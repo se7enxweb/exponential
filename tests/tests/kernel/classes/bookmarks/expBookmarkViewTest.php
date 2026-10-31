@@ -20,6 +20,9 @@
  *  BV-11 expBookmarkPage::viewItem() carries the reason, the icon and the label of its kind
  *  BV-12 every icon bookmark.ini names has its class in both copies of components.css
  *  BV-13 an extension adds a kind of bookmark through bookmark.ini; a class that is not a kind is skipped
+ *  BV-14 parse(): the module, the view, the ordered and unordered parameters and the query string of an address
+ *  BV-15 parsedFields(): what the columns module_name, view_name and view_parameters hold
+ *  BV-16 renamedURI(): a renamed module or view, parameters and query string kept; other modules and bad names refused
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -261,6 +264,66 @@ class expBookmarkViewTest extends PHPUnit\Framework\TestCase
             $ini->setVariable( 'BookmarkTypeSettings', 'TypeClass', $classes );
             expBookmarkView::reset();
         }
+    }
+
+    /** BV-14 parse(): module, view, ordered and unordered parameters and the query string of an address */
+    public function testParse()
+    {
+        $this->assertSame( array( 'module' => 'setup', 'view' => 'cache', 'ordered' => array(), 'unordered' => array(), 'query' => array() ),
+                           expBookmarkView::parse( 'setup/cache' ) );
+        $this->assertSame( array( 'module' => 'role', 'view' => 'view', 'ordered' => array( '3' ), 'unordered' => array(), 'query' => array() ),
+                           expBookmarkView::parse( 'role/view/3' ) );
+        $this->assertSame( array( 'module' => 'audit', 'view' => 'console', 'ordered' => array(),
+                                  'unordered' => array( 'user' => '14', 'offset' => '20' ), 'query' => array() ),
+                           expBookmarkView::parse( 'audit/console/(user)/14/(offset)/20' ) );
+        $parsed = expBookmarkView::parse( 'content/search?SearchText=news&SectionID=1' );
+        $this->assertSame( array( 'SearchText' => 'news', 'SectionID' => '1' ), $parsed['query'] );
+        $this->assertSame( 'search', $parsed['view'] );
+        $parsed = expBookmarkView::parse( 'content/view/full/2/(offset)/10/extra' );
+        $this->assertSame( array( 'full', '2', 'extra' ), $parsed['ordered'], 'a step without a name stays an ordered parameter' );
+        $this->assertSame( array( 'offset' => '10' ), $parsed['unordered'] );
+        $this->assertSame( array( 'page' => '2' ), expBookmarkView::parse( 'x/y/(page)/1/(page)/2' )['unordered'], 'the last value of a name counts' );
+        $this->assertSame( array( 'last' => '' ), expBookmarkView::parse( 'x/y/(last)' )['unordered'] );
+        $this->assertSame( array( 'module' => 'setup', 'view' => '', 'ordered' => array(), 'unordered' => array(), 'query' => array() ),
+                           expBookmarkView::parse( 'setup' ) );
+    }
+
+    /** BV-15 parsedFields(): the values of module_name, view_name and view_parameters (JSON, empty maps as objects) */
+    public function testParsedFields()
+    {
+        $this->assertSame( array( 'module_name' => 'role', 'view_name' => 'view',
+                                  'view_parameters' => '{"ordered":["3"],"unordered":{},"query":{}}' ),
+                           expBookmarkView::parsedFields( 'role/view/3' ) );
+        $this->assertSame( '{"ordered":[],"unordered":{"user":"14","offset":"20"},"query":{}}',
+                           expBookmarkView::parsedFields( 'audit/console/(user)/14/(offset)/20' )['view_parameters'] );
+        $this->assertSame( '{"ordered":[],"unordered":{},"query":{"SearchText":"Grüße/2026"}}',
+                           expBookmarkView::parsedFields( 'content/search?SearchText=Gr%C3%BC%C3%9Fe%2F2026' )['view_parameters'] );
+        foreach ( array( 'setup/cache', 'git_manager/dashboard', 'content/trash/(offset)/20', 'user/audit/(user)/14' ) as $uri )
+        {
+            $fields = expBookmarkView::parsedFields( $uri );
+            $parts = expBookmarkView::parts( $uri );
+            $this->assertSame( $parts['module'], $fields['module_name'], $uri );
+            $this->assertSame( $parts['view'], $fields['view_name'], $uri );
+            $this->assertIsArray( json_decode( $fields['view_parameters'], true ), $uri );
+        }
+        $this->assertSame( array( 'module_name', 'view_name', 'view_parameters' ), expBookmarkView::PARSED_COLUMNS );
+    }
+
+    /** BV-16 renamedURI(): a module, or one view, gets its new name; the parameters and the query string stay */
+    public function testRenamedURI()
+    {
+        $this->assertSame( 'roles/view/3', expBookmarkView::renamedURI( 'role/view/3', 'role', 'roles' ) );
+        $this->assertSame( 'roles/show/3', expBookmarkView::renamedURI( 'role/view/3', 'role/view', 'roles/show' ) );
+        $this->assertSame( 'roles/view/3', expBookmarkView::renamedURI( 'role/view/3', 'role/view', 'roles' ), 'a module alone keeps the view' );
+        $this->assertSame( 'search/find/(offset)/10?SearchText=news',
+                           expBookmarkView::renamedURI( 'content/search/(offset)/10?SearchText=news', 'content/search', 'search/find' ) );
+        $this->assertSame( 'admin2', expBookmarkView::renamedURI( 'admin', 'admin', 'admin2' ) );
+        $this->assertNull( expBookmarkView::renamedURI( 'role/edit/3', 'role/view', 'roles/show' ), 'another view' );
+        $this->assertNull( expBookmarkView::renamedURI( 'roles/view/3', 'role', 'x' ), 'another module, not a prefix' );
+        $this->assertNull( expBookmarkView::renamedURI( 'role/view/3', 'role', 'roles/view' ), 'a module cannot become one view' );
+        foreach ( array( array( 'role/../x', 'y' ), array( 'role', '' ), array( 'role', 'https://example.org' ), array( 'role', 'a/b/c' ),
+                         array( 'role', 'javascript:alert(1)' ), array( '', 'x' ) ) as $pair )
+            $this->assertNull( expBookmarkView::renamedURI( 'role/view/3', $pair[0], $pair[1] ), implode( ' -> ', $pair ) );
     }
 }
 

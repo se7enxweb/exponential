@@ -78775,6 +78775,294 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Umbuzo usebenza ngamalungelo akho, ungene ngale seshini.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count kumasekhondi angu-%seconds</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>awukho umkhawulo</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Ukujula</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Ubunkimbinkimbi</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Izinto ohlwini ngalunye</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (okuzenzakalelayo %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Izicelo ngomsebenzisi noma ngokhiye</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Izicelo ngekheli elingaziwa</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Ukuzihlola (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Imibuzo egciniwe kuphela</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Umbuzo omkhulu kakhulu</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>amabhayithi angu-%bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Ukulayisha okukhulu kakhulu</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Akukho kufinyelela isayithi %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Izinguquko zivuliwe ku-%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Izinguquko zivaliwe ku-%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>I-GraphQL API ivuliwe ku-%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>I-GraphQL API ivaliwe ku-%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Izilungiselelo azikwazanga ukubhalwa: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Inqolobane yezimpendulo isuliwe: kususwe izimpendulo ezingu-%count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Maka ibhokisi eceleni kombuzo ukuze uwususe.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Umbuzo awukwazanga ukususwa: umbuzo ofika kuhla lwemibhalo lwe-PersistedQueryDirectoryList[] ususwa kanye nefayela lawo.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Umbuzo ogciniwe ususiwe.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Izinguquko</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>kuvuliwe</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kuvaliwe</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Ukufinyelela kwamasayithi</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Lapho i-API nezinguquko zayo ziphendula khona. Izinkinobho zibhala i-graphql.ini, njengoba kwenza ./console exp:graphql:enable kanye ne-exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ukufinyelela isayithi</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>I-GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Shintsha</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Vala</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Vala izinguquko</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Vula izinguquko</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Vula</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Imikhawulo</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] yalokhu kufinyelela isayithi.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Inqolobane yezimpendulo</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Izimpendulo zemibuzo egciniwe, zigcinwa ngokwamalungelo omsebenzisi futhi ziphelelwa yisikhathi njalo uma okuqukethwe kushicilelwa.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Isimo</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Izimpendulo ezigciniwe</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>izimpendulo ezingu-%count, amabhayithi angu-%bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Isikhathi esiphezulu sokugcina</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Kuphelelwe yisikhathi ngokugcina</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Sula inqolobane yezimpendulo</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Imibuzo egciniwe</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Igcinwa nge-./console exp:graphql:persist, noma ngamaklayenti (imibuzo egciniwe ezenzakalelayo); ibizwa ngegama noma nge-SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Amagama</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Usayizi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kuphi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Susa</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>kuthunyelwe</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>kugciniwe</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Yebo, susa lo mbuzo</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Awukabikho umbuzo ogciniwe.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Okhiye be-API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Okhiye be-API bomuntu siqu abanesikhundla graphql:read (imibuzo) noma graphql:write (izinguquko). Bakhe futhi ubahoxise ekhasini elithi Ukufinyelela kwe-API, noma nge-./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Ukufinyelela kwe-API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Bonke okhiye</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ukhiye</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Igama</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Umnikazi</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Izikhundla</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Kusetshenziswe ngokugcina</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>kuyasebenza</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>kuphelelwe yisikhathi</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>kuhoxisiwe</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>soze</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Awukabikho ukhiye we-API onesikhundla se-GraphQL.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>I-GraphQL API ivaliwe ekufinyeleleni isayithi %siteaccess, okubonisa leli khasi; ithebula elingezansi libonisa lapho iphendula khona.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Okokufinyelela isayithi %siteaccess, okubonisa leli khasi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78877,6 +79165,178 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout idinga okukodwa ncamashi kokuthi id, identifier kanye ne-urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Inkambu ethi operations yesicelo esinezingxenye eziningi akusona isicelo esisodwa se-JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Inkambu ethi map yesicelo esinezingxenye eziningi akuyona into ye-JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Isicelo esinezingxenye eziningi asinalo ifayela %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Indlela enkambini ethi map kumele iqale nge-variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Ifayela %name alifikanga liphelele (iphutha lokulayisha %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Ifayela %name likhulu kunamabhayithi angu-%max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Ifayela %name alikwazanga ukuhlolwa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Izinguquko (mutations) zivaliwe kulokhu kufinyelela isayithi (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Thumela inguquko nge-POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Ngena ukuze ushintshe okuqukethwe.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Ukhiye we-API awunaso isikhundla %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Inguquko eneseshini idinga ithokheni yefomu yeseshini (unhlokweni X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>I-uploadFromUrl ivaliwe: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ayishoyo nhlobo umsingathi.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Ikheli kumele libe yikheli le-https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Umsingathi %host akekho ku-graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ifayela alikwazanga ukulandwa.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload wuhlobo lokufaka kuphela.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Okuguquguqukayo kohlobo Upload kuthatha ifayela lesicelo esinezingxenye eziningi.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>I-remote id %remoteId isivele isetshenziswa.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Okuqukethwe sekunokuhumusha ngo-%language: sebenzisa i-updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Nikeza okungenani inkambu eyodwa.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ayikwazanga ukwenziwa inguqulo entsha (okuqukethwe kunezinhlaka eziningi kakhulu).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Inguqulo %version akusiyo uhlaka.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>I-deleteContent idinga ncamashi eyodwa ku-id ne-nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Indawo ayikwazi ukuhanjiswa ngaphansi kwayo uqobo.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Okuqukethwe sekunendawo ngaphansi kuka-%parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Inani lenkambu %field alikwazanga ukugcinwa.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Alukho ulimi lokuqukethwe %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Asikho isigaba sokuqukethwe %class ku-schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Okuqukethwe akukho, noma awuvunyelwe ukukufunda.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Awuvunyelwe ukwenza lokhu kulokhu okuqukethwe.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Isigaba %class asinayo inkambu %field engabhalwa.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Inkambu %field inikezwe kabili.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Inkambu %field ithatha ifayela: lithumele njenge-upload (isicelo esinezingxenye eziningi).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Inkambu %field ayithathi fayela.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Inkambu %field idinga inani.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Ifomethi %format ingeyezinkambu zombhalo onothile kuphela; %field ithatha inani layo njengoba linjalo (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Inkambu %field iyadingeka.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>I-HTML ayikwazanga ukufundwa.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>I-content ithatha i-version kanye ne-id kuphela.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Ithokheni yokubuka kuqala ayivumelekile noma iphelelwe yisikhathi.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Akuyona i-origin (https://host noma https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Akusona isikhundla se-GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

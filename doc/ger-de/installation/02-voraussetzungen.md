@@ -1,7 +1,7 @@
 # 2. Voraussetzungen
 
 Dieses Kapitel führt auf, was ein Rechner braucht, bevor Exponential darauf installiert werden kann, und warum jeder
-Punkt nötig ist: die PHP-Version (7.4 bis 8.5; 8.0 für Velocity, 8.1 für Layouts), jede PHP-Extension mit der Stelle im
+Punkt nötig ist: die PHP-Version (7.4 bis 8.5; 8.0 für Velocity und Layouts), jede PHP-Extension mit der Stelle im
 Code, die sie verlangt, die `php.ini`-Einstellungen, die der Setup-Assistent prüft, die Datenbankserver und ihre
 Mindestversionen, Composer, einen Webserver sowie Hinweise zu Red Hat Enterprise Linux 9 und seinen Nachbauten, zu
 Debian und Ubuntu und zu Plesk. Zum Schluss steht, was die Dokumentation über Arbeitsspeicher und Festplatte sagt. Alles
@@ -32,7 +32,7 @@ man sie mitten in einer Installation, kostet sie einen Neustart der Installation
 | Bedarf | Minimum | Empfohlen | Geprüft durch |
 |---|---|---|---|
 | PHP | 8.0 unterstützt; 7.4 ohne Support nutzbar | das neueste 8.x, das Ihr System anbietet (8.5 wird unterstützt) | Composer (`composer.json`, `require.php`, und das Metapaket `se7enxweb/exponential-php-floor`); den Setup-Assistenten (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
-| PHP für Netgen Layouts und die Mediensite | 8.1 | wie oben | Composer (die Pakete `explayouts` und `sevenx-themes-media`; das Metapaket installiert sie ab PHP 8.1) |
+| PHP für Exponential Layouts und die Mediensite | 8.0 | wie oben | Composer (die Pakete `explayouts`, `expsite` und `sevenx-themes-media`; das Metapaket installiert sie ab PHP 8.0, mit exponential-php-floor 1.1.4 und neuer) |
 | PHP für Exponential Velocity | 8.0, mit `sockets` (ab dem Release 0.0.4.54; bis dahin 8.1) | wie oben, mit `pcntl` und `openssl` | Composer (`se7enxweb/exponential-velocity`: `"php": ">=8.0"`, `"ext-sockets": "*"`) |
 | PHP-Extensions | siehe [2.3](#23-php-extensions) | zusätzlich die empfohlenen | Composer (`ext-*`), den Systemtest des Setup-Assistenten |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an, `allow_url_fopen` an | | den Systemtest des Setup-Assistenten |
@@ -59,7 +59,7 @@ Kommandozeile).
 |---|---|
 | 7.4 | Ab 6.0.15 ohne Support nutzbar, für Websites, die noch nicht auf PHP 8 umziehen können (keine Zusage für Fehler- oder Sicherheitskorrekturen). Der Kernel und die mitgelieferten Extensions laufen darauf; Velocity, Netgen Layouts und einige Erweiterungen, die PHP 8 brauchen, werden nicht installiert (die vollständige Tabelle steht in [Warum Exponential PHP 7.4 unterstützt](../hilfe/warum-exponential-php-7-4-unterstuetzt.md)). |
 | 8.0 | Unterstützt. Der Kernel und die mitgelieferten Extensions laufen darauf unter Apache mit mod_php oder PHP-FPM. Sie ist das Standard-PHP von Red Hat Enterprise Linux 9, AlmaLinux 9 und Rocky Linux 9. Velocity läuft darauf ab seinem Release 0.0.4.54 (was sich unterscheidet, steht in [2.9](#php-80-und-red-hat-enterprise-linux)); Netgen Layouts braucht 8.1. |
-| 8.1 bis 8.4 | Unterstützt, einschließlich Velocity und Layouts. |
+| 8.1 bis 8.4 | Unterstützt, einschließlich Velocity und Layouts (wie auf 8.0). |
 | 8.5 | Unterstützt; die neueste getestete Version. |
 | 7.3 und älter | Nicht unterstützt. Eine Site, die bei PHP 7.3 oder älter bleiben muss, bleibt bei 6.0.7 oder früher. |
 
@@ -76,9 +76,9 @@ Jede Version bringt mehr Geschwindigkeit, und die älteren verlieren zuerst die 
 2022 keine Sicherheitskorrekturen des PHP-Projekts mehr; betreiben Sie es nur dort, wo Ihre Distribution oder Ihr
 Hoster es noch pflegt, und planen Sie den Umzug auf PHP 8.
 
-**Ein Metapaket pro PHP-Bereich.** Der Kernel verlangt außerdem `se7enxweb/exponential-php-floor` (`~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`). Jede seiner
+**Ein Metapaket pro PHP-Bereich.** Der Kernel verlangt außerdem `se7enxweb/exponential-php-floor` (`~1.0.3 || ~1.1.4 || ~1.2.3 || ~1.3.3`). Jede seiner
 Versionen gehört zu einem PHP-Bereich und verlangt die Erweiterungs-Releases und das Twig-3-Release, die dort laufen: 1.0.3 für PHP 7.4 (ohne Support nutzbar,
-`se7enxweb/twig` ~3.11.4), 1.1.3 für 8.0 (`se7enxweb/twig` ~3.19.1), 1.2.3 für 8.1 bis 8.3 und 1.3.3 für 8.4 und neuer (`twig/twig` ^3.27).
+`se7enxweb/twig` ~3.11.4), 1.1.4 für 8.0 (`se7enxweb/twig` ~3.19.1, mit Exponential Layouts, expsite und dem Media-Site-Theme), 1.2.3 für 8.1 bis 8.3 und 1.3.3 für 8.4 und neuer (`twig/twig` ^3.27).
 Die früheren Versionen (1.0.0 bis 1.0.2, 1.1.0 bis 1.1.2, 1.2.0 bis 1.2.2, 1.3.0 bis 1.3.2) erlaubten ältere Erweiterungs-Releases oder installieren
 kein Twig und sind ausgeschlossen. Der Kernel verlangt `twig/twig` nicht selbst: Das Upstream-Twig bis 3.26 ist durch Sicherheitshinweise gesperrt, und 3.27 verlangt PHP 8.1. Composer installiert die Version, die zum PHP passt, mit dem es
 läuft; dasselbe `composer require se7enxweb/exponential` ergibt so auf jedem unterstützten PHP eine vollständige

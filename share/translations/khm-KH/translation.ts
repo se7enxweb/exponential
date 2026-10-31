@@ -78777,6 +78777,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>សំណួរដំណើរការជាមួយសិទ្ធិរបស់អ្នក ដោយចូលតាមវគ្គនេះ។</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ក្នុងរយៈពេល %seconds វិ</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>គ្មានដែនកំណត់</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ជម្រៅ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ភាពស្មុគស្មាញ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ធាតុក្នុងមួយបញ្ជី</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (លំនាំដើម %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>សំណើក្នុងមួយអ្នកប្រើ ឬកូនសោ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>សំណើក្នុងមួយអាសយដ្ឋានអនាមិក</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>តែសំណួរដែលបានរក្សាទុក</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>សំណួរធំបំផុត</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes បៃ</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ការផ្ទុកឡើងធំបំផុត</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>គ្មានការចូលគេហទំព័រ %siteaccess ទេ។</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>ម្យូតេសិនត្រូវបានបើកនៅក្នុង %siteaccess។</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>ម្យូតេសិនត្រូវបានបិទនៅក្នុង %siteaccess។</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ត្រូវបានបើកនៅក្នុង %siteaccess។</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API ត្រូវបានបិទនៅក្នុង %siteaccess។</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>មិនអាចសរសេរការកំណត់បានទេ៖ %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ឃ្លាំងសម្ងាត់ចម្លើយត្រូវបានសម្អាត៖ ចម្លើយ %count ត្រូវបានលុប។</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>សូមធីកប្រអប់នៅក្បែរសំណួរ ដើម្បីលុបវា។</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>មិនអាចលុបសំណួរបានទេ៖ សំណួរដែលភ្ជាប់មកក្នុងថតនៃ PersistedQueryDirectoryList[] ត្រូវបានលុបជាមួយឯកសាររបស់វា។</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>សំណួរដែលបានរក្សាទុកត្រូវបានលុប។</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ម្យូតេសិន</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>បើក</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>បិទ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>កន្លែងដែល API និងម្យូតេសិនរបស់វាឆ្លើយតប។ ប៊ូតុងសរសេរ graphql.ini ដូចដែល ./console exp:graphql:enable និង exp:graphql:disable ធ្វើ។</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ការចូលគេហទំព័រ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ផ្លាស់ប្ដូរ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>បិទ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ម្យូតេសិនបិទ</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ម្យូតេសិនបើក</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>បើក</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ដែនកំណត់</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] នៃការចូលគេហទំព័រនេះ។</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ឃ្លាំងសម្ងាត់ចម្លើយ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>ចម្លើយនៃសំណួរដែលបានរក្សាទុក រក្សាទុកតាមសិទ្ធិអ្នកប្រើ ហើយផុតកំណត់រាល់ពេលមាតិកាត្រូវបានផ្សាយ។</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ស្ថានភាព</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ចម្លើយដែលបានរក្សាទុក</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>ចម្លើយ %count, %bytes បៃ</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>រក្សាទុកយូរបំផុត</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds វិ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ផុតកំណត់ចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>សម្អាតឃ្លាំងសម្ងាត់ចម្លើយ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>សំណួរដែលបានរក្សាទុក</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>រក្សាទុកដោយ ./console exp:graphql:persist ឬដោយម៉ាស៊ីនភ្ញៀវ (automatic persisted queries); ហៅតាមឈ្មោះ ឬ SHA-256។</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ទំហំ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ទីតាំង</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>លុប</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ភ្ជាប់មក</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>បានរក្សាទុក</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>បាទ/ចាស លុបសំណួរនេះ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>មិនទាន់មានសំណួរដែលបានរក្សាទុកនៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>កូនសោ API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>កូនសោ API ផ្ទាល់ខ្លួនដែលមានវិសាលភាព graphql:read (សំណួរ) ឬ graphql:write (ម្យូតេសិន)។ បង្កើត និងដកហូតពួកវានៅលើទំព័រ ការចូលប្រើ API ឬដោយ ./console exp:graphql:keys។</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>ការចូលប្រើ API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>កូនសោទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>កូនសោ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ឈ្មោះ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ម្ចាស់</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>វិសាលភាព</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ប្រើចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>សកម្ម</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ផុតកំណត់</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>បានដកហូត</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>មិនដែល</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>មិនទាន់មានកូនសោ API ដែលមានវិសាលភាព GraphQL នៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API ត្រូវបានបិទនៅក្នុងការចូលគេហទំព័រ %siteaccess ដែលបង្ហាញទំព័រនេះ។ តារាងខាងក្រោមបង្ហាញកន្លែងដែលវាឆ្លើយតប។</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>សម្រាប់ការចូលគេហទំព័រ %siteaccess ដែលបង្ហាញទំព័រនេះ។</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ត្រូវការតែមួយគត់ក្នុងចំណោម id, identifier និង urlAlias។</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>វាល operations នៃសំណើ multipart មិនមែនជាសំណើ JSON តែមួយទេ។</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>វាល map នៃសំណើ multipart មិនមែនជាវត្ថុ JSON ទេ។</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>សំណើ multipart មិនមានឯកសារ %field ទេ។</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ផ្លូវមួយនៃផែនទីវាលត្រូវតែចាប់ផ្ដើមដោយ variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ឯកសារ %name មកមិនពេញលេញទេ (កំហុសផ្ទុកឡើង %error)។</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ឯកសារ %name ធំជាង %max បៃ។</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>មិនអាចពិនិត្យឯកសារ %name បានទេ។</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ម្យូតេសិនត្រូវបានបិទនៅក្នុងការចូលគេហទំព័រនេះ (graphql.ini [GraphQLSettings] MutationsEnabled)។</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>សូមផ្ញើម្យូតេសិនដោយ POST។</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>សូមចូលដើម្បីផ្លាស់ប្ដូរមាតិកា។</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>កូនសោ API មិនមានវិសាលភាព %scope ទេ។</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ម្យូតេសិនដែលមានវគ្គ ត្រូវការតូខឹនទម្រង់របស់វគ្គនោះ (header X-CSRF-Token)។</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ត្រូវបានបិទ៖ graphql.ini [GraphQLSettings] UploadFromUrlHostList[] មិនបានដាក់ឈ្មោះម៉ាស៊ីនណាមួយទេ។</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>អាសយដ្ឋានត្រូវតែជាអាសយដ្ឋាន https។</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ម៉ាស៊ីន %host មិនមាននៅក្នុង graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ទេ។</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>មិនអាចទាញយកឯកសារបានទេ។</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload គឺជាប្រភេទបញ្ចូលតែប៉ុណ្ណោះ។</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>អថេរប្រភេទ Upload ទទួលឯកសារនៃសំណើ multipart។</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>remote id %remoteId ត្រូវបានប្រើរួចហើយ។</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>មាតិកាមានការបកប្រែជា %language រួចហើយ៖ សូមប្រើ updateContent។</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>សូមផ្ដល់វាលយ៉ាងហោចណាស់មួយ។</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>មិនអាចបង្កើតកំណែថ្មីបានទេ (មាតិកាមានសេចក្ដីព្រាងច្រើនពេក)។</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>កំណែ %version មិនមែនជាសេចក្ដីព្រាងទេ។</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ត្រូវការតែមួយគត់ក្នុងចំណោម id និង nodeId។</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ទីតាំងមិនអាចផ្លាស់ទីទៅក្រោមខ្លួនឯងបានទេ។</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>មាតិកាមានទីតាំងនៅក្រោម %parentId រួចហើយ។</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>មិនអាចរក្សាទុកតម្លៃនៃវាល %field បានទេ។</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>គ្មានភាសាមាតិកា %language ទេ។</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>គ្មានថ្នាក់មាតិកា %class នៅក្នុងគ្រោងការណ៍ទេ។</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>មាតិកាមិនមានទេ ឬអ្នកមិនអាចអានវាបានទេ។</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>អ្នកមិនអាចធ្វើការនេះលើមាតិកានេះបានទេ។</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ថ្នាក់ %class មិនមានវាល %field ដែលអាចសរសេរបានទេ។</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>វាល %field ត្រូវបានផ្ដល់ពីរដង។</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>វាល %field ទទួលឯកសារ៖ សូមផ្ញើវាជាការផ្ទុកឡើង (សំណើ multipart)។</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>វាល %field មិនទទួលឯកសារទេ។</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>វាល %field ត្រូវការតម្លៃ។</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ទម្រង់ %format សម្រាប់តែវាលអត្ថបទសម្បូរបែបប៉ុណ្ណោះ; %field ទទួលតម្លៃរបស់វាដដែល (RAW)។</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>វាល %field ត្រូវតែមាន។</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>មិនអាចអាន HTML បានទេ។</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ទទួល version តែជាមួយ id ប៉ុណ្ណោះ។</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>តូខឹនមើលជាមុនមិនត្រឹមត្រូវ ឬផុតកំណត់ហើយ។</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>មិនមែនជា origin ទេ (https://host ឬ https://host:port)៖ %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>មិនមែនជាវិសាលភាពនៃ GraphQL API ទេ៖ %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

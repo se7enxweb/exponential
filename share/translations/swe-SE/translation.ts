@@ -80080,6 +80080,294 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Frågan körs med dina behörigheter, inloggad med den här sessionen.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count på %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ingen gräns</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Djup</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Komplexitet</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Poster per lista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Förfrågningar per användare eller nyckel</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Förfrågningar per anonym adress</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspektion</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Endast lagrade frågor</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Största fråga</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Största uppladdning</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Det finns ingen webbplatsingång %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutationerna är påslagna i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutationerna är avstängda i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL-API:t är påslaget i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL-API:t är avstängt i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Inställningarna kunde inte skrivas: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Svarscachen har tömts: %count svar borttagna.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Kryssa i rutan bredvid frågan för att ta bort den.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Frågan kunde inte tas bort: en fråga som levereras i en katalog i PersistedQueryDirectoryList[] tas bort tillsammans med sin fil.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Den lagrade frågan har tagits bort.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutationer</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>på</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>av</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Webbplatsingångar</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Var API:t och dess mutationer svarar. Knapparna skriver graphql.ini, precis som ./console exp:graphql:enable och exp:graphql:disable gör.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webbplatsingång</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ändra</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Stäng av</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutationer av</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutationer på</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Slå på</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Gränser</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] för den här webbplatsingången.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Svarscache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Svaren på lagrade frågor, sparade per användarbehörighet och ogiltigförklarade när innehåll publiceras.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Sparade svar</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count svar, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Sparas högst</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Senast ogiltigförklarad</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Töm svarscachen</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Lagrade frågor</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Lagrade med ./console exp:graphql:persist eller av klienter (automatiska lagrade frågor); anropas med namn eller SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Storlek</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Var</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>levererad</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>lagrad</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ja, ta bort den här frågan</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ingen lagrad fråga ännu.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-nycklar</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Personliga API-nycklar med omfånget graphql:read (frågor) eller graphql:write (mutationer). Skapa och återkalla dem på sidan API-åtkomst eller med ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-åtkomst</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Alla nycklar</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Nyckel</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Ägare</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Omfång</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Senast använd</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>utgången</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>återkallad</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldrig</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ingen API-nyckel med ett GraphQL-omfång ännu.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL-API:t är avstängt i webbplatsingången %siteaccess, som visar den här sidan; tabellen nedan visar var det svarar.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>För webbplatsingången %siteaccess, som visar den här sidan.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -80182,6 +80470,178 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout behöver exakt ett av id, identifier och urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Fältet operations i en multipart-förfrågan är inte en enda JSON-förfrågan.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Fältet map i en multipart-förfrågan är inte ett JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-förfrågan har ingen fil %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>En sökväg i fältet map måste börja med variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Filen %name kom inte fram hel (uppladdningsfel %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Filen %name är större än %max byte.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Filen %name kunde inte kontrolleras.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutationer är avstängda i den här webbplatsingången (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Skicka en mutation med POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Logga in för att ändra innehåll.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-nyckeln har inte omfånget %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>En mutation med en session behöver sessionens formulärtoken (huvudet X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl är avstängt: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] anger ingen värd.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adressen måste vara en https-adress.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Värden %host finns inte i graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Filen kunde inte hämtas.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload är endast en indatatyp.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>En variabel av typen Upload tar emot en fil från en multipart-förfrågan.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Fjärr-id %remoteId är redan upptaget.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Innehållet har redan en översättning till %language: använd updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Ange minst ett fält.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ingen ny version kunde skapas (innehållet har för många utkast).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Version %version är inte ett utkast.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent behöver exakt ett av id och nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>En placering kan inte flyttas under sig själv.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Innehållet har redan en placering under %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Värdet i fältet %field kunde inte sparas.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Det finns inget innehållsspråk %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Det finns ingen innehållsklass %class i schemat.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Innehållet finns inte, eller så får du inte läsa det.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Du får inte göra detta med det här innehållet.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klassen %class har inget skrivbart fält %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Fältet %field anges två gånger.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Fältet %field tar emot en fil: skicka den som uppladdning (en multipart-förfrågan).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Fältet %field tar inte emot någon fil.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Fältet %field behöver ett värde.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formatet %format gäller endast formaterade textfält; %field tar emot sitt värde som det är (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Fältet %field är obligatoriskt.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-koden kunde inte läsas.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content tar emot version endast tillsammans med id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Förhandsgranskningstoken är ogiltig eller har gått ut.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Inte ett ursprung (https://host eller https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Inte ett omfång för GraphQL-API:t: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

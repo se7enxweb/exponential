@@ -78807,6 +78807,294 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Päring töötab sinu õigustega, selle seansiga sisse logituna.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds s jooksul</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>piiranguta</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Sügavus</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Keerukus</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Üksusi loendis</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (vaikimisi %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Taotlusi kasutaja või võtme kohta</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Taotlusi anonüümse aadressi kohta</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspektsioon</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Ainult salvestatud päringud</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Suurim päring</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes baiti</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Suurim üleslaadimine</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Saidi juurdepääsu %siteaccess pole olemas.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutatsioonid on saidi juurdepääsus %siteaccess sisse lülitatud.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutatsioonid on saidi juurdepääsus %siteaccess välja lülitatud.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API on saidi juurdepääsus %siteaccess sisse lülitatud.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API on saidi juurdepääsus %siteaccess välja lülitatud.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Seadeid ei õnnestunud kirjutada: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Vastuste vahemälu tühjendati: eemaldati %count vastust.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Päringu eemaldamiseks märgi selle kõrval olev kast.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Päringut ei õnnestunud eemaldada: PersistedQueryDirectoryList[] kataloogis tarnitud päring eemaldatakse koos selle failiga.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Salvestatud päring eemaldati.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutatsioonid</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>sees</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>väljas</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Saidi juurdepääsud</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kus API ja selle mutatsioonid vastavad. Nupud kirjutavad faili graphql.ini, nagu ./console exp:graphql:enable ja exp:graphql:disable seda teevad.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muuda</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Lülita välja</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutatsioonid välja</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutatsioonid sisse</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Lülita sisse</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Piirangud</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Selle saidi juurdepääsu graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Vastuste vahemälu</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Salvestatud päringute vastused, hoitud kasutajaõiguste kaupa ja aegunud iga kord, kui sisu avaldatakse.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Hoitud vastuseid</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count vastust, %bytes baiti</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Hoitakse kõige rohkem</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Viimati aegunud</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Tühjenda vastuste vahemälu</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Salvestatud päringud</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Salvestatud käsuga ./console exp:graphql:persist või klientide poolt (automaatsed salvestatud päringud); kutsutakse nime või SHA-256 järgi.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nimed</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Suurus</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Asukoht</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eemalda</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>tarnitud</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>salvestatud</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Jah, eemalda see päring</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Salvestatud päringuid veel pole.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-võtmed</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Isiklikud API-võtmed ulatusega graphql:read (päringud) või graphql:write (mutatsioonid). Loo ja tühista neid lehel API juurdepääs või käsuga ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API juurdepääs</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Kõik võtmed</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Võti</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Omanik</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Ulatused</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Viimati kasutatud</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiivne</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>aegunud</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>tühistatud</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mitte kunagi</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL-ulatusega API-võtmeid veel pole.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API on välja lülitatud saidi juurdepääsus %siteaccess, mis seda lehte näitab; allolev tabel näitab, kus see vastab.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Saidi juurdepääsu %siteaccess jaoks, mis seda lehte näitab.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79197,178 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout vajab täpselt ühte järgmistest: id, identifier ja urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Multipart-taotluse väli operations ei ole üks JSON-taotlus.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Multipart-taotluse väli map ei ole JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-taotluses pole faili %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Välja map tee peab algama sõnaga variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fail %name ei saabunud tervikuna (üleslaadimise viga %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fail %name on suurem kui %max baiti.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faili %name ei õnnestunud kontrollida.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutatsioonid on selles saidi juurdepääsus välja lülitatud (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Saada mutatsioon POST-iga.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Sisu muutmiseks logi sisse.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-võtmel pole ulatust %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Seansiga mutatsioon vajab seansi vormitõendit (päis X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl on välja lülitatud: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ei nimeta ühtegi hosti.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Aadress peab olema https-aadress.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host pole loendis graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faili ei õnnestunud tuua.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload on ainult sisendtüüp.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Tüüpi Upload muutuja võtab vastu multipart-taotluse faili.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Kaug-id %remoteId on juba kasutusel.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Sisul on juba tõlge keeles %language: kasuta updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Anna vähemalt üks väli.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Uut versiooni ei õnnestunud luua (sisul on liiga palju mustandeid).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versioon %version ei ole mustand.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent vajab täpselt ühte järgmistest: id ja nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Asukohta ei saa teisaldada iseenda alla.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Sisul on juba asukoht %parentId all.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Välja %field väärtust ei õnnestunud salvestada.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Sisukeelt %language pole olemas.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Skeemis pole sisuklassi %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Sisu pole olemas või sul pole õigust seda lugeda.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Sul pole õigust seda selle sisuga teha.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klassil %class pole kirjutatavat välja %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Väli %field on antud kaks korda.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Väli %field võtab vastu faili: saada see üleslaadimisena (multipart-taotlus).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Väli %field ei võta faili vastu.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Väli %field vajab väärtust.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Vorming %format on ainult rikasteksti väljadele; %field võtab väärtuse sellisena, nagu see on (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Väli %field on kohustuslik.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-i ei õnnestunud lugeda.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content võtab version vastu ainult koos id-ga.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Eelvaate tõend ei kehti või on aegunud.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ei ole päritolu (https://host või https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ei ole GraphQL API ulatus: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

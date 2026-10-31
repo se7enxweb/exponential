@@ -78777,6 +78777,294 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Jearaldat vuddjojuvvo du vuoigatvuođaiguin, sisačáliiduvvon dán bargovuoru bokte.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds s:s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ii ráddji</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Čiekŋalasvuohta</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksitehta</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elemeanttat juohke listtus</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standárda %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Gáibádusat juohke geavaheaddjái dahje čovdosii</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Gáibádusat juohke anonyma čujuhussii</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekšuvdna</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Dušše vurkejuvvon jearaldagat</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Stuorámus jearaldat</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Stuorámus sáddehus</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Neahttabáikebeassan %siteaccess ii gávdno.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutašuvnnat leat álggahuvvon %siteaccess:s.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutašuvnnat leat jáddaduvvon %siteaccess:s.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL-API lea álggahuvvon %siteaccess:s.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL-API lea jáddaduvvon %siteaccess:s.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ásahusaid ii sáhttán čállit: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Vástádusa gaskaboddosaš vurká lea čorgejuvvon: %count vástádusa sihkkojuvvon.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Merke ruvtto jearaldaga bálddas sihkkun dihte dan.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Jearaldaga ii sáhttán sihkkut: jearaldat mii lea sáddejuvvon PersistedQueryDirectoryList[] máhpas sihkkojuvvo iežas fiillain.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Vurkejuvvon jearaldat sihkkojuvvui.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutašuvnnat</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>álggahuvvon</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>jáddaduvvon</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Neahttabáikebeassamat</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Gos API ja dan mutašuvnnat vástidit. Boalut čállet graphql.ini, nugo ./console exp:graphql:enable ja exp:graphql:disable dahket.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Neahttabáikebeassan</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Rievdat</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Jáddat</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutašuvnnat eret</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutašuvnnat ala</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Álggat</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Rájit</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Dán neahttabáikebeassama graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Vástádusa gaskaboddosaš vurká</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Vurkejuvvon jearaldagaid vástádusat, mat vurkejuvvojit geavaheaddjivuoigatvuođaid mielde ja nohket juohke háve go sisdoallu almmuhuvvo.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dilli</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Vurkejuvvon vástádusat</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count vástádusa, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Vurkejuvvo eanemusat</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Maŋimuš nohkan</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Čorge vástádusa gaskaboddosaš vurkká</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Vurkejuvvon jearaldagat</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Vurkejuvvon ./console exp:graphql:persist:in dahje klieanttaid bokte (automáhtalaš vurkejuvvon jearaldagat); gohčoduvvojit nama dahje SHA-256 mielde.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namat</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Sturrodat</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Gos</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Sihko</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>sáddejuvvon</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>vurkejuvvon</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Juo, sihko dán jearaldaga</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ii vel vurkejuvvon jearaldat.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-čoavddat</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Persovnnalaš API-čoavddat viidodagain graphql:read (jearaldagat) dahje graphql:write (mutašuvnnat). Ráhkat ja geassit daid ruovttoluotta siiddus API-beassan, dahje ./console exp:graphql:keys:in.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-beassan</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Buot čoavddat</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Čoavdda</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namma</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eaiggát</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Viidodagat</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Maŋimusat geavahuvvon</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiivvalaš</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>nohkan</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>geassádallon</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ii goassige</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ii vel API-čoavdda mas lea GraphQL-viidodat.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL-API lea jáddaduvvon neahttabáikebeassamis %siteaccess, mii čájeha dán siiddu; vuolábeale tabealla čájeha gos dat vástida.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Neahttabáikebeassama %siteaccess várás, mii čájeha dán siiddu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout dárbbaša juste ovtta dáin: id, identifier ja urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Multipart-gáibádusa gieddi operations ii leat okta JSON-gáibádus.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Multipart-gáibádusa gieddi map ii leat JSON-objeakta.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-gáibádusas ii leat fiila %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Gieddi map bálggis ferte álgit variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fiila %name ii boahtán ollislaččat (sáddenmeattáhus %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fiila %name lea stuorát go %max byte.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fiilla %name ii sáhttán dárkkistit.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutašuvnnat leat jáddaduvvon dán neahttabáikebeassanis (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Sádde mutašuvnna POST:in.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Čálit sisa rievdadan dihte sisdoalu.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-čoavddas ii leat viidodat %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutašuvdna mas lea session dárbbaša session skovvatoken (bajilčála X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl lea jáddaduvvon: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ii namut ii ovttage guossohasa.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Čujuhus ferte leat https-čujuhus.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Guossoheaddji %host ii leat graphql.ini [GraphQLSettings] UploadFromUrlHostList[]:as.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fiilla ii sáhttán viežžat.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload lea dušše sisaboahtošládja.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload-šlája variábel váldá multipart-gáibádusa fiilla.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Gáiddus id %remoteId lea juo geavahusas.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Sisdoalus lea juo jorgalus gillii %language: geavat updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Atte unnimusat ovtta gietti.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ođđa veršuvnna ii sáhttán ráhkadit (sisdoalus leat menddo ollu konseavttat).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Veršuvdna %version ii leat konseapta.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent dárbbaša juste ovtta dain id ja nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Báikki ii sáhte sirdit iežas vuollái.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Sisdoalus lea juo báiki %parentId vuolde.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Gietti %field árvvu ii sáhttán vurket.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Sisdoallogiella %language ii gávdno.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Sisdoalloluohkká %class ii gávdno hámis.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Sisdoallu ii gávdno, dahje don it oaččo lohkat dan.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Don it oaččo dahkat dán dán sisdoallui.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Luohkás %class ii leat gieddi %field man sáhttá čállit.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Gieddi %field lea addojuvvon guktii.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Gieddi %field váldá fiilla: sádde dan upload:an (multipart-gáibádus).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Gieddi %field ii váldde fiilla.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Gieddi %field dárbbaša árvvu.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formáhtta %format lea dušše hábmejuvvon teakstagieddiide; %field váldá árvvus nu go dat lea (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Gieddi %field lea bákkolaš.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ii sáhttán lohkat.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content váldá version dušše id:in.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Ovdačájehantoken ii leat gustovaš dahje lea nohkan.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ii leat álgu (https://host dahje https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ii leat GraphQL-API viidodat: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

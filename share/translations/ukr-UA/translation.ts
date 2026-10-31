@@ -78807,6 +78807,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Запит виконується з вашими правами, з входом у цьому сеансі.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count за %seconds с</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>без обмеження</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Глибина</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Складність</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Елементів у списку</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (типово %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Звернень на користувача або ключ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Звернень на анонімну адресу</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Інтроспекція</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Лише збережені запити</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Найбільший запит</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes байтів</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Найбільше завантаження</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Доступу до сайту %siteaccess немає.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Мутації увімкнено в %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Мутації вимкнено в %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API увімкнено в %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API вимкнено в %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Не вдалося записати налаштування: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Кеш відповідей очищено: вилучено відповідей: %count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Позначте прапорець біля запиту, щоб вилучити його.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Не вдалося вилучити запит: запит, що постачається в каталозі з PersistedQueryDirectoryList[], вилучається разом зі своїм файлом.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Збережений запит вилучено.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Мутації</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>увімк.</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>вимк.</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Доступи до сайту</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Де відповідають API та його мутації. Кнопки записують graphql.ini так само, як ./console exp:graphql:enable і exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Доступ до сайту</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Змінити</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Вимкнути</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Вимкнути мутації</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Увімкнути мутації</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Увімкнути</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Обмеження</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] цього доступу до сайту.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Кеш відповідей</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Відповіді збережених запитів, що зберігаються окремо для прав користувачів і застарівають щоразу, коли публікується вміст.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Збережено відповідей</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>Відповідей: %count, байтів: %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Зберігаються щонайбільше</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Востаннє застаріло</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Очистити кеш відповідей</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Збережені запити</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Зберігаються через ./console exp:graphql:persist або клієнтами (автоматичні збережені запити); викликаються за назвою або SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Назви</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Розмір</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Де</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Вилучити</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>постачений</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>збережений</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Так, вилучити цей запит</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Збережених запитів ще немає.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Ключі API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Особисті ключі API з областю доступу graphql:read (запити) або graphql:write (мутації). Створюйте й відкликайте їх на сторінці «Доступ до API» або через ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Доступ до API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Усі ключі</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ключ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Власник</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Області доступу</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Останнє використання</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>активний</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>застарів</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>відкликаний</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ніколи</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ключів API з областю доступу GraphQL ще немає.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API вимкнено в доступі до сайту %siteaccess, який показує цю сторінку; таблиця нижче показує, де він відповідає.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Для доступу до сайту %siteaccess, який показує цю сторінку.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79197,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout потребує рівно одного з id, identifier і urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Поле operations багаточастинного звернення не є одним запитом JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Поле map багаточастинного звернення не є об’єктом JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Багаточастинне звернення не має файлу %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Шлях у полі map має починатися з variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Файл %name надійшов не повністю (помилка завантаження %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Файл %name більший за %max байтів.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Не вдалося перевірити файл %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Мутації вимкнено в цьому доступі до сайту (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Надішліть мутацію методом POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Увійдіть, щоб змінювати вміст.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Ключ API не має області доступу %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Мутації із сеансом потрібен токен форми цього сеансу (заголовок X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl вимкнено: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] не називає жодного хоста.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Адреса має бути адресою https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Хоста %host немає в graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Не вдалося отримати файл.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload — лише вхідний тип.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Змінна типу Upload приймає файл багаточастинного звернення.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Віддалений ідентифікатор %remoteId уже зайнятий.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Вміст уже має переклад мовою %language: використовуйте updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Укажіть принаймні одне поле.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Не вдалося створити нову версію (у вмісту забагато чернеток).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Версія %version не є чернеткою.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent потребує рівно одного з id і nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Розташування не можна перемістити під саме себе.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Вміст уже має розташування під %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Не вдалося зберегти значення поля %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Мови вмісту %language немає.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>У схемі немає класу вмісту %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Вмісту немає, або вам заборонено його читати.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Вам заборонено робити це з цим вмістом.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Клас %class не має поля %field, у яке можна записувати.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Поле %field указано двічі.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Поле %field приймає файл: надішліть його як upload (багаточастинне звернення).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Поле %field не приймає файлів.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Поле %field потребує значення.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Формат %format лише для полів форматованого тексту; %field приймає значення як є (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Поле %field обов’язкове.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Не вдалося прочитати HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content приймає version лише разом з id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Токен попереднього перегляду недійсний або його строк минув.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Не є джерелом (https://host або https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Не є областю доступу GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

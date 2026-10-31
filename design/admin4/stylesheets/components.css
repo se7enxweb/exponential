@@ -1590,8 +1590,11 @@ body.exp-debug-bar .a4-toasts { bottom: calc(var(--exp-debug-bar-h, 38px) + var(
   padding: 0 var(--a4-space-3) var(--a4-space-3);
 }
 .a4-confirm > div p { flex: 1 1 320px; color: var(--a4-ink); }
-.a4-toolbar .a4-confirm { flex: 0 1 auto; }
-.a4-toolbar .a4-confirm[open] { flex: 1 1 100%; }
+/* in a row of actions (a toolbar, a table's action cell) a closed confirmation is only as wide as its summary */
+.a4-toolbar .a4-confirm,
+.a4-actions > .a4-confirm { flex: 0 1 auto; }
+.a4-toolbar .a4-confirm[open],
+.a4-actions > .a4-confirm[open] { flex: 1 1 100%; }
 
 /* ---- Steps of a wizard: <ol class="a4-steps"><li class="is-done|is-current"> ---------------------------------- */
 

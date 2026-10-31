@@ -78777,6 +78777,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>কোয়েরি অসি নহাক্কী হক্তা, সেসন অসিনা সাইন ইন তৌরগা চলি।</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds সে. দা %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>লিমিত লৈতে</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>অরুবা</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>অকরবা মওং</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>লিস্ত অমদা আইতেম</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (দিফোল্ত %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>শিজিন্নরিবা মী অমা নত্রগা কী অমদা হায়জবা</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>মমিং লৈতবা এদ্রেস অমদা হায়জবা</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ইন্ত্রোস্পেকসন</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>পুথম্লবা কোয়েরিশিং খক্তা</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>খ্বাইদগী চাউবা কোয়েরি</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes বাইত</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>খ্বাইদগী চাউবা অপলোদ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>সাইট একসেস %siteaccess লৈতে।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess দা মিউতেসনশিং হাংদোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess দা মিউতেসনশিং থোংজিনখ্রে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess দা GraphQL API হাংদোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess দা GraphQL API থোংজিনখ্রে।</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>সেত্তিংশিং ইবা ঙম্দ্রে: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>পাউখুম কেস শেংদোকখ্রে: পাউখুম %count লৌথোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>কোয়েরি অদু লৌথোক্নবা মগী মনাক্তা লৈবা বোক্স অদু তিক তৌবিয়ু।</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>কোয়েরি অসি লৌথোকপা ঙম্দ্রে: PersistedQueryDirectoryList[] গী দাইরেক্তরি অমদা পুরকপা কোয়েরি অমা মগী ফাইলগা লোয়ননা লৌথোকই।</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>পুথম্লবা কোয়েরি অদু লৌথোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>মিউতেসনশিং</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>হাংলি</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>থোংলি</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>সাইট একসেসশিং</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API অমসুং মগী মিউতেসনশিংনা পাউখুম পীবা মফম। বত্তনশিংনা graphql.ini ইই, ./console exp:graphql:enable অমসুং exp:graphql:disable না তৌবগুম্না।</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইট একসেস</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>হোংদোকউ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>থোংজিনউ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>মিউতেসন থোংলি</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>মিউতেসন হাংলি</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>হাংদোকউ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>লিমিতশিং</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>সাইট একসেস অসিগী graphql.ini [GraphQLSettings]।</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>পাউখুম কেস</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>পুথম্লবা কোয়েরিশিংগী পাউখুম, শিজিন্নরিবা মীগী হক্কী মতুংইন্না থম্লি অমসুং কন্তেন্ত পব্লিস তৌবা খুদিংমক মতম লোই।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ফিভম</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>থম্লবা পাউখুম</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>পাউখুম %count, %bytes বাইত</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>খ্বাইদগী য়াম্লবদা থম্বা মতম</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds সে.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>অরোইবা মতম লোইবা</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>পাউখুম কেস শেংদোকউ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>পুথম্লবা কোয়েরিশিং</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist চানবিদুনা নত্রগা ক্লাইন্তশিংনা থম্লবা (মশানা পুথম্লবা কোয়েরিশিং); মমিং নত্রগা SHA-256 না কৌই।</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>মমিংশিং</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>চাউবা</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>কদাইদা</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>লৌথোকউ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>পুরকপা</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>থম্লবা</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>হোই, কোয়েরি অসি লৌথোকউ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>পুথম্লবা কোয়েরি অমত্তা হৌজিক ফাওবা লৈতে।</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API কীশিং</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>স্কোপ graphql:read (কোয়েরিশিং) নত্রগা graphql:write (মিউতেসনশিং) লৈবা মশাগী API কীশিং। মদুশিং API একসেস লমাইদা নত্রগা ./console exp:graphql:keys চানবিদুনা শেম্বা অমসুং লৌথোকপা।</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API একসেস</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>কী পুম্নমক</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>কী</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>মমিং</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>মপু</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>স্কোপশিং</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>অরোইবা শিজিন্নবা</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>চৎলি</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>মতম লোইখ্রে</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>লৌথোকখ্রে</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>করিসু নত্তে</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL স্কোপ লৈবা API কী অমত্তা হৌজিক ফাওবা লৈতে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>পেজ অসি উৎপা সাইট একসেস %siteaccess দা GraphQL API থোংজিনখ্রে; মখাগী তেবলনা মসিনা কদাইদা পাউখুম পীবগে হায়বা উৎলি।</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>পেজ অসি উৎপা সাইট একসেস %siteaccess গীদমক।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout না id, identifier অমসুং urlAlias দগী অমখক্তমক মথৌ তাই।</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>মল্তিপার্ত হায়জবা অমগী operations ফিল্দ অসি JSON হায়জবা অমা নত্তে।</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>মল্তিপার্ত হায়জবা অমগী map ফিল্দ অসি JSON ওবজেক্ত অমা নত্তে।</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>মল্তিপার্ত হায়জবা অসিদা ফাইল %field লৈতে।</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map ফিল্দকী পাথ অমা variables. দগী হৌগদবনি: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ফাইল %name অসি মপুংফানা লাক্তে (অপলোদ অশোয়বা %error)।</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ফাইল %name অসি %max বাইততগী হেন্না চাউই।</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ফাইল %name অসি য়েংশিনবা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>সাইট একসেস অসিদা মিউতেসনশিং থোংজিনখ্রে (graphql.ini [GraphQLSettings] MutationsEnabled)।</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>মিউতেসন অমা POST চানবিদুনা থাবিয়ু।</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>কন্তেন্ত হোংদোকনবগীদমক সাইন ইন তৌবিয়ু।</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API কী অসিদা স্কোপ %scope লৈতে।</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>সেসন লৈবা মিউতেসন অমগীদমক সেসনগী ফোর্ম তোকেন মথৌ তাই (হেদর X-CSRF-Token)।</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl থোংজিনখ্রে: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] না হোস্ত অমত্তা মমিং লৌদ্রে।</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>এদ্রেস অসি https এদ্রেস অমা ওইগদবনি।</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>হোস্ত %host অসি graphql.ini [GraphQLSettings] UploadFromUrlHostList[] দা লৈতে।</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ফাইল অসি পুরকপা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload অসি ইনপুত মখল খক্তনি।</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload মখলগী ভেরিএবল অমনা মল্তিপার্ত হায়জবা অমগী ফাইল অমা লৌই।</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>রিমোত id %remoteId অসি হান্নদগী লৌখ্রে।</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>কন্তেন্ত অসিদা হান্নদগী %language দা হন্দোকপা লৈরে: updateContent শিজিন্নবিয়ু।</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>খ্বাইদগী নপীবদা ফিল্দ অমা পীবিয়ু।</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>অনৌবা ভর্সন অমা শেমগৎপা ঙম্দ্রে (কন্তেন্ত অসিদা দ্রাফ্ত য়াম্না য়াম্লে)।</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ভর্সন %version অসি দ্রাফ্ত নত্তে।</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent না id অমসুং nodeId গী মনুংদগী অমখক্তা মথৌ তাই।</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>মফম অমা মশাগী মখাদা লেংদোকপা ঙমদে।</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>কন্তেন্ত অসিদা হান্নদগী %parentId গী মখাদা মফম অমা লৈরে।</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ফিল্দ %field গী ভেল্যু অসি থম্বা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>কন্তেন্ত লোন %language লৈতে।</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>স্কিমাদা কন্তেন্ত ক্লাস %class লৈতে।</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>কন্তেন্ত অসি লৈতে, নত্রগা নহাক্না পাবা য়াদে।</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>নহাক্না কন্তেন্ত অসিদা মসি তৌবা য়াদে।</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ক্লাস %class দা ইবা য়াবা ফিল্দ %field লৈতে।</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ফিল্দ %field অসি অনিরক পীখ্রে।</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ফিল্দ %field না ফাইল অমা লৌই: মদু অপলোদ ওইনা থাবিয়ু (মল্তিপার্ত হায়জবা)।</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ফিল্দ %field না ফাইল লৌদে।</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ফিল্দ %field দা ভেল্যু অমা মথৌ তাই।</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ফোর্মেত %format অসি রিচ তেক্সত ফিল্দশিংগীদমক খক্তনি; %field না মগী ভেল্যু লৈবা মতৌ অদুম লৌই (RAW)।</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ফিল্দ %field অসি মথৌ তাই।</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML অসি পাবা ঙম্দ্রে।</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content না version অসি id গা লোয়ননা খক্তা লৌই।</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>প্রিভিউ তোকেন অসি চৎনবা ঙমদে নত্রগা মতম লোইখ্রে।</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>অরিজিন অমা নত্তে (https://host নত্রগা https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API গী স্কোপ অমা নত্তে: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

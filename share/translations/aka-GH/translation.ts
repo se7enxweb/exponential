@@ -78777,6 +78777,294 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Abisadeɛ no di dwuma wɔ wo tumi ase, sɛnea woahyɛ mu wɔ seshɔn yi mu.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count wɔ %seconds s mu</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ano hyeɛ biara nni hɔ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Mu dɔ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Mu den</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Nneɛma wɔ list biara mu</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (default %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Abisa ma ɔdefoɔ anaa safoa biara</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Abisa ma address a wonnim biara</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Abisadeɛ a wɔakora so nkutoo</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Abisadeɛ kɛseɛ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>bytes %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Upload kɛseɛ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Wɛbsaet kwan %siteaccess biara nni hɔ.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Wɔasɔ mutations no wɔ %siteaccess mu.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Wɔadum mutations no wɔ %siteaccess mu.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Wɔasɔ GraphQL API no wɔ %siteaccess mu.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Wɔadum GraphQL API no wɔ %siteaccess mu.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Wɔntumi ankyerɛw nhyehyɛeɛ no: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Wɔapopa mmuaeɛ cache no: wɔayi mmuaeɛ %count afiri hɔ.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Hyɛ adaka a ɛwɔ abisadeɛ no nkyɛn no nsɔano na woayi.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Wɔntumi anyi abisadeɛ no: abisadeɛ a ɛbaa PersistedQueryDirectoryList[] directory bi mu no, wɔyi no ne ne fael.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Wɔayi abisadeɛ a wɔakora so no.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutations</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>asɔ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>adum</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Wɛbsaet akwan</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Baabi a API no ne ne mutations bua. Mmotɔm no kyerɛw graphql.ini, sɛdeɛ ./console exp:graphql:enable ne exp:graphql:disable yɛ no.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Wɛbsaet kwan</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Sesa</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Dum</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Dum mutations</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Sɔ mutations</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Sɔ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Ano hyeɛ</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] a ɛwɔ wɛbsaet kwan yi mu.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Mmuaeɛ cache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Abisadeɛ a wɔakora so no mmuaeɛ, wɔkora no sɛdeɛ ɔdefoɔ kwan teɛ, na ne bere twam berɛ biara a wɔde nsɛm bɛpue.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tebea</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Mmuaeɛ a wɔakora</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>mmuaeɛ %count, bytes %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Wɔkora kɔsi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ne bere twaa awieeɛ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Popa mmuaeɛ cache no</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Abisadeɛ a wɔakora so</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Wɔde ./console exp:graphql:persist akora, anaa clients na akora (automatic persisted queries); wɔfrɛ no din anaa SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Din</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Kɛseɛ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Baabi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Yi</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ɛbaa mu</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>wɔakora</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Aane, yi abisadeɛ yi</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Abisadeɛ a wɔakora so biara nni hɔ ɛsesei.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API nsafoa</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Ankasa API nsafoa a ɛwɔ scope graphql:read (abisadeɛ) anaa graphql:write (mutations). Yɛ na twa wɔn mu wɔ krataafa API kwan so, anaa fa ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API kwan</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Nsafoa nyinaa</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Safoa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Din</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Wura</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Scopes</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Wɔde dii dwuma awieeɛ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ɛyɛ adwuma</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ne bere atwam</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>wɔatwa mu</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>da</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>API safoa a ɛwɔ GraphQL scope biara nni hɔ ɛsesei.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Wɔadum GraphQL API no wɔ wɛbsaet kwan %siteaccess a ɛkyerɛ krataafa yi mu; pon a ɛwɔ aseɛ ha no kyerɛ baabi a ɛbua.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ma wɛbsaet kwan %siteaccess a ɛkyerɛ krataafa yi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout hia baako pɛ wɔ id, identifier ne urlAlias mu.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart abisa no mu field operations nyɛ JSON abisa baako.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart abisa no mu field map nyɛ JSON adeɛ.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart abisa no nni fael %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Ɛsɛ sɛ field map no kwan biara fi ase de variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fael %name no amma ne nyinaa (upload mfomsoɔ %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fael %name no so sen bytes %max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Wɔntumi anhwɛ fael %name no mu.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Wɔadum mutations wɔ wɛbsaet kwan yi mu (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Fa POST soma mutation.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Kɔ mu na woasesa nsɛm no.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API safoa no nni scope %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutation a ɛwɔ session hia session no form token (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Wɔadum uploadFromUrl: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] mmɔ host biara din.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Ɛsɛ sɛ address no yɛ https address.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host nni graphql.ini [GraphQLSettings] UploadFromUrlHostList[] mu.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Wɔntumi ankɔfa fael no.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload yɛ input type nkutoo.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Nsakraeɛ a ne type yɛ Upload gye fael a ɛfi multipart abisa mu.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Obi afa remote id %remoteId dada.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Nsɛm no wɔ nkyerɛaseɛ wɔ %language mu dada: fa updateContent di dwuma.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Fa field baako pɛ fa so ma.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Wɔntumi anyɛ version foforɔ (nsɛm no wɔ drafts pii dodo).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Version %version nyɛ draft.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent hia baako pɛ wɔ id ne nodeId mu.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Wɔntumi mfa beaeɛ bi nkɔ ɛno ankasa ase.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Nsɛm no wɔ beaeɛ bi wɔ %parentId ase dada.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Wɔntumi ankora field %field no bo.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nsɛm kasa %language biara nni hɔ.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nsɛm kuo %class biara nni schema no mu.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Nsɛm no nni hɔ, anaa wɔmma wo kwan sɛ wokenkan.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Wɔmma wo kwan sɛ woyɛ yei wɔ nsɛm yi ho.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Kuo %class nni field %field a wɔtumi kyerɛw gu mu.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Wɔde field %field ama mprenu.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Field %field gye fael: fa soma sɛ upload (multipart abisa).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Field %field nnye fael biara.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Field %field hia bo bi.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Format %format yɛ rich text fields nkutoo de; %field gye ne bo sɛdeɛ ɛteɛ (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Ɛhia field %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Wɔntumi ankenkan HTML no.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content gye version ka id ho nkutoo.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Preview token no nteɛ anaa ne bere atwam.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ɛnyɛ origin (https://host anaa https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ɛnyɛ GraphQL API no scope: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

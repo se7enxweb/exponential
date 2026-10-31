@@ -134,8 +134,10 @@ RateLimitPerMinute=120
 > Die Bereiche, die ein Schlüssel erhalten kann: <scope>=<module>/<function> der Richtlinie, die der Eigentümer dafür braucht,  
 > geprüft beim Erstellen des Schlüssels und erneut bei jeder Anfrage.  
 > Abfragen der GraphQL-API (/api/graphql), im Rahmen der Rechte des Eigentümers, Inhalte zu lesen  
+> Mutationen der GraphQL-API (graphql.ini MutationsEnabled), zusammen mit graphql:read: Jede Mutation prüft weiterhin die  
+> Richtlinien des Eigentümers an dem Inhalt, den sie ändert  
 
-Standard: ein Hash mit 6: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`, `help=exphelp/context`, `graphql:read=content/read`.
+Standard: ein Hash mit 7: `read=content/read`, `publish=content/create`, `edit=content/edit`, `remove=content/remove`, `help=exphelp/context`, `graphql:read=content/read`, `graphql:write=content/edit`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -149,12 +151,13 @@ Scopes[edit]=content/edit
 Scopes[remove]=content/remove
 Scopes[help]=exphelp/context
 Scopes[graphql:read]=content/read
+Scopes[graphql:write]=content/edit
 */ ?>
 ```
 
 ## ScopeNames
 
-Standard: ein Hash mit 6: `read=Read content`, `publish=Create and publish content`, `edit=Edit content`, `remove=Remove content`, `help=Read context help`, `graphql:read=Read content through GraphQL`.
+Standard: ein Hash mit 7: `read=Read content`, `publish=Create and publish content`, `edit=Edit content`, `remove=Remove content`, `help=Read context help`, `graphql:read=Read content through GraphQL`, `graphql:write=Change content through GraphQL`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -168,6 +171,7 @@ ScopeNames[edit]=Edit content
 ScopeNames[remove]=Remove content
 ScopeNames[help]=Read context help
 ScopeNames[graphql:read]=Read content through GraphQL
+ScopeNames[graphql:write]=Change content through GraphQL
 */ ?>
 ```
 

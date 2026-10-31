@@ -78777,6 +78777,294 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Mubvunzo unomhanya nekodzero dzako, wakapinda nechikamu chino.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count mu %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>hapana muganhu</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Kudzika</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kuoma</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Zvinhu pane rondedzero</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (zvakajairwa %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Zvikumbiro pamushandisi kana kiyi</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Zvikumbiro pakero isingazivikanwi</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Kuzviongorora (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Mibvunzo yakachengetwa chete</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Mubvunzo mukuru</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>mabhaiti %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Kuisa kukuru</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Hapana nzira yekupinda pasaiti %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Shanduko dzabatidzwa mu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Shanduko dzadzimwa mu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API yabatidzwa mu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API yadzimwa mu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Marongero haana kukwanisa kunyorwa: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Cache yemhinduro yacheneswa: mhinduro %count dzabviswa.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Maka bhokisi riri parutivi pemubvunzo kuti uubvise.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Mubvunzo haina kukwanisa kubviswa: mubvunzo wakauya mudhairekitori re PersistedQueryDirectoryList[] unobviswa pamwe nefaira rawo.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Mubvunzo wakachengetwa wabviswa.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Shanduko</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>yakabatidzwa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>yakadzimwa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nzira dzekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Panopindura API neshanduko dzayo. Mabhatani anonyora graphql.ini, sezvinoita ./console exp:graphql:enable ne exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nzira yekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Chinja</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Dzima</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Shanduko dzakadzimwa</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Shanduko dzakabatidzwa</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Batidza</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Miganhu</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] yenzira yekupinda pasaiti iyi.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache yemhinduro</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Mhinduro dzemibvunzo yakachengetwa, dzinochengetwa zvichienderana nekodzero dzemushandisi uye dzinopera pese panoburitswa zviri mukati.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Mamiriro</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Mhinduro dzakachengetwa</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>mhinduro %count, mabhaiti %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Dzinochengetwa zvisingapfuuri</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Kupera kwekupedzisira</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Chenesa cache yemhinduro</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Mibvunzo yakachengetwa</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Yakachengetwa ne ./console exp:graphql:persist, kana nevatengi (mibvunzo inozvichengeta yega); inodaidzwa nezita kana SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Mazita</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Saizi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kupi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Bvisa</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>yakauya</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>yakachengetwa</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Hongu, bvisa mubvunzo uyu</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Hapana mubvunzo wakachengetwa parizvino.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Makiyi eAPI</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Makiyi eAPI emunhu ane chikamu chemvumo graphql:read (mibvunzo) kana graphql:write (shanduko). Agadzire uye uakanzure papeji Kupinda kweAPI, kana ne ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Kupinda kweAPI</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Makiyi ese</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kiyi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Zita</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Muridzi</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Zvikamu zvemvumo</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Yakashandiswa pekupedzisira</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>inoshanda</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>yapera</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>yakanzurwa</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hazvina kumbobvira</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Hapana kiyi yeAPI ine chikamu chemvumo cheGraphQL parizvino.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API yakadzimwa munzira yekupinda pasaiti %siteaccess, inoratidza peji rino; tafura iri pazasi inoratidza painopindura.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Kunzira yekupinda pasaiti %siteaccess, inoratidza peji rino.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout inoda chimwe chete pa id, identifier ne urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Munda operations wechikumbiro che multipart hachisi chikumbiro chimwe cheJSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Munda map wechikumbiro che multipart hausi chinhu cheJSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Chikumbiro che multipart hachina faira %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Nzira yemunda map inofanira kutanga ne variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Faira %name haina kusvika yakakwana (kukanganisa kwekuisa %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Faira %name yakakura kupfuura mabhaiti %max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faira %name haina kukwanisa kuongororwa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Shanduko (mutations) dzakadzimwa munzira yekupinda pasaiti iyi (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Tumira shanduko nePOST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Pinda kuti uchinje zviri mukati.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Kiyi yeAPI haina chikamu chemvumo %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Shanduko ine chikamu inoda chiratidzo chefomu chechikamu (musoro X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl yakadzimwa: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] haidomi muenzi upi zvake.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Kero inofanira kuva kero ye https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Muenzi %host haasi mu graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faira haina kukwanisa kutorwa.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload imhando yekuisa chete.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Chinoshanduka chemhando Upload chinotora faira rechikumbiro che multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Id yekure %remoteId yatotorwa.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Zviri mukati zvatova neshanduro mu %language: shandisa updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Ipa munda mumwe chete zvishoma.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Hapana shanduro itsva yakakwanisa kugadzirwa (zviri mukati zvine zvinyorwa zvekutanga zvakawandisa).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Shanduro %version haisi chinyorwa chekutanga.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent inoda chimwe chete chaicho che id ne nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Nzvimbo haigoni kuendeswa pasi payo pachayo.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Zviri mukati zvatova nenzvimbo pasi pe %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Kukosha kwemunda %field hakuna kukwanisa kuchengetwa.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Hapana mutauro wezviri mukati %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Hapana kirasi yezviri mukati %class muchirongwa.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Zviri mukati hazvipo, kana kuti haubvumirwe kuzviverenga.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Haubvumirwe kuita izvi kuzviri mukati izvi.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Kirasi %class haina munda %field unogona kunyorwa.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Munda %field wapihwa kaviri.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Munda %field unotora faira: itumire sekuisa (chikumbiro che multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Munda %field hautore faira.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Munda %field unoda kukosha.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Chimiro %format ndecheminda yemavara akapfuma chete; %field unotora kukosha kwawo sezvakaita (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Munda %field unodiwa.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML haina kukwanisa kuverengwa.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content inotora version ne id chete.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Chiratidzo chekuona pamberi hachishande kana kuti chapera.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Haisi mavambo (https://host kana https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Hachisi chikamu chemvumo che GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

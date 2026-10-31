@@ -3,13 +3,13 @@ title: graphql.ini [GraphQLSettings]
 audience: developer, admin
 category: examples
 summary: "The settings of [GraphQLSettings] in graphql.ini: Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList ..."
-keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ResponseCache, ResponseCacheTtl, CredentialCacheTtl, RateLimit, RateLimitAnonymous, RateLimitWindow, SchemaExtensionList, ImageAliasList, Debug
+keywords: graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ResponseCache, ResponseCacheTtl, CredentialCacheTtl, RateLimit, RateLimitAnonymous, RateLimitWindow, SchemaExtensionList, ImageAliasList, MutationsEnabled, AnonymousMutations, MaxUploadSize
 type: generated
 generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-The block `[GraphQLSettings]` of `settings/graphql.ini`, with 28 setting(s).
+The block `[GraphQLSettings]` of `settings/graphql.ini`, with 36 setting(s).
 
 Never edit `settings/graphql.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -456,6 +456,135 @@ ImageAliasList[]
 ImageAliasList[]=small
 ImageAliasList[]=medium
 ImageAliasList[]=large
+*/ ?>
+```
+
+## MutationsEnabled
+
+> Mutations (createContent, updateContent, translateContent, publishDraft, deleteContent, moveContent, hideContent,  
+> revealContent, addLocation, uploadImage, uploadFromUrl, createPreviewToken): enabled (the default) or disabled.  
+> They come on together with the end point (Enabled above). Enabled: each mutation checks the policies of the user on  
+> the content it changes, runs the kernel's operations (the workflows of content/publish, content/move ... included),  
+> is recorded in the audit (content.graphql.mutation) and expires the response cache. A mutation is sent with POST  
+> only, by a signed-in user (AnonymousMutations below); with a personal API key it needs the scope graphql:write; with  
+> the session of the web interface it needs the form token (header X-CSRF-Token). Disabled: the schema has no type  
+> Mutation and a mutation is refused with DISABLED. For a read-only API, disable it per siteaccess  
+> (./console exp:graphql:disable --siteaccess=<name> --mutations).  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MutationsEnabled=enabled
+*/ ?>
+```
+
+## AnonymousMutations
+
+> Mutations of anonymous requests (they run with the Anonymous role's policies): disabled (the default) refuses  
+> them with FORBIDDEN; enabled lets them through to the policy checks (a guest book, a form that creates content).  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+AnonymousMutations=disabled
+*/ ?>
+```
+
+## MaxUploadSize
+
+> The largest file a mutation accepts (uploadImage, a FieldInput upload, uploadFromUrl), in bytes or with k, M, G.  
+> PHP's own upload\_max\_filesize and post\_max\_size limit a request before it gets here.  
+
+Default: `32M`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxUploadSize=32M
+*/ ?>
+```
+
+## UploadCheckList
+
+> Checks every uploaded file passes before it is stored: classes implementing expGraphQLUploadCheck (a virus  
+> scanner, a type filter). The first that gives a reason refuses the file; a class that is missing refuses every  
+> file. UploadCheckList\[\]=myClamAvUploadCheck  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# an empty "UploadCheckList[]" first replaces the shipped list; without it the items are added
+UploadCheckList[]
+*/ ?>
+```
+
+## FileDatatypeList
+
+> Datatypes whose value is a file, besides ezimage, ezbinaryfile and ezmedia: a FieldInput writes them with an  
+> upload only, never with a value (a path in a value could import any file of the server).  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# an empty "FileDatatypeList[]" first replaces the shipped list; without it the items are added
+FileDatatypeList[]
+*/ ?>
+```
+
+## UploadFromUrlHostList
+
+> The hosts uploadFromUrl may fetch files from (https only, no redirects, at most MaxUploadSize). Empty (the  
+> default): uploadFromUrl is switched off. UploadFromUrlHostList\[\]=images.example.com  
+
+Default: an empty list.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# an empty "UploadFromUrlHostList[]" first replaces the shipped list; without it the items are added
+UploadFromUrlHostList[]
+*/ ?>
+```
+
+## PreviewTokenTtl
+
+> Preview tokens (createPreviewToken, the query preview(token:)): the seconds a token is valid when the mutation  
+> does not say, and the longest it may ask for. The tokens are signed with the installation's secret key  
+> (EXP\_SECRET\_KEY or var/secrets/exp\_secret.key); rotating it ends every token.  
+
+Default: `3600`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+PreviewTokenTtl=3600
+*/ ?>
+```
+
+## MaxPreviewTokenTtl
+
+Default: `86400`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxPreviewTokenTtl=86400
 */ ?>
 ```
 

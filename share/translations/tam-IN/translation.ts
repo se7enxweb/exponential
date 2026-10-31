@@ -78775,6 +78775,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>இந்த அமர்வில் உள்நுழைந்து, உங்கள் உரிமைகளுடன் வினவல் இயங்குகிறது.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds வி. இல் %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>வரம்பு இல்லை</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ஆழம்</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>சிக்கலான தன்மை</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>பட்டியலுக்கான உருப்படிகள்</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (இயல்புநிலை %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>பயனர் அல்லது விசைக்கான கோரிக்கைகள்</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>அநாமதேய முகவரிக்கான கோரிக்கைகள்</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>சுயஆய்வு (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>சேமிக்கப்பட்ட வினவல்கள் மட்டும்</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>மிகப்பெரிய வினவல்</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes பைட்டுகள்</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>மிகப்பெரிய பதிவேற்றம்</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess என்ற தள அணுகல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess இல் மாற்றங்கள் இயக்கப்பட்டுள்ளன.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess இல் மாற்றங்கள் முடக்கப்பட்டுள்ளன.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess இல் GraphQL API இயக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess இல் GraphQL API முடக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>அமைப்புகளை எழுத முடியவில்லை: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>பதில் தற்காலிகச் சேமிப்பு அழிக்கப்பட்டது: %count பதில்கள் நீக்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>வினவலை நீக்க அதன் அருகிலுள்ள பெட்டியைத் தேர்வு செய்யவும்.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>வினவலை நீக்க முடியவில்லை: PersistedQueryDirectoryList[] இன் ஒரு கோப்பகத்தில் வழங்கப்பட்ட வினவல் அதன் கோப்புடன் நீக்கப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>சேமிக்கப்பட்ட வினவல் நீக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>இயக்கம்</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>முடக்கம்</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>தள அணுகல்கள்</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API மற்றும் அதன் மாற்றங்கள் பதிலளிக்கும் இடங்கள். ./console exp:graphql:enable மற்றும் exp:graphql:disable செய்வது போலவே பொத்தான்கள் graphql.ini ஐ எழுதுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>தள அணுகல்</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>மாற்று</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>முடக்கு</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>மாற்றங்களை முடக்கு</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>மாற்றங்களை இயக்கு</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>இயக்கு</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>வரம்புகள்</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>இந்தத் தள அணுகலின் graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>பதில் தற்காலிகச் சேமிப்பு</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>சேமிக்கப்பட்ட வினவல்களின் பதில்கள், பயனர் உரிமைகளின்படி வைக்கப்பட்டு, உள்ளடக்கம் வெளியிடப்படும் ஒவ்வொரு முறையும் காலாவதியாக்கப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>வைக்கப்பட்ட பதில்கள்</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count பதில்கள், %bytes பைட்டுகள்</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>அதிகபட்சம் வைக்கப்படும் காலம்</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds வி.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>கடைசியாகக் காலாவதியானது</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>பதில் தற்காலிகச் சேமிப்பை அழி</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>சேமிக்கப்பட்ட வினவல்கள்</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist மூலம் அல்லது கிளையண்டுகளால் (தானியங்கு சேமிக்கப்பட்ட வினவல்கள்) சேமிக்கப்படுகின்றன; பெயர் அல்லது SHA-256 மூலம் அழைக்கப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>பெயர்கள்</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>அளவு</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>இடம்</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>நீக்கு</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>வழங்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>சேமிக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ஆம், இந்த வினவலை நீக்கு</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>இன்னும் சேமிக்கப்பட்ட வினவல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API விசைகள்</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (வினவல்கள்) அல்லது graphql:write (மாற்றங்கள்) வரம்புடைய தனிப்பட்ட API விசைகள். அவற்றை API அணுகல் பக்கத்தில் அல்லது ./console exp:graphql:keys மூலம் உருவாக்கவும் திரும்பப் பெறவும்.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API அணுகல்</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>அனைத்து விசைகள்</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>விசை</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>பெயர்</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>உரிமையாளர்</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>வரம்புகள்</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>கடைசியாகப் பயன்படுத்தியது</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>செயலில்</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>காலாவதி</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>திரும்பப் பெறப்பட்டது</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ஒருபோதும் இல்லை</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL வரம்புடைய API விசை இன்னும் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>இந்தப் பக்கத்தைக் காட்டும் தள அணுகல் %siteaccess இல் GraphQL API முடக்கப்பட்டுள்ளது; அது எங்கே பதிலளிக்கிறது என்பதைக் கீழே உள்ள அட்டவணை காட்டுகிறது.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>இந்தப் பக்கத்தைக் காட்டும் தள அணுகல் %siteaccess க்கானது.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78877,6 +79165,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout க்கு id, identifier, urlAlias ஆகியவற்றில் சரியாக ஒன்று தேவை.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart கோரிக்கையின் operations புலம் ஒரு JSON கோரிக்கை அல்ல.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart கோரிக்கையின் map புலம் ஒரு JSON பொருள் அல்ல.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart கோரிக்கையில் %field கோப்பு இல்லை.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map புலத்தின் பாதை variables. உடன் தொடங்க வேண்டும்: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name கோப்பு முழுமையாக வந்து சேரவில்லை (பதிவேற்றப் பிழை %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name கோப்பு %max பைட்டுகளை விடப் பெரியது.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name கோப்பைச் சரிபார்க்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>இந்தத் தள அணுகலில் மாற்றங்கள் (mutations) முடக்கப்பட்டுள்ளன (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>மாற்றத்தை POST மூலம் அனுப்பவும்.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>உள்ளடக்கத்தை மாற்ற உள்நுழையவும்.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API விசைக்கு %scope வரம்பு இல்லை.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>அமர்வுடன் கூடிய மாற்றத்திற்கு அமர்வின் படிவ டோக்கன் தேவை (தலைப்பு X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl முடக்கப்பட்டுள்ளது: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] எந்த ஹோஸ்ட்டையும் குறிப்பிடவில்லை.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>முகவரி ஒரு https முகவரியாக இருக்க வேண்டும்.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host ஹோஸ்ட் graphql.ini [GraphQLSettings] UploadFromUrlHostList[] இல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>கோப்பைப் பெற முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ஒரு உள்ளீட்டு வகை மட்டுமே.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload வகை மாறி ஒரு multipart கோரிக்கையின் கோப்பை ஏற்கிறது.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId என்ற remote id ஏற்கனவே பயன்பாட்டில் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>உள்ளடக்கத்திற்கு ஏற்கனவே %language மொழிபெயர்ப்பு உள்ளது: updateContent ஐப் பயன்படுத்தவும்.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>குறைந்தது ஒரு புலத்தைக் கொடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>புதிய பதிப்பை உருவாக்க முடியவில்லை (உள்ளடக்கத்திற்கு அதிகமான வரைவுகள் உள்ளன).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>பதிப்பு %version ஒரு வரைவு அல்ல.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent க்கு id மற்றும் nodeId இல் சரியாக ஒன்று தேவை.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ஒரு இருப்பிடத்தை அதற்குக் கீழேயே நகர்த்த முடியாது.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>உள்ளடக்கத்திற்கு ஏற்கனவே %parentId இன் கீழ் ஒரு இருப்பிடம் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field புலத்தின் மதிப்பைச் சேமிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language என்ற உள்ளடக்க மொழி இல்லை.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ஸ்கீமாவில் %class என்ற உள்ளடக்க வகுப்பு இல்லை.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>உள்ளடக்கம் இல்லை, அல்லது அதைப் படிக்க உங்களுக்கு அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>இந்த உள்ளடக்கத்தில் இதைச் செய்ய உங்களுக்கு அனுமதி இல்லை.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class வகுப்பில் எழுதக்கூடிய %field புலம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field புலம் இரண்டு முறை கொடுக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field புலம் ஒரு கோப்பை ஏற்கிறது: அதைப் பதிவேற்றமாக அனுப்பவும் (multipart கோரிக்கை).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field புலம் கோப்பை ஏற்காது.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field புலத்திற்கு ஒரு மதிப்பு தேவை.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format வடிவம் செறிவான உரைப் புலங்களுக்கு மட்டுமே; %field தன் மதிப்பை உள்ளபடியே ஏற்கிறது (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field புலம் கட்டாயம்.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ஐப் படிக்க முடியவில்லை.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content, version ஐ id உடன் மட்டுமே ஏற்கிறது.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>முன்னோட்ட டோக்கன் செல்லாது அல்லது காலாவதியாகிவிட்டது.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>இது ஒரு origin அல்ல (https://host அல்லது https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API இன் வரம்பு அல்ல: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -78777,6 +78777,294 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Kontsulta zure eskubideekin exekutatzen da, saio honekin hasita.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds s-tan</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>mugarik ez</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Sakonera</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Konplexutasuna</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elementuak zerrendako</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (lehenetsia %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Eskaerak erabiltzaile edo gako bakoitzeko</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Eskaerak helbide anonimo bakoitzeko</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekzioa</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Gordetako kontsultak soilik</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Kontsultarik handiena</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Igoerarik handiena</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Ez dago %siteaccess gune-sarbiderik.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutazioak aktibatuta daude %siteaccess gune-sarbidean.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutazioak desaktibatuta daude %siteaccess gune-sarbidean.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL APIa aktibatuta dago %siteaccess gune-sarbidean.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL APIa desaktibatuta dago %siteaccess gune-sarbidean.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ezin izan dira ezarpenak idatzi: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Erantzunen cachea garbitu da: %count erantzun kendu dira.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Markatu kontsultaren ondoko laukia kentzeko.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Ezin izan da kontsulta kendu: PersistedQueryDirectoryList[] zerrendako direktorio batean datorren kontsulta bere fitxategiarekin batera kentzen da.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Gordetako kontsulta kendu da.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutazioak</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>aktibatuta</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>desaktibatuta</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Gune-sarbideak</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>APIak eta bere mutazioek non erantzuten duten. Botoiek graphql.ini idazten dute, ./console exp:graphql:enable eta exp:graphql:disable komandoek bezala.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gune-sarbidea</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL APIa</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Aldatu</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Desaktibatu</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Desaktibatu mutazioak</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Aktibatu mutazioak</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aktibatu</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Mugak</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Gune-sarbide honen graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Erantzunen cachea</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Gordetako kontsulten erantzunak, erabiltzaile-eskubideen arabera gordeak eta edukia argitaratzen den bakoitzean iraungiak.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Gordetako erantzunak</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count erantzun, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Gehienez gordeta</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Azken iraungitzea</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Garbitu erantzunen cachea</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Gordetako kontsultak</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist bidez edo bezeroek gordeak (gordetako kontsulta automatikoak); izenez edo SHA-256 bidez deitzen dira.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Izenak</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamaina</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kendu</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>banatua</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>gordea</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Bai, kendu kontsulta hau</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Oraindik ez dago gordetako kontsultarik.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API gakoak</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (kontsultak) edo graphql:write (mutazioak) esparrua duten API gako pertsonalak. Sortu eta baliogabetu itzazu API sarbidea orrian, edo ./console exp:graphql:keys bidez.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API sarbidea</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Gako guztiak</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Gakoa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Izena</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Jabea</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Esparruak</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Azken erabilera</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktibo</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>iraungita</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>baliogabetuta</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>inoiz ez</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Oraindik ez dago GraphQL esparrua duen API gakorik.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL APIa desaktibatuta dago orri hau erakusten duen %siteaccess gune-sarbidean; beheko taulak non erantzuten duen erakusten du.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Orri hau erakusten duen %siteaccess gune-sarbiderako.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-ek zehazki hauetako bat behar du: id, identifier eta urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Multipart eskaera baten operations eremua ez da JSON eskaera bakar bat.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Multipart eskaera baten map eremua ez da JSON objektu bat.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart eskaerak ez du %field fitxategirik.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map eremuaren bide batek variables.-ekin hasi behar du: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name fitxategia ez da osorik iritsi (igoera-errorea %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name fitxategia %max byte baino handiagoa da.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Ezin izan da %name fitxategia egiaztatu.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutazioak desaktibatuta daude gune-sarbide honetan (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Bidali mutazioa POST bidez.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Hasi saioa edukia aldatzeko.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API gakoak ez du %scope esparrua.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Saioa duen mutazio batek saioaren inprimaki-tokena behar du (X-CSRF-Token goiburua).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl desaktibatuta dago: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ez du ostalaririk izendatzen.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Helbideak https helbide bat izan behar du.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host ostalaria ez dago graphql.ini [GraphQLSettings] UploadFromUrlHostList[] zerrendan.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ezin izan da fitxategia eskuratu.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload sarrera-mota bat besterik ez da.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload motako aldagai batek multipart eskaera bateko fitxategi bat hartzen du.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId urruneko id-a dagoeneko erabilita dago.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Edukiak badu dagoeneko %language itzulpena: erabili updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Eman gutxienez eremu bat.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Ezin izan da bertsio berririk sortu (edukiak zirriborro gehiegi ditu).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version bertsioa ez da zirriborro bat.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent-ek zehazki hauetako bat behar du: id eta nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Kokapen bat ezin da bere azpira mugitu.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Edukiak badu dagoeneko kokapen bat %parentId azpian.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Ezin izan da %field eremuaren balioa gorde.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ez dago %language eduki-hizkuntzarik.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Eskeman ez dago %class eduki-klaserik.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Edukia ez dago, edo ezin duzu irakurri.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ezin duzu hau egin eduki honekin.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class klaseak ez du idatz daitekeen %field eremurik.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field eremua bi aldiz eman da.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field eremuak fitxategi bat hartzen du: bidali igoera gisa (multipart eskaera bat).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field eremuak ez du fitxategirik hartzen.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field eremuak balio bat behar du.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format formatua testu aberastuko eremuetarako soilik da; %field eremuak bere balioa dagoen bezala hartzen du (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field eremua derrigorrezkoa da.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Ezin izan da HTMLa irakurri.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content-ek version id-arekin batera soilik onartzen du.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Aurrebista-tokena ez da baliozkoa edo iraungi egin da.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ez da jatorri bat (https://host edo https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ez da GraphQL APIaren esparru bat: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

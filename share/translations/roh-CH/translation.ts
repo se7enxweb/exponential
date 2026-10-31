@@ -78777,6 +78777,294 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La dumonda vegn exequida cun voss dretgs, annunzià cun questa sessiun.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count en %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>nagin limit</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Profunditad</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Cumplexitad</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elements per glista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Dumondas per utilisader u clav</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Dumondas per adressa anonima</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspecziun</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Mo dumondas memorisadas</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>La pli gronda dumonda</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Il pli grond upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>I na dat nagin access a la website %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Las mutaziuns èn activadas en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Las mutaziuns èn deactivadas en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>L'API GraphQL è activada en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>L'API GraphQL è deactivada en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ils parameters n'han betg pudì vegnir scrits: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Il cache da las respostas è vegnì svidà: %count respostas allontanadas.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Marca la chascha sper la dumonda per l'allontanar.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>La dumonda n'ha betg pudì vegnir allontanada: ina dumonda furnida en in ordinatur da PersistedQueryDirectoryList[] vegn allontanada cun sia datoteca.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>La dumonda memorisada è vegnida allontanada.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutaziuns</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>activ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>deactivà</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesses a la website</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Nua che l'API e sias mutaziuns respundan. Ils buttuns scrivan graphql.ini, sco ./console exp:graphql:enable ed exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access a la website</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Midar</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Deactivar</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutaziuns deactivadas</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutaziuns activadas</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Activar</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limits</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] da quest access a la website.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache da las respostas</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Las respostas da las dumondas memorisadas, tegnidas per dretgs d'utilisader e scadidas mintga giada che cuntegn vegn publitgà.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stadi</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Respostas tegnidas</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count respostas, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Tegnidas maximalmain</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ultima scadenza</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Svidar il cache da las respostas</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Dumondas memorisadas</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Memorisadas cun ./console exp:graphql:persist, u da clients (dumondas memorisadas automaticas); clamadas per num u SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nums</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grondezza</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nua</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Allontanar</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>furnida</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>memorisada</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Gea, allontanar questa dumonda</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Anc nagina dumonda memorisada.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Clavs d'API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Clavs d'API persunalas cun la sfera graphql:read (dumondas) u graphql:write (mutaziuns). Creescha e revochescha ellas sin la pagina Access a l'API, u cun ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Access a l'API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Tut las clavs</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Clav</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Num</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietari</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Sferas</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ultima utilisaziun</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>activa</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>scadida</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revocada</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mai</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Anc nagina clav d'API cun ina sfera GraphQL.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>L'API GraphQL è deactivada en l'access a la website %siteaccess, che mussa questa pagina; la tabella sutvart mussa nua ch'ella respunda.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Per l'access a la website %siteaccess, che mussa questa pagina.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout dovra exactamain in da id, identifier ed urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Il champ operations da la dumonda multipart n'è betg ina suletta dumonda JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Il champ map da la dumonda multipart n'è betg in object JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>La dumonda multipart n'ha nagina datoteca %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>In percurs da la charta dals champs sto cumenzar cun variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>La datoteca %name n'è betg arrivada cumplettamain (errur da chargiar si %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>La datoteca %name è pli gronda che %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>La datoteca %name n'ha betg pudì vegnir controllada.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Las mutaziuns èn deactivadas en quest access a la website (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Trametta ina mutaziun cun POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>S'annunzia per midar il cuntegn.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>La clav d'API n'ha betg la sfera %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Ina mutaziun cun ina sessiun basegna il token dal formular da la sessiun (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl è deactivà: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] na numna nagin host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>L'adressa sto esser in'adressa https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Il host %host n'è betg en graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>La datoteca n'ha betg pudì vegnir prendida.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload è mo in tip d'endataziun.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Ina variabla dal tip Upload prenda ina datoteca d'ina dumonda multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>L'ID distanta %remoteId è gia occupada.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Il cuntegn ha gia ina translaziun en %language: utilisescha updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Inditgescha almain in champ.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>I n'ha betg pudì vegnir creà ina nova versiun (il cuntegn ha memia blers sbozs).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>La versiun %version n'è betg in sboz.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent basegna exactamain in da id e nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>In lieu na po betg vegnir spustà sut sasez.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Il cuntegn ha gia in lieu sut %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>La valur dal champ %field n'ha betg pudì vegnir memorisada.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>I na dat nagina lingua da cuntegn %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>I na dat nagina classa da cuntegn %class en la schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Il cuntegn n'exista betg, u ti na das betg al leger.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ti na das betg far quai cun quest cuntegn.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>La classa %class n'ha nagin champ %field che po vegnir scrit.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Il champ %field è indicà duas giadas.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Il champ %field prenda ina datoteca: trametta la sco upload (ina dumonda multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Il champ %field na prenda nagina datoteca.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Il champ %field basegna ina valur.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Il format %format è mo per champs da text formatà; %field prenda sia valur sco ch'ella è (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Il champ %field è obligatoric.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Il HTML n'ha betg pudì vegnir legì.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content prenda version mo cun id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Il token da prevista n'è betg valid u è scadì.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Betg in origin (https://host u https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Betg ina sfera da l'API GraphQL: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -78775,6 +78775,294 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Hoja inaendeshwa kwa haki zako, ukiwa umeingia kwa kipindi hiki.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count katika sek %seconds</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>hakuna kikomo</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Kina</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Uchangamano</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Vipengee kwa kila orodha</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (chaguo-msingi %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Maombi kwa kila mtumiaji au ufunguo</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Maombi kwa kila anwani isiyojulikana</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Hoja zilizohifadhiwa pekee</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Hoja kubwa zaidi</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>baiti %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Upakiaji mkubwa zaidi</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Hakuna siteaccess %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mabadiliko (mutations) yamewashwa katika %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mabadiliko (mutations) yamezimwa katika %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API imewashwa katika %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API imezimwa katika %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Mipangilio haikuweza kuandikwa: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Akiba ya majibu imesafishwa: majibu %count yameondolewa.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Weka alama kwenye kisanduku kando ya hoja ili kuiondoa.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Hoja haikuweza kuondolewa: hoja iliyosafirishwa katika saraka ya PersistedQueryDirectoryList[] huondolewa pamoja na faili yake.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Hoja iliyohifadhiwa imeondolewa.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mabadiliko (mutations)</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>imewashwa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>imezimwa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Mahali API na mabadiliko yake yanapojibu. Vitufe huandika graphql.ini, kama ./console exp:graphql:enable na exp:graphql:disable zinavyofanya.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Badilisha</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Zima</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mabadiliko yamezimwa</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mabadiliko yamewashwa</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Washa</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Vikomo</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ya siteaccess hii.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Akiba ya majibu</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Majibu ya hoja zilizohifadhiwa, yanayowekwa kulingana na haki za mtumiaji na kuisha muda kila maudhui yanapochapishwa.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Majibu yaliyowekwa</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>majibu %count, baiti %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Huwekwa kwa muda usiozidi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>sek %seconds</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Iliisha muda mara ya mwisho</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Safisha akiba ya majibu</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Hoja zilizohifadhiwa</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Zimehifadhiwa kwa ./console exp:graphql:persist, au na wateja (hoja zinazohifadhiwa kiotomatiki); huitwa kwa jina au SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Majina</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ukubwa</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Mahali</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ondoa</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>imesafirishwa</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>imehifadhiwa</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ndiyo, ondoa hoja hii</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Bado hakuna hoja iliyohifadhiwa.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Funguo za API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Funguo binafsi za API zenye wigo graphql:read (hoja) au graphql:write (mabadiliko). Ziunde na uzibatilishe kwenye ukurasa Ufikiaji wa API, au kwa ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Ufikiaji wa API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Funguo zote</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ufunguo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Jina</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mmiliki</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Wigo</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ilitumika mwisho</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>hai</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>imekwisha muda</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>imebatilishwa</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>kamwe</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Bado hakuna ufunguo wa API wenye wigo wa GraphQL.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API imezimwa katika siteaccess %siteaccess, inayoonyesha ukurasa huu; jedwali lililo hapa chini linaonyesha mahali inapojibu.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Kwa siteaccess %siteaccess, inayoonyesha ukurasa huu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78877,6 +79165,178 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout inahitaji kimoja tu kati ya id, identifier na urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Sehemu operations ya ombi la multipart si ombi moja la JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Sehemu map ya ombi la multipart si kitu cha JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Ombi la multipart halina faili %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Njia ya sehemu map lazima ianze na variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Faili %name haikufika kamili (hitilafu ya kupakia %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Faili %name ni kubwa kuliko baiti %max.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faili %name haikuweza kukaguliwa.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mabadiliko (mutations) yamezimwa katika siteaccess hii (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Tuma badiliko (mutation) kwa POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Ingia ili kubadilisha maudhui.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Ufunguo wa API hauna wigo %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Badiliko lenye kipindi linahitaji tokeni ya fomu ya kipindi hicho (kichwa X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl imezimwa: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] haitaji seva yoyote.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Anwani lazima iwe anwani ya https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Seva %host haimo katika graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faili haikuweza kuletwa.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ni aina ya ingizo pekee.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Kigezo cha aina Upload kinapokea faili ya ombi la multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Remote id %remoteId tayari imechukuliwa.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Maudhui tayari yana tafsiri katika %language: tumia updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Toa angalau sehemu moja.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Toleo jipya halikuweza kuundwa (maudhui yana rasimu nyingi mno).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Toleo %version si rasimu.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent inahitaji hasa kimoja kati ya id na nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Eneo haliwezi kuhamishwa chini yake lenyewe.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Maudhui tayari yana eneo chini ya %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Thamani ya sehemu %field haikuweza kuhifadhiwa.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Hakuna lugha ya maudhui %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Hakuna darasa la maudhui %class katika skima.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Maudhui hayapo, au huruhusiwi kuyasoma.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Huruhusiwi kufanya hivi kwa maudhui haya.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Darasa %class halina sehemu %field inayoruhusiwa kuandikwa.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Sehemu %field imetolewa mara mbili.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Sehemu %field inapokea faili: itume kama upakiaji (ombi la multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Sehemu %field haipokei faili.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Sehemu %field inahitaji thamani.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Muundo %format ni kwa sehemu za maandishi tajiri pekee; %field inapokea thamani yake kama ilivyo (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Sehemu %field inahitajika.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML haikuweza kusomwa.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content inapokea version pamoja na id pekee.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tokeni ya onyesho la awali si halali au imekwisha muda.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Si asili (https://host au https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Si wigo wa GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

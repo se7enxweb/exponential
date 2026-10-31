@@ -80002,6 +80002,294 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>De query draait met uw rechten, ingelogd met deze sessie.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count in %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>geen limiet</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Diepte</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Complexiteit</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Items per lijst</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standaard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Verzoeken per gebruiker of sleutel</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Verzoeken per anoniem adres</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspectie</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Alleen opgeslagen query's</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Grootste query</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Grootste upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Er is geen siteaccess %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>De mutaties zijn ingeschakeld in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>De mutaties zijn uitgeschakeld in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>De GraphQL-API is ingeschakeld in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>De GraphQL-API is uitgeschakeld in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>De instellingen konden niet worden geschreven: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>De antwoordcache is geleegd: %count antwoorden verwijderd.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Vink het vakje naast de query aan om deze te verwijderen.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>De query kon niet worden verwijderd: een query die in een map van PersistedQueryDirectoryList[] wordt meegeleverd, wordt samen met zijn bestand verwijderd.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>De opgeslagen query is verwijderd.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutaties</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>aan</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>uit</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccesses</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Waar de API en zijn mutaties antwoorden. De knoppen schrijven graphql.ini, zoals ./console exp:graphql:enable en exp:graphql:disable dat doen.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Wijzigen</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Uitschakelen</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutaties uit</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutaties aan</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Inschakelen</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limieten</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] van deze siteaccess.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Antwoordcache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>De antwoorden van opgeslagen query's, bewaard per gebruikersrechten en verlopen zodra er content wordt gepubliceerd.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Bewaarde antwoorden</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count antwoorden, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Maximaal bewaard</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Laatst verlopen</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Antwoordcache legen</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Opgeslagen query's</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Opgeslagen met ./console exp:graphql:persist of door clients (automatische opgeslagen query's); aangeroepen op naam of SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grootte</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Locatie</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>meegeleverd</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>opgeslagen</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ja, deze query verwijderen</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Nog geen opgeslagen query.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-sleutels</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Persoonlijke API-sleutels met de scope graphql:read (query's) of graphql:write (mutaties). Maak en trek ze in op de pagina API-toegang, of met ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-toegang</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Alle sleutels</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Sleutel</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigenaar</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Scopes</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Laatst gebruikt</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>actief</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>verlopen</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ingetrokken</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nooit</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Nog geen API-sleutel met een GraphQL-scope.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>De GraphQL-API is uitgeschakeld in de siteaccess %siteaccess, die deze pagina toont; de tabel hieronder toont waar hij antwoordt.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Voor de siteaccess %siteaccess, die deze pagina toont.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -80104,6 +80392,178 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout heeft precies één van id, identifier en urlAlias nodig.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Het veld operations van een multipart-verzoek is niet één JSON-verzoek.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Het veld map van een multipart-verzoek is geen JSON-object.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Het multipart-verzoek bevat geen bestand %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Een pad in het veld map moet beginnen met variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Het bestand %name is niet volledig aangekomen (uploadfout %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Het bestand %name is groter dan %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Het bestand %name kon niet worden gecontroleerd.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutaties zijn uitgeschakeld in deze siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Verstuur een mutatie met POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Log in om content te wijzigen.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>De API-sleutel heeft geen scope %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Een mutatie met een sessie heeft het formuliertoken van de sessie nodig (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl is uitgeschakeld: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] noemt geen host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Het adres moet een https-adres zijn.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>De host %host staat niet in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Het bestand kon niet worden opgehaald.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload is alleen een invoertype.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Een variabele van het type Upload neemt een bestand uit een multipart-verzoek.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Het remote id %remoteId is al in gebruik.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>De content heeft al een vertaling in %language: gebruik updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Geef minstens één veld op.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Er kon geen nieuwe versie worden gemaakt (de content heeft te veel concepten).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versie %version is geen concept.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent heeft precies één van id en nodeId nodig.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Een locatie kan niet onder zichzelf worden verplaatst.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>De content heeft al een locatie onder %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>De waarde van het veld %field kon niet worden opgeslagen.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Er is geen contenttaal %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Er is geen contentklasse %class in het schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>De content bestaat niet, of u mag deze niet lezen.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>U mag dit niet doen met deze content.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>De klasse %class heeft geen beschrijfbaar veld %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Het veld %field is twee keer opgegeven.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Het veld %field verwacht een bestand: verstuur het als upload (een multipart-verzoek).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Het veld %field accepteert geen bestand.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Het veld %field heeft een waarde nodig.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Het formaat %format is alleen voor rich-text-velden; %field neemt de waarde zoals die is (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Het veld %field is verplicht.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>De HTML kon niet worden gelezen.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content accepteert version alleen samen met id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Het voorbeeldtoken is ongeldig of verlopen.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Geen origin (https://host of https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Geen scope van de GraphQL-API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

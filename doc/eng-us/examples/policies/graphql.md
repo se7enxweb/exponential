@@ -2,7 +2,7 @@
 title: Policies of the graphql module
 audience: developer, admin
 category: examples
-summary: The policy functions of the graphql module (2) and their limitations.
+summary: The policy functions of the graphql module (3) and their limitations.
 keywords: graphql, policy, policies, role, limitation, permission
 type: generated
 generated: exp:help:examples
@@ -10,6 +10,24 @@ generated: exp:help:examples
 # Policies of the graphql module
 
 The policy functions of `graphql` and their limitations, from `$FunctionList` in `kernel/graphql/module.php`. In the administration they are chosen under Roles and policies; a policy on `graphql/*` grants every function.
+
+## administrate
+
+No view of the module names it; code checks it (`eZUser::hasAccessTo( 'graphql', 'administrate' )` or the `user/has_access_to` fetch).
+
+No limitations: the policy is all or nothing.
+
+```php
+// Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))
+$role = eZRole::fetchByName( 'Editor' );
+$role->appendPolicy( 'graphql', 'administrate' );
+```
+
+```tpl
+{if fetch( 'user', 'has_access_to', hash( 'module', 'graphql', 'function', 'administrate' ) )}
+    ...
+{/if}
+```
 
 ## playground
 

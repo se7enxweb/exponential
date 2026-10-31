@@ -439,7 +439,9 @@ class expGraphQLSchemaTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( 'BAD_USER_INPUT' ), self::codes( self::query( '{ node { id } }' ) ) );
         $this->assertSame( array( 'BAD_USER_INPUT' ), self::codes( self::query( '{ children(parentId: 2, after: "nonsense") { totalCount } }' ) ) );
         $this->assertSame( array( 'BAD_USER_INPUT' ), self::codes( self::query( '' ) ) );
-        $this->assertSame( array( 'VALIDATION' ), self::codes( self::query( 'mutation { x }' ) ) );
+        // mutations switched off (graphql.ini MutationsEnabled=disabled, a read-only API; on by default): refused before validation
+        $this->setting( 'MutationsEnabled', 'disabled' );
+        $this->assertSame( array( 'DISABLED' ), self::codes( self::query( 'mutation { x }' ) ) );
         $answer = self::query( '{ node(id: 2) { nosuchfield } }' );
         $this->assertSame( $answer['extensions']['requestId'], $answer['errors'][0]['extensions']['requestId'] );
         $this->assertArrayNotHasKey( 'trace', $answer['errors'][0]['extensions'] );

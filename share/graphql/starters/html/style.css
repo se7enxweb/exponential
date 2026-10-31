@@ -1,0 +1,9 @@
+:root { color-scheme: light dark; --gap: 1rem; --line: #8884; }
+body { margin: 0; font: 1rem/1.6 system-ui, sans-serif; }
+.site-header, main, .site-footer { max-width: 60rem; margin: 0 auto; padding: var(--gap); }
+.site-header { display: flex; flex-wrap: wrap; gap: var(--gap); align-items: baseline; border-bottom: 1px solid var(--line); }
+.site-name { font-weight: 700; text-decoration: none; }
+#menu { display: flex; flex-wrap: wrap; gap: var(--gap); }
+img { max-width: 100%; height: auto; }
+.children { border-top: 1px solid var(--line); padding-top: var(--gap); }
+.site-footer { font-size: .875rem; opacity: .7; }

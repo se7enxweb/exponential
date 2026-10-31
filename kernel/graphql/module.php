@@ -3,7 +3,8 @@
  * The module graphql: the GraphQL API with the session of the web interface (doc/eng-us/features/6.0/graphql.md).
  *
  *   graphql/playground   Setup > GraphQL: the end points, the schema and a playground to run queries (policy
- *                        graphql/playground)
+ *                        graphql/playground); the status per siteaccess, the limits, the response cache, the
+ *                        persisted queries and the API keys, changed with the policy graphql/administrate
  *   graphql/query        the session end point: a query as the signed-in user, JSON (policy graphql/query); the
  *                        playground posts to it
  *
@@ -38,5 +39,8 @@ $FunctionList = array();
 $FunctionList['playground'] = array();
 // Run GraphQL queries with the session of the web interface (graphql/query)
 $FunctionList['query'] = array();
+// Switch the API and its mutations on and off per siteaccess, clear its response cache, remove persisted queries and
+// see the API keys of every user in Setup > GraphQL
+$FunctionList['administrate'] = array();
 
 ?>

@@ -78777,6 +78777,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ຄຳຖາມດຳເນີນການດ້ວຍສິດຂອງທ່ານ, ເຂົ້າສູ່ລະບົບດ້ວຍເຊດຊັນນີ້.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ໃນ %seconds ວິ</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ບໍ່ຈຳກັດ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ຄວາມເລິກ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ຄວາມຊັບຊ້ອນ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ລາຍການຕໍ່ລາຍຊື່</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ຄ່າເລີ່ມຕົ້ນ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ຄຳຮ້ອງຕໍ່ຜູ້ໃຊ້ ຫຼືກະແຈ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ຄຳຮ້ອງຕໍ່ທີ່ຢູ່ບໍ່ລະບຸຕົວຕົນ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>ສະເພາະຄຳຖາມທີ່ບັນທຶກໄວ້</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ຄຳຖາມໃຫຍ່ສຸດ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ໄບຕ໌</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ການອັບໂຫຼດໃຫຍ່ສຸດ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ບໍ່ມີການເຂົ້າເຖິງໄຊ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>ການປ່ຽນແປງຖືກເປີດໃນ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>ການປ່ຽນແປງຖືກປິດໃນ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ຖືກເປີດໃນ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API ຖືກປິດໃນ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ບໍ່ສາມາດຂຽນການຕັ້ງຄ່າໄດ້: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ລ້າງແຄຊຄຳຕອບແລ້ວ: ລຶບ %count ຄຳຕອບ.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ໝາຍກ່ອງຂ້າງຄຳຖາມເພື່ອລຶບມັນ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ບໍ່ສາມາດລຶບຄຳຖາມໄດ້: ຄຳຖາມທີ່ມາພ້ອມໃນໄດເຣັກທໍຣີຂອງ PersistedQueryDirectoryList[] ຈະຖືກລຶບພ້ອມກັບໄຟລ໌ຂອງມັນ.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ລຶບຄຳຖາມທີ່ບັນທຶກໄວ້ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ເປີດ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ປິດ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>ບ່ອນທີ່ API ແລະການປ່ຽນແປງຂອງມັນຕອບ. ປຸ່ມຕ່າງໆຂຽນ graphql.ini ຄືກັບ ./console exp:graphql:enable ແລະ exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ປ່ຽນ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ປິດ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ປິດການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ເປີດການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ເປີດ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ຂີດຈຳກັດ</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ຂອງການເຂົ້າເຖິງໄຊນີ້.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ແຄຊຄຳຕອບ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>ຄຳຕອບຂອງຄຳຖາມທີ່ບັນທຶກໄວ້, ເກັບແຍກຕາມສິດຂອງຜູ້ໃຊ້ ແລະໝົດອາຍຸທຸກຄັ້ງທີ່ເຜີຍແຜ່ເນື້ອຫາ.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ສະຖານະ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ຄຳຕອບທີ່ເກັບໄວ້</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ຄຳຕອບ, %bytes ໄບຕ໌</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>ເກັບໄວ້ສູງສຸດ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ວິ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ໝົດອາຍຸຄັ້ງລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ລ້າງແຄຊຄຳຕອບ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>ຄຳຖາມທີ່ບັນທຶກໄວ້</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>ບັນທຶກດ້ວຍ ./console exp:graphql:persist ຫຼືໂດຍໄຄລເອັນ (ຄຳຖາມທີ່ບັນທຶກອັດຕະໂນມັດ); ເອີ້ນໃຊ້ດ້ວຍຊື່ ຫຼື SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ຊື່</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ຂະໜາດ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ບ່ອນ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ລຶບ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ມາພ້ອມ</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ບັນທຶກແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ແມ່ນ, ລຶບຄຳຖາມນີ້</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ຍັງບໍ່ມີຄຳຖາມທີ່ບັນທຶກໄວ້.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>ກະແຈ API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>ກະແຈ API ສ່ວນຕົວທີ່ມີຂອບເຂດ graphql:read (ຄຳຖາມ) ຫຼື graphql:write (ການປ່ຽນແປງ). ສ້າງ ແລະຖອນພວກມັນໃນໜ້າ ການເຂົ້າເຖິງ API ຫຼືດ້ວຍ ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>ການເຂົ້າເຖິງ API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ກະແຈທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ກະແຈ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ຊື່</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ເຈົ້າຂອງ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ຂອບເຂດ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ໃຊ້ຄັ້ງລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ໃຊ້ງານ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ໝົດອາຍຸ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ຖືກຖອນ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ບໍ່ເຄີຍ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>ຍັງບໍ່ມີກະແຈ API ທີ່ມີຂອບເຂດ GraphQL.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API ຖືກປິດໃນການເຂົ້າເຖິງໄຊ %siteaccess ທີ່ສະແດງໜ້ານີ້; ຕາຕະລາງຂ້າງລຸ່ມສະແດງບ່ອນທີ່ມັນຕອບ.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>ສຳລັບການເຂົ້າເຖິງໄຊ %siteaccess ທີ່ສະແດງໜ້ານີ້.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ຕ້ອງການອັນດຽວເທົ່ານັ້ນຈາກ id, identifier ແລະ urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>ຊ່ອງ operations ຂອງຄຳຮ້ອງ multipart ບໍ່ແມ່ນຄຳຮ້ອງ JSON ດຽວ.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>ຊ່ອງ map ຂອງຄຳຮ້ອງ multipart ບໍ່ແມ່ນອອບເຈັກ JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>ຄຳຮ້ອງ multipart ບໍ່ມີໄຟລ໌ %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ເສັ້ນທາງຂອງຊ່ອງ map ຕ້ອງເລີ່ມດ້ວຍ variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ໄຟລ໌ %name ມາຮອດບໍ່ຄົບ (ຂໍ້ຜິດພາດການອັບໂຫຼດ %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ໄຟລ໌ %name ໃຫຍ່ກວ່າ %max ໄບຕ໌.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ບໍ່ສາມາດກວດສອບໄຟລ໌ %name ໄດ້.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ການປ່ຽນແປງ (mutation) ຖືກປິດໃນການເຂົ້າເຖິງໄຊນີ້ (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ສົ່ງການປ່ຽນແປງດ້ວຍ POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>ເຂົ້າສູ່ລະບົບເພື່ອປ່ຽນເນື້ອຫາ.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>ກະແຈ API ບໍ່ມີຂອບເຂດ %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ການປ່ຽນແປງທີ່ໃຊ້ເຊດຊັນຕ້ອງການໂທເຄັນຟອມຂອງເຊດຊັນ (ສ່ວນຫົວ X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ຖືກປິດ: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ບໍ່ໄດ້ລະບຸໂຮສໃດ.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ທີ່ຢູ່ຕ້ອງເປັນທີ່ຢູ່ https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ໂຮສ %host ບໍ່ຢູ່ໃນ graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ບໍ່ສາມາດດຶງໄຟລ໌ໄດ້.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ເປັນປະເພດຂໍ້ມູນເຂົ້າເທົ່ານັ້ນ.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>ຕົວແປປະເພດ Upload ຮັບໄຟລ໌ຂອງຄຳຮ້ອງ multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>id ໄລຍະໄກ %remoteId ຖືກໃຊ້ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>ເນື້ອຫາມີຄຳແປເປັນ %language ແລ້ວ: ໃຊ້ updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>ໃຫ້ຢ່າງໜ້ອຍໜຶ່ງຊ່ອງ.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ບໍ່ສາມາດສ້າງເວີຊັນໃໝ່ໄດ້ (ເນື້ອຫາມີຮ່າງຫຼາຍເກີນໄປ).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ເວີຊັນ %version ບໍ່ແມ່ນຮ່າງ.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ຕ້ອງການ id ຫຼື nodeId ພຽງອັນດຽວ.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ບໍ່ສາມາດຍ້າຍຕຳແໜ່ງໄປໄວ້ໃຕ້ຕົວມັນເອງໄດ້.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>ເນື້ອຫາມີຕຳແໜ່ງຢູ່ໃຕ້ %parentId ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ບໍ່ສາມາດບັນທຶກຄ່າຂອງຊ່ອງ %field ໄດ້.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>ບໍ່ມີພາສາເນື້ອຫາ %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ບໍ່ມີຄລາສເນື້ອຫາ %class ໃນສະຄີມາ.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ເນື້ອຫາບໍ່ມີ, ຫຼືທ່ານບໍ່ມີສິດອ່ານມັນ.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ທ່ານບໍ່ມີສິດເຮັດສິ່ງນີ້ກັບເນື້ອຫານີ້.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ຄລາສ %class ບໍ່ມີຊ່ອງ %field ທີ່ຂຽນໄດ້.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ຊ່ອງ %field ຖືກໃຫ້ສອງເທື່ອ.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ຊ່ອງ %field ຮັບໄຟລ໌: ສົ່ງເປັນການອັບໂຫຼດ (ຄຳຮ້ອງ multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ຊ່ອງ %field ບໍ່ຮັບໄຟລ໌.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ຊ່ອງ %field ຕ້ອງມີຄ່າ.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ຮູບແບບ %format ໃຊ້ສະເພາະຊ່ອງຂໍ້ຄວາມແບບລາຍລະອຽດ; %field ຮັບຄ່າຕາມທີ່ເປັນ (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ຊ່ອງ %field ຈຳເປັນ.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>ບໍ່ສາມາດອ່ານ HTML ໄດ້.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ຮັບ version ພ້ອມ id ເທົ່ານັ້ນ.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>ໂທເຄັນສະແດງຕົວຢ່າງບໍ່ຖືກຕ້ອງ ຫຼືໝົດອາຍຸແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ບໍ່ແມ່ນ origin (https://host ຫຼື https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>ບໍ່ແມ່ນຂອບເຂດຂອງ GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

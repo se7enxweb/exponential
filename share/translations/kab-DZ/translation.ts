@@ -78777,6 +78777,294 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tasuturt tettwaselkam s yizerfan-ik, s tɣimit-a ideg tkecmeḍ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count deg %seconds tsn</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ulac tilisa</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Telqey</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Tasemmeskelt</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Iferdisen i yal tabdart</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (amezwer %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Tuttriwin i yal aseqdac neɣ tasarut</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Tuttriwin i yal tansa tarussint</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Tisuturin yettwaḥerzen kan</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Tasuturt tameqrant</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes n yibiten</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Asali ameqran</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Ulac anekcum ɣer usmel %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Ibeddilen rmed deg %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Ibeddilen nsan deg %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API yermed deg %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API yensa deg %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Iɣewwaren ur zmiren ara ad ttwarun: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Tazarkatut n tririyin tettwasfeḍ: %count n tririyin ttwakksent.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Ṛcem tanaka ɣer tama n tsuturt akken ad tt-tekkseḍ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Tasuturt ur tezmir ara ad tettwakkes: tasuturt i d-yettunefken deg ukaram n PersistedQueryDirectoryList[] tettwakkas s ufaylu-ines.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Tasuturt yettwaḥerzen tettwakkes.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Ibeddilen</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>yermed</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>yensa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Inekcumen ɣer usmel</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Anda d-ttarran API d yibeddilen-is. Tiqeffalin ttarunt graphql.ini, akken xeddmen ./console exp:graphql:enable d exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Abeddel</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Sens</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Ibeddilen nsan</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Ibeddilen rmed</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Rmed</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Tilisa</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] n unekcum-a ɣer usmel.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Tazarkatut n tririyin</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Tiririyin n tsuturin yettwaḥerzen, ttwaḥerzent ɣef yizerfan n useqdac, fukkunt yal tikkelt ara d-yeffeɣ ugbur.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Addad</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Tiririyin yettwaḥerzen</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count n tririyin, %bytes n yibiten</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Aḥraz afellay</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds tsn</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Tagara n tfukka</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Sfeḍ tazarkatut n tririyin</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Tisuturin yettwaḥerzen</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Ttwaḥerzent s ./console exp:graphql:persist, neɣ sɣur imsaɣen (automatic persisted queries); ttwasawalent s yisem neɣ s SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Ismawen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tiddi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Anda</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kkes</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>yettunefken</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>yettwaḥerzen</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ih, kkes tasuturt-a</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ur tella ara akka tura tasuturt yettwaḥerzen.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Tisura API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Tisura API tudmawanin s tmnaḍt graphql:read (tisuturin) neɣ graphql:write (ibeddilen). Rnu-tent, sefsex-tent deg usebter Anekcum API, neɣ s ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Anekcum API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Akk tisura</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Tasarut</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Bab</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Timnaḍin</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Aseqdec aneggaru</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>urmid</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>yefukk</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>yettwasefsex</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ulayɣer</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ur tella ara akka tura tsarut API s tmnaḍt GraphQL.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API yensa deg unekcum ɣer usmel %siteaccess, i d-yeskanayen asebter-a; tafelwit ddaw-a tesskanay anda d-yettarra.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>I unekcum ɣer usmel %siteaccess, i d-yeskanayen asebter-a.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout yesra yiwen kan seg id, identifier d urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Urti operations n tuttra multipart mačči d yiwet n tuttra JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Urti map n tuttra multipart mačči d taɣawsa JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Tuttra multipart ur tesɛi ara afaylu %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Abrid n tkarḍa n wurtiyen ilaq ad yebdu s variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Afaylu %name ur d-yewweḍ ara ummid (tuccḍa n usali %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Afaylu %name meqqer ugar n %max n yibiten.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Afaylu %name ur yezmir ara ad yettwasenqed.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Ibeddilen nsan deg unekcum-a ɣer usmel (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Azen abeddel s POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Qqen akken ad tbeddleḍ agbur.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Tasarut API ur tesɛi ara tamnaḍt %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Abeddel s tɣimit yesra ajiṭun n tferkit n tɣimit (aqerru X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl yensa: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ur d-yebder ara asneftaɣ.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Tansa ilaq ad tili d tansa https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Asneftaɣ %host ulac-it deg graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Afaylu ur yezmir ara ad d-yettwawwi.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload d anaw n usekcem kan.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Amutti n wanaw Upload yeṭṭef afaylu n tuttra multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Asulay anmeggag %remoteId yettwaṭṭef yakan.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Agbur yesɛa yakan tasuqilt s %language: seqdec updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Efk ma drus yiwen wurti.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Lqem amaynut ur yezmir ara ad yettwarnu (agbur yesɛa aṭas n yirewwayen).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Lqem %version mačči d arewway.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent yesra yiwen kan seg id d nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Adeg ur yezmir ara ad yettwasiweḍ ddaw-as.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Agbur yesɛa yakan adeg ddaw %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Azal n wurti %field ur yezmir ara ad yettwasekles.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ulac tutlayt n ugbur %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Ulac asmil n ugbur %class deg uskema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Agbur ulac-it, neɣ ur tzemreḍ ara ad t-teɣreḍ.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ur tzemreḍ ara ad txedmeḍ aya i ugbur-a.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Asmil %class ur yesɛi ara urti %field i yezmren ad yettwaru.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Urti %field yettunefk snat n tikkal.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Urti %field yeṭṭef afaylu: azen-it am usali (tuttra multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Urti %field ur yeṭṭef ara afaylu.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Urti %field yesra azal.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Amasal %format i wurtiyen n uḍris anesbaɣur kan; %field yeṭṭef azal-is akken yella (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Urti %field yettwasra.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ur yezmir ara ad yettwaɣer.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content yeṭṭef version s id kan.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Ajiṭun n teskant ur ameɣtu ara neɣ yefukk.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Mačči d aɣbalu (https://host neɣ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Mačči d tamnaḍt n GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

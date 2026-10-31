@@ -78777,6 +78777,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Хаттар кхочуш до хьан бакъонашца, хӀокху сессехь чувалийна.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds сек чохь %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>доза доцуш</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>КӀоргалла</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Чолхалла</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>МогӀам чохь элементаш</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ша-шаха %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Декъашхочун я догӀанан дехарш</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ЦӀе йоцчу адресан дехарш</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Интроспекци</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Ӏалашдина хаттарш бен</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Уггар доккха хаттар</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes байт</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Уггар доккха чуйолуьйтуш</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess сайте тӀекхачар дац.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess чохь мутацеш латийна ю.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess чохь мутацеш дӀайайина ю.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess чохь GraphQL API латийна ю.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess чохь GraphQL API дӀайайина ю.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ТӀегӀанаш яздан ца делира: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Жоьпийн кэш цӀанйина: %count жоп дӀадаьккхина.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Хаттар дӀадаккха цунна юххехь йолу кор билгалде.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Хаттар дӀадаккха ца делира: PersistedQueryDirectoryList[] директорехь деана хаттар шен файлца дӀадоккху.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Ӏалашдина хаттар дӀадаьккхина.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Мутацеш</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>латийна</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>дӀайайина</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайте тӀекхачарш</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API а, цуьнан мутацеш а жоп луш йолу меттигаш. Кнопкаш graphql.ini чу йоздо, ./console exp:graphql:enable а, exp:graphql:disable а санна.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Хийца</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ДӀайайа</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Мутацеш дӀайайа</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Мутацеш лато</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Лато</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Дозанаш</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ХӀокху сайте тӀекхачаран graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Жоьпийн кэш</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Ӏалашдинчу хаттарийн жоьпаш, декъашхочун бакъонашца Ӏалашдина, чулацам арахецча хан чекхйолуш.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Хьал</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Ӏалашдина жоьпаш</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count жоп, %bytes байт</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Уггар дукха Ӏалашдо</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds сек</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ТӀаьххьара хан чекхъяларан</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Жоьпийн кэш цӀанъе</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Ӏалашдина хаттарш</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist-ца я клиенташа Ӏалашдина (автоматически Ӏалашдина хаттарш); цӀарца я SHA-256-ца кхайкху.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ЦӀерш</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Барам</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Мичахь</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ДӀадаккха</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>деана</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>Ӏалашдина</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ХӀаъ, хӀара хаттар дӀадаккха</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ӏалашдина хаттар хӀинца а дац.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API догӀанаш</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (хаттарш) я graphql:write (мутацеш) гуо долу шениг API догӀанаш. Уьш API тӀекхачар агӀонгахь я ./console exp:graphql:keys-ца кхолла а, юхаяккха а.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API тӀекхачар</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Массо догӀанаш</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ДогӀа</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ЦӀе</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Гуонаш</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ТӀаьххьара лелийна</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>жигара</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>хан чекхъяьлла</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>юхаяьккхина</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>цкъа а</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL гуо долу API догӀа хӀинца а дац.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>ХӀара агӀо гойтуш долчу %siteaccess сайте тӀекхачарехь GraphQL API дӀайайина ю; лахахь йолчу таблицехь гайтина иза мичхьа жоп луш ю.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>ХӀара агӀо гойтуш долчу %siteaccess сайте тӀекхачарна.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-на id, identifier, urlAlias цаьрах нийса цхьаъ оьшу.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Multipart дехаран operations аре цхьа JSON дехар дац.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Multipart дехаран map аре JSON объект дац.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart дехарехь %field файл яц.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map аренан некъ variables.-ах доло деза: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name файл юкъара кхаьчна яц (чуйолуьйтуран гӀалат %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name файл %max байтал йоккха ю.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name файл таллалуш ца хилла.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Мутацеш хӀокху сайте тӀекхачарехь дӀайайина ю (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Мутаци POST-ца дахийта.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Чулацам хийца чувала.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API догӀанан %scope гуо дац.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Сессица йолчу мутацина сессин форман токен оьшу (корта X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl дӀайайина ю: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] чохь цхьа хост а яц.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Адрес https адрес хила еза.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host хост graphql.ini [GraphQLSettings] UploadFromUrlHostList[] чохь яц.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Файл схьаэца ца делира.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload чуйолу тайпа бен дац.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload тайпанан хийцалучо multipart дехаран файл тӀеоьцу.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId генара идентификатор дӀалаьцна ю.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Чулацамехь %language маттахь гочдар хӀинцале а ду: updateContent лелае.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Лаххара а цхьа аре язъе.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Керла верси кхолла ца делира (чулацамехь дукха черновикаш ю).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version верси черновик яц.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent-на id, nodeId цаьрах нийса цхьаъ оьшу.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Меттиг шен кӀел дӀаяккха йиш яц.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Чулацамехь %parentId кӀел меттиг хӀинцале а ю.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field аренан маьӀна Ӏалашдан ца делира.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language чулацаман мотт бац.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Схемехь %class чулацаман класс яц.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Чулацам бац, я хьан иза еша бакъо яц.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ХӀокху чулацамца иза дан хьан бакъо яц.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class классехь яздан мега %field аре яц.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field аре шозза язйина ю.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field аре файл тӀеоьцу: иза чуйолуьйтуш дахийта (multipart дехар).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field аре файл тӀе ца оьцу.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field аренна маьӀна оьшу.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format формат хаздина текстан ареш бен дац; %field шен маьӀна долчу кепара тӀеоьцу (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field аре тӀедожийна ю.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML еша ца делира.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content-с version id-ца бен тӀе ца оьцу.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Хьалха хьажаран токен нийса яц я цуьнан хан чекхъяьлла.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Схьадаларан меттиг яц (https://host я https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API гуо дац: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

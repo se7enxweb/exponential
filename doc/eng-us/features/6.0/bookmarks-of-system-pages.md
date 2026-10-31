@@ -33,12 +33,38 @@ are the ones every bookmark has. Its address is a row of the table `expbookmark_
 | `bookmark_id` | The id of the bookmark row (primary key) |
 | `user_id` | The owner, as on the bookmark row (indexed) |
 | `module_uri` | The address: module, view and the view's parameters, ordered (`role/view/3`) and unordered (`/(offset)/20`), without the host, the siteaccess and the fragment; a query string only with the keys its kind keeps, sorted (`content/search?SearchText=news&SectionID=1`) |
+| `module_name` | The module of the address (`role`), indexed with `view_name` |
+| `view_name` | The view of the address (`view`) |
+| `view_parameters` | The parameters of the address as JSON: `ordered` (a list), `unordered` and `query` (name to value), e.g. `{"ordered":[],"unordered":{"user":"14","offset":"20"},"query":{}}` for `audit/console/(user)/14/(offset)/20` |
 | `created` | When the page was bookmarked |
 
-The module and the view are read from the address when it is shown (`expBookmarkView::parts()`), so the address is
-the one thing to validate, compare and change: a renamed module or view is one `UPDATE expbookmark_view SET module_uri
-= ...` of the rows that start with the old name. One address is bookmarked once per user: bookmarking it again
-updates the name and, when one is chosen, the folder.
+The address is what is compared and opened; `module_name`, `view_name` and `view_parameters` are the same address
+taken apart (`expBookmarkView::parse()`), written with it, so bookmarks can be found, checked and moved by module and
+view without parsing every address (`SELECT ... WHERE module_name = 'role' AND view_name = 'view'`). One address is
+bookmarked once per user: bookmarking it again updates the name and, when one is chosen, the folder.
+
+| Address | `module_name` | `view_name` | `view_parameters` |
+|---|---|---|---|
+| `setup/cache` | `setup` | `cache` | `{"ordered":[],"unordered":{},"query":{}}` |
+| `role/view/3` | `role` | `view` | `{"ordered":["3"],"unordered":{},"query":{}}` |
+| `content/trash/(offset)/20` | `content` | `trash` | `{"ordered":[],"unordered":{"offset":"20"},"query":{}}` |
+| `content/search?SearchText=news` | `content` | `search` | `{"ordered":[],"unordered":{},"query":{"SearchText":"news"}}` |
+
+## Renaming a module or a view
+
+When a module or a view gets a new name (an extension renames its module, a view moves), its bookmarks move with
+one command; their names, folders, order, parameters and query strings stay:
+
+```
+php update/common/scripts/6.0/createbookmarkviewtable.php --rename=oldreports=reports --dry-run -s <admin siteaccess>
+php update/common/scripts/6.0/createbookmarkviewtable.php --rename=oldreports=reports -s <admin siteaccess>
+php update/common/scripts/6.0/createbookmarkviewtable.php --rename=oldreports/list=reports/overview -s <admin siteaccess>
+```
+
+`<old>` and `<new>` are each a module (`reports`) or a module and a view (`reports/overview`). A module alone moves
+every view of it and keeps the view names; a module alone cannot become one view. The bookmarks of every user are
+moved. From code: `expBookmarkView::renameModuleView( 'oldreports/list', 'reports/overview', $apply )` returns the
+bookmark ids with the old and the new address (`$apply = false` only reports).
 
 ## Rules
 
@@ -144,7 +170,19 @@ gets it from:
   ```
 
 Until the table exists the administration does not offer **Bookmark this page** and node bookmarks work exactly as
-before. `settings/bookmark.ini` ships with the kernel; an installation that kept an older settings tree without it
+before.
+
+An installation that ran an early 6.0.15 build has the table without `module_name`, `view_name` and
+`view_parameters`. Bookmarks keep working (the kernel asks the database's catalogue and writes the address alone until
+the columns are there); the update adds them:
+
+- `./console exp:upgrade --apply` (steps `6.0.15-bookmark-view-columns`, every engine, and
+  `6.0.15-bookmark-view-fill`, which fills the columns of the rows from their address), or
+- `php update/common/scripts/6.0/createbookmarkviewtable.php -s <admin siteaccess>`, which runs the same two steps
+  (`--dry-run` says what is missing), or
+- on MySQL and PostgreSQL the SQL update file of the engine (guarded, it adds only what is missing), followed by one
+  of the two above for the rows. SQLite cannot add a column only when it is missing: there it is the console or the
+  script. `settings/bookmark.ini` ships with the kernel; an installation that kept an older settings tree without it
 still works: nothing is excluded but what module definitions exclude, no query string is kept, and every system page
 has the gear icon. After the update, clear the caches (`php bin/php/ezcache.php --clear-all`) and regenerate the
 kernel autoloads when the code was copied by hand (`php bin/php/ezpgenerateautoloads.php -k`).

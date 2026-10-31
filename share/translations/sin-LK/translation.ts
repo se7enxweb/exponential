@@ -78777,6 +78777,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>මෙම සැසියෙන් පුරනය වී, ඔබගේ අයිතිවාසිකම් සමඟ විමසුම ක්‍රියාත්මක වේ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>තත්. %seconds තුළ %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>සීමාවක් නැත</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ගැඹුර</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>සංකීර්ණත්වය</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ලැයිස්තුවකට අයිතම</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (පෙරනිමි %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>පරිශීලකයෙකුට හෝ යතුරකට ඉල්ලීම්</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>නිර්නාමික ලිපිනයකට ඉල්ලීම්</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ස්වයං පරීක්ෂණය</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>ගබඩා කළ විමසුම් පමණි</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>විශාලතම විමසුම</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>බයිට %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>විශාලතම උඩුගත කිරීම</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess අඩවි ප්‍රවේශයක් නැත.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess හි mutations සක්‍රිය කර ඇත.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess හි mutations අක්‍රිය කර ඇත.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess හි GraphQL API සක්‍රිය කර ඇත.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess හි GraphQL API අක්‍රිය කර ඇත.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>සැකසුම් ලිවිය නොහැකි විය: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ප්‍රතිචාර හැඹිලිය හිස් කරන ලදී: පිළිතුරු %count ක් ඉවත් කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>විමසුම ඉවත් කිරීමට එය අසල ඇති කොටුව සලකුණු කරන්න.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>විමසුම ඉවත් කළ නොහැකි විය: PersistedQueryDirectoryList[] හි නාමාවලියක සපයා ඇති විමසුමක් එහි ගොනුව සමඟ ඉවත් කෙරේ.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ගබඩා කළ විමසුම ඉවත් කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutations</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>සක්‍රිය</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>අක්‍රිය</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>අඩවි ප්‍රවේශ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API සහ එහි mutations පිළිතුරු දෙන ස්ථාන. ./console exp:graphql:enable සහ exp:graphql:disable මෙන් බොත්තම් graphql.ini ලියයි.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>අඩවි ප්‍රවේශය</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>වෙනස් කරන්න</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>අක්‍රිය කරන්න</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutations අක්‍රිය කරන්න</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutations සක්‍රිය කරන්න</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>සක්‍රිය කරන්න</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>සීමා</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>මෙම අඩවි ප්‍රවේශයේ graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ප්‍රතිචාර හැඹිලිය</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>ගබඩා කළ විමසුම්වල පිළිතුරු, පරිශීලක අයිතිවාසිකම් අනුව තබා ගන්නා අතර අන්තර්ගතය ප්‍රකාශ කරන සෑම විටම කල් ඉකුත් වේ.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>තබා ගත් පිළිතුරු</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>පිළිතුරු %count, බයිට %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>උපරිම තබා ගැනීම</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>තත්. %seconds</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>අවසන් වරට කල් ඉකුත් විය</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ප්‍රතිචාර හැඹිලිය හිස් කරන්න</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>ගබඩා කළ විමසුම්</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist මඟින් හෝ සේවාලාභීන් විසින් (ස්වයංක්‍රීය ගබඩා කළ විමසුම්) ගබඩා කෙරේ; නමෙන් හෝ SHA-256 මඟින් කැඳවනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>නම්</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ප්‍රමාණය</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>කොහේද</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>සපයා ඇත</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ගබඩා කළ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ඔව්, මෙම විමසුම ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>තවම ගබඩා කළ විමසුමක් නැත.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API යතුරු</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (විමසුම්) හෝ graphql:write (mutations) විෂය පථය සහිත පුද්ගලික API යතුරු. ඒවා API ප්‍රවේශය පිටුවෙහි හෝ ./console exp:graphql:keys මඟින් සාදා අවලංගු කරන්න.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ප්‍රවේශය</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>සියලු යතුරු</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>යතුර</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>නම</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>හිමිකරු</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>විෂය පථ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>අවසන් වරට භාවිතා කළේ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>සක්‍රිය</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>කල් ඉකුත්</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>අවලංගු කළ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>කිසිදා නැත</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>තවම GraphQL විෂය පථයක් සහිත API යතුරක් නැත.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>මෙම පිටුව පෙන්වන අඩවි ප්‍රවේශය %siteaccess හි GraphQL API අක්‍රිය කර ඇත; එය පිළිතුරු දෙන්නේ කොතැනද යන්න පහත වගුව පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>මෙම පිටුව පෙන්වන අඩවි ප්‍රවේශය %siteaccess සඳහා.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout සඳහා id, identifier සහ urlAlias අතරින් හරියටම එකක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart ඉල්ලීමේ operations ක්ෂේත්‍රය එක් JSON ඉල්ලීමක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart ඉල්ලීමේ map ක්ෂේත්‍රය JSON වස්තුවක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart ඉල්ලීමේ %field ගොනුවක් නැත.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map ක්ෂේත්‍රයේ මාර්ගයක් variables. වලින් ආරම්භ විය යුතුය: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name ගොනුව සම්පූර්ණයෙන් ලැබුණේ නැත (උඩුගත කිරීමේ දෝෂය %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name ගොනුව බයිට %max ට වඩා විශාලය.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name ගොනුව පරීක්ෂා කළ නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>මෙම අඩවි ප්‍රවේශයේ mutations අක්‍රිය කර ඇත (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>mutation එක POST මඟින් යවන්න.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>අන්තර්ගතය වෙනස් කිරීමට පුරනය වන්න.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API යතුරට %scope විෂය පථය නැත.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>සැසියක් සහිත mutation එකකට එම සැසියේ පෝරම ටෝකනය අවශ්‍යයි (ශීර්ෂය X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl අක්‍රිය කර ඇත: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] හි කිසිදු ධාරකයක් සඳහන් නොවේ.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ලිපිනය https ලිපිනයක් විය යුතුය.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host ධාරකය graphql.ini [GraphQLSettings] UploadFromUrlHostList[] හි නැත.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ගොනුව ලබා ගත නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload යනු ආදාන වර්ගයක් පමණි.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload වර්ගයේ විචල්‍යයක් multipart ඉල්ලීමක ගොනුවක් ගනී.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId දුරස්ථ id දැනටමත් භාවිතයේ ඇත.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>අන්තර්ගතයට දැනටමත් %language පරිවර්තනයක් ඇත: updateContent භාවිතා කරන්න.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>අවම වශයෙන් එක් ක්ෂේත්‍රයක් ලබා දෙන්න.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>නව අනුවාදයක් සෑදිය නොහැකි විය (අන්තර්ගතයට කෙටුම්පත් ඕනෑවට වඩා ඇත).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version අනුවාදය කෙටුම්පතක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent සඳහා id සහ nodeId වලින් හරියටම එකක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ස්ථානයක් එයටම යටින් ගෙන යා නොහැක.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>අන්තර්ගතයට දැනටමත් %parentId යටතේ ස්ථානයක් ඇත.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field ක්ෂේත්‍රයේ අගය ගබඩා කළ නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language අන්තර්ගත භාෂාවක් නැත.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ස්කීමාවේ %class අන්තර්ගත පන්තියක් නැත.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>අන්තර්ගතය නොමැත, නැතහොත් ඔබට එය කියවීමට අවසර නැත.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>මෙම අන්තර්ගතයට මෙය කිරීමට ඔබට අවසර නැත.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class පන්තියේ ලිවිය හැකි %field ක්ෂේත්‍රයක් නැත.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field ක්ෂේත්‍රය දෙවරක් ලබා දී ඇත.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field ක්ෂේත්‍රය ගොනුවක් ගනී: එය upload ලෙස යවන්න (multipart ඉල්ලීමක්).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field ක්ෂේත්‍රය ගොනුවක් නොගනී.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field ක්ෂේත්‍රයට අගයක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format ආකෘතිය පොහොසත් පෙළ ක්ෂේත්‍ර සඳහා පමණි; %field එහි අගය එලෙසම ගනී (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field ක්ෂේත්‍රය අනිවාර්යයි.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML කියවිය නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content විසින් version ගන්නේ id සමඟ පමණි.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>පෙරදසුන් ටෝකනය වලංගු නැත හෝ කල් ඉකුත් වී ඇත.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>මූලාරම්භයක් නොවේ (https://host හෝ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API හි විෂය පථයක් නොවේ: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

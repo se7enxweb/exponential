@@ -9,14 +9,14 @@ wo etwas nicht ausgeführt wurde, sagt die Seite es.
 ## Welches Twig für welches PHP
 
 Composer installiert Twig 3 mit dem Rest der Installation, über das Metapaket `se7enxweb/exponential-php-floor`, das
-die `composer.json` des Kernels verlangt (`~1.0.3 || ~1.1.3 || ~1.2.3 || ~1.3.3`). Composer wählt das Floor-Release,
+die `composer.json` des Kernels verlangt (`~1.0.3 || ~1.1.4 || ~1.2.3 || ~1.3.3`). Composer wählt das Floor-Release,
 das zu der PHP-Version passt, mit der es läuft, und dieses Release verlangt das Twig-3-Paket für diese PHP-Linie:
 
 | PHP | Exponential | Floor-Release | Twig-Paket | Installiertes Twig am 29. Oktober 2026 |
 |---|---|---|---|---|
 | 8.4 und neuer | unterstützt | 1.3.3 | `twig/twig` `^3.27` | 3.30.0 |
 | 8.1 bis 8.3 | unterstützt | 1.2.3 | `twig/twig` `^3.27` | 3.30.0 |
-| 8.0 | unterstützt | 1.1.3 | `se7enxweb/twig` `~3.19.1` | 3.19.1 |
+| 8.0 | unterstützt | 1.1.4 | `se7enxweb/twig` `~3.19.1` | 3.19.1 |
 | 7.4 | nutzbar ohne Unterstützung | 1.0.3 | `se7enxweb/twig` `~3.11.4` | 3.11.4 |
 
 Eine Installation mit eingeschalteter Sicherheitssperre von Composer (der Standard, den das Projekt auf jeder

@@ -78807,6 +78807,294 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Apeqqut pisinnaatitaaffitit atorlugit ingerlanneqarpoq, session-imi matumani iserputit.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds sek-imi</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>killeqanngitsoq</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Itissusaa</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Ilungersunartussusaa</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Allattorsimaffimmi immikkoortut</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (aallaqqaasiutitut %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Atuisumut imaluunniit ilisarnaammut qinnuteqaatit</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Najukkamut atiqanngitsumut qinnuteqaatit</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Apeqqutit toqqorsimasut kisimik</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Apeqqut anginerpaaq</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Nassiussaq anginerpaaq</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nittartakkamut isaariaq %siteaccess peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutationit %siteaccess-imi ammarneqarput.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutationit %siteaccess-imi matuneqarput.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess-imi ammarneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess-imi matuneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Aaqqissuussinerit allanneqarsinnaanngillat: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Akissutit cache-iat salinneqarpoq: akissutit %count peerneqarput.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Apeqqut peerniarukku sanianiittoq ammaarfik nalunaaruk.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Apeqqut peerneqarsinnaanngilaq: apeqqut PersistedQueryDirectoryList[]-imi toqqorsimaffimmi ilanngunneqartoq fiiliminik peqateqarluni peerneqartarpoq.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Apeqqut toqqorsimasoq peerneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutationit</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ammasoq</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>matusoq</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nittartakkamut isaariaatit</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API aamma mutationii sumi akisartut. Toortagassat graphql.ini allattarpaat, ./console exp:graphql:enable aamma exp:graphql:disable assigalugit.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nittartakkamut isaariaq</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Allannguut</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Matuguk</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutationit matoqqapput</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutationit ammapput</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ammaruk</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Killiliussat</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Nittartakkamut isaariaatip matuma graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Akissutit cache-iat</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Apeqqutit toqqorsimasut akissutaat, atuisup pisinnaatitaaffii naapertorlugit toqqorneqartartut, imarisallu saqqummiunneqartillugit tamatigut atorunnaartartut.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Qanoq innera</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Akissutit toqqorsimasut</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>Akissutit %count, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Sivisunerpaamik toqqorneqartarpoq</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Kingullermik atorunnaarpoq</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Akissutit cache-iat saliuk</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Apeqqutit toqqorsimasut</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist atorlugu imaluunniit client-init toqqorneqartartut (automatic persisted queries); aqqisigut imaluunniit SHA-256 atorlugu taaneqartartut.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Aqqit</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Angissusaa</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Sumi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Piiaruk</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ilanngunneqartoq</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>toqqorsimasoq</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Aap, apeqqut una piiaruk</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Apeqqummik toqqorsimasumik suli peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-mi ilisarnaatit</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Namminersortut API-mi ilisarnaatit atuuffeqartut graphql:read (apeqqutit) imaluunniit graphql:write (mutationit). Quppernermi API-mut isersinnaaneq imaluunniit ./console exp:graphql:keys atorlugu pilersikkit atorunnaarsillugillu.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-mut isersinnaaneq</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Ilisarnaatit tamarmik</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ilisarnaat</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ateq</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Piginnittoq</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Atuuffiit</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Kingullermik atorneqarpoq</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>atuuttoq</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>atorunnaarsimasoq</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>atorunnaarsitaq</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>taamaattoqarsimanngilaq</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>API-mi ilisarnaammik GraphQL-imi atuuffilimmik suli peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API nittartakkamut isaariami %siteaccess-imi, quppernermik matuminnga takutitsisumi, matuneqarpoq; tabeli ataaniittoq sumi akisartoq takutippaa.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Nittartakkamut isaariaq %siteaccess, quppernermik matuminnga takutitsisoq, pillugu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79197,178 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout id, identifier aamma urlAlias akornanni ataasiinnarmik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Qinnuteqaatip multipart-ip immersugassaa operations JSON-qinnuteqaatitut ataasiusunngilaq.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Qinnuteqaatip multipart-ip immersugassaa map JSON-objektiunngilaq.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Qinnuteqaat multipart fiilimik %field-imik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Immersugassat nalunaarsuiffiata aqqutaa variables.-imik aallarnertariaqarpoq: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fiili %name tamakkiisumik tikinngilaq (nassiussinermi kukkuneq %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fiili %name %max byte-nit anneruvoq.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fiili %name misissorneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutationit nittartakkamut isaariami matumani matoqqapput (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Mutation POST atorlugu nassiuguk.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Imarisat allanngortinniarukkit iserit.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-mi ilisarnaat atuuffimmik %scope-mik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutation session-imik atuisoq session-ip immersugassiaata token-ianik pisariaqartitsivoq (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl matoqqavoq: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] host-imik taaguuteqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Najugaq https-najugaasariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host graphql.ini [GraphQLSettings] UploadFromUrlHostList[]-imiinngilaq.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fiili aaneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload input-ip suussusiinnaavoq.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Variabeli Upload-itut suussusilik qinnuteqaatip multipart-ip fiilianik tigusisarpoq.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Remote id %remoteId atorneqareerpoq.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Imarisat %language-mut nutserneqareerput: updateContent atoruk.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Minnerpaamik immersugassaq ataaseq tunniuguk.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Versioni nutaaq pilersinneqarsinnaanngilaq (imarisat missingiuteqarpallaarput).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versioni %version missingiutaanngilaq.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent id aamma nodeId akornanni ataasiinnarmik pisariaqartitsivoq.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Inissisimaffik nammineq ataanut nuunneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Imarisat %parentId ataani inissisimaffeqareerput.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Immersugassap %field naleqa toqqorneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Imarisanut oqaatsit %language peqanngillat.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Skemami imarisat klassiat %class peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Imarisat peqanngillat, imaluunniit atuarsinnaanngilatit.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Imarisani uku taamaaliorfigisinnaanngilatit.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klassi %class immersugassamik %field-imik allaffigineqarsinnaasumik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Immersugassaq %field marloriarluni tunniunneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Immersugassaq %field fiilimik tigusisarpoq: nassiussatut nassiuguk (qinnuteqaat multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Immersugassaq %field fiilimik tigusisanngilaq.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Immersugassaq %field naleqartariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Ilusaa %format allagaqarfinnut ilusilersukkanut kisimi atuuppoq; %field naleqa ilusaatut tigusarpaa (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Immersugassaq %field pisariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML atuarneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version id-imik peqateqartoq kisiat tigusarpaa.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Takuneqaqqaarnissaanut token atuunngilaq imaluunniit atorunnaarsimavoq.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Aallaavik (origin) pinngilaq (https://host imaluunniit https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API-p atuuffia pinngilaq: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

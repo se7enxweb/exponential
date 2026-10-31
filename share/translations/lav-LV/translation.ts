@@ -78807,6 +78807,294 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Vaicājums tiek izpildīts ar jūsu tiesībām, pierakstoties šajā sesijā.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds s laikā</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>bez ierobežojuma</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Dziļums</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Sarežģītība</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Vienumi sarakstā</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (noklusējums %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Pieprasījumi uz lietotāju vai atslēgu</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Pieprasījumi uz anonīmu adresi</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcija</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Tikai saglabāti vaicājumi</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Lielākais vaicājums</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes baiti</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Lielākā augšupielāde</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nav vietnes piekļuves %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutācijas vietnes piekļuvē %siteaccess ir ieslēgtas.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutācijas vietnes piekļuvē %siteaccess ir izslēgtas.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API vietnes piekļuvē %siteaccess ir ieslēgts.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API vietnes piekļuvē %siteaccess ir izslēgts.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Iestatījumus neizdevās ierakstīt: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Atbilžu kešatmiņa notīrīta: noņemtas %count atbildes.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Atzīmējiet rūtiņu blakus vaicājumam, lai to noņemtu.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Vaicājumu neizdevās noņemt: vaicājums, kas piegādāts PersistedQueryDirectoryList[] direktorijā, tiek noņemts kopā ar savu failu.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Saglabātais vaicājums noņemts.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutācijas</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ieslēgts</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>izslēgts</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Vietnes piekļuves</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kur atbild API un tā mutācijas. Pogas raksta graphql.ini tāpat kā ./console exp:graphql:enable un exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mainīt</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Izslēgt</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutācijas izslēgtas</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutācijas ieslēgtas</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ieslēgt</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Ierobežojumi</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Šīs vietnes piekļuves graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Atbilžu kešatmiņa</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Saglabāto vaicājumu atbildes, glabātas atsevišķi pēc lietotāja tiesībām un novecojušas ikreiz, kad tiek publicēts saturs.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stāvoklis</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Glabātās atbildes</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count atbildes, %bytes baiti</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Glabā ne ilgāk kā</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Pēdējā novecošana</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Notīrīt atbilžu kešatmiņu</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Saglabātie vaicājumi</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Saglabāti ar ./console exp:graphql:persist vai klientu (automātiski saglabātie vaicājumi); izsaucami pēc nosaukuma vai SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nosaukumi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Izmērs</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Noņemt</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>piegādāts</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>saglabāts</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Jā, noņemt šo vaicājumu</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Vēl nav neviena saglabāta vaicājuma.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API atslēgas</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Personiskās API atslēgas ar tvērumu graphql:read (vaicājumi) vai graphql:write (mutācijas). Izveidojiet un atsauciet tās lapā API piekļuve vai ar ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API piekļuve</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Visas atslēgas</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Atslēga</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Īpašnieks</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Tvērumi</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Pēdējoreiz izmantota</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktīva</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>beigusies</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>atsaukta</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nekad</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Vēl nav nevienas API atslēgas ar GraphQL tvērumu.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API ir izslēgts vietnes piekļuvē %siteaccess, kas rāda šo lapu; tabula zemāk rāda, kur tas atbild.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Vietnes piekļuvei %siteaccess, kas rāda šo lapu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79197,178 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout nepieciešams tieši viens no id, identifier un urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Daudzdaļīga pieprasījuma lauks operations nav viens JSON pieprasījums.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Daudzdaļīga pieprasījuma lauks map nav JSON objekts.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Daudzdaļīgajā pieprasījumā nav faila %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Lauka map ceļam jāsākas ar variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fails %name nav saņemts pilnībā (augšupielādes kļūda %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fails %name ir lielāks par %max baitiem.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Failu %name neizdevās pārbaudīt.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutācijas šajā vietnes piekļuvē ir izslēgtas (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Sūtiet mutāciju ar POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Piesakieties, lai mainītu saturu.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API atslēgai nav tvēruma %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutācijai ar sesiju vajadzīgs sesijas veidlapas marķieris (galvene X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ir izslēgts: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nenosauc nevienu resursdatoru.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresei jābūt https adresei.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Resursdators %host nav norādīts graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Failu neizdevās iegūt.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ir tikai ievades tips.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Tipa Upload mainīgais saņem daudzdaļīga pieprasījuma failu.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Attālais id %remoteId jau ir aizņemts.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Saturam jau ir tulkojums valodā %language: izmantojiet updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Norādiet vismaz vienu lauku.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Jaunu versiju neizdevās izveidot (saturam ir pārāk daudz melnrakstu).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versija %version nav melnraksts.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent vajag tieši vienu no id un nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Atrašanās vietu nevar pārvietot zem tās pašas.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Saturam jau ir atrašanās vieta zem %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Lauka %field vērtību neizdevās saglabāt.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nav satura valodas %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Shēmā nav satura klases %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Satura nav, vai jums nav atļauts to lasīt.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Jums nav atļauts to darīt ar šo saturu.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klasei %class nav rakstāma lauka %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Lauks %field ir norādīts divreiz.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Lauks %field pieņem failu: sūtiet to kā augšupielādi (daudzdaļīgs pieprasījums).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Lauks %field nepieņem failu.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Laukam %field vajadzīga vērtība.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formāts %format ir tikai bagātinātā teksta laukiem; %field pieņem vērtību tādu, kāda tā ir (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Lauks %field ir obligāts.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML neizdevās nolasīt.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content pieņem version tikai kopā ar id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Priekšskatījuma marķieris nav derīgs vai ir beidzies.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nav izcelsme (https://host vai https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nav GraphQL API tvērums: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -78807,6 +78807,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>يُنفَّذ الاستعلام بصلاحياتك، مع تسجيل الدخول بهذه الجلسة.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count خلال %seconds ث</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>بلا حد</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>العمق</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>التعقيد</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>العناصر لكل قائمة</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (الافتراضي %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>الطلبات لكل مستخدم أو مفتاح</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>الطلبات لكل عنوان مجهول</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>الاستبطان (Introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>الاستعلامات المحفوظة فقط</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>أكبر استعلام</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes بايت</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>أكبر رفع</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>لا يوجد siteaccess باسم %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>التعديلات (mutations) مفعّلة في %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>التعديلات (mutations) معطّلة في %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>واجهة GraphQL البرمجية مفعّلة في %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>واجهة GraphQL البرمجية معطّلة في %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>تعذّرت كتابة الإعدادات: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>تم مسح ذاكرة التخزين المؤقت للإجابات: أُزيلت %count إجابة.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>حدّد المربع بجانب الاستعلام لإزالته.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>تعذّرت إزالة الاستعلام: الاستعلام المرفق في دليل من PersistedQueryDirectoryList[] يُزال مع ملفه.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>أُزيل الاستعلام المحفوظ.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>التعديلات (Mutations)</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>مفعّل</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>معطّل</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>الـ siteaccesses</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>حيث تجيب الواجهة البرمجية وتعديلاتها. تكتب الأزرار graphql.ini، كما يفعل ./console exp:graphql:enable و exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>واجهة GraphQL البرمجية</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغيير</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>تعطيل</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>تعطيل التعديلات</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>تفعيل التعديلات</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>تفعيل</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>الحدود</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] لهذا الـ siteaccess.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ذاكرة التخزين المؤقت للإجابات</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>إجابات الاستعلامات المحفوظة، تُحفظ حسب صلاحيات المستخدم وتنتهي صلاحيتها كلما نُشر محتوى.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>الحالة</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>الإجابات المحفوظة</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count إجابة، %bytes بايت</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>مدة الحفظ القصوى</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ث</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>آخر انتهاء صلاحية</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>امسح ذاكرة التخزين المؤقت للإجابات</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>الاستعلامات المحفوظة</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>تُخزَّن باستخدام ./console exp:graphql:persist أو من قبل العملاء (الاستعلامات المحفوظة التلقائية)؛ وتُستدعى بالاسم أو بـ SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>الأسماء</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>الحجم</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>المكان</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>إزالة</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>مرفق</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>مخزَّن</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>نعم، أزل هذا الاستعلام</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>لا يوجد استعلام محفوظ بعد.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>مفاتيح API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>مفاتيح API شخصية بالنطاق graphql:read (الاستعلامات) أو graphql:write (التعديلات). أنشئها وألغها في صفحة الوصول إلى API، أو باستخدام ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>الوصول إلى API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>جميع المفاتيح</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>المفتاح</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>المالك</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>النطاقات</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>آخر استخدام</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>نشط</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>منتهي الصلاحية</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ملغى</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>أبدًا</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>لا يوجد مفتاح API بنطاق GraphQL بعد.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>واجهة GraphQL البرمجية معطّلة في الـ siteaccess %siteaccess الذي يعرض هذه الصفحة؛ ويبيّن الجدول أدناه أين تجيب.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>للـ siteaccess %siteaccess الذي يعرض هذه الصفحة.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79197,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>يحتاج layout إلى واحد بالضبط من id و identifier و urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>الحقل operations في طلب multipart ليس طلب JSON واحدًا.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>الحقل map في طلب multipart ليس كائن JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>لا يحتوي طلب multipart على الملف %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>يجب أن يبدأ كل مسار في الحقل map بـ variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>لم يصل الملف %name كاملًا (خطأ الرفع %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>الملف %name أكبر من %max بايت.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>تعذّر فحص الملف %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>التعديلات (mutations) معطّلة في هذا الـ siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>أرسل التعديل (mutation) باستخدام POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>سجّل الدخول لتغيير المحتوى.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>مفتاح API لا يملك النطاق %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>يحتاج التعديل (mutation) ضمن جلسة إلى رمز النموذج الخاص بالجلسة (الترويسة X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl معطّل: لا يذكر graphql.ini [GraphQLSettings] UploadFromUrlHostList[] أي مضيف.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>يجب أن يكون العنوان عنوان https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>المضيف %host غير موجود في graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>تعذّر جلب الملف.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload نوع إدخال فقط.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>يأخذ المتغير من النوع Upload ملفًا من طلب multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>المعرّف البعيد (remote id) %remoteId مستخدم بالفعل.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>للمحتوى ترجمة بلغة %language بالفعل: استخدم updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>قدّم حقلًا واحدًا على الأقل.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>تعذّر إنشاء نسخة جديدة (للمحتوى مسودات كثيرة جدًا).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>النسخة %version ليست مسودة.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>يحتاج deleteContent إلى واحد بالضبط من id و nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>لا يمكن نقل موقع إلى ما تحته هو نفسه.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>للمحتوى موقع تحت %parentId بالفعل.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>تعذّر حفظ قيمة الحقل %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>لا توجد لغة محتوى %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>لا توجد فئة محتوى %class في المخطط.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>المحتوى غير موجود، أو لا يحق لك قراءته.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>لا يحق لك القيام بهذا على هذا المحتوى.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>لا تحتوي الفئة %class على حقل %field قابل للكتابة.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>الحقل %field مُعطى مرتين.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>يأخذ الحقل %field ملفًا: أرسله كرفع (طلب multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>لا يأخذ الحقل %field أي ملف.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>يحتاج الحقل %field إلى قيمة.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>التنسيق %format مخصّص لحقول النص المنسّق فقط؛ يأخذ %field قيمته كما هي (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>الحقل %field مطلوب.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>تعذّرت قراءة HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>يقبل content الوسيط version مع id فقط.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>رمز المعاينة غير صالح أو انتهت صلاحيته.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ليس مصدرًا (https://host أو https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>ليس نطاقًا لواجهة GraphQL البرمجية: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

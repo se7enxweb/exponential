@@ -33,12 +33,39 @@ Priorität sind also die, die jedes Lesezeichen hat. Seine Adresse ist eine Zeil
 | `bookmark_id` | Die ID der Lesezeichen-Zeile (Primärschlüssel) |
 | `user_id` | Den Besitzer, wie in der Lesezeichen-Zeile (indiziert) |
 | `module_uri` | Die Adresse: Modul, Ansicht und die Parameter der Ansicht, geordnete (`role/view/3`) und ungeordnete (`/(offset)/20`), ohne Host, Siteaccess und Fragment; einen Query-String nur mit den Schlüsseln, die ihre Art behält, sortiert (`content/search?SearchText=news&SectionID=1`) |
+| `module_name` | Das Modul der Adresse (`role`), zusammen mit `view_name` indiziert |
+| `view_name` | Die Ansicht der Adresse (`view`) |
+| `view_parameters` | Die Parameter der Adresse als JSON: `ordered` (eine Liste), `unordered` und `query` (Name zu Wert), z. B. `{"ordered":[],"unordered":{"user":"14","offset":"20"},"query":{}}` für `audit/console/(user)/14/(offset)/20` |
 | `created` | Wann die Seite gemerkt wurde |
 
-Modul und Ansicht werden bei der Anzeige aus der Adresse gelesen (`expBookmarkView::parts()`); die Adresse ist also das
-eine, was zu prüfen, zu vergleichen und zu ändern ist: Ein umbenanntes Modul oder eine umbenannte Ansicht ist ein
-`UPDATE expbookmark_view SET module_uri = ...` der Zeilen, die mit dem alten Namen beginnen. Eine Adresse wird je
-Benutzer einmal gemerkt: Erneutes Merken ändert den Namen und, wenn einer gewählt ist, den Ordner.
+Verglichen und geöffnet wird die Adresse; `module_name`, `view_name` und `view_parameters` sind dieselbe Adresse,
+zerlegt (`expBookmarkView::parse()`) und mit ihr geschrieben. So lassen sich Lesezeichen nach Modul und Ansicht finden,
+prüfen und verschieben, ohne jede Adresse zu zerlegen (`SELECT ... WHERE module_name = 'role' AND view_name =
+'view'`). Eine Adresse wird je Benutzer einmal gemerkt: Erneutes Merken ändert den Namen und, wenn einer gewählt ist,
+den Ordner.
+
+| Adresse | `module_name` | `view_name` | `view_parameters` |
+|---|---|---|---|
+| `setup/cache` | `setup` | `cache` | `{"ordered":[],"unordered":{},"query":{}}` |
+| `role/view/3` | `role` | `view` | `{"ordered":["3"],"unordered":{},"query":{}}` |
+| `content/trash/(offset)/20` | `content` | `trash` | `{"ordered":[],"unordered":{"offset":"20"},"query":{}}` |
+| `content/search?SearchText=news` | `content` | `search` | `{"ordered":[],"unordered":{},"query":{"SearchText":"news"}}` |
+
+## Ein Modul oder eine Ansicht umbenennen
+
+Bekommt ein Modul oder eine Ansicht einen neuen Namen (eine Erweiterung benennt ihr Modul um, eine Ansicht zieht um),
+ziehen ihre Lesezeichen mit einem Befehl mit; Namen, Ordner, Reihenfolge, Parameter und Query-Strings bleiben:
+
+```
+php update/common/scripts/6.0/createbookmarkviewtable.php --rename=oldreports=reports --dry-run -s <Admin-Siteaccess>
+php update/common/scripts/6.0/createbookmarkviewtable.php --rename=oldreports=reports -s <Admin-Siteaccess>
+php update/common/scripts/6.0/createbookmarkviewtable.php --rename=oldreports/list=reports/overview -s <Admin-Siteaccess>
+```
+
+`<alt>` und `<neu>` sind jeweils ein Modul (`reports`) oder ein Modul mit Ansicht (`reports/overview`). Ein Modul allein
+verschiebt alle seine Ansichten und behält deren Namen; ein Modul allein kann nicht zu einer einzelnen Ansicht werden.
+Die Lesezeichen aller Benutzer werden verschoben. Im Code: `expBookmarkView::renameModuleView( 'oldreports/list',
+'reports/overview', $apply )` gibt die Lesezeichen-IDs mit alter und neuer Adresse zurück (`$apply = false` meldet nur).
 
 ## Regeln
 
@@ -149,7 +176,19 @@ von vor 6.0.15 bekommt sie aus:
   ```
 
 Solange die Tabelle fehlt, bietet die Administration **Seite merken** nicht an, und Knoten-Lesezeichen funktionieren
-genau wie vorher. `settings/bookmark.ini` wird mit dem Kernel ausgeliefert; eine Installation, die einen älteren
+genau wie vorher.
+
+Eine Installation, auf der ein früher Build von 6.0.15 lief, hat die Tabelle ohne `module_name`, `view_name` und
+`view_parameters`. Lesezeichen funktionieren weiter (der Kernel fragt den Katalog der Datenbank und schreibt nur die
+Adresse, bis die Spalten da sind); das Update fügt sie hinzu:
+
+- `./console exp:upgrade --apply` (Schritte `6.0.15-bookmark-view-columns`, auf jeder Engine, und
+  `6.0.15-bookmark-view-fill`, der die Spalten der Zeilen aus ihrer Adresse füllt), oder
+- `php update/common/scripts/6.0/createbookmarkviewtable.php -s <Admin-Siteaccess>`, das dieselben zwei Schritte
+  ausführt (`--dry-run` sagt, was fehlt), oder
+- auf MySQL und PostgreSQL die SQL-Update-Datei der Engine (abgesichert, sie fügt nur hinzu, was fehlt), danach eines
+  der beiden oben für die Zeilen. SQLite kann eine Spalte nicht nur dann hinzufügen, wenn sie fehlt: Dort sind es die
+  Konsole oder das Skript. `settings/bookmark.ini` wird mit dem Kernel ausgeliefert; eine Installation, die einen älteren
 Einstellungsbaum ohne sie behalten hat, funktioniert trotzdem: Ausgeschlossen ist dann nur, was Moduldefinitionen
 ausschließen, kein Query-String wird behalten, und jede Systemseite hat das Zahnrad-Symbol. Leeren Sie nach dem Update
 die Caches (`php bin/php/ezcache.php --clear-all`) und erzeugen Sie die Kernel-Autoloads neu, wenn der Code von Hand

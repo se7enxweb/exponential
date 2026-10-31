@@ -78807,6 +78807,294 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Interogarea rulează cu drepturile dumneavoastră, autentificat cu această sesiune.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count în %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>fără limită</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Adâncime</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Complexitate</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elemente pe listă</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (implicit %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Cereri per utilizator sau cheie</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Cereri per adresă anonimă</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspecție</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Doar interogări persistente</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Cea mai mare interogare</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes octeți</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Cea mai mare încărcare</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nu există accesul la site %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutațiile sunt activate în %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutațiile sunt dezactivate în %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>API-ul GraphQL este activat în %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>API-ul GraphQL este dezactivat în %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Setările nu au putut fi scrise: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Memoria cache a răspunsurilor a fost golită: %count răspunsuri eliminate.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Bifați caseta de lângă interogare pentru a o elimina.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Interogarea nu a putut fi eliminată: o interogare livrată într-un director din PersistedQueryDirectoryList[] se elimină împreună cu fișierul ei.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Interogarea persistentă a fost eliminată.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutații</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>activat</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>dezactivat</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accese la site</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Unde răspund API-ul și mutațiile sale. Butoanele scriu graphql.ini, așa cum fac ./console exp:graphql:enable și exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Acces la site</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Modificare</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Dezactivare</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutații dezactivate</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutații activate</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Activare</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limite</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] al acestui acces la site.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Memoria cache a răspunsurilor</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Răspunsurile interogărilor persistente, păstrate pe drepturi de utilizator și expirate ori de câte ori se publică conținut.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stare</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Răspunsuri păstrate</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count răspunsuri, %bytes octeți</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Păstrate cel mult</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ultima expirare</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Golește memoria cache a răspunsurilor</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Interogări persistente</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Stocate cu ./console exp:graphql:persist sau de clienți (interogări persistente automate); apelate după nume sau SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dimensiune</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Unde</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Elimină</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>livrată</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>stocată</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Da, elimină această interogare</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Nicio interogare persistentă încă.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Chei API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Chei API personale cu domeniul graphql:read (interogări) sau graphql:write (mutații). Creați-le și revocați-le pe pagina Acces API sau cu ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Acces API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Toate cheile</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Cheie</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietar</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Domenii</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ultima utilizare</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>activă</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>expirată</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revocată</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>niciodată</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Nicio cheie API cu domeniu GraphQL încă.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>API-ul GraphQL este dezactivat în accesul la site %siteaccess, care afișează această pagină; tabelul de mai jos arată unde răspunde.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Pentru accesul la site %siteaccess, care afișează această pagină.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79197,178 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout necesită exact unul dintre id, identifier și urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Câmpul operations al cererii multipart nu este o singură cerere JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Câmpul map al cererii multipart nu este un obiect JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Cererea multipart nu conține fișierul %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>O cale din harta câmpurilor trebuie să înceapă cu variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fișierul %name nu a sosit complet (eroare de încărcare %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fișierul %name depășește %max octeți.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fișierul %name nu a putut fi verificat.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutațiile sunt dezactivate în acest acces la site (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Trimiteți o mutație cu POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Autentificați-vă pentru a modifica conținutul.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Cheia API nu are domeniul %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>O mutație cu sesiune are nevoie de tokenul de formular al sesiunii (antetul X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl este dezactivat: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nu numește niciun host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresa trebuie să fie o adresă https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hostul %host nu este în graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fișierul nu a putut fi preluat.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload este doar un tip de intrare.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>O variabilă de tip Upload primește un fișier dintr-o cerere multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>ID-ul la distanță %remoteId este deja folosit.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Conținutul are deja o traducere în %language: folosiți updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Indicați cel puțin un câmp.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nu s-a putut crea o versiune nouă (conținutul are prea multe ciorne).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versiunea %version nu este o ciornă.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent are nevoie de exact unul dintre id și nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>O locație nu poate fi mutată sub ea însăși.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Conținutul are deja o locație sub %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Valoarea câmpului %field nu a putut fi stocată.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nu există limba de conținut %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nu există clasa de conținut %class în schemă.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Conținutul nu există sau nu aveți voie să îl citiți.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Nu aveți voie să faceți asta cu acest conținut.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Clasa %class nu are un câmp %field care poate fi scris.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Câmpul %field este dat de două ori.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Câmpul %field primește un fișier: trimiteți-l ca încărcare (o cerere multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Câmpul %field nu primește fișier.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Câmpul %field are nevoie de o valoare.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formatul %format este doar pentru câmpurile de text îmbogățit; %field primește valoarea așa cum este (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Câmpul %field este obligatoriu.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ul nu a putut fi citit.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content acceptă version doar împreună cu id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tokenul de previzualizare nu este valid sau a expirat.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nu este o origine (https://host sau https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nu este un domeniu al API-ului GraphQL: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

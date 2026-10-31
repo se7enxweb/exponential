@@ -63,9 +63,10 @@ class expGraphQLServer
      * @param string $body
      * @param array $get
      * @param array $post
+     * @param array $files $_FILES: a multipart request of mutations with files (expGraphQLUpload::readMultipart())
      * @return array query, variables, operationName; or error (a message) when the request cannot be read
      */
-    public static function parseHttpRequest( $method, $contentType, $body, array $get, array $post )
+    public static function parseHttpRequest( $method, $contentType, $body, array $get, array $post, array $files = array() )
     {
         $method = strtoupper( (string)$method );
         $contentType = strtolower( trim( explode( ';', (string)$contentType )[0] ) );
@@ -73,6 +74,12 @@ class expGraphQLServer
             $input = $get;
         else if ( $method !== 'POST' )
             return array( 'error' => expGraphQLMessage::tr( 'Use GET or POST.' ) );
+        else if ( $contentType === 'multipart/form-data' && isset( $post['operations'] ) )
+        {
+            $input = expGraphQLUpload::readMultipart( $post, $files );
+            if ( isset( $input['error'] ) )
+                return $input;
+        }
         else if ( $contentType === 'application/graphql' )
             $input = array( 'query' => (string)$body );
         else if ( $contentType === 'application/json' || ( $contentType === '' && $body !== '' && $body[0] === '{' ) )
@@ -119,6 +126,8 @@ class expGraphQLServer
     public function run( array $request, expGraphQLContext $context )
     {
         $request += array( 'query' => '', 'variables' => null, 'operationName' => null, 'id' => null, 'persistedHash' => null );
+        if ( isset( $request['method'] ) && $context->httpMethod === null )
+            $context->httpMethod = (string)$request['method'];
         $resolved = self::resolvePersisted( $request, $context, $this->persistedStore );
         if ( isset( $resolved['error'] ) )
         {
@@ -143,6 +152,8 @@ class expGraphQLServer
     public function respond( array $request, expGraphQLContext $context, array $server )
     {
         $request += array( 'query' => '', 'variables' => null, 'operationName' => null, 'id' => null, 'persistedHash' => null );
+        if ( isset( $request['method'] ) && $context->httpMethod === null )
+            $context->httpMethod = (string)$request['method'];
         $headers = array( 'X-GraphQL-Schema' => $this->builder->schemaHash(), 'X-Request-Id' => $context->requestId );
         $resolved = self::resolvePersisted( $request, $context, $this->persistedStore );
         $cache = null;
@@ -339,9 +350,30 @@ class expGraphQLServer
         $debug = expGraphQL::setting( 'Debug', 'disabled' ) === 'enabled';
         $rules = self::validationRules( $context->allowsIntrospection() );
 
+        // The operation it runs: a mutation is checked before anything runs (expGraphQLMutations::refusal()). A query
+        // that cannot be parsed goes to the library as text, which answers its syntax error.
+        $source = $query;
         try
         {
-            $result = \GraphQL\GraphQL::executeQuery( $this->builder->schema(), $query, null, $context, $variables, $operationName, null, $rules );
+            $document = \GraphQL\Language\Parser::parse( $query );
+            $operation = \GraphQL\Utils\AST::getOperationAST( $document, $operationName );
+            $context->operationType = $operation !== null ? (string)$operation->operation : null;
+            $source = $document;
+        }
+        catch ( \GraphQL\Error\SyntaxError $e )
+        {
+            $context->operationType = null;
+        }
+        if ( $context->operationType === 'mutation' )
+        {
+            $refusal = expGraphQLMutations::refusal( $context );
+            if ( $refusal !== null )
+                return array( 'errors' => array( self::error( $refusal[0], $refusal[1], $context ) ), 'extensions' => $extensions );
+        }
+
+        try
+        {
+            $result = \GraphQL\GraphQL::executeQuery( $this->builder->schema(), $source, null, $context, $variables, $operationName, null, $rules );
         }
         catch ( Exception $e )
         {

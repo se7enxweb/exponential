@@ -85747,6 +85747,294 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Die Abfrage läuft mit Ihren Rechten, angemeldet mit dieser Sitzung.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count in %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>keine Grenze</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Tiefe</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Komplexität</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Einträge pro Liste</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (Standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Anfragen pro Benutzer oder Schlüssel</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Anfragen pro anonymer Adresse</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Nur gespeicherte Abfragen</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Größte Abfrage</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Größter Upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Es gibt keinen Siteaccess %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Die Mutationen sind in %siteaccess eingeschaltet.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Die Mutationen sind in %siteaccess ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Die GraphQL-API ist in %siteaccess eingeschaltet.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Die GraphQL-API ist in %siteaccess ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Die Einstellungen konnten nicht geschrieben werden: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Der Antwort-Cache wurde geleert: %count Antworten entfernt.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Kreuzen Sie das Kästchen neben der Abfrage an, um sie zu entfernen.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Die Abfrage konnte nicht entfernt werden: Eine Abfrage, die in einem Verzeichnis aus PersistedQueryDirectoryList[] ausgeliefert wird, wird mit ihrer Datei entfernt.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Die gespeicherte Abfrage wurde entfernt.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutationen</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>an</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccesses</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Wo die API und ihre Mutationen antworten. Die Schaltflächen schreiben graphql.ini, wie es ./console exp:graphql:enable und exp:graphql:disable tun.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ändern</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Ausschalten</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutationen aus</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutationen an</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Einschalten</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Grenzen</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] dieses Siteaccess.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Antwort-Cache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Die Antworten gespeicherter Abfragen, getrennt nach Benutzerrechten aufbewahrt und verworfen, sobald Inhalt veröffentlicht wird.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zustand</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Aufbewahrte Antworten</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count Antworten, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Höchstens aufbewahrt</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Zuletzt verworfen</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Antwort-Cache leeren</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Gespeicherte Abfragen</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Gespeichert mit ./console exp:graphql:persist oder von Clients (automatische gespeicherte Abfragen); aufgerufen per Name oder SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Größe</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ort</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ausgeliefert</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>gespeichert</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ja, diese Abfrage entfernen</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Noch keine gespeicherte Abfrage.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-Schlüssel</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Persönliche API-Schlüssel mit dem Bereich graphql:read (Abfragen) oder graphql:write (Mutationen). Erstellen und widerrufen Sie sie auf der Seite API-Zugang oder mit ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-Zugang</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Alle Schlüssel</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlüssel</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Besitzer</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Bereiche</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Zuletzt verwendet</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>abgelaufen</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>widerrufen</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nie</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Noch kein API-Schlüssel mit einem GraphQL-Bereich.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Die GraphQL-API ist im Siteaccess %siteaccess, der diese Seite zeigt, ausgeschaltet; die Tabelle unten zeigt, wo sie antwortet.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Für den Siteaccess %siteaccess, der diese Seite zeigt.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -85849,6 +86137,178 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout braucht genau eines von id, identifier und urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Das Feld operations einer Multipart-Anfrage ist keine JSON-Anfrage.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Das Feld map einer Multipart-Anfrage ist kein JSON-Objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Die Multipart-Anfrage enthält keine Datei %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Ein Pfad der Feldzuordnung muss mit variables. beginnen: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Die Datei %name ist nicht vollständig angekommen (Upload-Fehler %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Die Datei %name ist größer als %max Bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Die Datei %name konnte nicht geprüft werden.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutationen sind in diesem Siteaccess ausgeschaltet (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Senden Sie eine Mutation mit POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Melden Sie sich an, um Inhalte zu ändern.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Der API-Schlüssel hat den Bereich %scope nicht.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Eine Mutation mit einer Sitzung braucht das Formular-Token der Sitzung (Header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ist ausgeschaltet: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nennt keinen Host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Die Adresse muss eine https-Adresse sein.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Der Host %host steht nicht in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Die Datei konnte nicht abgerufen werden.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ist nur ein Eingabetyp.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Eine Variable vom Typ Upload nimmt eine Datei einer Multipart-Anfrage auf.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Die Remote-ID %remoteId ist bereits vergeben.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Der Inhalt hat bereits eine Übersetzung in %language: Verwenden Sie updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Geben Sie mindestens ein Feld an.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Es konnte keine neue Version angelegt werden (der Inhalt hat zu viele Entwürfe).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Version %version ist kein Entwurf.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent braucht genau eines von id und nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ein Ort kann nicht unter sich selbst verschoben werden.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Der Inhalt hat bereits einen Ort unter %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Der Wert des Feldes %field konnte nicht gespeichert werden.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Es gibt keine Inhaltssprache %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Es gibt keine Inhaltsklasse %class im Schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Der Inhalt ist nicht vorhanden, oder Sie dürfen ihn nicht lesen.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Sie dürfen dies mit diesem Inhalt nicht tun.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Die Klasse %class hat kein beschreibbares Feld %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Das Feld %field ist doppelt angegeben.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Das Feld %field nimmt eine Datei auf: Senden Sie sie als Upload (eine Multipart-Anfrage).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Das Feld %field nimmt keine Datei auf.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Das Feld %field braucht einen Wert.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Das Format %format gilt nur für Rich-Text-Felder; %field nimmt seinen Wert unverändert auf (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Das Feld %field ist ein Pflichtfeld.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Das HTML konnte nicht gelesen werden.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content nimmt version nur zusammen mit id an.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Das Vorschau-Token ist ungültig oder abgelaufen.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Kein Origin (https://host oder https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Kein Bereich der GraphQL-API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

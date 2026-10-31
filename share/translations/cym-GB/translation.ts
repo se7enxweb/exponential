@@ -78777,6 +78777,294 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Mae'r ymholiad yn rhedeg gyda'ch hawliau chi, wedi mewngofnodi gyda'r sesiwn hon.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count mewn %seconds e</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>dim terfyn</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Dyfnder</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Cymhlethdod</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Eitemau fesul rhestr</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (rhagosodiad %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Ceisiadau fesul defnyddiwr neu allwedd</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Ceisiadau fesul cyfeiriad dienw</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Mewnsylliad</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Ymholiadau wedi'u cadw yn unig</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Ymholiad mwyaf</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes beit</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Llwyth mwyaf</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nid oes mynediad i'r wefan %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mae'r mwtaniadau wedi'u troi ymlaen yn %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mae'r mwtaniadau wedi'u diffodd yn %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Mae'r API GraphQL wedi'i droi ymlaen yn %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Mae'r API GraphQL wedi'i ddiffodd yn %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Nid oedd modd ysgrifennu'r gosodiadau: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Cliriwyd y storfa ymatebion: tynnwyd %count ateb.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Ticiwch y blwch wrth ymyl yr ymholiad i'w dynnu.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Nid oedd modd tynnu'r ymholiad: caiff ymholiad a ddaw mewn cyfeiriadur o PersistedQueryDirectoryList[] ei dynnu gyda'i ffeil.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Tynnwyd yr ymholiad wedi'i gadw.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mwtaniadau</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ymlaen</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>i ffwrdd</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Mynediadau i'r wefan</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Lle mae'r API a'i fwtaniadau yn ateb. Mae'r botymau'n ysgrifennu graphql.ini, fel y mae ./console exp:graphql:enable ac exp:graphql:disable yn ei wneud.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Mynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Newid</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Diffodd</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Diffodd mwtaniadau</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Troi mwtaniadau ymlaen</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Troi ymlaen</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Terfynau</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] y mynediad i'r wefan hwn.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Storfa ymatebion</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Atebion ymholiadau wedi'u cadw, a gedwir fesul hawliau defnyddiwr ac a ddaw i ben pryd bynnag y cyhoeddir cynnwys.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cyflwr</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Atebion a gadwyd</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ateb, %bytes beit</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Cedwir am uchafswm o</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds e</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Daeth i ben ddiwethaf</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Clirio'r storfa ymatebion</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Ymholiadau wedi'u cadw</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Wedi'u storio gyda ./console exp:graphql:persist, neu gan gleientiaid (ymholiadau wedi'u cadw yn awtomatig); fe'u gelwir wrth enw neu SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Enwau</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Maint</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Lle</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Tynnu</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>wedi'i gludo</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>wedi'i storio</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ie, tynnu'r ymholiad hwn</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Dim ymholiad wedi'i gadw eto.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Allweddi API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Allweddi API personol gyda'r cwmpas graphql:read (ymholiadau) neu graphql:write (mwtaniadau). Crëwch a dirymwch nhw ar y dudalen Mynediad API, neu gyda ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Mynediad API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Pob allwedd</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Allwedd</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Enw</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Perchennog</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Cwmpasau</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Defnyddiwyd ddiwethaf</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>gweithredol</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>wedi dod i ben</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>wedi'i dirymu</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>byth</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Dim allwedd API gyda chwmpas GraphQL eto.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Mae'r API GraphQL wedi'i ddiffodd yn y mynediad i'r wefan %siteaccess, sy'n dangos y dudalen hon; mae'r tabl isod yn dangos ble mae'n ateb.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ar gyfer y mynediad i'r wefan %siteaccess, sy'n dangos y dudalen hon.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Mae layout angen union un o id, identifier ac urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Nid yw maes operations cais amlran yn un cais JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Nid yw maes map cais amlran yn wrthrych JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Nid oes ffeil %field yn y cais amlran.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Rhaid i lwybr yn y maes map ddechrau gyda variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Ni chyrhaeddodd y ffeil %name yn gyfan (gwall llwytho i fyny %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Mae'r ffeil %name yn fwy na %max beit.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Nid oedd modd gwirio'r ffeil %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mae mwtaniadau wedi'u diffodd yn y mynediad i'r wefan hwn (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Anfonwch fwtaniad gyda POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Mewngofnodwch i newid cynnwys.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Nid oes gan yr allwedd API y cwmpas %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mae mwtaniad gyda sesiwn angen tocyn ffurflen y sesiwn (pennyn X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Mae uploadFromUrl wedi'i ddiffodd: nid yw graphql.ini [GraphQLSettings] UploadFromUrlHostList[] yn enwi unrhyw westeiwr.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Rhaid i'r cyfeiriad fod yn gyfeiriad https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Nid yw'r gwesteiwr %host yn graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Nid oedd modd nôl y ffeil.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Math mewnbwn yn unig yw Upload.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Mae newidyn o'r math Upload yn derbyn ffeil o gais amlran.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Mae'r id pell %remoteId wedi'i gymryd.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Mae gan y cynnwys gyfieithiad yn %language eisoes: defnyddiwch updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Rhowch o leiaf un maes.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nid oedd modd creu fersiwn newydd (mae gan y cynnwys ormod o ddrafftiau).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Nid yw fersiwn %version yn ddrafft.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Mae deleteContent angen union un o id a nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ni ellir symud lleoliad o dan ei hun.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Mae gan y cynnwys leoliad o dan %parentId eisoes.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Nid oedd modd storio gwerth y maes %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nid oes iaith cynnwys %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nid oes dosbarth cynnwys %class yn y sgema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Nid yw'r cynnwys yno, neu ni chewch ei ddarllen.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ni chewch wneud hyn i'r cynnwys hwn.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Nid oes gan y dosbarth %class faes %field y caniateir ysgrifennu iddo.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Mae'r maes %field wedi'i roi ddwywaith.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Mae'r maes %field yn derbyn ffeil: anfonwch hi fel upload (cais amlran).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Nid yw'r maes %field yn derbyn ffeil.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Mae'r maes %field angen gwerth.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Mae'r fformat %format ar gyfer meysydd testun cyfoethog yn unig; mae %field yn derbyn ei werth fel y mae (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Mae angen y maes %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Nid oedd modd darllen yr HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Mae content yn derbyn version gydag id yn unig.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Nid yw'r tocyn rhagolwg yn ddilys neu mae wedi dod i ben.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nid yw'n darddiad (https://host neu https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nid yw'n gwmpas yr API GraphQL: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

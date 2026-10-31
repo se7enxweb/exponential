@@ -78810,6 +78810,294 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>DIchmeylIj lo' ghel; ghom vam Daq Da'el.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds lup Daq %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>veH pagh</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>juch</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Qatlhghach</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>tetlh Hoch Doch mI'</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (motlh %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>lo'wI' ngaQHa'moHwI' ghap tlhobghachmey</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>pongHa' URL Daq tlhobghachmey</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>qach nab nuDghach (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>pollu'pu'bogh ghelmey neH</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ghel tIn law'</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>lab tIn law'</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess yoS lojmIt tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess Daq choHmoHghachmey chu'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess Daq choHmoHghachmey chu'Ha'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess Daq GraphQL API chu'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess Daq GraphQL API chu'Ha'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>DuHmey ghItlhlaHbe'lu': %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>jang De' polwI' chImmoHlu'ta': %count jangmey teqlu'.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ghel DateqmeH ghel retlh 'aplo' yIghItlh.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ghel teqlaHbe'lu': PersistedQueryDirectoryList[] ghItlh qach Daq ghelvetlh nobpu'lu'chugh, ghItlhDaj tlhej teqlu'.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>pollu'pu'bogh ghel teqlu'ta'.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>choHmoHghachmey</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>chu'lu'ta'</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>chu'Ha'lu'ta'</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>yoS lojmItmey</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API choHmoHghachmeyDaj je jangmeH Daq. graphql.ini ghItlh leQmey, ./console exp:graphql:enable exp:graphql:disable je rur.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>yIchoH</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>yIchu'Ha'</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>choHmoHghachmey yIchu'Ha'</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>choHmoHghachmey yIchu'</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>yIchu'</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>veHmey</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>yoS lojmIt vam graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>jang De' polwI'</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>pollu'pu'bogh ghelmey jangmey; lo'wI' chaw' tlhej pollu' 'ej De' chu' ghItlhlu'DI' HeghmoHlu'.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>jangmey pollu'pu'bogh</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count jangmey, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>poH nIb law'</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds lup</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Qav Heghghach</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>jang De' polwI' yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>pollu'pu'bogh ghelmey</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist lo'lu'DI' pollu', pagh De'wI' ngaSwI' polmoH (pollu'pu'bogh ghelmey ghun'eghchu'); pong pagh SHA-256 lo'lu'DI' rI'lu'.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>pongmey</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>tInghach</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>nuqDaq</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>yIteq</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>nobpu'lu'bogh</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>pollu'pu'bogh</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>HISlaH, ghel vam yIteq</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>pollu'pu'bogh ghel tu'lu'be' DaH.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ngaQHa'moHwI'mey</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (ghelmey) pagh graphql:write (choHmoHghachmey) chaw' veH ghajbogh ngoch API ngaQHa'moHwI'mey. API 'el chaw' nav Daq pagh ./console exp:graphql:keys lo'taHvIS tIchenmoH 'ej tIteq.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API 'el chaw'</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Hoch ngaQHa'moHwI'mey</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ngaQHa'moHwI'</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ghajwI'</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>chaw' veHmey</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Qav lo'ghach</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>Qap</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>Heghpu'</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>nge'lu'ta'</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>not</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL chaw' veH ghajbogh API ngaQHa'moHwI' tu'lu'be' DaH.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>nav vam 'aghbogh yoS lojmIt %siteaccess Daq GraphQL API chu'Ha'lu'; bIngDaq ghItlh 'agh jangmeH Daq.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>nav vam 'aghbogh yoS lojmIt %siteaccess vaD.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78912,6 +79200,178 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout poQ wa&apos; neH: id, identifier pagh urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>tlhobghach law' 'ay' tlhegh operations wa' JSON tlhobghach 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>tlhobghach law' 'ay' tlhegh map JSON Doch 'oHbe'.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>%field ghItlh ghajbe' tlhobghach law' 'ay'.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>tlhegh map He variables. DaH tagh net poQ: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>naQ paQDI'be' %name ghItlh (lab Qagh %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%max byte tIn law' %name ghItlh tIn puS.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name ghItlh nuDlaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>yoS lojmIt vam Daq choHmoHghachmey chu'Ha'lu' (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>POST lo'taHvIS choHmoHghach yIngeH.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>De' DachoHmeH yI'el.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>%scope chaw' veH ghajbe' API ngaQHa'moHwI'.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ghom ghajbogh choHmoHghach ghom mutlhghach Degh poQ (nach X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl chu'Ha'lu': jabwI' pagh pong graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>https URL Daq 'oH URL Daq'e' net poQ.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>graphql.ini [GraphQLSettings] UploadFromUrlHostList[] Daq tu'lu'be' %host jabwI'.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ghItlh Suqlu'laHbe'.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>'el Segh neH 'oH Upload'e'.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>tlhobghach law' 'ay' ghItlh lajmeH Upload Segh choHwI' lo'lu'.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>remote id %remoteId lo'lu'pu'.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>%language mughmoHghach ghaj De' DaH: updateContent yIlo'.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>wa' tlhegh yInob, puSqu'.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>chovnatlh chu' chenmoHlaHbe'lu' (nab law'qu' ghaj De').</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>nab 'oHbe' %version chovnatlh.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>id nodeId ghap wa' neH poQ deleteContent.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Daq'e' Daq bIng vIHmoHlaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>%parentId bIng Daq ghaj De' DaH.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field tlhegh ngoD pollaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language De' Hol tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>qach nab Daq %class De' buv tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>naDev De' tu'lu'be', pagh bIlaDlaHbe'.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>De' vam Daq Dochvam DaruchlaHbe'.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ghItlhlu'laHbogh %field tlhegh ghajbe' %class buv.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>cha'logh nobpu'lu' %field tlhegh.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ghItlh laj %field tlhegh: upload rur yIngeH (tlhobghach law' 'ay').</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ghItlh lajbe' %field tlhegh.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ngoD poQ %field tlhegh.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>mu'mey Sar tlhegh neH ghItlh Segh %format; ngoD laj %field rur ghu'Daj (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field tlhegh poQlu'.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML laDlaHbe'lu'.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>id tlhej version neH laj content.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>nungbogh mIllogh Degh lo'laHbe' pagh Heghpu'.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>mung 'oHbe' (https://host pagh https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API chaw' veH 'oHbe': %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

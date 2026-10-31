@@ -3,13 +3,13 @@ title: graphql.ini [GraphQLSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [GraphQLSettings] in graphql.ini: Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList ..."
-keywords: Einstellung, graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ResponseCache, ResponseCacheTtl, CredentialCacheTtl, RateLimit, RateLimitAnonymous, RateLimitWindow, SchemaExtensionList, ImageAliasList, Debug
+keywords: Einstellung, graphql.ini, GraphQLSettings, INI, setting, Enabled, SiteAccessList, LibraryPath, NamingStyle, ClassList, ExcludedClassList, HiddenFieldList, HiddenDatatypeList, Introspection, MaxDepth, MaxComplexity, MaxListLimit, DefaultListLimit, PersistedQueries, AutomaticPersistedQueries, MaxPersistedQueries, PersistedQueriesOnly, PersistedQueryDirectoryList, MaxQueryLength, ResponseCache, ResponseCacheTtl, CredentialCacheTtl, RateLimit, RateLimitAnonymous, RateLimitWindow, SchemaExtensionList, ImageAliasList, MutationsEnabled, AnonymousMutations, MaxUploadSize
 type: generated
 generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-Der Block `[GraphQLSettings]` von `settings/graphql.ini`, mit 28 Einstellung(en).
+Der Block `[GraphQLSettings]` von `settings/graphql.ini`, mit 36 Einstellung(en).
 
 Bearbeiten Sie `settings/graphql.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -459,6 +459,136 @@ ImageAliasList[]
 ImageAliasList[]=small
 ImageAliasList[]=medium
 ImageAliasList[]=large
+*/ ?>
+```
+
+## MutationsEnabled
+
+> Mutationen (createContent, updateContent, translateContent, publishDraft, deleteContent, moveContent, hideContent,  
+> revealContent, addLocation, uploadImage, uploadFromUrl, createPreviewToken): enabled (der Standard) oder disabled.  
+> Sie werden zusammen mit dem Endpunkt eingeschaltet (Enabled oben). Enabled: Jede Mutation prüft die Richtlinien des  
+> Benutzers an dem Inhalt, den sie ändert, führt die Operationen des Kernels aus (samt den Workflows von content/publish,  
+> content/move ...), wird im Audit aufgezeichnet (content.graphql.mutation) und lässt den Antwort-Cache verfallen. Eine  
+> Mutation wird nur mit POST gesendet, von einem angemeldeten Benutzer (AnonymousMutations unten); mit einem persönlichen  
+> API-Schlüssel braucht sie den Bereich graphql:write; mit der Sitzung der Weboberfläche braucht sie das Formular-Token  
+> (Header X-CSRF-Token). Disabled: Das Schema hat keinen Typ Mutation, und eine Mutation wird mit DISABLED abgelehnt. Für  
+> eine API, die nur liest, schalten Sie sie je Siteaccess aus  
+> (./console exp:graphql:disable --siteaccess=<name> --mutations).  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MutationsEnabled=enabled
+*/ ?>
+```
+
+## AnonymousMutations
+
+> Mutationen anonymer Anfragen (sie laufen mit den Richtlinien der Rolle Anonymous): disabled (der Standard) lehnt  
+> sie mit FORBIDDEN ab; enabled lässt sie zu den Richtlinienprüfungen durch (ein Gästebuch, ein Formular, das Inhalte anlegt).  
+
+Standard: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+AnonymousMutations=disabled
+*/ ?>
+```
+
+## MaxUploadSize
+
+> Die größte Datei, die eine Mutation annimmt (uploadImage, ein Upload in einem FieldInput, uploadFromUrl), in Bytes oder mit k, M, G.  
+> upload\_max\_filesize und post\_max\_size von PHP begrenzen eine Anfrage, bevor sie hier ankommt.  
+
+Standard: `32M`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxUploadSize=32M
+*/ ?>
+```
+
+## UploadCheckList
+
+> Prüfungen, die jede hochgeladene Datei besteht, bevor sie gespeichert wird: Klassen, die expGraphQLUploadCheck implementieren  
+> (ein Virenscanner, ein Filter für Dateitypen). Die erste, die einen Grund nennt, lehnt die Datei ab; eine fehlende Klasse  
+> lehnt jede Datei ab. UploadCheckList\[\]=myClamAvUploadCheck  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# ein leeres "UploadCheckList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+UploadCheckList[]
+*/ ?>
+```
+
+## FileDatatypeList
+
+> Datentypen, deren Wert eine Datei ist, neben ezimage, ezbinaryfile und ezmedia: Ein FieldInput schreibt sie nur mit  
+> einem Upload, nie mit einem Wert (ein Pfad in einem Wert könnte jede Datei des Servers importieren).  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# ein leeres "FileDatatypeList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+FileDatatypeList[]
+*/ ?>
+```
+
+## UploadFromUrlHostList
+
+> Die Hosts, von denen uploadFromUrl Dateien holen darf (nur https, keine Weiterleitungen, höchstens MaxUploadSize). Leer  
+> (der Standard): uploadFromUrl ist ausgeschaltet. UploadFromUrlHostList\[\]=images.example.com  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+# ein leeres "UploadFromUrlHostList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+UploadFromUrlHostList[]
+*/ ?>
+```
+
+## PreviewTokenTtl
+
+> Vorschau-Token (createPreviewToken, die Abfrage preview(token:)): die Sekunden, die ein Token gilt, wenn die Mutation  
+> nichts angibt, und das Längste, das sie verlangen darf. Die Token sind mit dem geheimen Schlüssel der Installation signiert  
+> (EXP\_SECRET\_KEY oder var/secrets/exp\_secret.key); ihn zu rotieren beendet jedes Token.  
+
+Standard: `3600`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+PreviewTokenTtl=3600
+*/ ?>
+```
+
+## MaxPreviewTokenTtl
+
+Standard: `86400`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxPreviewTokenTtl=86400
 */ ?>
 ```
 

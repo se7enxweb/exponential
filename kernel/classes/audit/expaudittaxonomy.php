@@ -68,6 +68,9 @@ class expAuditTaxonomy
         'content.file.review.mark' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content', 'label' => 'Missing file review mark' ),
         'content.node.hide' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.node.reveal' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
+        // the mutations of the GraphQL API (doc/eng-us/features/6.0/graphql.md, "Mutations")
+        'content.graphql.mutation' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'GraphQL mutation' ),
+        'content.graphql.mutation.failed' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'GraphQL mutation refused or failed' ),
         'content.node.swap' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.node.section' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.object.state' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),

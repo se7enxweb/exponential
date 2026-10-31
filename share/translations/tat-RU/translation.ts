@@ -78777,6 +78777,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Сорау сезнең хокуклар белән, бу сеанста керү аша башкарыла.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds с эчендә %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>чиксез</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Тирәнлек</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Катлаулылык</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Исемлектәге элементлар</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (килешү буенча %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Кулланучыга яки ачкычка мөрәҗәгатьләр</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Аноним адреска мөрәҗәгатьләр</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Интроспекция</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Саклап куелган сораулар гына</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Иң зур сорау</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes байт</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Иң зур йөкләү</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess сайтка керү ноктасы юк.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess эчендә мутацияләр кабызылды.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess эчендә мутацияләр сүндерелде.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess эчендә GraphQL API кабызылды.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess эчендә GraphQL API сүндерелде.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Көйләүләрне язып булмады: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Җаваплар кэшы чистартылды: %count җавап бетерелде.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Сорауны бетерү өчен аның янындагы тамгачыкны куегыз.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Сорауны бетереп булмады: PersistedQueryDirectoryList[] каталогында китерелгән сорау үз файлы белән бетерелә.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Саклап куелган сорау бетерелде.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Мутацияләр</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>кабызылган</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>сүндерелгән</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайтка керү нокталары</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API һәм аның мутацияләре кайда җавап бирә. Төймәләр graphql.ini файлын яза, ./console exp:graphql:enable һәм exp:graphql:disable эшләгәнчә.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтка керү ноктасы</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Үзгәртү</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Сүндерү</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Мутацияләрне сүндерү</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Мутацияләрне кабызу</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Кабызу</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Чикләүләр</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Бу сайтка керү ноктасының graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Җаваплар кэшы</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Саклап куелган сорауларның җаваплары, кулланучы хокуклары буенча саклана һәм эчтәлек бастырылган саен искерә.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Халәт</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Сакланган җаваплар</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count җавап, %bytes байт</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Иң күп саклау вакыты</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Соңгы тапкыр искергән</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Җаваплар кэшын чистарту</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Саклап куелган сораулар</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist белән яки клиентлар тарафыннан сакланган (автоматик саклап куелган сораулар); исем яки SHA-256 буенча чакырыла.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Исемнәр</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Зурлык</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Кайда</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Бетерү</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>китерелгән</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>сакланган</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Әйе, бу сорауны бетерергә</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Әлегә саклап куелган сорау юк.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ачкычлары</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (сораулар) яки graphql:write (мутацияләр) өлкәле шәхси API ачкычлары. Аларны API керү битендә яки ./console exp:graphql:keys белән булдырыгыз һәм кире алыгыз.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API керү</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Барлык ачкычлар</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ачкыч</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Исем</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Хуҗа</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Өлкәләр</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Соңгы куллану</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>актив</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>вакыты чыккан</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>кире алынган</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>беркайчан да</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Әлегә GraphQL өлкәле API ачкычы юк.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Бу битне күрсәтүче %siteaccess сайтка керү ноктасында GraphQL API сүндерелгән; астагы таблица аның кайда җавап биргәнен күрсәтә.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Бу битне күрсәтүче %siteaccess сайтка керү ноктасы өчен.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout өчен id, identifier һәм urlAlias арасыннан нәкъ берсе кирәк.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart мөрәҗәгатенең operations кыры бер JSON мөрәҗәгате түгел.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart мөрәҗәгатенең map кыры JSON объекты түгел.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart мөрәҗәгатендә %field файлы юк.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map кырындагы юл variables. белән башланырга тиеш: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name файлы тулысынча килеп җитмәде (йөкләү хатасы %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name файлы %max байттан зуррак.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name файлын тикшереп булмады.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Бу сайтка керү ноктасында мутацияләр сүндерелгән (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Мутацияне POST белән җибәрегез.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Эчтәлекне үзгәртү өчен керегез.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API ачкычының %scope өлкәсе юк.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Сеанслы мутациягә сеансның форма токены кирәк (X-CSRF-Token башлыгы).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl сүндерелгән: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] бер хостны да күрсәтми.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Адрес https адресы булырга тиеш.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host хосты graphql.ini [GraphQLSettings] UploadFromUrlHostList[] исемлегендә юк.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Файлны алып булмады.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload — кертү тибы гына.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload тибындагы үзгәрешле multipart мөрәҗәгатенең файлын ала.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId remote id инде алынган.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Эчтәлекнең %language телендә тәрҗемәсе инде бар: updateContent кулланыгыз.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Ким дигәндә бер кыр күрсәтегез.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Яңа версия ясап булмады (эчтәлекнең каралама күчермәләре артык күп).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version версиясе каралама түгел.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent өчен id һәм nodeId арасыннан нәкъ берсе кирәк.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Урынны үз астына күчереп булмый.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Эчтәлекнең %parentId астында урыны инде бар.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field кырының кыйммәтен саклап булмады.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language эчтәлек теле юк.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Схемада %class эчтәлек классы юк.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Эчтәлек юк, яисә сезгә аны укырга ярамый.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Бу эчтәлек белән моны эшләргә сезгә ярамый.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class классында язып була торган %field кыры юк.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field кыры ике тапкыр бирелгән.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field кыры файл ала: аны йөкләү итеп җибәрегез (multipart мөрәҗәгате).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field кыры файл алмый.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field кырына кыйммәт кирәк.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format форматы бары тик бай текст кырлары өчен; %field кыйммәтне ничек бар, шулай ала (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field кыры мәҗбүри.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ны укып булмады.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version-ны id белән генә ала.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Алдан карау токены дөрес түгел яисә аның вакыты чыккан.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Бу origin түгел (https://host яки https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API өлкәсе түгел: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

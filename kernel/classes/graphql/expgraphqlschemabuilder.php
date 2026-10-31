@@ -4,11 +4,14 @@
  * implementing the interface Content, a field per attribute (expGraphQLFieldMapper), and the root queries:
  *
  *   node(id | remoteId | path | urlAlias, language)   the content at a location
- *   content(id | remoteId, language)                  a content object at its main location
+ *   content(id | remoteId, version, language)         a content object at its main location (or a version of it)
+ *   preview(token)                                    the version a preview token names
  *   children(parentId, classes, sortField, sortOrder, depth, limit, offset, first, after)
  *   currentUser, siteaccess, translations
  *
- * The schema hash (schemaHash()) changes when a class, an attribute or the naming changes; it is sent with every
+ * and the mutations of expGraphQLMutations, unless graphql.ini MutationsEnabled (enabled by default) switches them off.
+ *
+ * The schema hash (schemaHash()) changes when a class, an attribute, the naming or the mutations change; it is sent with every
  * answer (header X-GraphQL-Schema, siteaccess { schemaHash }). Loaded only after webonyx/graphql-php.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -23,7 +26,7 @@ use GraphQL\Type\Schema;
 class expGraphQLSchemaBuilder
 {
     /** The kernel's own schema: raised when its types or the mapping of a datatype change, so the hash does. */
-    const VERSION = 2;
+    const VERSION = 3;
 
     /** @var expGraphQLClassCatalogue */
     protected $catalogue;
@@ -94,7 +97,8 @@ class expGraphQLSchemaBuilder
      */
     public function schemaHash()
     {
-        $hashed = self::VERSION . '|' . $this->catalogue->hash() . '|' . $this->naming->style() . '|' . json_encode( $this->typeNames );
+        $hashed = self::VERSION . '|' . $this->catalogue->hash() . '|' . $this->naming->style() . '|' . json_encode( $this->typeNames )
+                  . ( expGraphQLMutations::enabled() ? '|mutations' : '' );
         if ( $this->extensions )
             $hashed .= '|' . implode( ',', expGraphQLSchemaExtensions::names( $this->extensions ) );
         return substr( sha1( $hashed ), 0, 12 );
@@ -186,15 +190,34 @@ class expGraphQLSchemaBuilder
                     ),
                     'content' => array(
                         'type' => $types->content(),
-                        'description' => 'A content object at its main location, by its id or its remote id.',
-                        'args' => array( 'id' => array( 'type' => Type::int() ), 'remoteId' => array( 'type' => Type::string() ) ) + $byArgs,
+                        'description' => 'A content object at its main location, by its id or its remote id; with version, that version (a draft) for a user who may read it.',
+                        'args' => array( 'id' => array( 'type' => Type::int() ), 'remoteId' => array( 'type' => Type::string() ),
+                                         'version' => array( 'type' => Type::int(), 'description' => 'A version number (content/versionread, or a draft of your own); with id only.' ) ) + $byArgs,
                         'resolve' => function ( $root, $args, expGraphQLContext $ctx ) {
                             $language = isset( $args['language'] ) ? (string)$args['language'] : false;
                             $given = array_intersect_key( $args, array( 'id' => 1, 'remoteId' => 1 ) );
                             if ( count( $given ) !== 1 )
                                 throw new expGraphQLError( expGraphQLMessage::tr( 'content needs exactly one of id and remoteId.' ), expGraphQLError::BAD_USER_INPUT );
+                            if ( isset( $args['version'] ) )
+                            {
+                                if ( !isset( $args['id'] ) )
+                                    throw new expGraphQLError( expGraphQLMessage::tr( 'content takes version with id only.' ), expGraphQLError::BAD_USER_INPUT );
+                                return $ctx->writer()->version( $args['id'], $args['version'], $language );
+                            }
                             return isset( $args['id'] ) ? $ctx->repository->contentById( $args['id'], $language )
                                                         : $ctx->repository->contentByRemoteId( $args['remoteId'], $language );
+                        },
+                    ),
+                    'preview' => array(
+                        'type' => $types->content(),
+                        'description' => 'The version a preview token names (createPreviewToken), until the token expires; no sign-in needed.',
+                        'args' => array( 'token' => array( 'type' => Type::nonNull( Type::string() ), 'description' => 'The token of createPreviewToken.' ) ),
+                        'resolve' => function ( $root, $args, expGraphQLContext $ctx ) {
+                            $tokens = $ctx->previewTokens();
+                            $data = $tokens !== null ? $tokens->verify( (string)$args['token'] ) : null;
+                            if ( $data === null )
+                                throw new expGraphQLError( expGraphQLMessage::tr( 'The preview token is not valid or has expired.' ), expGraphQLError::FORBIDDEN );
+                            return $ctx->writer()->preview( $data );
                         },
                     ),
                     'children' => array(
@@ -264,6 +287,9 @@ class expGraphQLSchemaBuilder
         ) );
         $this->schema = new Schema( array(
             'query' => $query,
+            // the mutations unless they are switched off (graphql.ini MutationsEnabled, on by default): a schema without them
+            // tells a client so, and the hash changes with them
+            'mutation' => expGraphQLMutations::enabled() ? expGraphQLMutations::type( $types ) : null,
             'types' => function () use ( $builder ) {
                 $all = array();
                 foreach ( $builder->catalogue()->identifiers() as $identifier )

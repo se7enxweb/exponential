@@ -6,7 +6,8 @@
  * there yet (the update was not run), the tests are skipped.
  *
  *  BV-L1 createNew(): a bookmark row with node_id 0 and the address in expbookmark_view, without the siteaccess; the
- *        same address again updates the name and the folder instead of adding a second bookmark
+ *        same address again updates the name and the folder instead of adding a second bookmark; the parsed address
+ *        (module_name, view_name, view_parameters) is written with it once the table has those columns
  *  BV-L2 the flat list of the browse page (fetchListForUser()) has node bookmarks only, unless asked for both; the
  *        tree and the rows have both, the rows with kind, uri and can_open (decorateRows())
  *  BV-L3 rename(): only the user's own system page bookmarks, never a node bookmark, never to an empty name
@@ -93,6 +94,11 @@ class BookmarkViewsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'setup/info', $b->attribute( 'module_uri' ) );
         $this->assertNull( $b->attribute( 'node' ) );
         $this->assertSame( array( 'user_id' => (string)$this->user, 'module_uri' => 'setup/info' ), array_map( 'strval', $this->uriRow( $id ) ) );
+        if ( expBookmarkView::hasParsedColumns( true ) )
+        {
+            $row = eZDB::instance()->arrayQuery( 'SELECT module_name, view_name, view_parameters FROM expbookmark_view WHERE bookmark_id = ' . (int)$id );
+            $this->assertSame( expBookmarkView::parsedFields( 'setup/info' ), array_map( 'strval', $row[0] ), 'the parsed address is written with it' );
+        }
 
         $again = $this->view( 'setup/info', 'Info renamed', 0 );
         $this->assertSame( $id, $again, 'one bookmark per address' );

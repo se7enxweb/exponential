@@ -28,7 +28,7 @@ Bearbeiten Sie `settings/upgrade.ini` nie selbst: Ein Update ersetzt die Datei. 
 > stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
 > stage finish: make the changes live and check the site (only when the run changed something)  
 
-Standard: eine Liste mit 35: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepRecordTable`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables`, `expUpgradeStepBookmarkFolders`, `expUpgradeStepBookmarkViewTable` ....
+Standard: eine Liste mit 37: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepRecordTable`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables`, `expUpgradeStepBookmarkFolders`, `expUpgradeStepBookmarkViewTable` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -48,6 +48,7 @@ StepList[]=expUpgradeStepOrderStatuses
 StepList[]=expUpgradeStepAuditIndexTables
 StepList[]=expUpgradeStepBookmarkFolders
 StepList[]=expUpgradeStepBookmarkViewTable
+StepList[]=expUpgradeStepBookmarkViewColumns
 StepList[]=expUpgradeStepMailPreferenceTables
 StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
@@ -55,8 +56,7 @@ StepList[]=expUpgradeStepDataTableTables
 StepList[]=expUpgradeStepUserSessionTable
 StepList[]=expUpgradeStepOAuthPkceColumns
 StepList[]=expUpgradeStepPasskeyTable
-StepList[]=expUpgradeStepHelpContentTables
-# ... 15 weitere in der ausgelieferten Datei
+# ... 17 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

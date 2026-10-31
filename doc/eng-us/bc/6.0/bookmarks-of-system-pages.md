@@ -13,6 +13,14 @@ page lists what changed for code, templates, extensions and databases. The featu
   its schema handler (`expBookmarkView::install()`).
 - `ezcontentbrowsebookmark` is unchanged. A system page bookmark is a row with `node_id = 0`.
 - Nothing is migrated; existing bookmarks stay node bookmarks.
+- The address is also kept parsed: `module_name` and `view_name` (varchar 100, `''` by default) and
+  `view_parameters` (longtext, JSON of `ordered`, `unordered` and `query`), with the index `expbookmark_view_module`
+  (`module_name`, `view_name`). A new table has them. A table made by an early 6.0.15 build gets them from the upgrade
+  steps `6.0.15-bookmark-view-columns` (database stage, every engine) and `6.0.15-bookmark-view-fill` (scripts stage:
+  the rows filled from their address), which `./console exp:upgrade --apply` and
+  `createbookmarkviewtable.php` run; the MySQL and PostgreSQL update files add the columns and the index too
+  (guarded), the SQLite file cannot. Until then `expBookmarkView::definition()` leaves the columns out
+  (`hasParsedColumns()`), so the order of code and update does not matter.
 
 ## Code that reads bookmarks
 
@@ -67,10 +75,24 @@ Added with the saved searches and the greyed bookmarks:
 | Templates | `bookmark_tree.tpl` and the `bookmark.tpl` cards draw `a4-bi-<icon>` instead of the gear and show `reason_text`; `design/admin3/templates/pagelayout.tpl` includes the button too |
 
 A stored address can now end in a query string (`content/search?SearchText=news`); code that reads `module_uri`
-directly and splits it on `/` should use `expBookmarkView::parts()` or `pathOf()`.
+directly and splits it on `/` should use `expBookmarkView::parts()` or `pathOf()`, or read `module_name` and
+`view_name`.
+
+## Parsed address and renaming
+
+| Where | What |
+|---|---|
+| `expBookmarkView::parse( $uri )` | `module`, `view`, `ordered` (list), `unordered` and `query` (name => value) of an address; no database, no module definition |
+| `expBookmarkView::parsedFields( $uri )` | The values of `module_name`, `view_name` and `view_parameters`; `createNew()` writes them |
+| `expBookmarkView::definitionWithAllColumns()`, `hasParsedColumns( $refresh )`, `PARSED_COLUMNS` | The full definition; whether the table has the columns (asked of the catalogue once per process); `definition()` leaves them out while it does not |
+| `expBookmarkView::renamedURI( $uri, $from, $to )`, `renameModuleView( $from, $to, $apply )` | An address with a renamed module or view (`'role'` to `'roles'`, `'role/view'` to `'roles/show'`), parameters and query string kept; the bookmarks of every user moved, `$apply = false` only reports |
+| `expBookmarkView::staleParsedRows()`, `fillParsedColumns()` | The rows whose columns do not match their address, and filling them |
+| `expUpgradeStepBookmarkViewColumns`, `expUpgradeStepBookmarkViewFill` | The upgrade steps `6.0.15-bookmark-view-columns` and `6.0.15-bookmark-view-fill` (`settings/upgrade.ini`) |
+| `update/common/scripts/6.0/createbookmarkviewtable.php` | Runs both steps after creating the table; `--rename=<old>=<new>` moves bookmarks, with `--dry-run` it only says what would change |
 
 ## Tests
 
 - `tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php`: addresses, query strings, names, items, search and order, the excluded views, the kinds (an extension's too), the icons and the reasons (no database)
-- `tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php`: the table everywhere it is written; the SQLite update twice
+- `tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php`: the table everywhere it is written; the SQLite update twice; an early table left to the upgrade steps; the steps in `upgrade.ini`
+- `tests/tests/kernel/classes/bookmarks/BookmarkViewParsedColumnsTest.php`: on a SQLite database in memory, an early table keeps working, the steps add and fill the parsed columns, renaming a module and a view
 - `tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php`: the model on a live installation (skipped without one or without the table)

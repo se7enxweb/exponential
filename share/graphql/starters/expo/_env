@@ -1,0 +1,4 @@
+# The GraphQL end point of the site. An app is a public client: give it no key, or a key with graphql:read only for
+# content the anonymous user may not read; never a key with graphql:write.
+EXPO_PUBLIC_GRAPHQL_ENDPOINT=__EXP_ENDPOINT__
+EXPO_PUBLIC_GRAPHQL_KEY=

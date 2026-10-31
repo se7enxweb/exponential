@@ -330,11 +330,65 @@ CREATE TABLE expbookmark_folder (
 CREATE TABLE IF NOT EXISTS expbookmark_view (
   bookmark_id int(11) NOT NULL DEFAULT '0',
   created int(11) NOT NULL DEFAULT '0',
+  module_name varchar(100) NOT NULL DEFAULT '',
   module_uri longtext,
   user_id int(11) NOT NULL DEFAULT '0',
+  view_name varchar(100) NOT NULL DEFAULT '',
+  view_parameters longtext,
   PRIMARY KEY ( bookmark_id ),
+  KEY expbookmark_view_module ( module_name, view_name ),
   KEY expbookmark_view_user ( user_id )
 ) ENGINE=InnoDB;
+
+-- The address parsed: module_name, view_name and view_parameters (JSON of the ordered, unordered
+-- and query parameters), so bookmarks are found and moved by module and view. A table made by an
+-- early 6.0.15 build has only the address: the columns and their index are added when missing
+-- (chosen by a look at information_schema, as above, so the lines can run again). The rows are
+-- filled from their address by update/common/scripts/6.0/createbookmarkviewtable.php or
+-- ./console exp:upgrade --apply; until then the kernel reads the address alone.
+SET @exp_bmv_module_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'expbookmark_view'
+        AND COLUMN_NAME = 'module_name' ) = 0,
+    'ALTER TABLE expbookmark_view ADD module_name varchar(100) NOT NULL DEFAULT ''''',
+    'DO 0' );
+PREPARE exp_bmv_module_stmt FROM @exp_bmv_module_sql;
+EXECUTE exp_bmv_module_stmt;
+DEALLOCATE PREPARE exp_bmv_module_stmt;
+
+SET @exp_bmv_view_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'expbookmark_view'
+        AND COLUMN_NAME = 'view_name' ) = 0,
+    'ALTER TABLE expbookmark_view ADD view_name varchar(100) NOT NULL DEFAULT ''''',
+    'DO 0' );
+PREPARE exp_bmv_view_stmt FROM @exp_bmv_view_sql;
+EXECUTE exp_bmv_view_stmt;
+DEALLOCATE PREPARE exp_bmv_view_stmt;
+
+SET @exp_bmv_params_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.COLUMNS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'expbookmark_view'
+        AND COLUMN_NAME = 'view_parameters' ) = 0,
+    'ALTER TABLE expbookmark_view ADD view_parameters longtext',
+    'DO 0' );
+PREPARE exp_bmv_params_stmt FROM @exp_bmv_params_sql;
+EXECUTE exp_bmv_params_stmt;
+DEALLOCATE PREPARE exp_bmv_params_stmt;
+
+SET @exp_bmv_index_sql := IF(
+    ( SELECT COUNT(*) FROM information_schema.STATISTICS
+      WHERE TABLE_SCHEMA = DATABASE()
+        AND TABLE_NAME = 'expbookmark_view'
+        AND INDEX_NAME = 'expbookmark_view_module' ) = 0,
+    'CREATE INDEX expbookmark_view_module ON expbookmark_view ( module_name, view_name )',
+    'DO 0' );
+PREPARE exp_bmv_index_stmt FROM @exp_bmv_index_sql;
+EXECUTE exp_bmv_index_stmt;
+DEALLOCATE PREPARE exp_bmv_index_stmt;
 
 -- E-mail preferences and consent.
 --

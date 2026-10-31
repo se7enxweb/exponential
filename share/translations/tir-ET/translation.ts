@@ -78777,6 +78777,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>እቲ ሕቶ ብመሰላትካ ይካየድ፣ በዚ ክፍለ ግዜ ኣቲኻ ኣለኻ።</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ኣብ %seconds ካ.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ደረት የብሉን</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ዕምቆት</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ዝተሓላለኸ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ኣቕሓ ንነፍሲ ወከፍ ዝርዝር</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ንቡር %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ጠለባት ንነፍሲ ወከፍ ተጠቃሚ ወይ መፍትሕ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ጠለባት ንነፍሲ ወከፍ ስም ኣልቦ ኣድራሻ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>ዝተዓቀቡ ሕቶታት ጥራይ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ዝዓበየ ሕቶ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ባይት</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ዝዓበየ ምጽዓን</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ምእታው መርበብ %siteaccess የለን።</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>እቶም ምቕያራት ኣብ %siteaccess ወሊዖም።</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>እቶም ምቕያራት ኣብ %siteaccess ጠፊኦም።</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ኣብ %siteaccess ወሊዑ።</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API ኣብ %siteaccess ጠፊኡ።</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>እቲ ቅጥዕታት ክጽሓፍ ኣይከኣለን፦ %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ካሽ መልሲ ተጸሪጉ፦ %count መልስታት ተኣልዮም።</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ነቲ ሕቶ ንምእላይ ኣብ ጥቓኡ ዘሎ ሳጹን ምልክት ግበር።</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>እቲ ሕቶ ክእለ ኣይከኣለን፦ ኣብ ማህደር ናይ PersistedQueryDirectoryList[] ዝመጸ ሕቶ ምስ ፋይሉ እዩ ዝእለ።</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>እቲ ዝተዓቀበ ሕቶ ተኣልዩ።</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ምቕያራት</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ወሊዑ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ጠፊኡ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ምእታዋት መርበብ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>እቲ API ከምኡ'ውን ምቕያራቱ ኣበይ ከም ዝምልሱ። እቶም መጠወቒታት graphql.ini ይጽሕፉ፣ ከምቲ ./console exp:graphql:enable ከምኡ'ውን exp:graphql:disable ዝገብርዎ።</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ምእታው መርበብ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ቀይር</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ኣጥፍእ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ምቕያራት ኣጥፍእ</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ምቕያራት ወልዕ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ወልዕ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ደረታት</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ናይዚ ምእታው መርበብ።</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ካሽ መልሲ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>መልስታት ናይ ዝተዓቀቡ ሕቶታት፣ ብመሰል ተጠቃሚ ዝዕቀቡን ትሕዝቶ ኣብ ዝሕተመሉ ግዜ ዘብቕዑን።</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ኩነታት</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ዝተዓቀቡ መልስታት</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count መልስታት፣ %bytes ባይት</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>ብዝበዝሐ ዝዕቀበሉ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ካ.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ናይ መወዳእታ ምብቃዕ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ካሽ መልሲ ኣጽሪ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>ዝተዓቀቡ ሕቶታት</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>ብ ./console exp:graphql:persist ወይ ብዓማዊል ዝተዓቀቡ (ኣውቶማቲክ ዝተዓቀቡ ሕቶታት)፤ ብስም ወይ ብ SHA-256 ይጽውዑ።</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ኣስማት</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>መጠን</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ኣበይ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ኣልይ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ምስ ስርዓት ዝመጸ</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ዝተዓቀበ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>እወ፣ ነዚ ሕቶ ኣልዮ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ገና ዝተዓቀበ ሕቶ የለን።</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API መፍትሕታት</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>ውልቃዊ API መፍትሕታት ምስ ወሰን graphql:read (ሕቶታት) ወይ graphql:write (ምቕያራት)። ኣብ ገጽ API ምእታው ወይ ብ ./console exp:graphql:keys ስርሖምን ሰርዞምን።</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ምእታው</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ኩሎም መፍትሕታት</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>መፍትሕ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ወናኒ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ወሰናት</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ናይ መወዳእታ ኣጠቓቕማ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ንጡፍ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ግዜኡ ኣኺሉ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ተሰሪዙ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ፈጺሙ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>ገና GraphQL ወሰን ዘለዎ API መፍትሕ የለን።</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API ኣብቲ ነዚ ገጽ ዘርኢ ምእታው መርበብ %siteaccess ጠፊኡ ኣሎ፤ እቲ ኣብ ታሕቲ ዘሎ ሰንጠረዥ ኣበይ ከም ዝምልስ የርኢ።</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>ነቲ ነዚ ገጽ ዘርኢ ምእታው መርበብ %siteaccess።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ካብ id፣ identifier ከምኡ&apos;ውን urlAlias ልክዕ ሓደ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>ዓውዲ operations ናይ multipart ጠለብ ሓደ JSON ጠለብ ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>ዓውዲ map ናይ multipart ጠለብ JSON ኦብጀክት ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>እቲ multipart ጠለብ ፋይል %field የብሉን።</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>መንገዲ ናይ ዓውዲ map ብ variables. ክጅምር ኣለዎ፦ %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>እቲ ፋይል %name ምሉእ ኮይኑ ኣይበጽሐን (ጌጋ ምጽዓን %error)።</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>እቲ ፋይል %name ካብ %max ባይት ይዓቢ።</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>እቲ ፋይል %name ክምርመር ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ምቕያራት ኣብዚ ምእታው መርበብ ጠፊኦም ኣለው (graphql.ini [GraphQLSettings] MutationsEnabled)።</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ምቕያር ብ POST ስደድ።</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>ትሕዝቶ ንምቕያር እቶ።</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>እቲ API መፍትሕ ወሰን %scope የብሉን።</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ምቕያር ምስ ክፍለ ግዜ ናይቲ ክፍለ ግዜ ቶከን ቅጥዒ የድልዮ (ርእሲ X-CSRF-Token)።</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ጠፊኡ ኣሎ፦ graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ዝኾነ ሆስት ኣይጠቐሰን።</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>እቲ ኣድራሻ https ኣድራሻ ክኸውን ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>እቲ ሆስት %host ኣብ graphql.ini [GraphQLSettings] UploadFromUrlHostList[] የለን።</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>እቲ ፋይል ክመጽእ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ዓይነት ኣእታዊ ጥራይ እዩ።</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>ተለዋዋጢ ናይ ዓይነት Upload ካብ multipart ጠለብ ፋይል ይቕበል።</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>እቲ ርሑቕ id %remoteId ተታሒዙ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>እቲ ትሕዝቶ ድሮ ብ %language ትርጉም ኣለዎ፦ updateContent ተጠቐም።</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>እንተወሓደ ሓደ ዓውዲ ሃብ።</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ሓድሽ ሕታም ክስራሕ ኣይከኣለን (እቲ ትሕዝቶ ብዙሓት ንድፍታት ኣለውዎ)።</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ሕታም %version ንድፊ ኣይኮነን።</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ካብ id ከምኡ'ውን nodeId ልክዕ ሓደ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ቦታ ኣብ ትሕቲ ባዕሉ ክግዕዝ ኣይክእልን።</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>እቲ ትሕዝቶ ድሮ ኣብ ትሕቲ %parentId ቦታ ኣለዎ።</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ዋጋ ናይቲ ዓውዲ %field ክዕቀብ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>ቋንቋ ትሕዝቶ %language የለን።</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ኣብቲ ኣወዳድባ ክፍሊ ትሕዝቶ %class የለን።</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>እቲ ትሕዝቶ የለን፣ ወይ ከተንብቦ ኣይፍቀደልካን።</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ነዚ ኣብዚ ትሕዝቶ ክትገብሮ ኣይፍቀደልካን።</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>እቲ ክፍሊ %class ክጽሓፍ ዝኽእል ዓውዲ %field የብሉን።</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>እቲ ዓውዲ %field ክልተ ግዜ ተዋሂቡ።</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>እቲ ዓውዲ %field ፋይል ይቕበል፦ ከም ምጽዓን ስደዶ (multipart ጠለብ)።</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>እቲ ዓውዲ %field ፋይል ኣይቕበልን።</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>እቲ ዓውዲ %field ዋጋ የድልዮ።</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>እቲ ቅርጺ %format ንዓውድታት ሃብታም ጽሑፍ ጥራይ እዩ፤ %field ዋጋኡ ከም ዘለዎ ይቕበል (RAW)።</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>እቲ ዓውዲ %field ግዴታ እዩ።</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>እቲ HTML ክንበብ ኣይከኣለን።</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ንversion ምስ id ጥራይ ይቕበል።</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>ቶከን ቅድመ ምርኣይ ቅቡል ኣይኮነን ወይ ግዜኡ ኣኺሉ።</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>መበቆል ኣይኮነን (https://host ወይ https://host:port)፦ %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>ወሰን ናይ GraphQL API ኣይኮነን፦ %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

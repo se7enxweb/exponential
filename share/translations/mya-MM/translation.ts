@@ -78777,6 +78777,294 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>မေးမြန်းမှုကို ဤစက်ရှင်ဖြင့် ဝင်ရောက်ထားသော သင်၏ ခွင့်ပြုချက်များဖြင့် လုပ်ဆောင်သည်။</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds စက္ကန့်တွင် %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ကန့်သတ်ချက် မရှိ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>အနက်</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ရှုပ်ထွေးမှု</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>စာရင်းတစ်ခုစီရှိ အရာများ</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (မူလ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>အသုံးပြုသူ သို့မဟုတ် ကီး တစ်ခုစီ၏ တောင်းဆိုမှု</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>အမည်မသိ လိပ်စာ တစ်ခုစီ၏ တောင်းဆိုမှု</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှုများသာ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>အကြီးဆုံး မေးမြန်းမှု</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ဘိုက်</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>အကြီးဆုံး တင်ခြင်း</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု %siteaccess မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess တွင် ပြောင်းလဲမှုများကို ဖွင့်လိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess တွင် ပြောင်းလဲမှုများကို ပိတ်လိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess တွင် GraphQL API ကို ဖွင့်လိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess တွင် GraphQL API ကို ပိတ်လိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ဆက်တင်များကို ရေး၍ မရပါ- %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>အဖြေ ကက်ရှ်ကို ရှင်းလင်းပြီး- အဖြေ %count ခု ဖယ်ရှားလိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>မေးမြန်းမှုကို ဖယ်ရှားရန် ၎င်းဘေးရှိ အကွက်ကို အမှန်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>မေးမြန်းမှုကို ဖယ်ရှား၍ မရပါ- PersistedQueryDirectoryList[] ၏ ဖိုင်တွဲတွင် ပါလာသော မေးမြန်းမှုကို ၎င်း၏ဖိုင်နှင့်အတူ ဖယ်ရှားသည်။</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှုကို ဖယ်ရှားလိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ဖွင့်</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ပိတ်</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ဆိုက်ဝင်ရောက်မှုများ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API နှင့် ၎င်း၏ ပြောင်းလဲမှုများ ဖြေကြားသည့်နေရာ။ ခလုတ်များသည် ./console exp:graphql:enable နှင့် exp:graphql:disable ကဲ့သို့ graphql.ini ကို ရေးသည်။</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ပြောင်းရန်</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ပိတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ပြောင်းလဲမှု ပိတ်</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ပြောင်းလဲမှု ဖွင့်</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ကန့်သတ်ချက်များ</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ဤဆိုက်ဝင်ရောက်မှု၏ graphql.ini [GraphQLSettings]။</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>အဖြေ ကက်ရှ်</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှုများ၏ အဖြေများ၊ အသုံးပြုသူ အခွင့်အရေးအလိုက် သိမ်းထားပြီး အကြောင်းအရာ ထုတ်ဝေတိုင်း သက်တမ်းကုန်သည်။</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>အခြေအနေ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>သိမ်းထားသော အဖြေများ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>အဖြေ %count ခု၊ %bytes ဘိုက်</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>အများဆုံး သိမ်းထားချိန်</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds စက္ကန့်</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>နောက်ဆုံး သက်တမ်းကုန်ချိန်</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>အဖြေ ကက်ရှ်ကို ရှင်းလင်းရန်</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှုများ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist ဖြင့် သို့မဟုတ် client များမှ သိမ်းဆည်းထားသည် (အလိုအလျောက် သိမ်းဆည်းသော မေးမြန်းမှုများ); အမည် သို့မဟုတ် SHA-256 ဖြင့် ခေါ်သည်။</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>အမည်များ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>အရွယ်အစား</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>နေရာ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ပါလာသည်</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>သိမ်းထားသည်</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ဟုတ်ကဲ့၊ ဤမေးမြန်းမှုကို ဖယ်ရှားပါ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှု မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ကီးများ</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>နယ်ပယ် graphql:read (မေးမြန်းမှုများ) သို့မဟုတ် graphql:write (ပြောင်းလဲမှုများ) ပါသော ကိုယ်ပိုင် API ကီးများ။ ၎င်းတို့ကို API ဝင်ရောက်ခွင့် စာမျက်နှာတွင် သို့မဟုတ် ./console exp:graphql:keys ဖြင့် ဖန်တီးပြီး ရုပ်သိမ်းပါ။</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ဝင်ရောက်ခွင့်</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ကီးအားလုံး</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ကီး</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>အမည်</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ပိုင်ရှင်</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>နယ်ပယ်များ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>နောက်ဆုံး အသုံးပြုချိန်</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>အသက်ဝင်</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>သက်တမ်းကုန်</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ရုပ်သိမ်းပြီး</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ဘယ်တော့မှ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL နယ်ပယ်ပါသော API ကီး မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>ဤစာမျက်နှာကို ပြသသည့် ဆိုက်ဝင်ရောက်မှု %siteaccess တွင် GraphQL API ကို ပိတ်ထားသည်။ ၎င်း ဖြေကြားသည့်နေရာကို အောက်ပါဇယားတွင် ပြသည်။</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>ဤစာမျက်နှာကို ပြသသည့် ဆိုက်ဝင်ရောက်မှု %siteaccess အတွက်။</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79167,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout သည် id, identifier နှင့် urlAlias ထဲမှ တစ်ခုတည်းကိုသာ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart တောင်းဆိုမှု၏ operations အကွက်သည် JSON တောင်းဆိုမှု တစ်ခုတည်း မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart တောင်းဆိုမှု၏ map အကွက်သည် JSON အရာဝတ္ထု မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart တောင်းဆိုမှုတွင် ဖိုင် %field မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map အကွက်၏ လမ်းကြောင်းသည် variables. ဖြင့် စရမည်- %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ဖိုင် %name သည် အပြည့်အစုံ မရောက်ပါ (တင်ခြင်း အမှား %error)။</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ဖိုင် %name သည် %max ဘိုက်ထက် ကြီးနေသည်။</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ဖိုင် %name ကို စစ်ဆေး၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ဤဆိုက်ဝင်ရောက်မှုတွင် ပြောင်းလဲမှု (mutation) များကို ပိတ်ထားသည် (graphql.ini [GraphQLSettings] MutationsEnabled)။</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ပြောင်းလဲမှုကို POST ဖြင့် ပို့ပါ။</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>အကြောင်းအရာ ပြောင်းရန် ဝင်ရောက်ပါ။</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API ကီးတွင် နယ်ပယ် %scope မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ဆက်ရှင်ပါသော ပြောင်းလဲမှုသည် ဆက်ရှင်၏ ဖောင်တိုကင် လိုအပ်သည် (ခေါင်းစီး X-CSRF-Token)။</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ကို ပိတ်ထားသည်- graphql.ini [GraphQLSettings] UploadFromUrlHostList[] တွင် ဟို့စ် တစ်ခုမျှ မဖော်ပြထားပါ။</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>လိပ်စာသည် https လိပ်စာ ဖြစ်ရမည်။</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ဟို့စ် %host သည် graphql.ini [GraphQLSettings] UploadFromUrlHostList[] တွင် မပါပါ။</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ဖိုင်ကို ရယူ၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload သည် ထည့်သွင်းမှု အမျိုးအစား သာ ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload အမျိုးအစား ကိန်းရှင်သည် multipart တောင်းဆိုမှု၏ ဖိုင်ကို လက်ခံသည်။</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>အဝေး id %remoteId ကို အသုံးပြုပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>အကြောင်းအရာတွင် %language ဘာသာပြန် ရှိပြီးဖြစ်သည်- updateContent ကို သုံးပါ။</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>အနည်းဆုံး အကွက် တစ်ခု ပေးပါ။</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ဗားရှင်းအသစ် ဖန်တီး၍ မရပါ (အကြောင်းအရာတွင် မူကြမ်း များလွန်းသည်)။</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ဗားရှင်း %version သည် မူကြမ်း မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent သည် id နှင့် nodeId အနက် တစ်ခုတည်းကိုသာ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>တည်နေရာကို ၎င်း၏အောက်သို့ ရွှေ့၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>အကြောင်းအရာတွင် %parentId အောက်၌ တည်နေရာ ရှိပြီးဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>အကွက် %field ၏ တန်ဖိုးကို သိမ်း၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>အကြောင်းအရာ ဘာသာစကား %language မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ဇယားဖွဲ့စည်းပုံတွင် အကြောင်းအရာ အတန်းအစား %class မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>အကြောင်းအရာ မရှိပါ၊ သို့မဟုတ် သင် ဖတ်ခွင့် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ဤအကြောင်းအရာကို ဤသို့ ပြုလုပ်ခွင့် သင့်တွင် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>အတန်းအစား %class တွင် ရေးနိုင်သော အကွက် %field မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>အကွက် %field ကို နှစ်ကြိမ် ပေးထားသည်။</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>အကွက် %field သည် ဖိုင်ကို လက်ခံသည်- ၎င်းကို တင်ခြင်းအဖြစ် ပို့ပါ (multipart တောင်းဆိုမှု)။</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>အကွက် %field သည် ဖိုင် မလက်ခံပါ။</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>အကွက် %field တွင် တန်ဖိုး လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ပုံစံ %format သည် rich text အကွက်များအတွက်သာ ဖြစ်သည်; %field သည် ၎င်း၏တန်ဖိုးကို ရှိသည့်အတိုင်း လက်ခံသည် (RAW)။</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>အကွက် %field သည် မဖြစ်မနေ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ကို ဖတ်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content သည် version ကို id နှင့်သာ လက်ခံသည်။</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>အစမ်းကြည့် တိုကင်သည် မမှန်ကန်ပါ သို့မဟုတ် သက်တမ်းကုန်သွားပြီ။</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>origin မဟုတ်ပါ (https://host သို့မဟုတ် https://host:port)- %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API ၏ နယ်ပယ် မဟုတ်ပါ- %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>
