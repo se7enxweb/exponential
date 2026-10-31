@@ -915,6 +915,41 @@ CREATE TABLE `expupgrade_step` (
 ,  `step_id` varchar(150) NOT NULL DEFAULT '' PRIMARY KEY
 ,  `version` varchar(30) NOT NULL DEFAULT ''
 );
+CREATE TABLE `exp_migration` (
+  `caption_id` varchar(150) NOT NULL DEFAULT ''
+,  `checksum` varchar(64) NOT NULL DEFAULT ''
+,  `duration_ms` integer NOT NULL DEFAULT '0'
+,  `engine` varchar(30) NOT NULL DEFAULT ''
+,  `environment` varchar(50) NOT NULL DEFAULT ''
+,  `file_path` varchar(255) NOT NULL DEFAULT ''
+,  `finished_at` integer NOT NULL DEFAULT '0'
+,  `message` varchar(1000) NOT NULL DEFAULT ''
+,  `migration_id` varchar(150) NOT NULL DEFAULT ''
+,  `revision` varchar(64) NOT NULL DEFAULT ''
+,  `run_by` varchar(150) NOT NULL DEFAULT ''
+,  `run_id` varchar(64) NOT NULL DEFAULT ''
+,  `source` varchar(100) NOT NULL DEFAULT ''
+,  `stage` varchar(20) NOT NULL DEFAULT ''
+,  `started_at` integer NOT NULL DEFAULT '0'
+,  `state` varchar(20) NOT NULL DEFAULT ''
+,  `version` varchar(30) NOT NULL DEFAULT ''
+,  PRIMARY KEY (`source`,`migration_id`)
+);
+CREATE TABLE `exp_migration_run` (
+  `caption_post` varchar(150) NOT NULL DEFAULT ''
+,  `caption_pre` varchar(150) NOT NULL DEFAULT ''
+,  `commit_id` varchar(64) NOT NULL DEFAULT ''
+,  `environment` varchar(50) NOT NULL DEFAULT ''
+,  `finished_at` integer NOT NULL DEFAULT '0'
+,  `log_file` varchar(255) NOT NULL DEFAULT ''
+,  `message` varchar(1000) NOT NULL DEFAULT ''
+,  `push_state` varchar(20) NOT NULL DEFAULT ''
+,  `run_by` varchar(150) NOT NULL DEFAULT ''
+,  `run_id` varchar(64) NOT NULL DEFAULT '' PRIMARY KEY
+,  `started_at` integer NOT NULL DEFAULT '0'
+,  `state` varchar(20) NOT NULL DEFAULT ''
+,  `tag_name` varchar(150) NOT NULL DEFAULT ''
+);
 CREATE TABLE `exphelp_help_id` (
   `help_id` varchar(80) NOT NULL DEFAULT '' PRIMARY KEY
 ,  `object_id` integer NOT NULL DEFAULT '0'
@@ -1467,6 +1502,8 @@ CREATE INDEX expuser_audit_created ON expuser_audit ( created );
 CREATE INDEX exphelp_help_id_object ON exphelp_help_id ( object_id );
 CREATE INDEX exphelp_feedback_object ON exphelp_feedback ( object_id, created );
 CREATE INDEX exphelp_feedback_created ON exphelp_feedback ( created );
+CREATE INDEX exp_migration_run_id ON exp_migration ( run_id );
+CREATE INDEX exp_migration_run_started ON exp_migration_run ( started_at );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_sid" ON "ezorder_status_history" (`status_id`);

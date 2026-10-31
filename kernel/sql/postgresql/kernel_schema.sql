@@ -2726,6 +2726,46 @@ CREATE TABLE expupgrade_step (
 
 
 
+CREATE TABLE exp_migration (
+    caption_id character varying(150) DEFAULT ''::character varying NOT NULL,
+    checksum character varying(64) DEFAULT ''::character varying NOT NULL,
+    duration_ms integer DEFAULT 0 NOT NULL,
+    engine character varying(30) DEFAULT ''::character varying NOT NULL,
+    environment character varying(50) DEFAULT ''::character varying NOT NULL,
+    file_path character varying(255) DEFAULT ''::character varying NOT NULL,
+    finished_at integer DEFAULT 0 NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    migration_id character varying(150) DEFAULT ''::character varying NOT NULL,
+    revision character varying(64) DEFAULT ''::character varying NOT NULL,
+    run_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    run_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    source character varying(100) DEFAULT ''::character varying NOT NULL,
+    stage character varying(20) DEFAULT ''::character varying NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    "version" character varying(30) DEFAULT ''::character varying NOT NULL
+);
+
+
+
+CREATE TABLE exp_migration_run (
+    caption_post character varying(150) DEFAULT ''::character varying NOT NULL,
+    caption_pre character varying(150) DEFAULT ''::character varying NOT NULL,
+    commit_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    environment character varying(50) DEFAULT ''::character varying NOT NULL,
+    finished_at integer DEFAULT 0 NOT NULL,
+    log_file character varying(255) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    push_state character varying(20) DEFAULT ''::character varying NOT NULL,
+    run_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    run_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    tag_name character varying(150) DEFAULT ''::character varying NOT NULL
+);
+
+
+
 CREATE TABLE exphelp_help_id (
     help_id character varying(80) DEFAULT ''::character varying NOT NULL,
     object_id integer DEFAULT 0 NOT NULL,
@@ -4288,6 +4328,14 @@ CREATE INDEX exphelp_feedback_created ON exphelp_feedback USING btree (created);
 
 
 
+CREATE INDEX exp_migration_run_id ON exp_migration USING btree (run_id);
+
+
+
+CREATE INDEX exp_migration_run_started ON exp_migration_run USING btree (started_at);
+
+
+
 
 
 
@@ -5394,6 +5442,16 @@ ALTER TABLE ONLY expuser_audit
 
 ALTER TABLE ONLY expupgrade_step
     ADD CONSTRAINT expupgrade_step_pkey PRIMARY KEY (step_id);
+
+
+
+ALTER TABLE ONLY exp_migration
+    ADD CONSTRAINT exp_migration_pkey PRIMARY KEY (source, migration_id);
+
+
+
+ALTER TABLE ONLY exp_migration_run
+    ADD CONSTRAINT exp_migration_run_pkey PRIMARY KEY (run_id);
 
 
 

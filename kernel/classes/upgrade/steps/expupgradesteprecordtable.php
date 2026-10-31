@@ -9,7 +9,8 @@
 
 /**
  * Step 0: the table in which exp:upgrade records what it applied (expupgrade_step). The other steps run without it,
- * but nothing is recorded until it exists.
+ * but nothing is recorded until it exists. The step after it, 6.0.15-migration-tables, makes the migration record
+ * exp_migration that replaces it and copies its rows; expupgrade_step is then only read.
  *
  * @since 6.0.15
  * @package kernel
@@ -28,6 +29,6 @@ class expUpgradeStepRecordTable extends expUpgradeSchemaStep
 
     public function tables()
     {
-        return array( expUpgradeRecord::TABLE );
+        return array( expUpgradeRecord::LEGACY_TABLE );
     }
 }
