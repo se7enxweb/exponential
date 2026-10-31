@@ -398,17 +398,124 @@ class expGraphQLServer
      * (MaxDepth, MaxComplexity) in place of the library's (switched off) ones. exp:graphql:persist checks a query
      * against the same rules, so a stored query never fails a limit when it is called.
      *
+     * The complexity depends on the values of the variables (limit: $n multiplies what it lists). A request passes
+     * its own; a check without a request (exp:graphql:persist, exp:graphql:starter) passes worstCaseVariables(), or
+     * a query with a required variable fails as "Variable ... was not provided".
+     *
      * @param bool $allowIntrospection
+     * @param array|null $variables the values of the variables the complexity is computed with
      * @return array
      */
-    public static function validationRules( $allowIntrospection )
+    public static function validationRules( $allowIntrospection, $variables = null )
     {
         $rules = \GraphQL\Validator\DocumentValidator::allRules();
         $rules[\GraphQL\Validator\Rules\QueryDepth::class] = new \GraphQL\Validator\Rules\QueryDepth( expGraphQL::intSetting( 'MaxDepth', 12 ) );
-        $rules[\GraphQL\Validator\Rules\QueryComplexity::class] = new \GraphQL\Validator\Rules\QueryComplexity( expGraphQL::intSetting( 'MaxComplexity', 1000 ) );
+        $complexity = new \GraphQL\Validator\Rules\QueryComplexity( expGraphQL::intSetting( 'MaxComplexity', 1000 ) );
+        if ( is_array( $variables ) )
+            $complexity->setRawVariableValues( $variables );
+        $rules[\GraphQL\Validator\Rules\QueryComplexity::class] = $complexity;
         $rules[\GraphQL\Validator\Rules\DisableIntrospection::class] = new \GraphQL\Validator\Rules\DisableIntrospection(
             $allowIntrospection ? \GraphQL\Validator\Rules\DisableIntrospection::DISABLED : \GraphQL\Validator\Rules\DisableIntrospection::ENABLED );
         return $rules;
+    }
+
+    /**
+     * Values for every variable of a document that give its highest complexity, for a check made before any request
+     * calls it (exp:graphql:persist, exp:graphql:starter): an Int is graphql.ini MaxListLimit (a list it limits is as
+     * long as a request may make it), a Boolean is true (an @include runs) or false where it is the condition of
+     * an @skip (the field is not skipped), any other value is the simplest one its type accepts. A stored query is
+     * so refused when one call of it could exceed MaxComplexity; the request checks its own values again.
+     *
+     * @param \GraphQL\Type\Schema $schema
+     * @param \GraphQL\Language\AST\DocumentNode $document
+     * @return array variable name => value
+     */
+    public static function worstCaseVariables( $schema, \GraphQL\Language\AST\DocumentNode $document )
+    {
+        $skipped = array();
+        \GraphQL\Language\Visitor::visit( $document, array(
+            \GraphQL\Language\AST\NodeKind::DIRECTIVE => function ( \GraphQL\Language\AST\DirectiveNode $directive ) use ( &$skipped ) {
+                if ( $directive->name->value !== 'skip' )
+                    return;
+                foreach ( $directive->arguments as $argument )
+                {
+                    if ( $argument->name->value === 'if' && $argument->value instanceof \GraphQL\Language\AST\VariableNode )
+                        $skipped[$argument->value->name->value] = true;
+                }
+            },
+        ) );
+        $values = array();
+        foreach ( $document->definitions as $definition )
+        {
+            if ( !$definition instanceof \GraphQL\Language\AST\OperationDefinitionNode )
+                continue;
+            foreach ( $definition->variableDefinitions as $variable )
+            {
+                $name = $variable->variable->name->value;
+                if ( array_key_exists( $name, $values ) )
+                    continue;
+                $type = \GraphQL\Utils\AST::typeFromAST( array( $schema, 'getType' ), $variable->type );
+                if ( $type === null )
+                    continue; // an unknown type: the validation of the document says so
+                $value = self::worstCaseValue( $type, isset( $skipped[$name] ) );
+                if ( $value !== null )
+                    $values[$name] = $value;
+            }
+        }
+        return $values;
+    }
+
+    /**
+     * @param \GraphQL\Type\Definition\Type $type
+     * @param bool $skip the variable is the condition of an @skip
+     * @param int $level how deep in input objects (a cycle of required fields ends)
+     * @return mixed null: no value (the variable is left out)
+     */
+    protected static function worstCaseValue( $type, $skip, $level = 0 )
+    {
+        if ( $type instanceof \GraphQL\Type\Definition\NonNull )
+            $type = $type->getWrappedType();
+        if ( $type instanceof \GraphQL\Type\Definition\ListOfType )
+        {
+            $item = self::worstCaseValue( $type->getWrappedType(), $skip, $level );
+            return $item === null ? array() : array( $item );
+        }
+        if ( $type instanceof \GraphQL\Type\Definition\EnumType )
+        {
+            $enumValues = $type->getValues();
+            return $enumValues ? $enumValues[0]->name : null;
+        }
+        if ( $type instanceof \GraphQL\Type\Definition\InputObjectType )
+        {
+            if ( $level > 10 )
+                return null;
+            $object = array();
+            foreach ( $type->getFields() as $field )
+            {
+                // the required fields only: an optional one may exclude another (a @oneOf input)
+                if ( !$field->getType() instanceof \GraphQL\Type\Definition\NonNull || $field->defaultValueExists() )
+                    continue;
+                $value = self::worstCaseValue( $field->getType(), false, $level + 1 );
+                if ( $value !== null )
+                    $object[$field->name] = $value;
+            }
+            return $object;
+        }
+        switch ( $type->name )
+        {
+            case 'Int':
+                return max( 1, expGraphQL::intSetting( 'MaxListLimit', 100 ) );
+            case 'Float':
+                return 1.0;
+            case 'Boolean':
+                return !$skip;
+            case 'String':
+            case 'ID':
+                return '1';
+            case 'Upload':
+                return new expGraphQLUpload( 'file', 'application/octet-stream', '', 0 );
+        }
+        return '1'; // another scalar: its parser decides; a value it refuses is reported as such
     }
 
     /**

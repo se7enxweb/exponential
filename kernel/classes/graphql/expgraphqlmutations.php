@@ -146,7 +146,7 @@ class expGraphQLMutations
             'language' => $language,
             'publish' => $publish,
         );
-        return array(
+        $kernel = array(
             'createContent' => array(
                 'type' => $payload,
                 'description' => 'Creates content below a location (content/create there), and publishes it unless publish is false.',
@@ -285,6 +285,9 @@ class expGraphQLMutations
                 },
             ),
         );
+        // the mutations of schema extensions (expGraphQLMutationExtension) after the kernel's; they apply the rules of
+        // a mutation themselves (refusal())
+        return $kernel + $types->extensionMutationFields();
     }
 
     /**

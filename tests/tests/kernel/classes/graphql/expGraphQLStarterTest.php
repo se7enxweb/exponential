@@ -90,6 +90,25 @@ class expGraphQLStarterTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'children', $article, 'the fields of every content are not repeated' );
     }
 
+    public function testQueriesPassTheChecksOfTheCommands()
+    {
+        // exp:graphql:starter checks its queries as exp:graphql:persist stores them, with the limits of graphql.ini.
+        // Node($path: String!) and Content_*($id: Int!) failed there ('Variable "$path" ... was not provided'),
+        // so no kit could be generated, and step 8 of the walkthrough could not store a kit's graphql/.
+        $builder = self::builder();
+        $schema = $builder->schema();
+        $starter = new expGraphQLStarter( $builder );
+        foreach ( expGraphQLStarter::kits() as $kit )
+        {
+            $this->assertNotSame( array(), $starter->files( $kit, array( 'endpoint' => 'https://www.example.com/api/graphql', 'site' => 'site' ) ), $kit );
+            foreach ( $starter->queries() as $name => $query )
+            {
+                $this->assertSame( array(), Exponential\Command\Kernel\Expgraphqlstarter::problems( $schema, $query ), "$kit $name" );
+                $this->assertSame( array(), Exponential\Command\Kernel\Expgraphqlpersist::problems( $schema, $query ), "$kit $name" );
+            }
+        }
+    }
+
     public function testFilesOfEveryKit()
     {
         $starter = new expGraphQLStarter( self::builder() );
