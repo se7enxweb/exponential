@@ -8059,7 +8059,7 @@ a9bcd39a2092f456d9086bb6fabebc9f  doc/eng-us/help/designers/distribution/keeping
 6bad99052cd1c51a64a01ecebed754b7  doc/eng-us/help/designers/distribution/listing-on-projects-exponential-earth.md
 abe3ec38a871fc2baf627ab00c11c6e4  doc/eng-us/help/designers/distribution/only-the-last-position-counts.md
 b7e95015b6783a3ced0fd2efb30feabe  doc/eng-us/help/designers/distribution/packagist-auto-update.md
-1dc90fcb420f72f2c430ae100f468125  doc/eng-us/help/designers/distribution/readme-that-explains-and-sells.md
+eb671136e5b9315dc5a2317f55db1ab1  doc/eng-us/help/designers/distribution/readme-that-explains-and-sells.md
 1fa3b96036e6f26030a2a1e1052c93cd  doc/eng-us/help/designers/distribution/repository-name-description-topics.md
 2e6b13ed462a6091f61fd1fd811d2183  doc/eng-us/help/designers/distribution/screenshot-checklist.md
 0b4739e5fe6c938e44058b744f96ddce  doc/eng-us/help/designers/distribution/screenshots-for-a-theme.md
@@ -8102,7 +8102,7 @@ c4276ec86d4766b7a58b2636a8f44ea7  doc/eng-us/help/designers/extensions/naming-yo
 cc28f45496884ed4e05d73fa494e39b6  doc/eng-us/help/designers/extensions/package-licenses-in-the-wizard.md
 d7a44189081dff4961e7b29811e9cfc1  doc/eng-us/help/designers/extensions/package-secret-check.md
 a2f76fee0827c0617d0a0db0580c1126  doc/eng-us/help/designers/extensions/putting-a-theme-under-git.md
-7cbf1b8de97a32734e8a3ccafa6a179e  doc/eng-us/help/designers/extensions/readme-for-a-theme.md
+1fd521b4a7d4f15cc3bd83e69cd956d8  doc/eng-us/help/designers/extensions/readme-for-a-theme.md
 e8dd95bbf6d8c1ed0e54e739616061ef  doc/eng-us/help/designers/extensions/registering-the-design.md
 1e093e75442add1912cf336f6b804de8  doc/eng-us/help/designers/extensions/settings-files-in-an-extension.md
 d182e1acab8a82f3a98ad5580c34c706  doc/eng-us/help/designers/extensions/share-folder-assets.md
@@ -8127,7 +8127,7 @@ e44219f655308a60e74b3e14df3769c8  doc/eng-us/help/designers/lifecycle/comparing-
 83be353d46c2219c6845314493740420  doc/eng-us/help/designers/lifecycle/contributing-back-upstream.md
 ac383dc9e6a9de856adfb1baa463d3b8  doc/eng-us/help/designers/lifecycle/credits-and-attribution.md
 d0aece48ebcb9d9a1cd100a74e96827f  doc/eng-us/help/designers/lifecycle/csp-audit-per-release.md
-dd413b66375bf6b5a340c7d058bfda02  doc/eng-us/help/designers/lifecycle/declaring-compatibility.md
+bb68e5ad189296fa9ddf85d93ee780d4  doc/eng-us/help/designers/lifecycle/declaring-compatibility.md
 775eb913d8c545a5e1e26098d9216468  doc/eng-us/help/designers/lifecycle/dependency-updates.md
 bd9635a7bca19a020ff45ac57bab2a2c  doc/eng-us/help/designers/lifecycle/deprecating-a-setting-or-template.md
 446c40df559c69f1a976791048324bde  doc/eng-us/help/designers/lifecycle/deprecation-policy.md
@@ -8181,7 +8181,7 @@ ac29ad0b706682e8c522a79a20589a30  doc/eng-us/help/designers/sales/selling-from-y
 38b6c2de55f0af0d798166068264b372  doc/eng-us/help/designers/sales/taxes-and-invoices.md
 0163fb7edfd53d7e7779fcc3f6472349  doc/eng-us/help/designers/sales/training-and-workshops.md
 e075fe044a85fbf3282aaf5718f5b0f4  doc/eng-us/help/designers/sales/warranty-and-liability.md
-5158df16d9b57f23e4494815167c72e5  doc/eng-us/help/designers/sales/what-buyers-receive.md
+9712f89addf21a39c7477f1c8e08eba9  doc/eng-us/help/designers/sales/what-buyers-receive.md
 d01a5b4511950e7aec612af9a755784e  doc/eng-us/help/designers/sales/what-you-can-sell.md
 205ff68925d4e401f2da67d64029cd7c  doc/eng-us/help/designers/sales/where-themes-are-found.md
 b61e75b88d577bc9ec2dda137b5ef8d5  doc/eng-us/help/designers/sales/working-with-agencies-and-partners.md
@@ -17043,7 +17043,7 @@ b08e3684ca9c39b81ba35e03ba7452a6  doc/ger-de/hilfe/designer/erweiterungen/ihr-pa
 7ce6274ffafa6cb1ad56cc539b3bdb0f  doc/ger-de/hilfe/designer/erweiterungen/ordnerstruktur-einer-theme-erweiterung.md
 891e76b4add5e5a342e4f9672213d08a  doc/ger-de/hilfe/designer/erweiterungen/paketerstellungs-assistent-schritt-fuer-schritt.md
 6483e5e1822868c2cf94e7b369399e82  doc/ger-de/hilfe/designer/erweiterungen/paketlizenzen-im-assistenten.md
-14079fd3c1d4b3d30ae61ac9667eefa4  doc/ger-de/hilfe/designer/erweiterungen/readme-fuer-ein-theme.md
+dbab3dbcde83aad7308afdea9be2c28f  doc/ger-de/hilfe/designer/erweiterungen/readme-fuer-ein-theme.md
 344fa8d2d0a24b1589f26da8e4c44ac4  doc/ger-de/hilfe/designer/erweiterungen/siteaccess-einstellungen-in-einem-theme.md
 2ca63fbc1d2ff274ad2b68aaeb6eba0d  doc/ger-de/hilfe/designer/erweiterungen/template-operatoren-in-einem-theme.md
 d31ba93b34ea10baf16ee181f32c5921  doc/ger-de/hilfe/designer/erweiterungen/theme-erweiterungen-hier-beginnen.md
@@ -17073,7 +17073,7 @@ f69c4f236526a6bd841bdb4a5caca55e  doc/ger-de/hilfe/designer/lebenszyklus/exponen
 b5bda496a55a40a18e89561a9b5c24f3  doc/ger-de/hilfe/designer/lebenszyklus/inkompatible-aenderungen.md
 9600770b1285ca6e20b9f5e191cc4f5e  doc/ger-de/hilfe/designer/lebenszyklus/inline-skripte-und-styles-entfernen.md
 edd43d57fc6645d66e6957c8a1ba9c11  doc/ger-de/hilfe/designer/lebenszyklus/javascript-bibliotheken-aktualisieren.md
-588268663fd45a46b14c03c30be2ab3d  doc/ger-de/hilfe/designer/lebenszyklus/kompatibilitaet-angeben.md
+d5aafb1da9021d8969f1d08096bb9056  doc/ger-de/hilfe/designer/lebenszyklus/kompatibilitaet-angeben.md
 454bfc13bd6805b3eb58567621786143  doc/ger-de/hilfe/designer/lebenszyklus/kompatibilitaetsmatrix.md
 6ad395734e307a1e29f82c63287b9229  doc/ger-de/hilfe/designer/lebenszyklus/lebensende.md
 8b2f31d20bb175b1e37b15fa4d4e2e90  doc/ger-de/hilfe/designer/lebenszyklus/lebenszyklus-hier-beginnen.md
@@ -17200,7 +17200,7 @@ c3cc940b53f47af4b2b696db021eaf71  doc/ger-de/hilfe/designer/verkauf/ueber-die-ei
 9a2566ff61c6982bb94cfa4be0785eb5  doc/ger-de/hilfe/designer/verkauf/verkaufen-hier-beginnen.md
 6c137100854c5e7e74f9e6a7639181be  doc/ger-de/hilfe/designer/verkauf/vertraege-und-bedingungen.md
 fe1a90f298e8ac4f0f7a364f23ab5f83  doc/ger-de/hilfe/designer/verkauf/wartungsabonnements.md
-bd059b59cf4d622370a13f7a8f75f740  doc/ger-de/hilfe/designer/verkauf/was-kaeufer-erhalten.md
+80a1e1d360ceaa3b09f02cdecdd96d8c  doc/ger-de/hilfe/designer/verkauf/was-kaeufer-erhalten.md
 dd2f812fdaddcee90742286e43f9d747  doc/ger-de/hilfe/designer/verkauf/was-sie-verkaufen-koennen.md
 5acc444c612118fd62c7a579dc9b1ba3  doc/ger-de/hilfe/designer/verkauf/wo-themes-zu-finden-sind.md
 c242292453b2c059cadd14ea5f85286e  doc/ger-de/hilfe/designer/verkauf/zusammenarbeit-mit-agenturen-und-partnern.md
@@ -17216,7 +17216,7 @@ f11f09952e371d7197710952613fa880  doc/ger-de/hilfe/designer/veroeffentlichung/cr
 528d3fd06df82ab507bcd3eb907a9a49  doc/ger-de/hilfe/designer/veroeffentlichung/demo-websites.md
 b8b52c571b8fb99da612439ab89c3270  doc/ger-de/hilfe/designer/veroeffentlichung/dokumentieren-auf-ezpedia.md
 fb2ebf7277e0cfd65ea5cd234c9c48be  doc/ger-de/hilfe/designer/veroeffentlichung/ein-gepushter-tag-ist-endgueltig.md
-3f77fa4cb4d8634347dd5a04a840c784  doc/ger-de/hilfe/designer/veroeffentlichung/ein-readme-das-erklaert-und-verkauft.md
+bbd4086b49a44f127dc9ecfccfe949f1  doc/ger-de/hilfe/designer/veroeffentlichung/ein-readme-das-erklaert-und-verkauft.md
 6f9ba054ecb93e2b57253e881e5ef43a  doc/ger-de/hilfe/designer/veroeffentlichung/ein-theme-veroeffentlichen-hier-beginnen.md
 0bccaff098ea6d3a1ff88064f014f16f  doc/ger-de/hilfe/designer/veroeffentlichung/eine-changelog-datei-fuehren.md
 d9e5a9a7c8ec2febba9028407ba2767f  doc/ger-de/hilfe/designer/veroeffentlichung/eine-versionsnummer-waehlen.md
