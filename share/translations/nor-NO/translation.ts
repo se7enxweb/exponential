@@ -80323,6 +80323,142 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>For nettstedstilgangen %siteaccess, som viser denne siden.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooker</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Hver hendelse et endepunkt ber om (publish, update, trash, delete, move, hide, reveal, mutation), sendes til det, signert, av cronjob-delen graphqlwebhooks. ./console exp:graphql:webhooks gjør det samme som denne delen.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hendelser</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>alle</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hver nettstedstilgang</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>feil</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ingen hemmelighet</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Venter</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count gitt opp</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Siste levering</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Send en test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ja, fjern denne webhooken</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ingen webhooker ennå.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Legg til en webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Legg til</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Nylige leveringer</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tid</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonnementer</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Direkteoppdateringer for klienter: en hendelsesstrøm på /api/graphql/subscribe og en WebSocket (graphql-transport-ws) på Velocity. Hver hendelse går bare til abonnenter som har lov til å lese innholdet.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Åpne nå</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Flest åpne</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total totalt, %user per bruker, %address per adresse</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonyme abonnementer</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Strømmens varighet</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhooken kunne ikke legges til: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhooken %name ble endret; signeringshemmeligheten beholdes.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Signeringshemmeligheten kunne ikke lagres (Oppsett &gt; Hemmeligheter).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhooken %name ble lagt til. Signeringshemmeligheten, vist bare denne gangen: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhooken %name finnes ikke.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhooken %name svarte ikke: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhooken %name svarte %status på %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Kryss av i boksen ved siden av webhooken for å fjerne den.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhooken %name ble fjernet.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -80597,6 +80733,42 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ikke et omfang i GraphQL-API-et: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Send abonnementer til /api/graphql/subscribe (en hendelsesstrøm eller en WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Forespørselen angir ingen operasjon i dokumentet.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Et abonnement ber om nøyaktig ett felt.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>For mange abonnementer er åpne; prøv igjen senere.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Du har %max abonnementer åpne, det meste som er tillatt.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Adressen din har %max abonnementer åpne, det meste som er tillatt.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonnementer er slått av i denne nettstedstilgangen.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Logg inn for å abonnere (et token eller en personlig API-nøkkel).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Send mutasjoner til /api/graphql.</translation>
     </message>
 </context>
 </TS>

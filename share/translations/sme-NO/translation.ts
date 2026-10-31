@@ -79065,6 +79065,142 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Neahttabáikebeassama %siteaccess várás, mii čájeha dán siiddu.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhookat</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Juohke dáhpáhus maid loahppačuokkis bivdá (publish, update, trash, delete, move, hide, reveal, mutation), sáddejuvvo dasa, vuolláičállojuvvon, cronjob-oasis graphqlwebhooks. ./console exp:graphql:webhooks dahká seamma go dát oassi.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Dáhpáhusat</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>buot</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Juohke neahttabáikebeassan</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>boatkanan</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ii čiehkádus</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Vurdet</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count heaitthuvvon</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Maŋimuš sáddejupmi</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Sádde geahččaleami</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Juo, sihko dán webhooka</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ii vel webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Lasit webhooka</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Lasit</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Maŋimuš sáddejumit</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Áigi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Boađus</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Diŋgojumit</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Njuolggoođasmahttimat klieanttaide: dáhpáhusrávdnji /api/graphql/subscribe:s, ja WebSocket (graphql-transport-ws) Velocity:s. Juohke dáhpáhus manná dušše diŋgojeddjiide geat besset lohkat dan sisdoalu.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Rabas dál</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Eanemus rabas</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total oktiibuot, %user juohke geavaheaddjái, %address juohke čujuhussii</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Namahis diŋgojumit</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Rávnji guhkkodat</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhooka ii sáhttán lasihit: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name rievdaduvvui; dan vuolláičállinčiehkádus bissu.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Vuolláičállinčiehkádusa ii sáhttán vurket (Ásaheapmi &gt; Čiehkádusat).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name lasihuvvui. Dan vuolláičállinčiehkádus, čájehuvvon dušše dán háve: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhook %name ii gávdno.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name ii vástidan: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name vástidii %status %ms ms:s.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Merke ruvtto webhooka bálddas sihkkun dihte dan.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name sihkkojuvvui.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ii leat GraphQL-API viidodat: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Sádde diŋgojumiid /api/graphql/subscribe:i (dáhpáhusrávdnji dahje WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Bivdda ii namut ovttage dokumeantta doaimma.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Diŋgojupmi bivdá juste ovtta gietti.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Menddo ollu diŋgojumit leat rabas; geahččal fas maŋŋelis.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Dus leat %max diŋgojumi rabas, eanemus mii lea lohpi.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Du čujuhusas leat %max diŋgojumi rabas, eanemus mii lea lohpi.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Diŋgojumit leat jáddaduvvon dán neahttabáikebeassanis.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Čálit sisa diŋgot dihte (token dahje persovnnalaš API-čoavdda).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Sádde mutašuvnnaid /api/graphql:i.</translation>
     </message>
 </context>
 </TS>

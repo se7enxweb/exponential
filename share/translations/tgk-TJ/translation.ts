@@ -79065,6 +79065,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Барои дастрасии сомонаи %siteaccess, ки ин саҳифаро нишон медиҳад.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Вебхукҳо</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Ҳар рӯйдоде, ки нуқтаи ниҳоӣ мехоҳад (publish, update, trash, delete, move, hide, reveal, mutation), ба он бо имзо аз ҷониби қисми cronjob graphqlwebhooks фиристода мешавад. ./console exp:graphql:webhooks ҳамон корро мекунад, ки ин бахш мекунад.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Рӯйдодҳо</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>ҳама</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ҳар дастрасии сомона</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>вайрон</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>бе сир</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Дар интизорӣ</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count партофта шуд</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Супориши охирин</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Фиристодани санҷиш</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ҳа, ин вебхукро нест кунед</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ҳоло вебхук нест.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Илова кардани вебхук</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Илова кардан</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Супоришҳои охирин</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Вақт</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Натиҷа</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Обунаҳо</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Навсозиҳои зинда барои муштариён: ҷараёни рӯйдодҳо дар /api/graphql/subscribe ва WebSocket (graphql-transport-ws) дар Velocity. Ҳар рӯйдод танҳо ба обуначиёне меравад, ки мундариҷаи онро хонда метавонанд.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Ҳозир кушода</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Ҳадди аксари кушода</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>ҳамагӣ %total, барои ҳар корбар %user, барои ҳар суроға %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Обунаҳои беном</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Давомнокии ҷараён</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Вебхукро илова кардан имконнопазир шуд: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Вебхуки %name тағйир дода шуд; сирри имзои он боқӣ мемонад.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Сирри имзоро захира кардан имконнопазир шуд (Насб &gt; Сирҳо).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Вебхуки %name илова шуд. Сирри имзои он, ки танҳо ҳамин бор нишон дода мешавад: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Вебхуки %name вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Вебхуки %name ҷавоб надод: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Вебхуки %name дар %ms мс %status ҷавоб дод.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Барои нест кардани вебхук қуттии назди онро қайд кунед.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Вебхуки %name нест карда шуд.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Доираи GraphQL API нест: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Обунаҳоро ба /api/graphql/subscribe фиристед (ҷараёни рӯйдодҳо ё WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Дархост ягон амалиёти ҳуҷҷатро ном намебарад.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Обуна маҳз як майдонро талаб мекунад.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Обунаҳои кушода аз ҳад зиёданд; баъдтар дубора кӯшиш кунед.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Шумо %max обунаи кушода доред, ки ҳадди аксари иҷозатдодашуда аст.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Суроғаи шумо %max обунаи кушода дорад, ки ҳадди аксари иҷозатдодашуда аст.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Обунаҳо дар ин дастрасии сомона хомӯшанд.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Барои обуна шудан ворид шавед (токен ё калиди шахсии API).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Мутатсияҳоро ба /api/graphql фиристед.</translation>
     </message>
 </context>
 </TS>

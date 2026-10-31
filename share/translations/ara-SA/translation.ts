@@ -79095,6 +79095,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>للـ siteaccess %siteaccess الذي يعرض هذه الصفحة.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>خطافات الويب (Webhooks)</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>كل حدث تطلبه نقطة نهاية (publish, update, trash, delete, move, hide, reveal, mutation) يُرسَل إليها موقّعًا بواسطة جزء المهمة المجدولة graphqlwebhooks. يؤدي ./console exp:graphql:webhooks ما يؤديه هذا القسم.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>الأحداث</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>الكل</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>كل siteaccess</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>معطّل</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>بلا سرّ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>قيد الانتظار</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count متروك</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>آخر تسليم</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>أرسل اختبارًا</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>نعم، أزل خطاف الويب هذا</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>لا يوجد خطاف ويب بعد.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>إضافة خطاف ويب</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>إضافة</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>التسليمات الأخيرة</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>الوقت</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>النتيجة</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>الاشتراكات (Subscriptions)</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>تحديثات مباشرة للعملاء: تدفق أحداث على /api/graphql/subscribe، و WebSocket (graphql-transport-ws) على Velocity. لا يذهب كل حدث إلا إلى المشتركين الذين يحق لهم قراءة محتواه.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>المفتوحة الآن</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>الحد الأقصى المفتوح</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total إجمالًا، %user لكل مستخدم، %address لكل عنوان</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>الاشتراكات المجهولة</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>مدة التدفق</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>تعذّرت إضافة خطاف الويب: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>غُيّر خطاف الويب %name؛ ويبقى سرّ التوقيع الخاص به كما هو.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>تعذّر حفظ سرّ التوقيع (الإعداد &gt; الأسرار).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>أُضيف خطاف الويب %name. سرّ التوقيع الخاص به، ويُعرض هذه المرة فقط: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>لا يوجد خطاف ويب %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>لم يُجب خطاف الويب %name: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>أجاب خطاف الويب %name بـ %status خلال %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>حدّد المربع بجانب خطاف الويب لإزالته.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>أُزيل خطاف الويب %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79369,6 +79505,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>ليس نطاقًا لواجهة GraphQL البرمجية: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>أرسل الاشتراكات إلى /api/graphql/subscribe (تدفق أحداث أو WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>لا يسمّي الطلب أي عملية من المستند.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>يطلب الاشتراك حقلًا واحدًا بالضبط.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>عدد الاشتراكات المفتوحة كبير جدًا؛ حاول مرة أخرى لاحقًا.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>لديك %max اشتراكات مفتوحة، وهو الحد الأقصى المسموح به.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>لدى عنوانك %max اشتراكات مفتوحة، وهو الحد الأقصى المسموح به.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>الاشتراكات معطّلة في هذا الـ siteaccess.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>سجّل الدخول للاشتراك (رمز أو مفتاح API شخصي).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>أرسل التعديلات (mutations) إلى /api/graphql.</translation>
     </message>
 </context>
 </TS>

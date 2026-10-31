@@ -79065,6 +79065,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>یہ صَفحہ ہاوَن وٲلِس سایِٹ ایکسیس %siteaccess خٲطرٕ۔</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>ویب ہُکس</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>ہر ایوینٹ یُس اینڈ پوائنٹ مَنگان چھُ (publish, update, trash, delete, move, hide, reveal, mutation) چھُ cronjob حِصہٕ graphqlwebhooks دستخط کٔرِتھ تَتھ سوزان۔ ./console exp:graphql:webhooks چھُ سُے کٲم کران یۄس یہِ حِصہٕ کران چھُ۔</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ایوینٹس</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>سٲری</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>پرٛتھ سایِٹ ایکسیسس</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>خراب</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>کانٛہہ راز نہٕ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>انتظار منٛز</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count ترٲوِمٕتؠ</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>آخری ترسیل</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>ٹیسٹ سوزِو</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>آ، یہِ ویب ہُک ہٹٲوِو</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>وُنیک چھُ نہٕ کانٛہہ ویب ہُک۔</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>ویب ہُک جوڑِو</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>جوڑِو</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>حالیہ ترسیل</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وَکھ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہٕ</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>سَبسکرِپشَن</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>کلائنٹن خٲطرٕ لائیو اپڈیٹ: /api/graphql/subscribe پؠٹھ ایوینٹ سٹریم، تہٕ Velocity پؠٹھ WebSocket (graphql-transport-ws)۔ پرٛتھ ایوینٹ چھُ صِرف تِمن سبسکرائبرن واتان یِم امہِ ہُند مواد پٔرِتھ ہیکن۔</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>وۄنی کھُلٕمٕتؠ</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>زیادٕ کھوتہٕ زیادٕ کھُلٕمٕتؠ</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>کُل %total، پرٛتھ یوزرس %user، پرٛتھ پتس %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>گُمنام سَبسکرِپشَن</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>سٹریمٕچ مُدت</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ویب ہُک ہیوٚک نہٕ جوڑنہٕ یِتھ: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>ویب ہُک %name آو بدلاونہٕ؛ اَمیُک دستخطی راز چھُ رُوزان۔</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>دستخطی راز ہیوٚک نہٕ محفوظ کرنہٕ یِتھ (سیٹ اَپ &gt; خُفیہ مَعلوٗمات)۔</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>ویب ہُک %name آو جوڑنہٕ۔ اَمیُک دستخطی راز، صِرف یِہ اکھ لَٹ ہاونہٕ آمُت: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ویب ہُک %name چھُ نہٕ۔</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>ویب ہُکن %name دیُت نہٕ جواب: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>ویب ہُکن %name دیُت %ms ms منٛز %status جواب۔</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>ویب ہُک ہٹاونہٕ خٲطرٕ کٔرِو امہِ نِش وول باکس ٹِک۔</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>ویب ہُک %name آو ہٹاونہٕ۔</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API ہُنٛد اسکوپ چھُ نہٕ: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>سَبسکرِپشَن سوزِو /api/graphql/subscribe پؠٹھ (ایوینٹ سٹریم یا WebSocket)۔</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>درخواست چھےٚ نہٕ ڈاکیومینٹُک کانٛہہ آپریشن ناو ہیوان۔</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>سَبسکرِپشَن چھُ ٹھیک اکھ فیلڈ مَنگان۔</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>واریاہ سَبسکرِپشَن چھِ کھُلٕمٕتؠ؛ پتہٕ کٔرِو بیٛیہِ کوشش۔</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>توہہِ چھِ %max سَبسکرِپشَن کھُلٕمٕتؠ، یِہ چھُ اجازت ہُند زیادٕ کھوتہٕ زیادٕ۔</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>تُہنٛدِس پتس پؠٹھ چھِ %max سَبسکرِپشَن کھُلٕمٕتؠ، یِہ چھُ اجازت ہُند زیادٕ کھوتہٕ زیادٕ۔</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>یمہٕ سایِٹ ایکسیسس منٛز چھِ سَبسکرِپشَن بنٛد۔</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>سبسکرائب کرنہٕ خٲطرٕ کٔرِو سائن اِن (ٹوکن یا ذٲتی API کی)۔</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>میوٹیشنز سوزِو /api/graphql پؠٹھ۔</translation>
     </message>
 </context>
 </TS>
