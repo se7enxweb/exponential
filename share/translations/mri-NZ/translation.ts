@@ -79205,6 +79205,142 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Mō te urunga pae %siteaccess, e whakaatu ana i tēnei whārangi.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Ngā matau tukutuku</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Ko ia takahanga e tonoa ana e tētahi pito mutunga (publish, update, trash, delete, move, hide, reveal, mutation) ka tukuna ki a ia, kua hainatia, e te wāhanga cronjob graphqlwebhooks. He ōrite te mahi a ./console exp:graphql:webhooks ki tēnei wāhanga.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngā takahanga</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>katoa</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Ia urunga pae</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>kua pakaru</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>kāore he mea muna</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>E tatari ana</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count kua whakarērea</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Tuku whakamutunga</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Tukuna he whakamātautau</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Āe, tangohia tēnei matau tukutuku</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Kāore anō he matau tukutuku.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Tāpiri matau tukutuku</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Tāpiri</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Ngā tukunga tata nei</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Wā</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hua</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Ngā ohaurunga</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>He whakahōu ora mō ngā kiritaki: he rerenga takahanga ki /api/graphql/subscribe, me tētahi WebSocket (graphql-transport-ws) ki Velocity. Ka tae ia takahanga ki ngā kaiohauru anake e āhei ana ki te pānui i tōna ihirangi.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>E tuwhera ana ināianei</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Te nuinga ka tuwhera</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total katoa, %user mō ia kaiwhakamahi, %address mō ia wāhitau</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Ngā ohaurunga kore ingoa</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Te roa o te rerenga</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Kāore i taea te matau tukutuku te tāpiri: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Kua panonihia te matau tukutuku %name; ka noho tonu tōna mea muna haina.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Kāore i taea te mea muna haina te penapena (Whakaritenga &gt; Ngā mea muna).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Kua tāpirihia te matau tukutuku %name. Tōna mea muna haina, ka whakaaturia kotahi anake: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Kāore he matau tukutuku %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Kāore te matau tukutuku %name i whakautu: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>I whakautu te matau tukutuku %name ki te %status i roto i te %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Tohua te pouaka i te taha o te matau tukutuku hei tango i a ia.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Kua tangohia te matau tukutuku %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ehara i te korahi o te GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Tukuna ngā ohaurunga ki /api/graphql/subscribe (he rerenga takahanga, he WebSocket rānei).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Kāore te tono e whakaingoa i tētahi mahi o te tuhinga.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Ka tono tētahi ohaurunga kia kotahi tonu te āpure.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>He nui rawa ngā ohaurunga e tuwhera ana; whakamātau anō ā muri ake.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>E %max ō ohaurunga e tuwhera ana, koinā te mea nui rawa e whakaaetia ana.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>E %max ngā ohaurunga e tuwhera ana i tō wāhitau, koinā te mea nui rawa e whakaaetia ana.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Kua whakawetohia ngā ohaurunga i tēnei urunga pae.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Takiuru kia ohauru ai (he tohu, he kī API whaiaro rānei).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Tukuna ngā panoni ki /api/graphql.</translation>
     </message>
 </context>
 </TS>

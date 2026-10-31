@@ -34,7 +34,7 @@ class expGraphQLRestTest extends PHPUnit\Framework\TestCase
         $providers = eZINI::instance( 'rest.ini' )->variable( 'ApiProvider', 'ProviderClass' );
         $this->assertSame( 'expGraphQLRestProvider', $providers['graphql'] );
         $provider = new expGraphQLRestProvider();
-        $this->assertSame( array( 'expGraphQLQuery', 'expGraphQLQuerySlash', 'expGraphQLPlayground' ), array_keys( $provider->getRoutes() ) );
+        $this->assertSame( array( 'expGraphQLQuery', 'expGraphQLQuerySlash', 'expGraphQLPlayground', 'expGraphQLSubscribe' ), array_keys( $provider->getRoutes() ) );
         $this->assertInstanceOf( 'expGraphQLRestViewController', $provider->getViewController() );
         $cache = eZINI::instance( 'rest.ini' )->variable( 'expGraphQLRestController_CacheSettings', 'ApplicationCache' );
         $this->assertSame( 'disabled', $cache, 'a GraphQL answer depends on the user: never in the REST application cache' );
@@ -43,6 +43,7 @@ class expGraphQLRestTest extends PHPUnit\Framework\TestCase
     public function testTheEndPointAuthenticatesOnlyWhatPresentsCredentials()
     {
         $this->assertTrue( ezpRestAuthConfiguration::isOptional( new ezcMvcRoutingInformation( '', 'expGraphQLRestController', 'query' ) ) );
+        $this->assertTrue( ezpRestAuthConfiguration::isOptional( new ezcMvcRoutingInformation( '', 'expGraphQLRestController', 'subscribe' ) ) );
         $this->assertFalse( ezpRestAuthConfiguration::isOptional( new ezcMvcRoutingInformation( '', 'expHelpRestController', 'topic' ) ) );
 
         $request = new ezpRestRequest();

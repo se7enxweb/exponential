@@ -79235,6 +79235,142 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Don rochtain suímh %siteaccess, a thaispeánann an leathanach seo.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Crúcaí gréasáin</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Seolann an chuid cronjob graphqlwebhooks gach teagmhas a iarrann críochphointe (publish, update, trash, delete, move, hide, reveal, mutation) chuige, sínithe. Déanann ./console exp:graphql:webhooks an rud céanna leis an rannán seo.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Teagmhais</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>gach ceann</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gach rochtain suímh</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>briste</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>gan rún</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Ag fanacht</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count tréigthe</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>An seachadadh deireanach</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Seol tástáil</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Bain an crúca gréasáin seo, cinnte</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Níl aon chrúca gréasáin ann fós.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Cuir crúca gréasáin leis</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Cuir leis</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Seachadtaí le déanaí</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Am</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Toradh</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Síntiúis</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Nuashonruithe beo do chliaint: sruth teagmhas ag /api/graphql/subscribe, agus WebSocket (graphql-transport-ws) ar Velocity. Ní théann gach teagmhas ach chuig síntiúsóirí a bhfuil cead acu a ábhar a léamh.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Oscailte anois</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Uasmhéid oscailte</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total san iomlán, %user in aghaidh an úsáideora, %address in aghaidh an tseolta</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Síntiúis gan ainm</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Fad an tsrutha</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Níorbh fhéidir an crúca gréasáin a chur leis: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Athraíodh an crúca gréasáin %name; fanann a rún sínithe.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Níorbh fhéidir an rún sínithe a stóráil (Socrú &gt; Rúin).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Cuireadh an crúca gréasáin %name leis. A rún sínithe, á thaispeáint an uair seo amháin: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Níl crúca gréasáin %name ann.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Níor fhreagair an crúca gréasáin %name: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>D'fhreagair an crúca gréasáin %name %status i %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Cuir tic sa bhosca in aice leis an gcrúca gréasáin chun é a bhaint.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Baineadh an crúca gréasáin %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79509,6 +79645,42 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ní raon den API GraphQL é: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Seol síntiúis chuig /api/graphql/subscribe (sruth teagmhas nó WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Ní ainmníonn an t-éileamh aon oibríocht den doiciméad.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Iarrann síntiús réimse amháin go díreach.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Tá an iomarca síntiús oscailte; bain triail eile as ar ball.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Tá %max síntiús oscailte agat, an t-uasmhéid a cheadaítear.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Tá %max síntiús oscailte ag do sheoladh, an t-uasmhéid a cheadaítear.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Tá síntiúis múchta sa rochtain suímh seo.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Sínigh isteach chun liostáil (comhartha nó eochair API phearsanta).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Seol sócháin chuig /api/graphql.</translation>
     </message>
 </context>
 </TS>

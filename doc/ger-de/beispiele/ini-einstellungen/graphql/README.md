@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # graphql.ini
 
-Die ausgelieferten Einstellungen von `settings/graphql.ini`: 2 Blöcke, 38 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/graphql.ini`: 4 Blöcke, 56 Einstellungen.
 
 > Die GraphQL-API des Kernels: ein Endpunkt je Siteaccess (/api/graphql), ein aus den Inhaltsklassen erzeugtes  
 > Schema, die Benutzer, Rollen und Richtlinien der Administration, die OAuth-Token und persönlichen API-Schlüssel der  
@@ -19,8 +19,10 @@ Die ausgelieferten Einstellungen von `settings/graphql.ini`: 2 Blöcke, 38 Einst
 
 | Block | Einstellungen |
 |---|---|
-| [GraphQLSettings](GraphQLSettings.md) | 36 |
+| [GraphQLSettings](GraphQLSettings.md) | 45 |
 | [GraphQLNaming](GraphQLNaming.md) | 2 |
+| [GraphQLEvents](GraphQLEvents.md) | 2 |
+| [GraphQLWebhooks](GraphQLWebhooks.md) | 7 |
 
 - [Alle Beispiele](../../README.md)
 

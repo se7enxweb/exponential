@@ -28,6 +28,7 @@ Wo eine Erweiterung sich über Einstellungen in den Kernel einklinkt: INI-Einste
 | [cronjob.ini](cronjob.md) | Kernel | 1 | ExtensionDirectories |
 | [datatable.ini](datatable.md) | Kernel | 1 | IgnoreClasses |
 | [dbschema.ini](dbschema.md) | Kernel | 1 | SchemaHandlerClasses |
+| [editorpolicies.ini](editorpolicies.md) | Kernel | 1 | Classes |
 | [error.ini](error.md) | Kernel | 3 | DefaultErrorHandler, ErrorHandler, ErrorHandler |
 | [exphelp.ini](exphelp.md) | Kernel | 2 | Providers, BookChecks |
 | [ezxml.ini](ezxml.md) | Kernel | 4 | HandlerClass, AliasClasses, HandlerClass, AliasClasses |

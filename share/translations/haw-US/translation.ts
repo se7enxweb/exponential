@@ -79205,6 +79205,142 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>No ka Siteaccess %siteaccess, ka mea e hōʻike ana i kēia ʻaoʻao.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Nā webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Hoʻouna ʻia kēlā me kēia hanana a kekahi kiko hope e noi ai (publish, update, trash, delete, move, hide, reveal, mutation) iā ia, me ka pūlima, e ka ʻāpana cronjob graphqlwebhooks. Hana ʻo ./console exp:graphql:webhooks i ka mea like me kēia māhele.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Nā hanana</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>a pau</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kēlā me kēia Siteaccess</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>haki</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ʻaʻohe huna</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>E kali ana</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count i haʻalele ʻia</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Hoʻouna hope loa</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Hoʻouna i hoʻāʻo</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>ʻAe, e wehe i kēia webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>ʻAʻohe webhook i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Hoʻohui i webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Hoʻohui</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Nā hoʻouna hou</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Manawa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hopena</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Nā kau inoa</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Nā hōʻano hou ola no nā client: he kahawai hanana ma /api/graphql/subscribe, a me kekahi WebSocket (graphql-transport-ws) ma Velocity. Hele kēlā me kēia hanana i nā mea kau inoa wale nō i ʻae ʻia e heluhelu i kona ʻike.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Hāmama i kēia manawa</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Ka nui loa hāmama</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total a pau, %user no kēlā me kēia mea hoʻohana, %address no kēlā me kēia helu wahi</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Nā kau inoa inoa ʻole</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Ka lōʻihi o ke kahawai</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ʻAʻole hiki ke hoʻohui ʻia ka webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Ua hoʻololi ʻia ka webhook %name; noho mau kona huna pūlima.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>ʻAʻole hiki ke mālama ʻia ka huna pūlima (Hoʻonohonoho &gt; Nā huna).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Ua hoʻohui ʻia ka webhook %name. ʻO kona huna pūlima, hōʻike ʻia i kēia manawa hoʻokahi wale nō: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ʻAʻohe webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>ʻAʻole i pane mai ka webhook %name: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Ua pane ka webhook %name i %status i loko o %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>E kaha i ka pahu ma ka ʻaoʻao o ka webhook e wehe ai.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Ua wehe ʻia ka webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>ʻAʻole he ʻano o ka GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>E hoʻouna i nā kau inoa i /api/graphql/subscribe (he kahawai hanana a i ʻole he WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>ʻAʻole i kapa ka noi i kekahi hana o ka palapala.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Noi ke kau inoa i hoʻokahi kahua wale nō.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Nui loa nā kau inoa hāmama; e hoʻāʻo hou ma hope.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>He %max āu kau inoa hāmama, ka nui loa i ʻae ʻia.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>He %max kau inoa hāmama ko kou helu wahi, ka nui loa i ʻae ʻia.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Ua hoʻopio ʻia nā kau inoa ma kēia Siteaccess.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>E komo i mea e kau inoa ai (he hōʻailona a i ʻole he kī API pilikino).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>E hoʻouna i nā hoʻololi i /api/graphql.</translation>
     </message>
 </context>
 </TS>

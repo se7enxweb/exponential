@@ -29,6 +29,7 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         'expgraphqlkeys' => array( 'exp:graphql:keys' ),
         'expgraphqlstarter' => array( 'exp:graphql:starter' ),
         'expgraphqlbench' => array( 'exp:graphql:bench' ),
+        'expgraphqlwebhooks' => array( 'exp:graphql:webhooks' ),
     );
 
     /** command => its option names */
@@ -42,6 +43,8 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         'expgraphqlkeys' => array( 'list', 'create', 'for', 'name', 'scope', 'days', 'revoke', 'format', 'apply' ),
         'expgraphqlstarter' => array( 'kit', 'to', 'endpoint', 'list', 'apply' ),
         'expgraphqlbench' => array( 'url', 'id', 'variables', 'query-file', 'requests', 'runs', 'rows', 'siteaccess-header', 'insecure', 'format' ),
+        'expgraphqlwebhooks' => array( 'list', 'add', 'remove', 'test', 'deliver', 'log', 'url', 'events', 'siteaccess', 'classes', 'subtree', 'payload',
+                                       'query', 'as', 'secret-name', 'limit', 'format', 'apply' ),
     );
 
     /** command class => exit code constants */
@@ -55,11 +58,12 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         'Expgraphqlkeys' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2 ),
         'Expgraphqlstarter' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2, 'EXIT_UNAVAILABLE' => 3 ),
         'Expgraphqlbench' => array( 'EXIT_OK' => 0, 'EXIT_LIMIT' => 1, 'EXIT_USAGE' => 2, 'EXIT_UNAVAILABLE' => 3 ),
+        'Expgraphqlwebhooks' => array( 'EXIT_OK' => 0, 'EXIT_ERRORS' => 1, 'EXIT_USAGE' => 2 ),
     );
 
     const ERROR_CODES = array( 'FORBIDDEN', 'NOT_FOUND', 'VALIDATION', 'PARSE', 'BAD_USER_INPUT', 'DEPTH_LIMIT', 'COMPLEXITY_LIMIT',
                                'INTROSPECTION_DISABLED', 'RATE_LIMITED', 'DISABLED', 'INTERNAL', 'PERSISTED_QUERY_NOT_FOUND',
-                               'PERSISTED_QUERY_NOT_SUPPORTED', 'PERSISTED_QUERY_REQUIRED' );
+                               'PERSISTED_QUERY_NOT_SUPPORTED', 'PERSISTED_QUERY_REQUIRED', 'SUBSCRIPTION_LIMIT' );
 
     const CONTENT_FIELDS = array( 'id', 'remoteId', 'name', 'classIdentifier', 'className', 'published', 'modified', 'language',
                                   'languages', 'mainLanguage', 'ownerId', 'ownerName', 'sectionId', 'url', 'urlAlias', 'location',
@@ -72,7 +76,8 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
                                   'GeoLocation', 'Rating', 'Metadata', 'EnhancedLink', 'Option', 'OptionList', 'OptionGroup', 'Range',
                                   'CurrencyPrice', 'EnumValue', 'SearchResult', 'SearchFacet', 'SearchFacetValue', 'Tag', 'Layout',
                                   'LayoutZone', 'LayoutBlock', 'LayoutBlockParameter',
-                                  'Upload', 'FieldInput', 'FieldFormat', 'MutationStatus', 'ContentPayload', 'PreviewToken' );
+                                  'Upload', 'FieldInput', 'FieldFormat', 'MutationStatus', 'ContentPayload', 'PreviewToken',
+                                  'ContentEvent', 'ContentEventKind' );
 
     const SORT_FIELDS = array( 'PATH', 'PUBLISHED', 'MODIFIED', 'SECTION', 'DEPTH', 'CLASS_IDENTIFIER', 'CLASS_NAME', 'PRIORITY', 'NAME', 'NODE_ID' );
 
@@ -130,6 +135,8 @@ class expGraphQLCommandContractTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'exp-graphql-persisted/1', Exponential\Command\Kernel\Expgraphqlpersist::SCHEMA );
         $this->assertSame( 'exp-graphql-keys/1', Exponential\Command\Kernel\Expgraphqlkeys::SCHEMA );
         $this->assertSame( 'exp-graphql-bench/1', Exponential\Command\Kernel\Expgraphqlbench::SCHEMA );
+        $this->assertSame( 'exp-graphql-webhook/1', expGraphQLWebhooks::SCHEMA );
+        self::sameSet( array( 'publish', 'update', 'trash', 'delete', 'move', 'hide', 'reveal', 'mutation' ), expGraphQLEvents::ALL, 'an event of the journal' );
         self::sameSet( array( 'get', '304', 'post', 'kernel', 'uncached' ), expGraphQLBench::ROWS, 'a row of exp:graphql:bench' );
         self::sameSet( array( 'sdl', 'json', 'summary' ), Exponential\Command\Kernel\Expgraphqlschema::FORMATS, 'a format of exp:graphql:schema' );
         self::sameSet( array( 'html', 'next', 'nuxt', 'astro', 'expo' ), expGraphQLStarter::kits(), 'a kit of exp:graphql:starter' );

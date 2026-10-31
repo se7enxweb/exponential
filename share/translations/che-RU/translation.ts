@@ -79205,6 +79205,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>ХӀара агӀо гойтуш долчу %siteaccess сайте тӀекхачарна.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Вебхукаш</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Чаккхенан тӀадамо доьхуш долу хилам массо а (publish, update, trash, delete, move, hide, reveal, mutation) цуьнга, куьг а таӀийна, дахийтало cronjob-ан дакъо graphqlwebhooks. ./console exp:graphql:webhooks хӀокху декъо ден хӀума до.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Хиламаш</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>массо а</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Сайте тӀекхачар массо а</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>талхийна</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>къайле яц</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Хьоьжуш</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count дӀатесна</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>ТӀаьххьара дӀакхачор</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Зер дахийта</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>ХӀаъ, хӀара вебхук дӀадаккха</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Вебхук хӀинца а дац.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Вебхук тӀетоха</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>ТӀетоха</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>ТӀаьххьарлера дӀакхачорш</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Хан</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Жамӏ</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Подпискаш</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Клиенташна дийна керлачу хаамаш: /api/graphql/subscribe тӀехь хиламийн тӀаьхьалонаш, Velocity тӀехь WebSocket (graphql-transport-ws) а. ХӀора хилам цуьнан чулацам еша бакъо йолчу подписчикашка бен ца кхочу.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>ХӀинца схьаелла</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Уггар дукха схьаелла</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total массо а, %user хӀора лелорхочунна, %address хӀора адресна</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>ЦӀе йоцу подпискаш</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>ТӀаьхьалонан бохалла</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Вебхук тӀетоха ца делира: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Вебхук %name хийцина; цуьнан куьг таӀоран къайле юьсу.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Куьг таӀоран къайле Ӏалашъян ца делира (ДӀахӀоттор &gt; Къайленаш).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Вебхук %name тӀетоьхна. Цуьнан куьг таӀоран къайле, хӀокху цкъа бен гойтуш яц: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Вебхук %name дац.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Вебхуко %name жоп ца делла: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Вебхуко %name %ms ms чохь %status жоп делла.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Вебхук дӀабаккха цунна юххехь йолу кор билгалде.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Вебхук %name дӀабаьккхина.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API гуо дац: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Подпискаш /api/graphql/subscribe тӀе дахийта (хиламийн тӀаьхьалонаш я WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Дехаро документан цхьа а операци ца йоккху.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Подписко цхьа поле бен ца доьху.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Подпискаш дукха схьаелла ю; тӀаьхьо юха хьажа.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Хьан %max подписка схьаелла ю, магийна уггар дукха.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Хьан адресехь %max подписка схьаелла ю, магийна уггар дукха.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Подпискаш хӀокху сайте тӀекхачарехь дӀайайина ю.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Подписка ян чувала (токен я шен API догӀа).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Мутацеш /api/graphql тӀе дахийта.</translation>
     </message>
 </context>
 </TS>

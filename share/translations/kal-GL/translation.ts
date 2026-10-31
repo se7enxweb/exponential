@@ -79235,6 +79235,142 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Nittartakkamut isaariaq %siteaccess, quppernermik matuminnga takutitsisoq, pillugu.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhookit</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Pisoq tamarmi naggatip sumiiffiata piumasaa (publish, update, trash, delete, move, hide, reveal, mutation) cronjob-ip ilaanit graphqlwebhooks-mit atsiorlugu nassiunneqartarpoq. ./console exp:graphql:webhooks immikkoortortap matuma assinganik suliaqarpoq.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Pisut</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>tamarmik</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Nittartakkamut isaariaatit tamarmik</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>aserorsimasoq</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>isertugaqanngitsoq</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Utaqqisut</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count qimakkat</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Kingullermik nassiussineq</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Misiliut nassiuguk</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Aap, webhook una piiaruk</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Webhook suli peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Webhook ilaguk</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ilaguk</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Nassiussinerit kingulliit</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Piffissaq</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Angusaq</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonnementit</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Atuisunut nutarterinerit toqqaannartut: pisunik ingerlaartitsineq /api/graphql/subscribe-mi aamma WebSocket (graphql-transport-ws) Velocity-mi. Pisoq tamarmi abonnementeqartunut imaanik atuarsinnaasunut kisimi nassiunneqartarpoq.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Massakkut ammasut</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Ammasut amerlanerpaat</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total katillugit, %user atuisumut ataatsimut, %address najugaqarfimmut ataatsimut</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Abonnementit kinaassuseqanngitsut</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Ingerlaartitsinerup sivisussusaa</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook ilanngunneqarsinnaanngilaq: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name allanngortinneqarpoq; atsiornermut isertugaa allanngortinneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Atsiornermut isertugaq toqqorneqarsinnaanngilaq (Aaqqissuussineq &gt; Isertugat).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name ilanngunneqarpoq. Atsiornermut isertugaa, maanna ataasiarluni takutinneqartoq: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhook %name peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name akissuteqanngilaq: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name %status-mik akivoq %ms ms-ni.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Webhook peerniarukku sanianiittoq ammaarfik nalunaaruk.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name peerneqarpoq.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79509,6 +79645,42 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API-p atuuffia pinngilaq: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Abonnementit /api/graphql/subscribe-mut nassiukkit (pisunik ingerlaartitsineq imaluunniit WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Piumasaqaat dokumentip suliaanik taaguuteqanngilaq.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Abonnement immersugassamik ataatsimik kisimi piumasaqarpoq.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Abonnementit ammasut amerlavallaarput; kingusinnerusukkut misiligit.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Abonnementit %max ammatippatit, amerlanerpaat akuerisat.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Najugaqarfiit %max abonnementinik ammasoqarpoq, amerlanerpaat akuerisat.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonnementit nittartakkamut isaariami matumani matoqqapput.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Abonnementeqarniaruit iserit (token imaluunniit API-mi ilisarnaat namminermut).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Mutationit /api/graphql-mut nassiukkit.</translation>
     </message>
 </context>
 </TS>

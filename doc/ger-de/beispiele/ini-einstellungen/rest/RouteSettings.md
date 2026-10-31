@@ -57,7 +57,7 @@ SkipFilter[]=ezpRestOauthTokenController_handleRequest
 > DefaultUserID). controller\_action. Eine Anfrage mit einem falschen oder abgelaufenen Token wird wie auf jeder anderen  
 > Route abgelehnt, nie als anonym ausgeführt.  
 
-Standard: eine Liste mit 1: `expGraphQLRestController_query`.
+Standard: eine Liste mit 2: `expGraphQLRestController_query`, `expGraphQLRestController_subscribe`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -66,6 +66,7 @@ Standard: eine Liste mit 1: `expGraphQLRestController_query`.
 # ein leeres "OptionalAuthentication[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 OptionalAuthentication[]
 OptionalAuthentication[]=expGraphQLRestController_query
+OptionalAuthentication[]=expGraphQLRestController_subscribe
 */ ?>
 ```
 

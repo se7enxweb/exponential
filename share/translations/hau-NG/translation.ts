@@ -79203,6 +79203,142 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Don hanyar shiga shafi %siteaccess, wadda ke nuna wannan shafin.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Kowane abin da ya faru da ƙarshen hanya ya nema (publish, update, trash, delete, move, hide, reveal, mutation) ana aika masa shi, da sa hannu, ta ɓangaren cronjob graphqlwebhooks. ./console exp:graphql:webhooks yana yin abu ɗaya da wannan sashe.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Abubuwan da suka faru</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>duka</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kowace hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ya lalace</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>babu sirri</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Ana jira</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count an yi watsi da su</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Isarwa ta ƙarshe</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Aika gwaji</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ee, cire wannan webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Babu webhook tukuna.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Ƙara webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ƙara</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Isarwa na baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Lokaci</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sakamako</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Rajistoci</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Sabuntawa kai tsaye ga abokan ciniki: rafin abubuwan da suka faru a /api/graphql/subscribe, da WebSocket (graphql-transport-ws) a kan Velocity. Kowane abu yana zuwa ne kawai ga masu rajista da aka ba izinin karanta abun cikinsa.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>A buɗe yanzu</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Mafi yawan buɗewa</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total gaba ɗaya, %user ga kowane mai amfani, %address ga kowane adireshi</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Rajistoci marasa suna</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Tsawon rafi</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Ba a iya ƙara webhook ɗin ba: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>An canza webhook %name; sirrin sa hannunsa ya rage.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Ba a iya adana sirrin sa hannu ba (Saitin farko &gt; Sirrika).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>An ƙara webhook %name. Sirrin sa hannunsa, an nuna shi wannan sau ɗaya kawai: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Babu webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name bai amsa ba: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name ya amsa %status cikin %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Duba akwatin da ke kusa da webhook ɗin don cire shi.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>An cire webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79477,6 +79613,42 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ba iyakar GraphQL API ba ce: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Aika rajistoci zuwa /api/graphql/subscribe (rafin abubuwan da suka faru ko WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Buƙatar ba ta ambaci wani aiki na takardar ba.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Rajista tana neman fili ɗaya kacal.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Rajistoci da yawa sun buɗe; sake gwadawa daga baya.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Kana da rajistoci %max a buɗe, mafi yawan da aka yarda.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Adireshinka yana da rajistoci %max a buɗe, mafi yawan da aka yarda.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>An kashe rajistoci a wannan hanyar shiga shafi.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Shiga don yin rajista (alama ko maɓallin API na kanka).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Aika sauye-sauye zuwa /api/graphql.</translation>
     </message>
 </context>
 </TS>

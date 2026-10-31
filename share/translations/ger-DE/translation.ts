@@ -86175,6 +86175,142 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Für den Siteaccess %siteaccess, der diese Seite zeigt.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Jedes Ereignis, das ein Endpunkt anfordert (publish, update, trash, delete, move, hide, reveal, mutation), wird ihm signiert vom Cronjob-Teil graphqlwebhooks zugestellt. ./console exp:graphql:webhooks tut dasselbe wie dieser Abschnitt.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ereignisse</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>alle</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Jeder Siteaccess</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>defekt</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>kein Geheimnis</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Wartend</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count aufgegeben</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Letzte Zustellung</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Test senden</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ja, diesen Webhook entfernen</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Noch kein Webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Webhook hinzufügen</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Hinzufügen</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Letzte Zustellungen</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zeit</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ergebnis</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonnements</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Live-Aktualisierungen für Clients: ein Ereignisstrom unter /api/graphql/subscribe und ein WebSocket (graphql-transport-ws) auf Velocity. Jedes Ereignis geht nur an Abonnenten, die seinen Inhalt lesen dürfen.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Jetzt offen</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Höchstens offen</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total insgesamt, %user pro Benutzer, %address pro Adresse</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonyme Abonnements</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Stream-Dauer</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Der Webhook konnte nicht hinzugefügt werden: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Der Webhook %name wurde geändert; sein Signiergeheimnis bleibt erhalten.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Das Signiergeheimnis konnte nicht gespeichert werden (Setup &gt; Geheimnisse).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Der Webhook %name wurde hinzugefügt. Sein Signiergeheimnis, nur dieses eine Mal angezeigt: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Es gibt keinen Webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Der Webhook %name hat nicht geantwortet: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Der Webhook %name hat in %ms ms mit %status geantwortet.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Kreuzen Sie das Kästchen neben dem Webhook an, um ihn zu entfernen.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Der Webhook %name wurde entfernt.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -86449,6 +86585,42 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Kein Bereich der GraphQL-API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Senden Sie Abonnements an /api/graphql/subscribe (ein Ereignisstrom oder ein WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Die Anfrage nennt keine Operation des Dokuments.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Ein Abonnement fragt genau ein Feld ab.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Zu viele Abonnements sind offen; versuchen Sie es später erneut.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Sie haben %max Abonnements offen, die erlaubte Höchstzahl.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Ihre Adresse hat %max Abonnements offen, die erlaubte Höchstzahl.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonnements sind in diesem Siteaccess ausgeschaltet.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Melden Sie sich an, um zu abonnieren (ein Token oder ein persönlicher API-Schlüssel).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Senden Sie Mutationen an /api/graphql.</translation>
     </message>
 </context>
 </TS>

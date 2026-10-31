@@ -18,11 +18,12 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 |---|---|---|
 | (Standard) | [unpublish.php](unpublish.md), [rssimport.php](rssimport.md), [indexcontent.php](indexcontent.md), [hide.php](hide.md), [internal_drafts_cleanup.php](internal_drafts_cleanup.md) | `php runcronjobs.php` |
 | `infrequent` | [basket_cleanup.php](basket_cleanup.md), [linkcheck.php](linkcheck.md), [mailpreferences.php](mailpreferences.md), [usersessions.php](usersessions.md), [useraudit.php](useraudit.md), [exphelp.php](exphelp.md) | `php runcronjobs.php infrequent` |
-| `frequent` | [notification.php](notification.md), [workflow.php](workflow.md), [contentjobs.php](contentjobs.md), [datatablesync.php](datatablesync.md), [audit.php](audit.md), [mailbounces.php](mailbounces.md) | `php runcronjobs.php frequent` |
+| `frequent` | [notification.php](notification.md), [workflow.php](workflow.md), [contentjobs.php](contentjobs.md), [datatablesync.php](datatablesync.md), [audit.php](audit.md), [mailbounces.php](mailbounces.md), [graphqlwebhooks.php](graphqlwebhooks.md) | `php runcronjobs.php frequent` |
 | `contentcheck` | [contentcheck.php](contentcheck.md) | `php runcronjobs.php contentcheck` |
 | `contentjobs` | [contentjobs.php](contentjobs.md) | `php runcronjobs.php contentjobs` |
 | `datatable` | [datatablesync.php](datatablesync.md) | `php runcronjobs.php datatable` |
 | `audit` | [audit.php](audit.md) | `php runcronjobs.php audit` |
+| `graphqlwebhooks` | [graphqlwebhooks.php](graphqlwebhooks.md) | `php runcronjobs.php graphqlwebhooks` |
 | `logs` | [explogrotate.php](explogrotate.md) | `php runcronjobs.php logs` |
 | `notification` | [notification.php](notification.md) | `php runcronjobs.php notification` |
 | `mailpreferences` | [mailpreferences.php](mailpreferences.md) | `php runcronjobs.php mailpreferences` |
@@ -49,6 +50,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | [datatablesync.php](datatablesync.md) | Startet die fälligen Synchronisationen der Datentabellen (geplante und Live-Synchronisationen, nach ihrem Intervall) | frequent, datatable |
 | [exphelp.php](exphelp.md) | Als Inhalt gepflegte Hilfe: entfernt alte Antworten auf "War das hilfreich?" und hält den DITA-Export der Hilfe in Git fest, wenn exphelp.ini [ContentSettings] DitaHistoryDirectory gesetzt ist | infrequent, exphelp |
 | [explogrotate.php](explogrotate.md) | Logs: rotiert die Logs über ihrer MaxSize, bereinigt und komprimiert ihre Archive (aus, solange kein Teil ihn ausführt) | logs |
+| [graphqlwebhooks.php](graphqlwebhooks.md) | GraphQL-Webhooks: die Ereignisse des Journals an die Endpunkte senden, die sie haben wollen, mit Wiederholungen | frequent, graphqlwebhooks |
 | [hide.php](hide.md) | Führt geplante Aktionen zum Verbergen und Anzeigen von Inhaltsobjekten aus | (Standard) |
 | [httpcache_cleanup.php](httpcache_cleanup.md) | Entfernt abgelaufene, gelöschte und verwaiste Einträge aus dem rollenbewussten HTTP-Cache | cache_cleanup |
 | [indexcontent.php](indexcontent.md) | Indiziert anstehende Inhaltsänderungen in der Suchmaschine | (Standard) |

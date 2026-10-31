@@ -79203,6 +79203,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Fún ìwọlé sáìtì %siteaccess, tí ó ń fi ojú ìwé yìí hàn.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Àwọn webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Gbogbo ìṣẹ̀lẹ̀ tí ojú ìparí kan bá béèrè fún (publish, update, trash, delete, move, hide, reveal, mutation) ni a ń fi ránṣẹ́ sí i, pẹ̀lú ìbuwọ́lù, láti ọwọ́ apá cronjob graphqlwebhooks. ./console exp:graphql:webhooks ń ṣe ohun kan náà bí abala yìí.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Àwọn ìṣẹ̀lẹ̀</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>gbogbo</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gbogbo ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ó ti bàjẹ́</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>kò sí àṣírí</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Ń dúró</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count tí a jọ̀wọ́</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Ìfiránṣẹ́ tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Fi ìdánwò ránṣẹ́</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Bẹ́ẹ̀ni, yọ webhook yìí kúrò</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Kò sí webhook síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Ṣàfikún webhook kan</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ṣàfikún</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Àwọn ìfiránṣẹ́ àìpẹ́</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àkókò</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Àbájáde</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Àwọn ìforúkọsílẹ̀</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Àwọn ìmúdójúìwọ̀n tààrà fún àwọn oníbàárà: ìṣàn ìṣẹ̀lẹ̀ ní /api/graphql/subscribe, àti WebSocket (graphql-transport-ws) lórí Velocity. Ìṣẹ̀lẹ̀ kọ̀ọ̀kan ń lọ sọ́dọ̀ àwọn olùforúkọsílẹ̀ tí wọ́n lè ka àkóónú rẹ̀ nìkan.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Ṣíṣí báyìí</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Ṣíṣí tó pọ̀ jùlọ</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total lápapọ̀, %user fún olùlò kọ̀ọ̀kan, %address fún àdírẹ́sì kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Àwọn ìforúkọsílẹ̀ aláìlórúkọ</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Gígùn ìṣàn</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>A kò lè ṣàfikún webhook náà: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>A ti yí webhook %name padà; àṣírí ìbuwọ́lù rẹ̀ wà bí ó ti wà.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>A kò lè tọ́jú àṣírí ìbuwọ́lù náà (Ìgbékalẹ̀ &gt; Àwọn àṣírí).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>A ti ṣàfikún webhook %name. Àṣírí ìbuwọ́lù rẹ̀, tí a fihàn lẹ́ẹ̀kan yìí nìkan: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Kò sí webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name kò dáhùn: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name dáhùn %status ní %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Fi àmì sí àpótí tó wà lẹ́gbẹ̀ẹ́ webhook náà láti yọ ọ́ kúrò.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>A ti yọ webhook %name kúrò.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79477,6 +79613,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Kì í ṣe àyè ti GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Fi àwọn ìforúkọsílẹ̀ ránṣẹ́ sí /api/graphql/subscribe (ìṣàn ìṣẹ̀lẹ̀ tàbí WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Ìbéèrè náà kò dárúkọ iṣẹ́ kankan nínú ìwé náà.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Ìforúkọsílẹ̀ kan ń béèrè fún pápá kan ṣoṣo.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Ìforúkọsílẹ̀ tó ṣí sílẹ̀ ti pọ̀ jù; gbìyànjú lẹ́ẹ̀kan sí i lẹ́yìn náà.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>O ní ìforúkọsílẹ̀ %max tó ṣí sílẹ̀, èyí tó pọ̀ jùlọ tí a gbà láàyè.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Àdírẹ́sì rẹ ní ìforúkọsílẹ̀ %max tó ṣí sílẹ̀, èyí tó pọ̀ jùlọ tí a gbà láàyè.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>A ti pa àwọn ìforúkọsílẹ̀ nínú ìwọlé sáìtì yìí.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Wọlé láti forúkọsílẹ̀ (token tàbí kọ́kọ́rọ́ API ti ara ẹni).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Fi àwọn ìyípadà (mutation) ránṣẹ́ sí /api/graphql.</translation>
     </message>
 </context>
 </TS>

@@ -33,7 +33,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | Kernel | 1 |
 | [country.ini](country/README.md) | Kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | Kernel | 1 |
-| [cronjob.ini](cronjob/README.md) | Kernel | 24 |
+| [cronjob.ini](cronjob/README.md) | Kernel | 25 |
 | [dashboard.ini](dashboard/README.md) | Kernel | 8 |
 | [datatable.ini](datatable/README.md) | Kernel | 3 |
 | [datatype.ini](datatype/README.md) | Kernel | 5 |
@@ -42,13 +42,14 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [debug.ini](debug/README.md) | Kernel | 2 |
 | [debugbar.ini](debugbar/README.md) | Kernel | 42 |
 | [design.ini](design/README.md) | Kernel | 5 |
+| [editorpolicies.ini](editorpolicies/README.md) | Kernel | 2 |
 | [error.ini](error/README.md) | Kernel | 7 |
 | [exphelp.ini](exphelp/README.md) | Kernel | 69 |
 | [extendedattributefilter.ini](extendedattributefilter/README.md) | Kernel | 0 |
 | [ezxml.ini](ezxml/README.md) | Kernel | 4 |
 | [fetchalias.ini](fetchalias/README.md) | Kernel | 8 |
 | [file.ini](file/README.md) | Kernel | 6 |
-| [graphql.ini](graphql/README.md) | Kernel | 2 |
+| [graphql.ini](graphql/README.md) | Kernel | 4 |
 | [httpcache.ini](httpcache/README.md) | Kernel | 1 |
 | [i18n.ini](i18n/README.md) | Kernel | 2 |
 | [icon.ini](icon/README.md) | Kernel | 3 |

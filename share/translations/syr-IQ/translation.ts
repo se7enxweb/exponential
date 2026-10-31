@@ -79213,6 +79213,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>ܠܡܥܠܢܐ ܕܐܬܪܐ %siteaccess ܕܡܚܘܐ ܠܗܕܐ ܦܐܬܐ.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>ܘܝܒܗܘܟ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>ܟܠ ܓܕܫܐ ܕܢܘܩܙܐ ܕܣܘܦܐ ܒܥܐ (publish, update, trash, delete, move, hide, reveal, mutation) ܡܫܬܕܪ ܠܗ، ܚܬܝܡܐ، ܡܢ ܡܢܬܐ ܕ cronjob graphqlwebhooks. ./console exp:graphql:webhooks ܥܒܕ ܗܝ ܕܐܝܟ ܗܢܐ ܦܣܘܩܐ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ܓܕ̈ܫܐ</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>ܟܠܗܘܢ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ܟܠ ܡܥܠܢܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ܬܒܝܪܐ</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ܠܐ ܐܪܙܐ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ܡܣܟܝܢ</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count ܫܒܝܩܝܢ</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>ܫܕܪܐ ܐܚܪܝܐ</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>ܫܕܪ ܢܣܝܘܢܐ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>ܐܝܢ، ܫܩܘܠ ܗܢܐ ܘܝܒܗܘܟ</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>ܥܕܡܐ ܠܗܫܐ ܠܝܬ ܘܝܒܗܘܟ.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>ܐܘܣܦ ܘܝܒܗܘܟ</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>ܐܘܣܦ</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>ܫܕܪ̈ܐ ܚܕ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ܥܕܢܐ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ܦܐܪܐ</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>ܡܫܬܘܬܦܘ̈ܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>ܚܘܕ̈ܬܐ ܚܝ̈ܐ ܠܡܩܒܠ̈ܢܐ: ܪܕܝܐ ܕܓܕ̈ܫܐ ܒ /api/graphql/subscribe، ܘ WebSocket (graphql-transport-ws) ܥܠ Velocity. ܟܠ ܓܕܫܐ ܐܙܠ ܠܚܘܕ ܠܡܫܬܘܬܦ̈ܢܐ ܕܡܨܝܢ ܠܡܩܪܐ ܡܠܝܘܬܗ.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>ܦܬܝܚܢ ܗܫܐ</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>ܣܟܐ ܕܦܬܝܚܢ</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total ܒܟܠ، %user ܠܟܠ ܡܦܠܚܢܐ، %address ܠܟܠ ܡܘܢܥܐ</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>ܡܫܬܘܬܦܘ̈ܝܬܐ ܕܠܐ ܫܡܐ</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>ܐܘܪܟܐ ܕܪܕܝܐ</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ܘܝܒܗܘܟ ܠܐ ܐܫܟܚ ܠܡܬܘܣܦܘ: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>ܘܝܒܗܘܟ %name ܐܫܬܚܠܦ؛ ܐܪܙܐ ܕܚܬܡܐ ܕܝܠܗ ܩܐܡ.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>ܐܪܙܐ ܕܚܬܡܐ ܠܐ ܐܫܟܚ ܠܡܬܢܛܪܘ (ܛܘܝܒܐ &gt; ܐܪ̈ܙܐ).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>ܘܝܒܗܘܟ %name ܐܬܘܣܦ. ܐܪܙܐ ܕܚܬܡܐ ܕܝܠܗ، ܡܬܚܙܐ ܗܕܐ ܙܒܢܬܐ ܠܚܘܕ: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ܠܝܬ ܘܝܒܗܘܟ %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>ܘܝܒܗܘܟ %name ܠܐ ܦܢܝ: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>ܘܝܒܗܘܟ %name ܦܢܝ %status ܒ %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>ܪܫܘܡ ܩܘܛܝܐ ܕܠܓܒ ܘܝܒܗܘܟ ܕܬܫܩܘܠܝܘܗܝ.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>ܘܝܒܗܘܟ %name ܐܫܬܩܠ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79487,6 +79623,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>ܠܐ ܗܘܐ ܚܘܕܪܐ ܕ API ܕ GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>ܫܕܪ ܡܫܬܘܬܦܘ̈ܝܬܐ ܠ /api/graphql/subscribe (ܪܕܝܐ ܕܓܕ̈ܫܐ ܐܘ WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>ܒܥܘܬܐ ܠܐ ܩܪܝܐ ܫܡܐ ܕܥܒܕܐ ܡܢ ܟܬܒܐ.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>ܡܫܬܘܬܦܘܬܐ ܒܥܝܐ ܚܕ ܚܩܠܐ ܒܠܚܘܕ.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>ܡܫܬܘܬܦܘ̈ܝܬܐ ܣܓܝܐܬܐ ܛܒ ܦܬܝܚܢ؛ ܢܣܝ ܬܘܒ ܒܬܪܟܢ.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>ܐܝܬ ܠܟ %max ܡܫܬܘܬܦܘ̈ܝܬܐ ܦܬܝܚ̈ܬܐ، ܣܟܐ ܕܡܦܣܐ.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>ܠܡܘܢܥܐ ܕܝܠܟ ܐܝܬ %max ܡܫܬܘܬܦܘ̈ܝܬܐ ܦܬܝܚ̈ܬܐ، ܣܟܐ ܕܡܦܣܐ.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>ܡܫܬܘܬܦܘ̈ܝܬܐ ܒܛܝܠܢ ܒܗܢܐ ܡܥܠܢܐ ܕܐܬܪܐ.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>ܥܘܠ ܕܬܫܬܘܬܦ (ܐܬܐ ܐܘ ܩܠܝܕܐ ܕ API ܦܪܨܘܦܝܐ).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>ܫܕܪ ܫܘ̈ܚܠܦܐ ܠ /api/graphql.</translation>
     </message>
 </context>
 </TS>

@@ -79235,6 +79235,142 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Sivustoyhteydelle %siteaccess, joka näyttää tämän sivun.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhookit</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Jokainen tapahtuma, jota päätepiste pyytää (publish, update, trash, delete, move, hide, reveal, mutation), lähetetään sille allekirjoitettuna cronjob-osan graphqlwebhooks kautta. ./console exp:graphql:webhooks tekee saman kuin tämä osio.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tapahtumat</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>kaikki</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Jokainen sivustoyhteys</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>rikki</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ei salaisuutta</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Odottaa</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count luovuttu</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Viimeisin toimitus</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Lähetä testi</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Kyllä, poista tämä webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ei vielä webhookeja.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Lisää webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Lisää</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Viimeisimmät toimitukset</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Aika</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulos</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Tilaukset</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Reaaliaikaiset päivitykset asiakkaille: tapahtumavirta osoitteessa /api/graphql/subscribe ja WebSocket (graphql-transport-ws) Velocityssä. Jokainen tapahtuma menee vain tilaajille, jotka saavat lukea sen sisällön.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Nyt auki</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Enintään auki</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total yhteensä, %user käyttäjää kohden, %address osoitetta kohden</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Nimettömät tilaukset</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Virran kesto</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhookia ei voitu lisätä: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhookia %name muutettiin; sen allekirjoitussalaisuus säilyy.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Allekirjoitussalaisuutta ei voitu tallentaa (Asetukset &gt; Salaisuudet).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name lisättiin. Sen allekirjoitussalaisuus, näytetään vain tämän kerran: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhookia %name ei ole.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name ei vastannut: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name vastasi %status ajassa %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Valitse webhookin vieressä oleva ruutu poistaaksesi sen.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name poistettiin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79509,6 +79645,42 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ei GraphQL API:n laajuus: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Lähetä tilaukset osoitteeseen /api/graphql/subscribe (tapahtumavirta tai WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Pyyntö ei nimeä mitään asiakirjan operaatiota.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Tilaus pyytää täsmälleen yhtä kenttää.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Liian monta tilausta on auki; yritä myöhemmin uudelleen.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Sinulla on %max tilausta auki, suurin sallittu määrä.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Osoitteellasi on %max tilausta auki, suurin sallittu määrä.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Tilaukset on poistettu käytöstä tässä sivustoyhteydessä.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Kirjaudu sisään tilataksesi (tunniste tai henkilökohtainen API-avain).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Lähetä mutaatiot osoitteeseen /api/graphql.</translation>
     </message>
 </context>
 </TS>

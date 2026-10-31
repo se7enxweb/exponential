@@ -79203,6 +79203,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>ਇਹ ਸਫ਼ਾ ਦਿਖਾਉਣ ਵਾਲੇ ਸਾਈਟ ਐਕਸੈਸ %siteaccess ਲਈ।</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>ਵੈੱਬਹੁੱਕ</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>ਐਂਡ ਪੁਆਇੰਟ ਜੋ ਵੀ ਘਟਨਾ ਮੰਗਦਾ ਹੈ (publish, update, trash, delete, move, hide, reveal, mutation), ਉਹ cronjob ਦਾ ਹਿੱਸਾ graphqlwebhooks ਦਸਤਖਤ ਕਰਕੇ ਉਸਨੂੰ ਭੇਜਦਾ ਹੈ। ./console exp:graphql:webhooks ਵੀ ਇਸ ਭਾਗ ਵਾਲਾ ਹੀ ਕੰਮ ਕਰਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ਘਟਨਾਵਾਂ</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>ਸਾਰੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ਹਰ ਸਾਈਟ ਐਕਸੈਸ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ਖਰਾਬ</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ਕੋਈ ਗੁਪਤ ਕੁੰਜੀ ਨਹੀਂ</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ਉਡੀਕ ਵਿੱਚ</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count ਛੱਡੀਆਂ ਗਈਆਂ</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>ਆਖਰੀ ਡਿਲੀਵਰੀ</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>ਟੈਸਟ ਭੇਜੋ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>ਹਾਂ, ਇਹ ਵੈੱਬਹੁੱਕ ਹਟਾਓ</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>ਅਜੇ ਕੋਈ ਵੈੱਬਹੁੱਕ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>ਵੈੱਬਹੁੱਕ ਜੋੜੋ</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>ਜੋੜੋ</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>ਹਾਲੀਆ ਡਿਲੀਵਰੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ਸਮਾਂ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ਨਤੀਜਾ</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>ਕਲਾਇੰਟਾਂ ਲਈ ਲਾਈਵ ਅੱਪਡੇਟ: /api/graphql/subscribe 'ਤੇ ਘਟਨਾ ਸਟ੍ਰੀਮ, ਅਤੇ Velocity 'ਤੇ WebSocket (graphql-transport-ws)। ਹਰ ਘਟਨਾ ਸਿਰਫ਼ ਉਹਨਾਂ ਸਬਸਕ੍ਰਾਈਬਰਾਂ ਨੂੰ ਜਾਂਦੀ ਹੈ ਜੋ ਉਸਦੀ ਸਮੱਗਰੀ ਪੜ੍ਹ ਸਕਦੇ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>ਹੁਣ ਖੁੱਲ੍ਹੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>ਵੱਧ ਤੋਂ ਵੱਧ ਖੁੱਲ੍ਹੀਆਂ</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>ਕੁੱਲ %total, ਪ੍ਰਤੀ ਵਰਤੋਂਕਾਰ %user, ਪ੍ਰਤੀ ਪਤਾ %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>ਗੁਮਨਾਮ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>ਸਟ੍ਰੀਮ ਦੀ ਮਿਆਦ</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ਵੈੱਬਹੁੱਕ ਜੋੜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>ਵੈੱਬਹੁੱਕ %name ਬਦਲਿਆ ਗਿਆ; ਇਸਦੀ ਦਸਤਖਤ ਗੁਪਤ ਕੁੰਜੀ ਉਹੀ ਰਹਿੰਦੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>ਦਸਤਖਤ ਗੁਪਤ ਕੁੰਜੀ ਸਟੋਰ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ (ਸੈੱਟਅੱਪ &gt; ਗੁਪਤ ਜਾਣਕਾਰੀ)।</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>ਵੈੱਬਹੁੱਕ %name ਜੋੜਿਆ ਗਿਆ। ਇਸਦੀ ਦਸਤਖਤ ਗੁਪਤ ਕੁੰਜੀ, ਸਿਰਫ਼ ਇਸ ਵਾਰ ਦਿਖਾਈ ਗਈ: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ਵੈੱਬਹੁੱਕ %name ਮੌਜੂਦ ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>ਵੈੱਬਹੁੱਕ %name ਨੇ ਜਵਾਬ ਨਹੀਂ ਦਿੱਤਾ: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>ਵੈੱਬਹੁੱਕ %name ਨੇ %ms ms ਵਿੱਚ %status ਜਵਾਬ ਦਿੱਤਾ।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>ਵੈੱਬਹੁੱਕ ਹਟਾਉਣ ਲਈ ਉਸਦੇ ਨਾਲ ਵਾਲੇ ਬਕਸੇ 'ਤੇ ਨਿਸ਼ਾਨ ਲਗਾਓ।</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>ਵੈੱਬਹੁੱਕ %name ਹਟਾਇਆ ਗਿਆ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79477,6 +79613,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API ਦਾ ਦਾਇਰਾ ਨਹੀਂ ਹੈ: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ /api/graphql/subscribe 'ਤੇ ਭੇਜੋ (ਘਟਨਾ ਸਟ੍ਰੀਮ ਜਾਂ WebSocket)।</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>ਬੇਨਤੀ ਦਸਤਾਵੇਜ਼ ਦੇ ਕਿਸੇ ਓਪਰੇਸ਼ਨ ਦਾ ਨਾਮ ਨਹੀਂ ਲੈਂਦੀ।</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>ਇੱਕ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਬਿਲਕੁਲ ਇੱਕ ਖੇਤਰ ਮੰਗਦੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>ਬਹੁਤ ਸਾਰੀਆਂ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਖੁੱਲ੍ਹੀਆਂ ਹਨ; ਬਾਅਦ ਵਿੱਚ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>ਤੁਹਾਡੀਆਂ %max ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਖੁੱਲ੍ਹੀਆਂ ਹਨ, ਜੋ ਇਜਾਜ਼ਤ ਦੀ ਵੱਧ ਤੋਂ ਵੱਧ ਹੱਦ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>ਤੁਹਾਡੇ ਪਤੇ ਦੀਆਂ %max ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਖੁੱਲ੍ਹੀਆਂ ਹਨ, ਜੋ ਇਜਾਜ਼ਤ ਦੀ ਵੱਧ ਤੋਂ ਵੱਧ ਹੱਦ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>ਇਸ ਸਾਈਟ ਐਕਸੈਸ ਵਿੱਚ ਸਬਸਕ੍ਰਿਪਸ਼ਨਾਂ ਬੰਦ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>ਸਬਸਕ੍ਰਾਈਬ ਕਰਨ ਲਈ ਸਾਈਨ ਇਨ ਕਰੋ (ਟੋਕਨ ਜਾਂ ਨਿੱਜੀ API ਕੁੰਜੀ)।</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>ਮਿਊਟੇਸ਼ਨ /api/graphql 'ਤੇ ਭੇਜੋ।</translation>
     </message>
 </context>
 </TS>

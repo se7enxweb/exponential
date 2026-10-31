@@ -79205,6 +79205,142 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Foar de websidetagong %siteaccess, dy't dizze side toant.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Elk barren dat in einpunt freget (publish, update, trash, delete, move, hide, reveal, mutation), wurdt der ûndertekene hinne stjoerd troch it cronjobûnderdiel graphqlwebhooks. ./console exp:graphql:webhooks docht itselde as dizze seksje.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Barrens</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>alle</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Elke websidetagong</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>stikken</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>gjin geheim</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Wachtsjend</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count opjûn</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Lêste levering</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>In test stjoere</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ja, smyt dizze webhook fuort</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Noch gjin webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>In webhook tafoegje</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Tafoegje</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Resinte leveringen</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tiid</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonneminten</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Live-fernijingen foar kliïnten: in barrenstream op /api/graphql/subscribe, en in WebSocket (graphql-transport-ws) op Velocity. Elk barren giet allinnich nei abonnees dy't de ynhâld lêze meie.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>No iepen</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Maksimaal iepen</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total yn totaal, %user per brûker, %address per adres</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonime abonneminten</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Streamdoer</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>De webhook koe net tafoege wurde: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>De webhook %name is feroare; syn ûndertekeningsgeheim bliuwt.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>It ûndertekeningsgeheim koe net bewarre wurde (Ynstelle &gt; Geheimen).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>De webhook %name is tafoege. Syn ûndertekeningsgeheim, allinnich dizze iene kear toand: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Der is gjin webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>De webhook %name joech gjin antwurd: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>De webhook %name antwurde %status yn %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Finkje it fakje neist de webhook oan om him fuort te heljen.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>De webhook %name is fuortsmiten.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Gjin berik fan de GraphQL-API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Stjoer abonneminten nei /api/graphql/subscribe (in barrenstream of in WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>It fersyk neamt gjin operaasje fan it dokumint.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>In abonnemint freget krekt ien fjild.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Te folle abonneminten binne iepen; besykje it letter nochris.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Jo hawwe %max abonneminten iepen, it maksimum dat tastien is.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Jo adres hat %max abonneminten iepen, it maksimum dat tastien is.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonneminten binne útskeakele yn dizze websidetagong.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Meld jo oan om te abonnearjen (in token of in persoanlike API-kaai).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Stjoer mutaasjes nei /api/graphql.</translation>
     </message>
 </context>
 </TS>

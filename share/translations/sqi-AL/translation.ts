@@ -79235,6 +79235,142 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Për qasjen në sajt %siteaccess, që shfaq këtë faqe.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook-et</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Çdo ngjarje që kërkon një pikë fundore (publish, update, trash, delete, move, hide, reveal, mutation) i dërgohet asaj, e nënshkruar, nga pjesa e cronjob-it graphqlwebhooks. ./console exp:graphql:webhooks bën të njëjtën gjë si ky seksion.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngjarjet</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>të gjitha</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Çdo qasje në sajt</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>i prishur</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>pa sekret</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Në pritje</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count të braktisura</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Dorëzimi i fundit</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Dërgo një test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Po, hiqe këtë webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ende asnjë webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Shto një webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Shto</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Dorëzimet e fundit</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Koha</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultati</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonimet</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Përditësime të drejtpërdrejta për klientët: një rrjedhë ngjarjesh në /api/graphql/subscribe dhe një WebSocket (graphql-transport-ws) në Velocity. Çdo ngjarje shkon vetëm te abonentët që mund të lexojnë përmbajtjen e saj.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Të hapura tani</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Më së shumti të hapura</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total gjithsej, %user për përdorues, %address për adresë</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Abonime anonime</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Kohëzgjatja e rrjedhës</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook-u nuk mund të shtohej: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook-u %name u ndryshua; sekreti i tij i nënshkrimit mbetet.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Sekreti i nënshkrimit nuk mund të ruhej (Konfigurimi &gt; Sekretet).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook-u %name u shtua. Sekreti i tij i nënshkrimit, i shfaqur vetëm këtë herë: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Nuk ka webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook-u %name nuk u përgjigj: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook-u %name u përgjigj %status në %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Shënoni kutinë pranë webhook-ut për ta hequr.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook-u %name u hoq.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79509,6 +79645,42 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Nuk është fushëveprim i GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Dërgoni abonimet te /api/graphql/subscribe (një rrjedhë ngjarjesh ose një WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Kërkesa nuk emërton asnjë operacion të dokumentit.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Një abonim kërkon saktësisht një fushë.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Ka shumë abonime të hapura; provoni përsëri më vonë.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Keni %max abonime të hapura, numri maksimal i lejuar.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Adresa juaj ka %max abonime të hapura, numri maksimal i lejuar.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonimet janë të çaktivizuara në këtë qasje në sajt.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Identifikohuni për t'u abonuar (një token ose një çelës API personal).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Dërgoni mutacionet te /api/graphql.</translation>
     </message>
 </context>
 </TS>

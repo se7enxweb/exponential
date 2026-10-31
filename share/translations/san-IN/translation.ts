@@ -79205,6 +79205,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>इदं पृष्ठं दर्शयतः जालस्थलप्रवेशस्य %siteaccess कृते।</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>वेब्-हुक्-सूत्राणि</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>अन्तबिन्दुः यां यां घटनां याचते (publish, update, trash, delete, move, hide, reveal, mutation), सा सा हस्ताक्षरिता सती cronjob-भागेन graphqlwebhooks इत्यनेन तस्मै प्रेष्यते। ./console exp:graphql:webhooks अपि अस्य विभागस्य समानं कार्यं करोति।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>घटनाः</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>सर्वाः</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>प्रत्येकः जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>भग्नम्</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>गोप्यं नास्ति</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>प्रतीक्षमाणाः</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count त्यक्ताः</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>अन्तिमं प्रेषणम्</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>परीक्षणं प्रेषयतु</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>आम्, इदं वेब्-हुक् अपसारयतु</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>अद्यावधि वेब्-हुक् नास्ति।</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>वेब्-हुक् योजयतु</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>योजयतु</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>नूतनानि प्रेषणानि</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>समयः</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणामः</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>सदस्यताः</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>ग्राहकेभ्यः सद्यः अद्यतनानि: /api/graphql/subscribe इत्यत्र घटनाप्रवाहः, Velocity इत्यत्र WebSocket (graphql-transport-ws) च। प्रत्येका घटना केवलं तेभ्यः सदस्येभ्यः गच्छति ये तस्याः विषयवस्तु पठितुं शक्नुवन्ति।</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>इदानीं उद्घाटिताः</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>अधिकतमम् उद्घाटिताः</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>आहत्य %total, प्रत्युपयोक्तारं %user, प्रतिसङ्केतं %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>अनामिकाः सदस्यताः</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>प्रवाहस्य अवधिः</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>वेब्-हुक् योजयितुं न शक्यम्: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>वेब्-हुक् %name परिवर्तितम्; तस्य हस्ताक्षरगोप्यं तिष्ठति।</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>हस्ताक्षरगोप्यं संग्रहीतुं न शक्यम् (स्थापना &gt; गोप्यानि)।</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>वेब्-हुक् %name योजितम्। तस्य हस्ताक्षरगोप्यम्, एकवारमेव दर्शितम्: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>वेब्-हुक् %name नास्ति।</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>वेब्-हुक् %name न प्रत्युत्तरत्: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>वेब्-हुक् %name %ms ms मध्ये %status प्रत्युत्तरत्।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>वेब्-हुक् अपसारयितुं तस्य पार्श्वे स्थितं पेटिकां चिह्नयतु।</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>वेब्-हुक् %name अपसारितम्।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API इत्यस्य व्याप्तिः नास्ति: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>सदस्यताः /api/graphql/subscribe प्रति प्रेषयतु (घटनाप्रवाहः WebSocket वा)।</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>अनुरोधः प्रलेखस्य कस्याः अपि क्रियायाः नाम न ददाति।</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>एका सदस्यता एकमेव क्षेत्रं याचते।</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>अतिबह्व्यः सदस्यताः उद्घाटिताः सन्ति; पश्चात् पुनः प्रयतताम्।</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>भवतः %max सदस्यताः उद्घाटिताः सन्ति, यत् अनुमतम् अधिकतमम्।</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>भवतः सङ्केतस्य %max सदस्यताः उद्घाटिताः सन्ति, यत् अनुमतम् अधिकतमम्।</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>अस्मिन् जालस्थलप्रवेशे सदस्यताः निष्क्रियाः सन्ति।</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>सदस्यतायै प्रविशतु (टोकन् अथवा वैयक्तिका API-कुञ्चिका)।</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>म्यूटेशन्-क्रियाः /api/graphql प्रति प्रेषयतु।</translation>
     </message>
 </context>
 </TS>

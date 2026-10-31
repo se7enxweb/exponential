@@ -79205,6 +79205,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>পেজ অসি উৎপা সাইট একসেস %siteaccess গীদমক।</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>ৱেবহুকশিং</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>এন্দ পোইন্ত অমনা পীনবা হায়বা থৌদোক খুদিংমক (publish, update, trash, delete, move, hide, reveal, mutation) cronjob শরুক graphqlwebhooks না মিং থোইদুনা মাংদা থাই। ./console exp:graphql:webhooks না সেক্সন অসিগা মান্নবা থবক তৌই।</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>থৌদোকশিং</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>পুম্নমক</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>সাইট একসেস খুদিংমক</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>কাইখ্রবা</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>সিক্রেট লৈতে</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ঙাইরি</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count থাদোকখ্রে</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>অরোইবা পীখিবা</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>তেস্ত অমা থাবিয়ু</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>হোই, ৱেবহুক অসি লৌথোকউ</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>হৌজিক ফাওবা ৱেবহুক অমত্তা লৈতে।</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>ৱেবহুক অমা হাপচিনবিয়ু</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>হাপচিনবিয়ু</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>অনৌবা পীখিবশিং</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>মতম</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>মহৈ</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>সবস্ক্রিপসনশিং</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>ক্লাইএন্তশিংগীদমক লাইভ অপদেতশিং: /api/graphql/subscribe দা থৌদোকগী স্ত্রীম অমা, অমসুং Velocity দা WebSocket (graphql-transport-ws) অমা। থৌদোক খুদিংমক মসিগী কন্তেন্ত পাবা য়াবা সবস্ক্রাইবরশিংদা খক্তমক চৎই।</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>হৌজিক হাংদোক্লি</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>খ্বাইদগী য়াম্না হাংদোকপা য়াবা</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>পুম্নমক %total, শীজিন্নবা মী অমদা %user, এদ্রেস অমদা %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>মমিং লৈতবা সবস্ক্রিপসনশিং</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>স্ত্রীমগী অসাংবা</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ৱেবহুক অদু হাপচিনবা ঙম্দ্রে: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>ৱেবহুক %name হোংদোকখ্রে; মসিগী মিং থোইবগী সিক্রেট লৈরি।</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>মিং থোইবগী সিক্রেট থম্বা ঙম্দ্রে (সেটআপ &gt; সিক্রেটশিং)।</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>ৱেবহুক %name হাপচিনখ্রে। মসিগী মিং থোইবগী সিক্রেট, অমুক খক্তমক উৎপা: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ৱেবহুক %name লৈতে।</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>ৱেবহুক %name না পাউখুম পীদ্রে: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>ৱেবহুক %name না %ms ms দা %status পাউখুম পীখ্রে।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>ৱেবহুক অদু লৌথোক্নবা মগী মনাক্তা লৈবা বোক্স অদু তিক তৌবিয়ু।</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>ৱেবহুক %name লৌথোকখ্রে।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API গী স্কোপ অমা নত্তে: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>সবস্ক্রিপসনশিং /api/graphql/subscribe দা থাবিয়ু (থৌদোকগী স্ত্রীম নত্রগা WebSocket)।</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>হায়জবা অসিনা দোকুমেন্তকী ওপরেসন অমত্তগী মমিং পীদে।</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>সবস্ক্রিপসন অমনা ফিল্দ অমখক্তমক হায়জৈ।</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>সবস্ক্রিপসন য়াম্না মরাং কায়না হাংদোক্লি; মতুংদা অমুক হন্না হোৎনবিয়ু।</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>নহাক্কী সবস্ক্রিপসন %max হাংদোক্লি, এলাউ তৌবা খ্বাইদগী য়াম্বা।</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>নহাক্কী এদ্রেসতা সবস্ক্রিপসন %max হাংদোক্লি, এলাউ তৌবা খ্বাইদগী য়াম্বা।</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>সাইট একসেস অসিদা সবস্ক্রিপসনশিং থোংজিনখ্রে।</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>সবস্ক্রাইব তৌনবা সাইন ইন তৌবিয়ু (তোকেন অমা নত্রগা মশাগী API কী অমা)।</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>মিউতেসনশিং /api/graphql দা থাবিয়ু।</translation>
     </message>
 </context>
 </TS>

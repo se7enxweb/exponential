@@ -79205,6 +79205,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Maʻá e hūʻanga uepisaiti %siteaccess, ʻa ia ʻoku ne fakahaaʻi ʻa e peesi ko ʻeni.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Ngaahi webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Ko e meʻa hoko kotoa pē ʻoku kole ki ai ha feituʻu ngataʻanga (publish, update, trash, delete, move, hide, reveal, mutation) ʻoku fekauʻi ki ai, kuo fakamoʻoniʻi, ʻe he konga cronjob graphqlwebhooks. ʻOku fai ʻe he ./console exp:graphql:webhooks ʻa e meʻa tatau mo e konga ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ngaahi meʻa hoko</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>kotoa</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hūʻanga uepisaiti kotoa pē</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>maumau</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ʻikai ha meʻa fufū</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>ʻOku tatali</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count kuo liʻaki</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Tuku atu fakamuimui</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Fekauʻi ha sivi</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>ʻIo, toʻo ʻa e webhook ko ʻeni</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>ʻOku teʻeki ai ha webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Tānaki ha webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Tānaki</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Ngaahi tuku atu fakamuimui</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Taimi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ola</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Ngaahi kau mai</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Ngaahi fakafoʻou fakahangatonu ki he kau kasitomaa: ha tafe meʻa hoko ʻi he /api/graphql/subscribe, mo ha WebSocket (graphql-transport-ws) ʻi he Velocity. ʻOku ʻalu ʻa e meʻa hoko taki taha ki he kau kau mai pē ʻoku ngofua ke nau lau hono ngaahi meʻa ʻoku ʻi loto.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Fakaava he taimí ni</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Lahi taha fakaava</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total kotoa, %user ki he tokotaha fakaʻaongaʻi, %address ki he tuʻasila</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Ngaahi kau mai taʻehingoa</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Lōloa ʻo e tafe</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Naʻe ʻikai lava ke tānaki ʻa e webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Kuo liliu ʻa e webhook %name; ʻoku nofo pē ʻa ʻene meʻa fufū fakamoʻoni.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Naʻe ʻikai lava ke tauhi ʻa e meʻa fufū fakamoʻoni (Fokotuʻu &gt; Ngaahi meʻa fufū).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Kuo tānaki ʻa e webhook %name. Ko ʻene meʻa fufū fakamoʻoni, ʻoku fakahā ʻi he taimi pē ko ʻeni: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ʻOku ʻikai ha webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Naʻe ʻikai tali ʻa e webhook %name: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Naʻe tali ʻa e webhook %name ʻaki ʻa e %status ʻi he %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Fakaʻilongaʻi ʻa e puha ʻi he tafaʻaki ʻo e webhook ke toʻo ia.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Kuo toʻo ʻa e webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>ʻOku ʻikai ko ha ʻā ʻo e GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Fekauʻi ʻa e ngaahi kau mai ki he /api/graphql/subscribe (ha tafe meʻa hoko pe ha WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>ʻOku ʻikai fakahingoa ʻe he kole ha ngāue ʻo e tohi.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>ʻOku kole ʻe ha kau mai ha feituʻu ʻe taha pē.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Lahi fau ʻa e ngaahi kau mai ʻoku fakaava; toe feinga ʻamui ange.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>ʻOku ʻi ai hoʻo kau mai ʻe %max ʻoku fakaava, ko e lahi taha ia ʻoku ngofua.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>ʻOku ʻi ai ʻa e kau mai ʻe %max ʻoku fakaava mei hoʻo tuʻasila, ko e lahi taha ia ʻoku ngofua.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Kuo tāmateʻi ʻa e ngaahi kau mai ʻi he hūʻanga uepisaiti ko ʻeni.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Hū ki loto ke kau mai (ha token pe ha kī API fakafoʻituitui).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Fekauʻi ʻa e ngaahi liliu (mutation) ki he /api/graphql.</translation>
     </message>
 </context>
 </TS>

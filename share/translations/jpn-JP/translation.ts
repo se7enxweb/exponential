@@ -79235,6 +79235,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>このページを表示しているサイトアクセス %siteaccess のものです。</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>エンドポイントが求める各イベント (publish, update, trash, delete, move, hide, reveal, mutation) は、cronjob パート graphqlwebhooks によって署名付きで送信されます。./console exp:graphql:webhooks はこのセクションと同じ処理を行います。</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>イベント</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>すべて</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>すべてのサイトアクセス</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>故障</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>シークレットなし</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>待機中</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count 件断念</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>最終配信</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>テスト送信</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>はい、この Webhook を削除します</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Webhook はまだありません。</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Webhook を追加</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>追加</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>最近の配信</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>日時</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>購読</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>クライアント向けのライブ更新: /api/graphql/subscribe のイベントストリームと、Velocity 上の WebSocket (graphql-transport-ws)。各イベントは、その内容を読める購読者にのみ送られます。</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>現在開いている数</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>最大同時数</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>全体で %total、ユーザーごとに %user、アドレスごとに %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>匿名の購読</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>ストリームの長さ</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook を追加できませんでした: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name を変更しました。署名シークレットはそのままです。</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>署名シークレットを保存できませんでした (システム設定 &gt; シークレット)。</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name を追加しました。署名シークレット (今回のみ表示): %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhook %name はありません。</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name は応答しませんでした: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name は %ms ms で %status を返しました。</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>削除するには、Webhook の横のチェックボックスをオンにしてください。</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name を削除しました。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79509,6 +79645,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API のスコープではありません: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>購読は /api/graphql/subscribe に送ってください (イベントストリームまたは WebSocket)。</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>リクエストがドキュメントの操作を指定していません。</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>購読ではフィールドを 1 つだけ指定してください。</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>開いている購読が多すぎます。後でもう一度お試しください。</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max 件の購読を開いており、これが上限です。</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>お使いのアドレスで %max 件の購読が開いており、これが上限です。</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>このサイトアクセスでは購読が無効になっています。</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>購読するにはサインインしてください (トークンまたは個人用 API キー)。</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>ミューテーションは /api/graphql に送ってください。</translation>
     </message>
 </context>
 </TS>

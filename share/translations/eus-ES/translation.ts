@@ -79205,6 +79205,142 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Orri hau erakusten duen %siteaccess gune-sarbiderako.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhookak</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Amaiera-puntu batek eskatzen duen gertaera oro (publish, update, trash, delete, move, hide, reveal, mutation) sinatuta bidaltzen zaio, graphqlwebhooks cronjob zatiaren bidez. ./console exp:graphql:webhooks komandoak atal honen gauza bera egiten du.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Gertaerak</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>guztiak</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gune-sarbide guztiak</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>hautsita</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>sekreturik ez</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Zain</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count bertan behera utzita</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Azken bidalketa</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Bidali proba bat</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Bai, kendu webhook hau</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Oraindik ez dago webhookik.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Gehitu webhook bat</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Gehitu</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Azken bidalketak</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ordua</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Emaitza</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Harpidetzak</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Zuzeneko eguneratzeak bezeroentzat: gertaera-jario bat /api/graphql/subscribe helbidean, eta WebSocket bat (graphql-transport-ws) Velocity zerbitzarian. Gertaera bakoitza haren edukia irakur dezaketen harpidedunei soilik iristen zaie.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Orain irekita</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Gehienez irekita</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total guztira, %user erabiltzaileko, %address helbideko</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Harpidetza anonimoak</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Jarioaren iraupena</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Ezin izan da webhooka gehitu: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>%name webhooka aldatu da; bere sinadura-sekretua mantentzen da.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Ezin izan da sinadura-sekretua gorde (Konfigurazioa &gt; Sekretuak).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>%name webhooka gehitu da. Bere sinadura-sekretua, behin bakarrik erakutsita: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Ez dago %name webhookik.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>%name webhookak ez du erantzun: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>%name webhookak %status erantzun du %ms ms-tan.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Markatu webhookaren ondoko laukia kentzeko.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>%name webhooka kendu da.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ez da GraphQL APIaren esparru bat: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Bidali harpidetzak /api/graphql/subscribe helbidera (gertaera-jario bat edo WebSocket bat).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Eskaerak ez du dokumentuko eragiketarik izendatzen.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Harpidetza batek eremu bakar bat eskatzen du.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Harpidetza gehiegi daude irekita; saiatu berriro geroago.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max harpidetza dituzu irekita, onartutako gehienekoa.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Zure helbideak %max harpidetza ditu irekita, onartutako gehienekoa.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Harpidetzak desaktibatuta daude gune-sarbide honetan.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Hasi saioa harpidetzeko (token bat edo API gako pertsonal bat).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Bidali mutazioak /api/graphql helbidera.</translation>
     </message>
 </context>
 </TS>

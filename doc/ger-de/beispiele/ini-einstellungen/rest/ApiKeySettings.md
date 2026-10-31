@@ -192,7 +192,7 @@ DefaultReadScope=read
 
 ## RouteScopes
 
-Standard: ein Hash mit 6: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`, `expGraphQLRestController_query=graphql:read`.
+Standard: ein Hash mit 7: `ezp7xRestContentController_CreateContentNode=publish`, `ezp7xRestContentController_UpdateContentNode=edit`, `ezp7xRestContentController_DeleteContentNode=remove`, `expHelpRestController_topic=help`, `expHelpRestController_manual=help`, `expGraphQLRestController_query=graphql:read`, `expGraphQLRestController_subscribe=graphql:read`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -206,6 +206,7 @@ RouteScopes[ezp7xRestContentController_DeleteContentNode]=remove
 RouteScopes[expHelpRestController_topic]=help
 RouteScopes[expHelpRestController_manual]=help
 RouteScopes[expGraphQLRestController_query]=graphql:read
+RouteScopes[expGraphQLRestController_subscribe]=graphql:read
 */ ?>
 ```
 

@@ -80508,6 +80508,142 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>För webbplatsingången %siteaccess, som visar den här sidan.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Varje händelse som en slutpunkt ber om (publish, update, trash, delete, move, hide, reveal, mutation) skickas till den, signerad, av cronjobbsdelen graphqlwebhooks. ./console exp:graphql:webhooks gör samma sak som det här avsnittet.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Händelser</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>alla</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Varje webbplatsingång</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>trasig</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ingen hemlighet</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Väntande</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count uppgivna</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Senaste leverans</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Skicka ett test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ja, ta bort den här webhooken</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ingen webhook ännu.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Lägg till en webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Lägg till</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Senaste leveranser</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tid</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Prenumerationer</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Liveuppdateringar för klienter: en händelseström på /api/graphql/subscribe och en WebSocket (graphql-transport-ws) på Velocity. Varje händelse går bara till prenumeranter som får läsa dess innehåll.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Öppna nu</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Högst öppna</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total totalt, %user per användare, %address per adress</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonyma prenumerationer</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Strömmens längd</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhooken kunde inte läggas till: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhooken %name har ändrats; dess signeringshemlighet behålls.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Signeringshemligheten kunde inte lagras (Konfiguration &gt; Hemligheter).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhooken %name har lagts till. Dess signeringshemlighet, som visas bara denna gång: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Det finns ingen webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhooken %name svarade inte: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhooken %name svarade %status på %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Kryssa i rutan bredvid webhooken för att ta bort den.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhooken %name har tagits bort.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -80782,6 +80918,42 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Inte ett omfång för GraphQL-API:t: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Skicka prenumerationer till /api/graphql/subscribe (en händelseström eller en WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Förfrågan anger ingen operation i dokumentet.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>En prenumeration ber om exakt ett fält.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>För många prenumerationer är öppna; försök igen senare.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Du har %max prenumerationer öppna, det högsta tillåtna.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Din adress har %max prenumerationer öppna, det högsta tillåtna.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Prenumerationer är avstängda i den här webbplatsingången.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Logga in för att prenumerera (en token eller en personlig API-nyckel).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Skicka mutationer till /api/graphql.</translation>
     </message>
 </context>
 </TS>

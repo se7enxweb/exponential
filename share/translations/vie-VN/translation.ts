@@ -79205,6 +79205,142 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Cho điểm truy cập trang %siteaccess, nơi hiển thị trang này.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Mỗi sự kiện mà một điểm cuối yêu cầu (publish, update, trash, delete, move, hide, reveal, mutation) đều được phần cronjob graphqlwebhooks gửi đến nó, có chữ ký. ./console exp:graphql:webhooks làm cùng việc với phần này.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Sự kiện</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>tất cả</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Mọi điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>hỏng</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>không có khóa bí mật</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Đang chờ</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>Đã bỏ: %count</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Lần gửi gần nhất</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Gửi thử</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Có, xóa webhook này</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Chưa có webhook nào.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Thêm webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Thêm</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Các lần gửi gần đây</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Thời gian</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Kết quả</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Đăng ký theo dõi</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Cập nhật trực tiếp cho máy khách: một luồng sự kiện tại /api/graphql/subscribe và một WebSocket (graphql-transport-ws) trên Velocity. Mỗi sự kiện chỉ được gửi đến những người đăng ký có quyền đọc nội dung của nó.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Đang mở</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Mở tối đa</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>Tổng %total, %user mỗi người dùng, %address mỗi địa chỉ</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Đăng ký theo dõi ẩn danh</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Thời lượng luồng</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Không thể thêm webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Đã thay đổi webhook %name; khóa bí mật ký của nó được giữ nguyên.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Không thể lưu khóa bí mật ký (Thiết lập &gt; Bí mật).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Đã thêm webhook %name. Khóa bí mật ký của nó, chỉ hiển thị lần này: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Không có webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name không phản hồi: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name đã phản hồi %status trong %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Đánh dấu ô bên cạnh webhook để xóa nó.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Đã xóa webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79479,6 +79615,42 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Không phải là phạm vi của API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Hãy gửi đăng ký theo dõi đến /api/graphql/subscribe (một luồng sự kiện hoặc một WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Yêu cầu không nêu thao tác nào của tài liệu.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Một đăng ký theo dõi yêu cầu đúng một trường.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Có quá nhiều đăng ký theo dõi đang mở; hãy thử lại sau.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Bạn đang mở %max đăng ký theo dõi, mức tối đa cho phép.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Địa chỉ của bạn đang mở %max đăng ký theo dõi, mức tối đa cho phép.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Đăng ký theo dõi đang tắt ở điểm truy cập trang này.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Hãy đăng nhập để đăng ký theo dõi (một mã thông báo hoặc một khóa API cá nhân).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Hãy gửi mutation đến /api/graphql.</translation>
     </message>
 </context>
 </TS>

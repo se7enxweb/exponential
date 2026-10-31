@@ -79203,6 +79203,142 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Loogu talagalay gelitaanka goobta %siteaccess, ee muujinaya boggan.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook-yada</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Dhacdo kasta oo barta dhammaadka ay codsato (publish, update, trash, delete, move, hide, reveal, mutation) waxaa loogu diraa, iyadoo saxeexan, qaybta cronjob-ka graphqlwebhooks. ./console exp:graphql:webhooks wuxuu sameeyaa wax la mid ah qaybtan.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Dhacdooyinka</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>dhammaan</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gelitaan kasta oo goob</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>jaban</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>sir ma leh</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Sugaya</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count laga quustay</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Gaarsiintii ugu dambeysay</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Dir tijaabo</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Haa, saar webhook-gan</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Weli ma jiro webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Ku dar webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ku dar</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Gaarsiimihii dhowaa</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waqti</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Natiijo</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Is-diiwaangelinta</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Cusboonaysiin toos ah oo loogu talagalay macaamiisha: qulqul dhacdooyin ah oo ku yaal /api/graphql/subscribe, iyo WebSocket (graphql-transport-ws) oo ku yaal Velocity. Dhacdo kasta waxay gaartaa oo keliya kuwa is-diiwaangeliyay ee akhrin kara nuxurkeeda.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Hadda furan</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Ugu badnaan furan</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total wadar ahaan, %user isticmaale kasta, %address cinwaan kasta</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Is-diiwaangelinta aan magaca lahayn</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Dhererka qulqulka</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook-ga lama dari karin: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook-ga %name waa la beddelay; sirtiisa saxiixa way sii jirtaa.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Sirta saxiixa lama kaydin karin (Habeyn &gt; Siraha).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook-ga %name waa lagu daray. Sirtiisa saxiixa, oo la muujiyay hal mar oo keliya: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Ma jiro webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook-ga %name kama jawaabin: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook-ga %name wuxuu ku jawaabay %status muddo %ms ms ah.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Calaamadee sanduuqa ku xiga webhook-ga si aad u saarto.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook-ga %name waa la saaray.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79477,6 +79613,42 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ma aha baaxad ka mid ah GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>U dir is-diiwaangelinta /api/graphql/subscribe (qulqul dhacdooyin ah ama WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Codsigu ma magacaabo hawlgal ka mid ah dukumeentiga.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Is-diiwaangelintu waxay codsataa hal goob oo keliya.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Is-diiwaangelinno aad u badan ayaa furan; isku day mar dambe.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Waxaad leedahay %max is-diiwaangelin oo furan, inta ugu badan ee la oggol yahay.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Cinwaankaagu wuxuu leeyahay %max is-diiwaangelin oo furan, inta ugu badan ee la oggol yahay.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Is-diiwaangelinta waa ka demsan yihiin gelitaankan goobta.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Gal si aad isu diiwaangeliso (calaamad token ah ama fure API shakhsi ah).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>U dir isbeddellada (mutations) /api/graphql.</translation>
     </message>
 </context>
 </TS>
