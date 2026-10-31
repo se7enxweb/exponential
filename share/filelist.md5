@@ -6685,7 +6685,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 26ddd0cf40cd46bd777c6a6cd595c001  doc/eng-us/features/6.0/velocity-websockets-and-events.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-commands.md
-264d6d8a8c848667302b1e280e5cdd79  doc/eng-us/features/6.0/website-sidebar.md
+9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 69cf415d178489c7ca9f2cf4bf7df884  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
 5a472729017993e883a506d5dfbd346e  doc/eng-us/guides/README.md
@@ -15973,7 +15973,7 @@ b2ec6f7c415225178be44e5caeab8388  doc/ger-de/funktionen/6.0/velocity-zeitplaner.
 7b9d3ace84a70314eeb6b83a3949469a  doc/ger-de/funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md
 8a6387d0944cfcf12dbffe21cf8cf6f6  doc/ger-de/funktionen/6.0/vorabladen-des-zugriffsarrays.md
 5a82b84fa068555c248d17d1a6d4125f  doc/ger-de/funktionen/6.0/wartungsmodus.md
-83a7073751d32600c7ca9bdc1c3ebe1f  doc/ger-de/funktionen/6.0/website-seitenleiste.md
+0eb69b86b32c2545332f801a64521116  doc/ger-de/funktionen/6.0/website-seitenleiste.md
 bea8ea9f00dfc81102f6e376de1bea4e  doc/ger-de/funktionen/6.0/websiteuebergreifende-links-im-multisite.md
 3c2b3930490f58368df9a670f4cf0959  doc/ger-de/funktionen/6.0/zugriffs-und-cache-filter.md
 aba05fee1af76fb5cde206933fa6cb94  doc/ger-de/funktionen/6.0/zusaetzliche-extension-verzeichnisse.md
@@ -23412,7 +23412,7 @@ acae6bbb77fcc05695116d119c0879f5  kernel/classes/expvelocitywatchdog.php
 35ecc21bdffdb4e710505fdd826df48a  kernel/classes/expviewaccess.php
 60d22591b81ac4d724cf627f169f2aeb  kernel/classes/expviewparameters.php
 2476f9c0f8ba75823eb320fe33bc0ab5  kernel/classes/expweakpasswordlist.php
-93be149be27fe50ac77b4f33cbf4ca49  kernel/classes/expwebsitesidebarmigration.php
+1c8f734b6a84f1f6538bf3bfcff37ef3  kernel/classes/expwebsitesidebarmigration.php
 19df831ef09fa7411d27bf3b6c4cfea4  kernel/classes/ezaudit.php
 2deb8dd5796ace6c5bb4c7b85ee06ea4  kernel/classes/ezbasket.php
 49db61a7999663c74b1b6cbe4b852d89  kernel/classes/ezbinaryfilehandler.php
@@ -23916,7 +23916,7 @@ d4882884cb8e11c2db92d3940177cd98  kernel/classes/upgrade/steps/expupgradestepsit
 87f6ba3903afebfb8610bc329921a159  kernel/classes/upgrade/steps/expupgradestepuseraudittable.php
 944d951983d88dd9c44de03285f14bc6  kernel/classes/upgrade/steps/expupgradestepuserloginuniqueindex.php
 eb5b19516b103fa6f771fa670e270485  kernel/classes/upgrade/steps/expupgradestepusersessiontable.php
-c6e6caf03b993e327788b0741029c374  kernel/classes/upgrade/steps/expupgradestepwebsitesidebar.php
+335dbb85aba9525ff01197a806857554  kernel/classes/upgrade/steps/expupgradestepwebsitesidebar.php
 2b5af103863c5e0f0fb1b9979726a684  kernel/classes/user/exppasswordchangerequired.php
 f3af015f9e7fbdb82cad81d7cc2c87fa  kernel/classes/user/expregistrationadminaction.php
 f11fc49c3931622b3234870783fd957c  kernel/classes/user/expsigninsecondfactor.php
@@ -24230,7 +24230,7 @@ c887ef0c09b4113ee9fc73b06d0e122b  kernel/private/classes/commands/exptemplatecon
 7f5dbf4392650d66bdded06094e13eae  kernel/private/classes/commands/exptemplateconverttwigtostpl.php
 240f5f08dba2a52329a725b885c587fe  kernel/private/classes/commands/exptemplateconverttwigtotpl.php
 81af78f376418b564013cd32306b4dfd  kernel/private/classes/commands/exptemplateengines.php
-c4ff3a09e33517fc28adebcdc82202d2  kernel/private/classes/commands/expwtmigratefromezwt.php
+b038023a4cdc6dd16a956f22e07ea15a  kernel/private/classes/commands/expwtmigratefromezwt.php
 0490ac4d5fa0fd55d517d73135c31db4  kernel/private/classes/commands/ezapplytemplate.php
 642175f631984db5adf5a4f5e3f2cb33  kernel/private/classes/commands/ezasynchronouspublisher.php
 f95b245cc74654bc2ea5af83705fcaa4  kernel/private/classes/commands/ezcache.php
@@ -27409,7 +27409,7 @@ d82f876705fd85722ea8409d0cd97fe7  tests/tests/kernel/classes/expVelocityStopRest
 805242b566e7eb9a4614ce5c30430c32  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 343c0121d4e5e9a067c7b31b5e462c9c  tests/tests/kernel/classes/expViewAccessTest.php
 0745ffa213053f2a3bc03b9a9fbb664e  tests/tests/kernel/classes/expViewParametersTest.php
-cd0b59256170242053b1448b811c307e  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
+ede6f8e1cfe9c914d8726d33cea69a51  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml

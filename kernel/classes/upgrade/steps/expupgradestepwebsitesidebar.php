@@ -25,7 +25,7 @@ class expUpgradeStepWebsiteSidebar extends expUpgradeScriptStep
 
     public function description()
     {
-        return 'expwt (the website sidebar) in place of ezwt: settings, policies, activation (exp:wt:migrate-from-ezwt)';
+        return 'expwt (the website sidebar) in place of ezwt: settings, policies, activation, schedule (exp:wt:migrate-from-ezwt)';
     }
 
     protected function changes( expUpgradeContext $context )
