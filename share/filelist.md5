@@ -3337,7 +3337,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-74ac4b9b865ff7e3a73d1634e5c1fc86  doc/changelogs/6.0/6.0.15.md
+c8850ffe9527ecb209b8800a258c71bf  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3486,7 +3486,7 @@ e68dc45d4eb39d75dbddc54db9116504  doc/eng-us/bc/6.0/debug-bar.md
 dd5a75132053a4ed2a80e386eebe7f04  doc/eng-us/bc/6.0/demo-mode.md
 68ca2915c347f13a647afb19d14748d0  doc/eng-us/bc/6.0/draft-edit-access.md
 b0fbba2abe4abadee42e57cebb5388fd  doc/eng-us/bc/6.0/eZINI_PRESERVES_COMMENTS.md
-cfcd49b5cc2cee458566f58c357432a0  doc/eng-us/bc/6.0/editor-role-policies.md
+c8831f92cec9aa845d875d8f47bbdb20  doc/eng-us/bc/6.0/editor-role-policies.md
 6f84e346bd4e6b717ec6e552f2d152c6  doc/eng-us/bc/6.0/expinfo-operator.md
 dde90f374f5c726818094a022c0d5a7b  doc/eng-us/bc/6.0/exponentialsdk-and-exponential-cron.md
 e03549b98a5316616e86c5e6aea94193  doc/eng-us/bc/6.0/extension-package-secret-check.md
@@ -13028,7 +13028,7 @@ d2f8403906212d10b165b1b9653b9193  doc/ger-de/bc/6.0/phpunitv13-fuer-php841.md
 78c5914ba36834b6e5cb989b04aabe79  doc/ger-de/bc/6.0/rad-erweiterungsoberflaeche.md
 a87249b7de03c3604d96098437fbb7b9  doc/ger-de/bc/6.0/rad-erweiterungspunkte.md
 d4b8fa2c2bb2774894e82becbb64ef1a  doc/ger-de/bc/6.0/rad-sicherheit.md
-c1bc236060344773dc50729f281125bf  doc/ger-de/bc/6.0/redakteur-rolle-richtlinien.md
+20c4c870d0aa48482d3ca01174819cbb  doc/ger-de/bc/6.0/redakteur-rolle-richtlinien.md
 a9e1197830ad95e753f4c6f1c38cf693  doc/ger-de/bc/6.0/reparatur.md
 6ad31ed1e21c597ad6650e1278be2ccf  doc/ger-de/bc/6.0/schutz-fuer-weiterleitungs-query-und-bildaliase.md
 40828a6a1fabb215580f471d7f4631c5  doc/ger-de/bc/6.0/schwache-passwoerter-und-gueltigkeit-von-reset-links.md
@@ -23293,7 +23293,7 @@ ceb8038b13ca2723d475c854688ff1f8  kernel/classes/expcontentpendinglist.php
 b96ea510a324ff861e315d1ac4aed6cd  kernel/classes/expcronjobpause.php
 c9b12f35141dfbdc4e1ca9e9bace958f  kernel/classes/expcrontabsetup.php
 903bec3bf1081f1d2721446139da40ca  kernel/classes/expdemomode.php
-cfb1d1d6c185ba78d0f202b44d57d21c  kernel/classes/expeditorpolicies.php
+140a689c29cdb0a1caca757add5851f0  kernel/classes/expeditorpolicies.php
 d68e2e916f02f7cd683579b16ca1bdde  kernel/classes/experrorheaderlist.php
 d297ed4defa1838b4d188b6947de9114  kernel/classes/expextensioncatalogue.php
 aa39b72a84f205780698024ea67cda6e  kernel/classes/expextensionchangeplan.php
@@ -23825,7 +23825,7 @@ c8487ce7613064c2440bc5c059fe3a71  kernel/classes/upgrade/steps/expupgradestepboo
 6e451953a86d2ce0417355d00ee082c4  kernel/classes/upgrade/steps/expupgradestepbookmarkviewtable.php
 011cdeaf97448ff2b182afec75e075be  kernel/classes/upgrade/steps/expupgradestepcodeupdate.php
 cbea0fa4b585784263ee3e07dcdeffdd  kernel/classes/upgrade/steps/expupgradestepdatatabletables.php
-3ffe7b6c90f520c6f07b9619309a57c3  kernel/classes/upgrade/steps/expupgradestepeditorpolicies.php
+07986d6d982c4f46df0e8a367fbf9ccc  kernel/classes/upgrade/steps/expupgradestepeditorpolicies.php
 162998013b34562d1604c3e7beaf0441  kernel/classes/upgrade/steps/expupgradestepfinishdeploy.php
 5a014a5f6518b81a8e6cc46820d8bc77  kernel/classes/upgrade/steps/expupgradestepfinishsmoke.php
 a7345db423f27fe05f24099cf808b3f5  kernel/classes/upgrade/steps/expupgradestephelpcontenttables.php
@@ -24116,7 +24116,7 @@ b48aeb16210c9892df236bcd83029aa2  kernel/private/classes/clusterfilehandlers/int
 134054d610fea7a3c34a5bea9c4a72d2  kernel/private/classes/commands/accesscheck.php
 fd45c3cfa535827c0416512155386783  kernel/private/classes/commands/addanonymouspublicpolicies.php
 e4add5310e9133402f902a1711ad6c96  kernel/private/classes/commands/adddefaultstates.php
-561ff6cf9b613ff1edb626002c21ef94  kernel/private/classes/commands/addeditorpolicies.php
+3450f7666b5ee4eb61a18eef5dccbfa1  kernel/private/classes/commands/addeditorpolicies.php
 e777fffd9c19d04dfc90cb389f98c655  kernel/private/classes/commands/addexphelpreadpolicy.php
 4bc799cd493cac05eb9918903b6a781e  kernel/private/classes/commands/addmembermanagement.php
 c0be86259df29eb80766daea3b7fe0cf  kernel/private/classes/commands/addoauthauthorizepolicy.php
@@ -25355,6 +25355,7 @@ ea68c5ba8eb753c5292a1c4dd3a5b2bc  settings/datetime.ini
 0c09e0bf093c0f1f18f97705355d487c  settings/debug.ini
 c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 546a2136d4ba2d6bff06dee5f0a8fe6f  settings/design.ini
+b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
 ba1d8b44bc7cddc6b3c54f8e3ee09720  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
@@ -27292,7 +27293,7 @@ a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguages
 9f3998cf6c064a3c02c62ad6c6f696f9  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php
 6db0fecbb771dd2f8012e6fbb5185256  tests/tests/kernel/classes/expCronjobsCompactViewTest.php
 9e3a31da644e81a47ac51bcdee139a6c  tests/tests/kernel/classes/expCrontabSetupTest.php
-5af14849d1ff6a54b5fb1beb533ff42c  tests/tests/kernel/classes/expEditorPoliciesTest.php
+9d03e5cca758926f3bcafab15ab91fce  tests/tests/kernel/classes/expEditorPoliciesTest.php
 baf40d1e5571f3e0021edb6c2e9217a0  tests/tests/kernel/classes/expEntryScriptRenameRulesTest.php
 75d4909bce770c7bfceac5e3e99db3f5  tests/tests/kernel/classes/expImageUploadValidatorTest.php
 bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultExtensionsTest.php

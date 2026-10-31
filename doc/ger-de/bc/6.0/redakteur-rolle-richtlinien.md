@@ -58,6 +58,41 @@ Einstellungen der Benachrichtigungen nicht öffnen (`notification/use`).
 Die Richtlinien kommen in die Rolle Editor, die Zuweisung der Rolle begrenzt sie also wie den Rest: für die Gruppe
 Editors auf die Teilbäume Content und Media. Ausblenden und die Liste der verwendenden Objekte funktionieren nur dort.
 
+## Die Oberflächenauswahl, die Klassen der Media-Site und doppelte Richtlinien (30. Oktober 2026)
+
+Eine Installation, die angelegt wurde, bevor die Pakete die Klassen der Media-Site kannten, oder deren Rolle Editor von
+Hand bearbeitet wurde, zeigte drei weitere Lücken. Der Setup-Schritt, das Skript und der Aktualisierungsschritt
+`6.0.15-editor-policies` schließen nun auch sie:
+
+- **Der UI-Umschalter**: `uiswitch/language` und `uiswitch/design` (die Sprache der Oberfläche und das helle oder
+  dunkle Design der Administration in der rechten Spalte) kommen hinzu, wenn sie der Rolle fehlen. Jede nur, solange
+  ihr Anbieter in `uiswitch.ini [UISwitchSettings] ProviderList[]` steht.
+- **Klassengruppen** (`settings/editorpolicies.ini`): Eine Klassengruppe nennt Inhaltsklassen, die ein Redakteur
+  anlegt und über die Website-Werkzeugleiste bearbeitet. Die mitgelieferte Gruppe `media_site` enthält die Klassen der
+  Media-Site (`ng_*`). Für die Klassen einer Gruppe, die kein `content/create` der Rolle erlaubt, kommt ein
+  `content/create` hinzu, begrenzt mit `Class` auf diese Klassen und mit `ParentClass` auf die Elternklassen der Gruppe
+  (`folder`, `frontpage` und die Container-Klassen der Gruppe selbst, etwa `ng_frontpage`, `ng_container` und
+  `ng_category`); ebenso ein `websitetoolbar/use`, begrenzt mit `Class`, wo ezwt installiert ist. Eine
+  Anlege-Richtlinie zählt für eine Klasse, wenn sie keine `Class`-Begrenzung hat oder die Klasse nennt; es zählen nur
+  die eigenen Richtlinien der Rolle Editor. Eine Installation ohne `ng_*`-Klassen bleibt unberührt.
+- **Doppelte Richtlinien**: Eine Richtlinie, die die Rolle zweimal hat, mit demselben Modul, derselben Funktion und
+  denselben Begrenzungen, wird einmal entfernt; die älteste bleibt. Die Grunddaten und ein älterer Paketschritt
+  konnten beide `ezoe/*` hinzufügen. Eine Richtlinie, die sich nur in ihren Begrenzungen unterscheidet, ist nie doppelt.
+  `[EditorPolicySettings] RemoveDuplicates=disabled` schaltet das ab.
+
+Eine eigene Klassengruppe kommt in `settings/override/editorpolicies.ini.append.php`:
+
+```ini
+[EditorPolicySettings]
+ClassSets[]=shop
+
+[ClassSet_shop]
+Classes[]=shop_*
+Parents[]=folder
+ContainersAreParents=true
+WebsiteToolbar=true
+```
+
 ## Was bleibt, und warum
 
 - **Den Papierkorb leeren** (`content/cleantrash`) entfernt die gelöschten Objekte aller endgültig; Redakteure stellen
@@ -136,9 +171,31 @@ Die folgenden Optionen werden mit `--apply` kombiniert; ohne `--apply` zeigen si
   `content/*`.
 - `--only=<Modul/Funktion>` fügt nur diese Richtlinie hinzu, wiederholbar; `content/*` bleibt dann.
 - `--role=<Name oder ID>` vervollständigt eine andere Rolle als Editor (eine eigene Redakteursrolle der Website).
+- `--skip-class-set=<Name>` lässt eine Klassengruppe aus `editorpolicies.ini` weg (z. B.
+  `--skip-class-set=media_site`), wiederholbar.
+- `--keep-duplicates` lässt eine Richtlinie, die die Rolle zweimal hat, stehen.
 
-Das Skript fügt `geo_article` und `video` nicht zu `content/create` hinzu: Klassenlisten sind die Entscheidung der
-Website. Fügen Sie sie unter Rollen und Richtlinien hinzu, wenn Ihre Redakteure solche Inhalte schreiben.
+`--only` fügt nur einzelne Richtlinien hinzu: Die Klassengruppen und die doppelten Richtlinien bleiben dann, wie sie
+sind.
+
+Bei einer Rolle Editor von vor den Klassen der Media-Site, mit `ezoe/*` zweimal und ohne `uiswitch/design`, listet der
+Probelauf:
+
+```
+would add   uiswitch/design              the light or dark design of the administration interface (the UI switch)
+would remove ezoe/*                       duplicate of policy 330 (policy 6904)
+would add   content/create               class set media_site: Class=43,44,...,73,84 ParentClass=1,22,43,44,45,46,48,49,50,51,52
+would add   websitetoolbar/use           class set media_site: Class=43,44,...,73,84
+
+PASS: 1 duplicate policy would be removed; 3 policies would be added to Editor (3) (dry run, nothing changed; --apply writes)
+```
+
+Mit `--apply` prüft das Skript danach die gespeicherte Rolle (keine doppelte Richtlinie mehr, jede Klasse der Gruppen
+erlaubt).
+
+Das Skript fügt `geo_article` und `video` nicht zu `content/create` hinzu: Klassenlisten außerhalb einer Klassengruppe
+sind die Entscheidung der Website. Fügen Sie sie unter Rollen und Richtlinien hinzu oder nennen Sie sie in einer
+Klassengruppe, wenn Ihre Redakteure solche Inhalte schreiben.
 
 Code: `kernel/classes/expeditorpolicies.php`, Befehl `kernel/private/classes/commands/addeditorpolicies.php`. Test ohne
 Datenbank: `tests/tests/kernel/classes/expEditorPoliciesTest.php`.

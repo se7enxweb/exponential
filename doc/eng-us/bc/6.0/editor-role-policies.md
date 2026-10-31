@@ -56,6 +56,39 @@ password (`user/password`), edit the own account (`user/edit`, function *selfedi
 The policies are added to the Editor role, so they are limited by the role's assignment like the rest of it: for the
 Editors group, to the Content and Media subtrees. Hiding and the reverse related list work there only.
 
+## The interface choices, the media site's classes and duplicates (30 October 2026)
+
+An installation made before the media site's classes were added to the packages, or whose Editor role was edited by
+hand, showed three more gaps. The setup step, the script and the upgrade step `6.0.15-editor-policies` now close them
+as well:
+
+- **The UI switch**: `uiswitch/language` and `uiswitch/design` (the interface language and the light or dark
+  administration design in the right column) are added when the role lacks them. Each is added only while its
+  provider is listed in `uiswitch.ini [UISwitchSettings] ProviderList[]`.
+- **Class sets** (`settings/editorpolicies.ini`): a class set names content classes an editor creates and edits from
+  the website toolbar. The shipped set `media_site` holds the media site's classes (`ng_*`). For the classes of a set
+  that no `content/create` of the role grants, one `content/create` is added, limited by `Class` to those classes and
+  by `ParentClass` to the set's parents (`folder`, `frontpage` and the set's own container classes, such as
+  `ng_frontpage`, `ng_container` and `ng_category`); likewise one `websitetoolbar/use` limited by `Class`, where ezwt
+  is installed. A create policy counts for a class when it has no `Class` limitation or names the class; only the
+  Editor role's own policies count. An installation without `ng_*` classes is not touched.
+- **Duplicates**: a policy the role holds twice, with the same module, function and limitations, is removed once; the
+  oldest is kept. The base data and an older package step could each add `ezoe/*`. A policy that differs only in
+  its limitations is never a duplicate. `[EditorPolicySettings] RemoveDuplicates=disabled` switches this off.
+
+Add a class set of your own in `settings/override/editorpolicies.ini.append.php`:
+
+```ini
+[EditorPolicySettings]
+ClassSets[]=shop
+
+[ClassSet_shop]
+Classes[]=shop_*
+Parents[]=folder
+ContainersAreParents=true
+WebsiteToolbar=true
+```
+
 ## What stays as it is, and why
 
 - **Emptying the trash** (`content/cleantrash`) removes everybody's trashed objects for good; editors restore, an
@@ -130,9 +163,28 @@ The options below combine with `--apply`; without it they show what they would d
   `content/restore` or `content/reverserelatedlist` is not added in place of `content/*` either.
 - `--only=<module/function>` adds only that policy, repeatable; `content/*` is then kept.
 - `--role=<name or ID>` completes another role than Editor (a site's own editor role).
+- `--skip-class-set=<name>` leaves a class set of `editorpolicies.ini` out (e.g. `--skip-class-set=media_site`),
+  repeatable.
+- `--keep-duplicates` leaves a policy the role holds twice.
 
-The script does not add `geo_article` and `video` to `content/create`: class lists are the site's choice. Add them in
-Roles and policies if your editors write those.
+`--only` adds single policies only: the class sets and the duplicates are then left alone.
+
+On an Editor role made before the media site's classes, with `ezoe/*` twice and without `uiswitch/design`, the dry run
+lists:
+
+```
+would add   uiswitch/design              the light or dark design of the administration interface (the UI switch)
+would remove ezoe/*                       duplicate of policy 330 (policy 6904)
+would add   content/create               class set media_site: Class=43,44,...,73,84 ParentClass=1,22,43,44,45,46,48,49,50,51,52
+would add   websitetoolbar/use           class set media_site: Class=43,44,...,73,84
+
+PASS: 1 duplicate policy would be removed; 3 policies would be added to Editor (3) (dry run, nothing changed; --apply writes)
+```
+
+With `--apply` the script checks the stored role afterwards (no duplicate left, every class of the sets granted).
+
+The script does not add `geo_article` and `video` to `content/create`: class lists outside a class set are the site's
+choice. Add them in Roles and policies, or name them in a class set, if your editors write those.
 
 Code: `kernel/classes/expeditorpolicies.php`, command `kernel/private/classes/commands/addeditorpolicies.php`. Test
 without a database: `tests/tests/kernel/classes/expEditorPoliciesTest.php`.

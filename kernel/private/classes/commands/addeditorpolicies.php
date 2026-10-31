@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/addeditorpolicies.php.
- * @description Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account (dry run unless --apply)
+ * @description Give the Editor role the everyday policies it lacks: content/hide, content/restore, content/reverserelatedlist, ezmultiupload, the image editor, the own account, the UI switch, the class sets of editorpolicies.ini, no duplicates (dry run unless --apply)
  * Guide: doc/eng-us/bc/6.0/editor-role-policies.md
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -32,6 +32,11 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
                     . "restore, reverserelatedlist): it also grants emptying everybody's trash, the languages, the URL\n"
                     . "aliases and everybody's content jobs. --keep-content-wildcard leaves it. Lists what the role still\n"
                     . "holds that an editor role should not (WARN lines). Prints PASS or FAIL at the end.\n"
+                    . "The UI switch's language and design choice (uiswitch/language, uiswitch/design) are added where\n"
+                    . "the provider exists. Then the class sets of editorpolicies.ini (default: the media site's ng_*\n"
+                    . "classes): one content/create limited to the set's classes the role cannot create yet and its parent\n"
+                    . "classes, and one websitetoolbar/use for them. A policy the role holds twice (same module, function\n"
+                    . "and limitations) is removed once (--keep-duplicates leaves it).\n"
                     . "Without --apply nothing is written: the script lists what it would remove and add. --dry-run is\n"
                     . "still accepted and means the same as no flag; --apply together with --dry-run is a usage error (exit 2).\n\n"
                     . "Example: php bin/php/addeditorpolicies.php\n"
@@ -44,7 +49,7 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
             )
         );
         $options = $this->startup(
-            "[apply][dry-run][role:][only:*][skip:*][keep-content-wildcard]",
+            "[apply][dry-run][role:][only:*][skip:*][keep-content-wildcard][keep-duplicates][skip-class-set:*]",
             '',
             array(
                 'apply' => "Write the changes (the default is a dry run that lists them and changes nothing)",
@@ -52,7 +57,9 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
                 'keep-content-wildcard' => "Leave a content/* of the role as it is (not replaced by single functions)",
                 'role' => "The role to complete (ID or name); default Editor",
                 'only' => "Only this policy (module/function), may be repeated",
-                'skip' => "Never this policy (module/function), may be repeated; e.g. --skip=content/restore keeps the trash closed"
+                'skip' => "Never this policy (module/function), may be repeated; e.g. --skip=content/restore keeps the trash closed",
+                'keep-duplicates' => "Leave a policy the role holds twice (the default removes the later one)",
+                'skip-class-set' => "Never this class set of editorpolicies.ini (e.g. media_site), may be repeated"
             )
         );
 
@@ -141,6 +148,46 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
             $granted++;
         }
 
+        // the class sets of editorpolicies.ini and the duplicates; --only adds single policies only
+        $skipSets = $options['skip-class-set'] ? array_map( 'strval', (array)$options['skip-class-set'] ) : array();
+        $removedDuplicates = 0;
+        $classGranted = 0;
+        if ( !$only )
+        {
+            if ( !$dryRun )
+                $role = \eZRole::fetch( (int)$role->attribute( 'id' ) );
+            $more = \expEditorPolicies::completeClassesAndDuplicates( $role, !$dryRun, $skipSets, !$options['keep-duplicates'] );
+            foreach ( $more['duplicates'] as $duplicate )
+            {
+                $cli->output( ( $dryRun ? 'would remove' : 'remove      ' )
+                              . sprintf( ' %-28s duplicate of policy %d (policy %d)', $duplicate['name'], $duplicate['keep'], $duplicate['id'] ) );
+                $removedDuplicates++;
+            }
+            foreach ( $more['classes'] as $entry )
+            {
+                $name = sprintf( '%-28s', $entry['module'] . '/' . $entry['function'] );
+                if ( $entry['action'] !== 'grant' )
+                {
+                    $cli->output( "skip        $name class set {$entry['set']}: {$entry['why']}" );
+                    continue;
+                }
+                $cli->output( ( $dryRun ? 'would add  ' : 'add        ' ) . " $name class set {$entry['set']}: "
+                              . \expEditorPolicies::describeLimitations( $entry['limitations'] ) );
+                $classGranted++;
+            }
+            if ( !$dryRun && ( $classGranted || $removedDuplicates ) )
+            {
+                // Check what was stored: no duplicate left, every class of the sets granted.
+                $again = \expEditorPolicies::completeClassesAndDuplicates( \eZRole::fetch( (int)$role->attribute( 'id' ) ), false, $skipSets, !$options['keep-duplicates'] );
+                if ( $again['lines'] )
+                {
+                    $cli->error( "FAIL: $label still lacks: " . implode( '; ', $again['lines'] ) );
+                    $script->shutdown( 1 );
+                }
+            }
+        }
+        $granted += $classGranted;
+
         foreach ( \expEditorPolicies::overGrants( $dryRun ? $policies : \expEditorPolicies::policiesOf( \eZRole::fetch( (int)$role->attribute( 'id' ) ) ) ) as $over )
         {
             $cli->output( sprintf( 'WARN        %-28s granted by %s: %s', $over['module'] . '/' . $over['function'], $over['by'], $over['reason'] ) );
@@ -186,6 +233,9 @@ class Addeditorpolicies extends \Exponential\Runnable\Command
         $cli->output();
         $replaced = $narrowed ? 'content/* ' . ( $dryRun ? 'would be' : 'was' ) . ' replaced by ' . count( $narrowPlan['add'] )
                                 . ' content function' . ( count( $narrowPlan['add'] ) === 1 ? '' : 's' ) . '; ' : '';
+        if ( $removedDuplicates )
+            $replaced .= $removedDuplicates . ' duplicate polic' . ( $removedDuplicates === 1 ? 'y' : 'ies' )
+                       . ( $dryRun ? ' would be' : ( $removedDuplicates === 1 ? ' was' : ' were' ) ) . ' removed; ';
         if ( $dryRun )
             $cli->output( "PASS: {$replaced}$granted polic" . ( $granted === 1 ? 'y' : 'ies' ) . " would be added to $label (dry run, nothing changed; --apply writes)" );
         else
