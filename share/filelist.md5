@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-00443e8dfeaf00fa01b3eb531bc1d824  autoload/ezp_kernel.php
+197b522d28a3104ae26f7969669fa5b6  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -23345,6 +23345,7 @@ f5e00741cb1d97fbbc64c34dfcb77a92  kernel/classes/expcollaborationsampledata.php
 2b8c5aba431eb7022455b5e77253d8aa  kernel/classes/expcontenthistorylist.php
 d8df80e6f7684b3a57b83865cb18d6df  kernel/classes/expcontentlanguagestates.php
 ceb8038b13ca2723d475c854688ff1f8  kernel/classes/expcontentpendinglist.php
+e6c056b88718931c6627826b3008518a  kernel/classes/expcontentschedule.php
 b96ea510a324ff861e315d1ac4aed6cd  kernel/classes/expcronjobpause.php
 c9b12f35141dfbdc4e1ca9e9bace958f  kernel/classes/expcrontabsetup.php
 903bec3bf1081f1d2721446139da40ca  kernel/classes/expdemomode.php
@@ -27357,6 +27358,7 @@ b5c23cd29414f9b4fc63e63845ce9fb3  tests/tests/kernel/classes/expContentFieldMark
 a6f6894206dbc0dde7dae7dba8bf008a  tests/tests/kernel/classes/expContentLanguagesCountsLiveTest.php
 6e629a30bdb5317e8023fc65878b4808  tests/tests/kernel/classes/expContentLanguagesOverviewTest.php
 530d3937f557729c918c83262d7ea3b5  tests/tests/kernel/classes/expContentRemoveLeftoversTest.php
+db6ee7a9d8d4631eaad0c55b6b5ce17d  tests/tests/kernel/classes/expContentScheduleTest.php
 7d1aa02d1bc554730e39b449430164d6  tests/tests/kernel/classes/expCronjobPauseTest.php
 25a6ff60c12764a1b9811f86ce18533f  tests/tests/kernel/classes/expCronjobRunnerScheduleTest.php
 9f3998cf6c064a3c02c62ad6c6f696f9  tests/tests/kernel/classes/expCronjobScriptDocumentationTest.php

@@ -1176,6 +1176,7 @@ return array(
       'expContentJobWorker'                                          => 'kernel/classes/contentjob/expcontentjobworker.php',
       'expContentLanguageStates'                                     => 'kernel/classes/expcontentlanguagestates.php',
       'expContentPendingList'                                        => 'kernel/classes/expcontentpendinglist.php',
+      'expContentSchedule'                                           => 'kernel/classes/expcontentschedule.php',
       'expContentSecurityPolicy'                                     => 'kernel/private/classes/expcontentsecuritypolicy.php',
       'expContentSecurityPolicyOperator'                             => 'kernel/common/expcontentsecuritypolicyoperator.php',
       'expContentSecurityPolicyReport'                               => 'kernel/private/classes/expcontentsecuritypolicyreport.php',
