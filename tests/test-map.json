@@ -264,6 +264,7 @@
     ],
     "lib/ezutils/classes/ezdebug.php": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",
+      "tests/tests/lib/ezutils/expDebugOffHeaderTest.php",
       "tests/tests/lib/ezutils/eZDebugTimingPointLogTest.php",
       "tests/tests/lib/ezfile/expLogRotatorTest.php"
     ],
@@ -2745,11 +2746,13 @@
     ],
     "kernel/classes/expbenchmark.php": [
       "tests/tests/kernel/classes/benchmark/ExpBenchmarkHttpTest.php",
+      "tests/tests/lib/ezutils/expDebugOffHeaderTest.php",
       "tests/tests/kernel/classes/benchmark/ExpBenchmarkMicroTest.php",
       "tests/tests/kernel/classes/benchmark/ExpBenchmarkTest.php"
     ],
     "kernel/classes/expbenchmarkhttp.php": [
       "tests/tests/kernel/classes/benchmark/ExpBenchmarkHttpTest.php",
+      "tests/tests/lib/ezutils/expDebugOffHeaderTest.php",
       "tests/tests/kernel/classes/benchmark/ExpBenchmarkTest.php"
     ],
     "kernel/classes/expbenchmarkmicro.php": [

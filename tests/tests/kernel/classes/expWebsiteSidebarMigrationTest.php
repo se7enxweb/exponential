@@ -235,6 +235,58 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * F21: the schedule entries of earlier expwt versions are read into steps; what cannot be read is removed, not
+     * carried out.
+     */
+    public function testSchedulePlanReadsTheEntriesOfEarlierExpwtVersions()
+    {
+        $plan = expWebsiteSidebarMigration::schedulePlan( array(
+            'expwt_unpublish_88' => '{"type":"unpublish","node":88,"user":14,"at":3000}',
+            'expwt_publish_59_4' => array( 'type' => 'publish', 'object' => 59, 'version' => 4, 'user' => 14, 'at' => 2000, 'until' => 5000 ),
+            'expwt_publish_60_2' => 'not json',
+            'expwt_publish_61_1' => '{"type":"unpublish","node":9,"user":14,"at":1}',
+            'expwt_publish_62_1' => '{"type":"publish","object":62,"version":1,"user":0,"at":1}',
+        ) );
+        $by = array();
+        foreach ( $plan as $step )
+            $by[$step['name']] = $step;
+        $this->assertSame( array( 'expwt_publish_59_4', 'expwt_publish_60_2', 'expwt_publish_61_1', 'expwt_publish_62_1', 'expwt_unpublish_88' ),
+                           array_keys( $by ), 'by name' );
+        $p = $by['expwt_publish_59_4'];
+        $this->assertSame( array( 'publish', 59, 4, 14, 2000, 5000, 'move' ),
+                           array( $p['kind'], $p['object'], $p['version'], $p['user'], $p['at'], $p['until'], $p['state'] ) );
+        $t = $by['expwt_unpublish_88'];
+        $this->assertSame( array( 'takedown', 88, 3000, null, 'move' ), array( $t['kind'], $t['node'], $t['at'], $t['until'], $t['state'] ) );
+        $this->assertSame( 'drop', $by['expwt_publish_60_2']['state'], 'not JSON' );
+        $this->assertSame( 'drop', $by['expwt_publish_61_1']['state'], 'a take-down under the name of a publish' );
+        $this->assertSame( 'drop', $by['expwt_publish_62_1']['state'], 'no user' );
+    }
+
+    public function testScheduleDecideMovesWhatTheKernelCanCarry()
+    {
+        $publish = array( 'identifier' => 'publish_date', 'datatype' => 'ezdatetime', 'precision' => 'datetime' );
+        $hide = array( 'identifier' => 'hide_date', 'datatype' => 'ezdatetime', 'precision' => 'datetime' );
+        $step = array( 'name' => 'expwt_publish_59_4', 'kind' => 'publish', 'object' => 59, 'version' => 4, 'node' => null,
+                       'user' => 14, 'at' => 2000, 'until' => 5000, 'state' => 'move', 'why' => '' );
+        $all = array( 'exists' => true, 'draft' => true, 'user' => true, 'publish' => $publish, 'takeDown' => $hide, 'now' => 1000 );
+        $this->assertSame( 'move', expWebsiteSidebarMigration::scheduleDecide( $step, $all )['state'] );
+        $this->assertSame( 'drop', expWebsiteSidebarMigration::scheduleDecide( $step, array( 'exists' => false ) + $all )['state'], 'gone' );
+        $this->assertSame( 'drop', expWebsiteSidebarMigration::scheduleDecide( $step, array( 'draft' => false ) + $all )['state'], 'published meanwhile' );
+        $this->assertSame( 'blocked', expWebsiteSidebarMigration::scheduleDecide( $step, array( 'user' => false ) + $all )['state'], 'no user' );
+        $this->assertSame( 'blocked', expWebsiteSidebarMigration::scheduleDecide( $step, array( 'publish' => null ) + $all )['state'], 'no publish date field' );
+        $this->assertSame( 'blocked', expWebsiteSidebarMigration::scheduleDecide( $step, array( 'takeDown' => null ) + $all )['state'], 'no hide date field' );
+        $due = array( 'until' => null ) + $step;
+        $this->assertSame( 'move', expWebsiteSidebarMigration::scheduleDecide( $due, array( 'publish' => null, 'now' => 3000 ) + $all )['state'],
+                           'due already: published now, no date field needed' );
+        $down = array( 'name' => 'expwt_unpublish_88', 'kind' => 'takedown', 'node' => 88, 'at' => 3000, 'until' => null ) + $step;
+        $this->assertSame( 'move', expWebsiteSidebarMigration::scheduleDecide( $down, array( 'draft' => false, 'publish' => null ) + $all )['state'] );
+        $this->assertSame( 'blocked', expWebsiteSidebarMigration::scheduleDecide( $down, array( 'takeDown' => null ) + $all )['state'] );
+        $line = expWebsiteSidebarMigration::scheduleText( expWebsiteSidebarMigration::scheduleDecide( $step, array( 'publish' => null ) + $all ), false );
+        $this->assertStringContainsString( 'stays until it can', $line );
+        $this->assertStringContainsString( 'wait-until-date', $line );
+    }
+
+    /**
      * The backup of a settings file (which can hold credentials) keeps the file's mode instead of becoming readable by
      * everybody, as a plain copy() made it.
      */

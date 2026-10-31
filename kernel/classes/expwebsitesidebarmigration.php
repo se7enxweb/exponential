@@ -26,6 +26,14 @@
  * Where ezwt was active, the sidebar is switched on: expwt.ini [ExpwtSettings] Enabled=enabled beside the
  * site.ini that activated it, unless that file sets Enabled already (F18); elsewhere it stays at expwt's default.
  *
+ * The schedule of earlier expwt versions (F21): an entry in the site data table per draft to publish later
+ * (expwt_publish_<object>_<version>) and per page to take down (expwt_unpublish_<node>), carried out by expwt's own
+ * cronjob, which is gone. Each entry moves to the kernel's mechanism (expContentSchedule): its dates go into the
+ * date fields of the draft (or, for a take-down, of the published version), the draft is published through
+ * content/publish as the user who scheduled it (the wait-until-date event holds it until its date, approvals apply)
+ * and the entry is removed. An entry that cannot move yet (the class has no date field the kernel reads, the user is
+ * gone) stays and is reported as a note; one whose draft was published or removed meanwhile is removed.
+ *
  * The plans work on plain arrays and text and are tested without a database or files
  * (tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php); collect() reads the installation and apply()
  * writes it, used by the upgrade step 6.0.15-expwt-enable (expUpgradeStepWebsiteSidebar) and by
@@ -540,15 +548,251 @@ class expWebsiteSidebarMigration
             $lines[] = "switch the sidebar on (Enabled=enabled) in $path, where ezwt was active";
         foreach ( self::policyPlan( self::roles() ) as $grant )
             $lines[] = ( isset( $grant['remove'] ) ? 'take away ' : 'grant ' ) . self::grantText( $grant );
+        foreach ( self::scheduleChecked() as $step )
+        {
+            if ( $step['state'] !== 'blocked' )
+                $lines[] = self::scheduleText( $step, false );
+        }
         return $lines;
     }
 
-    /** @return string[] what was not copied */
+    /** @return string[] what was not copied, and the schedule entries that cannot move yet */
     public static function notes( $root = '.' )
     {
         $files = self::collect( $root );
         $settings = self::settingsPlan( $files['toolbar'], $files['expwt'] );
-        return $settings['notes'];
+        $notes = $settings['notes'];
+        foreach ( self::scheduleChecked() as $step )
+        {
+            if ( $step['state'] === 'blocked' )
+                $notes[] = self::scheduleText( $step, false );
+        }
+        return $notes;
+    }
+
+    // ------------------------------------------------------------------------------------------ schedule (F21)
+
+    /** The names of the site data rows of the schedule of earlier expwt versions */
+    const SCHEDULE_PUBLISH = 'expwt_publish_';
+    const SCHEDULE_TAKE_DOWN = 'expwt_unpublish_';
+
+    /**
+     * The schedule entries of earlier expwt versions as steps. Pure.
+     *
+     * @param array $entries name => value (the JSON text of the row, or its decoded array)
+     * @return array each: name, kind (publish, takedown, or drop for an entry that cannot be read), object, version,
+     *               node, user, at, until, state (move; drop for kind drop), why
+     */
+    public static function schedulePlan( array $entries )
+    {
+        $out = array();
+        ksort( $entries, SORT_STRING );
+        foreach ( $entries as $name => $value )
+        {
+            $name = (string)$name;
+            $data = is_array( $value ) ? $value : json_decode( (string)$value, true );
+            $step = array( 'name' => $name, 'kind' => 'drop', 'object' => null, 'version' => null, 'node' => null,
+                           'user' => null, 'at' => null, 'until' => null, 'state' => 'drop', 'why' => 'it cannot be read' );
+            if ( is_array( $data ) && isset( $data['type'], $data['user'], $data['at'] ) && (int)$data['user'] > 0 && (int)$data['at'] > 0 )
+            {
+                if ( $data['type'] === 'publish' && strpos( $name, self::SCHEDULE_PUBLISH ) === 0
+                     && isset( $data['object'], $data['version'] ) && (int)$data['object'] > 0 && (int)$data['version'] > 0 )
+                {
+                    $step = array( 'kind' => 'publish', 'object' => (int)$data['object'], 'version' => (int)$data['version'],
+                                   'user' => (int)$data['user'], 'at' => (int)$data['at'],
+                                   'until' => !empty( $data['until'] ) ? (int)$data['until'] : null, 'state' => 'move', 'why' => '' ) + $step;
+                }
+                else if ( $data['type'] === 'unpublish' && strpos( $name, self::SCHEDULE_TAKE_DOWN ) === 0
+                          && isset( $data['node'] ) && (int)$data['node'] > 0 )
+                {
+                    $step = array( 'kind' => 'takedown', 'node' => (int)$data['node'], 'user' => (int)$data['user'],
+                                   'at' => (int)$data['at'], 'state' => 'move', 'why' => '' ) + $step;
+                }
+            }
+            $out[] = $step;
+        }
+        return $out;
+    }
+
+    /**
+     * A step after checking it against the installation, pure: the facts are given.
+     *
+     * @param array $step of schedulePlan()
+     * @param array $facts exists (the object or node is there), draft (the version is still a draft), user (the user is
+     *                     there), publish, takeDown (expContentSchedule::forObject()), now
+     * @return array the step with state move, drop or blocked and why
+     */
+    public static function scheduleDecide( array $step, array $facts )
+    {
+        if ( $step['state'] !== 'move' )
+            return $step;
+        if ( empty( $facts['exists'] ) )
+            return array( 'state' => 'drop', 'why' => $step['kind'] === 'publish' ? 'the draft is gone' : 'the page is gone' ) + $step;
+        if ( $step['kind'] === 'publish' && empty( $facts['draft'] ) )
+            return array( 'state' => 'drop', 'why' => 'the version is no longer a draft (published, sent to a workflow or archived)' ) + $step;
+        if ( empty( $facts['user'] ) )
+            return array( 'state' => 'blocked', 'why' => 'the user who scheduled it is gone' ) + $step;
+        $waits = $step['kind'] === 'publish' && $step['at'] > (int)$facts['now'];
+        if ( $waits && empty( $facts['publish'] ) )
+            return array( 'state' => 'blocked', 'why' => 'its class has no date field a wait-until-date event of a content/publish workflow lists' ) + $step;
+        $until = $step['kind'] === 'publish' ? $step['until'] : $step['at'];
+        if ( $until !== null && empty( $facts['takeDown'] ) )
+            return array( 'state' => 'blocked', 'why' => 'its class has no date field in content.ini [HideSettings] HideDateAttributeList, or the page is not below a node of RootNodeList' ) + $step;
+        return $step;
+    }
+
+    /** @return string a step as one line */
+    public static function scheduleText( array $step, $done )
+    {
+        $date = function ( $ts ) { return $ts ? date( 'Y-m-d H:i', (int)$ts ) : ''; };
+        if ( $step['state'] === 'drop' )
+            return ( $done ? 'removed' : 'remove' ) . " the sidebar's schedule entry {$step['name']} ({$step['why']})";
+        if ( $step['state'] === 'blocked' )
+            return "the sidebar's schedule entry {$step['name']} cannot move to the kernel's schedule yet: {$step['why']}; it stays until it can";
+        if ( $step['kind'] === 'publish' )
+            return ( $done ? 'moved' : 'move' ) . " the sidebar's schedule entry {$step['name']} to the kernel's schedule: publish object {$step['object']} version {$step['version']} at "
+                . $date( $step['at'] ) . ( $step['until'] ? ', take down at ' . $date( $step['until'] ) : '' );
+        return ( $done ? 'moved' : 'move' ) . " the sidebar's schedule entry {$step['name']} to the kernel's schedule: take node {$step['node']} down at " . $date( $step['at'] );
+    }
+
+    /** @return array name => JSON text, every schedule entry of earlier expwt versions */
+    public static function scheduleEntries()
+    {
+        $out = array();
+        foreach ( array( self::SCHEDULE_PUBLISH, self::SCHEDULE_TAKE_DOWN ) as $prefix )
+        {
+            $count = (int)eZSiteData::fetchListCount( $prefix . '*' );
+            for ( $offset = 0; $offset < $count; $offset += 500 )
+            {
+                foreach ( (array)eZSiteData::fetchList( $prefix . '*', $offset, 500 ) as $row )
+                    $out[(string)$row->attribute( 'name' )] = (string)$row->attribute( 'value' );
+            }
+        }
+        return $out;
+    }
+
+    /**
+     * The steps of schedulePlan() checked against the installation (scheduleDecide()).
+     *
+     * @return array each step with the objects found: object (eZContentObject), version, node
+     */
+    public static function scheduleChecked()
+    {
+        $out = array();
+        $now = time();
+        foreach ( self::schedulePlan( self::scheduleEntries() ) as $step )
+        {
+            $facts = array( 'exists' => false, 'draft' => false, 'user' => false, 'publish' => null, 'takeDown' => null, 'now' => $now );
+            $found = array( 'objectFound' => null, 'versionFound' => null, 'nodeFound' => null );
+            if ( $step['kind'] === 'publish' )
+            {
+                $object = eZContentObject::fetch( $step['object'] );
+                $version = $object instanceof eZContentObject ? $object->version( $step['version'] ) : null;
+                if ( $version instanceof eZContentObjectVersion )
+                {
+                    $facts['exists'] = true;
+                    $facts['draft'] = in_array( (int)$version->attribute( 'status' ), array( eZContentObjectVersion::STATUS_DRAFT, eZContentObjectVersion::STATUS_INTERNAL_DRAFT ), true );
+                    $found = array( 'objectFound' => $object, 'versionFound' => $version ) + $found;
+                }
+            }
+            else if ( $step['kind'] === 'takedown' )
+            {
+                $node = eZContentObjectTreeNode::fetch( $step['node'] );
+                $object = $node instanceof eZContentObjectTreeNode ? $node->object() : null;
+                if ( $object instanceof eZContentObject )
+                {
+                    $facts['exists'] = true;
+                    $found = array( 'objectFound' => $object, 'versionFound' => $object->currentVersion(), 'nodeFound' => $node ) + $found;
+                }
+            }
+            if ( $facts['exists'] )
+            {
+                $facts['user'] = $step['user'] && eZUser::fetch( $step['user'] ) instanceof eZUser;
+                $parentPath = null;
+                if ( $found['nodeFound'] )
+                {
+                    $parent = $found['nodeFound']->attribute( 'parent' );
+                    $parentPath = $parent instanceof eZContentObjectTreeNode ? (string)$parent->attribute( 'path_string' ) : '';
+                }
+                $can = expContentSchedule::forObject( $found['objectFound'], $parentPath );
+                $facts['publish'] = $can['publish'];
+                $facts['takeDown'] = $can['takeDown'];
+            }
+            $step = self::scheduleDecide( $step, $facts );
+            $out[] = $step + $found + array( 'can' => $facts );
+        }
+        return $out;
+    }
+
+    /**
+     * Moves every schedule entry that can move to the kernel's mechanism and removes the stale ones.
+     *
+     * @return string[] what was done
+     */
+    public static function applySchedule()
+    {
+        $done = array();
+        $now = time();
+        $before = eZUser::currentUserID();
+        foreach ( self::scheduleChecked() as $step )
+        {
+            if ( $step['state'] === 'blocked' )
+                continue;
+            if ( $step['state'] === 'move' )
+            {
+                $user = eZUser::fetch( $step['user'] );
+                eZUser::setCurrentlyLoggedInUser( $user, (int)$step['user'], eZUser::NO_SESSION_REGENERATE );
+                try
+                {
+                    $line = self::scheduleText( $step, true ) . self::moveScheduleStep( $step, $now );
+                }
+                catch ( Exception $e )
+                {
+                    $line = "FAILED to move the sidebar's schedule entry {$step['name']}: " . $e->getMessage() . ' (it stays)';
+                    eZDebug::writeError( $line, __METHOD__ );
+                    $done[] = $line;
+                    continue;
+                }
+            }
+            else
+                $line = self::scheduleText( $step, true );
+            $row = eZSiteData::fetchByName( $step['name'] );
+            if ( $row instanceof eZSiteData )
+                $row->remove();
+            $done[] = $line;
+        }
+        $back = eZUser::fetch( $before );
+        if ( $back instanceof eZUser )
+            eZUser::setCurrentlyLoggedInUser( $back, $before, eZUser::NO_SESSION_REGENERATE );
+        return $done;
+    }
+
+    /** @return string what came of it, appended to the step's line */
+    private static function moveScheduleStep( array $step, $now )
+    {
+        $can = $step['can'];
+        $object = $step['objectFound'];
+        $id = (int)$object->attribute( 'id' );
+        if ( $step['kind'] === 'takedown' )
+        {
+            $plan = expContentSchedule::plan( null, $can['takeDown'], null, $step['at'], 0, 0 );
+            expContentSchedule::setDates( $step['versionFound'], $plan['writes'] );
+            eZContentCacheManager::clearContentCacheIfNeeded( $id );
+            eZContentObject::clearCache( array( $id ) );
+            return ' (the hide cronjob takes it down)';
+        }
+        $version = $step['versionFound'];
+        $current = $can['publish'] ? expContentSchedule::dateOf( $version, $can['publish']['identifier'] ) : 0;
+        $plan = expContentSchedule::plan( $can['publish'], $can['takeDown'], $step['at'], $step['until'], $now, $current );
+        if ( $plan['error'] !== null )
+            throw new RuntimeException( $plan['error'] );
+        expContentSchedule::setDates( $version, $plan['writes'] );
+        $result = eZOperationHandler::execute( 'content', 'publish', array( 'object_id' => $id, 'version' => (int)$step['version'] ) );
+        eZContentObject::clearCache( array( $id ) );
+        $status = expGraphQLWriter::workflowStatus( $result, 'PUBLISHED' );
+        if ( $status === 'PENDING' )
+            return $plan['deferred'] ? ' (waiting in the workflow until its date)' : ' (waiting in the workflow)';
+        return $status === 'PUBLISHED' ? ' (it was due: published)' : ' (the workflow stopped it: ' . strtolower( $status ) . ')';
     }
 
     /**
@@ -633,6 +877,8 @@ class expWebsiteSidebarMigration
             eZRole::expireCache();
             eZCache::clearByTag( 'ini' );
         }
+        foreach ( self::applySchedule() as $line )
+            $done[] = $line;
         return $done;
     }
 }

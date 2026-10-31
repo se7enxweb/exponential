@@ -15,6 +15,8 @@ Datenschichten) ist `extension/expwt/doc/ger-de/expwt.md`.
 - **Mutationen von Schema-Erweiterungen** (`expGraphQLMutationExtension`, [die GraphQL-API](graphql.md#schema-erweiterungen)):
   die GraphQL-Datenschicht von expwt ergänzt `expwtWrite` neben den Mutationen des Kernels.
 - **Den Wechsel von ezwt**: den Konsolenbefehl `exp:wt:migrate-from-ezwt` und den Upgrade-Schritt `6.0.15-expwt-enable`.
+- **Die Zeitsteuerung** (`expContentSchedule`): veröffentlichen am und zurückziehen am über den Wait-until-date-Workflow
+  und den Hide-Cronjob, siehe [Zeitsteuerung](#zeitsteuerung-ein-verfahren-für-die-administration-und-die-seitenleiste).
 
 ## Von ezwt zu expwt wechseln
 
@@ -52,6 +54,45 @@ Eine Datei, die er ändert, bleibt als `<Datei>.before-expwt` erhalten. Die eZOD
 Toolbar-Templates von ezwt haben keine Entsprechung; sie werden als Hinweise aufgeführt, nicht kopiert. Ein zweiter Lauf
 ändert nichts. Die Seitenleiste selbst bleibt aus, bis sie eingeschaltet wird (`expwt.ini [ExpwtSettings]
 Enabled=enabled`, je Siteaccess), denn expwt wird bis zu seiner Version 1.0 ausgeschaltet ausgeliefert.
+
+## Zeitsteuerung: ein Verfahren für die Administration und die Seitenleiste
+
+Später veröffentlichen und eine Seite zu einem Zeitpunkt zurückziehen nutzen das eigene Verfahren des Kernels, dasselbe
+wie die Administration (`expContentSchedule`, Entscheidung F21 des expwt-Plans). Nichts davon gehört der Seitenleiste:
+
+| | wie es arbeitet | was die Klasse braucht |
+|---|---|---|
+| veröffentlichen am | das Datumsfeld des Entwurfs trägt den Zeitpunkt; das Veröffentlichen startet den Workflow an `content/publish` (before), dessen Ereignis „Wait until date“ (`ezwaituntildate`) den Entwurf bis dahin zurückhält; der Workflow-Cronjob (`workflow.php`, Teil frequent) veröffentlicht ihn dann. Jedes andere Ereignis dieses Workflows, etwa eine Freigabe, gilt wie bei jedem Veröffentlichen | ein Datumsfeld (`ezdatetime`, oder `ezdate` für einen Tag), das das Ereignis aufführt, und das Ereignis direkt im Workflow am Trigger (eines in einem Multiplexer zählt nicht: es läuft vielleicht nicht für jedes Objekt, und ein Datum, auf das nicht gewartet wird, würde sofort veröffentlichen) |
+| zurückziehen am | das Datumsfeld aus `content.ini [HideSettings] HideDateAttributeList[<Klasse>]`; der Hide-Cronjob (`hide.php`) verbirgt die Seite, sobald der Zeitpunkt da ist | dieses Feld (`ezdatetime` oder `ezdate`) und die Seite unterhalb eines Knotens aus `[HideSettings] RootNodeList[]` |
+
+So wird es für eine Klasse eingeschaltet, zum Beispiel `article`:
+
+1. Der Klasse ein Datumsfeld geben, z. B. `publish_date` und `hide_date` (Datum und Uhrzeit).
+2. Einrichtung, Workflows: ein Workflow mit dem Ereignis „Wait until date“, das `article/publish_date` aufführt;
+   Einrichtung, Trigger: ihn an `content` `publish` `before` anschließen. Ein Freigabe-Ereignis darf im selben Workflow
+   stehen.
+3. `settings/override/content.ini.append.php`:
+   ```ini
+   [HideSettings]
+   RootNodeList[]=2
+   HideDateAttributeList[article]=hide_date
+   ```
+4. Die Cronjobs: `workflow.php` (Teil frequent) und `hide.php` (Standardteil) laufen in einer üblichen Crontab bereits.
+
+Die Website-Seitenleiste schreibt genau diese Felder: „Veröffentlichen am“ und „Zurückziehen am“ bietet sie für eine
+Klasse an, die sie hat; bei einer Klasse ohne sie zeigt sie statt des Feldes den Grund. In der Administration werden die
+Felder wie jedes andere bearbeitet.
+
+### Die Zeitsteuerung früherer expwt-Versionen
+
+Bisher führte expwt einen eigenen Zeitplan (Site-Data-Zeilen `expwt_publish_<Objekt>_<Version>` und
+`expwt_unpublish_<Knoten>`) und einen eigenen Cronjob `expwt_scheduled`. `exp:wt:migrate-from-ezwt` (und der
+Upgrade-Schritt `6.0.15-expwt-enable`) überführt jeden Eintrag in das Verfahren des Kernels: Die Zeitpunkte kommen in die
+Datumsfelder des Entwurfs, und der Entwurf wird als der Benutzer veröffentlicht, der ihn eingeplant hat, sodass das
+Wait-until-date-Ereignis ihn zurückhält; ein Zurückziehen-Datum kommt in das Feld der veröffentlichten Version. Der
+Eintrag wird entfernt, sobald er überführt ist. Ein Eintrag, dessen Entwurf inzwischen veröffentlicht oder gelöscht
+wurde, wird entfernt; einer, dessen Klasse das Datumsfeld fehlt, bleibt, wird als Hinweis aufgeführt und bei einem
+späteren Lauf überführt, sobald die Klasse es hat.
 
 ## Jede Aktion prüft zwei Policies
 

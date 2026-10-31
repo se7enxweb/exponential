@@ -1,7 +1,7 @@
 <?php
 /**
  * The code of bin/php/expwtmigratefromezwt.php.
- * @description Replace ezwt (the website toolbar) by expwt (the website sidebar): settings, policies, activation (dry run unless --apply)
+ * @description Replace ezwt (the website toolbar) by expwt (the website sidebar): settings, policies, activation, schedule (dry run unless --apply)
  * @alias exp:wt:migrate-from-ezwt
  * Guide: doc/eng-us/features/6.0/website-sidebar.md
  *
@@ -26,6 +26,9 @@ class Expwtmigratefromezwt extends \Exponential\Runnable\Command
                     . "Editor role those four and the Administrator role expwt/*, and puts expwt in ezwt's place in\n"
                     . "ActiveExtensions[] and ActiveAccessExtensions[]. A changed file is kept as <file>.before-expwt.\n"
                     . "The sidebar itself stays off until switched on (expwt.ini [ExpwtSettings] Enabled).\n"
+                    . "It also moves the schedule of earlier expwt versions (publish later, take down) to the kernel's\n"
+                    . "schedule: the wait-until-date workflow and the hide cronjob. An entry whose class has no date field\n"
+                    . "the kernel reads stays and is listed as a note; run the command again once it has one.\n"
                     . "Without --apply nothing is written. The upgrade step 6.0.15-expwt-enable does the same.\n\n"
                     . "Example: php bin/php/expwtmigratefromezwt.php\n"
                     . "         php bin/php/expwtmigratefromezwt.php --apply",

@@ -542,6 +542,9 @@ class expBenchmarkHttp
         if ( $options['encoding'] !== '' )
             $lines[] = 'Accept-Encoding: ' . $options['encoding'];
         $lines[] = 'User-Agent: ' . self::USER_AGENT;
+        // measure what a visitor gets: no debug report, even from an address on DebugIPList (a page with the
+        // report is private, no-store and never comes from a cache)
+        $lines[] = 'X-Exp-Debug: off';
         return $lines;
     }
 
