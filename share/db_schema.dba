@@ -2293,6 +2293,13 @@ $schema = array (
         'not_null' => '1',
         'default' => 0,
       ),
+      'module_name' =>
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
       'module_uri' =>
       array (
         'type' => 'longtext',
@@ -2305,6 +2312,18 @@ $schema = array (
         'not_null' => '1',
         'default' => 0,
       ),
+      'view_name' =>
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'view_parameters' =>
+      array (
+        'type' => 'longtext',
+        'default' => false,
+      ),
     ),
     'indexes' =>
     array (
@@ -2314,6 +2333,15 @@ $schema = array (
         'fields' =>
         array (
           0 => 'bookmark_id',
+        ),
+      ),
+      'expbookmark_view_module' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'module_name',
+          1 => 'view_name',
         ),
       ),
       'expbookmark_view_user' =>

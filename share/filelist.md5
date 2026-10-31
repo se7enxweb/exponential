@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 e33a9db3cca23be2ced533902bff8c72  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-4daf0d230548465dc8b8e968599cbb99  autoload/ezp_kernel.php
+764e3138662655e780d33f0eda93ce42  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3337,7 +3337,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a87a1b99ffb8ea6170c122139ad4cf6c  doc/changelogs/6.0/6.0.15.md
+e601a0cab4fcc1e1bd7abd234e7017b9  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3472,7 +3472,7 @@ f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
 41b5bdd9a600e99203e97c58f9fb160d  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
 34dc9ac582951a50f20f4af3b12a69ae  doc/eng-us/bc/6.0/behaviour-changes-2026-10.md
 634c9b738dac08042ef4b52dee1d3212  doc/eng-us/bc/6.0/bookmark-folders.md
-bd9d0f0e243a978899bd04280c3b08b2  doc/eng-us/bc/6.0/bookmarks-of-system-pages.md
+bfbd22d130a8ec900e95798ec69cbb69  doc/eng-us/bc/6.0/bookmarks-of-system-pages.md
 103eb43b7b3b7a7162e0a1cc7d050273  doc/eng-us/bc/6.0/cache-console.md
 a4728bf2db13d48f57e43d6418d4a08f  doc/eng-us/bc/6.0/ci.md
 20ce9d5335e19c7a69aae9cdaf03daed  doc/eng-us/bc/6.0/cleanuprss.md
@@ -5493,7 +5493,7 @@ ef6349083925cd2714e8bf8d03ea0cb6  doc/eng-us/examples/ini-settings/units/BinaryP
 d56bd0119117724ec28451b955cf9040  doc/eng-us/examples/ini-settings/units/FakeBinaryPrefixes.md
 dd6d7906b719b6760aa1bc4f73629d05  doc/eng-us/examples/ini-settings/units/README.md
 0e232771066dcceaa317c813e63cbefe  doc/eng-us/examples/ini-settings/upgrade/README.md
-47ee2ae375c7f5db4aa2cd0e5fd0d350  doc/eng-us/examples/ini-settings/upgrade/UpgradeSettings.md
+8055b980e79ef2e5d52930f39330c6ea  doc/eng-us/examples/ini-settings/upgrade/UpgradeSettings.md
 9e1b1ccf30cd6e71aea2f74dba8e332d  doc/eng-us/examples/ini-settings/upload/BugFileUpload.md
 250a3b352f951ffa60262e4294242ab6  doc/eng-us/examples/ini-settings/upload/CreateSettings.md
 fab0fc00ce80a0f18ebccd6e6f08f37d  doc/eng-us/examples/ini-settings/upload/LocationSettings.md
@@ -6483,7 +6483,7 @@ c39d570092f54064a972f04dc1ae069e  doc/eng-us/features/6.0/admin4l.md
 64d6c14e6630ba2fab70560d20ccab11  doc/eng-us/features/6.0/audit-trail.md
 e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 457ed37f55792f132d65cf84e8825a68  doc/eng-us/features/6.0/bookmark-folders.md
-0924f54b4d18c240e49ed232c2584236  doc/eng-us/features/6.0/bookmarks-of-system-pages.md
+5c77cbe69fa7e3424fbbdda91b017a5d  doc/eng-us/features/6.0/bookmarks-of-system-pages.md
 73986af5ddf303d1baee0bc49446baf1  doc/eng-us/features/6.0/cache-clear-rename-aside.md
 558b5499642e620d7e385d0f3f012d53  doc/eng-us/features/6.0/class-attribute-move-to-edge.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
@@ -6677,7 +6677,7 @@ e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 a68843766fba12d6bf9d1878a045e9eb  doc/eng-us/guides/approving-new-editor-accounts.md
 158d25c3e5f52e97b5cfaad49c8e6a00  doc/eng-us/guides/benchmarking.md
-b4809ac4dc3a93ab0e37a3b6632662f1  doc/eng-us/guides/bookmarks.md
+9c41dd92bb18e4edbd028274c7279c5f  doc/eng-us/guides/bookmarks.md
 516a1e2b3319471e92686ada9c326c71  doc/eng-us/guides/caches.md
 b448ed8a155b834a33e48205b69cbf82  doc/eng-us/guides/changing-owners.md
 3a8ab864a2b8f976a88b4a4db5df7851  doc/eng-us/guides/class-groups.md
@@ -6788,7 +6788,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 09c137108d069f3a15ad57e13a5af159  doc/eng-us/guides/upgrade-steps-for-extensions.md
-1a709feaff4a290854e94bdea8179971  doc/eng-us/guides/upgrading-with-the-console.md
+90550cee6b03a6e63f597d1f400f4997  doc/eng-us/guides/upgrading-with-the-console.md
 ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
@@ -7976,7 +7976,7 @@ c5a551b215bec55a858288d4a11849ca  doc/eng-us/help/customers/value/features-custo
 d5394140aa0f893580a2e77c150e9120  doc/eng-us/help/customers/value/roi-example-assumptions.md
 9e3662b84c208fac88b0ad7dc439b659  doc/eng-us/help/customers/value/roi-worksheet.md
 d540ac722870544539a5c7f96833d41e  doc/eng-us/help/customers/what-you-own.md
-d71277b2857fc04af4409f294da5ec47  doc/eng-us/help/database-administrators/applying-the-6-0-15-database-update.md
+122e23905feb0b5ed1f64e11f1e7d76d  doc/eng-us/help/database-administrators/applying-the-6-0-15-database-update.md
 b395e87aace8d32bef3c1dbccce95367  doc/eng-us/help/database-administrators/backups-per-engine.md
 92550e94f1b9bad1263405563fcce995  doc/eng-us/help/database-administrators/character-sets-and-collations.md
 84ceb2f4698993ef3959c4174bf36603  doc/eng-us/help/database-administrators/checking-the-schema-after-an-upgrade.md
@@ -8020,7 +8020,7 @@ dda60ef224226a76a45e340e8f2675dd  doc/eng-us/help/database-administrators/sql-qu
 2b2f3aac251b7d211500ce6dcb6275b9  doc/eng-us/help/database-administrators/sqlite-maintenance.md
 19eb71cb76331670f60c68823c0dc200  doc/eng-us/help/database-administrators/sqlite-write-queue-and-locking.md
 bc489746b529cc9960734fceb34525d4  doc/eng-us/help/database-administrators/supported-engines-and-versions.md
-cd2386db3097eea07b3b43246ff93db5  doc/eng-us/help/database-administrators/tables-you-should-know.md
+174a8672bbff65e841ea06c36235d033  doc/eng-us/help/database-administrators/tables-you-should-know.md
 ff468b8e02ccdb0729605357e6a63157  doc/eng-us/help/database-administrators/the-database-layer-in-one-page.md
 62012bfcd6f730d0e61f3f6a5a6cedee  doc/eng-us/help/database-administrators/the-dba-schema-format.md
 f85e926222be76f7c7824babb37ab731  doc/eng-us/help/database-administrators/troubleshooting-database-errors.md
@@ -12844,7 +12844,7 @@ d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
 dc18f178aea8247024e4ead219b9891c  doc/ger-de/anleitungen/README.md
-0794f5d304ae87c4c987d5994c3f9967  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
+94ef5c1a141e73e045c7207ebadd26a6  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
@@ -12901,7 +12901,7 @@ a83e97a6aac6d250a267fa0d660ffdec  doc/ger-de/anleitungen/inhaltssprachen.md
 54e9abc27cfbca244fc3f19ca62eb500  doc/ger-de/anleitungen/inhaltsverlauf.md
 f20f292d44b8cea7e9a3e921f376e99c  doc/ger-de/anleitungen/klassengruppen.md
 cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstellungen.md
-8a4b0d63efc01972c5a54651c0add47a  doc/ger-de/anleitungen/lesezeichen.md
+9dc66e69779c4e6a073c88dfc0948efa  doc/ger-de/anleitungen/lesezeichen.md
 19ad3fdd043c1d4d4d203bb6dd95c158  doc/ger-de/anleitungen/mail-einstellungen-administrator.md
 60703bdde17fe14d72e5fab3560aaf0c  doc/ger-de/anleitungen/mail-einstellungen-entwickler.md
 465336715cb5f76e2f9ecd9aaca6024a  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
@@ -12986,7 +12986,7 @@ f7afe9eda5b02d1cb4e810857a818dd0  doc/ger-de/bc/6.0/inhaltsjobs.md
 197db39abf7f4ea2eeb9a260a803daee  doc/ger-de/bc/6.0/kickstartercli.md
 6eb74a075ecaeb09a213b3adc9e697e8  doc/ger-de/bc/6.0/konsole.md
 91033bcb69b5008d798485f1da4d8e5c  doc/ger-de/bc/6.0/layouts.md
-b5979df3e8ce0a19813f8d6729261196  doc/ger-de/bc/6.0/lesezeichen-fuer-systemseiten.md
+e701feff32d7e37a85a19231c4799fe1  doc/ger-de/bc/6.0/lesezeichen-fuer-systemseiten.md
 a004e13c4ed73564f977fa433d7563da  doc/ger-de/bc/6.0/lesezeichenordner.md
 7a9b3db4c6b1d9ad3130eca883ff93a7  doc/ger-de/bc/6.0/love/README.md
 53d864812901942975deaa4e6b771765  doc/ger-de/bc/6.0/love/api.md
@@ -14951,7 +14951,7 @@ b80d91f48a316d71afedc15c7bf57aba  doc/ger-de/beispiele/ini-einstellungen/units/B
 7d73da3d624f4d95dffac9afb3b2eead  doc/ger-de/beispiele/ini-einstellungen/units/FakeBinaryPrefixes.md
 4615118eede2cfc79ae051f4835cfafd  doc/ger-de/beispiele/ini-einstellungen/units/README.md
 e126305578cd9b4e9ed06e89a2caf6f5  doc/ger-de/beispiele/ini-einstellungen/upgrade/README.md
-39d36d04ad976429021ed7d56a589536  doc/ger-de/beispiele/ini-einstellungen/upgrade/UpgradeSettings.md
+79fc9276f7977941ca6f2714e450d87e  doc/ger-de/beispiele/ini-einstellungen/upgrade/UpgradeSettings.md
 0dc8102f5b228f057be7e8c35f20b372  doc/ger-de/beispiele/ini-einstellungen/upload/BugFileUpload.md
 cd3c81229920639bc272e2b4ea8a979c  doc/ger-de/beispiele/ini-einstellungen/upload/CreateSettings.md
 b2b59b4789cee4c4727815f9b3894b84  doc/ger-de/beispiele/ini-einstellungen/upload/LocationSettings.md
@@ -15840,7 +15840,7 @@ a23c82e7bfd15faed6bd3072d4203e4e  doc/ger-de/funktionen/6.0/klassenattribute-an-
 c9de4471d5c29a61f80d16650e22b29a  doc/ger-de/funktionen/6.0/ladereihenfolge-der-extensions.md
 2c4d56fdc633b7a35390ebf1c5c06270  doc/ger-de/funktionen/6.0/laendergruppen.md
 aded008fb0cb6c843f2caa5ce1fa255f  doc/ger-de/funktionen/6.0/legacy-bridge.md
-a89e73a173e4a44ae3f09f9df69b14cb  doc/ger-de/funktionen/6.0/lesezeichen-fuer-systemseiten.md
+1367a47ed5090fc9b6f4d69d7cc870f8  doc/ger-de/funktionen/6.0/lesezeichen-fuer-systemseiten.md
 da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
 814a75b8780507956190e0c206bbfa6a  doc/ger-de/funktionen/6.0/log-betrachter.md
 d1adeb16d48df541b3a2c073b9495150  doc/ger-de/funktionen/6.0/log-rotation.md
@@ -16955,7 +16955,7 @@ de0839eec1c86fa4ba9b7706ca43d37a  doc/ger-de/hilfe/das-benutzer-auditprotokoll.m
 f8df156201423662ba55ba15167cb35b  doc/ger-de/hilfe/datenbankadministratoren/aufraeumen-cronjobs-und-warteschlangen.md
 eb6be18722835ab6b749dbacaba6c2a6  doc/ger-de/hilfe/datenbankadministratoren/checklisten-fuer-datenbankadministratoren.md
 f2377cdd6a1c01761d1aec48fe1e8385  doc/ger-de/hilfe/datenbankadministratoren/clustering-dfs-und-die-datenbank.md
-1d8265ec5827a143eeb606047e93ccd8  doc/ger-de/hilfe/datenbankadministratoren/das-datenbank-update-6-0-15-anwenden.md
+94089c20901b141be2173f682a80e617  doc/ger-de/hilfe/datenbankadministratoren/das-datenbank-update-6-0-15-anwenden.md
 ced62c6996019200e8471a6a57a4a3d5  doc/ger-de/hilfe/datenbankadministratoren/das-dba-schemaformat.md
 193e59b5ea0c3adbd7db6e84d4099ad7  doc/ger-de/hilfe/datenbankadministratoren/das-schema-nach-einem-upgrade-pruefen.md
 0bfb167a8f44104dcacac8df0bfd7a19  doc/ger-de/hilfe/datenbankadministratoren/datenbankadministratoren-hier-beginnen.md
@@ -16996,7 +16996,7 @@ cc4171157afcadc2e7f8d06f26ec760c  doc/ger-de/hilfe/datenbankadministratoren/sql-
 5661419b14a7f4becb4e730fd72534bb  doc/ger-de/hilfe/datenbankadministratoren/sqlite-wartung.md
 d7fc9e07aa9708c2d661ab7292b7947f  doc/ger-de/hilfe/datenbankadministratoren/stand-von-microsoft-sql-server.md
 facff089e557edaf8c306980aa5f184e  doc/ger-de/hilfe/datenbankadministratoren/tabellen-des-suchindex.md
-02a790cbbee4d98b6d43e5a3eb451df8  doc/ger-de/hilfe/datenbankadministratoren/tabellen-die-sie-kennen-sollten.md
+c12fde09d2b2903b72ee39a69d679a4a  doc/ger-de/hilfe/datenbankadministratoren/tabellen-die-sie-kennen-sollten.md
 a5a807f6683e34c696f32b0aacc76b15  doc/ger-de/hilfe/datenbankadministratoren/unterstuetzte-engines-und-versionen.md
 0337786a8861a06cf138fc469722ad1f  doc/ger-de/hilfe/datenbankadministratoren/upgrades-und-sql-update-dateien.md
 a7952afcc240b6127001757506c9b9cc  doc/ger-de/hilfe/datenbankadministratoren/zeichensaetze-und-sortierfolgen.md
@@ -23276,7 +23276,7 @@ dc12399d3e06ce2689d9fdc5a0c19335  kernel/classes/expbenchmarkkernel.php
 772e3ba0cc4d6cd23f787152d648a9c2  kernel/classes/expbookmarktype.php
 2f12796d7160f856b09f2ca717034d4f  kernel/classes/expbookmarktypesearch.php
 1fe08923429074cdebf9118cd151a595  kernel/classes/expbookmarktypesystempage.php
-b761599628675ad45c7a93d35b13b27d  kernel/classes/expbookmarkview.php
+59707972b3bc804411aa1dc3a0290086  kernel/classes/expbookmarkview.php
 e22e0cd27a9bc4f0aabe4e26a8b10cec  kernel/classes/expcachecatalogue.php
 5dd06b1fa297c0097dde4df061456db6  kernel/classes/expcachemanager.php
 526dd0bbc202efcfbab77cc4a847cb84  kernel/classes/expcachewarm.php
@@ -23820,6 +23820,8 @@ e3ce75d033564977418b42e166b4ab04  kernel/classes/upgrade/steps/expupgradestepano
 c6a637d610db03f7d58a5dce12d99ccc  kernel/classes/upgrade/steps/expupgradestepapikeytable.php
 51716ac42fbfa60d142a4d5fcc216992  kernel/classes/upgrade/steps/expupgradestepauditindextables.php
 c8487ce7613064c2440bc5c059fe3a71  kernel/classes/upgrade/steps/expupgradestepbookmarkfolders.php
+8168670fa907d2f89aac503224960f74  kernel/classes/upgrade/steps/expupgradestepbookmarkviewcolumns.php
+683c0bd7c441616cda4aa006c40f8dcc  kernel/classes/upgrade/steps/expupgradestepbookmarkviewfill.php
 6e451953a86d2ce0417355d00ee082c4  kernel/classes/upgrade/steps/expupgradestepbookmarkviewtable.php
 011cdeaf97448ff2b182afec75e075be  kernel/classes/upgrade/steps/expupgradestepcodeupdate.php
 cbea0fa4b585784263ee3e07dcdeffdd  kernel/classes/upgrade/steps/expupgradestepdatatabletables.php
@@ -24967,12 +24969,12 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-cbdf04daaa82b61c0763fb09b2fb0a8f  kernel/sql/mysql/kernel_schema.sql
-8e367a5672a9891a165581efc207009d  kernel/sql/postgresql/kernel_schema.sql
+69b5cb930226eb9f7c770a2edbd4b704  kernel/sql/mysql/kernel_schema.sql
+0d7fd838491796c8e79af6c0236200bd  kernel/sql/postgresql/kernel_schema.sql
 67721f5188e529651254baaf73115a2d  kernel/sql/postgresql/sequence.sql.template
 24f4bdbc332642858d8c0a98a94541d5  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
-cd46d35fceee0e427bea482d697409ca  kernel/sql/sqlite/schema.sql
+61be56a585dc79ac0771a5fe6baf45e4  kernel/sql/sqlite/schema.sql
 4ceffdfdd3df6dad001c45ecbfc14f26  kernel/state/assign.php
 1876c01f370cc8092ddb92cb64870718  kernel/state/edit.php
 51d446ac0be7f9efa76a6406a8e2ba76  kernel/state/group.php
@@ -25410,7 +25412,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-405cf7b4185b1cd163f35dd906d9b7c3  settings/upgrade.ini
+17bfb96340acc7e7075122f3b353e6b3  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 c9367f1773b93f33e799247c43697cdc  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -25467,7 +25469,7 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a2b80831488ff635f2b4e7b922434d9d  share/db_data.dba
-1f47120a559c76c7894450d03ac6c971  share/db_schema.dba
+7c78d06aeff46d8cc8867a428920f662  share/db_schema.dba
 a053460928304f8f2beb6a8903551954  share/graphql/starters/astro/README.md
 9c5fe3be955c8a73d36f804d2542a088  share/graphql/starters/astro/_env
 7fc461a54ac538970c597a60c3be8367  share/graphql/starters/astro/astro.config.mjs
@@ -27098,10 +27100,11 @@ bb66bbf6ad596cb12e644b945f46a0f4  tests/tests/kernel/classes/benchmark/ExpBenchm
 d13efcdca5d25b142467c18aba938118  tests/tests/kernel/classes/benchmark/stub_server.php
 b18127a22f8a46b2ff02d61e4b5c6d7e  tests/tests/kernel/classes/bookmarks/BookmarkFolderUpgradeSqlTest.php
 16562b1931d55c6b5138723f1b1ee024  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
-c7ad0acc5911ebb445ee432a5c67bd36  tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php
-62d024cb421eeb96fdf4625bd0ff6d8b  tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php
+baaf01fe3b18b48aa1c9aa2afd3797f7  tests/tests/kernel/classes/bookmarks/BookmarkViewParsedColumnsTest.php
+9388763b112b9c37cabf8a354b75177e  tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php
+c171cdda400a1305144f380ff7fecb7d  tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php
 742e384210b75bff0a56e21cd00ac13d  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
-20b5ef27bf115202e1b0d3ab0b7b478d  tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php
+94967666e4586b493dd9dcead8a89625  tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php
 9c4a1758ccef63a808d3bb5e638ea67c  tests/tests/kernel/classes/cachesmore/eZStaticCachePathsTest.php
 32797ee964fe06176eb00d583d0c5737  tests/tests/kernel/classes/cachesmore/expPreloadRunnerLinksTest.php
 58fbc9b3d8de475e842729aca7e28459  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
@@ -28456,7 +28459,7 @@ bb39a45d6606b9df49c05f4c31e6ded7  update/common/scripts/5.4/cleanuntranslatabler
 dffebf82ed0f98aca1b2a34da0ad5673  update/common/scripts/5.4/fixtrashedimagereferences.php
 5e27ce76cf28f07c2c3f7a3bc831568a  update/common/scripts/6.0/createapikeytable.php
 a5f440b96f0b048ff57c517d3684918a  update/common/scripts/6.0/createaudittables.php
-2a44beee19be3c195ea9386faac76e16  update/common/scripts/6.0/createbookmarkviewtable.php
+228f40fae10ed757847e42c52806a981  update/common/scripts/6.0/createbookmarkviewtable.php
 b3b358aaafa23fb1adcdd4bdcb92f1ec  update/common/scripts/6.0/createmissingusersettings.php
 0a2a766ae9ed213df86d190a95190963  update/common/scripts/6.0/createpasskeytable.php
 2c32e4995ccbb7f8ec66f7c04b10ac19  update/common/scripts/6.0/createtransferruntable.php
@@ -28528,7 +28531,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-5a0a398ef82c972da4b0d41fff86e171  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+32dedd473b8cb5acb0a3266362a40fc4  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -28587,9 +28590,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-83f04750bb9ff25c6699e48d8a3fddf8  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+87e819662605f1044f6d323ca67783c3  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-8ebe5af8740269522cd7df8dffaca9cc  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+73151b1f061a92d6c579275e421868e0  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php

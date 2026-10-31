@@ -11,6 +11,12 @@
  *  BV-S3 the update files create it only when it is missing (IF NOT EXISTS, a guarded DO block on PostgreSQL)
  *  BV-S4 the SQLite update runs twice and keeps the rows; bookmark_id is unique
  *  BV-S5 the update script exists, is executable and goes through expBookmarkView::install()
+ *  BV-S6 the SQLite update leaves a table of an early 6.0.15 build (without the parsed columns) as it is, without an error
+ *  BV-S7 the upgrade steps of the parsed columns are listed after the table's step, and name columns and an index of
+ *        share/db_schema.dba
+ *
+ * The parsed columns (module_name, view_name, view_parameters) and their index expbookmark_view_module are in every
+ * definition; the MySQL and PostgreSQL updates add them to a table that lacks them, guarded (BV-S3).
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -22,7 +28,7 @@ class BookmarkViewSchemaSqlTest extends PHPUnit\Framework\TestCase
 {
     private static $root;
 
-    private static $columns = array( 'bookmark_id', 'created', 'module_uri', 'user_id' );
+    private static $columns = array( 'bookmark_id', 'created', 'module_name', 'module_uri', 'user_id', 'view_name', 'view_parameters' );
 
     public static function setUpBeforeClass(): void
     {
@@ -38,10 +44,20 @@ class BookmarkViewSchemaSqlTest extends PHPUnit\Framework\TestCase
         $table = $schema['expbookmark_view'];
         $this->assertSame( self::$columns, array_keys( $table['fields'] ) );
         $this->assertSame( 'longtext', $table['fields']['module_uri']['type'] );
+        $this->assertSame( 'longtext', $table['fields']['view_parameters']['type'] );
+        foreach ( array( 'module_name', 'view_name' ) as $column )
+        {
+            $this->assertSame( 'varchar', $table['fields'][$column]['type'], $column );
+            $this->assertSame( 100, $table['fields'][$column]['length'], $column );
+            $this->assertSame( '', $table['fields'][$column]['default'], $column );
+        }
         $this->assertSame( array( 'bookmark_id' ), $table['indexes']['PRIMARY']['fields'] );
         $this->assertSame( array( 'user_id' ), $table['indexes']['expbookmark_view_user']['fields'] );
+        $this->assertSame( array( 'module_name', 'view_name' ), $table['indexes']['expbookmark_view_module']['fields'] );
 
-        $definition = expBookmarkView::definition();
+        $definition = expBookmarkView::definitionWithAllColumns();
+        $this->assertSame( 100, $definition['fields']['module_name']['max_length'] );
+        $this->assertSame( 100, $definition['fields']['view_name']['max_length'] );
         $persistent = array_keys( $definition['fields'] );
         sort( $persistent );
         $this->assertSame( self::$columns, $persistent );
@@ -61,9 +77,10 @@ class BookmarkViewSchemaSqlTest extends PHPUnit\Framework\TestCase
             $sql = file_get_contents( self::$root . '/' . $file );
             $this->assertMatchesRegularExpression( '/CREATE TABLE `?expbookmark_view`? \((.*?)\n\)/s', $sql, $engine );
             preg_match( '/CREATE TABLE `?expbookmark_view`? \((.*?)\n\)/s', $sql, $m );
-            preg_match_all( '/^[\s,]*`?([a-z_]+)`? (?:int|integer|longtext|text)/m', $m[1], $cols );
+            preg_match_all( '/^[\s,]*`?([a-z_]+)`? (?:int|integer|longtext|text|varchar|character varying)/m', $m[1], $cols );
             $this->assertSame( self::$columns, $cols[1], $engine );
             $this->assertMatchesRegularExpression( '/expbookmark_view_user/', $sql, $engine );
+            $this->assertMatchesRegularExpression( '/expbookmark_view_module\W[^\n]*module_name`?, ?`?view_name/', $sql, $engine );
         }
         $this->assertStringContainsString( 'PRIMARY KEY  (bookmark_id)', file_get_contents( self::$root . '/kernel/sql/mysql/kernel_schema.sql' ) );
         $this->assertStringContainsString( 'ADD CONSTRAINT expbookmark_view_pkey PRIMARY KEY (bookmark_id)', file_get_contents( self::$root . '/kernel/sql/postgresql/kernel_schema.sql' ) );
@@ -82,6 +99,68 @@ class BookmarkViewSchemaSqlTest extends PHPUnit\Framework\TestCase
         $sqlite = file_get_contents( self::$root . '/update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql' );
         $this->assertStringContainsString( 'CREATE TABLE IF NOT EXISTS expbookmark_view', $sqlite );
         $this->assertStringContainsString( 'CREATE INDEX IF NOT EXISTS expbookmark_view_user', $sqlite );
+
+        // the parsed columns of a table made by an early 6.0.15 build: added only when missing
+        foreach ( array( 'module_name', 'view_name', 'view_parameters' ) as $column )
+        {
+            $this->assertMatchesRegularExpression( "/TABLE_NAME = 'expbookmark_view'\s+AND COLUMN_NAME = '$column' \) = 0,\s+'ALTER TABLE expbookmark_view ADD $column /", $mysql, $column );
+            $this->assertStringContainsString( "ALTER TABLE expbookmark_view ADD COLUMN IF NOT EXISTS $column ", $section, $column );
+        }
+        $this->assertMatchesRegularExpression( "/INDEX_NAME = 'expbookmark_view_module' \) = 0,\s+'CREATE INDEX expbookmark_view_module ON expbookmark_view \( module_name, view_name \)'/", $mysql );
+        $this->assertStringContainsString( 'CREATE INDEX IF NOT EXISTS expbookmark_view_module ON expbookmark_view USING btree ( module_name, view_name )', $section );
+    }
+
+    /** BV-S6 */
+    public function testSqliteUpdateLeavesAnEarlyTable()
+    {
+        if ( !in_array( 'sqlite', PDO::getAvailableDrivers(), true ) )
+            $this->markTestSkipped( 'no pdo_sqlite' );
+        $pdo = new PDO( 'sqlite::memory:' );
+        $pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+        $pdo->exec( 'CREATE TABLE expbookmark_view ( bookmark_id integer NOT NULL DEFAULT 0, created integer NOT NULL DEFAULT 0, '
+                    . 'module_uri longtext, user_id integer NOT NULL DEFAULT 0, PRIMARY KEY ( bookmark_id ) )' );
+        $pdo->exec( 'CREATE INDEX expbookmark_view_user ON expbookmark_view ( user_id )' );
+        $pdo->exec( "INSERT INTO expbookmark_view (bookmark_id, user_id, module_uri) VALUES (7, 14, 'setup/info')" );
+        foreach ( preg_split( '/;\s*$/m', preg_replace( '/^--.*$/m', '', self::sqliteSection() ) ) as $statement )
+            if ( trim( $statement ) !== '' )
+                $pdo->exec( $statement );
+        $this->assertSame( array( 'bookmark_id', 'created', 'module_uri', 'user_id' ),
+                           array_column( $pdo->query( 'PRAGMA table_info(expbookmark_view)' )->fetchAll( PDO::FETCH_ASSOC ), 'name' ),
+                           'the early table is left for the upgrade step, which adds the columns' );
+        $this->assertSame( '1', (string)$pdo->query( 'SELECT COUNT(*) FROM expbookmark_view' )->fetchColumn() );
+    }
+
+    /** The bookmark section of the SQLite update file */
+    private static function sqliteSection()
+    {
+        $sql = file_get_contents( self::$root . '/update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql' );
+        $start = strpos( $sql, '-- Bookmarks of system pages' );
+        return substr( $sql, $start, strpos( $sql, "\n-- ", strpos( $sql, 'CREATE INDEX IF NOT EXISTS expbookmark_view_user', $start ) ) - $start );
+    }
+
+    /** BV-S7 */
+    public function testUpgradeSteps()
+    {
+        $ini = file_get_contents( self::$root . '/settings/upgrade.ini' );
+        preg_match_all( '/^StepList\[\]=(\S+)$/m', $ini, $m );
+        $steps = $m[1];
+        $table = array_search( 'expUpgradeStepBookmarkViewTable', $steps, true );
+        $columns = array_search( 'expUpgradeStepBookmarkViewColumns', $steps, true );
+        $fill = array_search( 'expUpgradeStepBookmarkViewFill', $steps, true );
+        $this->assertNotFalse( $columns );
+        $this->assertNotFalse( $fill );
+        $this->assertGreaterThan( $table, $columns );
+        $this->assertGreaterThan( $columns, $fill );
+
+        $schema = null;
+        include self::$root . '/share/db_schema.dba';
+        $step = new expUpgradeStepBookmarkViewColumns();
+        $this->assertSame( 'database', $step->stage() );
+        foreach ( $step->fields()['expbookmark_view'] as $field )
+            $this->assertArrayHasKey( $field, $schema['expbookmark_view']['fields'], $field );
+        foreach ( $step->indexes()['expbookmark_view'] as $index )
+            $this->assertArrayHasKey( $index, $schema['expbookmark_view']['indexes'], $index );
+        $this->assertSame( array( '6.0.15-bookmark-view-columns' ), ( new expUpgradeStepBookmarkViewFill() )->after() );
     }
 
     /** BV-S4 */

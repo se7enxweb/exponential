@@ -1646,6 +1646,8 @@ return array(
       'expUpgradeStepApiKeyTable'                                    => 'kernel/classes/upgrade/steps/expupgradestepapikeytable.php',
       'expUpgradeStepAuditIndexTables'                               => 'kernel/classes/upgrade/steps/expupgradestepauditindextables.php',
       'expUpgradeStepBookmarkFolders'                                => 'kernel/classes/upgrade/steps/expupgradestepbookmarkfolders.php',
+      'expUpgradeStepBookmarkViewColumns'                            => 'kernel/classes/upgrade/steps/expupgradestepbookmarkviewcolumns.php',
+      'expUpgradeStepBookmarkViewFill'                               => 'kernel/classes/upgrade/steps/expupgradestepbookmarkviewfill.php',
       'expUpgradeStepBookmarkViewTable'                              => 'kernel/classes/upgrade/steps/expupgradestepbookmarkviewtable.php',
       'expUpgradeStepCodeUpdate'                                     => 'kernel/classes/upgrade/steps/expupgradestepcodeupdate.php',
       'expUpgradeStepDataTableTables'                                => 'kernel/classes/upgrade/steps/expupgradestepdatatabletables.php',

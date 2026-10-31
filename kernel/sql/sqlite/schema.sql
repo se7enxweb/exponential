@@ -178,8 +178,11 @@ CREATE TABLE `expbookmark_folder` (
 CREATE TABLE `expbookmark_view` (
   `bookmark_id` integer NOT NULL DEFAULT '0'
 ,  `created` integer NOT NULL DEFAULT '0'
+,  `module_name` varchar(100) NOT NULL DEFAULT ''
 ,  `module_uri` longtext
 ,  `user_id` integer NOT NULL DEFAULT '0'
+,  `view_name` varchar(100) NOT NULL DEFAULT ''
+,  `view_parameters` longtext
 ,  PRIMARY KEY (`bookmark_id`)
 );
 CREATE TABLE `ezcontentbrowserecent` (
@@ -1432,6 +1435,7 @@ CREATE INDEX "idx_ezworkflow_event_wid_version_placement" ON "ezworkflow_event" 
 CREATE INDEX "idx_ezcontentbrowsebookmark_ezcontentbrowsebookmark_user" ON "ezcontentbrowsebookmark" (`user_id`);
 CREATE INDEX "idx_ezcontentbrowsebookmark_ezcontentbrowsebookmark_folder" ON "ezcontentbrowsebookmark" (`user_id`,`folder_id`);
 CREATE INDEX "idx_expbookmark_folder_expbookmark_folder_user" ON "expbookmark_folder" (`user_id`,`parent_id`);
+CREATE INDEX "idx_expbookmark_view_expbookmark_view_module" ON "expbookmark_view" (`module_name`,`view_name`);
 CREATE INDEX "idx_expbookmark_view_expbookmark_view_user" ON "expbookmark_view" (`user_id`);
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_from" ON "ezcontentobject_link" (`from_contentobject_id`,`from_contentobject_version`,`contentclassattribute_id`);
 CREATE INDEX "idx_ezcontentobject_link_ezco_link_to_co_id" ON "ezcontentobject_link" (`to_contentobject_id`);

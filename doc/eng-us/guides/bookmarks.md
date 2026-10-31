@@ -175,6 +175,10 @@ Open a folder in the folder list. Its panel offers:
   else. The tree of the Bookmarks box and the browse dialog (`content/bookmark_tree.tpl`) is unchanged.
 - The look is in the bookmark section of `stylesheets/modules/content.css` (design/admin and design/admin4), in the
   visual language of the section, link list and session pages.
+- A system page bookmark keeps its address (`expbookmark_view.module_uri`) and the same address taken apart:
+  `module_name`, `view_name` and `view_parameters` (`expBookmarkView::parse()`). When a module or a view is renamed,
+  `php update/common/scripts/6.0/createbookmarkviewtable.php --rename=<old>=<new>` moves the bookmarks of every user
+  ([details](../features/6.0/bookmarks-of-system-pages.md#renaming-a-module-or-a-view)).
 
 Tests, no database: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php`.
 With an installation: `php vendor/bin/phpunit tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php --filter 'testShift|testSetOrderAndMoveToPosition'`.

@@ -329,6 +329,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-audit-index-tables` | database | `update/common/scripts/6.0/createaudittables.php` (Tabellen) |
 | `6.0.15-bookmark-folders` | database | Lesezeichenordner: Spalten, Index, Tabelle `expbookmark_folder` |
 | `6.0.15-bookmark-view-table` | database | `createbookmarkviewtable.php` |
+| `6.0.15-bookmark-view-columns` | database | `expbookmark_view.module_name`, `view_name`, `view_parameters` und ihr Index (`createbookmarkviewtable.php`) |
 | `6.0.15-mail-preference-tables` | database | die fünf Tabellen `expmail_*` |
 | `6.0.15-api-key-table` | database | `createapikeytable.php` |
 | `6.0.15-transfer-run-table` | database | `createtransferruntable.php` |
@@ -350,6 +351,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-help-read-policy` | scripts | `bin/php/addexphelpreadpolicy.php` |
 | `6.0.15-oauth-authorize-policy` | scripts | `bin/php/addoauthauthorizepolicy.php` |
 | `6.0.15-order-siteaccess-backfill` | scripts | `bin/php/expbackfillordersiteaccess.php --apply` |
+| `6.0.15-bookmark-view-fill` | scripts | die zerlegte Adresse älterer Lesezeichen von Systemseiten (`createbookmarkviewtable.php`) |
 | `6.0.15-finish-deploy` | finish | `./console exp:velocity deploy --kernel` |
 | `6.0.15-finish-smoke` | finish | ein Abruf der Startseite |
 

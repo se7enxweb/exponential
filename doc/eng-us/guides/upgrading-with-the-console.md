@@ -311,6 +311,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-audit-index-tables` | database | `update/common/scripts/6.0/createaudittables.php` (tables) |
 | `6.0.15-bookmark-folders` | database | bookmark folders: columns, index, table `expbookmark_folder` |
 | `6.0.15-bookmark-view-table` | database | `createbookmarkviewtable.php` |
+| `6.0.15-bookmark-view-columns` | database | `expbookmark_view.module_name`, `view_name`, `view_parameters` and their index (`createbookmarkviewtable.php`) |
 | `6.0.15-mail-preference-tables` | database | the five `expmail_*` tables |
 | `6.0.15-api-key-table` | database | `createapikeytable.php` |
 | `6.0.15-transfer-run-table` | database | `createtransferruntable.php` |
@@ -332,6 +333,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-help-read-policy` | scripts | `bin/php/addexphelpreadpolicy.php` |
 | `6.0.15-oauth-authorize-policy` | scripts | `bin/php/addoauthauthorizepolicy.php` |
 | `6.0.15-order-siteaccess-backfill` | scripts | `bin/php/expbackfillordersiteaccess.php --apply` |
+| `6.0.15-bookmark-view-fill` | scripts | the parsed address of older system page bookmarks (`createbookmarkviewtable.php`) |
 | `6.0.15-finish-deploy` | finish | `./console exp:velocity deploy --kernel` |
 | `6.0.15-finish-smoke` | finish | a request to the front page |
 

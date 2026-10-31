@@ -14,6 +14,14 @@ Funktion selbst: [Lesezeichen für Systemseiten](../../funktionen/6.0/lesezeiche
   ihren Schema-Handler (`expBookmarkView::install()`).
 - `ezcontentbrowsebookmark` bleibt unverändert. Ein Lesezeichen einer Systemseite ist eine Zeile mit `node_id = 0`.
 - Nichts wird migriert; vorhandene Lesezeichen bleiben Knoten-Lesezeichen.
+- Die Adresse wird auch zerlegt gespeichert: `module_name` und `view_name` (varchar 100, Vorgabe `''`) und
+  `view_parameters` (longtext, JSON aus `ordered`, `unordered` und `query`), mit dem Index `expbookmark_view_module`
+  (`module_name`, `view_name`). Eine neue Tabelle hat sie. Eine Tabelle aus einem frühen Build von 6.0.15 bekommt sie
+  von den Update-Schritten `6.0.15-bookmark-view-columns` (Stufe database, jede Engine) und `6.0.15-bookmark-view-fill`
+  (Stufe scripts: die Zeilen aus ihrer Adresse gefüllt), die `./console exp:upgrade --apply` und
+  `createbookmarkviewtable.php` ausführen; die Update-Dateien von MySQL und PostgreSQL fügen Spalten und Index ebenfalls
+  hinzu (abgesichert), die von SQLite kann das nicht. Bis dahin lässt `expBookmarkView::definition()` die Spalten weg
+  (`hasParsedColumns()`); die Reihenfolge von Code und Update spielt also keine Rolle.
 
 ## Code, der Lesezeichen liest
 
@@ -69,10 +77,24 @@ Hinzugekommen mit den gespeicherten Suchen und den ausgegrauten Lesezeichen:
 | Templates | `bookmark_tree.tpl` und die Karten von `bookmark.tpl` zeichnen `a4-bi-<icon>` statt des Zahnrads und zeigen `reason_text`; `design/admin3/templates/pagelayout.tpl` bindet die Schaltfläche auch ein |
 
 Eine gespeicherte Adresse kann jetzt auf einen Query-String enden (`content/search?SearchText=news`); Code, der
-`module_uri` direkt liest und an `/` trennt, sollte `expBookmarkView::parts()` oder `pathOf()` verwenden.
+`module_uri` direkt liest und an `/` trennt, sollte `expBookmarkView::parts()` oder `pathOf()` verwenden oder
+`module_name` und `view_name` lesen.
+
+## Zerlegte Adresse und Umbenennen
+
+| Wo | Was |
+|---|---|
+| `expBookmarkView::parse( $uri )` | `module`, `view`, `ordered` (Liste), `unordered` und `query` (Name => Wert) einer Adresse; ohne Datenbank und ohne Moduldefinition |
+| `expBookmarkView::parsedFields( $uri )` | Die Werte von `module_name`, `view_name` und `view_parameters`; `createNew()` schreibt sie |
+| `expBookmarkView::definitionWithAllColumns()`, `hasParsedColumns( $refresh )`, `PARSED_COLUMNS` | Die vollständige Definition; ob die Tabelle die Spalten hat (einmal je Prozess den Katalog gefragt); `definition()` lässt sie weg, solange sie fehlen |
+| `expBookmarkView::renamedURI( $uri, $from, $to )`, `renameModuleView( $from, $to, $apply )` | Eine Adresse mit umbenanntem Modul oder umbenannter Ansicht (`'role'` zu `'roles'`, `'role/view'` zu `'roles/show'`), Parameter und Query-String bleiben; die Lesezeichen aller Benutzer verschoben, `$apply = false` meldet nur |
+| `expBookmarkView::staleParsedRows()`, `fillParsedColumns()` | Die Zeilen, deren Spalten nicht zu ihrer Adresse passen, und deren Füllen |
+| `expUpgradeStepBookmarkViewColumns`, `expUpgradeStepBookmarkViewFill` | Die Update-Schritte `6.0.15-bookmark-view-columns` und `6.0.15-bookmark-view-fill` (`settings/upgrade.ini`) |
+| `update/common/scripts/6.0/createbookmarkviewtable.php` | Führt beide Schritte nach dem Anlegen der Tabelle aus; `--rename=<alt>=<neu>` verschiebt Lesezeichen, mit `--dry-run` sagt es nur, was sich ändern würde |
 
 ## Tests
 
 - `tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php`: Adressen, Query-Strings, Namen, Einträge, Suche und Sortierung, die ausgeschlossenen Ansichten, die Arten (auch die einer Erweiterung), die Symbole und die Gründe (ohne Datenbank)
-- `tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php`: die Tabelle überall, wo sie steht; das SQLite-Update zweimal
+- `tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php`: die Tabelle überall, wo sie steht; das SQLite-Update zweimal; eine frühe Tabelle bleibt den Update-Schritten überlassen; die Schritte in `upgrade.ini`
+- `tests/tests/kernel/classes/bookmarks/BookmarkViewParsedColumnsTest.php`: auf einer SQLite-Datenbank im Speicher funktioniert eine frühe Tabelle weiter, die Schritte fügen die zerlegten Spalten hinzu und füllen sie, ein Modul und eine Ansicht werden umbenannt
 - `tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php`: das Modell auf einer laufenden Installation (ohne eine oder ohne die Tabelle übersprungen)

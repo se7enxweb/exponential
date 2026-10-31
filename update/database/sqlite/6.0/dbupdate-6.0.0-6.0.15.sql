@@ -285,11 +285,20 @@ CREATE INDEX expbookmark_folder_user ON expbookmark_folder ( user_id, parent_id 
 -- it has a name, a folder and a place in its folder like every other; expbookmark_view holds
 -- its address (module_uri, without the siteaccess). New table only: node bookmarks do not
 -- change. Written with IF NOT EXISTS, so running these statements again changes nothing.
+-- The table has the address parsed as well: module_name, view_name and view_parameters (JSON of the
+-- ordered, unordered and query parameters), so bookmarks are found and moved by module and view.
+-- SQLite cannot add a column only when it is missing: a table made by an early 6.0.15 build, with
+-- the address alone, gets them from update/common/scripts/6.0/createbookmarkviewtable.php or
+-- ./console exp:upgrade --apply, which also fill them and add their index (expbookmark_view_module,
+-- left out here because it would fail on such a table); until then the kernel reads the address alone.
 CREATE TABLE IF NOT EXISTS expbookmark_view (
   bookmark_id integer NOT NULL DEFAULT 0,
   created integer NOT NULL DEFAULT 0,
+  module_name varchar(100) NOT NULL DEFAULT '',
   module_uri longtext,
   user_id integer NOT NULL DEFAULT 0,
+  view_name varchar(100) NOT NULL DEFAULT '',
+  view_parameters longtext,
   PRIMARY KEY ( bookmark_id )
 );
 CREATE INDEX IF NOT EXISTS expbookmark_view_user ON expbookmark_view ( user_id );
