@@ -78329,6 +78329,58 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Eich sesiynau a&apos;ch digwyddiadau diogelwch fel ffeil JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Nid yw sesiynau'n cael eu cofnodi ar y wefan hon, felly nid oedd modd allgofnodi unrhyw ddyfais arall. Newidiwch eich cyfrinair nawr.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Cafodd %count sesiwn arall eu hallgofnodi. Nawr newidiwch eich cyfrinair.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nid oedd unrhyw ddyfais arall wedi mewngofnodi. Nawr newidiwch eich cyfrinair.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Diolch. Mae'r digwyddiad wedi'i nodi fel eich un chi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Nid oes angen ateb i'r digwyddiad hwnnw.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Roedd y dudalen wedi dod i ben. Ni newidiwyd dim; rhowch gynnig arall arni.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Diogelu eich cyfrif</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Os nad chi oedd rhywbeth yma, allgofnodwch bob dyfais arall, yna dewiswch gyfrinair newydd. Mae dyfeisiau a arhosodd wedi mewngofnodi gyda Cofio fi yn cael eu hallgofnodi hefyd.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Mae pob dyfais heblaw hon yn cael ei hallgofnodi ar ei chais nesaf. Yna byddwch yn dewis cyfrinair newydd.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ie, allgofnodi'r dyfeisiau eraill</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ai chi oedd hwn?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ie, fi oedd e</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Na, diogelu fy nghyfrif</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Eich sesiynau a&apos;ch digwyddiadau diogelwch fel ffeil JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Nid yw sesiynau'n cael eu cofnodi ar y wefan hon, felly nid oedd modd allgofnodi unrhyw ddyfais arall. Newidiwch eich cyfrinair nawr.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Cafodd %count sesiwn arall eu hallgofnodi. Nawr newidiwch eich cyfrinair.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nid oedd unrhyw ddyfais arall wedi mewngofnodi. Nawr newidiwch eich cyfrinair.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Diolch. Mae'r digwyddiad wedi'i nodi fel eich un chi.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Nid oes angen ateb i'r digwyddiad hwnnw.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Roedd y dudalen wedi dod i ben. Ni newidiwyd dim; rhowch gynnig arall arni.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Diogelu eich cyfrif</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Os nad chi oedd rhywbeth yma, allgofnodwch bob dyfais arall, yna dewiswch gyfrinair newydd. Mae dyfeisiau a arhosodd wedi mewngofnodi gyda Cofio fi yn cael eu hallgofnodi hefyd.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Mae pob dyfais heblaw hon yn cael ei hallgofnodi ar ei chais nesaf. Yna byddwch yn dewis cyfrinair newydd.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ie, allgofnodi'r dyfeisiau eraill</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ai chi oedd hwn?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ie, fi oedd e</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Na, diogelu fy nghyfrif</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Trinydd sesiynau: %handler. Mae&apos;r sesiynau&apos;n cael eu darllen o&apos;r tabl expuser_session, felly mae&apos;r adroddiad yn gweithio gyda phob trinydd.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Gweithgarwch amheus yn ystod y %hours awr diwethaf</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Methodd un rhwydwaith fewngofnodi i %accounts cyfrif (%count ymgais)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cyfrif wedi'i gloi ar ôl mewngofnodi aflwyddiannus</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count mewngofnodiad aflwyddiannus ar un cyfrif</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Wedi mewngofnodi o %count gwlad ar yr un pryd</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gweithgarwch diogelwch</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiynau</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Darllenir mewngofnodion aflwyddiannus o log archwilio'r defnyddwyr, nad yw ar gael yma.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Dim byd amheus: dim cyfrif â mewngofnodion aflwyddiannus dro ar ôl tro, dim rhwydwaith yn rhoi cynnig ar sawl cyfrif, dim cyfrif wedi mewngofnodi o sawl gwlad.</translation>
     </message>
 </context>
 <context>

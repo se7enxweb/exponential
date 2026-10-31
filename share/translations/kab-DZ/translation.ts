@@ -78329,6 +78329,58 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Tiɣimiyin-ik d tedyanin-ik n tɣellist am ufaylu JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Tiɣimiyin ur ttwaseklasent ara deg usmel-a, ihi ulac ibenk-nniḍen i yezmren ad yettwasufeɣ. Beddel awal-ik uffir tura.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count tɣimiyin-nniḍen ttwasufɣent. Tura beddel awal-ik uffir.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ulac ibenk-nniḍen i yeqqnen. Tura beddel awal-ik uffir.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tanemmirt. Tadyant tettwacreḍ d tin-ik.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tadyant-nni ur tesri ara tiririt.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Asebter yezri wakud-is. Ulac ayen yettwabeddlen; ma ulac aɣilif, ɛreḍ tikkelt nniḍen.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ḥrez amiḍan-ik</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ma yella kra dagi mačči d kečč, ssufeɣ akk ibenkan-nniḍen, sakin fren awal uffir amaynut. Ibenkan yeqqimen qqnen s Cfu fell-i ad ttwasufɣen daɣen.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Yal ibenk ala wa ad yettwasufeɣ di tuttra-ines i d-iteddun. Sakin ad tferneḍ awal uffir amaynut.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ih, ssufeɣ ibenkan-nniḍen</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>D kečč aya?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ih, d nekk</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ala, ḥrez amiḍan-iw</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Tiɣimiyin-ik d tedyanin-ik n tɣellist am ufaylu JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Tiɣimiyin ur ttwaseklasent ara deg usmel-a, ihi ulac ibenk-nniḍen i yezmren ad yettwasufeɣ. Beddel awal-ik uffir tura.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count tɣimiyin-nniḍen ttwasufɣent. Tura beddel awal-ik uffir.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ulac ibenk-nniḍen i yeqqnen. Tura beddel awal-ik uffir.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tanemmirt. Tadyant tettwacreḍ d tin-ik.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tadyant-nni ur tesri ara tiririt.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Asebter yezri wakud-is. Ulac ayen yettwabeddlen; ma ulac aɣilif, ɛreḍ tikkelt nniḍen.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ḥrez amiḍan-ik</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ma yella kra dagi mačči d kečč, ssufeɣ akk ibenkan-nniḍen, sakin fren awal uffir amaynut. Ibenkan yeqqimen qqnen s Cfu fell-i ad ttwasufɣen daɣen.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Yal ibenk ala wa ad yettwasufeɣ di tuttra-ines i d-iteddun. Sakin ad tferneḍ awal uffir amaynut.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ih, ssufeɣ ibenkan-nniḍen</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>D kečč aya?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ih, d nekk</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ala, ḥrez amiḍan-iw</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Amsefrak n tɣimiyin: %handler. Tiɣimiyin ttwaɣrant seg tfelwit expuser_session, ihi aneqqis iteddu d yal amsefrak.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Armud yettwagin deg %hours n yisragen ineggura</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Aẓeṭṭa yiwen ur yessaweḍ ara ad yeqqen ɣer %accounts imiḍanen (%count iɛaṛḍen)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Amiḍan yettwasekker deffir tuqqniwin ur neddi ara</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count tuqqniwin ur neddi ara ɣef yiwen umiḍan</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Yeqqen seg %count tmura deg yiwen wakud</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Armud n tɣellist</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Tiɣimiyin</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Tuqqniwin ur neddi ara ttwaɣrent seg uɣmis n usenqed n yiseqdacen, ur nelli ara dagi.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ulac ayen yettwagin: ulac amiḍan s tuqqniwin ur neddi ara yettuɣalen, ulac aẓeṭṭa yettɛaraḍen aṭas n yimiḍanen, ulac amiḍan yeqqnen seg aṭas n tmura.</translation>
     </message>
 </context>
 <context>

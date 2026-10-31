@@ -78359,6 +78359,58 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vaše relácie a udalosti zabezpečenia ako súbor JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Relácie sa na tejto lokalite nezaznamenávajú, preto nebolo možné odhlásiť žiadne iné zariadenie. Hneď si zmeňte heslo.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Odhlásené ďalšie relácie: %count. Teraz si zmeňte heslo.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Žiadne iné zariadenie nebolo prihlásené. Teraz si zmeňte heslo.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ďakujeme. Udalosť je označená ako vaša.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Táto udalosť nevyžaduje odpoveď.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Platnosť stránky vypršala. Nič sa nezmenilo; skúste to znova.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zabezpečiť konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ak tu niečo neurobili vy, odhláste všetky ostatné zariadenia a potom si zvoľte nové heslo. Odhlásia sa aj zariadenia, ktoré zostali prihlásené cez Zapamätať si ma.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Všetky zariadenia okrem tohto sa odhlásia pri ďalšej požiadavke. Potom si zvolíte nové heslo.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Áno, odhlásiť ostatné zariadenia</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Boli ste to vy?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Áno, bol som to ja</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nie, zabezpečiť moje konto</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78541,6 +78593,58 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vaše relácie a udalosti zabezpečenia ako súbor JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Relácie sa na tejto lokalite nezaznamenávajú, preto nebolo možné odhlásiť žiadne iné zariadenie. Hneď si zmeňte heslo.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Odhlásené ďalšie relácie: %count. Teraz si zmeňte heslo.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Žiadne iné zariadenie nebolo prihlásené. Teraz si zmeňte heslo.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ďakujeme. Udalosť je označená ako vaša.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Táto udalosť nevyžaduje odpoveď.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Platnosť stránky vypršala. Nič sa nezmenilo; skúste to znova.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zabezpečiť konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ak tu niečo neurobili vy, odhláste všetky ostatné zariadenia a potom si zvoľte nové heslo. Odhlásia sa aj zariadenia, ktoré zostali prihlásené cez Zapamätať si ma.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Všetky zariadenia okrem tohto sa odhlásia pri ďalšej požiadavke. Potom si zvolíte nové heslo.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Áno, odhlásiť ostatné zariadenia</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Boli ste to vy?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Áno, bol som to ja</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nie, zabezpečiť moje konto</translation>
     </message>
 </context>
 <context>
@@ -78732,6 +78836,42 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Obslužný program relácií: %handler. Relácie sa načítavajú z tabuľky expuser_session, preto prehľad funguje s každým obslužným programom.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Podozrivá aktivita za posledných %hours hodín</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Jedna sieť sa neúspešne pokúsila prihlásiť do kont (%accounts) (pokusy: %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto zamknuté po neúspešných prihláseniach</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Neúspešné prihlásenia do jedného konta: %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Prihlásenie z viacerých krajín naraz: %count</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivita zabezpečenia</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Relácie</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Neúspešné prihlásenia sa čítajú z denníka auditu používateľov, ktorý tu nie je k dispozícii.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nič podozrivé: žiadne konto s opakovanými neúspešnými prihláseniami, žiadna sieť skúšajúca viacero kont, žiadne konto prihlásené z viacerých krajín.</translation>
     </message>
 </context>
 <context>

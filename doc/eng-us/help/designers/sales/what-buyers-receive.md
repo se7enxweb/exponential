@@ -22,7 +22,7 @@ bought. Write it down.
 | Updates | Every release of the 1.x line for 12 months |
 | Support | Email, answers within two working days, for one installation |
 | Documentation | README, INSTALL.md, a configuration guide |
-| Compatibility | Tested with Exponential 6.0.15 and PHP 8.1 to 8.5 |
+| Compatibility | Tested with Exponential 6.0.15 and PHP 8.0 to 8.5 |
 | Not included | Content entry, hosting, custom changes |
 
 ## Step by step

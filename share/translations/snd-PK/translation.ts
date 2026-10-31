@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>توهان جا سيشن ۽ سيڪيورٽي واقعا هڪ JSON فائل طور.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>هن سائيٽ تي سيشن رڪارڊ نه ٿيندا آهن، تنهن ڪري ٻي ڪا به ڊوائيس لاگ آئوٽ نه ٿي سگهي. هاڻي ئي پنهنجو پاسورڊ تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ٻيا سيشن لاگ آئوٽ ڪيا ويا. هاڻي پنهنجو پاسورڊ تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ٻي ڪا به ڊوائيس لاگ ان نه هئي. هاڻي پنهنجو پاسورڊ تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>مهرباني. هي واقعو توهان جي طور تي نشان لڳايو ويو آهي.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ان واقعي کي ڪنهن جواب جي ضرورت ناهي.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحي جي مدي ختم ٿي وئي هئي. ڪجهه تبديل نه ٿيو؛ مهرباني ڪري ٻيهر ڪوشش ڪريو.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>پنهنجو اڪائونٽ محفوظ ڪريو</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>جيڪڏهن هتي ڪجهه توهان نه ڪيو هو، ته باقي سڀ ڊوائيسون لاگ آئوٽ ڪريو، پوءِ نئون پاسورڊ چونڊيو. مون کي ياد رکو سان لاگ ان رهيل ڊوائيسون به لاگ آئوٽ ٿي وينديون.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>هن کان سواءِ هر ڊوائيس پنهنجي ايندڙ درخواست تي لاگ آئوٽ ٿي ويندي. پوءِ توهان نئون پاسورڊ چونڊيو.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ها، باقي ڊوائيسون لاگ آئوٽ ڪريو</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ڇا هي توهان هئا؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ها، اهو مان هوس</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نه، منهنجو اڪائونٽ محفوظ ڪريو</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>توهان جا سيشن ۽ سيڪيورٽي واقعا هڪ JSON فائل طور.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>هن سائيٽ تي سيشن رڪارڊ نه ٿيندا آهن، تنهن ڪري ٻي ڪا به ڊوائيس لاگ آئوٽ نه ٿي سگهي. هاڻي ئي پنهنجو پاسورڊ تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ٻيا سيشن لاگ آئوٽ ڪيا ويا. هاڻي پنهنجو پاسورڊ تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ٻي ڪا به ڊوائيس لاگ ان نه هئي. هاڻي پنهنجو پاسورڊ تبديل ڪريو.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>مهرباني. هي واقعو توهان جي طور تي نشان لڳايو ويو آهي.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ان واقعي کي ڪنهن جواب جي ضرورت ناهي.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحي جي مدي ختم ٿي وئي هئي. ڪجهه تبديل نه ٿيو؛ مهرباني ڪري ٻيهر ڪوشش ڪريو.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>پنهنجو اڪائونٽ محفوظ ڪريو</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>جيڪڏهن هتي ڪجهه توهان نه ڪيو هو، ته باقي سڀ ڊوائيسون لاگ آئوٽ ڪريو، پوءِ نئون پاسورڊ چونڊيو. مون کي ياد رکو سان لاگ ان رهيل ڊوائيسون به لاگ آئوٽ ٿي وينديون.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>هن کان سواءِ هر ڊوائيس پنهنجي ايندڙ درخواست تي لاگ آئوٽ ٿي ويندي. پوءِ توهان نئون پاسورڊ چونڊيو.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ها، باقي ڊوائيسون لاگ آئوٽ ڪريو</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ڇا هي توهان هئا؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ها، اهو مان هوس</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نه، منهنجو اڪائونٽ محفوظ ڪريو</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>سيشن هينڊلر: %handler. سيشن ٽيبل expuser_session مان پڙهيا وڃن ٿا، تنهن ڪري رپورٽ هر هينڊلر سان ڪم ڪري ٿي.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>گذريل %hours ڪلاڪن ۾ مشڪوڪ سرگرمي</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>هڪ نيٽ ورڪ %accounts اڪائونٽن ۾ لاگ ان ڪرڻ ۾ ناڪام ٿيو (%count ڪوششون)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ناڪام لاگ ان کان پوءِ اڪائونٽ بند ڪيو ويو</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>هڪ اڪائونٽ تي %count ناڪام لاگ ان</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>هڪ ئي وقت %count ملڪن مان لاگ ان ٿيو</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>سيڪيورٽي سرگرمي</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>سيشن</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ناڪام لاگ ان يوزر آڊٽ لاگ مان پڙهيا ويندا آهن، جيڪو هتي دستياب ناهي.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ڪجهه به مشڪوڪ ناهي: بار بار ناڪام لاگ ان وارو ڪو اڪائونٽ ناهي، ڪيترن اڪائونٽن جي ڪوشش ڪندڙ ڪو نيٽ ورڪ ناهي، ڪيترن ملڪن مان لاگ ان ٿيل ڪو اڪائونٽ ناهي.</translation>
     </message>
 </context>
 <context>

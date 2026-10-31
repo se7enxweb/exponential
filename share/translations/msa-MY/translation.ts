@@ -78329,6 +78329,58 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sesi dan peristiwa keselamatan anda sebagai fail JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesi tidak direkodkan di laman ini, jadi tiada peranti lain yang dapat dilog keluar. Tukar kata laluan anda sekarang.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sesi lain telah dilog keluar. Sekarang tukar kata laluan anda.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Tiada peranti lain yang log masuk. Sekarang tukar kata laluan anda.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Terima kasih. Peristiwa ini telah ditanda sebagai milik anda.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Peristiwa itu tidak memerlukan jawapan.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Halaman telah tamat tempoh. Tiada apa-apa yang diubah; sila cuba lagi.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Lindungi akaun anda</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jika sesuatu di sini bukan anda, log keluar semua peranti lain, kemudian pilih kata laluan baharu. Peranti yang kekal log masuk dengan “Ingat saya” juga dilog keluar.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Setiap peranti kecuali peranti ini dilog keluar pada permintaan seterusnya. Kemudian anda memilih kata laluan baharu.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ya, log keluar peranti lain</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Adakah ini anda?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ya, itu saya</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Tidak, lindungi akaun saya</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sesi dan peristiwa keselamatan anda sebagai fail JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesi tidak direkodkan di laman ini, jadi tiada peranti lain yang dapat dilog keluar. Tukar kata laluan anda sekarang.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sesi lain telah dilog keluar. Sekarang tukar kata laluan anda.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Tiada peranti lain yang log masuk. Sekarang tukar kata laluan anda.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Terima kasih. Peristiwa ini telah ditanda sebagai milik anda.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Peristiwa itu tidak memerlukan jawapan.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Halaman telah tamat tempoh. Tiada apa-apa yang diubah; sila cuba lagi.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Lindungi akaun anda</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jika sesuatu di sini bukan anda, log keluar semua peranti lain, kemudian pilih kata laluan baharu. Peranti yang kekal log masuk dengan “Ingat saya” juga dilog keluar.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Setiap peranti kecuali peranti ini dilog keluar pada permintaan seterusnya. Kemudian anda memilih kata laluan baharu.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ya, log keluar peranti lain</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Adakah ini anda?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ya, itu saya</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Tidak, lindungi akaun saya</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Pengendali sesi: %handler. Sesi dibaca daripada jadual expuser_session, jadi laporan berfungsi dengan setiap pengendali.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Aktiviti mencurigakan dalam %hours jam terakhir</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Satu rangkaian gagal log masuk ke %accounts akaun (%count cubaan)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaun dikunci selepas log masuk gagal</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count log masuk gagal pada satu akaun</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Log masuk dari %count negara serentak</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktiviti keselamatan</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesi</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Log masuk gagal dibaca daripada log audit pengguna, yang tidak tersedia di sini.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Tiada apa-apa yang mencurigakan: tiada akaun dengan log masuk gagal berulang, tiada rangkaian yang mencuba beberapa akaun, tiada akaun yang log masuk dari beberapa negara.</translation>
     </message>
 </context>
 <context>

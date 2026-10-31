@@ -78338,6 +78338,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>מותבא וגדשא דשלמותא דילוכון איך פנקיתא ד JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>מותבא לא מתכתבין באתרא הדין, ועל הדין לא אפשר לאפקא מאנא אחרנא. שחלפו מלתא דעברא דילוכון השתא.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count מותבא אחרנין אתפקו. השתא שחלפו מלתא דעברא דילוכון.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>לא הוה מאנא אחרנא עאל. השתא שחלפו מלתא דעברא דילוכון.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>תודה. עובדא אתרשים דילוכון.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>עובדא הדין לא צריך תיובתא.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>פאתא עבר זבנה. מדם לא אשתחלף; בבעותא נסו תוב.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>חמיא דחושבנא דילוכון</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>אן מדם הכא לא הוה אנתון, אפקו כל מאנא אחרנא, ובתר כן בחרו מלתא דעברא חדתא. מאנא דקיימין עאלין בדכרוני אף אנון מתפקין.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>כל מאנא בר מן הדין מתפק בבעותא דבתרה. ובתר כן אנתון בחרין מלתא דעברא חדתא.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>אין, אפקו מאנא אחרנא</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>אנתון הויתון?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>אין, אנא הוית</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>לא, חמו חושבנא דילי</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78520,6 +78572,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>מותבא וגדשא דשלמותא דילוכון איך פנקיתא ד JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>מותבא לא מתכתבין באתרא הדין, ועל הדין לא אפשר לאפקא מאנא אחרנא. שחלפו מלתא דעברא דילוכון השתא.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count מותבא אחרנין אתפקו. השתא שחלפו מלתא דעברא דילוכון.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>לא הוה מאנא אחרנא עאל. השתא שחלפו מלתא דעברא דילוכון.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>תודה. עובדא אתרשים דילוכון.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>עובדא הדין לא צריך תיובתא.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>פאתא עבר זבנה. מדם לא אשתחלף; בבעותא נסו תוב.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>חמיא דחושבנא דילוכון</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>אן מדם הכא לא הוה אנתון, אפקו כל מאנא אחרנא, ובתר כן בחרו מלתא דעברא חדתא. מאנא דקיימין עאלין בדכרוני אף אנון מתפקין.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>כל מאנא בר מן הדין מתפק בבעותא דבתרה. ובתר כן אנתון בחרין מלתא דעברא חדתא.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>אין, אפקו מאנא אחרנא</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>אנתון הויתון?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>אין, אנא הוית</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>לא, חמו חושבנא דילי</translation>
     </message>
 </context>
 <context>
@@ -78711,6 +78815,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>מעבדנא דמותבא: %handler. מותבא מתקרין מן פתורא expuser_session, מטל הנא מודענותא פלחא עם כל מעבדנא.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>עבדנותא חשידתא ב-%hours שעין דעברו</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>רשתא חדא לא אצלחת למיעל ל-%accounts חושבנין (%count נסיונין)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>חושבנא אתאחד בתר מיעלא דלא אצלחו</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count מיעלא דלא אצלחו בחושבנא חד</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>עאל מן %count מדינן בזבנא חד</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>עבדנותא דשלמותא</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>מותבא</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>מיעלא דלא אצלחו מתקרין מן ספר בדיקתא דמשתמשין, דלא איתוהי הכא.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>לית מדם חשיד: לית חושבנא עם מיעלא דלא אצלחו תוב ותוב, לית רשתא דמנסיא חושבנין סגיאין, לית חושבנא דעאל מן מדינן סגיאן.</translation>
     </message>
 </context>
 <context>

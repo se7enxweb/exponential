@@ -78329,6 +78329,58 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Les tos sesiones y eventos de seguridá nun ficheru JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Nesti sitiu nun se rexistren les sesiones, asina que nun se pudo zarrar la sesión de nengún otru preséu. Camuda agora la to contraseña.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Zarráronse %count sesiones más. Agora camuda la to contraseña.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nun había nengún otru preséu con sesión aniciada. Agora camuda la to contraseña.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Gracies. L'eventu marcóse como tuyu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Esi eventu nun precisa rempuesta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La páxina caducara. Nun se camudó nada; volvi intentalo.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Protexer la to cuenta</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Si daqué d'equí nun fuisti tu, zarra la sesión de tolos demás preseos y depués escueyi una contraseña nueva. Tamién se zarra la sesión de los preseos que siguíen coneutaos con «Recordame».</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>La sesión de tolos preseos menos esti zárrase na so siguiente solicitú. Depués escueyes una contraseña nueva.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sí, zarrar la sesión de los demás preseos</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>¿Fuisti tu?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sí, fui yo</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Non, protexer la mio cuenta</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Les tos sesiones y eventos de seguridá nun ficheru JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Nesti sitiu nun se rexistren les sesiones, asina que nun se pudo zarrar la sesión de nengún otru preséu. Camuda agora la to contraseña.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Zarráronse %count sesiones más. Agora camuda la to contraseña.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nun había nengún otru preséu con sesión aniciada. Agora camuda la to contraseña.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Gracies. L'eventu marcóse como tuyu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Esi eventu nun precisa rempuesta.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>La páxina caducara. Nun se camudó nada; volvi intentalo.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Protexer la to cuenta</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Si daqué d'equí nun fuisti tu, zarra la sesión de tolos demás preseos y depués escueyi una contraseña nueva. Tamién se zarra la sesión de los preseos que siguíen coneutaos con «Recordame».</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>La sesión de tolos preseos menos esti zárrase na so siguiente solicitú. Depués escueyes una contraseña nueva.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sí, zarrar la sesión de los demás preseos</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>¿Fuisti tu?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sí, fui yo</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Non, protexer la mio cuenta</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Xestor de sesiones: %handler. Les sesiones lléense de la tabla expuser_session, polo que l&apos;informe funciona con cualquier xestor.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Actividá sospechosa nes últimes %hours hores</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Una rede nun pudo aniciar sesión en %accounts cuentes (%count intentos)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cuenta bloquiada tres anicios de sesión fallaos</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count anicios de sesión fallaos nuna cuenta</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Sesión aniciada dende %count países al empar</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Actividá de seguridá</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiones</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Los anicios de sesión fallaos lléense del rexistru d'auditoría d'usuarios, que nun ta disponible equí.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nada sospechoso: nenguna cuenta con anicios de sesión fallaos repetíos, nenguna rede probando delles cuentes, nenguna cuenta con sesión aniciada dende dellos países.</translation>
     </message>
 </context>
 <context>

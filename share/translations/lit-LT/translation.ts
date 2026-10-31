@@ -78359,6 +78359,58 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Jūsų seansai ir saugos įvykiai kaip JSON failas.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Šioje svetainėje sesijos neregistruojamos, todėl nė vieno kito įrenginio nepavyko atjungti. Pakeiskite slaptažodį dabar.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Atjungta kitų sesijų: %count. Dabar pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Joks kitas įrenginys nebuvo prisijungęs. Dabar pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ačiū. Įvykis pažymėtas kaip jūsų.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Į šį įvykį atsakyti nereikia.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Puslapio galiojimas baigėsi. Niekas nepakeista; bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Apsaugoti paskyrą</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jei kažko čia nedarėte jūs, atjunkite visus kitus įrenginius, tada pasirinkite naują slaptažodį. Atjungiami ir įrenginiai, likę prisijungę su „Prisiminti mane“.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Visi įrenginiai, išskyrus šį, atjungiami per kitą jų užklausą. Tada pasirenkate naują slaptažodį.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Taip, atjungti kitus įrenginius</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ar tai buvote jūs?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Taip, tai buvau aš</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ne, apsaugoti mano paskyrą</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78541,6 +78593,58 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Jūsų seansai ir saugos įvykiai kaip JSON failas.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Šioje svetainėje sesijos neregistruojamos, todėl nė vieno kito įrenginio nepavyko atjungti. Pakeiskite slaptažodį dabar.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Atjungta kitų sesijų: %count. Dabar pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Joks kitas įrenginys nebuvo prisijungęs. Dabar pakeiskite slaptažodį.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ačiū. Įvykis pažymėtas kaip jūsų.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Į šį įvykį atsakyti nereikia.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Puslapio galiojimas baigėsi. Niekas nepakeista; bandykite dar kartą.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Apsaugoti paskyrą</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jei kažko čia nedarėte jūs, atjunkite visus kitus įrenginius, tada pasirinkite naują slaptažodį. Atjungiami ir įrenginiai, likę prisijungę su „Prisiminti mane“.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Visi įrenginiai, išskyrus šį, atjungiami per kitą jų užklausą. Tada pasirenkate naują slaptažodį.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Taip, atjungti kitus įrenginius</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ar tai buvote jūs?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Taip, tai buvau aš</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ne, apsaugoti mano paskyrą</translation>
     </message>
 </context>
 <context>
@@ -78732,6 +78836,42 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Seansų tvarkyklė: %handler. Seansai skaitomi iš lentelės expuser_session, todėl ataskaita veikia su bet kuria tvarkykle.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Įtartina veikla per paskutines %hours val.</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Vienam tinklui nepavyko prisijungti prie paskyrų: %accounts (bandymų: %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Paskyra užrakinta po nesėkmingų prisijungimų</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Nesėkmingų prisijungimų vienoje paskyroje: %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Prisijungta iš %count šalių vienu metu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Saugos veikla</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesijos</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Nesėkmingi prisijungimai skaitomi iš naudotojų audito žurnalo, kuris čia nepasiekiamas.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nieko įtartino: nėra paskyros su pasikartojančiais nesėkmingais prisijungimais, nėra tinklo, bandančio kelias paskyras, nėra paskyros, prisijungusios iš kelių šalių.</translation>
     </message>
 </context>
 <context>

@@ -78327,6 +78327,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>نشست‌ها و رویدادهای امنیتی شما در قالب فایل JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>نشست‌ها در این سایت ثبت نمی‌شوند، بنابراین هیچ دستگاه دیگری خارج نشد. اکنون گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count نشست دیگر خارج شدند. اکنون گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>هیچ دستگاه دیگری وارد نشده بود. اکنون گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>سپاسگزاریم. این رویداد به نام شما علامت‌گذاری شد.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>این رویداد نیازی به پاسخ ندارد.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحه منقضی شده بود. چیزی تغییر نکرد؛ لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ایمن کردن حساب</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>اگر چیزی در اینجا کار شما نبود، همهٔ دستگاه‌های دیگر را خارج کنید و سپس گذرواژهٔ تازه‌ای برگزینید. دستگاه‌هایی که با «مرا به خاطر بسپار» وارد مانده‌اند نیز خارج می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>همهٔ دستگاه‌ها به جز این یکی در درخواست بعدی خود خارج می‌شوند. سپس گذرواژهٔ تازه‌ای برمی‌گزینید.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>بله، دستگاه‌های دیگر را خارج کن</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>آیا این شما بودید؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>بله، من بودم</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نه، حسابم را ایمن کن</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>نشست‌ها و رویدادهای امنیتی شما در قالب فایل JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>نشست‌ها در این سایت ثبت نمی‌شوند، بنابراین هیچ دستگاه دیگری خارج نشد. اکنون گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count نشست دیگر خارج شدند. اکنون گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>هیچ دستگاه دیگری وارد نشده بود. اکنون گذرواژهٔ خود را تغییر دهید.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>سپاسگزاریم. این رویداد به نام شما علامت‌گذاری شد.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>این رویداد نیازی به پاسخ ندارد.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحه منقضی شده بود. چیزی تغییر نکرد؛ لطفاً دوباره تلاش کنید.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ایمن کردن حساب</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>اگر چیزی در اینجا کار شما نبود، همهٔ دستگاه‌های دیگر را خارج کنید و سپس گذرواژهٔ تازه‌ای برگزینید. دستگاه‌هایی که با «مرا به خاطر بسپار» وارد مانده‌اند نیز خارج می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>همهٔ دستگاه‌ها به جز این یکی در درخواست بعدی خود خارج می‌شوند. سپس گذرواژهٔ تازه‌ای برمی‌گزینید.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>بله، دستگاه‌های دیگر را خارج کن</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>آیا این شما بودید؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>بله، من بودم</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نه، حسابم را ایمن کن</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>گردانندهٔ نشست: %handler. نشست‌ها از جدول expuser_session خوانده می‌شوند، بنابراین گزارش با هر گرداننده‌ای کار می‌کند.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>فعالیت مشکوک در %hours ساعت گذشته</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>یک شبکه نتوانست به %accounts حساب وارد شود (%count تلاش)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>حساب پس از ورودهای ناموفق قفل شد</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count ورود ناموفق به یک حساب</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ورود هم‌زمان از %count کشور</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>فعالیت امنیتی</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>نشست‌ها</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ورودهای ناموفق از گزارش ممیزی کاربران خوانده می‌شوند که در اینجا در دسترس نیست.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>هیچ مورد مشکوکی نیست: هیچ حسابی با ورودهای ناموفق مکرر، هیچ شبکه‌ای که چند حساب را امتحان کند و هیچ حسابی که از چند کشور وارد شده باشد وجود ندارد.</translation>
     </message>
 </context>
 <context>

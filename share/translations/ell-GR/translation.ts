@@ -78359,6 +78359,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Οι περίοδοι λειτουργίας και τα συμβάντα ασφαλείας σας ως αρχείο JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Οι περίοδοι λειτουργίας δεν καταγράφονται σε αυτόν τον ιστότοπο, οπότε δεν ήταν δυνατή η αποσύνδεση καμίας άλλης συσκευής. Αλλάξτε τον κωδικό πρόσβασής σας τώρα.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Αποσυνδέθηκαν %count άλλες περίοδοι λειτουργίας. Τώρα αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Καμία άλλη συσκευή δεν ήταν συνδεδεμένη. Τώρα αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ευχαριστούμε. Το συμβάν επισημάνθηκε ως δικό σας.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Αυτό το συμβάν δεν χρειάζεται απάντηση.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Η σελίδα είχε λήξει. Δεν άλλαξε τίποτα· δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ασφάλιση του λογαριασμού σας</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Αν κάτι εδώ δεν ήσασταν εσείς, αποσυνδέστε κάθε άλλη συσκευή και, στη συνέχεια, επιλέξτε νέο κωδικό πρόσβασης. Αποσυνδέονται επίσης οι συσκευές που έμειναν συνδεδεμένες με την Απομνημόνευση στοιχείων.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Κάθε συσκευή εκτός από αυτήν αποσυνδέεται στο επόμενο αίτημά της. Στη συνέχεια επιλέγετε νέο κωδικό πρόσβασης.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ναι, αποσύνδεση των άλλων συσκευών</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ήσασταν εσείς;</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ναι, ήμουν εγώ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Όχι, ασφάλιση του λογαριασμού μου</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78541,6 +78593,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Οι περίοδοι λειτουργίας και τα συμβάντα ασφαλείας σας ως αρχείο JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Οι περίοδοι λειτουργίας δεν καταγράφονται σε αυτόν τον ιστότοπο, οπότε δεν ήταν δυνατή η αποσύνδεση καμίας άλλης συσκευής. Αλλάξτε τον κωδικό πρόσβασής σας τώρα.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Αποσυνδέθηκαν %count άλλες περίοδοι λειτουργίας. Τώρα αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Καμία άλλη συσκευή δεν ήταν συνδεδεμένη. Τώρα αλλάξτε τον κωδικό πρόσβασής σας.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ευχαριστούμε. Το συμβάν επισημάνθηκε ως δικό σας.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Αυτό το συμβάν δεν χρειάζεται απάντηση.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Η σελίδα είχε λήξει. Δεν άλλαξε τίποτα· δοκιμάστε ξανά.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ασφάλιση του λογαριασμού σας</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Αν κάτι εδώ δεν ήσασταν εσείς, αποσυνδέστε κάθε άλλη συσκευή και, στη συνέχεια, επιλέξτε νέο κωδικό πρόσβασης. Αποσυνδέονται επίσης οι συσκευές που έμειναν συνδεδεμένες με την Απομνημόνευση στοιχείων.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Κάθε συσκευή εκτός από αυτήν αποσυνδέεται στο επόμενο αίτημά της. Στη συνέχεια επιλέγετε νέο κωδικό πρόσβασης.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ναι, αποσύνδεση των άλλων συσκευών</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ήσασταν εσείς;</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ναι, ήμουν εγώ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Όχι, ασφάλιση του λογαριασμού μου</translation>
     </message>
 </context>
 <context>
@@ -78732,6 +78836,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Χειριστής περιόδων λειτουργίας: %handler. Οι περίοδοι λειτουργίας διαβάζονται από τον πίνακα expuser_session, οπότε η αναφορά λειτουργεί με κάθε χειριστή.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Ύποπτη δραστηριότητα τις τελευταίες %hours ώρες</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Ένα δίκτυο απέτυχε να συνδεθεί σε %accounts λογαριασμούς (%count προσπάθειες)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Ο λογαριασμός κλειδώθηκε μετά από αποτυχημένες συνδέσεις</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count αποτυχημένες συνδέσεις σε έναν λογαριασμό</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Σύνδεση από %count χώρες ταυτόχρονα</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Δραστηριότητα ασφαλείας</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Περίοδοι λειτουργίας</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Οι αποτυχημένες συνδέσεις διαβάζονται από το αρχείο ελέγχου χρηστών, το οποίο δεν είναι διαθέσιμο εδώ.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Τίποτα ύποπτο: κανένας λογαριασμός με επανειλημμένες αποτυχημένες συνδέσεις, κανένα δίκτυο που δοκιμάζει πολλούς λογαριασμούς, κανένας λογαριασμός συνδεδεμένος από πολλές χώρες.</translation>
     </message>
 </context>
 <context>

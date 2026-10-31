@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>သင့်ဆက်ရှင်များနှင့် လုံခြုံရေးဖြစ်ရပ်များကို JSON ဖိုင်အဖြစ်။</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ဤဆိုက်တွင် ဆက်ရှင်များကို မှတ်တမ်းမတင်သဖြင့် အခြားစက်ပစ္စည်းကို ထွက်ခိုင်း၍ မရနိုင်ခဲ့ပါ။ သင့်စကားဝှက်ကို ယခုပင် ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>အခြားဆက်ရှင် %count ခုကို ထွက်ခိုင်းပြီးပါပြီ။ ယခု သင့်စကားဝှက်ကို ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>အခြားစက်ပစ္စည်း တစ်ခုမျှ ဝင်ထားခြင်း မရှိခဲ့ပါ။ ယခု သင့်စကားဝှက်ကို ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ကျေးဇူးတင်ပါသည်။ ဤဖြစ်ရပ်ကို သင်၏ဖြစ်ရပ်အဖြစ် မှတ်သားပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ထိုဖြစ်ရပ်အတွက် အဖြေ မလိုအပ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>စာမျက်နှာ သက်တမ်းကုန်သွားပြီ။ ဘာမျှ မပြောင်းလဲပါ၊ ကျေးဇူးပြု၍ ထပ်စမ်းပါ။</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>သင့်အကောင့်ကို လုံခြုံအောင်ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ဤနေရာရှိ တစ်စုံတစ်ရာသည် သင်မဟုတ်ပါက အခြားစက်ပစ္စည်းအားလုံးကို ထွက်ခိုင်းပြီး စကားဝှက်အသစ်တစ်ခု ရွေးပါ။ “ကျွန်ုပ်ကို မှတ်ထားပါ” ဖြင့် ဝင်ထားဆဲ စက်ပစ္စည်းများလည်း ထွက်သွားပါမည်။</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ဤစက်မှလွဲ၍ စက်ပစ္စည်းတိုင်းသည် ၎င်း၏နောက်တောင်းဆိုမှုတွင် ထွက်သွားပါမည်။ ထို့နောက် သင်သည် စကားဝှက်အသစ် ရွေးပါမည်။</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ဟုတ်ကဲ့၊ အခြားစက်ပစ္စည်းများကို ထွက်ခိုင်းပါ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ဤသည်မှာ သင်လား။</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ဟုတ်ကဲ့၊ ကျွန်ုပ်ပါ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>မဟုတ်ပါ၊ ကျွန်ုပ်၏အကောင့်ကို လုံခြုံအောင်ပြုလုပ်ပါ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>သင့်ဆက်ရှင်များနှင့် လုံခြုံရေးဖြစ်ရပ်များကို JSON ဖိုင်အဖြစ်။</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ဤဆိုက်တွင် ဆက်ရှင်များကို မှတ်တမ်းမတင်သဖြင့် အခြားစက်ပစ္စည်းကို ထွက်ခိုင်း၍ မရနိုင်ခဲ့ပါ။ သင့်စကားဝှက်ကို ယခုပင် ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>အခြားဆက်ရှင် %count ခုကို ထွက်ခိုင်းပြီးပါပြီ။ ယခု သင့်စကားဝှက်ကို ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>အခြားစက်ပစ္စည်း တစ်ခုမျှ ဝင်ထားခြင်း မရှိခဲ့ပါ။ ယခု သင့်စကားဝှက်ကို ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ကျေးဇူးတင်ပါသည်။ ဤဖြစ်ရပ်ကို သင်၏ဖြစ်ရပ်အဖြစ် မှတ်သားပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ထိုဖြစ်ရပ်အတွက် အဖြေ မလိုအပ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>စာမျက်နှာ သက်တမ်းကုန်သွားပြီ။ ဘာမျှ မပြောင်းလဲပါ၊ ကျေးဇူးပြု၍ ထပ်စမ်းပါ။</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>သင့်အကောင့်ကို လုံခြုံအောင်ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ဤနေရာရှိ တစ်စုံတစ်ရာသည် သင်မဟုတ်ပါက အခြားစက်ပစ္စည်းအားလုံးကို ထွက်ခိုင်းပြီး စကားဝှက်အသစ်တစ်ခု ရွေးပါ။ “ကျွန်ုပ်ကို မှတ်ထားပါ” ဖြင့် ဝင်ထားဆဲ စက်ပစ္စည်းများလည်း ထွက်သွားပါမည်။</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ဤစက်မှလွဲ၍ စက်ပစ္စည်းတိုင်းသည် ၎င်း၏နောက်တောင်းဆိုမှုတွင် ထွက်သွားပါမည်။ ထို့နောက် သင်သည် စကားဝှက်အသစ် ရွေးပါမည်။</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ဟုတ်ကဲ့၊ အခြားစက်ပစ္စည်းများကို ထွက်ခိုင်းပါ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ဤသည်မှာ သင်လား။</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ဟုတ်ကဲ့၊ ကျွန်ုပ်ပါ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>မဟုတ်ပါ၊ ကျွန်ုပ်၏အကောင့်ကို လုံခြုံအောင်ပြုလုပ်ပါ</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ဆက်ရှင် handler: %handler ။ ဆက်ရှင်များကို ဇယား expuser_session မှ ဖတ်သဖြင့် အစီရင်ခံစာသည် handler တိုင်းနှင့် အလုပ်လုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>နောက်ဆုံး %hours နာရီအတွင်း သံသယဖြစ်ဖွယ် လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ကွန်ရက်တစ်ခုသည် အကောင့် %accounts ခုသို့ ဝင်ရောက်ရန် မအောင်မြင်ခဲ့ပါ (ကြိုးပမ်းမှု %count ကြိမ်)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ဝင်ရောက်မှု မအောင်မြင်ပြီးနောက် အကောင့်ကို ပိတ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>အကောင့်တစ်ခုတွင် မအောင်မြင်သော ဝင်ရောက်မှု %count ကြိမ်</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>နိုင်ငံ %count နိုင်ငံမှ တစ်ပြိုင်နက် ဝင်ရောက်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>လုံခြုံရေး လှုပ်ရှားမှု</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ဆက်ရှင်များ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>မအောင်မြင်သော ဝင်ရောက်မှုများကို အသုံးပြုသူ စစ်ဆေးမှတ်တမ်းမှ ဖတ်ယူပြီး ၎င်းကို ဤနေရာတွင် မရရှိနိုင်ပါ။</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>သံသယဖြစ်ဖွယ် မရှိပါ- ထပ်ခါထပ်ခါ ဝင်ရောက်မှု မအောင်မြင်သော အကောင့် မရှိ၊ အကောင့်အများအပြားကို ကြိုးစားသော ကွန်ရက် မရှိ၊ နိုင်ငံအများအပြားမှ ဝင်ရောက်ထားသော အကောင့် မရှိပါ။</translation>
     </message>
 </context>
 <context>

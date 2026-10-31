@@ -79541,6 +79541,58 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sesje i zdarzenia bezpieczeństwa jako plik JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesje nie są rejestrowane w tej witrynie, więc nie można było wylogować żadnego innego urządzenia. Zmień teraz swoje hasło.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Wylogowano inne sesje: %count. Teraz zmień swoje hasło.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Żadne inne urządzenie nie było zalogowane. Teraz zmień swoje hasło.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Dziękujemy. Zdarzenie zostało oznaczone jako Twoje.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>To zdarzenie nie wymaga odpowiedzi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Strona wygasła. Niczego nie zmieniono; proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zabezpieczyć konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jeśli coś tutaj nie było Twoim działaniem, wyloguj wszystkie inne urządzenia, a następnie wybierz nowe hasło. Urządzenia pozostające zalogowane dzięki opcji „Zapamiętać mnie” również zostaną wylogowane.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Każde urządzenie oprócz tego zostanie wylogowane przy swoim następnym żądaniu. Następnie wybierzesz nowe hasło.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Tak, wyloguj pozostałe urządzenia</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Czy to Ty?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Tak, to ja</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nie, zabezpiecz moje konto</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -79723,6 +79775,58 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sesje i zdarzenia bezpieczeństwa jako plik JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesje nie są rejestrowane w tej witrynie, więc nie można było wylogować żadnego innego urządzenia. Zmień teraz swoje hasło.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Wylogowano inne sesje: %count. Teraz zmień swoje hasło.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Żadne inne urządzenie nie było zalogowane. Teraz zmień swoje hasło.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Dziękujemy. Zdarzenie zostało oznaczone jako Twoje.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>To zdarzenie nie wymaga odpowiedzi.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Strona wygasła. Niczego nie zmieniono; proszę spróbować ponownie.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zabezpieczyć konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Jeśli coś tutaj nie było Twoim działaniem, wyloguj wszystkie inne urządzenia, a następnie wybierz nowe hasło. Urządzenia pozostające zalogowane dzięki opcji „Zapamiętać mnie” również zostaną wylogowane.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Każde urządzenie oprócz tego zostanie wylogowane przy swoim następnym żądaniu. Następnie wybierzesz nowe hasło.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Tak, wyloguj pozostałe urządzenia</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Czy to Ty?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Tak, to ja</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nie, zabezpiecz moje konto</translation>
     </message>
 </context>
 <context>
@@ -79914,6 +80018,42 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Procedura obsługi sesji: %handler. Sesje są odczytywane z tabeli expuser_session, dlatego raport działa z każdą procedurą obsługi.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Podejrzana aktywność w ciągu ostatnich %hours godz.</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Jedna sieć nie zdołała zalogować się na konta (%accounts) – prób: %count</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto zablokowane po nieudanych logowaniach</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Nieudane logowania na jednym koncie: %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Zalogowano jednocześnie z krajów: %count</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktywność związana z bezpieczeństwem</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesje</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Nieudane logowania są odczytywane z dziennika audytu użytkowników, który nie jest tutaj dostępny.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nic podejrzanego: brak konta z powtarzającymi się nieudanymi logowaniami, brak sieci próbującej wielu kont, brak konta zalogowanego z wielu krajów.</translation>
     </message>
 </context>
 <context>

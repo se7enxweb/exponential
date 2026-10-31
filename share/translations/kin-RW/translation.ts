@@ -78329,6 +78329,58 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Amasesiyo yanyu n&apos;ibikorwa by&apos;umutekano nk&apos;ifayili ya JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Amasesiyo ntabikwa kuri uru rubuga, bityo nta kindi gikoresho cyashoboye gusohorwa. Muhindure ijambobanga ryanyu nonaha.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Andi masesiyo %count yasohowe. Ubu muhindure ijambobanga ryanyu.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nta kindi gikoresho cyari cyinjiye. Ubu muhindure ijambobanga ryanyu.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Murakoze. Iki gikorwa cyashyizweho ikimenyetso nk'icyanyu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Icyo gikorwa ntigikeneye igisubizo.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Igihe cy'urupapuro cyari cyarangiye. Nta cyahindutse; nyamuneka mwongere mugerageze.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Murinde konti yanyu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Niba hari ikintu hano kitari mwebwe, musohore ibindi bikoresho byose, hanyuma muhitemo ijambobanga rishya. Ibikoresho byagumye byinjiye bikoresheje Nyibuka na byo birasohorwa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Buri gikoresho uretse iki gisohorwa ku busabe bwacyo bukurikiyeho. Hanyuma muhitamo ijambobanga rishya.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yego, sohora ibindi bikoresho</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ni mwebwe?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yego, ni jye</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Oya, rinda konti yanjye</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Amasesiyo yanyu n&apos;ibikorwa by&apos;umutekano nk&apos;ifayili ya JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Amasesiyo ntabikwa kuri uru rubuga, bityo nta kindi gikoresho cyashoboye gusohorwa. Muhindure ijambobanga ryanyu nonaha.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Andi masesiyo %count yasohowe. Ubu muhindure ijambobanga ryanyu.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nta kindi gikoresho cyari cyinjiye. Ubu muhindure ijambobanga ryanyu.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Murakoze. Iki gikorwa cyashyizweho ikimenyetso nk'icyanyu.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Icyo gikorwa ntigikeneye igisubizo.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Igihe cy'urupapuro cyari cyarangiye. Nta cyahindutse; nyamuneka mwongere mugerageze.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Murinde konti yanyu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Niba hari ikintu hano kitari mwebwe, musohore ibindi bikoresho byose, hanyuma muhitemo ijambobanga rishya. Ibikoresho byagumye byinjiye bikoresheje Nyibuka na byo birasohorwa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Buri gikoresho uretse iki gisohorwa ku busabe bwacyo bukurikiyeho. Hanyuma muhitamo ijambobanga rishya.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yego, sohora ibindi bikoresho</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ni mwebwe?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yego, ni jye</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Oya, rinda konti yanjye</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Porogaramu ikora y&apos;amasesiyo: %handler. Amasesiyo asomwa mu mbonerahamwe expuser_session, bityo raporo ikora na porogaramu ikora iyo ari yo yose.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Ibikorwa biteye amakenga mu masaha %hours ashize</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Umuyoboro umwe wananiwe kwinjira muri konti %accounts (ubugerageza %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konti yafunzwe nyuma yo kwinjira byananiranye</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Kwinjira %count byananiranye kuri konti imwe</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Yinjiye iturutse mu bihugu %count icyarimwe</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ibikorwa by'umutekano</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Amasesiyo</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Kwinjira byananiranye bisomwa mu gitabo cy'igenzura cy'abakoresha, kitaboneka hano.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nta kiteye amakenga: nta konti ifite kwinjira byananiranye bisubiramo, nta muyoboro ugerageza konti nyinshi, nta konti yinjiye iturutse mu bihugu byinshi.</translation>
     </message>
 </context>
 <context>

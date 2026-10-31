@@ -78329,6 +78329,58 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sessions maa e huuɗe waɗnde kisal maa wano fichier JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesiyonji e ndee nokkuure binndaaka, ndun noo jaaɓirde goɗɗe yaltinaaki. Waylu finnde maa jooni.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sesiyonji goɗɗe yaltinaama. Jooni waylu finnde maa.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Alaa jaaɓirde goɗɗe naatnoo. Jooni waylu finnde maa.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>A jaaraama. Ko ɗum waɗi maandinaama no maa.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ko ɗum waɗi soklaaki jaabawol.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Hello ndee yottii. Alaa huunde waylaama; useni, foti kadi.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Reen konte maa</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>So huunde ɗoo wonaa an, yaltin jaaɓirde goɗɗe fof, refti suɓo finnde hesere. Jaaɓirde ɗe ngoni e nder e Siftor kam yaltinte kadi.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Jaaɓirde fof si wonaa ndee yaltinte e ɗaɓɓaande mum garoowo. Refti a suɓat finnde hesere.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Eey, yaltin jaaɓirde goɗɗe</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ko an waɗi ɗum?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Eey, ko min</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Alaa, reen konte am</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sessions maa e huuɗe waɗnde kisal maa wano fichier JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesiyonji e ndee nokkuure binndaaka, ndun noo jaaɓirde goɗɗe yaltinaaki. Waylu finnde maa jooni.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sesiyonji goɗɗe yaltinaama. Jooni waylu finnde maa.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Alaa jaaɓirde goɗɗe naatnoo. Jooni waylu finnde maa.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>A jaaraama. Ko ɗum waɗi maandinaama no maa.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ko ɗum waɗi soklaaki jaabawol.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Hello ndee yottii. Alaa huunde waylaama; useni, foti kadi.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Reen konte maa</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>So huunde ɗoo wonaa an, yaltin jaaɓirde goɗɗe fof, refti suɓo finnde hesere. Jaaɓirde ɗe ngoni e nder e Siftor kam yaltinte kadi.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Jaaɓirde fof si wonaa ndee yaltinte e ɗaɓɓaande mum garoowo. Refti a suɓat finnde hesere.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Eey, yaltin jaaɓirde goɗɗe</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ko an waɗi ɗum?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Eey, ko min</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Alaa, reen konte am</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Handler session: %handler. Sessions ina janngee diga taabal expuser_session, ɗuum waɗi jaŋtol ngol ina golla e handler kala.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Golle sikkitorɗe e %hours waktuuji ɓennuɗi</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Laylaywol gootol roŋki naatde e %accounts konte (%count eeɗannde)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konte uddaama caggal naatgol waɗaaki</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count naatgol waɗaaki e konte wootere</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Naatii e %count leyɗe e oon sahaa gootum</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Golle kisal</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesiyonji</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Naatgol waɗaaki janngetee e deftere ƴeewndo huutortooɓe, nde woodaani ɗoo.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Alaa ko sikkitinii: alaa konte naatgol waɗaaki ruttaama, alaa laylaywol eeɗoowol konte keewɗe, alaa konte naatnde e leyɗe keewɗe.</translation>
     </message>
 </context>
 <context>

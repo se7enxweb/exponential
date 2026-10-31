@@ -78329,6 +78329,58 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ur seiseanan is ur tachartasan tèarainteachd mar fhaidhle JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Chan eilear a’ clàradh sheiseanan air an làrach seo, mar sin cha b’ urrainnear inneal eile a chlàradh a-mach. Atharraichibh ur facal-faire an-dràsta.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Chaidh %count seiseanan eile a chlàradh a-mach. A-nis atharraichibh ur facal-faire.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Cha robh inneal eile air a chlàradh a-steach. A-nis atharraichibh ur facal-faire.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tapadh leibh. Tha an tachartas air a chomharrachadh mar ur fear fhèin.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Chan fheum an tachartas sin freagairt.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bha an duilleag air a dhol à ùine. Cha deach dad atharrachadh; feuchaibh a-rithist.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Dìon ur cunntas</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Mur e sibhse a bh’ ann an rud sam bith an-seo, clàraichibh a-mach gach inneal eile agus an uairsin taghaibh facal-faire ùr. Thèid innealan a dh’fhan clàraichte a-steach le Cuimhnich orm a chlàradh a-mach cuideachd.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Thèid gach inneal ach am fear seo a chlàradh a-mach leis an ath iarrtas aige. An uairsin taghaidh sibh facal-faire ùr.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Tha, clàraich a-mach na h-innealan eile</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>An e sibhse a bh’ ann?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Is e, b’ e mise a bh’ ann</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Chan e, dìon mo chunntas</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ur seiseanan is ur tachartasan tèarainteachd mar fhaidhle JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Chan eilear a’ clàradh sheiseanan air an làrach seo, mar sin cha b’ urrainnear inneal eile a chlàradh a-mach. Atharraichibh ur facal-faire an-dràsta.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Chaidh %count seiseanan eile a chlàradh a-mach. A-nis atharraichibh ur facal-faire.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Cha robh inneal eile air a chlàradh a-steach. A-nis atharraichibh ur facal-faire.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tapadh leibh. Tha an tachartas air a chomharrachadh mar ur fear fhèin.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Chan fheum an tachartas sin freagairt.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bha an duilleag air a dhol à ùine. Cha deach dad atharrachadh; feuchaibh a-rithist.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Dìon ur cunntas</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Mur e sibhse a bh’ ann an rud sam bith an-seo, clàraichibh a-mach gach inneal eile agus an uairsin taghaibh facal-faire ùr. Thèid innealan a dh’fhan clàraichte a-steach le Cuimhnich orm a chlàradh a-mach cuideachd.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Thèid gach inneal ach am fear seo a chlàradh a-mach leis an ath iarrtas aige. An uairsin taghaidh sibh facal-faire ùr.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Tha, clàraich a-mach na h-innealan eile</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>An e sibhse a bh’ ann?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Is e, b’ e mise a bh’ ann</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Chan e, dìon mo chunntas</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Làimhsichear sheiseanan: %handler. Thèid na seiseanan a leughadh on chlàr expuser_session, mar sin obraichidh an aithisg le gach làimhsichear.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Gnìomhachd amharasach anns na %hours uairean a thìde mu dheireadh</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Dh’fhàillig air aon lìonra clàradh a-steach gu %accounts cunntasan (%count oidhirpean)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cunntas glaiste às dèidh clàraidhean a-steach a dh’fhàillig</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count clàraidhean a-steach a dh’fhàillig air aon chunntas</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Clàraichte a-steach à %count dùthchannan aig an aon àm</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gnìomhachd tèarainteachd</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seiseanan</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Thèid clàraidhean a-steach a dh’fhàillig a leughadh à loga sgrùdaidh nan cleachdaichean, nach eil ri fhaighinn an-seo.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Chan eil dad amharasach: chan eil cunntas le clàraidhean a-steach a dh’fhàillig a-rithist is a-rithist, lìonra a’ feuchainn grunn chunntasan no cunntas clàraichte a-steach à grunn dhùthchannan.</translation>
     </message>
 </context>
 <context>

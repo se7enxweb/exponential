@@ -78359,6 +78359,58 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Jūsu sesijas un drošības notikumi kā JSON fails.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Šajā vietnē sesijas netiek reģistrētas, tāpēc nevienu citu ierīci nevarēja izrakstīt. Nomainiet paroli tūlīt.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Izrakstītas %count citas sesijas. Tagad nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Neviena cita ierīce nebija pierakstījusies. Tagad nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Paldies. Notikums ir atzīmēts kā jūsējais.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Šim notikumam atbilde nav vajadzīga.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lapas derīgums bija beidzies. Nekas netika mainīts; lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Aizsargāt kontu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ja kaut ko šeit neesat veicis jūs, izrakstiet visas pārējās ierīces un pēc tam izvēlieties jaunu paroli. Tiek izrakstītas arī ierīces, kas palikušas pierakstītas ar “Atcerēties mani”.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Visas ierīces, izņemot šo, tiek izrakstītas pie nākamā pieprasījuma. Pēc tam jūs izvēlaties jaunu paroli.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Jā, izrakstīt pārējās ierīces</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Vai tas bijāt jūs?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Jā, tas biju es</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nē, aizsargāt manu kontu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78541,6 +78593,58 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Jūsu sesijas un drošības notikumi kā JSON fails.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Šajā vietnē sesijas netiek reģistrētas, tāpēc nevienu citu ierīci nevarēja izrakstīt. Nomainiet paroli tūlīt.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Izrakstītas %count citas sesijas. Tagad nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Neviena cita ierīce nebija pierakstījusies. Tagad nomainiet paroli.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Paldies. Notikums ir atzīmēts kā jūsējais.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Šim notikumam atbilde nav vajadzīga.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Lapas derīgums bija beidzies. Nekas netika mainīts; lūdzu, mēģiniet vēlreiz.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Aizsargāt kontu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ja kaut ko šeit neesat veicis jūs, izrakstiet visas pārējās ierīces un pēc tam izvēlieties jaunu paroli. Tiek izrakstītas arī ierīces, kas palikušas pierakstītas ar “Atcerēties mani”.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Visas ierīces, izņemot šo, tiek izrakstītas pie nākamā pieprasījuma. Pēc tam jūs izvēlaties jaunu paroli.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Jā, izrakstīt pārējās ierīces</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Vai tas bijāt jūs?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Jā, tas biju es</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nē, aizsargāt manu kontu</translation>
     </message>
 </context>
 <context>
@@ -78732,6 +78836,42 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sesiju apdarinātājs: %handler. Sesijas tiek nolasītas no tabulas expuser_session, tāpēc atskaite darbojas ar jebkuru apdarinātāju.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Aizdomīgas darbības pēdējo %hours stundu laikā</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Vienam tīklam neizdevās pierakstīties %accounts kontos (%count mēģinājumi)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konts bloķēts pēc neveiksmīgām pierakstīšanās reizēm</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count neveiksmīgas pierakstīšanās vienā kontā</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Pierakstījies no %count valstīm vienlaikus</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Drošības darbības</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesijas</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Neveiksmīgās pierakstīšanās tiek nolasītas no lietotāju audita žurnāla, kas šeit nav pieejams.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nekā aizdomīga: nav konta ar atkārtotām neveiksmīgām pierakstīšanās reizēm, nav tīkla, kas mēģina vairākus kontus, nav konta, kas pierakstījies no vairākām valstīm.</translation>
     </message>
 </context>
 <context>

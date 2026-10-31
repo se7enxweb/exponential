@@ -78329,6 +78329,58 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Entuula zo n&apos;ebibaddewo eby&apos;obukuumi nga fayiro ya JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Enkuŋŋaana tezikuumibwa ku mukutu guno, n'olwekyo tewali kyuma kirala kyasobodde kufulumizibwa. Kyusa ekigambo kyo eky'ekyama kati.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Enkuŋŋaana endala %count zifulumiziddwa. Kati kyusa ekigambo kyo eky'ekyama.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Tewaali kyuma kirala kyali kiyingidde. Kati kyusa ekigambo kyo eky'ekyama.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Webale. Ekibaddewo kiteekeddwako akabonero nti kyali ggwe.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ekibaddewo ekyo tekyetaaga kuddibwamu.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Olupapula lwali lukomye. Tewali kyakyusibwa; bambi gezaako nate.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kuuma akawunti yo</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Bwe wabaawo ekintu wano ekitaali ggwe, fulumya ebyuma ebirala byonna, oluvannyuma olonde ekigambo ky'ekyama ekipya. Ebyuma ebyasigala nga biyingidde nga bakozesa “Nzijukire” nabyo bifulumizibwa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Buli kyuma okuggyako kino kifulumizibwa ku kusaba kwakyo okuddako. Oluvannyuma olonda ekigambo ky'ekyama ekipya.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yee, fulumya ebyuma ebirala</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ggwe wakikoze?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yee, yali nze</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nedda, kuuma akawunti yange</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Entuula zo n&apos;ebibaddewo eby&apos;obukuumi nga fayiro ya JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Enkuŋŋaana tezikuumibwa ku mukutu guno, n'olwekyo tewali kyuma kirala kyasobodde kufulumizibwa. Kyusa ekigambo kyo eky'ekyama kati.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Enkuŋŋaana endala %count zifulumiziddwa. Kati kyusa ekigambo kyo eky'ekyama.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Tewaali kyuma kirala kyali kiyingidde. Kati kyusa ekigambo kyo eky'ekyama.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Webale. Ekibaddewo kiteekeddwako akabonero nti kyali ggwe.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ekibaddewo ekyo tekyetaaga kuddibwamu.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Olupapula lwali lukomye. Tewali kyakyusibwa; bambi gezaako nate.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Kuuma akawunti yo</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Bwe wabaawo ekintu wano ekitaali ggwe, fulumya ebyuma ebirala byonna, oluvannyuma olonde ekigambo ky'ekyama ekipya. Ebyuma ebyasigala nga biyingidde nga bakozesa “Nzijukire” nabyo bifulumizibwa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Buli kyuma okuggyako kino kifulumizibwa ku kusaba kwakyo okuddako. Oluvannyuma olonda ekigambo ky'ekyama ekipya.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yee, fulumya ebyuma ebirala</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ggwe wakikoze?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yee, yali nze</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nedda, kuuma akawunti yange</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Ekikwata entuula: %handler. Entuula zisomebwa okuva mu taabulo expuser_session, n&apos;olwekyo lipoota ekola n&apos;ekikwata kyonna.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Ebikolebwa ebiteeberezebwa mu ssaawa %hours eziyise</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Omukutu gumu gwalemereddwa okuyingira mu akawunti %accounts (okugezaako %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akawunti esibiddwa oluvannyuma lw'okulemererwa okuyingira</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Okulemererwa okuyingira %count ku akawunti emu</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Yayingira okuva mu nsi %count omulundi gumu</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ebikolebwa eby'obukuumi</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Enkuŋŋaana</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Okulemererwa okuyingira kusomebwa okuva mu kitabo ky'okwekebejja abakozesa, ekitali wano.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Tewali kiteeberezebwa: tewali akawunti erimu okulemererwa okuyingira okuddiŋŋana, tewali mukutu ogugezaako akawunti eziwera, tewali akawunti eyayingira okuva mu nsi eziwera.</translation>
     </message>
 </context>
 <context>

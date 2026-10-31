@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ߌ ߞߊ ߛߍߛߌߦߐ߲ߟߎ ߊߣߌ ߌ ߞߊ ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ ߌ ߣ&apos;ߊ ߝߐ JSON ߝߌߛߌߦߋ.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ߛߍߛߌߦߐ߲ߟߎ ߕߍ ߛߓߍߘߐ ߞߍߦߙߐ ߣߌ߲ ߞߊ߲, ߏ ߘߐ ߡߌߣߍ߲ ߜ߳ߊ߲ߞߊ߲ ߕߍ ߛߋ ߓߐ ߟߊ. ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߟߍߡߊ ߛߌߛߍ߲.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߜ߳ߊ߲ߞߊ߲ %count ߓߐߣߍ߲ ߘߌ. ߛߌߛߍ߲ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߟߍߡߊ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ߡߌߣߍ߲ ߜ߳ߊ߲ߞߊ߲ ߕߍ ߘߏ߲ߣߍ߲ ߕߎߣߎ߲. ߛߌߛߍ߲ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߟߍߡߊ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ߌ ߣߌ ߗߍ. ߞߍߣߍ߲ ߣߌ߲ ߛߓߍߣߍ߲ ߌ ߕߐߘߐ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ߞߍߣߍ߲ ߏ ߡߊ ߖߋߓߌ ߝߍ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ߢߍ ߕߍߡߍߣߊ. ߝߏߦߌ ߡߊ ߦߍߟߍߡߊ; ߤߊߞߍߕߏ߸ ߊ ߟߊߖߍ ߕߎߡߊ ߥߍߙߍ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ߌ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ߣߌ ߝߋߎ ߦߋ߲ ߣߌ߲ ߡߊ ߞߍ ߌ ߓߟߏ ߡߊ, ߡߌߣߍ߲ ߜ߳ߊ߲ߞߊ߲ ߓߍߍ ߓߐ, ߏ ߞߐ ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߘߊ ߕߊ. ߡߌߣߍ߲ ߡߍ߲ ߘߏ߲ߣߍ߲ ߕߎ «ߒ ߤߊߞߌߟߌ ߕߏ» ߟߊ, ߏߟߎ ߝߣߊ ߓߐߟߊ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ߡߌߣߍ߲ ߓߍߍ ߓߐߟߊ ߞߏ ߣߌ߲ ߘߐߙߐ߲ ߕߍ, ߊ ߞߊ ߡߊߢߌߣߌ ߣߊߓߊߟߌ ߟߊ. ߏ ߞߐ ߌ ߘߌ ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߘߊ ߕߊ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ߐߥߐ, ߡߌߣߍ߲ ߜ߳ߊ߲ߞߊ߲ߟߎ ߓߐ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ߌ ߟߋ ߞߍ ߘߌ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ߐߥߐ, ߒ ߠߋ ߕߘߍ ߞߍ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ߊߦߌ, ߒ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ߌ ߞߊ ߛߍߛߌߦߐ߲ߟߎ ߊߣߌ ߌ ߞߊ ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ ߌ ߣ&apos;ߊ ߝߐ JSON ߝߌߛߌߦߋ.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ߛߍߛߌߦߐ߲ߟߎ ߕߍ ߛߓߍߘߐ ߞߍߦߙߐ ߣߌ߲ ߞߊ߲, ߏ ߘߐ ߡߌߣߍ߲ ߜ߳ߊ߲ߞߊ߲ ߕߍ ߛߋ ߓߐ ߟߊ. ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߟߍߡߊ ߛߌߛߍ߲.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ߛߍߛߌߦߐ߲ ߜ߳ߊ߲ߞߊ߲ %count ߓߐߣߍ߲ ߘߌ. ߛߌߛߍ߲ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߟߍߡߊ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ߡߌߣߍ߲ ߜ߳ߊ߲ߞߊ߲ ߕߍ ߘߏ߲ߣߍ߲ ߕߎߣߎ߲. ߛߌߛߍ߲ ߌ ߞߊ ߜ߳ߎ߲ߘߏߘߊߢߍ ߦߟߍߡߊ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ߌ ߣߌ ߗߍ. ߞߍߣߍ߲ ߣߌ߲ ߛߓߍߣߍ߲ ߌ ߕߐߘߐ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ߞߍߣߍ߲ ߏ ߡߊ ߖߋߓߌ ߝߍ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ߢߍ ߕߍߡߍߣߊ. ߝߏߦߌ ߡߊ ߦߍߟߍߡߊ; ߤߊߞߍߕߏ߸ ߊ ߟߊߖߍ ߕߎߡߊ ߥߍߙߍ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ߌ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ߣߌ ߝߋߎ ߦߋ߲ ߣߌ߲ ߡߊ ߞߍ ߌ ߓߟߏ ߡߊ, ߡߌߣߍ߲ ߜ߳ߊ߲ߞߊ߲ ߓߍߍ ߓߐ, ߏ ߞߐ ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߘߊ ߕߊ. ߡߌߣߍ߲ ߡߍ߲ ߘߏ߲ߣߍ߲ ߕߎ «ߒ ߤߊߞߌߟߌ ߕߏ» ߟߊ, ߏߟߎ ߝߣߊ ߓߐߟߊ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ߡߌߣߍ߲ ߓߍߍ ߓߐߟߊ ߞߏ ߣߌ߲ ߘߐߙߐ߲ ߕߍ, ߊ ߞߊ ߡߊߢߌߣߌ ߣߊߓߊߟߌ ߟߊ. ߏ ߞߐ ߌ ߘߌ ߜ߳ߎ߲ߘߏߘߊߢߍ ߞߎߘߊ ߕߊ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ߐߥߐ, ߡߌߣߍ߲ ߜ߳ߊ߲ߞߊ߲ߟߎ ߓߐ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ߌ ߟߋ ߞߍ ߘߌ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ߐߥߐ, ߒ ߠߋ ߕߘߍ ߞߍ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ߊߦߌ, ߒ ߞߊ ߞߐ߲ߕߌ ߟߊߞߊߣߊ</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ߛߍߛߌߦߐ߲ ߢߍߣߊߓߐߓߊߜ߳ߊ: %handler. ߛߍߛߌߦߐ߲ߟߎ ߓߋ ߞߊߙߊ߲ ߞߊ ߓߐ ߕߊߓߊߟߌ expuser_session ߣߊ߸ ߏ ߘߐߙߐ߲ ߞߏߛߐ߲ ߖߊߕߋߓߐߛߍߓߍ߲ ߓߋ ߓߊߙߊ ߞߍ ߣߌ ߢߍߣߊߓߐߓߊߜ߳ߊ ߓߍߍ ߦߋ.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ߛߌߜߌ ߞߍߥߊߟߍߟߎ ߕߎߡߊߙߋ߲ ߟߊߓߊ߲ %hours ߞߣߐ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ߙߋߛߏ ߞߋߟߋ߲ ߡߊ ߛߐ߲ ߞߊ ߘߏ߲ ߞߐ߲ߕߌ %accounts ߞߣߐ (ߞߍߟߌ %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ߞߐ߲ߕߌ ߛߐߘߐ߲ߣߍ߲ ߘߏ߲ ߓߍ߲ߓߊߟߌߟߎ ߞߐ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ߘߏ߲ ߓߍ߲ߓߊߟߌ %count ߞߐ߲ߕߌ ߞߋߟߋ߲ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ߘߏ߲ߣߍ߲ ߖߊߡߊߣߊ %count ߟߊ ߕߎߡߊ ߞߋߟߋ߲ ߘߐ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ߟߊߞߊߣߊ ߞߍߥߊߟߍߟߎ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ߛߍߛߌߦߐ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ߘߏ߲ ߓߍ߲ߓߊߟߌߟߎ ߞߊߙߊ߲ߣߍ߲ ߓߊߙߊߓߊߟߊ ߟߊߝߊߛߍߦߊ ߛߓߍߘߊ ߟߋ ߘߐ, ߏ ߕߍ ߦߊ߲ ߘߐ.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ߛߌߜߌ ߝߏߦߌ ߕߍ: ߞߐ߲ߕߌ ߕߍ ߘߏ߲ ߓߍ߲ߓߊߟߌ ߛߊߦߌߣߍ߲ ߦߋ, ߙߋߛߏ ߕߍ ߞߐ߲ߕߌ ߛߌߦߊߡߊ ߞߍߟߌߟߊ, ߞߐ߲ߕߌ ߕߍ ߘߏ߲ߣߍ߲ ߖߊߡߊߣߊ ߛߌߦߊߡߊ ߟߊ.</translation>
     </message>
 </context>
 <context>

@@ -128,6 +128,34 @@ nennt (Methode, Browser, System, Ort, Zahl der Sitzungen, verbleibende Codes); n
 Die Zwei-Schritt-Ereignisse `access.user.two_factor.*` zeichnet die Zwei-Schritt-Erweiterung über
 `expSignInSecondFactor::audit()` auf.
 
+### Waren Sie das?
+
+Auf dem eigenen Konto fragt die Seite **Waren Sie das?** zu jedem Ereignis der letzten 30 Tage, das Aufmerksamkeit
+braucht (die Stufen warn und bad: fehlgeschlagene Versuche, Ablehnungen, neue Geräte und Orte, eine Sperre, Änderungen
+an Passwort, E-Mail-Adresse, Zwei-Schritt-Anmeldung und Passkeys), außer ein Administrator hat es ausgelöst (die Zeile
+nennt, wer):
+
+- **Ja, das war ich** (`ConfirmEventButton`) merkt sich die Antwort in der Benutzereinstellung `expsecurity_confirmed`
+  (die IDs der beantworteten Zeilen, die neuesten 200) und zeichnet `access.user.activity.confirm` mit der Zeilen-ID
+  auf. Die Frage kommt nicht wieder; das Ereignis bleibt in der Zeitleiste.
+- **Nein, mein Konto absichern** öffnet **Konto absichern** (unten).
+
+Die Seite eines anderen Kontos (`user/security/<ID>`) fragt nie: Nur der Inhaber kann antworten.
+
+### Konto absichern
+
+Die Karte **Konto absichern** in der eigenen Sicherheitsaktivität tut, was Googles „Konto schützen“ tut:
+
+1. „Bestätigen Sie, dass Sie es sind“ fragt zuerst (`[ReauthGroup_account]` `Rules[]=user/security self SecureButton`);
+2. jede andere Sitzung des Kontos wird bei ihrer nächsten Anfrage abgemeldet, auch die mit „Angemeldet bleiben“
+   (`revokeOthers()`, aufgezeichnet als `access.session.revoke`, Umfang `others`); dieses Gerät bleibt angemeldet;
+3. die Seite sagt, wie viele Sitzungen endeten, und führt weiter zu **Passwort ändern**.
+
+Der Link **Konto absichern** der Sicherheits-Mails (Neue Anmeldung, Sicherheitswarnung) ist
+`user/security/(secure)/1`: Die Seite öffnet sich mit hervorgehobener Karte und offener Bestätigung. Wer nicht
+angemeldet ist, meldet sich zuerst an und landet dort. Ohne Sitzungsaufzeichnung (`Tracking=disabled` oder keine
+Tabelle) lässt sich nichts abmelden; die Seite sagt das und führt zum Passwort.
+
 ## Sicherheitswarnungen
 
 Neben „Neue Anmeldung“ (oben) und „Ihr Passwort wurde geändert“ (`[PasswordSettings] ChangeNotificationMail`) bekommt
@@ -169,6 +197,12 @@ Sicht des Administrators auf die ganze Website:
 
 - die jetzt laufenden Sitzungen und die Zahl der Benutzer, denen sie gehören, die Anmeldungen und fehlgeschlagenen
   Versuche von heute;
+- **Verdächtige Aktivität der letzten 24 Stunden** (`expUserSessionReport::patterns()`), das Schlimmste zuerst: ein
+  Netz (die gespeicherte Adresse, auf ihr Netz gekürzt), das sich bei drei oder mehr Konten vergeblich anzumelden
+  versucht; ein Konto, das nach fehlgeschlagenen Anmeldungen gesperrt wurde; ein Konto mit mindestens
+  `FailedSignInAlertThreshold` (5) fehlgeschlagenen Anmeldungen; ein Konto, das gerade aus mehr als einem Land
+  angemeldet ist (nur mit GeoIP-Datenbank). Jedes verlinkt auf Sicherheitsaktivität und Sitzungen des Kontos. Die
+  Fehlschläge stammen aus dem Benutzer-Auditprotokoll; ohne es sagt die Karte das;
 - **Einen Benutzer überall abmelden**: eine Benutzer-ID, ein Benutzername oder eine E-Mail-Adresse; jede Sitzung dieses
   Kontos endet bei ihrer nächsten Anfrage, auch die mit „Angemeldet bleiben“ (`revokeAll()`, aufgezeichnet als
   `access.session.revoke`, scope `all`; mit dem Datenbank-Session-Handler werden seine Sitzungen sofort gelöscht);
@@ -226,6 +260,7 @@ ezformtoken; danach leitet die Seite auf sich selbst um und zeigt das Ergebnis e
 | `access.session.revoke` | Eine auf der Seite abgemeldete Sitzung: `after.count`, `after.sessions` (Zeilen-IDs), `after.scope` (one, others, all), `after.by` (user, admin), `after.actor_id`; Grund `user_request` oder `admin` |
 | `access.session.new_device` | Eine Anmeldung von einem neuen Gerät (die E-Mail geht hinaus): Browser, System, Gerät, Methode |
 | `access.session.new_location` | Eine Anmeldung aus einem neuen Land (nur mit GeoIP-Datenbank): Land, Ort, Methode |
+| `access.user.activity.confirm` | Der Inhaber hat in der Sicherheitsaktivität „Ja, das war ich“ geantwortet: ID und Name des Ereignisses |
 
 ## Aufbewahrung: der Cronjob usersessions.php
 
@@ -270,4 +305,4 @@ Sitzungen entfernt.
 - `expUserSessionTracker::revoke( $userID, $sessionID, $actorID )`, `revokeOthers()`, `revokeAll()`,
   `endOtherRows( $userID, $reason, $actorID )`, `listForUser( $userID )`, `cleanup()`.
 - `expUserAgent::parse()`, `label()`, `approximateIP()`: einfache Funktionen ohne Zustand.
-- Tests: `tests/tests/kernel/classes/user/expUserSessionTest.php`, `expUserSessionInfoTest.php`.
+- Tests: `tests/tests/kernel/classes/user/expUserSessionTest.php`, `expUserSessionInfoTest.php`, `expUserSecurityActivityTest.php` („Waren Sie das?“, Konto absichern), `expUserSessionReportTest.php` (die verdächtigen Muster).

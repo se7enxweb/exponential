@@ -79632,6 +79632,58 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Dina sessioner och säkerhetshändelser som en JSON-fil.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessioner registreras inte på den här webbplatsen, så ingen annan enhet kunde loggas ut. Ändra ditt lösenord nu.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count andra sessioner loggades ut. Ändra nu ditt lösenord.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ingen annan enhet var inloggad. Ändra nu ditt lösenord.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tack. Händelsen är markerad som din.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Den händelsen behöver inget svar.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sidan hade gått ut. Ingenting ändrades; försök igen.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Skydda ditt konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Om något här inte var du, logga ut alla andra enheter och välj sedan ett nytt lösenord. Enheter som hålls inloggade med Kom ihåg mig loggas också ut.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Alla enheter utom den här loggas ut vid nästa förfrågan. Sedan väljer du ett nytt lösenord.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, logga ut de andra enheterna</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Var det här du?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, det var jag</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nej, skydda mitt konto</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -79814,6 +79866,58 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Dina sessioner och säkerhetshändelser som en JSON-fil.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sessioner registreras inte på den här webbplatsen, så ingen annan enhet kunde loggas ut. Ändra ditt lösenord nu.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count andra sessioner loggades ut. Ändra nu ditt lösenord.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ingen annan enhet var inloggad. Ändra nu ditt lösenord.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tack. Händelsen är markerad som din.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Den händelsen behöver inget svar.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Sidan hade gått ut. Ingenting ändrades; försök igen.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Skydda ditt konto</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Om något här inte var du, logga ut alla andra enheter och välj sedan ett nytt lösenord. Enheter som hålls inloggade med Kom ihåg mig loggas också ut.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Alla enheter utom den här loggas ut vid nästa förfrågan. Sedan väljer du ett nytt lösenord.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, logga ut de andra enheterna</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Var det här du?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, det var jag</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nej, skydda mitt konto</translation>
     </message>
 </context>
 <context>
@@ -80005,6 +80109,42 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Sessionshanterare: %handler. Sessionerna läses från tabellen expuser_session, så rapporten fungerar med alla hanterare.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Misstänkt aktivitet de senaste %hours timmarna</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Ett nätverk misslyckades att logga in på %accounts konton (%count försök)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Kontot låst efter misslyckade inloggningar</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count misslyckade inloggningar på ett konto</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Inloggad från %count länder samtidigt</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Säkerhetsaktivitet</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessioner</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Misslyckade inloggningar läses från användarnas granskningslogg, som inte finns tillgänglig här.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Inget misstänkt: inget konto med upprepade misslyckade inloggningar, inget nätverk som provar flera konton, inget konto inloggat från flera länder.</translation>
     </message>
 </context>
 <context>

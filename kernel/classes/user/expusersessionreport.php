@@ -182,6 +182,124 @@ class expUserSessionReport
     }
 
     /**
+     * Suspicious patterns of the last hours, worst first, from plain rows (tested without a database):
+     * - failures: an account with at least $threshold failed sign-ins (someone guessing its password);
+     * - network: one network (the stored address, shortened) failing on at least $networkAccounts different accounts
+     *   (someone trying many accounts);
+     * - locked: an account locked after failed sign-ins;
+     * - countries: an account signed in right now from more than one country (only with a GeoIP database).
+     *
+     * @param array[] $failures rows with user_id and ip (one per failed sign-in)
+     * @param int[] $locked the user ids of the accounts locked
+     * @param array $countries user id => string[] the countries of its running sessions
+     * @param int $threshold failed sign-ins of one account that count
+     * @param int $networkAccounts accounts one network must fail on to count
+     * @return array[] kind, user_id (0 for network), count, network, countries
+     */
+    public static function findPatterns( array $failures, array $locked, array $countries, $threshold = 5, $networkAccounts = 3 )
+    {
+        $byUser = array();
+        $byNetwork = array();
+        foreach ( $failures as $row )
+        {
+            $userID = isset( $row['user_id'] ) ? (int)$row['user_id'] : 0;
+            $ip = isset( $row['ip'] ) ? expUserAgent::approximateIP( (string)$row['ip'] ) : '';
+            if ( $userID > 0 )
+                $byUser[$userID] = ( isset( $byUser[$userID] ) ? $byUser[$userID] : 0 ) + 1;
+            if ( $ip !== '' )
+            {
+                if ( !isset( $byNetwork[$ip] ) )
+                    $byNetwork[$ip] = array( 'accounts' => array(), 'count' => 0 );
+                $byNetwork[$ip]['count']++;
+                if ( $userID > 0 )
+                    $byNetwork[$ip]['accounts'][$userID] = true;
+            }
+        }
+        $out = array();
+        foreach ( $byNetwork as $ip => $n )
+            if ( count( $n['accounts'] ) >= max( 2, (int)$networkAccounts ) )
+                $out[] = array( 'kind' => 'network', 'user_id' => 0, 'count' => $n['count'], 'accounts' => count( $n['accounts'] ),
+                                'network' => (string)$ip, 'countries' => array() );
+        foreach ( array_unique( array_map( 'intval', $locked ) ) as $userID )
+            if ( $userID > 0 )
+                $out[] = array( 'kind' => 'locked', 'user_id' => $userID, 'count' => isset( $byUser[$userID] ) ? $byUser[$userID] : 0,
+                                'accounts' => 1, 'network' => '', 'countries' => array() );
+        arsort( $byUser );
+        foreach ( $byUser as $userID => $count )
+            if ( (int)$threshold > 0 && $count >= (int)$threshold && !in_array( $userID, $locked ) )
+                $out[] = array( 'kind' => 'failures', 'user_id' => (int)$userID, 'count' => $count, 'accounts' => 1, 'network' => '', 'countries' => array() );
+        foreach ( $countries as $userID => $list )
+        {
+            $list = array_values( array_unique( array_filter( array_map( 'strval', (array)$list ) ) ) );
+            sort( $list );
+            if ( count( $list ) > 1 )
+                $out[] = array( 'kind' => 'countries', 'user_id' => (int)$userID, 'count' => count( $list ), 'accounts' => 1, 'network' => '',
+                                'countries' => $list );
+        }
+        return $out;
+    }
+
+    /**
+     * The suspicious patterns of the last $hours (findPatterns()) read from the user audit log and the running
+     * sessions, each with the login and name of its account.
+     *
+     * @param int $hours
+     * @param int|null $now
+     * @return array[] findPatterns() with login and name
+     */
+    public static function patterns( $hours = 24, $now = null )
+    {
+        $now = $now === null ? time() : (int)$now;
+        $since = $now - (int)$hours * 3600;
+        $failures = array();
+        $locked = array();
+        if ( class_exists( 'expUserSecurityActivity' ) && expUserSecurityActivity::available() )
+        {
+            $db = eZDB::instance();
+            $rows = $db->arrayQuery( 'SELECT event_name, target_type, target_id, client_ip FROM ' . expUserAudit::TABLE
+                                     . " WHERE event_name IN ( 'access.session.login.failed', 'access.user.lock' ) AND created >= " . (int)$since );
+            foreach ( (array)$rows as $row )
+            {
+                $userID = $row['target_type'] === 'user' ? (int)$row['target_id'] : 0;
+                if ( $row['event_name'] === 'access.user.lock' )
+                    $locked[] = $userID;
+                else
+                    $failures[] = array( 'user_id' => $userID, 'ip' => (string)$row['client_ip'] );
+            }
+        }
+        $countries = array();
+        if ( expUserSessionTracker::available() && expUserSessionInfo::available() )
+        {
+            $timeout = expUserSessionTracker::sessionTimeout();
+            $rows = expUserSession::fetchObjectList( expUserSession::definition(), array( 'id', 'user_id', 'last_active', 'remember_until' ),
+                                                     array( 'ended' => 0 ), null, null, false );
+            $owner = array();
+            foreach ( (array)$rows as $row )
+                if ( !expUserSessionTracker::hasTimedOut( (int)$row['last_active'], (int)$row['remember_until'], $timeout, $now ) )
+                    $owner[(int)$row['id']] = (int)$row['user_id'];
+            foreach ( expUserSessionInfo::fetchForSessions( array_keys( $owner ) ) as $sessionID => $info )
+                if ( isset( $owner[$sessionID] ) && !empty( $info['country'] ) )
+                    $countries[$owner[$sessionID]][] = (string)$info['country'];
+        }
+        $threshold = (int)expUserSessionTracker::setting( 'FailedSignInAlertThreshold', 5 );
+        $out = array();
+        foreach ( self::findPatterns( $failures, $locked, $countries, $threshold > 0 ? $threshold : 5 ) as $item )
+        {
+            $item['login'] = '';
+            $item['name'] = '';
+            if ( $item['user_id'] > 0 )
+            {
+                $user = eZUser::fetch( $item['user_id'] );
+                $object = $user instanceof eZUser ? eZContentObject::fetch( $item['user_id'] ) : null;
+                $item['login'] = $user instanceof eZUser ? (string)$user->attribute( 'login' ) : '';
+                $item['name'] = $object instanceof eZContentObject ? (string)$object->attribute( 'name' ) : '';
+            }
+            $out[] = $item;
+        }
+        return $out;
+    }
+
+    /**
      * The account a form names: a user id or a login (exactly, any case), or an e-mail address.
      *
      * @param string $value

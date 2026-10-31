@@ -78359,6 +78359,58 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Do sheisiúin agus d’imeachtaí slándála mar chomhad JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ní thaifeadtar seisiúin ar an suíomh seo, mar sin níorbh fhéidir aon ghléas eile a shíniú amach. Athraigh do phasfhocal anois.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Síníodh %count seisiún eile amach. Athraigh do phasfhocal anois.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ní raibh aon ghléas eile sínithe isteach. Athraigh do phasfhocal anois.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Go raibh maith agat. Tá an teagmhas marcáilte mar do cheann féin.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Níl freagra de dhíth ar an teagmhas sin.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bhí an leathanach imithe in éag. Níor athraíodh aon rud; bain triail eile as.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Daingnigh do chuntas</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Mura tusa a bhí i rud éigin anseo, sínigh amach gach gléas eile, ansin roghnaigh pasfhocal nua. Síneofar amach freisin gléasanna a coinníodh sínithe isteach le Cuimhnigh orm.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Síneofar amach gach gléas seachas an ceann seo ag a chéad iarratas eile. Ansin roghnóidh tú pasfhocal nua.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sea, sínigh amach na gléasanna eile</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>An tusa a bhí ann?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sea, mise a bhí ann</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ní hea, daingnigh mo chuntas</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78541,6 +78593,58 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Do sheisiúin agus d’imeachtaí slándála mar chomhad JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Ní thaifeadtar seisiúin ar an suíomh seo, mar sin níorbh fhéidir aon ghléas eile a shíniú amach. Athraigh do phasfhocal anois.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Síníodh %count seisiún eile amach. Athraigh do phasfhocal anois.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ní raibh aon ghléas eile sínithe isteach. Athraigh do phasfhocal anois.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Go raibh maith agat. Tá an teagmhas marcáilte mar do cheann féin.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Níl freagra de dhíth ar an teagmhas sin.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bhí an leathanach imithe in éag. Níor athraíodh aon rud; bain triail eile as.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Daingnigh do chuntas</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Mura tusa a bhí i rud éigin anseo, sínigh amach gach gléas eile, ansin roghnaigh pasfhocal nua. Síneofar amach freisin gléasanna a coinníodh sínithe isteach le Cuimhnigh orm.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Síneofar amach gach gléas seachas an ceann seo ag a chéad iarratas eile. Ansin roghnóidh tú pasfhocal nua.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Sea, sínigh amach na gléasanna eile</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>An tusa a bhí ann?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Sea, mise a bhí ann</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ní hea, daingnigh mo chuntas</translation>
     </message>
 </context>
 <context>
@@ -78732,6 +78836,42 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Láimhseálaí seisiún: %handler. Léitear na seisiúin ón tábla expuser_session, mar sin oibríonn an tuarascáil le gach láimhseálaí.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Gníomhaíocht amhrasach sna %hours uair an chloig seo caite</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Theip ar líonra amháin síniú isteach i %accounts cuntas (%count iarracht)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Cuntas glasáilte tar éis sínithe isteach a theip</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count síniú isteach a theip ar chuntas amháin</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Sínithe isteach ó %count tír ag an am céanna</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Gníomhaíocht slándála</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Seisiúin</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Léitear sínithe isteach a theip ó loga iniúchta na n-úsáideoirí, nach bhfuil ar fáil anseo.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Níl aon rud amhrasach: níl aon chuntas le sínithe isteach a theip arís agus arís eile, aon líonra ag triail roinnt cuntas, ná aon chuntas sínithe isteach ó roinnt tíortha.</translation>
     </message>
 </context>
 <context>

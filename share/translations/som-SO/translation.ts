@@ -78327,6 +78327,58 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Fadhiyadaada iyo dhacdooyinka amniga oo ah fayl JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Fadhiyada laguma diiwaangeliyo boggan, sidaas darteed qalab kale lagama saari karin. Hadda beddel erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count fadhi oo kale ayaa laga saaray. Hadda beddel erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Qalab kale lama gelin. Hadda beddel erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Mahadsanid. Dhacdada waxaa lagu calaamadeeyay inay adiga tahay.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dhacdadaas uma baahna jawaab.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bogga waqtigiisu wuu dhacay. Waxba lama beddelin; fadlan isku day mar kale.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sug akoonkaaga</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Haddii wax halkan ah aanay ahayn adiga, ka saar dhammaan qalabka kale, kadibna dooro eray sir ah oo cusub. Qalabka lagu hayo I xasuuso sidoo kale waa laga saarayaa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Qalab kasta marka laga reebo kan waa laga saarayaa codsigiisa xiga. Kadib waxaad doorataa eray sir ah oo cusub.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Haa, ka saar qalabka kale</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ma adigii baa?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Haa, aniga ayaa ahaa</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Maya, sug akoonkayga</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Fadhiyadaada iyo dhacdooyinka amniga oo ah fayl JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Fadhiyada laguma diiwaangeliyo boggan, sidaas darteed qalab kale lagama saari karin. Hadda beddel erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count fadhi oo kale ayaa laga saaray. Hadda beddel erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Qalab kale lama gelin. Hadda beddel erayga sirta ah.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Mahadsanid. Dhacdada waxaa lagu calaamadeeyay inay adiga tahay.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dhacdadaas uma baahna jawaab.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Bogga waqtigiisu wuu dhacay. Waxba lama beddelin; fadlan isku day mar kale.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Sug akoonkaaga</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Haddii wax halkan ah aanay ahayn adiga, ka saar dhammaan qalabka kale, kadibna dooro eray sir ah oo cusub. Qalabka lagu hayo I xasuuso sidoo kale waa laga saarayaa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Qalab kasta marka laga reebo kan waa laga saarayaa codsigiisa xiga. Kadib waxaad doorataa eray sir ah oo cusub.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Haa, ka saar qalabka kale</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ma adigii baa?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Haa, aniga ayaa ahaa</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Maya, sug akoonkayga</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Maamulaha fadhiga: %handler. Fadhiyada waxaa laga akhriyaa miiska expuser_session, sidaa darteed warbixintu waxay la shaqaysaa maamule kasta.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Dhaqdhaqaaq laga shakiyo %hours saacadood ee la soo dhaafay</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Hal shabakad ayaa ku guuldarreysatay inay gasho %accounts akoon (%count isku day)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akoonka waa la xiray kadib gelitaanno fashilmay</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count gelitaan oo fashilmay hal akoon</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Laga galay %count waddan hal mar</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Dhaqdhaqaaqa amniga</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Fadhiyada</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Gelitaannada fashilmay waxaa laga akhriyaa diiwaanka hubinta isticmaalayaasha, kaas oo aan halkan laga heli karin.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Wax laga shakiyo ma jiraan: ma jiro akoon leh gelitaanno fashilmay oo soo noqnoqday, ma jirto shabakad isku dayaysa akoonno badan, ma jiro akoon laga galay waddamo badan.</translation>
     </message>
 </context>
 <context>

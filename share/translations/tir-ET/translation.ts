@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ክፍለ ግዜታትኩምን ፍጻመታት ድሕንነትኩምን ከም ፋይል JSON።</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ኣብዚ መርበብ ሓበሬታ ክፍለ ግዜታት ኣይምዝገቡን፣ ስለዚ ካልእ መሳርሒ ክወጽእ ኣይከኣለን። ሕጂ መሕለፊ ቃልኩም ቀይሩ።</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ካልኦት ክፍለ ግዜታት ወጺኦም። ሕጂ መሕለፊ ቃልኩም ቀይሩ።</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ካልእ መሳርሒ ኣቲዩ ኣይነበረን። ሕጂ መሕለፊ ቃልኩም ቀይሩ።</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>የቐንየልና። እቲ ፍጻመ ናትኩም ተባሂሉ ተመልኪቱ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>እቲ ፍጻመ መልሲ ኣየድልዮን።</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>እቲ ገጽ ግዜኡ ሓሊፉ ነይሩ። ዋላ ሓደ ኣይተቐየረን፤ በጃኹም ዳግም ፈትኑ።</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ሕሳብኩም ኣውሕሱ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ኣብዚ ዘሎ ገለ ነገር ንስኹም እንተዘይኮይኑ፣ ኩሎም ካልኦት መሳርሒታት ኣውጽኡ፣ ድሕሪኡ ሓድሽ መሕለፊ ቃል ምረጹ። ብዘክረኒ ኣቲዮም ዝጸንሑ መሳርሒታት እውን ይወጹ።</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ብዘይካ እዚ ኩሉ መሳርሒ ኣብቲ ዝቕጽል ሕቶኡ ይወጽእ። ድሕሪኡ ሓድሽ መሕለፊ ቃል ትመርጹ።</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>እወ፣ ካልኦት መሳርሒታት ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>እዚ ንስኹም ዲኹም?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>እወ፣ ኣነ እየ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ኣይፋል፣ ሕሳበይ ኣውሕስ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ክፍለ ግዜታትኩምን ፍጻመታት ድሕንነትኩምን ከም ፋይል JSON።</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ኣብዚ መርበብ ሓበሬታ ክፍለ ግዜታት ኣይምዝገቡን፣ ስለዚ ካልእ መሳርሒ ክወጽእ ኣይከኣለን። ሕጂ መሕለፊ ቃልኩም ቀይሩ።</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ካልኦት ክፍለ ግዜታት ወጺኦም። ሕጂ መሕለፊ ቃልኩም ቀይሩ።</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ካልእ መሳርሒ ኣቲዩ ኣይነበረን። ሕጂ መሕለፊ ቃልኩም ቀይሩ።</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>የቐንየልና። እቲ ፍጻመ ናትኩም ተባሂሉ ተመልኪቱ ኣሎ።</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>እቲ ፍጻመ መልሲ ኣየድልዮን።</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>እቲ ገጽ ግዜኡ ሓሊፉ ነይሩ። ዋላ ሓደ ኣይተቐየረን፤ በጃኹም ዳግም ፈትኑ።</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ሕሳብኩም ኣውሕሱ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ኣብዚ ዘሎ ገለ ነገር ንስኹም እንተዘይኮይኑ፣ ኩሎም ካልኦት መሳርሒታት ኣውጽኡ፣ ድሕሪኡ ሓድሽ መሕለፊ ቃል ምረጹ። ብዘክረኒ ኣቲዮም ዝጸንሑ መሳርሒታት እውን ይወጹ።</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ብዘይካ እዚ ኩሉ መሳርሒ ኣብቲ ዝቕጽል ሕቶኡ ይወጽእ። ድሕሪኡ ሓድሽ መሕለፊ ቃል ትመርጹ።</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>እወ፣ ካልኦት መሳርሒታት ኣውጽእ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>እዚ ንስኹም ዲኹም?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>እወ፣ ኣነ እየ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ኣይፋል፣ ሕሳበይ ኣውሕስ</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ኣሰራሒ ክፍለ ግዜ: %handler። ክፍለ ግዜታት ካብ ሰሌዳ expuser_session ስለ ዝንበቡ፣ እቲ ጸብጻብ ምስ ዝኾነ ኣሰራሒ ይሰርሕ።</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ኣብዘን ዝሓለፋ %hours ሰዓታት ጥርጣረ ዘለዎ ንጥፈት</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ሓደ መርበብ ናብ %accounts ሕሳባት ምእታው ኣይከኣለን (%count ፈተነታት)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ድሕሪ ዘይተዓወቱ ምእታዋት ሕሳብ ተዓጽዩ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ኣብ ሓደ ሕሳብ %count ዘይተዓወቱ ምእታዋት</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ብሓደ ግዜ ካብ %count ሃገራት ኣትዩ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ንጥፈታት ድሕንነት</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ክፍለ ግዜታት</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ዘይተዓወቱ ምእታዋት ካብ መዝገብ ምርመራ ተጠቀምቲ ይንበቡ፣ እዚ ድማ ኣብዚ ኣይርከብን።</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ጥርጣረ ዘለዎ ነገር የለን፦ ተደጋጋሚ ዘይተዓወቱ ምእታዋት ዘለዎ ሕሳብ የለን፣ ብዙሓት ሕሳባት ዝፍትን መርበብ የለን፣ ካብ ብዙሓት ሃገራት ዝኣተወ ሕሳብ የለን።</translation>
     </message>
 </context>
 <context>

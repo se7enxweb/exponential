@@ -73728,7 +73728,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>%language: %count of %total pages</source>
-        <translation>%language: %count of %total pages</translation>
+        <translation>%language: %count for %total pages</translation>
     </message>
     <message>
         <source>About the help in other languages</source>
@@ -73880,11 +73880,11 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Hide section: %title</source>
-        <translation>Hide section: %title</translation>
+        <translation>Hide di section: %title</translation>
     </message>
     <message>
         <source>Show section: %title</source>
-        <translation>Show section: %title</translation>
+        <translation>Show di section: %title</translation>
     </message>
     <message>
         <source>"Saving an article with an image fails with a 500 error", not "Bug" or "Help".</source>
@@ -73892,7 +73892,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>%count min read</source>
-        <translation>%count min read</translation>
+        <translation>%count minute to read am</translation>
     </message>
     <message>
         <source>%count pages</source>
@@ -73900,7 +73900,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>%from–%to of %total</source>
-        <translation>%from–%to of %total</translation>
+        <translation>%from–%to for %total</translation>
     </message>
     <message>
         <source>(new issue on GitHub, opens in a new window)</source>
@@ -73968,7 +73968,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Browse by topic</source>
-        <translation>Browse by topic</translation>
+        <translation>Browse am by topic</translation>
     </message>
     <message>
         <source>Category:</source>
@@ -74164,7 +74164,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Previous and next page</source>
-        <translation>Previous and next page</translation>
+        <translation>Di page wey dey before and di one wey dey after</translation>
     </message>
     <message>
         <source>Read the security policy</source>
@@ -74192,11 +74192,11 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Results for “%query”</source>
-        <translation>Results for “%query”</translation>
+        <translation>Wetin we find for “%query”</translation>
     </message>
     <message>
         <source>Search guides, settings, commands…</source>
-        <translation>Search guides, settings, commands…</translation>
+        <translation>Search di guides, settings, commands…</translation>
     </message>
     <message>
         <source>Search the open issues of the tracker below. If your error is there, add what you know to it instead of opening a new one.</source>
@@ -74220,7 +74220,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Steps to reproduce</source>
-        <translation>Steps to reproduce</translation>
+        <translation>Steps to make am happen again</translation>
     </message>
     <message>
         <source>Tell us on GitHub: the guide shows which tracker fits, what to include and the system details to copy, without any secrets.</source>
@@ -74504,7 +74504,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Contribute back</source>
-        <translation>Contribute back</translation>
+        <translation>Give back to di project</translation>
     </message>
     <message>
         <source>Fork, fix and open a pull request.</source>
@@ -74616,7 +74616,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Apply filters</source>
-        <translation>Apply filters</translation>
+        <translation>Use di filters</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -74632,7 +74632,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Choose another audience, topic or type.</source>
-        <translation>Choose another audience, topic or type.</translation>
+        <translation>Choose anoda audience, topic or type.</translation>
     </message>
     <message>
         <source>Creating and changing content: the editor, fields, drafts and versions.</source>
@@ -74680,7 +74680,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Reference material: settings, commands and formats.</source>
-        <translation>Reference material: settings, commands and formats.</translation>
+        <translation>Reference material: di settings, di commands and di formats.</translation>
     </message>
     <message>
         <source>Running the site: settings, users and roles, caches, cronjobs and logs.</source>
@@ -74708,11 +74708,11 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Your account: password, two-step sign-in and preferences.</source>
-        <translation>Your account: password, two-step sign-in and preferences.</translation>
+        <translation>Your account: password, two-step sign-in and wetin you prefer.</translation>
     </message>
     <message>
         <source>%count pages match</source>
-        <translation>%count pages match</translation>
+        <translation>%count pages match am</translation>
     </message>
     <message>
         <source>%count pages, in the folders of the documentation. Open a folder, or filter by a word of the title.</source>
@@ -74796,7 +74796,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Page %number of %count</source>
-        <translation>Page %number of %count</translation>
+        <translation>Page %number for %count</translation>
     </message>
     <message>
         <source>Image: %alt</source>
@@ -74808,7 +74808,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>%count of %total entries</source>
-        <translation>%count of %total entries</translation>
+        <translation>%count for %total entries</translation>
     </message>
     <message>
         <source>Filter</source>
@@ -74816,7 +74816,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Sort by %title</source>
-        <translation>Sort by %title</translation>
+        <translation>Arrange am by %title</translation>
     </message>
     <message>
         <source>Version, name, year or revision</source>
@@ -74832,7 +74832,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Addresses and notes</source>
-        <translation>Addresses and notes</translation>
+        <translation>Addresses and di notes</translation>
     </message>
     <message>
         <source>Addresses on servers that are no longer online are kept as historical text.</source>
@@ -74948,7 +74948,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>From version %from</source>
-        <translation>From version %from</translation>
+        <translation>Start from version %from</translation>
     </message>
     <message>
         <source>Help topics</source>
@@ -74960,7 +74960,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Manuals and help topics</source>
-        <translation>Manuals and help topics</translation>
+        <translation>Manuals and di help topics</translation>
     </message>
     <message>
         <source>Platform:</source>
@@ -75228,7 +75228,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Open or close every folder</source>
-        <translation>Open or close every folder</translation>
+        <translation>Open or close all di folders</translation>
     </message>
     <message>
         <source>Every folder is open.</source>
@@ -75248,7 +75248,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>All pages for %audience</source>
-        <translation>All pages for %audience</translation>
+        <translation>All di pages for %audience</translation>
     </message>
     <message>
         <source>All audiences</source>
@@ -75264,7 +75264,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Search by topic</source>
-        <translation>Search by topic</translation>
+        <translation>Search am by topic</translation>
     </message>
     <message>
         <source>Each button lists the pages of one topic for %audience.</source>
@@ -75280,7 +75280,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Latest commits to Exponential</source>
-        <translation>Latest commits to Exponential</translation>
+        <translation>Di latest commits for Exponential</translation>
     </message>
     <message>
         <source>Full history on GitHub</source>
@@ -75444,7 +75444,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Two ways to build</source>
-        <translation>Two ways to build</translation>
+        <translation>Two ways to build am</translation>
     </message>
     <message>
         <source>Two ways to build a site with Exponential: how they differ and how to choose between them.</source>
@@ -75568,7 +75568,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Download all as DITA</source>
-        <translation>Download all as DITA</translation>
+        <translation>Download everytin as DITA</translation>
     </message>
     <message>
         <source>Help topics overdue for review</source>
@@ -75932,7 +75932,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</source>
-        <translation>Exponential for non-profits: members, volunteers, fundraising pages, accessibility and transparency.</translation>
+        <translation>Exponential for non-profits: members, volunteers, pages to raise money, accessibility and openness.</translation>
     </message>
     <message>
         <source>Local businesses</source>
@@ -75976,7 +75976,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Plain-language help</source>
-        <translation>Plain-language help</translation>
+        <translation>Help for simple language</translation>
     </message>
     <message>
         <source>Exponential in plain language: how-tos without the command line, hosting choices and a glossary.</source>
@@ -76000,7 +76000,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Use and run Exponential</source>
-        <translation>Use and run Exponential</translation>
+        <translation>Use and run Exponential yourself</translation>
     </message>
     <message>
         <source>Editors, administrators, developers and users, and everyone with a site of their own.</source>
@@ -76056,11 +76056,11 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>More audiences</source>
-        <translation>More audiences</translation>
+        <translation>More audiences dey</translation>
     </message>
     <message>
         <source>Review and release</source>
-        <translation>Review and release</translation>
+        <translation>Check am and release am</translation>
     </message>
     <message>
         <source>The topic is in Review now.</source>
@@ -76084,7 +76084,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Review workflow</source>
-        <translation>Review workflow</translation>
+        <translation>How di review dey go</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -76112,7 +76112,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Style guide check</source>
-        <translation>Style guide check</translation>
+        <translation>Check against di style guide</translation>
     </message>
     <message>
         <source>The style guide check found nothing.</source>
@@ -76192,7 +76192,7 @@ You go need change di class of di node wit di swap functionality.</translation>
     </message>
     <message>
         <source>Another reason</source>
-        <translation>Another reason</translation>
+        <translation>Anoda reason</translation>
     </message>
     <message>
         <source>This topic is not Released; readers do not see it.</source>
@@ -78337,6 +78337,58 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Your sessions and security events as JSON file.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Dis site no dey record sessions, so we no fit sign out any oda device. Change your password now now.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>We don sign out %count oda sessions. Now change your password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>No oda device bin dey signed in. Now change your password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tank you. We don mark di event say na you.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dat event no need any ansa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Di page don expire. Nothing change; abeg try again.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Make your account safe</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>If anytin for here no be you, sign out all di oda devices, den choose new password. Devices wey dey signed in wit “Remember me” go sign out too.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Every device apart from dis one go sign out wen e make im next request. Den you go choose new password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yes, sign out di oda devices</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Na you do am?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yes, na me</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>No, make my account safe</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78519,6 +78571,58 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Your sessions and security events as JSON file.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Dis site no dey record sessions, so we no fit sign out any oda device. Change your password now now.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>We don sign out %count oda sessions. Now change your password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>No oda device bin dey signed in. Now change your password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Tank you. We don mark di event say na you.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dat event no need any ansa.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Di page don expire. Nothing change; abeg try again.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Make your account safe</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>If anytin for here no be you, sign out all di oda devices, den choose new password. Devices wey dey signed in wit “Remember me” go sign out too.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Every device apart from dis one go sign out wen e make im next request. Den you go choose new password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yes, sign out di oda devices</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Na you do am?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yes, na me</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>No, make my account safe</translation>
     </message>
 </context>
 <context>
@@ -78710,6 +78814,42 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Session handler: %handler. Dem dey read di sessions from di table expuser_session, so di report dey work wit every handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Tins wey no clear for di last %hours hours</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>One network no fit sign in to %accounts accounts (%count tries)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Dem lock di account afta sign-ins wey no work</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count sign-ins wey no work for one account</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>E sign in from %count kontris di same time</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Wetin happen for security</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sessions</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>We dey read sign-ins wey no work from di user audit log, but e no dey here.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nothing wey no clear: no account wit plenti sign-ins wey no work, no network wey dey try plenti accounts, no account wey sign in from plenti kontris.</translation>
     </message>
 </context>
 <context>

@@ -78359,6 +78359,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>جلساتك وأحداثك الأمنية في ملف JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>لا تُسجَّل الجلسات على هذا الموقع، لذا لم يكن بالإمكان تسجيل خروج أي جهاز آخر. غيّر كلمة المرور الآن.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>تم تسجيل خروج %count من الجلسات الأخرى. غيّر الآن كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>لم يكن أي جهاز آخر مسجّل الدخول. غيّر الآن كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>شكرًا لك. تم تمييز الحدث على أنه خاص بك.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>هذا الحدث لا يحتاج إلى إجابة.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>انتهت صلاحية الصفحة. لم يتغير شيء؛ يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>تأمين حسابك</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>إذا لم يكن شيء هنا من فعلك، فسجّل خروج كل الأجهزة الأخرى، ثم اختر كلمة مرور جديدة. يتم أيضًا تسجيل خروج الأجهزة التي بقيت مسجّلة الدخول عبر «تذكّرني».</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>يتم تسجيل خروج كل جهاز باستثناء هذا الجهاز عند طلبه التالي. ثم تختار كلمة مرور جديدة.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>نعم، سجّل خروج الأجهزة الأخرى</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>هل كان هذا أنت؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>نعم، كنت أنا</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>لا، أمّن حسابي</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78541,6 +78593,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>جلساتك وأحداثك الأمنية في ملف JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>لا تُسجَّل الجلسات على هذا الموقع، لذا لم يكن بالإمكان تسجيل خروج أي جهاز آخر. غيّر كلمة المرور الآن.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>تم تسجيل خروج %count من الجلسات الأخرى. غيّر الآن كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>لم يكن أي جهاز آخر مسجّل الدخول. غيّر الآن كلمة المرور.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>شكرًا لك. تم تمييز الحدث على أنه خاص بك.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>هذا الحدث لا يحتاج إلى إجابة.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>انتهت صلاحية الصفحة. لم يتغير شيء؛ يرجى المحاولة مرة أخرى.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>تأمين حسابك</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>إذا لم يكن شيء هنا من فعلك، فسجّل خروج كل الأجهزة الأخرى، ثم اختر كلمة مرور جديدة. يتم أيضًا تسجيل خروج الأجهزة التي بقيت مسجّلة الدخول عبر «تذكّرني».</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>يتم تسجيل خروج كل جهاز باستثناء هذا الجهاز عند طلبه التالي. ثم تختار كلمة مرور جديدة.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>نعم، سجّل خروج الأجهزة الأخرى</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>هل كان هذا أنت؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>نعم، كنت أنا</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>لا، أمّن حسابي</translation>
     </message>
 </context>
 <context>
@@ -78732,6 +78836,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>معالج الجلسات: %handler. تُقرأ الجلسات من الجدول expuser_session، لذا يعمل التقرير مع كل معالج.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>نشاط مريب خلال آخر %hours ساعة</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>فشلت شبكة واحدة في تسجيل الدخول إلى %accounts حسابات (%count محاولات)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>تم قفل الحساب بعد عمليات تسجيل دخول فاشلة</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count عمليات تسجيل دخول فاشلة على حساب واحد</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>تم تسجيل الدخول من %count دول في وقت واحد</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>نشاط الأمان</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>الجلسات</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>تُقرأ عمليات تسجيل الدخول الفاشلة من سجل تدقيق المستخدمين، وهو غير متاح هنا.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>لا شيء مريب: لا يوجد حساب بعمليات تسجيل دخول فاشلة متكررة، ولا شبكة تجرّب عدة حسابات، ولا حساب سُجّل الدخول إليه من عدة دول.</translation>
     </message>
 </context>
 <context>

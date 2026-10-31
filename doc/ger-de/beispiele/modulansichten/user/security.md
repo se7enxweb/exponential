@@ -14,12 +14,12 @@ Eine Ansicht des Moduls `user`, definiert in `kernel/user/module.php` und ausgef
 ## Adresse
 
 ```text
-/user/security/<UserID>/(offset)/<Offset>
+/user/security/<UserID>/(offset)/<Offset>/(secure)/<Secure>
 ```
 
 Geordnete Parameter, in dieser Reihenfolge nach dem Namen der Ansicht: `UserID`.
 
-Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`.
+Ungeordnete Parameter, in beliebiger Reihenfolge als `/(name)/value`: `(offset)` setzt `Offset`, `(secure)` setzt `Secure`.
 
 ## Wer sie öffnen darf
 

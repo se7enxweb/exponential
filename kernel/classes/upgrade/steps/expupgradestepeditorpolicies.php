@@ -10,7 +10,8 @@
 /**
  * The everyday policies of the Editor role, through expEditorPolicies as bin/php/addeditorpolicies.php --apply with
  * its default options: a content/* without limitations is replaced by the single content functions, then the missing
- * policies are added. Not applicable without a role Editor.
+ * policies are added (the UI switch among them), then the class sets of editorpolicies.ini and the removal of duplicate
+ * policies. Not applicable without a role Editor.
  *
  * @since 6.0.15
  * @package kernel
@@ -53,7 +54,9 @@ class expUpgradeStepEditorPolicies extends expUpgradeScriptStep
         foreach ( expEditorPolicies::plan( $policies, expEditorPolicies::availableModules(), array(), array(), expEditorPolicies::heldAlongside( $role ) ) as $entry )
             if ( $entry['action'] === 'grant' )
                 $lines[] = "add {$entry['module']}/{$entry['function']}: {$entry['reason']}";
-        return $lines;
+        // the class sets of editorpolicies.ini and the duplicates, without writing
+        $more = expEditorPolicies::completeClassesAndDuplicates( $role, false );
+        return array_merge( $lines, $more['lines'] );
     }
 
     protected function write( expUpgradeContext $context )
@@ -75,6 +78,8 @@ class expUpgradeStepEditorPolicies extends expUpgradeScriptStep
             $done[] = "added {$entry['module']}/{$entry['function']}";
         }
         eZRole::expireCache();
+        $more = expEditorPolicies::completeClassesAndDuplicates( eZRole::fetch( (int)$role->attribute( 'id' ) ), true );
+        $done = array_merge( $done, $more['lines'] );
         foreach ( expEditorPolicies::overGrants( expEditorPolicies::policiesOf( eZRole::fetch( (int)$role->attribute( 'id' ) ) ) ) as $over )
             $done[] = sprintf( 'WARN %s/%s granted by %s: %s', $over['module'], $over['function'], $over['by'], $over['reason'] );
         return $done;

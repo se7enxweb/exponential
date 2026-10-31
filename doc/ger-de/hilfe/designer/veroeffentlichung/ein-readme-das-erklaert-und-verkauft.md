@@ -20,7 +20,7 @@ Ein Besucher entscheidet innerhalb des ersten Bildschirms. Setzen Sie dorthin:
 2. Einen Screenshot der Startseite (heller Modus), darunter einen Link zu einem Screenshot im Dunkelmodus und einem
    auf dem Telefon.
 3. Drei bis fünf Fakten, die ein Käufer prüft, jeder wahr und überprüfbar:
-   - „Funktioniert mit Exponential 6.0 (getestet mit 6.0.15) auf PHP 8.1 bis 8.5.“
+   - „Funktioniert mit Exponential 6.0 (getestet mit 6.0.15) auf PHP 8.0 bis 8.5.“
    - „Besteht axe ohne ernsthafte Probleme bei 1440 px und 375 px.“ (nur, wenn Sie es ausgeführt haben)
    - „Läuft unter einer Content Security Policy ohne 'unsafe-inline'.“ (nur, wenn es das tut)
    - „GPL-2.0-or-later. Frei zu nutzen, zu ändern und weiterzugeben.“

@@ -104,7 +104,7 @@ of an account is not new: there is nothing to compare it with (`FirstSignInMail=
 events, newest first, with the sign-ins, failed attempts and account changes of the last 30 days on top. Every
 signed-in user has it for the own account; `user/security/<user id>` shows another account to a viewer with the policy
 `user/sessions`. It is linked from Your devices, the account page (the card **Security activity**, with the failed
-sign-ins of the last 30 days), the user menu of the header and the "Current user" box. Read only.
+sign-ins of the last 30 days), the user menu of the header and the "Current user" box. Read only for another account; on the own account it asks "Was this you?" and secures the account (below).
 
 | Shown | Events |
 |---|---|
@@ -120,6 +120,33 @@ host and what the event names (method, browser, system, place, number of session
 
 The two-step events `access.user.two_factor.*` are recorded by the two-step extension through
 `expSignInSecondFactor::audit()`.
+
+### Was this you?
+
+On the own account the page asks **Was this you?** about every event of the last 30 days that needs attention (the
+levels warn and bad: failed attempts, refusals, new devices and places, a lock, changes of password, e-mail address,
+two-step sign-in and passkeys), unless an administrator made it (the row says who did):
+
+- **Yes, it was me** (`ConfirmEventButton`) remembers the answer in the user preference `expsecurity_confirmed` (the
+  ids of the answered rows, the newest 200) and records `access.user.activity.confirm` with the row id. The question
+  is not asked again; the event stays in the timeline.
+- **No, secure my account** opens **Secure your account** (below).
+
+Another account's page (`user/security/<id>`) never asks: only the owner can answer.
+
+### Secure your account
+
+The card **Secure your account** on the own security activity does what Google's "Secure your account" does:
+
+1. "Verify it's you" asks first (`[ReauthGroup_account]` `Rules[]=user/security self SecureButton`);
+2. every other session of the account is signed out at its next request, also those kept by Remember me
+   (`revokeOthers()`, recorded as `access.session.revoke`, scope `others`); this device stays signed in;
+3. the page says how many sessions ended and leads on to **Change password**.
+
+The link **Secure your account** of the security mails (New sign-in, Security alert) is `user/security/(secure)/1`:
+the page opens with that card highlighted and its confirmation open. A visitor who is not signed in signs in first
+and lands there. Without session tracking (`Tracking=disabled` or no table) nothing can be signed out; the page says
+so and leads to the password.
 
 ## Security alerts
 
@@ -159,6 +186,11 @@ mail goes through the mail gate; with `[MailSettings] Transport=file` it is writ
 administrator's view of the whole site:
 
 - the sessions running now and the number of users they belong to, the sign-ins and failed attempts of today;
+- **Suspicious activity in the last 24 hours** (`expUserSessionReport::patterns()`), worst first: one network (the
+  stored address, shortened to its network) failing to sign in to three or more accounts; an account locked after
+  failed sign-ins; an account with at least `FailedSignInAlertThreshold` (5) failed sign-ins; an account signed in
+  right now from more than one country (only with a GeoIP database). Each links to that account's security activity
+  and sessions. The failures come from the user audit log; without it the card says so;
 - **Sign a user out everywhere**: a user ID, username or e-mail address; every session of that account ends at its
   next request, also those kept by Remember me (`revokeAll()`, recorded as `access.session.revoke`, scope `all`; with
   the database session handler its sessions are deleted at once);
@@ -213,6 +245,7 @@ ezformtoken; after it the page redirects to itself and shows the result once.
 | `access.session.revoke` | A session signed out from the page: `after.count`, `after.sessions` (row ids), `after.scope` (one, others, all), `after.by` (user, admin), `after.actor_id`; reason `user_request` or `admin` |
 | `access.session.new_device` | A sign-in from a new device (the e-mail goes out): browser, system, device, method |
 | `access.session.new_location` | A sign-in from a new country (only with a GeoIP database): country, place, method |
+| `access.user.activity.confirm` | The owner answered "Yes, it was me" on the security activity: the row id and name of the event |
 
 ## Retention: the cronjob usersessions.php
 
@@ -254,4 +287,4 @@ and the same script (`createusersessiontable.php`) create it. Its rows are remov
 - `expUserSessionTracker::revoke( $userID, $sessionID, $actorID )`, `revokeOthers()`, `revokeAll()`,
   `endOtherRows( $userID, $reason, $actorID )`, `listForUser( $userID )`, `cleanup()`.
 - `expUserAgent::parse()`, `label()`, `approximateIP()`: plain functions without state.
-- Tests: `tests/tests/kernel/classes/user/expUserSessionTest.php`, `expUserSessionInfoTest.php`.
+- Tests: `tests/tests/kernel/classes/user/expUserSessionTest.php`, `expUserSessionInfoTest.php`, `expUserSecurityActivityTest.php` ("Was this you?", Secure your account), `expUserSessionReportTest.php` (the suspicious patterns).

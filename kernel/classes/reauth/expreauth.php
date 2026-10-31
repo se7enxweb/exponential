@@ -714,7 +714,7 @@ class expReauth
             $item = eZCollaborationItem::fetch( $itemID );
             return $item instanceof eZCollaborationItem && (int)$item->attribute( 'data_int1' ) > 0 ? (int)$item->attribute( 'data_int1' ) : null;
         }
-        if ( in_array( $where, array( 'user/password', 'user/setting', 'user/edit', 'user/sessions' ), true ) )
+        if ( in_array( $where, array( 'user/password', 'user/setting', 'user/edit', 'user/sessions', 'user/security' ), true ) )
             return $first > 0 ? $first : (int)eZUser::currentUserID();
         if ( $where === 'content/edit' && $first > 0 )
         {

@@ -78327,6 +78327,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ستاسو ناستې او امنیتي پېښې د JSON دوتنې په توګه.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>په دې سایټ کې ناستې نه ثبتېږي، نو هېڅ بله وسیله ونه ایستل شوه. اوس خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>نورې %count ناستې وایستل شوې. اوس خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>بله هېڅ وسیله ننوتې نه وه. اوس خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>مننه. پېښه ستاسو په توګه نښه شوه.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>هغه پېښه ځواب ته اړتیا نه لري.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>د پاڼې وخت ختم شوی و. هېڅ شی بدل نه شو؛ مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>خپل حساب خوندي کړئ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>که دلته څه ستاسو له خوا نه وو، نو له نورو ټولو وسیلو ووځئ، بیا نوی پټنوم وټاکئ. هغه وسیلې چې د “ما په یاد ولرئ” له لارې ننوتې پاتې دي هم ایستل کېږي.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>پرته له دې څخه هره وسیله په خپله راتلونکې غوښتنه کې ایستل کېږي. بیا تاسو نوی پټنوم ټاکئ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>هو، نورې وسیلې وباسئ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>دا تاسو وئ؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>هو، زه وم</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نه، زما حساب خوندي کړئ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ستاسو ناستې او امنیتي پېښې د JSON دوتنې په توګه.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>په دې سایټ کې ناستې نه ثبتېږي، نو هېڅ بله وسیله ونه ایستل شوه. اوس خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>نورې %count ناستې وایستل شوې. اوس خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>بله هېڅ وسیله ننوتې نه وه. اوس خپل پټنوم بدل کړئ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>مننه. پېښه ستاسو په توګه نښه شوه.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>هغه پېښه ځواب ته اړتیا نه لري.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>د پاڼې وخت ختم شوی و. هېڅ شی بدل نه شو؛ مهرباني وکړئ بیا هڅه وکړئ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>خپل حساب خوندي کړئ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>که دلته څه ستاسو له خوا نه وو، نو له نورو ټولو وسیلو ووځئ، بیا نوی پټنوم وټاکئ. هغه وسیلې چې د “ما په یاد ولرئ” له لارې ننوتې پاتې دي هم ایستل کېږي.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>پرته له دې څخه هره وسیله په خپله راتلونکې غوښتنه کې ایستل کېږي. بیا تاسو نوی پټنوم ټاکئ.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>هو، نورې وسیلې وباسئ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>دا تاسو وئ؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>هو، زه وم</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نه، زما حساب خوندي کړئ</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>د ناستې چلوونکی: %handler. ناستې د expuser_session له جدول څخه لوستل کېږي، نو راپور د هر چلوونکي سره کار کوي.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>په تېرو %hours ساعتونو کې شکمن فعالیت</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>یوه شبکه ونه توانېده چې %accounts حسابونو ته ننوځي (%count هڅې)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>حساب د ناکامو ننوتنو وروسته قلف شو</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>په یوه حساب کې %count ناکامې ننوتنې</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>په یو وخت کې له %count هېوادونو څخه ننوتل</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>امنیتي فعالیت</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ناستې</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ناکامې ننوتنې د کارن د پلټنې له لاګ څخه لوستل کېږي، چې دلته شتون نه لري.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>هېڅ شکمن شی نشته: داسې حساب نشته چې بیا بیا ناکامې ننوتنې ولري، داسې شبکه نشته چې څو حسابونه هڅه کړي، داسې حساب نشته چې له څو هېوادونو ننوتی وي.</translation>
     </message>
 </context>
 <context>

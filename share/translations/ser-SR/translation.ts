@@ -78359,6 +78359,58 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vaše sesije i bezbednosni događaji kao JSON datoteka.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesije se na ovom sajtu ne beleže, pa nijedan drugi uređaj nije mogao biti odjavljen. Odmah promenite lozinku.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Odjavljeno je drugih sesija: %count. Sada promenite lozinku.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nijedan drugi uređaj nije bio prijavljen. Sada promenite lozinku.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Hvala. Događaj je označen kao vaš.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Na taj događaj nije potreban odgovor.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Stranica je istekla. Ništa nije promenjeno; pokušajte ponovo.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zaštiti nalog</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ako nešto ovde niste bili vi, odjavite sve ostale uređaje, a zatim izaberite novu lozinku. Uređaji koji su ostali prijavljeni pomoću opcije Zapamti me takođe se odjavljuju.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Svaki uređaj osim ovog biće odjavljen pri sledećem zahtevu. Zatim birate novu lozinku.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Da, odjavi ostale uređaje</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Da li ste ovo bili vi?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Da, to sam bio ja</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ne, zaštiti moj nalog</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78541,6 +78593,58 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vaše sesije i bezbednosni događaji kao JSON datoteka.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sesije se na ovom sajtu ne beleže, pa nijedan drugi uređaj nije mogao biti odjavljen. Odmah promenite lozinku.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Odjavljeno je drugih sesija: %count. Sada promenite lozinku.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Nijedan drugi uređaj nije bio prijavljen. Sada promenite lozinku.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Hvala. Događaj je označen kao vaš.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Na taj događaj nije potreban odgovor.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Stranica je istekla. Ništa nije promenjeno; pokušajte ponovo.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Zaštiti nalog</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ako nešto ovde niste bili vi, odjavite sve ostale uređaje, a zatim izaberite novu lozinku. Uređaji koji su ostali prijavljeni pomoću opcije Zapamti me takođe se odjavljuju.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Svaki uređaj osim ovog biće odjavljen pri sledećem zahtevu. Zatim birate novu lozinku.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Da, odjavi ostale uređaje</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Da li ste ovo bili vi?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Da, to sam bio ja</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ne, zaštiti moj nalog</translation>
     </message>
 </context>
 <context>
@@ -78732,6 +78836,42 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Rukovalac sesijama: %handler. Sesije se čitaju iz tabele expuser_session, pa izveštaj radi sa svakim rukovaocem.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Sumnjiva aktivnost u poslednjih %hours sati</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Jedna mreža nije uspela da se prijavi na naloge (%accounts) (pokušaja: %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Nalog zaključan posle neuspelih prijava</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Neuspelih prijava na jedan nalog: %count</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Prijavljen iz više zemalja istovremeno: %count</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Bezbednosna aktivnost</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sesije</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Neuspele prijave čitaju se iz dnevnika revizije korisnika, koji ovde nije dostupan.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Ništa sumnjivo: nema naloga sa ponovljenim neuspelim prijavama, nema mreže koja pokušava više naloga, nema naloga prijavljenog iz više zemalja.</translation>
     </message>
 </context>
 <context>

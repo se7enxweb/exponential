@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>თქვენი სესიები და უსაფრთხოების მოვლენები JSON ფაილის სახით.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ამ საიტზე სესიები არ აღირიცხება, ამიტომ სხვა მოწყობილობიდან გასვლა ვერ მოხერხდა. შეცვალეთ პაროლი ახლავე.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count სხვა სესია დასრულდა. ახლა შეცვალეთ პაროლი.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>სხვა მოწყობილობა შესული არ იყო. ახლა შეცვალეთ პაროლი.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>გმადლობთ. მოვლენა მონიშნულია, როგორც თქვენი.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ეს მოვლენა პასუხს არ საჭიროებს.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>გვერდის ვადა ამოიწურა. არაფერი შეცვლილა; გთხოვთ, სცადოთ ხელახლა.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>დაიცავით თქვენი ანგარიში</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>თუ აქ რაიმე თქვენ არ იყავით, გამოიყვანეთ ყველა სხვა მოწყობილობა და შემდეგ აირჩიეთ ახალი პაროლი. დამიმახსოვრე-ით შესული მოწყობილობებიც გამოდის.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ყველა მოწყობილობა, ამის გარდა, გამოდის მისი შემდეგი მოთხოვნისას. შემდეგ თქვენ აირჩევთ ახალ პაროლს.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>დიახ, გამოიყვანე სხვა მოწყობილობები</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ეს თქვენ იყავით?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>დიახ, ეს მე ვიყავი</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>არა, დაიცავი ჩემი ანგარიში</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>თქვენი სესიები და უსაფრთხოების მოვლენები JSON ფაილის სახით.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ამ საიტზე სესიები არ აღირიცხება, ამიტომ სხვა მოწყობილობიდან გასვლა ვერ მოხერხდა. შეცვალეთ პაროლი ახლავე.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count სხვა სესია დასრულდა. ახლა შეცვალეთ პაროლი.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>სხვა მოწყობილობა შესული არ იყო. ახლა შეცვალეთ პაროლი.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>გმადლობთ. მოვლენა მონიშნულია, როგორც თქვენი.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ეს მოვლენა პასუხს არ საჭიროებს.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>გვერდის ვადა ამოიწურა. არაფერი შეცვლილა; გთხოვთ, სცადოთ ხელახლა.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>დაიცავით თქვენი ანგარიში</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>თუ აქ რაიმე თქვენ არ იყავით, გამოიყვანეთ ყველა სხვა მოწყობილობა და შემდეგ აირჩიეთ ახალი პაროლი. დამიმახსოვრე-ით შესული მოწყობილობებიც გამოდის.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ყველა მოწყობილობა, ამის გარდა, გამოდის მისი შემდეგი მოთხოვნისას. შემდეგ თქვენ აირჩევთ ახალ პაროლს.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>დიახ, გამოიყვანე სხვა მოწყობილობები</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ეს თქვენ იყავით?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>დიახ, ეს მე ვიყავი</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>არა, დაიცავი ჩემი ანგარიში</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>სესიების დამმუშავებელი: %handler. სესიები იკითხება ცხრილიდან expuser_session, ამიტომ ანგარიში მუშაობს ნებისმიერ დამმუშავებელთან.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>საეჭვო აქტივობა ბოლო %hours საათში</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ერთმა ქსელმა ვერ შეძლო შესვლა %accounts ანგარიშში (%count მცდელობა)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ანგარიში დაიბლოკა წარუმატებელი შესვლების შემდეგ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count წარუმატებელი შესვლა ერთ ანგარიშზე</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>შესულია %count ქვეყნიდან ერთდროულად</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>უსაფრთხოების აქტივობა</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>სესიები</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>წარუმატებელი შესვლები იკითხება მომხმარებელთა აუდიტის ჟურნალიდან, რომელიც აქ ხელმისაწვდომი არ არის.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>საეჭვო არაფერია: არ არის ანგარიში განმეორებითი წარუმატებელი შესვლებით, არ არის ქსელი, რომელიც რამდენიმე ანგარიშს ცდის, არ არის ანგარიში, რომელიც რამდენიმე ქვეყნიდანაა შესული.</translation>
     </message>
 </context>
 <context>

@@ -78327,6 +78327,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>آپ کے سیشنز اور سلامتی کے واقعات ایک JSON فائل کے طور پر۔</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>اس سائٹ پر سیشنز ریکارڈ نہیں ہوتے، اس لیے کوئی دوسرا آلہ سائن آؤٹ نہیں ہو سکا۔ ابھی اپنا پاس ورڈ تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count دوسرے سیشنز سائن آؤٹ کر دیے گئے۔ اب اپنا پاس ورڈ تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>کوئی دوسرا آلہ سائن ان نہیں تھا۔ اب اپنا پاس ورڈ تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>شکریہ۔ یہ واقعہ آپ کا نشان زد کر دیا گیا ہے۔</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>اس واقعے کو کسی جواب کی ضرورت نہیں۔</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحے کی میعاد ختم ہو گئی تھی۔ کچھ تبدیل نہیں ہوا؛ براہ کرم دوبارہ کوشش کریں۔</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>اپنا اکاؤنٹ محفوظ کریں</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>اگر یہاں کچھ آپ نے نہیں کیا تھا تو باقی تمام آلات سائن آؤٹ کریں، پھر نیا پاس ورڈ منتخب کریں۔ مجھے یاد رکھیں کے ذریعے سائن ان رکھے گئے آلات بھی سائن آؤٹ ہو جاتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>اس کے علاوہ ہر آلہ اپنی اگلی درخواست پر سائن آؤٹ ہو جاتا ہے۔ پھر آپ نیا پاس ورڈ منتخب کرتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ہاں، باقی آلات سائن آؤٹ کریں</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>کیا یہ آپ تھے؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ہاں، یہ میں تھا</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نہیں، میرا اکاؤنٹ محفوظ کریں</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>آپ کے سیشنز اور سلامتی کے واقعات ایک JSON فائل کے طور پر۔</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>اس سائٹ پر سیشنز ریکارڈ نہیں ہوتے، اس لیے کوئی دوسرا آلہ سائن آؤٹ نہیں ہو سکا۔ ابھی اپنا پاس ورڈ تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count دوسرے سیشنز سائن آؤٹ کر دیے گئے۔ اب اپنا پاس ورڈ تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>کوئی دوسرا آلہ سائن ان نہیں تھا۔ اب اپنا پاس ورڈ تبدیل کریں۔</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>شکریہ۔ یہ واقعہ آپ کا نشان زد کر دیا گیا ہے۔</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>اس واقعے کو کسی جواب کی ضرورت نہیں۔</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحے کی میعاد ختم ہو گئی تھی۔ کچھ تبدیل نہیں ہوا؛ براہ کرم دوبارہ کوشش کریں۔</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>اپنا اکاؤنٹ محفوظ کریں</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>اگر یہاں کچھ آپ نے نہیں کیا تھا تو باقی تمام آلات سائن آؤٹ کریں، پھر نیا پاس ورڈ منتخب کریں۔ مجھے یاد رکھیں کے ذریعے سائن ان رکھے گئے آلات بھی سائن آؤٹ ہو جاتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>اس کے علاوہ ہر آلہ اپنی اگلی درخواست پر سائن آؤٹ ہو جاتا ہے۔ پھر آپ نیا پاس ورڈ منتخب کرتے ہیں۔</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ہاں، باقی آلات سائن آؤٹ کریں</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>کیا یہ آپ تھے؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ہاں، یہ میں تھا</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نہیں، میرا اکاؤنٹ محفوظ کریں</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>سیشن ہینڈلر: %handler۔ سیشنز ٹیبل expuser_session سے پڑھے جاتے ہیں، اس لیے رپورٹ ہر ہینڈلر کے ساتھ کام کرتی ہے۔</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>پچھلے %hours گھنٹوں میں مشکوک سرگرمی</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ایک نیٹ ورک %accounts اکاؤنٹس میں سائن ان کرنے میں ناکام رہا (%count کوششیں)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ناکام سائن انز کے بعد اکاؤنٹ مقفل کر دیا گیا</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ایک اکاؤنٹ پر %count ناکام سائن انز</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ایک ساتھ %count ممالک سے سائن ان کیا گیا</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>سلامتی کی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>سیشنز</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ناکام سائن انز صارف آڈٹ لاگ سے پڑھے جاتے ہیں، جو یہاں دستیاب نہیں۔</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>کچھ بھی مشکوک نہیں: بار بار ناکام سائن انز والا کوئی اکاؤنٹ نہیں، کئی اکاؤنٹس آزمانے والا کوئی نیٹ ورک نہیں، کئی ممالک سے سائن ان کیا گیا کوئی اکاؤنٹ نہیں۔</translation>
     </message>
 </context>
 <context>

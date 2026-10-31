@@ -78327,6 +78327,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Àwọn ìgbà ìwọlé yín àti àwọn ìṣẹ̀lẹ̀ ààbò yín gẹ́gẹ́ bí fáìlì JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>A kò ń ṣe àkọsílẹ̀ àwọn ìgbà ìṣiṣẹ́ lórí ojú òpó yìí, nítorí náà kò sí ẹ̀rọ mìíràn tí a lè mú jáde. Ẹ yí ọ̀rọ̀ aṣínà yín padà nísinsìnyí.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>A ti mú àwọn ìgbà ìṣiṣẹ́ mìíràn %count jáde. Nísinsìnyí ẹ yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Kò sí ẹ̀rọ mìíràn tí ó wọlé. Nísinsìnyí ẹ yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ẹ ṣé. A ti sàmì sí ìṣẹ̀lẹ̀ náà gẹ́gẹ́ bí tiyín.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ìṣẹ̀lẹ̀ yẹn kò nílò ìdáhùn.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ojú ìwé náà ti parí. A kò yí nǹkan kan padà; ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ẹ dáàbò bo àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Bí ohun kan níbí kì í bá ṣe ẹ̀yin, ẹ mú gbogbo ẹ̀rọ mìíràn jáde, lẹ́yìn náà ẹ yan ọ̀rọ̀ aṣínà tuntun. Àwọn ẹ̀rọ tí ó wà ní wíwọlé nípasẹ̀ Ẹ ranti mi náà yóò jáde.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Gbogbo ẹ̀rọ àyàfi èyí ni a ó mú jáde nígbà ìbéèrè rẹ̀ tó kàn. Lẹ́yìn náà ẹ ó yan ọ̀rọ̀ aṣínà tuntun.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Bẹ́ẹ̀ni, mú àwọn ẹ̀rọ mìíràn jáde</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ṣé ẹ̀yin ni èyí?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Bẹ́ẹ̀ni, èmi ni</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Rárá, dáàbò bo àkáǹtì mi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Àwọn ìgbà ìwọlé yín àti àwọn ìṣẹ̀lẹ̀ ààbò yín gẹ́gẹ́ bí fáìlì JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>A kò ń ṣe àkọsílẹ̀ àwọn ìgbà ìṣiṣẹ́ lórí ojú òpó yìí, nítorí náà kò sí ẹ̀rọ mìíràn tí a lè mú jáde. Ẹ yí ọ̀rọ̀ aṣínà yín padà nísinsìnyí.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>A ti mú àwọn ìgbà ìṣiṣẹ́ mìíràn %count jáde. Nísinsìnyí ẹ yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Kò sí ẹ̀rọ mìíràn tí ó wọlé. Nísinsìnyí ẹ yí ọ̀rọ̀ aṣínà yín padà.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ẹ ṣé. A ti sàmì sí ìṣẹ̀lẹ̀ náà gẹ́gẹ́ bí tiyín.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Ìṣẹ̀lẹ̀ yẹn kò nílò ìdáhùn.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ojú ìwé náà ti parí. A kò yí nǹkan kan padà; ẹ jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan sí i.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ẹ dáàbò bo àkáǹtì yín</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Bí ohun kan níbí kì í bá ṣe ẹ̀yin, ẹ mú gbogbo ẹ̀rọ mìíràn jáde, lẹ́yìn náà ẹ yan ọ̀rọ̀ aṣínà tuntun. Àwọn ẹ̀rọ tí ó wà ní wíwọlé nípasẹ̀ Ẹ ranti mi náà yóò jáde.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Gbogbo ẹ̀rọ àyàfi èyí ni a ó mú jáde nígbà ìbéèrè rẹ̀ tó kàn. Lẹ́yìn náà ẹ ó yan ọ̀rọ̀ aṣínà tuntun.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Bẹ́ẹ̀ni, mú àwọn ẹ̀rọ mìíràn jáde</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ṣé ẹ̀yin ni èyí?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Bẹ́ẹ̀ni, èmi ni</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Rárá, dáàbò bo àkáǹtì mi</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Olùgbọ́ ìgbà ìwọlé: %handler. A ń ka àwọn ìgbà ìwọlé láti inú tábìlì expuser_session, nítorí náà ìròyìn náà ń ṣiṣẹ́ pẹ̀lú olùgbọ́ èyíkéyìí.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Ìṣẹ̀lẹ̀ àfura ní wákàtí %hours sẹ́yìn</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Nẹ́tíwọ́ọ̀kì kan kùnà láti wọlé sí àkáǹtì %accounts (ìgbìyànjú %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>A ti ti àkáǹtì pa lẹ́yìn ìwọlé tí ó kùnà</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Ìwọlé %count tí ó kùnà lórí àkáǹtì kan</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Wọlé láti orílẹ̀-èdè %count lẹ́ẹ̀kan náà</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Ìṣẹ̀lẹ̀ ààbò</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Àwọn ìgbà ìṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>A ń ka àwọn ìwọlé tí ó kùnà láti inú àkọsílẹ̀ àyẹ̀wò olùmúlò, èyí tí kò sí níbí.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Kò sí ohun àfura: kò sí àkáǹtì pẹ̀lú ìwọlé tí ó kùnà léraléra, kò sí nẹ́tíwọ́ọ̀kì tí ń gbìyànjú àkáǹtì púpọ̀, kò sí àkáǹtì tí ó wọlé láti orílẹ̀-èdè púpọ̀.</translation>
     </message>
 </context>
 <context>

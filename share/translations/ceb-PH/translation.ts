@@ -78329,6 +78329,58 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ang imong mga sesyon ug mga panghitabo sa seguridad isip JSON file.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Wala gitala ang mga sesyon niini nga site, mao nga walay laing device nga ma-logout. Usba dayon ang imong password.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ka laing sesyon ang na-logout. Karon usba ang imong password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Walay laing device nga naka-login. Karon usba ang imong password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Salamat. Ang hitabo gimarkahan nga imo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Kana nga hitabo wala magkinahanglan og tubag.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Nag-expire na ang panid. Walay giusab; palihug sulayi pag-usab.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Seguroha ang imong account</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kung adunay butang dinhi nga dili ikaw, i-logout ang matag laing device, dayon pagpili og bag-ong password. Ang mga device nga nagpabiling naka-login pinaagi sa Hinumdomi ako ma-logout usab.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ang matag device gawas niini ma-logout sa sunod niini nga hangyo. Dayon mopili ka og bag-ong password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Oo, i-logout ang ubang mga device</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ikaw ba kini?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Oo, ako kadto</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Dili, seguroha ang akong account</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ang imong mga sesyon ug mga panghitabo sa seguridad isip JSON file.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Wala gitala ang mga sesyon niini nga site, mao nga walay laing device nga ma-logout. Usba dayon ang imong password.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count ka laing sesyon ang na-logout. Karon usba ang imong password.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Walay laing device nga naka-login. Karon usba ang imong password.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Salamat. Ang hitabo gimarkahan nga imo.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Kana nga hitabo wala magkinahanglan og tubag.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Nag-expire na ang panid. Walay giusab; palihug sulayi pag-usab.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Seguroha ang imong account</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Kung adunay butang dinhi nga dili ikaw, i-logout ang matag laing device, dayon pagpili og bag-ong password. Ang mga device nga nagpabiling naka-login pinaagi sa Hinumdomi ako ma-logout usab.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Ang matag device gawas niini ma-logout sa sunod niini nga hangyo. Dayon mopili ka og bag-ong password.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Oo, i-logout ang ubang mga device</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ikaw ba kini?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Oo, ako kadto</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Dili, seguroha ang akong account</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Handler sa sesyon: %handler. Ang mga sesyon gibasa gikan sa table nga expuser_session, busa ang report molihok sa matag handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Kadudahang kalihokan sa miaging %hours ka oras</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Usa ka network ang napakyas sa pag-login sa %accounts ka account (%count ka pagsulay)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Na-lock ang account human sa napakyas nga mga pag-login</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count ka napakyas nga pag-login sa usa ka account</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Naka-login gikan sa %count ka nasod sa samang higayon</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Kalihokan sa seguridad</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Mga sesyon</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Ang napakyas nga mga pag-login gibasa gikan sa audit log sa mga user, nga dili magamit dinhi.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Walay kadudahan: walay account nga balik-balik nga napakyas sa pag-login, walay network nga misulay sa daghang account, walay account nga naka-login gikan sa daghang nasod.</translation>
     </message>
 </context>
 <context>

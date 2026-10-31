@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>دانیشتنەکان و ڕووداوەکانی پاراستنتان وەک فایلی JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>دانیشتنەکان لەم ماڵپەڕەدا تۆمار ناکرێن، بۆیە هیچ ئامێرێکی تر نەتوانرا دەربکرێت. ئێستا وشەی نهێنییەکەتان بگۆڕن.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count دانیشتنی تر دەرکران. ئێستا وشەی نهێنییەکەتان بگۆڕن.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>هیچ ئامێرێکی تر لە ژوورەوە نەبوو. ئێستا وشەی نهێنییەکەتان بگۆڕن.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>سوپاس. ڕووداوەکە وەک هی ئێوە نیشانە کرا.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ئەو ڕووداوە پێویستی بە وەڵام نییە.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ماوەی پەڕەکە بەسەرچووبوو. هیچ شتێک نەگۆڕدرا؛ تکایە دووبارە هەوڵ بدەنەوە.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>هەژمارەکەتان بپارێزن</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ئەگەر شتێک لێرەدا ئێوە نەبوون، هەموو ئامێرەکانی تر دەربکەن، پاشان وشەی نهێنییەکی نوێ هەڵبژێرن. ئەو ئامێرانەی بە «من بیرت بێت» لە ژوورەوە ماونەتەوە، ئەوانیش دەردەکرێن.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>هەموو ئامێرێک جگە لەم ئامێرە لە داواکاریی داهاتوویدا دەردەکرێت. پاشان وشەی نهێنییەکی نوێ هەڵدەبژێرن.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>بەڵێ، ئامێرەکانی تر دەربکە</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ئەمە ئێوە بوون؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>بەڵێ، من بووم</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نەخێر، هەژمارەکەم بپارێزە</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>دانیشتنەکان و ڕووداوەکانی پاراستنتان وەک فایلی JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>دانیشتنەکان لەم ماڵپەڕەدا تۆمار ناکرێن، بۆیە هیچ ئامێرێکی تر نەتوانرا دەربکرێت. ئێستا وشەی نهێنییەکەتان بگۆڕن.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count دانیشتنی تر دەرکران. ئێستا وشەی نهێنییەکەتان بگۆڕن.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>هیچ ئامێرێکی تر لە ژوورەوە نەبوو. ئێستا وشەی نهێنییەکەتان بگۆڕن.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>سوپاس. ڕووداوەکە وەک هی ئێوە نیشانە کرا.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ئەو ڕووداوە پێویستی بە وەڵام نییە.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ماوەی پەڕەکە بەسەرچووبوو. هیچ شتێک نەگۆڕدرا؛ تکایە دووبارە هەوڵ بدەنەوە.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>هەژمارەکەتان بپارێزن</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ئەگەر شتێک لێرەدا ئێوە نەبوون، هەموو ئامێرەکانی تر دەربکەن، پاشان وشەی نهێنییەکی نوێ هەڵبژێرن. ئەو ئامێرانەی بە «من بیرت بێت» لە ژوورەوە ماونەتەوە، ئەوانیش دەردەکرێن.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>هەموو ئامێرێک جگە لەم ئامێرە لە داواکاریی داهاتوویدا دەردەکرێت. پاشان وشەی نهێنییەکی نوێ هەڵدەبژێرن.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>بەڵێ، ئامێرەکانی تر دەربکە</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ئەمە ئێوە بوون؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>بەڵێ، من بووم</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نەخێر، هەژمارەکەم بپارێزە</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>هەندڵەری دانیشتن: %handler. دانیشتنەکان لە خشتەی expuser_session دەخوێنرێنەوە، بۆیە ڕاپۆرتەکە لەگەڵ هەموو هەندڵەرێک کار دەکات.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>چالاکیی گوماناوی لە %hours کاتژمێری ڕابردوودا</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>تۆڕێک نەیتوانی بچێتە ناو %accounts هەژمار (%count هەوڵ)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>هەژمار داخرا دوای چوونەژوورەوەی سەرنەکەوتوو</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count چوونەژوورەوەی سەرنەکەوتوو لەسەر یەک هەژمار</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>لە یەک کاتدا لە %count وڵاتەوە چووەتە ژوورەوە</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>چالاکیی پاراستن</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>دانیشتنەکان</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>چوونەژوورەوە سەرنەکەوتووەکان لە تۆماری وردبینیی بەکارهێنەران دەخوێنرێنەوە، کە لێرەدا بەردەست نییە.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>هیچ شتێکی گوماناوی نییە: هیچ هەژمارێک بە چوونەژوورەوەی سەرنەکەوتووی دووبارە نییە، هیچ تۆڕێک چەند هەژمارێک تاقی ناکاتەوە، هیچ هەژمارێک لە چەند وڵاتێکەوە نەچووەتە ژوورەوە.</translation>
     </message>
 </context>
 <context>

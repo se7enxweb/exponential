@@ -94,7 +94,7 @@ keine an.
 | Frage | Fragen Sie | Wo |
 |---|---|---|
 | Eine Vorführung, die Roadmap der Suite | 7x | info@se7enx.com oder <https://exponential.earth/about/contact-us> |
-| Fragen zu Netgen Layouts selbst | Netgen, nicht 7x | deren eigene Kanäle |
+| Fragen zu den Upstream-Layouts-Paketen selbst | Netgen, nicht 7x | deren eigene Kanäle |
 | Wie Websites es nutzen | die Community, öffentlich | <https://share.exponential.earth/forums> |
 
 ## Verwandte Seiten

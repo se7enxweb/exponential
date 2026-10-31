@@ -78329,6 +78329,58 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sashaawwanii fi taateewwan nageenyaa keessan akka faayilii JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Saayitii kana irratti sashaawwan hin galmaa'an, kanaaf meeshaan biraa tokkollee ba'uu hin dandeenye. Amma jecha icciitii keessan jijjiiraa.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Sashaawwan biroo %count ba'aniiru. Amma jecha icciitii keessan jijjiiraa.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Meeshaan biraa tokkollee seenee hin turre. Amma jecha icciitii keessan jijjiiraa.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Galatoomaa. Taateen kun kan keessan ta'uun mallattoo'eera.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Taateen sun deebii hin barbaachisu.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Fuulli yeroon isaa darbeera. Homaa hin jijjiiramne; maaloo irra deebi'aa yaalaa.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Herrega keessan eegaa</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Wanti asii tokko isin yoo hin taane, meeshaalee biroo hunda ba'isaa, achiis jecha icciitii haaraa filadhaa. Meeshaaleen “Na yaadadhu”n seenanii turanis ni ba'u.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Meeshaan hundi, kana malee, gaaffii isaa itti aanu irratti ni ba'a. Achiis isin jecha icciitii haaraa filattu.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Eeyyee, meeshaalee biroo ba'isi</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Kun isin turtanii?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Eeyyee, ana ture</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Lakki, herrega koo eegi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sashaawwanii fi taateewwan nageenyaa keessan akka faayilii JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Saayitii kana irratti sashaawwan hin galmaa'an, kanaaf meeshaan biraa tokkollee ba'uu hin dandeenye. Amma jecha icciitii keessan jijjiiraa.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Sashaawwan biroo %count ba'aniiru. Amma jecha icciitii keessan jijjiiraa.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Meeshaan biraa tokkollee seenee hin turre. Amma jecha icciitii keessan jijjiiraa.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Galatoomaa. Taateen kun kan keessan ta'uun mallattoo'eera.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Taateen sun deebii hin barbaachisu.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Fuulli yeroon isaa darbeera. Homaa hin jijjiiramne; maaloo irra deebi'aa yaalaa.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Herrega keessan eegaa</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Wanti asii tokko isin yoo hin taane, meeshaalee biroo hunda ba'isaa, achiis jecha icciitii haaraa filadhaa. Meeshaaleen “Na yaadadhu”n seenanii turanis ni ba'u.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Meeshaan hundi, kana malee, gaaffii isaa itti aanu irratti ni ba'a. Achiis isin jecha icciitii haaraa filattu.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Eeyyee, meeshaalee biroo ba'isi</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Kun isin turtanii?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Eeyyee, ana ture</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Lakki, herrega koo eegi</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Hojjettaa sashaa: %handler. Sashaawwan gabatee expuser_session irraa dubbifamu, kanaaf gabaasni hojjettaa kamiin iyyuu ni hojjeta.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Sochii shakkisiisaa sa'aatii %hours darban keessatti</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Neetworkiin tokko herregoota %accounts seenuu dadhabe (yaalii %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Herregni erga seensi hin milkoofne booda cufame</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Seensa hin milkoofne %count herrega tokko irratti</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Yeroo tokkotti biyyoota %count irraa seene</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sochii nageenyaa</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sashaawwan</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Seensi hin milkoofne galmee odiitii fayyadamtootaa irraa dubbifama, kunis asitti hin argamu.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Wanti shakkisiisaan hin jiru: herregni seensa hin milkoofne irra deddeebiin qabu hin jiru, neetworkiin herregoota hedduu yaalu hin jiru, herregni biyyoota hedduu irraa seene hin jiru.</translation>
     </message>
 </context>
 <context>

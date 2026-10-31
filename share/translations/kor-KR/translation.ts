@@ -78359,6 +78359,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>세션 및 보안 이벤트를 JSON 파일로 받습니다.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>이 사이트에서는 세션이 기록되지 않으므로 다른 장치를 로그아웃할 수 없었습니다. 지금 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>다른 세션 %count개가 로그아웃되었습니다. 이제 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>로그인된 다른 장치가 없었습니다. 이제 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>감사합니다. 이 이벤트는 본인의 활동으로 표시되었습니다.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>이 이벤트에는 응답이 필요하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>페이지가 만료되었습니다. 변경된 내용이 없습니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>계정 보호</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>본인이 하지 않은 활동이 있다면 다른 모든 장치를 로그아웃한 다음 새 암호를 선택하십시오. '로그인 상태 유지'로 로그인된 장치도 로그아웃됩니다.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>이 장치를 제외한 모든 장치는 다음 요청 시 로그아웃됩니다. 그런 다음 새 암호를 선택합니다.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>예, 다른 장치 로그아웃</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>본인이었습니까?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>예, 본인입니다</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>아니요, 계정을 보호합니다</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78541,6 +78593,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>세션 및 보안 이벤트를 JSON 파일로 받습니다.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>이 사이트에서는 세션이 기록되지 않으므로 다른 장치를 로그아웃할 수 없었습니다. 지금 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>다른 세션 %count개가 로그아웃되었습니다. 이제 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>로그인된 다른 장치가 없었습니다. 이제 암호를 변경하십시오.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>감사합니다. 이 이벤트는 본인의 활동으로 표시되었습니다.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>이 이벤트에는 응답이 필요하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>페이지가 만료되었습니다. 변경된 내용이 없습니다. 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>계정 보호</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>본인이 하지 않은 활동이 있다면 다른 모든 장치를 로그아웃한 다음 새 암호를 선택하십시오. '로그인 상태 유지'로 로그인된 장치도 로그아웃됩니다.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>이 장치를 제외한 모든 장치는 다음 요청 시 로그아웃됩니다. 그런 다음 새 암호를 선택합니다.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>예, 다른 장치 로그아웃</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>본인이었습니까?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>예, 본인입니다</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>아니요, 계정을 보호합니다</translation>
     </message>
 </context>
 <context>
@@ -78732,6 +78836,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>세션 처리기: %handler. 세션은 expuser_session 테이블에서 읽으므로 이 보고서는 모든 처리기에서 작동합니다.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>최근 %hours시간 동안의 의심스러운 활동</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>한 네트워크가 계정 %accounts개에 로그인하지 못했습니다(시도 %count회)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>로그인 실패 후 계정 잠김</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>한 계정에서 로그인 실패 %count회</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>%count개 국가에서 동시에 로그인함</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>보안 활동</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>세션</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>로그인 실패는 사용자 감사 로그에서 읽어 오며, 이 로그는 여기에서 사용할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>의심스러운 활동 없음: 로그인 실패가 반복된 계정도, 여러 계정을 시도한 네트워크도, 여러 국가에서 로그인한 계정도 없습니다.</translation>
     </message>
 </context>
 <context>

@@ -78327,6 +78327,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>JSON ଫାଇଲ୍ ଭାବେ ଆପଣଙ୍କ ସତ୍ର ଓ ସୁରକ୍ଷା ଘଟଣା।</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ଏହି ସାଇଟରେ ସେସନ୍‌ଗୁଡ଼ିକ ରେକର୍ଡ କରାଯାଏ ନାହିଁ, ତେଣୁ ଅନ୍ୟ କୌଣସି ଡିଭାଇସ୍ ସାଇନ୍ ଆଉଟ୍ କରାଯାଇପାରିଲା ନାହିଁ। ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ପାସୱାର୍ଡ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ଅନ୍ୟ %count ସେସନ୍ ସାଇନ୍ ଆଉଟ୍ କରାଗଲା। ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ପାସୱାର୍ଡ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ଅନ୍ୟ କୌଣସି ଡିଭାଇସ୍ ସାଇନ୍ ଇନ୍ ହୋଇନଥିଲା। ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ପାସୱାର୍ଡ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ଧନ୍ୟବାଦ। ଏହି ଘଟଣାକୁ ଆପଣଙ୍କର ବୋଲି ଚିହ୍ନିତ କରାଗଲା।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ସେହି ଘଟଣାର କୌଣସି ଉତ୍ତର ଆବଶ୍ୟକ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ପୃଷ୍ଠାର ମିଆଦ ସମାପ୍ତ ହୋଇଯାଇଥିଲା। କିଛି ବଦଳାଯାଇନାହିଁ; ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ଆପଣଙ୍କ ଖାତା ସୁରକ୍ଷିତ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ଯଦି ଏଠାରେ କିଛି ଆପଣ କରିନଥିଲେ, ଅନ୍ୟ ସମସ୍ତ ଡିଭାଇସ୍ ସାଇନ୍ ଆଉଟ୍ କରନ୍ତୁ, ତାପରେ ଏକ ନୂଆ ପାସୱାର୍ଡ ବାଛନ୍ତୁ। “ମୋତେ ମନେ ରଖନ୍ତୁ” ସହିତ ସାଇନ୍ ଇନ୍ ରହିଥିବା ଡିଭାଇସ୍‌ଗୁଡ଼ିକ ମଧ୍ୟ ସାଇନ୍ ଆଉଟ୍ ହୁଅନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ଏହାକୁ ଛାଡ଼ି ପ୍ରତ୍ୟେକ ଡିଭାଇସ୍ ତାହାର ପରବର୍ତ୍ତୀ ଅନୁରୋଧରେ ସାଇନ୍ ଆଉଟ୍ ହୁଏ। ତାପରେ ଆପଣ ଏକ ନୂଆ ପାସୱାର୍ଡ ବାଛନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ହଁ, ଅନ୍ୟ ଡିଭାଇସ୍‌ଗୁଡ଼ିକ ସାଇନ୍ ଆଉଟ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ଏହା ଆପଣ ଥିଲେ କି?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ହଁ, ଏହା ମୁଁ ଥିଲି</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ନା, ମୋ ଖାତା ସୁରକ୍ଷିତ କରନ୍ତୁ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>JSON ଫାଇଲ୍ ଭାବେ ଆପଣଙ୍କ ସତ୍ର ଓ ସୁରକ୍ଷା ଘଟଣା।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ଏହି ସାଇଟରେ ସେସନ୍‌ଗୁଡ଼ିକ ରେକର୍ଡ କରାଯାଏ ନାହିଁ, ତେଣୁ ଅନ୍ୟ କୌଣସି ଡିଭାଇସ୍ ସାଇନ୍ ଆଉଟ୍ କରାଯାଇପାରିଲା ନାହିଁ। ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ପାସୱାର୍ଡ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ଅନ୍ୟ %count ସେସନ୍ ସାଇନ୍ ଆଉଟ୍ କରାଗଲା। ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ପାସୱାର୍ଡ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ଅନ୍ୟ କୌଣସି ଡିଭାଇସ୍ ସାଇନ୍ ଇନ୍ ହୋଇନଥିଲା। ବର୍ତ୍ତମାନ ଆପଣଙ୍କ ପାସୱାର୍ଡ ବଦଳାନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ଧନ୍ୟବାଦ। ଏହି ଘଟଣାକୁ ଆପଣଙ୍କର ବୋଲି ଚିହ୍ନିତ କରାଗଲା।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ସେହି ଘଟଣାର କୌଣସି ଉତ୍ତର ଆବଶ୍ୟକ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ପୃଷ୍ଠାର ମିଆଦ ସମାପ୍ତ ହୋଇଯାଇଥିଲା। କିଛି ବଦଳାଯାଇନାହିଁ; ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ଆପଣଙ୍କ ଖାତା ସୁରକ୍ଷିତ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ଯଦି ଏଠାରେ କିଛି ଆପଣ କରିନଥିଲେ, ଅନ୍ୟ ସମସ୍ତ ଡିଭାଇସ୍ ସାଇନ୍ ଆଉଟ୍ କରନ୍ତୁ, ତାପରେ ଏକ ନୂଆ ପାସୱାର୍ଡ ବାଛନ୍ତୁ। “ମୋତେ ମନେ ରଖନ୍ତୁ” ସହିତ ସାଇନ୍ ଇନ୍ ରହିଥିବା ଡିଭାଇସ୍‌ଗୁଡ଼ିକ ମଧ୍ୟ ସାଇନ୍ ଆଉଟ୍ ହୁଅନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ଏହାକୁ ଛାଡ଼ି ପ୍ରତ୍ୟେକ ଡିଭାଇସ୍ ତାହାର ପରବର୍ତ୍ତୀ ଅନୁରୋଧରେ ସାଇନ୍ ଆଉଟ୍ ହୁଏ। ତାପରେ ଆପଣ ଏକ ନୂଆ ପାସୱାର୍ଡ ବାଛନ୍ତି।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ହଁ, ଅନ୍ୟ ଡିଭାଇସ୍‌ଗୁଡ଼ିକ ସାଇନ୍ ଆଉଟ୍ କରନ୍ତୁ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ଏହା ଆପଣ ଥିଲେ କି?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ହଁ, ଏହା ମୁଁ ଥିଲି</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ନା, ମୋ ଖାତା ସୁରକ୍ଷିତ କରନ୍ତୁ</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ସତ୍ର ହ୍ୟାଣ୍ଡଲର୍: %handler। ସତ୍ରଗୁଡ଼ିକ expuser_session ଟେବୁଲ୍‌ରୁ ପଢ଼ାଯାଏ, ତେଣୁ ରିପୋର୍ଟଟି ପ୍ରତ୍ୟେକ ହ୍ୟାଣ୍ଡଲର୍ ସହିତ କାମ କରେ।</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ଗତ %hours ଘଣ୍ଟାରେ ସନ୍ଦେହଜନକ କାର୍ଯ୍ୟକଳାପ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ଗୋଟିଏ ନେଟୱାର୍କ %accounts ଖାତାରେ ସାଇନ୍ ଇନ୍ କରିବାରେ ବିଫଳ ହେଲା (%count ପ୍ରୟାସ)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ବିଫଳ ସାଇନ୍ ଇନ୍ ପରେ ଖାତା ଲକ୍ ହେଲା</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ଗୋଟିଏ ଖାତାରେ %count ବିଫଳ ସାଇନ୍ ଇନ୍</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ଏକାସାଙ୍ଗରେ %count ଦେଶରୁ ସାଇନ୍ ଇନ୍</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ସୁରକ୍ଷା କାର୍ଯ୍ୟକଳାପ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ସେସନ୍‌ଗୁଡ଼ିକ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ବିଫଳ ସାଇନ୍ ଇନ୍ ଉପଯୋଗକର୍ତ୍ତା ଅଡିଟ୍ ଲଗ୍‌ରୁ ପଢ଼ାଯାଏ, ଯାହା ଏଠାରେ ଉପଲବ୍ଧ ନାହିଁ।</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>କିଛି ସନ୍ଦେହଜନକ ନାହିଁ: ବାରମ୍ବାର ବିଫଳ ସାଇନ୍ ଇନ୍ ଥିବା କୌଣସି ଖାତା ନାହିଁ, ଅନେକ ଖାତା ଚେଷ୍ଟା କରୁଥିବା କୌଣସି ନେଟୱାର୍କ ନାହିଁ, ଅନେକ ଦେଶରୁ ସାଇନ୍ ଇନ୍ ହୋଇଥିବା କୌଣସି ଖାତା ନାହିଁ।</translation>
     </message>
 </context>
 <context>

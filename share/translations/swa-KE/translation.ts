@@ -78327,6 +78327,58 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vipindi vyako na matukio ya usalama kama faili ya JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Vipindi havirekodiwi kwenye tovuti hii, kwa hivyo hakuna kifaa kingine kilichoweza kutolewa. Badilisha nenosiri lako sasa hivi.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Vipindi vingine %count vimetolewa. Sasa badilisha nenosiri lako.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Hakuna kifaa kingine kilichokuwa kimeingia. Sasa badilisha nenosiri lako.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Asante. Tukio limewekwa alama kuwa lako.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tukio hilo halihitaji jibu.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Muda wa ukurasa ulikuwa umeisha. Hakuna kilichobadilishwa; tafadhali jaribu tena.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Linda akaunti yako</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ikiwa kitu hapa hakikuwa wewe, toa vifaa vingine vyote, kisha uchague nenosiri jipya. Vifaa vilivyobaki vimeingia kupitia Nikumbuke vinatolewa pia.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kila kifaa isipokuwa hiki kinatolewa katika ombi lake linalofuata. Kisha unachagua nenosiri jipya.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ndiyo, toa vifaa vingine</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Je, huyu alikuwa wewe?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ndiyo, nilikuwa mimi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Hapana, linda akaunti yangu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Vipindi vyako na matukio ya usalama kama faili ya JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Vipindi havirekodiwi kwenye tovuti hii, kwa hivyo hakuna kifaa kingine kilichoweza kutolewa. Badilisha nenosiri lako sasa hivi.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Vipindi vingine %count vimetolewa. Sasa badilisha nenosiri lako.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Hakuna kifaa kingine kilichokuwa kimeingia. Sasa badilisha nenosiri lako.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Asante. Tukio limewekwa alama kuwa lako.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Tukio hilo halihitaji jibu.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Muda wa ukurasa ulikuwa umeisha. Hakuna kilichobadilishwa; tafadhali jaribu tena.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Linda akaunti yako</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ikiwa kitu hapa hakikuwa wewe, toa vifaa vingine vyote, kisha uchague nenosiri jipya. Vifaa vilivyobaki vimeingia kupitia Nikumbuke vinatolewa pia.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Kila kifaa isipokuwa hiki kinatolewa katika ombi lake linalofuata. Kisha unachagua nenosiri jipya.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ndiyo, toa vifaa vingine</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Je, huyu alikuwa wewe?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ndiyo, nilikuwa mimi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Hapana, linda akaunti yangu</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Kishughulikiaji cha vipindi: %handler. Vipindi husomwa kutoka jedwali expuser_session, kwa hivyo ripoti hufanya kazi na kila kishughulikiaji.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Shughuli za kutiliwa shaka katika saa %hours zilizopita</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Mtandao mmoja ulishindwa kuingia kwenye akaunti %accounts (majaribio %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akaunti imefungwa baada ya kuingia kushindwa</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Kuingia kulikoshindwa mara %count kwenye akaunti moja</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Imeingia kutoka nchi %count kwa wakati mmoja</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Shughuli za usalama</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Vipindi</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Kuingia kulikoshindwa kunasomwa kutoka kwenye kumbukumbu ya ukaguzi wa watumiaji, ambayo haipatikani hapa.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Hakuna cha kutiliwa shaka: hakuna akaunti yenye kuingia kulikoshindwa mara kwa mara, hakuna mtandao unaojaribu akaunti kadhaa, hakuna akaunti iliyoingia kutoka nchi kadhaa.</translation>
     </message>
 </context>
 <context>

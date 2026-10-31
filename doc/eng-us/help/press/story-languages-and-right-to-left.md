@@ -40,7 +40,7 @@ development line, which is not released.
 | Complete English and German catalogs, a translation string for almost every visible text | 27 and 28 September 2026 | [Translations and languages](../../features/6.0/translations-and-languages.md) |
 | 89 new locales and one page for every language | 15 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#15-october-2026-89-new-locales-and-one-page-for-every-language) |
 | Right-to-left languages, Hebrew, Latin, Klingon and 81 more locales | 16 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#16-october-2026-right-to-left-languages-hebrew-latin-klingon-and-81-more-locales) |
-| The administration in Arabic, machine-assisted and to be reviewed by a native speaker | 18 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#18-october-2026-the-administration-in-arabic-and-hebrew-for-the-newest-strings) |
+| The administration in Arabic and Hebrew for the newest strings, machine-assisted | 18 October 2026 | [6.0.15 changelog](../../../changelogs/6.0/6.0.15.md#18-october-2026-the-administration-in-arabic-and-hebrew-for-the-newest-strings) |
 
 ## Facts you can print
 
@@ -53,7 +53,6 @@ development line, which is not released.
 | A left-to-right page stays "the same markup byte for byte" after the right-to-left work. | [Right to left](../../features/6.0/right-to-left.md) |
 | No PHP extension is needed at run time for the languages. | [Languages in Exponential, section 10](../../languages.md#10-no-php-extension-at-run-time) |
 | An installation can hold at most 62 content languages on 64-bit PHP. | [Languages in Exponential, section 11](../../languages.md#11-the-limit-of-62-content-languages) |
-| Several complete translations were machine-assisted; a native review is invited. | [Languages in Exponential, section 8](../../languages.md#8-adding-or-completing-an-administration-translation) |
 
 ## Where the sources differ
 
@@ -71,12 +70,12 @@ October in several steps, so use the dated figure from the languages page and gi
 ## Angles and headline ideas
 
 - Regional angle: is your language complete, partial or content only? Check section 4 of the languages page.
-- Community angle: native speakers are invited to review machine-assisted translations.
+- Community angle: how anyone can add or complete an administration translation ([Languages in Exponential, section 8](../../languages.md#8-adding-or-completing-an-administration-translation)).
 
 ```text
 "An admin that reads right to left: Exponential adds Hebrew and Arabic"
 "368 locales, many complete translations: counting languages honestly"
-"Native speakers wanted: reviewing a CMS translated with machine help"
+"Translated with machine help, and saying so: a CMS in many languages"
 ```
 
 ## Who to ask

@@ -78337,6 +78337,58 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sési sareng kajadian kaamanan anjeun salaku berkas JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sési henteu dicatet dina situs ieu, jadi teu aya alat séjén anu tiasa dikaluarkeun. Robih sandi anjeun ayeuna kénéh.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sési séjén parantos dikaluarkeun. Ayeuna robih sandi anjeun.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Teu aya alat séjén anu asup. Ayeuna robih sandi anjeun.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Hatur nuhun. Kajadian ieu ditandaan minangka milik anjeun.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Kajadian éta henteu peryogi waleran.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kacana parantos kadaluwarsa. Teu aya anu dirobih; mangga cobian deui.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Amankeun akun anjeun</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Upami aya hal di dieu anu sanés anjeun, kaluarkeun sadaya alat séjén, teras pilih sandi énggal. Alat anu tetep asup ku Émut kuring ogé dikaluarkeun.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Unggal alat iwal ti ieu dikaluarkeun dina pamundut salajengna. Teras anjeun milih sandi énggal.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Leres, kaluarkeun alat séjén</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Naha ieu anjeun?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Leres, éta abdi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Henteu, amankeun akun abdi</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78519,6 +78571,58 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Sési sareng kajadian kaamanan anjeun salaku berkas JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sési henteu dicatet dina situs ieu, jadi teu aya alat séjén anu tiasa dikaluarkeun. Robih sandi anjeun ayeuna kénéh.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count sési séjén parantos dikaluarkeun. Ayeuna robih sandi anjeun.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Teu aya alat séjén anu asup. Ayeuna robih sandi anjeun.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Hatur nuhun. Kajadian ieu ditandaan minangka milik anjeun.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Kajadian éta henteu peryogi waleran.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Kacana parantos kadaluwarsa. Teu aya anu dirobih; mangga cobian deui.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Amankeun akun anjeun</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Upami aya hal di dieu anu sanés anjeun, kaluarkeun sadaya alat séjén, teras pilih sandi énggal. Alat anu tetep asup ku Émut kuring ogé dikaluarkeun.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Unggal alat iwal ti ieu dikaluarkeun dina pamundut salajengna. Teras anjeun milih sandi énggal.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Leres, kaluarkeun alat séjén</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Naha ieu anjeun?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Leres, éta abdi</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Henteu, amankeun akun abdi</translation>
     </message>
 </context>
 <context>
@@ -78710,6 +78814,42 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Panangan sési: %handler. Sési dibaca tina tabél expuser_session, janten laporan ieu tiasa jalan sareng unggal panangan.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Aktivitas anu curiga dina %hours jam ka tukang</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Hiji jaringan gagal asup ka %accounts akun (%count usaha)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Akun dikonci saatos gagal asup</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count gagal asup dina hiji akun</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Asup ti %count nagara sakaligus</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Aktivitas kaamanan</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sési</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Gagal asup dibaca tina log audit pangguna, anu henteu sayogi di dieu.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Teu aya anu curiga: teu aya akun kalayan gagal asup anu diulang-ulang, teu aya jaringan anu nyobian sababaraha akun, teu aya akun anu asup ti sababaraha nagara.</translation>
     </message>
 </context>
 <context>

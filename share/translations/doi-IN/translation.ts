@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>तुंदे सत्तर ते सुरक्षा घटनां इक JSON फाइल दे रूप च।</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>इस साइट पर सत्तर दर्ज नेईं कीते जंदे, इस करी कोई होर डिवाइस लॉगआउट नेईं होई सकेआ। हुनै अपना पासवर्ड बदलो।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count होर सत्तर लॉगआउट होई गे। हुन अपना पासवर्ड बदलो।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>कोई होर डिवाइस लॉगइन नेईं हा। हुन अपना पासवर्ड बदलो।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्नवाद। घटना गी तुंदी दे रूप च चिन्हत करी दित्ता गेआ ऐ।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>उस घटना गी कुसै जवाब दी लोड़ नेईं।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>सफे दा समां मुक्की गेदा हा। किश बी नेईं बदलेआ गेआ; मेहरबानी करियै फ्ही कोशश करो।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>अपना खाता सुरक्षत करो</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>जेकर इत्थै किश तुस नेईं हे, तां बाकी सारे डिवाइस लॉगआउट करो, फ्ही नमां पासवर्ड चुनो। मिगी याद रखो कन्नै लॉगइन रेह् डिवाइस बी लॉगआउट होई जंदे न।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>इस गी छोड़ियै हर डिवाइस अपनी अगली बेनती पर लॉगआउट होई जंदा ऐ। फ्ही तुस नमां पासवर्ड चुनगे ओ।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>हां, बाकी डिवाइस लॉगआउट करो</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>केह् एह् तुस हे?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>हां, एह् मैं हा</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>नेईं, मेरा खाता सुरक्षत करो</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>तुंदे सत्तर ते सुरक्षा घटनां इक JSON फाइल दे रूप च।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>इस साइट पर सत्तर दर्ज नेईं कीते जंदे, इस करी कोई होर डिवाइस लॉगआउट नेईं होई सकेआ। हुनै अपना पासवर्ड बदलो।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count होर सत्तर लॉगआउट होई गे। हुन अपना पासवर्ड बदलो।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>कोई होर डिवाइस लॉगइन नेईं हा। हुन अपना पासवर्ड बदलो।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्नवाद। घटना गी तुंदी दे रूप च चिन्हत करी दित्ता गेआ ऐ।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>उस घटना गी कुसै जवाब दी लोड़ नेईं।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>सफे दा समां मुक्की गेदा हा। किश बी नेईं बदलेआ गेआ; मेहरबानी करियै फ्ही कोशश करो।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>अपना खाता सुरक्षत करो</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>जेकर इत्थै किश तुस नेईं हे, तां बाकी सारे डिवाइस लॉगआउट करो, फ्ही नमां पासवर्ड चुनो। मिगी याद रखो कन्नै लॉगइन रेह् डिवाइस बी लॉगआउट होई जंदे न।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>इस गी छोड़ियै हर डिवाइस अपनी अगली बेनती पर लॉगआउट होई जंदा ऐ। फ्ही तुस नमां पासवर्ड चुनगे ओ।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>हां, बाकी डिवाइस लॉगआउट करो</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>केह् एह् तुस हे?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>हां, एह् मैं हा</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>नेईं, मेरा खाता सुरक्षत करो</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>सत्तर हैंडलर: %handler। सत्तर टेबल expuser_session थमां पढ़े जंदे न, इस आस्तै रिपोर्ट हर हैंडलर कन्नै कम्म करदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>पिछले %hours घैंटें च शक्की गतिविधि</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>इक नेटवर्क %accounts खातें च लॉगइन करने च नाकाम रेहा (%count कोशशां)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>नाकाम लॉगइनें परैंत खाता लॉक होई गेआ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>इक खाते पर %count नाकाम लॉगइन</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>इक्कै बेल्लै %count देसें थमां लॉगइन</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षा गतिविधि</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सत्तर</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>नाकाम लॉगइन बरतूनी आह्ले दे ऑडिट लॉग थमां पढ़े जंदे न, जेहड़ा इत्थै उपलब्ध नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>किश बी शक्की नेईं: बार-बार नाकाम लॉगइन आह्ला कोई खाता नेईं, कई खातें गी अजमाने आह्ला कोई नेटवर्क नेईं, कई देसें थमां लॉगइन कोई खाता नेईं।</translation>
     </message>
 </context>
 <context>

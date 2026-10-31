@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ເຊສຊັນ ແລະ ເຫດການດ້ານຄວາມປອດໄພຂອງທ່ານໃນຮູບແບບໄຟລ໌ JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ເວັບໄຊນີ້ບໍ່ໄດ້ບັນທຶກເຊສຊັນ, ສະນັ້ນຈຶ່ງບໍ່ສາມາດອອກຈາກລະບົບອຸປະກອນອື່ນໄດ້. ກະລຸນາປ່ຽນລະຫັດຜ່ານຂອງທ່ານດຽວນີ້.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ໄດ້ອອກຈາກລະບົບ %count ເຊສຊັນອື່ນແລ້ວ. ຕອນນີ້ກະລຸນາປ່ຽນລະຫັດຜ່ານຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ບໍ່ມີອຸປະກອນອື່ນເຂົ້າສູ່ລະບົບຢູ່. ຕອນນີ້ກະລຸນາປ່ຽນລະຫັດຜ່ານຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ຂອບໃຈ. ເຫດການນີ້ຖືກໝາຍວ່າເປັນຂອງທ່ານແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ເຫດການນັ້ນບໍ່ຕ້ອງການຄຳຕອບ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ໜ້າໄດ້ໝົດອາຍຸແລ້ວ. ບໍ່ມີສິ່ງໃດຖືກປ່ຽນແປງ; ກະລຸນາລອງອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ປົກປ້ອງບັນຊີຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ຖ້າມີບາງຢ່າງຢູ່ນີ້ທີ່ບໍ່ແມ່ນທ່ານ, ໃຫ້ອອກຈາກລະບົບອຸປະກອນອື່ນທັງໝົດ, ແລ້ວເລືອກລະຫັດຜ່ານໃໝ່. ອຸປະກອນທີ່ຍັງເຂົ້າສູ່ລະບົບໄວ້ດ້ວຍ “ຈື່ຂ້ອຍໄວ້” ກໍຈະຖືກອອກຈາກລະບົບເຊັ່ນກັນ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ທຸກອຸປະກອນຍົກເວັ້ນອັນນີ້ຈະຖືກອອກຈາກລະບົບໃນຄຳຮ້ອງຂໍຖັດໄປ. ຈາກນັ້ນທ່ານຈະເລືອກລະຫັດຜ່ານໃໝ່.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ແມ່ນ, ອອກຈາກລະບົບອຸປະກອນອື່ນ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ນີ້ແມ່ນທ່ານບໍ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ແມ່ນ, ແມ່ນຂ້ອຍເອງ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ບໍ່, ປົກປ້ອງບັນຊີຂອງຂ້ອຍ</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>ເຊສຊັນ ແລະ ເຫດການດ້ານຄວາມປອດໄພຂອງທ່ານໃນຮູບແບບໄຟລ໌ JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>ເວັບໄຊນີ້ບໍ່ໄດ້ບັນທຶກເຊສຊັນ, ສະນັ້ນຈຶ່ງບໍ່ສາມາດອອກຈາກລະບົບອຸປະກອນອື່ນໄດ້. ກະລຸນາປ່ຽນລະຫັດຜ່ານຂອງທ່ານດຽວນີ້.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>ໄດ້ອອກຈາກລະບົບ %count ເຊສຊັນອື່ນແລ້ວ. ຕອນນີ້ກະລຸນາປ່ຽນລະຫັດຜ່ານຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>ບໍ່ມີອຸປະກອນອື່ນເຂົ້າສູ່ລະບົບຢູ່. ຕອນນີ້ກະລຸນາປ່ຽນລະຫັດຜ່ານຂອງທ່ານ.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>ຂອບໃຈ. ເຫດການນີ້ຖືກໝາຍວ່າເປັນຂອງທ່ານແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>ເຫດການນັ້ນບໍ່ຕ້ອງການຄຳຕອບ.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>ໜ້າໄດ້ໝົດອາຍຸແລ້ວ. ບໍ່ມີສິ່ງໃດຖືກປ່ຽນແປງ; ກະລຸນາລອງອີກຄັ້ງ.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>ປົກປ້ອງບັນຊີຂອງທ່ານ</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>ຖ້າມີບາງຢ່າງຢູ່ນີ້ທີ່ບໍ່ແມ່ນທ່ານ, ໃຫ້ອອກຈາກລະບົບອຸປະກອນອື່ນທັງໝົດ, ແລ້ວເລືອກລະຫັດຜ່ານໃໝ່. ອຸປະກອນທີ່ຍັງເຂົ້າສູ່ລະບົບໄວ້ດ້ວຍ “ຈື່ຂ້ອຍໄວ້” ກໍຈະຖືກອອກຈາກລະບົບເຊັ່ນກັນ.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>ທຸກອຸປະກອນຍົກເວັ້ນອັນນີ້ຈະຖືກອອກຈາກລະບົບໃນຄຳຮ້ອງຂໍຖັດໄປ. ຈາກນັ້ນທ່ານຈະເລືອກລະຫັດຜ່ານໃໝ່.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>ແມ່ນ, ອອກຈາກລະບົບອຸປະກອນອື່ນ</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>ນີ້ແມ່ນທ່ານບໍ?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>ແມ່ນ, ແມ່ນຂ້ອຍເອງ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>ບໍ່, ປົກປ້ອງບັນຊີຂອງຂ້ອຍ</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>ຕົວຈັດການເຊສຊັນ: %handler. ເຊສຊັນອ່ານຈາກຕາຕະລາງ expuser_session, ສະນັ້ນລາຍງານຈຶ່ງເຮັດວຽກກັບຕົວຈັດການທຸກແບບ.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>ກິດຈະກຳທີ່ໜ້າສົງໄສໃນ %hours ຊົ່ວໂມງທີ່ຜ່ານມາ</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>ເຄືອຂ່າຍໜຶ່ງເຂົ້າສູ່ລະບົບ %accounts ບັນຊີບໍ່ສຳເລັດ (%count ຄັ້ງ)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ບັນຊີຖືກລັອກຫຼັງຈາກເຂົ້າສູ່ລະບົບບໍ່ສຳເລັດ</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>ເຂົ້າສູ່ລະບົບບໍ່ສຳເລັດ %count ຄັ້ງໃນບັນຊີດຽວ</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>ເຂົ້າສູ່ລະບົບຈາກ %count ປະເທດພ້ອມກັນ</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>ກິດຈະກຳດ້ານຄວາມປອດໄພ</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>ເຊສຊັນ</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ການເຂົ້າສູ່ລະບົບທີ່ບໍ່ສຳເລັດຖືກອ່ານຈາກບັນທຶກການກວດສອບຜູ້ໃຊ້, ເຊິ່ງບໍ່ມີຢູ່ທີ່ນີ້.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>ບໍ່ມີຫຍັງໜ້າສົງໄສ: ບໍ່ມີບັນຊີທີ່ເຂົ້າສູ່ລະບົບບໍ່ສຳເລັດຊ້ຳໆ, ບໍ່ມີເຄືອຂ່າຍທີ່ພະຍາຍາມຫຼາຍບັນຊີ, ບໍ່ມີບັນຊີທີ່ເຂົ້າສູ່ລະບົບຈາກຫຼາຍປະເທດ.</translation>
     </message>
 </context>
 <context>

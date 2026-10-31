@@ -78329,6 +78329,58 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Wò zãɣiwo kple wò dedienɔnɔme ƒe nudzɔdzɔwo abe JSON faɛl ene.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Womeŋlɔa zãɣiwo ɖi le nyatakakadzraɖoƒe sia o, eya ta womete ŋu ɖe mɔ̃ɖaŋu bubu aɖeke do le eme o. Trɔ wò mɔxenya fifia.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Wode zãɣi bubu %count do le eme. Fifia trɔ wò mɔxenya.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Mɔ̃ɖaŋu bubu aɖeke menɔ eme o. Fifia trɔ wò mɔxenya.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Akpe. Woɖo dzesi nudzɔdzɔa be wòe nye tɔwò.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Nudzɔdzɔ ma mehiã ŋuɖoɖo aɖeke o.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Axa la ƒe ɣeyiɣi va yi. Wometrɔ naneke o; taflatse, gbugbɔ dze agbagba.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ta wò akɔnta ŋu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ne nane le afi sia si menye wòe o la, de mɔ̃ɖaŋu bubu ɖe sia ɖe do le eme, eye nàtia mɔxenya yeye. Wode mɔ̃ɖaŋu siwo wona wonɔ eme kple Ɖo ŋku dzinye dzi la hã do le eme.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Wode mɔ̃ɖaŋu ɖe sia ɖe negbe esia ko do le eme le eƒe biabia si kplɔe ɖo me. Emegbe nàtia mɔxenya yeye.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ɛ̃, de mɔ̃ɖaŋu bubuawo do le eme</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Wòe a?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ɛ̃, nyee</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ao, ta nye akɔnta ŋu</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Wò zãɣiwo kple wò dedienɔnɔme ƒe nudzɔdzɔwo abe JSON faɛl ene.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Womeŋlɔa zãɣiwo ɖi le nyatakakadzraɖoƒe sia o, eya ta womete ŋu ɖe mɔ̃ɖaŋu bubu aɖeke do le eme o. Trɔ wò mɔxenya fifia.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Wode zãɣi bubu %count do le eme. Fifia trɔ wò mɔxenya.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Mɔ̃ɖaŋu bubu aɖeke menɔ eme o. Fifia trɔ wò mɔxenya.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Akpe. Woɖo dzesi nudzɔdzɔa be wòe nye tɔwò.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Nudzɔdzɔ ma mehiã ŋuɖoɖo aɖeke o.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Axa la ƒe ɣeyiɣi va yi. Wometrɔ naneke o; taflatse, gbugbɔ dze agbagba.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Ta wò akɔnta ŋu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ne nane le afi sia si menye wòe o la, de mɔ̃ɖaŋu bubu ɖe sia ɖe do le eme, eye nàtia mɔxenya yeye. Wode mɔ̃ɖaŋu siwo wona wonɔ eme kple Ɖo ŋku dzinye dzi la hã do le eme.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Wode mɔ̃ɖaŋu ɖe sia ɖe negbe esia ko do le eme le eƒe biabia si kplɔe ɖo me. Emegbe nàtia mɔxenya yeye.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ɛ̃, de mɔ̃ɖaŋu bubuawo do le eme</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Wòe a?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ɛ̃, nyee</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Ao, ta nye akɔnta ŋu</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Zãɣi kpɔla: %handler. Woxlẽa zãɣiwo tso kplɔ̃ expuser_session me, eya ta nyatakaka la wɔa dɔ kple kpɔla ɖesiaɖe.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Nuwɔna siwo dzi kakaɖedzi mele o le gaƒoƒo %hours siwo va yi me</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Kadodo ɖeka mete ŋu ge ɖe akɔnta %accounts me o (agbagbadzedze %count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Wotu akɔnta la le gegedeeme siwo mede edzi o megbe</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Gegedeeme %count siwo mede edzi o le akɔnta ɖeka dzi</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Woge ɖe eme tso dukɔ %count me ɣeyiɣi ɖeka</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Dedienɔnɔme ƒe nuwɔwɔwo</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Zãɣiwo</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Woxlẽa gegedeeme siwo mede edzi o tso zãtɔwo ƒe ŋkuléleɖenu ƒe agbalẽ me, eye mele afi sia o.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Naneke si dzi kakaɖedzi mele o meli o: akɔnta aɖeke si ŋu gegedeeme siwo mede edzi o gbugbɔ dzɔ le o, kadodo aɖeke si dze agbagba le akɔnta geɖewo ŋu o, akɔnta aɖeke si ge ɖe eme tso dukɔ geɖewo me o.</translation>
     </message>
 </context>
 <context>

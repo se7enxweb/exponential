@@ -30,6 +30,9 @@ class Sessionreport extends \Exponential\Runnable\ModuleView
     const DAYS = 14;
     const LIMIT = 100;
 
+    /** The suspicious patterns cover the last hours */
+    const PATTERN_HOURS = 24;
+
     public function run( array $scope )
     {
         $Params = $scope['Params'];
@@ -97,6 +100,8 @@ class Sessionreport extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'report_limit', self::LIMIT );
         $tpl->setVariable( 'report_days', $days );
         $tpl->setVariable( 'report_today', $today );
+        $tpl->setVariable( 'report_patterns', $available ? \expUserSessionReport::patterns( self::PATTERN_HOURS ) : array() );
+        $tpl->setVariable( 'report_pattern_hours', self::PATTERN_HOURS );
         $tpl->setVariable( 'report_message', $message );
         $tpl->setVariable( 'report_form_token', self::formToken() );
         $tpl->setVariable( 'report_handler', get_class( \eZSession::getHandlerInstance() ) );

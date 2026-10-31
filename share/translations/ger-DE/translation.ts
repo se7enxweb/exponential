@@ -85299,6 +85299,58 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ihre Sitzungen und Sicherheitsereignisse als JSON-Datei.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sitzungen werden auf dieser Website nicht erfasst, daher konnte kein anderes Gerät abgemeldet werden. Ändern Sie jetzt Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count andere Sitzungen wurden abgemeldet. Ändern Sie jetzt Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Kein anderes Gerät war angemeldet. Ändern Sie jetzt Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Vielen Dank. Das Ereignis ist als Ihres markiert.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dieses Ereignis erfordert keine Antwort.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Die Seite war abgelaufen. Es wurde nichts geändert; bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Konto absichern</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Falls etwas hiervon nicht von Ihnen stammt, melden Sie alle anderen Geräte ab und wählen Sie dann ein neues Passwort. Geräte, die mit „Angemeldet bleiben“ angemeldet blieben, werden ebenfalls abgemeldet.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Alle Geräte außer diesem werden bei ihrer nächsten Anfrage abgemeldet. Danach wählen Sie ein neues Passwort.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, die anderen Geräte abmelden</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Waren Sie das?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, das war ich</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nein, mein Konto absichern</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -85481,6 +85533,58 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Ihre Sitzungen und Sicherheitsereignisse als JSON-Datei.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Sitzungen werden auf dieser Website nicht erfasst, daher konnte kein anderes Gerät abgemeldet werden. Ändern Sie jetzt Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count andere Sitzungen wurden abgemeldet. Ändern Sie jetzt Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Kein anderes Gerät war angemeldet. Ändern Sie jetzt Ihr Passwort.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Vielen Dank. Das Ereignis ist als Ihres markiert.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Dieses Ereignis erfordert keine Antwort.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Die Seite war abgelaufen. Es wurde nichts geändert; bitte versuchen Sie es noch einmal.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Konto absichern</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Falls etwas hiervon nicht von Ihnen stammt, melden Sie alle anderen Geräte ab und wählen Sie dann ein neues Passwort. Geräte, die mit „Angemeldet bleiben“ angemeldet blieben, werden ebenfalls abgemeldet.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Alle Geräte außer diesem werden bei ihrer nächsten Anfrage abgemeldet. Danach wählen Sie ein neues Passwort.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ja, die anderen Geräte abmelden</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Waren Sie das?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ja, das war ich</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Nein, mein Konto absichern</translation>
     </message>
 </context>
 <context>
@@ -85672,6 +85776,42 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Session-Handler: %handler. Die Sitzungen werden aus der Tabelle expuser_session gelesen, deshalb arbeitet der Bericht mit jedem Handler.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Verdächtige Aktivität in den letzten %hours Stunden</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Ein Netzwerk konnte sich bei %accounts Konten nicht anmelden (%count Versuche)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Konto nach fehlgeschlagenen Anmeldungen gesperrt</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>%count fehlgeschlagene Anmeldungen bei einem Konto</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Gleichzeitig aus %count Ländern angemeldet</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Sicherheitsaktivität</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Sitzungen</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Fehlgeschlagene Anmeldungen werden aus dem Benutzer-Audit-Log gelesen, das hier nicht verfügbar ist.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Nichts Verdächtiges: kein Konto mit wiederholt fehlgeschlagenen Anmeldungen, kein Netzwerk, das mehrere Konten probiert, kein Konto, das aus mehreren Ländern angemeldet ist.</translation>
     </message>
 </context>
 <context>

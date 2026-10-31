@@ -22,7 +22,7 @@ unterschiedlichen Vorstellungen davon, was gekauft wurde. Schreiben Sie es auf.
 | Updates | Jedes Release der Linie 1.x für 12 Monate |
 | Support | E-Mail, Antworten innerhalb von zwei Arbeitstagen, für eine Installation |
 | Dokumentation | README, INSTALL.md, eine Konfigurationsanleitung |
-| Kompatibilität | Getestet mit Exponential 6.0.15 und PHP 8.1 bis 8.5 |
+| Kompatibilität | Getestet mit Exponential 6.0.15 und PHP 8.0 bis 8.5 |
 | Nicht enthalten | Inhaltseingabe, Hosting, individuelle Änderungen |
 
 ## Schritt für Schritt

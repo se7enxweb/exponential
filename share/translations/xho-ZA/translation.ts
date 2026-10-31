@@ -78327,6 +78327,58 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Iiseshoni zenu neziganeko zokhuseleko njengefayile ye-JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Iiseshoni azirekhodwa kule sayithi, ngoko akukho sixhobo sinye sinokukhutshwa. Tshintsha inombolo yokuvula ngoku.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ezinye iiseshoni ezi-%count zikhutshiwe. Ngoku tshintsha inombolo yokuvula.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Akukho sinye isixhobo ebesingenile. Ngoku tshintsha inombolo yokuvula.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Enkosi. Esi siganeko siphawulwe njengesakho.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Eso siganeko asidingi mpendulo.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Iphepha belisele liphelelwe lixesha. Akukho nto itshintshiweyo; nceda nizame kwakhona.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Khuselani iakhawunti yenu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ukuba kukho into apha ebingenguwe, khupha zonke ezinye izixhobo, uze ukhethe inombolo yokuvula entsha. Izixhobo ezigcinwe zingenile nge Ndikhumbule nazo ziyakhutshwa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Sonke isixhobo ngaphandle kwesi siyakhutshwa kwisicelo saso esilandelayo. Emva koko ukhetha inombolo yokuvula entsha.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ewe, khupha ezinye izixhobo</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ibinguwe lo?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ewe, ibindim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Hayi, khusela iakhawunti yam</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Iiseshoni zenu neziganeko zokhuseleko njengefayile ye-JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Iiseshoni azirekhodwa kule sayithi, ngoko akukho sixhobo sinye sinokukhutshwa. Tshintsha inombolo yokuvula ngoku.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Ezinye iiseshoni ezi-%count zikhutshiwe. Ngoku tshintsha inombolo yokuvula.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Akukho sinye isixhobo ebesingenile. Ngoku tshintsha inombolo yokuvula.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Enkosi. Esi siganeko siphawulwe njengesakho.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Eso siganeko asidingi mpendulo.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Iphepha belisele liphelelwe lixesha. Akukho nto itshintshiweyo; nceda nizame kwakhona.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Khuselani iakhawunti yenu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Ukuba kukho into apha ebingenguwe, khupha zonke ezinye izixhobo, uze ukhethe inombolo yokuvula entsha. Izixhobo ezigcinwe zingenile nge Ndikhumbule nazo ziyakhutshwa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Sonke isixhobo ngaphandle kwesi siyakhutshwa kwisicelo saso esilandelayo. Emva koko ukhetha inombolo yokuvula entsha.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Ewe, khupha ezinye izixhobo</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Ibinguwe lo?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Ewe, ibindim</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Hayi, khusela iakhawunti yam</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ Kuya kufuneka niyitshintshe iklasi yendawo yomthi ngokusebenzisa umsebenzi wokut
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Isilawuli seseshoni: %handler. Iiseshoni zifundwa kwitheyibhile expuser_session, ngoko ingxelo isebenza nasiphi na isilawuli.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Imisebenzi ekrokrisayo kwiiyure ezi-%hours ezidlulileyo</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Uthungelwano olunye aluphumelelanga ukungena kwiiakhawunti ezi-%accounts (imizamo ezi-%count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Iakhawunti itshixiwe emva kokungena okungaphumelelanga</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Ukungena okungaphumelelanga oku-%count kwiakhawunti enye</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Ingenile isuka kumazwe ali-%count ngaxeshanye</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokhuseleko</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Iiseshoni</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Ukungena okungaphumelelanga kufundwa kwirekhodi yophicotho lwabasebenzisi, engafumanekiyo apha.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Akukho nto ikrokrisayo: akukho akhawunti enokungena okungaphumelelanga okuphindaphindiweyo, akukho thungelwano luzama iiakhawunti ezininzi, akukho akhawunti engene isuka kumazwe amaninzi.</translation>
     </message>
 </context>
 <context>

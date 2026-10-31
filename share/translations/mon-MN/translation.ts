@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Таны сессүүд болон аюулгүй байдлын үйл явдлууд JSON файл хэлбэрээр.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Энэ сайт сессүүдийг бүртгэдэггүй тул өөр ямар ч төхөөрөмжийг гаргаж чадсангүй. Нууц үгээ одоо солино уу.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Бусад %count сессээс гаргалаа. Одоо нууц үгээ солино уу.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Өөр ямар ч төхөөрөмж нэвтэрсэн байгаагүй. Одоо нууц үгээ солино уу.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Баярлалаа. Энэ үйл явдлыг таных гэж тэмдэглэлээ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Тэр үйл явдалд хариу шаардлагагүй.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Хуудасны хугацаа дууссан байсан. Юу ч өөрчлөгдөөгүй; дахин оролдоно уу.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Бүртгэлээ хамгаалах</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Энд байгаа ямар нэг зүйлийг та хийгээгүй бол бусад бүх төхөөрөмжөөс гарч, дараа нь шинэ нууц үг сонгоно уу. “Намайг санах”-аар нэвтэрсэн хэвээр байгаа төхөөрөмжүүдээс мөн гарна.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Энэхүүнээс бусад бүх төхөөрөмж дараагийн хүсэлтээрээ гарна. Дараа нь та шинэ нууц үг сонгоно.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Тийм, бусад төхөөрөмжөөс гарах</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Энэ та байсан уу?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Тийм, энэ би байсан</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Үгүй, миний бүртгэлийг хамгаалах</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Таны сессүүд болон аюулгүй байдлын үйл явдлууд JSON файл хэлбэрээр.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Энэ сайт сессүүдийг бүртгэдэггүй тул өөр ямар ч төхөөрөмжийг гаргаж чадсангүй. Нууц үгээ одоо солино уу.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Бусад %count сессээс гаргалаа. Одоо нууц үгээ солино уу.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Өөр ямар ч төхөөрөмж нэвтэрсэн байгаагүй. Одоо нууц үгээ солино уу.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Баярлалаа. Энэ үйл явдлыг таных гэж тэмдэглэлээ.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Тэр үйл явдалд хариу шаардлагагүй.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Хуудасны хугацаа дууссан байсан. Юу ч өөрчлөгдөөгүй; дахин оролдоно уу.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Бүртгэлээ хамгаалах</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Энд байгаа ямар нэг зүйлийг та хийгээгүй бол бусад бүх төхөөрөмжөөс гарч, дараа нь шинэ нууц үг сонгоно уу. “Намайг санах”-аар нэвтэрсэн хэвээр байгаа төхөөрөмжүүдээс мөн гарна.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Энэхүүнээс бусад бүх төхөөрөмж дараагийн хүсэлтээрээ гарна. Дараа нь та шинэ нууц үг сонгоно.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Тийм, бусад төхөөрөмжөөс гарах</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Энэ та байсан уу?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Тийм, энэ би байсан</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Үгүй, миний бүртгэлийг хамгаалах</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Сессийн боловсруулагч: %handler. Сессүүдийг expuser_session хүснэгтээс уншдаг тул тайлан аливаа боловсруулагчтай ажилладаг.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Сүүлийн %hours цагийн сэжигтэй үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Нэг сүлжээ %accounts бүртгэлд нэвтэрч чадсангүй (%count оролдлого)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Амжилтгүй нэвтрэлтийн дараа бүртгэл түгжигдсэн</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Нэг бүртгэлд %count амжилтгүй нэвтрэлт</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Нэгэн зэрэг %count орноос нэвтэрсэн</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Аюулгүй байдлын үйл ажиллагаа</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сессүүд</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Амжилтгүй нэвтрэлтийг хэрэглэгчийн аудитын бүртгэлээс уншдаг бөгөөд энд боломжгүй байна.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Сэжигтэй зүйл алга: давтан амжилтгүй нэвтэрсэн бүртгэл алга, хэд хэдэн бүртгэлийг оролдсон сүлжээ алга, хэд хэдэн орноос нэвтэрсэн бүртгэл алга.</translation>
     </message>
 </context>
 <context>

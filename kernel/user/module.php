@@ -198,13 +198,15 @@ $ViewList['sessions'] = array(
 // "Security activity" (doc/eng-us/features/6.0/user-sessions.md): the recent security events of the signed-in user's
 // own account (sign-ins, failed attempts, new devices and places, password, e-mail, two-step sign-in), read from the
 // user audit log; user/security/<user id> for another account needs the policy user/sessions, which the view checks.
-// Read only. See kernel/private/classes/views/user/security.php
+// On the own account it asks "Was this you?" about the events that need attention (ConfirmEventButton) and secures the
+// account (SecureButton: every other session signed out, then the password); (secure)/1, the link of the security
+// mails, puts that first. Changes are POST only, with the page's own token. See kernel/private/classes/views/user/security.php
 $ViewList['security'] = array(
     'functions' => array( 'login' ),
     'script' => 'security.php',
     'ui_context' => 'administration',
     'default_navigation_part' => 'ezmynavigationpart',
-    'unordered_params' => array( 'offset' => 'Offset' ),
+    'unordered_params' => array( 'offset' => 'Offset', 'secure' => 'Secure' ),
     'params' => array( 'UserID' ),
 );
 

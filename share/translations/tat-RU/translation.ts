@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Сезнең сеанслар һәм куркынычсызлык вакыйгалары JSON файлы буларак.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Бу сайтта сеанслар язылмый, шуңа күрә бер генә башка җайланманы да чыгарып булмады. Серсүзегезне хәзер үк үзгәртегез.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Башка %count сеанс чыгарылды. Хәзер серсүзегезне үзгәртегез.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Башка бер җайланма да кермәгән иде. Хәзер серсүзегезне үзгәртегез.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Рәхмәт. Вакыйга сезнеке дип билгеләнде.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Бу вакыйгага җавап кирәкми.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Битнең срогы чыккан иде. Бернәрсә дә үзгәртелмәде; зинһар, тагын бер тапкыр сынап карагыз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Хисап язмасын яклау</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Монда берәр нәрсә сез булмасагыз, барлык башка җайланмаларны чыгарыгыз, аннары яңа серсүз сайлагыз. Мине исегездә калдырыгыз ярдәмендә кергән килеш калган җайланмалар да чыгарыла.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Мондыйдан башка һәр җайланма киләсе соравында чыгарыла. Аннары сез яңа серсүз сайлыйсыз.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Әйе, башка җайланмаларны чыгару</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Бу сез идегезме?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Әйе, бу мин идем</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Юк, хисап язмамны яклау</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Сезнең сеанслар һәм куркынычсызлык вакыйгалары JSON файлы буларак.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Бу сайтта сеанслар язылмый, шуңа күрә бер генә башка җайланманы да чыгарып булмады. Серсүзегезне хәзер үк үзгәртегез.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Башка %count сеанс чыгарылды. Хәзер серсүзегезне үзгәртегез.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Башка бер җайланма да кермәгән иде. Хәзер серсүзегезне үзгәртегез.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Рәхмәт. Вакыйга сезнеке дип билгеләнде.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Бу вакыйгага җавап кирәкми.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Битнең срогы чыккан иде. Бернәрсә дә үзгәртелмәде; зинһар, тагын бер тапкыр сынап карагыз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Хисап язмасын яклау</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Монда берәр нәрсә сез булмасагыз, барлык башка җайланмаларны чыгарыгыз, аннары яңа серсүз сайлагыз. Мине исегездә калдырыгыз ярдәмендә кергән килеш калган җайланмалар да чыгарыла.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Мондыйдан башка һәр җайланма киләсе соравында чыгарыла. Аннары сез яңа серсүз сайлыйсыз.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Әйе, башка җайланмаларны чыгару</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Бу сез идегезме?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Әйе, бу мин идем</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Юк, хисап язмамны яклау</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Сеанс эшкәрткече: %handler. Сеанслар expuser_session таблицасыннан укыла, шуңа күрә хисап теләсә кайсы эшкәрткеч белән эшли.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Соңгы %hours сәгатьтә шикле гамәлләр</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Бер челтәр %accounts хисап язмасына керә алмады (%count омтылыш)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Уңышсыз керүләрдән соң хисап язмасы бикләнде</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Бер хисап язмасында %count уңышсыз керү</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Бер үк вакытта %count илдән кергән</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Куркынычсызлык гамәлләре</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеанслар</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Уңышсыз керүләр кулланучылар аудиты журналыннан укыла, ул монда юк.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Шикле бернәрсә дә юк: кабат-кабат уңышсыз керүләр булган хисап язмасы юк, берничә хисап язмасын сынаган челтәр юк, берничә илдән кергән хисап язмасы юк.</translation>
     </message>
 </context>
 <context>

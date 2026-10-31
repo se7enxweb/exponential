@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>भवतः सत्राणि सुरक्षाघटनाः च JSON सञ्चिकारूपेण।</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>अस्मिन् जालस्थाने सत्राणि न अभिलिख्यन्ते, अतः अन्यत् किमपि उपकरणं निर्गमयितुं न शक्तम्। अधुना एव स्वगुप्तशब्दं परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>अन्यानि %count सत्राणि निर्गमितानि। अधुना स्वगुप्तशब्दं परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>अन्यत् किमपि उपकरणं प्रविष्टं नासीत्। अधुना स्वगुप्तशब्दं परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्यवादः। एषा घटना भवतः इति चिह्निता।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>अस्याः घटनायाः उत्तरं न आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठस्य कालः समाप्तः आसीत्। किमपि न परिवर्तितम्; कृपया पुनः प्रयतताम्।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>स्वखातस्य सुरक्षणम्</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>यदि अत्र किमपि भवता न कृतम्, तर्हि अन्यानि सर्वाणि उपकरणानि निर्गमयतु, ततः नूतनं गुप्तशब्दं चिनोतु। माम् स्मरतु इत्यनेन प्रविष्टानि उपकरणानि अपि निर्गम्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>इदं विहाय सर्वाणि उपकरणानि आगामिन्यां प्रार्थनायां निर्गम्यन्ते। ततः भवान् नूतनं गुप्तशब्दं चिनोति।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>आम्, अन्यानि उपकरणानि निर्गमयतु</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>किम् एतत् भवता कृतम्?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>आम्, अहम् एव आसम्</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>न, मम खातं सुरक्षितं करोतु</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>भवतः सत्राणि सुरक्षाघटनाः च JSON सञ्चिकारूपेण।</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>अस्मिन् जालस्थाने सत्राणि न अभिलिख्यन्ते, अतः अन्यत् किमपि उपकरणं निर्गमयितुं न शक्तम्। अधुना एव स्वगुप्तशब्दं परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>अन्यानि %count सत्राणि निर्गमितानि। अधुना स्वगुप्तशब्दं परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>अन्यत् किमपि उपकरणं प्रविष्टं नासीत्। अधुना स्वगुप्तशब्दं परिवर्तयतु।</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>धन्यवादः। एषा घटना भवतः इति चिह्निता।</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>अस्याः घटनायाः उत्तरं न आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>पृष्ठस्य कालः समाप्तः आसीत्। किमपि न परिवर्तितम्; कृपया पुनः प्रयतताम्।</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>स्वखातस्य सुरक्षणम्</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>यदि अत्र किमपि भवता न कृतम्, तर्हि अन्यानि सर्वाणि उपकरणानि निर्गमयतु, ततः नूतनं गुप्तशब्दं चिनोतु। माम् स्मरतु इत्यनेन प्रविष्टानि उपकरणानि अपि निर्गम्यन्ते।</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>इदं विहाय सर्वाणि उपकरणानि आगामिन्यां प्रार्थनायां निर्गम्यन्ते। ततः भवान् नूतनं गुप्तशब्दं चिनोति।</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>आम्, अन्यानि उपकरणानि निर्गमयतु</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>किम् एतत् भवता कृतम्?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>आम्, अहम् एव आसम्</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>न, मम खातं सुरक्षितं करोतु</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>सत्रहैण्डलरः: %handler। सत्राणि expuser_session सारणीतः पठ्यन्ते, अतः प्रतिवेदनं प्रत्येकेन हैण्डलरेण सह कार्यं करोति।</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>गतेषु %hours होरासु संशयास्पदा गतिविधिः</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>एकं जालं %accounts खातेषु प्रवेष्टुं विफलम् अभवत् (%count प्रयासाः)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>विफलप्रवेशेभ्यः अनन्तरं खातं निरुद्धम्</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>एकस्मिन् खाते %count विफलप्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>युगपत् %count देशेभ्यः प्रविष्टम्</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>सुरक्षागतिविधिः</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>सत्राणि</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>विफलप्रवेशाः उपयोक्तृ-लेखापरीक्षापञ्जिकातः पठ्यन्ते, या अत्र न उपलभ्यते।</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>किमपि संशयास्पदं नास्ति: पुनः पुनः विफलप्रवेशयुक्तं खातं नास्ति, अनेकानि खातानि प्रयतमानं जालं नास्ति, अनेकेभ्यः देशेभ्यः प्रविष्टं खातं नास्ति।</translation>
     </message>
 </context>
 <context>

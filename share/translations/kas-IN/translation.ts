@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>توٚہہ ہِنٛد سیشَن تہٕ حِفاظتی واقعات JSON فایِلہِ ہِنٛدِ پاٹھۍ۔</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>یتھ سایٹس پؠٹھ چھِنہٕ سیشَن درج سپدان، اَمہِ موجوٗب ہیوٚک نہٕ کانٛہہ بیٛاکھ آلہٕ سایِن آوُٹ سپدِتھ۔ وُنی بَدلاوِو پنُن پاس ورڈ۔</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count بیٛاکھ سیشَن آیہِ سایِن آوُٹ کرنہٕ۔ وُنی بَدلاوِو پنُن پاس ورڈ۔</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>کانٛہہ بیٛاکھ آلہٕ اوس نہٕ سایِن اِن۔ وُنی بَدلاوِو پنُن پاس ورڈ۔</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>شُکریہ۔ یہِ واقعہ آو توٚہہ سٕندِس ناوَس پؠٹھ نِشانہٕ کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>تَتھ واقعس چھُنہٕ کانٛہہ جواب درکار۔</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحُک وَقت اوس ختم گومُت۔ کیٚنہہ تہِ آو نہٕ بَدلاونہٕ؛ مہربانی کٔرِتھ کٔرِو دوبارٕ کوشِش۔</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>پنُن کھاتہٕ محفوٗظ کٔرِو</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>اَگر یتھ کیٚنہہ توٚہہ نہٕ ٲسِو، باقی سٲری آلہٕ سایِن آوُٹ کٔرِو، پتہٕ ژارِو نوٚو پاس ورڈ۔ مےٚ یاد رَٹِو سٟتؠ سایِن اِن تھاونہٕ آمٕتؠ آلہٕ تہِ گژھن سایِن آوُٹ۔</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>یِمہِ وَراے گژھہِ پرٛتھ آلہٕ پنٕنہِ نٔوِس درخواستس پؠٹھ سایِن آوُٹ۔ پتہٕ ژارِو توٚہہ نوٚو پاس ورڈ۔</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>آ، باقی آلہٕ سایِن آوُٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>کیا یہِ ٲسِو توٚہہ؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>آ، یہِ اوسُس بہٕ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نہٕ، میٖون کھاتہٕ محفوٗظ کٔرِو</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>توٚہہ ہِنٛد سیشَن تہٕ حِفاظتی واقعات JSON فایِلہِ ہِنٛدِ پاٹھۍ۔</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>یتھ سایٹس پؠٹھ چھِنہٕ سیشَن درج سپدان، اَمہِ موجوٗب ہیوٚک نہٕ کانٛہہ بیٛاکھ آلہٕ سایِن آوُٹ سپدِتھ۔ وُنی بَدلاوِو پنُن پاس ورڈ۔</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>%count بیٛاکھ سیشَن آیہِ سایِن آوُٹ کرنہٕ۔ وُنی بَدلاوِو پنُن پاس ورڈ۔</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>کانٛہہ بیٛاکھ آلہٕ اوس نہٕ سایِن اِن۔ وُنی بَدلاوِو پنُن پاس ورڈ۔</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>شُکریہ۔ یہِ واقعہ آو توٚہہ سٕندِس ناوَس پؠٹھ نِشانہٕ کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>تَتھ واقعس چھُنہٕ کانٛہہ جواب درکار۔</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>صفحُک وَقت اوس ختم گومُت۔ کیٚنہہ تہِ آو نہٕ بَدلاونہٕ؛ مہربانی کٔرِتھ کٔرِو دوبارٕ کوشِش۔</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>پنُن کھاتہٕ محفوٗظ کٔرِو</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>اَگر یتھ کیٚنہہ توٚہہ نہٕ ٲسِو، باقی سٲری آلہٕ سایِن آوُٹ کٔرِو، پتہٕ ژارِو نوٚو پاس ورڈ۔ مےٚ یاد رَٹِو سٟتؠ سایِن اِن تھاونہٕ آمٕتؠ آلہٕ تہِ گژھن سایِن آوُٹ۔</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>یِمہِ وَراے گژھہِ پرٛتھ آلہٕ پنٕنہِ نٔوِس درخواستس پؠٹھ سایِن آوُٹ۔ پتہٕ ژارِو توٚہہ نوٚو پاس ورڈ۔</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>آ، باقی آلہٕ سایِن آوُٹ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>کیا یہِ ٲسِو توٚہہ؟</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>آ، یہِ اوسُس بہٕ</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>نہٕ، میٖون کھاتہٕ محفوٗظ کٔرِو</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>سیشَن ہینڈلر: %handler۔ سیشَن چھِ ٹیبل expuser_session منٛزٕ پَرنہٕ یِوان، اَمہِ موجوٗب چھےٚ رِپورٹ ہر ہینڈلرس سٟتۍ کٲم کران۔</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>پَتِمَن %hours گَنٛٹَن منٛز مشکوٗک سرگرمی</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>اَکھ نیٹ ورک ہیوٚک نہٕ %accounts کھاتَن منٛز سایِن اِن کٔرِتھ (%count کوشِشہٕ)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>ناکام سایِن اِنَو پتہٕ کھاتہٕ بنٛد</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>اَکِس کھاتس پؠٹھ %count ناکام سایِن اِن</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>اَکی وِزِ %count مُلکَو پؠٹھہٕ سایِن اِن</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>حِفاظتی سرگرمی</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>سیشَن</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>ناکام سایِن اِن چھِ یوٗزر آڈِٹ لاگہٕ پؠٹھہٕ پرنہٕ یِوان، یُس یتھ دَستیاب چھُنہٕ۔</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>کیٚنہہ مشکوٗک نہٕ: نہٕ کانٛہہ کھاتہٕ بار بار ناکام سایِن اِنَو سٟتؠ، نہٕ کانٛہہ نیٹ ورک کیٚنژن کھاتَن آزماوان، نہٕ کانٛہہ کھاتہٕ کیٚنژن مُلکَو پؠٹھہٕ سایِن اِن۔</translation>
     </message>
 </context>
 <context>

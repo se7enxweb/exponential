@@ -78329,6 +78329,58 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Сеанстарыңыз бен қауіпсіздік оқиғалары JSON файлы ретінде.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Бұл сайтта сеанстар тіркелмейді, сондықтан басқа құрылғыны шығару мүмкін болмады. Құпиясөзіңізді қазір өзгертіңіз.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Басқа %count сеанс аяқталды. Енді құпиясөзіңізді өзгертіңіз.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Басқа құрылғы кірмеген еді. Енді құпиясөзіңізді өзгертіңіз.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Рақмет. Оқиға сіздікі ретінде белгіленді.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Бұл оқиғаға жауап қажет емес.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Беттің мерзімі өтіп кеткен. Ештеңе өзгертілмеді; қайталап көріңіз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Тіркелгіні қорғау</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Егер мұндағы бірдеңе сіз болмасаңыз, барлық басқа құрылғыларды шығарып, содан кейін жаңа құпиясөз таңдаңыз. Мені есте сақтау арқылы кіріп тұрған құрылғылар да шығарылады.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Осыдан басқа әр құрылғы келесі сұрауында шығарылады. Содан кейін сіз жаңа құпиясөз таңдайсыз.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Иә, басқа құрылғыларды шығару</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Бұл сіз бе едіңіз?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Иә, бұл мен едім</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Жоқ, тіркелгімді қорғау</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78511,6 +78563,58 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Сеанстарыңыз бен қауіпсіздік оқиғалары JSON файлы ретінде.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Бұл сайтта сеанстар тіркелмейді, сондықтан басқа құрылғыны шығару мүмкін болмады. Құпиясөзіңізді қазір өзгертіңіз.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Басқа %count сеанс аяқталды. Енді құпиясөзіңізді өзгертіңіз.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Басқа құрылғы кірмеген еді. Енді құпиясөзіңізді өзгертіңіз.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Рақмет. Оқиға сіздікі ретінде белгіленді.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Бұл оқиғаға жауап қажет емес.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Беттің мерзімі өтіп кеткен. Ештеңе өзгертілмеді; қайталап көріңіз.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Тіркелгіні қорғау</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Егер мұндағы бірдеңе сіз болмасаңыз, барлық басқа құрылғыларды шығарып, содан кейін жаңа құпиясөз таңдаңыз. Мені есте сақтау арқылы кіріп тұрған құрылғылар да шығарылады.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Осыдан басқа әр құрылғы келесі сұрауында шығарылады. Содан кейін сіз жаңа құпиясөз таңдайсыз.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Иә, басқа құрылғыларды шығару</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Бұл сіз бе едіңіз?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Иә, бұл мен едім</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Жоқ, тіркелгімді қорғау</translation>
     </message>
 </context>
 <context>
@@ -78702,6 +78806,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Сеанстар өңдегіші: %handler. Сеанстар expuser_session кестесінен оқылады, сондықтан есеп кез келген өңдегішпен жұмыс істейді.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Соңғы %hours сағаттағы күдікті әрекеттер</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Бір желі %accounts тіркелгіге кіре алмады (%count әрекет)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>Сәтсіз кірулерден кейін тіркелгі құлыпталды</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Бір тіркелгіде %count сәтсіз кіру</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Бір мезгілде %count елден кірген</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Қауіпсіздік әрекеттері</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Сеанстар</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Сәтсіз кірулер пайдаланушылар аудит журналынан оқылады, ол мұнда қолжетімсіз.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Күдікті ештеңе жоқ: қайталанған сәтсіз кірулері бар тіркелгі жоқ, бірнеше тіркелгіні байқап көретін желі жоқ, бірнеше елден кірген тіркелгі жоқ.</translation>
     </message>
 </context>
 <context>

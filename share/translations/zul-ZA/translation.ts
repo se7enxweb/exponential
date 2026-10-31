@@ -78327,6 +78327,58 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Amaseshini enu nezehlakalo zokuphepha njengefayela le-JSON.</translation>
     </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Amaseshini awaqoshwa kule sayithi, ngakho ayikho enye idivayisi ebingaphunyiswa. Shintsha iphasiwedi yakho manje.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Amanye amaseshini angu-%count aphunyisiwe. Manje shintsha iphasiwedi yakho.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ayikho enye idivayisi ebingene. Manje shintsha iphasiwedi yakho.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ngiyabonga. Lesi senzakalo simakwe njengesakho.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Leso senzakalo asidingi mpendulo.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ikhasi belisiphelelwe yisikhathi. Akukho okushintshiwe; sicela nizame futhi.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Vikelani i-akhawunti yenu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Uma okuthile lapha bekungeyena wena, phumisa wonke amanye amadivayisi, bese ukhetha iphasiwedi entsha. Amadivayisi agcinwe engene nge Ngikhumbule nawo ayaphunyiswa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Yonke idivayisi ngaphandle kwale iphunyiswa esicelweni sayo esilandelayo. Bese ukhetha iphasiwedi entsha.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yebo, phumisa amanye amadivayisi</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bekuwena yini lo?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yebo, bekuyimina</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Cha, vikela i-akhawunti yami</translation>
+    </message>
 </context>
 <context>
     <name>design/standard/user/security</name>
@@ -78509,6 +78561,58 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>Your sessions and security events as a JSON file.</source>
         <translation>Amaseshini enu nezehlakalo zokuphepha njengefayela le-JSON.</translation>
+    </message>
+    <message>
+        <source>Sessions are not recorded on this site, so no other device could be signed out. Change your password now.</source>
+        <translation>Amaseshini awaqoshwa kule sayithi, ngakho ayikho enye idivayisi ebingaphunyiswa. Shintsha iphasiwedi yakho manje.</translation>
+    </message>
+    <message>
+        <source>%count other sessions were signed out. Now change your password.</source>
+        <translation>Amanye amaseshini angu-%count aphunyisiwe. Manje shintsha iphasiwedi yakho.</translation>
+    </message>
+    <message>
+        <source>No other device was signed in. Now change your password.</source>
+        <translation>Ayikho enye idivayisi ebingene. Manje shintsha iphasiwedi yakho.</translation>
+    </message>
+    <message>
+        <source>Thank you. The event is marked as yours.</source>
+        <translation>Ngiyabonga. Lesi senzakalo simakwe njengesakho.</translation>
+    </message>
+    <message>
+        <source>That event needs no answer.</source>
+        <translation>Leso senzakalo asidingi mpendulo.</translation>
+    </message>
+    <message>
+        <source>The page had expired. Nothing was changed; please try again.</source>
+        <translation>Ikhasi belisiphelelwe yisikhathi. Akukho okushintshiwe; sicela nizame futhi.</translation>
+    </message>
+    <message>
+        <source>Secure your account</source>
+        <translation>Vikelani i-akhawunti yenu</translation>
+    </message>
+    <message>
+        <source>If something here was not you, sign out every other device, then choose a new password. Devices kept signed in with Remember me are signed out too.</source>
+        <translation>Uma okuthile lapha bekungeyena wena, phumisa wonke amanye amadivayisi, bese ukhetha iphasiwedi entsha. Amadivayisi agcinwe engene nge Ngikhumbule nawo ayaphunyiswa.</translation>
+    </message>
+    <message>
+        <source>Every device except this one is signed out at its next request. Then you choose a new password.</source>
+        <translation>Yonke idivayisi ngaphandle kwale iphunyiswa esicelweni sayo esilandelayo. Bese ukhetha iphasiwedi entsha.</translation>
+    </message>
+    <message>
+        <source>Yes, sign out the other devices</source>
+        <translation>Yebo, phumisa amanye amadivayisi</translation>
+    </message>
+    <message>
+        <source>Was this you?</source>
+        <translation>Bekuwena yini lo?</translation>
+    </message>
+    <message>
+        <source>Yes, it was me</source>
+        <translation>Yebo, bekuyimina</translation>
+    </message>
+    <message>
+        <source>No, secure my account</source>
+        <translation>Cha, vikela i-akhawunti yami</translation>
     </message>
 </context>
 <context>
@@ -78700,6 +78804,42 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>Session handler: %handler. The sessions are read from the table expuser_session, so the report works with every handler.</source>
         <translation>Isiphathi seseshini: %handler. Amaseshini afundwa ethebuleni elithi expuser_session, ngakho umbiko usebenza nanoma yisiphi isiphathi.</translation>
+    </message>
+    <message>
+        <source>Suspicious activity in the last %hours hours</source>
+        <translation>Umsebenzi osolisayo emahoreni angu-%hours edlule</translation>
+    </message>
+    <message>
+        <source>One network failed to sign in to %accounts accounts (%count attempts)</source>
+        <translation>Inethiwekhi eyodwa yehlulekile ukungena kuma-akhawunti angu-%accounts (imizamo engu-%count)</translation>
+    </message>
+    <message>
+        <source>Account locked after failed sign-ins</source>
+        <translation>I-akhawunti ivaliwe ngemuva kokungena okwehlulekile</translation>
+    </message>
+    <message>
+        <source>%count failed sign-ins on one account</source>
+        <translation>Ukungena okwehlulekile okungu-%count ku-akhawunti eyodwa</translation>
+    </message>
+    <message>
+        <source>Signed in from %count countries at once</source>
+        <translation>Ingene isuka emazweni angu-%count ngesikhathi esisodwa</translation>
+    </message>
+    <message>
+        <source>Security activity</source>
+        <translation>Imisebenzi yokuphepha</translation>
+    </message>
+    <message>
+        <source>Sessions</source>
+        <translation>Amasesheni</translation>
+    </message>
+    <message>
+        <source>Failed sign-ins are read from the user audit log, which is not available here.</source>
+        <translation>Ukungena okwehlulekile kufundwa kurekhodi lokuhlola labasebenzisi, elingatholakali lapha.</translation>
+    </message>
+    <message>
+        <source>Nothing suspicious: no account with repeated failed sign-ins, no network trying several accounts, no account signed in from several countries.</source>
+        <translation>Akukho okusolisayo: ayikho i-akhawunti enokungena okwehlulekile okuphindaphindiwe, ayikho inethiwekhi ezama ama-akhawunti amaningi, ayikho i-akhawunti engene isuka emazweni amaningi.</translation>
     </message>
 </context>
 <context>
