@@ -194,4 +194,50 @@ class expGraphQLPersistedQueriesTest extends PHPUnit\Framework\TestCase
         $this->assertNotSame( array(), Exponential\Command\Kernel\Expgraphqlpersist::problems( $schema,
             '{ children(parentId: 2, limit: 3) { nodes { children(limit: 2) { nodes { name } } } } }' ), 'deeper than MaxDepth' );
     }
+
+    public function testAQueryWithVariablesIsCheckedForItsWorstCall()
+    {
+        // The complexity rule reads the values of the variables, and before a request there are none: every query with
+        // a required variable failed with 'Variable "$path" of required type "String!" was not provided', the kits'
+        // Node and Content_* queries included (exp:graphql:starter, exp:graphql:persist of a kit's graphql/).
+        if ( !expGraphQL::loadLibrary() )
+            $this->markTestSkipped( 'webonyx/graphql-php is not installed; set GRAPHQL_LIBRARY_PATH' );
+        $catalogue = expGraphQLClassCatalogue::filtered( array( array( 'id' => 1, 'identifier' => 'folder', 'name' => 'Folder', 'description' => '',
+            'attributes' => array( array( 'id' => 1, 'identifier' => 'short_name', 'datatype' => 'ezstring', 'name' => 'Short name', 'description' => '',
+                                          'required' => false, 'options' => array() ) ) ) ), array() );
+        $builder = new expGraphQLSchemaBuilder( $catalogue, new expGraphQLNaming( 'identifier' ) );
+        $schema = $builder->schema();
+        $this->setting( 'MaxComplexity', '1000' );
+        $this->setting( 'MaxDepth', '12' );
+        $this->setting( 'MaxListLimit', '100' );
+        $problems = function ( $query ) use ( $schema ) {
+            return Exponential\Command\Kernel\Expgraphqlpersist::problems( $schema, $query );
+        };
+
+        $this->assertSame( array(), $problems( 'query Node($path: String!) { node(urlAlias: $path) { id name urlAlias } }' ), 'a required String' );
+        $this->assertSame( array(), $problems( 'query Kids($parent: Int!) { children(parentId: $parent, limit: 3) { nodes { name } } }' ), 'a required Int' );
+        $this->assertSame( array(), $problems( 'query Kids($parent: Int!, $n: Int) { children(parentId: $parent, limit: $n) { nodes { name } } }' ),
+                           'a limit from a variable, within the limit at MaxListLimit' );
+
+        // a limit from a variable counts as MaxListLimit: one call with $n = 100 would exceed MaxComplexity
+        $wide = 'query Kids($parent: Int!, $n: Int) { children(parentId: $parent, limit: $n) { nodes { name children(limit: $n) { nodes { name url } } } } }';
+        $refused = $problems( $wide );
+        $this->assertCount( 1, $refused );
+        $this->assertStringContainsString( 'Max query complexity should be 1000', $refused[0] );
+        $this->assertSame( array(), $problems( str_replace( array( ', $n: Int', 'limit: $n' ), array( '', 'limit: 3' ), $wide ) ), 'the same with small literal limits' );
+
+        // a field that a condition may leave out counts: @include runs, @skip does not skip
+        $nested = 'nodes { name children(limit: 100) %s { nodes { name url } } }';
+        $this->assertNotSame( array(), $problems( 'query S($p: Int!, $hide: Boolean!) { children(parentId: $p, limit: 100) { ' . sprintf( $nested, '@skip(if: $hide)' ) . ' } }' ) );
+        $this->assertNotSame( array(), $problems( 'query S($p: Int!, $show: Boolean!) { children(parentId: $p, limit: 100) { ' . sprintf( $nested, '@include(if: $show)' ) . ' } }' ) );
+
+        $this->assertSame( array( 'path' => '1', 'n' => 100, 'hide' => false, 'show' => true, 'list' => array( 100 ) ),
+            expGraphQLServer::worstCaseVariables( $schema, GraphQL\Language\Parser::parse(
+                'query A($path: String!, $n: Int, $hide: Boolean!, $show: Boolean, $list: [Int!]) { node(urlAlias: $path) { id @skip(if: $hide) name @include(if: $show) } }' ) ) );
+
+        // a request still checks the values it sends
+        $context = self::context( expGraphQLContext::AUTH_CONSOLE );
+        $server = new expGraphQLServer( $builder );
+        $this->assertSame( expGraphQLError::COMPLEXITY_LIMIT, $server->execute( $wide, array( 'parent' => 2, 'n' => 100 ), null, $context )['errors'][0]['extensions']['code'] );
+    }
 }

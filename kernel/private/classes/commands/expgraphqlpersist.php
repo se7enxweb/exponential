@@ -167,8 +167,10 @@ class Expgraphqlpersist extends \Exponential\Runnable\Command
         }
         $problems = array();
         // the rules a request is checked against, its depth and complexity limits included (introspection is
-        // checked when the query is called: who may read the schema depends on the request)
-        foreach ( \GraphQL\Validator\DocumentValidator::validate( $schema, $document, \expGraphQLServer::validationRules( true ) ) as $error )
+        // checked when the query is called: who may read the schema depends on the request). No request gives the
+        // variables their values: the complexity is that of the values that make it highest.
+        $rules = \expGraphQLServer::validationRules( true, \expGraphQLServer::worstCaseVariables( $schema, $document ) );
+        foreach ( \GraphQL\Validator\DocumentValidator::validate( $schema, $document, $rules ) as $error )
             $problems[] = $error->getMessage();
         return $problems;
     }
