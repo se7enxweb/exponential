@@ -79065,6 +79065,142 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Untuk akses situs %siteaccess, yang menampilkan halaman ini.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Setiap peristiwa yang diminta sebuah titik akhir (publish, update, trash, delete, move, hide, reveal, mutation) dikirim kepadanya, bertanda tangan, oleh bagian cronjob graphqlwebhooks. ./console exp:graphql:webhooks melakukan hal yang sama dengan bagian ini.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Peristiwa</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>semua</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Setiap akses situs</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>rusak</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>tanpa rahasia</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Menunggu</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count dibatalkan</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Pengiriman terakhir</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Kirim uji coba</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ya, hapus webhook ini</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Belum ada webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Tambah webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Tambah</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Pengiriman terkini</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waktu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hasil</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Langganan</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Pembaruan langsung untuk klien: aliran peristiwa di /api/graphql/subscribe, dan WebSocket (graphql-transport-ws) di Velocity. Setiap peristiwa hanya dikirim ke pelanggan yang boleh membaca kontennya.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Terbuka sekarang</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Paling banyak terbuka</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total total, %user per pengguna, %address per alamat</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Langganan anonim</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Durasi aliran</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook tidak dapat ditambahkan: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name telah diubah; rahasia penandatanganannya tetap.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Rahasia penandatanganan tidak dapat disimpan (Penyiapan &gt; Rahasia).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name telah ditambahkan. Rahasia penandatanganannya, ditampilkan sekali ini saja: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Tidak ada webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name tidak menjawab: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name menjawab %status dalam %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Centang kotak di samping webhook untuk menghapusnya.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name telah dihapus.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Bukan cakupan API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Kirim langganan ke /api/graphql/subscribe (aliran peristiwa atau WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Permintaan tidak menyebut operasi apa pun dari dokumen.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Sebuah langganan meminta tepat satu bidang.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Terlalu banyak langganan yang terbuka; coba lagi nanti.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Anda memiliki %max langganan terbuka, jumlah terbanyak yang diizinkan.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Alamat Anda memiliki %max langganan terbuka, jumlah terbanyak yang diizinkan.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Langganan dimatikan di akses situs ini.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Masuk untuk berlangganan (token atau kunci API pribadi).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Kirim mutasi ke /api/graphql.</translation>
     </message>
 </context>
 </TS>

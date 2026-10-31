@@ -33,7 +33,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | kernel | 1 |
 | [country.ini](country/README.md) | kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | kernel | 1 |
-| [cronjob.ini](cronjob/README.md) | kernel | 24 |
+| [cronjob.ini](cronjob/README.md) | kernel | 25 |
 | [dashboard.ini](dashboard/README.md) | kernel | 8 |
 | [datatable.ini](datatable/README.md) | kernel | 3 |
 | [datatype.ini](datatype/README.md) | kernel | 5 |
@@ -48,7 +48,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [ezxml.ini](ezxml/README.md) | kernel | 4 |
 | [fetchalias.ini](fetchalias/README.md) | kernel | 8 |
 | [file.ini](file/README.md) | kernel | 6 |
-| [graphql.ini](graphql/README.md) | kernel | 2 |
+| [graphql.ini](graphql/README.md) | kernel | 4 |
 | [httpcache.ini](httpcache/README.md) | kernel | 1 |
 | [i18n.ini](i18n/README.md) | kernel | 2 |
 | [icon.ini](icon/README.md) | kernel | 3 |

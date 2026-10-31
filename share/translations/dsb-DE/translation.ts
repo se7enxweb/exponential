@@ -79095,6 +79095,142 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Za pśistup k sedłu %siteaccess, kótaryž pokazujo toś ten bok.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooki</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Kuždy tšojeńk, kótaryž kóńcny dypk žada (publish, update, trash, delete, move, hide, reveal, mutation), se jomu signěrowany pósćelo pśez źěl cronjoba graphqlwebhooks. ./console exp:graphql:webhooks cyni to samske ako toś ten wótrězk.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tšojeńki</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>wšykne</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kuždy pśistup k sedłu</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>wobškóźony</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>žedno pótajmstwo</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Caka</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count wzdatych</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Slědne dodaśe</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Test pósłaś</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Jo, toś ten webhook wótpóraś</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Hyšći žeden webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Webhook pśidaś</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Pśidaś</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Nejnowše dodaśa</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Cas</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wuslědk</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonementy</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Aktualizacije živje za klientow: tšojeńkowy tok na /api/graphql/subscribe a WebSocket (graphql-transport-ws) na Velocity. Kuždy tšojeńk dojźo jano k abonentam, kótarež směju jogo wopśimjeśe cytaś.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Něnto wócynjone</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Nejwušej wócynjone</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total dogromady, %user na wužywarja, %address na adresu</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonymne abonementy</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Dłujkosć toka</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook njedajo se pśidaś: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name jo se změnił; jogo signěrowańske pótajmstwo wóstanjo.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Signěrowańske pótajmstwo njedajo se składowaś (Zarědowanje &gt; Pótajmstwa).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name jo se pśidał. Jogo signěrowańske pótajmstwo, pokazane jano toś ten raz: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhook %name njeeksistěrujo.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name njejo wótegronił: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name jo wótegronił %status za %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Markěrujśo kašćik pódla webhooka, aby jen wótpórał.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name jo se wótpórał.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79369,6 +79505,42 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Žeden wobceŕk GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Pósćelśo abonementy na /api/graphql/subscribe (tšojeńkowy tok abo WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Póžedanje njemjenujo žednu operaciju dokumenta.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Abonement žada akuratnje jadno pólo.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Pśewjele abonementow jo wócynjonych; wopytajśo pózdźej hyšći raz.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Maśo %max wócynjonych abonementow, maksimum, kótarež jo dowólone.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Waša adresa ma %max wócynjonych abonementow, maksimum, kótarež jo dowólone.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonementy su w toś tom pśistupje k sedłu wótšaltowane.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Pśizjawśo se, aby abonował (token abo wósobinski API-kluc).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Pósćelśo mutacije na /api/graphql.</translation>
     </message>
 </context>
 </TS>
