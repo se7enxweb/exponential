@@ -39,6 +39,14 @@
         "en": "Nodes per batch (one transaction each).",
         "de": "Knoten pro Stapel (jeder eine Transaktion)."
     },
+    "ini:settings/content.ini [ContentJobSettings] BusyBackoffMax": {
+        "en": "The longest pause between two of those tries, in seconds.",
+        "de": "Die längste Pause zwischen zwei dieser Versuche, in Sekunden."
+    },
+    "ini:settings/content.ini [ContentJobSettings] BusyRetries": {
+        "en": "A batch that fails because the database is busy or locked (SQLite \"database is busy\" or \"locked\",\nMySQL lock wait timeout 1205 or deadlock 1213) is rolled back and run again from the last checkpoint\nup to this many times, after a pause that doubles each time (1, 2, 4 ... seconds). Then the job fails\nwith a temporary error, which the cronjob part resumes on its own. 0 = fail at the first such error.",
+        "de": "Ein Stapel, der scheitert, weil die Datenbank belegt oder gesperrt ist (SQLite \"database is busy\" oder \"locked\",\nMySQL Zeitüberschreitung beim Warten auf eine Sperre 1205 oder Deadlock 1213), wird zurückgerollt und ab dem letzten Checkpoint\nbis zu so vielen Malen erneut ausgeführt, nach einer Pause, die sich jedes Mal verdoppelt (1, 2, 4 ... Sekunden). Dann schlägt der Auftrag\nmit einem vorübergehenden Fehler fehl, den der Cronjob-Teil von selbst fortsetzt. 0 = beim ersten solchen Fehler fehlschlagen."
+    },
     "ini:settings/content.ini [ContentJobSettings] JobTypes": {
         "en": "The job types: JobTypes[<name>]=<class implementing expContentJobType>.\nA package install in the background (Setup > Packages > Install, \"Install in the background\"), doc/eng-us/bc/6.0/package-json-format.md\nAn export of the audit console in the background (Audit > Export, \"Export in the background\"), doc/eng-us/bc/6.0/audit.md\nThe help's manuals built from the Markdown help in the background (a new installation queues it), doc/eng-us/features/6.0/help-content.md\nA background run of an import or export tool (Export, CIE ...) when there is no job queue,\ndoc/eng-us/features/6.0/transfer-runs.md (transfer.ini)",
         "de": "Die Job-Typen: JobTypes[<name>]=<Klasse, die expContentJobType implementiert>.\nEine Paketinstallation im Hintergrund (Setup > Pakete > Installieren, \"Im Hintergrund installieren\"), doc/eng-us/bc/6.0/package-json-format.md\nEin Export der Audit-Konsole im Hintergrund (Audit > Export, \"Im Hintergrund exportieren\"), doc/eng-us/bc/6.0/audit.md\nDie Handbücher der Hilfe, im Hintergrund aus der Markdown-Hilfe gebaut (eine neue Installation reiht es ein), doc/eng-us/features/6.0/help-content.md\nEin Hintergrundlauf eines Import- oder Export-Werkzeugs (Export, CIE ...), wenn es keine Job-Warteschlange gibt,\ndoc/eng-us/features/6.0/transfer-runs.md (transfer.ini)"
@@ -48,8 +56,8 @@
         "de": "Abgeschlossene (fertige oder abgebrochene) Aufträge entfernt der Cronjob-Teil nach so vielen Tagen. 0 = nie."
     },
     "ini:settings/content.ini [ContentJobSettings] MaxAttempts": {
-        "en": "A job whose worker is started this many times without finishing one batch is failed (with the\nlast error) instead of being retried for ever. Resume it once the cause is fixed.",
-        "de": "Ein Auftrag, dessen Worker so oft gestartet wird, ohne einen Stapel abzuschließen, wird als fehlgeschlagen markiert (mit dem\nletzten Fehler), statt endlos wiederholt zu werden. Setzen Sie ihn fort, sobald die Ursache behoben ist."
+        "en": "A job whose worker is started this many times without finishing one batch is failed (with the\nlast error) instead of being retried for ever. Resume it once the cause is fixed.\nIt is also how often the cronjob part resumes a job on its own that failed for a temporary database\nerror (busy, locked, a deadlock); the count starts again after every batch done.",
+        "de": "Ein Auftrag, dessen Worker so oft gestartet wird, ohne einen Stapel abzuschließen, wird als fehlgeschlagen markiert (mit dem\nletzten Fehler), statt endlos wiederholt zu werden. Setzen Sie ihn fort, sobald die Ursache behoben ist.\nEs ist auch, wie oft der Cronjob-Teil einen Auftrag von selbst fortsetzt, der an einem vorübergehenden Datenbankfehler\nscheiterte (belegt, gesperrt, ein Deadlock); die Zählung beginnt nach jedem fertigen Stapel neu."
     },
     "ini:settings/content.ini [ContentJobSettings] NowLimit": {
         "en": "\"Now\" is refused above this number of nodes, with a message to run it as a job. 0 = no ceiling.",

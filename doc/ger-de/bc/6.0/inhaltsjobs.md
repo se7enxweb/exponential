@@ -185,7 +185,7 @@ anfragende Benutzer.
 ## Der Befehl und der Cronjob-Teil
 
 ```bash
-php bin/php/expcontentjob.php list [--all]                 # or: php bin/php/console exp:expcontentjob list
+php bin/php/expcontentjob.php list [--all] [--resume]      # or: php bin/php/console exp:expcontentjob list
 php bin/php/expcontentjob.php show <id>
 php bin/php/expcontentjob.php remove <node>[,<node>...] [--trash|--delete] [--background]
 php bin/php/expcontentjob.php copy <source> <new parent> [--all-versions] [--keep-creator] [--keep-time] [--background]
@@ -196,7 +196,14 @@ php bin/php/expcontentjob.php run <id> | resume <id> [--background] | cancel <id
 Der Cronjob-Teil `contentjobs` (Gruppe frequent, `settings/cronjob.ini`) startet Jobs, deren Worker nie gestartet ist
 (nach `QueuedGrace` Sekunden), und setzt Jobs fort, deren Worker gestorben ist. Ein Job geht daher nie verloren, wenn
 der Webserver keinen Worker starten kann (`exec` ausgeschaltet, das Prozesslimit erreicht): Er startet innerhalb einer
-Minute.
+Minute. Er setzt auch einen Job fort, der an einem vorübergehenden Datenbankfehler gescheitert ist (siehe „Eine belegte
+Datenbank“ unten), höchstens `MaxAttempts` Mal hintereinander.
+
+`list` gibt je Job das Alter seines Herzschlags aus (wann sein Worker ihn zuletzt geschrieben hat: `42s`, `7m`, `3h`,
+`2d`) und `stalled` für einen Job, der ohne Worker wartet: eingereiht oder laufend, ohne dass ein Worker ihn hält, oder
+an einem vorübergehenden Datenbankfehler gescheitert. `list --resume` setzt jeden hängenden oder fehlgeschlagenen Job
+fort, jeden mit einem Worker im Hintergrund; nach einem Ausfall ist das der eine Befehl statt eines Fortsetzens Job für
+Job.
 
 ## Einstellungen: `content.ini [ContentJobSettings]`
 
@@ -207,7 +214,9 @@ Minute.
 | `BatchSize` | 50 | Knoten pro Stapel, je eine Transaktion |
 | `BatchPause` | 0 | Millisekunden zwischen Stapeln, Raum für andere Schreiber (unter SQLite lohnen 100 bis 200) |
 | `QueuedGrace` | 60 | Sekunden, bevor der Cronjob-Teil einen Job startet, den niemand gestartet hat |
-| `MaxAttempts` | 5 | Starts eines Workers ohne fertigen Stapel, bevor der Job als fehlgeschlagen gilt |
+| `MaxAttempts` | 5 | Starts eines Workers ohne fertigen Stapel, bevor der Job als fehlgeschlagen gilt; auch wie oft hintereinander der Cronjob-Teil einen Job fortsetzt, der an einem vorübergehenden Datenbankfehler scheiterte (nach jedem fertigen Stapel wieder ab 0 gezählt) |
+| `BusyRetries` | 8 | erneute Versuche eines Stapels, der auf eine belegte oder gesperrte Datenbank traf, ab dem letzten Checkpoint (0: beim ersten fehlschlagen) |
+| `BusyBackoffMax` | 60 | die längste Pause zwischen diesen Versuchen, in Sekunden; die Pause ist 1, 2, 4 ... Sekunden |
 | `KeepDays` | 30 | fertige Jobs werden nach so vielen Tagen entfernt |
 | `PhpBinary` | (leer) | die PHP-Binärdatei der Kommandozeile für den Worker |
 | `JobTypes[<name>]` | remove, copy, move, hide, reveal, section, state, addlocation, removelocation, packageinstall, auditexport | die Jobtypen |
@@ -238,10 +247,54 @@ Skalierung, kill -9 und Nebenläufigkeit sind in ihrer Testsuite beschrieben (`t
 - **Der Worker wird beendet** (kill -9, ein Neustart, ein Deploy): Der Job bleibt ohne Worker auf `running`; die
   Fortschrittsseite zeigt den Worker als stehend und bietet Fortsetzen an; der Cronjob-Teil setzt ihn von selbst fort.
 - **Der Webserver kann keinen Worker starten**: Der Job wartet; der Cronjob-Teil startet ihn nach `QueuedGrace`.
+- **Eine belegte Datenbank**: siehe den nächsten Abschnitt. Der Worker versucht den Stapel erneut, danach setzt der
+  Cronjob-Teil den Job fort.
+- **Jeder andere Fehler des Workers** (außerhalb eines Stapels: der Speicher der Jobs, das Audit, das `prepare()` eines
+  Typs): Der Job ist `failed` mit „the worker stopped: <Grund>“. Der Worker-Prozess endet nie mit dem Job auf `running`,
+  ohne dass etwas den Grund nennt.
 - **Abbrechen**: nach dem aktuellen Stapel. Ein abgebrochenes Entfernen lässt den Rest stehen; eine abgebrochene Kopie
   lässt die Teilkopie stehen und bietet an, sie zu entfernen.
 - **Die Engine fehlt oder ist defekt**: Jede View fällt auf ihren alten synchronen Code zurück und protokolliert den
   Fehler.
+
+### Eine belegte Datenbank
+
+Unter SQLite wartet eine Transaktion `site.ini [DatabaseSettings] SQLiteTransactionWait` Sekunden (25) auf die
+Schreibsperre und scheitert dann mit „database is busy“ ([SQLite-Transaktionen](sqlite-transaktionen.md)). Ein langer
+Import neben einem Inhaltsjob kann die Sperre so lange halten. Bis 6.0.15 begann der Worker die Transaktion des
+Stapels außerhalb des Codes, der einen gescheiterten Stapel behandelt: Der Fehler beendete den Worker-Prozess, der Job
+blieb ohne Worker auf `running` und schlug nach `MaxAttempts` solchen Neustarts endgültig fehl. Ein solcher Fehler
+innerhalb eines Stapels ließ den Job fehlschlagen, und nichts setzte einen fehlgeschlagenen Job fort. Der Aufbau der
+Handbücher der Hilfe auf den Demonstrationsservern blieb so bei 77 % und bei 5 % stehen.
+
+Jetzt wird ein vorübergehender Datenbankfehler erneut versucht:
+
+| Fehler | Gilt als vorübergehend |
+|---|---|
+| SQLite belegt und gesperrt (Codes 5 und 6, „database is locked“, „database is busy: the transaction could not start within ...“) | ja |
+| MySQL Zeitüberschreitung beim Warten auf eine Sperre (1205) und Deadlock (1213) | ja |
+| alles andere (eine Bedingung, ein fehlender Knoten, ein eigener Fehler des Typs) | nein: Der Job schlägt fehl wie bisher |
+
+Bei einem solchen Fehler rollt der Worker den Stapel zurück, liest den Job erneut ab seinem letzten Checkpoint, ruft
+`prepare()` des Typs erneut auf (sein Zustand im Speicher wird neu aufgebaut, wie beim Fortsetzen), wartet 1, 2, 4 ...
+Sekunden bis höchstens `BusyBackoffMax` und schreibt dabei mindestens alle 5 Sekunden den Herzschlag, und führt den
+Stapel erneut aus, `BusyRetries` Mal. Das Protokoll des Jobs zeigt jeden Versuch:
+
+```text
+batch 4: the database is busy (database is busy: the transaction could not start within 25 s, ...); rolled back, try 2 of 9 in 1 s from the last checkpoint
+batch 4: committed at try 2
+```
+
+Sind die Versuche aufgebraucht, ist der Job `failed` mit gesetztem `temporary_error` („the database stayed busy (9
+tries): ...“). Der Cronjob-Teil setzt einen solchen Job von selbst fort, sobald `QueuedGrace` Sekunden vergangen sind,
+höchstens `MaxAttempts` Mal hintereinander; jeder fertige Stapel beginnt die Zählung neu, und ein Fortsetzen durch eine
+Person setzt sie auf 0. Ein Job, der aus einem anderen Grund fehlschlug, wartet weiterhin auf eine Person.
+
+Kein Element wird doppelt bearbeitet: Der gescheiterte Stapel wird zurückgerollt, und der Typ baut seinen Zustand aus
+dem Checkpoint neu auf. Ein Jobtyp, der zwischen den Stapeln Zustand im Speicher hält, muss ihn in `prepare()` neu
+aufbauen, das der Worker jetzt auch vor jedem erneuten Versuch aufruft. Der Job der Handbücher der Hilfe tut das mit
+`expHelpManualSync::abandon()`: Die Objekte, IDs und offenen Schreibvorgänge des zurückgerollten Versuchs werden
+vergessen, und ein neuer Abgleich liest, was gespeichert ist.
 
 ## Jobtypen anderer Teile des Kernels
 

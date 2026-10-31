@@ -47,7 +47,34 @@ Objekte unterhalb des Knotens die Sektion erhalten ([Sektionen](../../anleitunge
 `php bin/php/expcontentjob.php` ist dasselbe Skript.
 
 Der Cronjob-Teil `contentjobs` (Gruppe `frequent`) startet einen Worker neu, dessen Prozess gestorben ist, startet einen
-eingereihten Auftrag, den niemand gestartet hat, und entfernt fertige Aufträge nach `KeepDays`.
+eingereihten Auftrag, den niemand gestartet hat, setzt einen Auftrag fort, der an einer dauerhaft belegten Datenbank
+gescheitert ist, und entfernt fertige Aufträge nach `KeepDays`.
+
+`list` zeigt, wie lange der Herzschlag jedes Auftrags zurückliegt, und kennzeichnet einen Auftrag als `stalled`, wenn
+er ohne Worker wartet. `list --resume` setzt jeden hängenden oder fehlgeschlagenen Auftrag im Hintergrund fort:
+
+```bash
+php bin/php/console exp:expcontentjob list
+php bin/php/console exp:expcontentjob list --resume
+```
+
+## Eine belegte Datenbank
+
+Ein Teilschritt, der auf eine belegte Datenbank trifft, geht nicht verloren. Unter SQLite geschieht das, wenn ein
+anderer Prozess die Schreibsperre länger hält als `site.ini [DatabaseSettings] SQLiteTransactionWait`; unter MySQL ist
+es eine Zeitüberschreitung beim Warten auf eine Sperre oder ein Deadlock. Der Worker
+
+1. rollt den Teilschritt zurück, sodass nichts davon in der Datenbank bleibt;
+2. liest den Auftrag erneut ab seinem letzten Checkpoint und lässt den Auftragstyp seinen Zustand neu aufbauen, wie
+   beim Fortsetzen;
+3. wartet 1, 2, 4 ... Sekunden (höchstens `BusyBackoffMax`) und schreibt währenddessen den Herzschlag;
+4. versucht den Teilschritt erneut, bis zu `BusyRetries` Mal.
+
+Ist die Datenbank danach immer noch belegt, schlägt der Auftrag mit einem vorübergehenden Fehler fehl. Der Cronjob-Teil
+setzt ihn von selbst fort, höchstens `MaxAttempts` Mal hintereinander; jeder fertige Teilschritt beginnt diese Zählung
+neu. Jedes Element wird genau einmal bearbeitet, wie oft ein Teilschritt auch versucht wird. Vor dieser Änderung konnte
+der Worker eines Handbuch-Aufbaus der Hilfe an einer belegten SQLite-Datenbank enden und den Auftrag `running` ohne
+Worker zurücklassen; er musste von Hand fortgesetzt werden.
 
 ## Einstellungen
 
@@ -61,7 +88,9 @@ Alle Schlüssel stehen in `settings/content.ini`, Block `ContentJobSettings`. Ge
 | `BatchSize` | `50` | Knoten pro Teilschritt (jeweils eine Transaktion) |
 | `BatchPause` | `0` | Sekunden zwischen den Teilschritten |
 | `QueuedGrace` / `QueuedTimeout` | `60` / `600` | Sekunden, bevor ein eingereihter Auftrag von cron gestartet / aufgegeben wird |
-| `MaxAttempts` | `5` | Neustarts des Workers, bevor ein Auftrag fehlschlägt |
+| `MaxAttempts` | `5` | Neustarts des Workers, bevor ein Auftrag fehlschlägt; auch die automatischen Fortsetzungen in Folge eines Auftrags, der an einer belegten Datenbank scheiterte |
+| `BusyRetries` | `8` | Erneute Versuche eines Teilschritts, der auf eine belegte oder gesperrte Datenbank traf; `0` = sofort fehlschlagen |
+| `BusyBackoffMax` | `60` | Längste Pause zwischen diesen Versuchen, in Sekunden (die Pause verdoppelt sich ab 1) |
 | `KeepDays` | `30` | Fertige Aufträge werden danach entfernt |
 | `PhpBinary` | leer | PHP-Programm, mit dem Worker gestartet werden |
 | `JobTypes[<type>]` | neun eingebaute Klassen | `remove`, `copy`, `move`, `hide`, `reveal`, `section`, `state`, `addlocation`, `removelocation` |

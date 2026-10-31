@@ -25,7 +25,7 @@ Was `--help` ausgibt, so wie der Befehl es schreibt:
 ```text
 Content jobs: large subtree removes and copies, run in batches in the background.
 
-  list [--all]                         the jobs
+  list [--all] [--resume]              the jobs (heartbeat age, stalled); --resume: resume every stalled or failed one
   show <id> [--json]                   one job and the end of its log
   run <id>                             run a job in the foreground
   resume <id> [--background]           resume a failed job or one whose worker died
@@ -41,6 +41,7 @@ Content jobs: large subtree removes and copies, run in batches in the background
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--all` |  | list: jeder Auftrag, nicht nur die aktiven und fehlgeschlagenen |
+| `--resume` |  | list: jeden hängenden oder fehlgeschlagenen Auftrag fortsetzen, jeden mit einem Worker im Hintergrund |
 | `--json` |  | show: der Auftrag als JSON |
 | `--background` |  | remove, copy, resume: einen abgekoppelten Worker starten und zurückkehren |
 | `--trash` |  | remove: die Objekte in den Papierkorb verschieben (der Standard von content.ini [RemoveSettings]) |
