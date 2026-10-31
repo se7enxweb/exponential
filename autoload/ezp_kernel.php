@@ -1237,6 +1237,7 @@ return array(
       'expGraphQLLayoutsSource'                                      => 'kernel/classes/graphql/extensions/expgraphqllayoutssource.php',
       'expGraphQLLocation'                                           => 'kernel/classes/graphql/expgraphqllocation.php',
       'expGraphQLMessage'                                            => 'kernel/classes/graphql/expgraphqlmessage.php',
+      'expGraphQLMutationExtension'                                  => 'kernel/classes/graphql/expgraphqlmutationextension.php',
       'expGraphQLMutations'                                          => 'kernel/classes/graphql/expgraphqlmutations.php',
       'expGraphQLNaming'                                             => 'kernel/classes/graphql/expgraphqlnaming.php',
       'expGraphQLPersistedQueries'                                   => 'kernel/classes/graphql/expgraphqlpersistedqueries.php',
