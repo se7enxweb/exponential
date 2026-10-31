@@ -206,9 +206,21 @@ class expGraphQLMutationsTest extends PHPUnit\Framework\TestCase
 
     const CREATE = 'mutation { createContent(parentId: 2, classIdentifier: "article", fields: [{identifier: "title", value: "Hello"}, {identifier: "intro", value: "Two\n\nparagraphs", format: TEXT}]) { status contentId nodeId version content { id name } } }';
 
-    public function testSwitchedOffByDefault()
+    public function testSwitchedOnByDefault()
     {
-        $this->assertMatchesRegularExpression( '/^MutationsEnabled=disabled$/m', file_get_contents( dirname( __DIR__, 5 ) . '/settings/graphql.ini' ), 'graphql.ini ships them off' );
+        // owner decision 2026-10-30: the mutations come on together with the end point
+        $this->assertMatchesRegularExpression( '/^MutationsEnabled=enabled$/m', file_get_contents( dirname( __DIR__, 5 ) . '/settings/graphql.ini' ), 'graphql.ini ships them on' );
+        $this->assertMatchesRegularExpression( '/^AnonymousMutations=disabled$/m', file_get_contents( dirname( __DIR__, 5 ) . '/settings/graphql.ini' ), 'anonymous mutations stay off' );
+        // the code's fallback agrees with the file: no MutationsEnabled at all is on as well
+        $this->setting( 'MutationsEnabled', 'enabled' );
+        expGraphQL::ini()->removeSetting( 'GraphQLSettings', 'MutationsEnabled' );
+        $this->assertNull( expGraphQL::setting( 'MutationsEnabled' ) );
+        $this->assertTrue( expGraphQLMutations::enabled() );
+        $this->assertNotNull( self::builder()->schema()->getMutationType() );
+    }
+
+    public function testSwitchedOff()
+    {
         $this->setting( 'MutationsEnabled', 'disabled' );
         $this->assertNull( self::builder()->schema()->getMutationType() );
         $off = self::builder()->schemaHash();

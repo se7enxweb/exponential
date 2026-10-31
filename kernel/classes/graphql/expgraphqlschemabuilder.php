@@ -9,7 +9,7 @@
  *   children(parentId, classes, sortField, sortOrder, depth, limit, offset, first, after)
  *   currentUser, siteaccess, translations
  *
- * and, where graphql.ini MutationsEnabled switches them on, the mutations of expGraphQLMutations.
+ * and the mutations of expGraphQLMutations, unless graphql.ini MutationsEnabled (enabled by default) switches them off.
  *
  * The schema hash (schemaHash()) changes when a class, an attribute, the naming or the mutations change; it is sent with every
  * answer (header X-GraphQL-Schema, siteaccess { schemaHash }). Loaded only after webonyx/graphql-php.
@@ -287,7 +287,7 @@ class expGraphQLSchemaBuilder
         ) );
         $this->schema = new Schema( array(
             'query' => $query,
-            // the mutations only where they are switched on (graphql.ini MutationsEnabled): a schema without them
+            // the mutations unless they are switched off (graphql.ini MutationsEnabled, on by default): a schema without them
             // tells a client so, and the hash changes with them
             'mutation' => expGraphQLMutations::enabled() ? expGraphQLMutations::type( $types ) : null,
             'types' => function () use ( $builder ) {

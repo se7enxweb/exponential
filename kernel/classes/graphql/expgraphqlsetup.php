@@ -26,11 +26,13 @@ class expGraphQLSetup
      * The changes that switch the API on. settings/override wins over the settings of a siteaccess, so where the API
      * answers is decided there: Enabled=enabled, and SiteAccessList[] (empty: every siteaccess). The siteaccesses
      * named are added to the list, unless the API answers everywhere already; none named makes it answer everywhere.
-     * MutationsEnabled where asked (mutationChanges()); CORS for the origins of a front end.
+     * The mutations come on with the API (MutationsEnabled is enabled by default); asked for, MutationsEnabled=enabled
+     * is written too (mutationChanges()), where exp:graphql:disable --mutations switched them off. CORS for the
+     * origins of a front end.
      *
      * @param string[] $siteAccesses empty: every siteaccess
      * @param string[] $origins https://shop.example.com
-     * @param bool $mutations switch the mutations on too
+     * @param bool $mutations write MutationsEnabled=enabled too
      * @return array[] the changes (scope, file, op, block, variable, value)
      * @throws expGraphQLError BAD_USER_INPUT for an origin that is not one
      */
@@ -284,7 +286,8 @@ class expGraphQLSetup
             $list = array_values( array_filter( (array)expIniEditor::effectiveValue( 'graphql.ini', 'GraphQLSettings', 'SiteAccessList', $siteAccess ), 'strlen' ) );
             $states[] = array( 'name' => (string)$siteAccess,
                                'enabled' => $enabled && ( !$list || in_array( $siteAccess, $list, true ) ),
-                               'mutations' => expIniEditor::effectiveValue( 'graphql.ini', 'GraphQLSettings', 'MutationsEnabled', $siteAccess ) === 'enabled' );
+                               // MutationsEnabled is enabled unless a file says otherwise (settings/graphql.ini ships it on)
+                               'mutations' => ( expIniEditor::effectiveValue( 'graphql.ini', 'GraphQLSettings', 'MutationsEnabled', $siteAccess ) ?? 'enabled' ) === 'enabled' );
         }
         return $states;
     }

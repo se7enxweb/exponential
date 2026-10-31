@@ -51,7 +51,7 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
             $out = $this->cli();
             $out->output( sprintf( '%-14s %s', 'siteaccess', $status['siteaccess'] ) );
             $out->output( sprintf( '%-14s %s', 'enabled', $status['enabled'] ? 'yes' : 'no (graphql.ini [GraphQLSettings] Enabled, SiteAccessList[])' ) );
-            $out->output( sprintf( '%-14s %s', 'mutations', $status['mutations'] ? 'yes' : 'no (graphql.ini [GraphQLSettings] MutationsEnabled)' ) );
+            $out->output( sprintf( '%-14s %s', 'mutations', $status['mutations'] ? 'yes' : 'no (graphql.ini [GraphQLSettings] MutationsEnabled=disabled; enabled is the default)' ) );
             $out->output( sprintf( '%-14s %s', 'end point', $status['endpoint'] ) );
             $out->output( sprintf( '%-14s %s', 'library', $status['library'] ? 'webonyx/graphql-php ' . $status['libraryVersion'] : 'not installed' ) );
             $out->output( sprintf( '%-14s depth %d, complexity %d, list %d (default %d)', 'limits', $status['limits']['maxDepth'], $status['limits']['maxComplexity'],
