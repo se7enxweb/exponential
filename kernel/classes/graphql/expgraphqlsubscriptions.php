@@ -248,7 +248,7 @@ class expGraphQLSubscriptions
         {
             return array( 'error' => array( $e->getMessage(), expGraphQLError::PARSE ) );
         }
-        $errors = \GraphQL\Validator\DocumentValidator::validate( $schema, $document, expGraphQLServer::validationRules( $allowIntrospection ) );
+        $errors = \GraphQL\Validator\DocumentValidator::validate( $schema, $document, expGraphQLServer::validationRules( $allowIntrospection, (array)$variables ) );
         if ( $errors )
         {
             $first = $errors[0];

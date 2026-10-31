@@ -85,6 +85,14 @@ läuft; dasselbe `composer require se7enxweb/exponential` ergibt so auf jedem un
 Installation, mit eingeschalteten Sicherheitsprüfungen von Composer. Führen Sie Composer mit dem PHP aus, das die
 Website verwenden wird (siehe [PHP auf der Kommandozeile und im Web](#php-auf-der-kommandozeile-und-im-web)).
 
+**Die GraphQL-Bibliothek ist optional.** Die GraphQL-API läuft auf `webonyx/graphql-php` 15 (`^15.32.3`), das
+`composer.json` vorschlägt und unter `require-dev` führt, aber nicht verlangt, und das das Metapaket nicht installiert:
+Exponential Platform Legacy 3.x (`ibexa/graphql-php` 0.13) und 4.6.x auf PHP 7.4 (`se7enxweb/graphql-php` 14) bringen
+für ihr eigenes GraphQL-Bundle eine andere Version mit, und eine Voraussetzung ließ ihre Installation scheitern. Der
+Kernel allein (`composer create-project`, oder `composer install` in einem Checkout) installiert sie; mit `--no-dev`
+fügen Sie sie mit `composer require webonyx/graphql-php:^15.32.3` hinzu. Ohne sie, oder mit einer anderen Version, ist
+nur die GraphQL-API nicht verfügbar und sagt, warum ([Die Bibliothek](../funktionen/6.0/graphql.md#die-bibliothek)).
+
 In 6.0.15 wird PHP 8.0 wieder unterstützt, und PHP 7.4 ist wieder nutzbar, ohne Support. Die veröffentlichten Releases `v6.0.8` bis
 `v6.0.14` verlangen in ihrer `composer.json` PHP 8.1, und `v6.0.7` verlangt 7.4 oder 8.1; installieren Sie auf PHP 7.4
 oder 8.0 daher die Linie 6.0.15 (`dev-main`, bis ihr Tag veröffentlicht ist;

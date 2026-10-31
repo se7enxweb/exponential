@@ -10,6 +10,7 @@
  *  - every class of autoload/ezp_kernel.php and of var/autoload/ezp_extension.php loads,
  *    which compiles each class file and checks its parents and interfaces on this PHP;
  *  - the functions of lib/phpcompat.php exist;
+ *  - the GraphQL API reports its library (missing without webonyx/graphql-php 15) instead of failing;
  *  - the wash operator escapes single quotes (the htmlspecialchars() default of PHP 8.1,
  *    which PHP 8.0 does not have) and a template renders.
  * Classes that need an optional PHP extension or library that is not installed are listed
@@ -89,7 +90,28 @@ foreach ( array( 'array_is_list' ) as $function )
 if ( function_exists( 'array_is_list' ) && ( !array_is_list( array( 1, 2 ) ) || array_is_list( array( 1 => 1 ) ) ) )
     $failures[] = 'array_is_list() answers wrongly';
 
-// 3. a template, and the wash operator
+// 3. the GraphQL API without its library: composer.json only suggests webonyx/graphql-php, so a production
+// install (--no-dev, the PHP 7.4 and 8.0 jobs) has none, or a platform's other version; the API must say so
+if ( class_exists( 'expGraphQL' ) )
+{
+    try
+    {
+        $graphqlState = expGraphQL::libraryState();
+        $graphqlStatus = expGraphQLSetup::status();
+        if ( $graphqlStatus['library'] !== ( $graphqlState === expGraphQL::LIBRARY_AVAILABLE ) )
+            $failures[] = 'the GraphQL status disagrees with the library state ' . $graphqlState;
+        else if ( $graphqlState !== expGraphQL::LIBRARY_AVAILABLE && !$graphqlStatus['libraryProblem'] )
+            $failures[] = 'the GraphQL status does not say why the library cannot be used';
+        else
+            $cli->output( '  GraphQL library: ' . $graphqlState . ( $graphqlStatus['libraryProblem'] ? ' (' . $graphqlStatus['libraryProblem'] . ')' : '' ) );
+    }
+    catch ( Throwable $e )
+    {
+        $failures[] = 'GraphQL status: ' . get_class( $e ) . ': ' . $e->getMessage();
+    }
+}
+
+// 4. a template, and the wash operator
 $tpl = eZTemplate::factory();
 $tpl->setVariable( 'text', "It's <b>" );
 $file = eZSys::cacheDirectory() . '/bootsmoke.tpl';

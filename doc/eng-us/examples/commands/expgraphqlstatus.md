@@ -30,7 +30,7 @@ of their own (they are strings).
 ./console exp:graphql:status --siteaccess=site
 ./console exp:graphql:status --format=json
 
-Exit code: 0 the library is available; 3 it is missing; 2 wrong options.
+Exit code: 0 the library is available; 3 it is missing or not version 15; 2 wrong options.
 ```
 
 ## Options

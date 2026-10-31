@@ -16,8 +16,14 @@
   --us-bad: #b91c1c;
   color: var(--us-ink);
 }
+/* Light or dark. A design with a light and dark switch of its own marks <html> with the mode in use, and these pages
+   follow that mark, not the system's: html[data-theme="light|dark"] (the common convention), html[data-bs-theme]
+   (Bootstrap 5.3) or html[data-exp-theme="light|dark|darker"] (the media design of sevenx_themes_media). Without a
+   mark they follow the system (prefers-color-scheme). This is the integration point for a site design: set one of
+   the three attributes on <html> before the page is drawn. The two blocks carry the same dark values. */
 @media (prefers-color-scheme: dark) {
-  .us-page, .us-account-link {
+  :root:not([data-theme="light"]):not([data-bs-theme="light"]):not([data-exp-theme="light"]) .us-page,
+  :root:not([data-theme="light"]):not([data-bs-theme="light"]):not([data-exp-theme="light"]) .us-account-link {
     --us-ink: #e6e8ec;
     --us-muted: #a5acb8;
     --us-line: #3a4150;
@@ -29,6 +35,20 @@
     --us-warn-soft: #422006;
     --us-bad: #fca5a5;
   }
+}
+:root[data-theme="dark"] .us-page, :root[data-theme="dark"] .us-account-link,
+:root[data-bs-theme="dark"] .us-page, :root[data-bs-theme="dark"] .us-account-link,
+:root[data-exp-theme^="dark"] .us-page, :root[data-exp-theme^="dark"] .us-account-link {
+  --us-ink: #e6e8ec;
+  --us-muted: #a5acb8;
+  --us-line: #3a4150;
+  --us-soft: #1d222b;
+  --us-card: #161a21;
+  --us-accent: #fb923c;
+  --us-ok: #86efac;
+  --us-ok-soft: #14532d;
+  --us-warn-soft: #422006;
+  --us-bad: #fca5a5;
 }
 .us-page h1 { margin: 0 0 .3em; }
 .us-intro, .us-meta { color: var(--us-muted); }
