@@ -1344,7 +1344,13 @@ hinzufügen:
   bleibt);
 - **Felder von `Location`** (`locationFields()`; der Wert ist ein `expGraphQLLocation`);
 - **den Typ ihrer Datentypen** (`datatypes()` und `fieldMapping()`): Ein Feld eines solchen Attributs bekommt den Typ
-  der Erweiterung statt eines `String`.
+  der Erweiterung statt eines `String`;
+- **Mutationen** (seit 6.0.15): Eine Klasse, die zusätzlich `expGraphQLMutationExtension` implementiert, ergänzt
+  `Mutation` um `mutationFields()`, nach denen des Kernels (ein Name, den der Kernel nutzt, bleibt). Ihr Resolver wendet
+  zuerst die Regeln jeder Mutation an: Er ruft `expGraphQLMutations::refusal( $ctx )` auf und wirft einen
+  `expGraphQLError` mit dessen Antwort (Mutationen ausgeschaltet, ein GET, ein anonymer Benutzer, ein API-Schlüssel ohne
+  `graphql:write`, eine Sitzung ohne ihr CSRF-Token). `expwtWrite` der Website-Seitenleiste ist eine davon
+  ([die Website-Seitenleiste](website-seitenleiste.md)).
 
 ```php
 class myColorGraphQLExtension implements expGraphQLSchemaExtension
