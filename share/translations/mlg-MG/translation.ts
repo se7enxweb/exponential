@@ -78777,6 +78777,286 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Mandeha amin'ny zonao ny fangatahana, niditra tamin'ity fotoam-pidirana ity ianao.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ao anatin'ny %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>tsy misy fetra</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Halalina</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Fahasarotana</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Singa isaky ny lisitra</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (mahazatra %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Fangatahana isaky ny mpampiasa na fanalahidy</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Fangatahana isaky ny adiresy tsy fantatra</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Fanontaniana voatahiry ihany</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Fanontaniana lehibe indrindra</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes oktety</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Fampakarana lehibe indrindra</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Tsy misy fidirana amin'ny tranonkala %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Velona ny fanovana ao amin'ny %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Maty ny fanovana ao amin'ny %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Velona ny GraphQL API ao amin'ny %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Maty ny GraphQL API ao amin'ny %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Tsy voasoratra ny fikirana: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Voafafa ny cache valiny: valiny %count no nesorina.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Mariho ny boaty eo anilan'ny fanontaniana mba hanesorana azy.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Tsy nesorina ny fanontaniana: ny fanontaniana tonga ao amin'ny lahatahiry iray an'ny PersistedQueryDirectoryList[] dia esorina miaraka amin'ny rakiny.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Nesorina ny fanontaniana voatahiry.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Fanovana</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>velona</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>maty</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Fidirana amin'ny tranonkala</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ny toerana mamaly ny API sy ny fanovany. Manoratra graphql.ini ireo bokotra, toy ny ataon'ny ./console exp:graphql:enable sy exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Fidirana amin'ny tranonkala</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ovay</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Vonoy</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Maty ny fanovana</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Velona ny fanovana</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Velomy</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Fetra</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] an'ity fidirana amin'ny tranonkala ity.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache valiny</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Ny valin'ny fanontaniana voatahiry, tazonina araka ny zon'ny mpampiasa ary lany isaky ny misy votoaty avoaka.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toetra</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Valiny voatazona</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>valiny %count, %bytes oktety</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Tazonina farafahabetsany</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Lany farany</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Fafao ny cache valiny</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Fanontaniana voatahiry</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Voatahiry amin'ny ./console exp:graphql:persist, na avy amin'ny mpanjifa (fanontaniana voatahiry ho azy); antsoina amin'ny anarana na SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Anarana</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Habe</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Aiza</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Esory</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>tonga miaraka</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>voatahiry</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Eny, esory ity fanontaniana ity</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Mbola tsy misy fanontaniana voatahiry.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Fanalahidy API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Fanalahidy API manokana misy sehatra graphql:read (fanontaniana) na graphql:write (fanovana). Amboary sy foano izy ireo ao amin'ny pejy Fidirana API, na amin'ny ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Fidirana API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Fanalahidy rehetra</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Fanalahidy</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Anarana</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tompony</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Sehatra</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Nampiasaina farany</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>mavitrika</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>lany daty</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>nofoanana</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>tsy mbola</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Mbola tsy misy fanalahidy API misy sehatra GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Mila iray monja amin&apos;ny id, identifier sy urlAlias ny layout.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Tsy fangatahana JSON tokana ny saha operations an'ny fangatahana multipart.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Tsy zavatra JSON ny saha map an'ny fangatahana multipart.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Tsy misy rakitra %field ny fangatahana multipart.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Tsy maintsy manomboka amin'ny variables. ny lalana ao amin'ny saha map: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Tsy tonga feno ny rakitra %name (hadisoana fampakarana %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Lehibe mihoatra ny %max oktety ny rakitra %name.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Tsy voamarina ny rakitra %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Maty ny fanovana (mutation) amin'ity fidirana amin'ny tranonkala ity (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Alefaso amin'ny POST ny fanovana.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Midira mba hanova votoaty.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Tsy manana sehatra %scope ny fanalahidy API.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mila ny famantarana taratasy an'ny session ny fanovana misy session (lohateny X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Maty ny uploadFromUrl: tsy manonona mpampiantrano na iray aza ny graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Tsy maintsy adiresy https ny adiresy.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Tsy ao amin'ny graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ny mpampiantrano %host.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Tsy voaray ny rakitra.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Karazana fampidirana ihany ny Upload.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Ny miova karazana Upload dia mandray rakitra avy amin'ny fangatahana multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Efa voaray ny id lavitra %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Efa manana dikanteny amin'ny %language ny votoaty: ampiasao ny updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Omeo saha iray farafahakeliny.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Tsy afaka namorona dika vaovao (be loatra ny drafitra ananan'ny votoaty).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Tsy drafitra ny dika %version.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Mila iray monja amin'ny id sy nodeId ny deleteContent.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Tsy azo afindra ao ambanin'ny tenany ny toerana iray.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Efa manana toerana ao ambanin'ny %parentId ny votoaty.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Tsy voatahiry ny sandan'ny saha %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Tsy misy fiteny votoaty %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Tsy misy kilasy votoaty %class ao amin'ny rafitra.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Tsy eo ny votoaty, na tsy azonao vakiana.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Tsy azonao atao amin'ity votoaty ity izany.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Tsy manana saha %field azo soratana ny kilasy %class.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Indroa no nomena ny saha %field.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Mandray rakitra ny saha %field: alefaso ho fampakarana (fangatahana multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Tsy mandray rakitra ny saha %field.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Mila sanda ny saha %field.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Ho an'ny saha lahatsoratra manankarena ihany ny endrika %format; raisin'ny %field araka izay misy ny sandany (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Ilaina ny saha %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Tsy voavaky ny HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content dia mandray version miaraka amin'ny id ihany.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tsy manan-kery na lany daty ny famantarana topi-maso.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Tsy origin (https://host na https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Tsy sehatry ny GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

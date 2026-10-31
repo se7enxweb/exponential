@@ -78775,6 +78775,286 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Weydiintu waxay ku shaqaysaa xuquuqdaada, adigoo ku soo galay fadhigan.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count gudaha %seconds il.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>xad la'aan</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Qoto-dheer</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Adkaan</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Shay liiskiiba</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (caadi %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Codsiyo isticmaale ama fure kasta</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Codsiyo cinwaan qarsoodi kasta</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Isbaaritaan (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Weydiimo kaydsan oo keliya</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Weydiinta ugu weyn</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes beyt</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Soo-gelinta ugu weyn</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Ma jiro gelitaan goob %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Isbeddellada waa la shiday gudaha %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Isbeddellada waa la demiyay gudaha %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API waa la shiday gudaha %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API waa la demiyay gudaha %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Dejimaha lama qori karin: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Kaydka jawaabaha waa la nadiifiyay: %count jawaabood ayaa la saaray.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Calaamadee sanduuqa ku xiga weydiinta si aad u saarto.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Weydiinta lama saari karin: weydiin lagu keenay galka PersistedQueryDirectoryList[] waxaa lala saaraa faylkeeda.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Weydiinta kaydsan waa la saaray.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Isbeddellada</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>shidan</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>demsan</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Gelitaannada goobta</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Halka API-ga iyo isbeddelladiisu ka jawaabaan. Badhamadu waxay qoraan graphql.ini, sida ./console exp:graphql:enable iyo exp:graphql:disable sameeyaan.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gelitaanka goobta</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Beddel</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Dami</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Isbeddellada demsan</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Isbeddellada shidan</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Shid</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Xadadka</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ee gelitaankan goobta.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Kaydka jawaabaha</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Jawaabaha weydiimaha kaydsan, oo loo hayo sida xuquuqda isticmaalaha, oo dhaca mar kasta oo nuxur la daabaco.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Xaalad</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Jawaabaha la hayo</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count jawaabood, %bytes beyt</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Ugu badnaan la hayo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds il.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Dhicitaankii ugu dambeeyay</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Nadiifi kaydka jawaabaha</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Weydiimo kaydsan</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Lagu kaydiyay ./console exp:graphql:persist, ama macaamiisha (weydiimo si toos ah loo kaydiyay); lagu yeero magac ama SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Magacyada</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Cabbir</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Halka</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Saar</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>la keenay</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>la kaydiyay</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Haa, saar weydiintan</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Weli ma jirto weydiin kaydsan.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Furayaasha API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Furayaal API shakhsi ah oo leh baaxadda graphql:read (weydiimo) ama graphql:write (isbeddello). Ku samee oo ku buri bogga Gelitaanka API, ama ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Gelitaanka API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Dhammaan furayaasha</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Fure</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Magac</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Milkiile</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Baaxadaha</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Markii ugu dambeysay la isticmaalay</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>firfircoon</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>dhacay</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>la buriyay</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>weligii</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Weli ma jiro fure API oo leh baaxad GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78877,6 +79157,178 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout waxay u baahan tahay mid keliya oo ka mid ah id, identifier iyo urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Goobta operations ee codsiga multipart ma aha hal codsi JSON ah.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Goobta map ee codsiga multipart ma aha shay JSON ah.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Codsiga multipart ma laha fayl %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Waddo ka mid ah goobta map waa inay ku bilaabataa variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Faylka %name si dhammaystiran uma iman (khalad soo-gelin %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Faylka %name wuu ka weyn yahay %max beyt.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Faylka %name lama hubin karin.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Isbeddellada (mutations) waa ka demsan yihiin gelitaankan goobta (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Isbeddelka ku dir POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Gal si aad u beddesho nuxurka.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Furaha API ma laha baaxadda %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Isbeddel leh fadhi wuxuu u baahan yahay calaamadda foomka ee fadhiga (madaxa X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl waa demsan yahay: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ma magacaabo wax martigeliye ah.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Cinwaanku waa inuu noqdaa cinwaan https ah.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Martigeliyaha %host kuma jiro graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faylka lama soo qaadi karin.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload waa nooc gelin oo keliya.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Doorsoome nooca Upload ah wuxuu qaataa fayl ka mid ah codsi multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Aqoonsiga fog %remoteId waa la qaatay.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Nuxurku horey ayuu u leeyahay tarjumaad %language: isticmaal updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Bixi ugu yaraan hal goob.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nooc cusub lama samayn karin (nuxurku wuxuu leeyahay qabyo aad u badan).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Nooca %version ma aha qabyo.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent wuxuu u baahan yahay mid keliya oo ka mid ah id iyo nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Goob lama dhigi karo hoosteeda.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Nuxurku horey ayuu u leeyahay goob ka hoosaysa %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Qiimaha goobta %field lama kaydin karin.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ma jiro luqad nuxur %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Ma jiro fasal nuxur %class oo ku jira schema-da.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Nuxurku ma jiro, ama looma oggola inaad akhrido.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Looma oggola inaad tan ku samayso nuxurkan.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Fasalka %class ma laha goob %field oo la qori karo.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Goobta %field laba jeer ayaa la bixiyay.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Goobta %field waxay qaadataa fayl: u dir soo-gelin ahaan (codsi multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Goobta %field ma qaadato fayl.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Goobta %field waxay u baahan tahay qiime.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Qaabka %format waxaa loogu talagalay goobaha qoraalka hodanka ah oo keliya; %field wuxuu qaataa qiimihiisa sida uu yahay (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Goobta %field waa qasab.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ka lama akhrin karin.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content wuxuu qaataa version oo keliya marka la raaciyo id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Calaamadda horudhaca ma ansax aha ama way dhacday.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ma aha asal (https://host ama https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ma aha baaxad ka mid ah GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

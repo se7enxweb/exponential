@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>คิวรีทำงานด้วยสิทธิ์ของคุณ โดยลงชื่อเข้าใช้ด้วยเซสชันนี้</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ครั้งใน %seconds วิ.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ไม่จำกัด</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ความลึก</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ความซับซ้อน</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>รายการต่อลิสต์</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ค่าเริ่มต้น %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>คำขอต่อผู้ใช้หรือคีย์</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>คำขอต่อที่อยู่นิรนาม</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>เฉพาะคิวรีที่จัดเก็บไว้</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>คิวรีที่ใหญ่ที่สุด</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ไบต์</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>การอัปโหลดที่ใหญ่ที่สุด</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ไม่มีการเข้าถึงไซต์ %siteaccess</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>เปิดมิวเทชันใน %siteaccess แล้ว</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>ปิดมิวเทชันใน %siteaccess แล้ว</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>เปิด GraphQL API ใน %siteaccess แล้ว</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>ปิด GraphQL API ใน %siteaccess แล้ว</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ไม่สามารถเขียนการตั้งค่าได้: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ล้างแคชคำตอบแล้ว: ลบคำตอบออก %count รายการ</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ทำเครื่องหมายในช่องข้างคิวรีเพื่อลบออก</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ไม่สามารถลบคิวรีได้: คิวรีที่มาพร้อมในไดเรกทอรีของ PersistedQueryDirectoryList[] จะถูกลบพร้อมกับไฟล์ของมัน</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ลบคิวรีที่จัดเก็บไว้แล้ว</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>มิวเทชัน</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>เปิด</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ปิด</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>ที่ที่ API และมิวเทชันของมันตอบกลับ ปุ่มเหล่านี้เขียน graphql.ini เช่นเดียวกับ ./console exp:graphql:enable และ exp:graphql:disable</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>เปลี่ยน</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ปิด</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ปิดมิวเทชัน</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>เปิดมิวเทชัน</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>เปิด</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ขีดจำกัด</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ของการเข้าถึงไซต์นี้</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>แคชคำตอบ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>คำตอบของคิวรีที่จัดเก็บไว้ เก็บแยกตามสิทธิ์ผู้ใช้และหมดอายุทุกครั้งที่มีการเผยแพร่เนื้อหา</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>สถานะ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>คำตอบที่เก็บไว้</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count คำตอบ, %bytes ไบต์</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>เก็บไว้นานสุด</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds วิ.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>หมดอายุล่าสุด</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ล้างแคชคำตอบ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>คิวรีที่จัดเก็บไว้</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>จัดเก็บด้วย ./console exp:graphql:persist หรือโดยไคลเอนต์ (automatic persisted queries); เรียกใช้ด้วยชื่อหรือ SHA-256</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ขนาด</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ที่อยู่</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ลบ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>มาพร้อมระบบ</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>จัดเก็บแล้ว</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ใช่ ลบคิวรีนี้</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ยังไม่มีคิวรีที่จัดเก็บไว้</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API key</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>API key ส่วนตัวที่มีขอบเขต graphql:read (คิวรี) หรือ graphql:write (มิวเทชัน) สร้างและเพิกถอนได้ที่หน้าการเข้าถึง API หรือด้วย ./console exp:graphql:keys</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>การเข้าถึง API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>คีย์ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>คีย์</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>เจ้าของ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ขอบเขต</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ใช้ล่าสุด</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ใช้งานอยู่</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>หมดอายุ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>เพิกถอนแล้ว</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ไม่เคย</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>ยังไม่มี API key ที่มีขอบเขต GraphQL</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ต้องมี id, identifier หรือ urlAlias อย่างใดอย่างหนึ่งเท่านั้น</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>ฟิลด์ operations ของคำขอแบบ multipart ไม่ใช่คำขอ JSON เดียว</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>ฟิลด์ map ของคำขอแบบ multipart ไม่ใช่ออบเจกต์ JSON</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>คำขอแบบ multipart ไม่มีไฟล์ %field</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>พาธในฟิลด์ map ต้องขึ้นต้นด้วย variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ไฟล์ %name มาถึงไม่ครบ (ข้อผิดพลาดการอัปโหลด %error)</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ไฟล์ %name ใหญ่เกิน %max ไบต์</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ไม่สามารถตรวจสอบไฟล์ %name ได้</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>มิวเทชันถูกปิดอยู่ในการเข้าถึงไซต์นี้ (graphql.ini [GraphQLSettings] MutationsEnabled)</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ส่งมิวเทชันด้วย POST</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>ลงชื่อเข้าใช้เพื่อแก้ไขเนื้อหา</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API key ไม่มีขอบเขต %scope</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>มิวเทชันที่ใช้เซสชันต้องมีโทเค็นฟอร์มของเซสชัน (ส่วนหัว X-CSRF-Token)</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ถูกปิดอยู่: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ไม่ได้ระบุโฮสต์ใดเลย</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ที่อยู่ต้องเป็นที่อยู่ https</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>โฮสต์ %host ไม่อยู่ใน graphql.ini [GraphQLSettings] UploadFromUrlHostList[]</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ไม่สามารถดึงไฟล์ได้</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload เป็นชนิดอินพุตเท่านั้น</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>ตัวแปรชนิด Upload รับไฟล์จากคำขอแบบ multipart</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>remote id %remoteId ถูกใช้แล้ว</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>เนื้อหานี้มีคำแปลเป็น %language อยู่แล้ว: ใช้ updateContent</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>ระบุอย่างน้อยหนึ่งฟิลด์</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ไม่สามารถสร้างเวอร์ชันใหม่ได้ (เนื้อหามีฉบับร่างมากเกินไป)</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>เวอร์ชัน %version ไม่ใช่ฉบับร่าง</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ต้องการ id หรือ nodeId อย่างใดอย่างหนึ่งเท่านั้น</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ไม่สามารถย้ายตำแหน่งไปไว้ใต้ตัวเองได้</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>เนื้อหานี้มีตำแหน่งอยู่ใต้ %parentId แล้ว</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ไม่สามารถบันทึกค่าของฟิลด์ %field ได้</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>ไม่มีภาษาเนื้อหา %language</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ไม่มีคลาสเนื้อหา %class ในสคีมา</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ไม่มีเนื้อหานี้ หรือคุณไม่ได้รับอนุญาตให้อ่าน</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>คุณไม่ได้รับอนุญาตให้ทำสิ่งนี้กับเนื้อหานี้</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>คลาส %class ไม่มีฟิลด์ %field ที่เขียนได้</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ระบุฟิลด์ %field ซ้ำสองครั้ง</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ฟิลด์ %field รับไฟล์: ส่งเป็นการอัปโหลด (คำขอแบบ multipart)</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ฟิลด์ %field ไม่รับไฟล์</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ฟิลด์ %field ต้องมีค่า</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>รูปแบบ %format ใช้ได้กับฟิลด์ข้อความแบบ rich text เท่านั้น; %field รับค่าตามที่เป็น (RAW)</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ต้องระบุฟิลด์ %field</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>ไม่สามารถอ่าน HTML ได้</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content รับ version ได้เฉพาะเมื่อใช้ร่วมกับ id</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>โทเค็นแสดงตัวอย่างไม่ถูกต้องหรือหมดอายุแล้ว</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ไม่ใช่ origin (https://host หรือ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>ไม่ใช่ขอบเขตของ GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

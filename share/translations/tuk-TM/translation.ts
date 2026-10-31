@@ -78777,6 +78777,286 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Sorag siziň hukuklaryňyz bilen, şu sessiýada giren ýagdaýyňyzda işleýär.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds sek içinde %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>çäksiz</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Çuňluk</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Çylşyrymlylyk</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Sanawdaky elementler</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (deslapky %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Ulanyjy ýa-da açar boýunça ýüzlenmeler</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Näbelli salgy boýunça ýüzlenmeler</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspeksiýa</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Diňe saklanan soraglar</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Iň uly sorag</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes baýt</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Iň uly ýükleme</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess saýta giriş nokady ýok.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutasiýalar %siteaccess-de açyldy.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutasiýalar %siteaccess-de öçürildi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess-de açyldy.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess-de öçürildi.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Sazlamalary ýazyp bolmady: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Jogap keşi arassalandy: %count jogap aýryldy.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Soragy aýyrmak üçin onuň ýanyndaky gutujygy belläň.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Soragy aýyryp bolmady: PersistedQueryDirectoryList[] katalogynda gelen sorag öz faýly bilen bilelikde aýrylýar.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Saklanan sorag aýryldy.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutasiýalar</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>açyk</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>öçük</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Saýta giriş nokatlary</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API-niň we onuň mutasiýalarynyň jogap berýän ýerleri. Düwmeler graphql.ini-ni ./console exp:graphql:enable we exp:graphql:disable ýaly ýazýar.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Üýtget</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Öçür</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutasiýalary öçür</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutasiýalary aç</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Çäklendirmeler</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Bu saýta giriş nokadynyň graphql.ini [GraphQLSettings] sazlamalary.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Jogap keşi</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Saklanan soraglaryň jogaplary: ulanyjy hukuklary boýunça saklanýar we mazmun her gezek çap edilende könelýär.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ýagdaý</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Saklanan jogaplar</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count jogap, %bytes baýt</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Iň köp saklanýar</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Soňky könelme</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Jogap keşini arassala</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Saklanan soraglar</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist bilen ýa-da müşderiler tarapyndan saklanýar (awtomatik saklanan soraglar); ady ýa-da SHA-256 boýunça çagyrylýar.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Atlar</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ölçeg</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ýeri</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Aýyr</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>bile gelen</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>saklanan</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Hawa, bu soragy aýyr</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Entek saklanan sorag ýok.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API açarlary</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (soraglar) ýa-da graphql:write (mutasiýalar) gerimli şahsy API açarlary. Olary API girişi sahypasynda ýa-da ./console exp:graphql:keys bilen dörediň we ýatyryň.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API girişi</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Ähli açarlar</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Açar</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ady</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eýesi</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Gerimler</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Soňky ulanylyşy</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>işjeň</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>möhleti gutardy</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ýatyryldy</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hiç haçan</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Entek GraphQL gerimli API açary ýok.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout üçin id, identifier we urlAlias-dan takyk biri gerek.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Köp bölekli ýüzlenmäniň operations meýdany bir JSON ýüzlenmesi däl.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Köp bölekli ýüzlenmäniň map meýdany JSON obýekti däl.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Köp bölekli ýüzlenmede %field faýly ýok.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map meýdanyndaky ýol variables. bilen başlamaly: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name faýly doly gelmedi (ýükleme ýalňyşlygy %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name faýly %max baýtdan uly.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name faýlyny barlap bolmady.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutasiýalar bu saýta giriş nokadynda öçürilen (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Mutasiýany POST bilen iberiň.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Mazmuny üýtgetmek üçin giriň.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API açarynyň %scope gerimi ýok.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Sessiýa bilen iberilýän mutasiýa sessiýanyň forma tokenini talap edýär (X-CSRF-Token sözbaşysy).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl öçürilen: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] hiç bir hosty görkezmeýär.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Salgy https salgysy bolmaly.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host hosty graphql.ini [GraphQLSettings] UploadFromUrlHostList[] sanawynda ýok.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Faýly alyp bolmady.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload diňe giriş görnüşi.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload görnüşli üýtgeýän köp bölekli ýüzlenmäniň faýlyny kabul edýär.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId uzak identifikatory eýýäm eýelenen.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Mazmunyň %language dilinde terjimesi eýýäm bar: updateContent ulanyň.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Iň bolmanda bir meýdan beriň.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Täze wersiýa döredip bolmady (mazmunyň garalamalary gaty köp).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version wersiýasy garalama däl.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent üçin id we nodeId-den takyk biri gerek.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Ýerleşişi öz aşagyna geçirip bolmaýar.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Mazmunyň %parentId aşagynda eýýäm ýerleşişi bar.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field meýdanynyň bahasyny saklap bolmady.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language mazmun dili ýok.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Shemada %class mazmun synpy ýok.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Mazmun ýok ýa-da ony okamaga rugsadyňyz ýok.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Bu mazmun bilen muny etmäge rugsadyňyz ýok.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class synpynda ýazyp bolýan %field meýdany ýok.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field meýdany iki gezek berlen.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field meýdany faýl kabul edýär: ony upload hökmünde iberiň (köp bölekli ýüzlenme).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field meýdany faýl kabul etmeýär.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field meýdanyna baha gerek.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format formaty diňe baý tekst meýdanlary üçin; %field bahasyny bolşy ýaly kabul edýär (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field meýdany hökmany.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-i okap bolmady.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version-y diňe id bilen kabul edýär.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Öňünden görkeziş tokeni nädogry ýa-da möhleti gutardy.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Gelip çykyş (origin) däl (https://host ýa-da https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API-niň gerimi däl: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -276,6 +276,17 @@ removed in a later major version. Change the virtual host (the HTTPS one too) an
 `curl -i -X PROPFIND -H 'Depth: 1' https://www.example.com/index_webdav.php/` (expect `207 Multi-Status`):
 [The WebDAV entry script is now index_webdav.php](../bc/6.0/webdav-entry-script-index-webdav.md).
 
+**If SOAP is on** (`soap.ini` `EnableSOAP=true`, for example for the `syndication` extension): since 6.0.15 its entry
+script is `index_soap.php`. `soap.php` only forwards to it and will be removed in a later major version. Let
+`index_soap.php` through in the HTTPS virtual host and in `.htaccess`, point the SOAP clients at it, reload the web
+server, then test with `curl -sS -i 'https://www.example.com/index_soap.php?wsdl'` (expect `200` and
+`Error: this web page does only understand POST methods`; a `404` or a page of the site means the rule is missing):
+[The SOAP entry script is now index_soap.php](../bc/6.0/soap-entry-script-index-soap.md).
+
+**This is the step most often forgotten.** An upgrade replaces the scripts, but the virtual host, the rewrite rules
+and the control panel's directives are yours: no upgrade changes them. Change them on the HTTPS host (`*:443`), not
+only on the HTTP one, and run the `curl` test after the reload, before you call the upgrade done.
+
 For what changed by month, the story is in the [chronicle](../history/2026/); every single change is in the
 [ledger of the root repository](../history/ledger/exponential-root.md).
 

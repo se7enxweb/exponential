@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>די אָנפֿרעג ווערט אויסגעפֿירט מיט אייַערע רעכט, אייַנגעשריבן מיט דער דאָזיקער סעסיע.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count אין %seconds סעק.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>קיין גרענעץ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>טיפֿקייט</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>קאָמפּליצירטקייט</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>עלעמענטן פּער רשימה</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (פֿאַרויסגעשטעלט %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>בקשות פּער באַניצער אָדער שליסל</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>בקשות פּער אַנאָנימער אַדרעס</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>אינטראָספּעקציע</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>בלויז אָפּגעהיטע אָנפֿרעגן</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>גרעסטער אָנפֿרעג</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes בייטן</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>גרעסטער אַרויפֿלאָד</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>עס איז נישטאָ קיין וועבזייַטל־צוטריט %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>די מוטאַציעס זענען אָנגעצונדן אין %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>די מוטאַציעס זענען אויסגעלאָשן אין %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>די GraphQL API איז אָנגעצונדן אין %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>די GraphQL API איז אויסגעלאָשן אין %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>מע האָט נישט געקענט שרייַבן די אייַנשטעלונגען: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>דער ענטפֿער־קאַש איז אויסגעליידיקט: %count ענטפֿערס אַוועקגענומען.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>צייכנט אָן דאָס קעסטל לעבן דעם אָנפֿרעג כּדי אים אַוועקצונעמען.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>מע האָט נישט געקענט אַוועקנעמען דעם אָנפֿרעג: אַן אָנפֿרעג וואָס קומט אין אַ טעקל פֿון PersistedQueryDirectoryList[] ווערט אַוועקגענומען צוזאַמען מיט זייַן טעקע.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>דער אָפּגעהיטער אָנפֿרעג איז אַוועקגענומען.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>מוטאַציעס</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>אָן</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>אויס</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>וועבזייַטל־צוטריטן</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>וווּ די API און אירע מוטאַציעס ענטפֿערן. די קנעפּלעך שרייַבן graphql.ini, אַזוי ווי ./console exp:graphql:enable און exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ענדערן</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>אויסלעשן</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>מוטאַציעס אויס</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>מוטאַציעס אָן</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>אָנצינדן</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>גרענעצן</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] פֿון דעם וועבזייַטל־צוטריט.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ענטפֿער־קאַש</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>די ענטפֿערס פֿון אָפּגעהיטע אָנפֿרעגן, געהאַלטן לויט די באַניצער־רעכט און אויסגעגאַנגען ווען אינהאַלט ווערט פֿאַרעפֿנטלעכט.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>צושטאַנד</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>געהאַלטענע ענטפֿערס</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ענטפֿערס, %bytes בייטן</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>מאַקסימום געהאַלטן</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds סעק.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>לעצטנס אויסגעגאַנגען</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ליידיקט אויס דעם ענטפֿער־קאַש</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>אָפּגעהיטע אָנפֿרעגן</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>אָפּגעהיט מיט ./console exp:graphql:persist, אָדער דורך קליענטן (אויטאָמאַטישע אָפּגעהיטע אָנפֿרעגן); גערופֿן לויטן נאָמען אָדער SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>נעמען</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גרייס</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>וווּ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>אַוועקנעמען</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>מיטגעשיקט</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>אָפּגעהיט</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>יאָ, נעמט אַוועק דעם אָנפֿרעג</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>נאָך קיין אָפּגעהיטער אָנפֿרעג.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API־שליסלען</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>פּערזענלעכע API־שליסלען מיטן פֿאַרנעם graphql:read (אָנפֿרעגן) אָדער graphql:write (מוטאַציעס). מאַכט זיי און רופֿט זיי צוריק אויפֿן בלאַט API־צוטריט, אָדער מיט ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API־צוטריט</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>אַלע שליסלען</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>שליסל</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>נאָמען</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>באַזיצער</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>פֿאַרנעמען</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>לעצטנס געניצט</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>אַקטיוו</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>אויסגעגאַנגען</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>צוריקגערופֿן</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>קיין מאָל ניט</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>נאָך קיין API־שליסל מיט אַ GraphQL פֿאַרנעם.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout דאַרף פּונקט איינס פֿון id, identifier און urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>דאָס פֿעלד operations פֿון אַ מערטייליקער בקשה איז נישט קיין איין JSON בקשה.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>דאָס פֿעלד map פֿון אַ מערטייליקער בקשה איז נישט קיין JSON אָביעקט.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>די מערטייליקע בקשה האָט נישט קיין טעקע %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>אַ וועג אין פֿעלד map מוז זיך אָנהייבן מיט variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>די טעקע %name איז נישט אָנגעקומען אין גאַנצן (אַרויפֿלאָד־גרייז %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>די טעקע %name איז גרעסער ווי %max בייטן.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>מע האָט נישט געקענט קאָנטראָלירן די טעקע %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>מוטאַציעס זענען אויסגעלאָשן אין דעם וועבזייַטל־צוטריט (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>שיקט אַ מוטאַציע מיט POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>שרייבט זיך אייַן כּדי צו ענדערן אינהאַלט.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>דער API־שליסל האָט נישט קיין פֿאַרנעם %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>אַ מוטאַציע מיט אַ סעסיע דאַרף דעם פֿאָרעם־טאָקען פֿון דער סעסיע (קעפּל X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl איז אויסגעלאָשן: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] נעמט נישט קיין האָסט.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>די אַדרעס מוז זייַן אַן https אַדרעס.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>דער האָסט %host איז נישט אין graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>מע האָט נישט געקענט ברענגען די טעקע.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload איז בלויז אַן אייַנגאַב־טיפּ.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>אַ וואַריאַבל פֿון טיפּ Upload נעמט אַ טעקע פֿון אַ מערטייליקער בקשה.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>די ווייַטע id %remoteId איז שוין פֿאַרנומען.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>דער אינהאַלט האָט שוין אַן איבערזעצונג אויף %language: ניצט updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>גיט כאָטש איין פֿעלד.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>מע האָט נישט געקענט מאַכן קיין נייַע ווערסיע (דער אינהאַלט האָט צו פֿיל פּראָיעקטן).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ווערסיע %version איז נישט קיין פּראָיעקט.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent דאַרף פּונקט איינס פֿון id און nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>אַן אָרט קען נישט אַריבערגעפֿירט ווערן אונטער זיך אַליין.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>דער אינהאַלט האָט שוין אַן אָרט אונטער %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>מע האָט נישט געקענט אָפּהיטן דעם ווערט פֿון פֿעלד %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>עס איז נישטאָ קיין אינהאַלט־שפּראַך %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>עס איז נישטאָ קיין אינהאַלט־קלאַס %class אין דער סכעמע.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>דער אינהאַלט איז נישטאָ, אָדער איר טאָרט אים נישט לייענען.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>איר טאָרט דאָס נישט טאָן מיט דעם אינהאַלט.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>דער קלאַס %class האָט נישט קיין שרייַבלעך פֿעלד %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>דאָס פֿעלד %field איז געגעבן צוויי מאָל.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>דאָס פֿעלד %field נעמט אַ טעקע: שיקט זי ווי upload (אַ מערטייליקע בקשה).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>דאָס פֿעלד %field נעמט נישט קיין טעקע.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>דאָס פֿעלד %field דאַרף אַ ווערט.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>דער פֿאָרמאַט %format איז נאָר פֿאַר רייַך־טעקסט פֿעלדער; %field נעמט זייַן ווערט ווי ער איז (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>דאָס פֿעלד %field איז נייטיק.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>מע האָט נישט געקענט לייענען דעם HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content נעמט version נאָר מיט id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>דער פֿאָרויסקוק־טאָקען איז נישט גילטיק אָדער איז אויסגעגאַנגען.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>נישט קיין אָריגין (https://host אָדער https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>נישט קיין פֿאַרנעם פֿון דער GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

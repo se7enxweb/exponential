@@ -1,0 +1,17 @@
+---
+// A field's value as the page shows it: an image, rich text (HTML rendered by the site), a relation, a list, text.
+const { value } = Astro.props;
+const kind = value === null || value === undefined || value === '' ? 'none'
+  : Array.isArray( value ) ? 'list'
+  : typeof value !== 'object' ? 'text'
+  : 'width' in value && 'url' in value ? 'image'
+  : 'html' in value ? 'html'
+  : 'urlAlias' in value ? 'link'
+  : 'object';
+---
+{ kind === 'list' && <ul>{ value.map( ( item: any ) => <li><Astro.self value={ item } /></li> ) }</ul> }
+{ kind === 'image' && value.url && <img src={ value.url } alt={ value.alt ?? '' } width={ value.width } height={ value.height } loading="lazy" /> }
+{ kind === 'html' && value.html && <div class="rich-text" set:html={ value.html } /> }
+{ kind === 'link' && <a href={ `/${ value.urlAlias ?? '' }` }>{ value.name }</a> }
+{ kind === 'object' && <span>{ Object.values( value ).filter( Boolean ).join( ', ' ) }</span> }
+{ kind === 'text' && <span>{ String( value ) }</span> }

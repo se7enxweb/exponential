@@ -41,7 +41,31 @@ objects below the node get the section ([Sections](../../guides/sections.md#85-w
 `php bin/php/expcontentjob.php` is the same script.
 
 The cronjob part `contentjobs` (group `frequent`) restarts a worker whose process died, starts a queued job nobody
-started, and removes finished jobs after `KeepDays`.
+started, resumes a job that failed because the database stayed busy, and removes finished jobs after `KeepDays`.
+
+`list` shows how long ago each job's worker last wrote its heartbeat and marks a job `stalled` when it waits without
+a worker. `list --resume` resumes every stalled or failed job in the background:
+
+```bash
+php bin/php/console exp:expcontentjob list
+php bin/php/console exp:expcontentjob list --resume
+```
+
+## A busy database
+
+A batch that meets a busy database is not lost. On SQLite this happens when another process holds the write
+lock for longer than `site.ini [DatabaseSettings] SQLiteTransactionWait`; on MySQL it is a lock wait timeout or a
+deadlock. The worker then:
+
+1. rolls the batch back, so nothing of it stays in the database;
+2. reads the job again from its last checkpoint and lets the job type rebuild its state, as a resume does;
+3. waits 1, 2, 4 ... seconds (at most `BusyBackoffMax`), writing the heartbeat meanwhile;
+4. tries the batch again, up to `BusyRetries` times.
+
+If the database is still busy after that, the job fails with a temporary error. The cronjob part resumes it on
+its own, at most `MaxAttempts` times in a row; every batch done starts that count again. Each item is done exactly
+once, however often a batch is tried. Before this change the worker of a help manual build could stop on a busy
+SQLite database and leave the job `running` without a worker; it had to be resumed by hand.
 
 ## Settings
 
@@ -55,7 +79,9 @@ All keys are in `settings/content.ini`, block `ContentJobSettings`. Scope: insta
 | `BatchSize` | `50` | Nodes per batch (one transaction each) |
 | `BatchPause` | `0` | Seconds between batches |
 | `QueuedGrace` / `QueuedTimeout` | `60` / `600` | Seconds before a queued job is started by cron / given up |
-| `MaxAttempts` | `5` | Worker restarts before a job fails |
+| `MaxAttempts` | `5` | Worker restarts before a job fails; also the automatic resumes in a row of a job that failed for a busy database |
+| `BusyRetries` | `8` | Tries again of a batch that met a busy or locked database; `0` = fail at once |
+| `BusyBackoffMax` | `60` | Longest pause between those tries, in seconds (the pause doubles from 1) |
 | `KeepDays` | `30` | Finished jobs are removed after this |
 | `PhpBinary` | empty | PHP binary used to start workers |
 | `JobTypes[<type>]` | nine built-in classes | `remove`, `copy`, `move`, `hide`, `reveal`, `section`, `state`, `addlocation`, `removelocation` |

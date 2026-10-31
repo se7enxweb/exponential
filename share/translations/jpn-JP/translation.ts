@@ -78807,6 +78807,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>クエリは、このセッションでサインインしているあなたの権限で実行されます。</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds 秒間に %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>制限なし</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>深さ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>複雑さ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>リストあたりの項目数</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (既定値 %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ユーザーまたはキーごとのリクエスト数</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>匿名アドレスごとのリクエスト数</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>イントロスペクション</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>保存済みクエリのみ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>最大クエリサイズ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes バイト</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>最大アップロードサイズ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>サイトアクセス %siteaccess は存在しません。</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess でミューテーションが有効になりました。</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess でミューテーションが無効になりました。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess で GraphQL API が有効になりました。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess で GraphQL API が無効になりました。</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>設定を書き込めませんでした: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>レスポンスキャッシュを消去しました: %count 件の応答を削除しました。</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>削除するには、クエリの横のチェックボックスをオンにしてください。</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>クエリを削除できませんでした: PersistedQueryDirectoryList[] のディレクトリで提供されるクエリは、そのファイルとともに削除されます。</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>保存済みクエリを削除しました。</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ミューテーション</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>有効</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>無効</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API とそのミューテーションが応答する場所です。ボタンは ./console exp:graphql:enable と exp:graphql:disable と同じように graphql.ini を書き込みます。</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>変更</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>無効にする</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ミューテーション無効</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ミューテーション有効</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>有効にする</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>制限</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>このサイトアクセスの graphql.ini [GraphQLSettings]。</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>レスポンスキャッシュ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>保存済みクエリの応答。ユーザー権限ごとに保持され、コンテンツが公開されるたびに失効します。</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状態</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>保持中の応答</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count 件の応答、%bytes バイト</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>最大保持期間</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds 秒</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>最終失効</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>レスポンスキャッシュを消去</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>保存済みクエリ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist で、またはクライアントによって保存されます (automatic persisted queries)。名前または SHA-256 で呼び出します。</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>場所</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>同梱</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>はい、このクエリを削除します</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>保存済みクエリはまだありません。</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API キー</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>スコープ graphql:read (クエリ) または graphql:write (ミューテーション) を持つ個人用 API キー。API アクセスのページ、または ./console exp:graphql:keys で作成・失効できます。</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API アクセス</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>すべてのキー</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>キー</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>所有者</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>スコープ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>最終使用</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>有効</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>期限切れ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>失効</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL スコープを持つ API キーはまだありません。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79189,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout には id、identifier、urlAlias のいずれか1つだけが必要です。</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart リクエストの operations フィールドが 1 つの JSON リクエストではありません。</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart リクエストの map フィールドが JSON オブジェクトではありません。</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart リクエストにファイル %field がありません。</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>フィールドマップのパスは variables. で始まる必要があります: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ファイル %name が完全に届きませんでした (アップロードエラー %error)。</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ファイル %name が %max バイトを超えています。</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ファイル %name を検査できませんでした。</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>このサイトアクセスではミューテーションが無効になっています (graphql.ini [GraphQLSettings] MutationsEnabled)。</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ミューテーションは POST で送信してください。</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>コンテンツを変更するにはサインインしてください。</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API キーにスコープ %scope がありません。</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>セッションを使うミューテーションには、そのセッションのフォームトークン (ヘッダー X-CSRF-Token) が必要です。</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl は無効です: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] にホストが指定されていません。</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>アドレスは https のアドレスである必要があります。</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ホスト %host は graphql.ini [GraphQLSettings] UploadFromUrlHostList[] にありません。</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ファイルを取得できませんでした。</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload は入力型専用です。</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload 型の変数は multipart リクエストのファイルを受け取ります。</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>リモート ID %remoteId は既に使われています。</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>このコンテンツには既に %language の翻訳があります: updateContent を使ってください。</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>少なくとも 1 つのフィールドを指定してください。</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>新しいバージョンを作成できませんでした (コンテンツの下書きが多すぎます)。</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>バージョン %version は下書きではありません。</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent には id と nodeId のいずれか 1 つだけが必要です。</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ロケーションを自分自身の下に移動することはできません。</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>このコンテンツには既に %parentId の下にロケーションがあります。</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>フィールド %field の値を保存できませんでした。</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>コンテンツ言語 %language は存在しません。</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>スキーマにコンテンツクラス %class はありません。</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>コンテンツが存在しないか、読み取る権限がありません。</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>このコンテンツに対してこの操作を行う権限がありません。</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>クラス %class には書き込み可能なフィールド %field がありません。</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>フィールド %field が 2 回指定されています。</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>フィールド %field はファイルを受け取ります: アップロードとして送信してください (multipart リクエスト)。</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>フィールド %field はファイルを受け取りません。</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>フィールド %field には値が必要です。</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>フォーマット %format はリッチテキストフィールド専用です。%field は値をそのまま受け取ります (RAW)。</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>フィールド %field は必須です。</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML を読み取れませんでした。</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content は id とともにのみ version を受け取ります。</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>プレビュートークンが無効か、期限切れです。</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>オリジンではありません (https://host または https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API のスコープではありません: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -1,0 +1,3 @@
+# The GraphQL end point of the site, and an optional personal API key (scope graphql:read), read on the server only.
+NUXT_GRAPHQL_ENDPOINT=__EXP_ENDPOINT__
+NUXT_GRAPHQL_KEY=

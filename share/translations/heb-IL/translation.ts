@@ -78809,6 +78809,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>השאילתה רצה עם ההרשאות שלך, כשאתה מחובר בהפעלה זו.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count בתוך %seconds ש׳</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ללא הגבלה</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>עומק</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>מורכבות</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>פריטים לרשימה</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ברירת מחדל %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>בקשות למשתמש או למפתח</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>בקשות לכתובת אנונימית</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>שאילתות שמורות בלבד</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>השאילתה הגדולה ביותר</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes בתים</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ההעלאה הגדולה ביותר</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>אין גישת אתר %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>המוטציות מופעלות ב־%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>המוטציות כבויות ב־%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>ממשק ה־API של GraphQL מופעל ב־%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>ממשק ה־API של GraphQL כבוי ב־%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>לא ניתן היה לכתוב את ההגדרות: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>מטמון התשובות נוקה: %count תשובות הוסרו.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>סמנו את התיבה שליד השאילתה כדי להסיר אותה.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>לא ניתן היה להסיר את השאילתה: שאילתה שסופקה בתיקייה של PersistedQueryDirectoryList[] מוסרת יחד עם הקובץ שלה.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>השאילתה השמורה הוסרה.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>מוטציות</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>פועל</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>כבוי</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>גישות אתר</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>היכן ה־API והמוטציות שלו עונים. הכפתורים כותבים את graphql.ini, כפי ש־./console exp:graphql:enable ו־exp:graphql:disable עושים.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>גישת אתר</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API של GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>שינוי</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>כיבוי</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>מוטציות כבויות</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>מוטציות פועלות</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>הפעלה</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>מגבלות</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] של גישת אתר זו.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>מטמון תשובות</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>התשובות של השאילתות השמורות, נשמרות לפי הרשאות המשתמש ופגות בכל פעם שתוכן מתפרסם.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>תשובות שמורות</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count תשובות, %bytes בתים</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>נשמרות לכל היותר</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ש׳</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>תפוגה אחרונה</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ניקוי מטמון התשובות</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>שאילתות שמורות</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>נשמרו עם ./console exp:graphql:persist, או על ידי לקוחות (שאילתות שמורות אוטומטיות); נקראות לפי שם או SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>שמות</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גודל</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>מיקום</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>הסרה</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>סופקה</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>נשמרה</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>כן, להסיר את השאילתה הזו</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>אין עדיין שאילתה שמורה.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>מפתחות API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>מפתחות API אישיים עם התחום graphql:read (שאילתות) או graphql:write (מוטציות). צרו ובטלו אותם בעמוד גישת API, או עם ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>גישת API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>כל המפתחות</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>מפתח</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>בעלים</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>תחומים</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>שימוש אחרון</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>פעיל</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>פג תוקף</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>בוטל</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>אף פעם</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>אין עדיין מפתח API עם תחום GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78911,6 +79191,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout דורש בדיוק אחד מבין id, identifier ו־urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>השדה operations של בקשת multipart אינו בקשת JSON אחת.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>השדה map של בקשת multipart אינו אובייקט JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>בבקשת ה־multipart אין קובץ %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>נתיב במיפוי השדות חייב להתחיל ב־variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>הקובץ %name לא הגיע בשלמותו (שגיאת העלאה %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>הקובץ %name גדול מ־%max בתים.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>לא ניתן היה לבדוק את הקובץ %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>המוטציות כבויות בגישת אתר זו (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>שלחו מוטציה עם POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>היכנסו כדי לשנות תוכן.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>למפתח ה־API אין את התחום %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>מוטציה עם סשן צריכה את אסימון הטופס של הסשן (כותרת X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl כבוי: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] אינו מציין אף מארח.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>הכתובת חייבת להיות כתובת https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>המארח %host אינו נמצא ב־graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>לא ניתן היה להביא את הקובץ.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload הוא סוג קלט בלבד.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>משתנה מסוג Upload מקבל קובץ של בקשת multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>המזהה המרוחק %remoteId כבר תפוס.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>לתוכן כבר יש תרגום ל־%language: השתמשו ב־updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>ציינו לפחות שדה אחד.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>לא ניתן היה ליצור גרסה חדשה (לתוכן יש יותר מדי טיוטות).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>גרסה %version אינה טיוטה.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent צריך בדיוק אחד מבין id ו־nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>אי אפשר להעביר מיקום אל מתחת לעצמו.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>לתוכן כבר יש מיקום מתחת ל־%parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>לא ניתן היה לשמור את הערך של השדה %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>אין שפת תוכן %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>אין מחלקת תוכן %class בסכמה.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>התוכן אינו קיים, או שאינכם רשאים לקרוא אותו.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>אינכם רשאים לעשות זאת לתוכן הזה.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>למחלקה %class אין שדה %field שניתן לכתוב בו.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>השדה %field ניתן פעמיים.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>השדה %field מקבל קובץ: שלחו אותו כהעלאה (בקשת multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>השדה %field אינו מקבל קובץ.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>השדה %field צריך ערך.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>הפורמט %format מיועד רק לשדות טקסט עשיר; %field מקבל את ערכו כמות שהוא (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>השדה %field הוא שדה חובה.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>לא ניתן היה לקרוא את ה־HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content מקבל version רק יחד עם id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>אסימון התצוגה המקדימה אינו תקף או שפג תוקפו.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>אינו מקור (https://host או https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>אינו תחום של ה־API של GraphQL: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

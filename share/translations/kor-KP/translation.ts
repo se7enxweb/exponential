@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>질문은 이 세션으로 가입한 리용자의 권한으로 실행됩니다.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds초동안 %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>제한없음</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>깊이</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>복잡도</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>목록당 항목수</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (기정값 %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>리용자 또는 열쇠당 요청수</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>익명주소당 요청수</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>내부검사 (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>보관된 질문만</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>가장 큰 질문</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes바이트</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>가장 큰 올리적재</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>싸이트접근 %siteaccess가 없습니다.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess에서 변경조작이 켜졌습니다.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess에서 변경조작이 꺼졌습니다.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess에서 GraphQL API가 켜졌습니다.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess에서 GraphQL API가 꺼졌습니다.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>설정을 쓸수 없었습니다: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>응답캐쉬를 지웠습니다: 응답 %count개를 삭제했습니다.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>질문을 삭제하려면 옆의 칸에 표시하십시오.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>질문을 삭제할수 없었습니다: PersistedQueryDirectoryList[]의 등록부에 들어있는 질문은 그 화일과 함께 삭제됩니다.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>보관된 질문을 삭제했습니다.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>변경조작</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>켜짐</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>꺼짐</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API와 그 변경조작이 응답하는 곳입니다. 단추들은 ./console exp:graphql:enable 및 exp:graphql:disable과 같이 graphql.ini를 씁니다.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>변경</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>끄기</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>변경조작 꺼짐</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>변경조작 켜짐</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>켜기</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>제한</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>이 싸이트접근의 graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>응답캐쉬</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>보관된 질문의 응답으로서 리용자권한별로 보관되며 내용이 발행될 때마다 무효로 됩니다.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>보관된 응답</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>응답 %count개, %bytes바이트</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>최대보관기간</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds초</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>마지막 무효화</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>응답캐쉬 지우기</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>보관된 질문</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist로 또는 의뢰기에 의하여 보관됩니다 (automatic persisted queries); 이름이나 SHA-256으로 호출합니다.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>크기</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>삭제</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>동봉</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>보관</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>예, 이 질문을 삭제합니다</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>보관된 질문이 아직 없습니다.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API 열쇠</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>범위 graphql:read (질문) 또는 graphql:write (변경조작)를 가진 개인 API 열쇠. API 접근 페지에서 또는 ./console exp:graphql:keys로 만들고 취소하십시오.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API 접근</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>모든 열쇠</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>열쇠</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>소유자</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>범위</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>마지막 사용</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>유효</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>기한지남</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>취소됨</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL 범위를 가진 API 열쇠가 아직 없습니다.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout에는 id, identifier, urlAlias중 정확히 하나가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart 요청의 operations마당이 하나의 JSON 요청이 아닙니다.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart 요청의 map마당이 JSON 객체가 아닙니다.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart 요청에 화일 %field가 없습니다.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>마당대응표의 경로는 variables.로 시작해야 합니다: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>화일 %name이 완전히 도착하지 않았습니다 (올리적재오류 %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>화일 %name이 %max바이트보다 큽니다.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>화일 %name을 검사할수 없었습니다.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>이 싸이트접근에서는 변경조작이 꺼져있습니다 (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>변경조작은 POST로 보내십시오.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>내용을 변경하려면 가입하십시오.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API 열쇠에 범위 %scope가 없습니다.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>세션을 쓰는 변경조작에는 그 세션의 양식토큰이 필요합니다 (머리부 X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl이 꺼져있습니다: graphql.ini [GraphQLSettings] UploadFromUrlHostList[]에 호스트가 없습니다.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>주소는 https주소여야 합니다.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>호스트 %host가 graphql.ini [GraphQLSettings] UploadFromUrlHostList[]에 없습니다.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>화일을 가져올수 없었습니다.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload는 입력형으로만 쓰입니다.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload형의 변수는 multipart 요청의 화일을 받습니다.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>원격 id %remoteId는 이미 쓰이고있습니다.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>내용에 이미 %language 번역이 있습니다: updateContent를 쓰십시오.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>적어도 하나의 마당을 주십시오.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>새 판을 만들수 없었습니다 (내용에 초안이 너무 많습니다).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>판 %version은 초안이 아닙니다.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent에는 id, nodeId중 정확히 하나가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>위치는 자기자신의 아래로 옮길수 없습니다.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>내용에 이미 %parentId 아래의 위치가 있습니다.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>마당 %field의 값을 보관할수 없었습니다.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>내용언어 %language가 없습니다.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>스키마에 내용클라스 %class가 없습니다.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>내용이 없거나 읽을 권한이 없습니다.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>이 내용에 대하여 이 조작을 할 권한이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>클라스 %class에는 쓸수 있는 마당 %field가 없습니다.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>마당 %field가 두번 주어졌습니다.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>마당 %field는 화일을 받습니다: 올리적재로 보내십시오 (multipart 요청).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>마당 %field는 화일을 받지 않습니다.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>마당 %field에는 값이 필요합니다.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>형식 %format은 서식본문마당에만 쓰입니다; %field는 값을 그대로 받습니다 (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>마당 %field는 필수입니다.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML을 읽을수 없었습니다.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content는 id와 함께만 version을 받습니다.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>미리보기토큰이 유효하지 않거나 기한이 지났습니다.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>오리진이 아닙니다 (https://host 또는 https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API의 범위가 아닙니다: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

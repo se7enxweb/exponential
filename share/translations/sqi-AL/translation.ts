@@ -78807,6 +78807,286 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Pyetësori ekzekutohet me të drejtat tuaja, i identifikuar në këtë seancë.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count në %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>pa kufi</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Thellësia</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksiteti</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elemente për listë</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (parazgjedhje %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Kërkesa për përdorues ose çelës</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Kërkesa për adresë anonime</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspeksioni</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Vetëm pyetësorë të ruajtur</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Pyetësori më i madh</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtë</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Ngarkimi më i madh</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nuk ka qasje në sajt %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutacionet janë aktivizuar në %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutacionet janë çaktivizuar në %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API është aktivizuar në %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API është çaktivizuar në %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Cilësimet nuk mund të shkruheshin: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Cache-i i përgjigjeve u pastrua: %count përgjigje u hoqën.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Shënoni kutinë pranë pyetësorit për ta hequr.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Pyetësori nuk mund të hiqej: një pyetësor i dorëzuar në një direktori të PersistedQueryDirectoryList[] hiqet bashkë me skedarin e tij.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Pyetësori i ruajtur u hoq.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacionet</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>joaktiv</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Qasjet në sajt</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ku përgjigjen API dhe mutacionet e tij. Butonat shkruajnë graphql.ini, siç bëjnë ./console exp:graphql:enable dhe exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Qasja në sajt</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ndrysho</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Çaktivizo</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutacionet joaktive</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutacionet aktive</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aktivizo</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Kufijtë</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] i kësaj qasjeje në sajt.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache-i i përgjigjeve</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Përgjigjet e pyetësorëve të ruajtur, të mbajtura sipas të drejtave të përdoruesit dhe të skaduara sa herë publikohet përmbajtje.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gjendja</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Përgjigje të mbajtura</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count përgjigje, %bytes bajtë</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Mbahen të shumtën</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Skadimi i fundit</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Pastro cache-in e përgjigjeve</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Pyetësorë të ruajtur</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Të ruajtur me ./console exp:graphql:persist, ose nga klientët (pyetësorë të ruajtur automatikisht); thirren me emër ose SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Emrat</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Madhësia</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Hiq</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>i dorëzuar</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>i ruajtur</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Po, hiqe këtë pyetësor</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ende asnjë pyetësor i ruajtur.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Çelësat API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Çelësa API personalë me fushëveprimin graphql:read (pyetësorë) ose graphql:write (mutacione). Krijojini dhe revokojini në faqen Qasja API, ose me ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Qasja API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Të gjithë çelësat</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Çelësi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Emri</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Pronari</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Fushëveprimet</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Përdorur së fundi</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>skaduar</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revokuar</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>kurrë</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ende asnjë çelës API me fushëveprim GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79189,178 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout kërkon saktësisht një nga id, identifier dhe urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Fusha operations e një kërkese multipart nuk është një kërkesë e vetme JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Fusha map e një kërkese multipart nuk është objekt JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Kërkesa multipart nuk ka skedar %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Një shteg i fushës map duhet të fillojë me variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Skedari %name nuk mbërriti i plotë (gabim ngarkimi %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Skedari %name është më i madh se %max bajtë.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Skedari %name nuk mund të kontrollohej.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutacionet janë të çaktivizuara në këtë qasje në sajt (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Dërgojeni mutacionin me POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Identifikohuni për të ndryshuar përmbajtjen.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Çelësi API nuk ka fushëveprimin %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Një mutacion me seancë ka nevojë për tokenin e formularit të seancës (koka X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl është i çaktivizuar: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nuk emërton asnjë host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresa duhet të jetë adresë https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hosti %host nuk është në graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Skedari nuk mund të merrej.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload është vetëm tip hyrjeje.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Një variabël e tipit Upload merr një skedar të një kërkese multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>ID-ja e largët %remoteId është e zënë.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Përmbajtja ka tashmë një përkthim në %language: përdorni updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Jepni të paktën një fushë.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nuk mund të krijohej version i ri (përmbajtja ka shumë drafte).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versioni %version nuk është draft.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ka nevojë për saktësisht një nga id dhe nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Një vendndodhje nuk mund të zhvendoset nën veten.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Përmbajtja ka tashmë një vendndodhje nën %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Vlera e fushës %field nuk mund të ruhej.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nuk ka gjuhë përmbajtjeje %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nuk ka klasë përmbajtjeje %class në skemë.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Përmbajtja nuk ekziston, ose nuk keni leje ta lexoni.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Nuk keni leje ta bëni këtë me këtë përmbajtje.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klasa %class nuk ka fushë %field që mund të shkruhet.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Fusha %field është dhënë dy herë.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Fusha %field merr një skedar: dërgojeni si ngarkim (një kërkesë multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Fusha %field nuk merr skedar.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Fusha %field ka nevojë për një vlerë.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formati %format është vetëm për fusha teksti të pasur; %field e merr vlerën ashtu siç është (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Fusha %field është e detyrueshme.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ja nuk mund të lexohej.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content merr version vetëm me id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Tokeni i parapamjes nuk është i vlefshëm ose ka skaduar.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nuk është origjinë (https://host ose https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nuk është fushëveprim i GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -51,6 +51,7 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
             $out = $this->cli();
             $out->output( sprintf( '%-14s %s', 'siteaccess', $status['siteaccess'] ) );
             $out->output( sprintf( '%-14s %s', 'enabled', $status['enabled'] ? 'yes' : 'no (graphql.ini [GraphQLSettings] Enabled, SiteAccessList[])' ) );
+            $out->output( sprintf( '%-14s %s', 'mutations', $status['mutations'] ? 'yes' : 'no (graphql.ini [GraphQLSettings] MutationsEnabled)' ) );
             $out->output( sprintf( '%-14s %s', 'end point', $status['endpoint'] ) );
             $out->output( sprintf( '%-14s %s', 'library', $status['library'] ? 'webonyx/graphql-php ' . $status['libraryVersion'] : 'not installed' ) );
             $out->output( sprintf( '%-14s depth %d, complexity %d, list %d (default %d)', 'limits', $status['limits']['maxDepth'], $status['limits']['maxComplexity'],
@@ -79,45 +80,9 @@ class Expgraphqlstatus extends \Exponential\Runnable\Command
      */
     public static function status()
     {
-        $library = \expGraphQL::loadLibrary();
-        $status = array( 'siteaccess' => \expGraphQL::currentSiteAccess(),
-                         'enabled' => \expGraphQL::isEnabled(),
-                         'siteaccessList' => \expGraphQL::listSetting( 'SiteAccessList' ),
-                         'endpoint' => '/api/graphql',
-                         'library' => $library,
-                         'libraryVersion' => $library ? \expGraphQL::libraryVersion() : null,
-                         'limits' => array( 'maxDepth' => \expGraphQL::intSetting( 'MaxDepth', 12 ), 'maxComplexity' => \expGraphQL::intSetting( 'MaxComplexity', 1000 ),
-                                            'maxListLimit' => \expGraphQL::intSetting( 'MaxListLimit', 100 ), 'defaultListLimit' => \expGraphQL::intSetting( 'DefaultListLimit', 25 ) ),
-                         'rateLimits' => array( 'user' => (int)\expGraphQL::setting( 'RateLimit', 600 ), 'anonymous' => (int)\expGraphQL::setting( 'RateLimitAnonymous', 120 ),
-                                                'window' => \expGraphQL::intSetting( 'RateLimitWindow', 60 ) ),
-                         'persisted' => array( 'enabled' => \expGraphQL::setting( 'PersistedQueries', 'enabled' ) === 'enabled',
-                                               'automatic' => (string)\expGraphQL::setting( 'AutomaticPersistedQueries', 'signed-in' ),
-                                               'only' => (string)\expGraphQL::setting( 'PersistedQueriesOnly', 'disabled' ),
-                                               'stored' => \expGraphQLPersistedQueries::fromSettings()->count() ),
-                         'responseCache' => array( 'enabled' => \expGraphQL::setting( 'ResponseCache', 'enabled' ) === 'enabled',
-                                                   'ttl' => (int)\expGraphQL::setting( 'ResponseCacheTtl', 86400 ) ),
-                         'introspection' => (string)\expGraphQL::setting( 'Introspection', 'signed-in' ),
-                         'naming' => \expGraphQLNaming::fromSettings()->style(),
-                         'schemaHash' => null, 'classes' => 0, 'fields' => 0, 'extensions' => array(), 'unmappedDatatypes' => array() );
-        if ( $library )
-        {
-            $summary = \expGraphQLSchemaBuilder::fromSettings()->summary();
-            $status['schemaHash'] = $summary['schemaHash'];
-            $status['extensions'] = $summary['extensions'];
-            $status['classes'] = count( $summary['classes'] );
-            $unmapped = array();
-            foreach ( $summary['classes'] as $class )
-            {
-                $status['fields'] += count( $class['fields'] );
-                foreach ( $class['fields'] as $field )
-                    if ( !$field['mapped'] )
-                        $unmapped[$field['datatype']] = true;
-            }
-            ksort( $unmapped );
-            $status['unmappedDatatypes'] = array_keys( $unmapped );
-        }
-        return $status;
+        return \expGraphQLSetup::status();
     }
 }
 
 }
+?>

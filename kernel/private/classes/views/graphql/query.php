@@ -32,7 +32,7 @@ class Query extends \Exponential\Runnable\ModuleView
             self::send( 400, \expGraphQLServer::refusal( \expGraphQLMessage::tr( 'Send the query with POST.' ), \expGraphQLError::BAD_USER_INPUT ) );
 
         $request = \expGraphQLServer::parseHttpRequest( 'POST', (string)\eZSys::serverVariable( 'CONTENT_TYPE', true ),
-                                                        (string)file_get_contents( 'php://input' ), array(), $_POST );
+                                                        (string)file_get_contents( 'php://input' ), array(), $_POST, $_FILES );
         if ( isset( $request['error'] ) )
             self::send( 400, \expGraphQLServer::refusal( $request['error'], \expGraphQLError::BAD_USER_INPUT ) );
 
@@ -48,6 +48,8 @@ class Query extends \Exponential\Runnable\ModuleView
         $builder = \expGraphQLSchemaBuilder::fromSettings();
         $context = new \expGraphQLContext( $user, \expGraphQLContext::AUTH_SESSION, new \expGraphQLRepository( $builder->catalogue() ),
                                            \expGraphQLContext::requestBaseUrl() );
+        // a mutation of a session needs the form token of the session (expGraphQLMutations::refusal())
+        $context->formTokenChecked = \expGraphQLMutations::formTokenMatches( $_SERVER, $_POST );
         $answer = ( new \expGraphQLServer( $builder ) )->run( $request, $context )['answer'];
         header( 'X-GraphQL-Schema: ' . $builder->schemaHash() );
         self::send( 200, $answer );

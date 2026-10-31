@@ -78777,6 +78777,286 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Lañset e vez ar goulenn gant ho kwirioù, kevreet gant an dalc'h-mañ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count e %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>bevenn ebet</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Donder</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kemplezhded</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elfennoù dre roll</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (dre ziouer %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Rekedoù dre implijer pe alc'hwez</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Rekedoù dre chomlec'h dizanv</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Emsell</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Rekedoù enrollet hepken</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Reked brasañ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes okted</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Pellgargadenn vrasañ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>N'eus haeziñ lec'hienn %siteaccess ebet.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Gweredekaet eo ar c'hemmadurioù e %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Diweredekaet eo ar c'hemmadurioù e %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Gweredekaet eo an API GraphQL e %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Diweredekaet eo an API GraphQL e %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>N'eus ket bet gallet skrivañ an arventennoù: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Goullonderet eo bet krubuilh ar respontoù: %count respont dilamet.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Askit ar voest e-kichen ar reked evit he dilemel.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>N'eus ket bet gallet dilemel ar reked: ur reked pourchaset en ur c'havlec'h eus PersistedQueryDirectoryList[] a vez dilamet gant he restr.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Dilamet eo bet ar reked enrollet.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Kemmadurioù</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>war enaou</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>lazhet</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Haeziñ lec'hienn</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>E-lec'h ma respont an API hag he c'hemmadurioù. Skrivañ a ra an afelloù graphql.ini, evel ma ra ./console exp:graphql:enable hag exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Haeziñ lec'hienn</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Kemmañ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Diweredekaat</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Diweredekaat ar c'hemmadurioù</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Gweredekaat ar c'hemmadurioù</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Gweredekaat</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Bevennoù</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] an haeziñ lec'hienn-mañ.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Krubuilh ar respontoù</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Respontoù ar rekedoù enrollet, miret hervez gwirioù an implijer ha diamzeret bep tro ma vez embannet danvez.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stad</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Respontoù miret</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count respont, %bytes okted</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Miret d'ar muiañ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Diamzeret da ziwezhañ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Goullonderiñ krubuilh ar respontoù</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Rekedoù enrollet</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Enrollet gant ./console exp:graphql:persist, pe gant ar c'hliantoù (rekedoù enrollet emgefreek); galvet dre anv pe SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Anvioù</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ment</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Pelec'h</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Dilemel</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>pourchaset</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>enrollet</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ya, dilemel ar reked-mañ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Reked enrollet ebet c'hoazh.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Alc'hwezioù API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Alc'hwezioù API personel gant an dachenn graphql:read (rekedoù) pe graphql:write (kemmadurioù). Krouit ha nullit anezho war ar bajenn Haeziñ an API, pe gant ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Haeziñ an API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>An holl alc'hwezioù</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Alc'hwez</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Anv</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Perc'henn</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Tachennoù</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Implijet da ziwezhañ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>oberiant</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>aet da benn</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>nullet</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>morse</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Alc'hwez API ebet gant un dachenn GraphQL c'hoazh.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout en deus ezhomm eus unan hepken eus id, identifier ha urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>N'eo ket ar vaezienn operations eus ur goulenn multipart ur reked JSON hepken.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>N'eo ket ar vaezienn map eus ur goulenn multipart un ergorenn JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>N'eus restr %field ebet er goulenn multipart.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Un hent eus ar vaezienn map a rank kregiñ gant variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>N'eo ket erruet ar restr %name a-bezh (fazi pellgargañ %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Brasoc'h eo ar restr %name eget %max okted.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>N'eus ket bet gallet gwiriañ ar restr %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Diweredekaet eo ar c'hemmadurioù en haeziñ al lec'hienn-mañ (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Kasit ur c'hemmadur gant POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Kevreit evit kemmañ an danvez.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>N'en deus ket an alc'hwez API an dachenn %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Ur c'hemmadur gant un dalc'h en deus ezhomm eus jedouer furmskrid an dalc'h (talbenn X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Diweredekaet eo uploadFromUrl: ne envel graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ostiz ebet.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Ret eo d'ar chomlec'h bezañ ur chomlec'h https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>N'emañ ket an ostiz %host e graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>N'eus ket bet gallet kerc'hat ar restr.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload n'eo nemet ur rizh enankañ.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Un argemmenn a rizh Upload a gemer ur restr eus ur goulenn multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Kemeret eo dija an id a-bell %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Un droidigezh e %language en deus dija an danvez: implijit updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Roit ur vaezienn d'an nebeutañ.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>N'eus ket bet gallet ober ur stumm nevez (re a brouennoù en deus an danvez).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>N'eo ket ar stumm %version ur brouenn.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent en deus ezhomm eus unan hepken eus id ha nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>N'hall ket ul lec'hiadur bezañ dilec'hiet dindan e-unan.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Ul lec'hiadur dindan %parentId en deus dija an danvez.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>N'eus ket bet gallet enrollañ talvoud ar vaezienn %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>N'eus yezh danvez %language ebet.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>N'eus klas danvez %class ebet er chema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>N'emañ ket an danvez amañ, pe n'hoc'h eus ket an aotre d'e lenn.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>N'hoc'h eus ket an aotre d'ober an dra-se gant an danvez-mañ.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>N'en deus ket ar c'hlas %class maezienn %field ebet a c'haller skrivañ.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Roet eo bet ar vaezienn %field div wech.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Ur restr a gemer ar vaezienn %field: kasit anezhi evel upload (ur goulenn multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Ne gemer restr ebet ar vaezienn %field.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Ezhomm en deus ar vaezienn %field eus un talvoud.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Evit ar maeziennoù testenn binvidik hepken eo ar furmad %format; %field a gemer e dalvoud evel m'emañ (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Ret eo ar vaezienn %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>N'eus ket bet gallet lenn an HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ne gemer version nemet gant id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>N'eo ket reizh jedouer ar rakwel pe aet eo da benn.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>N'eo ket un orin (https://host pe https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>N'eo ket un dachenn eus an API GraphQL: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

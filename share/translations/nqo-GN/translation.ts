@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ߢߌߣߌ߲ߞߊߟߌ ߦߋ ߓߏߟߌ ߟߊ ߌ ߟߊ ߤߊߞߍ ߟߎ ߟߊ߸ ߌ ߘߏ߲ߣߍ߲ ߣߌ߲ ߛߋߛߐ߲ ߣߌ߲ ߘߐ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ߛߋߞߐ߲ߘߌ %seconds ߞߣߐ߫</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ߘߊ߲߬ ߕߍ߫</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ߘߎ߲߬ߞߊ߬ߦߊ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ߜߟߍ߬ߦߊ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ߝߋ߲߫ ߛߙߍߘߍ ߞߋߟߋ߲߫ ߞߋߟߋ߲߫ ߘߐ߫</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ߓߊߓߌߟߊ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ߡߊߢߌߣߌ߲ߠߌ ߓߊ߯ߙߊߟߊ ߥߟߊ߫ ߞߌߟߋ ߞߋߟߋ߲߫ ߞߋߟߋ߲߫ ߓߟߏ߫</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ߡߊߢߌߣߌ߲ߠߌ ߊߘߙߍߛߌ ߕߐ߯ߒߕߊ߲ ߞߋߟߋ߲߫ ߞߋߟߋ߲߫ ߓߟߏ߫</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ߖߍ߬ߘߍ߬ߝߛߍ߬ߝߛߍ߬ߟߌ</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߟߊߡߙߊ߬ߣߍ߲ ߠߎ߬ ߘߐߙߐ߲</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߓߟߏߓߊ߲ߓߊ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ߓߊߦߌߕ</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ߟߊߦߟߍ ߓߟߏߓߊ߲ߓߊ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ߛߌߕߌ ߘߏ߲ߘߊ %siteaccess ߕߍ߫ ߦߋ߲߬.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߟߎ߬ ߦߟߍߣߍ߲ ߦߋ߫ %siteaccess ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߟߎ߬ ߛߐߜߐߟߍ߲ ߦߋ߫ %siteaccess ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ߦߟߍߣߍ߲ ߦߋ߫ %siteaccess ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API ߛߐߜߐߟߍ߲ ߦߋ߫ %siteaccess ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ߟߊ߬ߓߍ߲߬ߢߐ߲߰ ߡߊ߫ ߛߋ߫ ߛߓߍ߫ ߟߊ߫: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ߖߊߓߌ ߟߊߡߙߊ߬ߦߙߐ ߖߊ߬ߛߌ߬ߣߍ߲߫ ߘߊ߫: ߖߊߓߌ %count ߓߐ߫ ߘߊ߫.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߘߊߞߎ ߘߊ߲߬ߕߍ߰ ߛߎ߲ߝߘߍ߫ ߞߊ߬ ߊ߬ ߓߐ߫.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߡߊ߫ ߛߋ߫ ߓߐ߫ ߟߊ߫: ߢߌߣߌ߲ߞߊߟߌ ߡߍ߲ ߣߊ߬ߣߍ߲߫ PersistedQueryDirectoryList[] ߞߐߕߐ߮ ߟߊߡߙߊ߬ߦߙߐ ߘߐ߫ ߸ ߏ߬ ߦߋ߫ ߓߐ߫ ߟߊ߫ ߊ߬ ߟߊ߫ ߞߐߕߐ߮ ߣߌ߫.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߟߊߡߙߊ߬ߣߍ߲ ߓߐ߫ ߘߊ߫.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߟߎ߬</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ߦߟߍߣߍ߲</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ߛߐߜߐߟߍ߲</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ߛߌߕߌ ߘߏ߲ߘߊ ߟߎ߬</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API ߣߌ߫ ߊ߬ ߟߊ߫ ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߟߎ߬ ߦߋ߫ ߖߊ߬ߓߌ߬ ߟߊ߫ ߦߙߐ ߡߍ߲ ߘߐ߫. ߛߎ߲ߝߘߍ ߟߎ߬ ߦߋ߫ graphql.ini ߛߓߍ߫ ߟߊ߫, ߌ ߞߏ߫ ./console exp:graphql:enable ߣߌ߫ exp:graphql:disable ߦߋ߫ ߊ߬ ߞߍ߫ ߟߊ߫ ߡߍ߲߫.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ߛߌߕߌ ߘߏ߲ߘߊ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ߡߊ߬ߝߊ߬ߟߋ߲߫</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ߊ߬ ߛߐߜߐ߫</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߛߐߜߐߟߍ߲</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߦߟߍߣߍ߲</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ߊ߬ ߦߟߍ߫</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ߘߊ߲߬ ߠߎ߬</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ߣߌ߲߬ ߛߌߕߌ ߘߏ߲ߘߊ ߟߊ߫ graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ߖߊߓߌ ߟߊߡߙߊ߬ߦߙߐ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߟߊߡߙߊ߬ߣߍ߲ ߠߎ߬ ߟߊ߫ ߖߊߓߌ ߟߎ߬, ߓߊ߯ߙߊߟߊ ߤߊߞߍ ߟߎ߬ ߓߟߏ߫ ߟߊߡߙߊ߬ߣߍ߲, ߊ߬ ߕߎ߬ߡߊ ߦߋ߫ ߓߊ߲߫ ߞߐߣߐߞߏ ߟߊߓߐߣߍ߲ ߕߎ߬ߡߊ ߓߍ߯ ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ߖߊ߯ߓߌ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ߖߊߓߌ ߟߊߡߙߊ߬ߣߍ߲</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>ߖߊߓߌ %count, ߓߊߦߌߕ %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>ߟߊߡߙߊ߬ ߕߎ߬ߡߊ ߓߟߏߓߊ߲ߓߊ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ߛߋߞߐ߲ߘߌ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ߕߎ߬ߡߊ ߓߊ߲߫ ߟߊ߫ ߟߊߓߊ߲</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ߖߊߓߌ ߟߊߡߙߊ߬ߦߙߐ ߖߊ߬ߛߌ߬</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߟߊߡߙߊ߬ߣߍ߲ ߠߎ߬</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist ߟߊ߫ ߟߊߡߙߊ߬ߣߍ߲, ߥߟߊ߫ ߞߟߌߦߊ߲ ߟߎ߬ ߓߟߏ߫ (ߢߌߣߌ߲ߞߊߟߌ ߟߊߡߙߊ߬ߣߍ߲ ߖߘߍ߬ߞߊ߬); ߞߟߌ ߦߋ߫ ߞߍ߫ ߟߊ߫ ߕߐ߮ ߥߟߊ߫ SHA-256 ߟߊ߫.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ߕߐ߮ ߟߎ߬</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ߓߟߏߓߊ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ߡߌ߲߫</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ߊ߬ ߓߐ߫</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ߣߊ߬ߣߍ߲߫</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ߟߊߡߙߊ߬ߣߍ߲</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ߐ߲߬ߐ߲߬, ߢߌߣߌ߲ߞߊߟߌ ߣߌ߲߬ ߓߐ߫</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ߢߌߣߌ߲ߞߊߟߌ ߟߊߡߙߊ߬ߣߍ߲ ߛߌ߫ ߕߍ߫ ߦߋ߲߬ ߝߟߐ߫.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ߞߌߟߋ ߟߎ߬</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>ߞߌߟߋ ߞߍߘߐ ߟߎ߬ ߘߊ߲߬ߠߊ߲ graphql:read (ߢߌߣߌ߲ߞߊߟߌ ߟߎ߬) ߥߟߊ߫ graphql:write (ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߟߎ߬) ߘߌ߫. ߊ߬ ߟߎ߬ ߘߊߟߊ߫ ߊ߬ ߟߎ߬ ߓߐ߫ API ߘߏ߲ߘߊ ߞߐߜߍ ߞߊ߲߬, ߥߟߊ߫ ./console exp:graphql:keys ߟߊ߫.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ߘߏ߲ߘߊ</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ߞߌߟߋ ߓߍ߯</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ߞߌߟߋ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ߕߐ߮</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ߕߌ߮</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ߘߊ߲߬ߠߊ߲ ߠߎ߬</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ߟߊߓߊ߯ߙߊ߫ ߟߊߓߊ߲</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ߓߊ߯ߙߊ ߟߊ߫</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ߕߎ߬ߡߊ ߓߊ߲߫ ߘߊ߫</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ߓߐ߫ ߘߊ߫</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ߝߏߦߌ߬ ߕߍ߫</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>API ߞߌߟߋ ߛߌ߫ ߕߍ߫ ߦߋ߲߬ ߝߟߐ߫ GraphQL ߘߊ߲߬ߠߊ߲ ߦߋ߫ ߡߍ߲ ߠߊ߫.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout ߦߋ߫ id, identifier ߣߌ߫ urlAlias ߟߎ߬ ߞߋߟߋ߲߫ ߘߐߙߐ߲ ߠߋ߬ ߝߍ߬ߘߊ߫.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart ߡߊߢߌߣߌ߲ߠߌ ߟߊ߫ operations ߝߊ߲߬ߞߊ ߕߍ߫ JSON ߡߊߢߌߣߌ߲ߠߌ ߞߋߟߋ߲߫ ߘߌ߫.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart ߡߊߢߌߣߌ߲ߠߌ ߟߊ߫ map ߝߊ߲߬ߞߊ ߕߍ߫ JSON ߝߋ߲ ߘߌ߫.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>ߞߐߕߐ߮ %field ߕߍ߫ multipart ߡߊߢߌߣߌ߲ߠߌ ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ߝߊ߲߬ߞߊ ߓߊ߲ߓߊ߲ ߟߊ߫ ߛߌߟߊ ߘߌ߫ ߘߊߡߌ߬ߣߊ߬ variables. ߟߊ߫: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ߞߐߕߐ߮ %name ߡߊ߫ ߛߋ߫ ߊ߬ ߘߐߓߍ߲߬ ߘߐ߫ (ߟߊߦߟߍ ߝߎ߬ߕߎ߲߬ߕߌ %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ߞߐߕߐ߮ %name ߦߋ߫ ߓߊߦߌߕ %max ߕߊ߬ߡߌ߲߬.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ߞߐߕߐ߮ %name ߡߊ߫ ߛߋ߫ ߝߛߍ߬ߝߛߍ߬ ߟߊ߫.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߟߎ߬ ߛߐߜߐߟߍ߲ ߦߋ߫ ߣߌ߲߬ ߛߌߕߌ ߘߏ߲ߘߊ ߣߌ߲߬ ߘߐ߫ (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߟߊߥߟߌ߫ POST ߟߊ߫.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>ߌ ߘߏ߲߫ ߞߊ߬ ߞߐߣߐߞߏ ߡߊ߬ߝߊ߬ߟߋ߲߫.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API ߞߌߟߋ ߕߍ߫ ߘߊ߲߬ߠߊ߲ %scope ߦߋ߫.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>ߛߋߛߐ߲ ߡߊ߬ߝߊ߬ߟߋ߲߬ߠߌ ߦߋ߫ ߛߋߛߐ߲ ߟߊ߫ ߛߓߍߘߊ ߕߏߞߍ߲ ߝߍ߬ߘߊ߫ (ߞߎ߲߬ߠߊ X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ߛߐߜߐߟߍ߲ ߦߋ߫: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ߕߍ߫ host ߛߌ߫ ߕߐ߮ ߝߐ߫.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ߊߘߙߍߛߌ ߘߌ߫ ߞߍ߫ https ߊߘߙߍߛߌ ߘߌ߫.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>host %host ߕߍ߫ graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ߞߐߕߐ߮ ߡߊ߫ ߛߋ߫ ߘߊ߲߬ߡߌ߬ߣߊ߬ ߟߊ߫.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ߦߋ߫ ߘߏ߲߬ߠߌ߲ ߛߎ߮ ߘߐߙߐ߲ ߠߋ߬ ߘߌ߫.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload ߛߎ߮ ߦߟߍߡߊߕߐ ߦߋ߫ multipart ߡߊߢߌߣߌ߲ߠߌ ߞߐߕߐ߮ ߠߋ߬ ߡߊߛߐ߬ߘߐ߲߬ ߠߊ߫.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>ߝߊ߬ߘߌ߬ߟߊ߬ߟߌ ߖߊ߰ߡߊ %remoteId ߕߊ߬ߣߍ߲ ߦߋ߫ ߞߘߐ.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>ߘߟߊߡߌߘߊ ߦߋ߫ ߞߐߣߐߞߏ ߟߊ߫ %language ߘߐ߫ ߞߘߐ: updateContent ߟߊߓߊ߯ߙߊ߫.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>ߝߊ߲߬ߞߊ ߞߋߟߋ߲߫ ߘߐߘߐ߲߫ ߘߌ߫.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ߦߟߌߡߊߛߍߦߌ ߞߎߘߊ߫ ߡߊ߫ ߛߋ߫ ߘߊߟߊ߫ ߟߊ߫ (ߞߐߣߐߞߏ ߓߊ߲߬ߓߊ߬ߓߊ߰ߟߌ ߦߋ߫ ߛߌߦߊߡߊ߲߬).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ߦߟߌߡߊߛߍߦߌ %version ߕߍ߫ ߓߊ߲߬ߓߊ߬ߓߊ߰ߟߌ ߘߌ߫.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ߦߋ߫ id ߣߌ߫ nodeId ߟߎ߬ ߞߋߟߋ߲߫ ߘߐߙߐ߲ ߠߋ߬ ߝߍ߬ߘߊ߫.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ߘߊ߲߬ߕߍ߰ ߕߍ߫ ߛߋ߫ ߟߊߥߊ߫ ߟߊ߫ ߊ߬ ߖߘߍ߬ ߞߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>ߘߊ߲߬ߕߍ߰ ߦߋ߫ ߞߐߣߐߞߏ ߟߊ߫ %parentId ߞߘߐ߫ ߞߘߐ.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ߝߊ߲߬ߞߊ %field ߛߎ߲ߞߊ߲ ߡߊ߫ ߛߋ߫ ߟߊߡߙߊ߬ ߟߊ߫.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>ߞߐߣߐߞߏ ߞߊ߲ %language ߕߍ߫ ߦߋ߲߬.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>ߞߐߣߐߞߏ ߞߎߟߎ %class ߕߍ߫ ߛߌߜ߳ߌߗߏߜ߳ߏ ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ߞߐߣߐߞߏ ߕߍ߫ ߦߋ߲߬, ߥߟߊ߫ ߌ ߕߍ߫ ߛߌ߫ ߊ߬ ߞߊ߬ߙߊ߲߬.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ߌ ߕߍ߫ ߛߌ߫ ߣߌ߲߬ ߞߍ߫ ߞߐߣߐߞߏ ߣߌ߲߬ ߘߐ߫.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>ߞߎߟߎ %class ߕߍ߫ ߝߊ߲߬ߞߊ %field ߛߓߍߓߊߟߌ ߛߐ߬ߘߐ߲߬.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ߝߊ߲߬ߞߊ %field ߘߌߣߍ߲ ߦߋ߫ ߝߋ߲߬ ߝߌ߬ߟߊ.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ߝߊ߲߬ߞߊ %field ߦߋ߫ ߞߐߕߐ߮ ߡߊߛߐ߬ߘߐ߲߬ ߠߊ߫: ߊ߬ ߟߊߥߟߌ߫ ߟߊߦߟߍ ߘߌ߫ (multipart ߡߊߢߌߣߌ߲ߠߌ).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ߝߊ߲߬ߞߊ %field ߕߍ߫ ߞߐߕߐ߮ ߡߊߛߐ߬ߘߐ߲߬ ߠߊ߫.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ߝߊ߲߬ߞߊ %field ߦߋ߫ ߛߎ߲ߞߊ߲ ߝߍ߬ߘߊ߫.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ߖߙߎߡߎ %format ߦߋ߫ ߛߓߍߟߌ ߣߊ߲߬ߝߊ߬ߣߍ߲ ߝߊ߲߬ߞߊ ߟߎ߬ ߘߐߙߐ߲ ߠߋ߬ ߓߟߏ߫; %field ߦߋ߫ ߊ߬ ߛߎ߲ߞߊ߲ ߡߊߛߐ߬ߘߐ߲߬ ߠߊ߫ ߊ߬ ߦߋ߫ ߞߏ߫ ߡߍ߲߫ (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ߝߊ߲߬ߞߊ %field ߦߋ߫ ߞߊ߲߫ ߞߍ߫.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ߡߊ߫ ߛߋ߫ ߞߊ߬ߙߊ߲߬ ߠߊ߫.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content ߦߋ߫ version ߡߊߛߐ߬ߘߐ߲߬ ߠߊ߫ id ߘߐߙߐ߲ ߠߋ߬ ߝߍ߬.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>ߢߍߝߍ߬ߝߌ߬ߟߊ߬ߟߌ ߕߏߞߍ߲ ߕߍ߫ ߓߊ߲߫ ߘߌ߫ ߥߟߊ߫ ߊ߬ ߕߎ߬ߡߊ ߓߊ߲߫ ߘߊ߫.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>origin ߕߍ߫ (https://host ߥߟߊ߫ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API ߘߊ߲߬ߠߊ߲ ߕߍ߫: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

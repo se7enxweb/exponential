@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Հարցումը կատարվում է ձեր իրավունքներով՝ այս սեսիայով մուտք գործած։</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds վրկ-ում</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>առանց սահմանի</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Խորություն</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Բարդություն</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Տարրեր ցանկում</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (լռելյայն %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Դիմումներ ըստ օգտատիրոջ կամ բանալու</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Դիմումներ ըստ անանուն հասցեի</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Ինտրոսպեկցիա</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Միայն պահպանված հարցումներ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Ամենամեծ հարցումը</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes բայթ</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Ամենամեծ վերբեռնումը</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess կայքի մուտքի կետ չկա։</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Մուտացիաները միացված են %siteaccess-ում։</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Մուտացիաներն անջատված են %siteaccess-ում։</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API-ն միացված է %siteaccess-ում։</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API-ն անջատված է %siteaccess-ում։</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Կարգավորումները հնարավոր չեղավ գրել՝ %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Պատասխանների քեշը մաքրվեց՝ հեռացվեց %count պատասխան։</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Նշեք հարցման կողքի վանդակը՝ այն հեռացնելու համար։</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Հարցումը հնարավոր չեղավ հեռացնել՝ PersistedQueryDirectoryList[]-ի պանակում մատակարարված հարցումը հեռացվում է իր ֆայլի հետ։</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Պահպանված հարցումը հեռացվեց։</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Մուտացիաներ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>միացված</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>անջատված</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Կայքի մուտքի կետեր</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Որտեղ են պատասխանում API-ն և նրա մուտացիաները։ Կոճակները գրում են graphql.ini, ինչպես ./console exp:graphql:enable և exp:graphql:disable։</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Կայքի մուտքի կետ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Փոխել</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Անջատել</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Մուտացիաներն անջատված են</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Մուտացիաները միացված են</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Միացնել</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Սահմանաչափեր</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Կայքի այս մուտքի կետի graphql.ini [GraphQLSettings]։</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Պատասխանների քեշ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Պահպանված հարցումների պատասխանները՝ պահվում են ըստ օգտատիրոջ իրավունքների և ժամկետանց են դառնում ամեն անգամ, երբ բովանդակություն է հրապարակվում։</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Վիճակ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Պահված պատասխաններ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count պատասխան, %bytes բայթ</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Պահվում է առավելագույնը</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds վրկ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Վերջին ժամկետանցում</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Մաքրել պատասխանների քեշը</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Պահպանված հարցումներ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Պահպանվում են ./console exp:graphql:persist-ով կամ հաճախորդների կողմից (automatic persisted queries)։ Կանչվում են անունով կամ SHA-256-ով։</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Անուններ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Չափ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Որտեղ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Հեռացնել</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>մատակարարված</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>պահպանված</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Այո, հեռացնել այս հարցումը</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Պահպանված հարցում դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API բանալիներ</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Անձնական API բանալիներ graphql:read (հարցումներ) կամ graphql:write (մուտացիաներ) շրջանակով։ Ստեղծեք և չեղարկեք դրանք API հասանելիություն էջում կամ ./console exp:graphql:keys-ով։</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API հասանելիություն</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Բոլոր բանալիները</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Բանալի</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Անուն</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Սեփականատեր</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Շրջանակներ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Վերջին օգտագործում</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ակտիվ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ժամկետանց</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>չեղարկված</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>երբեք</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL շրջանակով API բանալի դեռ չկա։</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-ին անհրաժեշտ է ճիշտ մեկը id, identifier և urlAlias արժեքներից։</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart դիմումի operations դաշտը մեկ JSON դիմում չէ։</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart դիմումի map դաշտը JSON օբյեկտ չէ։</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart դիմումում %field ֆայլ չկա։</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Դաշտերի քարտեզի ուղին պետք է սկսվի variables.-ով՝ %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name ֆայլն ամբողջությամբ չի հասել (վերբեռնման սխալ %error)։</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name ֆայլը %max բայթից մեծ է։</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name ֆայլը հնարավոր չեղավ ստուգել։</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Մուտացիաներն անջատված են կայքի այս մուտքի կետում (graphql.ini [GraphQLSettings] MutationsEnabled)։</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Ուղարկեք մուտացիան POST-ով։</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Մուտք գործեք՝ բովանդակությունը փոխելու համար։</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API բանալին %scope շրջանակ չունի։</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Սեսիայով մուտացիային անհրաժեշտ է սեսիայի ձևի թոքենը (X-CSRF-Token վերնագիր)։</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl-ն անջատված է՝ graphql.ini [GraphQLSettings] UploadFromUrlHostList[]-ում ոչ մի հոսթ նշված չէ։</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Հասցեն պետք է լինի https հասցե։</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host հոսթը graphql.ini [GraphQLSettings] UploadFromUrlHostList[]-ում չէ։</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Ֆայլը հնարավոր չեղավ ստանալ։</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload-ը միայն մուտքային տիպ է։</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload տիպի փոփոխականն ընդունում է multipart դիմումի ֆայլ։</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>%remoteId հեռավոր id-ն արդեն զբաղված է։</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Բովանդակությունն արդեն ունի %language թարգմանություն՝ օգտագործեք updateContent։</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Տվեք առնվազն մեկ դաշտ։</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Նոր տարբերակ հնարավոր չեղավ ստեղծել (բովանդակությունը չափազանց շատ սևագրեր ունի)։</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>%version տարբերակը սևագիր չէ։</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent-ին անհրաժեշտ է ճիշտ մեկը id և nodeId արժեքներից։</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Տեղադրությունը չի կարող տեղափոխվել իր իսկ տակ։</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Բովանդակությունն արդեն ունի տեղադրություն %parentId-ի տակ։</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field դաշտի արժեքը հնարավոր չեղավ պահպանել։</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language բովանդակության լեզու չկա։</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Սխեմայում %class բովանդակության դաս չկա։</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Բովանդակությունը չկա, կամ դուք չեք կարող այն կարդալ։</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Դուք չեք կարող դա անել այս բովանդակության հետ։</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class դասը չունի %field դաշտ, որը կարելի է գրել։</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field դաշտը տրված է երկու անգամ։</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field դաշտն ընդունում է ֆայլ՝ ուղարկեք այն որպես վերբեռնում (multipart դիմում)։</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field դաշտը ֆայլ չի ընդունում։</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field դաշտին արժեք է անհրաժեշտ։</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format ձևաչափը միայն ձևաչափված տեքստի դաշտերի համար է, %field-ն ընդունում է արժեքն այնպես, ինչպես կա (RAW)։</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field դաշտը պարտադիր է։</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ը հնարավոր չեղավ կարդալ։</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content-ն ընդունում է version միայն id-ի հետ։</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Նախադիտման թոքենն անվավեր է կամ ժամկետանց։</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ծագում չէ (https://host կամ https://host:port)՝ %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API-ի շրջանակ չէ՝ %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

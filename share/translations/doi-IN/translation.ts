@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>क्वेरी तुंदे अधिकारें कन्नै चलदी ऐ, इस सत्र कन्नै साइन इन करियै।</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds सकिंट च %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>कोई सीमा नेईं</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>डूंह्गाई</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>जटिलता</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>हर सूची च आइटम</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (डिफ़ॉल्ट %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>हर उपयोगकर्ता जां कुंजी पर अनुरोध</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>हर गुमनाम पते पर अनुरोध</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>इंट्रोस्पेक्शन</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>सिर्फ सेव कीतियां क्वेरियां</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>सारें शा बड्डी क्वेरी</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes बाइट</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>सारें शा बड्डा अपलोड</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>कोई साइटएक्सेस %siteaccess नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess च म्यूटेशन चालू करी दित्ते गे न।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess च म्यूटेशन बंद करी दित्ते गे न।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess च GraphQL API चालू करी दित्ता गेआ ऐ।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess च GraphQL API बंद करी दित्ता गेआ ऐ।</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>सेटिंगां लिखियां नेईं जाई सकियां: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>रिस्पॉन्स कैश साफ करी दित्ता गेआ: %count जवाब हटाए गे।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>क्वेरी हटाने आस्तै उसदे बक्खै आह्ले बक्से पर निशान लाओ।</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>क्वेरी हटाई नेईं जाई सकी: PersistedQueryDirectoryList[] दी कुसै डायरेक्टरी च आई दी क्वेरी अपनी फाइल कन्नै गै हटाई जंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>सेव कीती दी क्वेरी हटाई दित्ती गेई।</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>म्यूटेशन</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>चालू</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बंद</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>साइटएक्सेस</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>जित्थें API ते उसदे म्यूटेशन जवाब दिंदे न। बटन graphql.ini लिखदे न, जि'यां ./console exp:graphql:enable ते exp:graphql:disable करदे न।</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइटएक्सेस</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>बदलो</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>बंद करो</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>म्यूटेशन बंद</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>म्यूटेशन चालू</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>चालू करो</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>सीमां</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>इस साइटएक्सेस दा graphql.ini [GraphQLSettings]।</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>रिस्पॉन्स कैश</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>सेव कीतियें क्वेरियें दे जवाब, उपयोगकर्ता दे अधिकारें मताबक रक्खे जंदे न ते जदूं बी सामग्री प्रकाशत होंदी ऐ तां उंदी मियाद मुक्की जंदी ऐ।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>रक्खे गेदे जवाब</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count जवाब, %bytes बाइट</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>बद्ध शा बद्ध रक्खने दा समां</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds सकिंट</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>पिछली बारी मियाद मुक्की</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>रिस्पॉन्स कैश साफ करो</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>सेव कीतियां क्वेरियां</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist कन्नै जां क्लाइंटें आसेआ सेव कीतियां (आटोमैटिक सेव कीतियां क्वेरियां); नां जां SHA-256 कन्नै बुलाइयां जंदियां न।</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>नां</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>साइज़</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>कुत्थें</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>हटाओ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>साथै आई दी</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>सेव कीती दी</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>हां, एह् क्वेरी हटाओ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>हाली तगर कोई सेव कीती दी क्वेरी नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API कुंजियां</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>स्कोप graphql:read (क्वेरियां) जां graphql:write (म्यूटेशन) आह्लियां निजी API कुंजियां। इनें गी API एक्सेस पेज पर जां ./console exp:graphql:keys कन्नै बनाओ ते रद्द करो।</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API एक्सेस</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>सारियां कुंजियां</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>कुंजी</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नां</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>मालक</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>स्कोप</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>पिछली बारी बरती गेई</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>सक्रिय</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>मियाद मुक्की</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>रद्द</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>कदें नेईं</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>हाली तगर GraphQL स्कोप आह्ली कोई API कुंजी नेईं ऐ।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout गी id, identifier ते urlAlias बिच्चा ठीक इक लोड़चदा ऐ।</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>मल्टीपार्ट अनुरोध दा operations फ़ील्ड इक JSON अनुरोध नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>मल्टीपार्ट अनुरोध दा map फ़ील्ड JSON ऑब्जेक्ट नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>मल्टीपार्ट अनुरोध च कोई फाइल %field नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map फ़ील्ड दा हर पाथ variables. कन्नै शुरू होना चाहिदा: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>फाइल %name पूरी नेईं पुज्जी (अपलोड गलती %error)।</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>फाइल %name %max बाइट थमां बड्डी ऐ।</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>फाइल %name दी जांच नेईं होई सकी।</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>इस साइटएक्सेस च म्यूटेशन बंद न (graphql.ini [GraphQLSettings] MutationsEnabled)।</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>म्यूटेशन POST कन्नै भेजो।</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>सामग्री बदलने आस्तै साइन इन करो।</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API कुंजी दा स्कोप %scope नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>सत्र आह्ले म्यूटेशन गी सत्र दा फ़ॉर्म टोकन लोड़चदा ऐ (हेडर X-CSRF-Token)।</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl बंद ऐ: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] च कोई होस्ट नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>पता https पता होना चाहिदा।</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>होस्ट %host graphql.ini [GraphQLSettings] UploadFromUrlHostList[] च नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>फाइल हासल नेईं होई सकी।</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload सिर्फ इक इनपुट टाइप ऐ।</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload टाइप दा वेरिएबल मल्टीपार्ट अनुरोध दी इक फाइल लैंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>रिमोट id %remoteId पैह्लें गै बरतोए दा ऐ।</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>सामग्री दा %language च अनुवाद पैह्लें गै ऐ: updateContent बरतो।</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>घट्टो-घट्ट इक फ़ील्ड देओ।</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>कोई नमां संस्करण नेईं बनी सकेआ (सामग्री दे बड़े मते ड्राफ्ट न)।</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>संस्करण %version ड्राफ्ट नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent गी id ते nodeId बिच्चा ठीक इक लोड़चदा ऐ।</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>कोई लोकेशन अपने आपै हेठ नेईं सरकाई जाई सकदी।</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>सामग्री दी %parentId हेठ पैह्लें गै इक लोकेशन ऐ।</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>फ़ील्ड %field दा मुल्ल सेव नेईं होई सकेआ।</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>कोई सामग्री भाशा %language नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>स्कीमा च कोई सामग्री वर्ग %class नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>सामग्री मौजूद नेईं ऐ, जां तुस उसी नेईं पढ़ी सकदे।</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>तुस इस सामग्री कन्नै एह् नेईं करी सकदे।</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>वर्ग %class च कोई लिखने जोग फ़ील्ड %field नेईं ऐ।</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>फ़ील्ड %field दो बारी दित्ता गेदा ऐ।</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>फ़ील्ड %field इक फाइल लैंदा ऐ: उसी upload दे रूप च भेजो (मल्टीपार्ट अनुरोध)।</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>फ़ील्ड %field कोई फाइल नेईं लैंदा।</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>फ़ील्ड %field गी इक मुल्ल लोड़चदा ऐ।</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>फ़ॉर्मेट %format सिर्फ रिच टेक्स्ट फ़ील्डें आस्तै ऐ; %field अपना मुल्ल जि'यां दा ति'यां लैंदा ऐ (RAW)।</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>फ़ील्ड %field ज़रूरी ऐ।</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML पढ़ेआ नेईं जाई सकेआ।</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version सिर्फ id कन्नै लैंदा ऐ।</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>प्रीव्यू टोकन मान्य नेईं ऐ जां इसदी मियाद मुक्की गेदी ऐ।</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ओरिजिन नेईं ऐ (https://host जां https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API दा स्कोप नेईं ऐ: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

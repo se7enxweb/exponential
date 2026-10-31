@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ഈ സെഷനിൽ സൈൻ ഇൻ ചെയ്ത്, നിങ്ങളുടെ അവകാശങ്ങളോടെയാണ് ക്വറി പ്രവർത്തിക്കുന്നത്.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds സെ. ൽ %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>പരിധിയില്ല</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ആഴം</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>സങ്കീർണ്ണത</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ഓരോ ലിസ്റ്റിലെയും ഇനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (സ്ഥിരസ്ഥിതി %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ഓരോ ഉപയോക്താവിനും കീയ്ക്കും ഉള്ള അഭ്യർത്ഥനകൾ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ഓരോ അജ്ഞാത വിലാസത്തിനും ഉള്ള അഭ്യർത്ഥനകൾ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ഇൻട്രോസ്പെക്ഷൻ</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>സംഭരിച്ച ക്വറികൾ മാത്രം</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ഏറ്റവും വലിയ ക്വറി</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ബൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ഏറ്റവും വലിയ അപ്‌ലോഡ്</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess എന്ന സൈറ്റ്ആക്സസ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess ൽ മ്യൂട്ടേഷനുകൾ ഓണാക്കി.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess ൽ മ്യൂട്ടേഷനുകൾ ഓഫാക്കി.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess ൽ GraphQL API ഓണാക്കി.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess ൽ GraphQL API ഓഫാക്കി.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ക്രമീകരണങ്ങൾ എഴുതാൻ കഴിഞ്ഞില്ല: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ഉത്തര കാഷെ മായ്ച്ചു: %count ഉത്തരങ്ങൾ നീക്കം ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ക്വറി നീക്കം ചെയ്യാൻ അതിനടുത്തുള്ള ബോക്സ് ടിക്ക് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ക്വറി നീക്കം ചെയ്യാൻ കഴിഞ്ഞില്ല: PersistedQueryDirectoryList[] ലെ ഒരു ഡയറക്ടറിയിൽ വന്ന ക്വറി അതിന്റെ ഫയലിനൊപ്പം നീക്കം ചെയ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>സംഭരിച്ച ക്വറി നീക്കം ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>മ്യൂട്ടേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ഓൺ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ഓഫ്</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>സൈറ്റ്ആക്സസുകൾ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API യും അതിന്റെ മ്യൂട്ടേഷനുകളും ഉത്തരം നൽകുന്ന ഇടം. ./console exp:graphql:enable, exp:graphql:disable എന്നിവ ചെയ്യുന്നതുപോലെ ബട്ടണുകൾ graphql.ini എഴുതുന്നു.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>സൈറ്റ്ആക്സസ്</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>മാറ്റുക</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ഓഫാക്കുക</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>മ്യൂട്ടേഷനുകൾ ഓഫ്</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>മ്യൂട്ടേഷനുകൾ ഓൺ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ഓണാക്കുക</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>പരിധികൾ</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ഈ സൈറ്റ്ആക്സസിന്റെ graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ഉത്തര കാഷെ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>സംഭരിച്ച ക്വറികളുടെ ഉത്തരങ്ങൾ, ഉപയോക്തൃ അവകാശങ്ങൾ അനുസരിച്ച് സൂക്ഷിക്കുകയും ഉള്ളടക്കം പ്രസിദ്ധീകരിക്കുമ്പോഴെല്ലാം കാലഹരണപ്പെടുകയും ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>അവസ്ഥ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>സൂക്ഷിച്ച ഉത്തരങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ഉത്തരങ്ങൾ, %bytes ബൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>പരമാവധി സൂക്ഷിക്കുന്നത്</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds സെ.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>അവസാനം കാലഹരണപ്പെട്ടത്</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ഉത്തര കാഷെ മായ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>സംഭരിച്ച ക്വറികൾ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist ഉപയോഗിച്ചോ ക്ലയന്റുകൾ വഴിയോ സംഭരിച്ചത് (ഓട്ടോമാറ്റിക് സംഭരിച്ച ക്വറികൾ); പേര് അല്ലെങ്കിൽ SHA-256 വഴി വിളിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>പേരുകൾ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>വലുപ്പം</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>എവിടെ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ഒപ്പം വന്നത്</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>സംഭരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>അതെ, ഈ ക്വറി നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ഇതുവരെ സംഭരിച്ച ക്വറി ഒന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API കീകൾ</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (ക്വറികൾ) അല്ലെങ്കിൽ graphql:write (മ്യൂട്ടേഷനുകൾ) സ്കോപ്പുള്ള വ്യക്തിഗത API കീകൾ. API ആക്സസ് പേജിലോ ./console exp:graphql:keys ഉപയോഗിച്ചോ അവ ഉണ്ടാക്കുകയും റദ്ദാക്കുകയും ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ആക്സസ്</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>എല്ലാ കീകളും</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>കീ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>പേര്</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ഉടമ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>സ്കോപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>അവസാനം ഉപയോഗിച്ചത്</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>സജീവം</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>കാലഹരണപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>റദ്ദാക്കി</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ഒരിക്കലുമില്ല</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL സ്കോപ്പുള്ള API കീ ഇതുവരെ ഇല്ല.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78877,6 +79157,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-ന് id, identifier, urlAlias എന്നിവയിൽ കൃത്യമായി ഒന്ന് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>മൾട്ടിപാർട്ട് അഭ്യർത്ഥനയുടെ operations ഫീൽഡ് ഒരൊറ്റ JSON അഭ്യർത്ഥനയല്ല.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>മൾട്ടിപാർട്ട് അഭ്യർത്ഥനയുടെ map ഫീൽഡ് ഒരു JSON ഒബ്ജക്റ്റല്ല.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>മൾട്ടിപാർട്ട് അഭ്യർത്ഥനയിൽ %field എന്ന ഫയൽ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map ഫീൽഡിലെ ഒരു പാത്ത് variables. എന്നതിൽ ആരംഭിക്കണം: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>%name എന്ന ഫയൽ പൂർണ്ണമായി എത്തിയില്ല (അപ്‌ലോഡ് പിശക് %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>%name എന്ന ഫയൽ %max ബൈറ്റിനേക്കാൾ വലുതാണ്.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>%name എന്ന ഫയൽ പരിശോധിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>ഈ സൈറ്റ്ആക്സസിൽ മ്യൂട്ടേഷനുകൾ ഓഫാണ് (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>മ്യൂട്ടേഷൻ POST ഉപയോഗിച്ച് അയയ്ക്കുക.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>ഉള്ളടക്കം മാറ്റാൻ സൈൻ ഇൻ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API കീയ്ക്ക് %scope എന്ന സ്കോപ്പ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>സെഷനുള്ള മ്യൂട്ടേഷന് സെഷന്റെ ഫോം ടോക്കൺ ആവശ്യമാണ് (ഹെഡർ X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ഓഫാണ്: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ഒരു ഹോസ്റ്റും പറയുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>വിലാസം ഒരു https വിലാസമായിരിക്കണം.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>%host എന്ന ഹോസ്റ്റ് graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ൽ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ഫയൽ കൊണ്ടുവരാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ഒരു ഇൻപുട്ട് തരം മാത്രമാണ്.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload തരത്തിലുള്ള ഒരു വേരിയബിൾ മൾട്ടിപാർട്ട് അഭ്യർത്ഥനയുടെ ഒരു ഫയൽ സ്വീകരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>റിമോട്ട് id %remoteId ഇതിനകം എടുത്തിട്ടുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>ഉള്ളടക്കത്തിന് ഇതിനകം %language ൽ ഒരു വിവർത്തനമുണ്ട്: updateContent ഉപയോഗിക്കുക.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>കുറഞ്ഞത് ഒരു ഫീൽഡ് നൽകുക.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>പുതിയ പതിപ്പ് ഉണ്ടാക്കാൻ കഴിഞ്ഞില്ല (ഉള്ളടക്കത്തിന് വളരെയധികം ഡ്രാഫ്റ്റുകളുണ്ട്).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>പതിപ്പ് %version ഒരു ഡ്രാഫ്റ്റല്ല.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent ന് id, nodeId എന്നിവയിൽ കൃത്യമായി ഒന്ന് ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>ഒരു ലൊക്കേഷൻ അതിന് താഴേക്ക് തന്നെ നീക്കാൻ കഴിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>ഉള്ളടക്കത്തിന് ഇതിനകം %parentId ന് താഴെ ഒരു ലൊക്കേഷനുണ്ട്.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>%field എന്ന ഫീൽഡിന്റെ മൂല്യം സംഭരിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>%language എന്ന ഉള്ളടക്ക ഭാഷ ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>സ്കീമയിൽ %class എന്ന ഉള്ളടക്ക ക്ലാസ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ഉള്ളടക്കം നിലവിലില്ല, അല്ലെങ്കിൽ അത് വായിക്കാൻ നിങ്ങൾക്ക് അനുവാദമില്ല.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ഈ ഉള്ളടക്കത്തോട് ഇത് ചെയ്യാൻ നിങ്ങൾക്ക് അനുവാദമില്ല.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>%class എന്ന ക്ലാസിന് എഴുതാവുന്ന %field എന്ന ഫീൽഡ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>%field എന്ന ഫീൽഡ് രണ്ടുതവണ നൽകിയിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>%field എന്ന ഫീൽഡ് ഒരു ഫയൽ സ്വീകരിക്കുന്നു: അത് അപ്‌ലോഡായി അയയ്ക്കുക (മൾട്ടിപാർട്ട് അഭ്യർത്ഥന).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>%field എന്ന ഫീൽഡ് ഫയൽ സ്വീകരിക്കുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>%field എന്ന ഫീൽഡിന് ഒരു മൂല്യം ആവശ്യമാണ്.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>%format എന്ന ഫോർമാറ്റ് റിച്ച് ടെക്സ്റ്റ് ഫീൽഡുകൾക്ക് മാത്രമാണ്; %field അതിന്റെ മൂല്യം അതേപടി സ്വീകരിക്കുന്നു (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>%field എന്ന ഫീൽഡ് നിർബന്ധമാണ്.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML വായിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content, version നെ id യോടൊപ്പം മാത്രം സ്വീകരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>പ്രിവ്യൂ ടോക്കൺ സാധുവല്ല അല്ലെങ്കിൽ കാലഹരണപ്പെട്ടു.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>ഒരു ഒറിജിൻ അല്ല (https://host അല്ലെങ്കിൽ https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API യുടെ ഒരു സ്കോപ്പ് അല്ല: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

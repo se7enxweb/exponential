@@ -29,7 +29,7 @@ Every module's policy functions and the limitations each can carry, from `$Funct
 | [ezinfo](ezinfo.md) | `read` |
 | [ezjscore](ezjscore.md) | `call`, `run` |
 | [ezoe](ezoe.md) | `browse`, `disable_editor`, `editor`, `relations`, `search` |
-| [graphql](graphql.md) | `playground`, `query` |
+| [graphql](graphql.md) | `administrate`, `playground`, `query` |
 | [infocollector](infocollector.md) | `read` |
 | [layout](layout.md) | (none: `layout/*`) |
 | [mailpreferences](mailpreferences.md) | `administrate`, `export` |

@@ -78807,6 +78807,286 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Dopyt beží s vašimi oprávneniami, prihlásení v tejto relácii.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count za %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>bez limitu</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Hĺbka</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Zložitosť</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Položky na zoznam</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (predvolené %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Požiadavky na používateľa alebo kľúč</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Požiadavky na anonymnú adresu</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcia</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Iba uložené dopyty</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Najväčší dopyt</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtov</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Najväčšie nahrávanie</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Prístup k lokalite %siteaccess neexistuje.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutácie sú v %siteaccess zapnuté.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutácie sú v %siteaccess vypnuté.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API je v %siteaccess zapnuté.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API je v %siteaccess vypnuté.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Nastavenia sa nepodarilo zapísať: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Vyrovnávacia pamäť odpovedí bola vymazaná: odstránených odpovedí: %count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Ak chcete dopyt odstrániť, začiarknite políčko vedľa neho.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Dopyt sa nepodarilo odstrániť: dopyt dodaný v adresári z PersistedQueryDirectoryList[] sa odstraňuje spolu so svojím súborom.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Uložený dopyt bol odstránený.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutácie</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>zapnuté</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>vypnuté</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Prístupy k lokalite</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kde API a jeho mutácie odpovedajú. Tlačidlá zapisujú graphql.ini, rovnako ako ./console exp:graphql:enable a exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Zmeniť</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Vypnúť</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Vypnúť mutácie</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Zapnúť mutácie</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Zapnúť</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limity</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] tohto prístupu k lokalite.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Vyrovnávacia pamäť odpovedí</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Odpovede uložených dopytov, uchovávané podľa práv používateľa a zneplatnené pri každom zverejnení obsahu.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Uchované odpovede</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count odpovedí, %bytes bajtov</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Uchovávané najviac</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Naposledy zneplatnené</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Vymazať vyrovnávaciu pamäť odpovedí</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Uložené dopyty</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Uložené pomocou ./console exp:graphql:persist alebo klientmi (automatické uložené dopyty); volajú sa názvom alebo SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Názvy</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Veľkosť</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kde</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstrániť</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>dodaný</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>uložený</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Áno, odstrániť tento dopyt</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Zatiaľ žiadny uložený dopyt.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Kľúče API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Osobné kľúče API s rozsahom graphql:read (dopyty) alebo graphql:write (mutácie). Vytvárajte a odvolávajte ich na stránke Prístup k API alebo pomocou ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Prístup k API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Všetky kľúče</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kľúč</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Názov</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Vlastník</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Rozsahy</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Naposledy použitý</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktívny</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>vypršaný</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>odvolaný</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikdy</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Zatiaľ žiadny kľúč API s rozsahom GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79189,178 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout vyžaduje práve jedno z: id, identifier a urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Pole operations požiadavky multipart nie je jedna požiadavka JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Pole map požiadavky multipart nie je objekt JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Požiadavka multipart neobsahuje súbor %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Cesta v poli map musí začínať na variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Súbor %name neprišiel celý (chyba nahrávania %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Súbor %name je väčší ako %max bajtov.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Súbor %name sa nepodarilo skontrolovať.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutácie sú v tomto prístupe k lokalite vypnuté (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Mutáciu odošlite metódou POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Ak chcete meniť obsah, prihláste sa.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Kľúč API nemá rozsah %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutácia so session potrebuje formulárový token tejto session (hlavička X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl je vypnuté: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] neuvádza žiadny hostiteľ.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresa musí byť adresa https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hostiteľ %host nie je v graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Súbor sa nepodarilo načítať.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload je iba vstupný typ.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Premenná typu Upload preberá súbor z požiadavky multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Vzdialené id %remoteId je už obsadené.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Obsah už má preklad v jazyku %language: použite updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Zadajte aspoň jedno pole.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Novú verziu sa nepodarilo vytvoriť (obsah má príliš veľa konceptov).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Verzia %version nie je koncept.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent potrebuje práve jedno z id a nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Umiestnenie nemožno presunúť pod seba samé.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Obsah už má umiestnenie pod %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Hodnotu poľa %field sa nepodarilo uložiť.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Jazyk obsahu %language neexistuje.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Trieda obsahu %class v schéme neexistuje.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Obsah neexistuje alebo ho nesmiete čítať.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>S týmto obsahom to nesmiete urobiť.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Trieda %class nemá zapisovateľné pole %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Pole %field je zadané dvakrát.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Pole %field preberá súbor: odošlite ho ako upload (požiadavka multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Pole %field nepreberá súbor.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Pole %field potrebuje hodnotu.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Formát %format je iba pre polia s formátovaným textom; %field preberá hodnotu tak, ako je (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Pole %field je povinné.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML sa nepodarilo prečítať.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content preberá version iba s id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Token náhľadu je neplatný alebo vypršal.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nie je pôvod (https://host alebo https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nie je rozsah GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -17,7 +17,7 @@ No view of the module names it; code checks it (`eZUser::hasAccessTo( 'apikey', 
 
 | Limitation | Values come from |
 |---|---|
-| Scope | fixed: Read content (read), Create and publish content (publish), Edit content (edit), Remove content (remove), Read context help (help), Read content through GraphQL (graphql:read) |
+| Scope | fixed: Read content (read), Create and publish content (publish), Edit content (edit), Remove content (remove), Read context help (help), Read content through GraphQL (graphql:read), Change content through GraphQL (graphql:write) |
 
 ```php
 // Give a role the policy (eZRole::appendPolicy( $module, $function, $limitations ))

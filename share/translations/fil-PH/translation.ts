@@ -78777,6 +78777,286 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tumatakbo ang query gamit ang iyong mga karapatan, naka-sign in sa session na ito.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count sa loob ng %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>walang limit</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Lalim</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Complexity</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Mga item bawat listahan</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (default %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Mga kahilingan bawat user o key</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Mga kahilingan bawat anonymous na address</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Mga naka-imbak na query lamang</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Pinakamalaking query</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Pinakamalaking upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Walang siteaccess na %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Naka-on ang mga mutation sa %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Naka-off ang mga mutation sa %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Naka-on ang GraphQL API sa %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Naka-off ang GraphQL API sa %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Hindi maisulat ang mga setting: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Na-clear ang response cache: %count sagot ang inalis.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Lagyan ng tsek ang kahon sa tabi ng query para alisin ito.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Hindi maalis ang query: ang query na kasama sa isang directory ng PersistedQueryDirectoryList[] ay inaalis kasama ng file nito.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Inalis ang naka-imbak na query.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mga mutation</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>naka-on</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>naka-off</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Mga siteaccess</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kung saan sumasagot ang API at ang mga mutation nito. Isinusulat ng mga button ang graphql.ini, gaya ng ginagawa ng ./console exp:graphql:enable at exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Baguhin</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>I-off</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Naka-off ang mutation</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Naka-on ang mutation</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>I-on</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Mga limit</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ng siteaccess na ito.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Response cache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Ang mga sagot ng mga naka-imbak na query, iniingatan ayon sa mga karapatan ng user at nag-e-expire tuwing may nilalamang inilalathala.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Mga sagot na iniingatan</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count sagot, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Iniingatan nang hanggang</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Huling pag-expire</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>I-clear ang response cache</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Mga naka-imbak na query</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Iniimbak gamit ang ./console exp:graphql:persist, o ng mga client (awtomatikong naka-imbak na query); tinatawag ayon sa pangalan o SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Mga pangalan</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Laki</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Saan</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Alisin</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>kasama</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>naka-imbak</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Oo, alisin ang query na ito</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Wala pang naka-imbak na query.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Mga API key</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Mga personal na API key na may scope na graphql:read (mga query) o graphql:write (mga mutation). Gawin at bawiin ang mga ito sa pahinang API access, o gamit ang ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API access</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Lahat ng key</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Key</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Pangalan</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>May-ari</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Mga scope</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Huling ginamit</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktibo</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>expired</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>binawi</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hindi kailanman</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Wala pang API key na may GraphQL scope.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Kailangan ng layout ang eksaktong isa sa id, identifier at urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Ang field na operations ng isang multipart na kahilingan ay hindi isang JSON na kahilingan.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Ang field na map ng isang multipart na kahilingan ay hindi isang JSON object.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Walang file na %field ang multipart na kahilingan.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Dapat magsimula sa variables. ang isang path ng field map: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Hindi buong dumating ang file na %name (error sa pag-upload %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Mas malaki sa %max bytes ang file na %name.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Hindi masuri ang file na %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Naka-off ang mga mutation sa siteaccess na ito (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Ipadala ang mutation gamit ang POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Mag-sign in para baguhin ang nilalaman.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Walang scope na %scope ang API key.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Kailangan ng mutation na may session ang form token ng session (header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Naka-off ang uploadFromUrl: walang host na nakalista sa graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Dapat https na address ang address.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Wala ang host na %host sa graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Hindi makuha ang file.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Ang Upload ay isang input type lamang.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Ang variable na may type na Upload ay tumatanggap ng file mula sa isang multipart na kahilingan.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Gamit na ang remote id na %remoteId.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>May salin na sa %language ang nilalaman: gamitin ang updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Magbigay ng kahit isang field.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Hindi makagawa ng bagong bersyon (masyadong maraming draft ang nilalaman).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Hindi draft ang bersyon %version.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Kailangan ng deleteContent ang eksaktong isa sa id at nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Hindi maaaring ilipat ang isang lokasyon sa ilalim ng sarili nito.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>May lokasyon na ang nilalaman sa ilalim ng %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Hindi maimbak ang value ng field na %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Walang content language na %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Walang content class na %class sa schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Wala ang nilalaman, o hindi mo ito pinapayagang basahin.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Hindi mo pinapayagang gawin ito sa nilalamang ito.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Walang field na %field na maaaring sulatan ang class na %class.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Dalawang beses ibinigay ang field na %field.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Tumatanggap ng file ang field na %field: ipadala ito bilang upload (isang multipart na kahilingan).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Hindi tumatanggap ng file ang field na %field.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Kailangan ng value ang field na %field.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Para lamang sa mga rich text field ang format na %format; tinatanggap ng %field ang value nito kung ano ito (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Kinakailangan ang field na %field.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Hindi mabasa ang HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Tumatanggap lamang ang content ng version kasama ang id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Hindi wasto o nag-expire na ang preview token.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Hindi isang origin (https://host o https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Hindi isang scope ng GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

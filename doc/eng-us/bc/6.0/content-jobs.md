@@ -170,7 +170,7 @@ permissions for the whole set when the job is created, and per node as the reque
 ## The command and the cronjob part
 
 ```bash
-php bin/php/expcontentjob.php list [--all]                 # or: php bin/php/console exp:expcontentjob list
+php bin/php/expcontentjob.php list [--all] [--resume]      # or: php bin/php/console exp:expcontentjob list
 php bin/php/expcontentjob.php show <id>
 php bin/php/expcontentjob.php remove <node>[,<node>...] [--trash|--delete] [--background]
 php bin/php/expcontentjob.php copy <source> <new parent> [--all-versions] [--keep-creator] [--keep-time] [--background]
@@ -180,7 +180,14 @@ php bin/php/expcontentjob.php run <id> | resume <id> [--background] | cancel <id
 
 The cronjob part `contentjobs` (frequent group, `settings/cronjob.ini`) starts jobs whose worker never started
 (after `QueuedGrace` seconds) and resumes jobs whose worker died. A job is therefore never lost when the web
-server cannot start a worker (`exec` disabled, the process limit reached): it starts within a minute.
+server cannot start a worker (`exec` disabled, the process limit reached): it starts within a minute. It also
+resumes a job that failed for a temporary database error (see "A busy database" below), at most `MaxAttempts`
+times in a row.
+
+`list` prints, per job, the age of its heartbeat (when its worker last wrote it: `42s`, `7m`, `3h`, `2d`) and
+`stalled` for a job that waits without a worker: queued or running with no worker holding it, or failed for a
+temporary database error. `list --resume` resumes every stalled or failed job, each with a worker in the
+background, and is what to run after an outage instead of resuming job by job.
 
 ## Settings: `content.ini [ContentJobSettings]`
 
@@ -191,7 +198,9 @@ server cannot start a worker (`exec` disabled, the process limit reached): it st
 | `BatchSize` | 50 | nodes per batch, one transaction each |
 | `BatchPause` | 0 | milliseconds between batches, room for other writers (on SQLite worth 100 to 200) |
 | `QueuedGrace` | 60 | seconds before the cronjob part starts a job nobody started |
-| `MaxAttempts` | 5 | worker starts without a finished batch before the job is failed |
+| `MaxAttempts` | 5 | worker starts without a finished batch before the job is failed; also how often in a row the cronjob part resumes a job that failed for a temporary database error (counted again from 0 after every batch done) |
+| `BusyRetries` | 8 | tries again of a batch that met a busy or locked database, from the last checkpoint (0: fail at the first) |
+| `BusyBackoffMax` | 60 | the longest pause between those tries, in seconds; the pause is 1, 2, 4 ... seconds |
 | `KeepDays` | 30 | finished jobs are removed after this many days |
 | `PhpBinary` | (empty) | the PHP command line binary for the worker |
 | `JobTypes[<name>]` | remove, copy, move, hide, reveal, section, state, addlocation, removelocation, packageinstall, auditexport | the job types |
@@ -221,9 +230,50 @@ tests are described in its test suite (`tests/tests/kernel/classes/contentjob/`)
 - **The worker is killed** (kill -9, a reboot, a deploy): the job stays `running` without a worker; the progress
   page shows the worker as stalled and offers Resume; the cronjob part resumes it by itself.
 - **The web server cannot start a worker**: the job waits; the cronjob part starts it after `QueuedGrace`.
+- **A busy database**: see the next section. The job is retried by its worker, then resumed by the cronjob part.
+- **Any other error of the worker** (outside a batch: the store, the audit, a type's `prepare()`): the job is
+  `failed` with "the worker stopped: <reason>". The worker process never ends with the job `running` and nothing
+  saying why.
 - **Cancel**: after the current batch. A cancelled remove leaves the rest in place; a cancelled copy leaves the
   partial copy and offers to remove it.
 - **The engine is missing or broken**: every view falls back to its old synchronous code, and logs the error.
+
+### A busy database
+
+On SQLite a transaction waits `site.ini [DatabaseSettings] SQLiteTransactionWait` seconds (25) for the write lock
+and then fails with "database is busy" ([SQLite transactions](sqlite-transactions.md)). A long import next to a
+content job can hold the lock that long. Until 6.0.15 the worker started the batch's transaction outside the code
+that handles a failed batch: the error ended the worker process, the job stayed `running` without a worker, and
+after `MaxAttempts` such restarts it failed for good. A busy error inside a batch failed the job, and nothing
+resumed a failed job. Help manual builds on the demonstration servers stopped this way at 77% and at 5%.
+
+Now a temporary database error is retried:
+
+| Error | Counted as temporary |
+|---|---|
+| SQLite busy and locked (codes 5 and 6, "database is locked", "database is busy: the transaction could not start within ...") | yes |
+| MySQL lock wait timeout (1205) and deadlock (1213) | yes |
+| anything else (a constraint, a missing node, a type's own error) | no: the job fails as before |
+
+On such an error the worker rolls the batch back, reads the job again from its last checkpoint, runs the type's
+`prepare()` again (its in-memory state rebuilt, as on a resume), waits 1, 2, 4 ... seconds up to `BusyBackoffMax`
+while writing the heartbeat at least every 5 seconds, and runs the batch again, `BusyRetries` times. The log of
+the job shows each try:
+
+```text
+batch 4: the database is busy (database is busy: the transaction could not start within 25 s, ...); rolled back, try 2 of 9 in 1 s from the last checkpoint
+batch 4: committed at try 2
+```
+
+When the tries run out the job is `failed` with `temporary_error` set ("the database stayed busy (9 tries): ...").
+The cronjob part resumes such a job by itself once `QueuedGrace` seconds have passed, at most `MaxAttempts` times
+in a row; every batch done starts the count again, and a resume by a person sets it to 0. A job that failed for
+any other reason still waits for a person.
+
+No item is done twice: the batch that failed is rolled back, and the type builds its state again from the
+checkpoint. A job type that keeps state in memory between batches must rebuild it in `prepare()`, which the
+worker now also calls before each retry. The help manuals' job does this with `expHelpManualSync::abandon()`:
+the objects, ids and open writes of the rolled-back try are forgotten and a new sync reads what is stored.
 
 ## Job types of other parts of the kernel
 

@@ -1,0 +1,5 @@
+# The GraphQL end point of the site, an optional personal API key (scope graphql:read), and how deep the static build
+# follows the content tree from the root. Read at build time only.
+EXP_GRAPHQL_ENDPOINT=__EXP_ENDPOINT__
+EXP_GRAPHQL_KEY=
+EXP_BUILD_DEPTH=3

@@ -78807,6 +78807,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Το ερώτημα εκτελείται με τα δικαιώματά σας, συνδεδεμένοι σε αυτή τη συνεδρία.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count σε %seconds δευτ.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>χωρίς όριο</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Βάθος</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Πολυπλοκότητα</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Στοιχεία ανά λίστα</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (προεπιλογή %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Αιτήματα ανά χρήστη ή κλειδί</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Αιτήματα ανά ανώνυμη διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Ενδοσκόπηση</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Μόνο αποθηκευμένα ερωτήματα</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Μεγαλύτερο ερώτημα</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Μεγαλύτερη μεταφόρτωση</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Δεν υπάρχει πρόσβαση ιστότοπου %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Οι μεταλλάξεις είναι ενεργοποιημένες στο %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Οι μεταλλάξεις είναι απενεργοποιημένες στο %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Το GraphQL API είναι ενεργοποιημένο στο %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Το GraphQL API είναι απενεργοποιημένο στο %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Δεν ήταν δυνατή η εγγραφή των ρυθμίσεων: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Η κρυφή μνήμη απαντήσεων εκκαθαρίστηκε: αφαιρέθηκαν %count απαντήσεις.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Επιλέξτε το πλαίσιο δίπλα στο ερώτημα για να το αφαιρέσετε.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Δεν ήταν δυνατή η αφαίρεση του ερωτήματος: ένα ερώτημα που παρέχεται σε κατάλογο του PersistedQueryDirectoryList[] αφαιρείται μαζί με το αρχείο του.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Το αποθηκευμένο ερώτημα αφαιρέθηκε.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Μεταλλάξεις</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ενεργό</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ανενεργό</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Προσβάσεις ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Πού απαντούν το API και οι μεταλλάξεις του. Τα κουμπιά γράφουν το graphql.ini, όπως κάνουν τα ./console exp:graphql:enable και exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Αλλαγή</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Απενεργοποίηση</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Απενεργοποίηση μεταλλάξεων</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Ενεργοποίηση μεταλλάξεων</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ενεργοποίηση</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Όρια</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] αυτής της πρόσβασης ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Κρυφή μνήμη απαντήσεων</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Οι απαντήσεις των αποθηκευμένων ερωτημάτων, που διατηρούνται ανά δικαιώματα χρήστη και λήγουν κάθε φορά που δημοσιεύεται περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Διατηρημένες απαντήσεις</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count απαντήσεις, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Διατήρηση το πολύ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds δευτ.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Τελευταία λήξη</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Εκκαθάριση κρυφής μνήμης απαντήσεων</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Αποθηκευμένα ερωτήματα</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Αποθηκεύονται με ./console exp:graphql:persist ή από πελάτες (αυτόματα αποθηκευμένα ερωτήματα)· καλούνται με όνομα ή SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Ονόματα</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Μέγεθος</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Θέση</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Αφαίρεση</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>παρεχόμενο</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>αποθηκευμένο</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ναι, αφαίρεση αυτού του ερωτήματος</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Δεν υπάρχει ακόμη αποθηκευμένο ερώτημα.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Κλειδιά API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Προσωπικά κλειδιά API με εύρος graphql:read (ερωτήματα) ή graphql:write (μεταλλάξεις). Δημιουργήστε και ανακαλέστε τα στη σελίδα Πρόσβαση API ή με ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Πρόσβαση API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Όλα τα κλειδιά</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Κλειδί</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Κάτοχος</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Εύρη</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Τελευταία χρήση</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ενεργό</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>έληξε</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ανακλήθηκε</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ποτέ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Δεν υπάρχει ακόμη κλειδί API με εύρος GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79189,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>Το layout χρειάζεται ακριβώς ένα από τα id, identifier και urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Το πεδίο operations ενός αιτήματος multipart δεν είναι ένα αίτημα JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Το πεδίο map ενός αιτήματος multipart δεν είναι αντικείμενο JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Το αίτημα multipart δεν περιέχει το αρχείο %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Μια διαδρομή του πεδίου map πρέπει να ξεκινά με variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Το αρχείο %name δεν έφτασε ολόκληρο (σφάλμα μεταφόρτωσης %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Το αρχείο %name είναι μεγαλύτερο από %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Δεν ήταν δυνατός ο έλεγχος του αρχείου %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Οι μεταλλάξεις (mutations) είναι απενεργοποιημένες σε αυτή την πρόσβαση ιστότοπου (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Στείλτε τη μετάλλαξη με POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Συνδεθείτε για να αλλάξετε περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Το κλειδί API δεν έχει το εύρος %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Μια μετάλλαξη με συνεδρία χρειάζεται το διακριτικό φόρμας της συνεδρίας (κεφαλίδα X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>Το uploadFromUrl είναι απενεργοποιημένο: το graphql.ini [GraphQLSettings] UploadFromUrlHostList[] δεν ορίζει κανέναν host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Η διεύθυνση πρέπει να είναι διεύθυνση https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Ο host %host δεν υπάρχει στο graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Δεν ήταν δυνατή η λήψη του αρχείου.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Το Upload είναι μόνο τύπος εισόδου.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Μια μεταβλητή τύπου Upload δέχεται ένα αρχείο από αίτημα multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Το απομακρυσμένο id %remoteId χρησιμοποιείται ήδη.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Το περιεχόμενο έχει ήδη μετάφραση σε %language: χρησιμοποιήστε το updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Δώστε τουλάχιστον ένα πεδίο.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Δεν ήταν δυνατή η δημιουργία νέας έκδοσης (το περιεχόμενο έχει πάρα πολλά πρόχειρα).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Η έκδοση %version δεν είναι πρόχειρο.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>Το deleteContent χρειάζεται ακριβώς ένα από τα id και nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Μια θέση δεν μπορεί να μετακινηθεί κάτω από τον εαυτό της.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Το περιεχόμενο έχει ήδη θέση κάτω από το %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Δεν ήταν δυνατή η αποθήκευση της τιμής του πεδίου %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Δεν υπάρχει γλώσσα περιεχομένου %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Δεν υπάρχει κλάση περιεχομένου %class στο σχήμα.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Το περιεχόμενο δεν υπάρχει ή δεν έχετε δικαίωμα ανάγνωσής του.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Δεν έχετε δικαίωμα να το κάνετε αυτό σε αυτό το περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Η κλάση %class δεν έχει εγγράψιμο πεδίο %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Το πεδίο %field δόθηκε δύο φορές.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Το πεδίο %field δέχεται αρχείο: στείλτε το ως μεταφόρτωση (αίτημα multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Το πεδίο %field δεν δέχεται αρχείο.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Το πεδίο %field χρειάζεται τιμή.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Η μορφή %format είναι μόνο για πεδία εμπλουτισμένου κειμένου· το %field δέχεται την τιμή του ως έχει (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Το πεδίο %field είναι υποχρεωτικό.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση του HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>Το content δέχεται version μόνο μαζί με id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Το διακριτικό προεπισκόπησης δεν είναι έγκυρο ή έχει λήξει.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Δεν είναι προέλευση (https://host ή https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Δεν είναι εύρος του GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

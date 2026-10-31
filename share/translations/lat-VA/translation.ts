@@ -78810,6 +78810,286 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Quaestio tuis iuribus exsequitur, hac sessione inscriptus.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count in %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>sine limite</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Altitudo</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Complexitas</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Res per indicem</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (praefinitum %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Petitiones per usorem aut clavem</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Petitiones per inscriptionem anonymam</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspectio</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Solae quaestiones servatae</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Maxima quaestio</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes octeti</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Maxima impositio</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nullus est aditus situs %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutationes in %siteaccess accensae sunt.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutationes in %siteaccess exstinctae sunt.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>API GraphQL in %siteaccess accensa est.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>API GraphQL in %siteaccess exstincta est.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Optiones scribi non potuerunt: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Memoria responsorum purgata est: %count responsa remota.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Nota capsulam iuxta quaestionem ut eam removeas.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Quaestio removeri non potuit: quaestio in directorio PersistedQueryDirectoryList[] tradita cum fasciculo suo removetur.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Quaestio servata remota est.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutationes</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>accensum</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>exstinctum</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ubi API et mutationes eius respondent. Bulla graphql.ini scribunt, sicut ./console exp:graphql:enable et exp:graphql:disable faciunt.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aditus situs</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muta</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Exstingue</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutationes exstinctae</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutationes accensae</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Accende</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limites</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] huius aditus situs.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Memoria responsorum</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Responsa quaestionum servatarum, secundum iura usoris servata et exspirata quotiens contentum publicatur.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Responsa servata</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count responsa, %bytes octeti</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Diutissime servatur</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ultimo exspiravit</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Purga memoriam responsorum</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Quaestiones servatae</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Servatae per ./console exp:graphql:persist aut a clientibus (quaestiones servatae automaticae); nomine aut SHA-256 vocantur.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nomina</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Magnitudo</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ubi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Remove</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>tradita</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>servata</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ita, remove hanc quaestionem</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Nulla quaestio servata adhuc.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Claves API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Claves API personales cum ambitu graphql:read (quaestiones) aut graphql:write (mutationes). Fac et revoca eas in pagina Aditus API, aut per ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Aditus API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Omnes claves</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Clavis</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomen</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Possessor</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Ambitus</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ultimo usa</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>activa</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>exspirata</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revocata</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>numquam</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Nulla clavis API cum ambitu GraphQL adhuc.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78912,6 +79192,178 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout unum tantum ex id, identifier et urlAlias requirit.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Campus operations petitionis multipartitae non est una petitio JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Campus map petitionis multipartitae non est obiectum JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Petitio multipartita fasciculum %field non habet.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Via campi map a variables. incipere debet: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fasciculus %name non integer advenit (error impositionis %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fasciculus %name maior est quam %max octeti.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fasciculus %name examinari non potuit.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutationes in hoc aditu situs exstinctae sunt (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Mitte mutationem per POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Inscribe te ut contentum mutes.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>Clavis API ambitum %scope non habet.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutatio cum sessione signum formae sessionis requirit (caput X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl exstinctum est: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nullum hospitem nominat.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Inscriptio debet esse inscriptio https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Hospes %host non est in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fasciculus afferri non potuit.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload genus inputi tantum est.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Variabilis generis Upload fasciculum petitionis multipartitae accipit.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Id remotum %remoteId iam occupatum est.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Contentum iam translationem in %language habet: utere updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Da saltem unum campum.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nulla nova versio fieri potuit (contentum nimis multa adumbrata habet).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Versio %version non est adumbratio.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent requirit unum ex id et nodeId, neque plura.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Locus sub se ipsum moveri non potest.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Contentum iam locum sub %parentId habet.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Valor campi %field servari non potuit.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nulla est lingua contenti %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nulla est classis contenti %class in schemate.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Contentum non adest, aut tibi legere non licet.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Hoc huic contento facere tibi non licet.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Classis %class nullum campum %field habet qui scribi possit.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Campus %field bis datus est.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Campus %field fasciculum accipit: mitte eum ut impositionem (petitio multipartita).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Campus %field nullum fasciculum accipit.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Campus %field valorem requirit.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Forma %format tantum ad campos textus ditioris pertinet; %field valorem suum ut est accipit (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Campus %field necessarius est.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML legi non potuit.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content version tantum cum id accipit.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Signum praevisionis non valet aut exspiravit.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Non est origo (https://host aut https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Non est ambitus API GraphQL: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -78777,6 +78777,286 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Fyrispurningurin koyrir við tínum rættindum, innritaður við hesi setuni.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count um %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>einki mark</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Dýpd</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Flókni</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Lutir fyri hvønn lista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (sjálvvirði %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Umbønir fyri hvønn brúkara ella lykil</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Umbønir fyri hvørja navnleysa adressu</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Bert goymdir fyrispurningar</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Størsti fyrispurningur</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes být</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Størsta uppsending</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Eingin atgongd til vevstað %siteaccess er til.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutatiónirnar eru tendraðar í %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutatiónirnar eru sløktar í %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL-API'ið er tendrað í %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL-API'ið er sløkt í %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Stillingarnar kundu ikki skrivast: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Svarkovin er tømd: %count svar strikað.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Set kross í kassan við fyrispurningin fyri at strika hann.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Fyrispurningurin kundi ikki strikast: ein fyrispurningur, ið er útflýggjaður í eini mappu í PersistedQueryDirectoryList[], verður strikaður saman við fíluni.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Goymdi fyrispurningurin varð strikaður.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutatiónir</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>tendrað</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>sløkt</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Atgongdir til vevstað</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Har API'ið og mutatiónirnar svara. Knøttarnir skriva graphql.ini, sum ./console exp:graphql:enable og exp:graphql:disable gera.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Atgongd til vevstað</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Broyt</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Sløkk</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutatiónir sløktar</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutatiónir tendraðar</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Tendra</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Mørk</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] fyri hesa atgongd til vevstað.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Svarkova</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Svarini hjá goymdum fyrispurningum, goymd eftir brúkararættindum og útgingin hvørja ferð innihald verður útgivið.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Støða</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Goymd svar</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count svar, %bytes být</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Goymd í mesta lagi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Seinast útgingið</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Tøm svarkovuna</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Goymdir fyrispurningar</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Goymdir við ./console exp:graphql:persist, ella av klientum (sjálvvirkandi goymdir fyrispurningar); kallaðir við navni ella SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nøvn</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Stødd</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hvar</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Strika</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>útflýggjaður</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>goymdur</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ja, strika henda fyrispurningin</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Eingin goymdur fyrispurningur enn.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-lyklar</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Persónligir API-lyklar við økinum graphql:read (fyrispurningar) ella graphql:write (mutatiónir). Ger og tak tey aftur á síðuni API-atgongd, ella við ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-atgongd</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Allir lyklar</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Lykil</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigari</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Øki</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Seinast brúktur</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>virkin</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>útgingin</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>tikin aftur</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ongantíð</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Eingin API-lykil við GraphQL-øki enn.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout hevur tørv á júst einum av id, identifier og urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Teigurin operations í eini multipart-umbøn er ikki ein JSON-umbøn.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Teigurin map í eini multipart-umbøn er ikki eitt JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-umbønin hevur onga fílu %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Ein leið í teigakortinum má byrja við variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Fílan %name kom ikki heil fram (uppsendingarvilla %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Fílan %name er størri enn %max být.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Fílan %name kundi ikki kannast.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutatiónir eru sløktar í hesi atgongd til vevstað (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Send eina mutatión við POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Rita inn fyri at broyta innihald.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-lykilin hevur ikki økið %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Ein mutatión við eini setu krevur formlykilin hjá setuni (høvd X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl er sløkt: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nevnir ongan vert.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adressan má vera ein https-adressa.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Verturin %host er ikki í graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Fílan kundi ikki heintast.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload er bert eitt inntaksslag.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Ein variabul av slagnum Upload tekur eina fílu úr eini multipart-umbøn.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Fjar-id %remoteId er longu tikið.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Innihaldið hevur longu eina umseting á %language: nýt updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Gev í minsta lagi ein teig.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Eingin nýggj útgáva kundi gerast (innihaldið hevur ov nógvar kladdur).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Útgáva %version er ikki ein kladda.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent krevur júst eitt av id og nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Eitt stað kann ikki flytast niður undir seg sjálvt.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Innihaldið hevur longu eitt stað undir %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Virðið í teiginum %field kundi ikki goymast.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Einki innihaldsmál %language er til.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Eingin innihaldsflokkur %class er í skemanum.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Innihaldið er ikki til, ella tú hevur ikki loyvi at lesa tað.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Tú hevur ikki loyvi at gera hetta við hetta innihaldið.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Flokkurin %class hevur ongan skrivligan teig %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Teigurin %field er givin tvær ferðir.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Teigurin %field tekur eina fílu: send hana sum uppsending (eina multipart-umbøn).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Teigurin %field tekur onga fílu.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Teigurin %field krevur eitt virði.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Sniðið %format er bert til ríkan tekst-teigar; %field tekur virðið, sum tað er (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Teigurin %field er kravdur.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML kundi ikki lesast.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content tekur bert version saman við id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Forskoðanarlykilin er ikki gildugur ella er útgingin.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Ikki ein uppruni (https://host ella https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Ikki eitt øki í GraphQL-API'num: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

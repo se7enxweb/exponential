@@ -1,0 +1,37 @@
+---
+import Field from '../components/Field.astro';
+import { allPaths, graphql } from '../lib/graphql';
+import { BY_CLASS, MENU, NODE } from '../lib/queries';
+
+// A static page for every URL alias the build found (src/lib/graphql.ts allPaths()).
+export async function getStaticPaths() {
+  return ( await allPaths() ).map( ( path ) => ( { params: { path: path || undefined } } ) );
+}
+
+const path = '/' + ( Astro.params.path ?? '' );
+const { node } = await graphql( NODE, { path } );
+const menu = await graphql( MENU );
+const query = BY_CLASS[ node.classIdentifier ];
+const full = query ? await graphql( query, { id: node.id } ) : { content: null };
+const fields = Object.entries( full.content ?? {} ).filter( ( [ key ] ) => ![ 'id', 'name', 'classIdentifier' ].includes( key ) );
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{ node.name } - __EXP_SITE__</title>
+  </head>
+  <body>
+    <header>
+      <a href="/"><strong>__EXP_SITE__</strong></a>
+      <nav>{ ( menu.node?.children.nodes ?? [] ).map( ( item: any ) => <a href={ `/${ item.urlAlias }` }> { item.name } </a> ) }</nav>
+    </header>
+    <main>
+      <h1>{ node.name }</h1>
+      { fields.map( ( [ key, value ] ) => <section class={ `field field-${ key }` }><Field value={ value } /></section> ) }
+      { node.children.totalCount > 0 && (
+        <ul class="children">{ node.children.nodes.map( ( child: any ) => <li><a href={ `/${ child.urlAlias }` }>{ child.name }</a></li> ) }</ul>
+      ) }
+    </main>
+  </body>
+</html>

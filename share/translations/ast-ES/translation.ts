@@ -78777,6 +78777,286 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La consulta executase colos tos permisos, cola sesión aniciada agora.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count en %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ensin llende</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Fondura</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Complexidá</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elementos per llista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (predetermináu %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Solicitúes per usuariu o clave</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Solicitúes per direición anónima</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspección</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Namái consultes persistentes</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Consulta más grande</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Xuba más grande</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nun hai nengún accesu al sitiu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Les mutaciones tán activaes en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Les mutaciones tán desactivaes en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>L'API GraphQL ta activada en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>L'API GraphQL ta desactivada en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Nun se pudieron escribir los axustes: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Vacióse la caché de rempuestes: %count rempuestes desaniciaes.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Marca la caxa al llau de la consulta pa desaniciala.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Nun se pudo desaniciar la consulta: una consulta incluyida nun direutoriu de PersistedQueryDirectoryList[] desaníciase col so ficheru.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Desanicióse la consulta persistente.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutaciones</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>activa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>desactiva</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesos al sitiu</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ónde respuenden l'API y les sos mutaciones. Los botones escriben graphql.ini, como faen ./console exp:graphql:enable y exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Accesu al sitiu</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Camudar</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Desactivar</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutaciones desactivaes</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutaciones activaes</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Activar</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Llendes</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] d'esti accesu al sitiu.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Caché de rempuestes</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Les rempuestes de les consultes persistentes, guardaes según los permisos del usuariu y caducaes cada vez que se publica conteníu.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estáu</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Rempuestes guardaes</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count rempuestes, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Guardaes como muncho</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Última caducidá</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Vaciar la caché de rempuestes</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Consultes persistentes</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Guardaes con ./console exp:graphql:persist o polos clientes (consultes persistentes automátiques); llámense pol nome o pol SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nomes</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamañu</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ónde</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Desaniciar</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>incluyida</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>guardada</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Sí, desaniciar esta consulta</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Entá nun hai nenguna consulta persistente.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Claves d'API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Claves d'API personales col ámbitu graphql:read (consultes) o graphql:write (mutaciones). Créales y revócales na páxina Accesu a l'API o con ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Accesu a l'API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Toles claves</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Clave</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Propietariu</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Ámbitos</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Últimu usu</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>activa</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>caducada</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revocada</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>enxamás</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Entá nun hai nenguna clave d'API con un ámbitu GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout necesita exactamente ún de id, identifier y urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>El campu operations d'una solicitú multipart nun ye una solicitú JSON.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>El mapa de campos d'una solicitú multipart nun ye un oxetu JSON.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>La solicitú multipart nun tien el ficheru %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Un camín del mapa de campos tien d'entamar con variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>El ficheru %name nun llegó enteru (error de xuba %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>El ficheru %name ye mayor que %max bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Nun se pudo comprobar el ficheru %name.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Les mutaciones tán desactivaes nesti accesu al sitiu (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Unvia una mutación con POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Anicia sesión pa camudar el conteníu.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>La clave d'API nun tien l'ámbitu %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Una mutación con sesión necesita'l token de formulariu de la sesión (cabecera X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ta desactiváu: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nun nomba nengún sirvidor.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>La direición tien de ser una direición https.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>El sirvidor %host nun ta en graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Nun se pudo descargar el ficheru.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ye namái un tipu d'entrada.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Una variable de tipu Upload toma un ficheru d'una solicitú multipart.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>La id remota %remoteId yá ta ocupada.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>El conteníu yá tien una traducción en %language: usa updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Da polo menos un campu.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nun se pudo facer una versión nueva (el conteníu tien demasiaos borradores).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>La versión %version nun ye un borrador.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent necesita exactamente ún de id y nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Un allugamientu nun se pue mover debaxo de sí mesmu.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>El conteníu yá tien un allugamientu debaxo de %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Nun se pudo guardar el valor del campu %field.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Nun hai nenguna llingua de conteníu %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Nun hai nenguna clase de conteníu %class nel esquema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>El conteníu nun esiste o nun tienes permisu pa lleelu.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Nun tienes permisu pa facer esto con esti conteníu.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>La clase %class nun tien nengún campu %field que se pueda escribir.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>El campu %field dase dos veces.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>El campu %field toma un ficheru: unvialu como xuba (una solicitú multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>El campu %field nun toma nengún ficheru.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>El campu %field necesita un valor.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>El formatu %format ye namái pa campos de testu enriquecíu; %field toma'l so valor tal cual (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>El campu %field ye obligatoriu.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Nun se pudo lleer l'HTML.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content toma version namái con id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>El token de vista previa nun ye válidu o caducó.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nun ye un orixe (https://host o https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nun ye un ámbitu de l'API GraphQL: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

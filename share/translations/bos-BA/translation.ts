@@ -78807,6 +78807,286 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Upit se izvršava s vašim pravima, prijavljeni u ovoj sesiji.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count u %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>bez ograničenja</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Dubina</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Složenost</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Stavki po listi</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (zadano %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Zahtjeva po korisniku ili ključu</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Zahtjeva po anonimnoj adresi</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcija</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Samo pohranjeni upiti</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Najveći upit</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtova</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Najveće otpremanje</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Ne postoji pristup web-stranici %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutacije su uključene u %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutacije su isključene u %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API je uključen u %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API je isključen u %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Postavke nije moguće zapisati: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Keš odgovora je očišćen: uklonjeno odgovora: %count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Označite polje pored upita da ga uklonite.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Upit nije moguće ukloniti: upit isporučen u direktoriju iz PersistedQueryDirectoryList[] uklanja se zajedno sa svojom datotekom.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Pohranjeni upit je uklonjen.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacije</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>uključeno</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>isključeno</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Pristupi web-stranici</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Gdje API i njegove mutacije odgovaraju. Dugmad zapisuju graphql.ini, kao što to rade ./console exp:graphql:enable i exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pristup web-stranici</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Promijeni</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Isključi</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Isključi mutacije</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Uključi mutacije</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Uključi</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Ograničenja</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ovog pristupa web-stranici.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Keš odgovora</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Odgovori pohranjenih upita, čuvani prema pravima korisnika i poništeni pri svakoj objavi sadržaja.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Sačuvani odgovori</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>Odgovora: %count, %bytes bajtova</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Čuva se najviše</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Posljednje poništavanje</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Očisti keš odgovora</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Pohranjeni upiti</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Pohranjeni putem ./console exp:graphql:persist ili od strane klijenata (automatski pohranjeni upiti); pozivaju se po imenu ili SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Imena</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Veličina</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Gdje</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ukloni</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>isporučen</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>pohranjen</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Da, ukloni ovaj upit</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Još nema pohranjenih upita.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ključevi</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Lični API ključevi s opsegom graphql:read (upiti) ili graphql:write (mutacije). Kreirajte ih i opozovite na stranici API pristup ili putem ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API pristup</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Svi ključevi</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ključ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ime</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Vlasnik</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Opsezi</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Posljednja upotreba</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktivan</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>istekao</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>opozvan</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikad</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Još nema API ključa s GraphQL opsegom.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79189,178 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout treba tačno jedno od id, identifier i urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Polje operations multipart zahtjeva nije jedan JSON zahtjev.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Polje map multipart zahtjeva nije JSON objekat.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart zahtjev ne sadrži datoteku %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Putanja u polju map mora počinjati s variables.: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Datoteka %name nije stigla cijela (greška pri otpremanju %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Datoteka %name je veća od %max bajtova.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Datoteku %name nije moguće provjeriti.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutacije su isključene u ovom pristupu web-stranici (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Pošaljite mutaciju putem POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Prijavite se da biste mijenjali sadržaj.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API ključ nema opseg %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutacija sa sesijom treba token obrasca te sesije (zaglavlje X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl je isključen: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] ne navodi nijedan host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresa mora biti https adresa.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host nije u graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Datoteku nije moguće preuzeti.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload je samo ulazni tip.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Varijabla tipa Upload prima datoteku iz multipart zahtjeva.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Remote id %remoteId je već zauzet.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Sadržaj već ima prijevod na %language: koristite updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Navedite barem jedno polje.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nije moguće napraviti novu verziju (sadržaj ima previše nacrta).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Verzija %version nije nacrt.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent treba tačno jedno od id i nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Lokacija se ne može premjestiti ispod same sebe.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Sadržaj već ima lokaciju ispod %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Vrijednost polja %field nije moguće pohraniti.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Ne postoji jezik sadržaja %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>U shemi ne postoji klasa sadržaja %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Sadržaj ne postoji ili ga ne smijete čitati.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Ovo ne smijete raditi s ovim sadržajem.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klasa %class nema polje %field u koje se smije pisati.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Polje %field je navedeno dvaput.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Polje %field prima datoteku: pošaljite je kao upload (multipart zahtjev).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Polje %field ne prima datoteku.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Polje %field treba vrijednost.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Format %format je samo za polja obogaćenog teksta; %field prima svoju vrijednost onakvu kakva jeste (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Polje %field je obavezno.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML nije moguće pročitati.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content prima version samo uz id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Token pregleda nije važeći ili je istekao.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Nije porijeklo (https://host ili https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Nije opseg GraphQL API-ja: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>მოთხოვნა სრულდება თქვენი უფლებებით, ამ სესიით შესული.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds წმ-ში</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ლიმიტის გარეშე</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>სიღრმე</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>სირთულე</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ელემენტები სიაში</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ნაგულისხმევი %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>მოთხოვნები მომხმარებელზე ან გასაღებზე</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>მოთხოვნები ანონიმურ მისამართზე</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ინტროსპექცია</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>მხოლოდ შენახული მოთხოვნები</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>უდიდესი მოთხოვნა</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ბაიტი</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>უდიდესი ატვირთვა</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>საიტზე წვდომა %siteaccess არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>მუტაციები ჩართულია %siteaccess-ში.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>მუტაციები გამორთულია %siteaccess-ში.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ჩართულია %siteaccess-ში.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API გამორთულია %siteaccess-ში.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>პარამეტრების ჩაწერა ვერ მოხერხდა: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>პასუხების ქეში გასუფთავდა: წაიშალა %count პასუხი.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>მოთხოვნის წასაშლელად მონიშნეთ მის გვერდით მდებარე ველი.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>მოთხოვნის წაშლა ვერ მოხერხდა: PersistedQueryDirectoryList[]-ის საქაღალდეში მოწოდებული მოთხოვნა იშლება თავის ფაილთან ერთად.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>შენახული მოთხოვნა წაიშალა.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>მუტაციები</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ჩართული</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>გამორთული</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>საიტზე წვდომები</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>სად პასუხობს API და მისი მუტაციები. ღილაკები წერს graphql.ini-ს, ისევე როგორც ./console exp:graphql:enable და exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>შეცვლა</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>გამორთვა</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>მუტაციები გამორთულია</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>მუტაციები ჩართულია</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ჩართვა</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ლიმიტები</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ამ საიტზე წვდომის graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>პასუხების ქეში</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>შენახული მოთხოვნების პასუხები, ინახება მომხმარებლის უფლებების მიხედვით და ძალას კარგავს შიგთავსის ყოველი გამოქვეყნებისას.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>შენახული პასუხები</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count პასუხი, %bytes ბაიტი</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>შენახვის მაქსიმუმი</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds წმ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ბოლოს გაუქმდა</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>პასუხების ქეშის გასუფთავება</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>შენახული მოთხოვნები</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>ინახება ./console exp:graphql:persist-ით ან კლიენტების მიერ (automatic persisted queries); გამოიძახება სახელით ან SHA-256-ით.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>სახელები</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ზომა</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>სად</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>წაშლა</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>მოწოდებული</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>შენახული</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>დიახ, წაშალე ეს მოთხოვნა</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>შენახული მოთხოვნა ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API გასაღებები</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>პერსონალური API გასაღებები მოქმედების არით graphql:read (მოთხოვნები) ან graphql:write (მუტაციები). შექმენით და გააუქმეთ ისინი გვერდზე API წვდომა, ან ./console exp:graphql:keys-ით.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API წვდომა</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ყველა გასაღები</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>გასაღები</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>სახელი</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>მფლობელი</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>მოქმედების არეები</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ბოლო გამოყენება</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>აქტიური</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ვადაგასული</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>გაუქმებული</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>არასდროს</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL მოქმედების არის მქონე API გასაღები ჯერ არ არის.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout-ს სჭირდება ზუსტად ერთი შემდეგთაგან: id, identifier ან urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart მოთხოვნის ველი operations არ არის ერთი JSON მოთხოვნა.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart მოთხოვნის ველი map არ არის JSON ობიექტი.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart მოთხოვნას არ აქვს ფაილი %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ველების რუკის გზა უნდა იწყებოდეს variables.-ით: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>ფაილი %name სრულად არ მოვიდა (ატვირთვის შეცდომა %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>ფაილი %name %max ბაიტზე დიდია.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>ფაილის %name შემოწმება ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>მუტაციები გამორთულია ამ საიტზე წვდომაში (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>მუტაცია გაგზავნეთ POST-ით.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>შედით სისტემაში შიგთავსის შესაცვლელად.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API გასაღებს არ აქვს მოქმედების არე %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>სესიით გაგზავნილ მუტაციას სჭირდება სესიის ფორმის ტოკენი (სათაური X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl გამორთულია: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] არც ერთ ჰოსტს არ ასახელებს.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>მისამართი უნდა იყოს https მისამართი.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>ჰოსტი %host არ არის graphql.ini [GraphQLSettings] UploadFromUrlHostList[]-ში.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>ფაილის მიღება ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload მხოლოდ შეყვანის ტიპია.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload ტიპის ცვლადი იღებს multipart მოთხოვნის ფაილს.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>დისტანციური id %remoteId უკვე დაკავებულია.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>შიგთავსს უკვე აქვს თარგმანი %language ენაზე: გამოიყენეთ updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>მიუთითეთ მინიმუმ ერთი ველი.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>ახალი ვერსიის შექმნა ვერ მოხერხდა (შიგთავსს ძალიან ბევრი მონახაზი აქვს).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>ვერსია %version არ არის მონახაზი.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent-ს სჭირდება ზუსტად ერთი შემდეგთაგან: id ან nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>მდებარეობის გადატანა საკუთარი თავის ქვეშ შეუძლებელია.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>შიგთავსს უკვე აქვს მდებარეობა %parentId-ის ქვეშ.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>ველის %field მნიშვნელობის შენახვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>შიგთავსის ენა %language არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>შიგთავსის კლასი %class სქემაში არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>შიგთავსი არ არსებობს, ან მისი წაკითხვის უფლება არ გაქვთ.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ამ შიგთავსზე ამის გაკეთების უფლება არ გაქვთ.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>კლასს %class არ აქვს ჩასაწერად ნებადართული ველი %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>ველი %field ორჯერ არის მითითებული.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>ველი %field იღებს ფაილს: გაგზავნეთ ატვირთვად (multipart მოთხოვნა).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>ველი %field ფაილს არ იღებს.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>ველს %field სჭირდება მნიშვნელობა.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>ფორმატი %format მხოლოდ ფორმატირებული ტექსტის ველებისთვისაა; %field იღებს მნიშვნელობას როგორც არის (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>ველი %field სავალდებულოა.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML-ის წაკითხვა ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content იღებს version-ს მხოლოდ id-სთან ერთად.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>გადახედვის ტოკენი არასწორია ან ვადაგასულია.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>არ არის წყარო (https://host ან https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>არ არის GraphQL API-ის მოქმედების არე: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

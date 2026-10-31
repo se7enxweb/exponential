@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>查詢以您的權限執行，使用目前的工作階段登入。</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds 秒內 %count 個</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>無限制</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>深度</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>複雜度</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>每個清單的項目數</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max（預設 %default）</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>每個使用者或金鑰的請求數</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>每個匿名位址的請求數</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>自我檢查（Introspection）</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>僅限持久化查詢</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>最大查詢</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes 位元組</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>最大上傳</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>不存在網站存取 %siteaccess。</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess 已開啟變更。</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess 已關閉變更。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess 已開啟 GraphQL API。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess 已關閉 GraphQL API。</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>無法寫入設定：%error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>回應快取已清除：移除了 %count 個回應。</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>勾選查詢旁的方塊以移除它。</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>無法移除此查詢：隨 PersistedQueryDirectoryList[] 中某個目錄提供的查詢須連同其檔案一併移除。</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>持久化查詢已移除。</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>變更</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>開啟</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API 及其變更在何處回應。這些按鈕會寫入 graphql.ini，與 ./console exp:graphql:enable 和 exp:graphql:disable 的作用相同。</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>變更設定</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>關閉變更</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>開啟變更</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>開啟</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>限制</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>此網站存取的 graphql.ini [GraphQLSettings]。</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>回應快取</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>持久化查詢的回應，依使用者權限保存，並在每次發布內容時過期。</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>已保存的回應</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count 個回應，%bytes 位元組</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>最長保存</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds 秒</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>上次過期</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>清除回應快取</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>持久化查詢</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>透過 ./console exp:graphql:persist 或由用戶端儲存（自動持久化查詢）；以名稱或 SHA-256 呼叫。</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>大小</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>隨附</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>已儲存</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>是，移除此查詢</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>尚無持久化查詢。</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API 金鑰</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>具有 graphql:read（查詢）或 graphql:write（變更）範圍的個人 API 金鑰。可在「API 存取」頁面或使用 ./console exp:graphql:keys 建立和撤銷。</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API 存取</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>所有金鑰</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>金鑰</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>擁有者</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>範圍</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>上次使用</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>有效</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>已過期</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>已撤銷</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>從未</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>尚無具有 GraphQL 範圍的 API 金鑰。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78877,6 +79157,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout 需要 id、identifier 和 urlAlias 其中恰好一個。</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart 請求的 operations 欄位不是一個 JSON 請求。</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart 請求的 map 欄位不是 JSON 物件。</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart 請求中沒有檔案 %field。</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>map 欄位中的路徑必須以 variables. 開頭：%path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>檔案 %name 未完整送達（上傳錯誤 %error）。</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>檔案 %name 大於 %max 位元組。</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>無法檢查檔案 %name。</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>此網站存取已關閉變更（graphql.ini [GraphQLSettings] MutationsEnabled）。</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>請用 POST 送出變更。</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>請登入後再修改內容。</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>此 API 金鑰沒有範圍 %scope。</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>使用工作階段的變更需要該工作階段的表單權杖（標頭 X-CSRF-Token）。</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl 已關閉：graphql.ini [GraphQLSettings] UploadFromUrlHostList[] 未列出任何主機。</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>位址必須是 https 位址。</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>主機 %host 不在 graphql.ini [GraphQLSettings] UploadFromUrlHostList[] 中。</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>無法取得該檔案。</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload 只能作為輸入型別。</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>型別為 Upload 的變數接收 multipart 請求中的檔案。</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>遠端 id %remoteId 已被使用。</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>此內容已有 %language 翻譯：請使用 updateContent。</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>請至少提供一個欄位。</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>無法建立新版本（此內容的草稿過多）。</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>版本 %version 不是草稿。</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent 需要 id 和 nodeId 中的恰好一個。</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>位置不能移到其自身之下。</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>此內容在 %parentId 之下已有位置。</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>無法儲存欄位 %field 的值。</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>不存在內容語言 %language。</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>結構描述中不存在內容類別 %class。</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>此內容不存在，或您無權讀取。</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>您無權對此內容執行此操作。</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>類別 %class 沒有可寫入的欄位 %field。</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>欄位 %field 被提供了兩次。</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>欄位 %field 接收檔案：請以上傳方式送出（multipart 請求）。</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>欄位 %field 不接收檔案。</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>欄位 %field 需要一個值。</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>格式 %format 僅適用於 RTF 欄位；%field 依原樣接收其值(RAW)。</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>欄位 %field 為必填。</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>無法讀取此 HTML。</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content 只有在提供 id 時才接受 version。</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>預覽權杖無效或已過期。</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>不是有效的來源（https://host 或 https://host:port）：%origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>不是 GraphQL API 的範圍：%scope（graphql:read、graphql:write）</translation>
     </message>
 </context>
 </TS>

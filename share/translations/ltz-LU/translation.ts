@@ -78777,6 +78777,286 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>D'Ufro leeft mat Äre Rechter, ugemellt mat dëser Sessioun.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count an %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>keng Limit</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Déift</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Komplexitéit</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elementer pro Lëscht</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (Standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Ufroen pro Benotzer oder Schlëssel</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Ufroen pro anonymer Adress</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Nëmme gespäichert Ufroen</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Gréisst Ufro</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Gréisst Eroplueden</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Et gëtt keen Site-Zougang %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>D'Mutatiounen sinn an %siteaccess ageschalt.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>D'Mutatiounen sinn an %siteaccess ausgeschalt.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>D'GraphQL-API ass an %siteaccess ageschalt.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>D'GraphQL-API ass an %siteaccess ausgeschalt.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>D'Astellunge konnten net geschriwwe ginn: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>De Äntwert-Cache gouf eidel gemaach: %count Äntwerten ewechgeholl.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Kräizt d'Këscht nieft der Ufro un, fir se ewechzehuelen.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>D'Ufro konnt net ewechgeholl ginn: eng Ufro, déi an engem Verzeechnes vu PersistedQueryDirectoryList[] matgeliwwert gëtt, gëtt mat hirem Fichier ewechgeholl.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Déi gespäichert Ufro gouf ewechgeholl.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutatiounen</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>un</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Site-Zougäng</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Wou d'API an hir Mutatiounen äntweren. D'Knäppercher schreiwen graphql.ini, sou wéi ./console exp:graphql:enable an exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site-Zougang</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Änneren</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Ausschalten</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutatiounen aus</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutatiounen un</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aschalten</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limitten</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] vun dësem Site-Zougang.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Äntwert-Cache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>D'Äntwerte vu gespäicherten Ufroen, pro Benotzerrechter gehalen an ofgelaf, all Kéier wann Inhalt publizéiert gëtt.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zoustand</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Gehalen Äntwerten</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count Äntwerten, %bytes Bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Héchstens gehalen</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Lescht ofgelaf</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Äntwert-Cache eidel maachen</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Gespäichert Ufroen</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Gespäichert mat ./console exp:graphql:persist oder vu Clienten (automatesch gespäichert Ufroen); mam Numm oder SHA-256 opgeruff.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nimm</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Gréisst</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wou</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ewechhuelen</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>matgeliwwert</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>gespäichert</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Jo, dës Ufro ewechhuelen</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Nach keng gespäichert Ufro.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-Schlësselen</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Perséinlech API-Schlësselen mam Beräich graphql:read (Ufroen) oder graphql:write (Mutatiounen). Maacht a widderruft se op der Säit API-Zougang oder mat ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-Zougang</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>All Schlësselen</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Schlëssel</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Numm</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Besëtzer</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Beräicher</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Fir d'lescht benotzt</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ofgelaf</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>widderruff</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ni</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Nach keen API-Schlëssel mat engem GraphQL-Beräich.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout brauch genee eent vun id, identifier an urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>D'Feld operations vun enger Multipart-Ufro ass keng eenzeg JSON-Ufro.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>D'Feld map vun enger Multipart-Ufro ass keen JSON-Objet.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>D'Multipart-Ufro huet keen Fichier %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>E Wee vum Feld map muss mat variables. ufänken: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>De Fichier %name ass net komplett ukomm (Eropluedfeeler %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>De Fichier %name ass méi grouss wéi %max Bytes.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>De Fichier %name konnt net gepréift ginn.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutatiounen sinn an dësem Site-Zougang ausgeschalt (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Schéckt eng Mutatioun mat POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Mellt Iech un, fir Inhalt z'änneren.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>De API-Schlëssel huet de Beräich %scope net.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Eng Mutatioun mat enger Sessioun brauch de Formulaire-Token vun der Sessioun (Header X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl ass ausgeschalt: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] nennt keen Host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>D'Adress muss eng https-Adress sinn.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Den Host %host steet net an graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>De Fichier konnt net ofgeruff ginn.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload ass nëmmen en Input-Typ.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Eng Variabel vum Typ Upload hëlt e Fichier vun enger Multipart-Ufro.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>D'Remote-id %remoteId ass scho vergi.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Den Inhalt huet schonn eng Iwwersetzung op %language: benotzt updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Gitt mindestens ee Feld un.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Et konnt keng nei Versioun erstallt ginn (den Inhalt huet ze vill Entwërf).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>D'Versioun %version ass keen Entworf.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent brauch genee eent vun id an nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Eng Plaz kann net ënner sech selwer geréckelt ginn.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Den Inhalt huet schonn eng Plaz ënner %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>De Wäert vum Feld %field konnt net gespäichert ginn.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Et gëtt keng Inhaltssprooch %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>Et gëtt keng Inhaltsklass %class am Schema.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Den Inhalt ass net do, oder Dir däerft en net liesen.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>Dir däerft dat net mat dësem Inhalt maachen.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>D'Klass %class huet keen Feld %field, dat geschriwwe ka ginn.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>D'Feld %field ass zweemol uginn.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>D'Feld %field hëlt e Fichier: schéckt en als Eroplueden (eng Multipart-Ufro).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>D'Feld %field hëlt keen Fichier.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>D'Feld %field brauch e Wäert.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>De Format %format ass nëmme fir Rich-Text-Felder; %field hëlt säi Wäert, wéi e ass (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>D'Feld %field ass obligatoresch.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>Den HTML konnt net gelies ginn.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content hëlt version nëmme mat id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>De Virschau-Token ass net gëlteg oder ass ofgelaf.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Keen Origin (https://host oder https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Kee Beräich vun der GraphQL-API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

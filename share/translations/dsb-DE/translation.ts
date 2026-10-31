@@ -78807,6 +78807,286 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Napšašowanje se z wašymi pšawami wuwjeźo, pśizjawjone w toś tej sesiji.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count w %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>žedna granica</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Głubokosć</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksnosć</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Zapiski na lisćinu</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Póžedanja na wužywarja abo kluc</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Póžedanja na anonymnu adresu</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcija</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Jano skłaźone napšašowanja</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Nejwětše napšašowanje</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtow</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Nejwětše nagraśe</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Njejo pśistup k sedłu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutacije su w %siteaccess zašaltowane.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutacije su w %siteaccess wótšaltowane.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API jo w %siteaccess zašaltowane.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API jo w %siteaccess wótšaltowane.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Nastajenja njedaju se pisaś: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Cache wótegronow jo se wuprozniła: %count wótegronow wótpórane.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Markěrujśo kašćik pódla napšašowanja, aby jo wótpórał.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Napšašowanje njedajo se wótpóraś: napšašowanje dodane w zapisu z PersistedQueryDirectoryList[] wótpórajo se ze swójeju dataju.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Skłaźone napšašowanje jo se wótpórało.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacije</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>zašaltowane</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>wótšaltowane</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Pśistupy k sedłu</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Źož API a jogo mutacije wótegranjaju. Tłocaški pišu graphql.ini, kaž ./console exp:graphql:enable a exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Pśistup k sedłu</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změniś</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Wótšaltowaś</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutacije wótšaltowaś</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutacije zašaltowaś</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Zašaltowaś</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Granice</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] toś togo pśistupa k sedłu.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache wótegronow</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Wótegrona skłaźonych napšašowanjow, wobchowane pó pšawach wužywarja a spadnjone, ga se wopśimjeśe wózjawijo.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Wobchowane wótegrona</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count wótegronow, %bytes bajtow</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Wobchowane maksimalnje</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Slědne spadnjenje</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Cache wótegronow wuprozniś</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Skłaźone napšašowanja</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Składowane z ./console exp:graphql:persist abo wót klientow (awtomatiske skłaźone napšašowanja); wołane pó mjenju abo SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Mjenja</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Wjelikosć</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Źož</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Wótpóraś</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>dodane</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>składowane</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Jo, toś to napšašowanje wótpóraś</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Hyšći žedno skłaźone napšašowanje.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-kluce</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Wósobinske API-kluce z wobceŕkom graphql:read (napšašowanja) abo graphql:write (mutacije). Napórajśo a wótwołajśo je na boku API-pśistup abo z ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-pśistup</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Wšykne kluce</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kluc</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Mě</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Wobsejaŕ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Wobceŕki</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Slědny raz wužyty</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiwny</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>spadnjony</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>wótwołany</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nigda</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Hyšći žeden API-kluc z GraphQL-wobceŕkom.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78909,6 +79189,178 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout trjeba rowno jadno z id, identifier a urlAlias.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>Pólo operations multipart-póžedanja njejo jadno JSON-póžedanje.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>Pólo map multipart-póžedanja njejo JSON-objekt.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>Multipart-póžedanje njewopśimujo dataju %field.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>Sćažka póla map musy se z variables. zachopiś: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>Dataja %name njejo dopołnje dojšła (zmólka nagraśa %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>Dataja %name jo wětša ako %max bajtow.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>Dataja %name njedajo se pśeglědowaś.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>Mutacije su w toś tom pśistupje k sedłu wótšaltowane (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>Pósćelśo mutaciju z POST.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>Pśizjawśo se, aby wopśimjeśe změnił.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-kluc njama wobceŕk %scope.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>Mutacija ze sesiju trjeba formularowy token sesije (głowa X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl jo wótšaltowane: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] njemjenijo žeden host.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>Adresa musy https-adresa byś.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>Host %host njejo w graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>Dataja njedajo se wobstaraś.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload jo jano typ zapódaśa.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Wariabla typa Upload pśiwzejo dataju multipart-póžedanja.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>Zdalny id %remoteId jo južo wužyty.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>Wopśimjeśe ma južo pśełožk do %language: wužywajśo updateContent.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>Pódajśo nanejmjenjej jadno pólo.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>Nowa wersija njedajo se napóraś (wopśimjeśe ma pśewjele naćiskow).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>Wersija %version njejo naćisk.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent trjeba rowno jadno z id a nodeId.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>Městno njedajo se pód samo se pśesunuś.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>Wopśimjeśe ma južo městno pód %parentId.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>Gódnota póla %field njedajo se składowaś.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>Njejo rěc wopśimjeśa %language.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>W šemje njejo klasa wopśimjeśa %class.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>Wopśimjeśe njeeksistěrujo abo njesmějośo jo cytaś.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>To njesmějośo z toś tym wopśimjeśim cyniś.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>Klasa %class njama pisajobne pólo %field.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>Pólo %field jo dwójcy pódane.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>Pólo %field pśiwzejo dataju: pósćelśo ju ako nagraśe (multipart-póžedanje).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>Pólo %field njepśiwzejo žednu dataju.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>Pólo %field trjeba gódnotu.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>Format %format jo jano za póla z formatěrowanym tekstom; %field pśiwzejo swóju gódnotu tak, kaž jo (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>Pólo %field jo trěbne.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML njedajo se cytaś.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content pśiwzejo version jano z id.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>Token pśeglěda njejo płaśiwy abo jo spadnuł.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>Žeden origin (https://host abo https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>Žeden wobceŕk GraphQL API: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

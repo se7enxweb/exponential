@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>पृच्छा भवतः अधिकारैः, अनेन सत्रेण प्रविष्टः सन् चलति।</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds से मध्ये %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>सीमा नास्ति</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>गभीरता</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>जटिलता</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>प्रतिसूचि वस्तूनि</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (पूर्वनिर्धारितम् %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>प्रत्युपयोक्तृ अथवा कुञ्चिका अनुरोधाः</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>प्रति अज्ञातसङ्केतं अनुरोधाः</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>आत्मनिरीक्षणम्</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>केवलं संगृहीताः पृच्छाः</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>बृहत्तमा पृच्छा</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes बाइट्</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>बृहत्तमम् उपारोपणम्</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>जालस्थलप्रवेशः %siteaccess नास्ति।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess मध्ये म्यूटेशन्-क्रियाः सक्रियाः सन्ति।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess मध्ये म्यूटेशन्-क्रियाः निष्क्रियाः सन्ति।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess मध्ये GraphQL API सक्रियम् अस्ति।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess मध्ये GraphQL API निष्क्रियम् अस्ति।</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>विन्यासाः लेखितुं न शक्ताः: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>उत्तर-क्याश् रिक्तीकृतम्: %count उत्तराणि अपसारितानि।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>पृच्छाम् अपसारयितुं तस्याः पार्श्वे स्थितं पेटिकां चिह्नयतु।</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>पृच्छा अपसारयितुं न शक्ता: PersistedQueryDirectoryList[] इत्यस्य निर्देशिकायां प्रदत्ता पृच्छा स्वसञ्चिकया सह अपसार्यते।</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>संगृहीता पृच्छा अपसारिता।</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>म्यूटेशन्-क्रियाः</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>सक्रियम्</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>निष्क्रियम्</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>जालस्थलप्रवेशाः</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API तस्य म्यूटेशन्-क्रियाः च कुत्र उत्तरं ददति। गुण्डिकाः graphql.ini लिखन्ति, यथा ./console exp:graphql:enable exp:graphql:disable च कुरुतः।</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>जालस्थलप्रवेशः</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>परिवर्तयतु</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>निष्क्रियं करोतु</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>म्यूटेशन् निष्क्रियाः</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>म्यूटेशन् सक्रियाः</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>सक्रियं करोतु</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>सीमाः</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>अस्य जालस्थलप्रवेशस्य graphql.ini [GraphQLSettings]।</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>उत्तर-क्याश्</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>संगृहीतानां पृच्छानाम् उत्तराणि, उपयोक्तृ-अधिकारानुसारं रक्षितानि, यदा यदा विषयवस्तु प्रकाश्यते तदा कालातीतानि।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थितिः</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>रक्षितानि उत्तराणि</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count उत्तराणि, %bytes बाइट्</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>अधिकतमं रक्षितम्</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds से</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>अन्तिमः कालातीतः</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>उत्तर-क्याश् रिक्तीकरोतु</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>संगृहीताः पृच्छाः</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist द्वारा, अथवा ग्राहकैः संगृहीताः (स्वचालित-संगृहीताः पृच्छाः); नाम्ना अथवा SHA-256 द्वारा आहूयन्ते।</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>नामानि</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकारः</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>कुत्र</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>अपसारयतु</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>प्रदत्ता</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>संगृहीता</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>आम्, इमां पृच्छाम् अपसारयतु</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>अद्यावधि संगृहीता पृच्छा नास्ति।</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-कुञ्चिकाः</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (पृच्छाः) अथवा graphql:write (म्यूटेशन्-क्रियाः) व्याप्तियुक्ताः व्यक्तिगत-API-कुञ्चिकाः। ताः API-प्रवेश-पृष्ठे, अथवा ./console exp:graphql:keys द्वारा निर्मातु निरस्यतु च।</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-प्रवेशः</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>सर्वाः कुञ्चिकाः</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>कुञ्चिका</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>स्वामी</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>व्याप्तयः</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>अन्तिमप्रयोगः</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>सक्रिया</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>कालातीता</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>निरस्ता</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>कदापि न</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>अद्यावधि GraphQL-व्याप्तियुक्ता API-कुञ्चिका नास्ति।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout कृते id, identifier, urlAlias इत्येषु एकम् एव आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>multipart-अनुरोधस्य operations-क्षेत्रम् एकः JSON-अनुरोधः नास्ति।</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>multipart-अनुरोधस्य map-क्षेत्रम् JSON-वस्तु नास्ति।</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>multipart-अनुरोधे %field सञ्चिका नास्ति।</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>क्षेत्रमानचित्रस्य मार्गः variables. इत्यनेन आरभेत: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>सञ्चिका %name सम्पूर्णा न प्राप्ता (उपारोपणदोषः %error)।</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>सञ्चिका %name %max बाइट्-परिमाणात् बृहत्तरा अस्ति।</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>सञ्चिका %name परीक्षितुं न शक्ता।</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>अस्मिन् जालस्थलप्रवेशे म्यूटेशन्-क्रियाः निष्क्रियाः सन्ति (graphql.ini [GraphQLSettings] MutationsEnabled)।</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>म्यूटेशन्-क्रियां POST द्वारा प्रेषयतु।</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>विषयवस्तु परिवर्तयितुं प्रविशतु।</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>API-कुञ्चिकायाः %scope व्याप्तिः नास्ति।</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>सत्रयुक्तायाः म्यूटेशन्-क्रियायाः सत्रस्य प्रपत्र-टोकन् आवश्यकम् (शीर्षकम् X-CSRF-Token)।</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl निष्क्रियम् अस्ति: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] इत्यत्र कोऽपि होस्ट् नास्ति।</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>सङ्केतः https-सङ्केतः भवेत्।</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>होस्ट् %host graphql.ini [GraphQLSettings] UploadFromUrlHostList[] इत्यत्र नास्ति।</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>सञ्चिका आनेतुं न शक्ता।</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload केवलम् आगत-प्रकारः अस्ति।</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>Upload-प्रकारस्य चरः multipart-अनुरोधस्य सञ्चिकां गृह्णाति।</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>दूरस्थ-परिचयः %remoteId पूर्वमेव प्रयुक्तः।</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>विषयवस्तुनः %language भाषायाम् अनुवादः पूर्वमेव अस्ति: updateContent प्रयुज्यताम्।</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>न्यूनातिन्यूनम् एकं क्षेत्रं ददातु।</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>नूतनं संस्करणं कर्तुं न शक्तम् (विषयवस्तुनः अत्यधिकानि प्रारूपाणि सन्ति)।</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>संस्करणम् %version प्रारूपं नास्ति।</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent इत्यस्य id nodeId इत्यनयोः यथार्थम् एकम् आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>स्थानं स्वस्य अधः चालयितुं न शक्यते।</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>विषयवस्तुनः %parentId अधः पूर्वमेव स्थानम् अस्ति।</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>क्षेत्रस्य %field मूल्यं संग्रहीतुं न शक्तम्।</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>विषयवस्तुभाषा %language नास्ति।</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>स्कीमायां विषयवस्तुवर्गः %class नास्ति।</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>विषयवस्तु नास्ति, अथवा भवान् तत् पठितुं न अर्हति।</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>भवान् अस्मिन् विषयवस्तुनि एतत् कर्तुं न अर्हति।</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>वर्गे %class लेखनीयं क्षेत्रं %field नास्ति।</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>क्षेत्रम् %field द्विवारं दत्तम्।</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>क्षेत्रम् %field सञ्चिकां गृह्णाति: ताम् उपारोपणरूपेण प्रेषयतु (multipart-अनुरोधः)।</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>क्षेत्रम् %field सञ्चिकां न गृह्णाति।</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>क्षेत्रस्य %field मूल्यम् आवश्यकम्।</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>प्रारूपः %format केवलं समृद्धपाठक्षेत्रेभ्यः; %field स्वमूल्यं यथावत् गृह्णाति (RAW)।</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>क्षेत्रम् %field अनिवार्यम्।</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML पठितुं न शक्तम्।</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content केवलं id सह version गृह्णाति।</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>पूर्वावलोकन-टोकन् अमान्यम् अथवा कालातीतम्।</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>origin नास्ति (https://host अथवा https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>GraphQL API इत्यस्य व्याप्तिः नास्ति: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>

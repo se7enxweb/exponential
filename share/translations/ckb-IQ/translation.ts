@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>پرسیارەکە بە مافەکانی تۆ جێبەجێ دەکرێت، بە چوونەژوورەوە لەم دانیشتنەدا.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count لە %seconds چرکەدا</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>بێ سنوور</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>قووڵی</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ئاڵۆزی</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>بڕگە بۆ هەر لیستێک</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (بنەڕەت %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>داواکاری بۆ هەر بەکارهێنەر یان کلیلێک</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>داواکاری بۆ هەر ناونیشانێکی نەناسراو</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>تەنها پرسیارە پاشەکەوتکراوەکان</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>گەورەترین پرسیار</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes بایت</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>گەورەترین بارکردن</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>هیچ دەستگەیشتنی ماڵپەڕی %siteaccess نییە.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>گۆڕینەکان لە %siteaccess دا هەڵکراون.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>گۆڕینەکان لە %siteaccess دا کوژاونەتەوە.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>API ی GraphQL لە %siteaccess دا هەڵکراوە.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>API ی GraphQL لە %siteaccess دا کوژاوەتەوە.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ڕێکخستنەکان نەنووسران: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>کاشی وەڵام پاک کرایەوە: %count وەڵام لابران.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>بۆ لابردنی پرسیارەکە، خانەی تەنیشتی نیشان بکە.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>پرسیارەکە لانەبرا: پرسیارێک کە لە بوخچەیەکی PersistedQueryDirectoryList[] دا هاتووە لەگەڵ فایلەکەی لادەبرێت.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>پرسیارە پاشەکەوتکراوەکە لابرا.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>گۆڕینەکان</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>هەڵکراو</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>کوژاوە</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>دەستگەیشتنەکانی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>شوێنی وەڵامدانەوەی API و گۆڕینەکانی. دوگمەکان graphql.ini دەنووسن، وەک ./console exp:graphql:enable و exp:graphql:disable دەیکەن.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دەستگەیشتنی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API ی GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>گۆڕین</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>کوژاندنەوە</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>گۆڕینەکان بکوژێنەوە</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>گۆڕینەکان هەڵبکە</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>هەڵکردن</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>سنوورەکان</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ی ئەم دەستگەیشتنی ماڵپەڕە.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>کاشی وەڵام</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>وەڵامی پرسیارە پاشەکەوتکراوەکان، بەپێی مافەکانی بەکارهێنەر هەڵدەگیرێن و هەر کاتێک ناوەڕۆک بڵاو بکرێتەوە بەسەردەچن.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>دۆخ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>وەڵامە هەڵگیراوەکان</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count وەڵام، %bytes بایت</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>زۆرترین ماوەی هەڵگرتن</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds چرکە</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>دوایین بەسەرچوون</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>کاشی وەڵام پاک بکەرەوە</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>پرسیارە پاشەکەوتکراوەکان</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>بە ./console exp:graphql:persist یان لەلایەن ڕاژەخوازەکانەوە پاشەکەوت کراون (پرسیاری پاشەکەوتکراوی خۆکار)؛ بە ناو یان SHA-256 بانگ دەکرێن.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ناوەکان</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>قەبارە</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>شوێن</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>لابردن</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>هاتوو</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>پاشەکەوتکراو</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>بەڵێ، ئەم پرسیارە لاببە</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>هێشتا هیچ پرسیارێکی پاشەکەوتکراو نییە.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>کلیلەکانی API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>کلیلی API ی کەسی بە بواری graphql:read (پرسیارەکان) یان graphql:write (گۆڕینەکان). لە پەڕەی دەستگەیشتنی API یان بە ./console exp:graphql:keys دروستیان بکە و هەڵیانبوەشێنەوە.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>دەستگەیشتنی API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>هەموو کلیلەکان</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کلیل</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ناو</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>خاوەن</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>بوارەکان</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>دوایین بەکارهێنان</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>چالاک</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>بەسەرچوو</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>هەڵوەشێنراوە</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هەرگیز</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>هێشتا هیچ کلیلێکی API بە بواری GraphQL نییە.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -78879,6 +79159,178 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>layout needs exactly one of id, identifier and urlAlias.</source>
         <translation>layout پێویستی بە ڕێک یەکێک لە id، identifier و urlAlias هەیە.</translation>
+    </message>
+    <message>
+        <source>The field operations of a multipart request is not one JSON request.</source>
+        <translation>خانەی operations ی داواکارییەکی multipart یەک داواکاری JSON نییە.</translation>
+    </message>
+    <message>
+        <source>The field map of a multipart request is not a JSON object.</source>
+        <translation>خانەی map ی داواکارییەکی multipart ئۆبجێکتێکی JSON نییە.</translation>
+    </message>
+    <message>
+        <source>The multipart request has no file %field.</source>
+        <translation>داواکارییە multipart ەکە هیچ فایلێکی %field ی تێدا نییە.</translation>
+    </message>
+    <message>
+        <source>A path of the field map must start with variables.: %path</source>
+        <translation>ڕێڕەوێکی خانەی map دەبێت بە variables. دەست پێ بکات: %path</translation>
+    </message>
+    <message>
+        <source>The file %name did not arrive whole (upload error %error).</source>
+        <translation>فایلی %name بە تەواوی نەگەیشت (هەڵەی بارکردن %error).</translation>
+    </message>
+    <message>
+        <source>The file %name is larger than %max bytes.</source>
+        <translation>فایلی %name لە %max بایت گەورەترە.</translation>
+    </message>
+    <message>
+        <source>The file %name could not be checked.</source>
+        <translation>فایلی %name نەپشکنرا.</translation>
+    </message>
+    <message>
+        <source>Mutations are switched off in this siteaccess (graphql.ini [GraphQLSettings] MutationsEnabled).</source>
+        <translation>گۆڕینەکان (mutations) لەم دەستگەیشتنی ماڵپەڕەدا کوژاونەتەوە (graphql.ini [GraphQLSettings] MutationsEnabled).</translation>
+    </message>
+    <message>
+        <source>Send a mutation with POST.</source>
+        <translation>گۆڕینێک بە POST بنێرە.</translation>
+    </message>
+    <message>
+        <source>Sign in to change content.</source>
+        <translation>بۆ گۆڕینی ناوەڕۆک بچۆ ژوورەوە.</translation>
+    </message>
+    <message>
+        <source>The API key has no scope %scope.</source>
+        <translation>کلیلی API ەکە بواری %scope ی نییە.</translation>
+    </message>
+    <message>
+        <source>A mutation with a session needs the form token of the session (header X-CSRF-Token).</source>
+        <translation>گۆڕینێک بە دانیشتنەوە پێویستی بە نیشانەی فۆرمی دانیشتنەکە هەیە (سەردێڕی X-CSRF-Token).</translation>
+    </message>
+    <message>
+        <source>uploadFromUrl is switched off: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] names no host.</source>
+        <translation>uploadFromUrl کوژاوەتەوە: graphql.ini [GraphQLSettings] UploadFromUrlHostList[] هیچ میوانخانەیەک ناو نابات.</translation>
+    </message>
+    <message>
+        <source>The address must be an https address.</source>
+        <translation>ناونیشانەکە دەبێت ناونیشانێکی https بێت.</translation>
+    </message>
+    <message>
+        <source>The host %host is not in graphql.ini [GraphQLSettings] UploadFromUrlHostList[].</source>
+        <translation>میوانخانەی %host لە graphql.ini [GraphQLSettings] UploadFromUrlHostList[] دا نییە.</translation>
+    </message>
+    <message>
+        <source>The file could not be fetched.</source>
+        <translation>فایلەکە نەهێنرا.</translation>
+    </message>
+    <message>
+        <source>Upload is an input type only.</source>
+        <translation>Upload تەنها جۆرێکی تێخستنە.</translation>
+    </message>
+    <message>
+        <source>A variable of type Upload takes a file of a multipart request.</source>
+        <translation>گۆڕاوێکی جۆری Upload فایلێکی داواکارییەکی multipart وەردەگرێت.</translation>
+    </message>
+    <message>
+        <source>The remote id %remoteId is taken.</source>
+        <translation>id ی دوور %remoteId پێشتر گیراوە.</translation>
+    </message>
+    <message>
+        <source>The content has a translation in %language already: use updateContent.</source>
+        <translation>ناوەڕۆکەکە پێشتر وەرگێڕانێکی بە %language هەیە: updateContent بەکاربهێنە.</translation>
+    </message>
+    <message>
+        <source>Give at least one field.</source>
+        <translation>لانیکەم یەک خانە بدە.</translation>
+    </message>
+    <message>
+        <source>No new version could be made (the content has too many drafts).</source>
+        <translation>هیچ وەشانێکی نوێ دروست نەکرا (ناوەڕۆکەکە ڕەشنووسی زۆری هەیە).</translation>
+    </message>
+    <message>
+        <source>Version %version is not a draft.</source>
+        <translation>وەشانی %version ڕەشنووس نییە.</translation>
+    </message>
+    <message>
+        <source>deleteContent needs exactly one of id and nodeId.</source>
+        <translation>deleteContent پێویستی بە ڕێک یەکێک لە id و nodeId هەیە.</translation>
+    </message>
+    <message>
+        <source>A location cannot be moved below itself.</source>
+        <translation>شوێنێک ناتوانرێت بخرێتە ژێر خۆیەوە.</translation>
+    </message>
+    <message>
+        <source>The content has a location below %parentId already.</source>
+        <translation>ناوەڕۆکەکە پێشتر شوێنێکی لە ژێر %parentId هەیە.</translation>
+    </message>
+    <message>
+        <source>The value of the field %field could not be stored.</source>
+        <translation>بەهای خانەی %field پاشەکەوت نەکرا.</translation>
+    </message>
+    <message>
+        <source>There is no content language %language.</source>
+        <translation>هیچ زمانی ناوەڕۆکی %language نییە.</translation>
+    </message>
+    <message>
+        <source>There is no content class %class in the schema.</source>
+        <translation>هیچ پۆلی ناوەڕۆکی %class لە سکیماکەدا نییە.</translation>
+    </message>
+    <message>
+        <source>The content is not there, or you may not read it.</source>
+        <translation>ناوەڕۆکەکە بوونی نییە، یان ڕێگەت پێ نادرێت بیخوێنیتەوە.</translation>
+    </message>
+    <message>
+        <source>You may not do this to this content.</source>
+        <translation>ڕێگەت پێ نادرێت ئەمە بەم ناوەڕۆکە بکەیت.</translation>
+    </message>
+    <message>
+        <source>The class %class has no field %field that may be written.</source>
+        <translation>پۆلی %class هیچ خانەیەکی %field ی نییە کە بتوانرێت بنووسرێت.</translation>
+    </message>
+    <message>
+        <source>The field %field is given twice.</source>
+        <translation>خانەی %field دوو جار دراوە.</translation>
+    </message>
+    <message>
+        <source>The field %field takes a file: send it as upload (a multipart request).</source>
+        <translation>خانەی %field فایل وەردەگرێت: وەک بارکردن بینێرە (داواکارییەکی multipart).</translation>
+    </message>
+    <message>
+        <source>The field %field takes no file.</source>
+        <translation>خانەی %field فایل وەرناگرێت.</translation>
+    </message>
+    <message>
+        <source>The field %field needs a value.</source>
+        <translation>خانەی %field پێویستی بە بەهایەک هەیە.</translation>
+    </message>
+    <message>
+        <source>The format %format is only for rich text fields; %field takes its value as it is (RAW).</source>
+        <translation>فۆرماتی %format تەنها بۆ خانەکانی دەقی دەوڵەمەندە؛ %field بەهاکەی وەک خۆی وەردەگرێت (RAW).</translation>
+    </message>
+    <message>
+        <source>The field %field is required.</source>
+        <translation>خانەی %field پێویستە.</translation>
+    </message>
+    <message>
+        <source>The HTML could not be read.</source>
+        <translation>HTML ەکە نەخوێنرایەوە.</translation>
+    </message>
+    <message>
+        <source>content takes version with id only.</source>
+        <translation>content تەنها لەگەڵ id دا version وەردەگرێت.</translation>
+    </message>
+    <message>
+        <source>The preview token is not valid or has expired.</source>
+        <translation>نیشانەی پێشبینین دروست نییە یان بەسەرچووە.</translation>
+    </message>
+    <message>
+        <source>Not an origin (https://host or https://host:port): %origin</source>
+        <translation>سەرچاوەیەک نییە (https://host یان https://host:port): %origin</translation>
+    </message>
+    <message>
+        <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
+        <translation>بوارێکی API ی GraphQL نییە: %scope (graphql:read, graphql:write)</translation>
     </message>
 </context>
 </TS>
