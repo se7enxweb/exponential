@@ -79055,6 +79055,14 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Enweghị igodo API nwere mpaghara GraphQL ka ugbu a.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Agbanyụla GraphQL API na Nnweta saịtị %siteaccess, nke na-egosi ibe a; tebụl dị n'okpuru na-egosi ebe ọ na-aza.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Maka Nnweta saịtị %siteaccess, nke na-egosi ibe a.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

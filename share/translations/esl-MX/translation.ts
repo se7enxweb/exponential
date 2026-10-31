@@ -83316,6 +83316,14 @@ Gracias por la retroalimentación</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Aún no hay ninguna clave de API con un ámbito GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>La API GraphQL está desactivada en el acceso al sitio %siteaccess, que muestra esta página; la tabla de abajo muestra dónde responde.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Para el acceso al sitio %siteaccess, que muestra esta página.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

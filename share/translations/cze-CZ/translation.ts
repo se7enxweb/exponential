@@ -80343,6 +80343,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Zatím žádný klíč API s rozsahem GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API je vypnuté v přístupu k webu %siteaccess, který zobrazuje tuto stránku; tabulka níže ukazuje, kde odpovídá.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Pro přístup k webu %siteaccess, který zobrazuje tuto stránku.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

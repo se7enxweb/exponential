@@ -79055,6 +79055,14 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Bado hakuna ufunguo wa API wenye wigo wa GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API imezimwa katika siteaccess %siteaccess, inayoonyesha ukurasa huu; jedwali lililo hapa chini linaonyesha mahali inapojibu.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Kwa siteaccess %siteaccess, inayoonyesha ukurasa huu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

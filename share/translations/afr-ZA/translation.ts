@@ -79087,6 +79087,14 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Nog geen API-sleutel met 'n GraphQL-bestek nie.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Die GraphQL-API is afgeskakel in die werftoegang %siteaccess, wat hierdie bladsy wys; die tabel hieronder wys waar dit antwoord.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Vir die werftoegang %siteaccess, wat hierdie bladsy wys.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

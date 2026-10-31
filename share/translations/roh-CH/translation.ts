@@ -79057,6 +79057,14 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Anc nagina clav d'API cun ina sfera GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>L'API GraphQL è deactivada en l'access a la website %siteaccess, che mussa questa pagina; la tabella sutvart mussa nua ch'ella respunda.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Per l'access a la website %siteaccess, che mussa questa pagina.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

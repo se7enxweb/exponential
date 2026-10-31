@@ -79055,6 +79055,14 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Hîn mifteyeke API bi qadeke GraphQL tune ye.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>API ya GraphQL di gihîştina malperê %siteaccess de, ku vê rûpelê nîşan dide, girtî ye; tabloya li jêr nîşan dide ku ew li ku bersiv dide.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ji bo gihîştina malperê %siteaccess, ku vê rûpelê nîşan dide.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

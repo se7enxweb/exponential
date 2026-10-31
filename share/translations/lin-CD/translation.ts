@@ -79057,6 +79057,14 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Fungola moko te ya API na etando ya GraphQL naino.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API ekangami na siteaccess %siteaccess, oyo ezali kolakisa lokasa oyo; tableau oyo ezali na nse elakisi esika eyanolaka.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Mpo na siteaccess %siteaccess, oyo ezali kolakisa lokasa oyo.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

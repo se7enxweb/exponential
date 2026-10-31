@@ -79057,6 +79057,14 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Chan eil iuchair API le sgòp GraphQL ann fhathast.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Tha an API GraphQL dheth san inntrigeadh làraich %siteaccess, a tha a' sealltainn na duilleige seo; tha an clàr gu h-ìosal a' sealltainn càite am freagair e.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Airson an inntrigidh làraich %siteaccess, a tha a' sealltainn na duilleige seo.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

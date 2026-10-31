@@ -79057,6 +79057,14 @@ Düyünün sinfini dəyişdirmə funksiyasından istifadə edərək dəyişməli
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Hələ GraphQL əhatəli API açarı yoxdur.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API bu səhifəni göstərən %siteaccess sayt girişində söndürülüb; aşağıdakı cədvəl onun harada cavab verdiyini göstərir.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Bu səhifəni göstərən %siteaccess sayt girişi üçün.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

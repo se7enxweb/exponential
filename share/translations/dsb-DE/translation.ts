@@ -79087,6 +79087,14 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Hyšći žeden API-kluc z GraphQL-wobceŕkom.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API jo w pśistupje k sedłu %siteaccess, kótaryž pokazujo toś ten bok, wótšaltowane; tabela dołojce pokazujo, źož wótegranja.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Za pśistup k sedłu %siteaccess, kótaryž pokazujo toś ten bok.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

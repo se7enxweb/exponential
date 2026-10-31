@@ -68,7 +68,12 @@ class Playground extends \Exponential\Runnable\ModuleView
         $tpl->setVariable( 'example', self::EXAMPLE );
         $tpl->setVariable( 'can_administrate', $canAdministrate );
         $tpl->setVariable( 'messages', $messages );
-        $tpl->setVariable( 'siteaccesses', \expGraphQLSetup::siteAccessStates() );
+        // this page shows the settings of its own siteaccess (admin); the table shows every siteaccess, so the notice
+        // that the API is off here says so, and names the siteaccess, when it answers elsewhere
+        $states = \expGraphQLSetup::siteAccessStates();
+        $tpl->setVariable( 'siteaccesses', $states );
+        $tpl->setVariable( 'siteaccess', (string)\expGraphQL::currentSiteAccess() );
+        $tpl->setVariable( 'answers_elsewhere', in_array( true, array_column( $states, 'enabled' ), true ) );
         $tpl->setVariable( 'mutations', \expGraphQLMutations::enabled() );
         $tpl->setVariable( 'limits', self::limits() );
         $tpl->setVariable( 'cache', \expGraphQLResponseCache::forInstallation()->stats() + array( 'enabled' => \expGraphQL::setting( 'ResponseCache', 'enabled' ) === 'enabled',

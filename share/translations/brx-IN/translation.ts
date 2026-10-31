@@ -79057,6 +79057,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>No API key with a GraphQL scope yet.</source>
         <translation>दासिमबो GraphQL सारि गोनां API साबि गैया।</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>बे फोथाखौ दिन्थिनाय साइट-प्रबेश %siteaccess आव GraphQL API बन्द जादों; गाहायनि फारिलाइआ बेयाव फिननाय होयो दिन्थियो।</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>बे फोथाखौ दिन्थिनाय साइट-प्रबेश %siteaccess नि थाखाय।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

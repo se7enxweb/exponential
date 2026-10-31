@@ -79055,6 +79055,14 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Weli ma jiro fure API oo leh baaxad GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API waa ka demsan yahay gelitaanka goobta %siteaccess, ee muujinaya boggan; shaxda hoose ayaa muujinaysa halka uu ka jawaabo.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Loogu talagalay gelitaanka goobta %siteaccess, ee muujinaya boggan.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

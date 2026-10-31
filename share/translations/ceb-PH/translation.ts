@@ -79057,6 +79057,14 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Wala pay API key nga adunay GraphQL scope.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Gipalong ang GraphQL API sa access sa site nga %siteaccess, nga nagpakita niining panid; ang talaan sa ubos nagpakita kon asa kini motubag.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Para sa access sa site nga %siteaccess, nga nagpakita niining panid.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

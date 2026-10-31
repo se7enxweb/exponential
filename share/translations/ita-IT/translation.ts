@@ -80464,6 +80464,14 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ancora nessuna chiave API con uno scope GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>L'API GraphQL è disattivata nel Siteaccess %siteaccess, che mostra questa pagina; la tabella sotto mostra dove risponde.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Per il Siteaccess %siteaccess, che mostra questa pagina.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

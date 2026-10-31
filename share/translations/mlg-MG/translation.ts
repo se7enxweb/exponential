@@ -79057,6 +79057,14 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Mbola tsy misy fanalahidy API misy sehatra GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Maty ny GraphQL API ao amin'ny fidirana amin'ny tranonkala %siteaccess, izay mampiseho ity pejy ity; asehon'ny tabilao etsy ambany ny toerana mamaliany.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ho an'ny fidirana amin'ny tranonkala %siteaccess, izay mampiseho ity pejy ity.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -79057,6 +79057,14 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Manaraqmi GraphQL chiqanniyuq API llave kanchu.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL APIqa wañuchisqam kay raphita rikuchiq %siteaccess web yaykunapi; uraypi kaq tablam rikuchin maypi kutichisqanta.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Kay raphita rikuchiq %siteaccess web yaykunapaq.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

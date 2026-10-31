@@ -79057,6 +79057,14 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Amagul caabi API bu am wàllu GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API bi dañu ko fay ci buntu sit %siteaccess, biy wone xët wii; tablo bi ci suuf day wone fi mu di tontu.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ngir buntu sit %siteaccess, biy wone xët wii.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

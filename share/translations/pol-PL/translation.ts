@@ -80269,6 +80269,14 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Brak kluczy API z zakresem GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API jest wyłączone w dostępie do witryny %siteaccess, który wyświetla tę stronę; tabela poniżej pokazuje, gdzie odpowiada.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Dla dostępu do witryny %siteaccess, który wyświetla tę stronę.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

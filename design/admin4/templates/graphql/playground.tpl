@@ -3,7 +3,8 @@
    API keys with a GraphQL scope, and a playground that posts the query to the session end point graphql/query
    (graphql_playground.js). The buttons need the policy graphql/administrate.
    Variables: enabled, library, library_version, endpoint, session_endpoint, schema (hash, classes), example,
-   can_administrate, messages (kind, text), siteaccesses (name, enabled, mutations), mutations, limits (label, value),
+   can_administrate, messages (kind, text), siteaccesses (name, enabled, mutations), siteaccess (the one showing this
+   page), answers_elsewhere (the API answers in some siteaccess), mutations, limits (label, value),
    cache (entries, bytes, expiredAt, enabled, ttl), persisted (hash, names, bytes, shipped), keys (id, prefix, name,
    owner, scopes, status, created, expires, lastUsed). *}
 <div class="a4-page a4-graphql" id="exp-graphql-playground">
@@ -19,20 +20,23 @@
 <div class="a4-notice is-{if eq( $m.kind, 'ok' )}ok{elseif eq( $m.kind, 'warn' )}warn{else}bad{/if}" role="{if eq( $m.kind, 'bad' )}alert{else}status{/if}"><p>{$m.text|wash}</p></div>
 {/foreach}
 
-{if $enabled|not}
+{if and( $enabled|not, $answers_elsewhere )}
+<div class="a4-notice is-info" role="status"><p>{'The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.'|i18n( 'design/admin/graphql',, hash( '%siteaccess', $siteaccess ) )|wash}</p></div>
+{elseif $enabled|not}
 <div class="a4-notice is-warn" role="status"><p>{'The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.'|i18n( 'design/admin/graphql' )}</p></div>
 {elseif $library|not}
 <div class="a4-notice is-bad" role="alert"><p>{'The GraphQL library (webonyx/graphql-php 15) is not installed.'|i18n( 'design/admin/graphql' )}</p></div>
 {/if}
 
 <section class="a4-card a4-section" aria-labelledby="graphql-facts">
-    <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="graphql-facts">{'End point'|i18n( 'design/admin/graphql' )}</h2></div>
+    <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="graphql-facts">{'End point'|i18n( 'design/admin/graphql' )}</h2>
+        <p class="a4-meta">{'For the siteaccess %siteaccess, which shows this page.'|i18n( 'design/admin/graphql',, hash( '%siteaccess', $siteaccess ) )|wash}</p></div>
     <div class="a4-card-body">
         <dl class="a4-facts is-rows">
             <dt>{'End point'|i18n( 'design/admin/graphql' )}</dt><dd><code class="a4-code">{$endpoint|wash}</code></dd>
             <dt>{'Library'|i18n( 'design/admin/graphql' )}</dt><dd>{if $library}webonyx/graphql-php {$library_version|wash}{else}&ndash;{/if}</dd>
             <dt>{'Schema'|i18n( 'design/admin/graphql' )}</dt><dd>{if $schema.hash}{'%count content classes, schema %hash'|i18n( 'design/admin/graphql',, hash( '%count', $schema.classes, '%hash', $schema.hash ) )|wash}{else}&ndash;{/if}</dd>
-            <dt>{'Mutations'|i18n( 'design/admin/graphql' )}</dt><dd>{if $mutations}<span class="a4-badge is-ok">{'on'|i18n( 'design/admin/graphql' )}</span>{else}<span class="a4-badge">{'off'|i18n( 'design/admin/graphql' )}</span>{/if}</dd>
+            <dt>{'Mutations'|i18n( 'design/admin/graphql' )}</dt><dd>{if and( $enabled, $mutations )}<span class="a4-badge is-ok">{'on'|i18n( 'design/admin/graphql' )}</span>{else}<span class="a4-badge">{'off'|i18n( 'design/admin/graphql' )}</span>{/if}</dd>
         </dl>
     </div>
 </section>
@@ -131,10 +135,10 @@
             <td>{'%bytes bytes'|i18n( 'design/admin/graphql',, hash( '%bytes', $q.bytes ) )|wash}</td>
             <td>{if $q.shipped}<span class="a4-badge is-info">{'shipped'|i18n( 'design/admin/graphql' )}</span>{else}<span class="a4-badge">{'stored'|i18n( 'design/admin/graphql' )}</span>{/if}</td>
             {if $can_administrate}
-            <td>{if $q.shipped|not}
+            <td class="a4-actions">{if $q.shipped|not}
                 <details class="a4-confirm">
-                    <summary class="a4-btn a4-btn-small a4-btn-outline-danger">{'Remove'|i18n( 'design/admin/graphql' )}</summary>
-                    <div class="a4-fold-body is-warn">
+                    <summary>{'Remove'|i18n( 'design/admin/graphql' )}</summary>
+                    <div>
                         <label class="a4-check"><input type="checkbox" name="ConfirmRemovePersisted[{$q.hash|wash}]" value="1" /> {'Yes, remove this query'|i18n( 'design/admin/graphql' )}</label>
                         <button type="submit" class="a4-btn a4-btn-small a4-btn-danger" name="RemovePersistedButton[{$q.hash|wash}]" value="1">{'Remove'|i18n( 'design/admin/graphql' )}</button>
                     </div>

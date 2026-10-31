@@ -79087,6 +79087,14 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Níl aon eochair API le raon GraphQL fós.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Tá an API GraphQL múchta sa rochtain suímh %siteaccess, a thaispeánann an leathanach seo; taispeánann an tábla thíos cá bhfreagraíonn sé.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Don rochtain suímh %siteaccess, a thaispeánann an leathanach seo.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

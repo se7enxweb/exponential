@@ -79057,6 +79057,14 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Tewannabaawo kisumuluzo kya API kirina buyinza bwa GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API nzikiddwa mu mulyango gw'omukutu %siteaccess, oguraga olupapula luno; ekipande wansi kiraga awali w'eddamu.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ku mulyango gw'omukutu %siteaccess, oguraga olupapula luno.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
