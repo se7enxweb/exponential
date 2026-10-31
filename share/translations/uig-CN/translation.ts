@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>سۈرۈشتۈرۈش سىزنىڭ ھوقۇقىڭىز بىلەن، مۇشۇ ئەڭگىمە ئارقىلىق كىرگەن ھالەتتە ئىجرا قىلىنىدۇ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds سېكۇنتتا %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>چەكلىمىسىز</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>چوڭقۇرلۇق</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>مۇرەككەپلىك</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ھەر تىزىملىكتىكى تۈرلەر</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (كۆڭۈلدىكى %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ھەر ئىشلەتكۈچى ياكى ئاچقۇچقا ئىلتىماس</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ھەر نامسىز ئادرېسقا ئىلتىماس</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ئۆز-ئۆزىنى تەكشۈرۈش (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>پەقەت ساقلانغان سۈرۈشتۈرۈشلەر</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ئەڭ چوڭ سۈرۈشتۈرۈش</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes بايت</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ئەڭ چوڭ يۈكلەش</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess تور بېكەت زىيارىتى يوق.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess دا ئۆزگەرتىشلەر ئېچىلدى.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess دا ئۆزگەرتىشلەر تاقالدى.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess دا GraphQL API ئېچىلدى.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess دا GraphQL API تاقالدى.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>تەڭشەكلەرنى يازغىلى بولمىدى: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ئىنكاس غەملەكى تازىلاندى: %count جاۋاب ئۆچۈرۈلدى.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>سۈرۈشتۈرۈشنى ئۆچۈرۈش ئۈچۈن يېنىدىكى رامكىنى بەلگىلەڭ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>سۈرۈشتۈرۈشنى ئۆچۈرگىلى بولمىدى: PersistedQueryDirectoryList[] مۇندەرىجىسىدە كەلگەن سۈرۈشتۈرۈش ھۆججىتى بىلەن بىللە ئۆچۈرۈلىدۇ.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ساقلانغان سۈرۈشتۈرۈش ئۆچۈرۈلدى.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ئۆزگەرتىشلەر</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ئوچۇق</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>تاقاق</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>تور بېكەت زىيارەتلىرى</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API ۋە ئۇنىڭ ئۆزگەرتىشلىرى جاۋاب بېرىدىغان جايلار. كۇنۇپكىلار graphql.ini نى ./console exp:graphql:enable ۋە exp:graphql:disable غا ئوخشاش يازىدۇ.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>تور بېكەت زىيارىتى</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ئۆزگەرتىش</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>تاقاش</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ئۆزگەرتىشلەرنى تاقاش</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ئۆزگەرتىشلەرنى ئېچىش</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ئېچىش</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>چەكلىمىلەر</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>بۇ تور بېكەت زىيارىتىنىڭ graphql.ini [GraphQLSettings] تەڭشەكلىرى.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ئىنكاس غەملەكى</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>ساقلانغان سۈرۈشتۈرۈشلەرنىڭ جاۋابلىرى، ئىشلەتكۈچى ھوقۇقى بويىچە ساقلىنىدۇ ۋە مەزمۇن ھەر قېتىم ئېلان قىلىنغاندا ۋاقتى توشىدۇ.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ھالەت</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ساقلانغان جاۋابلار</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count جاۋاب، %bytes بايت</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>ئەڭ ئۇزۇن ساقلىنىش</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds سېكۇنت</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ئاخىرقى ۋاقتى توشۇش</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ئىنكاس غەملەكىنى تازىلاش</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>ساقلانغان سۈرۈشتۈرۈشلەر</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist بىلەن ياكى خېرىدارلار تەرىپىدىن ساقلىنىدۇ (ئاپتوماتىك ساقلانغان سۈرۈشتۈرۈشلەر)؛ ئىسمى ياكى SHA-256 بىلەن چاقىرىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ئىسىملار</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>چوڭلۇقى</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ئورنى</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ئۆچۈرۈش</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>بىللە كەلگەن</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ساقلانغان</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>شۇنداق، بۇ سۈرۈشتۈرۈشنى ئۆچۈر</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>تېخى ساقلانغان سۈرۈشتۈرۈش يوق.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ئاچقۇچلىرى</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (سۈرۈشتۈرۈشلەر) ياكى graphql:write (ئۆزگەرتىشلەر) دائىرىلىك شەخسىي API ئاچقۇچلىرى. ئۇلارنى API زىيارىتى بېتىدە ياكى ./console exp:graphql:keys بىلەن قۇرۇڭ ۋە ئەمەلدىن قالدۇرۇڭ.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API زىيارىتى</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>بارلىق ئاچقۇچلار</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ئاچقۇچ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ئىسىم</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ئىگىسى</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>دائىرىلەر</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ئاخىرقى ئىشلىتىلگەن</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ئاكتىپ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ۋاقتى توشقان</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ئەمەلدىن قالدۇرۇلغان</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ھەرگىز</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>تېخى GraphQL دائىرىلىك API ئاچقۇچى يوق.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

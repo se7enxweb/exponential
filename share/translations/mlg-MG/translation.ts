@@ -78777,6 +78777,286 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Mandeha amin'ny zonao ny fangatahana, niditra tamin'ity fotoam-pidirana ity ianao.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ao anatin'ny %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>tsy misy fetra</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Halalina</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Fahasarotana</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Singa isaky ny lisitra</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (mahazatra %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Fangatahana isaky ny mpampiasa na fanalahidy</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Fangatahana isaky ny adiresy tsy fantatra</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Fanontaniana voatahiry ihany</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Fanontaniana lehibe indrindra</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes oktety</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Fampakarana lehibe indrindra</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Tsy misy fidirana amin'ny tranonkala %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Velona ny fanovana ao amin'ny %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Maty ny fanovana ao amin'ny %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Velona ny GraphQL API ao amin'ny %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Maty ny GraphQL API ao amin'ny %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Tsy voasoratra ny fikirana: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Voafafa ny cache valiny: valiny %count no nesorina.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Mariho ny boaty eo anilan'ny fanontaniana mba hanesorana azy.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Tsy nesorina ny fanontaniana: ny fanontaniana tonga ao amin'ny lahatahiry iray an'ny PersistedQueryDirectoryList[] dia esorina miaraka amin'ny rakiny.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Nesorina ny fanontaniana voatahiry.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Fanovana</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>velona</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>maty</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Fidirana amin'ny tranonkala</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ny toerana mamaly ny API sy ny fanovany. Manoratra graphql.ini ireo bokotra, toy ny ataon'ny ./console exp:graphql:enable sy exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Fidirana amin'ny tranonkala</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ovay</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Vonoy</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Maty ny fanovana</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Velona ny fanovana</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Velomy</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Fetra</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] an'ity fidirana amin'ny tranonkala ity.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache valiny</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Ny valin'ny fanontaniana voatahiry, tazonina araka ny zon'ny mpampiasa ary lany isaky ny misy votoaty avoaka.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toetra</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Valiny voatazona</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>valiny %count, %bytes oktety</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Tazonina farafahabetsany</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Lany farany</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Fafao ny cache valiny</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Fanontaniana voatahiry</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Voatahiry amin'ny ./console exp:graphql:persist, na avy amin'ny mpanjifa (fanontaniana voatahiry ho azy); antsoina amin'ny anarana na SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Anarana</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Habe</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Aiza</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Esory</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>tonga miaraka</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>voatahiry</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Eny, esory ity fanontaniana ity</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Mbola tsy misy fanontaniana voatahiry.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Fanalahidy API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Fanalahidy API manokana misy sehatra graphql:read (fanontaniana) na graphql:write (fanovana). Amboary sy foano izy ireo ao amin'ny pejy Fidirana API, na amin'ny ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Fidirana API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Fanalahidy rehetra</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Fanalahidy</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Anarana</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tompony</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Sehatra</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Nampiasaina farany</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>mavitrika</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>lany daty</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>nofoanana</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>tsy mbola</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Mbola tsy misy fanalahidy API misy sehatra GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

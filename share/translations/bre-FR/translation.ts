@@ -78777,6 +78777,286 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Lañset e vez ar goulenn gant ho kwirioù, kevreet gant an dalc'h-mañ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count e %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>bevenn ebet</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Donder</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kemplezhded</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elfennoù dre roll</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (dre ziouer %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Rekedoù dre implijer pe alc'hwez</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Rekedoù dre chomlec'h dizanv</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Emsell</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Rekedoù enrollet hepken</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Reked brasañ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes okted</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Pellgargadenn vrasañ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>N'eus haeziñ lec'hienn %siteaccess ebet.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Gweredekaet eo ar c'hemmadurioù e %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Diweredekaet eo ar c'hemmadurioù e %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Gweredekaet eo an API GraphQL e %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Diweredekaet eo an API GraphQL e %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>N'eus ket bet gallet skrivañ an arventennoù: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Goullonderet eo bet krubuilh ar respontoù: %count respont dilamet.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Askit ar voest e-kichen ar reked evit he dilemel.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>N'eus ket bet gallet dilemel ar reked: ur reked pourchaset en ur c'havlec'h eus PersistedQueryDirectoryList[] a vez dilamet gant he restr.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Dilamet eo bet ar reked enrollet.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Kemmadurioù</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>war enaou</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>lazhet</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Haeziñ lec'hienn</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>E-lec'h ma respont an API hag he c'hemmadurioù. Skrivañ a ra an afelloù graphql.ini, evel ma ra ./console exp:graphql:enable hag exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Haeziñ lec'hienn</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Kemmañ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Diweredekaat</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Diweredekaat ar c'hemmadurioù</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Gweredekaat ar c'hemmadurioù</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Gweredekaat</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Bevennoù</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] an haeziñ lec'hienn-mañ.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Krubuilh ar respontoù</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Respontoù ar rekedoù enrollet, miret hervez gwirioù an implijer ha diamzeret bep tro ma vez embannet danvez.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stad</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Respontoù miret</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count respont, %bytes okted</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Miret d'ar muiañ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Diamzeret da ziwezhañ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Goullonderiñ krubuilh ar respontoù</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Rekedoù enrollet</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Enrollet gant ./console exp:graphql:persist, pe gant ar c'hliantoù (rekedoù enrollet emgefreek); galvet dre anv pe SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Anvioù</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ment</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Pelec'h</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Dilemel</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>pourchaset</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>enrollet</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ya, dilemel ar reked-mañ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Reked enrollet ebet c'hoazh.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Alc'hwezioù API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Alc'hwezioù API personel gant an dachenn graphql:read (rekedoù) pe graphql:write (kemmadurioù). Krouit ha nullit anezho war ar bajenn Haeziñ an API, pe gant ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Haeziñ an API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>An holl alc'hwezioù</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Alc'hwez</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Anv</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Perc'henn</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Tachennoù</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Implijet da ziwezhañ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>oberiant</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>aet da benn</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>nullet</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>morse</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Alc'hwez API ebet gant un dachenn GraphQL c'hoazh.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

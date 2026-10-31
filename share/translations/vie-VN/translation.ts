@@ -78777,6 +78777,286 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Truy vấn chạy với quyền của bạn, đăng nhập bằng phiên này.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count trong %seconds giây</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>không giới hạn</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Độ sâu</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Độ phức tạp</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Mục mỗi danh sách</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (mặc định %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Yêu cầu mỗi người dùng hoặc khóa</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Yêu cầu mỗi địa chỉ ẩn danh</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Tự kiểm tra lược đồ (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Chỉ truy vấn đã lưu</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Truy vấn lớn nhất</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Tệp tải lên lớn nhất</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Không có điểm truy cập trang %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Đã bật mutation ở %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Đã tắt mutation ở %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Đã bật API GraphQL ở %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Đã tắt API GraphQL ở %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Không thể ghi cài đặt: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Đã xóa bộ nhớ đệm phản hồi: đã loại bỏ %count kết quả trả về.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Đánh dấu ô bên cạnh truy vấn để xóa nó.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Không thể xóa truy vấn: truy vấn đi kèm trong một thư mục của PersistedQueryDirectoryList[] được xóa cùng với tệp của nó.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Đã xóa truy vấn đã lưu.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutation</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>bật</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>tắt</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Nơi API và các mutation của nó trả lời. Các nút ghi graphql.ini, giống như ./console exp:graphql:enable và exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Thay đổi</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Tắt</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Tắt mutation</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Bật mutation</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Bật</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Giới hạn</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] của điểm truy cập trang này.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Bộ nhớ đệm phản hồi</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Kết quả trả về của các truy vấn đã lưu, được giữ theo quyền người dùng và hết hạn mỗi khi nội dung được xuất bản.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Trạng thái</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Kết quả đang giữ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count kết quả, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Giữ tối đa</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds giây</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Hết hạn gần nhất</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Xóa bộ nhớ đệm phản hồi</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Truy vấn đã lưu</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Được lưu bằng ./console exp:graphql:persist, hoặc bởi máy khách (truy vấn đã lưu tự động); gọi bằng tên hoặc SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Tên</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Kích thước</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Vị trí</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Xóa</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>đi kèm</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>đã lưu</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Có, xóa truy vấn này</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Chưa có truy vấn đã lưu nào.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Khóa API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Khóa API cá nhân có phạm vi graphql:read (truy vấn) hoặc graphql:write (mutation). Tạo và thu hồi chúng trên trang Truy cập API, hoặc bằng ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Truy cập API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Tất cả khóa</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Khóa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tên</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Chủ sở hữu</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Phạm vi</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Lần dùng gần nhất</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>hoạt động</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>đã hết hạn</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>đã thu hồi</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>không bao giờ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Chưa có khóa API nào có phạm vi GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

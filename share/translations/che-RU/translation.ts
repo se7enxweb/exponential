@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Хаттар кхочуш до хьан бакъонашца, хӀокху сессехь чувалийна.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds сек чохь %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>доза доцуш</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>КӀоргалла</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Чолхалла</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>МогӀам чохь элементаш</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ша-шаха %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Декъашхочун я догӀанан дехарш</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ЦӀе йоцчу адресан дехарш</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Интроспекци</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Ӏалашдина хаттарш бен</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Уггар доккха хаттар</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes байт</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Уггар доккха чуйолуьйтуш</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess сайте тӀекхачар дац.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess чохь мутацеш латийна ю.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess чохь мутацеш дӀайайина ю.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess чохь GraphQL API латийна ю.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess чохь GraphQL API дӀайайина ю.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ТӀегӀанаш яздан ца делира: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Жоьпийн кэш цӀанйина: %count жоп дӀадаьккхина.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Хаттар дӀадаккха цунна юххехь йолу кор билгалде.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Хаттар дӀадаккха ца делира: PersistedQueryDirectoryList[] директорехь деана хаттар шен файлца дӀадоккху.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Ӏалашдина хаттар дӀадаьккхина.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Мутацеш</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>латийна</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>дӀайайина</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайте тӀекхачарш</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API а, цуьнан мутацеш а жоп луш йолу меттигаш. Кнопкаш graphql.ini чу йоздо, ./console exp:graphql:enable а, exp:graphql:disable а санна.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Хийца</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ДӀайайа</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Мутацеш дӀайайа</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Мутацеш лато</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Лато</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Дозанаш</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ХӀокху сайте тӀекхачаран graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Жоьпийн кэш</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Ӏалашдинчу хаттарийн жоьпаш, декъашхочун бакъонашца Ӏалашдина, чулацам арахецча хан чекхйолуш.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Хьал</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Ӏалашдина жоьпаш</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count жоп, %bytes байт</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Уггар дукха Ӏалашдо</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds сек</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ТӀаьххьара хан чекхъяларан</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Жоьпийн кэш цӀанъе</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Ӏалашдина хаттарш</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist-ца я клиенташа Ӏалашдина (автоматически Ӏалашдина хаттарш); цӀарца я SHA-256-ца кхайкху.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ЦӀерш</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Барам</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Мичахь</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ДӀадаккха</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>деана</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>Ӏалашдина</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ХӀаъ, хӀара хаттар дӀадаккха</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ӏалашдина хаттар хӀинца а дац.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API догӀанаш</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (хаттарш) я graphql:write (мутацеш) гуо долу шениг API догӀанаш. Уьш API тӀекхачар агӀонгахь я ./console exp:graphql:keys-ца кхолла а, юхаяккха а.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API тӀекхачар</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Массо догӀанаш</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ДогӀа</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ЦӀе</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Гуонаш</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ТӀаьххьара лелийна</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>жигара</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>хан чекхъяьлла</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>юхаяьккхина</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>цкъа а</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL гуо долу API догӀа хӀинца а дац.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Суроо сиздин укуктарыңыз менен, ушул сеанста кирүү аркылуу аткарылат.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds сек ичинде %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>чексиз</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Тереңдик</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Татаалдык</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Тизмедеги элементтер</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (демейки %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Колдонуучуга же ачкычка сурамдар</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Аноним дарекке сурамдар</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Интроспекция</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Сакталган суроолор гана</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Эң чоң суроо</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes байт</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Эң чоң жүктөө</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess сайтка кирүү чекити жок.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Мутациялар %siteaccess ичинде күйгүзүлдү.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Мутациялар %siteaccess ичинде өчүрүлдү.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess ичинде күйгүзүлдү.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess ичинде өчүрүлдү.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Жөндөөлөрдү жазуу мүмкүн болгон жок: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Жооптор кэши тазаланды: %count жооп жок кылынды.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Суроону жок кылуу үчүн анын жанындагы кутучаны белгилеңиз.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Суроону жок кылуу мүмкүн болгон жок: PersistedQueryDirectoryList[] каталогунда берилген суроо өз файлы менен бирге жок кылынат.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Сакталган суроо жок кылынды.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Мутациялар</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>күйүк</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>өчүк</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Сайтка кирүү чекиттери</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API жана анын мутациялары жооп берген жер. Баскычтар ./console exp:graphql:enable жана exp:graphql:disable сыяктуу graphql.ini файлын жазат.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Сайтка кирүү чекити</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өзгөртүү</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Өчүрүү</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Мутациялар өчүк</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Мутациялар күйүк</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Күйгүзүү</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Чектөөлөр</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Бул сайтка кирүү чекитинин graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Жооптор кэши</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Сакталган суроолордун жооптору, колдонуучу укуктары боюнча сакталат жана мазмун жарыяланган сайын эскирет.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Абалы</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Сакталган жооптор</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count жооп, %bytes байт</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Эң көп сактоо</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds сек</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Акыркы эскирүү</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Жооптор кэшин тазалоо</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Сакталган суроолор</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist аркылуу же кардарлар тарабынан сакталат (automatic persisted queries); аты же SHA-256 боюнча чакырылат.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Аттары</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Өлчөмү</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Жайгашкан жери</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Жок кылуу</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>берилген</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>сакталган</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ооба, бул суроону жок кылуу</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Азырынча сакталган суроо жок.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ачкычтары</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (суроолор) же graphql:write (мутациялар) чөйрөсү бар жеке API ачкычтары. Аларды API мүмкүнчүлүгү барагында же ./console exp:graphql:keys аркылуу түзүңүз жана жокко чыгарыңыз.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API мүмкүнчүлүгү</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Бардык ачкычтар</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ачкыч</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Аты</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Ээси</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Чөйрөлөр</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Акыркы колдонулган</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>жигердүү</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>мөөнөтү өткөн</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>жокко чыгарылган</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>эч качан</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Азырынча GraphQL чөйрөсү бар API ачкычы жок.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

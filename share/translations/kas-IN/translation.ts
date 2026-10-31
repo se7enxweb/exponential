@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>کوئری چھےٚ تُہٕنٛدِ حقوٗقو سٟتؠ، یمہٕ سیشنہٕ سٟتؠ سائن اِن کٔرِتھ چلان۔</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds سیکنڈن منٛز %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>کانٛہہ حَد نہٕ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>گہرٲیی</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>پیچیدگی</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>فی لِسٹ آئٹم</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ڈیفالٹ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>فی یوزر یا کی درخواستہٕ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>فی گُمنام پتہٕ درخواستہٕ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>انٹروسپیکشن</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>صرف محفوظ کوئری</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>سب کھوتہٕ بٔڑ کوئری</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes بائٹ</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>سب کھوتہٕ بٔڑ اپ لوڈ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess سایِٹ ایکسیسس چھُ نہٕ۔</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess منٛز آیہٕ میوٹیشنز چالوٗ کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess منٛز آیہٕ میوٹیشنز بنٛد کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess منٛز آیہٕ GraphQL API چالوٗ کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess منٛز آیہٕ GraphQL API بنٛد کرنہٕ۔</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ترتیبات ہیچہٕ نہٕ لیٚکھِتھ: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ریسپانس کیش آیہٕ صاف کرنہٕ: %count جواب آیہٕ ہٹاونہٕ۔</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>کوئری ہٹاونہٕ خٲطرٕ کٔرِو امہِ نِش وول باکس ٹِک۔</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>کوئری ہیچ نہٕ ہٹٲوِتھ: PersistedQueryDirectoryList[] کہِ ڈائریکٹری منٛز دِنہٕ آمٕژ کوئری چھےٚ پنٕنہِ فایِلہِ سٟتؠ ہٹاونہٕ یِوان۔</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>محفوظ کوئری آیہٕ ہٹاونہٕ۔</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>میوٹیشنز</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>چالوٗ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بنٛد</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>سایِٹ ایکسیسز</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>یتھ API تہٕ امیٚک میوٹیشنز جواب دِوان چھِ۔ بٹن چھِ graphql.ini لیکھان، ییٚتھہٕ پٲٹھۍ ./console exp:graphql:enable تہٕ exp:graphql:disable کران چھِ۔</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سایِٹ ایکسیسس</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>بدلٲوِو</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>بنٛد کٔرِو</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>میوٹیشنز بنٛد</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>میوٹیشنز چالوٗ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>چالوٗ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>حَد</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>یمہٕ سایِٹ ایکسیسُک graphql.ini [GraphQLSettings]۔</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ریسپانس کیش</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>محفوظ کوئریو ہٕنٛد جواب، یوزرٕ سٕندِ حقوٗقو مطٲبق تھاونہٕ آمٕتۍ تہٕ ہر وَتھ مَواد شائع گژھنہٕ پتہٕ ختم۔</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالَت</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>تھاونہٕ آمٕتۍ جواب</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count جواب، %bytes بائٹ</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>زیادٕ کھوتہٕ زیادٕ تھاونہٕ آمٕت</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds سیکنڈ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>آخری خٲتمہ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ریسپانس کیش صاف کٔرِو</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>محفوظ کوئری</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist سٟتؠ یا کلائنٹو ذریعہٕ محفوظ (automatic persisted queries)؛ ناوٕ یا SHA-256 سٟتؠ کال کرنہٕ یِوان۔</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ناو</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>سایِز</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>جاے</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ہٹٲوِو</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>شامل</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>محفوظ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>آ، یہِ کوئری ہٹٲوِو</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>وُنیک چھےٚ نہٕ کانٛہہ محفوظ کوئری۔</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API کیز</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (کوئری) یا graphql:write (میوٹیشنز) اسکوپ وٲلۍ ذٲتی API کیز۔ یم بنٲوِو تہٕ منسوخ کٔرِو API رسٲیی صفحس پؠٹھ، یا ./console exp:graphql:keys سٟتؠ۔</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API رسٲیی</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>سٲری کیز</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کی</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ناو</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>مالِک</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>اسکوپ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>آخری استعمال</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>سَرگَرم</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>میعاد ختم</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>منسوخ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>کَتھ نہ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>وُنیک چھےٚ نہٕ GraphQL اسکوپ وٲج کانٛہہ API کی۔</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

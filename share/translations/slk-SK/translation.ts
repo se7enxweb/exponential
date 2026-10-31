@@ -78807,6 +78807,286 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Dopyt beží s vašimi oprávneniami, prihlásení v tejto relácii.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count za %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>bez limitu</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Hĺbka</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Zložitosť</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Položky na zoznam</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (predvolené %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Požiadavky na používateľa alebo kľúč</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Požiadavky na anonymnú adresu</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcia</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Iba uložené dopyty</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Najväčší dopyt</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtov</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Najväčšie nahrávanie</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Prístup k lokalite %siteaccess neexistuje.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutácie sú v %siteaccess zapnuté.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutácie sú v %siteaccess vypnuté.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API je v %siteaccess zapnuté.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API je v %siteaccess vypnuté.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Nastavenia sa nepodarilo zapísať: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Vyrovnávacia pamäť odpovedí bola vymazaná: odstránených odpovedí: %count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Ak chcete dopyt odstrániť, začiarknite políčko vedľa neho.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Dopyt sa nepodarilo odstrániť: dopyt dodaný v adresári z PersistedQueryDirectoryList[] sa odstraňuje spolu so svojím súborom.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Uložený dopyt bol odstránený.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutácie</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>zapnuté</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>vypnuté</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Prístupy k lokalite</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kde API a jeho mutácie odpovedajú. Tlačidlá zapisujú graphql.ini, rovnako ako ./console exp:graphql:enable a exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Zmeniť</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Vypnúť</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Vypnúť mutácie</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Zapnúť mutácie</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Zapnúť</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limity</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] tohto prístupu k lokalite.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Vyrovnávacia pamäť odpovedí</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Odpovede uložených dopytov, uchovávané podľa práv používateľa a zneplatnené pri každom zverejnení obsahu.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Uchované odpovede</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count odpovedí, %bytes bajtov</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Uchovávané najviac</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Naposledy zneplatnené</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Vymazať vyrovnávaciu pamäť odpovedí</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Uložené dopyty</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Uložené pomocou ./console exp:graphql:persist alebo klientmi (automatické uložené dopyty); volajú sa názvom alebo SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Názvy</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Veľkosť</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kde</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstrániť</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>dodaný</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>uložený</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Áno, odstrániť tento dopyt</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Zatiaľ žiadny uložený dopyt.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Kľúče API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Osobné kľúče API s rozsahom graphql:read (dopyty) alebo graphql:write (mutácie). Vytvárajte a odvolávajte ich na stránke Prístup k API alebo pomocou ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Prístup k API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Všetky kľúče</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kľúč</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Názov</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Vlastník</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Rozsahy</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Naposledy použitý</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktívny</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>vypršaný</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>odvolaný</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikdy</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Zatiaľ žiadny kľúč API s rozsahom GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

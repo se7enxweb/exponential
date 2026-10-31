@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>查詢以您的權限執行，使用目前的工作階段登入。</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds 秒內 %count 個</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>無限制</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>深度</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>複雜度</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>每個清單的項目數</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max（預設 %default）</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>每個使用者或金鑰的請求數</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>每個匿名位址的請求數</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>自我檢查（Introspection）</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>僅限持久化查詢</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>最大查詢</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes 位元組</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>最大上傳</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>不存在網站存取 %siteaccess。</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess 已開啟變更。</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess 已關閉變更。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess 已開啟 GraphQL API。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess 已關閉 GraphQL API。</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>無法寫入設定：%error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>回應快取已清除：移除了 %count 個回應。</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>勾選查詢旁的方塊以移除它。</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>無法移除此查詢：隨 PersistedQueryDirectoryList[] 中某個目錄提供的查詢須連同其檔案一併移除。</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>持久化查詢已移除。</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>變更</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>開啟</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API 及其變更在何處回應。這些按鈕會寫入 graphql.ini，與 ./console exp:graphql:enable 和 exp:graphql:disable 的作用相同。</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>網站存取</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>變更設定</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>關閉</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>關閉變更</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>開啟變更</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>開啟</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>限制</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>此網站存取的 graphql.ini [GraphQLSettings]。</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>回應快取</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>持久化查詢的回應，依使用者權限保存，並在每次發布內容時過期。</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>狀態</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>已保存的回應</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count 個回應，%bytes 位元組</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>最長保存</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds 秒</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>上次過期</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>清除回應快取</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>持久化查詢</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>透過 ./console exp:graphql:persist 或由用戶端儲存（自動持久化查詢）；以名稱或 SHA-256 呼叫。</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>大小</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>隨附</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>已儲存</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>是，移除此查詢</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>尚無持久化查詢。</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API 金鑰</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>具有 graphql:read（查詢）或 graphql:write（變更）範圍的個人 API 金鑰。可在「API 存取」頁面或使用 ./console exp:graphql:keys 建立和撤銷。</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API 存取</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>所有金鑰</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>金鑰</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名稱</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>擁有者</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>範圍</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>上次使用</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>有效</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>已過期</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>已撤銷</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>從未</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>尚無具有 GraphQL 範圍的 API 金鑰。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

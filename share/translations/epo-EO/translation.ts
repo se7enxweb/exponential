@@ -78777,6 +78777,286 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La informpeto ruliĝas kun viaj rajtoj, ensalutinte per ĉi tiu seanco.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count en %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>sen limo</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Profundo</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Komplekseco</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Eroj po listo</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (defaŭlte %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Petoj po uzanto aŭ ŝlosilo</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Petoj po anonima adreso</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekto</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Nur konservitaj informpetoj</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Plej granda informpeto</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtoj</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Plej granda alŝuto</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Ne ekzistas retejaliro %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>La mutacioj estas ŝaltitaj en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>La mutacioj estas malŝaltitaj en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>La GraphQL-API estas ŝaltita en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>La GraphQL-API estas malŝaltita en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ne eblis skribi la agordojn: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>La respondkaŝmemoro estis malplenigita: %count respondoj forigitaj.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Marku la skatolon apud la informpeto por forigi ĝin.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Ne eblis forigi la informpeton: informpeto liverita en dosierujo de PersistedQueryDirectoryList[] estas forigata kun sia dosiero.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>La konservita informpeto estis forigita.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacioj</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ŝaltita</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>malŝaltita</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Retejaliroj</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kie la API kaj ĝiaj mutacioj respondas. La butonoj skribas graphql.ini, kiel faras ./console exp:graphql:enable kaj exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Retejaliro</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ŝanĝi</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Malŝalti</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Malŝalti mutaciojn</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Ŝalti mutaciojn</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ŝalti</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limoj</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] de ĉi tiu retejaliro.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Respondkaŝmemoro</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>La respondoj de konservitaj informpetoj, tenataj laŭ uzantorajtoj kaj eksvalidigataj kiam ajn enhavo estas publikigita.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Tenataj respondoj</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count respondoj, %bytes bajtoj</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Tenataj maksimume</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Laste eksvalidigita</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Malplenigi la respondkaŝmemoron</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Konservitaj informpetoj</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Konservitaj per ./console exp:graphql:persist aŭ de klientoj (aŭtomataj konservitaj informpetoj); vokataj per nomo aŭ SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nomoj</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grando</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kie</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Forigi</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>liverita</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>konservita</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Jes, forigi ĉi tiun informpeton</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ankoraŭ neniu konservita informpeto.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-ŝlosiloj</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Personaj API-ŝlosiloj kun la amplekso graphql:read (informpetoj) aŭ graphql:write (mutacioj). Kreu kaj revoku ilin en la paĝo API-aliro aŭ per ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-aliro</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Ĉiuj ŝlosiloj</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ŝlosilo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomo</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Posedanto</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Ampleksoj</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Laste uzita</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiva</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>eksvalidiĝinta</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revokita</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>neniam</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ankoraŭ neniu API-ŝlosilo kun GraphQL-amplekso.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

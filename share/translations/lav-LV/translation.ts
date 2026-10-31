@@ -78807,6 +78807,286 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Vaicājums tiek izpildīts ar jūsu tiesībām, pierakstoties šajā sesijā.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds s laikā</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>bez ierobežojuma</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Dziļums</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Sarežģītība</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Vienumi sarakstā</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (noklusējums %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Pieprasījumi uz lietotāju vai atslēgu</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Pieprasījumi uz anonīmu adresi</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcija</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Tikai saglabāti vaicājumi</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Lielākais vaicājums</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes baiti</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Lielākā augšupielāde</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nav vietnes piekļuves %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutācijas vietnes piekļuvē %siteaccess ir ieslēgtas.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutācijas vietnes piekļuvē %siteaccess ir izslēgtas.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API vietnes piekļuvē %siteaccess ir ieslēgts.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API vietnes piekļuvē %siteaccess ir izslēgts.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Iestatījumus neizdevās ierakstīt: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Atbilžu kešatmiņa notīrīta: noņemtas %count atbildes.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Atzīmējiet rūtiņu blakus vaicājumam, lai to noņemtu.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Vaicājumu neizdevās noņemt: vaicājums, kas piegādāts PersistedQueryDirectoryList[] direktorijā, tiek noņemts kopā ar savu failu.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Saglabātais vaicājums noņemts.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutācijas</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ieslēgts</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>izslēgts</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Vietnes piekļuves</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kur atbild API un tā mutācijas. Pogas raksta graphql.ini tāpat kā ./console exp:graphql:enable un exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mainīt</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Izslēgt</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutācijas izslēgtas</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutācijas ieslēgtas</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ieslēgt</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Ierobežojumi</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Šīs vietnes piekļuves graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Atbilžu kešatmiņa</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Saglabāto vaicājumu atbildes, glabātas atsevišķi pēc lietotāja tiesībām un novecojušas ikreiz, kad tiek publicēts saturs.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stāvoklis</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Glabātās atbildes</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count atbildes, %bytes baiti</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Glabā ne ilgāk kā</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Pēdējā novecošana</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Notīrīt atbilžu kešatmiņu</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Saglabātie vaicājumi</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Saglabāti ar ./console exp:graphql:persist vai klientu (automātiski saglabātie vaicājumi); izsaucami pēc nosaukuma vai SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nosaukumi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Izmērs</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Noņemt</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>piegādāts</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>saglabāts</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Jā, noņemt šo vaicājumu</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Vēl nav neviena saglabāta vaicājuma.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API atslēgas</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Personiskās API atslēgas ar tvērumu graphql:read (vaicājumi) vai graphql:write (mutācijas). Izveidojiet un atsauciet tās lapā API piekļuve vai ar ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API piekļuve</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Visas atslēgas</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Atslēga</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Īpašnieks</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Tvērumi</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Pēdējoreiz izmantota</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktīva</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>beigusies</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>atsaukta</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nekad</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Vēl nav nevienas API atslēgas ar GraphQL tvērumu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

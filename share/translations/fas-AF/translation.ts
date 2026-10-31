@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>پرس‌وجو با صلاحیت‌های شما اجرا می‌شود، با ورود از طریق همین جلسه.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count در %seconds ثانیه</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>بدون محدودیت</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>عمق</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>پیچیدگی</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>آیتم در هر فهرست</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (پیش‌فرض %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>درخواست به ازای هر کاربر یا کلید</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>درخواست به ازای هر نشانی ناشناس</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>درون‌نگری (Introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>تنها پرس‌وجوهای ذخیره‌شده</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>بزرگ‌ترین پرس‌وجو</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes بایت</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>بزرگ‌ترین بارگذاری</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>دسترسی سایت %siteaccess وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>جهش‌ها در %siteaccess روشن هستند.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>جهش‌ها در %siteaccess خاموش هستند.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>API ‏GraphQL در %siteaccess روشن است.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>API ‏GraphQL در %siteaccess خاموش است.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>تنظیمات نوشته نشد: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>حافظهٔ نهان پاسخ‌ها پاک شد: %count پاسخ حذف شد.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>برای حذف پرس‌وجو، کادر کنار آن را علامت بزنید.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>پرس‌وجو حذف نشد: پرس‌وجویی که در یکی از پوشه‌های PersistedQueryDirectoryList[] عرضه شده است همراه با فایلش حذف می‌شود.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>پرس‌وجوی ذخیره‌شده حذف شد.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>جهش‌ها</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>روشن</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>خاموش</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>دسترسی‌های سایت</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>جایی که API و جهش‌هایش پاسخ می‌دهند. دکمه‌ها graphql.ini را می‌نویسند، همان‌گونه که ./console exp:graphql:enable و exp:graphql:disable می‌نویسند.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>دسترسی سایت</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API ‏GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تغییر</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>خاموش کردن</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>جهش‌ها خاموش</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>جهش‌ها روشن</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>روشن کردن</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>محدودیت‌ها</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] این دسترسی سایت.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>حافظهٔ نهان پاسخ‌ها</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>پاسخ‌های پرس‌وجوهای ذخیره‌شده، که به تفکیک حقوق کاربر نگه داشته می‌شوند و هر بار که محتوایی منتشر شود منقضی می‌شوند.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>پاسخ‌های نگه‌داشته</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count پاسخ، %bytes بایت</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>حداکثر مدت نگه‌داری</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ثانیه</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>آخرین انقضا</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>پاک کردن حافظهٔ نهان پاسخ‌ها</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>پرس‌وجوهای ذخیره‌شده</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>ذخیره‌شده با ./console exp:graphql:persist یا توسط کلاینت‌ها (پرس‌وجوهای ذخیره‌شدهٔ خودکار)؛ با نام یا SHA-256 فراخوانده می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>نام‌ها</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>اندازه</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>محل</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>عرضه‌شده</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ذخیره‌شده</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>بله، این پرس‌وجو حذف شود</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>هنوز هیچ پرس‌وجوی ذخیره‌شده‌ای نیست.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>کلیدهای API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>کلیدهای شخصی API با دامنهٔ graphql:read (پرس‌وجوها) یا graphql:write (جهش‌ها). آن‌ها را در صفحهٔ دسترسی API یا با ./console exp:graphql:keys بسازید و باطل کنید.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>دسترسی API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>همهٔ کلیدها</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کلید</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نام</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>مالک</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>دامنه‌ها</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>آخرین استفاده</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>فعال</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>منقضی</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>باطل‌شده</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هرگز</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>هنوز هیچ کلید API با دامنهٔ GraphQL نیست.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

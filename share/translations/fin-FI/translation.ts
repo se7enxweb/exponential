@@ -78807,6 +78807,286 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Kysely suoritetaan sinun oikeuksillasi, tällä istunnolla kirjautuneena.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count / %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ei rajaa</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Syvyys</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Monimutkaisuus</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Kohteita luettelossa</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (oletus %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Pyyntöjä käyttäjää tai avainta kohden</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Pyyntöjä anonyymiä osoitetta kohden</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspektio</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Vain tallennetut kyselyt</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Suurin kysely</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes tavua</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Suurin lataus</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Sivustoyhteyttä %siteaccess ei ole.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutaatiot on otettu käyttöön sivustoyhteydessä %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutaatiot on poistettu käytöstä sivustoyhteydessä %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API on otettu käyttöön sivustoyhteydessä %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API on poistettu käytöstä sivustoyhteydessä %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Asetuksia ei voitu kirjoittaa: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Vastausvälimuisti tyhjennettiin: %count vastausta poistettu.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Valitse kyselyn vieressä oleva ruutu poistaaksesi sen.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Kyselyä ei voitu poistaa: PersistedQueryDirectoryList[]-hakemistossa toimitettu kysely poistetaan tiedostonsa mukana.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Tallennettu kysely poistettiin.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutaatiot</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>päällä</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pois</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Sivustoyhteydet</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Missä API ja sen mutaatiot vastaavat. Painikkeet kirjoittavat graphql.ini-tiedostoon, kuten ./console exp:graphql:enable ja exp:graphql:disable tekevät.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Sivustoyhteys</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muuta</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Poista käytöstä</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutaatiot pois</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutaatiot päällä</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ota käyttöön</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Rajat</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Tämän sivustoyhteyden graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Vastausvälimuisti</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Tallennettujen kyselyjen vastaukset, säilytetään käyttöoikeuksittain ja vanhennetaan aina, kun sisältöä julkaistaan.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Säilytetyt vastaukset</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count vastausta, %bytes tavua</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Säilytetään enintään</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Viimeksi vanhennettu</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Tyhjennä vastausvälimuisti</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Tallennetut kyselyt</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Tallennettu komennolla ./console exp:graphql:persist tai asiakkaiden toimesta (automaattiset tallennetut kyselyt); kutsutaan nimellä tai SHA-256:lla.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nimet</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Koko</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Sijainti</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Poista</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>toimitettu</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>tallennettu</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Kyllä, poista tämä kysely</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ei vielä tallennettuja kyselyjä.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-avaimet</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Henkilökohtaiset API-avaimet laajuudella graphql:read (kyselyt) tai graphql:write (mutaatiot). Luo ja peruuta niitä sivulla API-käyttö tai komennolla ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-käyttö</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Kaikki avaimet</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Avain</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Omistaja</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Laajuudet</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Viimeksi käytetty</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiivinen</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>vanhentunut</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>peruutettu</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ei koskaan</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ei vielä API-avainta GraphQL-laajuudella.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

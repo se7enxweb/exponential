@@ -80080,6 +80080,286 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Frågan körs med dina behörigheter, inloggad med den här sessionen.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count på %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ingen gräns</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Djup</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Komplexitet</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Poster per lista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Förfrågningar per användare eller nyckel</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Förfrågningar per anonym adress</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspektion</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Endast lagrade frågor</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Största fråga</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Största uppladdning</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Det finns ingen webbplatsingång %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutationerna är påslagna i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutationerna är avstängda i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL-API:t är påslaget i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL-API:t är avstängt i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Inställningarna kunde inte skrivas: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Svarscachen har tömts: %count svar borttagna.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Kryssa i rutan bredvid frågan för att ta bort den.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Frågan kunde inte tas bort: en fråga som levereras i en katalog i PersistedQueryDirectoryList[] tas bort tillsammans med sin fil.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Den lagrade frågan har tagits bort.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutationer</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>på</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>av</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Webbplatsingångar</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Var API:t och dess mutationer svarar. Knapparna skriver graphql.ini, precis som ./console exp:graphql:enable och exp:graphql:disable gör.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webbplatsingång</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ändra</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Stäng av</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutationer av</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutationer på</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Slå på</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Gränser</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] för den här webbplatsingången.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Svarscache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Svaren på lagrade frågor, sparade per användarbehörighet och ogiltigförklarade när innehåll publiceras.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Sparade svar</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count svar, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Sparas högst</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Senast ogiltigförklarad</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Töm svarscachen</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Lagrade frågor</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Lagrade med ./console exp:graphql:persist eller av klienter (automatiska lagrade frågor); anropas med namn eller SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Storlek</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Var</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ta bort</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>levererad</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>lagrad</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ja, ta bort den här frågan</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ingen lagrad fråga ännu.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-nycklar</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Personliga API-nycklar med omfånget graphql:read (frågor) eller graphql:write (mutationer). Skapa och återkalla dem på sidan API-åtkomst eller med ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-åtkomst</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Alla nycklar</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Nyckel</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namn</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Ägare</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Omfång</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Senast använd</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>utgången</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>återkallad</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldrig</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ingen API-nyckel med ett GraphQL-omfång ännu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

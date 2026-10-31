@@ -80184,6 +80184,286 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La query viene eseguita con i tuoi permessi, con l'accesso di questa sessione.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count in %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>nessun limite</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Profondità</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Complessità</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elementi per lista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (predefinito %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Richieste per utente o chiave</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Richieste per indirizzo anonimo</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Solo query persistenti</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Query più grande</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Upload più grande</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Non esiste il Siteaccess %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Le mutation sono attivate in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Le mutation sono disattivate in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>L'API GraphQL è attivata in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>L'API GraphQL è disattivata in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Impossibile scrivere le impostazioni: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>La cache delle risposte è stata svuotata: %count risposte rimosse.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Spunta la casella accanto alla query per rimuoverla.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Impossibile rimuovere la query: una query fornita in una directory di PersistedQueryDirectoryList[] viene rimossa insieme al suo file.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>La query persistente è stata rimossa.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutation</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>attivo</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>disattivo</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Dove rispondono l'API e le sue mutation. I pulsanti scrivono graphql.ini, come fanno ./console exp:graphql:enable ed exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Modifica</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Disattiva</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutation disattivate</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutation attivate</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Attiva</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limiti</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] di questo Siteaccess.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache delle risposte</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Le risposte delle query persistenti, conservate per diritti utente e invalidate a ogni pubblicazione di contenuti.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Risposte conservate</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count risposte, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Conservate al massimo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ultima scadenza</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Svuota la cache delle risposte</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Query persistenti</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Memorizzate con ./console exp:graphql:persist o dai client (automatic persisted queries); richiamate per nome o SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nomi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dimensione</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Posizione</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Rimuovi</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>fornita</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>memorizzata</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Sì, rimuovi questa query</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ancora nessuna query persistente.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Chiavi API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Chiavi API personali con lo scope graphql:read (query) o graphql:write (mutation). Creale e revocale nella pagina Accesso API, oppure con ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Accesso API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Tutte le chiavi</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Chiave</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietario</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Scope</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ultimo utilizzo</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>attiva</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>scaduta</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revocata</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mai</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ancora nessuna chiave API con uno scope GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

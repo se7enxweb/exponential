@@ -78807,6 +78807,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Заявката се изпълнява с вашите права, с вход в тази сесия.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count за %seconds с</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>без ограничение</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Дълбочина</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Сложност</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Елементи в списък</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (по подразбиране %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Искания на потребител или ключ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Искания на анонимен адрес</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Интроспекция</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Само съхранени заявки</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Най-голяма заявка</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes байта</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Най-голямо качване</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Няма достъп до сайта %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Мутациите са включени в %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Мутациите са изключени в %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API е включен в %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API е изключен в %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Настройките не можаха да бъдат записани: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Кешът на отговорите е изчистен: премахнати отговори: %count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Отметнете полето до заявката, за да я премахнете.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Заявката не можа да бъде премахната: заявка, доставена в директория от PersistedQueryDirectoryList[], се премахва заедно с файла си.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Съхранената заявка е премахната.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Мутации</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>вкл.</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>изкл.</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Достъпи до сайта</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Къде отговарят API и мутациите му. Бутоните записват graphql.ini, както правят ./console exp:graphql:enable и exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Достъп до сайта</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Промени</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Изключи</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Изключи мутациите</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Включи мутациите</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Включи</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Ограничения</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] на този достъп до сайта.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Кеш на отговорите</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Отговорите на съхранените заявки, пазени според правата на потребителя и обезсилвани при всяко публикуване на съдържание.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Състояние</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Пазени отговори</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count отговора, %bytes байта</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Пазят се най-много</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Последно обезсилване</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Изчисти кеша на отговорите</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Съхранени заявки</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Съхранени с ./console exp:graphql:persist или от клиенти (автоматично съхранени заявки); извикват се по име или SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Имена</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Размер</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Къде</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Премахни</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>доставена</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>съхранена</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Да, премахни тази заявка</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Все още няма съхранени заявки.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ключове</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Лични API ключове с обхват graphql:read (заявки) или graphql:write (мутации). Създавайте и отменяйте ги на страницата API достъп или с ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API достъп</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Всички ключове</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ключ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Име</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Собственик</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Обхвати</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Последно използван</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>активен</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>изтекъл</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>отменен</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>никога</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Все още няма API ключ с обхват на GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

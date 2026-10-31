@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>မေးမြန်းမှုကို ဤစက်ရှင်ဖြင့် ဝင်ရောက်ထားသော သင်၏ ခွင့်ပြုချက်များဖြင့် လုပ်ဆောင်သည်။</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds စက္ကန့်တွင် %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ကန့်သတ်ချက် မရှိ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>အနက်</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ရှုပ်ထွေးမှု</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>စာရင်းတစ်ခုစီရှိ အရာများ</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (မူလ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>အသုံးပြုသူ သို့မဟုတ် ကီး တစ်ခုစီ၏ တောင်းဆိုမှု</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>အမည်မသိ လိပ်စာ တစ်ခုစီ၏ တောင်းဆိုမှု</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှုများသာ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>အကြီးဆုံး မေးမြန်းမှု</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ဘိုက်</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>အကြီးဆုံး တင်ခြင်း</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု %siteaccess မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess တွင် ပြောင်းလဲမှုများကို ဖွင့်လိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess တွင် ပြောင်းလဲမှုများကို ပိတ်လိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess တွင် GraphQL API ကို ဖွင့်လိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess တွင် GraphQL API ကို ပိတ်လိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ဆက်တင်များကို ရေး၍ မရပါ- %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>အဖြေ ကက်ရှ်ကို ရှင်းလင်းပြီး- အဖြေ %count ခု ဖယ်ရှားလိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>မေးမြန်းမှုကို ဖယ်ရှားရန် ၎င်းဘေးရှိ အကွက်ကို အမှန်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>မေးမြန်းမှုကို ဖယ်ရှား၍ မရပါ- PersistedQueryDirectoryList[] ၏ ဖိုင်တွဲတွင် ပါလာသော မေးမြန်းမှုကို ၎င်း၏ဖိုင်နှင့်အတူ ဖယ်ရှားသည်။</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှုကို ဖယ်ရှားလိုက်သည်။</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ဖွင့်</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ပိတ်</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ဆိုက်ဝင်ရောက်မှုများ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API နှင့် ၎င်း၏ ပြောင်းလဲမှုများ ဖြေကြားသည့်နေရာ။ ခလုတ်များသည် ./console exp:graphql:enable နှင့် exp:graphql:disable ကဲ့သို့ graphql.ini ကို ရေးသည်။</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ဆိုက်ဝင်ရောက်မှု</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ပြောင်းရန်</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ပိတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ပြောင်းလဲမှု ပိတ်</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ပြောင်းလဲမှု ဖွင့်</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ကန့်သတ်ချက်များ</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ဤဆိုက်ဝင်ရောက်မှု၏ graphql.ini [GraphQLSettings]။</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>အဖြေ ကက်ရှ်</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှုများ၏ အဖြေများ၊ အသုံးပြုသူ အခွင့်အရေးအလိုက် သိမ်းထားပြီး အကြောင်းအရာ ထုတ်ဝေတိုင်း သက်တမ်းကုန်သည်။</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>အခြေအနေ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>သိမ်းထားသော အဖြေများ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>အဖြေ %count ခု၊ %bytes ဘိုက်</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>အများဆုံး သိမ်းထားချိန်</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds စက္ကန့်</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>နောက်ဆုံး သက်တမ်းကုန်ချိန်</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>အဖြေ ကက်ရှ်ကို ရှင်းလင်းရန်</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှုများ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist ဖြင့် သို့မဟုတ် client များမှ သိမ်းဆည်းထားသည် (အလိုအလျောက် သိမ်းဆည်းသော မေးမြန်းမှုများ); အမည် သို့မဟုတ် SHA-256 ဖြင့် ခေါ်သည်။</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>အမည်များ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>အရွယ်အစား</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>နေရာ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ဖယ်ရှားရန်</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ပါလာသည်</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>သိမ်းထားသည်</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ဟုတ်ကဲ့၊ ဤမေးမြန်းမှုကို ဖယ်ရှားပါ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>သိမ်းဆည်းထားသော မေးမြန်းမှု မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ကီးများ</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>နယ်ပယ် graphql:read (မေးမြန်းမှုများ) သို့မဟုတ် graphql:write (ပြောင်းလဲမှုများ) ပါသော ကိုယ်ပိုင် API ကီးများ။ ၎င်းတို့ကို API ဝင်ရောက်ခွင့် စာမျက်နှာတွင် သို့မဟုတ် ./console exp:graphql:keys ဖြင့် ဖန်တီးပြီး ရုပ်သိမ်းပါ။</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ဝင်ရောက်ခွင့်</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ကီးအားလုံး</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ကီး</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>အမည်</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ပိုင်ရှင်</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>နယ်ပယ်များ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>နောက်ဆုံး အသုံးပြုချိန်</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>အသက်ဝင်</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>သက်တမ်းကုန်</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ရုပ်သိမ်းပြီး</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ဘယ်တော့မှ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL နယ်ပယ်ပါသော API ကီး မရှိသေးပါ။</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

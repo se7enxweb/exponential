@@ -78777,6 +78777,286 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Gaaffiin mirga keetiin hojjeta, yeroo kanaan seenteetta.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count sekondii %seconds keessatti</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>daangaa malee</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Gadi fageenya</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Walxaxiinsa</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Wantoota tarree tokkoon</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (durtii %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Iyyannoowwan fayyadamaa ykn furtuu tokkoon</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Iyyannoowwan teessoo maqaa hin qabne tokkoon</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Ofqorannoo</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Gaaffiiwwan kuufaman qofa</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Gaaffii guddaa</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>Baayitii %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Olkaa'insa guddaa</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Seensi marsariitii %siteaccess hin jiru.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Jijjiiramoonni %siteaccess keessatti banamaniiru.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Jijjiiramoonni %siteaccess keessatti dhaamsamaniiru.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess keessatti banameera.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess keessatti dhaamsameera.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Qindaa'inoota barreessuun hin danda'amne: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Kuusaan deebii qulqulleeffameera: deebiiwwan %count haqamaniiru.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Gaaffii haquuf saanduqa cinaa isaa jiru mallatteessi.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Gaaffii haquun hin danda'amne: gaaffiin kallattii PersistedQueryDirectoryList[] keessatti dhufe faayilii isaa wajjin haqama.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Gaaffiin kuufame haqameera.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Jijjiiramoota</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>banaa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>cufaa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Seensawwan marsariitii</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Bakka API fi jijjiiramoonni isaa deebii kennan. Qabduuwwan graphql.ini barreessu, akkuma ./console exp:graphql:enable fi exp:graphql:disable godhan.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Seensa marsariitii</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Jijjiiri</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Dhaamsi</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Jijjiiramoota cufaa</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Jijjiiramoota banaa</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Bani</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Daangaawwan</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] seensa marsariitii kanaa.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Kuusaa deebii</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Deebiiwwan gaaffiiwwan kuufamanii, mirga fayyadamaatiin kuufamanii fi yeroo qabiyyeen maxxanfamu hunda yeroon isaanii darba.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Haala</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Deebiiwwan kuufaman</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>Deebiiwwan %count, baayitii %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Yoo baay'ate kuufama</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Yeroo dhumaa darbe</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Kuusaa deebii qulqulleessi</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Gaaffiiwwan kuufaman</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist'n, ykn maamiltootaan kuufaman (gaaffiiwwan ofumaan kuufaman); maqaan ykn SHA-256'n waamamu.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Maqaawwan</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Hamma</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Eessa</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Haqi</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>kan dhufe</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>kan kuufame</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Eeyyee, gaaffii kana haqi</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ammaaf gaaffiin kuufame hin jiru.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Furtuuwwan API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Furtuuwwan API dhuunfaa daangaa graphql:read (gaaffiiwwan) ykn graphql:write (jijjiiramoota) qaban. Fuula Seensa API irratti, ykn ./console exp:graphql:keys'n uumi fi haqi.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Seensa API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Furtuuwwan hunda</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Furtuu</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Maqaa</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Abbaa</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Daangaawwan</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Yeroo dhumaa itti fayyadame</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>hojii irra</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>yeroon darbe</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>haqame</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>gonkumaa</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ammaaf furtuun API daangaa GraphQL qabu hin jiru.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

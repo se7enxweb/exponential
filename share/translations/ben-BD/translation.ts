@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>কোয়েরিটি আপনার অধিকার নিয়ে, এই সেশনে সাইন ইন অবস্থায় চলে।</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds সে-এ %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>কোনো সীমা নেই</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>গভীরতা</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>জটিলতা</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>প্রতি তালিকায় আইটেম</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ডিফল্ট %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>প্রতি ব্যবহারকারী বা কী-তে অনুরোধ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>প্রতি বেনামি ঠিকানায় অনুরোধ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ইনট্রোস্পেকশন</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>শুধু সংরক্ষিত কোয়েরি</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>সবচেয়ে বড় কোয়েরি</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes বাইট</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>সবচেয়ে বড় আপলোড</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess নামে কোনো সাইটঅ্যাক্সেস নেই।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess-এ মিউটেশন চালু করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess-এ মিউটেশন বন্ধ করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess-এ GraphQL API চালু করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess-এ GraphQL API বন্ধ করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>সেটিংস লেখা যায়নি: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>উত্তর ক্যাশ খালি করা হয়েছে: %count টি উত্তর সরানো হয়েছে।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>কোয়েরিটি সরাতে তার পাশের বাক্সে টিক দিন।</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>কোয়েরিটি সরানো যায়নি: PersistedQueryDirectoryList[]-এর কোনো ডিরেক্টরিতে সরবরাহকৃত কোয়েরি তার ফাইলের সঙ্গে সরানো হয়।</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>সংরক্ষিত কোয়েরিটি সরানো হয়েছে।</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>মিউটেশন</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>চালু</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>বন্ধ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API ও এর মিউটেশন কোথায় উত্তর দেয়। বোতামগুলো graphql.ini লেখে, যেমন ./console exp:graphql:enable ও exp:graphql:disable করে।</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইটঅ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>পরিবর্তন</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>বন্ধ করুন</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>মিউটেশন বন্ধ</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>মিউটেশন চালু</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>চালু করুন</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>সীমা</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>এই সাইটঅ্যাক্সেসের graphql.ini [GraphQLSettings]।</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>উত্তর ক্যাশ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>সংরক্ষিত কোয়েরির উত্তর, ব্যবহারকারীর অধিকার অনুযায়ী রাখা হয় এবং কনটেন্ট প্রকাশিত হলেই মেয়াদোত্তীর্ণ হয়।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অবস্থা</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>রাখা উত্তর</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count টি উত্তর, %bytes বাইট</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>সর্বোচ্চ রাখা হয়</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds সে</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>শেষ মেয়াদোত্তীর্ণ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>উত্তর ক্যাশ খালি করুন</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>সংরক্ষিত কোয়েরি</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist দিয়ে বা ক্লায়েন্টদের মাধ্যমে সংরক্ষিত (স্বয়ংক্রিয় সংরক্ষিত কোয়েরি); নাম বা SHA-256 দিয়ে ডাকা হয়।</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>নাম</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>আকার</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>কোথায়</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>সরান</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>সরবরাহকৃত</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>সংরক্ষিত</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>হ্যাঁ, এই কোয়েরিটি সরান</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>এখনও কোনো সংরক্ষিত কোয়েরি নেই।</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API কী</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (কোয়েরি) বা graphql:write (মিউটেশন) স্কোপসহ ব্যক্তিগত API কী। এগুলো API অ্যাক্সেস পৃষ্ঠায় বা ./console exp:graphql:keys দিয়ে তৈরি ও বাতিল করুন।</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API অ্যাক্সেস</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>সব কী</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>কী</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>নাম</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>মালিক</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>স্কোপ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>শেষ ব্যবহার</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>সক্রিয়</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>মেয়াদোত্তীর্ণ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>বাতিল</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>কখনও না</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>এখনও GraphQL স্কোপসহ কোনো API কী নেই।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -78775,6 +78775,286 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Weydiintu waxay ku shaqaysaa xuquuqdaada, adigoo ku soo galay fadhigan.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count gudaha %seconds il.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>xad la'aan</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Qoto-dheer</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Adkaan</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Shay liiskiiba</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (caadi %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Codsiyo isticmaale ama fure kasta</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Codsiyo cinwaan qarsoodi kasta</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Isbaaritaan (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Weydiimo kaydsan oo keliya</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Weydiinta ugu weyn</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes beyt</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Soo-gelinta ugu weyn</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Ma jiro gelitaan goob %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Isbeddellada waa la shiday gudaha %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Isbeddellada waa la demiyay gudaha %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API waa la shiday gudaha %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API waa la demiyay gudaha %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Dejimaha lama qori karin: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Kaydka jawaabaha waa la nadiifiyay: %count jawaabood ayaa la saaray.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Calaamadee sanduuqa ku xiga weydiinta si aad u saarto.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Weydiinta lama saari karin: weydiin lagu keenay galka PersistedQueryDirectoryList[] waxaa lala saaraa faylkeeda.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Weydiinta kaydsan waa la saaray.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Isbeddellada</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>shidan</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>demsan</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Gelitaannada goobta</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Halka API-ga iyo isbeddelladiisu ka jawaabaan. Badhamadu waxay qoraan graphql.ini, sida ./console exp:graphql:enable iyo exp:graphql:disable sameeyaan.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gelitaanka goobta</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Beddel</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Dami</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Isbeddellada demsan</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Isbeddellada shidan</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Shid</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Xadadka</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ee gelitaankan goobta.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Kaydka jawaabaha</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Jawaabaha weydiimaha kaydsan, oo loo hayo sida xuquuqda isticmaalaha, oo dhaca mar kasta oo nuxur la daabaco.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Xaalad</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Jawaabaha la hayo</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count jawaabood, %bytes beyt</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Ugu badnaan la hayo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds il.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Dhicitaankii ugu dambeeyay</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Nadiifi kaydka jawaabaha</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Weydiimo kaydsan</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Lagu kaydiyay ./console exp:graphql:persist, ama macaamiisha (weydiimo si toos ah loo kaydiyay); lagu yeero magac ama SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Magacyada</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Cabbir</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Halka</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Saar</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>la keenay</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>la kaydiyay</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Haa, saar weydiintan</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Weli ma jirto weydiin kaydsan.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Furayaasha API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Furayaal API shakhsi ah oo leh baaxadda graphql:read (weydiimo) ama graphql:write (isbeddello). Ku samee oo ku buri bogga Gelitaanka API, ama ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Gelitaanka API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Dhammaan furayaasha</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Fure</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Magac</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Milkiile</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Baaxadaha</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Markii ugu dambeysay la isticmaalay</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>firfircoon</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>dhacay</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>la buriyay</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>weligii</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Weli ma jiro fure API oo leh baaxad GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

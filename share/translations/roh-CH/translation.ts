@@ -78777,6 +78777,286 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>La dumonda vegn exequida cun voss dretgs, annunzià cun questa sessiun.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count en %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>nagin limit</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Profunditad</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Cumplexitad</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elements per glista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Dumondas per utilisader u clav</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Dumondas per adressa anonima</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspecziun</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Mo dumondas memorisadas</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>La pli gronda dumonda</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Il pli grond upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>I na dat nagin access a la website %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Las mutaziuns èn activadas en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Las mutaziuns èn deactivadas en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>L'API GraphQL è activada en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>L'API GraphQL è deactivada en %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ils parameters n'han betg pudì vegnir scrits: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Il cache da las respostas è vegnì svidà: %count respostas allontanadas.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Marca la chascha sper la dumonda per l'allontanar.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>La dumonda n'ha betg pudì vegnir allontanada: ina dumonda furnida en in ordinatur da PersistedQueryDirectoryList[] vegn allontanada cun sia datoteca.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>La dumonda memorisada è vegnida allontanada.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutaziuns</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>activ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>deactivà</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Accesses a la website</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Nua che l'API e sias mutaziuns respundan. Ils buttuns scrivan graphql.ini, sco ./console exp:graphql:enable ed exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access a la website</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Midar</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Deactivar</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutaziuns deactivadas</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutaziuns activadas</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Activar</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limits</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] da quest access a la website.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache da las respostas</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Las respostas da las dumondas memorisadas, tegnidas per dretgs d'utilisader e scadidas mintga giada che cuntegn vegn publitgà.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stadi</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Respostas tegnidas</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count respostas, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Tegnidas maximalmain</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ultima scadenza</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Svidar il cache da las respostas</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Dumondas memorisadas</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Memorisadas cun ./console exp:graphql:persist, u da clients (dumondas memorisadas automaticas); clamadas per num u SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nums</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grondezza</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Nua</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Allontanar</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>furnida</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>memorisada</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Gea, allontanar questa dumonda</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Anc nagina dumonda memorisada.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Clavs d'API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Clavs d'API persunalas cun la sfera graphql:read (dumondas) u graphql:write (mutaziuns). Creescha e revochescha ellas sin la pagina Access a l'API, u cun ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Access a l'API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Tut las clavs</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Clav</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Num</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Proprietari</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Sferas</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Ultima utilisaziun</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>activa</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>scadida</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revocada</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mai</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Anc nagina clav d'API cun ina sfera GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

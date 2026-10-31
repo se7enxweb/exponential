@@ -78777,6 +78777,286 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Laaj bi dafay dox ak sa sañ-sañ, yaw mi dugg ci jamono jii.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ci %seconds segond</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>amul dig</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Xóot</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Jafe-jafe</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Lëf ci limu bu nekk</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (bu ñu tànn %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Ñaan ci jëfandikukat walla caabi bu nekk</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Ñaan ci adrees bu amul tur bu nekk</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Seetlu tekki bi (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Laaj yu ñu denc rekk</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Laaj bi gën a rëy</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Yebal bi gën a rëy</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Amul buntu sit %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Soppi yi dañu leen taal ci %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Soppi yi dañu leen fay ci %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API bi dañu ko taal ci %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API bi dañu ko fay ci %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Mënuñu woon a bind tànneef yi: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Kaasu tontu yi dañu ko setal: %count tontu lañu dindi.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Màndargal kees bi ci wetu laaj bi ngir dindi ko.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Mënuñu woon a dindi laaj bi: laaj bu ñëw ci kàggu PersistedQueryDirectoryList[] dañu koy dindi ak dencukaayam.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Laaj bu ñu denc bi dindi nañu ko.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Soppi yi</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>taal</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>fay</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Buntu sit yi</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Fi API bi ak ay soppiam di tontu. Bitoŋ yi dañuy bind graphql.ini, ni ./console exp:graphql:enable ak exp:graphql:disable di def.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Buntu sit</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Soppi</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Fay</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Fay soppi yi</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Taal soppi yi</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Taal</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Dig yi</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] bu buntu sit bii.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Kaasu tontu yi</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Tontuy laaj yu ñu denc, ñu denc leen ci sañ-sañu jëfandikukat bu nekk te ñu jeex saa bu ñu siiwalee lu bees.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Mbir</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Tontu yu ñu denc</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count tontu, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Dencu bu gën a yàgg</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Jeex bu mujj</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Setal kaasu tontu yi</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Laaj yu ñu denc</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Ñu denc leen ak ./console exp:graphql:persist, walla kiliyaan yi (laaj yu ñu denc ci seen bopp); ñu leen di woo ci tur walla SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Tur yi</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dayo</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Fan</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Dindi</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ñëwaale</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>dencu</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Waaw, dindil laaj bii</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Amagul laaj bu ñu denc.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Caabi API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Caabi API yu boppu nit yu am wàll graphql:read (laaj) walla graphql:write (soppi). Defal leen te dindi leen ci xëtu Dugg API, walla ak ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Dugg API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Caabi yépp</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Caabi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tur</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Boroom</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Wàll yi</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Jëfandikoo bu mujj</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>dox na</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>jeex na</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>dindi nañu ko</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mukk</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Amagul caabi API bu am wàllu GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

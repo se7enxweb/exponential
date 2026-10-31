@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ຄຳຖາມດຳເນີນການດ້ວຍສິດຂອງທ່ານ, ເຂົ້າສູ່ລະບົບດ້ວຍເຊດຊັນນີ້.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ໃນ %seconds ວິ</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ບໍ່ຈຳກັດ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ຄວາມເລິກ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ຄວາມຊັບຊ້ອນ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ລາຍການຕໍ່ລາຍຊື່</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ຄ່າເລີ່ມຕົ້ນ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ຄຳຮ້ອງຕໍ່ຜູ້ໃຊ້ ຫຼືກະແຈ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ຄຳຮ້ອງຕໍ່ທີ່ຢູ່ບໍ່ລະບຸຕົວຕົນ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>ສະເພາະຄຳຖາມທີ່ບັນທຶກໄວ້</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ຄຳຖາມໃຫຍ່ສຸດ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ໄບຕ໌</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ການອັບໂຫຼດໃຫຍ່ສຸດ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ບໍ່ມີການເຂົ້າເຖິງໄຊ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>ການປ່ຽນແປງຖືກເປີດໃນ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>ການປ່ຽນແປງຖືກປິດໃນ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ຖືກເປີດໃນ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API ຖືກປິດໃນ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ບໍ່ສາມາດຂຽນການຕັ້ງຄ່າໄດ້: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ລ້າງແຄຊຄຳຕອບແລ້ວ: ລຶບ %count ຄຳຕອບ.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ໝາຍກ່ອງຂ້າງຄຳຖາມເພື່ອລຶບມັນ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ບໍ່ສາມາດລຶບຄຳຖາມໄດ້: ຄຳຖາມທີ່ມາພ້ອມໃນໄດເຣັກທໍຣີຂອງ PersistedQueryDirectoryList[] ຈະຖືກລຶບພ້ອມກັບໄຟລ໌ຂອງມັນ.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ລຶບຄຳຖາມທີ່ບັນທຶກໄວ້ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ເປີດ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ປິດ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>ບ່ອນທີ່ API ແລະການປ່ຽນແປງຂອງມັນຕອບ. ປຸ່ມຕ່າງໆຂຽນ graphql.ini ຄືກັບ ./console exp:graphql:enable ແລະ exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ການເຂົ້າເຖິງໄຊ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ປ່ຽນ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ປິດ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ປິດການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ເປີດການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ເປີດ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ຂີດຈຳກັດ</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ຂອງການເຂົ້າເຖິງໄຊນີ້.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ແຄຊຄຳຕອບ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>ຄຳຕອບຂອງຄຳຖາມທີ່ບັນທຶກໄວ້, ເກັບແຍກຕາມສິດຂອງຜູ້ໃຊ້ ແລະໝົດອາຍຸທຸກຄັ້ງທີ່ເຜີຍແຜ່ເນື້ອຫາ.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ສະຖານະ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ຄຳຕອບທີ່ເກັບໄວ້</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ຄຳຕອບ, %bytes ໄບຕ໌</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>ເກັບໄວ້ສູງສຸດ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ວິ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ໝົດອາຍຸຄັ້ງລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ລ້າງແຄຊຄຳຕອບ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>ຄຳຖາມທີ່ບັນທຶກໄວ້</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>ບັນທຶກດ້ວຍ ./console exp:graphql:persist ຫຼືໂດຍໄຄລເອັນ (ຄຳຖາມທີ່ບັນທຶກອັດຕະໂນມັດ); ເອີ້ນໃຊ້ດ້ວຍຊື່ ຫຼື SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ຊື່</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ຂະໜາດ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ບ່ອນ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ລຶບ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ມາພ້ອມ</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ບັນທຶກແລ້ວ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ແມ່ນ, ລຶບຄຳຖາມນີ້</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ຍັງບໍ່ມີຄຳຖາມທີ່ບັນທຶກໄວ້.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>ກະແຈ API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>ກະແຈ API ສ່ວນຕົວທີ່ມີຂອບເຂດ graphql:read (ຄຳຖາມ) ຫຼື graphql:write (ການປ່ຽນແປງ). ສ້າງ ແລະຖອນພວກມັນໃນໜ້າ ການເຂົ້າເຖິງ API ຫຼືດ້ວຍ ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>ການເຂົ້າເຖິງ API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ກະແຈທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ກະແຈ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ຊື່</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ເຈົ້າຂອງ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ຂອບເຂດ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ໃຊ້ຄັ້ງລ່າສຸດ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ໃຊ້ງານ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ໝົດອາຍຸ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ຖືກຖອນ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ບໍ່ເຄີຍ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>ຍັງບໍ່ມີກະແຈ API ທີ່ມີຂອບເຂດ GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

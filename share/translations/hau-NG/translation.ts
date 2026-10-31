@@ -78775,6 +78775,286 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tambayar tana gudana da haƙƙoƙinka, kamar yadda ka shiga da wannan zaman.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count cikin daƙ. %seconds</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>babu iyaka</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Zurfi</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Sarƙaƙiya</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Abubuwa a kowane jeri</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (tsoho %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Buƙatu a kowane mai amfani ko maɓalli</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Buƙatu a kowane adireshi maras suna</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Tambayoyin da aka adana kawai</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Tambaya mafi girma</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>bytes %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Lodawa mafi girma</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Babu hanyar shiga shafi %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>An kunna sauye-sauye a %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>An kashe sauye-sauye a %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>An kunna GraphQL API a %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>An kashe GraphQL API a %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ba a iya rubuta saitunan ba: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>An share ma'ajiyar amsoshi: an cire amsoshi %count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Duba akwatin da ke kusa da tambayar don cire ta.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Ba a iya cire tambayar ba: tambayar da aka kawo a cikin kundin PersistedQueryDirectoryList[] ana cire ta tare da fayil ɗinta.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>An cire tambayar da aka adana.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Sauye-sauye</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>a kunne</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>a kashe</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Hanyoyin shiga shafi</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Inda API da sauye-sauyenta ke amsawa. Maɓallan suna rubuta graphql.ini, kamar yadda ./console exp:graphql:enable da exp:graphql:disable suke yi.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Canza</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Kashe</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Sauye-sauye a kashe</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Sauye-sauye a kunne</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Kunna</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Iyakoki</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] na wannan hanyar shiga shafi.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Ma'ajiyar amsoshi</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Amsoshin tambayoyin da aka adana, ana ajiye su bisa haƙƙoƙin mai amfani kuma suna ƙarewa duk lokacin da aka wallafa abun ciki.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Matsayi</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Amsoshin da aka ajiye</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>Amsoshi %count, bytes %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Ajiyewa mafi tsawo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>daƙ. %seconds</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ƙarewa ta ƙarshe</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Share ma'ajiyar amsoshi</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Tambayoyin da aka adana</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>An adana su da ./console exp:graphql:persist, ko ta abokan ciniki (tambayoyin da aka adana kai tsaye); ana kiran su da suna ko SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Sunaye</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Girma</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ina</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Cire</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>an kawo</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>an adana</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ee, cire wannan tambayar</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Babu tambayar da aka adana tukuna.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Maɓallan API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Maɓallan API na kai tare da iyakar graphql:read (tambayoyi) ko graphql:write (sauye-sauye). Ƙirƙira su kuma soke su a shafin Samun API, ko da ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Samun API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Duk maɓallai</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Maɓalli</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Suna</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mai shi</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Iyakoki</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Amfani na ƙarshe</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>mai aiki</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ya ƙare</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>an soke</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ba taɓa ba</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Babu maɓallin API mai iyakar GraphQL tukuna.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

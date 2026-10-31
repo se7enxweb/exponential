@@ -80002,6 +80002,286 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>De query draait met uw rechten, ingelogd met deze sessie.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count in %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>geen limiet</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Diepte</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Complexiteit</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Items per lijst</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standaard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Verzoeken per gebruiker of sleutel</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Verzoeken per anoniem adres</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspectie</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Alleen opgeslagen query's</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Grootste query</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Grootste upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Er is geen siteaccess %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>De mutaties zijn ingeschakeld in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>De mutaties zijn uitgeschakeld in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>De GraphQL-API is ingeschakeld in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>De GraphQL-API is uitgeschakeld in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>De instellingen konden niet worden geschreven: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>De antwoordcache is geleegd: %count antwoorden verwijderd.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Vink het vakje naast de query aan om deze te verwijderen.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>De query kon niet worden verwijderd: een query die in een map van PersistedQueryDirectoryList[] wordt meegeleverd, wordt samen met zijn bestand verwijderd.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>De opgeslagen query is verwijderd.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutaties</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>aan</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>uit</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccesses</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Waar de API en zijn mutaties antwoorden. De knoppen schrijven graphql.ini, zoals ./console exp:graphql:enable en exp:graphql:disable dat doen.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Wijzigen</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Uitschakelen</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutaties uit</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutaties aan</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Inschakelen</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limieten</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] van deze siteaccess.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Antwoordcache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>De antwoorden van opgeslagen query's, bewaard per gebruikersrechten en verlopen zodra er content wordt gepubliceerd.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Bewaarde antwoorden</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count antwoorden, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Maximaal bewaard</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Laatst verlopen</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Antwoordcache legen</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Opgeslagen query's</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Opgeslagen met ./console exp:graphql:persist of door clients (automatische opgeslagen query's); aangeroepen op naam of SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grootte</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Locatie</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>meegeleverd</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>opgeslagen</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ja, deze query verwijderen</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Nog geen opgeslagen query.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-sleutels</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Persoonlijke API-sleutels met de scope graphql:read (query's) of graphql:write (mutaties). Maak en trek ze in op de pagina API-toegang, of met ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-toegang</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Alle sleutels</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Sleutel</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigenaar</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Scopes</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Laatst gebruikt</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>actief</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>verlopen</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ingetrokken</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nooit</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Nog geen API-sleutel met een GraphQL-scope.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

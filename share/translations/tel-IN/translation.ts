@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ఈ సెషన్‌తో సైన్ ఇన్ అయి, మీ హక్కులతో క్వెరీ నడుస్తుంది.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds సె. లో %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>పరిమితి లేదు</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>లోతు</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>సంక్లిష్టత</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>జాబితాకు అంశాలు</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (డిఫాల్ట్ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>వినియోగదారు లేదా కీకి అభ్యర్థనలు</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>అనామక చిరునామాకు అభ్యర్థనలు</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ఇంట్రోస్పెక్షన్</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>నిల్వ చేసిన క్వెరీలు మాత్రమే</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>అతిపెద్ద క్వెరీ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes బైట్‌లు</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>అతిపెద్ద అప్‌లోడ్</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess అనే సైట్‌యాక్సెస్ లేదు.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess లో మ్యుటేషన్‌లు ఆన్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess లో మ్యుటేషన్‌లు ఆఫ్ చేయబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess లో GraphQL API ఆన్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess లో GraphQL API ఆఫ్ చేయబడింది.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>సెట్టింగ్‌లను రాయలేకపోయాము: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ప్రతిస్పందన కాష్ ఖాళీ చేయబడింది: %count సమాధానాలు తొలగించబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>క్వెరీని తొలగించడానికి దాని పక్కన ఉన్న పెట్టెను టిక్ చేయండి.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>క్వెరీని తొలగించలేకపోయాము: PersistedQueryDirectoryList[] లోని డైరెక్టరీలో అందించబడిన క్వెరీ దాని ఫైల్‌తో పాటే తొలగించబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>నిల్వ చేసిన క్వెరీ తొలగించబడింది.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>మ్యుటేషన్‌లు</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ఆన్</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ఆఫ్</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>సైట్‌యాక్సెస్‌లు</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API మరియు దాని మ్యుటేషన్‌లు ఎక్కడ సమాధానమిస్తాయి. ./console exp:graphql:enable మరియు exp:graphql:disable చేసినట్లే బటన్‌లు graphql.ini ను రాస్తాయి.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>సైట్‌యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>మార్చు</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ఆఫ్ చేయి</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>మ్యుటేషన్‌లు ఆఫ్</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>మ్యుటేషన్‌లు ఆన్</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ఆన్ చేయి</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>పరిమితులు</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ఈ సైట్‌యాక్సెస్ యొక్క graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ప్రతిస్పందన కాష్</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>నిల్వ చేసిన క్వెరీల సమాధానాలు, వినియోగదారు హక్కుల ప్రకారం ఉంచబడి, కంటెంట్ ప్రచురించబడిన ప్రతిసారీ గడువు ముగుస్తాయి.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ఉంచిన సమాధానాలు</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count సమాధానాలు, %bytes బైట్‌లు</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>గరిష్ఠంగా ఉంచే సమయం</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds సె.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>చివరిగా గడువు ముగిసింది</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ప్రతిస్పందన కాష్‌ను ఖాళీ చేయి</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>నిల్వ చేసిన క్వెరీలు</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist తో లేదా క్లయింట్‌ల ద్వారా (ఆటోమేటిక్ నిల్వ చేసిన క్వెరీలు) నిల్వ చేయబడతాయి; పేరు లేదా SHA-256 ద్వారా పిలవబడతాయి.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>పేర్లు</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>పరిమాణం</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ఎక్కడ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>తొలగించు</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>అందించబడింది</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>నిల్వ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>అవును, ఈ క్వెరీని తొలగించు</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ఇంకా నిల్వ చేసిన క్వెరీ లేదు.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API కీలు</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (క్వెరీలు) లేదా graphql:write (మ్యుటేషన్‌లు) స్కోప్ ఉన్న వ్యక్తిగత API కీలు. వాటిని API యాక్సెస్ పేజీలో లేదా ./console exp:graphql:keys తో సృష్టించండి మరియు రద్దు చేయండి.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>అన్ని కీలు</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>కీ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>పేరు</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>యజమాని</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>స్కోప్‌లు</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>చివరిగా ఉపయోగించినది</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>సక్రియం</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>గడువు ముగిసింది</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>రద్దు చేయబడింది</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ఎప్పుడూ లేదు</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL స్కోప్ ఉన్న API కీ ఇంకా లేదు.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

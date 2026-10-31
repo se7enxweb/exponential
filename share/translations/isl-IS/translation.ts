@@ -78807,6 +78807,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Fyrirspurnin keyrir með þínum réttindum, í þessari innskráðu lotu.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count á %seconds sek.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>engin takmörk</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Dýpt</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Flækjustig</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Atriði í lista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (sjálfgefið %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Beiðnir á notanda eða lykil</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Beiðnir á nafnlaust vistfang</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Sjálfsskoðun (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Aðeins vistaðar fyrirspurnir</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Stærsta fyrirspurn</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bæti</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Stærsta upphleðsla</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Enginn vefaðgangur %siteaccess er til.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Kveikt er á breytingaaðgerðum í %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Slökkt er á breytingaaðgerðum í %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Kveikt er á GraphQL-forritaskilunum í %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Slökkt er á GraphQL-forritaskilunum í %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ekki tókst að skrifa stillingarnar: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Svarskyndiminnið var hreinsað: %count svörum eytt.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Hakaðu í reitinn við fyrirspurnina til að fjarlægja hana.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Ekki tókst að fjarlægja fyrirspurnina: fyrirspurn sem fylgir í möppu í PersistedQueryDirectoryList[] er fjarlægð með skránni sinni.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Vistaða fyrirspurnin var fjarlægð.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Breytingaaðgerðir</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>kveikt</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>slökkt</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Vefaðgangar</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Hvar forritaskilin og breytingaaðgerðir þeirra svara. Hnapparnir skrifa graphql.ini, eins og ./console exp:graphql:enable og exp:graphql:disable gera.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Vefaðgangur</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-forritaskil</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Breyta</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Slökkva</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Slökkt á breytingaaðgerðum</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Kveikt á breytingaaðgerðum</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Kveikja</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Takmörk</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] þessa vefaðgangs.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Svarskyndiminni</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Svör vistaðra fyrirspurna, geymd eftir notendaréttindum og ógilt í hvert sinn sem efni er birt.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staða</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Geymd svör</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count svör, %bytes bæti</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Geymt í mesta lagi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Síðast ógilt</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Hreinsa svarskyndiminnið</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Vistaðar fyrirspurnir</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Vistaðar með ./console exp:graphql:persist, eða af biðlurum (automatic persisted queries); kallaðar eftir nafni eða SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nöfn</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Stærð</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hvar</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjarlægja</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>meðfylgjandi</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>vistuð</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Já, fjarlægja þessa fyrirspurn</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Engin vistuð fyrirspurn enn.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-lyklar</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Persónulegir API-lyklar með umfangið graphql:read (fyrirspurnir) eða graphql:write (breytingaaðgerðir). Búðu þá til og afturkallaðu á síðunni API-aðgangur, eða með ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-aðgangur</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Allir lyklar</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Lykill</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nafn</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eigandi</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Umfang</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Síðast notaður</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>virkur</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>útrunninn</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>afturkallaður</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldrei</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Enginn API-lykill með GraphQL-umfang enn.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

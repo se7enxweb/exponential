@@ -78807,6 +78807,286 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Il-mistoqsija taħdem bid-drittijiet tiegħek, illoggjat b'din is-sessjoni.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count f'%seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>l-ebda limitu</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Fond</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kumplessità</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elementi għal kull lista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (default %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Talbiet għal kull utent jew ċavetta</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Talbiet għal kull indirizz anonimu</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspezzjoni</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Mistoqsijiet maħżuna biss</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>L-akbar mistoqsija</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>L-akbar tlugħ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>M'hemm l-ebda aċċess għas-sit %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Il-mutazzjonijiet inxtegħlu f'%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Il-mutazzjonijiet intfew f'%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>L-API GraphQL inxtegħlet f'%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>L-API GraphQL intfiet f'%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Is-settings ma setgħux jinkitbu: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Il-cache tat-tweġibiet tbattlet: tneħħew %count tweġibiet.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Immarka l-kaxxa ħdejn il-mistoqsija biex tneħħiha.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Il-mistoqsija ma setgħetx titneħħa: mistoqsija mogħtija f'direttorju ta' PersistedQueryDirectoryList[] titneħħa mal-fajl tagħha.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Il-mistoqsija maħżuna tneħħiet.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutazzjonijiet</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>mixgħul</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>mitfi</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Aċċessi għas-sit</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Fejn tweġibu l-API u l-mutazzjonijiet tagħha. Il-buttuni jiktbu graphql.ini, kif jagħmlu ./console exp:graphql:enable u exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ibdel</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Itfi</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutazzjonijiet mitfija</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutazzjonijiet mixgħula</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ixgħel</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limiti</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ta' dan l-aċċess għas-sit.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache tat-tweġibiet</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>It-tweġibiet tal-mistoqsijiet maħżuna, miżmuma skont id-drittijiet tal-utent u li jiskadu kull meta jiġi ppubblikat kontenut.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stat</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Tweġibiet miżmuma</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count tweġibiet, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Miżmuma l-iktar</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>L-aħħar skadenza</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Battal il-cache tat-tweġibiet</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Mistoqsijiet maħżuna</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Maħżuna b'./console exp:graphql:persist, jew mill-klijenti (mistoqsijiet maħżuna awtomatikament); imsejħa bl-isem jew SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Ismijiet</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Daqs</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Fejn</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Neħħi</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>mogħtija</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>maħżuna</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Iva, neħħi din il-mistoqsija</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Għad m'hemm l-ebda mistoqsija maħżuna.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Ċwievet API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Ċwievet API personali bl-ambitu graphql:read (mistoqsijiet) jew graphql:write (mutazzjonijiet). Oħloqhom u rrevokahom fil-paġna Aċċess għall-API, jew b'./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Aċċess għall-API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Iċ-ċwievet kollha</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ċavetta</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sid</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Ambiti</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>L-aħħar użu</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>attiva</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>skaduta</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revokata</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>qatt</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Għad m'hemm l-ebda ċavetta API b'ambitu GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

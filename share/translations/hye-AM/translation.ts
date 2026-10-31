@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Հարցումը կատարվում է ձեր իրավունքներով՝ այս սեսիայով մուտք գործած։</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds վրկ-ում</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>առանց սահմանի</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Խորություն</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Բարդություն</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Տարրեր ցանկում</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (լռելյայն %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Դիմումներ ըստ օգտատիրոջ կամ բանալու</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Դիմումներ ըստ անանուն հասցեի</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Ինտրոսպեկցիա</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Միայն պահպանված հարցումներ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Ամենամեծ հարցումը</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes բայթ</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Ամենամեծ վերբեռնումը</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess կայքի մուտքի կետ չկա։</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Մուտացիաները միացված են %siteaccess-ում։</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Մուտացիաներն անջատված են %siteaccess-ում։</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API-ն միացված է %siteaccess-ում։</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API-ն անջատված է %siteaccess-ում։</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Կարգավորումները հնարավոր չեղավ գրել՝ %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Պատասխանների քեշը մաքրվեց՝ հեռացվեց %count պատասխան։</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Նշեք հարցման կողքի վանդակը՝ այն հեռացնելու համար։</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Հարցումը հնարավոր չեղավ հեռացնել՝ PersistedQueryDirectoryList[]-ի պանակում մատակարարված հարցումը հեռացվում է իր ֆայլի հետ։</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Պահպանված հարցումը հեռացվեց։</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Մուտացիաներ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>միացված</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>անջատված</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Կայքի մուտքի կետեր</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Որտեղ են պատասխանում API-ն և նրա մուտացիաները։ Կոճակները գրում են graphql.ini, ինչպես ./console exp:graphql:enable և exp:graphql:disable։</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Կայքի մուտքի կետ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Փոխել</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Անջատել</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Մուտացիաներն անջատված են</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Մուտացիաները միացված են</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Միացնել</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Սահմանաչափեր</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Կայքի այս մուտքի կետի graphql.ini [GraphQLSettings]։</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Պատասխանների քեշ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Պահպանված հարցումների պատասխանները՝ պահվում են ըստ օգտատիրոջ իրավունքների և ժամկետանց են դառնում ամեն անգամ, երբ բովանդակություն է հրապարակվում։</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Վիճակ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Պահված պատասխաններ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count պատասխան, %bytes բայթ</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Պահվում է առավելագույնը</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds վրկ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Վերջին ժամկետանցում</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Մաքրել պատասխանների քեշը</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Պահպանված հարցումներ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Պահպանվում են ./console exp:graphql:persist-ով կամ հաճախորդների կողմից (automatic persisted queries)։ Կանչվում են անունով կամ SHA-256-ով։</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Անուններ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Չափ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Որտեղ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Հեռացնել</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>մատակարարված</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>պահպանված</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Այո, հեռացնել այս հարցումը</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Պահպանված հարցում դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API բանալիներ</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Անձնական API բանալիներ graphql:read (հարցումներ) կամ graphql:write (մուտացիաներ) շրջանակով։ Ստեղծեք և չեղարկեք դրանք API հասանելիություն էջում կամ ./console exp:graphql:keys-ով։</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API հասանելիություն</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Բոլոր բանալիները</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Բանալի</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Անուն</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Սեփականատեր</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Շրջանակներ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Վերջին օգտագործում</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ակտիվ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ժամկետանց</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>չեղարկված</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>երբեք</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL շրջանակով API բանալի դեռ չկա։</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

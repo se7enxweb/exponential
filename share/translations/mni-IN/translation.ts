@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>কোয়েরি অসি নহাক্কী হক্তা, সেসন অসিনা সাইন ইন তৌরগা চলি।</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds সে. দা %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>লিমিত লৈতে</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>অরুবা</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>অকরবা মওং</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>লিস্ত অমদা আইতেম</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (দিফোল্ত %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>শিজিন্নরিবা মী অমা নত্রগা কী অমদা হায়জবা</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>মমিং লৈতবা এদ্রেস অমদা হায়জবা</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ইন্ত্রোস্পেকসন</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>পুথম্লবা কোয়েরিশিং খক্তা</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>খ্বাইদগী চাউবা কোয়েরি</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes বাইত</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>খ্বাইদগী চাউবা অপলোদ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>সাইট একসেস %siteaccess লৈতে।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess দা মিউতেসনশিং হাংদোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess দা মিউতেসনশিং থোংজিনখ্রে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess দা GraphQL API হাংদোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess দা GraphQL API থোংজিনখ্রে।</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>সেত্তিংশিং ইবা ঙম্দ্রে: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>পাউখুম কেস শেংদোকখ্রে: পাউখুম %count লৌথোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>কোয়েরি অদু লৌথোক্নবা মগী মনাক্তা লৈবা বোক্স অদু তিক তৌবিয়ু।</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>কোয়েরি অসি লৌথোকপা ঙম্দ্রে: PersistedQueryDirectoryList[] গী দাইরেক্তরি অমদা পুরকপা কোয়েরি অমা মগী ফাইলগা লোয়ননা লৌথোকই।</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>পুথম্লবা কোয়েরি অদু লৌথোকখ্রে।</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>মিউতেসনশিং</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>হাংলি</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>থোংলি</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>সাইট একসেসশিং</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API অমসুং মগী মিউতেসনশিংনা পাউখুম পীবা মফম। বত্তনশিংনা graphql.ini ইই, ./console exp:graphql:enable অমসুং exp:graphql:disable না তৌবগুম্না।</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>সাইট একসেস</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>হোংদোকউ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>থোংজিনউ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>মিউতেসন থোংলি</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>মিউতেসন হাংলি</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>হাংদোকউ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>লিমিতশিং</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>সাইট একসেস অসিগী graphql.ini [GraphQLSettings]।</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>পাউখুম কেস</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>পুথম্লবা কোয়েরিশিংগী পাউখুম, শিজিন্নরিবা মীগী হক্কী মতুংইন্না থম্লি অমসুং কন্তেন্ত পব্লিস তৌবা খুদিংমক মতম লোই।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ফিভম</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>থম্লবা পাউখুম</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>পাউখুম %count, %bytes বাইত</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>খ্বাইদগী য়াম্লবদা থম্বা মতম</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds সে.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>অরোইবা মতম লোইবা</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>পাউখুম কেস শেংদোকউ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>পুথম্লবা কোয়েরিশিং</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist চানবিদুনা নত্রগা ক্লাইন্তশিংনা থম্লবা (মশানা পুথম্লবা কোয়েরিশিং); মমিং নত্রগা SHA-256 না কৌই।</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>মমিংশিং</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>চাউবা</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>কদাইদা</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>লৌথোকউ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>পুরকপা</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>থম্লবা</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>হোই, কোয়েরি অসি লৌথোকউ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>পুথম্লবা কোয়েরি অমত্তা হৌজিক ফাওবা লৈতে।</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API কীশিং</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>স্কোপ graphql:read (কোয়েরিশিং) নত্রগা graphql:write (মিউতেসনশিং) লৈবা মশাগী API কীশিং। মদুশিং API একসেস লমাইদা নত্রগা ./console exp:graphql:keys চানবিদুনা শেম্বা অমসুং লৌথোকপা।</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API একসেস</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>কী পুম্নমক</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>কী</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>মমিং</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>মপু</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>স্কোপশিং</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>অরোইবা শিজিন্নবা</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>চৎলি</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>মতম লোইখ্রে</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>লৌথোকখ্রে</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>করিসু নত্তে</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL স্কোপ লৈবা API কী অমত্তা হৌজিক ফাওবা লৈতে।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

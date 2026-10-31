@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ìbéèrè náà ń ṣiṣẹ́ pẹ̀lú ẹ̀tọ́ rẹ, o ti wọlé pẹ̀lú àkókò yìí.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count láàárín ìṣẹ́jú-àáyá %seconds</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>kò sí ìdíwọ̀n</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Jíjìn</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Ìdíjú</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Ohun fún àkójọ kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (àìyípadà %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Ìfiránṣẹ́ fún olùlò tàbí kọ́kọ́rọ́ kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Ìfiránṣẹ́ fún àdírẹ́sì àìlórúkọ kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Ìṣàyẹ̀wò ara ẹni (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Àwọn ìbéèrè tí a tọ́jú nìkan</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Ìbéèrè tó tóbi jùlọ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>báìtì %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Ìgbéwọlé tó tóbi jùlọ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Kò sí ìwọlé sáìtì %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>A ti tan àwọn ìyípadà nínú %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>A ti pa àwọn ìyípadà nínú %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>A ti tan GraphQL API nínú %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>A ti pa GraphQL API nínú %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>A kò lè kọ àwọn ètò náà: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>A ti pa kásẹ̀ ìdáhùn rẹ́: a yọ ìdáhùn %count kúrò.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Fi àmì sí àpótí tó wà lẹ́gbẹ̀ẹ́ ìbéèrè náà láti yọ ọ́ kúrò.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>A kò lè yọ ìbéèrè náà kúrò: ìbéèrè tí ó wá nínú àpò-fáìlì kan ti PersistedQueryDirectoryList[] ni a ń yọ kúrò pẹ̀lú fáìlì rẹ̀.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>A ti yọ ìbéèrè tí a tọ́jú kúrò.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Àwọn ìyípadà</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>títàn</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pípa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Àwọn ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ibi tí API àti àwọn ìyípadà rẹ̀ ti ń dáhùn. Àwọn bọ́tìnnì ń kọ graphql.ini, bí ./console exp:graphql:enable àti exp:graphql:disable ṣe ń ṣe.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Ìwọlé sáìtì</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Yí padà</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Pa á</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Pa àwọn ìyípadà</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Tan àwọn ìyípadà</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Tàn án</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Àwọn ìdíwọ̀n</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ti ìwọlé sáìtì yìí.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Kásẹ̀ ìdáhùn</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Àwọn ìdáhùn ti àwọn ìbéèrè tí a tọ́jú, tí a pa mọ́ gẹ́gẹ́ bí ẹ̀tọ́ olùlò, tí wọ́n sì ń parí nígbàkúùgbà tí a bá tẹ àkóónú jáde.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Àwọn ìdáhùn tí a pa mọ́</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>ìdáhùn %count, báìtì %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Àkókò tó pọ̀ jùlọ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ìparí tó kẹ́yìn</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Pa kásẹ̀ ìdáhùn rẹ́</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Àwọn ìbéèrè tí a tọ́jú</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>A tọ́jú wọn pẹ̀lú ./console exp:graphql:persist, tàbí láti ọwọ́ àwọn oníbàárà (àwọn ìbéèrè tí a tọ́jú láìfọwọ́yí); a ń pè wọ́n ní orúkọ tàbí SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Àwọn orúkọ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ìwọ̀n</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ibo</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Yọ kúrò</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>tí ó wá pẹ̀lú</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>tí a tọ́jú</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Bẹ́ẹ̀ni, yọ ìbéèrè yìí kúrò</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Kò sí ìbéèrè tí a tọ́jú síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Àwọn kọ́kọ́rọ́ API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Àwọn kọ́kọ́rọ́ API ti ara ẹni pẹ̀lú àyè graphql:read (àwọn ìbéèrè) tàbí graphql:write (àwọn ìyípadà). Ṣe wọ́n kí o sì fagilé wọn lórí ojú-ìwé Ìwọlé API, tàbí pẹ̀lú ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Ìwọlé API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Gbogbo kọ́kọ́rọ́</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kọ́kọ́rọ́</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Orúkọ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Olùní</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Àwọn àyè</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Lílò gbẹ̀yìn</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ń ṣiṣẹ́</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ti parí</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ti fagilé</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>láéláé</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Kò sí kọ́kọ́rọ́ API pẹ̀lú àyè GraphQL síbẹ̀.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

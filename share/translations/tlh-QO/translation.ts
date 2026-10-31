@@ -78810,6 +78810,286 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>DIchmeylIj lo' ghel; ghom vam Daq Da'el.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds lup Daq %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>veH pagh</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>juch</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Qatlhghach</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>tetlh Hoch Doch mI'</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (motlh %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>lo'wI' ngaQHa'moHwI' ghap tlhobghachmey</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>pongHa' URL Daq tlhobghachmey</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>qach nab nuDghach (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>pollu'pu'bogh ghelmey neH</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ghel tIn law'</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>lab tIn law'</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess yoS lojmIt tu'lu'be'.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess Daq choHmoHghachmey chu'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess Daq choHmoHghachmey chu'Ha'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess Daq GraphQL API chu'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess Daq GraphQL API chu'Ha'lu'ta'.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>DuHmey ghItlhlaHbe'lu': %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>jang De' polwI' chImmoHlu'ta': %count jangmey teqlu'.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ghel DateqmeH ghel retlh 'aplo' yIghItlh.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ghel teqlaHbe'lu': PersistedQueryDirectoryList[] ghItlh qach Daq ghelvetlh nobpu'lu'chugh, ghItlhDaj tlhej teqlu'.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>pollu'pu'bogh ghel teqlu'ta'.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>choHmoHghachmey</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>chu'lu'ta'</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>chu'Ha'lu'ta'</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>yoS lojmItmey</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API choHmoHghachmeyDaj je jangmeH Daq. graphql.ini ghItlh leQmey, ./console exp:graphql:enable exp:graphql:disable je rur.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>yoS lojmIt</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>yIchoH</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>yIchu'Ha'</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>choHmoHghachmey yIchu'Ha'</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>choHmoHghachmey yIchu'</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>yIchu'</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>veHmey</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>yoS lojmIt vam graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>jang De' polwI'</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>pollu'pu'bogh ghelmey jangmey; lo'wI' chaw' tlhej pollu' 'ej De' chu' ghItlhlu'DI' HeghmoHlu'.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>jangmey pollu'pu'bogh</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count jangmey, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>poH nIb law'</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds lup</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Qav Heghghach</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>jang De' polwI' yIchImmoH</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>pollu'pu'bogh ghelmey</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist lo'lu'DI' pollu', pagh De'wI' ngaSwI' polmoH (pollu'pu'bogh ghelmey ghun'eghchu'); pong pagh SHA-256 lo'lu'DI' rI'lu'.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>pongmey</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>tInghach</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>nuqDaq</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>yIteq</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>nobpu'lu'bogh</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>pollu'pu'bogh</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>HISlaH, ghel vam yIteq</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>pollu'pu'bogh ghel tu'lu'be' DaH.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ngaQHa'moHwI'mey</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (ghelmey) pagh graphql:write (choHmoHghachmey) chaw' veH ghajbogh ngoch API ngaQHa'moHwI'mey. API 'el chaw' nav Daq pagh ./console exp:graphql:keys lo'taHvIS tIchenmoH 'ej tIteq.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API 'el chaw'</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Hoch ngaQHa'moHwI'mey</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ngaQHa'moHwI'</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ghajwI'</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>chaw' veHmey</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Qav lo'ghach</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>Qap</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>Heghpu'</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>nge'lu'ta'</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>not</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL chaw' veH ghajbogh API ngaQHa'moHwI' tu'lu'be' DaH.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

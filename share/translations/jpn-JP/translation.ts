@@ -78807,6 +78807,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>クエリは、このセッションでサインインしているあなたの権限で実行されます。</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds 秒間に %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>制限なし</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>深さ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>複雑さ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>リストあたりの項目数</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (既定値 %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ユーザーまたはキーごとのリクエスト数</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>匿名アドレスごとのリクエスト数</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>イントロスペクション</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>保存済みクエリのみ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>最大クエリサイズ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes バイト</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>最大アップロードサイズ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>サイトアクセス %siteaccess は存在しません。</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess でミューテーションが有効になりました。</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess でミューテーションが無効になりました。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess で GraphQL API が有効になりました。</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess で GraphQL API が無効になりました。</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>設定を書き込めませんでした: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>レスポンスキャッシュを消去しました: %count 件の応答を削除しました。</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>削除するには、クエリの横のチェックボックスをオンにしてください。</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>クエリを削除できませんでした: PersistedQueryDirectoryList[] のディレクトリで提供されるクエリは、そのファイルとともに削除されます。</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>保存済みクエリを削除しました。</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ミューテーション</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>有効</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>無効</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API とそのミューテーションが応答する場所です。ボタンは ./console exp:graphql:enable と exp:graphql:disable と同じように graphql.ini を書き込みます。</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>サイトアクセス</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>変更</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>無効にする</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ミューテーション無効</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ミューテーション有効</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>有効にする</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>制限</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>このサイトアクセスの graphql.ini [GraphQLSettings]。</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>レスポンスキャッシュ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>保存済みクエリの応答。ユーザー権限ごとに保持され、コンテンツが公開されるたびに失効します。</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>状態</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>保持中の応答</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count 件の応答、%bytes バイト</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>最大保持期間</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds 秒</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>最終失効</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>レスポンスキャッシュを消去</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>保存済みクエリ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist で、またはクライアントによって保存されます (automatic persisted queries)。名前または SHA-256 で呼び出します。</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>場所</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>同梱</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>保存</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>はい、このクエリを削除します</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>保存済みクエリはまだありません。</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API キー</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>スコープ graphql:read (クエリ) または graphql:write (ミューテーション) を持つ個人用 API キー。API アクセスのページ、または ./console exp:graphql:keys で作成・失効できます。</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API アクセス</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>すべてのキー</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>キー</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>所有者</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>スコープ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>最終使用</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>有効</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>期限切れ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>失効</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL スコープを持つ API キーはまだありません。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

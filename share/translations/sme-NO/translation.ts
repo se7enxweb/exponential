@@ -78777,6 +78777,286 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Jearaldat vuddjojuvvo du vuoigatvuođaiguin, sisačáliiduvvon dán bargovuoru bokte.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds s:s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ii ráddji</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Čiekŋalasvuohta</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksitehta</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elemeanttat juohke listtus</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standárda %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Gáibádusat juohke geavaheaddjái dahje čovdosii</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Gáibádusat juohke anonyma čujuhussii</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekšuvdna</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Dušše vurkejuvvon jearaldagat</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Stuorámus jearaldat</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Stuorámus sáddehus</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Neahttabáikebeassan %siteaccess ii gávdno.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutašuvnnat leat álggahuvvon %siteaccess:s.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutašuvnnat leat jáddaduvvon %siteaccess:s.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL-API lea álggahuvvon %siteaccess:s.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL-API lea jáddaduvvon %siteaccess:s.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ásahusaid ii sáhttán čállit: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Vástádusa gaskaboddosaš vurká lea čorgejuvvon: %count vástádusa sihkkojuvvon.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Merke ruvtto jearaldaga bálddas sihkkun dihte dan.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Jearaldaga ii sáhttán sihkkut: jearaldat mii lea sáddejuvvon PersistedQueryDirectoryList[] máhpas sihkkojuvvo iežas fiillain.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Vurkejuvvon jearaldat sihkkojuvvui.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutašuvnnat</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>álggahuvvon</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>jáddaduvvon</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Neahttabáikebeassamat</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Gos API ja dan mutašuvnnat vástidit. Boalut čállet graphql.ini, nugo ./console exp:graphql:enable ja exp:graphql:disable dahket.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Neahttabáikebeassan</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Rievdat</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Jáddat</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutašuvnnat eret</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutašuvnnat ala</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Álggat</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Rájit</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Dán neahttabáikebeassama graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Vástádusa gaskaboddosaš vurká</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Vurkejuvvon jearaldagaid vástádusat, mat vurkejuvvojit geavaheaddjivuoigatvuođaid mielde ja nohket juohke háve go sisdoallu almmuhuvvo.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dilli</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Vurkejuvvon vástádusat</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count vástádusa, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Vurkejuvvo eanemusat</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Maŋimuš nohkan</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Čorge vástádusa gaskaboddosaš vurkká</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Vurkejuvvon jearaldagat</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Vurkejuvvon ./console exp:graphql:persist:in dahje klieanttaid bokte (automáhtalaš vurkejuvvon jearaldagat); gohčoduvvojit nama dahje SHA-256 mielde.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Namat</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Sturrodat</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Gos</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Sihko</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>sáddejuvvon</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>vurkejuvvon</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Juo, sihko dán jearaldaga</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ii vel vurkejuvvon jearaldat.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-čoavddat</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Persovnnalaš API-čoavddat viidodagain graphql:read (jearaldagat) dahje graphql:write (mutašuvnnat). Ráhkat ja geassit daid ruovttoluotta siiddus API-beassan, dahje ./console exp:graphql:keys:in.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-beassan</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Buot čoavddat</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Čoavdda</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namma</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eaiggát</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Viidodagat</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Maŋimusat geavahuvvon</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiivvalaš</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>nohkan</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>geassádallon</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ii goassige</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ii vel API-čoavdda mas lea GraphQL-viidodat.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

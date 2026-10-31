@@ -78807,6 +78807,286 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Pyetësori ekzekutohet me të drejtat tuaja, i identifikuar në këtë seancë.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count në %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>pa kufi</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Thellësia</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksiteti</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elemente për listë</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (parazgjedhje %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Kërkesa për përdorues ose çelës</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Kërkesa për adresë anonime</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspeksioni</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Vetëm pyetësorë të ruajtur</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Pyetësori më i madh</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtë</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Ngarkimi më i madh</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nuk ka qasje në sajt %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutacionet janë aktivizuar në %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutacionet janë çaktivizuar në %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API është aktivizuar në %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API është çaktivizuar në %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Cilësimet nuk mund të shkruheshin: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Cache-i i përgjigjeve u pastrua: %count përgjigje u hoqën.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Shënoni kutinë pranë pyetësorit për ta hequr.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Pyetësori nuk mund të hiqej: një pyetësor i dorëzuar në një direktori të PersistedQueryDirectoryList[] hiqet bashkë me skedarin e tij.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Pyetësori i ruajtur u hoq.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacionet</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>joaktiv</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Qasjet në sajt</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ku përgjigjen API dhe mutacionet e tij. Butonat shkruajnë graphql.ini, siç bëjnë ./console exp:graphql:enable dhe exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Qasja në sajt</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ndrysho</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Çaktivizo</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutacionet joaktive</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutacionet aktive</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aktivizo</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Kufijtë</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] i kësaj qasjeje në sajt.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache-i i përgjigjeve</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Përgjigjet e pyetësorëve të ruajtur, të mbajtura sipas të drejtave të përdoruesit dhe të skaduara sa herë publikohet përmbajtje.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gjendja</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Përgjigje të mbajtura</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count përgjigje, %bytes bajtë</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Mbahen të shumtën</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Skadimi i fundit</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Pastro cache-in e përgjigjeve</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Pyetësorë të ruajtur</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Të ruajtur me ./console exp:graphql:persist, ose nga klientët (pyetësorë të ruajtur automatikisht); thirren me emër ose SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Emrat</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Madhësia</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ku</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Hiq</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>i dorëzuar</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>i ruajtur</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Po, hiqe këtë pyetësor</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ende asnjë pyetësor i ruajtur.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Çelësat API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Çelësa API personalë me fushëveprimin graphql:read (pyetësorë) ose graphql:write (mutacione). Krijojini dhe revokojini në faqen Qasja API, ose me ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Qasja API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Të gjithë çelësat</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Çelësi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Emri</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Pronari</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Fushëveprimet</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Përdorur së fundi</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>skaduar</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>revokuar</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>kurrë</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ende asnjë çelës API me fushëveprim GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

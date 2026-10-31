@@ -78777,6 +78777,286 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tapukuyqa qampa derechoykikunawan purin, kay sesionwan yaykusqa kaspa.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds s ukhupi %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>mana saywayuq</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Ukhu kay</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Ch'iqi kay</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Sapa listapi imakuna</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ñawpaqmanta %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Sapa ruraq utaq llavepaq mañakuykuna</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Sapa mana riqsisqa tiyapaq mañakuykuna</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspección</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Waqaychasqa tapukuykunalla</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Aswan hatun tapukuy</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Aswan hatun wichachiy</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Manam %siteaccess web yaykuy kanchu.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutacionkunaqa kawsachisqam %siteaccess nisqapi.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutacionkunaqa wañuchisqam %siteaccess nisqapi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL APIqa kawsachisqam %siteaccess nisqapi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL APIqa wañuchisqam %siteaccess nisqapi.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Churanakunata manam qillqayta atikurqanchu: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Kutichiy cacheqa ch'uyanchasqam: %count kutichiykuna qichusqa.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Tapukuyta qichunaykipaq waqtanpi cajata markay.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Tapukuytaqa manam qichuyta atikurqanchu: PersistedQueryDirectoryList[] nisqapa directorionpi apamusqa tapukuyqa willañiqinwan kuskam qichukun.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Waqaychasqa tapukuyqa qichusqam.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacionkuna</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>kawsachisqa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>wañuchisqa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Web yaykunakuna</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Maypim API mutacionninkunapas kutichinku. Butonkunaqa graphql.ini nisqatam qillqanku, ./console exp:graphql:enable exp:graphql:disable nisqakuna hina.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Web yaykuy</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Tikray</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Wañuchiy</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutacionkuna wañuchisqa</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutacionkuna kawsachisqa</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Kawsachiy</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Saywakuna</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Kay web yaykuypa graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Kutichiy cache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Waqaychasqa tapukuykunapa kutichiyninkuna, ruraqpa derechonkunaman hina waqaychasqa, samiq lluqsichikuqtinkama tukusqa.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kaynin</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Waqaychasqa kutichiykuna</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count kutichiykuna, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Aswan unaypaq waqaychasqa</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Qhipa tukukuy</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Kutichiy cacheta ch'uyanchay</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Waqaychasqa tapukuykuna</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist nisqawan, utaq clientekunawan waqaychasqa (kikinmanta waqaychasqa tapukuykuna); sutinwan utaq SHA-256wan waqyasqa.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Sutikuna</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Sayaynin</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Maypi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Qichuy</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>apamusqa</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>waqaychasqa</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Arí, kay tapukuyta qichuy</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Manaraqmi waqaychasqa tapukuy kanchu.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API llavekuna</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Sapan API llavekuna graphql:read (tapukuykuna) utaq graphql:write (mutacionkuna) chiqanniyuq. API yaykuy p'anqapi, utaq ./console exp:graphql:keys nisqawan ruway hinaspa chinkachiy.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API yaykuy</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Llapa llavekuna</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Llave</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Suti</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Dueño</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Chiqankuna</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Qhipa llamk'achisqa</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>kawsaq</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>tukusqa</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>chinkachisqa</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mana hayk'appas</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Manaraqmi GraphQL chiqanniyuq API llave kanchu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

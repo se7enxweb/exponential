@@ -78785,6 +78785,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>क्वेरी तपाईंको अधिकारसहित, यस सत्रमा साइन इन भएर चल्छ।</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds से मा %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>सीमा छैन</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>गहिराइ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>जटिलता</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>प्रति सूची वस्तुहरू</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (पूर्वनिर्धारित %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>प्रति प्रयोगकर्ता वा कुञ्जी अनुरोधहरू</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>प्रति अज्ञात ठेगाना अनुरोधहरू</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>इन्ट्रोस्पेक्सन</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>भण्डारण गरिएका क्वेरीहरू मात्र</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>सबैभन्दा ठूलो क्वेरी</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes बाइट</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>सबैभन्दा ठूलो अपलोड</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>साइट पहुँच %siteaccess छैन।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess मा म्युटेसनहरू खुला छन्।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess मा म्युटेसनहरू बन्द छन्।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess मा GraphQL API खुला छ।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess मा GraphQL API बन्द छ।</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>सेटिङहरू लेख्न सकिएन: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>उत्तर क्यास खाली गरियो: %count उत्तरहरू हटाइए।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>क्वेरी हटाउन यसको छेउको बाकसमा चिनो लगाउनुहोस्।</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>क्वेरी हटाउन सकिएन: PersistedQueryDirectoryList[] को डाइरेक्टरीमा आएको क्वेरी आफ्नो फाइलसँगै हटाइन्छ।</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>भण्डारण गरिएको क्वेरी हटाइयो।</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>म्युटेसनहरू</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>खुला</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>बन्द</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>साइट पहुँचहरू</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API र यसका म्युटेसनहरूले कहाँ उत्तर दिन्छन्। बटनहरूले graphql.ini लेख्छन्, जस्तै ./console exp:graphql:enable र exp:graphql:disable ले गर्छन्।</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>साइट पहुँच</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>परिवर्तन गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>बन्द गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>म्युटेसन बन्द</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>म्युटेसन खुला</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>खोल्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>सीमाहरू</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>यस साइट पहुँचको graphql.ini [GraphQLSettings]।</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>उत्तर क्यास</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>भण्डारण गरिएका क्वेरीहरूका उत्तरहरू, प्रयोगकर्ता अधिकार अनुसार राखिन्छन् र सामग्री प्रकाशित हुँदा म्याद सकिन्छ।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>अवस्था</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>राखिएका उत्तरहरू</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count उत्तरहरू, %bytes बाइट</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>बढीमा राखिने</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds से</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>अन्तिम म्याद समाप्ति</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>उत्तर क्यास खाली गर्नुहोस्</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>भण्डारण गरिएका क्वेरीहरू</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist सँग, वा क्लाइन्टहरूद्वारा भण्डारण गरिएका (स्वचालित भण्डारण गरिएका क्वेरीहरू); नाम वा SHA-256 द्वारा बोलाइन्छन्।</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>नामहरू</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकार</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>कहाँ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>हटाउनुहोस्</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>साथमा आएको</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>भण्डारण गरिएको</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>हो, यो क्वेरी हटाउनुहोस्</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>अहिलेसम्म कुनै भण्डारण गरिएको क्वेरी छैन।</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API कुञ्जीहरू</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (क्वेरीहरू) वा graphql:write (म्युटेसनहरू) दायरासहितका व्यक्तिगत API कुञ्जीहरू। तिनलाई API पहुँच पृष्ठमा, वा ./console exp:graphql:keys सँग बनाउनुहोस् र रद्द गर्नुहोस्।</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API पहुँच</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>सबै कुञ्जीहरू</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>कुञ्जी</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>मालिक</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>दायराहरू</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>अन्तिम प्रयोग</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>सक्रिय</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>म्याद सकिएको</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>रद्द गरिएको</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>कहिल्यै होइन</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>अहिलेसम्म GraphQL दायरासहितको कुनै API कुञ्जी छैन।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

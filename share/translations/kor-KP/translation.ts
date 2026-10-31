@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>질문은 이 세션으로 가입한 리용자의 권한으로 실행됩니다.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds초동안 %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>제한없음</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>깊이</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>복잡도</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>목록당 항목수</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (기정값 %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>리용자 또는 열쇠당 요청수</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>익명주소당 요청수</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>내부검사 (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>보관된 질문만</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>가장 큰 질문</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes바이트</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>가장 큰 올리적재</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>싸이트접근 %siteaccess가 없습니다.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess에서 변경조작이 켜졌습니다.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess에서 변경조작이 꺼졌습니다.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess에서 GraphQL API가 켜졌습니다.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess에서 GraphQL API가 꺼졌습니다.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>설정을 쓸수 없었습니다: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>응답캐쉬를 지웠습니다: 응답 %count개를 삭제했습니다.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>질문을 삭제하려면 옆의 칸에 표시하십시오.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>질문을 삭제할수 없었습니다: PersistedQueryDirectoryList[]의 등록부에 들어있는 질문은 그 화일과 함께 삭제됩니다.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>보관된 질문을 삭제했습니다.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>변경조작</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>켜짐</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>꺼짐</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API와 그 변경조작이 응답하는 곳입니다. 단추들은 ./console exp:graphql:enable 및 exp:graphql:disable과 같이 graphql.ini를 씁니다.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>싸이트접근</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>변경</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>끄기</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>변경조작 꺼짐</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>변경조작 켜짐</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>켜기</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>제한</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>이 싸이트접근의 graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>응답캐쉬</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>보관된 질문의 응답으로서 리용자권한별로 보관되며 내용이 발행될 때마다 무효로 됩니다.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>상태</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>보관된 응답</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>응답 %count개, %bytes바이트</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>최대보관기간</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds초</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>마지막 무효화</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>응답캐쉬 지우기</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>보관된 질문</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist로 또는 의뢰기에 의하여 보관됩니다 (automatic persisted queries); 이름이나 SHA-256으로 호출합니다.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>크기</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>위치</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>삭제</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>동봉</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>보관</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>예, 이 질문을 삭제합니다</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>보관된 질문이 아직 없습니다.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API 열쇠</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>범위 graphql:read (질문) 또는 graphql:write (변경조작)를 가진 개인 API 열쇠. API 접근 페지에서 또는 ./console exp:graphql:keys로 만들고 취소하십시오.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API 접근</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>모든 열쇠</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>열쇠</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>소유자</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>범위</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>마지막 사용</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>유효</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>기한지남</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>취소됨</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>없음</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL 범위를 가진 API 열쇠가 아직 없습니다.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

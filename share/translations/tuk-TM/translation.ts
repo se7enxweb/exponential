@@ -78777,6 +78777,286 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Sorag siziň hukuklaryňyz bilen, şu sessiýada giren ýagdaýyňyzda işleýär.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds sek içinde %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>çäksiz</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Çuňluk</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Çylşyrymlylyk</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Sanawdaky elementler</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (deslapky %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Ulanyjy ýa-da açar boýunça ýüzlenmeler</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Näbelli salgy boýunça ýüzlenmeler</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspeksiýa</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Diňe saklanan soraglar</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Iň uly sorag</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes baýt</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Iň uly ýükleme</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess saýta giriş nokady ýok.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutasiýalar %siteaccess-de açyldy.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutasiýalar %siteaccess-de öçürildi.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess-de açyldy.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess-de öçürildi.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Sazlamalary ýazyp bolmady: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Jogap keşi arassalandy: %count jogap aýryldy.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Soragy aýyrmak üçin onuň ýanyndaky gutujygy belläň.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Soragy aýyryp bolmady: PersistedQueryDirectoryList[] katalogynda gelen sorag öz faýly bilen bilelikde aýrylýar.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Saklanan sorag aýryldy.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutasiýalar</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>açyk</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>öçük</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Saýta giriş nokatlary</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API-niň we onuň mutasiýalarynyň jogap berýän ýerleri. Düwmeler graphql.ini-ni ./console exp:graphql:enable we exp:graphql:disable ýaly ýazýar.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saýta giriş nokady</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Üýtget</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Öçür</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutasiýalary öçür</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutasiýalary aç</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Çäklendirmeler</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Bu saýta giriş nokadynyň graphql.ini [GraphQLSettings] sazlamalary.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Jogap keşi</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Saklanan soraglaryň jogaplary: ulanyjy hukuklary boýunça saklanýar we mazmun her gezek çap edilende könelýär.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ýagdaý</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Saklanan jogaplar</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count jogap, %bytes baýt</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Iň köp saklanýar</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Soňky könelme</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Jogap keşini arassala</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Saklanan soraglar</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist bilen ýa-da müşderiler tarapyndan saklanýar (awtomatik saklanan soraglar); ady ýa-da SHA-256 boýunça çagyrylýar.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Atlar</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ölçeg</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ýeri</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Aýyr</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>bile gelen</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>saklanan</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Hawa, bu soragy aýyr</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Entek saklanan sorag ýok.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API açarlary</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (soraglar) ýa-da graphql:write (mutasiýalar) gerimli şahsy API açarlary. Olary API girişi sahypasynda ýa-da ./console exp:graphql:keys bilen dörediň we ýatyryň.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API girişi</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Ähli açarlar</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Açar</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ady</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Eýesi</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Gerimler</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Soňky ulanylyşy</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>işjeň</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>möhleti gutardy</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ýatyryldy</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hiç haçan</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Entek GraphQL gerimli API açary ýok.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

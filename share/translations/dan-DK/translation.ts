@@ -79457,6 +79457,286 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Forespørgslen kører med dine rettigheder, logget ind med denne session.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count på %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ingen grænse</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Dybde</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksitet</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elementer pr. liste</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Anmodninger pr. bruger eller nøgle</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Anmodninger pr. anonym adresse</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Kun gemte forespørgsler</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Største forespørgsel</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Største upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Der findes ingen siteaccess %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutationerne er slået til i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutationerne er slået fra i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL-API'et er slået til i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL-API'et er slået fra i %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Indstillingerne kunne ikke skrives: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Svarcachen blev tømt: %count svar fjernet.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Sæt flueben ved forespørgslen for at fjerne den.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Forespørgslen kunne ikke fjernes: en forespørgsel, der leveres i en mappe fra PersistedQueryDirectoryList[], fjernes sammen med sin fil.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Den gemte forespørgsel blev fjernet.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutationer</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>til</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>fra</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siteaccesses</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Hvor API'et og dets mutationer svarer. Knapperne skriver graphql.ini, ligesom ./console exp:graphql:enable og exp:graphql:disable gør.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL-API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ændr</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Slå fra</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutationer fra</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutationer til</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Slå til</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Grænser</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] for denne siteaccess.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Svarcache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Svarene på gemte forespørgsler, gemt pr. brugerrettigheder og udløbet, hver gang indhold publiceres.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Gemte svar</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count svar, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Gemmes højst</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Senest udløbet</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Tøm svarcachen</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Gemte forespørgsler</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Gemt med ./console exp:graphql:persist eller af klienter (automatiske gemte forespørgsler); kaldes ved navn eller SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Navne</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Størrelse</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hvor</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>leveret</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>gemt</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ja, fjern denne forespørgsel</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ingen gemte forespørgsler endnu.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-nøgler</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Personlige API-nøgler med omfanget graphql:read (forespørgsler) eller graphql:write (mutationer). Opret og tilbagekald dem på siden API-adgang eller med ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-adgang</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Alle nøgler</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Nøgle</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Ejer</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Omfang</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Senest brugt</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiv</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>udløbet</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>tilbagekaldt</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>aldrig</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Endnu ingen API-nøgle med et GraphQL-omfang.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

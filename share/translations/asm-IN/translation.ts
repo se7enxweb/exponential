@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>কোৱেৰীটো আপোনাৰ অধিকাৰেৰে, এই ছেছনেৰে ছাইন ইন কৰি চলে।</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds ছে. ত %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>কোনো সীমা নাই</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>গভীৰতা</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>জটিলতা</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>তালিকা প্ৰতি বস্তু</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ডিফল্ট %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ব্যৱহাৰকাৰী বা কী প্ৰতি অনুৰোধ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>বেনামী ঠিকনা প্ৰতি অনুৰোধ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ইণ্ট্ৰ'স্পেকচন</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>কেৱল সংৰক্ষিত কোৱেৰী</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>আটাইতকৈ ডাঙৰ কোৱেৰী</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes বাইট</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>আটাইতকৈ ডাঙৰ আপলোড</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess নামৰ কোনো ছাইট প্ৰৱেশ নাই।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess ত মিউটেচন অন কৰা হৈছে।</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess ত মিউটেচন বন্ধ কৰা হৈছে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess ত GraphQL API অন কৰা হৈছে।</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess ত GraphQL API বন্ধ কৰা হৈছে।</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ছেটিংছ লিখিব পৰা নগ'ল: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>উত্তৰ কেশ্ব খালী কৰা হ'ল: %count টা উত্তৰ আঁতৰোৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>কোৱেৰীটো আঁতৰাবলৈ ইয়াৰ কাষৰ বাকচত টিক দিয়ক।</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>কোৱেৰীটো আঁতৰাব পৰা নগ'ল: PersistedQueryDirectoryList[] ৰ এটা ফোল্ডাৰত অহা কোৱেৰী ইয়াৰ ফাইলৰ সৈতে আঁতৰোৱা হয়।</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>সংৰক্ষিত কোৱেৰীটো আঁতৰোৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>মিউটেচন</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>অন</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>অফ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ছাইট প্ৰৱেশসমূহ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>য'ত API আৰু ইয়াৰ মিউটেচনে উত্তৰ দিয়ে। বুটামবোৰে graphql.ini লিখে, ./console exp:graphql:enable আৰু exp:graphql:disable এ কৰাৰ দৰে।</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ছাইট প্ৰৱেশ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>সলনি কৰক</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>বন্ধ কৰক</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>মিউটেচন অফ</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>মিউটেচন অন</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>অন কৰক</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>সীমা</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>এই ছাইট প্ৰৱেশৰ graphql.ini [GraphQLSettings]।</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>উত্তৰ কেশ্ব</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>সংৰক্ষিত কোৱেৰীৰ উত্তৰ, ব্যৱহাৰকাৰীৰ অধিকাৰ অনুসৰি ৰখা আৰু বিষয়বস্তু প্ৰকাশ হ'লেই ম্যাদ উকলোৱা।</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অৱস্থা</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ৰখা উত্তৰ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count টা উত্তৰ, %bytes বাইট</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>সৰ্বাধিক ৰখা সময়</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ছে.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>শেষ ম্যাদ উকলা</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>উত্তৰ কেশ্ব খালী কৰক</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>সংৰক্ষিত কোৱেৰী</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist ৰে, বা ক্লায়েণ্টে সংৰক্ষণ কৰা (স্বয়ংক্ৰিয় সংৰক্ষিত কোৱেৰী); নাম বা SHA-256 ৰে মতা হয়।</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>নাম</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>আকাৰ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ক'ত</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>আঁতৰাওক</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>সৈতে অহা</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>সংৰক্ষিত</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>হয়, এই কোৱেৰীটো আঁতৰাওক</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>এতিয়ালৈকে কোনো সংৰক্ষিত কোৱেৰী নাই।</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API কী</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (কোৱেৰী) বা graphql:write (মিউটেচন) স্কোপৰ ব্যক্তিগত API কী। API প্ৰৱেশ পৃষ্ঠাত বা ./console exp:graphql:keys ৰে সেইবোৰ বনাওক আৰু বাতিল কৰক।</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API প্ৰৱেশ</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>সকলো কী</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>কী</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>নাম</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>গৰাকী</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>স্কোপ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>শেষ ব্যৱহাৰ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>সক্ৰিয়</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ম্যাদ উকলিছে</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>বাতিল</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>কেতিয়াও নহয়</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>এতিয়ালৈকে GraphQL স্কোপৰ কোনো API কী নাই।</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -78807,6 +78807,286 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Apeqqut pisinnaatitaaffitit atorlugit ingerlanneqarpoq, session-imi matumani iserputit.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds sek-imi</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>killeqanngitsoq</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Itissusaa</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Ilungersunartussusaa</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Allattorsimaffimmi immikkoortut</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (aallaqqaasiutitut %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Atuisumut imaluunniit ilisarnaammut qinnuteqaatit</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Najukkamut atiqanngitsumut qinnuteqaatit</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Apeqqutit toqqorsimasut kisimik</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Apeqqut anginerpaaq</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Nassiussaq anginerpaaq</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nittartakkamut isaariaq %siteaccess peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutationit %siteaccess-imi ammarneqarput.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutationit %siteaccess-imi matuneqarput.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess-imi ammarneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess-imi matuneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Aaqqissuussinerit allanneqarsinnaanngillat: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Akissutit cache-iat salinneqarpoq: akissutit %count peerneqarput.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Apeqqut peerniarukku sanianiittoq ammaarfik nalunaaruk.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Apeqqut peerneqarsinnaanngilaq: apeqqut PersistedQueryDirectoryList[]-imi toqqorsimaffimmi ilanngunneqartoq fiiliminik peqateqarluni peerneqartarpoq.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Apeqqut toqqorsimasoq peerneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutationit</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ammasoq</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>matusoq</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nittartakkamut isaariaatit</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API aamma mutationii sumi akisartut. Toortagassat graphql.ini allattarpaat, ./console exp:graphql:enable aamma exp:graphql:disable assigalugit.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nittartakkamut isaariaq</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Allannguut</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Matuguk</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutationit matoqqapput</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutationit ammapput</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ammaruk</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Killiliussat</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Nittartakkamut isaariaatip matuma graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Akissutit cache-iat</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Apeqqutit toqqorsimasut akissutaat, atuisup pisinnaatitaaffii naapertorlugit toqqorneqartartut, imarisallu saqqummiunneqartillugit tamatigut atorunnaartartut.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Qanoq innera</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Akissutit toqqorsimasut</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>Akissutit %count, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Sivisunerpaamik toqqorneqartarpoq</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Kingullermik atorunnaarpoq</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Akissutit cache-iat saliuk</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Apeqqutit toqqorsimasut</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist atorlugu imaluunniit client-init toqqorneqartartut (automatic persisted queries); aqqisigut imaluunniit SHA-256 atorlugu taaneqartartut.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Aqqit</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Angissusaa</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Sumi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Piiaruk</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ilanngunneqartoq</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>toqqorsimasoq</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Aap, apeqqut una piiaruk</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Apeqqummik toqqorsimasumik suli peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-mi ilisarnaatit</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Namminersortut API-mi ilisarnaatit atuuffeqartut graphql:read (apeqqutit) imaluunniit graphql:write (mutationit). Quppernermi API-mut isersinnaaneq imaluunniit ./console exp:graphql:keys atorlugu pilersikkit atorunnaarsillugillu.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-mut isersinnaaneq</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Ilisarnaatit tamarmik</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ilisarnaat</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ateq</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Piginnittoq</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Atuuffiit</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Kingullermik atorneqarpoq</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>atuuttoq</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>atorunnaarsimasoq</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>atorunnaarsitaq</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>taamaattoqarsimanngilaq</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>API-mi ilisarnaammik GraphQL-imi atuuffilimmik suli peqanngilaq.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

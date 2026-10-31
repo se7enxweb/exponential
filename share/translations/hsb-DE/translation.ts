@@ -78777,6 +78777,286 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Naprašowanje so z wašimi prawami wuwjedźe, přizjewjeni w tutym posedźenju.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count w %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>žadyn limit</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Hłubokosć</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksnosć</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Zapiski na lisćinu</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (standard %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Naprašowanja na wužiwarja abo kluč</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Naprašowanja na anonymnu adresu</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcija</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Jenož składowane naprašowanja</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Najwjetše naprašowanje</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtow</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Najwjetši upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Njeje přistup k sydłu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutacije su w %siteaccess zapinjene.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutacije su w %siteaccess wupinjene.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API je w %siteaccess zapinjeny.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API je w %siteaccess wupinjeny.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Nastajenja njedachu so zapisać: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Pufrowak wotmołwow je so wuprózdnił: %count wotmołwow wotstronjenych.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Markěrujće kašćik pódla naprašowanja, zo byšće jo wotstronił.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Naprašowanje njeda so wotstronić: naprašowanje dodate w zapisu z PersistedQueryDirectoryList[] so ze swojej dataju wotstroni.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Składowane naprašowanje je so wotstroniło.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacije</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>zapinjene</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>wupinjene</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Přistupy k sydłu</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Hdźež API a jeho mutacije wotmołwjeja. Tłóčatka pisaja graphql.ini, kaž to ./console exp:graphql:enable a exp:graphql:disable činitej.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Přistup k sydłu</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změnić</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Wupinyć</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutacije wupinjene</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutacije zapinjene</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Zapinyć</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Limity</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] tutoho přistupa k sydłu.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Pufrowak wotmołwow</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Wotmołwy składowanych naprašowanjow, wobchowane po wužiwarskich prawach a spadnjene, hdyž so wobsah wozjewi.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staw</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Wobchowane wotmołwy</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count wotmołwow, %bytes bajtow</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Maksimalnje wobchowane</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Posledni raz spadnjene</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Pufrowak wotmołwow wuprózdnić</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Składowane naprašowanja</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Składowane z ./console exp:graphql:persist abo wot klientow (awtomatiske składowane naprašowanja); wołane po mjenje abo SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Mjena</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Wulkosć</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hdźe</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Wotstronić</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>dodate</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>składowane</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Haj, tute naprašowanje wotstronić</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Hišće žane składowane naprašowanje.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-kluče</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Wosobinske API-kluče z wobłukom graphql:read (naprašowanja) abo graphql:write (mutacije). Wutworće a wotwołajće je na stronje API-přistup abo z ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-přistup</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Wšě kluče</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kluč</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Mjeno</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Wobsedźer</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Wobłuki</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Posledni raz wužity</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiwny</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>spadnjeny</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>wotwołany</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ženje</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Hišće žadyn API-kluč z GraphQL-wobłukom.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

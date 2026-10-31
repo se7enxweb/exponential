@@ -78807,6 +78807,286 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Poizvedba se izvede z vašimi pravicami, prijavljeni v tej seji.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count v %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>brez omejitve</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Globina</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksnost</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elementov na seznam</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (privzeto %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Zahteve na uporabnika ali ključ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Zahteve na anonimni naslov</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcija</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Samo shranjene poizvedbe</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Največja poizvedba</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bajtov</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Največje nalaganje</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Dostop do spletnega mesta %siteaccess ne obstaja.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutacije so v %siteaccess vklopljene.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutacije so v %siteaccess izklopljene.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API je v %siteaccess vklopljen.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API je v %siteaccess izklopljen.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Nastavitev ni bilo mogoče zapisati: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Predpomnilnik odgovorov je bil počiščen: odstranjenih odgovorov: %count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Za odstranitev poizvedbe označite polje ob njej.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Poizvedbe ni bilo mogoče odstraniti: poizvedba, dobavljena v imeniku iz PersistedQueryDirectoryList[], se odstrani skupaj s svojo datoteko.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Shranjena poizvedba je bila odstranjena.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacije</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>vklopljeno</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>izklopljeno</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Dostopi do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kje API in njegove mutacije odgovarjajo. Gumbi zapišejo graphql.ini, tako kot ./console exp:graphql:enable in exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Dostop do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Spremeni</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Izklopi</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Izklopi mutacije</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Vklopi mutacije</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Vklopi</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Omejitve</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] tega dostopa do spletnega mesta.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Predpomnilnik odgovorov</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Odgovori shranjenih poizvedb, hranjeni po uporabniških pravicah in razveljavljeni ob vsaki objavi vsebine.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Hranjeni odgovori</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count odgovorov, %bytes bajtov</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Hranjeno največ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Nazadnje razveljavljeno</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Počisti predpomnilnik odgovorov</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Shranjene poizvedbe</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Shranjene z ./console exp:graphql:persist ali s strani odjemalcev (samodejne shranjene poizvedbe); kličejo se po imenu ali SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Imena</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Velikost</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kje</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Odstrani</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>dobavljena</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>shranjena</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Da, odstrani to poizvedbo</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Še ni shranjene poizvedbe.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Ključi API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Osebni ključi API z obsegom graphql:read (poizvedbe) ali graphql:write (mutacije). Ustvarite in prekličite jih na strani Dostop do API ali z ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Dostop do API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Vsi ključi</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ključ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ime</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Lastnik</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Obsegi</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Nazadnje uporabljen</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiven</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>potekel</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>preklican</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nikoli</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Še ni ključa API z obsegom GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

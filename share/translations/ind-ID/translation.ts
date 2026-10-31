@@ -78777,6 +78777,286 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Kueri berjalan dengan hak Anda, masuk dengan sesi ini.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count dalam %seconds dtk</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>tanpa batas</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Kedalaman</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Kompleksitas</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Item per daftar</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (bawaan %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Permintaan per pengguna atau kunci</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Permintaan per alamat anonim</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspeksi</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Hanya kueri tersimpan</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Kueri terbesar</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Unggahan terbesar</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Tidak ada akses situs %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutasi dinyalakan di %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutasi dimatikan di %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>API GraphQL dinyalakan di %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>API GraphQL dimatikan di %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Pengaturan tidak dapat ditulis: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Cache respons telah dibersihkan: %count jawaban dihapus.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Centang kotak di samping kueri untuk menghapusnya.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Kueri tidak dapat dihapus: kueri yang dikirim dalam direktori PersistedQueryDirectoryList[] dihapus bersama filenya.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Kueri tersimpan telah dihapus.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutasi</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>nyala</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>mati</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Tempat API dan mutasinya menjawab. Tombol-tombol ini menulis graphql.ini, seperti yang dilakukan ./console exp:graphql:enable dan exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Akses situs</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ubah</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Matikan</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutasi mati</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutasi nyala</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Nyalakan</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Batas</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] dari akses situs ini.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache respons</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Jawaban kueri tersimpan, disimpan per hak pengguna dan kedaluwarsa setiap kali konten diterbitkan.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Jawaban tersimpan</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count jawaban, %bytes byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Disimpan paling lama</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds dtk</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Terakhir kedaluwarsa</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Bersihkan cache respons</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Kueri tersimpan</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Disimpan dengan ./console exp:graphql:persist, atau oleh klien (automatic persisted queries); dipanggil dengan nama atau SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ukuran</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Lokasi</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Hapus</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>bawaan</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>tersimpan</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ya, hapus kueri ini</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Belum ada kueri tersimpan.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Kunci API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Kunci API pribadi dengan cakupan graphql:read (kueri) atau graphql:write (mutasi). Buat dan cabut di halaman Akses API, atau dengan ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Akses API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Semua kunci</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kunci</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Pemilik</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Cakupan</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Terakhir dipakai</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktif</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>kedaluwarsa</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>dicabut</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>tidak pernah</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Belum ada kunci API dengan cakupan GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

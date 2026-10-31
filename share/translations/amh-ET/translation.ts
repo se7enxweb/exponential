@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ጥያቄው በዚህ ክፍለ ጊዜ በገቡበት በእርስዎ መብቶች ይሄዳል።</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count በ%seconds ሰ</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ገደብ የለም</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ጥልቀት</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ውስብስብነት</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ንጥሎች በዝርዝር</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ነባሪ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ጥያቄዎች በተጠቃሚ ወይም በቁልፍ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ጥያቄዎች በስም-አልባ አድራሻ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>የተቀመጡ መጠይቆች ብቻ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ትልቁ መጠይቅ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ባይት</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ትልቁ ጭነት</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>የጣቢያ መዳረሻ %siteaccess የለም።</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>ሚውቴሽኖቹ በ%siteaccess ውስጥ በርተዋል።</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>ሚውቴሽኖቹ በ%siteaccess ውስጥ ጠፍተዋል።</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API በ%siteaccess ውስጥ በርቷል።</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API በ%siteaccess ውስጥ ጠፍቷል።</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ቅንብሮቹ ሊጻፉ አልቻሉም፦ %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>የምላሽ መሸጎጫው ጸድቷል፦ %count መልሶች ተወግደዋል።</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>መጠይቁን ለማስወገድ ከጎኑ ያለውን ሳጥን ምልክት ያድርጉ።</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>መጠይቁ ሊወገድ አልቻለም፦ በPersistedQueryDirectoryList[] ማውጫ ውስጥ አብሮ የመጣ መጠይቅ ከፋይሉ ጋር ይወገዳል።</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>የተቀመጠው መጠይቅ ተወግዷል።</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ሚውቴሽኖች</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>በርቷል</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>የጣቢያ መዳረሻዎች</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API እና ሚውቴሽኖቹ የሚመልሱበት ቦታ። አዝራሮቹ graphql.iniን ይጽፋሉ፣ ልክ ./console exp:graphql:enable እና exp:graphql:disable እንደሚያደርጉት።</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ቀይር</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>አጥፋ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ሚውቴሽኖችን አጥፋ</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ሚውቴሽኖችን አብራ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>አብራ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ገደቦች</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>የዚህ የጣቢያ መዳረሻ graphql.ini [GraphQLSettings]።</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>የምላሽ መሸጎጫ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>የተቀመጡ መጠይቆች መልሶች፣ በተጠቃሚ መብቶች የሚቀመጡ እና ይዘት በታተመ ቁጥር ጊዜያቸው የሚያልፍ።</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>የተቀመጡ መልሶች</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count መልሶች፣ %bytes ባይት</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>ቢበዛ የሚቀመጥበት</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ሰ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ለመጨረሻ ጊዜ ያለፈበት</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>የምላሽ መሸጎጫውን አጽዳ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>የተቀመጡ መጠይቆች</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>በ./console exp:graphql:persist ወይም በደንበኞች የተቀመጡ (automatic persisted queries)፤ በስም ወይም በSHA-256 ይጠራሉ።</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ስሞች</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>መጠን</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ቦታ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>አስወግድ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>አብሮ የመጣ</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>የተቀመጠ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>አዎ፣ ይህን መጠይቅ አስወግድ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>እስካሁን የተቀመጠ መጠይቅ የለም።</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>የAPI ቁልፎች</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>ወሰን graphql:read (መጠይቆች) ወይም graphql:write (ሚውቴሽኖች) ያላቸው የግል የAPI ቁልፎች። በገጹ የAPI መዳረሻ ላይ ወይም በ./console exp:graphql:keys ይፍጠሩ እና ይሻሩ።</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>የAPI መዳረሻ</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ሁሉም ቁልፎች</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ቁልፍ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ስም</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ባለቤት</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ወሰኖች</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ለመጨረሻ ጊዜ የተጠቀመበት</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ንቁ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ጊዜው ያለፈ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>የተሻረ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>በጭራሽ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>እስካሁን የGraphQL ወሰን ያለው የAPI ቁልፍ የለም።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

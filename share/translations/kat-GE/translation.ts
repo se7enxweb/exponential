@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>მოთხოვნა სრულდება თქვენი უფლებებით, ამ სესიით შესული.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds წმ-ში</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ლიმიტის გარეშე</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>სიღრმე</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>სირთულე</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ელემენტები სიაში</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ნაგულისხმევი %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>მოთხოვნები მომხმარებელზე ან გასაღებზე</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>მოთხოვნები ანონიმურ მისამართზე</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ინტროსპექცია</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>მხოლოდ შენახული მოთხოვნები</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>უდიდესი მოთხოვნა</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ბაიტი</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>უდიდესი ატვირთვა</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>საიტზე წვდომა %siteaccess არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>მუტაციები ჩართულია %siteaccess-ში.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>მუტაციები გამორთულია %siteaccess-ში.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ჩართულია %siteaccess-ში.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API გამორთულია %siteaccess-ში.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>პარამეტრების ჩაწერა ვერ მოხერხდა: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>პასუხების ქეში გასუფთავდა: წაიშალა %count პასუხი.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>მოთხოვნის წასაშლელად მონიშნეთ მის გვერდით მდებარე ველი.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>მოთხოვნის წაშლა ვერ მოხერხდა: PersistedQueryDirectoryList[]-ის საქაღალდეში მოწოდებული მოთხოვნა იშლება თავის ფაილთან ერთად.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>შენახული მოთხოვნა წაიშალა.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>მუტაციები</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ჩართული</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>გამორთული</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>საიტზე წვდომები</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>სად პასუხობს API და მისი მუტაციები. ღილაკები წერს graphql.ini-ს, ისევე როგორც ./console exp:graphql:enable და exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>შეცვლა</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>გამორთვა</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>მუტაციები გამორთულია</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>მუტაციები ჩართულია</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ჩართვა</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ლიმიტები</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ამ საიტზე წვდომის graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>პასუხების ქეში</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>შენახული მოთხოვნების პასუხები, ინახება მომხმარებლის უფლებების მიხედვით და ძალას კარგავს შიგთავსის ყოველი გამოქვეყნებისას.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>შენახული პასუხები</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count პასუხი, %bytes ბაიტი</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>შენახვის მაქსიმუმი</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds წმ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ბოლოს გაუქმდა</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>პასუხების ქეშის გასუფთავება</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>შენახული მოთხოვნები</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>ინახება ./console exp:graphql:persist-ით ან კლიენტების მიერ (automatic persisted queries); გამოიძახება სახელით ან SHA-256-ით.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>სახელები</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ზომა</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>სად</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>წაშლა</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>მოწოდებული</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>შენახული</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>დიახ, წაშალე ეს მოთხოვნა</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>შენახული მოთხოვნა ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API გასაღებები</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>პერსონალური API გასაღებები მოქმედების არით graphql:read (მოთხოვნები) ან graphql:write (მუტაციები). შექმენით და გააუქმეთ ისინი გვერდზე API წვდომა, ან ./console exp:graphql:keys-ით.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API წვდომა</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ყველა გასაღები</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>გასაღები</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>სახელი</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>მფლობელი</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>მოქმედების არეები</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ბოლო გამოყენება</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>აქტიური</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ვადაგასული</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>გაუქმებული</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>არასდროს</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL მოქმედების არის მქონე API გასაღები ჯერ არ არის.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

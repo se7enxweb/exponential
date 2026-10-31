@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>پوښتنه ستاسو په حقونو چلېږي، د همدې ناستې په ننوتلو سره.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>په %seconds ث کې %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>بې حده</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ژوروالی</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>پېچلتیا</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>په هر لست کې توکي</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (تلواله %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>د هر کارن یا کیلي غوښتنې</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>د هرې ناپېژاندې پتې غوښتنې</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ځان پلټنه</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>یوازې خوندي شوې پوښتنې</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>تر ټولو لویه پوښتنه</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes بایټه</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>تر ټولو لوی پورته کول</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>سایټ لاسرسی %siteaccess نشته.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>په %siteaccess کې میوټېشنونه چالان دي.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>په %siteaccess کې میوټېشنونه بند دي.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>په %siteaccess کې GraphQL API چالان دی.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>په %siteaccess کې GraphQL API بند دی.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>امستنې ونه شوې لیکل کېدای: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>د ځوابونو زېرمه پاکه شوه: %count ځوابونه لرې شول.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>د پوښتنې د لرې کولو لپاره د هغې څنګ ته بکس په نښه کړئ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>پوښتنه ونه شوه لرې کېدای: هغه پوښتنه چې د PersistedQueryDirectoryList[] په یوه لارښود کې راغلې د خپل فایل سره لرې کېږي.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>خوندي شوې پوښتنه لرې شوه.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>میوټېشنونه</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>چالان</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بند</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>سایټ لاسرسي</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API او د هغې میوټېشنونه چېرته ځواب ورکوي. تڼۍ graphql.ini لیکي، لکه څنګه چې ./console exp:graphql:enable او exp:graphql:disable کوي.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>سایټ لاسرسی</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>بدلول</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>بندول</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>میوټېشنونه بند</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>میوټېشنونه چالان</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>چالانول</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>حدونه</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>د دې سایټ لاسرسي graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>د ځوابونو زېرمه</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>د خوندي شوو پوښتنو ځوابونه، د کارن د حقونو له مخې ساتل کېږي او هرکله چې منځپانګه خپره شي موده یې پای ته رسېږي.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ساتل شوي ځوابونه</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ځوابونه، %bytes بایټه</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>تر ټولو ډېر ساتل</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ث</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>وروستی پای ته رسېدل</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>د ځوابونو زېرمه پاکول</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>خوندي شوې پوښتنې</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>د ./console exp:graphql:persist سره، یا د پېرېدونکو لخوا خوندي شوې (اتومات خوندي شوې پوښتنې)؛ په نوم یا SHA-256 بلل کېږي.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>نومونه</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>اندازه</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>چېرته</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>لرې کول</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>راغلې</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>خوندي شوې</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>هو، دا پوښتنه لرې کړئ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>تر اوسه هېڅ خوندي شوې پوښتنه نشته.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>د API کیلي</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>شخصي API کیلي د graphql:read (پوښتنې) یا graphql:write (میوټېشنونه) ساحې سره. هغه د API لاسرسي په پاڼه کې، یا د ./console exp:graphql:keys سره جوړې او لغوه کړئ.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>د API لاسرسی</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ټولې کیلي</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>کیلي</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نوم</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>خاوند</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ساحې</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>وروستی کارول</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>فعاله</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>موده یې تېره</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>لغوه شوې</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>هېڅکله</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>تر اوسه د GraphQL ساحې سره هېڅ API کیلي نشته.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

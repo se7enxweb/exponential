@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>இந்த அமர்வில் உள்நுழைந்து, உங்கள் உரிமைகளுடன் வினவல் இயங்குகிறது.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds வி. இல் %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>வரம்பு இல்லை</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ஆழம்</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>சிக்கலான தன்மை</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>பட்டியலுக்கான உருப்படிகள்</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (இயல்புநிலை %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>பயனர் அல்லது விசைக்கான கோரிக்கைகள்</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>அநாமதேய முகவரிக்கான கோரிக்கைகள்</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>சுயஆய்வு (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>சேமிக்கப்பட்ட வினவல்கள் மட்டும்</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>மிகப்பெரிய வினவல்</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes பைட்டுகள்</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>மிகப்பெரிய பதிவேற்றம்</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess என்ற தள அணுகல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess இல் மாற்றங்கள் இயக்கப்பட்டுள்ளன.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess இல் மாற்றங்கள் முடக்கப்பட்டுள்ளன.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess இல் GraphQL API இயக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess இல் GraphQL API முடக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>அமைப்புகளை எழுத முடியவில்லை: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>பதில் தற்காலிகச் சேமிப்பு அழிக்கப்பட்டது: %count பதில்கள் நீக்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>வினவலை நீக்க அதன் அருகிலுள்ள பெட்டியைத் தேர்வு செய்யவும்.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>வினவலை நீக்க முடியவில்லை: PersistedQueryDirectoryList[] இன் ஒரு கோப்பகத்தில் வழங்கப்பட்ட வினவல் அதன் கோப்புடன் நீக்கப்படுகிறது.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>சேமிக்கப்பட்ட வினவல் நீக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>இயக்கம்</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>முடக்கம்</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>தள அணுகல்கள்</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API மற்றும் அதன் மாற்றங்கள் பதிலளிக்கும் இடங்கள். ./console exp:graphql:enable மற்றும் exp:graphql:disable செய்வது போலவே பொத்தான்கள் graphql.ini ஐ எழுதுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>தள அணுகல்</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>மாற்று</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>முடக்கு</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>மாற்றங்களை முடக்கு</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>மாற்றங்களை இயக்கு</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>இயக்கு</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>வரம்புகள்</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>இந்தத் தள அணுகலின் graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>பதில் தற்காலிகச் சேமிப்பு</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>சேமிக்கப்பட்ட வினவல்களின் பதில்கள், பயனர் உரிமைகளின்படி வைக்கப்பட்டு, உள்ளடக்கம் வெளியிடப்படும் ஒவ்வொரு முறையும் காலாவதியாக்கப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>வைக்கப்பட்ட பதில்கள்</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count பதில்கள், %bytes பைட்டுகள்</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>அதிகபட்சம் வைக்கப்படும் காலம்</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds வி.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>கடைசியாகக் காலாவதியானது</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>பதில் தற்காலிகச் சேமிப்பை அழி</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>சேமிக்கப்பட்ட வினவல்கள்</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist மூலம் அல்லது கிளையண்டுகளால் (தானியங்கு சேமிக்கப்பட்ட வினவல்கள்) சேமிக்கப்படுகின்றன; பெயர் அல்லது SHA-256 மூலம் அழைக்கப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>பெயர்கள்</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>அளவு</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>இடம்</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>நீக்கு</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>வழங்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>சேமிக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ஆம், இந்த வினவலை நீக்கு</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>இன்னும் சேமிக்கப்பட்ட வினவல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API விசைகள்</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (வினவல்கள்) அல்லது graphql:write (மாற்றங்கள்) வரம்புடைய தனிப்பட்ட API விசைகள். அவற்றை API அணுகல் பக்கத்தில் அல்லது ./console exp:graphql:keys மூலம் உருவாக்கவும் திரும்பப் பெறவும்.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API அணுகல்</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>அனைத்து விசைகள்</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>விசை</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>பெயர்</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>உரிமையாளர்</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>வரம்புகள்</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>கடைசியாகப் பயன்படுத்தியது</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>செயலில்</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>காலாவதி</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>திரும்பப் பெறப்பட்டது</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ஒருபோதும் இல்லை</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL வரம்புடைய API விசை இன்னும் இல்லை.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

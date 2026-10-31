@@ -78775,6 +78775,286 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Pirsiyar bi mafên te dixebite, bi vê danişînê têketî.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count di %seconds çrk de</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>bê sînor</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Kûrahî</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Tevlihevî</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Hêman ji bo her lîsteyê</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (pêşdanasîn %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Daxwaz ji bo her bikarhêner an mifteyê</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Daxwaz ji bo her navnîşana nenas</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Tenê pirsiyarên tomarkirî</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Pirsiyara herî mezin</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bayt</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Barkirina herî mezin</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Gihîştina malperê %siteaccess tune ye.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Guherandin di %siteaccess de hatin vekirin.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Guherandin di %siteaccess de hatin girtin.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>API ya GraphQL di %siteaccess de hate vekirin.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>API ya GraphQL di %siteaccess de hate girtin.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Mîheng nehatin nivîsandin: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Cacheya bersivan hate paqijkirin: %count bersiv hatin rakirin.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Ji bo rakirina pirsiyarê qutîka li kêleka wê nîşan bike.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Pirsiyar nehate rakirin: pirsiyareke ku di peldankeke PersistedQueryDirectoryList[] de hatiye şandin bi pela xwe re tê rakirin.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Pirsiyara tomarkirî hate rakirin.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Guherandin</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>vekirî</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>girtî</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Gihîştinên malperê</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Cihê ku API û guherandinên wê bersiv didin. Bişkok graphql.ini dinivîsin, wekî ./console exp:graphql:enable û exp:graphql:disable dikin.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Gihîştina malperê</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API ya GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Biguherîne</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Bigire</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Guherandin girtî</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Guherandin vekirî</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Veke</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Sînor</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ya vê gihîştina malperê.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cacheya bersivan</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Bersivên pirsiyarên tomarkirî, li gorî mafên bikarhêner têne hilanîn û her gava naverok tê weşandin diqedin.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Bersivên hilanîn</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count bersiv, %bytes bayt</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Herî zêde tê hilanîn</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds çrk</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Qedandina dawî</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Cacheya bersivan paqij bike</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Pirsiyarên tomarkirî</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Bi ./console exp:graphql:persist an ji hêla xerîdaran ve (pirsiyarên tomarkirî yên otomatîk) têne tomarkirin; bi nav an SHA-256 têne gazîkirin.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Mezinahî</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Cih</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Rake</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>şandî</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>tomarkirî</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Erê, vê pirsiyarê rake</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Hîn pirsiyareke tomarkirî tune ye.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Mifteyên API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Mifteyên API yên kesane bi qada graphql:read (pirsiyar) an graphql:write (guherandin). Wan li ser rûpela Gihîştina API an bi ./console exp:graphql:keys çêke û betal bike.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Gihîştina API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Hemû mifte</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Mifte</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Xwedî</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Qad</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Bikaranîna dawî</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>çalak</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>qediyayî</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>betalkirî</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>qet</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Hîn mifteyeke API bi qadeke GraphQL tune ye.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

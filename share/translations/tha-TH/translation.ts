@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>คิวรีทำงานด้วยสิทธิ์ของคุณ โดยลงชื่อเข้าใช้ด้วยเซสชันนี้</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ครั้งใน %seconds วิ.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ไม่จำกัด</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ความลึก</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ความซับซ้อน</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>รายการต่อลิสต์</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ค่าเริ่มต้น %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>คำขอต่อผู้ใช้หรือคีย์</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>คำขอต่อที่อยู่นิรนาม</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>เฉพาะคิวรีที่จัดเก็บไว้</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>คิวรีที่ใหญ่ที่สุด</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ไบต์</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>การอัปโหลดที่ใหญ่ที่สุด</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ไม่มีการเข้าถึงไซต์ %siteaccess</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>เปิดมิวเทชันใน %siteaccess แล้ว</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>ปิดมิวเทชันใน %siteaccess แล้ว</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>เปิด GraphQL API ใน %siteaccess แล้ว</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>ปิด GraphQL API ใน %siteaccess แล้ว</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ไม่สามารถเขียนการตั้งค่าได้: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ล้างแคชคำตอบแล้ว: ลบคำตอบออก %count รายการ</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ทำเครื่องหมายในช่องข้างคิวรีเพื่อลบออก</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ไม่สามารถลบคิวรีได้: คิวรีที่มาพร้อมในไดเรกทอรีของ PersistedQueryDirectoryList[] จะถูกลบพร้อมกับไฟล์ของมัน</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ลบคิวรีที่จัดเก็บไว้แล้ว</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>มิวเทชัน</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>เปิด</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ปิด</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>ที่ที่ API และมิวเทชันของมันตอบกลับ ปุ่มเหล่านี้เขียน graphql.ini เช่นเดียวกับ ./console exp:graphql:enable และ exp:graphql:disable</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>การเข้าถึงไซต์</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>เปลี่ยน</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ปิด</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ปิดมิวเทชัน</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>เปิดมิวเทชัน</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>เปิด</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ขีดจำกัด</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ของการเข้าถึงไซต์นี้</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>แคชคำตอบ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>คำตอบของคิวรีที่จัดเก็บไว้ เก็บแยกตามสิทธิ์ผู้ใช้และหมดอายุทุกครั้งที่มีการเผยแพร่เนื้อหา</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>สถานะ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>คำตอบที่เก็บไว้</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count คำตอบ, %bytes ไบต์</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>เก็บไว้นานสุด</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds วิ.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>หมดอายุล่าสุด</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ล้างแคชคำตอบ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>คิวรีที่จัดเก็บไว้</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>จัดเก็บด้วย ./console exp:graphql:persist หรือโดยไคลเอนต์ (automatic persisted queries); เรียกใช้ด้วยชื่อหรือ SHA-256</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ขนาด</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ที่อยู่</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ลบ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>มาพร้อมระบบ</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>จัดเก็บแล้ว</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ใช่ ลบคิวรีนี้</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ยังไม่มีคิวรีที่จัดเก็บไว้</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API key</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>API key ส่วนตัวที่มีขอบเขต graphql:read (คิวรี) หรือ graphql:write (มิวเทชัน) สร้างและเพิกถอนได้ที่หน้าการเข้าถึง API หรือด้วย ./console exp:graphql:keys</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>การเข้าถึง API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>คีย์ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>คีย์</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>เจ้าของ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ขอบเขต</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ใช้ล่าสุด</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ใช้งานอยู่</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>หมดอายุ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>เพิกถอนแล้ว</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ไม่เคย</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>ยังไม่มี API key ที่มีขอบเขต GraphQL</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

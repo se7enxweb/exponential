@@ -78782,6 +78782,286 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Sorgu, bu oturumla giriş yapmış olarak sizin yetkilerinizle çalışır.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds sn içinde %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>sınır yok</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Derinlik</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Karmaşıklık</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Liste başına öğe</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (varsayılan %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Kullanıcı veya anahtar başına istek</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Anonim adres başına istek</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>İç gözlem (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Yalnızca kalıcı sorgular</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>En büyük sorgu</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bayt</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>En büyük yükleme</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess adında bir site erişimi yok.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutasyonlar %siteaccess içinde açıldı.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutasyonlar %siteaccess içinde kapatıldı.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess içinde açıldı.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API %siteaccess içinde kapatıldı.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ayarlar yazılamadı: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Yanıt önbelleği temizlendi: %count yanıt kaldırıldı.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Sorguyu kaldırmak için yanındaki kutuyu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Sorgu kaldırılamadı: PersistedQueryDirectoryList[] dizinlerinden birinde gelen bir sorgu, dosyasıyla birlikte kaldırılır.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Kalıcı sorgu kaldırıldı.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutasyonlar</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>açık</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kapalı</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Site erişimleri</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API ve mutasyonlarının yanıt verdiği yerler. Düğmeler, ./console exp:graphql:enable ve exp:graphql:disable gibi graphql.ini dosyasını yazar.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Site erişimi</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Değiştir</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Kapat</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutasyonları kapat</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutasyonları aç</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aç</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Sınırlar</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Bu site erişiminin graphql.ini [GraphQLSettings] ayarları.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Yanıt önbelleği</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Kalıcı sorguların yanıtları; kullanıcı yetkilerine göre saklanır ve içerik her yayımlandığında geçersiz olur.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Saklanan yanıtlar</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count yanıt, %bytes bayt</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>En fazla saklama süresi</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sn</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Son geçersiz kılma</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Yanıt önbelleğini temizle</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Kalıcı sorgular</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist ile ya da istemciler tarafından saklanır (otomatik kalıcı sorgular); adla veya SHA-256 ile çağrılır.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Adlar</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Boyut</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Konum</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kaldır</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>hazır gelen</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>saklanan</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Evet, bu sorguyu kaldır</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Henüz kalıcı sorgu yok.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API anahtarları</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (sorgular) veya graphql:write (mutasyonlar) kapsamlı kişisel API anahtarları. Bunları API erişimi sayfasında ya da ./console exp:graphql:keys ile oluşturun ve iptal edin.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API erişimi</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Tüm anahtarlar</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Anahtar</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Sahip</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Kapsamlar</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Son kullanım</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>etkin</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>süresi doldu</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>iptal edildi</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hiçbir zaman</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Henüz GraphQL kapsamlı API anahtarı yok.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -78777,6 +78777,286 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ekibuuzo kikola n'obuyinza bwo, ng'oyingidde mu kiseera kino.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count mu sikonda %seconds</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>tewali kkomo</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Obuziba</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Obuzibu</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Ebintu ku lukalala</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ekisookerwako %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Okusaba ku mukozesa oba ku kisumuluzo</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Okusaba ku ndagiriro etamanyiddwa</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Ebibuuzo ebyaterekebwa byokka</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Ekibuuzo ekisinga obunene</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>bayiti %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Okuteeka okusinga obunene</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Tewali mulyango gw'omukutu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Enkyukakyuka zikoleddwa mu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Enkyukakyuka nzikiddwa mu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ekoleddwa mu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API nzikiddwa mu %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Ensengeka tezaasobose kuwandiikibwa: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Cache y'okuddamu erongooseddwa: okuddamu %count kuggyiddwawo.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Kebera akasanduuko ku mabbali g'ekibuuzo okukiggyawo.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Ekibuuzo tekyasobose kuggyibwawo: ekibuuzo ekyajja mu ndagiriro ya PersistedQueryDirectoryList[] kiggyibwawo wamu ne fayiro yaakyo.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Ekibuuzo ekyaterekebwa kiggyiddwawo.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Enkyukakyuka</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>kikoleddwa</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kizikiddwa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Emiryango gy'omukutu</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Awali API n'enkyukakyuka zaayo we zidaamu. Obutambi buwandiika graphql.ini, nga ./console exp:graphql:enable ne exp:graphql:disable bwe bikola.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Omulyango gw'omukutu</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Kyusa</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Zikiza</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Enkyukakyuka nzikiddwa</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Enkyukakyuka zikoleddwa</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Koleeza</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Ekkomo</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ey'omulyango guno gw'omukutu.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache y'okuddamu</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Okuddamu kw'ebibuuzo ebyaterekebwa, okuterekeddwa okusinziira ku buyinza bw'omukozesa era kuggwaako buli lwe ebirimu bifulumizibwa.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Embeera</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Okuddamu okuterekeddwa</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>okuddamu %count, bayiti %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Kuterekebwa ekisinga</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>sikonda %seconds</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Okuggwaako okusembayo</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Longoosa cache y'okuddamu</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Ebibuuzo ebyaterekebwa</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Byaterekebwa ne ./console exp:graphql:persist, oba bakasitoma (ebibuuzo ebyeterekera byokka); biyitibwa n'erinnya oba SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Amannya</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Obunene</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Wa</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ggyawo</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>byajja nabyo</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>byaterekebwa</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ye, ggyawo ekibuuzo kino</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Tewannabaawo kibuuzo kyaterekebwa.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Ebisumuluzo bya API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Ebisumuluzo bya API eby'omuntu ssekinnoomu ebirina obuyinza graphql:read (ebibuuzo) oba graphql:write (enkyukakyuka). Bikole era obisazeemu ku lupapula Okuyingira mu API, oba ne ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Okuyingira mu API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Ebisumuluzo byonna</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Ekisumuluzo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Erinnya</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Nannyini</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Obuyinza</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Kyakozesebwa okusembayo</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>kikola</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>kyaggwaako</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>kyasazibwamu</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>tekyakozesebwa</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Tewannabaawo kisumuluzo kya API kirina buyinza bwa GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -78807,6 +78807,286 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Päring töötab sinu õigustega, selle seansiga sisse logituna.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count %seconds s jooksul</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>piiranguta</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Sügavus</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Keerukus</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Üksusi loendis</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (vaikimisi %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Taotlusi kasutaja või võtme kohta</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Taotlusi anonüümse aadressi kohta</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspektsioon</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Ainult salvestatud päringud</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Suurim päring</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes baiti</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Suurim üleslaadimine</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Saidi juurdepääsu %siteaccess pole olemas.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutatsioonid on saidi juurdepääsus %siteaccess sisse lülitatud.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutatsioonid on saidi juurdepääsus %siteaccess välja lülitatud.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API on saidi juurdepääsus %siteaccess sisse lülitatud.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API on saidi juurdepääsus %siteaccess välja lülitatud.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Seadeid ei õnnestunud kirjutada: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Vastuste vahemälu tühjendati: eemaldati %count vastust.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Päringu eemaldamiseks märgi selle kõrval olev kast.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Päringut ei õnnestunud eemaldada: PersistedQueryDirectoryList[] kataloogis tarnitud päring eemaldatakse koos selle failiga.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Salvestatud päring eemaldati.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutatsioonid</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>sees</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>väljas</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Saidi juurdepääsud</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kus API ja selle mutatsioonid vastavad. Nupud kirjutavad faili graphql.ini, nagu ./console exp:graphql:enable ja exp:graphql:disable seda teevad.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Saidi juurdepääs</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Muuda</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Lülita välja</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutatsioonid välja</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutatsioonid sisse</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Lülita sisse</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Piirangud</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Selle saidi juurdepääsu graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Vastuste vahemälu</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Salvestatud päringute vastused, hoitud kasutajaõiguste kaupa ja aegunud iga kord, kui sisu avaldatakse.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Olek</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Hoitud vastuseid</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count vastust, %bytes baiti</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Hoitakse kõige rohkem</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Viimati aegunud</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Tühjenda vastuste vahemälu</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Salvestatud päringud</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Salvestatud käsuga ./console exp:graphql:persist või klientide poolt (automaatsed salvestatud päringud); kutsutakse nime või SHA-256 järgi.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nimed</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Suurus</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Asukoht</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eemalda</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>tarnitud</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>salvestatud</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Jah, eemalda see päring</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Salvestatud päringuid veel pole.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-võtmed</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Isiklikud API-võtmed ulatusega graphql:read (päringud) või graphql:write (mutatsioonid). Loo ja tühista neid lehel API juurdepääs või käsuga ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API juurdepääs</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Kõik võtmed</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Võti</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Omanik</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Ulatused</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Viimati kasutatud</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktiivne</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>aegunud</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>tühistatud</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mitte kunagi</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL-ulatusega API-võtmeid veel pole.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

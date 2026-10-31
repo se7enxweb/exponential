@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ⴰⵙⵇⵙⵉ ⵉⵜⵜⵓⵙⴷⵓ ⵙ ⵉⵣⵔⴼⴰⵏ ⵏⵏⴽ, ⵜⴽⵛⵎⴷ ⵙ ⵜⵖⵉⵎⵉⵜ ⴰⴷ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ⴳ %seconds ⵏ ⵜⵙⵉⵏⵜ</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ⴰⵔ ⵜⴰⴳⵔⴰ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ⵜⵉⵍⵍⵉ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ⵜⴰⵎⵙⵍⵉⴳⵜ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ⵉⴼⵔⴷⵉⵙⵏ ⵉ ⵢⴰⵍ ⵜⴰⵍⴳⴰⵎⵜ</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ⵙ ⵓⵙⵍⵖⵓ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ⵉⵙⵓⵜⵔ ⵉ ⵢⴰⵍ ⴰⵏⵙⵙⵎⵔⵙ ⵏⵖ ⵜⴰⵙⴰⵔⵓⵜ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ⵉⵙⵓⵜⵔ ⵉ ⵢⴰⵍ ⵜⴰⵏⵙⴰ ⵜⴰⵔ ⵉⵙⵎ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ⴰⵙⵙⵓⵔⵙ ⵏ ⵓⵙⴽⵉⵎⴰ (introspection)</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>ⵉⵙⵇⵙⵉⵜⵏ ⵉⵜⵜⵓⵃⵔⵣⵏ ⵖⴰⵙ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ⴰⵙⵇⵙⵉ ⴰⵎⵇⵇⵔⴰⵏ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ⵏ ⴱⴰⵢⵜ</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ⴰⵙⴰⵍⵉ ⴰⵎⵇⵇⵔⴰⵏ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ⵓⵔ ⵉⵍⵍⵉ ⵓⴽⵛⵛⵓⵎ ⵖⵔ ⵓⵙⵎⵍ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>ⵉⵙⵏⴼⴰⵍ ⵜⵜⵓⵙⵙⴽⵛⵎⵏ ⴳ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>ⵉⵙⵏⴼⴰⵍ ⵜⵜⵓⵙⵅⵙⵉⵏ ⴳ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API ⵉⵜⵜⵓⵙⵙⴽⵛⵎ ⴳ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API ⵉⵜⵜⵓⵙⵅⵙⵉ ⴳ %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ⵓⵔ ⵉⵥⴹⵉⵕ ⵓⵔⴰ ⵏ ⵜⵉⵙⵖⴰⵍ: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ⵜⴰⵣⵔⴽⴰⵜⵓⵜ ⵏ ⵜⵔⵔⵉⵢⵉⵏ ⵜⵜⵓⵙⴼⴹ: %count ⵏ ⵜⵔⵔⵉⵢⵉⵏ ⵜⵜⵓⴽⴽⵙⵏⵜ.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ⵔⵛⵎ ⵜⴰⵙⵏⴷⵓⵇⵜ ⵍⵍⵉ ⵉⵍⵍⴰⵏ ⵖⵔ ⵜⵙⴳⴰ ⵏ ⵓⵙⵇⵙⵉ ⴰⴷ ⵜ ⵜⴽⴽⵙⴷ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ⵓⵔ ⵉⵥⴹⵉⵕ ⵓⴽⴽⵙ ⵏ ⵓⵙⵇⵙⵉ: ⴰⵙⵇⵙⵉ ⵍⵍⵉ ⴷ ⵢⵓⵙⵉⵏ ⴳ ⵢⴰⵏ ⵓⴽⴰⵔⴰⵎ ⵏ PersistedQueryDirectoryList[] ⵉⵜⵜⵓⴽⴽⴰⵙ ⴷ ⵓⴼⴰⵢⵍⵓ ⵏⵏⵙ.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ⴰⵙⵇⵙⵉ ⵉⵜⵜⵓⵃⵔⵣⵏ ⵉⵜⵜⵓⴽⴽⵙ.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ⵉⵙⵏⴼⴰⵍ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ⵢⵓⵔⵎⴷ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ⵢⵏⵙⴰ</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ⵉⴽⵛⵛⵓⵎⵏ ⵖⵔ ⵓⵙⵎⵍ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>ⵎⴰⵏⵉ ⵜⵔⴰⵔ API ⴷ ⵉⵙⵏⴼⴰⵍ ⵏⵏⵙ. ⵜⵉⵙⵏⵜⵉⵜⵉⵏ ⴰⵔ ⵜⵔⴰⵏⵜ graphql.ini, ⵣⵓⵏⴷ ./console exp:graphql:enable ⴷ exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ⴰⴽⵛⵛⵓⵎ ⵖⵔ ⵓⵙⵎⵍ</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ⴰⵙⵏⴼⵍ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ⵙⵏⵙ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ⵙⵏⵙ ⵉⵙⵏⴼⴰⵍ</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ⵔⵎⴷ ⵉⵙⵏⴼⴰⵍ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ⵔⵎⴷ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ⵜⵉⴳⵔⴰⵏ</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] ⵏ ⵓⴽⵛⵛⵓⵎ ⴰⴷ ⵖⵔ ⵓⵙⵎⵍ.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ⵜⴰⵣⵔⴽⴰⵜⵓⵜ ⵏ ⵜⵔⵔⵉⵢⵉⵏ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>ⵜⵉⵔⵔⵉⵢⵉⵏ ⵏ ⵉⵙⵇⵙⵉⵜⵏ ⵉⵜⵜⵓⵃⵔⵣⵏ, ⵜⵜⵓⵃⵔⵣⵏⵜ ⵙ ⵉⵣⵔⴼⴰⵏ ⵏ ⵓⵏⵙⵙⵎⵔⵙ ⴷ ⵜⵜⴽⵎⵎⴰⵍⵏⵜ ⴽⵓ ⵜⵉⴽⴽⵍⵜ ⵍⵍⵉ ⵉⵜⵜⵓⵥⵕⴰⵢ ⵓⴳⴱⵓⵔ.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ⴰⴷⴷⴰⴷ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ⵜⵉⵔⵔⵉⵢⵉⵏ ⵉⵜⵜⵓⵃⵔⵣⵏ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ⵏ ⵜⵔⵔⵉⵢⵉⵏ, %bytes ⵏ ⴱⴰⵢⵜ</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>ⴰⵃⵔⵣ ⴰⵎⵇⵇⵔⴰⵏ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ⴰⴽⵎⵎⵍ ⴰⵎⴳⴳⴰⵔⵓ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ⵙⴼⴹ ⵜⴰⵣⵔⴽⴰⵜⵓⵜ ⵏ ⵜⵔⵔⵉⵢⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>ⵉⵙⵇⵙⵉⵜⵏ ⵉⵜⵜⵓⵃⵔⵣⵏ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>ⵜⵜⵓⵃⵔⵣⵏ ⵙ ./console exp:graphql:persist, ⵏⵖ ⵙ ⵉⵎⵙⵖⴰⵏ (ⵉⵙⵇⵙⵉⵜⵏ ⵉⵜⵜⵓⵃⵔⵣⵏ ⵙ ⵉⵅⴼ ⵏⵏⵙⵏ); ⵜⵜⵓⵖⵔⴰⵏ ⵙ ⵉⵙⵎ ⵏⵖ ⵙ SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ⵉⵙⵎⴰⵡⵏ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ⵜⵉⴷⴷⵉ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ⵎⴰⵏⵉ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ⴽⴽⵙ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ⵉⴷⴷⴰ ⴷ</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ⵉⵜⵜⵓⵃⵔⵣ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ⵢⴰⵀ, ⴽⴽⵙ ⴰⵙⵇⵙⵉ ⴰⴷ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ⵓⵔ ⵉⵍⵍⵉ ⴰⵙⵇⵙⵉ ⵉⵜⵜⵓⵃⵔⵣⵏ ⴰⵔ ⴷⵖⵉ.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>ⵜⵉⵙⴰⵔⵓⵜⵉⵏ ⵏ API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>ⵜⵉⵙⴰⵔⵓⵜⵉⵏ ⵏ API ⵜⵉⵏⵎⵎⵓⴷⴰⵏⵉⵏ ⵙ ⵜⵎⵏⴰⴹⵜ graphql:read (ⵉⵙⵇⵙⵉⵜⵏ) ⵏⵖ graphql:write (ⵉⵙⵏⴼⴰⵍ). ⵙⴽⵔ ⵜⵏⵜ ⵜⵙⵙⵔⵙⴷ ⵜⵏⵜ ⴳ ⵜⴰⵙⵏⴰ ⴰⴽⵛⵛⵓⵎ ⵖⵔ API, ⵏⵖ ⵙ ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>ⴰⴽⵛⵛⵓⵎ ⵖⵔ API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ⵜⵉⵙⴰⵔⵓⵜⵉⵏ ⴰⴽⴽ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ⵜⴰⵙⴰⵔⵓⵜ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ⵉⵙⵎ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ⴱⴰⴱ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ⵜⵉⵎⵏⴰⴹⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ⴰⵙⵙⵎⵔⵙ ⴰⵎⴳⴳⴰⵔⵓ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ⵢⵓⵔⵎⴷ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ⵜⴽⵎⵎⵍ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ⵜⵜⵓⵙⵔⵙ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ⵓⵍⴰ ⵜⵉⴽⴽⵍ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>ⵓⵔ ⵜⵍⵍⵉ ⵜⴰⵙⴰⵔⵓⵜ ⵏ API ⵙ ⵜⵎⵏⴰⴹⵜ ⵏ GraphQL ⴰⵔ ⴷⵖⵉ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

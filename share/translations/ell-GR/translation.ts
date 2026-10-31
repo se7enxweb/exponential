@@ -78807,6 +78807,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Το ερώτημα εκτελείται με τα δικαιώματά σας, συνδεδεμένοι σε αυτή τη συνεδρία.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count σε %seconds δευτ.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>χωρίς όριο</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Βάθος</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Πολυπλοκότητα</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Στοιχεία ανά λίστα</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (προεπιλογή %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Αιτήματα ανά χρήστη ή κλειδί</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Αιτήματα ανά ανώνυμη διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Ενδοσκόπηση</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Μόνο αποθηκευμένα ερωτήματα</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Μεγαλύτερο ερώτημα</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Μεγαλύτερη μεταφόρτωση</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Δεν υπάρχει πρόσβαση ιστότοπου %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Οι μεταλλάξεις είναι ενεργοποιημένες στο %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Οι μεταλλάξεις είναι απενεργοποιημένες στο %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Το GraphQL API είναι ενεργοποιημένο στο %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Το GraphQL API είναι απενεργοποιημένο στο %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Δεν ήταν δυνατή η εγγραφή των ρυθμίσεων: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Η κρυφή μνήμη απαντήσεων εκκαθαρίστηκε: αφαιρέθηκαν %count απαντήσεις.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Επιλέξτε το πλαίσιο δίπλα στο ερώτημα για να το αφαιρέσετε.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Δεν ήταν δυνατή η αφαίρεση του ερωτήματος: ένα ερώτημα που παρέχεται σε κατάλογο του PersistedQueryDirectoryList[] αφαιρείται μαζί με το αρχείο του.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Το αποθηκευμένο ερώτημα αφαιρέθηκε.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Μεταλλάξεις</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ενεργό</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ανενεργό</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Προσβάσεις ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Πού απαντούν το API και οι μεταλλάξεις του. Τα κουμπιά γράφουν το graphql.ini, όπως κάνουν τα ./console exp:graphql:enable και exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Αλλαγή</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Απενεργοποίηση</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Απενεργοποίηση μεταλλάξεων</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Ενεργοποίηση μεταλλάξεων</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ενεργοποίηση</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Όρια</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] αυτής της πρόσβασης ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Κρυφή μνήμη απαντήσεων</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Οι απαντήσεις των αποθηκευμένων ερωτημάτων, που διατηρούνται ανά δικαιώματα χρήστη και λήγουν κάθε φορά που δημοσιεύεται περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Διατηρημένες απαντήσεις</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count απαντήσεις, %bytes bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Διατήρηση το πολύ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds δευτ.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Τελευταία λήξη</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Εκκαθάριση κρυφής μνήμης απαντήσεων</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Αποθηκευμένα ερωτήματα</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Αποθηκεύονται με ./console exp:graphql:persist ή από πελάτες (αυτόματα αποθηκευμένα ερωτήματα)· καλούνται με όνομα ή SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Ονόματα</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Μέγεθος</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Θέση</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Αφαίρεση</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>παρεχόμενο</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>αποθηκευμένο</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ναι, αφαίρεση αυτού του ερωτήματος</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Δεν υπάρχει ακόμη αποθηκευμένο ερώτημα.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Κλειδιά API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Προσωπικά κλειδιά API με εύρος graphql:read (ερωτήματα) ή graphql:write (μεταλλάξεις). Δημιουργήστε και ανακαλέστε τα στη σελίδα Πρόσβαση API ή με ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Πρόσβαση API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Όλα τα κλειδιά</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Κλειδί</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Κάτοχος</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Εύρη</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Τελευταία χρήση</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ενεργό</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>έληξε</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ανακλήθηκε</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ποτέ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Δεν υπάρχει ακόμη κλειδί API με εύρος GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

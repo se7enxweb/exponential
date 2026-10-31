@@ -78777,6 +78777,286 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Tasuturt tettwaselkam s yizerfan-ik, s tɣimit-a ideg tkecmeḍ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count deg %seconds tsn</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ulac tilisa</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Telqey</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Tasemmeskelt</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Iferdisen i yal tabdart</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (amezwer %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Tuttriwin i yal aseqdac neɣ tasarut</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Tuttriwin i yal tansa tarussint</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Tisuturin yettwaḥerzen kan</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Tasuturt tameqrant</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes n yibiten</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Asali ameqran</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Ulac anekcum ɣer usmel %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Ibeddilen rmed deg %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Ibeddilen nsan deg %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API yermed deg %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API yensa deg %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Iɣewwaren ur zmiren ara ad ttwarun: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Tazarkatut n tririyin tettwasfeḍ: %count n tririyin ttwakksent.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Ṛcem tanaka ɣer tama n tsuturt akken ad tt-tekkseḍ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Tasuturt ur tezmir ara ad tettwakkes: tasuturt i d-yettunefken deg ukaram n PersistedQueryDirectoryList[] tettwakkas s ufaylu-ines.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Tasuturt yettwaḥerzen tettwakkes.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Ibeddilen</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>yermed</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>yensa</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Inekcumen ɣer usmel</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Anda d-ttarran API d yibeddilen-is. Tiqeffalin ttarunt graphql.ini, akken xeddmen ./console exp:graphql:enable d exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Abeddel</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Sens</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Ibeddilen nsan</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Ibeddilen rmed</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Rmed</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Tilisa</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] n unekcum-a ɣer usmel.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Tazarkatut n tririyin</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Tiririyin n tsuturin yettwaḥerzen, ttwaḥerzent ɣef yizerfan n useqdac, fukkunt yal tikkelt ara d-yeffeɣ ugbur.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Addad</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Tiririyin yettwaḥerzen</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count n tririyin, %bytes n yibiten</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Aḥraz afellay</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds tsn</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Tagara n tfukka</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Sfeḍ tazarkatut n tririyin</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Tisuturin yettwaḥerzen</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Ttwaḥerzent s ./console exp:graphql:persist, neɣ sɣur imsaɣen (automatic persisted queries); ttwasawalent s yisem neɣ s SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Ismawen</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tiddi</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Anda</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kkes</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>yettunefken</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>yettwaḥerzen</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ih, kkes tasuturt-a</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ur tella ara akka tura tasuturt yettwaḥerzen.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Tisura API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Tisura API tudmawanin s tmnaḍt graphql:read (tisuturin) neɣ graphql:write (ibeddilen). Rnu-tent, sefsex-tent deg usebter Anekcum API, neɣ s ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Anekcum API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Akk tisura</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Tasarut</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Bab</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Timnaḍin</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Aseqdec aneggaru</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>urmid</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>yefukk</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>yettwasefsex</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ulayɣer</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ur tella ara akka tura tsarut API s tmnaḍt GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

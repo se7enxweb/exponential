@@ -78807,6 +78807,286 @@ Beidh ort aicme an nóid a athrú le feidhm na babhtála.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ritheann an t-iarratas le do chearta, logáilte isteach leis an seisiún seo.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count in %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>gan teorainn</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Doimhneacht</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Castacht</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Míreanna in aghaidh an liosta</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (réamhshocrú %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Éilimh in aghaidh an úsáideora nó na heochrach</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Éilimh in aghaidh an tseolta gan ainm</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Iarratais stóráilte amháin</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>An t-iarratas is mó</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes beart</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>An uaslódáil is mó</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Níl rochtain suímh %siteaccess ann.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Tá na sócháin casta air in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Tá na sócháin múchta in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Tá an API GraphQL casta air in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Tá an API GraphQL múchta in %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Níorbh fhéidir na socruithe a scríobh: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Glanadh taisce na bhfreagraí: %count freagra bainte.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Cuir tic sa bhosca in aice leis an iarratas chun é a bhaint.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Níorbh fhéidir an t-iarratas a bhaint: baintear iarratas a seachadadh i gcomhadlann de PersistedQueryDirectoryList[] in éineacht lena chomhad.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Baineadh an t-iarratas stóráilte.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Sócháin</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>air</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>as</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Rochtainí suímh</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Áit a bhfreagraíonn an API agus a shócháin. Scríobhann na cnaipí graphql.ini, mar a dhéanann ./console exp:graphql:enable agus exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Rochtain suímh</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Athraigh</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Múch</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Sócháin as</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Sócháin air</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Cas air</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Teorainneacha</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] na rochtana suímh seo.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Taisce freagraí</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Freagraí na n-iarratas stóráilte, coinnithe de réir chearta an úsáideora agus as feidhm aon uair a fhoilsítear ábhar.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staid</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Freagraí coinnithe</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count freagra, %bytes beart</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Coinnithe ar a mhéad</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>As feidhm go deireanach</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Glan taisce na bhfreagraí</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Iarratais stóráilte</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Stóráilte le ./console exp:graphql:persist, nó ag cliaint (iarratais stóráilte uathoibríocha); glaoitear orthu de réir ainm nó SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Ainmneacha</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Méid</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Áit</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Bain</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>seachadta</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>stóráilte</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Bain an t-iarratas seo, cinnte</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Níl aon iarratas stóráilte fós.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Eochracha API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Eochracha API pearsanta leis an raon graphql:read (iarratais) nó graphql:write (sócháin). Cruthaigh agus cúlghair iad ar an leathanach Rochtain API, nó le ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Rochtain API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Gach eochair</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Eochair</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ainm</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Úinéir</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Raonta</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Úsáidte go deireanach</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>gníomhach</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>as feidhm</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>cúlghairthe</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>riamh</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Níl aon eochair API le raon GraphQL fós.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

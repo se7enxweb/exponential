@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ಕ್ವೆರಿ ನಿಮ್ಮ ಹಕ್ಕುಗಳೊಂದಿಗೆ, ಈ ಸೆಷನ್‌ನಿಂದ ಸೈನ್ ಇನ್ ಆಗಿ ನಡೆಯುತ್ತದೆ.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds ಸೆ ನಲ್ಲಿ %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ಮಿತಿ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ಆಳ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>ಸಂಕೀರ್ಣತೆ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ಪ್ರತಿ ಪಟ್ಟಿಗೆ ಐಟಂಗಳು</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ಡೀಫಾಲ್ಟ್ %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ಪ್ರತಿ ಬಳಕೆದಾರ ಅಥವಾ ಕೀಗೆ ವಿನಂತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ಪ್ರತಿ ಅನಾಮಧೇಯ ವಿಳಾಸಕ್ಕೆ ವಿನಂತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ಇಂಟ್ರೋಸ್ಪೆಕ್ಷನ್</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಗಳು ಮಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ಅತಿ ದೊಡ್ಡ ಕ್ವೆರಿ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ಬೈಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ಅತಿ ದೊಡ್ಡ ಅಪ್‌ಲೋಡ್</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess ಸೈಟ್‌ಆಕ್ಸೆಸ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess ನಲ್ಲಿ ಮ್ಯುಟೇಶನ್‌ಗಳು ಆನ್ ಆಗಿವೆ.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess ನಲ್ಲಿ ಮ್ಯುಟೇಶನ್‌ಗಳು ಆಫ್ ಆಗಿವೆ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess ನಲ್ಲಿ GraphQL API ಆನ್ ಆಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess ನಲ್ಲಿ GraphQL API ಆಫ್ ಆಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ಪ್ರತಿಕ್ರಿಯೆ ಕ್ಯಾಶ್ ತೆರವುಗೊಳಿಸಲಾಗಿದೆ: %count ಉತ್ತರಗಳನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ಕ್ವೆರಿಯನ್ನು ತೆಗೆದುಹಾಕಲು ಅದರ ಪಕ್ಕದ ಚೌಕವನ್ನು ಗುರುತಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ಕ್ವೆರಿಯನ್ನು ತೆಗೆದುಹಾಕಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: PersistedQueryDirectoryList[] ನ ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಒದಗಿಸಿದ ಕ್ವೆರಿಯನ್ನು ಅದರ ಫೈಲ್‌ನೊಂದಿಗೆ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಯನ್ನು ತೆಗೆದುಹಾಕಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>ಮ್ಯುಟೇಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ಆನ್</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ಆಫ್</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API ಮತ್ತು ಅದರ ಮ್ಯುಟೇಶನ್‌ಗಳು ಉತ್ತರಿಸುವ ಸ್ಥಳಗಳು. ಬಟನ್‌ಗಳು ./console exp:graphql:enable ಮತ್ತು exp:graphql:disable ಮಾಡುವಂತೆಯೇ graphql.ini ಅನ್ನು ಬರೆಯುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>ಸೈಟ್‌ಆಕ್ಸೆಸ್</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ಬದಲಾಯಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ಆಫ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>ಮ್ಯುಟೇಶನ್‌ಗಳು ಆಫ್</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>ಮ್ಯುಟೇಶನ್‌ಗಳು ಆನ್</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ಆನ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>ಮಿತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ಈ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ನ graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ಪ್ರತಿಕ್ರಿಯೆ ಕ್ಯಾಶ್</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಗಳ ಉತ್ತರಗಳು, ಬಳಕೆದಾರ ಹಕ್ಕುಗಳ ಪ್ರಕಾರ ಇರಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ವಿಷಯ ಪ್ರಕಟವಾದಾಗಲೆಲ್ಲ ಅವಧಿ ಮುಗಿಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>ಇರಿಸಿದ ಉತ್ತರಗಳು</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ಉತ್ತರಗಳು, %bytes ಬೈಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>ಗರಿಷ್ಠ ಇರಿಸುವ ಅವಧಿ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ಸೆ</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>ಕೊನೆಯ ಅವಧಿ ಮುಕ್ತಾಯ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ಪ್ರತಿಕ್ರಿಯೆ ಕ್ಯಾಶ್ ತೆರವುಗೊಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist ಮೂಲಕ ಅಥವಾ ಕ್ಲೈಂಟ್‌ಗಳಿಂದ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ (automatic persisted queries); ಹೆಸರು ಅಥವಾ SHA-256 ಮೂಲಕ ಕರೆಯಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>ಹೆಸರುಗಳು</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ಗಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>ಎಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>ತೆಗೆದುಹಾಕಿ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ಒದಗಿಸಿದ</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>ಸಂಗ್ರಹಿಸಿದ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ಹೌದು, ಈ ಕ್ವೆರಿಯನ್ನು ತೆಗೆದುಹಾಕಿ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API ಕೀಗಳು</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (ಕ್ವೆರಿಗಳು) ಅಥವಾ graphql:write (ಮ್ಯುಟೇಶನ್‌ಗಳು) ಸ್ಕೋಪ್ ಹೊಂದಿರುವ ವೈಯಕ್ತಿಕ API ಕೀಗಳು. ಅವುಗಳನ್ನು API ಪ್ರವೇಶ ಪುಟದಲ್ಲಿ ಅಥವಾ ./console exp:graphql:keys ಮೂಲಕ ರಚಿಸಿ ಮತ್ತು ಹಿಂಪಡೆಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ಪ್ರವೇಶ</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>ಎಲ್ಲಾ ಕೀಗಳು</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>ಕೀ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ಮಾಲೀಕರು</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>ಸ್ಕೋಪ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>ಕೊನೆಯ ಬಳಕೆ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ಸಕ್ರಿಯ</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ಅವಧಿ ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>ಹಿಂಪಡೆಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ಎಂದಿಗೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL ಸ್ಕೋಪ್ ಹೊಂದಿರುವ API ಕೀ ಇನ್ನೂ ಇಲ್ಲ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -78777,6 +78777,286 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Holo ka nīnau me kou mau kuleana, me ke komo ʻana ma kēia kau.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count i loko o %seconds kek.</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ʻaʻohe palena</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Hohonu</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Paʻakikī</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Nā mea o kēlā me kēia papa inoa</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (paʻamau %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Nā noi o kēlā me kēia mea hoʻohana a kī paha</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Nā noi o kēlā me kēia helu wahi inoa ʻole</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Nā nīnau i mālama ʻia wale nō</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Ka nīnau nui loa</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes paita</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Ka hoʻouka nui loa</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>ʻAʻohe Siteaccess %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Ua hoʻā ʻia nā hoʻololi ma %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Ua hoʻopio ʻia nā hoʻololi ma %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Ua hoʻā ʻia ka GraphQL API ma %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Ua hoʻopio ʻia ka GraphQL API ma %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ʻAʻole hiki ke kākau ʻia nā hoʻonohonoho: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Ua hoʻokaʻawale ʻia ka waihona pane: %count pane i wehe ʻia.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>E kaha i ka pahu ma ka ʻaoʻao o ka nīnau e wehe ai.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ʻAʻole hiki ke wehe ʻia ka nīnau: wehe ʻia ka nīnau i hoʻouna ʻia i loko o kekahi papa kuhikuhi o PersistedQueryDirectoryList[] me kāna faila.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Ua wehe ʻia ka nīnau i mālama ʻia.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Nā hoʻololi</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ā</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>pio</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nā Siteaccess</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kahi e pane ai ka API a me kāna mau hoʻololi. Kākau nā pihi i graphql.ini, e like me ka hana a ./console exp:graphql:enable a me exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siteaccess</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Hoʻololi</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Hoʻopio</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Pio nā hoʻololi</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Ā nā hoʻololi</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Hoʻā</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Nā palena</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] o kēia Siteaccess.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Waihona pane</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Nā pane o nā nīnau i mālama ʻia, mālama ʻia e like me nā kuleana o ka mea hoʻohana a pau ko lākou manawa i kēlā me kēia paʻi ʻia ʻana o ka ʻike.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kūlana</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Nā pane i mālama ʻia</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count pane, %bytes paita</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Mālama ʻia a hiki i</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds kek.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Pau hope loa</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Hoʻokaʻawale i ka waihona pane</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Nā nīnau i mālama ʻia</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Mālama ʻia me ./console exp:graphql:persist, a i ʻole e nā mea kūʻokoʻa (nā nīnau i mālama ʻia me ka ʻakomi); kāhea ʻia ma ka inoa a i ʻole SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nā inoa</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Nui</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Ma hea</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Wehe</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>hoʻouna ʻia</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>mālama ʻia</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>ʻAe, e wehe i kēia nīnau</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ʻAʻohe nīnau i mālama ʻia i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Nā kī API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Nā kī API pilikino me ka ʻano graphql:read (nā nīnau) a i ʻole graphql:write (nā hoʻololi). E hana a hoʻopau iā lākou ma ka ʻaoʻao Komo API, a i ʻole me ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Komo API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Nā kī a pau</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kī</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Inoa</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Mea nona</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Nā ʻano</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Hoʻohana hope loa</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>ola</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>pau</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>hoʻopau ʻia</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ʻaʻole loa</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>ʻAʻohe kī API me kekahi ʻano GraphQL i kēia manawa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

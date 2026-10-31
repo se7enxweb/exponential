@@ -78777,6 +78777,286 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ang pangutana modagan uban sa imong mga katungod, naka-sign in niining session.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count sulod sa %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>walay limitasyon</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Giladmon</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Pagkakomplikado</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Mga butang matag lista</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (default %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Mga hangyo matag user o key</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Mga hangyo matag anonymous nga address</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Gitipigan nga mga pangutana lamang</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Pinakadakong pangutana</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ka byte</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Pinakadakong upload</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Walay access sa site nga %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Gipasiga ang mga mutation sa %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Gipalong ang mga mutation sa %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Gipasiga ang GraphQL API sa %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Gipalong ang GraphQL API sa %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Dili masulat ang mga setting: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Nahawan ang cache sa tubag: %count ka tubag ang gikuha.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Markahi ang kahon tupad sa pangutana aron kuhaon kini.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Dili makuha ang pangutana: ang pangutana nga gihatag sa direktoryo sa PersistedQueryDirectoryList[] makuha uban sa iyang file.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Gikuha ang gitipigan nga pangutana.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mga mutation</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>siga</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>palong</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Mga access sa site</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Asa motubag ang API ug ang mga mutation niini. Ang mga button mosulat sa graphql.ini, sama sa gibuhat sa ./console exp:graphql:enable ug exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Access sa site</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Usba</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Palonga</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Palonga ang mga mutation</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Pasigaa ang mga mutation</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Pasigaa</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Mga limitasyon</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] niining access sa site.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Cache sa tubag</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Ang mga tubag sa gitipigan nga mga pangutana, gitipigan matag katungod sa user ug gipatay kada ma-publish ang sulod.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kahimtang</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Gitipigan nga mga tubag</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ka tubag, %bytes ka byte</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Gitipigan labing dugay</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Katapusang pag-expire</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Hawani ang cache sa tubag</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Gitipigan nga mga pangutana</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Gitipigan pinaagi sa ./console exp:graphql:persist, o sa mga client (awtomatikong gitipigan nga mga pangutana); gitawag pinaagi sa ngalan o SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Mga ngalan</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Gidak-on</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Asa</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kuhaa</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>gihatag</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>gitipigan</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Oo, kuhaa kini nga pangutana</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Wala pay gitipigan nga pangutana.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Mga API key</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Personal nga mga API key nga adunay scope nga graphql:read (mga pangutana) o graphql:write (mga mutation). Himoa ug bawia kini sa panid nga Access sa API, o pinaagi sa ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Access sa API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Tanang key</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Key</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ngalan</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tag-iya</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Mga scope</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Katapusang gigamit</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktibo</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>natapos</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>gibawi</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>wala gayud</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Wala pay API key nga adunay GraphQL scope.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -78775,6 +78775,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>ഈ സെഷനിൽ സൈൻ ഇൻ ചെയ്ത്, നിങ്ങളുടെ അവകാശങ്ങളോടെയാണ് ക്വറി പ്രവർത്തിക്കുന്നത്.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%seconds സെ. ൽ %count</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>പരിധിയില്ല</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>ആഴം</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>സങ്കീർണ്ണത</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>ഓരോ ലിസ്റ്റിലെയും ഇനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (സ്ഥിരസ്ഥിതി %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>ഓരോ ഉപയോക്താവിനും കീയ്ക്കും ഉള്ള അഭ്യർത്ഥനകൾ</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>ഓരോ അജ്ഞാത വിലാസത്തിനും ഉള്ള അഭ്യർത്ഥനകൾ</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>ഇൻട്രോസ്പെക്ഷൻ</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>സംഭരിച്ച ക്വറികൾ മാത്രം</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>ഏറ്റവും വലിയ ക്വറി</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes ബൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ഏറ്റവും വലിയ അപ്‌ലോഡ്</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>%siteaccess എന്ന സൈറ്റ്ആക്സസ് ഇല്ല.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>%siteaccess ൽ മ്യൂട്ടേഷനുകൾ ഓണാക്കി.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>%siteaccess ൽ മ്യൂട്ടേഷനുകൾ ഓഫാക്കി.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>%siteaccess ൽ GraphQL API ഓണാക്കി.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>%siteaccess ൽ GraphQL API ഓഫാക്കി.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>ക്രമീകരണങ്ങൾ എഴുതാൻ കഴിഞ്ഞില്ല: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>ഉത്തര കാഷെ മായ്ച്ചു: %count ഉത്തരങ്ങൾ നീക്കം ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>ക്വറി നീക്കം ചെയ്യാൻ അതിനടുത്തുള്ള ബോക്സ് ടിക്ക് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>ക്വറി നീക്കം ചെയ്യാൻ കഴിഞ്ഞില്ല: PersistedQueryDirectoryList[] ലെ ഒരു ഡയറക്ടറിയിൽ വന്ന ക്വറി അതിന്റെ ഫയലിനൊപ്പം നീക്കം ചെയ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>സംഭരിച്ച ക്വറി നീക്കം ചെയ്തു.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>മ്യൂട്ടേഷനുകൾ</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>ഓൺ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ഓഫ്</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>സൈറ്റ്ആക്സസുകൾ</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>API യും അതിന്റെ മ്യൂട്ടേഷനുകളും ഉത്തരം നൽകുന്ന ഇടം. ./console exp:graphql:enable, exp:graphql:disable എന്നിവ ചെയ്യുന്നതുപോലെ ബട്ടണുകൾ graphql.ini എഴുതുന്നു.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>സൈറ്റ്ആക്സസ്</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>മാറ്റുക</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ഓഫാക്കുക</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>മ്യൂട്ടേഷനുകൾ ഓഫ്</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>മ്യൂട്ടേഷനുകൾ ഓൺ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ഓണാക്കുക</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>പരിധികൾ</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>ഈ സൈറ്റ്ആക്സസിന്റെ graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>ഉത്തര കാഷെ</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>സംഭരിച്ച ക്വറികളുടെ ഉത്തരങ്ങൾ, ഉപയോക്തൃ അവകാശങ്ങൾ അനുസരിച്ച് സൂക്ഷിക്കുകയും ഉള്ളടക്കം പ്രസിദ്ധീകരിക്കുമ്പോഴെല്ലാം കാലഹരണപ്പെടുകയും ചെയ്യുന്നു.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>അവസ്ഥ</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>സൂക്ഷിച്ച ഉത്തരങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ഉത്തരങ്ങൾ, %bytes ബൈറ്റ്</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>പരമാവധി സൂക്ഷിക്കുന്നത്</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds സെ.</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>അവസാനം കാലഹരണപ്പെട്ടത്</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ഉത്തര കാഷെ മായ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>സംഭരിച്ച ക്വറികൾ</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>./console exp:graphql:persist ഉപയോഗിച്ചോ ക്ലയന്റുകൾ വഴിയോ സംഭരിച്ചത് (ഓട്ടോമാറ്റിക് സംഭരിച്ച ക്വറികൾ); പേര് അല്ലെങ്കിൽ SHA-256 വഴി വിളിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>പേരുകൾ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>വലുപ്പം</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>എവിടെ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>ഒപ്പം വന്നത്</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>സംഭരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>അതെ, ഈ ക്വറി നീക്കം ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>ഇതുവരെ സംഭരിച്ച ക്വറി ഒന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API കീകൾ</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>graphql:read (ക്വറികൾ) അല്ലെങ്കിൽ graphql:write (മ്യൂട്ടേഷനുകൾ) സ്കോപ്പുള്ള വ്യക്തിഗത API കീകൾ. API ആക്സസ് പേജിലോ ./console exp:graphql:keys ഉപയോഗിച്ചോ അവ ഉണ്ടാക്കുകയും റദ്ദാക്കുകയും ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ആക്സസ്</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>എല്ലാ കീകളും</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>കീ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>പേര്</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>ഉടമ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>സ്കോപ്പുകൾ</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>അവസാനം ഉപയോഗിച്ചത്</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>സജീവം</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>കാലഹരണപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>റദ്ദാക്കി</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ഒരിക്കലുമില്ല</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>GraphQL സ്കോപ്പുള്ള API കീ ഇതുവരെ ഇല്ല.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

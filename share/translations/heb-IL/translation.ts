@@ -78809,6 +78809,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>השאילתה רצה עם ההרשאות שלך, כשאתה מחובר בהפעלה זו.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count בתוך %seconds ש׳</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>ללא הגבלה</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>עומק</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>מורכבות</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>פריטים לרשימה</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (ברירת מחדל %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>בקשות למשתמש או למפתח</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>בקשות לכתובת אנונימית</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>שאילתות שמורות בלבד</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>השאילתה הגדולה ביותר</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes בתים</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>ההעלאה הגדולה ביותר</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>אין גישת אתר %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>המוטציות מופעלות ב־%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>המוטציות כבויות ב־%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>ממשק ה־API של GraphQL מופעל ב־%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>ממשק ה־API של GraphQL כבוי ב־%siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>לא ניתן היה לכתוב את ההגדרות: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>מטמון התשובות נוקה: %count תשובות הוסרו.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>סמנו את התיבה שליד השאילתה כדי להסיר אותה.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>לא ניתן היה להסיר את השאילתה: שאילתה שסופקה בתיקייה של PersistedQueryDirectoryList[] מוסרת יחד עם הקובץ שלה.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>השאילתה השמורה הוסרה.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>מוטציות</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>פועל</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>כבוי</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>גישות אתר</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>היכן ה־API והמוטציות שלו עונים. הכפתורים כותבים את graphql.ini, כפי ש־./console exp:graphql:enable ו־exp:graphql:disable עושים.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>גישת אתר</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API של GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>שינוי</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>כיבוי</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>מוטציות כבויות</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>מוטציות פועלות</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>הפעלה</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>מגבלות</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] של גישת אתר זו.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>מטמון תשובות</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>התשובות של השאילתות השמורות, נשמרות לפי הרשאות המשתמש ופגות בכל פעם שתוכן מתפרסם.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>תשובות שמורות</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count תשובות, %bytes בתים</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>נשמרות לכל היותר</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ש׳</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>תפוגה אחרונה</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>ניקוי מטמון התשובות</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>שאילתות שמורות</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>נשמרו עם ./console exp:graphql:persist, או על ידי לקוחות (שאילתות שמורות אוטומטיות); נקראות לפי שם או SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>שמות</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גודל</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>מיקום</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>הסרה</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>סופקה</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>נשמרה</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>כן, להסיר את השאילתה הזו</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>אין עדיין שאילתה שמורה.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>מפתחות API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>מפתחות API אישיים עם התחום graphql:read (שאילתות) או graphql:write (מוטציות). צרו ובטלו אותם בעמוד גישת API, או עם ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>גישת API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>כל המפתחות</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>מפתח</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שם</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>בעלים</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>תחומים</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>שימוש אחרון</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>פעיל</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>פג תוקף</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>בוטל</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>אף פעם</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>אין עדיין מפתח API עם תחום GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

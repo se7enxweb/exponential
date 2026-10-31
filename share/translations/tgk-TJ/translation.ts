@@ -78777,6 +78777,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Дархост бо ҳуқуқҳои шумо, ки дар ин ҷаласа ворид шудаед, иҷро мешавад.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count дар %seconds с</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>бе маҳдудият</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Чуқурӣ</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Мураккабӣ</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Унсурҳо дар рӯйхат</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (пешфарз %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Муроҷиатҳо ба ҳар корбар ё калид</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Муроҷиатҳо ба ҳар нишонии беном</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Интроспексия</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Танҳо дархостҳои захирашуда</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Калонтарин дархост</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes байт</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Калонтарин боркунӣ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Дастрасии сомонаи %siteaccess вуҷуд надорад.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Мутатсияҳо дар %siteaccess фаъол карда шуданд.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Мутатсияҳо дар %siteaccess хомӯш карда шуданд.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API дар %siteaccess фаъол карда шуд.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API дар %siteaccess хомӯш карда шуд.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Танзимотро навиштан имконнопазир шуд: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Кеши ҷавобҳо тоза карда шуд: %count ҷавоб нест карда шуд.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Барои нест кардани дархост қуттии назди онро қайд кунед.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Дархостро нест кардан имконнопазир шуд: дархосте, ки дар феҳристи PersistedQueryDirectoryList[] расонида шудааст, бо файлаш нест карда мешавад.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Дархости захирашуда нест карда шуд.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Мутатсияҳо</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>фаъол</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>хомӯш</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Дастрасиҳои сомона</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ҷойҳое, ки API ва мутатсияҳои он ҷавоб медиҳанд. Тугмаҳо graphql.ini-ро менависанд, чунон ки ./console exp:graphql:enable ва exp:graphql:disable мекунанд.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Дастрасии сомона</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Тағйир додан</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Хомӯш кардан</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Хомӯш кардани мутатсияҳо</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Фаъол кардани мутатсияҳо</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Фаъол кардан</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Маҳдудиятҳо</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings]-и ин дастрасии сомона.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Кеши ҷавобҳо</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Ҷавобҳои дархостҳои захирашуда, ки аз рӯи ҳуқуқҳои корбар нигоҳ дошта мешаванд ва ҳар дафъае, ки мундариҷа нашр мешавад, кӯҳна мешаванд.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ҳолат</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Ҷавобҳои нигоҳдошташуда</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count ҷавоб, %bytes байт</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Ҳадди аксар нигоҳ дошта мешавад</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Охирин бор кӯҳна шуд</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Тоза кардани кеши ҷавобҳо</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Дархостҳои захирашуда</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Бо ./console exp:graphql:persist ё аз ҷониби мизоҷон (дархостҳои худкор захирашуда) захира мешаванд; бо ном ё SHA-256 даъват карда мешаванд.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Номҳо</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Андоза</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Дар куҷо</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Нест кардан</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>расонидашуда</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>захирашуда</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ҳа, ин дархостро нест кунед</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ҳоло дархости захирашуда нест.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>Калидҳои API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Калидҳои шахсии API бо доираи graphql:read (дархостҳо) ё graphql:write (мутатсияҳо). Онҳоро дар саҳифаи Дастрасии API ё бо ./console exp:graphql:keys созед ва бекор кунед.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>Дастрасии API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Ҳамаи калидҳо</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Калид</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ном</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Соҳиб</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Доираҳо</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Охирин истифода</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>фаъол</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>мӯҳлаташ гузашта</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>бекоршуда</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ҳеҷ гоҳ</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Ҳоло калиди API бо доираи GraphQL нест.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

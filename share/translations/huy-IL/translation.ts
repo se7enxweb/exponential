@@ -78786,6 +78786,286 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>שואלא רהט בשולטניך, עלילא בהנא מותבא.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count ב %seconds ש׳</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>בלא תחומא</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>עומקא</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>מסבכותא</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>פריטי לכל רשימא</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (קבוע %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>בעותא לכל משתמשא או קלידא</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>בעותא לכל כתובתא דלא ידיעא</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>שואלי נטירי בלחוד</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>שואלא רבא</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes בייטין</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>מסקא רבא</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>לית מעלנא דאתרא %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>מוטציי אתפעלו ב %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>מוטציי בטילו ב %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>API ד GraphQL אתפעל ב %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>API ד GraphQL בטיל ב %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>לא אפשר למכתב טויבא: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>סימתא דתיובתא אתדכיאת: %count תיובתא אשתקלו.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>סמן תיבותא דסמיך לשואלא למשקליה.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>לא אפשר למשקל שואלא: שואלא דאתא בתיקיתא ד PersistedQueryDirectoryList[] אשתקל עם פנקיתיה.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>שואלא נטירא אשתקל.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>מוטציי</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>פעיל</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>בטיל</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>מעלני דאתרא</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>איכא דה API ומוטציי דיליה עונין. כפתורי כתבין graphql.ini, כמה ד ./console exp:graphql:enable ו exp:graphql:disable עבדין.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>מעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>API ד GraphQL</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>שוחלפא</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>בטל</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>מוטציי בטילין</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>מוטציי פעילין</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>פעל</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>תחומא</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>graphql.ini [GraphQLSettings] דהנא מעלנא דאתרא.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>סימתא דתיובתא</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>תיובתא דשואלי נטירי, נטירין לפום רשותא דמשתמשא ופגין כל אימת דמליותא מתפרסמא.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>אסכמא</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>תיובתא נטירין</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count תיובתא, %bytes בייטין</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>נטירין לכל היותר</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ש׳</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>פגא אחריא</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>דכי סימתא דתיובתא</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>שואלי נטירי</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>נטירין ב ./console exp:graphql:persist, או על ידי לקוחי (automatic persisted queries); מתקרין בשמא או ב SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>שמהא</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>רבותא</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>איכא</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>שקלא</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>משתלחא</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>נטירא</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>אין, שקול הנא שואלא</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>לית עדיין שואלא נטירא.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>קלידי ד API</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>קלידי API דילך עם היקפא graphql:read (שואלי) או graphql:write (מוטציי). עביד ובטל יתהון בדפא מעלנא ד API, או ב ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>מעלנא ד API</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>כל קלידי</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>קלידא</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שמא</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>מרא</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>היקפי</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>שמושא אחריא</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>פעילא</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>זבנה גמר</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>בטילא</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>מתום לא</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>לית עדיין קלידא ד API עם היקפא ד GraphQL.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

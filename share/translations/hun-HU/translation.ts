@@ -78807,6 +78807,286 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>A lekérdezés az Ön jogosultságaival fut, ebben a bejelentkezett munkamenetben.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count / %seconds mp</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>nincs korlát</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Mélység</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Összetettség</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elemek listánként</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (alapértelmezés: %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Kérések felhasználónként vagy kulcsonként</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Kérések névtelen címenként</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekció</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Csak tárolt lekérdezések</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Legnagyobb lekérdezés</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes bájt</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Legnagyobb feltöltés</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nincs %siteaccess webhely-hozzáférés.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>A mutációk be vannak kapcsolva itt: %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>A mutációk ki vannak kapcsolva itt: %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>A GraphQL API be van kapcsolva itt: %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>A GraphQL API ki van kapcsolva itt: %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>A beállításokat nem sikerült kiírni: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>A válasz-gyorsítótár kiürítve: %count válasz eltávolítva.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Jelölje be a lekérdezés melletti négyzetet az eltávolításhoz.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>A lekérdezést nem sikerült eltávolítani: a PersistedQueryDirectoryList[] egy könyvtárában szállított lekérdezés a fájljával együtt távolítható el.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>A tárolt lekérdezés eltávolítva.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutációk</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>be</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ki</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Webhely-hozzáférések</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Ahol az API és a mutációi válaszolnak. A gombok a graphql.ini fájlt írják, ahogy a ./console exp:graphql:enable és az exp:graphql:disable is.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Módosítás</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Kikapcsolás</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutációk ki</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutációk be</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Bekapcsolás</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Korlátok</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>E webhely-hozzáférés graphql.ini [GraphQLSettings] beállításai.</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Válasz-gyorsítótár</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>A tárolt lekérdezések válaszai, felhasználói jogonként megőrizve, és minden tartalomközzétételkor lejárnak.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Megőrzött válaszok</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count válasz, %bytes bájt</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Legfeljebb megőrzés</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds mp</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Utolsó lejáratás</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Válasz-gyorsítótár ürítése</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Tárolt lekérdezések</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Tárolva a ./console exp:graphql:persist paranccsal vagy kliensek által (automatikus tárolt lekérdezések); név vagy SHA-256 alapján hívható.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Nevek</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Méret</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Hely</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eltávolítás</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>szállított</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>tárolt</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Igen, a lekérdezés eltávolítása</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Még nincs tárolt lekérdezés.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API-kulcsok</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Személyes API-kulcsok graphql:read (lekérdezések) vagy graphql:write (mutációk) hatókörrel. Létrehozni és visszavonni az API-hozzáférés oldalon vagy a ./console exp:graphql:keys paranccsal lehet.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API-hozzáférés</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Összes kulcs</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kulcs</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tulajdonos</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Hatókörök</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Utoljára használva</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktív</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>lejárt</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>visszavont</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>soha</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>Még nincs GraphQL-hatókörű API-kulcs.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

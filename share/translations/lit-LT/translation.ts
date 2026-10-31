@@ -78807,6 +78807,286 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Užklausa vykdoma jūsų teisėmis, prisijungus šia sesija.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count per %seconds s</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>be ribos</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Gylis</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Sudėtingumas</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Elementų sąraše</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (numatytoji %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Užklausimų vienam naudotojui arba raktui</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Užklausimų vienam anoniminiam adresui</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspekcija</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Tik išsaugotos užklausos</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Didžiausia užklausa</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>%bytes baitų</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Didžiausias įkėlimas</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nėra prieigos prie svetainės %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutacijos įjungtos prieigoje %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutacijos išjungtos prieigoje %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API įjungta prieigoje %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API išjungta prieigoje %siteaccess.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Nustatymų nepavyko įrašyti: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Atsakymų podėlis išvalytas: pašalinta atsakymų: %count.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Pažymėkite langelį šalia užklausos, kad ją pašalintumėte.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Užklausos nepavyko pašalinti: užklausa, pateikta PersistedQueryDirectoryList[] kataloge, šalinama kartu su savo failu.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Išsaugota užklausa pašalinta.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutacijos</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>įjungta</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>išjungta</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Prieigos prie svetainės</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Kur atsako API ir jos mutacijos. Mygtukai rašo graphql.ini, kaip tai daro ./console exp:graphql:enable ir exp:graphql:disable.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Prieiga prie svetainės</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Keisti</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Išjungti</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutacijos išjungtos</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutacijos įjungtos</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Įjungti</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Ribos</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Šios prieigos prie svetainės graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Atsakymų podėlis</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Išsaugotų užklausų atsakymai, saugomi pagal naudotojo teises ir nebegaliojantys kaskart, kai paskelbiamas turinys.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Būsena</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Saugomi atsakymai</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>%count atsakymų, %bytes baitų</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Saugoma ne ilgiau kaip</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Paskutinį kartą nebegaliojo</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Išvalyti atsakymų podėlį</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Išsaugotos užklausos</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Išsaugotos su ./console exp:graphql:persist arba klientų (automatiškai išsaugotos užklausos); kviečiamos pagal pavadinimą arba SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Pavadinimai</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dydis</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Kur</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Pašalinti</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>pateikta</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>išsaugota</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Taip, pašalinti šią užklausą</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Išsaugotų užklausų dar nėra.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API raktai</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Asmeniniai API raktai su aprėptimi graphql:read (užklausos) arba graphql:write (mutacijos). Kurkite ir atšaukite juos puslapyje API prieiga arba su ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API prieiga</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Visi raktai</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Raktas</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Pavadinimas</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Savininkas</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Aprėptys</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Paskutinį kartą naudotas</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>aktyvus</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>nebegalioja</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>atšauktas</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>niekada</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>API raktų su GraphQL aprėptimi dar nėra.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

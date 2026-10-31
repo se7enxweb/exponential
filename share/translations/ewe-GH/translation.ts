@@ -78777,6 +78777,286 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Biabia la wɔa dɔ kple wò ŋusẽwo, esi nège ɖe eme le kpekpe sia me.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count le sekend %seconds me</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>seɖoƒe aɖeke meli o</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Goglome</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Xaxa</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Nuwo le xexlẽdzesi ɖe sia ɖe me</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (gɔmeɖoanyi %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Kukuɖeɖewo na zãla alo safui ɖe sia ɖe</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Kukuɖeɖewo na adrɛs ŋkɔmanɔŋu ɖe sia ɖe</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Biabia siwo wodzra ɖo ko</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Biabia gãtɔ</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>byte %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Ɖoɖoɖeɖe gãtɔ</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu %siteaccess meli o.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Woʋu tɔtrɔwo le %siteaccess me.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Wotsi tɔtrɔwo le %siteaccess me.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>Woʋu GraphQL API la le %siteaccess me.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>Wotsi GraphQL API la le %siteaccess me.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Womete ŋu ŋlɔ ɖoɖowo o: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Wokplɔ ŋuɖoɖowo ƒe nudzraɖoƒe: woɖe ŋuɖoɖo %count ɖa.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Tre ɖe aɖaka si le biabia la xa me be nàɖe eɖa.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Womete ŋu ɖe biabia la ɖa o: biabia si woɖo ɖa le PersistedQueryDirectoryList[] ƒe agbalẽdzraɖoƒe aɖe me la, woɖenɛ ɖa kple eƒe faɛl.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Woɖe biabia si wodzra ɖo la ɖa.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Tɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>le eme</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>wotsi</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnuwo</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Afi si API la kple eƒe tɔtrɔwo ɖoa ŋu le. Abɔtawo ŋlɔa graphql.ini, abe ale si ./console exp:graphql:enable kple exp:graphql:disable wɔnɛ ene.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Trɔe</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Tsii</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Tɔtrɔwo wotsi</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Tɔtrɔwo le eme</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ʋui</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Seɖoƒewo</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Nyatakakaɖoƒe ƒe mɔnu sia ƒe graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Ŋuɖoɖowo ƒe nudzraɖoƒe</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Biabia siwo wodzra ɖo ƒe ŋuɖoɖowo, siwo wodzra ɖo ɖe zãla ƒe ŋusẽwo nu eye woƒe ɣeyiɣi va yina ɣesiaɣi si woɖe nyatakaka ɖe go.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Nɔnɔme</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Ŋuɖoɖo siwo wodzra ɖo</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>Ŋuɖoɖo %count, byte %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>Ɣeyiɣi didiƒetɔ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>sekend %seconds</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Ɣeyiɣi va yi mamlɛtɔ</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Kplɔ ŋuɖoɖowo ƒe nudzraɖoƒe</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Biabia siwo wodzra ɖo</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>Wodzra wo ɖo kple ./console exp:graphql:persist, alo asisiwo (biabia siwo wodzra ɖo le wo ɖokui si); woyɔa wo kple ŋkɔ alo SHA-256.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Ŋkɔwo</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Lolome</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Afika</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Ɖee ɖa</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>woɖo ɖa</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>wodzra ɖo</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ɛ̃, ɖe biabia sia ɖa</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Biabia aɖeke si wodzra ɖo meli haɖe o.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API safuiwo</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Ame ŋutɔ ƒe API safui siwo ƒe nuteƒe nye graphql:read (biabiawo) alo graphql:write (tɔtrɔwo). Wɔ wo eye nàtsri wo le axa API ƒe mɔnu dzi, alo kple ./console exp:graphql:keys.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API ƒe mɔnu</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Safuiwo katã</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Safui</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ŋkɔ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tɔ</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Nuteƒewo</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Wozãe mamlɛtɔ</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>le dɔ wɔm</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>ɣeyiɣi va yi</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>wotsrii</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>gbeɖe</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>API safui aɖeke si si GraphQL nuteƒe le meli haɖe o.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

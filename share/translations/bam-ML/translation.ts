@@ -78777,6 +78777,286 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>The query runs with your rights, signed in with this session.</source>
         <translation>Ɲininkali bɛ boli ni i ka sariyaw ye, i donnen nin sesɔn in na.</translation>
     </message>
+    <message>
+        <source>%count in %seconds s</source>
+        <translation>%count segonda %seconds kɔnɔ</translation>
+    </message>
+    <message>
+        <source>no limit</source>
+        <translation>dan si tɛ</translation>
+    </message>
+    <message>
+        <source>Depth</source>
+        <translation>Dunya</translation>
+    </message>
+    <message>
+        <source>Complexity</source>
+        <translation>Gɛlɛya</translation>
+    </message>
+    <message>
+        <source>Items per list</source>
+        <translation>Fɛnw lisi kelen-kelen na</translation>
+    </message>
+    <message>
+        <source>%max (default %default)</source>
+        <translation>%max (a sigilen %default)</translation>
+    </message>
+    <message>
+        <source>Requests per user or key</source>
+        <translation>Delili baarakɛla walima kile kelen-kelen na</translation>
+    </message>
+    <message>
+        <source>Requests per anonymous address</source>
+        <translation>Delili adrɛsi tɔgɔntan kelen-kelen na</translation>
+    </message>
+    <message>
+        <source>Introspection</source>
+        <translation>Introspection</translation>
+    </message>
+    <message>
+        <source>Persisted queries only</source>
+        <translation>Ɲininkali maralenw dɔrɔn</translation>
+    </message>
+    <message>
+        <source>Largest query</source>
+        <translation>Ɲininkali belebeleba</translation>
+    </message>
+    <message>
+        <source>%bytes bytes</source>
+        <translation>bayiti %bytes</translation>
+    </message>
+    <message>
+        <source>Largest upload</source>
+        <translation>Doncogo belebeleba</translation>
+    </message>
+    <message>
+        <source>There is no siteaccess %siteaccess.</source>
+        <translation>Siti donda %siteaccess tɛ yen.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched on in %siteaccess.</source>
+        <translation>Mutation yɛlɛla %siteaccess kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>The mutations are switched off in %siteaccess.</source>
+        <translation>Mutation sogola %siteaccess kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched on in %siteaccess.</source>
+        <translation>GraphQL API yɛlɛla %siteaccess kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>The GraphQL API is switched off in %siteaccess.</source>
+        <translation>GraphQL API sogola %siteaccess kɔnɔ.</translation>
+    </message>
+    <message>
+        <source>The settings could not be written: %error</source>
+        <translation>Labɛnw ma se ka sɛbɛn: %error</translation>
+    </message>
+    <message>
+        <source>The response cache was cleared: %count answers removed.</source>
+        <translation>Jaabi cache saniyara: jaabi %count bɔra.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the query to remove it.</source>
+        <translation>Ɲininkali kɛrɛfɛ bɔgɔsɔrɔ taamasiyɛn walasa ka a bɔ.</translation>
+    </message>
+    <message>
+        <source>The query could not be removed: a query shipped in a directory of PersistedQueryDirectoryList[] is removed with its file.</source>
+        <translation>Ɲininkali ma se ka bɔ: ɲininkali min nana PersistedQueryDirectoryList[] ka dosiye dɔ kɔnɔ, o bɛ bɔ ni a ka gafe ye.</translation>
+    </message>
+    <message>
+        <source>The persisted query was removed.</source>
+        <translation>Ɲininkali maralen bɔra.</translation>
+    </message>
+    <message>
+        <source>Mutations</source>
+        <translation>Mutation</translation>
+    </message>
+    <message>
+        <source>on</source>
+        <translation>yɛlɛlen</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>sogolen</translation>
+    </message>
+    <message>
+        <source>Siteaccesses</source>
+        <translation>Siti dondaw</translation>
+    </message>
+    <message>
+        <source>Where the API and its mutations answer. The buttons write graphql.ini, as ./console exp:graphql:enable and exp:graphql:disable do.</source>
+        <translation>Yɔrɔ minnu na API ni a ka mutation bɛ jaabi di. Butɔnw bɛ graphql.ini sɛbɛn, i n'a fɔ ./console exp:graphql:enable ani exp:graphql:disable b'a kɛ cogo min na.</translation>
+    </message>
+    <message>
+        <source>Siteaccess</source>
+        <translation>Siti donda</translation>
+    </message>
+    <message>
+        <source>GraphQL API</source>
+        <translation>GraphQL API</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Yɛlɛma</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>A sogo</translation>
+    </message>
+    <message>
+        <source>Mutations off</source>
+        <translation>Mutation sogolen</translation>
+    </message>
+    <message>
+        <source>Mutations on</source>
+        <translation>Mutation yɛlɛlen</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>A yɛlɛ</translation>
+    </message>
+    <message>
+        <source>Limits</source>
+        <translation>Danw</translation>
+    </message>
+    <message>
+        <source>graphql.ini [GraphQLSettings] of this siteaccess.</source>
+        <translation>Nin siti donda in ka graphql.ini [GraphQLSettings].</translation>
+    </message>
+    <message>
+        <source>Response cache</source>
+        <translation>Jaabi cache</translation>
+    </message>
+    <message>
+        <source>The answers of persisted queries, kept per user rights and expired whenever content is published.</source>
+        <translation>Ɲininkali maralenw ka jaabiw, minnu bɛ mara ka kɛɲɛ ni baarakɛla ka sariyaw ye, ka u waati ban tuma o tuma kɔnɔko bɛ bɔ kɛnɛ kan.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cogoya</translation>
+    </message>
+    <message>
+        <source>Answers kept</source>
+        <translation>Jaabi maralenw</translation>
+    </message>
+    <message>
+        <source>%count answers, %bytes bytes</source>
+        <translation>Jaabi %count, bayiti %bytes</translation>
+    </message>
+    <message>
+        <source>Kept at most</source>
+        <translation>A maralen bɛ mɛn a ka ca la</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>Last expired</source>
+        <translation>Waati banni laban</translation>
+    </message>
+    <message>
+        <source>Clear the response cache</source>
+        <translation>Jaabi cache saniya</translation>
+    </message>
+    <message>
+        <source>Persisted queries</source>
+        <translation>Ɲininkali maralenw</translation>
+    </message>
+    <message>
+        <source>Stored with ./console exp:graphql:persist, or by clients (automatic persisted queries); called by name or SHA-256.</source>
+        <translation>U marala ni ./console exp:graphql:persist ye, walima kiliyanw fɛ (ɲininkali maralen yɛrɛma); u bɛ wele ni tɔgɔ walima SHA-256 ye.</translation>
+    </message>
+    <message>
+        <source>Names</source>
+        <translation>Tɔgɔw</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Bonya</translation>
+    </message>
+    <message>
+        <source>Where</source>
+        <translation>Yɔrɔ</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>A bɔ</translation>
+    </message>
+    <message>
+        <source>shipped</source>
+        <translation>nalen</translation>
+    </message>
+    <message>
+        <source>stored</source>
+        <translation>maralen</translation>
+    </message>
+    <message>
+        <source>Yes, remove this query</source>
+        <translation>Ɔwɔ, nin ɲininkali bɔ</translation>
+    </message>
+    <message>
+        <source>No persisted query yet.</source>
+        <translation>Ɲininkali maralen si tɛ yen fɔlɔ.</translation>
+    </message>
+    <message>
+        <source>API keys</source>
+        <translation>API kilew</translation>
+    </message>
+    <message>
+        <source>Personal API keys with the scope graphql:read (queries) or graphql:write (mutations). Make and revoke them on the page API access, or with ./console exp:graphql:keys.</source>
+        <translation>Mɔgɔ yɛrɛ ka API kilew ni scope graphql:read (ɲininkaliw) walima graphql:write (mutation) ye. U dilan ani ka u bɔ baara la API donda ɲɛ kan, walima ni ./console exp:graphql:keys ye.</translation>
+    </message>
+    <message>
+        <source>API access</source>
+        <translation>API donda</translation>
+    </message>
+    <message>
+        <source>All keys</source>
+        <translation>Kilew bɛɛ</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation>Kile</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tɔgɔ</translation>
+    </message>
+    <message>
+        <source>Owner</source>
+        <translation>Tigi</translation>
+    </message>
+    <message>
+        <source>Scopes</source>
+        <translation>Scope</translation>
+    </message>
+    <message>
+        <source>Last used</source>
+        <translation>Baara laban</translation>
+    </message>
+    <message>
+        <source>active</source>
+        <translation>baara la</translation>
+    </message>
+    <message>
+        <source>expired</source>
+        <translation>waati tɛmɛna</translation>
+    </message>
+    <message>
+        <source>revoked</source>
+        <translation>bɔra baara la</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>abada</translation>
+    </message>
+    <message>
+        <source>No API key with a GraphQL scope yet.</source>
+        <translation>API kile si tɛ yen fɔlɔ min bɛ ni GraphQL scope ye.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
