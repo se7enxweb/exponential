@@ -118,6 +118,28 @@ class expHelpContentInstaller
             eZContentClass::expireCache();
             eZContentClassAttribute::expireCache();
         }
+        $this->installMetaData( array_keys( $classes ) );
+    }
+
+    /**
+     * The help classes as every other class: the Meta Data attribute (through xrowmetadata, when it is active and
+     * can be limited to these classes) and no title field below 255 characters (expHelpContentMetaData).
+     *
+     * @param string[] $identifiers
+     */
+    protected function installMetaData( array $identifiers )
+    {
+        list( $provider, $reason ) = expHelpContentMetaData::provider();
+        if ( $this->dryRun )
+        {
+            foreach ( expHelpContentMetaData::changes( expHelpContentMetaData::state( $identifiers ), $provider !== null ) as $line )
+                $this->change( 'classes', 'extend', $line );
+            if ( $provider === null )
+                $this->change( 'classes', 'skip', 'Meta Data attribute: ' . $reason );
+            return;
+        }
+        foreach ( expHelpContentMetaData::apply( $identifiers ) as $line )
+            $this->change( 'classes', strpos( $line, 'Meta Data attribute left out' ) === 0 ? 'skip' : 'extend', $line );
     }
 
     protected function ensureClass( $identifier, array $definition, $group )

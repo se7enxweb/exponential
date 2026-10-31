@@ -349,6 +349,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-member-management` | scripts | `bin/php/addmembermanagement.php --apply` |
 | `6.0.15-user-approval` | scripts | `bin/php/adduserapproval.php` |
 | `6.0.15-help-read-policy` | scripts | `bin/php/addexphelpreadpolicy.php` |
+| `6.0.15-help-class-metadata` | scripts | `./console exp:help:content classes --apply` (das Attribut Meta Data über xrowmetadata ab 1.4.24; Titelfelder mit mindestens 255 Zeichen) |
 | `6.0.15-oauth-authorize-policy` | scripts | `bin/php/addoauthauthorizepolicy.php` |
 | `6.0.15-order-siteaccess-backfill` | scripts | `bin/php/expbackfillordersiteaccess.php --apply` |
 | `6.0.15-bookmark-view-fill` | scripts | die zerlegte Adresse älterer Lesezeichen von Systemseiten (`createbookmarkviewtable.php`) |

@@ -1,0 +1,6 @@
+# description: The first news articles
+# requires: extension:expnews
+# requires: 20261005100000_news_folder
+-
+    type: content
+    mode: create

@@ -1,0 +1,5 @@
+# description: Demo articles of the newsdemo package
+# requires: 20261004100000_news_content
+-
+    type: content
+    mode: create

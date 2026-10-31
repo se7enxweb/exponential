@@ -2450,7 +2450,20 @@
     "share/syscard/about.txt": [
       "tests/tests/design/CopyrightFooterNoticeTest.php"
     ],
+    "kernel/classes/expdependencyorder.php": [
+      "tests/tests/kernel/classes/expDependencyOrderTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
+    ],
+    "settings/migration.ini": [
+      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/fixtures/*": [
+      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
+    ],
     "kernel/classes/migration/*": [
+      "tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
       "tests/tests/kernel/classes/migration/expMigrationStatusMirrorTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php",

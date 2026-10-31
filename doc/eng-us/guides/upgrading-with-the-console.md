@@ -331,6 +331,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-member-management` | scripts | `bin/php/addmembermanagement.php --apply` |
 | `6.0.15-user-approval` | scripts | `bin/php/adduserapproval.php` |
 | `6.0.15-help-read-policy` | scripts | `bin/php/addexphelpreadpolicy.php` |
+| `6.0.15-help-class-metadata` | scripts | `./console exp:help:content classes --apply` (the Meta Data attribute through xrowmetadata 1.4.24 or later; title fields of at least 255 characters) |
 | `6.0.15-oauth-authorize-policy` | scripts | `bin/php/addoauthauthorizepolicy.php` |
 | `6.0.15-order-siteaccess-backfill` | scripts | `bin/php/expbackfillordersiteaccess.php --apply` |
 | `6.0.15-bookmark-view-fill` | scripts | the parsed address of older system page bookmarks (`createbookmarkviewtable.php`) |

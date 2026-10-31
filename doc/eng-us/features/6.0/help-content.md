@@ -17,7 +17,7 @@ administration like any other content, and delivered into the help of the admini
 
 | Part | Where |
 |---|---|
-| The eight classes `help_manual`, `help_section` (chapter), `help_concept`, `help_task`, `help_reference`, `help_troubleshooting`, `help_screenshot`, `help_glossary_entry` in the class group "Help" | `./console exp:help:content classes --apply` |
+| The eight classes `help_manual`, `help_section` (chapter), `help_concept`, `help_task`, `help_reference`, `help_troubleshooting`, `help_screenshot`, `help_glossary_entry` in the class group "Help"; like every other class they carry the Meta Data attribute (`metadata`, category Meta, default license GPL-2.0-or-later, added through xrowmetadata 1.4.24 or later when it is active) and no title field below 255 characters | `./console exp:help:content classes --apply` |
 | The sections `help_public` and `help_internal`, the object state group `help_status` (Draft, Review, Released), the folder tree (`help-root`, `help-pool` ..., found by remote_id) | `./console exp:help:content tree --apply` |
 | The roles "Help editor" and "Help release" and the one additional policy of Anonymous | `./console exp:help:content roles --apply` |
 | The validator of the style guide, `--fix` sets the sections from the audience | `./console exp:help:content check` |
