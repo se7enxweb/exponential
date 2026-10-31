@@ -815,6 +815,10 @@
         "en": "copy: keep the creation and modification times",
         "de": "copy: die Zeitpunkte der Erstellung und Änderung beibehalten"
     },
+    "command:expcontentjob --resume": {
+        "en": "list: resume every stalled or failed job, each with a worker in the background",
+        "de": "list: jeden hängenden oder fehlgeschlagenen Auftrag fortsetzen, jeden mit einem Worker im Hintergrund"
+    },
     "command:expcontentjob --trash": {
         "en": "remove: move the objects to the trash (the default of content.ini [RemoveSettings])",
         "de": "remove: die Objekte in den Papierkorb verschieben (der Standard von content.ini [RemoveSettings])"

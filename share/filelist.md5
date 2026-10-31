@@ -3337,7 +3337,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-c1aa0b6552ff9907e99385726562a294  doc/changelogs/6.0/6.0.15.md
+4d7863549c5863a222f0c48b4197a59f  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3480,7 +3480,7 @@ f8dec2dfb81fbb16a107d0bde08c230b  doc/eng-us/bc/6.0/cli_cronjob_view_abstraction
 f1ac6c4bdfb768a543907f1e85408ed8  doc/eng-us/bc/6.0/console-exp-ini.md
 0df0598e09eb5156d92d8d949f7d1755  doc/eng-us/bc/6.0/console.md
 f504dbb0bd1d30709cde9b7def0b1c52  doc/eng-us/bc/6.0/content-export-menu.md
-4f0d7e4041e26dbbf28b759c9b1e41c3  doc/eng-us/bc/6.0/content-jobs.md
+cc90672fddc8e975d7107993d9b1cb59  doc/eng-us/bc/6.0/content-jobs.md
 ec94f35b9c29418f1c35fe46d54a157f  doc/eng-us/bc/6.0/content-object-fallback-locale.md
 e68dc45d4eb39d75dbddc54db9116504  doc/eng-us/bc/6.0/debug-bar.md
 dd5a75132053a4ed2a80e386eebe7f04  doc/eng-us/bc/6.0/demo-mode.md
@@ -3605,7 +3605,7 @@ f8a3168d2275ef728fe129c35a1cc006  doc/eng-us/examples/commands/convertezenumtoez
 45ccdf225962f695ee9af267cb1e367b  doc/eng-us/examples/commands/convertprice2multiprice.md
 f4587c65e9bc49f6da02850ae831874e  doc/eng-us/examples/commands/dfscleanup.md
 faeff6c3070aa0ffa84d48b14e1f11a2  doc/eng-us/examples/commands/expbackfillordersiteaccess.md
-60603e81fba7d938831cac2e66d93259  doc/eng-us/examples/commands/expcontentjob.md
+10e1317182e6a70d0be6dbd65c50d3e0  doc/eng-us/examples/commands/expcontentjob.md
 bf66b4b9145212157d8ce068d252ba37  doc/eng-us/examples/commands/expfetch.md
 dd8c099e9ba309af6f5534443c974716  doc/eng-us/examples/commands/expgraphqlbench.md
 f6d1e2dfdca888554dfb834bce2aa969  doc/eng-us/examples/commands/expgraphqldisable.md
@@ -3738,7 +3738,7 @@ b6ab06485c1c62781c9105ea9a4a8c4e  doc/eng-us/examples/cronjobs/cachecleanup.md
 3e1e80b38ce4b1e7b4b60133032691cf  doc/eng-us/examples/cronjobs/cleanuprss.md
 a48c16185a978f7eeb3512fe97d681df  doc/eng-us/examples/cronjobs/clusterpurge.md
 6195728efeb82d9003621ebe07557fb9  doc/eng-us/examples/cronjobs/contentcheck.md
-23ff5e820a8ba19a5018cce47446a795  doc/eng-us/examples/cronjobs/contentjobs.md
+e950c95dd23fc44e8fcb560a1ce6455a  doc/eng-us/examples/cronjobs/contentjobs.md
 9c8f697c4bc98254e31e6668e41069f3  doc/eng-us/examples/cronjobs/datatablesync.md
 99b990d3a6d301208db05cdc4113d875  doc/eng-us/examples/cronjobs/exphelp.md
 882625402db0d3b6527f9eabdefbff7c  doc/eng-us/examples/cronjobs/explogrotate.md
@@ -4171,7 +4171,7 @@ e6f09a08e00fb03f4f8790864a5cd4ab  doc/eng-us/examples/ini-settings/content/Actio
 02469206cc18ca7dbbae463f350802d1  doc/eng-us/examples/ini-settings/content/ClassAttributeSettings.md
 a57efe66dd8d97b932eb9ed707503eea  doc/eng-us/examples/ini-settings/content/ClassGroupIDs.md
 053565864eeac24f40f5087afb1f6690  doc/eng-us/examples/ini-settings/content/ClassSettings.md
-f00cc3128a2f9c40ab1f4c9bf8f7f133  doc/eng-us/examples/ini-settings/content/ContentJobSettings.md
+306b9a5cca28109a58ffce9804dd63c5  doc/eng-us/examples/ini-settings/content/ContentJobSettings.md
 8e6db2552bb8f0f82b03052b664187f0  doc/eng-us/examples/ini-settings/content/ContentOverrideSettings.md
 c0469c7bdbce5160d37a47ed13efa8c3  doc/eng-us/examples/ini-settings/content/ContentVersionDiffSettings.md
 8346a15e4aaea4081ed750a2c70fe65b  doc/eng-us/examples/ini-settings/content/CopySettings.md
@@ -4190,7 +4190,7 @@ ed6eabefdc4858233e66a3dc0c4f1be6  doc/eng-us/examples/ini-settings/content/NodeS
 fba989b2443ed3c56f0c7903aebffb75  doc/eng-us/examples/ini-settings/content/ObjectRelationDataTypeSettings.md
 9d4846dca66d958c2d2bac1d925179e5  doc/eng-us/examples/ini-settings/content/PDFExportSettings.md
 008aba8328613868ac0d851c8fe79f57  doc/eng-us/examples/ini-settings/content/PublishingSettings.md
-42354e32a290390966d612b388d37824  doc/eng-us/examples/ini-settings/content/README.md
+1234ca4ea933bfe8a3a2094542ea953c  doc/eng-us/examples/ini-settings/content/README.md
 74dbd486818998a61b5fd9dd99894011  doc/eng-us/examples/ini-settings/content/RSSExportSettings.md
 ebfc3b38e5ba09f5dce112795785a2e9  doc/eng-us/examples/ini-settings/content/RSSImportCleanupSettings.md
 e2080d76d97079669ffa3443f83ff653  doc/eng-us/examples/ini-settings/content/RSSImportSettings.md
@@ -6489,7 +6489,7 @@ e731fe24c4b181ab33740460b4ea3da6  doc/eng-us/features/6.0/benchmark.md
 9190c04f882edc9cb782b949391fbd25  doc/eng-us/features/6.0/clean-install-defaults.md
 3dbc9977f0761b8864aacf4497879bed  doc/eng-us/features/6.0/content-checks.md
 1556c10374f1697edaeff2d30c5b4474  doc/eng-us/features/6.0/content-finder.md
-61e80f3bb8438beb17887c8e5248332c  doc/eng-us/features/6.0/content-jobs.md
+86dfc90183ee24631a4712126ccee787  doc/eng-us/features/6.0/content-jobs.md
 69bc192a5b87b894ac2d4269a1dca6ce  doc/eng-us/features/6.0/content-limitation-handlers.md
 ad56fd18bdd749e07ee822b325ad15e0  doc/eng-us/features/6.0/content-security-policy.md
 e37ff9e9d23c49c89dc1a5bdb3f64abb  doc/eng-us/features/6.0/country-groups.md
@@ -12810,11 +12810,11 @@ bad2519096e06e1dde4533665f591654  doc/eng-us/standards/php-and-composer.md
 d540df62aa49e479062d2e4c943f13b8  doc/eng-us/standards/web-platform.md
 5b8f56021d72152e3cfa69cdef73f0a9  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
-5647e0a40e18862c9be14fe193209099  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
+e674a6b7b0baba552e23cf76a23c1eb3  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
-006afd1af6a28daed1e050dffdaca4e3  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
+de686b8d700cc7766d927e28537101f7  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 12320733ddd4b1155b033ddcff05c221  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
-c8d9e6a8ae553cdb707105fb02be9935  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
+52a411a083ba86ed79ed778b5bc13e77  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
 decce9bb06ae705823bfd0e79ffbc52e  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 165a26352e7de5255bc58002930bc22d  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 e1f333e7548632bd3736756fa7fcdf14  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
@@ -12981,7 +12981,7 @@ cf889b0a0d4dd069a1e712446b41dc27  doc/ger-de/bc/6.0/hilfeinhalte-dita-ebooks-rev
 2f85d280cc30fec78fa498042ebfa2d7  doc/ger-de/bc/6.0/http-caching.md
 43d676b154295b51022f71acc225fb5f  doc/ger-de/bc/6.0/http2-und-cache-vorwaermen.md
 e366181658a1774d36f0f46970fd0ded  doc/ger-de/bc/6.0/httpcache.md
-b07cb9d0845526f5a8130ac0d9c4c0f6  doc/ger-de/bc/6.0/inhaltsjobs.md
+f7afe9eda5b02d1cb4e810857a818dd0  doc/ger-de/bc/6.0/inhaltsjobs.md
 4e809d5414ab035953f3b8ebe675aee7  doc/ger-de/bc/6.0/kernel-dienste.md
 197db39abf7f4ea2eeb9a260a803daee  doc/ger-de/bc/6.0/kickstartercli.md
 6eb74a075ecaeb09a213b3adc9e697e8  doc/ger-de/bc/6.0/konsole.md
@@ -13089,7 +13089,7 @@ b749e7ced3f1da820eb3897fb49100e7  doc/ger-de/beispiele/befehle/contentcheck.md
 a761d1c41710f22ee1982b23f1048c69  doc/ger-de/beispiele/befehle/convertprice2multiprice.md
 f2c126a2c289be7660f72b5d95fda8c0  doc/ger-de/beispiele/befehle/dfscleanup.md
 a836201005e9b849da7108e7f2c88974  doc/ger-de/beispiele/befehle/expbackfillordersiteaccess.md
-ac6f497c93798c6207650e60b424284d  doc/ger-de/beispiele/befehle/expcontentjob.md
+433175eb1079ecb73197c164a9c33463  doc/ger-de/beispiele/befehle/expcontentjob.md
 982242f96f8558a44a6a4d2693d04c4e  doc/ger-de/beispiele/befehle/expfetch.md
 3d67d4f3f1177b7c8f8a8f847c4f42de  doc/ger-de/beispiele/befehle/expgraphqlbench.md
 5cd08a600b762a27e25d7d67817f06d1  doc/ger-de/beispiele/befehle/expgraphqldisable.md
@@ -13208,7 +13208,7 @@ cf0e283c1c4260fcab5330e16469b085  doc/ger-de/beispiele/befehle/webserver.md
 c6179c18b419255331371da6df3446a7  doc/ger-de/beispiele/cronjobs/cleanuprss.md
 4e1f811b415548303cdec67ac8f64239  doc/ger-de/beispiele/cronjobs/clusterpurge.md
 3ef3a9108fdc146a552a3cb9cec86538  doc/ger-de/beispiele/cronjobs/contentcheck.md
-bff6291aacdb69d42e291a35f2ea0ef6  doc/ger-de/beispiele/cronjobs/contentjobs.md
+d3cace32652ef780e6d94049cd844b36  doc/ger-de/beispiele/cronjobs/contentjobs.md
 4f5e4e4cee6d9bca0526298988272b3f  doc/ger-de/beispiele/cronjobs/datatablesync.md
 ceacfbf5d2656d77339b07359012a046  doc/ger-de/beispiele/cronjobs/exphelp.md
 eec545b93a0d5a448048f354cad25685  doc/ger-de/beispiele/cronjobs/explogrotate.md
@@ -13629,7 +13629,7 @@ eb096785fda57d5a555fbdba6b7818e7  doc/ger-de/beispiele/ini-einstellungen/content
 b2600cbc07b586b71d60774385bfd7bc  doc/ger-de/beispiele/ini-einstellungen/content/ClassAttributeSettings.md
 978dd2d75a9a949d2423e4e0d642af64  doc/ger-de/beispiele/ini-einstellungen/content/ClassGroupIDs.md
 65ca04d7badd8befc2435d5e16db085b  doc/ger-de/beispiele/ini-einstellungen/content/ClassSettings.md
-2f331f7af0032bd7fe8c06ab59f3b845  doc/ger-de/beispiele/ini-einstellungen/content/ContentJobSettings.md
+461ae8bb3e58c32b7f11bd8d95cd7eff  doc/ger-de/beispiele/ini-einstellungen/content/ContentJobSettings.md
 b080c7b60f8aa6dd80be526531952c5d  doc/ger-de/beispiele/ini-einstellungen/content/ContentOverrideSettings.md
 c71a0814627d1500b4fb0127269e5c67  doc/ger-de/beispiele/ini-einstellungen/content/ContentVersionDiffSettings.md
 f0aa3e17323f7b758edbde3804fa8945  doc/ger-de/beispiele/ini-einstellungen/content/CopySettings.md
@@ -13648,7 +13648,7 @@ d0b7039f5981d2b7f13e6d371eac68d7  doc/ger-de/beispiele/ini-einstellungen/content
 ed80a53b0471c7a72e5cef1bc6ac41a9  doc/ger-de/beispiele/ini-einstellungen/content/ObjectRelationDataTypeSettings.md
 aaa077a175eb9111ead0db9bb97aeda3  doc/ger-de/beispiele/ini-einstellungen/content/PDFExportSettings.md
 e2253751a9386d92d48ea3d9d9d26356  doc/ger-de/beispiele/ini-einstellungen/content/PublishingSettings.md
-595a3f918676b95177a242ff7ff69c62  doc/ger-de/beispiele/ini-einstellungen/content/README.md
+69948f19af6f72fe6360c2cb0dc453cf  doc/ger-de/beispiele/ini-einstellungen/content/README.md
 1cedc56a0cefb24bdc87b1214afefce2  doc/ger-de/beispiele/ini-einstellungen/content/RSSExportSettings.md
 03fbd0cffe8ec05e6844a4f90c45ca35  doc/ger-de/beispiele/ini-einstellungen/content/RSSImportCleanupSettings.md
 ac4117043cb44df2c86ad6814d8eebf2  doc/ger-de/beispiele/ini-einstellungen/content/RSSImportSettings.md
@@ -15829,7 +15829,7 @@ e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhalts
 445e9e9efb5d3397ac8acc5ce905b8bb  doc/ger-de/funktionen/6.0/icon-themes-in-extensions.md
 6a93174afff8017d38daaa3e8a6bcebc  doc/ger-de/funktionen/6.0/info-und-paketseiten.md
 5b3b088b68957758753acb3f0e3a1ca5  doc/ger-de/funktionen/6.0/inhalts-finder.md
-707b6f20caa5f028b6954a4d8ea362f8  doc/ger-de/funktionen/6.0/inhaltsauftraege.md
+c9687b21e2ca92f984b5c8ff01b66a7e  doc/ger-de/funktionen/6.0/inhaltsauftraege.md
 250191d1e65820f70ee9802b02e89be3  doc/ger-de/funktionen/6.0/inhaltspruefungen.md
 fe6defdb1be0b4b09da100b8f3f2391f  doc/ger-de/funktionen/6.0/ini-ueberschreibungen-fuer-mehrere-websites.md
 e58171389200d729f83da2332732500e  doc/ger-de/funktionen/6.0/installation-mit-einem-befehl.md
@@ -23139,13 +23139,13 @@ a746783114b5666628a50dafe76a437e  kernel/classes/contentcheck/expcontentcheckunr
 a3a25108049c842c697c6d7c1e2aa5b6  kernel/classes/contentfinder/expcontentfinder.php
 c5e65ad06a071604b4a88eaee6e7a103  kernel/classes/contentfinder/expcontentfinderaction.php
 4df9623c569784f6189074056ce2231c  kernel/classes/contentfinder/expcontentfinderinput.php
-a82e28bdac731be4538760e9f9f8e592  kernel/classes/contentjob/expcontentjob.php
+e6c6e4ffb6af083e15ee22a0d8703df8  kernel/classes/contentjob/expcontentjob.php
 01cf8df02dc8586ff06b67a9a98b94ef  kernel/classes/contentjob/expcontentjobaddlocation.php
 2fdd06efb4a8294596eea99a2c2f1768  kernel/classes/contentjob/expcontentjobauditexport.php
 e2e0fa25963bc9a15e8f91970f1060f5  kernel/classes/contentjob/expcontentjobbatchtype.php
 d75e3acd79cc3ae6934c332e127de4ce  kernel/classes/contentjob/expcontentjobcopysubtree.php
 3473972a2d9e2687062c55823bc70986  kernel/classes/contentjob/expcontentjobexception.php
-bf33becb10e8598cfc3e24a343cf8f1d  kernel/classes/contentjob/expcontentjobhelpmanuals.php
+1efeeb573617b8b19db1127be8fb8149  kernel/classes/contentjob/expcontentjobhelpmanuals.php
 a3971ab3f53079bc5e93968607db6158  kernel/classes/contentjob/expcontentjobhidesubtree.php
 2186b8f7f9941495d0412c71f1021e80  kernel/classes/contentjob/expcontentjoblock.php
 fedc7f42c07ecba9c207cec42b04f054  kernel/classes/contentjob/expcontentjobmovesubtree.php
@@ -23158,7 +23158,7 @@ f6100ad56b2605115bd6fc6d7f482b25  kernel/classes/contentjob/expcontentjobstatesu
 074b1234375eb880b059753f99e98d54  kernel/classes/contentjob/expcontentjobstore.php
 46d27d5c301edd17acdfa8170b5e864d  kernel/classes/contentjob/expcontentjobtransfer.php
 2a9c346ee6c25e7c07d0c9515e7b2f44  kernel/classes/contentjob/expcontentjobtype.php
-2c1e51ca10ba28d0c3a95512abd1cec6  kernel/classes/contentjob/expcontentjobworker.php
+28227d46a8c5bfa79ec9d35edb7cfd9c  kernel/classes/contentjob/expcontentjobworker.php
 e12509db7c16bfb4c891619dc0a983a2  kernel/classes/datatable/expdataconnection.php
 1f51eb85374c4cb868c25faa24284150  kernel/classes/datatable/expdataconnections.php
 892949e1a6bcf455e601d38633af6b48  kernel/classes/datatable/expdatatablecatalogue.php
@@ -23555,7 +23555,7 @@ b02343413e0d4682d00eba14e0e1c8d0  kernel/classes/help/content/exphelpcontentsite
 339e7e9f4739f5b9ecb833a3ffec7a9d  kernel/classes/help/content/exphelpditamarkup.php
 3f7439465cafa037b2cd84dcce497bdc  kernel/classes/help/content/exphelpmanualbuilder.php
 c03309656d9713504603a92d383af836  kernel/classes/help/content/exphelpmanualsource.php
-b1e44eeb170b38ba77c2ab152e21940e  kernel/classes/help/content/exphelpmanualsync.php
+8aebb131e54e8b435727afd4da64f2eb  kernel/classes/help/content/exphelpmanualsync.php
 452d87f1fba8d6a71260709ec99e373c  kernel/classes/help/content/rest/exphelprestcontroller.php
 23d8d28def612f9f13c11e7f74800151  kernel/classes/help/content/rest/exphelprestprovider.php
 bdd022a78ded90fa2ef96ce71a1bfeb3  kernel/classes/help/content/rest/exphelprestviewcontroller.php
@@ -24137,7 +24137,7 @@ fa7644c10f5abd5d2a57a468104fda64  kernel/private/classes/commands/clusterize.php
 6faf3a815c8643a233e04053ddae07ab  kernel/private/classes/commands/convertprice2multiprice.php
 845042909bb86e2a2700281b37c6d37a  kernel/private/classes/commands/dfscleanup.php
 c05ef905dde9822f2a3755518b4b579e  kernel/private/classes/commands/expbackfillordersiteaccess.php
-7dbced58b3e8c342fcf1ef95cb8f2f8b  kernel/private/classes/commands/expcontentjob.php
+40e4958317e33da81fdc573d6814191e  kernel/private/classes/commands/expcontentjob.php
 ab2cbe636f4bd9a9e93cf053b435f3bc  kernel/private/classes/commands/expgraphqlbench.php
 88d35c681f5771da513aecad190805a6  kernel/private/classes/commands/expgraphqldisable.php
 b5fdc3e2735d5346d608e96b92cfe336  kernel/private/classes/commands/expgraphqlenable.php
@@ -24256,7 +24256,7 @@ b712e5957989040aa51c09a4a492b323  kernel/private/classes/commands/velocity.php
 d6ded5e5769a721c7dc2dfb20e5c2b32  kernel/private/classes/cronjobs/cleanuprss.php
 c25d8e634032784363d6491011cde2a7  kernel/private/classes/cronjobs/clusterpurge.php
 b4e438d889c9b76ff605201076b3775a  kernel/private/classes/cronjobs/contentcheck.php
-93963e06710f46d239d3ac86e9ad9a06  kernel/private/classes/cronjobs/contentjobs.php
+37530db3ba57cba56a17d5dffd385d1c  kernel/private/classes/cronjobs/contentjobs.php
 265d27055b6ae8aa0e496451e857eefa  kernel/private/classes/cronjobs/datatablesync.php
 924c38cc6aadd95e9f3d62ca23211a36  kernel/private/classes/cronjobs/exphelp.php
 4476dc3a5650433e542687b319543298  kernel/private/classes/cronjobs/explogrotate.php
@@ -25338,7 +25338,7 @@ f99a41a30ace913f63ff7525de52d0ff  settings/browse.ini
 69b7abd76c6aad8b54776c6f2b9bb65e  settings/codetemplate.ini
 de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 182107cb19ce2f10279176af2ccb2819  settings/collect.ini
-18c560850c9baadd195e1d7cac2a5f39  settings/content.ini
+35477843a813a56b5979f134d515c582  settings/content.ini
 5a57137294a415e06b0009c05e110036  settings/contentcheck.ini
 3f17f13b308164f04a7c3dad1613e464  settings/contentfinder.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
@@ -27128,7 +27128,7 @@ f03b44386d1b3b6a08befee48341b80b  tests/tests/kernel/classes/clusterfilehandlers
 dca03bcce86d26850f7484091fc78e6b  tests/tests/kernel/classes/codetemplate/eZCodeTemplateTest.php
 0ea8d71f1f4fc503912171d6000c0030  tests/tests/kernel/classes/collaboration/CollaborationSampleDataTest.php
 791c0974a3ec97a8dffee1aa606b46fe  tests/tests/kernel/classes/commands/expVelocityHelpTextTest.php
-fa7ca413bcb7db0ed7b4d9228e171a46  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
+fb4afabd8a224fc7d5bc621763617be4  tests/tests/kernel/classes/contentjob/ContentJobEngineTest.php
 042369669760298efbb9f416cde4ab9d  tests/tests/kernel/classes/contentjobs/expContentJobCopyLinksTest.php
 d08208429f9bc154485f92e6d2c3fb30  tests/tests/kernel/classes/contentmodel/eZContentClassLiveTest.php
 47a3e49c49bb29932c590bf94eb54356  tests/tests/kernel/classes/contentmodel/eZContentFunctionCollectionLiveTest.php

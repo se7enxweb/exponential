@@ -2,14 +2,14 @@
 title: content.ini [ContentJobSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [ContentJobSettings] in content.ini: SynchronousLimit, NowLimit, BatchSize, BatchPause, QueuedGrace, QueuedTimeout, MaxAttempts, KeepDays ..."
-keywords: content.ini, ContentJobSettings, INI, setting, SynchronousLimit, NowLimit, BatchSize, BatchPause, QueuedGrace, QueuedTimeout, MaxAttempts, KeepDays, PhpBinary, JobTypes
+summary: "The settings of [ContentJobSettings] in content.ini: SynchronousLimit, NowLimit, BatchSize, BatchPause, QueuedGrace, QueuedTimeout, MaxAttempts, BusyRetries ..."
+keywords: content.ini, ContentJobSettings, INI, setting, SynchronousLimit, NowLimit, BatchSize, BatchPause, QueuedGrace, QueuedTimeout, MaxAttempts, BusyRetries, BusyBackoffMax, KeepDays, PhpBinary, JobTypes
 type: generated
 generated: exp:help:examples
 ---
 # content.ini [ContentJobSettings]
 
-The block `[ContentJobSettings]` of `settings/content.ini`, with 10 setting(s).
+The block `[ContentJobSettings]` of `settings/content.ini`, with 12 setting(s).
 
 Never edit `settings/content.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -117,6 +117,8 @@ QueuedTimeout=600
 
 > A job whose worker is started this many times without finishing one batch is failed (with the  
 > last error) instead of being retried for ever. Resume it once the cause is fixed.  
+> It is also how often the cronjob part resumes a job on its own that failed for a temporary database  
+> error (busy, locked, a deadlock); the count starts again after every batch done.  
 
 Default: `5`.
 
@@ -125,6 +127,37 @@ Default: `5`.
 # settings/override/content.ini.append.php
 [ContentJobSettings]
 MaxAttempts=5
+*/ ?>
+```
+
+## BusyRetries
+
+> A batch that fails because the database is busy or locked (SQLite "database is busy" or "locked",  
+> MySQL lock wait timeout 1205 or deadlock 1213) is rolled back and run again from the last checkpoint  
+> up to this many times, after a pause that doubles each time (1, 2, 4 ... seconds). Then the job fails  
+> with a temporary error, which the cronjob part resumes on its own. 0 = fail at the first such error.  
+
+Default: `8`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/content.ini.append.php
+[ContentJobSettings]
+BusyRetries=8
+*/ ?>
+```
+
+## BusyBackoffMax
+
+> The longest pause between two of those tries, in seconds.  
+
+Default: `60`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/content.ini.append.php
+[ContentJobSettings]
+BusyBackoffMax=60
 */ ?>
 ```
 

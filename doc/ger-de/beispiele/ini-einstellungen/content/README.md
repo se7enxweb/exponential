@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # content.ini
 
-Die ausgelieferten Einstellungen von `settings/content.ini`: 53 Blöcke, 141 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/content.ini`: 53 Blöcke, 143 Einstellungen.
 
 > Exponential-Konfigurationsdatei für das Modul content  
 >
@@ -65,7 +65,7 @@ Die ausgelieferten Einstellungen von `settings/content.ini`: 53 Blöcke, 141 Ein
 | [RemoveSettings](RemoveSettings.md) | 5 |
 | [ReverseRelationSettings](ReverseRelationSettings.md) | 1 |
 | [CopySettings](CopySettings.md) | 6 |
-| [ContentJobSettings](ContentJobSettings.md) | 10 |
+| [ContentJobSettings](ContentJobSettings.md) | 12 |
 | [RSSImportSettings](RSSImportSettings.md) | 1 |
 | [RSSImportCleanupSettings](RSSImportCleanupSettings.md) | 6 |
 | [RSSExportSettings](RSSExportSettings.md) | 1 |

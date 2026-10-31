@@ -2,14 +2,14 @@
 title: content.ini [ContentJobSettings]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [ContentJobSettings] in content.ini: SynchronousLimit, NowLimit, BatchSize, BatchPause, QueuedGrace, QueuedTimeout, MaxAttempts, KeepDays ..."
-keywords: Einstellung, content.ini, ContentJobSettings, INI, setting, SynchronousLimit, NowLimit, BatchSize, BatchPause, QueuedGrace, QueuedTimeout, MaxAttempts, KeepDays, PhpBinary, JobTypes
+summary: "Die Einstellungen von [ContentJobSettings] in content.ini: SynchronousLimit, NowLimit, BatchSize, BatchPause, QueuedGrace, QueuedTimeout, MaxAttempts, BusyRetries ..."
+keywords: Einstellung, content.ini, ContentJobSettings, INI, setting, SynchronousLimit, NowLimit, BatchSize, BatchPause, QueuedGrace, QueuedTimeout, MaxAttempts, BusyRetries, BusyBackoffMax, KeepDays, PhpBinary, JobTypes
 type: generated
 generated: exp:help:examples
 ---
 # content.ini [ContentJobSettings]
 
-Der Block `[ContentJobSettings]` von `settings/content.ini`, mit 10 Einstellung(en).
+Der Block `[ContentJobSettings]` von `settings/content.ini`, mit 12 Einstellung(en).
 
 Bearbeiten Sie `settings/content.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -117,6 +117,8 @@ QueuedTimeout=600
 
 > Ein Auftrag, dessen Worker so oft gestartet wird, ohne einen Stapel abzuschließen, wird als fehlgeschlagen markiert (mit dem  
 > letzten Fehler), statt endlos wiederholt zu werden. Setzen Sie ihn fort, sobald die Ursache behoben ist.  
+> Es ist auch, wie oft der Cronjob-Teil einen Auftrag von selbst fortsetzt, der an einem vorübergehenden Datenbankfehler  
+> scheiterte (belegt, gesperrt, ein Deadlock); die Zählung beginnt nach jedem fertigen Stapel neu.  
 
 Standard: `5`.
 
@@ -125,6 +127,37 @@ Standard: `5`.
 # settings/override/content.ini.append.php
 [ContentJobSettings]
 MaxAttempts=5
+*/ ?>
+```
+
+## BusyRetries
+
+> Ein Stapel, der scheitert, weil die Datenbank belegt oder gesperrt ist (SQLite "database is busy" oder "locked",  
+> MySQL Zeitüberschreitung beim Warten auf eine Sperre 1205 oder Deadlock 1213), wird zurückgerollt und ab dem letzten Checkpoint  
+> bis zu so vielen Malen erneut ausgeführt, nach einer Pause, die sich jedes Mal verdoppelt (1, 2, 4 ... Sekunden). Dann schlägt der Auftrag  
+> mit einem vorübergehenden Fehler fehl, den der Cronjob-Teil von selbst fortsetzt. 0 = beim ersten solchen Fehler fehlschlagen.  
+
+Standard: `8`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/content.ini.append.php
+[ContentJobSettings]
+BusyRetries=8
+*/ ?>
+```
+
+## BusyBackoffMax
+
+> Die längste Pause zwischen zwei dieser Versuche, in Sekunden.  
+
+Standard: `60`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/content.ini.append.php
+[ContentJobSettings]
+BusyBackoffMax=60
 */ ?>
 ```
 

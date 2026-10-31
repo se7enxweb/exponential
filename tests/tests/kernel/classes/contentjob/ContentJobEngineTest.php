@@ -99,6 +99,8 @@ class ezpTestContentJobType implements expContentJobType
 {
     public static $failAtBatch = 0;
     public static $cancelAtBatch = 0;
+    /** @var array batch number => how many more tries of it meet a busy database inside the batch (after writing) */
+    public static $busyInBatch = array();
 
     public function validate( array $params, eZUser $user )
     {
@@ -143,6 +145,16 @@ class ezpTestContentJobType implements expContentJobType
                     ezpTestContentJobDB::$pending[$item]++;
             throw new expContentJobException( 'simulated database error' );
         }
+        if ( !empty( self::$busyInBatch[ezpTestContentJobKill::$current] ) )
+        {
+            // what the driver throws when a statement inside the transaction meets a lock: half the batch is written
+            self::$busyInBatch[ezpTestContentJobKill::$current]--;
+            $n = 0;
+            foreach ( ezpTestContentJobDB::$pending as $item => $count )
+                if ( $count === 0 && $n++ < 2 )
+                    ezpTestContentJobDB::$pending[$item]++;
+            throw new eZDBException( 'database is locked', 5 );
+        }
         if ( self::$cancelAtBatch && ezpTestContentJobKill::$current === self::$cancelAtBatch )
             expContentJob::fetch( $job->id() )->cancel();
         // idempotent: the next items not done in the database
@@ -178,13 +190,34 @@ class ezpTestContentJobNotAType
 
 class ezpTestContentJobWorker extends expContentJobWorker
 {
+    /** @var array batch number => how many more starts of its transaction find the database busy */
+    public static $busyAtBegin = array();
+    /** @var string|null a file the pauses after a busy database are appended to (seconds, one per line); no real sleep */
+    public static $pauseFile = null;
+    /** @var bool clearCaches() throws: an error outside every try of the run */
+    public static $throwInClearCaches = false;
+
     protected function switchUser( expContentJob $job )
     {
     }
 
     protected function begin()
     {
+        $batch = $this->job ? (int) $this->job->progress()['batch'] + 1 : 0;
+        if ( !empty( self::$busyAtBegin[$batch] ) )
+        {
+            // what eZSQLite3DB::begin() throws after SQLiteTransactionWait without the write lock: nothing written
+            self::$busyAtBegin[$batch]--;
+            throw new eZDBException( 'database is busy: the transaction could not start within 1 s, another write held the lock all that time; nothing was written', 5 );
+        }
         ezpTestContentJobDB::begin();
+    }
+
+    protected function sleepWithHeartbeat( expContentJob $job, $seconds )
+    {
+        if ( self::$pauseFile !== null )
+            file_put_contents( self::$pauseFile, $seconds . "\n", FILE_APPEND );
+        $this->beat( $job );
     }
 
     protected function commit()
@@ -201,8 +234,60 @@ class ezpTestContentJobWorker extends expContentJobWorker
 
     protected function clearCaches()
     {
+        if ( self::$throwInClearCaches )
+            throw new RuntimeException( 'simulated error outside the batch' );
         // called right after the checkpoint is saved
         ezpTestContentJobKill::at( 'after-save' );
+    }
+}
+
+/**
+ * CJ-32: a job type on a real SQLite database: each batch records the next items in the table processed.
+ */
+class ezpTestContentJobSqliteType extends ezpTestContentJobType
+{
+    public function prepare( expContentJob $job )
+    {
+        $cp =& $job->checkpoint();
+        $cp += array( 'runs' => 0 );
+        $cp['runs']++;
+    }
+
+    public function runBatch( expContentJob $job, $batchSize )
+    {
+        $db = eZDB::instance();
+        $done = $db->arrayQuery( 'SELECT item FROM processed' );
+        $seen = array_fill_keys( array_map( 'intval', array_column( $done, 'item' ) ), true );
+        $total = (int) $job->params()['items'];
+        $n = 0;
+        for ( $item = 1; $item <= $total && $n < $batchSize; $item++ )
+        {
+            if ( isset( $seen[$item] ) )
+                continue;
+            $db->query( 'INSERT INTO processed ( item, pid ) VALUES ( ' . $item . ', ' . getmypid() . ' )' );
+            $seen[$item] = true;
+            $n++;
+        }
+        return array( 'done' => $n, 'done_total' => count( $seen ), 'finished' => count( $seen ) >= $total, 'message' => "$n items" );
+    }
+
+    public function afterBatch( expContentJob $job )
+    {
+    }
+
+    public function finish( expContentJob $job )
+    {
+    }
+}
+
+/**
+ * CJ-32: the real worker (begin, commit and rollback of eZDB) without the user switch.
+ */
+class ezpTestContentJobSqliteWorker extends expContentJobWorker
+{
+    protected function switchUser( expContentJob $job )
+    {
+        eZDB::setErrorHandling( eZDB::ERROR_HANDLING_EXCEPTIONS );
     }
 }
 
@@ -251,6 +336,10 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
         ezpTestContentJobKill::$point = null;
         ezpTestContentJobType::$failAtBatch = 0;
         ezpTestContentJobType::$cancelAtBatch = 0;
+        ezpTestContentJobType::$busyInBatch = array();
+        ezpTestContentJobWorker::$busyAtBegin = array();
+        ezpTestContentJobWorker::$throwInClearCaches = false;
+        ezpTestContentJobWorker::$pauseFile = $this->dir . '/pauses';
     }
 
     protected function tearDown(): void
@@ -264,6 +353,7 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
         rmdir( $this->dir );
         expContentJobStore::setDirectory( null );
         expContentJob::$settings = null;
+        ezpTestContentJobWorker::$pauseFile = null;
     }
 
     private function user( $id = 14 )
@@ -1012,5 +1102,266 @@ class ContentJobEngineTest extends PHPUnit\Framework\TestCase
             $checked++;
         }
         $this->assertGreaterThanOrEqual( 6, $checked );
+    }
+
+    /** @return int[] the pauses the test worker was asked for after a busy database, in seconds */
+    private function pauses()
+    {
+        $file = $this->dir . '/pauses';
+        return is_file( $file ) ? array_map( 'intval', file( $file, FILE_IGNORE_NEW_LINES ) ) : array();
+    }
+
+    /** Ages the job's heartbeat (the failed job's grace before the cronjob part resumes it) */
+    private function age( $id, $seconds = 61 )
+    {
+        expContentJobStore::update( $id, function ( array &$d ) use ( $seconds ) { $d['heartbeat'] = time() - $seconds; } );
+    }
+
+    /** CJ-28 */
+    public function testBusyDatabaseIsRetriedAndEveryItemDoneOnce()
+    {
+        expContentJob::$settings['BusyRetries'] = 3;
+        expContentJob::$settings['BusyBackoffMax'] = 60;
+        // the start of batch 1's transaction twice, a statement inside batch 3 once (after writing two items)
+        ezpTestContentJobWorker::$busyAtBegin = array( 1 => 2 );
+        ezpTestContentJobType::$busyInBatch = array( 3 => 1 );
+        $job = $this->create( '/1/2/42/', 10 );
+        $this->assertSame( 0, $this->runForked( $job->id() ) );
+        $job = expContentJob::fetch( $job->id() );
+        $this->assertSame( 'done', $job->state() );
+        $this->assertSame( array( '1' => 10 ), $this->counts(), 'every item exactly once: the half-written try was rolled back' );
+        $p = $job->progress();
+        $this->assertSame( array( 10, 10, 4 ), array( $p['done'], $p['total'], $p['batch'] ) );
+        $this->assertSame( array( 1, 2, 1 ), $this->pauses(), 'the pause doubles per try of a batch and starts again for the next one' );
+        $cp = $job->checkpoint();
+        $this->assertSame( 4, $cp['batches_seen'], 'the tries that were rolled back left nothing in the checkpoint' );
+        $this->assertSame( 4, $cp['runs'], 'prepare() ran again before each retry, as on a resume' );
+        $log = $job->log( 100 );
+        $this->assertCount( 3, preg_grep( '/the database is busy .* rolled back, try \d of 4 in \d+ s from the last checkpoint/', $log ) );
+        $this->assertCount( 1, preg_grep( '/batch 1: committed at try 3/', $log ) );
+        $this->assertCount( 1, preg_grep( '/batch 3: committed at try 2/', $log ) );
+        $this->assertSame( 1, $job->attempts(), 'one worker did it all' );
+        $this->assertFalse( expContentJobLock::check( '/1/2/42/' ) );
+
+        // the pause: 1, 2, 4 ... seconds up to BusyBackoffMax
+        expContentJob::$settings['BusyBackoffMax'] = 5;
+        $this->assertSame( array( 1, 2, 4, 5, 5 ), array_map( array( 'expContentJobWorker', 'busyPause' ), array( 1, 2, 3, 4, 5 ) ) );
+        expContentJob::$settings['BusyBackoffMax'] = 0;
+        $this->assertSame( 0, expContentJobWorker::busyPause( 3 ) );
+
+        // what counts as temporary
+        foreach ( array( new eZDBException( 'x', 5 ), new eZDBException( 'x', 6 ), new eZDBException( 'Lock wait timeout exceeded; try restarting transaction', 1205 ),
+                         new eZDBException( 'Deadlock found when trying to get lock', 1213 ), new RuntimeException( 'database is locked' ),
+                         new RuntimeException( 'wrapped', 0, new eZDBException( 'database is busy: ...', 5 ) ) ) as $e )
+            $this->assertTrue( expContentJobWorker::isTemporaryError( $e ), $e->getMessage() );
+        foreach ( array( new eZDBException( 'UNIQUE constraint failed', 19 ), new eZDBException( 'Duplicate entry', 1062 ),
+                         new expContentJobException( 'simulated database error' ) ) as $e )
+            $this->assertFalse( expContentJobWorker::isTemporaryError( $e ), $e->getMessage() );
+    }
+
+    /** CJ-29 */
+    public function testRetriesRunOutAndTheJobFailsWithTheTemporaryFlag()
+    {
+        expContentJob::$settings['BusyRetries'] = 2;
+        ezpTestContentJobType::$busyInBatch = array( 2 => 99 );
+        $job = $this->create( '/1/2/42/', 10 );
+        $this->assertSame( 1, $this->runForked( $job->id() ) );
+        $job = expContentJob::fetch( $job->id() );
+        $this->assertSame( 'failed', $job->state() );
+        $this->assertTrue( $job->temporaryError() );
+        $this->assertStringContainsString( 'the database stayed busy (3 tries): database is locked', $job->error() );
+        $this->assertSame( array( '1' => 3, '0' => 7 ), $this->counts(), 'batch 1 done, nothing of the three tries of batch 2' );
+        $this->assertSame( 1, $job->checkpoint()['batches_seen'], 'the failed job keeps the checkpoint of the last batch done' );
+        $this->assertSame( array( 1, 2 ), $this->pauses() );
+        $this->assertTrue( $job->isStalled() );
+        $this->assertSame( $job->id(), expContentJobLock::check( '/1/2/42/' )->id(), 'a failed job keeps its lock' );
+        $this->assertFalse( $job->autoResumable(), 'not within QueuedGrace of the failure' );
+        $this->age( $job->id() );
+        $this->assertTrue( expContentJob::fetch( $job->id() )->autoResumable() );
+
+        // a failure that is not temporary is not flagged, so it waits for a person
+        ezpTestContentJobDB::reset( 10 );
+        ezpTestContentJobType::$busyInBatch = array();
+        ezpTestContentJobType::$failAtBatch = 2;
+        $other = $this->create( '/1/2/43/', 10 );
+        $this->assertSame( 1, $this->runForked( $other->id() ) );
+        $other = expContentJob::fetch( $other->id() );
+        $this->assertFalse( $other->temporaryError() );
+        $this->age( $other->id() );
+        $this->assertFalse( expContentJob::fetch( $other->id() )->autoResumable() );
+        $this->assertFalse( expContentJob::fetch( $other->id() )->isStalled() );
+
+        // an error outside every try of the run (here: while clearing the caches after a batch) fails the job with
+        // the reason, instead of ending the process with the job 'running' and no worker
+        ezpTestContentJobType::$failAtBatch = 0;
+        ezpTestContentJobWorker::$throwInClearCaches = true;
+        $third = $this->create( '/1/2/44/', 10 );
+        $this->assertSame( 1, $this->runForked( $third->id() ) );
+        $third = expContentJob::fetch( $third->id() );
+        $this->assertSame( 'failed', $third->state() );
+        $this->assertStringContainsString( 'the worker stopped: simulated error outside the batch', $third->error() );
+        $this->assertFalse( $third->temporaryError() );
+    }
+
+    /** CJ-30 */
+    public function testCronResumesATemporaryFailureUpToMaxAttemptsCountedFromTheLastBatch()
+    {
+        expContentJob::$settings['MaxAttempts'] = 2;
+        expContentJob::$settings['BusyRetries'] = 0;
+        ezpTestContentJobWorker::$busyAtBegin = array( 1 => 99 );
+        $job = $this->create( '/1/2/42/', 10 );
+        $id = $job->id();
+        $this->assertSame( 1, $this->runForked( $id ) );
+        $this->assertTrue( expContentJob::fetch( $id )->temporaryError() );
+        $this->assertSame( 0, \Exponential\Cronjob\Kernel\Contentjobs::resumeStale( null, false ), 'not within QueuedGrace' );
+        for ( $i = 1; $i <= 2; $i++ )
+        {
+            $this->age( $id );
+            $this->assertSame( 1, \Exponential\Cronjob\Kernel\Contentjobs::resumeStale( null, false ), "automatic resume $i" );
+            $resumed = expContentJob::fetch( $id );
+            $this->assertSame( 'queued', $resumed->state() );
+            $this->assertSame( $i, $resumed->autoResumes() );
+            $this->assertNotEmpty( preg_grep( "/resumed automatically \\($i of 2\\)/", $resumed->log( 50 ) ) );
+            $this->assertSame( 1, $this->runForked( $id ) );
+        }
+        $this->age( $id );
+        $this->assertSame( 0, \Exponential\Cronjob\Kernel\Contentjobs::resumeStale( null, false ), 'MaxAttempts automatic resumes in a row: it waits for a person' );
+        $this->assertSame( 'failed', expContentJob::fetch( $id )->state() );
+        $this->assertSame( array( '0' => 10 ), $this->counts() );
+
+        // a person resumes it (the count starts again); batch 1 goes through, batch 2 meets the busy database
+        $this->assertTrue( expContentJob::fetch( $id )->resume( false ) );
+        $this->assertSame( 0, expContentJob::fetch( $id )->autoResumes() );
+        ezpTestContentJobWorker::$busyAtBegin = array( 2 => 99 );
+        $this->age( $id );
+        $this->assertSame( 1, $this->runForked( $id ) );
+        $this->age( $id );
+        $this->assertSame( 1, \Exponential\Cronjob\Kernel\Contentjobs::resumeStale( null, false ) );
+        $this->assertSame( 1, $this->runForked( $id ), 'batch 2 is still busy' );
+        $this->assertSame( 1, expContentJob::fetch( $id )->autoResumes(), 'a run without a batch done keeps the count' );
+        // batch 2 goes through now, batch 3 is busy: the batch done sets the count back, so the cronjob part goes on
+        ezpTestContentJobWorker::$busyAtBegin = array( 3 => 99 );
+        $this->age( $id );
+        $this->assertSame( 1, \Exponential\Cronjob\Kernel\Contentjobs::resumeStale( null, false ) );
+        $this->assertSame( 2, expContentJob::fetch( $id )->autoResumes() );
+        $this->assertSame( 1, $this->runForked( $id ) );
+        $this->assertSame( 0, expContentJob::fetch( $id )->autoResumes(), 'counted again from 0 after a batch done' );
+        $this->assertSame( 2, expContentJob::fetch( $id )->progress()['batch'] );
+        $this->age( $id );
+        $this->assertSame( 1, \Exponential\Cronjob\Kernel\Contentjobs::resumeStale( null, false ) );
+        ezpTestContentJobWorker::$busyAtBegin = array();
+        $this->assertSame( 0, $this->runForked( $id ) );
+        $this->assertSame( 'done', expContentJob::fetch( $id )->state() );
+        $this->assertSame( array( '1' => 10 ), $this->counts() );
+    }
+
+    /** CJ-31 */
+    public function testBusyRunEndsAsAnUninterruptedRun()
+    {
+        // the uninterrupted run
+        $ref = $this->create( '/1/2/90/', 10 );
+        $this->assertSame( 0, $this->runForked( $ref->id() ) );
+        $refState = ezpTestContentJobDB::read();
+        $ref = expContentJob::fetch( $ref->id() );
+
+        // the same job meets a busy database at the start of batch 1, twice inside batch 2, and inside batch 3 more
+        // often than BusyRetries allows: it fails, the cronjob part resumes it, the resumed worker finishes it
+        ezpTestContentJobDB::reset( 10 );
+        expContentJob::$settings['BusyRetries'] = 2;
+        ezpTestContentJobWorker::$busyAtBegin = array( 1 => 1 );
+        ezpTestContentJobType::$busyInBatch = array( 2 => 2, 3 => 3 );
+        $job = $this->create( '/1/2/91/', 10 );
+        $this->assertSame( 1, $this->runForked( $job->id() ) );
+        $failed = expContentJob::fetch( $job->id() );
+        $this->assertSame( 'failed', $failed->state() );
+        $this->assertTrue( $failed->temporaryError() );
+        $this->assertSame( 2, $failed->progress()['batch'] );
+        $this->age( $job->id() );
+        $this->assertSame( 1, \Exponential\Cronjob\Kernel\Contentjobs::resumeStale( null, false ) );
+        // the database is free again
+        ezpTestContentJobWorker::$busyAtBegin = array();
+        ezpTestContentJobType::$busyInBatch = array();
+        $this->assertSame( 0, $this->runForked( $job->id() ) );
+        $done = expContentJob::fetch( $job->id() );
+        $this->assertSame( 'done', $done->state() );
+        $this->assertSame( $refState, ezpTestContentJobDB::read(), 'every item exactly once, as in the uninterrupted run' );
+        $this->assertSame( $ref->progress()['done'], $done->progress()['done'] );
+        $this->assertSame( $ref->progress()['batch'], $done->progress()['batch'] );
+        $this->assertSame( $ref->checkpoint()['batches_seen'], $done->checkpoint()['batches_seen'] );
+        $this->assertSame( $ref->result(), $done->result() );
+        $this->assertFalse( $done->temporaryError() );
+        $this->assertSame( 0, $done->autoResumes() );
+        $this->assertFalse( expContentJobLock::check( '/1/2/91/' ) );
+    }
+
+    /**
+     * CJ-32: on a real SQLite database (a file in the test's scratch directory) a second connection holds the write
+     * lock (BEGIN IMMEDIATE) for 2.5 s; with SQLiteTransactionWait=1 the worker's first starts give up with "database
+     * is busy", it waits, tries again and finishes, every item recorded once.
+     */
+    public function testRealSqliteWriteLockHeldByAnotherConnectionIsWaitedOut()
+    {
+        if ( !extension_loaded( 'sqlite3' ) || !function_exists( 'pcntl_fork' ) )
+            $this->markTestSkipped( 'needs sqlite3 and pcntl' );
+        $file = $this->dir . '/busy.sqlite';
+        $setup = new SQLite3( $file );
+        $setup->exec( 'PRAGMA journal_mode=WAL' );
+        $setup->exec( 'CREATE TABLE processed ( item INTEGER NOT NULL, pid INTEGER NOT NULL )' );
+        $setup->close();
+        expContentJob::$settings['JobTypes'] = array( 'test' => 'ezpTestContentJobSqliteType' );
+        expContentJob::$settings['BusyRetries'] = 6;
+        expContentJob::$settings['BusyBackoffMax'] = 1;
+        $job = $this->create( '/1/2/42/', 10 );
+        $id = $job->id();
+
+        $held = $this->dir . '/held';
+        $holder = self::fork( function () use ( $file, $held )
+        {
+            $other = new SQLite3( $file );
+            $other->busyTimeout( 5000 );
+            $other->exec( 'BEGIN IMMEDIATE' );
+            touch( $held );
+            usleep( 2500000 );
+            $other->exec( 'COMMIT' );
+            $other->close();
+        } );
+        $deadline = microtime( true ) + 10;
+        while ( !is_file( $held ) && microtime( true ) < $deadline )
+            usleep( 10000 );
+        $this->assertFileExists( $held, 'the second connection holds the write lock' );
+
+        $codeFile = $this->dir . '/exit-code';
+        $worker = self::fork( function () use ( $id, $file, $codeFile )
+        {
+            ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'SQLiteTransactionWait', '1' );
+            ezpINIHelper::setINISetting( 'site.ini', 'DatabaseSettings', 'Transactions', 'enabled' );
+            $db = new eZSQLite3DB( array(
+                'server' => '', 'port' => '', 'user' => '', 'password' => '', 'database' => $file,
+                'use_slave_server' => false, 'slave_server' => '', 'slave_port' => '', 'slave_user' => '', 'slave_password' => '',
+                'slave_database' => '', 'socket' => false, 'charset' => 'utf-8', 'is_internal_charset' => true,
+                'builtin_encoding' => false, 'connect_retries' => 0, 'use_persistent_connection' => 'disabled' ) );
+            eZDB::setInstance( $db );
+            $code = ( new ezpTestContentJobSqliteWorker() )->run( $id );
+            $db->close();
+            file_put_contents( $codeFile, (string) $code );
+        } );
+        self::waitFor( array( $holder, $worker ), 60 );
+        $this->assertFileExists( $codeFile, 'the worker returned' );
+        $this->assertSame( '0', file_get_contents( $codeFile ) );
+
+        $job = expContentJob::fetch( $id );
+        $this->assertSame( 'done', $job->state(), implode( "\n", $job->log( 30 ) ) );
+        $log = $job->log( 100 );
+        $this->assertNotEmpty( preg_grep( '/batch 1: the database is busy \(database is busy: the transaction could not start within 1 s/', $log ),
+                               implode( "\n", $log ) );
+        $this->assertNotEmpty( preg_grep( '/batch 1: committed at try \d/', $log ) );
+        $check = new SQLite3( $file );
+        $counts = array();
+        $r = $check->query( 'SELECT item, COUNT(*) AS c FROM processed GROUP BY item ORDER BY item' );
+        while ( $row = $r->fetchArray( SQLITE3_ASSOC ) )
+            $counts[(int) $row['item']] = (int) $row['c'];
+        $check->close();
+        $this->assertSame( array_fill_keys( range( 1, 10 ), 1 ), $counts, 'every item recorded exactly once' );
+        $this->assertSame( 10, $job->progress()['done'] );
     }
 }

@@ -23,7 +23,7 @@ php bin/php/expcontentjob.php --help
 ```text
 Content jobs: large subtree removes and copies, run in batches in the background.
 
-  list [--all]                         the jobs
+  list [--all] [--resume]              the jobs (heartbeat age, stalled); --resume: resume every stalled or failed one
   show <id> [--json]                   one job and the end of its log
   run <id>                             run a job in the foreground
   resume <id> [--background]           resume a failed job or one whose worker died
@@ -39,6 +39,7 @@ Content jobs: large subtree removes and copies, run in batches in the background
 | Option | Value | Help |
 |---|---|---|
 | `--all` |  | list: every job, not only the active and failed ones |
+| `--resume` |  | list: resume every stalled or failed job, each with a worker in the background |
 | `--json` |  | show: the job as JSON |
 | `--background` |  | remove, copy, resume: start a detached worker and return |
 | `--trash` |  | remove: move the objects to the trash (the default of content.ini [RemoveSettings]) |

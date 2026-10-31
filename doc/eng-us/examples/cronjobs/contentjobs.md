@@ -14,14 +14,17 @@ Resume content jobs whose worker died and start queued jobs nobody started.
 Entry point `cronjobs/contentjobs.php`, code in `kernel/private/classes/cronjobs/contentjobs.php`.
 
 > The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a  
-> worker and have none — a running job whose worker died (kill -9, a reboot, a memory limit) and a queued job  
+> worker and have none — a running job whose worker died (kill -9, a reboot, a memory limit), a queued job  
 > nobody started within content.ini \[ContentJobSettings\] QueuedGrace seconds (the spawn from the web request  
-> failed) — and removes finished jobs older than KeepDays, and the runs of the import and export tools'  
-> run history older than transfer.ini \[TransferSettings\] KeepDays (expKernelTransferHistory::purge()).  
+> failed), and a job that failed for a temporary database error (busy, locked, a deadlock) once its worker's  
+> BusyRetries ran out — and removes finished jobs older than KeepDays, and the runs of the import and export  
+> tools' run history older than transfer.ini \[TransferSettings\] KeepDays (expKernelTransferHistory::purge()).  
 >
 > The worker is started detached (bin/php/expcontentjob.php run <id>), as from the web request, so a long job  
 > never holds up the other cronjob parts; started as root, it becomes the site user. A job resumed again and  
-> again without finishing a batch is failed by the worker after MaxAttempts starts instead of looping.  
+> again without finishing a batch is failed by the worker after MaxAttempts starts instead of looping, and a job  
+> failed for a temporary error is resumed at most MaxAttempts times in a row (the count starts again after every  
+> batch done); after that it waits for a person (bin/php/expcontentjob.php list --resume).  
 
 ## When it runs
 

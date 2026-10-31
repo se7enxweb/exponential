@@ -3,7 +3,10 @@
  * The command bin/php/expcontentjob.php (./console exp:expcontentjob): content jobs, the large subtree removes
  * and copies that run in batches in the background (kernel/classes/contentjob/).
  *
- *   list [--all]                    the jobs (queued, running and failed; --all: every job)
+ *   list [--all] [--resume]         the jobs (queued, running and failed; --all: every job), with the age of each
+ *                                   one's heartbeat and "stalled" for a job without a worker that waits for one
+ *                                   (or failed for a temporary database error); --resume resumes every stalled
+ *                                   or failed job in the background
  *   show <id> [--json]              one job: state, progress, result, the end of its log
  *   run <id>                        runs a job in the foreground (what the detached worker runs)
  *   resume <id> [--background]      a failed job, or one whose worker died, from its last checkpoint
@@ -36,7 +39,7 @@ class Expcontentjob extends \Exponential\Runnable\Command
 
         $cli = $this->cli();
         $script = $this->script( array( 'description' => "Content jobs: large subtree removes and copies, run in batches in the background.\n\n" .
-                                                         "  list [--all]                         the jobs\n" .
+                                                         "  list [--all] [--resume]              the jobs (heartbeat age, stalled); --resume: resume every stalled or failed one\n" .
                                                          "  show <id> [--json]                   one job and the end of its log\n" .
                                                          "  run <id>                             run a job in the foreground\n" .
                                                          "  resume <id> [--background]           resume a failed job or one whose worker died\n" .
@@ -49,8 +52,9 @@ class Expcontentjob extends \Exponential\Runnable\Command
                                         'use-modules' => true,
                                         'use-extensions' => true,
                                         'user' => true ) );
-        $options = $this->startup( '[all][json][background][trash][delete][all-versions][keep-creator][keep-time][scope:]', '',
+        $options = $this->startup( '[all][resume][json][background][trash][delete][all-versions][keep-creator][keep-time][scope:]', '',
                                    array( 'all' => 'list: every job, not only the active and failed ones',
+                                          'resume' => 'list: resume every stalled or failed job, each with a worker in the background',
                                           'json' => 'show: the job as JSON',
                                           'background' => 'remove, copy, resume: start a detached worker and return',
                                           'trash' => 'remove: move the objects to the trash (the default of content.ini [RemoveSettings])',
@@ -73,7 +77,7 @@ class Expcontentjob extends \Exponential\Runnable\Command
         switch ( $sub )
         {
             case 'list':
-                $this->shutdown( $this->listJobs( !empty( $options['all'] ) ) );
+                $this->shutdown( $this->listJobs( !empty( $options['all'] ), !empty( $options['resume'] ) ) );
             case 'show':
                 $this->shutdown( $this->showJob( $args ? $args[0] : '', !empty( $options['json'] ) ) );
             case 'run':
@@ -149,7 +153,7 @@ class Expcontentjob extends \Exponential\Runnable\Command
         return $ids;
     }
 
-    protected function listJobs( $all )
+    protected function listJobs( $all, $resume = false )
     {
         $jobs = \expContentJob::listFor( null, $all ? null : array( 'queued', 'running', 'failed' ) );
         if ( !$jobs )
@@ -157,16 +161,55 @@ class Expcontentjob extends \Exponential\Runnable\Command
             $this->output( $all ? 'No content jobs.' : 'No active or failed content jobs (--all lists every job).' );
             return 0;
         }
+        $toResume = array();
         foreach ( $jobs as $job )
         {
             $p = $job->progress();
             $state = $job->state();
-            if ( $job->isActive() && !$job->workerAlive() )
+            $alive = $job->workerAlive();
+            if ( $job->isActive() && !$alive )
                 $state .= ' (no worker)';
-            $this->output( sprintf( '%-26s %-6s %-20s %3d%% %7d/%-7d %s', $job->id(), $job->type(), $state, $p['percent'], $p['done'], $p['total'],
-                                    $job->description() ) );
+            if ( $job->state() === 'failed' && $job->temporaryError() )
+                $state .= ' (temporary)';
+            $stalled = $job->isStalled();
+            if ( $stalled || ( $job->state() === 'failed' && !$alive ) )
+                $toResume[] = $job;
+            // the heartbeat's age: how long ago the worker last wrote the job
+            $this->output( sprintf( '%-26s %-6s %-26s %3d%% %7d/%-7d %-6s %-7s %s', $job->id(), $job->type(), $state, $p['percent'], $p['done'], $p['total'],
+                                    $job->isActive() || $job->state() === 'failed' ? self::age( $job->heartbeatAge() ) : '-',
+                                    $stalled ? 'stalled' : '', $job->description() ) );
         }
-        return 0;
+        if ( !$resume )
+            return 0;
+        // --resume: every stalled or failed job, each with a detached worker (as resume <id> --background)
+        if ( !$toResume )
+            $this->output( 'No stalled or failed job to resume.' );
+        $code = 0;
+        foreach ( $toResume as $job )
+        {
+            if ( !$job->resume( false ) )
+            {
+                $this->error( 'Job ' . $job->id() . ' (' . $job->state() . ') could not be resumed (its log says why).' );
+                $code = 2;
+                continue;
+            }
+            $ok = $job->spawn();
+            $this->output( 'Job ' . $job->id() . ( $ok ? ' resumed in the background.' : ' is queued; the cronjob part contentjobs will start it.' ) );
+        }
+        return $code;
+    }
+
+    /** @return string an age in seconds as "42s", "7m", "3h" or "2d" (the heartbeat column of list) */
+    public static function age( $seconds )
+    {
+        $seconds = max( 0, (int) $seconds );
+        if ( $seconds < 120 )
+            return $seconds . 's';
+        if ( $seconds < 7200 )
+            return (int) floor( $seconds / 60 ) . 'm';
+        if ( $seconds < 172800 )
+            return (int) floor( $seconds / 3600 ) . 'h';
+        return (int) floor( $seconds / 86400 ) . 'd';
     }
 
     protected function showJob( $id, $json )

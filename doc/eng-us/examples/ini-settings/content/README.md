@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # content.ini
 
-The shipped settings of `settings/content.ini`: 53 blocks, 141 settings.
+The shipped settings of `settings/content.ini`: 53 blocks, 143 settings.
 
 > Exponential configuration file for content module  
 >
@@ -65,7 +65,7 @@ The shipped settings of `settings/content.ini`: 53 blocks, 141 settings.
 | [RemoveSettings](RemoveSettings.md) | 5 |
 | [ReverseRelationSettings](ReverseRelationSettings.md) | 1 |
 | [CopySettings](CopySettings.md) | 6 |
-| [ContentJobSettings](ContentJobSettings.md) | 10 |
+| [ContentJobSettings](ContentJobSettings.md) | 12 |
 | [RSSImportSettings](RSSImportSettings.md) | 1 |
 | [RSSImportCleanupSettings](RSSImportCleanupSettings.md) | 6 |
 | [RSSExportSettings](RSSExportSettings.md) | 1 |

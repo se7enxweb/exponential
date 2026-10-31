@@ -1,14 +1,17 @@
 <?php
 /**
  * The cronjob part contentjobs (cronjobs/contentjobs.php, frequent group): starts the content jobs that need a
- * worker and have none — a running job whose worker died (kill -9, a reboot, a memory limit) and a queued job
+ * worker and have none — a running job whose worker died (kill -9, a reboot, a memory limit), a queued job
  * nobody started within content.ini [ContentJobSettings] QueuedGrace seconds (the spawn from the web request
- * failed) — and removes finished jobs older than KeepDays, and the runs of the import and export tools'
- * run history older than transfer.ini [TransferSettings] KeepDays (expKernelTransferHistory::purge()).
+ * failed), and a job that failed for a temporary database error (busy, locked, a deadlock) once its worker's
+ * BusyRetries ran out — and removes finished jobs older than KeepDays, and the runs of the import and export
+ * tools' run history older than transfer.ini [TransferSettings] KeepDays (expKernelTransferHistory::purge()).
  *
  * The worker is started detached (bin/php/expcontentjob.php run <id>), as from the web request, so a long job
  * never holds up the other cronjob parts; started as root, it becomes the site user. A job resumed again and
- * again without finishing a batch is failed by the worker after MaxAttempts starts instead of looping.
+ * again without finishing a batch is failed by the worker after MaxAttempts starts instead of looping, and a job
+ * failed for a temporary error is resumed at most MaxAttempts times in a row (the count starts again after every
+ * batch done); after that it waits for a person (bin/php/expcontentjob.php list --resume).
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -39,7 +42,8 @@ class Contentjobs extends \Exponential\Runnable\CronjobPart
     }
 
     /**
-     * Starts a worker for each job that needs one.
+     * Starts a worker for each job that needs one: queued or running without a worker (isStale()), or failed
+     * for a temporary database error (autoResumable()).
      *
      * @param callable|null $say receives a line per job
      * @param bool $spawn false: queue them only (tests)
@@ -48,19 +52,33 @@ class Contentjobs extends \Exponential\Runnable\CronjobPart
     public static function resumeStale( $say = null, $spawn = true )
     {
         $started = 0;
-        foreach ( \expContentJob::listFor( null, array( 'queued', 'running' ) ) as $job )
+        foreach ( \expContentJob::listFor( null, array( 'queued', 'running', 'failed' ) ) as $job )
         {
-            if ( !$job->isStale() )
-                continue;
             $was = $job->state();
-            if ( !$job->resume( false ) )
-                continue;
-            $job->appendLog( 'the cronjob part contentjobs starts a worker (the job was ' . $was . ' without one)' );
+            if ( $was === \expContentJob::STATE_FAILED )
+            {
+                if ( !$job->autoResumable() )
+                    continue;
+                $error = $job->error();
+                if ( !$job->resume( false, true ) )
+                    continue;
+                $job->appendLog( 'the cronjob part contentjobs starts a worker (the job failed for a temporary error: ' . $error . ')' );
+                $why = 'failed for a temporary error, resume ' . $job->autoResumes() . ' of ' . max( 1, (int) \expContentJob::setting( 'MaxAttempts' ) );
+            }
+            else
+            {
+                if ( !$job->isStale() )
+                    continue;
+                if ( !$job->resume( false, true ) )
+                    continue;
+                $job->appendLog( 'the cronjob part contentjobs starts a worker (the job was ' . $was . ' without one)' );
+                $why = $was . ', no worker';
+            }
             if ( $spawn )
                 $job->spawn();
             $started++;
             if ( $say )
-                call_user_func( $say, 'Content job ' . $job->id() . ' (' . $was . ', no worker): worker started' );
+                call_user_func( $say, 'Content job ' . $job->id() . ' (' . $why . '): worker started' );
         }
         return $started;
     }
