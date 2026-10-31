@@ -247,12 +247,26 @@ read, and every write walks the memo.
 request, so a persistent worker (Velocity, FrankenPHP worker mode) starts each
 one with an empty memo.
 
+In a persistent worker (checked with Velocity, `ForkPerRequest=disabled`) the
+reset also drops the worker's copy of the state, so every request reads the
+state file again at its first lookup or write: the "once a second" below
+applies within one request only, and another process's write or a replaced
+state file counts from the worker's next request on (QC-46). The settings, the
+counters and the "lock failed" note are per request as well. What is kept
+across requests is only what belongs to a connection: the temporary tables
+this process created and the Oracle session settings, keyed by the driver
+object, so a new connection per request starts with none. No connection is
+kept for the cache's sake. `MEMO_MAX` bounds one request; a rendered page
+looks up about 550 statements, far fewer of them distinct, so a page never
+reaches it, and a script that does reads the older results from APCu or the
+result files again.
+
 ### Validity
 
 A shared state file, `var/<site>/cache/querycache/state.ser`, holds
 
 ```
-{ generation, genTime, tables: { table => time of its last write }, id }
+{ generation, genTime, tables: { table => time of its last write }, id, lockFailed }
 ```
 
 Every process reads and writes it: Apache/php-fpm, Velocity, scripts and
@@ -266,6 +280,21 @@ another process's change between reading and writing the file but does not
 close it, and on a server where the lock never works every write empties the
 cache. A file that cannot be written is logged, its temporary file removed;
 the change then holds in this process only, others see it after `MaxAge`.
+
+A lock failure is also kept in the state file (`lockFailed`, the time), so
+Setup > System information shows it whichever process failed (a cronjob
+running as another user, a Velocity worker), and the debug output of the
+request shows it as well (see below). **Clear the query cache** forgets it: after
+fixing the permissions, clear the cache and check whether the notice comes
+back.
+
+The lock is taken on the file at the path. A process that waited for it while
+the cache directory was deleted would otherwise get the lock on a file that is
+gone, while the next process creates a new `state.lock` and locks that one,
+and both would write the state at once. After `flock` the file held is
+compared with the one at the path (inode and device) and opened again when
+they differ, up to three times; then the write counts as a lock failure
+(QC-45).
 
 `id` is set when a file is written where there was none, or none that could be
 read: the first write of an installation, and the first one after the file was
@@ -304,11 +333,35 @@ A read that raced a write is therefore always stale, never trusted.
   does not say gets the statement read both ways, and where they differ it is
   not cached. The same rules apply to writes: a write that cannot be read makes
   everything stale;
+- on every database, a quote that is left unpaired (a literal that does not
+  end) and a quoted name that holds a quote (`"it's"`, `` `it's` ``, SQLite's
+  `[it's]`): read without knowing the name, its apostrophe would pair with the
+  next literal's quote and hide what is in between;
+- on PostgreSQL and SQLite (QC-43): a backslash does not escape, so `'C:\'` is a
+  whole literal and the statement is read; `"..."` quotes a name, which is
+  read as a table where it is one (`"public"."ezuser"` is `ezuser`). Not
+  cached: PostgreSQL's `E'...'` strings and dollar quoting (`$$...$$`,
+  `$tag$...$tag$`; `$1` is a parameter and stays readable), `TABLESAMPLE`, a
+  column alias list (`FROM a x (c1, c2)`). `#` is no comment there (an
+  operator in PostgreSQL). A PostgreSQL connection with
+  `standard_conforming_strings` off (the server's setting, or a `SET` in the
+  session) escapes with a backslash as MySQL does: the driver reads the
+  setting from the connection (`eZPostgreSQLDB::standardConformingStrings()`,
+  which costs no statement, the server reports every change), and double
+  quotes then make a statement not cacheable;
 - statements whose result is not a function of their tables: `NOW()`,
   `UNIX_TIMESTAMP()` with no argument, `CURRENT_DATE` and friends, `RAND()`,
   `UUID()`, `LAST_INSERT_ID()`, `FOUND_ROWS()`, Oracle's `SAMPLE (n)`, locks (`FOR UPDATE`,
   `LOCK IN SHARE MODE`, `GET_LOCK()`), variables (`@x`, `@@x`), `SQL_NO_CACHE`,
-  `INTO OUTFILE`;
+  `INTO OUTFILE`; PostgreSQL's `clock_timestamp()`, `statement_timestamp()`,
+  `transaction_timestamp()`, `timeofday()`, `txid_current()`, `setval()`,
+  `gen_random_uuid()`, `current_setting()`, every `pg_*()` function (advisory
+  locks, `pg_sleep()` ...), `FOR NO KEY UPDATE`, `FOR KEY SHARE`; SQLite's
+  `changes()`, `total_changes()`, `last_insert_rowid()`, `randomblob()`,
+  `date()`, `time()`, `datetime()`, `julianday()` and `unixepoch()` without an
+  argument; and the literal `'now'` (also `'today'`, `'tomorrow'`,
+  `'yesterday'`, `'localtime'`), which PostgreSQL's casts and SQLite's date
+  functions read as the clock;
 - reads of temporary tables: those `CREATE TEMPORARY TABLE` made in this
   process, and those named like `eZDBInterface::generateUniqueTempTableName()`
   names them (`ezsearch_tmp_12`, `ezproductcoll_tmp_972`, `eznode_count_3`).
@@ -327,10 +380,20 @@ cannot be read from the text marks **everything** stale (a generation bump),
 which is always safe. Inside a transaction the tables are collected and
 marked at the outermost `COMMIT`; on `ROLLBACK` they are dropped.
 
+The forms of PostgreSQL and SQLite (QC-44): `INSERT OR REPLACE`/`OR IGNORE`,
+`INSERT ... ON CONFLICT`, `UPDATE ONLY a` and `DELETE FROM ONLY a` (the table
+after `ONLY`), `TRUNCATE a, b` and `DROP TABLE a, b` (every table of the list),
+`ALTER TABLE ONLY a`, and `ALTER TABLE a RENAME TO b` (both names).
+`TRUNCATE ... CASCADE` and `DROP ... CASCADE` reach tables and views the text
+does not name, so they make everything stale; so do a `WITH ... INSERT`,
+`COPY` and an unnamed `CREATE INDEX ON a`. A name in a write's table list that
+cannot be read (a quoted name with a space, a subquery) makes the whole write
+unreadable: before, it was left out, and its table never became stale.
+
 ### Keys
 
-`xxh128` (where PHP has it; `md5` otherwise) of the driver class, database name, server, the statement text and
-`arrayQuery()`'s parameters (offset, limit, column). In APCu the entries are
+`xxh128` (where PHP has it; `md5` otherwise) of the driver class, database name, server, port, socket, database
+user, the Oracle session settings, the statement text and `arrayQuery()`'s parameters (offset, limit, column). In APCu the entries are
 `ezqc:<key>`, with `MaxAge` as their TTL, so APCu can evict them under memory
 pressure. The counters are `ezqcstat:*` (in APCu only: with the file storage
 and no APCu there are no counters). As files, the entries are
@@ -365,6 +428,9 @@ The **Database queries** box shows, for the server answering the page:
   their size on disk and their directory;
 - the generation, when the cache was last cleared, and how many tables the
   state file tracks;
+- in red, when a write could not take the state lock, the time of the last
+  failure and the lock file to check (from the state file, so any process's
+  failure shows; **Clear the query cache** removes the notice);
 - this server's counters since they were last reset: requests, hits, misses,
   hit rate, statements that could not be cached, writes;
 - the tables written most recently, and how long ago;
@@ -410,6 +476,7 @@ The report itself reads no state and sets no point.
 | Writes | writes the cache saw (each makes the tables it names stale) |
 | Database time saved (estimated) | the sum, over the hits, of the time each statement took the database with fetching its rows when it was stored; an upper estimate. Entries stored before this was recorded add "+ n hits on entries without a duration". Then its share of the page: `186 ms = 186 % of the page so far (100 ms; without the cache about 286 ms, 3 times as long)`; the factor only from 100 % on, where a share alone reads like a part of the page. The chip of the Exp Debug bar gives the same share, `QC 83 % · -186 ms (186 %)`, and the same sentence in its title |
 | Made everything stale | up to 20 writes whose tables cannot be read (a PL/SQL block, `CALL`, an `ALTER SESSION` that is not a [session setting](#session-settings-oracle-alter-session) ...), then "... and n more" |
+| State lock | only when a write of this request could not take `state.lock`: "could not be taken", with what to check. Every write of the request then made every cached result stale, and the Exp Debug bar's chip turns red |
 
 The report counts what happened since it started: from the first statement of the request with the debug output on,
 or again from the first statement after `eZDebug::reset()`. Its counters are its own, so Setup > System information
@@ -443,7 +510,7 @@ on, the cost is that of the accumulators.
 
 In the **Exp Debug bar** the same figures are a chip in the pinned bar (hit rate and saved time, the saved time also in
 percent of the page's time: `QC 83 % · -186 ms (186 %)` on a page of 100 ms means about 286 ms without the cache; amber below 50 %,
-red below 10 % or in `shared` mode without a storage, `debugbar.ini Thresholds[querycache_hit_rate]`) and the report stands at the top of the SQL tab, next
+red below 10 %, in `shared` mode without a storage or when a write could not take the state lock, `debugbar.ini Thresholds[querycache_hit_rate]`) and the report stands at the top of the SQL tab, next
 to the database's accumulators. The **Cache tab** (setup/managecache) shows what this server holds: entries and
 memory in APCu (or the result files and their size on disk; files count no hits), the counters since the last reset, the state, the cached results grouped by the tables they read
 (entries, rows, size, hits as counted by APCu) and the largest entries, with buttons to clear the query cache and to
@@ -506,6 +573,7 @@ the mode is off.
 | APCu memory full, other caches evicted | Keep `ApcuReserve` above 0, lower `MaxRows` or `MaxAge`, or raise `apc.shm_size`. Setup > System information shows what the query cache holds. |
 | "results not kept in APCu" in the box or the Cache tab | APCu had no more than `ApcuReserve` percent free. Raise `apc.shm_size`, or find the other users of APCu (Setup > System information, PHP section). |
 | `state.ser` not writable (warnings in the log) | `var/<site>/cache/querycache/` must be writable by every user the site runs as. Files written by root are handed to the directory's owner. |
+| "Writes could not take the state lock" in the box, `could not lock ... state.lock` in the log, a red QC chip in the Exp Debug bar | `state.lock` cannot be opened or locked: every write makes every cached result stale, so the cache gives almost nothing. Make `var/<site>/cache/querycache/state.lock` writable by every user the site runs as (FPM, Velocity, cron); on NFS, mount with NFSv4 or run `lockd`. Then clear the query cache: the notice goes and stays away while the lock works. |
 | A result looks wrong and you suspect the cache | Set `Mode=off` and compare. If the output is the same, it is not the cache. |
 
 ### Tests
@@ -559,10 +627,15 @@ so the tests never touch the site's cache.
 | QC-40 | A write that cannot take the state lock makes everything stale and logs it |
 | QC-41 | The memo keeps at most `MEMO_MAX` results, the least recently used goes first |
 | QC-42 | The key carries the database user, port and socket: another user's rows are not answered |
+| QC-43 | PostgreSQL and SQLite reads: a backslash does not escape (`standard_conforming_strings` off: it does, read from the connection), quoted names with an apostrophe and unterminated literals are not cached, `E''` and dollar quoting are not, `$1` and `#` stay readable, their volatile functions and `'now'` |
+| QC-44 | PostgreSQL and SQLite writes: `ONLY`, `TRUNCATE` and `DROP TABLE` lists, `RENAME TO`, `INSERT OR REPLACE`, `ON CONFLICT`; `CASCADE`, `WITH`, `COPY` and a name that cannot be read make everything stale |
+| QC-45 | A lock taken on a `state.lock` that was deleted meanwhile is given up and taken on the new file (a second process, `pcntl_fork()`; skipped without pcntl) |
+| QC-46 | A persistent worker starts every request from the state on disk: another process's write counts at once, results kept under a replaced state file are not answered (also those stored in the second the request still held it), the memo is empty, a lock failure is logged once per request |
+| QC-47 | A lock failure shows in Setup > System information (`status()` `lock_failed`, from the state file) and in the debug output; a later locked write keeps it, a clear forgets it |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (41 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-28 and QC-34 wait)
+# OK (47 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1, QC-45 pcntl), about 8 s (QC-08, QC-12, QC-28, QC-34 and QC-45 wait)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation

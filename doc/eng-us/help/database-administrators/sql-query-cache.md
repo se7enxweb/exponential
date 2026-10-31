@@ -43,9 +43,15 @@ MariaDB, PostgreSQL, SQLite and Oracle drivers; the MongoDB driver does not use 
 ## What is never cached
 
 - reads inside a transaction;
-- statements whose tables cannot be read from the text (subqueries in `FROM`, anything that is not a plain `SELECT`);
+- statements whose tables cannot all be read from the text: a subquery, hint or `PARTITION` in `FROM`, a parenthesised
+  join, a comment, a quote left unpaired or inside a quoted name, Oracle's `q''` and PostgreSQL's `E''` and dollar-quoted
+  strings, anything that is not a plain `SELECT`. Each `SELECT` of `UNION`, `MINUS`, `INTERSECT` and `EXCEPT` is read.
+  Where a backslash escapes depends on the driver: in MySQL's literals it does, in PostgreSQL's (with
+  `standard_conforming_strings` on, the default; the driver reads the setting from the connection), SQLite's and
+  Oracle's it does not;
 - statements whose result is not a function of their tables: `NOW()`, `RAND()`, `UUID()`, `LAST_INSERT_ID()`,
-  locks (`FOR UPDATE`), variables, `SQL_NO_CACHE`;
+  locks (`FOR UPDATE`), variables, `SQL_NO_CACHE`; PostgreSQL's `clock_timestamp()`, `txid_current()`, `pg_*()`
+  functions and `FOR NO KEY UPDATE`; SQLite's `changes()`, `last_insert_rowid()` and `datetime('now')`;
 - reads of temporary tables;
 - results with more than `MaxRows` rows, and reads of `ExcludeTables`.
 
@@ -57,6 +63,11 @@ On Oracle also statements that read a sequence, the clock, `SYS_GUID`, `SYS_CONT
 mark the tables they name as written. A write whose tables cannot be read marks everything stale. Inside a
 transaction the tables are marked at the outermost `COMMIT`; on `ROLLBACK` nothing is marked. Other processes
 (scripts, the admin host, Velocity) see the change through a shared state file in `var/<site>/cache/querycache/`.
+The file is written under a lock on `state.lock`, which must be writable by every user the site runs as (FPM,
+Velocity, cron); on NFS it needs NFSv4 or `lockd`. A write that cannot take the lock makes every result stale, and
+**Setup > System information** says so in red. PostgreSQL's `TRUNCATE ... CASCADE` and `DROP ... CASCADE` reach tables
+the statement does not name, so they make everything stale too. Deleting the cache directory is safe: results kept
+under the state file that was deleted are never answered again.
 
 ## Writes outside Exponential
 
@@ -92,6 +103,7 @@ To switch it off, set `Mode=off` and do the same; nothing needs deleting. The bu
 | Many files in `entries/` | the `cache_cleanup` part does not run |
 | APCu full, other caches evicted | keep `ApcuReserve` above 0, lower `MaxRows` or `MaxAge`, or raise `apc.shm_size` |
 | `state.ser` not writable | `var/<site>/cache/querycache/` must be writable by every user the site runs as |
+| "Writes could not take the state lock" in System information | make `state.lock` writable for every user the site runs as (on NFS: NFSv4 or `lockd`), then clear the query cache |
 
 When in doubt, set `Mode=off` and compare.
 

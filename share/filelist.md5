@@ -3337,7 +3337,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-47ac8387b50e7f245132d38d1d8076e8  doc/changelogs/6.0/6.0.15.md
+0cfbbb142abb5d9902244c6d5b62b75c  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3553,7 +3553,7 @@ fe76752d44638f44f345857617e38f5f  doc/eng-us/bc/6.0/php8.md
 0785742cb6ad30c25657d8d3a4363ac9  doc/eng-us/bc/6.0/role-policy-paging.md
 981cb46d02cc504b4d483962e3e5f0ed  doc/eng-us/bc/6.0/shop-basket-view-name.md
 1bb2ec9b10e67e5c692f4140f388681a  doc/eng-us/bc/6.0/soap-entry-script-index-soap.md
-a05a1c5c301a05bb33b299fec3a6a110  doc/eng-us/bc/6.0/sql-query-cache.md
+1b035a77f2a56fa9b0225c8aca76b934  doc/eng-us/bc/6.0/sql-query-cache.md
 fb85be121ac1186257310cd979fc3c1e  doc/eng-us/bc/6.0/sqlite-transactions.md
 04e2b3effc91ccae524c980b807607a9  doc/eng-us/bc/6.0/static-cache-defaults.md
 7889f36fad4374eb4863c2f13552e5f1  doc/eng-us/bc/6.0/subitems-table-options.md
@@ -8014,7 +8014,7 @@ ccd5557016146ae4118f8c2442904820  doc/eng-us/help/database-administrators/schema
 3d8518c7ae3af58fc3434a3a62d46802  doc/eng-us/help/database-administrators/search-index-tables.md
 dd859924cccf87cceedaed1607653e7f  doc/eng-us/help/database-administrators/securing-the-database.md
 a9782757cabcd3b1878af7af23cd5eee  doc/eng-us/help/database-administrators/sessions-in-the-database.md
-dda60ef224226a76a45e340e8f2675dd  doc/eng-us/help/database-administrators/sql-query-cache.md
+c61bf834423e847c20f0dcae2fa2c0fa  doc/eng-us/help/database-administrators/sql-query-cache.md
 4a145ff8b3854e56e3c2ad6e9dccf4a7  doc/eng-us/help/database-administrators/sqlite-files-ownership-and-permissions.md
 7df30163dce387c09608d8f8f36eb24f  doc/eng-us/help/database-administrators/sqlite-for-database-administrators.md
 2b2f3aac251b7d211500ce6dcb6275b9  doc/eng-us/help/database-administrators/sqlite-maintenance.md
@@ -13035,7 +13035,7 @@ a9e1197830ad95e753f4c6f1c38cf693  doc/ger-de/bc/6.0/reparatur.md
 d1cf560d1b942596beff989679e73cdc  doc/ger-de/bc/6.0/seitenweise-anzeige-von-rollen-und-richtlinien.md
 b8c6635746a56bda4315d93d3df53edf  doc/ger-de/bc/6.0/sicherheit-von-content-view-full.md
 f16c71aee0885dfb239e5224c8791a7f  doc/ger-de/bc/6.0/soap-einstiegsskript-index-soap.md
-55d3efaab66248dc5839d5e6bce188ad  doc/ger-de/bc/6.0/sql-abfrage-cache.md
+b6f5671a6d8c8c99ad7a188252af1387  doc/ger-de/bc/6.0/sql-abfrage-cache.md
 18a8a897af6e9f4e71e174f2b2423e5d  doc/ger-de/bc/6.0/sqlite-transaktionen.md
 ed99f303639d301e1bf5ddb4e8c4facc  doc/ger-de/bc/6.0/standardwerte-des-statischen-caches.md
 4d00c3e39c2236e5bb40312a2a0d2a12  doc/ger-de/bc/6.0/svg-bilder.md
@@ -16989,7 +16989,7 @@ d1c4a87118b654490aa13a108ac70d95  doc/ger-de/hilfe/datenbankadministratoren/post
 d556500c2e0ac37a2e76b747dc93ed78  doc/ger-de/hilfe/datenbankadministratoren/schemawerkzeuge-dump-insert-diff.md
 a6e1c9c607e1378bca67350d58dd466d  doc/ger-de/hilfe/datenbankadministratoren/sessions-in-der-datenbank.md
 8f05978a59c64041c27a54fd76b4bbd5  doc/ger-de/hilfe/datenbankadministratoren/sicherungen-je-engine.md
-cc4171157afcadc2e7f8d06f26ec760c  doc/ger-de/hilfe/datenbankadministratoren/sql-abfrage-cache.md
+11dd4cb96cbe830affe7b3ceb38f2261  doc/ger-de/hilfe/datenbankadministratoren/sql-abfrage-cache.md
 6f471132c12bbc001a088b2d3f2cac85  doc/ger-de/hilfe/datenbankadministratoren/sqlite-dateien-eigentuemer-und-rechte.md
 3786e378aafcb121b07694f6b86e0ef8  doc/ger-de/hilfe/datenbankadministratoren/sqlite-fuer-datenbankadministratoren.md
 8ebe3aa5ed810ed97f227778a32e2d1b  doc/ger-de/hilfe/datenbankadministratoren/sqlite-schreibwarteschlange-und-sperren.md
