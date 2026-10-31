@@ -80497,6 +80497,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Aucune clé d'API avec une portée GraphQL pour l'instant.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>L'API GraphQL est désactivée dans le siteaccess %siteaccess, qui affiche cette page ; le tableau ci-dessous indique où elle répond.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Pour le siteaccess %siteaccess, qui affiche cette page.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

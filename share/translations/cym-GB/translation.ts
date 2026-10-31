@@ -79057,6 +79057,14 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Dim allwedd API gyda chwmpas GraphQL eto.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Mae'r API GraphQL wedi'i ddiffodd yn y mynediad i'r wefan %siteaccess, sy'n dangos y dudalen hon; mae'r tabl isod yn dangos ble mae'n ateb.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ar gyfer y mynediad i'r wefan %siteaccess, sy'n dangos y dudalen hon.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -79057,6 +79057,14 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Entek GraphQL gerimli API açary ýok.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API bu sahypany görkezýän %siteaccess saýta giriş nokadynda öçürilen; aşakdaky tablisa onuň nirede jogap berýändigini görkezýär.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Bu sahypany görkezýän %siteaccess saýta giriş nokady üçin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

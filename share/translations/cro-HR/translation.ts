@@ -80110,6 +80110,14 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Još nema API ključa s GraphQL opsegom.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API isključen je u pristupu web-mjestu %siteaccess, koji prikazuje ovu stranicu; tablica ispod pokazuje gdje odgovara.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Za pristup web-mjestu %siteaccess, koji prikazuje ovu stranicu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

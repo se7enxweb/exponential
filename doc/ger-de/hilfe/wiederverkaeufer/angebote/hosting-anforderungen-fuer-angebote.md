@@ -25,7 +25,7 @@ Anforderungen erfüllt. Die vollständige Referenz ist [Anforderungen auf einen 
 
 | Bedarf | Minimum | Empfohlen | Geprüft durch |
 |---|---|---|---|
-| PHP | 8.0 unterstützt (7.4 ohne Support nutzbar; 8.1 für Layouts) | Das neueste 8.x, das das System anbietet; 8.5 ist das neueste getestete | `composer.json` und den Setup-Assistenten (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
+| PHP | 8.0 unterstützt, einschließlich Layouts (7.4 ohne Support nutzbar) | Das neueste 8.x, das das System anbietet; 8.5 ist das neueste getestete | `composer.json` und den Setup-Assistenten (`settings/setup.ini`, `[phpversion] MinimumVersion=7.4.0`) |
 | PHP-Erweiterungen | `dom`, `libxml`, `simplexml`, `xsl`, `mbstring`, `iconv`, `intl`, `zlib`, eine Datenbankerweiterung, `gd` oder ImageMagick | Dazu `curl`, `gd`, `openssl`, `pcntl`, `opcache` | Composer und die kritischen Tests des Setup-Assistenten |
 | `php.ini` | `memory_limit` 64M, `max_execution_time` 30, `date.timezone` gesetzt, `file_uploads` an, `allow_url_fopen` an | Mehr Speicher für Importe und Bildbearbeitung | Die kritischen Tests des Setup-Assistenten |
 | Composer | 2.x | Ein aktuelles 2.x | Sie |

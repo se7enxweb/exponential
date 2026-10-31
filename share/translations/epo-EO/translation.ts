@@ -79057,6 +79057,14 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ankoraŭ neniu API-ŝlosilo kun GraphQL-amplekso.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>La GraphQL-API estas malŝaltita en la retejaliro %siteaccess, kiu montras ĉi tiun paĝon; la suba tabelo montras, kie ĝi respondas.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Por la retejaliro %siteaccess, kiu montras ĉi tiun paĝon.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

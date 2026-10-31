@@ -79087,6 +79087,14 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ende asnjë çelës API me fushëveprim GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API është i çaktivizuar në qasjen në sajt %siteaccess, që shfaq këtë faqe; tabela më poshtë tregon ku përgjigjet.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Për qasjen në sajt %siteaccess, që shfaq këtë faqe.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

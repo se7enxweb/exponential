@@ -79087,6 +79087,14 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Encara no hi ha cap clau d'API amb un abast de GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>L'API GraphQL està desactivada a l'accés al lloc %siteaccess, que mostra aquesta pàgina; la taula de sota mostra on respon.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Per a l'accés al lloc %siteaccess, que mostra aquesta pàgina.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

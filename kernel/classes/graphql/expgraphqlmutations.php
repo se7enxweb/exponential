@@ -1,7 +1,7 @@
 <?php
 /**
- * The mutations of the GraphQL API (doc/eng-us/features/6.0/graphql.md, "Mutations"): opt-in per siteaccess
- * (graphql.ini [GraphQLSettings] MutationsEnabled, off by default), and then
+ * The mutations of the GraphQL API (doc/eng-us/features/6.0/graphql.md, "Mutations"): on together with the end point
+ * (graphql.ini [GraphQLSettings] MutationsEnabled, enabled by default; disabled per siteaccess for a read-only API):
  *
  *   createContent(parentId, classIdentifier, fields, language, remoteId, publish)
  *   updateContent(id, fields, language, publish)          a new version, published or left a draft
@@ -50,7 +50,7 @@ class expGraphQLMutations
      */
     public static function enabled()
     {
-        return expGraphQL::setting( 'MutationsEnabled', 'disabled' ) === 'enabled';
+        return expGraphQL::setting( 'MutationsEnabled', 'enabled' ) === 'enabled';
     }
 
     /**

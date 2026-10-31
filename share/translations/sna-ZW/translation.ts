@@ -79057,6 +79057,14 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Hapana kiyi yeAPI ine chikamu chemvumo cheGraphQL parizvino.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API yakadzimwa munzira yekupinda pasaiti %siteaccess, inoratidza peji rino; tafura iri pazasi inoratidza painopindura.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Kunzira yekupinda pasaiti %siteaccess, inoratidza peji rino.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

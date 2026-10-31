@@ -462,21 +462,22 @@ ImageAliasList[]=large
 ## MutationsEnabled
 
 > Mutations (createContent, updateContent, translateContent, publishDraft, deleteContent, moveContent, hideContent,  
-> revealContent, addLocation, uploadImage, uploadFromUrl, createPreviewToken): enabled or disabled (the default).  
-> Disabled: the schema has no type Mutation and a mutation is refused with DISABLED. Enabled: each mutation checks  
-> the policies of the user on the content it changes, runs the kernel's operations (the workflows of content/publish,  
-> content/move ... included), is recorded in the audit (content.graphql.mutation) and expires the response cache.  
-> A mutation is sent with POST only; with a personal API key it needs the scope graphql:write; with the session of  
-> the web interface it needs the form token (header X-CSRF-Token). Switch it on per siteaccess, for the siteaccess  
-> a front end writes through.  
+> revealContent, addLocation, uploadImage, uploadFromUrl, createPreviewToken): enabled (the default) or disabled.  
+> They come on together with the end point (Enabled above). Enabled: each mutation checks the policies of the user on  
+> the content it changes, runs the kernel's operations (the workflows of content/publish, content/move ... included),  
+> is recorded in the audit (content.graphql.mutation) and expires the response cache. A mutation is sent with POST  
+> only, by a signed-in user (AnonymousMutations below); with a personal API key it needs the scope graphql:write; with  
+> the session of the web interface it needs the form token (header X-CSRF-Token). Disabled: the schema has no type  
+> Mutation and a mutation is refused with DISABLED. For a read-only API, disable it per siteaccess  
+> (./console exp:graphql:disable --siteaccess=<name> --mutations).  
 
-Default: `disabled`.
+Default: `enabled`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
-MutationsEnabled=disabled
+MutationsEnabled=enabled
 */ ?>
 ```
 

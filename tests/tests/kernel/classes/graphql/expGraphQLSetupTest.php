@@ -69,7 +69,8 @@ class expGraphQLSetupTest extends PHPUnit\Framework\TestCase
         $states = array();
         foreach ( expGraphQLSetup::siteAccessStates() as $state )
             $states[$state['name']] = array( $state['enabled'], $state['mutations'] );
-        $this->assertSame( array( 'eng' => array( true, true ), 'admin' => array( false, false ), 'plain' => array( false, false ) ), $states );
+        $this->assertSame( array( 'eng' => array( true, true ), 'admin' => array( false, true ), 'plain' => array( false, true ) ), $states,
+                           'the mutations are on by default; the API answers only in eng' );
 
         // a second run changes nothing
         $again = expGraphQLSetup::apply( expGraphQLSetup::enableChanges( array( 'eng' ), array( 'https://shop.example.com' ), true ), false );
@@ -82,7 +83,7 @@ class expGraphQLSetupTest extends PHPUnit\Framework\TestCase
         $done = expGraphQLSetup::apply( expGraphQLSetup::enableChanges( array(), array(), false ), false );
         $this->assertSame( 1, $done['written'] );
         foreach ( expGraphQLSetup::siteAccessStates() as $state )
-            $this->assertSame( array( true, false ), array( $state['enabled'], $state['mutations'] ), $state['name'] );
+            $this->assertSame( array( true, true ), array( $state['enabled'], $state['mutations'] ), $state['name'] . ': the mutations come on with the API' );
 
         // answering everywhere already: a siteaccess named is not added to SiteAccessList[] (that would switch the others off)
         $changes = expGraphQLSetup::enableChanges( array( 'admin' ), array(), false );
@@ -113,6 +114,22 @@ class expGraphQLSetupTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( true, true, true ), array_column( expGraphQLSetup::siteAccessStates(), 'enabled' ) );
         expGraphQLSetup::apply( expGraphQLSetup::disableChanges( array(), false ), false );
         $this->assertSame( array( false, false, false ), array_column( expGraphQLSetup::siteAccessStates(), 'enabled' ) );
+    }
+
+    public function testMutationsAreOnByDefault()
+    {
+        // the shipped graphql.ini: on in every siteaccess, with nothing written
+        $this->assertSame( array( true, true, true ), array_column( expGraphQLSetup::siteAccessStates(), 'mutations' ) );
+        // no MutationsEnabled in any file: the code's fallback is on as well
+        $shipped = (string)file_get_contents( $this->root . 'settings/graphql.ini' );
+        $this->assertMatchesRegularExpression( '/^MutationsEnabled=enabled$/m', $shipped );
+        file_put_contents( $this->root . 'settings/graphql.ini', preg_replace( '/^MutationsEnabled=.*$/m', '', $shipped ) );
+        $this->assertSame( array( true, true, true ), array_column( expGraphQLSetup::siteAccessStates(), 'mutations' ) );
+        // switched off where a read-only API is wanted, and on again
+        expGraphQLSetup::apply( expGraphQLSetup::disableChanges( array( 'plain' ), true ), false );
+        $this->assertSame( array( 'eng' => true, 'admin' => true, 'plain' => false ), array_column( expGraphQLSetup::siteAccessStates(), 'mutations', 'name' ) );
+        expGraphQLSetup::apply( expGraphQLSetup::enableChanges( array( 'plain' ), array(), true ), false );
+        $this->assertSame( array( true, true, true ), array_column( expGraphQLSetup::siteAccessStates(), 'mutations' ) );
     }
 
     public function testAnUnknownSiteAccessIsAnError()

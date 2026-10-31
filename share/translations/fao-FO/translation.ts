@@ -79057,6 +79057,14 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Eingin API-lykil við GraphQL-øki enn.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL-API'ið er sløkt í atgongdini til vevstað %siteaccess, sum vísir hesa síðuna; talvan niðanfyri vísir, hvar tað svarar.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Fyri atgongdina til vevstað %siteaccess, sum vísir hesa síðuna.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

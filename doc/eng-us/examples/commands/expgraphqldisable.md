@@ -26,7 +26,8 @@ Switch the GraphQL API off
 Sets graphql.ini [GraphQLSettings] Enabled=disabled in settings/override (every siteaccess), or takes
 the siteaccesses of --siteaccess out of SiteAccessList[] there (settings/override wins over the files
 of a siteaccess; a list that would become empty switches the API off). With --mutations only the
-mutations are switched off (MutationsEnabled=disabled) and the queries keep answering. /api/graphql
+mutations are switched off (MutationsEnabled=disabled; enabled is the default, together with the
+API) and the queries keep answering: a read-only API. /api/graphql
 then answers 404 (DISABLED); the persisted queries, the keys and the cache stay.
 Shows the changes as a diff and writes nothing without --apply.
 
@@ -42,7 +43,7 @@ Exit code: 0 done (or shown); 1 a file could not be written; 2 wrong options (an
 | Option | Value | Help |
 |---|---|---|
 | `--siteaccess` | required | only these siteaccesses, comma separated (default: every siteaccess) |
-| `--mutations` |  | switch only the mutations off |
+| `--mutations` |  | switch only the mutations off (they are on by default): a read-only API |
 | `--apply` |  | write; without it nothing is changed |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).

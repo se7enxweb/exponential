@@ -79087,6 +79087,14 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Nicio cheie API cu domeniu GraphQL încă.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>API-ul GraphQL este dezactivat în accesul la site %siteaccess, care afișează această pagină; tabelul de mai jos arată unde răspunde.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Pentru accesul la site %siteaccess, care afișează această pagină.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

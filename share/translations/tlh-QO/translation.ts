@@ -79090,6 +79090,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>GraphQL chaw' veH ghajbogh API ngaQHa'moHwI' tu'lu'be' DaH.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>nav vam 'aghbogh yoS lojmIt %siteaccess Daq GraphQL API chu'Ha'lu'; bIngDaq ghItlh 'agh jangmeH Daq.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>nav vam 'aghbogh yoS lojmIt %siteaccess vaD.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

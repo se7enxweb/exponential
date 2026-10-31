@@ -79087,6 +79087,14 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Zatiaľ žiadny kľúč API s rozsahom GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API je vypnuté v prístupe k lokalite %siteaccess, ktorý zobrazuje túto stránku; tabuľka nižšie ukazuje, kde odpovedá.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Pre prístup k lokalite %siteaccess, ktorý zobrazuje túto stránku.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

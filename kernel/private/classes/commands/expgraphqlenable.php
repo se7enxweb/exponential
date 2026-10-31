@@ -24,12 +24,13 @@ class Expgraphqlenable extends \Exponential\Runnable\Command
     {
         $this->script( array( 'description' => "Switch the GraphQL API on\n" .
                                                "Sets graphql.ini [GraphQLSettings] Enabled=enabled in settings/override, adds the siteaccesses of\n" .
-                                               "--siteaccess to SiteAccessList[] (without it the API answers in every siteaccess), switches the\n" .
-                                               "mutations on with --mutations, lets a front end's origin call it with --origin (rest.ini\n" .
-                                               "[CorsSettings]), makes a personal API key for a user with --key-for (the token is shown once), checks\n" .
-                                               "that the schema builds, and prints the end point, a curl example and the playground. Shows the\n" .
-                                               "changes as a diff and writes nothing without --apply; with --apply each file is backed up first and\n" .
-                                               "the INI caches are cleared.\n" .
+                                               "--siteaccess to SiteAccessList[] (without it the API answers in every siteaccess); the mutations\n" .
+                                               "come on with it (MutationsEnabled=enabled, the default), and --mutations writes that too, where\n" .
+                                               "exp:graphql:disable --mutations switched them off. Lets a front end's origin call it with\n" .
+                                               "--origin (rest.ini [CorsSettings]), makes a personal API key for a user with --key-for (the token\n" .
+                                               "is shown once), checks that the schema builds, and prints the end point, a curl example and the\n" .
+                                               "playground. Shows the changes as a diff and writes nothing without --apply; with --apply each file\n" .
+                                               "is backed up first and the INI caches are cleared.\n" .
                                                "\n" .
                                                "./console exp:graphql:enable                                        what would change\n" .
                                                "./console exp:graphql:enable --siteaccess=site --apply\n" .
@@ -44,7 +45,7 @@ class Expgraphqlenable extends \Exponential\Runnable\Command
         $options = $this->startup( '[siteaccess:][origin:][mutations][key-for:][key-name:][scope:][days:][apply]', '',
                                    array( 'siteaccess' => 'the siteaccesses it answers in, comma separated (default: every siteaccess)',
                                           'origin' => 'the origin of a front end allowed to call it from a browser (CORS), comma separated',
-                                          'mutations' => 'switch the mutations on too (in the siteaccesses of --siteaccess)',
+                                          'mutations' => 'switch the mutations on again (in the siteaccesses of --siteaccess); they are on by default',
                                           'key-for' => 'make a personal API key for this user (a login)',
                                           'key-name' => 'the name of the key (default: GraphQL front end)',
                                           'scope' => 'the scopes of the key: graphql:read (the default), graphql:write (the default with --mutations)',

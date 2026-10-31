@@ -79087,6 +79087,14 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Még nincs GraphQL-hatókörű API-kulcs.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>A GraphQL API ki van kapcsolva az ezt az oldalt megjelenítő webhely-hozzáférésben (%siteaccess); az alábbi táblázat mutatja, hol válaszol.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Az ezt az oldalt megjelenítő webhely-hozzáféréshez: %siteaccess.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

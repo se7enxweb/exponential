@@ -86027,6 +86027,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Noch kein API-Schlüssel mit einem GraphQL-Bereich.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Die GraphQL-API ist im Siteaccess %siteaccess, der diese Seite zeigt, ausgeschaltet; die Tabelle unten zeigt, wo sie antwortet.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Für den Siteaccess %siteaccess, der diese Seite zeigt.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

@@ -4,8 +4,8 @@
         "de": "Schaltet die GraphQL-API oder nur ihre Mutationen für jeden Siteaccess oder für einige aus; ein Probelauf ohne --apply"
     },
     "command:expgraphqldisable --mutations": {
-        "en": "switch only the mutations off",
-        "de": "nur die Mutationen ausschalten"
+        "en": "switch only the mutations off (they are on by default): a read-only API",
+        "de": "nur die Mutationen ausschalten (sie sind standardmäßig eingeschaltet): eine API, die nur liest"
     },
     "command:expgraphqldisable --siteaccess": {
         "en": "only these siteaccesses, comma separated (default: every siteaccess)",
@@ -28,8 +28,8 @@
         "de": "der Name des Schlüssels (Standard: GraphQL front end)"
     },
     "command:expgraphqlenable --mutations": {
-        "en": "switch the mutations on too (in the siteaccesses of --siteaccess)",
-        "de": "auch die Mutationen einschalten (in den Siteaccesses aus --siteaccess)"
+        "en": "switch the mutations on again (in the siteaccesses of --siteaccess); they are on by default",
+        "de": "die Mutationen wieder einschalten (in den Siteaccesses aus --siteaccess); sie sind standardmäßig eingeschaltet"
     },
     "command:expgraphqlenable --origin": {
         "en": "the origin of a front end allowed to call it from a browser (CORS), comma separated",

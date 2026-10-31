@@ -25,7 +25,8 @@ class Expgraphqldisable extends \Exponential\Runnable\Command
                                                "Sets graphql.ini [GraphQLSettings] Enabled=disabled in settings/override (every siteaccess), or takes\n" .
                                                "the siteaccesses of --siteaccess out of SiteAccessList[] there (settings/override wins over the files\n" .
                                                "of a siteaccess; a list that would become empty switches the API off). With --mutations only the\n" .
-                                               "mutations are switched off (MutationsEnabled=disabled) and the queries keep answering. /api/graphql\n" .
+                                               "mutations are switched off (MutationsEnabled=disabled; enabled is the default, together with the\n" .
+                                               "API) and the queries keep answering: a read-only API. /api/graphql\n" .
                                                "then answers 404 (DISABLED); the persisted queries, the keys and the cache stay.\n" .
                                                "Shows the changes as a diff and writes nothing without --apply.\n" .
                                                "\n" .
@@ -39,7 +40,7 @@ class Expgraphqldisable extends \Exponential\Runnable\Command
                               'use-extensions' => true ) );
         $options = $this->startup( '[siteaccess:][mutations][apply]', '',
                                    array( 'siteaccess' => 'only these siteaccesses, comma separated (default: every siteaccess)',
-                                          'mutations' => 'switch only the mutations off',
+                                          'mutations' => 'switch only the mutations off (they are on by default): a read-only API',
                                           'apply' => 'write; without it nothing is changed' ) );
         $apply = !empty( $options['apply'] );
         $siteAccesses = Expgraphqlenable::listOption( $options, 'siteaccess' );

@@ -79057,6 +79057,14 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Encara cap de clau d'API amb un abast GraphQL.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>L'API GraphQL es desactivada dins l'accès al site %siteaccess, que mòstra aquesta pagina; la taula çai-jos mòstra ont respond.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Per l'accès al site %siteaccess, que mòstra aquesta pagina.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

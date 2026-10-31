@@ -79057,6 +79057,14 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Nta rufunguzo rwa API rufise akarere ka GraphQL ruraboneka.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API irazimije muri siteaccess %siteaccess, yerekana uru rupapuro; urutonde ruri munsi rwerekana aho yishura.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Ku bijanye na siteaccess %siteaccess, yerekana uru rupapuro.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

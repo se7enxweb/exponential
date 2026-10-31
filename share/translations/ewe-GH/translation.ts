@@ -79057,6 +79057,14 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>No API key with a GraphQL scope yet.</source>
         <translation>API safui aɖeke si si GraphQL nuteƒe le meli haɖe o.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>Wotsi GraphQL API la le nyatakakaɖoƒe ƒe mɔnu %siteaccess si ɖe axa sia fiana la me; tabla si le ete la ɖe afi si wòɖoa ŋu le fiana.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Na nyatakakaɖoƒe ƒe mɔnu %siteaccess si ɖe axa sia fiana.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

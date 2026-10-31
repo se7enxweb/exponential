@@ -79087,6 +79087,14 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Ei vielä API-avainta GraphQL-laajuudella.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API on poistettu käytöstä sivustoyhteydessä %siteaccess, joka näyttää tämän sivun; alla oleva taulukko näyttää, missä se vastaa.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>Sivustoyhteydelle %siteaccess, joka näyttää tämän sivun.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

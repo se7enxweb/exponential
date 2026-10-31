@@ -79737,6 +79737,14 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>Endnu ingen API-nøgle med et GraphQL-omfang.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL-API'et er slået fra i siteaccess %siteaccess, som viser denne side; tabellen nedenfor viser, hvor det svarer.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>For siteaccess %siteaccess, som viser denne side.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>

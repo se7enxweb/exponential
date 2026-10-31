@@ -3,7 +3,7 @@
 This guide takes an Exponential 6.0.15 site from "GraphQL switched off" to a running front end that reads its content
 through the GraphQL API: the API switched on for one siteaccess, a key for the front end, a starter project generated
 from the site's own schema, its queries stored on the server and answered from the response cache, and, if the front
-end also writes, the mutations switched on. Every step says what to run, what you should see and how to check it.
+end also writes, a key that may write (the mutations come on with the API). Every step says what to run, what you should see and how to check it.
 
 It is written for a developer with a shell on the server (for `./console`) and an administrator account. The
 reference for everything used here is [The GraphQL API](../features/6.0/graphql.md); copy-paste solutions for common
@@ -25,7 +25,7 @@ front ends are in [GraphQL recipes](graphql-recipes.md).
 6. [Generate the starter project](#6-generate-the-starter-project)
 7. [Run it](#7-run-it)
 8. [Store its queries on the server](#8-store-its-queries-on-the-server)
-9. [Writing: switch the mutations on](#9-writing-switch-the-mutations-on)
+9. [Writing: a key with graphql:write](#9-writing-a-key-with-graphqlwrite)
 10. [Before going live](#10-before-going-live)
 11. [When something does not work](#11-when-something-does-not-work)
 
@@ -188,10 +188,12 @@ content expires the cache. With `PersistedQueriesOnly=anonymous` the site then r
 anonymous requests: a good setting for production once the front end only sends stored queries. Setup > GraphQL lists
 the stored queries and the size of the cache.
 
-## 9. Writing: switch the mutations on
+## 9. Writing: a key with graphql:write
 
-Only when the front end changes content (a contact form that creates content, an editor app). Switch them on for the
-siteaccess and give the writing user a key with `graphql:write`:
+The mutations came on with the API in step 3 (`MutationsEnabled=enabled` is the default), but nothing can write yet:
+a mutation needs a signed-in user, and a key needs the scope `graphql:write`. When the front end changes content (a
+contact form that creates content, an editor app), give the writing user such a key (`--mutations` also switches the
+mutations on again, should they have been switched off for the siteaccess):
 
 ```bash
 ./console exp:graphql:enable --siteaccess=site --mutations --key-for=editor --apply
@@ -221,7 +223,8 @@ Never put a key with `graphql:write` into a browser or an app that others instal
 - [ ] The key's user reads only what the site shows; a browser or app gets no key, or one with `graphql:read` only.
 - [ ] The front end's queries are stored (`exp:graphql:persist`), and `PersistedQueriesOnly=anonymous` (or `enabled`).
 - [ ] The rate limits fit the expected traffic (`RateLimit`, `RateLimitAnonymous`; Setup > GraphQL shows them).
-- [ ] Mutations are on only where something writes, and `exp:graphql:keys` lists no key you do not know.
+- [ ] A siteaccess where nothing writes has `MutationsEnabled=disabled` (`exp:graphql:disable --siteaccess=<name>
+      --mutations --apply`), and `exp:graphql:keys` lists no key you do not know.
 - [ ] `Debug=disabled` on the production siteaccess.
 
 ## 11. When something does not work

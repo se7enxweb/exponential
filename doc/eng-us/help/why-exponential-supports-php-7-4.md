@@ -40,7 +40,7 @@ below them, not instead of anything.
 |---|---|
 | Which PHP versions? | Supported: 8.0 to 8.5. Usable without support: 7.4. `composer.json` declares `"php": "^7.4 \|\| ^8.0 \|\| ... \|\| ^8.8"`; versions after 8.5 do not exist yet and are not tested. |
 | What is usable on 7.4, without support? | The whole kernel: content, the admin and editor interfaces, templates, the REST API, SOAP, WebDAV, cronjobs, search, the setup wizard and `exp:install`, and the extensions bundled with the kernel. |
-| What needs PHP 8? | Exponential Velocity (8.0), Exponential Layouts and the media site (8.1), and a handful of extensions whose releases need 8.0. The [table](#what-works-on-php-74-and-what-needs-php-8) lists each one. |
+| What needs PHP 8? | Exponential Velocity, Exponential Layouts and the media site (8.0), and a handful of extensions whose releases need 8.0. The [table](#what-works-on-php-74-and-what-needs-php-8) lists each one. |
 | Do I have to choose packages by hand? | No. The kernel requires the metapackage `se7enxweb/exponential-php-floor`; Composer installs the version that fits your PHP and with it the right set of packages. |
 | Is PHP 7.4 safe? | PHP 7.4 has had no security fixes from the PHP project since 28 November 2022. It is safe only where your operating system vendor or host still patches it. See [How security is kept](#how-security-is-kept). |
 | What does "without support" mean? | No bug-fix or security commitment specific to PHP 7.4; a problem that occurs only on 7.4 may stay unfixed. You use it at your own risk. |
@@ -135,6 +135,7 @@ the kernel needs beyond that.
 | 1.1.0 | 8.0 | the extensions that need PHP 8.0, Velocity included, and google/recaptcha ~1.3.1 |
 | 1.2.0 | 8.1 to 8.3 | all of 1.1.0, plus Exponential Layouts, the expsite packages and the media site theme; google/recaptcha ~1.3.1 |
 | 1.3.0 | 8.4 and later | the same set with the current google/recaptcha 2.x |
+| 1.1.4 | 8.0 | all of 1.1.0 plus Exponential Layouts, the expsite packages and the media site theme, which run on PHP 8.0; 1.1.0 to 1.1.3 left them out |
 
 Composer always installs the highest version whose PHP requirement the running PHP meets. The result: the same
 `composer require se7enxweb/exponential` (or `composer create-project` of a skeleton) gives a complete, consistent

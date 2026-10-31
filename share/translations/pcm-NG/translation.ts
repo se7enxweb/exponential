@@ -79065,6 +79065,14 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>No API key with a GraphQL scope yet.</source>
         <translation>No API key wit GraphQL scope yet.</translation>
     </message>
+    <message>
+        <source>The GraphQL API is switched off in the siteaccess %siteaccess, which shows this page; the table below shows where it answers.</source>
+        <translation>GraphQL API don off for di siteaccess %siteaccess, wey dey show dis page; di table wey dey down show where e dey answer.</translation>
+    </message>
+    <message>
+        <source>For the siteaccess %siteaccess, which shows this page.</source>
+        <translation>For di siteaccess %siteaccess, wey dey show dis page.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
