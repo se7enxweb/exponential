@@ -79099,6 +79099,142 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Pre prístup k lokalite %siteaccess, ktorý zobrazuje túto stránku.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooky</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Každú udalosť, o ktorú koncový bod žiada (publish, update, trash, delete, move, hide, reveal, mutation), mu podpísanú odošle časť cronjobu graphqlwebhooks. ./console exp:graphql:webhooks robí to isté ako táto sekcia.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Udalosti</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>všetky</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Každý prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>chybný</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>bez tajomstva</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Čakajúce</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>Vzdané: %count</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Posledné doručenie</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Odoslať test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Áno, odstrániť tento webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Zatiaľ žiadny webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Pridať webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Pridať</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Nedávne doručenia</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Výsledok</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Odbery</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Živé aktualizácie pre klientov: prúd udalostí na /api/graphql/subscribe a WebSocket (graphql-transport-ws) vo Velocity. Každá udalosť ide len odberateľom, ktorí smú čítať jej obsah.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Otvorené teraz</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Najviac otvorených</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total celkovo, %user na používateľa, %address na adresu</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonymné odbery</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Dĺžka prúdu</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook sa nepodarilo pridať: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name bol zmenený; jeho podpisové tajomstvo zostáva.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Podpisové tajomstvo sa nepodarilo uložiť (Nastavenie &gt; Tajné údaje).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name bol pridaný. Jeho podpisové tajomstvo, zobrazené iba tento raz: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhook %name neexistuje.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name neodpovedal: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name odpovedal %status za %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Ak chcete webhook odstrániť, začiarknite políčko vedľa neho.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name bol odstránený.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79373,6 +79509,42 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Nie je rozsah GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Odbery posielajte na /api/graphql/subscribe (prúd udalostí alebo WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Požiadavka neuvádza žiadnu operáciu dokumentu.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Odber žiada presne jedno pole.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Otvorených je príliš veľa odberov; skúste to neskôr.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Máte otvorených %max odberov, čo je najviac povolených.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Vaša adresa má otvorených %max odberov, čo je najviac povolených.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Odbery sú v tomto prístupe k lokalite vypnuté.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Ak chcete odoberať, prihláste sa (token alebo osobný kľúč API).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Mutácie posielajte na /api/graphql.</translation>
     </message>
 </context>
 </TS>

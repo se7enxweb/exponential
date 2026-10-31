@@ -79099,6 +79099,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Για την πρόσβαση ιστότοπου %siteaccess, που εμφανίζει αυτή τη σελίδα.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Κάθε συμβάν που ζητά ένα τελικό σημείο (publish, update, trash, delete, move, hide, reveal, mutation) του αποστέλλεται, υπογεγραμμένο, από το τμήμα cronjob graphqlwebhooks. Το ./console exp:graphql:webhooks κάνει το ίδιο με αυτή την ενότητα.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Συμβάντα</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>όλα</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Κάθε πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>χαλασμένο</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>χωρίς μυστικό</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Σε αναμονή</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count εγκαταλείφθηκαν</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Τελευταία παράδοση</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Αποστολή δοκιμής</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ναι, αφαίρεση αυτού του webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Δεν υπάρχει ακόμη webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Προσθήκη webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Προσθήκη</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Πρόσφατες παραδόσεις</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ώρα</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Αποτέλεσμα</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Συνδρομές</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Ζωντανές ενημερώσεις για πελάτες: μια ροή συμβάντων στο /api/graphql/subscribe και ένα WebSocket (graphql-transport-ws) στο Velocity. Κάθε συμβάν πηγαίνει μόνο σε συνδρομητές που μπορούν να διαβάσουν το περιεχόμενό του.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Ανοιχτές τώρα</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Μέγιστες ανοιχτές</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total συνολικά, %user ανά χρήστη, %address ανά διεύθυνση</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Ανώνυμες συνδρομές</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Διάρκεια ροής</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Δεν ήταν δυνατή η προσθήκη του webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Το webhook %name άλλαξε· το μυστικό υπογραφής του παραμένει.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Δεν ήταν δυνατή η αποθήκευση του μυστικού υπογραφής (Ρυθμίσεις συστήματος &gt; Μυστικά).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Το webhook %name προστέθηκε. Το μυστικό υπογραφής του, που εμφανίζεται μόνο αυτή τη φορά: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Δεν υπάρχει webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Το webhook %name δεν απάντησε: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Το webhook %name απάντησε %status σε %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Επιλέξτε το πλαίσιο δίπλα στο webhook για να το αφαιρέσετε.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Το webhook %name αφαιρέθηκε.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79373,6 +79509,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Δεν είναι εύρος του GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Στείλτε τις συνδρομές στο /api/graphql/subscribe (μια ροή συμβάντων ή ένα WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Το αίτημα δεν ονομάζει καμία λειτουργία του εγγράφου.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Μια συνδρομή ζητά ακριβώς ένα πεδίο.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Υπάρχουν πάρα πολλές ανοιχτές συνδρομές· δοκιμάστε ξανά αργότερα.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Έχετε %max ανοιχτές συνδρομές, το μέγιστο επιτρεπτό.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Η διεύθυνσή σας έχει %max ανοιχτές συνδρομές, το μέγιστο επιτρεπτό.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Οι συνδρομές είναι απενεργοποιημένες σε αυτή την πρόσβαση ιστότοπου.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Συνδεθείτε για να εγγραφείτε (ένα διακριτικό ή ένα προσωπικό κλειδί API).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Στείλτε τις μεταλλάξεις στο /api/graphql.</translation>
     </message>
 </context>
 </TS>

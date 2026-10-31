@@ -79069,6 +79069,142 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Seensa marsariitii %siteaccess, kan fuula kana agarsiisuuf.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhookiiwwan</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Taateen qabxiin xumuraa gaafatu hundi (publish, update, trash, delete, move, hide, reveal, mutation) mallattoo waliin kutaa cronjob graphqlwebhooks'n isaaf ergama. ./console exp:graphql:webhooks waanuma kutaa kanaa hojjeta.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Taateewwan</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>hunda</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Seensa marsariitii hunda</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>cabeera</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>icciitii hin qabu</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Eegaa jira</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count dhiifame</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Ergaa dhumaa</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Qormaata ergi</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Eeyyee, webhook kana haqi</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ammaaf webhook hin jiru.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Webhook dabali</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Dabali</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Ergaawwan dhihoo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Yeroo</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Bu'aa</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Galmeewwan</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Haaromsa kallattii maamiltootaaf: yaa'a taateewwanii /api/graphql/subscribe irratti, fi WebSocket (graphql-transport-ws) Velocity irratti. Taateen tokkoon tokkoon isaa galmaa'oota qabiyyee isaa dubbisuu danda'an qofaaf darba.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Amma banaa</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Kan baay'ee banamuu danda'u</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total walumaagalatti, %user fayyadamaa tokkoof, %address teessoo tokkoof</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Galmeewwan maqaa malee</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Dheerina yaa'aa</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook dabaluun hin danda'amne: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name jijjiirameera; icciitiin mallattoo isaa ni hafa.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Icciitii mallattoo kuusuun hin danda'amne (Qopheessa &gt; Icciitiiwwan).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name dabalameera. Icciitii mallattoo isaa, yeroo kana qofa kan agarsiifamu: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Webhook %name hin jiru.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name deebii hin kennine: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name %status %ms ms keessatti deebiseera.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Webhook haquuf saanduqa cinaa isaa jiru mallatteessi.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name haqameera.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Daangaa GraphQL API miti: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Galmeewwan gara /api/graphql/subscribe ergi (yaa'a taateewwanii ykn WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Gaaffiin hojii galmee kamiyyuu hin moggaasu.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Galmeen tokko dirree tokko qofa gaafata.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Galmeewwan baay'een banaa dha; booda irra deebi'ii yaali.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Galmeewwan %max banaa qabda, kan baay'ee hayyamamu.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Teessoon kee galmeewwan %max banaa qaba, kan baay'ee hayyamamu.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Galmeewwan seensa marsariitii kana keessatti dhaamsamaniiru.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Galmaa'uuf seeni (token ykn furtuu API dhuunfaa).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Jijjiiramoota gara /api/graphql ergi.</translation>
     </message>
 </context>
 </TS>

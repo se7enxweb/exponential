@@ -79069,6 +79069,142 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Airson an inntrigidh làraich %siteaccess, a tha a' sealltainn na duilleige seo.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Dubhain-lìn</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Thèid gach tachartas a dh'iarras puing-crìche (publish, update, trash, delete, move, hide, reveal, mutation) a chur thuice, soidhnichte, leis a' phàirt cronjob graphqlwebhooks. Nì ./console exp:graphql:webhooks an aon rud ris an earrann seo.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tachartasan</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>na h-uile</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Gach inntrigeadh làraich</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>briste</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>gun dìomhair</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>A' feitheamh</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count air an leigeil seachad</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>An lìbhrigeadh mu dheireadh</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Cuir deuchainn</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Tha, thoir an dubhan-lìn seo air falbh</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Chan eil dubhan-lìn ann fhathast.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Cuir dubhan-lìn ris</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Cuir ris</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Lìbhrigidhean o chionn goirid</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Àm</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Toradh</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Fo-sgrìobhaidhean</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Ùrachaidhean beò do chliantan: sruth thachartasan aig /api/graphql/subscribe, agus WebSocket (graphql-transport-ws) air Velocity. Chan fhalbh gach tachartas ach gu fo-sgrìobhaichean aig a bheil cead an t-susbaint aige a leughadh.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Fosgailte an-dràsta</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Fosgailte air a' char as motha</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total uile gu lèir, %user gach cleachdaiche, %address gach seòladh</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Fo-sgrìobhaidhean gun ainm</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Faid an t-sruth</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Cha b' urrainn dhuinn an dubhan-lìn a chur ris: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Chaidh an dubhan-lìn %name atharrachadh; fanaidh an dìomhair soidhnidh aige.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Cha b' urrainn dhuinn an dìomhair soidhnidh a stòradh (Suidheachadh &gt; Dìomhaireachdan).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Chaidh an dubhan-lìn %name a chur ris. An dìomhair soidhnidh aige, ga shealltainn an turas seo a-mhàin: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Chan eil dubhan-lìn %name ann.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Cha do fhreagair an dubhan-lìn %name: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Fhreagair an dubhan-lìn %name %status ann an %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Cuir cromag sa bhogsa ri taobh an dubhain-lìn gus a thoirt air falbh.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Chaidh an dubhan-lìn %name a thoirt air falbh.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Chan e sgòp an API GraphQL a th' ann: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Cuir fo-sgrìobhaidhean gu /api/graphql/subscribe (sruth thachartasan no WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Chan eil an t-iarrtas ag ainmeachadh obrachadh sam bith dhen sgrìobhainn.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Iarraidh fo-sgrìobhadh dìreach aon raon.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Tha cus fho-sgrìobhaidhean fosgailte; feuch ris a-rithist an ceann tamaill.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Tha %max fo-sgrìobhaidhean fosgailte agad, an àireamh as motha a tha ceadaichte.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Tha %max fo-sgrìobhaidhean fosgailte aig an t-seòladh agad, an àireamh as motha a tha ceadaichte.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Tha fo-sgrìobhaidhean dheth san inntrigeadh làraich seo.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Clàraich a-steach gus fo-sgrìobhadh (tòcan no iuchair API phearsanta).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Cuir mùthaidhean gu /api/graphql.</translation>
     </message>
 </context>
 </TS>

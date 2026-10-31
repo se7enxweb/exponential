@@ -79069,6 +79069,142 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Ku bijanye na siteaccess %siteaccess, yerekana uru rupapuro.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Igikorwa cose iherezo risaba (publish, update, trash, delete, move, hide, reveal, mutation) rirungikirwa, gishizweko umukono, n'igice ca cronjob graphqlwebhooks. ./console exp:graphql:webhooks ikora ivyo nk'iki gice.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ibikorwa</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>vyose</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Siteaccess zose</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>vyononekaye</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>nta banga</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Birarindiriye</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count vyaretswe</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Irungikwa rya nyuma</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Rungika igerageza</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ego, kuraho iyi webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Nta webhook irahari.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Ongeraho webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ongeraho</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Amarungikwa aheruka</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Igihe</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Inyishu</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Iyandikisha</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Ibishasha vy'ako kanya ku bakiriya: umugezi w'ibikorwa kuri /api/graphql/subscribe, na WebSocket (graphql-transport-ws) kuri Velocity. Igikorwa cose kija gusa ku biyandikishije bashobora gusoma ibirimwo.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Bifunguye ubu</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Ivyinshi bishobora kuguruka</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total vyose hamwe, %user ku mukoresha, %address kuri aderese</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Iyandikisha ritagira izina</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Uburebure bw'umugezi</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook ntiyashoboye kwongerwako: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name yahinduwe; ibanga ryayo ry'umukono riguma.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Ibanga ry'umukono ntiryashoboye kubikwa (Gutunganya &gt; Ibanga).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name yongewemwo. Ibanga ryayo ry'umukono, ryerekanywe ubu gusa: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Nta webhook %name ihari.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name ntiyishuye: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name yishuye %status mu %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Shira akamenyetso mu gasandugu kari iruhande ya webhook kugira uyikureho.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name yakuweho.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Si akarere ka GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Rungika iyandikisha kuri /api/graphql/subscribe (umugezi w'ibikorwa canke WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Isaba ntirivuga igikorwa na kimwe c'inyandiko.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Iyandikisha risaba umwanya umwe gusa.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Iyandikisha ryinshi cane rirafunguye; subira ugerageze mu nyuma.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Ufise iyandikisha %max rifunguye, ari ryo ryinshi ryemewe.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Aderese yawe ifise iyandikisha %max rifunguye, ari ryo ryinshi ryemewe.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Iyandikisha rirazimije muri iyi siteaccess.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Injira kugira wiyandikishe (token canke urufunguzo rwa API rwawe bwite).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Rungika ihinduka kuri /api/graphql.</translation>
     </message>
 </context>
 </TS>

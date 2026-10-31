@@ -79069,6 +79069,142 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Evit an haeziñ lec'hienn %siteaccess, a ziskouez ar bajenn-mañ.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Pep darvoud a c'houlenn ur poent-termen (publish, update, trash, delete, move, hide, reveal, mutation) a vez kaset dezhañ, sinet, gant al lodenn cronjob graphqlwebhooks. ./console exp:graphql:webhooks a ra ar memes tra hag ar rann-mañ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Darvoudoù</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>an holl</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Pep haeziñ lec'hienn</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>torret</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>sekred ebet</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>O c'hortoz</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count dilezet</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Kasadenn ziwezhañ</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Kas un amprouadenn</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ya, dilemel ar webhook-mañ</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Webhook ebet c'hoazh.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Ouzhpennañ ur webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ouzhpennañ</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Kasadennoù nevez</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Eur</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Disoc'h</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Koumanantoù</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Hizivadurioù war-eeun evit ar c'hliantoù: ul lanv darvoudoù war /api/graphql/subscribe, hag ur WebSocket (graphql-transport-ws) war Velocity. Pep darvoud a ya hepken d'ar goumananterien a c'hall lenn e zanvez.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Digor bremañ</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Niver brasañ digor</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total en holl, %user dre implijer, %address dre chomlec'h</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Koumanantoù dizanv</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Padelezh al lanv</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>N'eus ket bet gallet ouzhpennañ ar webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Kemmet eo bet ar webhook %name; chom a ra e sekred sinañ.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>N'eus ket bet gallet enrollañ ar sekred sinañ (Kefluniañ &gt; Sekredoù).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Ouzhpennet eo bet ar webhook %name. E sekred sinañ, diskouezet ar wech-mañ hepken: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>N'eus webhook %name ebet.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>N'en deus ket respontet ar webhook %name: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Respontet en deus ar webhook %name %status e %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Askit ar voest e-kichen ar webhook evit e zilemel.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Dilamet eo bet ar webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>N'eo ket un dachenn eus an API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Kasit ar c'houmanantoù da /api/graphql/subscribe (ul lanv darvoudoù pe ur WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>N'envel ar reked oberiadenn ebet eus an teul.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Ur c'houmanant a c'houlenn ur vaezienn hepken.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Re a goumanantoù a zo digor; klaskit en-dro diwezhatoc'h.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max koumanant digor hoc'h eus, an niver brasañ aotreet.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>%max koumanant digor en deus ho chomlec'h, an niver brasañ aotreet.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Diweredekaet eo ar c'houmanantoù en haeziñ al lec'hienn-mañ.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Kevreit evit koumanantiñ (ur jedouer pe un alc'hwez API personel).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Kasit ar c'hemmadurioù da /api/graphql.</translation>
     </message>
 </context>
 </TS>

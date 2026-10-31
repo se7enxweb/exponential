@@ -79069,6 +79069,142 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Ar gyfer y mynediad i'r wefan %siteaccess, sy'n dangos y dudalen hon.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Mae pob digwyddiad y mae pwynt terfyn yn gofyn amdano (publish, update, trash, delete, move, hide, reveal, mutation) yn cael ei anfon ato, wedi'i lofnodi, gan y rhan cronjob graphqlwebhooks. Mae ./console exp:graphql:webhooks yn gwneud yr un peth â'r adran hon.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Digwyddiadau</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>pob un</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Pob mynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>wedi torri</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>dim cyfrinach</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Yn aros</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count wedi'u gadael</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Danfoniad diwethaf</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Anfon prawf</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ie, tynnu'r webhook hwn</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Dim webhook eto.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Ychwanegu webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ychwanegu</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Danfoniadau diweddar</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Amser</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Canlyniad</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Tanysgrifiadau</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Diweddariadau byw i gleientiaid: ffrwd ddigwyddiadau yn /api/graphql/subscribe, a WebSocket (graphql-transport-ws) ar Velocity. Dim ond i'r tanysgrifwyr sy'n cael darllen ei gynnwys y mae pob digwyddiad yn mynd.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Ar agor nawr</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Uchafswm ar agor</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total i gyd, %user i bob defnyddiwr, %address i bob cyfeiriad</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Tanysgrifiadau dienw</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Hyd y ffrwd</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Nid oedd modd ychwanegu'r webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Newidiwyd y webhook %name; mae ei gyfrinach lofnodi yn aros.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Nid oedd modd cadw'r gyfrinach lofnodi (Gosod &gt; Cyfrinachau).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Ychwanegwyd y webhook %name. Ei gyfrinach lofnodi, a ddangosir y tro hwn yn unig: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Nid oes webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Ni atebodd y webhook %name: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Atebodd y webhook %name %status mewn %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Ticiwch y blwch wrth ymyl y webhook i'w dynnu.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Tynnwyd y webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Nid yw'n gwmpas yr API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Anfonwch danysgrifiadau i /api/graphql/subscribe (ffrwd ddigwyddiadau neu WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Nid yw'r cais yn enwi unrhyw weithred o'r ddogfen.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Mae tanysgrifiad yn gofyn am union un maes.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Mae gormod o danysgrifiadau ar agor; rhowch gynnig arall yn nes ymlaen.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Mae gennych %max tanysgrifiad ar agor, yr uchafswm a ganiateir.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Mae gan eich cyfeiriad %max tanysgrifiad ar agor, yr uchafswm a ganiateir.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Mae tanysgrifiadau wedi'u diffodd yn y mynediad i'r wefan hwn.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Mewngofnodwch i danysgrifio (tocyn neu allwedd API bersonol).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Anfonwch fwtaniadau i /api/graphql.</translation>
     </message>
 </context>
 </TS>

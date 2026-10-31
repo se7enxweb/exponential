@@ -79069,6 +79069,142 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Ngir buntu sit %siteaccess, biy wone xët wii.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook yi</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Bépp xew-xew bu benn bërëb bu mujj laaj (publish, update, trash, delete, move, hide, reveal, mutation) dañu koko yónnee, ak xaatim, jaare ci pàcc cronjob graphqlwebhooks. ./console exp:graphql:webhooks def na li pàcc bii di def.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Xew-xew yi</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>lépp</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Bépp buntu sit</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>yàqu na</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>amul kumpa</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Ñu ngi xaar</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count bàyyi nañu leen</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Yónnee bu mujj</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Yónnee ab test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Waaw, dindil webhook bii</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Amagul webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Yokk ab webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Yokk</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Yónnee yu mujj yi</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waxtu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ngérte</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonmaa yi</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Yeesal yu dund ngir kiliyaan yi: ab xelli xew-xew ci /api/graphql/subscribe, ak ab WebSocket (graphql-transport-ws) ci Velocity. Bépp xew-xew dafay dem rekk ci abone yi am sañ-sañu jàng li ci biir.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Ubbeeku leegi</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Ubbeeku gi ëpp</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total yépp, %user ci jëfandikukat bu nekk, %address ci adrees bu nekk</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Abonmaa yu amul tur</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Diirub xelli bi</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Mënuñu woon a yokk webhook bi: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name soppi nañu ko; kumpa xaatimam dafay des.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Mënuñu woon a denc kumpa xaatim bi (Defar &gt; Kumpa yi).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name yokk nañu ko. Kumpa xaatimam, ñu wone ko benn yoon rekk: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Amul webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name tontuwul: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name tontu na %status ci %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Màndargal kees bi ci wetu webhook bi ngir dindi ko.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name dindi nañu ko.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Du wàllu GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Yónneel abonmaa yi ci /api/graphql/subscribe (ab xelli xew-xew walla ab WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Laaj bi tuddul benn jëf ci dokimaa bi.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Abonmaa dafay laaj benn tool rekk.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Abonmaa yu bari lool ñoo ubbeeku; jéemaatal ci kanam.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Am nga %max abonmaa yu ubbeeku, li ëpp li ñu may.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Sa adrees am na %max abonmaa yu ubbeeku, li ëpp li ñu may.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonmaa yi dañu leen fay ci buntu sit bii.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Duggal ngir abone (ab token walla ab caabi API bu sa bopp).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Yónneel soppi yi (mutation) ci /api/graphql.</translation>
     </message>
 </context>
 </TS>

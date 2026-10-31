@@ -79099,6 +79099,142 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Za dostop do spletnega mesta %siteaccess, ki prikazuje to stran.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Spletni kavlji</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Vsak dogodek, ki ga končna točka zahteva (publish, update, trash, delete, move, hide, reveal, mutation), ji podpisanega pošlje del cronjoba graphqlwebhooks. ./console exp:graphql:webhooks naredi isto kot ta razdelek.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Dogodki</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>vsi</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Vsak dostop do spletnega mesta</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>okvarjen</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>brez skrivnosti</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Čakajoče</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>Opuščene: %count</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Zadnja dostava</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Pošlji preizkus</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Da, odstrani ta spletni kavelj</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Še ni spletnega kavlja.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Dodaj spletni kavelj</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Dodaj</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Nedavne dostave</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Čas</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Naročnine</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Sprotne posodobitve za odjemalce: tok dogodkov na /api/graphql/subscribe in WebSocket (graphql-transport-ws) na Velocity. Vsak dogodek gre samo naročnikom, ki smejo brati njegovo vsebino.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Odprte zdaj</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Največ odprtih</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total skupaj, %user na uporabnika, %address na naslov</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonimne naročnine</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Dolžina toka</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Spletnega kavlja ni bilo mogoče dodati: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Spletni kavelj %name je bil spremenjen; njegova podpisna skrivnost ostane.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Podpisne skrivnosti ni bilo mogoče shraniti (Nastavitve &gt; Skrivnosti).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Spletni kavelj %name je bil dodan. Njegova podpisna skrivnost, prikazana samo tokrat: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Spletnega kavlja %name ni.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Spletni kavelj %name ni odgovoril: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Spletni kavelj %name je odgovoril %status v %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Za odstranitev spletnega kavlja označite polje ob njem.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Spletni kavelj %name je bil odstranjen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79373,6 +79509,42 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ni obseg GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Naročnine pošljite na /api/graphql/subscribe (tok dogodkov ali WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Zahteva ne navaja nobene operacije dokumenta.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Naročnina zahteva natanko eno polje.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Odprtih je preveč naročnin; poskusite znova pozneje.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Odprtih imate %max naročnin, kar je največ dovoljeno.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Vaš naslov ima odprtih %max naročnin, kar je največ dovoljeno.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Naročnine so v tem dostopu do spletnega mesta izklopljene.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Za naročanje se prijavite (žeton ali osebni ključ API).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Mutacije pošljite na /api/graphql.</translation>
     </message>
 </context>
 </TS>

@@ -79099,6 +79099,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>За приступ сајту %siteaccess, који приказује ову страницу.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Вебхукови</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Сваки догађај који крајња тачка тражи (publish, update, trash, delete, move, hide, reveal, mutation) шаље јој се, потписан, преко дела cronjob-а graphqlwebhooks. ./console exp:graphql:webhooks ради исто што и овај одељак.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Догађаји</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>сви</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Сваки приступ сајту</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>неисправан</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>без тајне</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>На чекању</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>Одустато: %count</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Последња испорука</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Пошаљи тест</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Да, уклони овај вебхук</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Још нема вебхукова.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Додај вебхук</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Додај</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Недавне испоруке</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Време</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Резултат</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Претплате</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Ажурирања уживо за клијенте: ток догађаја на /api/graphql/subscribe и WebSocket (graphql-transport-ws) на Velocity. Сваки догађај иде само претплатницима који смеју да читају његов садржај.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Отворено сада</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Највише отворених</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total укупно, %user по кориснику, %address по адреси</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Анонимне претплате</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Трајање тока</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Вебхук није могао бити додат: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Вебхук %name је измењен; његова тајна за потписивање остаје.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Тајна за потписивање није могла бити сачувана (Подешавање &gt; Тајне).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Вебхук %name је додат. Његова тајна за потписивање, приказана само овај пут: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Не постоји вебхук %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Вебхук %name није одговорио: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Вебхук %name је одговорио %status за %ms мс.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Означите поље поред вебхука да бисте га уклонили.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Вебхук %name је уклоњен.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79373,6 +79509,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Није опсег GraphQL API-ја: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Шаљите претплате на /api/graphql/subscribe (ток догађаја или WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Захтев не именује ниједну операцију документа.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Претплата тражи тачно једно поље.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Отворено је превише претплата; покушајте поново касније.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Имате %max отворених претплата, највише што је дозвољено.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Ваша адреса има %max отворених претплата, највише што је дозвољено.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Претплате су искључене у овом приступу сајту.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Пријавите се да бисте се претплатили (токен или лични API кључ).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Шаљите мутације на /api/graphql.</translation>
     </message>
 </context>
 </TS>

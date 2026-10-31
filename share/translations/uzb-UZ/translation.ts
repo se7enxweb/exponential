@@ -79069,6 +79069,142 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Ushbu sahifani koʻrsatayotgan %siteaccess sayt kirish nuqtasi uchun.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Vebxuklar</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Yakuniy nuqta soʻragan har bir hodisa (publish, update, trash, delete, move, hide, reveal, mutation) unga cronjob qismi graphqlwebhooks tomonidan imzolangan holda yuboriladi. ./console exp:graphql:webhooks ushbu boʻlim bilan bir xil ishni bajaradi.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Hodisalar</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>hammasi</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Har bir sayt kirish nuqtasi</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>buzilgan</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>maxfiy kalit yoʻq</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Kutilmoqda</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count ta voz kechildi</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Oxirgi yetkazish</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Sinov yuborish</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ha, bu vebxukni olib tashlash</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Hali vebxuk yoʻq.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Vebxuk qoʻshish</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Qoʻshish</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Soʻnggi yetkazishlar</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Vaqt</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Natija</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Obunalar</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Mijozlar uchun jonli yangilanishlar: /api/graphql/subscribe manzilidagi hodisalar oqimi va Velocity dagi WebSocket (graphql-transport-ws). Har bir hodisa faqat uning kontentini oʻqishi mumkin boʻlgan obunachilarga boradi.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Hozir ochiq</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Eng koʻp ochiq</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>jami %total, har bir foydalanuvchiga %user, har bir manzilga %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonim obunalar</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Oqim davomiyligi</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Vebxukni qoʻshib boʻlmadi: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>%name vebxuki oʻzgartirildi; uning imzo maxfiy kaliti saqlanib qoladi.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Imzo maxfiy kalitini saqlab boʻlmadi (Sozlash &gt; Maxfiy kalitlar).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>%name vebxuki qoʻshildi. Uning imzo maxfiy kaliti, faqat shu safar koʻrsatiladi: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>%name vebxuki mavjud emas.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>%name vebxuki javob bermadi: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>%name vebxuki %ms ms ichida %status javobini berdi.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Vebxukni olib tashlash uchun yonidagi katakchani belgilang.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>%name vebxuki olib tashlandi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API qamrovi emas: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Obunalarni /api/graphql/subscribe manziliga yuboring (hodisalar oqimi yoki WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Soʻrov hujjatning hech bir amalini nomlamaydi.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Obuna aynan bitta maydonni soʻraydi.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Juda koʻp obuna ochiq; keyinroq qayta urinib koʻring.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Sizda %max ta ochiq obuna bor, bu ruxsat etilgan eng koʻp son.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Manzilingizda %max ta ochiq obuna bor, bu ruxsat etilgan eng koʻp son.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Obunalar ushbu sayt kirish nuqtasida oʻchirilgan.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Obuna boʻlish uchun tizimga kiring (token yoki shaxsiy API kaliti).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Mutatsiyalarni /api/graphql manziliga yuboring.</translation>
     </message>
 </context>
 </TS>

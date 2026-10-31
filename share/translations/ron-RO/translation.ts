@@ -79099,6 +79099,142 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Pentru accesul la site %siteaccess, care afișează această pagină.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook-uri</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Fiecare eveniment pe care îl cere un punct final (publish, update, trash, delete, move, hide, reveal, mutation) îi este trimis, semnat, de partea de cronjob graphqlwebhooks. ./console exp:graphql:webhooks face același lucru ca această secțiune.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Evenimente</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>toate</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Fiecare acces la site</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>defect</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>fără secret</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>În așteptare</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count abandonate</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Ultima livrare</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Trimite un test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Da, elimină acest webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Niciun webhook încă.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Adaugă un webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Adaugă</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Livrări recente</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ora</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonamente</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Actualizări în timp real pentru clienți: un flux de evenimente la /api/graphql/subscribe și un WebSocket (graphql-transport-ws) pe Velocity. Fiecare eveniment ajunge doar la abonații care au voie să-i citească conținutul.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Deschise acum</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Maximum deschise</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total în total, %user per utilizator, %address per adresă</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Abonamente anonime</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Durata fluxului</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook-ul nu a putut fi adăugat: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook-ul %name a fost modificat; secretul său de semnare rămâne.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Secretul de semnare nu a putut fi stocat (Configurare &gt; Secrete).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook-ul %name a fost adăugat. Secretul său de semnare, afișat doar acum: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Nu există webhook-ul %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook-ul %name nu a răspuns: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook-ul %name a răspuns %status în %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Bifați caseta de lângă webhook pentru a-l elimina.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook-ul %name a fost eliminat.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79373,6 +79509,42 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Nu este un domeniu al API-ului GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Trimiteți abonamentele la /api/graphql/subscribe (un flux de evenimente sau un WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Cererea nu numește nicio operație a documentului.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Un abonament cere exact un câmp.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Sunt deschise prea multe abonamente; încercați din nou mai târziu.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Aveți %max abonamente deschise, maximul permis.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Adresa dvs. are %max abonamente deschise, maximul permis.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Abonamentele sunt dezactivate în acest acces la site.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Autentificați-vă pentru a vă abona (un token sau o cheie API personală).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Trimiteți mutațiile la /api/graphql.</translation>
     </message>
 </context>
 </TS>

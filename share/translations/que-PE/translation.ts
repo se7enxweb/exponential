@@ -79069,6 +79069,142 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Kay raphita rikuchiq %siteaccess web yaykunapaq.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhookkuna</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Tukuna k'iti mañakusqan sapa ruwakuyta (publish, update, trash, delete, move, hide, reveal, mutation) paymanmi apachikun, silq'usqa, cronjobpa graphqlwebhooks nisqa partenwan. ./console exp:graphql:webhooksqa kay t'aqa hinallatam ruwan.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Ruwakuykuna</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>llapan</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Sapa web yaykuy</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>p'akisqa</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>mana pakasqayuq</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Suyachkan</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count saqisqa</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Qhipa apachiy</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Huk pruebata apachiy</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Arí, kay webhookta qichuy</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Manaraqmi webhook kanchu.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Huk webhookta yapay</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Yapay</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Qayna apachiykuna</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Pacha</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Lluqsisqan</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Suscripcionkuna</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Clientekunapaq kawsaq musuqchaykuna: ruwakuy puriy /api/graphql/subscribe nisqapi, huk WebSocket (graphql-transport-ws) Velocitypi ima. Sapa ruwakuyqa samiqninta ñawinchayta atiq suscriptorkunallamanmi rin.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Kunan kichasqa</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Aswan achka kichasqa</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total llapanpi, %user sapa llamk'achiqpaq, %address sapa tiyanapaq</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Mana sutiyuq suscripcionkuna</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Puriypa unaynin</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhookta manam yapayta atikurqanchu: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name tikrasqam; silq'una pakasqanqa qhipakunmi.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Silq'una pakasqata manam waqaychayta atikurqanchu (Wakichiy &gt; Pakasqakuna).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name yapasqam. Silq'una pakasqan, kay kutillam rikuchisqa: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Manam webhook %name kanchu.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name manam kutichirqanchu: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name %status kutichirqan %ms ms ukhupi.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Webhookta qichunaykipaq waqtanpi cajata markay.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name qichusqam.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Manam GraphQL APIpa chiqanninchu: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Suscripcionkunata /api/graphql/subscribe nisqaman apachiy (ruwakuy puriy utaq WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Mañakuyqa manam qillqapa ni huk ruwayninta sutichanchu.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Huk suscripcionqa huk chakrallatam mañakun.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Nishu achka suscripcionkunam kichasqa; qhipaman wakmanta ruway.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max suscripcionkunam kichasqa kapusunki, chayqa aswan achka saqisqam.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Tiyanaykiqa %max kichasqa suscripcionkunayuqmi, chayqa aswan achka saqisqam.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Suscripcionkunaqa wañuchisqam kay web yaykunapi.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Suscribikunaykipaq yaykuy (huk token utaq kikiykipa API llavenwan).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Mutacionkunata /api/graphql nisqaman apachiy.</translation>
     </message>
 </context>
 </TS>

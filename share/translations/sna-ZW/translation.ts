@@ -79069,6 +79069,142 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Kunzira yekupinda pasaiti %siteaccess, inoratidza peji rino.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>MaWebhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Chiitiko chese chinokumbirwa nemagumo (publish, update, trash, delete, move, hide, reveal, mutation) chinotumirwa kwariri, chakasainwa, nechikamu checronjob graphqlwebhooks. ./console exp:graphql:webhooks inoita zvakafanana nechikamu ichi.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Zviitiko</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>zvese</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Nzira dzese dzekupinda pasaiti</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>yakaputsika</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>hapana chakavanzika</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Zvakamirira</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count zvakasiyiwa</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Kutumira kwekupedzisira</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Tumira bvunzo</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Hongu, bvisa webhook iyi</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Hapana webhook parizvino.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Wedzera webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Wedzera</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Zvatumirwa munguva pfupi yapfuura</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Nguva</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Mhedzisiro</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Kunyoresa</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Zvigadziridzo zvemhenyu zvevatengi: rukova rwezviitiko pa /api/graphql/subscribe, uye WebSocket (graphql-transport-ws) paVelocity. Chiitiko chimwe nechimwe chinoenda chete kuvanyoresa vanobvumirwa kuverenga zviri mukati macho.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Zvakavhurwa izvozvi</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Zvakawanda zvinogona kuvhurwa</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total zvese pamwe chete, %user pamushandisi, %address pakero</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Kunyoresa kusina zita</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Kureba kworukova</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook haina kukwanisa kuwedzerwa: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name yachinjwa; chakavanzika chayo chekusaina chinoramba chiripo.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Chakavanzika chekusaina hachina kukwanisa kuchengetwa (Gadziriro &gt; Zvakavanzika).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name yawedzerwa. Chakavanzika chayo chekusaina, chinoratidzwa kamwe chete: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Hapana webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name haina kupindura: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name yapindura %status mu %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Maka bhokisi riri parutivi pewebhook kuti uibvise.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name yabviswa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Hachisi chikamu chemvumo che GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Tumira kunyoresa ku /api/graphql/subscribe (rukova rwezviitiko kana WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Chikumbiro hachidomi basa ripi neripi regwaro.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Kunyoresa kunokumbira munda mumwe chete.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Kunyoresa kwakawandisa kwakavhurwa; edza zvakare gare gare.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Une kunyoresa %max kwakavhurwa, kwakawanda kunobvumirwa.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Kero yako ine kunyoresa %max kwakavhurwa, kwakawanda kunobvumirwa.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Kunyoresa kwakadzimwa munzira yekupinda pasaiti iyi.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Pinda kuti unyorese (token kana kiyi yeAPI yako pachako).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Tumira shanduko ku /api/graphql.</translation>
     </message>
 </context>
 </TS>

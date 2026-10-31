@@ -79067,6 +79067,142 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Kwa siteaccess %siteaccess, inayoonyesha ukurasa huu.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Kila tukio ambalo sehemu ya mwisho inaliomba (publish, update, trash, delete, move, hide, reveal, mutation) hutumwa kwake, likiwa limetiwa sahihi, na sehemu ya cronjob graphqlwebhooks. ./console exp:graphql:webhooks hufanya kazi ileile kama sehemu hii.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Matukio</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>yote</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kila siteaccess</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>imeharibika</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>hakuna siri</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Zinasubiri</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count zimeachwa</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Uwasilishaji wa mwisho</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Tuma jaribio</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ndiyo, ondoa webhook hii</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Bado hakuna webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Ongeza webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ongeza</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Uwasilishaji wa hivi karibuni</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Muda</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Matokeo</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Usajili</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Masasisho ya moja kwa moja kwa wateja: mtiririko wa matukio kwenye /api/graphql/subscribe, na WebSocket (graphql-transport-ws) kwenye Velocity. Kila tukio huenda tu kwa waliojisajili wanaoruhusiwa kusoma maudhui yake.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Zilizo wazi sasa</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Kiwango cha juu wazi</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total kwa jumla, %user kwa kila mtumiaji, %address kwa kila anwani</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Usajili bila jina</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Muda wa mtiririko</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook haikuweza kuongezwa: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name imebadilishwa; siri yake ya kutia sahihi inabaki.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Siri ya kutia sahihi haikuweza kuhifadhiwa (Usanidi &gt; Siri).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name imeongezwa. Siri yake ya kutia sahihi, inayoonyeshwa mara hii tu: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Hakuna webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name haikujibu: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name ilijibu %status ndani ya %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Weka alama kwenye kisanduku kando ya webhook ili kuiondoa.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name imeondolewa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79341,6 +79477,42 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Si wigo wa GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Tuma usajili kwa /api/graphql/subscribe (mtiririko wa matukio au WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Ombi halitaji operesheni yoyote ya hati.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Usajili huomba sehemu moja tu.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Usajili mwingi mno uko wazi; jaribu tena baadaye.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Una usajili %max ulio wazi, kiwango cha juu kinachoruhusiwa.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Anwani yako ina usajili %max ulio wazi, kiwango cha juu kinachoruhusiwa.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Usajili umezimwa katika siteaccess hii.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Ingia ili kujisajili (tokeni au ufunguo wa API wa kibinafsi).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Tuma mabadiliko (mutations) kwa /api/graphql.</translation>
     </message>
 </context>
 </TS>

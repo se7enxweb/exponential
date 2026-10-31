@@ -79069,6 +79069,142 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Fyri atgongdina til vevstað %siteaccess, sum vísir hesa síðuna.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Vevkrókar</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Hvør tilburður, sum eitt endapunkt biður um (publish, update, trash, delete, move, hide, reveal, mutation), verður sendur til tess, undirskrivaður, av cronjob-partinum graphqlwebhooks. ./console exp:graphql:webhooks ger tað sama sum hesin parturin.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tilburðir</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>allir</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Hvør atgongd til vevstað</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>brotin</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>einki loyndarmál</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Bíða</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count givnar upp</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Seinasta útflýggjan</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Send eina roynd</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ja, strika henda vevkrókin</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Eingin vevkrókur enn.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Legg ein vevkrók afturat</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Legg afturat</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Nýggjar útflýggjanir</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tíð</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Úrslit</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Hald</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Beinleiðis dagføringar fyri klientar: ein tilburðarstreymur á /api/graphql/subscribe, og ein WebSocket (graphql-transport-ws) á Velocity. Hvør tilburður fer bara til haldarar, ið hava loyvi at lesa innihald hansara.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Opin nú</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Flest opin</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total í alt, %user fyri hvønn brúkara, %address fyri hvørja adressu</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Dulnevnd hald</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Longd á streymi</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Vevkrókurin kundi ikki leggjast afturat: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Vevkrókurin %name varð broyttur; undirskriftarloyndarmálið verður verandi.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Undirskriftarloyndarmálið kundi ikki goymast (Uppseting &gt; Loyndarmál).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Vevkrókurin %name varð lagdur afturat. Undirskriftarloyndarmál hansara, víst bara hesa einu ferð: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Eingin vevkrókur %name er til.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Vevkrókurin %name svaraði ikki: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Vevkrókurin %name svaraði %status eftir %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Set kross í kassan við vevkrókin fyri at strika hann.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Vevkrókurin %name varð strikaður.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ikki eitt øki í GraphQL-API'num: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Send hald til /api/graphql/subscribe (ein tilburðarstreymur ella ein WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Umbønin nevnir onga atgerð í skjalinum.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Eitt hald biður um júst eitt felt.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Ov nógv hald eru opin; royn aftur seinni.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Tú hevur %max hald opin, tað mesta loyvda.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Adressan hjá tær hevur %max hald opin, tað mesta loyvda.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Hald eru sløkt í hesi atgongd til vevstað.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Rita inn fyri at tekna hald (ein lykil ella ein persónligur API-lykil).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Send mutatiónir til /api/graphql.</translation>
     </message>
 </context>
 </TS>

@@ -79078,6 +79078,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>למעלנא דאתרא %siteaccess דמחוא להנא דפא.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>כל הויא דנוקזא דסופא בעא (publish, update, trash, delete, move, hide, reveal, mutation) משתדר לה, חתימא, מן מנתא ד cronjob graphqlwebhooks. ./console exp:graphql:webhooks עבד הי דעבד הנא פלגא.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>הויא</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>כלהון</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>כל מעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>תבירא</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>לית רזא</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>מסכא</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count שביקין</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>משלמנותא בתרייתא</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>שדר בוחנא</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>אין, עבר הנא Webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>לית עדכיל Webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>אוסף Webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>אוסף</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>משלמנותא חדתתא</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>זבנא</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>פרי</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>מנויא</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>חודתא חייא לנסביא: נגדא דהויא ב /api/graphql/subscribe, ו WebSocket (graphql-transport-ws) על Velocity. כל הויא אזלא בלחוד לממניא דשליטין למקרא מליותה.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>פתיחין השא</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>סגיאא פתיחין</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total בכל, %user לכל מפלחנא, %address לכל משריתא</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>מנויא דלא שמא</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>אורכא דנגדא</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Webhook לא אשתכח לאתוספא: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name אשתחלף; רזא דחתמא דילה קאים.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>רזא דחתמא לא אשתכח למנטר (טויבא &gt; רזא).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name אתוסף. רזא דחתמא דילה, מתחזיא הדא זבנא בלחוד: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>לית Webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name לא ענא: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name ענא %status ב %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>רשום תיבותא דלות Webhook למעברה.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name אתעבר.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79352,6 +79488,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>לא הוא תחומא ד API ד GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>שדר מנויא ל /api/graphql/subscribe (נגדא דהויא או WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>בעותא לא קריא שום עבדא דכתבא.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>מנויא בעא חד חקלא בלחוד.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>סגיאין מנויא פתיחין; נסי תוב בתרכן.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>אית לך %max מנויא פתיחין, סגיאא דשריא.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>למשריתך אית %max מנויא פתיחין, סגיאא דשריא.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>מנויא בטילין בהנא מעלנא דאתרא.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>עול למתמנא (טבעא או מפתחא ד API דילך).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>שדר שחלופא ל /api/graphql.</translation>
     </message>
 </context>
 </TS>

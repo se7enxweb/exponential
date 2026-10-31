@@ -79067,6 +79067,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>適用於顯示此頁面的網站存取 %siteaccess。</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>端點所要求的每個事件（publish, update, trash, delete, move, hide, reveal, mutation）都由 cronjob 部分 graphqlwebhooks 簽署後送給它。./console exp:graphql:webhooks 的作用與本節相同。</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>事件</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>全部</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>所有網站存取</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>故障</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>無密鑰</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>等待中</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>已放棄 %count 個</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>最近一次傳遞</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>傳送測試</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>是，移除此 Webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>尚無 Webhook。</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>新增 Webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>新增</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>最近的傳遞</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>時間</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>結果</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>訂閱</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>提供給用戶端的即時更新：/api/graphql/subscribe 上的事件串流，以及 Velocity 上的 WebSocket（graphql-transport-ws）。每個事件只會送給有權讀取其內容的訂閱者。</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>目前開啟</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>最多開啟</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>總計 %total，每位使用者 %user，每個位址 %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>匿名訂閱</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>串流時長</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>無法新增 Webhook：%error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name 已變更；其簽署密鑰維持不變。</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>無法儲存簽署密鑰（設定 &gt; 密鑰）。</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name 已新增。其簽署密鑰僅顯示這一次：%secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>沒有 Webhook %name。</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name 沒有回應：%error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name 在 %ms ms 內回應了 %status。</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>勾選 Webhook 旁的方塊以移除它。</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name 已移除。</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79341,6 +79477,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>不是 GraphQL API 的範圍：%scope（graphql:read、graphql:write）</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>請將訂閱送到 /api/graphql/subscribe（事件串流或 WebSocket）。</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>請求沒有指定文件中的任何操作。</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>一個訂閱只能要求恰好一個欄位。</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>開啟的訂閱過多；請稍後再試。</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>您已開啟 %max 個訂閱，已達允許的上限。</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>您的位址已開啟 %max 個訂閱，已達允許的上限。</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>此網站存取已關閉訂閱。</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>請登入後再訂閱（權杖或個人 API 金鑰）。</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>請將變更送到 /api/graphql。</translation>
     </message>
 </context>
 </TS>

@@ -79067,6 +79067,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>இந்தப் பக்கத்தைக் காட்டும் தள அணுகல் %siteaccess க்கானது.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>வெப்ஹூக்குகள்</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>ஒரு முனைப்புள்ளி கேட்கும் ஒவ்வொரு நிகழ்வும் (publish, update, trash, delete, move, hide, reveal, mutation) cronjob பகுதி graphqlwebhooks மூலம் கையொப்பமிடப்பட்டு அதற்கு அனுப்பப்படுகிறது. ./console exp:graphql:webhooks இந்தப் பிரிவு செய்வதையே செய்கிறது.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>நிகழ்வுகள்</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>அனைத்தும்</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ஒவ்வொரு தள அணுகலும்</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>பழுதானது</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ரகசியம் இல்லை</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>காத்திருப்பவை</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count கைவிடப்பட்டன</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>கடைசி அனுப்புகை</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>சோதனை அனுப்பு</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>ஆம், இந்த வெப்ஹூக்கை நீக்கு</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>இன்னும் வெப்ஹூக் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>வெப்ஹூக்கைச் சேர்</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>சேர்</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>சமீபத்திய அனுப்புகைகள்</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>நேரம்</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>முடிவு</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>சந்தாக்கள்</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>கிளையண்டுகளுக்கான நேரலை புதுப்பிப்புகள்: /api/graphql/subscribe இல் ஒரு நிகழ்வு ஓட்டம், மற்றும் Velocity இல் ஒரு WebSocket (graphql-transport-ws). ஒவ்வொரு நிகழ்வும் அதன் உள்ளடக்கத்தைப் படிக்க அனுமதி உள்ள சந்தாதாரர்களுக்கு மட்டுமே செல்லும்.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>இப்போது திறந்தவை</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>அதிகபட்சம் திறந்தவை</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>மொத்தம் %total, பயனருக்கு %user, முகவரிக்கு %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>அநாமதேய சந்தாக்கள்</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>ஓட்டத்தின் நீளம்</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>வெப்ஹூக்கைச் சேர்க்க முடியவில்லை: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>வெப்ஹூக் %name மாற்றப்பட்டது; அதன் கையொப்ப ரகசியம் மாறாது.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>கையொப்ப ரகசியத்தைச் சேமிக்க முடியவில்லை (அமைவு &gt; ரகசியங்கள்).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>வெப்ஹூக் %name சேர்க்கப்பட்டது. அதன் கையொப்ப ரகசியம், இந்த ஒரு முறை மட்டும் காட்டப்படுகிறது: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>%name என்ற வெப்ஹூக் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>வெப்ஹூக் %name பதிலளிக்கவில்லை: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>வெப்ஹூக் %name %ms ms இல் %status எனப் பதிலளித்தது.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>வெப்ஹூக்கை நீக்க அதன் அருகிலுள்ள பெட்டியைத் தேர்வு செய்யவும்.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>வெப்ஹூக் %name நீக்கப்பட்டது.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79341,6 +79477,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API இன் வரம்பு அல்ல: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>சந்தாக்களை /api/graphql/subscribe க்கு அனுப்பவும் (ஒரு நிகழ்வு ஓட்டம் அல்லது ஒரு WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>கோரிக்கை ஆவணத்தின் எந்தச் செயல்பாட்டையும் பெயரிடவில்லை.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>ஒரு சந்தா சரியாக ஒரு புலத்தை மட்டுமே கேட்கும்.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>அதிகமான சந்தாக்கள் திறந்துள்ளன; பின்னர் மீண்டும் முயலவும்.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>உங்களிடம் %max சந்தாக்கள் திறந்துள்ளன, இதுவே அனுமதிக்கப்பட்ட அதிகபட்சம்.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>உங்கள் முகவரியில் %max சந்தாக்கள் திறந்துள்ளன, இதுவே அனுமதிக்கப்பட்ட அதிகபட்சம்.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>இந்தத் தள அணுகலில் சந்தாக்கள் முடக்கப்பட்டுள்ளன.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>சந்தா செய்ய உள்நுழையவும் (ஒரு டோக்கன் அல்லது ஒரு தனிப்பட்ட API விசை).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>மாற்றங்களை (mutations) /api/graphql க்கு அனுப்பவும்.</translation>
     </message>
 </context>
 </TS>

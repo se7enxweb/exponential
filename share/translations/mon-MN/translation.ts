@@ -79069,6 +79069,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Энэ хуудсыг харуулж буй %siteaccess сайтын хандалтын мэдээлэл.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Вебхукууд</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Төгсгөлийн цэгийн хүссэн үйл явдал бүрийг (publish, update, trash, delete, move, hide, reveal, mutation) cronjob-ийн graphqlwebhooks хэсэг гарын үсэгтэйгээр түүнд илгээнэ. ./console exp:graphql:webhooks нь энэ хэсэгтэй ижил үйлдэл хийнэ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Үйл явдлууд</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>бүгд</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Сайтын хандалт бүр</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>эвдэрсэн</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>нууцгүй</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Хүлээгдэж буй</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count орхигдсон</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Сүүлийн хүргэлт</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Туршилт илгээх</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Тийм, энэ вебхукийг устгах</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Вебхук одоогоор алга.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Вебхук нэмэх</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Нэмэх</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Сүүлийн хүргэлтүүд</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Цаг</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Үр дүн</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Захиалгууд</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Клиентүүдэд зориулсан шууд шинэчлэлт: /api/graphql/subscribe дээрх үйл явдлын урсгал, мөн Velocity дээрх WebSocket (graphql-transport-ws). Үйл явдал бүр зөвхөн түүний агуулгыг унших эрхтэй захиалагчдад очно.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Одоо нээлттэй</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Хамгийн ихдээ нээлттэй</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>Нийт %total, хэрэглэгч тус бүрд %user, хаяг тус бүрд %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Нэргүй захиалгууд</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Урсгалын урт</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Вебхукийг нэмж чадсангүй: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>%name вебхукийг өөрчиллөө; түүний гарын үсгийн нууц хэвээр үлдэнэ.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Гарын үсгийн нууцыг хадгалж чадсангүй (Тохируулга &gt; Нууцууд).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>%name вебхукийг нэмлээ. Түүний гарын үсгийн нууц, зөвхөн энэ удаа харагдана: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>%name вебхук байхгүй.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>%name вебхук хариу өгсөнгүй: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>%name вебхук %ms ms-д %status хариу өглөө.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Вебхукийг устгахын тулд хажуугийн нүдийг чагтална уу.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>%name вебхукийг устгалаа.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API-ийн хамрах хүрээ биш: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Захиалгуудыг /api/graphql/subscribe руу илгээнэ үү (үйл явдлын урсгал эсвэл WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Хүсэлт баримтын ямар ч үйлдлийг нэрлээгүй байна.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Захиалга яг нэг талбар хүснэ.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Хэт олон захиалга нээлттэй байна; дараа дахин оролдоно уу.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Танд %max захиалга нээлттэй байна, энэ нь зөвшөөрөгдөх дээд хэмжээ.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Таны хаягт %max захиалга нээлттэй байна, энэ нь зөвшөөрөгдөх дээд хэмжээ.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Энэ сайтын хандалтад захиалга унтраалттай байна.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Захиалахын тулд нэвтэрнэ үү (токен эсвэл хувийн API түлхүүр).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Мутацийг /api/graphql руу илгээнэ үү.</translation>
     </message>
 </context>
 </TS>

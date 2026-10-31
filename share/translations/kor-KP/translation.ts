@@ -79069,6 +79069,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>이 페지를 보여주는 싸이트접근 %siteaccess에 대한 것입니다.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>웨브후크</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>끝점이 요구하는 매 사건 (publish, update, trash, delete, move, hide, reveal, mutation)은 cronjob 부분 graphqlwebhooks가 서명하여 그곳으로 보냅니다. ./console exp:graphql:webhooks는 이 부분과 같은 일을 합니다.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>사건</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>전부</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>모든 싸이트접근</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>고장</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>비밀 값 없음</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>대기중</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count 포기</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>마지막 전송</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>시험 보내기</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>예, 이 웨브후크를 삭제합니다</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>웨브후크가 아직 없습니다.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>웨브후크 추가</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>추가</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>최근 전송</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>시간</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>결과</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>구독</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>의뢰기들을 위한 실시간 갱신: /api/graphql/subscribe의 사건흐름과 Velocity의 WebSocket (graphql-transport-ws). 매 사건은 그 내용을 읽을수 있는 구독자에게만 갑니다.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>현재 열림</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>최대 열림</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>전체 %total, 사용자당 %user, 주소당 %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>익명 구독</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>흐름 길이</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>웨브후크를 추가할수 없었습니다: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>웨브후크 %name이 변경되였습니다. 서명 비밀 값은 그대로 남습니다.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>서명 비밀 값을 보관할수 없었습니다 (설정 &gt; 비밀 값).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>웨브후크 %name이 추가되였습니다. 서명 비밀 값 (이번 한번만 표시): %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>웨브후크 %name이 없습니다.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>웨브후크 %name이 응답하지 않았습니다: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>웨브후크 %name이 %ms ms만에 %status로 응답하였습니다.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>웨브후크를 삭제하려면 옆의 칸에 표시하십시오.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>웨브후크 %name이 삭제되였습니다.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API의 범위가 아닙니다: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>구독은 /api/graphql/subscribe로 보내십시오 (사건흐름 또는 WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>요청이 문서의 어떤 조작도 지정하지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>구독은 정확히 하나의 항목을 요구합니다.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>열린 구독이 너무 많습니다. 후에 다시 시도하십시오.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max개의 구독이 열려있으며 이것이 허용되는 최대입니다.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>귀하의 주소에 %max개의 구독이 열려있으며 이것이 허용되는 최대입니다.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>이 싸이트접근에서는 구독이 꺼져있습니다.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>구독하려면 로그인하십시오 (토큰 또는 개인 API 열쇠).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>변경조작은 /api/graphql로 보내십시오.</translation>
     </message>
 </context>
 </TS>

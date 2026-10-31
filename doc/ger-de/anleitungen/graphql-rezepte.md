@@ -1,7 +1,7 @@
 # GraphQL-Rezepte: ein Blog, eine mobile App, ein statischer Build, ein KI-Agent
 
-Vier übliche Frontends auf der [GraphQL-API](../funktionen/6.0/graphql.md), jedes mit den Abfragen, die die Arbeit
-tun, und den Einstellungen, die dazugehören. Die Abfragen liefen gegen die Demo-Inhalte der Media-Site (Fit & Healthy)
+Vier übliche Frontends auf der [GraphQL-API](../funktionen/6.0/graphql.md) und Live-Aktualisierung mit Webhooks und
+Subscriptions, jedes mit den Abfragen, die die Arbeit tun, und den Einstellungen, die dazugehören. Die Abfragen liefen gegen die Demo-Inhalte der Media-Site (Fit & Healthy)
 von 6.0.15; die Antworten sind mit `...` gekürzt. Schalten Sie die API zuerst ein:
 [Schritt für Schritt](graphql-schritt-fuer-schritt.md) oder `./console exp:graphql:enable --apply`.
 
@@ -15,6 +15,7 @@ verwendet das Schema die Bezeichner Ihrer Administration, also lesen Sie Ihre au
 2. [Eine mobile App, die Menü und Artikel liest](#2-eine-mobile-app-die-menü-und-artikel-liest)
 3. [Ein statischer Build](#3-ein-statischer-build)
 4. [Ein KI-Agent, der Inhalte über GraphQL liest](#4-ein-ki-agent-der-inhalte-über-graphql-liest)
+5. [Live-Aktualisierung: ein Webhook für den Shop, eine Live-Liste im Browser](#5-live-aktualisierung-ein-webhook-für-den-shop-eine-live-liste-im-browser)
 
 ## 1. Ein Blog- oder News-Frontend
 
@@ -229,6 +230,92 @@ liest dann genau, was die Rollen dieses Benutzers erlauben, und jede Anfrage wir
 `excerpt(length:)` hält den Text kurz, den ein Agent in seinen Prompt setzt. Ein Agent, der nur Fragen beantwortet,
 braucht nie Mutationen; muss einer schreiben (Entwürfe, die ein Redakteur prüft), geben Sie ihm `graphql:write` und
 lassen Sie ihn `publish: false` senden, damit ein Mensch veröffentlicht.
+
+## 5. Live-Aktualisierung: ein Webhook für den Shop, eine Live-Liste im Browser
+
+Zwei Zuhörer an denselben Änderungen: ein Shop-Server, der seine Produkt-Teaser auffrischt, sobald ein Artikel
+veröffentlicht, geändert oder in den Papierkorb gelegt wird, und eine Seite, die neue Artikel in dem Moment zeigt, in
+dem ein Redakteur sie veröffentlicht, ohne neu zu laden.
+
+**Der Webhook.** Ein Befehl legt den Endpunkt und sein Signiergeheimnis an (einmal gezeigt; geben Sie es dem Shop):
+
+```bash
+./console exp:graphql:webhooks --add=shop --url=https://shop.example.com/hooks/exponential \
+    --events=publish,update,trash --classes=ng_article --siteaccess=site --apply
+./console exp:graphql:webhooks --test=shop --apply
+```
+
+Der Shop prüft jede Anfrage, bevor er darauf handelt (die Signatur über den Zeitstempel und den unveränderten Body und
+einen Zeitstempel, der höchstens fünf Minuten alt ist), antwortet schnell mit `204` und erledigt die Arbeit danach;
+eine Antwort, die nicht 2xx ist, wird später erneut gesendet, also kann dieselbe Zustell-ID zweimal ankommen:
+
+```php
+<?php
+$body = file_get_contents( 'php://input' );
+$ts = $_SERVER['HTTP_X_EXPONENTIAL_TIMESTAMP'] ?? '';
+$expected = 'sha256=' . hash_hmac( 'sha256', $ts . '.' . $body, getenv( 'EXPONENTIAL_WEBHOOK_SECRET' ) );
+if ( !ctype_digit( $ts ) || abs( time() - (int)$ts ) > 300
+     || !hash_equals( $expected, $_SERVER['HTTP_X_EXPONENTIAL_SIGNATURE'] ?? '' ) )
+{
+    http_response_code( 401 );
+    exit;
+}
+$event = json_decode( $body, true )['data']['contentEvent'];
+if ( !already_seen( $_SERVER['HTTP_X_EXPONENTIAL_DELIVERY'] ) )   // Ihr eigener Speicher der Zustell-IDs
+    queue_refresh( $event['objectId'], $event['event'] );            // trash: den Teaser entfernen
+http_response_code( 204 );
+```
+
+Der Shop braucht auch die Felder des Artikels? Lassen Sie den Webhook statt des bloßen Ereignisses die Antwort einer
+gespeicherten Abfrage senden: Speichern Sie die Abfrage einmal und richten Sie den Endpunkt darauf.
+
+```graphql
+# article-for-shop.graphql
+query ($objectId: Int) { content(id: $objectId) { name url ... on ng_article { teaser_intro { text } } } }
+```
+
+```bash
+./console exp:graphql:persist article-for-shop.graphql --name=article-for-shop --apply
+./console exp:graphql:webhooks --add=shop --url=https://shop.example.com/hooks/exponential \
+    --events=publish,update --classes=ng_article --payload=query --query=article-for-shop --apply
+```
+
+`data` im Body ist dann die Antwort der Abfrage, gelesen als anonymer Benutzer (oder `--as=<login>`), und das Ereignis
+steht in `extensions.event`.
+
+**Die Live-Liste.** Die Seite abonniert über SSE (auf jedem Server) mit dem kleinen Client `graphql-sse`, angemeldet
+mit einem Schlüssel, der nur liest; mit Velocity funktioniert dieselbe Subscription über einen WebSocket mit
+`graphql-ws`:
+
+```js
+import { createClient } from 'graphql-sse';
+
+const client = createClient({ url: 'https://example.com/api/graphql/subscribe',
+                              headers: { Authorization: 'Bearer ' + READ_ONLY_KEY } });
+const query = `subscription {
+  contentPublished(classes: ["ng_article"], parentId: 556) {
+    event
+    content { name url ... on ng_article { teaser_intro { text } } }
+  }
+}`;
+for await (const { data } of client.iterate({ query })) {
+  const item = data.contentPublished;
+  if (item.event === 'publish' && item.content) prependTeaser(item.content);   // Ihre Darstellung
+}
+```
+
+```text
+event: next
+id: 4.182211
+data: {"data":{"contentPublished":{"event":"publish","content":{"name":"Ten minutes of mobility","url":"/Fit-Healthy/Ten-minutes-of-mobility","teaser_intro":{"text":"..."}}}}}
+```
+
+**Einstellungen.** Der Benutzer des Schlüssels muss die Artikel lesen dürfen: Ein Ereignis, das der Benutzer nicht
+lesen darf, kommt nie an. Für eine öffentliche Seite ohne Schlüssel schalten Sie `AnonymousSubscriptions=enabled` im
+Siteaccess ein und halten `MaxSubscriptionsPerAddress` niedrig; jede offene Seite hält einen PHP-Prozess (oder
+Velocity-Worker), also bemessen Sie `MaxSubscriptions` nach dem, was der Server für Seiten übrig lässt. Der Stream endet
+alle 280 Sekunden, und der Client öffnet ihn dort wieder, wo er aufhörte; ein Proxy davor muss eine Anfrage so lange
+offen lassen und darf sie nicht puffern.
 
 ## Verwandte Seiten
 

@@ -79069,6 +79069,142 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>I unekcum ɣer usmel %siteaccess, i d-yeskanayen asebter-a.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Yal tadyant i d-yessuter yixef n tuqqna (publish, update, trash, delete, move, hide, reveal, mutation) tettwazen-as s uzmul sɣur aḥric n cronjob graphqlwebhooks. ./console exp:graphql:webhooks yettxeddim ayen kif kif d tigezmi-a.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Tidyanin</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>akk</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Yal anekcum ɣer usmel</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>yerreẓ</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ulac uẓẓay</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Di ttraju</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count ttwaǧǧan</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Tuzna taneggarut</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Azen tirmit</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ih, kkes webhook-a</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Ulac akka tura webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Rnu webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Rnu</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Tuzniwin tineggura</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Akud</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Agmuḍ</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Imulteɣen</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Ileqqman srid i yimsaɣen: asuddem n tdyanin deg /api/graphql/subscribe, akked WebSocket (graphql-transport-ws) ɣef Velocity. Yal tadyant tettwazen kan i wid yulteɣen i izemren ad ɣren agbur-is.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Yeldin tura</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Amḍan afellay yeldin</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total s umata, %user i yal aseqdac, %address i yal tansa</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Imulteɣen udrigen</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Teɣzi n usuddem</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Ur yezmir ara ad yettwarnu webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name yettwabeddel; aẓẓay-is n uzmul yeqqim.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Ur yezmir ara ad yettwasekles uẓẓay n uzmul (Asbadu &gt; Iẓẓayen).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name yettwarna. Aẓẓay-is n uzmul, yettwasken tikkelt-a kan: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Ulac webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name ur d-yerri ara: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name yerra-d %status deg %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Ṛcem tanaka ɣer tama n webhook akken ad t-tekkseḍ.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name yettwakkes.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Mačči d tamnaḍt n GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Azen imulteɣen ɣer /api/graphql/subscribe (asuddem n tdyanin neɣ WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Asuter ur d-yebder ara tamhelt n warrat.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Amulteɣ yessuter yiwen n wurti kan.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Aṭas n yimulteɣen i yeldin; ɛreḍ tikkelt-nniḍen ticki.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Tesɛiḍ %max n yimulteɣen yeldin, d afellay yettusirgen.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Tansa-k tesɛa %max n yimulteɣen yeldin, d afellay yettusirgen.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Imulteɣen nsan deg unekcum-a ɣer usmel.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Kcem akken ad tmulteɣeḍ (ajiṭun neɣ tasarut API tudmawant).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Azen ibeddilen ɣer /api/graphql.</translation>
     </message>
 </context>
 </TS>

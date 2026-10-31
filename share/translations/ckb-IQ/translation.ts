@@ -79069,6 +79069,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>بۆ دەستگەیشتنی ماڵپەڕی %siteaccess، کە ئەم پەڕەیە پیشان دەدات.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>وێبهووکەکان</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>هەر ڕووداوێک کە خاڵێکی کۆتایی داوای دەکات (publish, update, trash, delete, move, hide, reveal, mutation) بە واژووکراوی لەلایەن بەشی cronjob ـی graphqlwebhooks بۆی دەنێردرێت. ./console exp:graphql:webhooks هەمان کاری ئەم بەشە دەکات.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ڕووداوەکان</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>هەموو</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>هەموو دەستگەیشتنێکی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>تێکچوو</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>نهێنی نییە</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>چاوەڕوان</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count وازلێهێنراو</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>دوایین گەیاندن</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>تاقیکردنەوەیەک بنێرە</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>بەڵێ، ئەم وێبهووکە لاببە</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>هێشتا هیچ وێبهووکێک نییە.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>وێبهووکێک زیاد بکە</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>زیادکردن</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>گەیاندنە نوێیەکان</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>کات</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ئەنجام</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>بەشداربوونەکان</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>نوێکردنەوەی ڕاستەوخۆ بۆ کڕیارەکان: ڕێڕەوێکی ڕووداو لە /api/graphql/subscribe، و WebSocket (graphql-transport-ws) لەسەر Velocity. هەر ڕووداوێک تەنها بۆ ئەو بەشداربووانە دەچێت کە دەتوانن ناوەڕۆکەکەی بخوێننەوە.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>ئێستا کراوە</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>زۆرترین کراوە</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total بە گشتی، %user بۆ هەر بەکارهێنەرێک، %address بۆ هەر ناونیشانێک</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>بەشداربوونی بێناو</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>ماوەی ڕێڕەو</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>وێبهووکەکە زیاد نەکرا: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>وێبهووکی %name گۆڕدرا؛ نهێنیی واژووکردنەکەی دەمێنێتەوە.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>نهێنیی واژووکردن پاشەکەوت نەکرا (دامەزراندن &gt; نهێنییەکان).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>وێبهووکی %name زیادکرا. نهێنیی واژووکردنەکەی، تەنها ئەم جارە پیشان دەدرێت: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>هیچ وێبهووکێکی %name نییە.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>وێبهووکی %name وەڵامی نەدایەوە: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>وێبهووکی %name لە %ms ms دا وەڵامی %status ی دایەوە.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>بۆ لابردنی وێبهووکەکە، خانەی تەنیشتی نیشان بکە.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>وێبهووکی %name لابرا.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>بوارێکی API ی GraphQL نییە: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>بەشداربوونەکان بنێرە بۆ /api/graphql/subscribe (ڕێڕەوێکی ڕووداو یان WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>داواکارییەکە ناوی هیچ کارێکی بەڵگەنامەکە ناهێنێت.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>بەشداربوونێک ڕێک داوای یەک خانە دەکات.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>بەشداربوونی زۆر کراوەن؛ دواتر دووبارە هەوڵ بدەوە.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max بەشداربوونی کراوەت هەیە، کە زۆرترینی ڕێگەپێدراوە.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>ناونیشانەکەت %max بەشداربوونی کراوەی هەیە، کە زۆرترینی ڕێگەپێدراوە.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>بەشداربوونەکان لەم دەستگەیشتنی ماڵپەڕەدا کوژاونەتەوە.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>بۆ بەشداربوون بچۆ ژوورەوە (نیشانەیەک یان کلیلێکی API ی کەسی).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>گۆڕینەکان بنێرە بۆ /api/graphql.</translation>
     </message>
 </context>
 </TS>

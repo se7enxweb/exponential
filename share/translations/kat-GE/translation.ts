@@ -79069,6 +79069,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>საიტზე წვდომისთვის %siteaccess, რომელიც ამ გვერდს აჩვენებს.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>ვებჰუკები</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>ყოველ მოვლენას, რომელსაც საბოლოო წერტილი ითხოვს (publish, update, trash, delete, move, hide, reveal, mutation), მას ხელმოწერილს უგზავნის cronjob-ის ნაწილი graphqlwebhooks. ./console exp:graphql:webhooks იგივეს აკეთებს, რასაც ეს განყოფილება.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>მოვლენები</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>ყველა</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ყველა საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>გაუმართავი</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>საიდუმლოს გარეშე</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>მოლოდინში</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count მიტოვებული</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>ბოლო მიწოდება</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>სატესტოს გაგზავნა</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>დიახ, წაშალე ეს ვებჰუკი</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>ვებჰუკი ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>ვებჰუკის დამატება</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>დამატება</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>ბოლო მიწოდებები</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>დრო</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>შედეგი</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>გამოწერები</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>პირდაპირი განახლებები კლიენტებისთვის: მოვლენების ნაკადი /api/graphql/subscribe-ზე და WebSocket (graphql-transport-ws) Velocity-ზე. ყოველი მოვლენა მხოლოდ იმ გამომწერებს მიდის, ვისაც მისი შიგთავსის წაკითხვა შეუძლია.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>ახლა ღია</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>მაქსიმუმ ღია</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>სულ %total, %user თითო მომხმარებელზე, %address თითო მისამართზე</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>ანონიმური გამოწერები</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>ნაკადის ხანგრძლივობა</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ვებჰუკის დამატება ვერ მოხერხდა: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>ვებჰუკი %name შეიცვალა; მისი ხელმოწერის საიდუმლო უცვლელი რჩება.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>ხელმოწერის საიდუმლოს შენახვა ვერ მოხერხდა (კონფიგურაცია &gt; საიდუმლოებები).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>ვებჰუკი %name დაემატა. მისი ხელმოწერის საიდუმლო, ნაჩვენები მხოლოდ ამ ერთხელ: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ვებჰუკი %name არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>ვებჰუკმა %name არ უპასუხა: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>ვებჰუკმა %name უპასუხა %status %ms ms-ში.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>ვებჰუკის წასაშლელად მონიშნეთ მის გვერდით მდებარე ველი.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>ვებჰუკი %name წაიშალა.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79343,6 +79479,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>არ არის GraphQL API-ის მოქმედების არე: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>გამოწერები გაგზავნეთ /api/graphql/subscribe-ზე (მოვლენების ნაკადი ან WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>მოთხოვნაში დოკუმენტის არცერთი ოპერაცია არ არის დასახელებული.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>გამოწერა ზუსტად ერთ ველს ითხოვს.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>ძალიან ბევრი გამოწერაა ღია; სცადეთ მოგვიანებით.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>თქვენ გაქვთ %max ღია გამოწერა, დასაშვები მაქსიმუმი.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>თქვენს მისამართს აქვს %max ღია გამოწერა, დასაშვები მაქსიმუმი.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>გამოწერები გამორთულია ამ საიტზე წვდომაში.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>გამოსაწერად შედით სისტემაში (ტოკენით ან პირადი API გასაღებით).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>მუტაციები გაგზავნეთ /api/graphql-ზე.</translation>
     </message>
 </context>
 </TS>

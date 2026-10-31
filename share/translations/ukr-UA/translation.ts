@@ -79099,6 +79099,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Для доступу до сайту %siteaccess, який показує цю сторінку.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Вебхуки</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Кожну подію, яку запитує кінцева точка (publish, update, trash, delete, move, hide, reveal, mutation), надсилає їй, з підписом, частина cronjob graphqlwebhooks. ./console exp:graphql:webhooks робить те саме, що й цей розділ.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Події</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>усі</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Кожен доступ до сайту</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>зламаний</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>без секрету</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Очікують</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>Відмовлено: %count</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Остання доставка</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Надіслати тест</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Так, вилучити цей вебхук</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Вебхуків ще немає.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Додати вебхук</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Додати</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Останні доставки</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Час</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Підписки</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Оновлення наживо для клієнтів: потік подій на /api/graphql/subscribe і WebSocket (graphql-transport-ws) на Velocity. Кожна подія надходить лише тим підписникам, які можуть читати її вміст.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Відкрито зараз</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Найбільше відкритих</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total загалом, %user на користувача, %address на адресу</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Анонімні підписки</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Тривалість потоку</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Не вдалося додати вебхук: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Вебхук %name змінено; його секрет підпису зберігається.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Не вдалося зберегти секрет підпису (Налаштування &gt; Секрети).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Вебхук %name додано. Його секрет підпису, показаний лише цей раз: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Вебхука %name не існує.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Вебхук %name не відповів: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Вебхук %name відповів %status за %ms мс.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Позначте прапорець біля вебхука, щоб вилучити його.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Вебхук %name вилучено.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79373,6 +79509,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Не є областю доступу GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Надсилайте підписки на /api/graphql/subscribe (потік подій або WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Запит не називає жодної операції документа.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Підписка запитує рівно одне поле.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Відкрито забагато підписок; спробуйте пізніше.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>У вас відкрито %max підписок — це найбільша дозволена кількість.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>З вашої адреси відкрито %max підписок — це найбільша дозволена кількість.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Підписки вимкнено в цьому доступі до сайту.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Увійдіть, щоб підписатися (токен або особистий ключ API).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Надсилайте мутації на /api/graphql.</translation>
     </message>
 </context>
 </TS>
