@@ -18,7 +18,7 @@ Administration. Was spätere Phasen hinzufügen, steht unter [Was als Nächstes 
 | Aus, bis | `settings/graphql.ini` `[GraphQLSettings] Enabled=enabled`, wahlweise nur für die Siteaccesses aus `SiteAccessList[]` |
 | Bibliothek | `webonyx/graphql-php` 15, verlangt von der `composer.json` im Wurzelverzeichnis |
 | Anmeldung | ein OAuth-Token, ein persönlicher API-Schlüssel mit dem Bereich `graphql:read` (und `graphql:write` für Mutationen), die Sitzung (Playground) oder keine (anonym) |
-| Mutationen | aus, bis `MutationsEnabled=enabled`; dann gegen Richtlinien geprüft, mit Workflows, im Audit, nur `POST` |
+| Mutationen | zusammen mit dem Endpunkt eingeschaltet (`MutationsEnabled=enabled`, der Standard; `disabled` je Siteaccess für eine API, die nur liest); gegen Richtlinien geprüft, mit Workflows, im Audit, nur `POST`, nur angemeldet |
 | Rechte | immer die Rollen und Richtlinien des Benutzers; die Schema-Einstellungen entscheiden, was überhaupt gefragt werden kann |
 | Administration | Setup > GraphQL (Richtlinie `graphql/playground`): die Endpunkte, das Schema, die Siteaccesses, die Grenzen, der Antwort-Cache, die gespeicherten Abfragen, die Schlüssel und ein Playground; Schalter mit `graphql/administrate` |
 | Konsole | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys`, `exp:graphql:starter`, `exp:graphql:bench` |
@@ -56,8 +56,9 @@ Administration. Was spätere Phasen hinzufügen, steht unter [Was als Nächstes 
    `settings/override/graphql.ini.append.php` (ohne `--siteaccess`: jeder Siteaccess), erlaubt dem Frontend unter
    `https://shop.example.com` Aufrufe aus dem Browser (`rest.ini [CorsSettings]`), erzeugt einen persönlichen
    API-Schlüssel für den Benutzer `frontend` mit dem Bereich `graphql:read` (das Token wird einmal gezeigt), leert den
-   INI-Cache und gibt den Endpunkt und eine `curl`-Zeile zum Ausprobieren aus. `--mutations` schaltet die
-   [Mutationen](#mutationen) mit ein und gibt dem Schlüssel `graphql:write`. Setup > GraphQL hat dieselben Schalter je
+   INI-Cache und gibt den Endpunkt und eine `curl`-Zeile zum Ausprobieren aus. Die [Mutationen](#mutationen) kommen
+   mit der API; `--mutations` gibt dem Schlüssel auch `graphql:write` (und schaltet die Mutationen wieder ein, wo
+   `exp:graphql:disable --mutations` sie ausgeschaltet hat). Setup > GraphQL hat dieselben Schalter je
    Siteaccess. Von Hand ist es ein Block in `settings/override/graphql.ini.append.php`:
 
    ```ini
@@ -620,17 +621,19 @@ Die Seite hat keine deutsche Übersetzung, also wird sie englisch gelesen, und `
 ## Mutationen
 
 Mutationen ändern Inhalte: anlegen, eine neue Version schreiben, übersetzen, einen Entwurf veröffentlichen, entfernen,
-verschieben, verbergen und wieder sichtbar machen, einen weiteren Ort geben, Bilder hochladen. Sie sind **aus, bis sie
-eingeschaltet werden**, je Siteaccess:
+verschieben, verbergen und wieder sichtbar machen, einen weiteren Ort geben, Bilder hochladen. Sie sind **zusammen mit
+dem Endpunkt eingeschaltet** (`MutationsEnabled=enabled` ist der Standard). Für eine API, die nur liest, schalten Sie
+sie je Siteaccess aus, mit `./console exp:graphql:disable --siteaccess=<name> --mutations --apply`, der Schaltfläche
+**Mutationen aus** in Setup > GraphQL oder von Hand:
 
 ```ini
-# settings/siteaccess/<der Siteaccess, über den Ihr Frontend schreibt>/graphql.ini.append.php
+# settings/siteaccess/<der Siteaccess, der nur liest>/graphql.ini.append.php
 [GraphQLSettings]
-MutationsEnabled=enabled
+MutationsEnabled=disabled
 ```
 
 Solange sie aus sind, hat das Schema keinen Typ `Mutation`, und eine Mutation wird mit `DISABLED` abgelehnt.
-Eingeschaltet gelten für jede Mutation dieselben Regeln wie in der Administration:
+Solange sie eingeschaltet sind, gelten für jede Mutation dieselben Regeln wie in der Administration:
 
 - **Die Richtlinien des Benutzers.** Jede Mutation prüft die Rechte des Benutzers, als der sie läuft, an dem Inhalt,
   den sie ändert: `content/create` unter dem Elternknoten (für die Klasse und die Sprache), `content/edit` am Objekt (in
@@ -837,8 +840,9 @@ ausführen; `enabled` tut das für jede Anfrage an `/api/graphql`. Eine Ad-hoc-A
   exklusiver Sperre, also zählt jeder PHP-FPM- und jeder [Velocity](velocity-webserver.md)-Worker dieselben Anfragen,
   ohne Datenbankverbindung. Der Playground zählt je Benutzer; die Konsole ist nicht begrenzt. Ein Lasttest von einer
   Adresse braucht `RateLimitAnonymous=0` (oder ein Token) im gemessenen Siteaccess.
-- **Änderungen nur, wo eingeschaltet.** Eine Abfrage ändert nie Inhalte. [Mutationen](#mutationen) sind aus, bis
-  `MutationsEnabled=enabled` in einem Siteaccess steht; dann gehen sie nur mit `POST`, werden für anonyme Anfragen
+- **Änderungen nur durch die Prüfungen.** Eine Abfrage ändert nie Inhalte. [Mutationen](#mutationen) sind zusammen
+  mit dem Endpunkt eingeschaltet (`MutationsEnabled=enabled`, der Standard; `disabled` in einem Siteaccess macht seine
+  API zu einer, die nur liest); sie gehen nur mit `POST`, werden für anonyme Anfragen
   (`AnonymousMutations`), für einen Schlüssel ohne `graphql:write` und für eine Sitzung ohne ihr Formular-Token
   abgelehnt, gegen die Richtlinien des Benutzers geprüft, über die Operationen des Kernels und ihre Workflows
   ausgeführt und im Audit aufgezeichnet.
@@ -1095,8 +1099,8 @@ zum Schema-Hash, also sehen Clients, dass sich das Schema ändert. `exp:graphql:
 | [`exp:graphql:schema`](../../beispiele/befehle/expgraphqlschema.md) | das Schema: `--format=sdl` (die Schemasprache, für Code-Generatoren und Editoren), `json` (das Ergebnis der Introspection), `summary` (Klassen, Typen, Felder, Datentypen, abgebildet oder nicht); `--output=<datei>` |
 | [`exp:graphql:query`](../../beispiele/befehle/expgraphqlquery.md) | führt eine Abfrage aus, angegeben als Argument, als `.graphql`- oder `.gql`-Datei oder `-` für die Standardeingabe, oder eine gespeicherte Abfrage mit `--id=<Name oder sha256>`; `--variables`, `--operation`, `--as=<login>`, `--format=json\|table` |
 | [`exp:graphql:persist`](../../beispiele/befehle/expgraphqlpersist.md) | speichert `.graphql`-Dateien als [gespeicherte Abfragen](#gespeicherte-abfragen), nachdem sie gegen das Schema geprüft wurden (`--apply`; `--name=`), `--list` (`--format=text\|json`), `--remove=<Name oder sha256> --apply` |
-| [`exp:graphql:enable`](../../beispiele/befehle/expgraphqlenable.md) | schaltet die API mit einem Befehl ein: `--siteaccess=`, `--mutations`, `--origin=` (CORS), `--key-for=<login>` mit `--key-name=`, `--scope=`, `--days=`; prüft das Schema, gibt den Endpunkt und eine `curl`-Zeile aus; ein Probelauf (ein Diff) ohne `--apply` |
-| [`exp:graphql:disable`](../../beispiele/befehle/expgraphqldisable.md) | schaltet sie aus, überall oder für `--siteaccess=`; `--mutations` schaltet nur die Mutationen aus; ein Probelauf ohne `--apply` |
+| [`exp:graphql:enable`](../../beispiele/befehle/expgraphqlenable.md) | schaltet die API mit einem Befehl ein, ihre Mutationen mit ihr: `--siteaccess=`, `--mutations` (wieder ein nach `disable --mutations`; ein Schlüssel erhält `graphql:write`), `--origin=` (CORS), `--key-for=<login>` mit `--key-name=`, `--scope=`, `--days=`; prüft das Schema, gibt den Endpunkt und eine `curl`-Zeile aus; ein Probelauf (ein Diff) ohne `--apply` |
+| [`exp:graphql:disable`](../../beispiele/befehle/expgraphqldisable.md) | schaltet sie aus, überall oder für `--siteaccess=`; `--mutations` schaltet nur die Mutationen aus (eine API, die nur liest); ein Probelauf ohne `--apply` |
 | [`exp:graphql:starter`](../../beispiele/befehle/expgraphqlstarter.md) | erzeugt ein Starter-Frontend in ein neues Verzeichnis (`--kit=html\|next\|nuxt\|astro\|expo`, `--to=`, `--endpoint=`, `--list`): die Dateien des Kits und aus dem Schema erzeugte Abfragen (das Menü, eine Seite nach URL-Alias, jedes Feld jeder Klasse), jede vorher gegen das Schema geprüft; siehe [Schritt für Schritt](../../anleitungen/graphql-schritt-fuer-schritt.md); ein Probelauf ohne `--apply` |
 | [`exp:graphql:keys`](../../beispiele/befehle/expgraphqlkeys.md) | die persönlichen API-Schlüssel mit einem GraphQL-Bereich: die Liste (`--format=text\|json`), `--create --for=<login>` (`--name`, `--scope`, `--days`; das Token wird einmal gezeigt), `--revoke=<Präfix oder ID>`; ein Probelauf ohne `--apply` |
 | [`exp:graphql:bench`](../../beispiele/befehle/expgraphqlbench.md) | misst die Geschwindigkeit eines Endpunkts an Entscheidung 18 ([Geschwindigkeit](#geschwindigkeit)): zwischengespeichertes `GET`, `304`, zwischengespeichertes `POST`, eine zwischengespeicherte Antwort über den Kernel, ohne Zwischenspeicher (`--query-file`); Median, p95 und Maximum je Zeile, PASS oder FAIL gegen die harte Grenze von 33 ms; `--format=text\|json` |

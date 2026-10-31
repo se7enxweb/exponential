@@ -3,7 +3,8 @@
 Diese Anleitung bringt eine Site mit Exponential 6.0.15 von „GraphQL ausgeschaltet“ zu einem laufenden Frontend, das
 seine Inhalte über die GraphQL-API liest: die API für einen Siteaccess eingeschaltet, ein Schlüssel für das Frontend,
 ein Starter-Projekt aus dem eigenen Schema der Site erzeugt, seine Abfragen auf dem Server gespeichert und aus dem
-Antwort-Cache beantwortet, und, wenn das Frontend auch schreibt, die Mutationen eingeschaltet. Jeder Schritt sagt, was
+Antwort-Cache beantwortet, und, wenn das Frontend auch schreibt, ein Schlüssel, der schreiben darf (die Mutationen
+kommen mit der API). Jeder Schritt sagt, was
 Sie ausführen, was Sie sehen sollten und wie Sie es prüfen.
 
 Sie richtet sich an Entwickler mit einer Shell auf dem Server (für `./console`) und einem Administratorkonto. Die
@@ -26,7 +27,7 @@ Referenz für alles, was hier verwendet wird, ist [Die GraphQL-API](../funktione
 6. [Das Starter-Projekt erzeugen](#6-das-starter-projekt-erzeugen)
 7. [Starten](#7-starten)
 8. [Seine Abfragen auf dem Server speichern](#8-seine-abfragen-auf-dem-server-speichern)
-9. [Schreiben: die Mutationen einschalten](#9-schreiben-die-mutationen-einschalten)
+9. [Schreiben: ein Schlüssel mit graphql:write](#9-schreiben-ein-schlüssel-mit-graphqlwrite)
 10. [Vor dem Livegang](#10-vor-dem-livegang)
 11. [Wenn etwas nicht funktioniert](#11-wenn-etwas-nicht-funktioniert)
 
@@ -193,10 +194,13 @@ das Veröffentlichen von Inhalten lässt den Cache verfallen. Mit `PersistedQuer
 jede Ad-hoc-Abfrage anonymer Anfragen ab: eine gute Einstellung für den Betrieb, sobald das Frontend nur noch
 gespeicherte Abfragen sendet. Setup > GraphQL listet die gespeicherten Abfragen und die Größe des Caches.
 
-## 9. Schreiben: die Mutationen einschalten
+## 9. Schreiben: ein Schlüssel mit graphql:write
 
-Nur wenn das Frontend Inhalte ändert (ein Kontaktformular, das Inhalte anlegt, eine App für Redakteure). Schalten Sie
-sie für den Siteaccess ein und geben Sie dem schreibenden Benutzer einen Schlüssel mit `graphql:write`:
+Die Mutationen kamen in Schritt 3 mit der API (`MutationsEnabled=enabled` ist der Standard), aber noch kann nichts
+schreiben: Eine Mutation braucht einen angemeldeten Benutzer, und ein Schlüssel braucht den Bereich `graphql:write`.
+Wenn das Frontend Inhalte ändert (ein Kontaktformular, das Inhalte anlegt, eine App für Redakteure), geben Sie dem
+schreibenden Benutzer einen solchen Schlüssel (`--mutations` schaltet die Mutationen außerdem wieder ein, falls sie für
+den Siteaccess ausgeschaltet wurden):
 
 ```bash
 ./console exp:graphql:enable --siteaccess=site --mutations --key-for=editor --apply
@@ -230,8 +234,8 @@ ihn auf einem Server.
 - [ ] Die Abfragen des Frontends sind gespeichert (`exp:graphql:persist`), und `PersistedQueriesOnly=anonymous` (oder
       `enabled`).
 - [ ] Die Ratenbegrenzungen passen zum erwarteten Verkehr (`RateLimit`, `RateLimitAnonymous`; Setup > GraphQL zeigt sie).
-- [ ] Mutationen sind nur dort an, wo etwas schreibt, und `exp:graphql:keys` listet keinen Schlüssel, den Sie nicht
-      kennen.
+- [ ] Ein Siteaccess, in dem nichts schreibt, hat `MutationsEnabled=disabled` (`exp:graphql:disable
+      --siteaccess=<name> --mutations --apply`), und `exp:graphql:keys` listet keinen Schlüssel, den Sie nicht kennen.
 - [ ] `Debug=disabled` im Siteaccess des Betriebs.
 
 ## 11. Wenn etwas nicht funktioniert

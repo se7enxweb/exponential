@@ -3337,7 +3337,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-4d7863549c5863a222f0c48b4197a59f  doc/changelogs/6.0/6.0.15.md
+f50ed3b89ddfb65fdd23a0375e200184  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3608,8 +3608,8 @@ faeff6c3070aa0ffa84d48b14e1f11a2  doc/eng-us/examples/commands/expbackfillorders
 10e1317182e6a70d0be6dbd65c50d3e0  doc/eng-us/examples/commands/expcontentjob.md
 bf66b4b9145212157d8ce068d252ba37  doc/eng-us/examples/commands/expfetch.md
 dd8c099e9ba309af6f5534443c974716  doc/eng-us/examples/commands/expgraphqlbench.md
-f6d1e2dfdca888554dfb834bce2aa969  doc/eng-us/examples/commands/expgraphqldisable.md
-845d170638a608e51b7a5c567d5bd996  doc/eng-us/examples/commands/expgraphqlenable.md
+d96ffa7df29c05c9c65ba32799d63d2d  doc/eng-us/examples/commands/expgraphqldisable.md
+86f7b2924e13d22d9730b2e396ad79c2  doc/eng-us/examples/commands/expgraphqlenable.md
 eff1753adbe4a24a043adec860709825  doc/eng-us/examples/commands/expgraphqlkeys.md
 7b5670f042252ad416ae684006f637d7  doc/eng-us/examples/commands/expgraphqlpersist.md
 b791538120cc3622e7d2268eee2a4ab9  doc/eng-us/examples/commands/expgraphqlquery.md
@@ -4716,7 +4716,7 @@ bf32564c7a1a92b4de72ca42c5a07e96  doc/eng-us/examples/ini-settings/file/PassThro
 3baf29e40ee836d3a84f5bffff6100bc  doc/eng-us/examples/ini-settings/file/README.md
 3eab3b076ded343b9c9f94f0bbfa040b  doc/eng-us/examples/ini-settings/file/eZDFSClusteringSettings.md
 998449df227f74f196c6aeaa4cf4b60d  doc/eng-us/examples/ini-settings/graphql/GraphQLNaming.md
-6488d78c88cb34a98af7886319f3b092  doc/eng-us/examples/ini-settings/graphql/GraphQLSettings.md
+ac1125caf8dbfe53837c8825bf499388  doc/eng-us/examples/ini-settings/graphql/GraphQLSettings.md
 5849032fa15e6b98cdf0ec6fc6ee098e  doc/eng-us/examples/ini-settings/graphql/README.md
 530b72eabef1d6342eca900d870f3b0b  doc/eng-us/examples/ini-settings/httpcache/HttpCacheSettings.md
 d244fe70d76dae352601fba62c14d807  doc/eng-us/examples/ini-settings/httpcache/README.md
@@ -6566,7 +6566,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 9c48d98113bfd90aee4978edd5c7a7f2  doc/eng-us/features/6.0/ezpm-package-manager-cli.md
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
-0ec25fafe887d9c1c494f9be5c48cd66  doc/eng-us/features/6.0/graphql.md
+ced048d6e149abcabf17f2dbfd1bd355  doc/eng-us/features/6.0/graphql.md
 da954ebd145c3c58a98b5755235bb069  doc/eng-us/features/6.0/help-content.md
 c2e6afd557f166bbbd534db2b70a1de7  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
@@ -6695,7 +6695,7 @@ a518e62944d14435eac07c9fde4b2306  doc/eng-us/guides/extensions-page.md
 cdac22058aa72ebee655751b3f933e83  doc/eng-us/guides/finding-an-error-by-its-reference.md
 996ecbfce279c75c2c2fdfdd94d6a171  doc/eng-us/guides/getting-started.md
 274f91d81bbd78ebfda7ad315aca3ac5  doc/eng-us/guides/graphql-recipes.md
-54430d710c1ddca7c499331a974eced0  doc/eng-us/guides/graphql-walkthrough.md
+5327670ffd38c5c0efeb70f19641b033  doc/eng-us/guides/graphql-walkthrough.md
 fbcbc9cf7bbfb1f95906327d9513b2c6  doc/eng-us/guides/images/account-approval/approval-item.png
 8bcb3ac63cc2341e4ef7d3045867af4b  doc/eng-us/guides/images/account-approval/approved.png
 4a8739c9f2f5b65580e85608c8d2f948  doc/eng-us/guides/images/account-approval/section-workflow.png
@@ -12831,9 +12831,9 @@ f16d86ab0286e7abf7b93b1e644bbb1f  doc/ger-de/.examples/descriptions/13-ini-setti
 f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-and-template-bridge-2026-10-29.json
 4a574500e24e9fdb063aecc63316d565  doc/ger-de/.examples/descriptions/15-graphql-api-2026-10-29.json
 9f1ddb9451b178bdb01507200a1cc934  doc/ger-de/.examples/descriptions/16-graphql-api-phase-2-2026-10-30.json
-1d3bcd6ea925e2495423095debcc2d4e  doc/ger-de/.examples/descriptions/17-graphql-api-mutations-2026-10-30.json
+53d7b6d0ac9b5c38dd1a9e495c4906f3  doc/ger-de/.examples/descriptions/17-graphql-api-mutations-2026-10-30.json
 11d317a9fffe4afd4e34805f014c6bd1  doc/ger-de/.examples/descriptions/17-graphql-bench-2026-10-30.json
-cbc9f9618251fe4fd3bbba869705aed8  doc/ger-de/.examples/descriptions/18-graphql-api-setup-2026-10-30.json
+45c95355f2a63e43c2d843c62d7b0767  doc/ger-de/.examples/descriptions/18-graphql-api-setup-2026-10-30.json
 94bc98a826c7352b502724c0c179fb24  doc/ger-de/.examples/descriptions/19-graphql-api-starter-2026-10-30.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
@@ -12893,7 +12893,7 @@ a18906c2d024747be98c7252b5dcdda6  doc/ger-de/anleitungen/extensions.md
 df3154102d4ccbaaf89b86f7fc6d13a7  doc/ger-de/anleitungen/fehler-anhand-der-referenz-finden.md
 01c462f0c79a43b1f70a945e62a60dd8  doc/ger-de/anleitungen/gesammelte-informationen.md
 38db27f9cde44f4a9d1168aa7aed4c0f  doc/ger-de/anleitungen/graphql-rezepte.md
-740c66a7debd0775c4f0df32ee0b8a24  doc/ger-de/anleitungen/graphql-schritt-fuer-schritt.md
+b89b313044080b8b709b72c12aa46293  doc/ger-de/anleitungen/graphql-schritt-fuer-schritt.md
 f0277ca3c4b6176643fd82cfc07167c9  doc/ger-de/anleitungen/identitaet-bestaetigen.md
 e6ca3f7504b9e3f26e732979a4f53092  doc/ger-de/anleitungen/ihre-geraete-und-sitzungen.md
 123235c41b3d61d22fc74809cdd57dc6  doc/ger-de/anleitungen/inhaltsmodell-und-bearbeitung.md
@@ -13092,8 +13092,8 @@ a836201005e9b849da7108e7f2c88974  doc/ger-de/beispiele/befehle/expbackfillorders
 433175eb1079ecb73197c164a9c33463  doc/ger-de/beispiele/befehle/expcontentjob.md
 982242f96f8558a44a6a4d2693d04c4e  doc/ger-de/beispiele/befehle/expfetch.md
 3d67d4f3f1177b7c8f8a8f847c4f42de  doc/ger-de/beispiele/befehle/expgraphqlbench.md
-5cd08a600b762a27e25d7d67817f06d1  doc/ger-de/beispiele/befehle/expgraphqldisable.md
-4ec7cb310e2593ce5cd467b63e2fba67  doc/ger-de/beispiele/befehle/expgraphqlenable.md
+20cf31fdd0757a238fe62c95098b5fec  doc/ger-de/beispiele/befehle/expgraphqldisable.md
+e3afdbd74005a91be067f38955dc8cf5  doc/ger-de/beispiele/befehle/expgraphqlenable.md
 1e4bf83226b34c4dca76bc172d74f1ec  doc/ger-de/beispiele/befehle/expgraphqlkeys.md
 2bb7b2337b6f9876625ed10aa0c41dad  doc/ger-de/beispiele/befehle/expgraphqlpersist.md
 7b987e839cf87869c47fdd8fe7850ffb  doc/ger-de/beispiele/befehle/expgraphqlquery.md
@@ -14174,7 +14174,7 @@ c7e0a65f64bad5e826e902417cefbc7d  doc/ger-de/beispiele/ini-einstellungen/file/Pa
 c417cc736ef99d340cf8f6d178c5584c  doc/ger-de/beispiele/ini-einstellungen/file/README.md
 a00ea5dfccec576bed611262d7b8b0ca  doc/ger-de/beispiele/ini-einstellungen/file/eZDFSClusteringSettings.md
 89faf5ff6bcbd7bb591a09a9744befd0  doc/ger-de/beispiele/ini-einstellungen/graphql/GraphQLNaming.md
-21c5c1994d62f4442159de38e12d9bbd  doc/ger-de/beispiele/ini-einstellungen/graphql/GraphQLSettings.md
+b6fbaa182a661fdb93c1dac3f7f46eca  doc/ger-de/beispiele/ini-einstellungen/graphql/GraphQLSettings.md
 e189a6384d5fb35982277f51aabc4e70  doc/ger-de/beispiele/ini-einstellungen/graphql/README.md
 d4a5456dd3b5df504250b4c930ca1d1e  doc/ger-de/beispiele/ini-einstellungen/httpcache/HttpCacheSettings.md
 7104d2b912e12f6a5a216abacaadd136  doc/ger-de/beispiele/ini-einstellungen/httpcache/README.md
@@ -15822,7 +15822,7 @@ b1a17245ed04b8323c1b3acf66144d0c  doc/ger-de/funktionen/6.0/exp-debug-leiste.md
 b1f10199d3eaa2ca42f0dc2506b7daaa  doc/ger-de/funktionen/6.0/freigabe-von-redakteurskonten.md
 c86b628979e2e65666467fe3f589272a  doc/ger-de/funktionen/6.0/geheimnisspeicher.md
 eb3d2bb16f19518e5d5f40301852dfa7  doc/ger-de/funktionen/6.0/generator-fuer-den-statischen-cache.md
-f34c72a49d633f772411a8a78a205209  doc/ger-de/funktionen/6.0/graphql.md
+e342bd5d20abf533652386c240a624e5  doc/ger-de/funktionen/6.0/graphql.md
 e667b2bcfdc637b0ebf0d7ce755249e5  doc/ger-de/funktionen/6.0/handler-fuer-inhaltseinschraenkungen.md
 4c817b16a8baa24ca229830f51b0b584  doc/ger-de/funktionen/6.0/hilfeinhalte.md
 922ccbd845d7b93b0067c797f9bf45f2  doc/ger-de/funktionen/6.0/hilfesystem.md
@@ -24140,7 +24140,7 @@ c05ef905dde9822f2a3755518b4b579e  kernel/private/classes/commands/expbackfillord
 40e4958317e33da81fdc573d6814191e  kernel/private/classes/commands/expcontentjob.php
 ab2cbe636f4bd9a9e93cf053b435f3bc  kernel/private/classes/commands/expgraphqlbench.php
 00fa9b3ad265ada70a9ec5fd0b76ad0c  kernel/private/classes/commands/expgraphqldisable.php
-b4940f08f08f4a1d6f8c7c8855b09ccd  kernel/private/classes/commands/expgraphqlenable.php
+1a329fbdc7b783c8701b36aee4c5b914  kernel/private/classes/commands/expgraphqlenable.php
 869678d63beb2672d3a23aa79477e707  kernel/private/classes/commands/expgraphqlkeys.php
 6f5c4d74d26553be9c125a58e16e1a29  kernel/private/classes/commands/expgraphqlpersist.php
 fb02882bf0b0f68b95dbe2383effb80d  kernel/private/classes/commands/expgraphqlquery.php

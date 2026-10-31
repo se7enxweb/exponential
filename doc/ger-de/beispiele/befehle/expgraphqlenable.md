@@ -26,12 +26,13 @@ Was `--help` ausgibt, so wie der Befehl es schreibt:
 ```text
 Switch the GraphQL API on
 Sets graphql.ini [GraphQLSettings] Enabled=enabled in settings/override, adds the siteaccesses of
---siteaccess to SiteAccessList[] (without it the API answers in every siteaccess), switches the
-mutations on with --mutations, lets a front end's origin call it with --origin (rest.ini
-[CorsSettings]), makes a personal API key for a user with --key-for (the token is shown once), checks
-that the schema builds, and prints the end point, a curl example and the playground. Shows the
-changes as a diff and writes nothing without --apply; with --apply each file is backed up first and
-the INI caches are cleared.
+--siteaccess to SiteAccessList[] (without it the API answers in every siteaccess); the mutations
+come on with it (MutationsEnabled=enabled, the default), and --mutations writes that too, where
+exp:graphql:disable --mutations switched them off. Lets a front end's origin call it with
+--origin (rest.ini [CorsSettings]), makes a personal API key for a user with --key-for (the token
+is shown once), checks that the schema builds, and prints the end point, a curl example and the
+playground. Shows the changes as a diff and writes nothing without --apply; with --apply each file
+is backed up first and the INI caches are cleared.
 
 ./console exp:graphql:enable                                        what would change
 ./console exp:graphql:enable --siteaccess=site --apply
@@ -48,7 +49,7 @@ missing; 2 wrong options (an unknown siteaccess or user, an origin that is not o
 |---|---|---|
 | `--siteaccess` | erforderlich | die Siteaccesses, in denen sie antwortet, durch Kommas getrennt (Standard: jeder Siteaccess) |
 | `--origin` | erforderlich | der Origin eines Frontends, das sie aus einem Browser aufrufen darf (CORS), durch Kommas getrennt |
-| `--mutations` |  | auch die Mutationen einschalten (in den Siteaccesses aus --siteaccess) |
+| `--mutations` |  | die Mutationen wieder einschalten (in den Siteaccesses aus --siteaccess); sie sind standardmäßig eingeschaltet |
 | `--key-for` | erforderlich | einen persönlichen API-Schlüssel für diesen Benutzer erzeugen (ein Login) |
 | `--key-name` | erforderlich | der Name des Schlüssels (Standard: GraphQL front end) |
 | `--scope` | erforderlich | die Bereiche des Schlüssels: graphql:read (der Standard), graphql:write (der Standard mit --mutations) |
