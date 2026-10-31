@@ -27098,6 +27098,7 @@ ce4d8e9bc374017eb989a9f9247ccb4c  tests/tests/extension/ezoe/expOEPastedStylesTe
 570a96645257136a1bf654db8777d11f  tests/tests/extension/ezoe/expOERelationsEmbedIdTest.php
 99228dda821a37c0106edf780cc078b8  tests/tests/extension/ezoe/expOERoundTripTest.php
 0dcf7e9882330bbb379cde77792b93fa  tests/tests/extension/ezoe/expOETestCase.php
+7362d264cfdbd06b3c0728a370dea1c2  tests/tests/extension/ezoe/expOETinyMCE8SkinBoxModelTest.php
 8d8e4b90c478c86a78fc64db00506439  tests/tests/extension/ezoe/expOEUploadExecutableTest.php
 8266a98155e008943d695fdc889ab16e  tests/tests/extension/ezoe/expOEUploadPostStringTest.php
 abe87695b0129240038005d88c363c48  tests/tests/extension/ezoe/expOEUploadRulesTest.php
