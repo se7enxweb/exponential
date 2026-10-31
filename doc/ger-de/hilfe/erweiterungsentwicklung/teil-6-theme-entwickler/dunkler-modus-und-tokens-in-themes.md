@@ -136,6 +136,25 @@ document.addEventListener( 'click', function( e )
 Die `try`-Blöcke sind wichtig: Der Speicher kann nicht verfügbar sein (private Fenster, blockierte Website-Daten), und
 die Seite muss auch ohne ihn funktionieren.
 
+### Kernel-Seiten folgen dem Umschalter
+
+Einige Seiten des Kernels bringen ein kleines eigenes Stylesheet mit und werden in Ihrem Design so gezeigt, wie sie
+sind, zum Beispiel Ihre Geräte und die Sicherheitsaktivität (`design/standard/stylesheets/user_sessions.css`). Ohne ein
+Zeichen des Designs folgen sie dem Modus des Geräts; mit einem auf hell gestellten Umschalter auf einem dunklen Gerät
+wären sie also dunkel auf einer hellen Site. Stattdessen folgen sie dem Umschalter, wenn `<html>` den verwendeten Modus
+in einem dieser Attribute trägt:
+
+| Attribut | Werte | Wer es setzt |
+|---|---|---|
+| `data-theme` | `light`, `dark` | die übliche Konvention: verwenden Sie es für Ihren eigenen Umschalter |
+| `data-bs-theme` | `light`, `dark` | die Farbmodi von Bootstrap 5.3 |
+| `data-exp-theme` | `light`, `dark`, `darker` | das Media-Design von sevenx_themes_media |
+
+Setzen Sie den aufgelösten Modus, nicht die Wahl: `dark`, wenn der Besucher auf einem dunklen Gerät „System“ gewählt
+hat. Mit `data-mytheme-theme` aus dem Beispiel oben setzen Sie zusätzlich `data-theme`. Das Template des Kernels in
+Ihrem Design zu überschreiben (wie es das Media-Design für diese Seiten tut) bleibt der Weg, ihnen das eigene Aussehen
+Ihres Designs zu geben.
+
 ## Prüfen
 
 - Schalten Sie das Gerät zwischen Hell und Dunkel um: Die Website folgt.

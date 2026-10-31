@@ -132,6 +132,23 @@ document.addEventListener( 'click', function( e )
 The `try` blocks matter: storage may be unavailable (private windows, blocked site data), and the page must work
 without it.
 
+### Kernel pages follow the switch
+
+Some pages of the kernel bring a small stylesheet of their own and are shown in your design as they are, for example
+Your devices and Security activity (`design/standard/stylesheets/user_sessions.css`). Without a sign from the design
+they follow the device's mode, so with a toggle set to light on a dark device they would be dark on a light site.
+They follow the toggle instead when `<html>` carries the mode in use in one of these attributes:
+
+| Attribute | Values | Who sets it |
+|---|---|---|
+| `data-theme` | `light`, `dark` | the common convention: use it for your own toggle |
+| `data-bs-theme` | `light`, `dark` | Bootstrap 5.3's color modes |
+| `data-exp-theme` | `light`, `dark`, `darker` | the media design of sevenx_themes_media |
+
+Set the resolved mode, not the choice: `dark` when the visitor chose "system" on a dark device. With
+`data-mytheme-theme` in the example above, set `data-theme` as well. Overriding the kernel's template in your design
+(as the media design does for these pages) remains the way to give them your design's own look.
+
 ## Check it
 
 - Switch the device between light and dark: the site follows.

@@ -135,6 +135,7 @@ Sitzungen, die `[Session] SessionTimeout` lang nicht benutzt wurden, und entfern
 | Das abgemeldete Gerät ist noch angemeldet | Es hat noch keine Anfrage gestellt: Der nächste Klick zeigt die Anmeldeseite. Ein Gerät, das nur eine Seite offen hält, fragt den Server nicht |
 | Keine E-Mail nach einer Anmeldung von einem neuen Telefon | Das Kästchen auf Ihre Geräte ist leer, oder `NewDeviceMail=disabled`, oder es war die erste Anmeldung des Kontos, oder derselbe Browser und dasselbe System wurden innerhalb von 90 Tagen benutzt |
 | Ein Programm (WebDAV, REST mit einem App-Passwort) steht nicht in der Liste | Anfragen, die sich nur für sich selbst anmelden, ohne Sitzung, sind keine Sitzungen; widerrufen Sie stattdessen das App-Passwort oder den API-Schlüssel |
+| Ihre Geräte oder die Sicherheitsaktivität ist dunkel, während der Rest der Site hell ist (oder umgekehrt) | Die Seiten folgen dem hellen oder dunklen Modus des Systems, solange das Design der Site den verwendeten Modus nicht an `<html>` angibt: `data-theme="light"` oder `"dark"`, `data-bs-theme` (Bootstrap 5.3) oder `data-exp-theme` (das Media-Design). Ein Design mit eigenem Umschalter setzt eines davon, bevor die Seite gezeichnet wird; siehe [Dunkler Modus und Tokens in Themes](../hilfe/erweiterungsentwicklung/teil-6-theme-entwickler/dunkler-modus-und-tokens-in-themes.md#kernel-seiten-folgen-dem-umschalter) |
 
 ## Verweise
 

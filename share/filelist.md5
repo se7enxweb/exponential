@@ -2228,7 +2228,7 @@ bd05cb4fe2f6cce89d2e83c8f58298b2  design/standard/stylesheets/setup2.css
 e034cd0ea061441dc071305135910c4b  design/standard/stylesheets/setup3.css
 5a662d34e6ef5a7f2c147c6500ac33ac  design/standard/stylesheets/style.css
 0e348305d6c828290c39ab83639ca718  design/standard/stylesheets/treemenu.css
-d07a001c5fd9e7e0445c3bfef8268288  design/standard/stylesheets/user_sessions.css
+0626e1e7a915368cdbd3a34f139ecc4d  design/standard/stylesheets/user_sessions.css
 f90b91b7dabd554deb260702799fe763  design/standard/templates/apikey/list.tpl
 0dafb578b8c085af1948e09c376a4d90  design/standard/templates/apikey/parts/account_link.tpl
 bf10f75146b395c672f63bb0d24f2934  design/standard/templates/apikey/parts/page_end.tpl
@@ -3339,7 +3339,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-c86433b3b7489e36edf3059f54066576  doc/changelogs/6.0/6.0.15.md
+14274d38111459d4d66ec81416cc840b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6804,7 +6804,7 @@ ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
-8b555148a73977cab3cfb337004aae4b  doc/eng-us/guides/your-devices-and-sessions.md
+ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
 082e1ca5bb2bc6bb5efc4f5ad0e678f2  doc/eng-us/help/README.md
 f3a6eb643757b14f92dc0cede99d6396  doc/eng-us/help/accounts-and-sign-in.md
 a4159505dbe39bf144ddaacd6d3113aa  doc/eng-us/help/admin-tour.md
@@ -8666,7 +8666,7 @@ e5d4e84a1626cffd5f3075a5c44e1dd1  doc/eng-us/help/extension-development/part-5-e
 db759163a0aebf2bf93e638302922507  doc/eng-us/help/extension-development/part-6-theme-developers/README.md
 6e26641ca1e8019cc30d08c72d39a509  doc/eng-us/help/extension-development/part-6-theme-developers/a-theme-by-hand.md
 b09f24a2e6672f964627586e330a0827  doc/eng-us/help/extension-development/part-6-theme-developers/a-theme-with-the-rad-wizard.md
-ed25e2f0ce8391123a87bc7d8f063867  doc/eng-us/help/extension-development/part-6-theme-developers/dark-mode-and-tokens-in-themes.md
+734ddffbda94bf1c9e4767d778012979  doc/eng-us/help/extension-development/part-6-theme-developers/dark-mode-and-tokens-in-themes.md
 6e3aa9e39e45ccb3bf18cc1912f2834a  doc/eng-us/help/extension-development/part-6-theme-developers/design-extension-anatomy.md
 12cd1ba848a470ecb843c35f79e0dcb5  doc/eng-us/help/extension-development/part-6-theme-developers/distributing-a-theme.md
 5c3af087767c8d7a69cea91893941e97  doc/eng-us/help/extension-development/part-6-theme-developers/theme-assets-the-packer-and-csp.md
@@ -12908,7 +12908,7 @@ df3154102d4ccbaaf89b86f7fc6d13a7  doc/ger-de/anleitungen/fehler-anhand-der-refer
 6855141c8cffc122efbc45744a88ff75  doc/ger-de/anleitungen/graphql-rezepte.md
 b89b313044080b8b709b72c12aa46293  doc/ger-de/anleitungen/graphql-schritt-fuer-schritt.md
 f0277ca3c4b6176643fd82cfc07167c9  doc/ger-de/anleitungen/identitaet-bestaetigen.md
-8a97da925df433780705cabeabf781e4  doc/ger-de/anleitungen/ihre-geraete-und-sitzungen.md
+79aac653572eeb930b4393d072ec1e84  doc/ger-de/anleitungen/ihre-geraete-und-sitzungen.md
 123235c41b3d61d22fc74809cdd57dc6  doc/ger-de/anleitungen/inhaltsmodell-und-bearbeitung.md
 a83e97a6aac6d250a267fa0d660ffdec  doc/ger-de/anleitungen/inhaltssprachen.md
 54e9abc27cfbca244fc3f19ca62eb500  doc/ger-de/anleitungen/inhaltsverlauf.md
@@ -17746,7 +17746,7 @@ d71c89a581c7acb5a22b404f5064c478  doc/ger-de/hilfe/erweiterungsentwicklung/teil-
 b97606eee723198948667c03a95a35df  doc/ger-de/hilfe/erweiterungsentwicklung/teil-5-erweitern-forken-zurueckgeben/wann-forken.md
 ef6556e305f32c515d4d3566bfb66da2  doc/ger-de/hilfe/erweiterungsentwicklung/teil-6-theme-entwickler/README.md
 525af36eb750f8ede03e58a5f1044aa2  doc/ger-de/hilfe/erweiterungsentwicklung/teil-6-theme-entwickler/aufbau-einer-design-erweiterung.md
-40870c0873fd08ba80ef0778bdd2abe2  doc/ger-de/hilfe/erweiterungsentwicklung/teil-6-theme-entwickler/dunkler-modus-und-tokens-in-themes.md
+b8f45f3905bcb172703867dff6c57a7f  doc/ger-de/hilfe/erweiterungsentwicklung/teil-6-theme-entwickler/dunkler-modus-und-tokens-in-themes.md
 d60a8d1aeffa8dcf05047921f8a80cf3  doc/ger-de/hilfe/erweiterungsentwicklung/teil-6-theme-entwickler/ein-theme-mit-dem-rad-assistenten.md
 614d1c2596ba7eaa00bb3bb8bdeab6b7  doc/ger-de/hilfe/erweiterungsentwicklung/teil-6-theme-entwickler/ein-theme-verteilen.md
 f5443483e78768ea017952c414e0df7c  doc/ger-de/hilfe/erweiterungsentwicklung/teil-6-theme-entwickler/ein-theme-von-hand.md
