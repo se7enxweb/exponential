@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-2ac5bafb8ee6881d52095cf62eb1a4d6  autoload/ezp_kernel.php
+f397192ba4eb8d8b7068b0ee0fcaca64  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -234,7 +234,7 @@ bbaf8a3648252c445900da0976d68858  bin/startup/rhel/ezasynchronouspublisher
 48b0a8f89e5095abc1f6a0e056fd3108  bin/startup/rhel/ezasynchronouspublisher.defaults
 b974dde24700fd18ba9d30714509893a  composer.dev.json
 7e531407fc8efd6cf497d4260dd8897c  composer.dev.lock
-6ec1ae51fd4bf96447b74b5a3d2c83d6  composer.json
+c5b23f2bb6e03c1c02ed822598bb7786  composer.json
 e9264ecfdf16598f8b69c0ec301251ac  composer.json.dist
 493b236b88d569268b7381a695b9b22a  config.env.php.example
 b226014797143b612684b0aacc22d64c  config.php-RECOMMENDED
@@ -6580,7 +6580,7 @@ c1612437070da67fdd2723c6b1e1c2b2  doc/eng-us/features/6.0/extensions/xrowmetadat
 55a6d37f6223a741370c84e36904131d  doc/eng-us/features/6.0/file-consistency-check.md
 3f29ad01e9f5d278ca8af3fe2d21d253  doc/eng-us/features/6.0/form-expired-page.md
 fc6ebe78f6e6789c557f07de76f4dc7b  doc/eng-us/features/6.0/graphql.md
-da954ebd145c3c58a98b5755235bb069  doc/eng-us/features/6.0/help-content.md
+9db39c4a20f828a4728814ce92cfd6ba  doc/eng-us/features/6.0/help-content.md
 c2e6afd557f166bbbd534db2b70a1de7  doc/eng-us/features/6.0/help-system.md
 decef7a4849b116aa635b2654529fa1d  doc/eng-us/features/6.0/hidden-admin-tabs.md
 67e2133c059b3294dd3d9275b167b820  doc/eng-us/features/6.0/icon-themes-in-extensions.md
@@ -6816,7 +6816,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 09c137108d069f3a15ad57e13a5af159  doc/eng-us/guides/upgrade-steps-for-extensions.md
-90550cee6b03a6e63f597d1f400f4997  doc/eng-us/guides/upgrading-with-the-console.md
+5336a06641850478131c779385ea2d27  doc/eng-us/guides/upgrading-with-the-console.md
 ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
@@ -12874,7 +12874,7 @@ d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
 dc18f178aea8247024e4ead219b9891c  doc/ger-de/anleitungen/README.md
-94ef5c1a141e73e045c7207ebadd26a6  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
+34c617771d2bb012d91bbafb14634347  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
@@ -23605,12 +23605,13 @@ e9eaf1129042bdccf96b60023d3e9310  kernel/classes/help/content/exphelpcontentdita
 054ccc3420e970cb9065761e0a695e27  kernel/classes/help/content/exphelpcontentexport.php
 15a38e246c22c2da572eec60d592149c  kernel/classes/help/content/exphelpcontentfeedback.php
 c26de433c91a861f302698fce98abc3c  kernel/classes/help/content/exphelpcontenthelpids.php
-e18746008fc43f4bc562a68d48069f4f  kernel/classes/help/content/exphelpcontentinstaller.php
+bfa6349f3fe9560922607e84729c67fd  kernel/classes/help/content/exphelpcontentinstaller.php
+0ff824a485df2ef18041439d94e0da07  kernel/classes/help/content/exphelpcontentmetadata.php
 85e09660283bc7f6fabafb017ed8b037  kernel/classes/help/content/exphelpcontentpackage.php
 5b3beeb549127c883524019bac3e8960  kernel/classes/help/content/exphelpcontentprovider.php
 f9f7327ecca94e79c06dab89c6894076  kernel/classes/help/content/exphelpcontentrepository.php
 16a87dde91b0d05bbf1b0c1dd19f939c  kernel/classes/help/content/exphelpcontentreview.php
-a9f26c79f518b27153263dea3e8ed6b0  kernel/classes/help/content/exphelpcontentschema.php
+815ce8d36f16b92cb9fa38867abf4de2  kernel/classes/help/content/exphelpcontentschema.php
 984abefd704bd58b471663a52a3cc561  kernel/classes/help/content/exphelpcontentseeder.php
 b02343413e0d4682d00eba14e0e1c8d0  kernel/classes/help/content/exphelpcontentsite.php
 156598d0356beef921d790a8384da2f9  kernel/classes/help/content/exphelpcontenttables.php
@@ -23902,6 +23903,7 @@ cbea0fa4b585784263ee3e07dcdeffdd  kernel/classes/upgrade/steps/expupgradestepdat
 07986d6d982c4f46df0e8a367fbf9ccc  kernel/classes/upgrade/steps/expupgradestepeditorpolicies.php
 162998013b34562d1604c3e7beaf0441  kernel/classes/upgrade/steps/expupgradestepfinishdeploy.php
 5a014a5f6518b81a8e6cc46820d8bc77  kernel/classes/upgrade/steps/expupgradestepfinishsmoke.php
+1932cc847c21f425aae86d8ce5bf8421  kernel/classes/upgrade/steps/expupgradestephelpclassmetadata.php
 a7345db423f27fe05f24099cf808b3f5  kernel/classes/upgrade/steps/expupgradestephelpcontenttables.php
 bbea45e1ec5c8245b6b6cc91d1c85953  kernel/classes/upgrade/steps/expupgradestephelpreadpolicy.php
 a28da29c7041847028a9d14aaac21dd4  kernel/classes/upgrade/steps/expupgradesteplibrariesinstall.php
@@ -25493,7 +25495,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-15f3af565a4b276e98478eaace96e7f4  settings/upgrade.ini
+f6dd023d0edc25ee4f256161bd5e5799  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 53f363dfc5d11e88ff40763bed4b0471  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -27522,6 +27524,7 @@ c4394ed610114820c4c5a91d6fadc013  tests/tests/kernel/classes/help/expHelpCommuni
 b6cb5652371e1b718299f2cd27bb1558  tests/tests/kernel/classes/help/expHelpContentDitaTest.php
 f967fc78734fa715debd4de7a2e1adfd  tests/tests/kernel/classes/help/expHelpContentEbooksTest.php
 d85883254709e33136f8b062a9ee3ab9  tests/tests/kernel/classes/help/expHelpContentExportTest.php
+b668d476623795f2340940a46efb5556  tests/tests/kernel/classes/help/expHelpContentMetaDataTest.php
 a3b787bfec6e07bf0f23dc861bdf691d  tests/tests/kernel/classes/help/expHelpContentPackageTest.php
 e4fb5caf3dcbd84f5db003cfeac79804  tests/tests/kernel/classes/help/expHelpContentReviewTest.php
 1556dc93faa254d185825fc95d155a2d  tests/tests/kernel/classes/help/expHelpContentTest.php
@@ -27554,7 +27557,7 @@ e13055c68ca8d3755a317b1f6e5be33a  tests/tests/kernel/classes/help/expHelpProject
 a75bec75ab665b7e15c596bc4982753a  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 3a8abae711d189637fba36633f0467de  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
 78f1138c4b3dcc764ab9de0f1eb9bd03  tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php
-5fa2672678659521e429ba2dd4f79f3d  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
+247d2c5c12a83e0bd49cfebd6e0772f3  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
 187f8ac6a8fc9b0aef915d45037de83b  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 5279dfae2eba4659ace52fa2102abd7b  tests/tests/kernel/classes/help/expHelpSearchHrefTest.php
 c9a89abdd3d6ef82f6cab53a0dc3c53d  tests/tests/kernel/classes/help/expHelpSearchTest.php
@@ -27602,11 +27605,15 @@ d2b791059f44637db1e31999f7272737  tests/tests/kernel/classes/mailpreferences/fix
 fa2880c02db43fdfac79048ad61cba89  tests/tests/kernel/classes/mailpreferences/fixtures/listeners/plain-subscribe.eml
 b3e9646cf50ff3e42bfbb63cd0dea145  tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php
 d9328c2422dc9b95f59ec537cc219eb9  tests/tests/kernel/classes/migration/expMigrationLocatorTest.php
+3bb8cf8e28b5fbbc3b00973c4378aade  tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php
+7ed2376bb7a52b4116d24558bb80e3f9  tests/tests/kernel/classes/migration/expMigrationRecordEngineChecks.php
+0f63ed92a79c90e5e9d9b9892612ee54  tests/tests/kernel/classes/migration/expMigrationRecordTest.php
 a796389e1f17e661b2b5396b08c472f9  tests/tests/kernel/classes/migration/expMigrationRunnerDatabaseTest.php
 a0bf2d52bc8ba785107586db4fdb975d  tests/tests/kernel/classes/migration/expMigrationRunnerEngineChecks.php
 38eb47d490c7ad3e4e54c131af3642b7  tests/tests/kernel/classes/migration/expMigrationRunnerFakes.php
 cf675645496bc8be189eee8cd33fa09d  tests/tests/kernel/classes/migration/expMigrationRunnerSqliteTest.php
 e4926487134c14f5393868008f8aaeda  tests/tests/kernel/classes/migration/expMigrationRunnerTest.php
+37049ac2fb7081bfabee45a7742ff2a3  tests/tests/kernel/classes/migration/expMigrationStatusMirrorTest.php
 3f34a28edc5068b281efac522692a414  tests/tests/kernel/classes/migration/fixtures/broken/20261001100000_engine_php.mysql.php
 60d26565dd23429bf3e787609f7a7c59  tests/tests/kernel/classes/migration/fixtures/broken/20261001100000_unknown_type.yaml
 cc9ff3f93ed421917955cf7c1c955fde  tests/tests/kernel/classes/migration/fixtures/broken/20261002100000_two_types.sql
@@ -27627,10 +27634,6 @@ d4a22c81e55f7a472261de8a3746fa39  tests/tests/kernel/classes/migration/fixtures/
 a371c5cf6ffc213919b3e382bd77b77e  tests/tests/kernel/classes/migration/fixtures/site/20261004100000_news_content.yml
 700bad77cadb0aaeb24f88199fc43299  tests/tests/kernel/classes/migration/fixtures/site/README.md
 8c83e2ed558e08ffd270706a5715b8c2  tests/tests/kernel/classes/migration/fixtures/site/logs/20261009100000_in_a_subdirectory.sql
-3bb8cf8e28b5fbbc3b00973c4378aade  tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php
-7ed2376bb7a52b4116d24558bb80e3f9  tests/tests/kernel/classes/migration/expMigrationRecordEngineChecks.php
-0f63ed92a79c90e5e9d9b9892612ee54  tests/tests/kernel/classes/migration/expMigrationRecordTest.php
-37049ac2fb7081bfabee45a7742ff2a3  tests/tests/kernel/classes/migration/expMigrationStatusMirrorTest.php
 ccb0cfb6e86619942966dae18e9d7ca1  tests/tests/kernel/classes/namelists/eZSerializedObjectNameListMappingTest.php
 ef670105374ed5d9d92ff0a71354e646  tests/tests/kernel/classes/notification/NotificationSystemTest.php
 be5b81c8844c0960b337ca46f6c49211  tests/tests/kernel/classes/notification/eZNotificationScheduleTest.php

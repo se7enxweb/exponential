@@ -277,7 +277,7 @@ class expHelpContentSchema
                 'name' => 'Help glossary entry', 'container' => false, 'name_pattern' => '<term>',
                 'description' => 'A term of the glossary and the synonyms to avoid',
                 'attributes' => array(
-                    'term' => self::attr( 'Term', 'ezstring', true, true, true, array( 'max_length' => 100 ) ),
+                    'term' => self::attr( 'Term', 'ezstring', true, true, true, array( 'max_length' => 255 ) ),
                     'definition' => self::attr( 'Definition', 'eztext', false, true, true, array( 'rows' => 5 ) ),
                     'avoid' => self::attr( 'Synonyms to avoid', 'eztext', false, true, true, array( 'rows' => 3 ) ),
                     'audience' => self::attr( 'Audience', 'ezselection', false, false, false, array( 'options' => self::audiences(), 'multiple' => true ) ),
