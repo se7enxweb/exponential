@@ -25382,7 +25382,7 @@ bd53147fc2838f03c10393415f0a486d  lib/twig/classes/exptwigfilesystemcache.php
 65b88b93a3610eb8a25404910a52ad7d  lib/twig/classes/exptwignativeoperators.php
 aad9b1fde3221e89aba46033f26825ba  lib/twig/classes/exptwigobjectproxy.php
 0c1cdea2ba137e7c61208fc91b4751fc  lib/twig/classes/exptwigoperator.php
-aefd77c717efb7d7c7b02c2fa554f3f8  lib/twig/classes/exptwigrenderer.php
+6ee1e8a5a2e82f0cf9807f5188cc9579  lib/twig/classes/exptwigrenderer.php
 5d894f6592c899384420c0a3f77ab1cf  lib/twig/classes/exptwigreverseconverter.php
 c0e5f940ec6756d1d07b5aee8c447757  lib/twig/classes/exptwigsecurity.php
 a0b2fe24d799c7ba1fe61953524c1a78  lib/twig/classes/exptwigtagnode.php
@@ -28477,6 +28477,7 @@ bc629cf010cc713321f11c372f0ab8fb  tests/tests/lib/templatebridge/expTemplateBrid
 793d473e25f504120b708d3a01112122  tests/tests/lib/templatebridge/expTemplateCheckerTest.php
 42b168d5a0dab2382925f982b8d48cce  tests/tests/lib/templatebridge/expTemplateConvertAllEnginesTest.php
 6c10c76c99560ff99970a7bd57f28128  tests/tests/lib/twig/expTwigDebugBarTest.php
+e97420b5e9a8d945208414401c06d856  tests/tests/lib/twig/expTwigLibraryGuardTest.php
 ef2c7e14e90d7c1318bd6fbd1ee2d8ad  tests/tests/lib/twig/expTwigOperatorParityTest.php
 f2767bb89d854a6bdeb8202ae27a38c3  tests/tests/lib/twig/expTwigPerformanceGuardTest.php
 b45dc0e1c41966971542e8ea07bd148f  tests/tests/lib/twig/expTwigReverseConverterTest.php

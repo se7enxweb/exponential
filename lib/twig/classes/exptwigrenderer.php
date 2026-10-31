@@ -34,8 +34,16 @@ class expTwigRenderer
     /** @var \Twig\Environment[] by design bases and cache directory */
     private static $instancesByBases = array();
 
+    /**
+     * The oldest Twig the engine runs on: its nodes and token parsers use Twig\Node\Nodes, which Twig 3.15 added.
+     */
+    const MINIMUM_TWIG = '3.15';
+
     /** @var bool|null */
     private static $libraryLoaded = null;
+
+    /** @var string|null why the engine is off (libraryProblem()), null while it is on or not yet loaded */
+    private static $libraryProblem = null;
 
     /** @var array[] variables captured at the end of the templates being rendered, innermost last */
     private static $captureStack = array();
@@ -178,7 +186,8 @@ class expTwigRenderer
             return self::failure( "template not found: $file" );
         $twig = self::twig();
         if ( !$twig )
-            return self::failure( 'the Twig library is not available (install twig/twig with Composer, or see [TwigSettings] LibraryPath in twig.ini)' );
+            return self::failure( self::$libraryProblem !== null ? self::$libraryProblem
+                : 'the Twig library is not available (install twig/twig with Composer, or see [TwigSettings] LibraryPath in twig.ini)' );
 
         // a new request: a persistent worker serves every siteaccess (the profile setting is read again) and templates
         // may have changed since its last request
@@ -681,10 +690,47 @@ class expTwigRenderer
             if ( $libraryPath !== '' )
                 self::registerLibraryPath( $libraryPath );
         }
-        self::$libraryLoaded = class_exists( '\Twig\Environment' );
-        if ( !self::$libraryLoaded )
-            eZDebug::writeError( 'Twig 3 not found: install twig/twig with Composer or set [TwigSettings] LibraryPath in twig.ini', __METHOD__ );
+        $found = class_exists( '\Twig\Environment' );
+        self::$libraryProblem = self::libraryProblem( $found, $found && class_exists( '\Twig\Node\Nodes' ), $found ? \Twig\Environment::VERSION : null );
+        self::$libraryLoaded = self::$libraryProblem === null;
+        if ( !$found )
+            eZDebug::writeError( self::$libraryProblem, __METHOD__ );
+        elseif ( !self::$libraryLoaded )
+            eZDebug::writeWarning( self::$libraryProblem, __METHOD__ );
         return self::$libraryLoaded;
+    }
+
+    /**
+     * Why the Twig template engine cannot run with the Twig that is installed, or null when it can.
+     *
+     * A project can bring Twig 2 or an early Twig 3 (the Symfony 3.4 platforms install se7enxweb/twig 2.16): the
+     * engine is then switched off, every .twig template answers the "not available" failure of render(), and the
+     * .tpl and .stpl engines work as before. Loading the engine's node classes on such a Twig would end the request
+     * with a fatal error instead.
+     *
+     * @param bool $environmentFound \Twig\Environment exists
+     * @param bool $nodesFound \Twig\Node\Nodes exists (Twig 3.15 and later)
+     * @param string|null $version \Twig\Environment::VERSION when the environment exists
+     * @return string|null
+     */
+    public static function libraryProblem( $environmentFound, $nodesFound, $version )
+    {
+        if ( !$environmentFound )
+            return 'Twig 3 not found: install twig/twig with Composer or set [TwigSettings] LibraryPath in twig.ini';
+        if ( !$nodesFound )
+            return 'Twig ' . ( $version !== null ? $version : '(unknown version)' ) . ' found, but the .twig template engine needs Twig '
+                . self::MINIMUM_TWIG . ' or later; the engine is switched off (.tpl and .stpl templates are not affected)';
+        return null;
+    }
+
+    /**
+     * Why the engine is switched off after loadLibrary() returned false, or null.
+     *
+     * @return string|null
+     */
+    public static function libraryProblemMessage()
+    {
+        return self::$libraryProblem;
     }
 
     private static function registerLibraryPath( $libraryPath )
