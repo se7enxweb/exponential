@@ -26889,7 +26889,7 @@ c0c0f5eb8bbcd4ba17e6dac25d579b6b  tests/tests/design/AdminTokenUsageTest.php
 0710fd0f4116c01a9a299beba675c049  tests/tests/design/FormSubmitButtonDisableTest.php
 8e8452be9fc384ea01e7f33ad8dc1183  tests/tests/design/LogViewerCopyMessagesTest.php
 6daf7c6280369c901a6b348253f70dae  tests/tests/design/LogViewerNavTest.php
-c944bda7d7a0fda6cf96dcab7dabcc0e  tests/tests/design/PageLayoutHooksTest.php
+f3ce5764aa582b785855af3347c3ce7b  tests/tests/design/PageLayoutHooksTest.php
 295eaf509f785e62086efa8aa330141a  tests/tests/design/StandardClassAttributeNameEscapingTest.php
 85daef76e773824aa1ce1d4a83b8b72b  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 ac1753103e03e6df70dc4322713064cd  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php

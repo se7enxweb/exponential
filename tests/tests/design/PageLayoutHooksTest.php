@@ -32,12 +32,15 @@ class PageLayoutHooksTest extends PHPUnit\Framework\TestCase
         return $out;
     }
 
-    /** @dataProvider pagelayouts */
-    public function testPagelayoutIncludesTheHookOnceBeforeTheBodyEnds( $file )
+    public function testEveryPagelayoutIncludesTheHookOnceBeforeTheBodyEnds()
     {
-        $text = file_get_contents( $file );
-        $this->assertSame( 1, substr_count( $text, self::HOOK ), "$file: the hook once" );
-        $this->assertMatchesRegularExpression( '#' . preg_quote( self::HOOK, '#' ) . '\s*</body>#', $text, "$file: right before </body>" );
+        foreach ( self::pagelayouts() as $files )
+        {
+            $file = $files[0];
+            $text = file_get_contents( $file );
+            $this->assertSame( 1, substr_count( $text, self::HOOK ), "$file: the hook once" );
+            $this->assertMatchesRegularExpression( '#' . preg_quote( self::HOOK, '#' ) . '\s*</body>#', $text, "$file: right before </body>" );
+        }
     }
 
     public function testEveryKernelDesignWithAPagelayoutIsCovered()
