@@ -57,6 +57,15 @@ class eZDBQueryCache
     protected static $memo = array();
 
     /**
+     * At most this many results in the memo: a long script (an import, a cronjob) would otherwise keep every result
+     * it ever read, and every write walks the memo. The oldest goes first.
+     */
+    const MEMO_MAX = 1000;
+
+    /** @var bool whether this request logged that the state lock could not be taken (once per request) */
+    protected static $lockLogged = false;
+
+    /**
      * @var array temporary tables this process created (name => true). Not
      * reset per request: a persistent connection keeps them until dropped.
      */
@@ -587,7 +596,7 @@ class eZDBQueryCache
         // their tables excluded since, or temporary, is not answered from it.
         if ( $entry !== null && self::current( $entry ) && self::answerable( $entry['tables'] ) )
         {
-            self::$memo[$key] = $entry;
+            self::remember( $key, $entry );
             self::$stats['hits']++;
             $hit = $entry['rows'];
             if ( $debugStart !== null )
@@ -633,11 +642,23 @@ class eZDBQueryCache
         self::$stats['misses']++;
         if ( $debugStart !== null )
             self::debugTime( 'miss', $debugStart );
-        return array( $key, $tables, microtime( true ) );
+        // The state as the statement starts: a result is only ever answered under the same state file (see current())
+        return array( $key, $tables, microtime( true ), self::state()['id'] ?? null );
+    }
+
+    /** Keeps an entry in the memo as the newest, dropping the least recently used beyond MEMO_MAX. */
+    protected static function remember( $key, array $entry )
+    {
+        unset( self::$memo[$key] );
+        self::$memo[$key] = $entry;
+        if ( count( self::$memo ) > self::MEMO_MAX )
+            unset( self::$memo[array_key_first( self::$memo )] );
     }
 
     /**
-     * The key of a statement: the connection, its session settings (Oracle,
+     * The key of a statement: the connection (driver, database, server, port,
+     * socket and user: two sites on one server and one APCu may share a
+     * database name but not its rows), its session settings (Oracle,
      * see noteSession()), the text and arrayQuery()'s parameters. xxh128
      * where PHP has it (8.1+), several times faster than
      * md5 on a long statement; the parameters (offset, limit, column) joined
@@ -651,7 +672,8 @@ class eZDBQueryCache
             foreach ( $params as $name => $value )
                 $p .= $name . '=' . ( is_scalar( $value ) || $value === null ? (string)$value : serialize( $value ) ) . ';';
         }
-        $raw = get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . self::sessionKey( $db ) . "\0" . $sql . "\0" . $p;
+        $raw = get_class( $db ) . "\0" . ( $db->DB ?? '' ) . "\0" . ( $db->Server ?? '' ) . "\0" . ( $db->Port ?? '' ) . "\0" . ( $db->SocketPath ?? '' ) . "\0" . ( $db->User ?? '' )
+             . "\0" . self::sessionKey( $db ) . "\0" . $sql . "\0" . $p;
         static $xxh = null;
         if ( $xxh === null )
             $xxh = in_array( 'xxh128', hash_algos(), true );
@@ -684,6 +706,7 @@ class eZDBQueryCache
         if ( $ticket === null || !is_array( $rows ) )
             return;
         list( $key, $tables, $started ) = $ticket;
+        $stateId = $ticket[3] ?? null;
         $debugStart = empty( $GLOBALS['eZDebugEnabled'] ) ? null : self::debugStart();
         if ( count( $rows ) > self::settings()['maxRows'] )
         {
@@ -698,8 +721,8 @@ class eZDBQueryCache
         // 'ms': how long the database took for the statement and its rows, which
         // every later hit saves; the debug report adds them up.
         $entry = array( 'created' => $started, 'tables' => $tables, 'rows' => $copy,
-                        'ms' => round( ( microtime( true ) - $started ) * 1000, 3 ) );
-        self::$memo[$key] = $entry;
+                        'ms' => round( ( microtime( true ) - $started ) * 1000, 3 ), 'state' => $stateId );
+        self::remember( $key, $entry );
         if ( ( $storage = self::storage() ) === 'apcu' && !self::apcuRoom() )
         {
             // kept for this request only: APCu is short of room for the pool's other users
@@ -714,12 +737,18 @@ class eZDBQueryCache
             self::debugTime( 'store', $debugStart );
     }
 
-    /** Whether an entry is current: nothing it read was written since its query started. */
+    /**
+     * Whether an entry is current: nothing it read was written since its query started, under the same state file.
+     * A state file that is gone (deleted with the cache directory, unreadable) and written anew gets a new id, so the
+     * results kept in APCu before, whose writes it no longer knows, are not answered again.
+     */
     protected static function current( array $entry )
     {
         if ( microtime( true ) - $entry['created'] > self::settings()['maxAge'] )
             return false;
         $state = self::state();
+        if ( ( $entry['state'] ?? null ) !== ( $state['id'] ?? null ) )
+            return false;
         if ( $entry['created'] <= $state['genTime'] )
             return false;
         foreach ( $entry['tables'] as $t )
@@ -1417,7 +1446,8 @@ class eZDBQueryCache
         {
             $raw = @file_get_contents( self::stateDir() . '/state.ser' );
             $s = $raw === false ? false : @unserialize( $raw, array( 'allowed_classes' => false ) );
-            self::$state = is_array( $s ) ? $s : array( 'generation' => 1, 'genTime' => 0, 'tables' => array() );
+            // No file, or one that cannot be read: no id, so no result kept under an earlier file is current
+            self::$state = is_array( $s ) ? $s : array( 'generation' => 1, 'genTime' => 0, 'tables' => array(), 'id' => null );
             self::$stateRead = $now;
         }
         // Once per debug report, where the request first looks at the state.
@@ -1456,14 +1486,52 @@ class eZDBQueryCache
             }
         }
         $lock = @fopen( $dir . '/state.lock', 'c' );
-        if ( $lock )
-            flock( $lock, LOCK_EX );
+        if ( $lock && !flock( $lock, LOCK_EX ) )
+        {
+            fclose( $lock );
+            $lock = false;
+        }
         self::$state = null;
         $state = call_user_func( $change, self::state() );
+        if ( !$lock )
+        {
+            // Without the lock another process's change can be lost between reading and writing the state: a write
+            // it noted for its tables would vanish. Making everything stale narrows that to the moment between this
+            // read and this rename (a locked writer's change in between is still overwritten); it does not close
+            // it. The lock is what makes the state safe: state.lock must be writable by every user the site runs
+            // as, and on NFS needs NFSv4 or lockd.
+            if ( !self::$lockLogged )
+                error_log( 'eZDBQueryCache: could not lock ' . $dir . '/state.lock; writes make every cached result stale' );
+            self::$lockLogged = true;
+            $state['generation'] = (int)$state['generation'] + 1;
+            $state['genTime'] = microtime( true );
+            $state['tables'] = array();
+        }
+        // A new file (none before, or one that could not be read) gets an id of its own: see current()
+        if ( empty( $state['id'] ) )
+        {
+            try
+            {
+                $state['id'] = bin2hex( random_bytes( 8 ) );
+            }
+            catch ( Exception $e )
+            {
+                $state['id'] = uniqid( '', true ) . mt_rand();
+            }
+        }
         $tmp = $dir . '/state.ser.' . getmypid() . '.' . mt_rand() . '.tmp';
-        $ok = @file_put_contents( $tmp, serialize( $state ) ) !== false && @chmod( $tmp, eZFile::fileMode( 0660 ) ) !== null && @rename( $tmp, $dir . '/state.ser' );
+        $ok = @file_put_contents( $tmp, serialize( $state ) ) !== false;
+        if ( $ok )
+        {
+            // the mode is a convenience for other users of the group; a failure does not stop the write
+            @chmod( $tmp, eZFile::fileMode( 0660 ) );
+            $ok = @rename( $tmp, $dir . '/state.ser' );
+        }
         if ( !$ok )
+        {
+            @unlink( $tmp );
             error_log( 'eZDBQueryCache: could not write ' . $dir . '/state.ser; cached results may be stale until MaxAge' );
+        }
         // A root process (a script, a server) leaves the files to the directory's owner.
         if ( $asRoot && ( $owner = @stat( $dir ) ) && $owner['uid'] !== 0 )
         {
@@ -1492,6 +1560,7 @@ class eZDBQueryCache
         self::$stats = array( 'hits' => 0, 'misses' => 0, 'stores' => 0, 'uncacheable' => 0, 'writes' => 0, 'reserve' => 0 );
         self::$debug = null;
         self::$requestEnd = null;
+        self::$lockLogged = false;
     }
 
     /** @var string|false eZExecution::requestKey() of the request flushStats() is registered to run at the end of */

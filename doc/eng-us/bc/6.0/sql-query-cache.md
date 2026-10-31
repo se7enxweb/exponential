@@ -235,6 +235,13 @@ parsing was about a third of a rendered page's CPU):
 - `arrayQuery()` hands the rows to `store()` after a statement that returned;
 - `query()` tells `noteWrite()` of every statement that succeeded.
 
+The key of a statement carries the connection (driver class, database,
+server, port, socket and user, so two sites on one server and one APCu never share
+rows), the Oracle session settings, the text and `arrayQuery()`'s parameters.
+The request's memo keeps at most `eZDBQueryCache::MEMO_MAX` (1,000) results,
+the least recently used going first: a long script would otherwise keep every result it
+read, and every write walks the memo.
+
 `eZDBInterface::commit()` and `rollback()` call `afterCommit()` and
 `afterRollback()`. `ezpKernelWeb` calls `resetRequest()` at the start of every
 request, so a persistent worker (Velocity, FrankenPHP worker mode) starts each
@@ -245,17 +252,34 @@ one with an empty memo.
 A shared state file, `var/<site>/cache/querycache/state.ser`, holds
 
 ```
-{ generation, genTime, tables: { table => time of its last write } }
+{ generation, genTime, tables: { table => time of its last write }, id }
 ```
 
 Every process reads and writes it: Apache/php-fpm, Velocity, scripts and
 cronjobs each have an APCu of their own, so the state cannot live there. It is
 written under `flock` and replaced atomically; a process reads it again when
-its copy is older than one second.
+its copy is older than one second. The lock is what keeps the state right:
+`state.lock` must be writable by every user the site runs as, and on NFS it
+needs NFSv4 or `lockd`. A write that cannot open or take the lock makes
+everything stale and logs it once per request; that narrows the loss of
+another process's change between reading and writing the file but does not
+close it, and on a server where the lock never works every write empties the
+cache. A file that cannot be written is logged, its temporary file removed;
+the change then holds in this process only, others see it after `MaxAge`.
 
-An entry is kept with the time its query **started**, the tables it read and
-its rows. It is answered only while
+`id` is set when a file is written where there was none, or none that could be
+read: the first write of an installation, and the first one after the file was
+deleted (an `rm -r` of the cache directory, which leaves APCu and perhaps the
+result files behind). Results carry the id of the state they were stored
+under and are answered only under that one, so results whose writes the lost
+file knew are never answered again. The first write of a new installation
+therefore makes everything stored before it stale, once. A miss reads the
+state for this.
 
+An entry is kept with the time its query **started**, the tables it read, the
+state's id and its rows. It is answered only while
+
+- it was stored under the state file in place now (same `id`),
 - it was created after `genTime` (the last full clear),
 - every table it read was last written before it was created, and
 - it is younger than `MaxAge`.
@@ -531,10 +555,14 @@ so the tests never touch the site's cache.
 | QC-35 | In a web request, a Velocity worker included, the purge runs at the end of the request and is registered once; a script runs it at once |
 | QC-36 | One time base for the saved share: the script start (`REQUEST_TIME_FLOAT` without it) to the end the bar sets; a stale or later start gives no share; a new request measures to now again |
 | QC-37 | The report row says how many times as long the page would have taken without the cache, from a share of 100 % on, and carries no inline CSS |
+| QC-39 | Results kept under a state file that is gone (deleted with the cache directory) are not answered again; what is stored after is |
+| QC-40 | A write that cannot take the state lock makes everything stale and logs it |
+| QC-41 | The memo keeps at most `MEMO_MAX` results, the least recently used goes first |
+| QC-42 | The key carries the database user, port and socket: another user's rows are not answered |
 
 ```bash
 php vendor/bin/phpunit --testsuite lib --filter eZDBQueryCacheTest
-# OK (37 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-28 and QC-34 wait)
+# OK (41 tests; QC-24, QC-33, QC-34 and QC-35 need apc.enable_cli=1), about 7 s (QC-08, QC-12, QC-28 and QC-34 wait)
 ```
 
 **On a running site** (MySQL, the real drivers), each checked on a test installation
