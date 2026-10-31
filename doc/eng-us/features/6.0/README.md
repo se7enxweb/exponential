@@ -94,6 +94,7 @@ nginx with PHP-FPM keep working as before.
 - [Access and view cache filters for extensions](access-and-cache-filters.md)
 - [Content policy limitations of extensions](content-limitation-handlers.md)
 - [Icon themes that live in your extension](icon-themes-in-extensions.md)
+- [Pagelayout hooks: one place at the end of every page for extensions](pagelayout-hooks.md)
 - [Remote services: the whole admin as an HTTP API (expservices)](remote-services-expservices.md)
 - [The GraphQL API: ask the content for exactly the fields a page needs](graphql.md): `/api/graphql`, a schema
   generated from the content classes, policies always applied, Setup > GraphQL with a playground,

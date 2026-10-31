@@ -100,6 +100,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Filter für Zugriff und View-Cache in Erweiterungen](zugriffs-und-cache-filter.md)
 - [Einschränkungen von Inhaltsrichtlinien durch Erweiterungen](handler-fuer-inhaltseinschraenkungen.md)
 - [Icon-Themes, die in Ihrer Erweiterung liegen](icon-themes-in-extensions.md)
+- [Pagelayout-Hooks: eine Stelle am Ende jeder Seite für Erweiterungen](seitenlayout-hooks.md)
 - [Entfernte Dienste: die ganze Administration als HTTP-API (expservices)](entfernte-dienste-expservices.md)
 - [Die GraphQL-API: genau die Felder abfragen, die eine Seite braucht](graphql.md): `/api/graphql`, ein aus den
   Inhaltsklassen erzeugtes Schema, Richtlinien gelten immer, Setup > GraphQL mit einem Playground,

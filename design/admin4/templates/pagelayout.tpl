@@ -184,6 +184,7 @@
     <img src={'2/loader.gif'|ezimage()} id="ajaxuploader-loader"
         alt="{'Loading...'|i18n( 'design/admin/pagelayout' )}" />
 
+{include uri='design:pagelayout/hooks/body_end.tpl'}
 </body>
 
 </html>

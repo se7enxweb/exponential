@@ -695,7 +695,7 @@ e564dcd60747102cd28699dc161aa579  design/admin/templates/page_header.tpl
 3ceb59d3584d417fdb51fe11e73f2729  design/admin/templates/page_topmenu.tpl
 7595633233e131b1b54c3d3e493c4568  design/admin/templates/page_topmenuitem.tpl
 def1e69baea2cb9d93a8d1af2bf5f692  design/admin/templates/page_toppath.tpl
-4b5ba1c1de004c8d6d36c6b1bc329257  design/admin/templates/pagelayout.tpl
+c4ae78e6ace08cdc0fb80f8aa9b4ffe6  design/admin/templates/pagelayout.tpl
 2891f454853f3b2f2cac2a94173e257a  design/admin/templates/parts/audit/menu.tpl
 806405f8a2d30391496982a5c36334cb  design/admin/templates/parts/content/menu.tpl
 440d25498d1044ac8599fc479c458323  design/admin/templates/parts/exp_demo_mode_banner.tpl
@@ -993,7 +993,7 @@ cb128a4645e891cd796919aad3ed36d1  design/admin3/templates/page_header.tpl
 68ef800e886d8f0bbe4c2216f50e0c18  design/admin3/templates/page_search.tpl
 e197b66c63a2bcf4e5d9777cd91f6300  design/admin3/templates/page_topmenu.tpl
 cf8663798cf45b3045efbc98b8d831c5  design/admin3/templates/page_topmenuitem.tpl
-066b4bf70df2aad0392b9f6d691a7101  design/admin3/templates/pagelayout.tpl
+f71b23340155f6953a9b8b8f8269ebe9  design/admin3/templates/pagelayout.tpl
 e32e963f4d25c52a7f8d3eb520c0b227  design/admin3/templates/parts/user/menu.tpl
 03bf0a50004b366a1cbe7f46bb57d6ce  design/admin3/templates/window_controls.tpl
 a41265a8c8cf4698837a304aae23bb6a  design/admin4/fonts/IcoMoon.eot
@@ -1483,7 +1483,7 @@ ad2b16b7e90d3d850e074f97acd807d4  design/admin4/templates/page_search.tpl
 3d4afea787dd6fc64ddbc5f6d7e973d6  design/admin4/templates/page_topmenu.tpl
 262c20c7eaf7f90d393c1872af532d33  design/admin4/templates/page_topmenuitem.tpl
 a502e42cfc314d22305306bf64fc6c58  design/admin4/templates/page_toppath.tpl
-24f1c4a5404bd1328d08b36077e66538  design/admin4/templates/pagelayout.tpl
+19bdc734dab9a5e86837b11048c0394d  design/admin4/templates/pagelayout.tpl
 435db8e2b723396436597f44d430a983  design/admin4/templates/parts/a4_environment_badge.tpl
 b4673e247c3d0aade999bd6f38e6e06d  design/admin4/templates/parts/a4_header_help.tpl
 32a2ced2131b7d1a0aed712e1147485a  design/admin4/templates/parts/a4_header_item.tpl
@@ -1739,7 +1739,7 @@ ac760fb7abe0c74c082db3e09d724006  design/admin4l/templates/explayouts/block/admi
 00dc6fc9a64cbb17ffcdd7be6133b9a8  design/admin4l/templates/explayouts/block/admin_toolbar_developer.tpl
 435fa478e336ab853226197df0b70fc2  design/admin4l/templates/explayouts/block/admin_toolbar_right.tpl
 006a94cb403062f61b9ed5592ea9f6ae  design/admin4l/templates/explayouts/block/admin_ui_switch.tpl
-0c2b09cdb94df5c9a094777d2a7e19ec  design/admin4l/templates/pagelayout.tpl
+73643cf2e5880f13d894a79f5f874f0c  design/admin4l/templates/pagelayout.tpl
 e07ee98bdbd9a6b7b1224004fff07513  design/base/images/bin.gif
 86fff651cfbbcf360ef78737c6523d64  design/base/images/button.gif
 7ae68b7e4d3ceed5ac652b11f20face6  design/base/images/quote-down.gif
@@ -1978,7 +1978,7 @@ f061dda57413217ff460b3a0f8c380e8  design/base/templates/notification/handler/ezs
 a128330043e94c860fd598b40f6d45ba  design/base/templates/notification/handler/ezsubtree/view/digest_plain.tpl
 8df67aa527bcb05032f59c071d6a8a91  design/base/templates/notification/handler/ezsubtree/view/plain.tpl
 dfab1213e6918f442ca7efd7a7e070a5  design/base/templates/notification/settings.tpl
-19d0a0b0c0b4162cf13fbf63f2016393  design/base/templates/pagelayout.tpl
+7810f22f45dc361150be52c97ae79231  design/base/templates/pagelayout.tpl
 bbd300cf889157d5f91c39d466641221  design/base/templates/parts/path.tpl
 4957716813c60f9a19cab755957257a5  design/base/templates/parts/treemenu.tpl
 5dff624e89375bf70860c42fd4521590  design/base/templates/shop/basket.tpl
@@ -2004,11 +2004,11 @@ ccdc374287e8a777daf8aa5b31d9d52f  design/mysite/override/templates/image.tpl
 bc0fc6e7b61f72089fba036777a8ae45  design/mysite/override/templates/info_page.tpl
 062f0763b16ecdc31ac4330ad1b13993  design/mysite/override/templates/line_article.tpl
 a54f494a211e13cc276ecebcfd7b9369  design/mysite/stylesheets/mysite.css
-c8a00dfe771025f5dbb90cb446c4896d  design/mysite/templates/pagelayout.tpl
+bd5547faec4f931fe10b13113b190396  design/mysite/templates/pagelayout.tpl
 9b8baacf78163b4f752b8534aadb5770  design/plain/images/plain.gif
 d741ff478d87f2f3a436856ff8c18a3d  design/plain/templates/left_menu.tpl
 6114354e50395469fdc5534db795cbb4  design/plain/templates/page_topbox.tpl
-b46a44ede01240b35cd785bba3762a39  design/plain/templates/pagelayout.tpl
+d66309ccb92e6aee77c567b2e4607eb1  design/plain/templates/pagelayout.tpl
 ae3733258257ccef2eee2b20c77ac79a  design/standard/fonts/1942.ttf
 13c60222f1f0fe4e35621ab7c0ec1a23  design/standard/fonts/1942/text.txt
 ba31fd1eebfb435d1fc33598d23fcd58  design/standard/fonts/a_d_mono.ttf
@@ -2878,7 +2878,8 @@ f061d1ccc56b10ebe5653c5e011329e1  design/standard/templates/page_mainarea.tpl
 7d82ae198f747f325945a9fe2acb8623  design/standard/templates/page_toppath.tpl
 6fc57af45a8986acee8b4514462fab15  design/standard/templates/page_toptoolbar.tpl
 4ebfe5c829563edc25060b55305538d1  design/standard/templates/page_warning.tpl
-ed88bfc13f66408033fd2646b731da8e  design/standard/templates/pagelayout.tpl
+cf0962351ff74ebfe70fbd7feeedd1b6  design/standard/templates/pagelayout.tpl
+3a6b816ea7602744a8e6a69a9a2147af  design/standard/templates/pagelayout/hooks/body_end.tpl
 61fb91bd0de24052c8877f0e8732b825  design/standard/templates/parts/exp_content_direction.tpl
 d0ba090df7ef9e13793d7802efb17c85  design/standard/templates/parts/sortheader.tpl
 7c79e04f55cd77d4e6c7caf11a8ce457  design/standard/templates/pdf/edit.tpl
@@ -6478,7 +6479,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-5ff2d8da522e1c2c403995df2909bbbb  doc/eng-us/features/6.0/README.md
+7f9fe08417daae3ada93769c6113737f  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6607,6 +6608,7 @@ e510905150884893d3af084b35ddf870  doc/eng-us/features/6.0/order-list-sorting.md
 c4a200c5702d75559c297c3520f503f9  doc/eng-us/features/6.0/package-installer-batching.md
 a965ba169b72f314b100976debf1caf2  doc/eng-us/features/6.0/package-licenses-and-versions.md
 48fd83a220c170e55d9d71045b4dc611  doc/eng-us/features/6.0/package-wizard.md
+a05225d17abf65b608e1de98d82edced  doc/eng-us/features/6.0/pagelayout-hooks.md
 e14272d00b63fa9eb5ae016d2fe21511  doc/eng-us/features/6.0/password-change-at-next-sign-in.md
 580586e719e07c4425de56df825af3e9  doc/eng-us/features/6.0/pdf-export.md
 8e2819456b4dc80af070fe35b03512fc  doc/eng-us/features/6.0/permission-checks-for-many-assignments.md
@@ -12851,7 +12853,7 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-217511d9e2c8df80239f8efbfee0f88b  doc/ger-de/.paths.json
+ff304ab9045f42d89c3cf63016f7d25a  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -15744,7 +15746,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-06e14b57e742d8b583d40dc8effc73e4  doc/ger-de/funktionen/6.0/README.md
+4859c7b8485a09760d9ae931abc793f4  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -15900,6 +15902,7 @@ a122c0f92debf2b7f464a9ea1e43452f  doc/ger-de/funktionen/6.0/reparatur-im-browser
 a59b03c5f1bb37e29dd5e6528d455d6d  doc/ger-de/funktionen/6.0/rss-podcast-und-feed-liste.md
 6bc3cadc6f50ea4b8a82bd69816dffbc  doc/ger-de/funktionen/6.0/schaltflaechen-fuer-schnelle-platzierung.md
 bd98a387efd760a3fc1103edfd794708  doc/ger-de/funktionen/6.0/seite-abgelaufenes-formular.md
+73fee15ede03bd25402f65d9311e3b22  doc/ger-de/funktionen/6.0/seitenlayout-hooks.md
 03dad300451b8cbeabb109d4e41b1a7d  doc/ger-de/funktionen/6.0/seitenweise-listen-im-admin.md
 cb3e0b5cb1ea2825bc66bc2d92ea9ce7  doc/ger-de/funktionen/6.0/seitenweise-rollenzuweisungen.md
 3eb0430c6a58116d70ee6b782c34b5d0  doc/ger-de/funktionen/6.0/shop-dashboard.md
@@ -25421,7 +25424,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-3d8f99cc89b58cbe4ab620cc264f7028  settings/site.ini
+281c029b86daa869f991501659767b3f  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -26879,6 +26882,7 @@ c0c0f5eb8bbcd4ba17e6dac25d579b6b  tests/tests/design/AdminTokenUsageTest.php
 0710fd0f4116c01a9a299beba675c049  tests/tests/design/FormSubmitButtonDisableTest.php
 8e8452be9fc384ea01e7f33ad8dc1183  tests/tests/design/LogViewerCopyMessagesTest.php
 6daf7c6280369c901a6b348253f70dae  tests/tests/design/LogViewerNavTest.php
+c944bda7d7a0fda6cf96dcab7dabcc0e  tests/tests/design/PageLayoutHooksTest.php
 295eaf509f785e62086efa8aa330141a  tests/tests/design/StandardClassAttributeNameEscapingTest.php
 85daef76e773824aa1ce1d4a83b8b72b  tests/tests/design/StandardContentEditAccessibleNamesTest.php
 ac1753103e03e6df70dc4322713064cd  tests/tests/design/StandardDatatypeEditNoStyleAttributeTest.php
