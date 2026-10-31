@@ -8,11 +8,15 @@
  */
 
 /**
- * The record of what exp:upgrade applied: table expupgrade_step, one row per step id (the last result wins). The
- * record is information, not the truth: a step's state comes from detect(), the record only tells "done" (applied by
- * exp:upgrade) from "not-needed" (in place without it) and keeps the last failure's message.
+ * The record of what exp:upgrade applied, one row per step id (the last result wins). The record is information, not
+ * the truth: a step's state comes from detect(), the record only tells "done" (applied by exp:upgrade) from
+ * "not-needed" (in place without it) and keeps the last failure's message.
  *
- * The table is created by the first database step (6.0.15-upgrade-record-table); until it exists nothing is read or
+ * Where it is kept: the migration record exp_migration (expMigrationRecord), as migrations of the source "kernel",
+ * once the step 6.0.15-migration-tables has made that table and copied the rows of the older table expupgrade_step
+ * into it. Until then the record is expupgrade_step (made by step 0, 6.0.15-upgrade-record-table), so an
+ * installation that has not run the newer step keeps working. Reading merges both: a row of expupgrade_step that has
+ * not been copied yet still counts, and the row of exp_migration wins. Until either table exists nothing is read or
  * written and every step without a record counts as never run.
  *
  * @since 6.0.15
@@ -20,17 +24,36 @@
  */
 class expUpgradeRecord
 {
-    const TABLE = 'expupgrade_step';
+    /** The table the record is written to once it exists. */
+    const TABLE = expMigrationRecord::TABLE;
+
+    /** The record before exp_migration (step 0 makes it; read and written while exp_migration is missing). */
+    const LEGACY_TABLE = expMigrationRecord::LEGACY_TABLE;
 
     /**
-     * Whether the table exists (true, false, null when it cannot be told).
+     * Whether a record table exists (true, false, null when it cannot be told).
      *
      * @param eZDBInterface $db
      * @return bool|null
      */
     public static function exists( $db )
     {
-        return expKernelTableSchema::exists( self::TABLE, $db, true );
+        return self::table( $db ) !== null ? true : self::unknown( $db );
+    }
+
+    /**
+     * The table the record is written to: exp_migration, else expupgrade_step, else null.
+     *
+     * @param eZDBInterface $db
+     * @return string|null
+     */
+    public static function table( $db )
+    {
+        if ( expMigrationRecord::exists( $db ) === true )
+            return self::TABLE;
+        if ( expKernelTableSchema::exists( self::LEGACY_TABLE, $db, true ) === true )
+            return self::LEGACY_TABLE;
+        return null;
     }
 
     /**
@@ -42,19 +65,22 @@ class expUpgradeRecord
      */
     public static function all( $db )
     {
-        if ( self::exists( $db ) !== true )
-            return array();
-        $rows = expKernelTableSchema::tryArrayQuery( $db, 'SELECT * FROM ' . self::TABLE );
         $all = array();
-        foreach ( (array)$rows as $row )
+        if ( expKernelTableSchema::exists( self::LEGACY_TABLE, $db, true ) === true )
         {
-            $row = array_change_key_case( (array)$row, CASE_LOWER );
-            if ( !isset( $row['step_id'] ) )
-                continue;
-            foreach ( array( 'applied_at', 'duration_ms' ) as $int )
-                $row[$int] = isset( $row[$int] ) ? (int)$row[$int] : 0;
-            $all[(string)$row['step_id']] = $row;
+            $rows = expKernelTableSchema::tryArrayQuery( $db, 'SELECT * FROM ' . self::LEGACY_TABLE );
+            foreach ( (array)$rows as $row )
+            {
+                $row = array_change_key_case( (array)$row, CASE_LOWER );
+                if ( !isset( $row['step_id'] ) )
+                    continue;
+                foreach ( array( 'applied_at', 'duration_ms' ) as $int )
+                    $row[$int] = isset( $row[$int] ) ? (int)$row[$int] : 0;
+                $all[(string)$row['step_id']] = $row;
+            }
         }
+        foreach ( expMigrationRecord::all( $db, expMigrationRecord::SOURCE_UPGRADE ) as $row )
+            $all[$row['migration_id']] = expMigrationRecord::toLegacy( $row );
         return $all;
     }
 
@@ -66,32 +92,26 @@ class expUpgradeRecord
      * @param string $state done or failed
      * @param int $durationMs
      * @param string $message
-     * @return bool false when the table does not exist
+     * @return bool false when no record table exists
      */
     public static function write( $db, expUpgradeStep $step, $state, $durationMs, $message = '' )
     {
-        if ( self::exists( $db ) !== true )
-            return false;
-        $values = array(
-            'step_id' => $step->id(),
+        $now = time();
+        $file = self::file( $step );
+        return self::store( $db, array(
+            'migration_id' => $step->id(),
             'stage' => $step->stage(),
             'version' => $step->version(),
             'state' => (string)$state,
-            'applied_at' => time(),
+            'started_at' => max( 0, $now - (int)round( (int)$durationMs / 1000 ) ),
+            'finished_at' => $now,
             'duration_ms' => (int)$durationMs,
-            'applied_by' => self::by(),
+            'run_by' => self::by(),
             'engine' => expKernelTableSchema::type( $db ),
-            'checksum' => self::checksum( $step ),
-            'message' => mb_substr( (string)$message, 0, 1000 ),
-        );
-        $sqlValues = array();
-        foreach ( $values as $name => $value )
-            $sqlValues[] = is_int( $value ) ? (string)$value : "'" . $db->escapeString( (string)$value ) . "'";
-        $db->begin();
-        $db->query( 'DELETE FROM ' . self::TABLE . " WHERE step_id = '" . $db->escapeString( $step->id() ) . "'" );
-        $db->query( 'INSERT INTO ' . self::TABLE . ' ( ' . implode( ', ', array_keys( $values ) ) . ' ) VALUES ( ' . implode( ', ', $sqlValues ) . ' )' );
-        $db->commit();
-        return true;
+            'checksum' => $file !== '' ? hash_file( 'sha256', $file ) : '',
+            'file_path' => self::relative( $file ),
+            'message' => (string)$message,
+        ) );
     }
 
     /**
@@ -103,24 +123,15 @@ class expUpgradeRecord
      * @param string $kind
      * @param string $label
      * @param string $source
-     * @return bool false when the table does not exist
+     * @return bool false when no record table exists
      */
     public static function writeCaption( $db, $id, $kind, $label, $source )
     {
-        if ( self::exists( $db ) !== true )
-            return false;
-        $stepId = 'caption:' . $id;
-        $values = array( 'step_id' => $stepId, 'stage' => 'caption', 'version' => '', 'state' => (string)$kind, 'applied_at' => time(),
-                         'duration_ms' => 0, 'applied_by' => self::by(), 'engine' => expKernelTableSchema::type( $db ), 'checksum' => '',
-                         'message' => mb_substr( "$label ($source)", 0, 1000 ) );
-        $sql = array();
-        foreach ( $values as $v )
-            $sql[] = is_int( $v ) ? (string)$v : "'" . $db->escapeString( (string)$v ) . "'";
-        $db->begin();
-        $db->query( 'DELETE FROM ' . self::TABLE . " WHERE step_id = '" . $db->escapeString( $stepId ) . "'" );
-        $db->query( 'INSERT INTO ' . self::TABLE . ' ( ' . implode( ', ', array_keys( $values ) ) . ' ) VALUES ( ' . implode( ', ', $sql ) . ' )' );
-        $db->commit();
-        return true;
+        $now = time();
+        return self::store( $db, array( 'migration_id' => 'caption:' . $id, 'stage' => 'caption', 'version' => '', 'state' => (string)$kind,
+                                        'started_at' => $now, 'finished_at' => $now, 'duration_ms' => 0, 'run_by' => self::by(),
+                                        'engine' => expKernelTableSchema::type( $db ), 'checksum' => '', 'caption_id' => (string)$id,
+                                        'message' => "$label ($source)" ) );
     }
 
     /**
@@ -131,8 +142,8 @@ class expUpgradeRecord
      */
     public static function checksum( expUpgradeStep $step )
     {
-        $file = ( new ReflectionClass( $step ) )->getFileName();
-        return $file && is_readable( $file ) ? hash_file( 'sha256', $file ) : '';
+        $file = self::file( $step );
+        return $file !== '' ? hash_file( 'sha256', $file ) : '';
     }
 
     /**
@@ -145,5 +156,74 @@ class expUpgradeRecord
         $who = function_exists( 'posix_geteuid' ) && function_exists( 'posix_getpwuid' ) ? posix_getpwuid( posix_geteuid() ) : false;
         $name = is_array( $who ) && isset( $who['name'] ) ? $who['name'] : (string)get_current_user();
         return php_sapi_name() === 'cli' ? 'cli ' . $name : 'web ' . $name;
+    }
+
+    /**
+     * Writes a row (in the columns of exp_migration) to the record table there is.
+     *
+     * @param eZDBInterface $db
+     * @param array $row
+     * @return bool
+     */
+    protected static function store( $db, array $row )
+    {
+        $table = self::table( $db );
+        if ( $table === null )
+            return false;
+        $row['source'] = expMigrationRecord::SOURCE_UPGRADE;
+        if ( $table === self::TABLE )
+        {
+            $row['environment'] = expMigrationRecord::environment();
+            return expMigrationRecord::write( $db, $row );
+        }
+        $legacy = expMigrationRecord::toLegacy( $row );
+        $sql = array();
+        foreach ( $legacy as $value )
+            $sql[] = is_int( $value ) ? (string)$value : "'" . $db->escapeString( (string)$value ) . "'";
+        $db->begin();
+        $db->query( 'DELETE FROM ' . self::LEGACY_TABLE . " WHERE step_id = '" . $db->escapeString( $legacy['step_id'] ) . "'" );
+        $db->query( 'INSERT INTO ' . self::LEGACY_TABLE . ' ( ' . implode( ', ', array_keys( $legacy ) ) . ' ) VALUES ( ' . implode( ', ', $sql ) . ' )' );
+        $db->commit();
+        return true;
+    }
+
+    /**
+     * Whether the record tables cannot be told (null) or are both missing (false).
+     *
+     * @param eZDBInterface $db
+     * @return bool|null
+     */
+    protected static function unknown( $db )
+    {
+        if ( expMigrationRecord::exists( $db ) === null || expKernelTableSchema::exists( self::LEGACY_TABLE, $db, true ) === null )
+            return null;
+        return false;
+    }
+
+    /**
+     * The file of the step's class, or ''.
+     *
+     * @param expUpgradeStep $step
+     * @return string
+     */
+    protected static function file( expUpgradeStep $step )
+    {
+        $file = ( new ReflectionClass( $step ) )->getFileName();
+        return $file && is_readable( $file ) ? $file : '';
+    }
+
+    /**
+     * A path relative to the root of the installation (the path as it is when it lies elsewhere).
+     *
+     * @param string $file
+     * @return string
+     */
+    protected static function relative( $file )
+    {
+        if ( $file === '' )
+            return '';
+        $root = rtrim( str_replace( '\\', '/', class_exists( 'eZSys' ) ? (string)eZSys::rootDir() : getcwd() ), '/' ) . '/';
+        $file = str_replace( '\\', '/', $file );
+        return strpos( $file, $root ) === 0 ? substr( $file, strlen( $root ) ) : $file;
     }
 }

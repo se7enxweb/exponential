@@ -1056,3 +1056,57 @@ CREATE TABLE IF NOT EXISTS expupgrade_step (
     "version" character varying(30) DEFAULT ''::character varying NOT NULL,
     CONSTRAINT expupgrade_step_pkey PRIMARY KEY ( step_id )
 );
+
+-- exp_migration and exp_migration_run: the migration record (one row per migration, the key is its source and
+-- id) and its runs. exp_migration replaces expupgrade_step: exp:upgrade writes its steps there as migrations of
+-- the source "kernel", and the rows expupgrade_step has are copied over (the upgrade step
+-- 6.0.15-migration-tables does the same). No sequence. Written with IF NOT EXISTS, and the copy leaves out a row
+-- that exp_migration has already, so running these statements again changes nothing.
+
+CREATE TABLE IF NOT EXISTS exp_migration (
+    caption_id character varying(150) DEFAULT ''::character varying NOT NULL,
+    checksum character varying(64) DEFAULT ''::character varying NOT NULL,
+    duration_ms integer DEFAULT 0 NOT NULL,
+    engine character varying(30) DEFAULT ''::character varying NOT NULL,
+    environment character varying(50) DEFAULT ''::character varying NOT NULL,
+    file_path character varying(255) DEFAULT ''::character varying NOT NULL,
+    finished_at integer DEFAULT 0 NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    migration_id character varying(150) DEFAULT ''::character varying NOT NULL,
+    revision character varying(64) DEFAULT ''::character varying NOT NULL,
+    run_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    run_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    source character varying(100) DEFAULT ''::character varying NOT NULL,
+    stage character varying(20) DEFAULT ''::character varying NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    "version" character varying(30) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT exp_migration_pkey PRIMARY KEY ( source, migration_id )
+);
+CREATE INDEX IF NOT EXISTS exp_migration_run_id ON exp_migration USING btree ( run_id );
+
+CREATE TABLE IF NOT EXISTS exp_migration_run (
+    caption_post character varying(150) DEFAULT ''::character varying NOT NULL,
+    caption_pre character varying(150) DEFAULT ''::character varying NOT NULL,
+    commit_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    environment character varying(50) DEFAULT ''::character varying NOT NULL,
+    finished_at integer DEFAULT 0 NOT NULL,
+    log_file character varying(255) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    push_state character varying(20) DEFAULT ''::character varying NOT NULL,
+    run_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    run_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    tag_name character varying(150) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT exp_migration_run_pkey PRIMARY KEY ( run_id )
+);
+CREATE INDEX IF NOT EXISTS exp_migration_run_started ON exp_migration_run USING btree ( started_at );
+
+INSERT INTO exp_migration ( source, migration_id, stage, "version", state, started_at, finished_at, duration_ms, run_by, engine, checksum, message, caption_id )
+  SELECT 'kernel', s.step_id, s.stage, s."version", s.state,
+         CASE WHEN s.applied_at > 0 THEN GREATEST( s.applied_at - CAST( ROUND( s.duration_ms / 1000.0 ) AS integer ), 0 ) ELSE 0 END,
+         s.applied_at, s.duration_ms, s.applied_by, s.engine, s.checksum, s.message,
+         CASE WHEN s.stage = 'caption' AND s.step_id LIKE 'caption:%' THEN SUBSTRING( s.step_id FROM 9 ) ELSE '' END
+    FROM expupgrade_step s
+   WHERE NOT EXISTS ( SELECT 1 FROM exp_migration m WHERE m.source = 'kernel' AND m.migration_id = s.step_id );

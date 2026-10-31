@@ -879,3 +879,57 @@ CREATE TABLE IF NOT EXISTS expupgrade_step (
   version varchar(30) NOT NULL DEFAULT '',
   PRIMARY KEY ( step_id )
 ) ENGINE=InnoDB;
+
+-- exp_migration and exp_migration_run: the migration record (one row per migration, the key is its source and
+-- id) and its runs. exp_migration replaces expupgrade_step: exp:upgrade writes its steps there as migrations of
+-- the source "kernel", and the rows expupgrade_step has are copied over (the upgrade step
+-- 6.0.15-migration-tables does the same). Written with IF NOT EXISTS, and the copy leaves out a row that
+-- exp_migration has already, so running these statements again changes nothing.
+
+CREATE TABLE IF NOT EXISTS exp_migration (
+  caption_id varchar(150) NOT NULL DEFAULT '',
+  checksum varchar(64) NOT NULL DEFAULT '',
+  duration_ms int(11) NOT NULL DEFAULT '0',
+  engine varchar(30) NOT NULL DEFAULT '',
+  environment varchar(50) NOT NULL DEFAULT '',
+  file_path varchar(255) NOT NULL DEFAULT '',
+  finished_at int(11) NOT NULL DEFAULT '0',
+  message varchar(1000) NOT NULL DEFAULT '',
+  migration_id varchar(150) NOT NULL DEFAULT '',
+  revision varchar(64) NOT NULL DEFAULT '',
+  run_by varchar(150) NOT NULL DEFAULT '',
+  run_id varchar(64) NOT NULL DEFAULT '',
+  source varchar(100) NOT NULL DEFAULT '',
+  stage varchar(20) NOT NULL DEFAULT '',
+  started_at int(11) NOT NULL DEFAULT '0',
+  state varchar(20) NOT NULL DEFAULT '',
+  version varchar(30) NOT NULL DEFAULT '',
+  PRIMARY KEY ( source, migration_id ),
+  KEY exp_migration_run_id ( run_id )
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS exp_migration_run (
+  caption_post varchar(150) NOT NULL DEFAULT '',
+  caption_pre varchar(150) NOT NULL DEFAULT '',
+  commit_id varchar(64) NOT NULL DEFAULT '',
+  environment varchar(50) NOT NULL DEFAULT '',
+  finished_at int(11) NOT NULL DEFAULT '0',
+  log_file varchar(255) NOT NULL DEFAULT '',
+  message varchar(1000) NOT NULL DEFAULT '',
+  push_state varchar(20) NOT NULL DEFAULT '',
+  run_by varchar(150) NOT NULL DEFAULT '',
+  run_id varchar(64) NOT NULL DEFAULT '',
+  started_at int(11) NOT NULL DEFAULT '0',
+  state varchar(20) NOT NULL DEFAULT '',
+  tag_name varchar(150) NOT NULL DEFAULT '',
+  PRIMARY KEY ( run_id ),
+  KEY exp_migration_run_started ( started_at )
+) ENGINE=InnoDB;
+
+INSERT INTO exp_migration ( source, migration_id, stage, version, state, started_at, finished_at, duration_ms, run_by, engine, checksum, message, caption_id )
+  SELECT 'kernel', s.step_id, s.stage, s.version, s.state,
+         CASE WHEN s.applied_at > 0 THEN GREATEST( s.applied_at - ROUND( s.duration_ms / 1000 ), 0 ) ELSE 0 END,
+         s.applied_at, s.duration_ms, s.applied_by, s.engine, s.checksum, s.message,
+         CASE WHEN s.stage = 'caption' AND s.step_id LIKE 'caption:%' THEN SUBSTRING( s.step_id, 9 ) ELSE '' END
+    FROM expupgrade_step s
+   WHERE NOT EXISTS ( SELECT 1 FROM exp_migration m WHERE m.source = 'kernel' AND m.migration_id = s.step_id );

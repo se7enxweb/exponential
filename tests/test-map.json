@@ -2455,15 +2455,54 @@
       "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php",
       "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
     ],
-    "kernel/classes/migration/*": [
-      "tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
-    ],
     "settings/migration.ini": [
       "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
     ],
     "tests/tests/kernel/classes/migration/fixtures/*": [
       "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php"
+    ],
+    "kernel/classes/migration/*": [
+      "tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationStatusMirrorTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php"
+    ],
+    "share/migration/schema/exp-migration-status-1.json": [
+      "tests/tests/kernel/classes/migration/expMigrationStatusMirrorTest.php"
+    ],
+    "kernel/classes/upgrade/expupgraderecord.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
+    ],
+    "kernel/classes/upgrade/steps/expupgradestepmigrationtables.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
+    ],
+    "kernel/classes/upgrade/steps/expupgradesteprecordtable.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
+    ],
+    "settings/upgrade.ini": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
+    ],
+    "share/db_schema.dba": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
+    ],
+    "kernel/sql/*/*schema.sql": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
+    ],
+    "update/database/*/6.0/dbupdate-6.0.0-6.0.15.sql": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
+      "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
     ]
   },
   "generated": {
