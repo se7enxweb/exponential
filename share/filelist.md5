@@ -23345,7 +23345,7 @@ d5e199bd454224432eabb39471db46a8  kernel/classes/expsetuplog.php
 004f61c2ffe717623433b8cf4bcf206c  kernel/classes/expsystemreportmask.php
 163a7c4dd2536cd2b37fdf0296d3ebe7  kernel/classes/exptestlanguage.php
 720f1d6c03631c707711655967633b24  kernel/classes/expuserloginintegrity.php
-529ebacdb497cad66a4e42503ed69ce8  kernel/classes/expvelocity.php
+dbfecd4eef50c01d40d60cb79f865a9f  kernel/classes/expvelocity.php
 db86d785d5355ddc034913715fa846de  kernel/classes/expvelocityconfig.php
 22a42e255746f53ad48eee794363d589  kernel/classes/expvelocityconfiglayout.php
 cf9459cf1ee0ed910a01772cef07a118  kernel/classes/expvelocitydeploy.php
@@ -25423,7 +25423,7 @@ c80250dec48448bcda0865588dfc740c  settings/twig.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
 17bfb96340acc7e7075122f3b353e6b3  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
-c9367f1773b93f33e799247c43697cdc  settings/velocity.ini
+1d6fcccde3ac5e5e15768fca98801529  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
 6b0d7027cd5f03b0b476e7b52023db28  settings/webdav.ini
 38b904d75d6c87157a8e9d252efccab2  settings/wordmatch.ini
