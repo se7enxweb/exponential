@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 e33a9db3cca23be2ced533902bff8c72  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-32b7f30a4f90fdcccdc67c5d5d98f90c  autoload/ezp_kernel.php
+55480d504945ff80ae058d0f05f903cd  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -23257,7 +23257,7 @@ dc12399d3e06ce2689d9fdc5a0c19335  kernel/classes/expbenchmarkkernel.php
 772e3ba0cc4d6cd23f787152d648a9c2  kernel/classes/expbookmarktype.php
 2f12796d7160f856b09f2ca717034d4f  kernel/classes/expbookmarktypesearch.php
 1fe08923429074cdebf9118cd151a595  kernel/classes/expbookmarktypesystempage.php
-b761599628675ad45c7a93d35b13b27d  kernel/classes/expbookmarkview.php
+59707972b3bc804411aa1dc3a0290086  kernel/classes/expbookmarkview.php
 e22e0cd27a9bc4f0aabe4e26a8b10cec  kernel/classes/expcachecatalogue.php
 5dd06b1fa297c0097dde4df061456db6  kernel/classes/expcachemanager.php
 526dd0bbc202efcfbab77cc4a847cb84  kernel/classes/expcachewarm.php
@@ -23792,6 +23792,8 @@ e3ce75d033564977418b42e166b4ab04  kernel/classes/upgrade/steps/expupgradestepano
 c6a637d610db03f7d58a5dce12d99ccc  kernel/classes/upgrade/steps/expupgradestepapikeytable.php
 51716ac42fbfa60d142a4d5fcc216992  kernel/classes/upgrade/steps/expupgradestepauditindextables.php
 c8487ce7613064c2440bc5c059fe3a71  kernel/classes/upgrade/steps/expupgradestepbookmarkfolders.php
+8168670fa907d2f89aac503224960f74  kernel/classes/upgrade/steps/expupgradestepbookmarkviewcolumns.php
+683c0bd7c441616cda4aa006c40f8dcc  kernel/classes/upgrade/steps/expupgradestepbookmarkviewfill.php
 6e451953a86d2ce0417355d00ee082c4  kernel/classes/upgrade/steps/expupgradestepbookmarkviewtable.php
 011cdeaf97448ff2b182afec75e075be  kernel/classes/upgrade/steps/expupgradestepcodeupdate.php
 cbea0fa4b585784263ee3e07dcdeffdd  kernel/classes/upgrade/steps/expupgradestepdatatabletables.php
@@ -24935,12 +24937,12 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-cbdf04daaa82b61c0763fb09b2fb0a8f  kernel/sql/mysql/kernel_schema.sql
-8e367a5672a9891a165581efc207009d  kernel/sql/postgresql/kernel_schema.sql
+69b5cb930226eb9f7c770a2edbd4b704  kernel/sql/mysql/kernel_schema.sql
+0d7fd838491796c8e79af6c0236200bd  kernel/sql/postgresql/kernel_schema.sql
 67721f5188e529651254baaf73115a2d  kernel/sql/postgresql/sequence.sql.template
 24f4bdbc332642858d8c0a98a94541d5  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
-cd46d35fceee0e427bea482d697409ca  kernel/sql/sqlite/schema.sql
+61be56a585dc79ac0771a5fe6baf45e4  kernel/sql/sqlite/schema.sql
 4ceffdfdd3df6dad001c45ecbfc14f26  kernel/state/assign.php
 1876c01f370cc8092ddb92cb64870718  kernel/state/edit.php
 51d446ac0be7f9efa76a6406a8e2ba76  kernel/state/group.php
@@ -25378,7 +25380,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-405cf7b4185b1cd163f35dd906d9b7c3  settings/upgrade.ini
+17bfb96340acc7e7075122f3b353e6b3  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 c9367f1773b93f33e799247c43697cdc  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -25435,7 +25437,7 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a2b80831488ff635f2b4e7b922434d9d  share/db_data.dba
-1f47120a559c76c7894450d03ac6c971  share/db_schema.dba
+7c78d06aeff46d8cc8867a428920f662  share/db_schema.dba
 0d2dc77620a59815f0f637d7099cc90b  share/help/seed-glossary.json
 e5c09d9e4932f30d364759d243eb01df  share/help/seed-topics.json
 27b07790be30d1577541464bc445fff3  share/icons/big-smile.gif
@@ -27031,10 +27033,11 @@ bb66bbf6ad596cb12e644b945f46a0f4  tests/tests/kernel/classes/benchmark/ExpBenchm
 d13efcdca5d25b142467c18aba938118  tests/tests/kernel/classes/benchmark/stub_server.php
 b18127a22f8a46b2ff02d61e4b5c6d7e  tests/tests/kernel/classes/bookmarks/BookmarkFolderUpgradeSqlTest.php
 16562b1931d55c6b5138723f1b1ee024  tests/tests/kernel/classes/bookmarks/BookmarkFoldersTest.php
-c7ad0acc5911ebb445ee432a5c67bd36  tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php
+baaf01fe3b18b48aa1c9aa2afd3797f7  tests/tests/kernel/classes/bookmarks/BookmarkViewParsedColumnsTest.php
+9388763b112b9c37cabf8a354b75177e  tests/tests/kernel/classes/bookmarks/BookmarkViewSchemaSqlTest.php
 62d024cb421eeb96fdf4625bd0ff6d8b  tests/tests/kernel/classes/bookmarks/BookmarkViewsTest.php
 742e384210b75bff0a56e21cd00ac13d  tests/tests/kernel/classes/bookmarks/expBookmarkPageTest.php
-20b5ef27bf115202e1b0d3ab0b7b478d  tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php
+94967666e4586b493dd9dcead8a89625  tests/tests/kernel/classes/bookmarks/expBookmarkViewTest.php
 9c4a1758ccef63a808d3bb5e638ea67c  tests/tests/kernel/classes/cachesmore/eZStaticCachePathsTest.php
 32797ee964fe06176eb00d583d0c5737  tests/tests/kernel/classes/cachesmore/expPreloadRunnerLinksTest.php
 58fbc9b3d8de475e842729aca7e28459  tests/tests/kernel/classes/cachesmore/expPreloadRunnerSitePathTest.php
@@ -28385,7 +28388,7 @@ bb39a45d6606b9df49c05f4c31e6ded7  update/common/scripts/5.4/cleanuntranslatabler
 dffebf82ed0f98aca1b2a34da0ad5673  update/common/scripts/5.4/fixtrashedimagereferences.php
 5e27ce76cf28f07c2c3f7a3bc831568a  update/common/scripts/6.0/createapikeytable.php
 a5f440b96f0b048ff57c517d3684918a  update/common/scripts/6.0/createaudittables.php
-2a44beee19be3c195ea9386faac76e16  update/common/scripts/6.0/createbookmarkviewtable.php
+228f40fae10ed757847e42c52806a981  update/common/scripts/6.0/createbookmarkviewtable.php
 b3b358aaafa23fb1adcdd4bdcb92f1ec  update/common/scripts/6.0/createmissingusersettings.php
 0a2a766ae9ed213df86d190a95190963  update/common/scripts/6.0/createpasskeytable.php
 2c32e4995ccbb7f8ec66f7c04b10ac19  update/common/scripts/6.0/createtransferruntable.php
@@ -28457,7 +28460,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-5a0a398ef82c972da4b0d41fff86e171  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+32dedd473b8cb5acb0a3266362a40fc4  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -28516,9 +28519,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-83f04750bb9ff25c6699e48d8a3fddf8  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+87e819662605f1044f6d323ca67783c3  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-8ebe5af8740269522cd7df8dffaca9cc  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+73151b1f061a92d6c579275e421868e0  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php

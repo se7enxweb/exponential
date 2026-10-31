@@ -1576,8 +1576,11 @@ CREATE TABLE expbookmark_folder (
 CREATE TABLE expbookmark_view (
     bookmark_id integer DEFAULT 0 NOT NULL,
     created integer DEFAULT 0 NOT NULL,
+    module_name character varying(100) DEFAULT ''::character varying NOT NULL,
     module_uri text,
-    user_id integer DEFAULT 0 NOT NULL
+    user_id integer DEFAULT 0 NOT NULL,
+    view_name character varying(100) DEFAULT ''::character varying NOT NULL,
+    view_parameters text
 );
 
 
@@ -3518,6 +3521,14 @@ CREATE INDEX ezcontentbrowsebookmark_folder ON ezcontentbrowsebookmark USING btr
 
 
 CREATE INDEX expbookmark_folder_user ON expbookmark_folder USING btree (user_id, parent_id);
+
+
+
+
+CREATE INDEX expbookmark_view_module ON expbookmark_view USING btree (module_name, view_name);
+
+
+
 
 
 

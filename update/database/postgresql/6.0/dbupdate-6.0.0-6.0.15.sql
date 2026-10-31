@@ -451,14 +451,28 @@ BEGIN
         CREATE TABLE expbookmark_view (
           bookmark_id integer DEFAULT 0 NOT NULL,
           created integer DEFAULT 0 NOT NULL,
+          module_name character varying(100) DEFAULT ''::character varying NOT NULL,
           module_uri text,
-          user_id integer DEFAULT 0 NOT NULL
+          user_id integer DEFAULT 0 NOT NULL,
+          view_name character varying(100) DEFAULT ''::character varying NOT NULL,
+          view_parameters text
         );
         ALTER TABLE ONLY expbookmark_view ADD CONSTRAINT expbookmark_view_pkey PRIMARY KEY ( bookmark_id );
         CREATE INDEX expbookmark_view_user ON expbookmark_view USING btree ( user_id );
     END IF;
 END
 $$;
+
+-- The address parsed: module_name, view_name and view_parameters (JSON of the ordered, unordered
+-- and query parameters), so bookmarks are found and moved by module and view. A table made by an
+-- early 6.0.15 build has only the address: the columns are added when missing (ADD COLUMN IF NOT
+-- EXISTS, PostgreSQL 9.6 or newer) and so is their index, so the lines can run again. The rows are
+-- filled from their address by update/common/scripts/6.0/createbookmarkviewtable.php or
+-- ./console exp:upgrade --apply; until then the kernel reads the address alone.
+ALTER TABLE expbookmark_view ADD COLUMN IF NOT EXISTS module_name character varying(100) DEFAULT ''::character varying NOT NULL;
+ALTER TABLE expbookmark_view ADD COLUMN IF NOT EXISTS view_name character varying(100) DEFAULT ''::character varying NOT NULL;
+ALTER TABLE expbookmark_view ADD COLUMN IF NOT EXISTS view_parameters text;
+CREATE INDEX IF NOT EXISTS expbookmark_view_module ON expbookmark_view USING btree ( module_name, view_name );
 
 -- E-mail preferences and consent.
 --
