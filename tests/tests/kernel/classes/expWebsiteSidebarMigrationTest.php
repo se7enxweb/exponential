@@ -196,4 +196,27 @@ class expWebsiteSidebarMigrationTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'replace', $change['action'] );
         $this->assertSame( "ActiveExtensions[]=expwt\nActiveExtensions[]=ezoe\n", $change['text'], 'one expwt for two ezwt' );
     }
+
+    /**
+     * The backup of a settings file (which can hold credentials) keeps the file's mode instead of becoming readable by
+     * everybody, as a plain copy() made it.
+     */
+    public function testBackupKeepsTheModeOfTheSettingsFile()
+    {
+        $dir = 'var/tmp/expwt-migration-backup-test-' . getmypid();
+        @mkdir( $dir, eZDir::dirMode( 0700 ), true );
+        $path = $dir . '/site.ini.append.php';
+        file_put_contents( $path, "<?php /*\n[ExtensionSettings]\nActiveExtensions[]=ezwt\n*/ ?>\n" );
+        chmod( $path, eZFile::fileMode( 0640 ) );
+        $method = new ReflectionMethod( 'expWebsiteSidebarMigration', 'backup' );
+        $method->setAccessible( true );
+        $method->invoke( null, $path );
+        clearstatcache();
+        $this->assertFileExists( $path . '.before-expwt' );
+        $this->assertSame( fileperms( $path ) & 0777, fileperms( $path . '.before-expwt' ) & 0777, 'the backup has the mode of the file' );
+        $this->assertSame( 0, fileperms( $path . '.before-expwt' ) & 0007, 'the backup is not readable by others' );
+        unlink( $path . '.before-expwt' );
+        unlink( $path );
+        rmdir( $dir );
+    }
 }

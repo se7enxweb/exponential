@@ -453,6 +453,28 @@ class expWebsiteSidebarMigration
     }
 
     /**
+     * Copies a settings file to <file>.before-expwt with the original's mode, owner and group: a settings file can
+     * hold credentials, and a plain copy() would leave the backup readable by everybody.
+     *
+     * @param string $path
+     */
+    private static function backup( $path )
+    {
+        $backup = $path . '.before-expwt';
+        if ( !copy( $path, $backup ) )
+            return;
+        $perms = @fileperms( $path );
+        if ( $perms !== false )
+            @chmod( $backup, eZFile::fileMode( $perms & 0777 ) );
+        $owner = @fileowner( $path );
+        $group = @filegroup( $path );
+        if ( $owner !== false )
+            @chown( $backup, $owner );
+        if ( $group !== false )
+            @chgrp( $backup, $group );
+    }
+
+    /**
      * Writes the settings (a copy of each file it changes next to it, <file>.before-expwt) and grants the policies.
      *
      * @param string $root
@@ -466,7 +488,7 @@ class expWebsiteSidebarMigration
         foreach ( $settings['writes'] as $path => $text )
         {
             if ( is_file( $path ) )
-                copy( $path, $path . '.before-expwt' );
+                self::backup( $path );
             file_put_contents( $path, $text );
             $done[] = "wrote $path";
         }
@@ -475,7 +497,7 @@ class expWebsiteSidebarMigration
             $change = self::activationChange( $text );
             if ( $change === null )
                 continue;
-            copy( $path, $path . '.before-expwt' );
+            self::backup( $path );
             file_put_contents( $path, $change['text'] );
             $done[] = self::activationText( $change, $path, true );
         }
