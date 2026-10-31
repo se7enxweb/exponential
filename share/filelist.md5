@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-3e06c7091caa56fc125277f765683e80  autoload/ezp_kernel.php
+8dc75f72804b6cbbb089e09601899104  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 a880afdeae4b5fa062bb38f5a26c322f  benchmarks/classes/ezbenchmarkclirunner.php
@@ -107,6 +107,7 @@ db2c34ba4ef800cbfcc51c57e05140f6  bin/php/exptemplateconverttpltotwig.php
 b8889f13972e59ae4f545b60343e613f  bin/php/exptemplateconverttwigtostpl.php
 de8caa5d1733176bcb7ac09b190715ed  bin/php/exptemplateconverttwigtotpl.php
 e40098abc0bb9999b797056d2f7eb95b  bin/php/exptemplateengines.php
+2cedfdea71611595a41fbc4dda22d3f0  bin/php/expwtmigratefromezwt.php
 cd7e709ddd373b92570a4b8108f0844b  bin/php/ezapplytemplate.php
 5cc15c0bdc487530099644d781bd0e52  bin/php/ezasynchronouspublisher.php
 143f159813ab8806ae6b1651189fd1d9  bin/php/ezcache.php
@@ -6479,7 +6480,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-7f9fe08417daae3ada93769c6113737f  doc/eng-us/features/6.0/README.md
+c2cfcb5ff8331cde915fdd3850a59e5f  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6684,6 +6685,7 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 26ddd0cf40cd46bd777c6a6cd595c001  doc/eng-us/features/6.0/velocity-websockets-and-events.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-commands.md
+3c13cf829c54e3db26d57b76bc6cc366  doc/eng-us/features/6.0/website-sidebar.md
 69cf415d178489c7ca9f2cf4bf7df884  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
 5a472729017993e883a506d5dfbd346e  doc/eng-us/guides/README.md
@@ -12853,7 +12855,7 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-ff304ab9045f42d89c3cf63016f7d25a  doc/ger-de/.paths.json
+043d007ba0f56c782007269bad4d5a34  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -15746,7 +15748,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-4859c7b8485a09760d9ae931abc793f4  doc/ger-de/funktionen/6.0/README.md
+051dc91792fcfdd19ccebde5ed19dc0d  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -15945,6 +15947,7 @@ b2ec6f7c415225178be44e5caeab8388  doc/ger-de/funktionen/6.0/velocity-zeitplaner.
 7b9d3ace84a70314eeb6b83a3949469a  doc/ger-de/funktionen/6.0/veroeffentlichen-ohne-benachrichtigung.md
 8a6387d0944cfcf12dbffe21cf8cf6f6  doc/ger-de/funktionen/6.0/vorabladen-des-zugriffsarrays.md
 5a82b84fa068555c248d17d1a6d4125f  doc/ger-de/funktionen/6.0/wartungsmodus.md
+2a1a90d1b74baba7578cd6b6b9299464  doc/ger-de/funktionen/6.0/website-seitenleiste.md
 bea8ea9f00dfc81102f6e376de1bea4e  doc/ger-de/funktionen/6.0/websiteuebergreifende-links-im-multisite.md
 3c2b3930490f58368df9a670f4cf0959  doc/ger-de/funktionen/6.0/zugriffs-und-cache-filter.md
 aba05fee1af76fb5cde206933fa6cb94  doc/ger-de/funktionen/6.0/zusaetzliche-extension-verzeichnisse.md
@@ -23381,6 +23384,7 @@ acae6bbb77fcc05695116d119c0879f5  kernel/classes/expvelocitywatchdog.php
 35ecc21bdffdb4e710505fdd826df48a  kernel/classes/expviewaccess.php
 60d22591b81ac4d724cf627f169f2aeb  kernel/classes/expviewparameters.php
 2476f9c0f8ba75823eb320fe33bc0ab5  kernel/classes/expweakpasswordlist.php
+2a0b5c7c407244a21e325c3152836f81  kernel/classes/expwebsitesidebarmigration.php
 19df831ef09fa7411d27bf3b6c4cfea4  kernel/classes/ezaudit.php
 2deb8dd5796ace6c5bb4c7b85ee06ea4  kernel/classes/ezbasket.php
 49db61a7999663c74b1b6cbe4b852d89  kernel/classes/ezbinaryfilehandler.php
@@ -23884,6 +23888,7 @@ d4882884cb8e11c2db92d3940177cd98  kernel/classes/upgrade/steps/expupgradestepsit
 87f6ba3903afebfb8610bc329921a159  kernel/classes/upgrade/steps/expupgradestepuseraudittable.php
 944d951983d88dd9c44de03285f14bc6  kernel/classes/upgrade/steps/expupgradestepuserloginuniqueindex.php
 eb5b19516b103fa6f771fa670e270485  kernel/classes/upgrade/steps/expupgradestepusersessiontable.php
+c6e6caf03b993e327788b0741029c374  kernel/classes/upgrade/steps/expupgradestepwebsitesidebar.php
 2b5af103863c5e0f0fb1b9979726a684  kernel/classes/user/exppasswordchangerequired.php
 f3af015f9e7fbdb82cad81d7cc2c87fa  kernel/classes/user/expregistrationadminaction.php
 f11fc49c3931622b3234870783fd957c  kernel/classes/user/expsigninsecondfactor.php
@@ -24197,6 +24202,7 @@ c887ef0c09b4113ee9fc73b06d0e122b  kernel/private/classes/commands/exptemplatecon
 7f5dbf4392650d66bdded06094e13eae  kernel/private/classes/commands/exptemplateconverttwigtostpl.php
 240f5f08dba2a52329a725b885c587fe  kernel/private/classes/commands/exptemplateconverttwigtotpl.php
 81af78f376418b564013cd32306b4dfd  kernel/private/classes/commands/exptemplateengines.php
+c4ff3a09e33517fc28adebcdc82202d2  kernel/private/classes/commands/expwtmigratefromezwt.php
 0490ac4d5fa0fd55d517d73135c31db4  kernel/private/classes/commands/ezapplytemplate.php
 642175f631984db5adf5a4f5e3f2cb33  kernel/private/classes/commands/ezasynchronouspublisher.php
 f95b245cc74654bc2ea5af83705fcaa4  kernel/private/classes/commands/ezcache.php
@@ -25446,7 +25452,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-17bfb96340acc7e7075122f3b353e6b3  settings/upgrade.ini
+556408256401c0a504f4c6583accea87  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 53f363dfc5d11e88ff40763bed4b0471  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -27372,6 +27378,7 @@ d82f876705fd85722ea8409d0cd97fe7  tests/tests/kernel/classes/expVelocityStopRest
 805242b566e7eb9a4614ce5c30430c32  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 343c0121d4e5e9a067c7b31b5e462c9c  tests/tests/kernel/classes/expViewAccessTest.php
 0745ffa213053f2a3bc03b9a9fbb664e  tests/tests/kernel/classes/expViewParametersTest.php
+980c5dfccd684d371ce113f846aa5c35  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml
