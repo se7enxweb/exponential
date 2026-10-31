@@ -1513,6 +1513,22 @@ html.a4-preload *::after { transition: none !important; }
     padding: 0.5rem var(--a4-space-5);
   }
 }
+/* The website sidebar (expwt) beside the page. While its panel pushes the page, expwt names the room it takes on
+   <html>: --expwt-push-left or --expwt-push-right (the panel's width), --expwt-push-top or --expwt-push-bottom (the
+   bar's height). For left and right it gives the root that much padding on that side, so the content and the columns
+   in the body's margins move with it. What this layout fixes to the window steps aside the same way: the side
+   columns, the buttons on their edges and the toasts; on top and bottom the columns start below the bar or end above
+   it. On a phone the sidebar lies over the page and pushes nothing. */
+html[data-expwt-push="right"] .sidebar-controls { right: var(--expwt-push-right, 0px); }
+html[data-expwt-push="left"] .sidebar-controls { left: var(--expwt-push-left, 0px); }
+html:not([dir="rtl"])[data-expwt-push="right"] .sidebar.right,
+html[dir="rtl"][data-expwt-push="right"] .sidebar.left { right: var(--expwt-push-right, 0px); }
+html:not([dir="rtl"])[data-expwt-push="left"] .sidebar.left,
+html[dir="rtl"][data-expwt-push="left"] .sidebar.right { left: var(--expwt-push-left, 0px); }
+html:not([dir="rtl"])[data-expwt-push="right"] .a4-toasts { right: calc(var(--expwt-push-right, 0px) + var(--a4-space-4)); }
+html[dir="rtl"][data-expwt-push="left"] .a4-toasts { left: calc(var(--expwt-push-left, 0px) + var(--a4-space-4)); }
+html[data-expwt-push="top"] .sidebar { top: calc(var(--header-height) + var(--expwt-push-top, 0px)); }
+html[data-expwt-push="bottom"] .sidebar { bottom: var(--expwt-push-bottom, 0px); }
 
 /* The sidebar buttons: the desktop tab shape (admin3's 20 x 40 tab, flat on the window's edge) at every width,
    fixed at 48% of the window's height on its left and right edges, instead of the round buttons in the header. */
