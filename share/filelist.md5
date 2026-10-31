@@ -27542,7 +27542,7 @@ e13055c68ca8d3755a317b1f6e5be33a  tests/tests/kernel/classes/help/expHelpProject
 a75bec75ab665b7e15c596bc4982753a  tests/tests/kernel/classes/help/expHelpReadPolicyGrantTest.php
 3a8abae711d189637fba36633f0467de  tests/tests/kernel/classes/help/expHelpRecordRendererTest.php
 78f1138c4b3dcc764ab9de0f1eb9bd03  tests/tests/kernel/classes/help/expHelpRemoteImagesTest.php
-5fa2672678659521e429ba2dd4f79f3d  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
+247d2c5c12a83e0bd49cfebd6e0772f3  tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php
 187f8ac6a8fc9b0aef915d45037de83b  tests/tests/kernel/classes/help/expHelpSearchContractTest.php
 5279dfae2eba4659ace52fa2102abd7b  tests/tests/kernel/classes/help/expHelpSearchHrefTest.php
 c9a89abdd3d6ef82f6cab53a0dc3c53d  tests/tests/kernel/classes/help/expHelpSearchTest.php
