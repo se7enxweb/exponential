@@ -80205,11 +80205,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Ask the content of this site for exactly the fields a page needs, in one request. The schema follows the content classes; every query runs with the rights of the user who sends it.</source>
-        <translation>Pida al contenido de este sitio exactamente los campos que necesita una página, en una sola petición. El esquema sigue las clases de contenido; cada consulta se ejecuta con los permisos del usuario que la envía.</translation>
+        <translation>Pide al contenido de este sitio exactamente los campos que necesita una página, en una sola petición. El esquema sigue las clases de contenido; cada consulta se ejecuta con los permisos del usuario que la envía.</translation>
     </message>
     <message>
         <source>The GraphQL API is switched off in this siteaccess. Switch it on in graphql.ini: [GraphQLSettings] Enabled=enabled.</source>
-        <translation>La API GraphQL está desactivada en este acceso al sitio. Actívela en graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
+        <translation>La API GraphQL está desactivada en este acceso al sitio. Actívala en graphql.ini: [GraphQLSettings] Enabled=enabled.</translation>
     </message>
     <message>
         <source>The GraphQL library (webonyx/graphql-php 15) is not installed.</source>
@@ -80257,7 +80257,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>The query runs with your rights, signed in with this session.</source>
-        <translation>La consulta se ejecuta con sus permisos, con la sesión iniciada actual.</translation>
+        <translation>La consulta se ejecuta con tus permisos, con la sesión que tienes iniciada.</translation>
     </message>
     <message>
         <source>%count in %seconds s</source>
