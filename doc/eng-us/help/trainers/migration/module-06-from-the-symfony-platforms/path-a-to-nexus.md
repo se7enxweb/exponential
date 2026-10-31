@@ -3,8 +3,8 @@ title: "Lesson 6.2: Path A: to Exponential Platform Nexus"
 audience: trainer, developer
 category: training
 order: 62
-summary: Developers plan a same-generation move from eZ Platform or Ibexa to Exponential Platform Nexus - bring the source to the last release of its line, swap the packages, rename console commands, rebuild landing pages with Netgen Layouts, and verify. 45 minutes.
-keywords: migrating to exponential, path A, Exponential Platform Nexus, package swap, composer, se7enxweb forks, replace, console commands, exponential:reindex, Page Builder, Netgen Layouts, landing pages, version traps, verify
+summary: Developers plan a same-generation move from eZ Platform or Ibexa to Exponential Platform Nexus - bring the source to the last release of its line, swap the packages, rename console commands, rebuild landing pages with Exponential Layouts, and verify. 45 minutes.
+keywords: migrating to exponential, path A, Exponential Platform Nexus, package swap, composer, se7enxweb forks, replace, console commands, exponential:reindex, Page Builder, landing pages, version traps, verify
 type: help
 ---
 # Lesson 6.2: Path A: to Exponential Platform Nexus
@@ -35,7 +35,7 @@ After this lesson, learners can:
 - list the upstream update steps that bring a source to the last release of its line;
 - write the package swap in `composer.json` for one generation;
 - find and rewrite console command names in cron entries and deployment scripts;
-- plan landing pages of the Page Builder as a content task with Netgen Layouts.
+- plan landing pages of the Page Builder as a content task with Exponential Layouts.
 
 ## Trainer's notes
 
@@ -89,7 +89,7 @@ pages built with the Page Builder.
    that finds old command names in the cron directory and the deployment script, and note which line of the table
    applies to Nexus `1.2.0.x`.
 5. Write a three-step plan for the 35 landing pages from
-   [16.5.9](../../../../install/16-migrating-from-ez-platform-and-ibexa.md#1659-page-building-page-builder-against-netgen-layouts),
+   [16.5.9](../../../../install/16-migrating-from-ez-platform-and-ibexa.md#1659-page-building-page-builder-against-exponential-layouts),
    including the SQL that counts them.
 6. Write the verification commands of [16.8](../../../../install/16-migrating-from-ez-platform-and-ibexa.md#168-verify-the-migration)
    you will run after the swap, and the three counting queries.
@@ -114,7 +114,7 @@ pages built with the Page Builder.
    C. Packagist requires it D. Nexus has only one release
 3. Which option must never be passed to `mysql` or `psql` when running update scripts?
 4. On Platform v5, does `ibexa:reindex` still exist?
-5. Which tool converts Page Builder landing pages into Netgen Layouts layouts?
+5. Which tool converts Page Builder landing pages into layouts of Exponential Layouts?
 
 <details>
 <summary>Answers</summary>
@@ -127,7 +127,7 @@ pages built with the Page Builder.
 4. No. On v5 no aliases are registered; the command is `exponential:reindex`
    ([chapter 16.5.4](../../../../install/16-migrating-from-ez-platform-and-ibexa.md#1654-console-command-names)).
 5. None; plan it as a content task
-   ([chapter 16.5.9](../../../../install/16-migrating-from-ez-platform-and-ibexa.md#1659-page-building-page-builder-against-netgen-layouts)).
+   ([chapter 16.5.9](../../../../install/16-migrating-from-ez-platform-and-ibexa.md#1659-page-building-page-builder-against-exponential-layouts)).
 
 </details>
 

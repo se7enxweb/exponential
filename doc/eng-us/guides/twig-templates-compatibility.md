@@ -9,7 +9,7 @@ something was not run, the page says so.
 ## Which Twig for which PHP
 
 Composer installs Twig 3 with the rest of the installation, through the metapackage
-`se7enxweb/exponential-php-floor` that the kernel's `composer.json` requires (`~1.0.3 || ~1.1.3 || ~1.2.3 ||
+`se7enxweb/exponential-php-floor` that the kernel's `composer.json` requires (`~1.0.3 || ~1.1.4 || ~1.2.3 ||
 ~1.3.3`). Composer picks the floor release that matches the PHP version it runs with, and that release requires the
 Twig 3 package for that PHP line:
 
@@ -17,7 +17,7 @@ Twig 3 package for that PHP line:
 |---|---|---|---|---|
 | 8.4 and later | supported | 1.3.3 | `twig/twig` `^3.27` | 3.30.0 |
 | 8.1 to 8.3 | supported | 1.2.3 | `twig/twig` `^3.27` | 3.30.0 |
-| 8.0 | supported | 1.1.3 | `se7enxweb/twig` `~3.19.1` | 3.19.1 |
+| 8.0 | supported | 1.1.4 | `se7enxweb/twig` `~3.19.1` | 3.19.1 |
 | 7.4 | usable without support | 1.0.3 | `se7enxweb/twig` `~3.11.4` | 3.11.4 |
 
 An installation with Composer's security blocking on (the default, which the project keeps on for every PHP version)

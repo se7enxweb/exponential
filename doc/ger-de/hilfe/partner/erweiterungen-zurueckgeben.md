@@ -52,7 +52,7 @@ individuellen Erweiterungen und Korrekturen, die Sie für Ihre Kunden behalten, 
   woher es stammt.
 - Bieten Sie die Verbesserungen Ihres Forks zurück an, wenn das Original wieder auflebt.
 
-Das Projekt hält es ebenso: Exponential Layouts „bringt das Konzept von Netgen Layouts in den Kernel von Exponential“
+Das Projekt hält es ebenso: Exponential Layouts „bringt das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential“
 (README), und die Verbesserungen von LoveStack wurden „mit voller Nennung von Mugo Web“ neu gebaut (README).
 
 ## 5. Die Pflege übernehmen

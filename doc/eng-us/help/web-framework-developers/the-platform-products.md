@@ -28,7 +28,7 @@ descriptions below come from each distribution's own documentation and `composer
 |---|---|---|
 | **Exponential Platform 3.2.9** | a CMS on the last free eZ Platform versions, "Symfony / New Stack Only" | No |
 | **Exponential Platform Legacy** | the Symfony platform plus the legacy bridge and `se7enxweb/exponential` ("dual kernel") | Yes |
-| **Exponential Platform Nexus** | platform, Exponential 6, Netgen Media Site and Netgen Layouts, with demo content | the 1.0.0.x to 1.2.0.x lines and Nexus 2.5 yes; 1.3.0.x (Platform v5) no |
+| **Exponential Platform Nexus** | platform, Exponential 6, Netgen Media Site and Exponential Layouts, with demo content | the 1.0.0.x to 1.2.0.x lines and Nexus 2.5 yes; 1.3.0.x (Platform v5) no |
 | **Nexus starter** | the Platform v5 Nexus site as its own repository | No |
 | **Exponential Platform DXP** | a Symfony-only digital experience platform, the continuation of the Ibexa DXP OSS line | No |
 
@@ -43,7 +43,7 @@ Per-line details: [Nexus starter](../../features/6.0/platform-nexus-starter.md),
 | Symfony, Twig, platform REST | yes | yes | yes | yes |
 | GraphQL | in its requirements | check the line's `composer.json` | yes, with the REST API | yes, with GraphiQL |
 | Exponential 6 kernel and legacy admin | no | yes | lines up to 1.2.0.x and 2.5 | no |
-| Netgen Layouts editor | no | not stated | yes | no (only `se7enxweb/layouts-core`) |
+| Exponential Layouts editor | no | not stated | yes | no (only `se7enxweb/layouts-core`) |
 | Demo site | no | no | yes | no (clean skeleton) |
 
 SQLite installs exist for several platform lines ([SQLite for the platform](../../features/6.0/platform-sqlite-install.md));
@@ -58,7 +58,7 @@ contain none of them ([What Exponential is: the product family](../leadership/wh
 |---|---|
 | A PHP application with a content model, permissions and an administration, no Symfony | Exponential 6 |
 | A new Symfony project with a CMS, REST and GraphQL, no legacy kernel | Exponential Platform DXP ([DXP skeleton](../../features/6.0/platform-dxp-skeleton.md)) |
-| A finished demo site with Netgen Layouts on Symfony | Exponential Platform Nexus |
+| A finished demo site with Exponential Layouts on Symfony | Exponential Platform Nexus |
 | An Exponential 6 site plus Symfony beside it | Exponential Platform Legacy ([Symfony legacy bridge](symfony-and-the-legacy-bridge.md)) |
 | A team on eZ Platform 3 that wants current PHP | Exponential Platform 3.2.9 |
 

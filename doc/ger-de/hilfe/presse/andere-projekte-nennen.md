@@ -4,7 +4,7 @@ audience: press, advocate
 category: press-media
 order: 35
 summary: Welche Teile von Exponential auf der Open-Source-Arbeit anderer Unternehmen aufbauen - das Layout-Konzept und AdminUI von Netgen, der LoveStack von Mugo Web, Newsletter und request-shield von CJW Network, der Qbix-Server, Zeta Components -, wie das Projekt sie nennt und wie Berichte sie nennen sollten.
-keywords: Nennung, Quellenangabe, Urheber nennen, Netgen, Netgen Layouts, AdminUI, Mugo Web, LoveStack, CJW Network, cjw_newsletter, request-shield, Qbix, Zeta Components, AdminNeo, Open-Source-Nennung, credit, attribution, open source credit
+keywords: Nennung, Quellenangabe, Urheber nennen, Netgen, AdminUI, Mugo Web, LoveStack, CJW Network, cjw_newsletter, request-shield, Qbix, Zeta Components, AdminNeo, Open-Source-Nennung, credit, attribution, open source credit
 type: help
 ---
 # Netgen, Mugo Web und CJW Network nennen
@@ -24,7 +24,7 @@ Berichterstattung tut dasselbe.
 
 | Unternehmen oder Projekt | Was Exponential verwendet | Quelle |
 |---|---|---|
-| **Netgen** | Exponential Layouts bringt "the Netgen Layouts concept to the Exponential kernel"; die Distribution Nexus baut auf Netgen Media Site und Netgen Layouts auf; AdminUI ist "a feature complete port of the legendary Netgen AdminUI"; das Repository `se7enxweb/exponential` ist ein GitHub-Fork von `netgen/ezpublish-legacy` | README; [Beitragende und Freunde](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |
+| **Netgen** | Exponential Layouts bringt "the concept of the upstream layouts packages to the Exponential kernel"; die Distribution Nexus baut auf Netgen Media Site und den Upstream-Layouts-Paketen auf; AdminUI ist "a feature complete port of the legendary Netgen AdminUI"; das Repository `se7enxweb/exponential` ist ein GitHub-Fork von `netgen/ezpublish-legacy` | README; [Beitragende und Freunde](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts) |
 | **Mugo Web** | Die LoveStack-Verbesserungen, in 6.0.15 neu gebaut "with full credit to Mugo Web" | README, „Exponential Distribution Integration: LoveStack“ |
 | **CJW Network** | `cjw_newsletter`; eine CJW-Variante von Nexus; request-shield, dokumentiert als Begleiter vor dem HTTP-Cache ("a project of CJW Network ... not of the Foundation") | [Begleitprojekte](../wer-ist-die-exponential-foundation.md#begleitprojekte) |
 | **Qbix** | Exponential Velocity "began as a fork of the Qbix web server engine" | README von Velocity; [Exponential Velocity](../wer-ist-7x.md#exponential-velocity) |
@@ -35,13 +35,13 @@ Berichterstattung tut dasselbe.
 ## Wie das Projekt die Nennung formuliert
 
 - "with full credit to Mugo Web" (README).
-- "brings the Netgen Layouts concept to the Exponential kernel" (README).
+- "brings the concept of the upstream layouts packages to the Exponential kernel" (README).
 - "It began as a fork of the Qbix web server engine, and the two projects have since drifted far apart" (README von Velocity).
 
 ## Wie Sie es schreiben
 
 ```text
-„Exponential Layouts, ein Seitenbaukasten, der das Konzept von Netgen Layouts auf Exponential überträgt, ...“
+„Exponential Layouts, ein Seitenbaukasten, der das Konzept der Upstream-Layouts-Pakete auf Exponential überträgt, ...“
 „Die Linie 6.0.15 baut die LoveStack-Verbesserungen von Mugo Web neu, mit Nennung des Unternehmens.“
 „Velocity begann als Fork des Qbix-Webservers und hat sich seitdem eigenständig entwickelt.“
 ```

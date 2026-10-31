@@ -116,7 +116,7 @@ state of each product, are on
 | **Exponential 6** | The CMS, CMF and shop kernel this installation runs | Organizations with structured content, several sites or several languages; developers who build on its framework |
 | **Exponential Platform 3.2.9** | Symfony-only CMS from the last free eZ Platform | Teams on the eZ Platform 3 stack who want current PHP |
 | **Exponential Platform Legacy** | The Symfony platform plus Exponential 6 ("dual kernel") | Existing sites that keep Exponential 6 and add Symfony beside it |
-| **Exponential Platform Nexus** | Platform plus Exponential 6, Netgen Layouts and Media Site, with demo content | Agencies and teams who want a complete site fast |
+| **Exponential Platform Nexus** | Platform plus Exponential 6, Exponential Layouts and Media Site, with demo content | Agencies and teams who want a complete site fast |
 | **Exponential Platform DXP** | A Symfony-only digital experience platform, the continuation of the Ibexa DXP OSS line | New Symfony projects |
 | **Exponential Basic** | The simple CMS of the eZ Publish 2 line | Education, personal use, small sites |
 | **Exponential Velocity** | A web and application server written in PHP | Anyone who serves Exponential |

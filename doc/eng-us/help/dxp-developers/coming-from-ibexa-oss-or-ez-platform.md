@@ -70,8 +70,8 @@ the same work is [Migrating customers from eZ Platform and Ibexa](../hosting/mig
 
 ## Things that have no direct counterpart
 
-- **Page Builder landing pages**: no equivalent ships with the DXP; chapter 16 rebuilds them with Netgen Layouts on
-  Nexus ([16.5.9](../../install/16-migrating-from-ez-platform-and-ibexa.md#1659-page-building-page-builder-against-netgen-layouts)).
+- **Page Builder landing pages**: no equivalent ships with the DXP; chapter 16 rebuilds them with Exponential Layouts on
+  Nexus ([16.5.9](../../install/16-migrating-from-ez-platform-and-ibexa.md#1659-page-building-page-builder-against-exponential-layouts)).
 - **Commercial-edition features** of the source: the DXP is built from open source packages only; list what you use
   and check each against [What the DXP ships](what-the-dxp-ships-and-what-it-does-not.md).
 

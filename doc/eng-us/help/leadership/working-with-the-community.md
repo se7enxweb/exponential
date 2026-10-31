@@ -167,7 +167,7 @@ From [Contributors and pull requests](../who-is-the-exponential-foundation.md#co
   into the branch and push again.
 - **A first-time contributor's first pull request waits for a maintainer's approval** before any workflow runs.
 - **Work of others is credited.** The project rebuilt the LoveStack improvements of Mugo Web "with full credit to
-  Mugo Web", and Exponential Layouts ports the Netgen Layouts concept (README, quoted on the Foundation page).
+  Mugo Web", and Exponential Layouts ports the concept of the upstream layouts packages (README, quoted on the Foundation page).
 
 For a project plan this means: a contribution does not depend on winning an argument. Plan the time to write and
 test it well; the merge itself is not the uncertain part.

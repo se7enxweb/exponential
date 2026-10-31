@@ -28,7 +28,7 @@ shapes every later page of your bundle.
 |---|---|---|
 | **Exponential 6** | The CMS kernel, its required extensions and designs; installed with the setup wizard, the kickstarter or `exp:install` | `composer.json` of `se7enxweb/exponential`; [Exponential 6 as a base](exponential-6-as-a-base.md) |
 | **Exponential Platform Legacy** | "Dual Kernel Symfony CMS which also includes a full copy of Exponential 6" (README); lines 2.5.x to 5.0.x | [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md#exponential-platform-legacy) |
-| **Exponential Platform Nexus** | A ready-made website project: Platform, Netgen Layouts, demo content; the 1.0.0.x to 1.2.0.x lines and the 2.5 tags carry the legacy kernel, the 1.3.0.x line (Platform v5) does not | [Exponential Platform Nexus](../../features/6.0/platform-nexus-starter.md) |
+| **Exponential Platform Nexus** | A ready-made website project: Platform, Exponential Layouts, demo content; the 1.0.0.x to 1.2.0.x lines and the 2.5 tags carry the legacy kernel, the 1.3.0.x line (Platform v5) does not | [Exponential Platform Nexus](../../features/6.0/platform-nexus-starter.md) |
 
 ## The facts that decide it
 
@@ -39,7 +39,7 @@ shapes every later page of your bundle.
 | Installer | setup wizard, kickstarter, `exp:install` | the distribution's own; see its README | `exponential:install` (types such as `exponential-media`) |
 | PHP | 8.0 to 8.5 for 6.0.15 (`composer.json`) | per line, see its README | per line: 1.3.0.x needs PHP 8.4 or newer |
 | Databases | SQLite 3 (default), PostgreSQL, MongoDB, MariaDB, Oracle, MySQL | per line | the v5 starter: SQLite, MySQL, MariaDB, PostgreSQL |
-| Layouts page builder | Exponential Layouts (required since 6.0.15) | per line | Netgen Layouts |
+| Layouts page builder | Exponential Layouts (required since 6.0.15) | per line | Exponential Layouts |
 | Demo content | site packages with or without demo content | per line | the Nexus demo (`exponential-media`) |
 
 Nexus facts: [Exponential Platform Nexus](../../features/6.0/platform-nexus-starter.md). Exponential 6 facts:

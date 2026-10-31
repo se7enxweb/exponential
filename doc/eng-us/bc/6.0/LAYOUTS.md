@@ -1,7 +1,7 @@
 # Exponential Layouts
 
 Read this page if you build or edit page layouts in Exponential 6.0, or develop block types, view types or query types
-for them. Exponential Layouts brings the Netgen Layouts concept to the Exponential legacy stack: a layout is a saved
+for them. Exponential Layouts brings the concept of the upstream layouts packages to the Exponential legacy stack: a layout is a saved
 arrangement of blocks in zones, and a rule decides which pages get it, so editors rearrange pages without touching
 templates. The first half of this page teaches the ideas and the editor; the second half is reference material and
 extension work. If you already know the system, the [Reference tables](#reference-tables) at the end are the part you
@@ -527,7 +527,7 @@ A shared layout with zero links is still perfectly valid; it is just one nobody 
 
 **Export** produces a JSON document describing a layout with its zones, blocks, parameters and collections. **Import** takes that document and creates a layout from it.
 
-This is the supported way to move a layout between environments — build on staging, export, import on production — and the sensible way to keep a backup before a large restructuring. It is also how the port from Netgen Layouts works, since the data shape was kept deliberately close.
+This is the supported way to move a layout between environments — build on staging, export, import on production — and the sensible way to keep a backup before a large restructuring. It is also how data is ported from the upstream layouts packages, since the data shape was kept deliberately close.
 
 Identifiers travel with the export, so an import into an environment that already has that identifier needs care.
 
@@ -833,7 +833,7 @@ See [Query types and their parameters](#query-types-and-their-parameters) — 12
 
 ### Migration and parity
 
-The port follows the Netgen Layouts data shape, so a Netgen XML/JSON export can be imported with minimal transformation. Differences are limited to Exponential-specific query handlers and the legacy template rendering layer.
+The port follows the data shape of the upstream layouts packages, so an XML/JSON export from them can be imported with minimal transformation. Differences are limited to Exponential-specific query handlers and the legacy template rendering layer.
 
 ## Related pages
 

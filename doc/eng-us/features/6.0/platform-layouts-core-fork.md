@@ -1,11 +1,11 @@
 # Layouts on the platform: the layouts-core fork
 
-This page is for developers of Nexus and DXP projects on the Symfony based platform who use Netgen Layouts on PHP 8.4
+This page is for developers of Nexus and DXP projects on the Symfony based platform who use Exponential Layouts on PHP 8.4
 or 8.5. The se7enxweb fork of the Layouts core makes block templates that read parameters work on those PHP versions.
 
 | | |
 |---|---|
-| Repository | `se7enxweb/layouts-core` (fork of Netgen Layouts core) |
+| Repository | `se7enxweb/layouts-core` (fork of the upstream layouts core, `netgen/layouts-core`) |
 | Newest tag | `2.0.0-se7enx.1` (2026-04-19) |
 | Upstream releases in the history | `1.4.10` (2024-09-06), `1.4.11`, `1.4.12`, `1.4.13` (2025-12-17), `2.0.0` (2026-02-25) |
 | History | [layouts-core](../../history/ecosystem/layouts-core.md): 450 changes, one of them by the se7enxweb team |
@@ -16,7 +16,7 @@ or 8.5. The se7enxweb fork of the Layouts core makes block templates that read p
 Layouts is the page builder of the platform side of the family. Editors compose a page from zones and blocks in a
 visual editor, and rules decide which layout applies to which request. The core package holds the model (layouts,
 zones, blocks, collections, rules, targets, conditions), the parameter system, the block definitions and the
-rendering. Nexus sites (see [Nexus starter](platform-nexus-starter.md)) are built on it through the Netgen Layouts
+rendering. Nexus sites (see [Nexus starter](platform-nexus-starter.md)) are built on it through the layouts
 2.0.x packages: Ibexa integration, Site API integration, the standard blocks, the layouts admin at `/nglayouts/admin`
 and the editor app at `/nglayouts/app`.
 
@@ -54,7 +54,7 @@ Version 2.0 of the core uses PHP 8.4 language features throughout. One of them b
   ordinary method lookup. The same commit renames the package to `se7enxweb/layouts-core` and adds
   `replace: netgen/layouts-core`.
 
-Because of the `replace` declaration, every Netgen Layouts package that requires `netgen/layouts-core` is satisfied by
+Because of the `replace` declaration, every layouts package that requires `netgen/layouts-core` is satisfied by
 the fork. The metapackage `se7enxweb/exponential-platform-dxp` requires the fork directly (commit "require
 se7enxweb/layouts-core fork for PHP 8.4 private(set) Twig compatibility", 2026-04-19). Tag `2.0.0-se7enx.1` marks the
 fork on top of upstream `2.0.0`.

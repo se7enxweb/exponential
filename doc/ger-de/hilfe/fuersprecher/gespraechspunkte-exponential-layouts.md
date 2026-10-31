@@ -4,13 +4,13 @@ audience: advocate
 category: advocacy
 order: 20
 summary: Belegte Gesprächspunkte zu Exponential Layouts, dem visuellen Seitenbaukasten (Layouts, Zonen, Blöcke, Zuordnungen, gemeinsame Layouts, Entwürfe), eine Demo in einer Minute, die Nennung von Netgen und was Sie nicht behaupten sollten.
-keywords: Gesprächspunkte, Exponential Layouts, explayouts, Layouts-Editor, Seitenbaukasten, Zonen, Blöcke, Zuordnungen, gemeinsame Layouts, verknüpfte Zonen, Netgen Layouts, Designer, Redakteure, talking points, layouts editor, page builder, zones, blocks, mappings, shared layouts, linked zones, designers, editors
+keywords: Gesprächspunkte, Exponential Layouts, explayouts, Layouts-Editor, Seitenbaukasten, Zonen, Blöcke, Zuordnungen, gemeinsame Layouts, verknüpfte Zonen, Designer, Redakteure, talking points, layouts editor, page builder, zones, blocks, mappings, shared layouts, linked zones, designers, editors
 type: help
 ---
 # Gesprächspunkte: Exponential Layouts
 
 Diese Seite ist für Fürsprecher, die Redakteuren und Designern zeigen, wie Seiten gebaut werden. Exponential Layouts ist
-„ein visueller Seitenbaukasten für Exponential. Er bringt das Konzept von Netgen Layouts in den Kernel von Exponential:
+„ein visueller Seitenbaukasten für Exponential. Er bringt das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential:
 Ein Layout ist eine gespeicherte Anordnung von Blöcken in Zonen, und eine Regel entscheidet, welche Seiten es bekommen“
 ([Exponential Layouts](../wer-ist-die-exponential-foundation.md#exponential-layouts)).
 
@@ -58,8 +58,8 @@ Länger: [Demo-Skripte, Teil 4: Layouts von Anfang bis Ende](../geschaeft/demo-d
 
 ## Ehre, wem Ehre gebührt
 
-Exponential Layouts ist eine Portierung des Konzepts von Netgen Layouts in den Kernel von Exponential. Wenn Sie es
-vorstellen, sagen Sie das: „Es bringt das Konzept von Netgen Layouts zu Exponential.“ Die Arbeit anderer zu nennen
+Exponential Layouts ist eine Portierung des Konzepts der Upstream-Layouts-Pakete in den Kernel von Exponential. Wenn Sie es
+vorstellen, sagen Sie das: „Es bringt das Konzept der Upstream-Layouts-Pakete zu Exponential.“ Die Arbeit anderer zu nennen
 gehört zur Praxis des Projekts ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst),
 [Andere Projekte und Unternehmen respektieren](andere-projekte-respektieren.md)).
 

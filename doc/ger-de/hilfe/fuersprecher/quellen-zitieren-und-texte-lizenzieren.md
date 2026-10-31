@@ -84,7 +84,7 @@ Pull Request ([Zur Dokumentation beitragen](../../README-LIZENZ.md#zur-dokumenta
 
 ## Menschen und Projekte nennen
 
-- Nennen Sie Arbeit so, wie es das Projekt tut: „bringt das Konzept von Netgen Layouts in den Kernel von Exponential“,
+- Nennen Sie Arbeit so, wie es das Projekt tut: „bringt das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential“,
   „unter voller Nennung von Mugo Web“ ([Wie das Projekt wächst](../wer-ist-die-exponential-foundation.md#wie-das-projekt-wächst)).
 - Nennen Sie Beitragende nur so, wie öffentliche Quellen sie nennen, und nur mit dem, was öffentlich ist.
 - Übernehmen Sie Copyright-Hinweise genau so, wie sie geschrieben sind: „Exponential Foundation and 7x“

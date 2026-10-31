@@ -29,7 +29,7 @@ Exponential 6, but the family has more members, and several stories have confuse
 | **Exponential Basic** | The small, simple CMS of the 2.x line, "for everyone, educational purposes, personal use" | GPL v2 or later |
 | **Exponential Platform 3.2.9** | A Symfony-only CMS based on the last free versions of eZ Platform | per its package |
 | **Exponential Platform Legacy** | The Symfony platform with Exponential 6 included, a "dual kernel" | per its package |
-| **Exponential Platform Nexus** | Platform, Exponential 6, Netgen Layouts and Media Site with demo content | per its package |
+| **Exponential Platform Nexus** | Platform, Exponential 6, Exponential Layouts and Media Site with demo content | per its package |
 | **Exponential Platform DXP** | A free, open source Symfony digital experience platform, continuing the eZ Platform and Ibexa OSS line | "GPL-2.0-or-later or proprietary" (its composer.json) |
 | **Exponential Velocity** | A web and application server written in PHP that keeps the application loaded between requests | MIT |
 | **Exponential Intelligence** | A writing assistant in the administration that writes drafts and never publishes on its own | (package `se7enxweb/expai`) |

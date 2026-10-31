@@ -45,7 +45,7 @@ the project maintain servers, extensions and tools", die Foundation nennt also d
 | Exponential Basic | Ein einfaches CMS zum Lernen und für kleine Websites | `se7enxweb/exponentialbasic` |
 | Exponential Platform 3.2.9 | Reines Symfony-CMS aus dem letzten freien eZ Platform | `se7enxweb/exponential-platform` |
 | Exponential Platform Legacy | Symfony-Plattform plus Exponential 6 | `se7enxweb/exponential-platform-legacy` |
-| Exponential Platform Nexus | Plattform plus Exponential 6, Netgen Layouts und Media Site | `se7enxweb/exponential-platform-nexus` |
+| Exponential Platform Nexus | Plattform plus Exponential 6, Exponential Layouts und Media Site | `se7enxweb/exponential-platform-nexus` |
 | Exponential Platform DXP | Reines Symfony-Metapaket für eine DXP | `se7enxweb/exponential-platform-dxp` |
 
 Quelle: [Die Produktfamilie im Überblick](../../wer-ist-die-exponential-foundation.md#die-produktfamilie-im-überblick).

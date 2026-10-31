@@ -166,7 +166,7 @@ The sources mention other companies factually. Keep that tone.
 |---|---|---|
 | eZ Systems | Developer of eZ Publish; its copyright 1999 to 2014 stays in the code | Name only as history and in copyright notices |
 | Ibexa, eZ Platform, Ibexa DXP OSS | The Symfony-based successors of eZ Publish; the product was renamed "At the specific request of Ibexa" | Factual statements only; no comparisons beyond what the sources say ([Comparing Exponential factually](comparing-exponential-factually.md)) |
-| Netgen | Exponential Layouts brings "the Netgen Layouts concept to the Exponential kernel" | Credit them where their work is used |
+| Netgen | Exponential Layouts brings "the concept of the upstream layouts packages to the Exponential kernel" | Credit them where their work is used |
 | Mugo Web | LoveStack features rebuilt "with full credit to Mugo Web" | Credit them |
 | CJW Network | `cjw_newsletter`, request-shield | Credit them; request-shield is "a project of CJW Network ... not of the Foundation" |
 

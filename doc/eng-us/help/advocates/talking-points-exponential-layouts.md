@@ -4,13 +4,13 @@ audience: advocate
 category: advocacy
 order: 20
 summary: Sourced talking points about Exponential Layouts, the visual page builder (layouts, zones, blocks, mappings, shared layouts, drafts), a one-minute demo, the credit to Netgen, and what not to claim.
-keywords: talking points, Exponential Layouts, explayouts, layouts editor, page builder, zones, blocks, mappings, shared layouts, linked zones, Netgen Layouts, designers, editors
+keywords: talking points, Exponential Layouts, explayouts, layouts editor, page builder, zones, blocks, mappings, shared layouts, linked zones, designers, editors
 type: help
 ---
 # Talking points: Exponential Layouts
 
 This page is for advocates who show editors and designers how pages are built. Exponential Layouts is "a visual page
-builder for Exponential. It brings the Netgen Layouts concept to the Exponential kernel: a layout is a saved
+builder for Exponential. It brings the concept of the upstream layouts packages to the Exponential kernel: a layout is a saved
 arrangement of blocks in zones, and a rule decides which pages get it"
 ([Exponential Layouts](../who-is-the-exponential-foundation.md#exponential-layouts)).
 
@@ -58,8 +58,8 @@ Longer: [Demo scripts, Part 4: layouts, end to end](../business/demo-scripts.md#
 
 ## Credit where it is due
 
-Exponential Layouts is a port of the Netgen Layouts concept to the Exponential kernel. When you present it, say so:
-"It brings the Netgen Layouts concept to Exponential." Crediting the work of others is part of the project's
+Exponential Layouts is a port of the concept of the upstream layouts packages to the Exponential kernel. When you present it, say so:
+"It brings the concept of the upstream layouts packages to Exponential." Crediting the work of others is part of the project's
 practice ([How the project grows](../who-is-the-exponential-foundation.md#how-the-project-grows),
 [Respecting other projects and companies](respecting-other-projects-and-companies.md)).
 

@@ -61,7 +61,7 @@ Sources: [chapter 16.1](../../../../install/16-migrating-from-ez-platform-and-ib
 **Which path has the lowest risk for a live site?** Path A within the same generation: a package swap (16.2).
 
 **We use the commercial Page Builder. What happens?** There is no Page Builder in Nexus; landing pages are rebuilt
-with Netgen Layouts on path A, or with Exponential Layouts on path B (16.2, 16.5.9).
+with Exponential Layouts on both paths, on Nexus (A) or in the legacy kernel (B) (16.2, 16.5.9).
 
 **Do we have to know Composer version traps?** Yes, for path A: always name a version for Nexus, because the
 repository keeps upstream tags (16.1). Lesson 6.2 covers it.
@@ -121,7 +121,7 @@ A decision exercise in pairs, with chapter 16 open.
 3. Of the presentation and the custom code, not of the content; the content tables are shared
    ([chapter 16.2](../../../../install/16-migrating-from-ez-platform-and-ibexa.md#162-choosing-a-path)).
 4. Same generation first: Nexus `1.2.0.x` (or the 4.6 skeleton), then change the generation afterwards (chapter 16.2).
-5. **False.** Nexus builds pages with Netgen Layouts; the Page Builder has no counterpart (chapter 16.1, 16.5.9).
+5. **False.** Nexus builds pages with Exponential Layouts; the Page Builder has no counterpart (chapter 16.1, 16.5.9).
 
 </details>
 

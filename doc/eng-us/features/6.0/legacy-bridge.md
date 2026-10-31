@@ -18,7 +18,7 @@ Both read the same database. Content that editors create in the legacy admin sho
 ## Why you would use it
 
 - You have an Exponential 6 site and want to move to the Symfony platform without freezing editors out. Run both until the migration is done.
-- You want Twig, Symfony routing or the Netgen Layouts page builder for the public site, but your editors keep the familiar legacy admin.
+- You want Twig, Symfony routing or the Exponential Layouts page builder for the public site, but your editors keep the familiar legacy admin.
 - You keep legacy extensions (for example `ezjscore`, `eztags`, `ezwebin`) available in a platform project.
 
 ## Which version for which platform

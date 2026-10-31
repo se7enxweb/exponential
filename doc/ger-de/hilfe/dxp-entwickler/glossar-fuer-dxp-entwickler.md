@@ -49,7 +49,7 @@ suchen. Die Begriffe stehen in der alphabetischen Reihenfolge der englischen Ori
 
 | Begriff | Bedeutung | Exponential 6 | Seite |
 |---|---|---|---|
-| Nexus | die Distribution von Exponential Platform mit Netgen Layouts und einer Demo-Website | | [Wählen](dxp-legacy-nexus-oder-exponential-6-waehlen.md) |
+| Nexus | die Distribution von Exponential Platform mit Exponential Layouts und einer Demo-Website | | [Wählen](dxp-legacy-nexus-oder-exponential-6-waehlen.md) |
 | Rezept (recipe) | Konfiguration, die ein Flex-Paket in Ihr Projekt schreibt | | [Projektaufbau](der-verzeichnisaufbau-des-projekts.md#was-flex-schreibt) |
 | Replace | eine Composer-Deklaration, dass ein Paket ein anderes liefert | | [Die Forks](die-se7enxweb-forks-und-replace.md#wie-replace-funktioniert) |
 | Repository | der Inhaltsspeicher und seine PHP-Services | die Inhaltsklassen des Kernels | [Inhalte](inhaltstypen-und-platzierungen.md) |

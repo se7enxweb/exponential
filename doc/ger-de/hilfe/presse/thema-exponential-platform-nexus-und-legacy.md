@@ -3,8 +3,8 @@ title: "Thema: Exponential Platform Nexus und Legacy"
 audience: press
 category: press-media
 order: 83
-summary: Ein Themenbeitrag über die beiden Distributionen der Exponential-Familie mit zwei Kernels - Legacy, die Symfony-Plattform mit enthaltenem Exponential 6, und Nexus, das Netgen Layouts, Media Site und Demoinhalte hinzufügt - für wen sie gedacht sind und wie sie älteren Websites Schritt für Schritt den Weg nach vorn ermöglichen.
-keywords: Thema, Exponential Platform Nexus, Exponential Platform Legacy, zwei Kernels, Symfony, Legacy Bridge, Netgen Layouts, Media Site, Migration, CJW, Starter, story, dual kernel, legacy bridge, migration, starter
+summary: Ein Themenbeitrag über die beiden Distributionen der Exponential-Familie mit zwei Kernels - Legacy, die Symfony-Plattform mit enthaltenem Exponential 6, und Nexus, das Exponential Layouts, Media Site und Demoinhalte hinzufügt - für wen sie gedacht sind und wie sie älteren Websites Schritt für Schritt den Weg nach vorn ermöglichen.
+keywords: Thema, Exponential Platform Nexus, Exponential Platform Legacy, zwei Kernels, Symfony, Legacy Bridge, Media Site, Migration, CJW, Starter, story, dual kernel, legacy bridge, migration, starter
 type: help
 ---
 # Thema: Exponential Platform Nexus und Legacy
@@ -24,7 +24,7 @@ beginnen.
 
 **Exponential Platform Legacy** „provides a clean distribution of Exponential Platform ... with Exponential (Legacy)
 Included (now with SQLite support)“: die Symfony-Plattform und die Legacy Bridge mit Exponential 6, ein „dual kernel“
-(zwei Kernels). **Exponential Platform Nexus** fügt Netgen Media Site und Netgen Layouts mit Demoinhalten hinzu:
+(zwei Kernels). **Exponential Platform Nexus** fügt Netgen Media Site und Exponential Layouts mit Demoinhalten hinzu:
 „Platform v2/v3/v4/v5 + Exponential v6.x (Legacy) + Netgen Media Site + NG Layouts“ ([Exponential Platform Legacy](../wer-ist-die-exponential-foundation.md#exponential-platform-legacy),
 [Exponential Platform Nexus](../wer-ist-die-exponential-foundation.md#exponential-platform-nexus)). Sie sind für
 Websites gedacht, die bei Exponential 6 bleiben, auch für Websites aus den eZ-Publish-Jahren, und die Schritt für

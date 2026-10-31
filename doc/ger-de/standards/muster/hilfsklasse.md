@@ -223,13 +223,13 @@ Eine Klasse statischer Funktionen, nach Thema gruppiert; keine Instanzen.
 | `expLayoutsCollection` | class extends eZPersistentObject | `extension/explayouts/classes/explayoutscollection.php:2` | – | – |
 | `expLayoutsCollectionItem` | class extends eZPersistentObject | `extension/explayouts/classes/explayoutscollectionitem.php:2` | – | – |
 | `expLayoutsCollectionQuery` | class extends eZPersistentObject | `extension/explayouts/classes/explayoutscollectionquery.php:2` | – | – |
-| `expLayoutsDynamicCollection` | class | `extension/explayouts/classes/explayoutsdynamiccollection.php:15` | Führt „dynamische“ Collections aus (aus Netgen Layouts importierte Collection-Abfragen). | – |
+| `expLayoutsDynamicCollection` | class | `extension/explayouts/classes/explayoutsdynamiccollection.php:15` | Führt „dynamische“ Collections aus (aus der Nexus-Referenz importierte Collection-Abfragen). | – |
 | `expLayoutsExponential` | class | `extension/explayouts/classes/explayoutsexponential.php:4` | – | – |
 | `expLayoutsExporter` | class | `extension/explayouts/classes/explayoutsexporter.php:7` | Der Export eines Layouts (Version 1). | – |
-| `expLayoutsExpRelationListQuery` | class | `extension/explayouts/classes/explayoutsexprelationlistquery.php:6` | Exponential-4-Portierung des Netgen-Layouts-Handlers Exp RelationListQuery. | – |
-| `expLayoutsExpReverseRelationListQuery` | class | `extension/explayouts/classes/explayoutsexpreverserelationlistquery.php:6` | Exponential-4-Portierung des Netgen-Layouts-Handlers Exp ReverseRelationListQuery. | – |
+| `expLayoutsExpRelationListQuery` | class | `extension/explayouts/classes/explayoutsexprelationlistquery.php:6` | Exponential-Layouts-Portierung des Upstream-Handlers RelationListQuery. | – |
+| `expLayoutsExpReverseRelationListQuery` | class | `extension/explayouts/classes/explayoutsexpreverserelationlistquery.php:6` | Exponential-Layouts-Portierung des Upstream-Handlers ReverseRelationListQuery. | – |
 | `expLayoutsExpSiteApi` | class | `extension/explayouts/classes/explayoutsexpsiteapi.php:3` | – | – |
-| `expLayoutsExpTagsQuery` | class | `extension/explayouts/classes/explayoutsexptagsquery.php:6` | Exponential-4-Portierung des Netgen-Layouts-Handlers Exp TagsQuery. | – |
+| `expLayoutsExpTagsQuery` | class | `extension/explayouts/classes/explayoutsexptagsquery.php:6` | Exponential-Layouts-Portierung des Upstream-Handlers TagsQuery. | – |
 | `expLayoutsExpUtils` | class | `extension/explayouts/classes/explayoutsexputils.php:4` | – | – |
 | `expLayoutsFixtures` | class | `extension/explayouts/classes/explayoutsfixtures.php:2` | – | – |
 | `expLayoutsImporter` | class | `extension/explayouts/classes/explayoutsimporter.php:11` | Importiert einen Layout-Export, den dieser Extension (expLayoutsExporter, „version“: 1, Parameter als Map aus Name und Wert) und den des Layou… | – |

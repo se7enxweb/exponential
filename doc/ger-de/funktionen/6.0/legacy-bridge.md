@@ -23,7 +23,7 @@ Twig-Frontend, und umgekehrt.
 
 - Sie haben eine Exponential-6-Site und möchten auf die Symfony-Plattform umsteigen, ohne die Redakteure auszusperren.
   Betreiben Sie beides, bis die Migration abgeschlossen ist.
-- Sie möchten Twig, das Symfony-Routing oder den Seitenbaukasten Netgen Layouts für die öffentliche Site nutzen, Ihre
+- Sie möchten Twig, das Symfony-Routing oder den Seitenbaukasten Exponential Layouts für die öffentliche Site nutzen, Ihre
   Redakteure behalten aber die vertraute Legacy-Administrationsoberfläche.
 - Sie halten Legacy-Extensions (zum Beispiel `ezjscore`, `eztags`, `ezwebin`) in einem Plattformprojekt verfügbar.
 

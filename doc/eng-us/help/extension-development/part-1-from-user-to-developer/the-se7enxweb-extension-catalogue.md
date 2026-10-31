@@ -27,7 +27,7 @@ later version". Pages in the documentation exist for many of them; the column "D
 
 ## Page building: Exponential Layouts
 
-A visual page builder ported to Exponential from the Netgen Layouts packages. Thirteen packages that show how a large
+A visual page builder ported to Exponential from the upstream layouts packages. Thirteen packages that show how a large
 feature is split into a domain core, an API, a user interface and pluggable query handlers.
 
 | Package | What it does | License | Doc |

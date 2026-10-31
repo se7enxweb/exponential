@@ -1,12 +1,12 @@
 # Layouts auf der Plattform: der Fork von layouts-core
 
-Diese Seite ist für Entwickler von Nexus- und DXP-Projekten auf der Symfony-basierten Plattform, die Netgen Layouts unter
+Diese Seite ist für Entwickler von Nexus- und DXP-Projekten auf der Symfony-basierten Plattform, die Exponential Layouts unter
 PHP 8.4 oder 8.5 verwenden. Der Fork von se7enxweb des Layouts-Kerns lässt Block-Templates, die Parameter lesen, auf
 diesen PHP-Versionen funktionieren.
 
 | | |
 |---|---|
-| Repository | `se7enxweb/layouts-core` (Fork des Kerns von Netgen Layouts) |
+| Repository | `se7enxweb/layouts-core` (Fork des Upstream-Layouts-Kerns, `netgen/layouts-core`) |
 | Neuestes Tag | `2.0.0-se7enx.1` (19.04.2026) |
 | Upstream-Releases in der Historie | `1.4.10` (06.09.2024), `1.4.11`, `1.4.12`, `1.4.13` (17.12.2025), `2.0.0` (25.02.2026) |
 | Chronik | [layouts-core](../../geschichte/oekosystem/layouts-core.md): 450 Änderungen, eine davon vom Team von se7enxweb |
@@ -17,7 +17,7 @@ diesen PHP-Versionen funktionieren.
 Layouts ist der Seitenbaukasten der Plattformseite der Familie. Redakteure setzen eine Seite in einem visuellen Editor
 aus Zonen und Blöcken zusammen, und Regeln entscheiden, welches Layout für welche Anfrage gilt. Das Kernpaket enthält das
 Modell (Layouts, Zonen, Blöcke, Sammlungen, Regeln, Ziele, Bedingungen), das Parametersystem, die Blockdefinitionen und
-die Ausgabe. Nexus-Websites (siehe [Nexus-Starter](plattform-nexus-starter.md)) bauen über die Pakete von Netgen Layouts
+die Ausgabe. Nexus-Websites (siehe [Nexus-Starter](plattform-nexus-starter.md)) bauen über die Layouts-Pakete
 2.0.x darauf auf: Ibexa-Integration, Site-API-Integration, die Standardblöcke, die Layout-Administration unter
 `/nglayouts/admin` und die Editor-App unter `/nglayouts/app`.
 
@@ -55,7 +55,7 @@ Version 2.0 des Kerns verwendet durchgehend Sprachmittel von PHP 8.4. Eines davo
   die gewöhnliche Methodensuche auflöst. Derselbe Commit benennt das Paket in `se7enxweb/layouts-core` um und fügt
   `replace: netgen/layouts-core` hinzu.
 
-Wegen der Deklaration `replace` wird jedes Paket von Netgen Layouts, das `netgen/layouts-core` verlangt, vom Fork
+Wegen der Deklaration `replace` wird jedes Layouts-Paket, das `netgen/layouts-core` verlangt, vom Fork
 erfüllt. Das Metapaket `se7enxweb/exponential-platform-dxp` verlangt den Fork direkt (Commit „require
 se7enxweb/layouts-core fork for PHP 8.4 private(set) Twig compatibility“, 19.04.2026). Das Tag `2.0.0-se7enx.1`
 kennzeichnet den Fork auf Grundlage von Upstream `2.0.0`.

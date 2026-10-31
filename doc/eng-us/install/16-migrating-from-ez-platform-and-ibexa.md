@@ -53,7 +53,7 @@ schema, 4.0 kept the `ez*` table names and added `ibexa_*` tables, and 5.0 renam
 ### Target A: Exponential Platform Nexus and the Exponential Platform distributions
 
 **Exponential Platform Nexus** (repository and package `se7enxweb/exponential-platform-nexus`) is a ready site
-distribution maintained by 7x: Netgen Layouts, the Netgen media site design, Netgen Tags, the Netgen Site API and an
+distribution maintained by 7x: Exponential Layouts, the Netgen media site design, Netgen Tags, the Netgen Site API and an
 administration interface on top of an Ibexa-compatible Symfony platform whose packages are se7enxweb forks. Its GitHub
 description calls it "Platform v2/v3/v4/v5 + Exponential v6.x (Legacy) + Netgen Media Site + NG Layouts + Symfony
 7.4/5.4/3.4 PHP 8.0-8.5". It is not one stack but one line per platform generation, each on its own branch and tag
@@ -99,9 +99,9 @@ Three facts decide how a migration to these targets works:
    ([Package forks and command renames](../bc/6.0/platform-package-forks-and-command-renames.md)).
 3. **Nexus is built on the open source edition.** Its `config/bundles.php` (Nexus 5) registers the Ibexa core,
    legacy search engine, Solr, HTTP cache, REST, GraphQL, admin UI, RichText, Matrix, Query field type, cron,
-   messenger and design engine bundles, Netgen Layouts and about 25 other Netgen bundles; there is no Page Builder,
+   messenger and design engine bundles, Exponential Layouts and about 25 Netgen bundles; there is no Page Builder,
    Form Builder, editorial workflow, Elasticsearch, personalisation or commerce bundle. Content of the commercial
-   field types needs a decision before it can move ([16.5.9](#1659-page-building-page-builder-against-netgen-layouts)).
+   field types needs a decision before it can move ([16.5.9](#1659-page-building-page-builder-against-exponential-layouts)).
 
 ### Target B: Exponential 6.0, alone or as Exponential Platform Legacy
 
@@ -137,7 +137,7 @@ Symfony stack keeps running next to it is a second decision ([16.6.8](#1668-keep
 |---|---|---|
 | Custom Symfony bundles, Twig templates, REST or GraphQL clients | Keep them; same generation means same APIs | Rewrite as legacy extensions, TPL templates and modules; REST through the legacy REST layer |
 | RichText (`ezrichtext`) content | Stays as is | Convert or adapt ([16.6.3](#1663-field-types)) |
-| Page Builder landing pages (`ezlandingpage`, commercial) | No Page Builder; rebuild with Netgen Layouts | No equivalent; rebuild with Exponential Layouts |
+| Page Builder landing pages (`ezlandingpage`, commercial) | No Page Builder; rebuild with Exponential Layouts | No equivalent; rebuild with Exponential Layouts |
 | Editors who know the Symfony admin | Same admin UI generation | The legacy admin (`admin3` design), a different tool |
 | A team that knows INI, TPL and legacy extensions | Has to learn the Symfony stack | Works with what it knows |
 | PHP 8.0 or 8.1 servers | Nexus 1.0.0.x / 1.1.0.x (or Platform 3.x forks) | All of 6.0 |
@@ -632,14 +632,14 @@ vendor's 5.x migration page describes. Rebuild aliases only if the check in [16.
 php bin/console exponential:urls:regenerate-aliases
 ```
 
-### 16.5.9 Page building: Page Builder against Netgen Layouts
+### 16.5.9 Page building: Page Builder against Exponential Layouts
 
-Nexus builds pages with Netgen Layouts (`netgen/layouts-*` 1.4 on 2.5 to 4.6, 2.0 on v5, the
+Nexus builds pages with Exponential Layouts (`netgen/layouts-*` 1.4 on 2.5 to 4.6, 2.0 on v5, the
 `se7enxweb/layouts-core` fork on PHP 8.4). The commercial Page Builder (`ezlandingpage`, tables `ezpage_*`) has no
 counterpart in Nexus, and no tool converts landing pages into layouts. Plan it as a content task:
 
 1. List the landing pages: `SELECT COUNT(*) FROM ezcontentobject_attribute WHERE data_type_string = 'ezlandingpage';`
-2. For each landing page layout, build a Netgen Layouts layout with the same zones and a rule that maps it to the
+2. For each landing page layout, build an Exponential Layouts layout with the same zones and a rule that maps it to the
    location, and recreate the blocks (lists, content, HTML) as layout blocks with collections.
 3. Remove the `ezlandingpage` field from the content types once the layouts are live, or keep the field and have the
    template ignore it until then.
@@ -822,7 +822,7 @@ links with `INSERT INTO ezkeyword_attribute_link ( keyword_id, objectattribute_i
 | RichText as stored DocBook, until converted | XmlText with custom tags, the legacy content datatypes (Matrix, Option, Price, Star Rating with its extension, ezflow Page) |
 | REST v2 and GraphQL of the Symfony stack | The legacy REST layer (`rest.ini`), the legacy JSON calls of `ezjscore` |
 | Page Builder, Form Builder, workflow (commercial) | The legacy workflow events, information collection, shop, RSS import and export, newsletters (`cjw_newsletter`) |
-| Netgen Layouts on Symfony | Exponential Layouts, the legacy port of Netgen Layouts ([16.6.7](#1667-a-worked-port-netgen-layouts-and-the-media-site)) |
+| Exponential Layouts on Symfony (Nexus) | Exponential Layouts in the legacy kernel ([16.6.7](#1667-a-worked-port-exponential-layouts-and-the-media-site)) |
 | Messenger, Symfony cron | `runcronjobs.php` and the cronjob parts |
 | | Velocity as the web server, SQLite as a production engine, MongoDB and Oracle drivers, the audit log and the mail preference subsystem of 6.0.15 |
 
@@ -1104,7 +1104,7 @@ With `se7enxweb/ngsymfonytools` and the legacy bridge, a TPL template can also i
 [ngsymfonytools](../features/6.0/extensions/ngsymfonytools.md). For the template system itself read the
 [templates and design guide](../guides/templates-and-design.md).
 
-### 16.6.7 A worked port: Netgen Layouts and the media site
+### 16.6.7 A worked port: Exponential Layouts and the media site
 
 The Exponential installation behind this book went this way with a whole site: the Netgen media site as it runs on
 the Symfony stack (the Nexus reference) was ported to the 6.0 legacy kernel, with its layouts, its design and its
@@ -1112,10 +1112,10 @@ content. The approach, in the order it was done:
 
 1. **The page builder became legacy extensions.** Exponential Layouts (`se7enxweb/explayouts` and its sibling
    repositories `explayouts_core`, `explayouts_standard`, `explayouts_site_api`, `explayouts_ui`,
-   `explayouts_ui_api` and others) re-implements Netgen Layouts for the legacy kernel: `eZPersistentObject` classes on
+   `explayouts_ui_api` and others) re-implements the upstream layouts packages for the legacy kernel: `eZPersistentObject` classes on
    `explayouts_*` tables instead of Doctrine on `nglayouts_*`, block and layout types in `explayouts.ini` instead of
    YAML, block templates in the design cascade instead of Twig, rules resolved by `expLayoutsResolver`, and the
-   editor as a legacy module. "The port follows the Netgen Layouts data shape, so a Netgen XML/JSON export can be
+   editor as a legacy module. "The port follows the data shape of the upstream layouts packages, so an XML/JSON export from them can be
    imported with minimal transformation" ([Exponential Layouts](../bc/6.0/LAYOUTS.md#migration-and-parity),
    [import and export](../bc/6.0/LAYOUTS.md#import-export-and-share-links)).
 2. **The data moved by id.** Rules, collections and manual collection items refer to content and locations by id,
@@ -1268,7 +1268,7 @@ margin.
 - [ ] Path A: forks installed, no upstream duplicates, Flex recipes from `se7enxweb/sevenx-recipes`.
 - [ ] Path A: cron and deployment scripts use the `exponential:` commands (mandatory on v5).
 - [ ] Path A: REST clients on the generation's prefix, GraphQL schema regenerated.
-- [ ] Path A: landing pages rebuilt with Netgen Layouts, or kept out of scope.
+- [ ] Path A: landing pages rebuilt with Exponential Layouts, or kept out of scope.
 - [ ] Path B: every `data_type_string` has a legacy datatype; RichText converted or rendered.
 - [ ] Path B: 5.0 names reversed or translator active; `ezsqldiff.php` output reviewed and run; keyword link default; version rows.
 - [ ] Path B: INI settings for siteaccesses, languages, designs, image aliases and overrides; storage copied with the same `VarDir`.

@@ -4,7 +4,7 @@ audience: dxp-developer
 category: dxp-development
 order: 44
 summary: Was se7enxweb/layouts-core einem DXP-Projekt gibt und was nicht - den Kern für Modell und Ausgabe von Layouts ohne Editor, Administration oder Standardblöcke -, warum es den Fork gibt (PHP 8.4 und Twig) und wie Sie zu einem vollständigen Seitenbaukasten kommen.
-keywords: Layouts, layouts-core, se7enxweb/layouts-core, Netgen Layouts, Seitenbaukasten, Editor, Zonen, Blöcke, Regeln, PHP 8.4, private(set), Twig, Nexus, page builder, editor, zones, blocks, rules
+keywords: Layouts, layouts-core, se7enxweb/layouts-core, Seitenbaukasten, Editor, Zonen, Blöcke, Regeln, PHP 8.4, private(set), Twig, Nexus, page builder, editor, zones, blocks, rules
 type: help
 ---
 # Layouts Core in der DXP
@@ -28,7 +28,7 @@ and the rendering". Es ist der Fork von `netgen/layouts-core`, getaggt als `2.0.
 
 ## Was die DXP nicht enthält
 
-Das Metapaket verlangt nur den Core. Diese Pakete von Netgen Layouts sind nicht Teil der DXP:
+Das Metapaket verlangt nur den Core. Diese Layouts-Pakete sind nicht Teil der DXP:
 
 | Nicht enthalten | Was es hinzufügen würde |
 |---|---|
@@ -45,16 +45,16 @@ PHP 8.4 hat asymmetrische Sichtbarkeit (`private(set)`) hinzugefügt. Twig prüf
 bevor es nach einem Getter sucht; bei solchen Eigenschaften schlägt die Prüfung fehl, und ein Block-Template, das einen
 Parameter liest, bricht mit "Call to undefined method" ab. Der Fork ergänzt ausdrückliche Getter an
 `Netgen\Layouts\Parameters\Parameter` (`getName()`, `getParameterDefinition()`, `getValue()`, `isEmpty()`,
-`getValueObject()`) und deklariert `replace: netgen/layouts-core`, sodass jedes Paket von Netgen Layouts, das den
+`getValueObject()`) und deklariert `replace: netgen/layouts-core`, sodass jedes Layouts-Paket, das den
 Upstream-Namen verlangt, den Fork erhält.
 
 ## Wenn Sie einen Seitenbaukasten brauchen
 
 | Möglichkeit | Was Sie erhalten |
 |---|---|
-| Exponential Platform Nexus (1.3 oder der v5-Starter) | Netgen Layouts 2.0 mit seinem Editor, Standardblöcken und einer Demo-Website ([Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md)) |
+| Exponential Platform Nexus (1.3 oder der v5-Starter) | Exponential Layouts 2.0 mit seinem Editor, Standardblöcken und einer Demo-Website ([Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md)) |
 | Exponential 6 | Exponential Layouts, die Portierung auf den Kernel von Exponential 6 ([Der Layout-Editor](../layout-editor.md)) |
-| Ihr eigenes DXP-Projekt plus die fehlenden Pakete von Netgen Layouts | grundsätzlich möglich; testen Sie es an einer Kopie, mit PHP 8.4 oder neuer, und prüfen Sie jedes Paket gegen die Tabelle der Forks |
+| Ihr eigenes DXP-Projekt plus die fehlenden Layouts-Pakete | grundsätzlich möglich; testen Sie es an einer Kopie, mit PHP 8.4 oder neuer, und prüfen Sie jedes Paket gegen die Tabelle der Forks |
 
 Die Begriffe sind überall dieselben: "layout types with named zones, blocks with parameters, collections of items, and
 rules with targets that pick the layout of a page. If you know one, you know the other."

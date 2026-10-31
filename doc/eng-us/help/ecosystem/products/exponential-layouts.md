@@ -3,13 +3,13 @@ title: Exponential Layouts in the ecosystem
 audience: ecosystem, editor, designer, developer
 category: ecosystem
 order: 13
-summary: Exponential Layouts' place in the ecosystem - the visual page builder that brings the Netgen Layouts concept to the Exponential kernel, its packages, who it is for, how it relates to Nexus and the DXP, and where to read more.
-keywords: Exponential Layouts, page builder, layouts, zones, blocks, rules, Netgen Layouts, explayouts, Nexus, DXP, editors, designers
+summary: Exponential Layouts' place in the ecosystem - the visual page builder that brings the concept of the upstream layouts packages to the Exponential kernel, its packages, who it is for, how it relates to Nexus and the DXP, and where to read more.
+keywords: Exponential Layouts, page builder, layouts, zones, blocks, rules, explayouts, Nexus, DXP, editors, designers
 type: help
 ---
 # Exponential Layouts in the ecosystem
 
-**"A visual page builder for Exponential. It brings the Netgen Layouts concept to the Exponential kernel: a layout is
+**"A visual page builder for Exponential. It brings the concept of the upstream layouts packages to the Exponential kernel: a layout is
 a saved arrangement of blocks in zones, and a rule decides which pages get it"** (`README.md`).
 
 ## Contents
@@ -23,7 +23,7 @@ a saved arrangement of blocks in zones, and a rule decides which pages get it"**
 
 - Required in `composer.json` since 6.0.15
   ([The product family at a glance](../../who-is-the-exponential-foundation.md#the-product-family-at-a-glance)).
-- It ports a concept from another PHP project, Netgen Layouts, with credit
+- It ports a concept from other PHP packages, the upstream layouts packages, with credit
   ([How the project grows](../../who-is-the-exponential-foundation.md#how-the-project-grows)).
 - It is for "Editors who rearrange pages without template work, and designers"
   ([Exponential Layouts](../../who-is-the-exponential-foundation.md#exponential-layouts)).

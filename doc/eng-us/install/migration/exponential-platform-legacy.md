@@ -54,7 +54,7 @@ A ready-to-run variant of the v5 line is `se7enxweb/exponential-platform-legacy-
 | Symfony controllers, Twig, REST v2, GraphQL **next to** the legacy admin and TPL pages | Yes |
 | To port the public site to Twig page by page, without a big-bang cut-over | Yes |
 | Only the legacy kernel, served by Velocity or PHP-FPM | No: stay on Exponential 6 alone. The product's book says the hybrid "pays for itself only when you want Symfony controllers, REST v2, GraphQL or the platform admin" |
-| A visual page builder on the Symfony side | Look at [Nexus](exponential-platform-nexus.md), which adds Netgen Layouts |
+| A visual page builder on the Symfony side | Look at [Nexus](exponential-platform-nexus.md), which adds Exponential Layouts |
 | A Symfony-only project without the legacy kernel | [DXP](exponential-platform-dxp.md) |
 
 Things that change for the site when the Symfony stack serves it:
@@ -128,7 +128,7 @@ Every line change also changes the project layout and configuration (for example
 The legacy half is a complete Exponential 6 installation; going back means letting it serve the site again.
 
 1. **Back up** the shared database and storage.
-2. **Decide what happens to Symfony-only content.** RichText fields, Netgen Layouts or other platform-only data have
+2. **Decide what happens to Symfony-only content.** RichText fields, Exponential Layouts or other platform-only data have
    no legacy reading of their own: list the field types in use and check them against
    [chapter 16.6.3](../16-migrating-from-ez-platform-and-ibexa.md#1663-field-types).
 3. **On a v5 database**, reverse the `ibexa_*` table renames (or keep the translator extension active)

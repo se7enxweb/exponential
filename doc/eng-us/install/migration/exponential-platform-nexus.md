@@ -3,13 +3,13 @@ title: Exponential 6 and Exponential Platform Nexus
 audience: admin, developer, project-manager
 category: install-upgrade
 order: 21
-summary: Moving an Exponential 6 site into Exponential Platform Nexus (lines 1.0.0.x and v2.5.0.x on Platform 2.5, 1.1.0.x on 3.3, 1.2.0.x on 4.6, 1.3.0.x on v5) and back - which line, the database, the demo site you do not want, Netgen Layouts against Exponential Layouts, verification, rollback and checklist.
-keywords: Exponential Platform Nexus, Nexus, Netgen Layouts, media site, site bundle, 1.0.0.x, 1.1.0.x, 1.2.0.x, 1.3.0.x, v2.5.0.x, CJW Nexus, Exponential Layouts, nglayouts:export, exp:layouts, migration
+summary: Moving an Exponential 6 site into Exponential Platform Nexus (lines 1.0.0.x and v2.5.0.x on Platform 2.5, 1.1.0.x on 3.3, 1.2.0.x on 4.6, 1.3.0.x on v5) and back - which line, the database, the demo site you do not want, Exponential Layouts on Nexus against the legacy kernel, verification, rollback and checklist.
+keywords: Exponential Platform Nexus, Nexus, media site, site bundle, 1.0.0.x, 1.1.0.x, 1.2.0.x, 1.3.0.x, v2.5.0.x, CJW Nexus, Exponential Layouts, nglayouts:export, exp:layouts, migration
 type: install
 ---
 # Exponential 6 and Exponential Platform Nexus
 
-**Exponential Platform Nexus** (`se7enxweb/exponential-platform-nexus`) is a complete site distribution: Netgen
+**Exponential Platform Nexus** (`se7enxweb/exponential-platform-nexus`) is a complete site distribution: Exponential
 Layouts with its visual editor, the Netgen media site, Tags, the Site API and an admin, on one Exponential Platform
 generation per release line. Its legacy-capable lines also run the Exponential 6 kernel through the legacy bridge.
 
@@ -22,7 +22,7 @@ generation per release line. Its legacy-capable lines also run the Exponential 6
 - [1. The release lines](#1-the-release-lines)
 - [2. Which line to aim for](#2-which-line-to-aim-for)
 - [3. From Exponential 6 to Nexus](#3-from-exponential-6-to-nexus)
-- [4. Page building: Exponential Layouts and Netgen Layouts](#4-page-building-exponential-layouts-and-netgen-layouts)
+- [4. Page building: Exponential Layouts on Nexus and in the legacy kernel](#4-page-building-exponential-layouts-on-nexus-and-in-the-legacy-kernel)
 - [5. From Nexus to Exponential 6](#5-from-nexus-to-exponential-6)
 - [6. Verify, roll back](#6-verify-roll-back)
 - [7. Risks](#7-risks)
@@ -58,7 +58,7 @@ The product's rule is **same generation first**. An Exponential 6 database is a 
 |---|---|---|
 | Exponential 6 | `1.0.0.x` (2.5): it runs your Exponential 6 kernel next to the Symfony stack on the same database | move up line by line with the product's chapter 11 |
 | Exponential Platform Legacy `v2.5.0.x`, `v3.3.44.x`, `v4.6.23.x` | `1.0.0.x`, `1.1.0.x`, `1.2.0.x` | add the Netgen packages, the Layouts tables and the site bundle's configuration |
-| Exponential Platform Legacy `v5.0.x` | `1.3.0.x` has no legacy kernel | port what the legacy half did first, or stay on Platform Legacy and add Netgen Layouts yourself |
+| Exponential Platform Legacy `v5.0.x` | `1.3.0.x` has no legacy kernel | port what the legacy half did first, or stay on Platform Legacy and add Exponential Layouts yourself |
 
 Lines `1.0.0.x` to `1.2.0.x` keep the legacy admin and your legacy extensions working while you port. `1.3.0.x` is a
 Symfony-only application: the product's book lists what disappears (the legacy bundles, `ezpublish_legacy/`, the
@@ -81,12 +81,12 @@ The product's chapter 12.4 ("From eZ Publish 4.x and Exponential 6") is the proc
    (`src/AppBundle/ezpublish_legacy/`, linked into `ezpublish_legacy/` by the project's scripts), copy the storage to
    `ezpublish_legacy/var/<site>/storage`, and point `app/config/parameters.yml` at the database.
 6. **Replace the demo host map** in the siteaccess configuration with your own host names.
-7. **Create the Netgen Layouts tables** (the Layouts migrations on MySQL, or the schema file the Layouts package ships)
+7. **Create the Exponential Layouts tables** (the Layouts migrations on MySQL, or the schema file the Layouts package ships)
    and set the **site bundle's location parameters** (`ngsite.default.locations.site_info.id`,
    `ngsite.default.locations.tree_root.id` and the others the product's chapter 12.9 lists) to locations in *your*
    tree. A wrong id gives a 404 or an empty block, not an error at deploy time.
 8. **Keep the legacy siteaccesses running** (`legacy_mode: true`) while the public siteaccess moves to Twig templates
-   and Netgen Layouts one content type at a time.
+   and Exponential Layouts one content type at a time.
 9. **XmlText stays XmlText on `1.0.0.x`** (`se7enxweb/ezplatform-xmltext-fieldtype v1.8.11` is part of the project).
    Convert to RichText with `ezxmltext:convert-to-richtext` (in that package) only when you need it in the Symfony
    admin, at the latest before moving to `1.1.0.x`.
@@ -97,18 +97,18 @@ The product's chapter 12.4 ("From eZ Publish 4.x and Exponential 6") is the proc
 Your own content types render with your own templates: map them in the view configuration instead of renaming them
 to the demo `ng_*` types.
 
-## 4. Page building: Exponential Layouts and Netgen Layouts
+## 4. Page building: Exponential Layouts on Nexus and in the legacy kernel
 
-Exponential Layouts (`se7enxweb/explayouts`) is the port of Netgen Layouts to the Exponential 6 kernel: the same data
-shape on `explayouts_*` tables, the editor as a legacy module ([chapter 16.6.7](../16-migrating-from-ez-platform-and-ibexa.md#1667-a-worked-port-netgen-layouts-and-the-media-site)).
+Exponential Layouts (`se7enxweb/explayouts`) is the port of the upstream layouts packages to the Exponential 6 kernel: the same data
+shape on `explayouts_*` tables, the editor as a legacy module ([chapter 16.6.7](../16-migrating-from-ez-platform-and-ibexa.md#1667-a-worked-port-exponential-layouts-and-the-media-site)).
 They are two implementations; there is no command that copies one into the other.
 
 | Direction | What exists | What you do |
 |---|---|---|
 | Between Exponential installations | `./console exp:layouts export` / `import` (ZIP transfer file) | the normal tool |
 | Between Nexus installations | `php bin/console nglayouts:export layout <uuid>` / `nglayouts:import` (JSON) | the product's chapter 12.11 |
-| Exponential Layouts to Netgen Layouts | no converter | rebuild the layouts in the Nexus editor, or write a script from the `explayouts_*` rows to the `nglayouts_*` tables (the port follows the Netgen data shape, chapter 16.6.7) |
-| Netgen Layouts to Exponential Layouts | the explayouts commands `ext:explayouts:updatelinklocationreferences` (block links from `ibexa-location://<id>` to `exp-remote-location://<remote id>`) and `ext:explayouts:updatecomponentblockidentifiers` (`ibexa_component_<type>` to `exp_component_<type>`) convert data that came from the Symfony side | copy the rows (a script of your own: table and column names differ), then run both commands |
+| Legacy kernel (`explayouts_*`) to Nexus (`nglayouts_*`) | no converter | rebuild the layouts in the Nexus editor, or write a script from the `explayouts_*` rows to the `nglayouts_*` tables (the port follows the Netgen data shape, chapter 16.6.7) |
+| Nexus (`nglayouts_*`) to legacy kernel (`explayouts_*`) | the explayouts commands `ext:explayouts:updatelinklocationreferences` (block links from `ibexa-location://<id>` to `exp-remote-location://<remote id>`) and `ext:explayouts:updatecomponentblockidentifiers` (`ibexa_component_<type>` to `exp_component_<type>`) convert data that came from the Symfony side | copy the rows (a script of your own: table and column names differ), then run both commands |
 
 Layouts refer to content by id or remote id. Keep remote ids identical when content moves between installations, or
 the blocks point at nothing (the product's chapter 12.11).
@@ -124,8 +124,8 @@ Moving from a Nexus line back to Exponential 6 alone is "path B" of
 - **From `1.3.0.x`**: the database has the v5 `ibexa_*` table names and no legacy-only tables. Follow chapter 16.6.4
   (the renames, or the translator extension) and 16.6.9 ("5.0" row), recreate the legacy-only tables, and convert or
   render RichText ([16.6.3](../16-migrating-from-ez-platform-and-ibexa.md#1663-field-types)).
-- **Layouts**: rebuild the Netgen layouts as Exponential Layouts, or copy the rows and run the two conversion commands
-  of [section 4](#4-page-building-exponential-layouts-and-netgen-layouts). The media design exists for the legacy
+- **Layouts**: rebuild the Nexus layouts in the legacy kernel, or copy the rows and run the two conversion commands
+  of [section 4](#4-page-building-exponential-layouts-on-nexus-and-in-the-legacy-kernel). The media design exists for the legacy
   kernel as `se7enxweb/sevenx_themes_media`.
 - **Twig templates** become TPL by hand; a converter gets the syntax, not the semantics (16.6.7).
 

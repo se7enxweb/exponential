@@ -2,7 +2,7 @@
 
 Diese Seite ist für Template-Entwickler, die einen funktionierenden Ausgangspunkt für die Templates wollen, die eine
 Website am häufigsten braucht, in Twig für Exponential geschrieben: ein Pagelayout, eine Zeilenansicht, ein Block von
-Netgen Layouts, ein Mail-Template, Cache-Blöcke je Rolle und je Benutzer, ein Formular mit dem Formular-Token, Texte mit
+Exponential Layouts, ein Mail-Template, Cache-Blöcke je Rolle und je Benutzer, ein Formular mit dem Formular-Token, Texte mit
 einer Anzahl und Bilder in einem Bild-Alias. Jedes Rezept sagt, wohin die Datei gehört, zeigt das Template und zeigt,
 was es in einer Entwicklungsinstallation mit den Media-Demo-Inhalten druckte (Knoten 98 ist der Artikel „Why Track Your
 Workouts?“). Hostnamen in Ausgaben stehen als `www.example.com` da.
@@ -117,7 +117,7 @@ Match[class_identifier]=ng_article
 Eine Liste rendert jedes Kind damit: `{{ node_view_gui({content_node: child, view: 'line'}) }}`. Das Bild ist neben einem
 verlinkten Titel dekorativ, daher `alt=""`.
 
-## Ein Block von Netgen Layouts
+## Ein Block von Exponential Layouts
 
 **Datei**: das Ansichts-Template des Blocks in Ihrem Design, zum Beispiel `templates/explayouts/block/button.twig`. Die
 Layouts-Extension fragt die Design-Ressource nach `explayouts/block/button.tpl`; eine Override-Regel lenkt das auf das

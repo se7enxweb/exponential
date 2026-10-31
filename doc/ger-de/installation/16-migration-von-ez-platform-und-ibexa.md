@@ -54,7 +54,7 @@ Kerntabelle in `ibexa_*` um (Abschnitte [16.5.6](#1656-die-datenbank-generation-
 ### Ziel A: Exponential Platform Nexus und die Distributionen von Exponential Platform
 
 **Exponential Platform Nexus** (Repository und Paket `se7enxweb/exponential-platform-nexus`) ist eine fertige
-Site-Distribution, die von 7x gepflegt wird: Netgen Layouts, das Design der Netgen Media Site, Netgen Tags, die Netgen
+Site-Distribution, die von 7x gepflegt wird: Exponential Layouts, das Design der Netgen Media Site, Netgen Tags, die Netgen
 Site API und eine Administrationsoberfläche auf einer Ibexa-kompatiblen Symfony-Plattform, deren Pakete se7enxweb-Forks
 sind. Ihre GitHub-Beschreibung nennt sie „Platform v2/v3/v4/v5 + Exponential v6.x (Legacy) + Netgen Media Site + NG Layouts + Symfony
 7.4/5.4/3.4 PHP 8.0-8.5“. Sie ist nicht ein Stack, sondern eine Linie je Plattformgeneration, jede auf einem eigenen
@@ -100,10 +100,10 @@ Drei Tatsachen entscheiden, wie eine Migration zu diesen Zielen funktioniert:
    Datenbank-Installer ([Paket-Forks und Umbenennungen von Befehlen](../bc/6.0/plattform-paket-forks-und-umbenannte-befehle.md)).
 3. **Nexus baut auf der Open-Source-Edition auf.** Seine `config/bundles.php` (Nexus 5) registriert die Bundles für
    Ibexa Core, die Legacy-Suchmaschine, Solr, den HTTP-Cache, REST, GraphQL, die Administrationsoberfläche, RichText,
-   Matrix, den Query-Feldtyp, Cron, Messenger und die Design-Engine, dazu Netgen Layouts und etwa 25 weitere
+   Matrix, den Query-Feldtyp, Cron, Messenger und die Design-Engine, dazu Exponential Layouts und etwa 25
    Netgen-Bundles; es gibt kein Bundle für Page Builder, Form Builder, redaktionellen Workflow, Elasticsearch,
    Personalisierung oder Commerce. Inhalte der kommerziellen Feldtypen brauchen eine Entscheidung, bevor sie umziehen
-   können ([16.5.9](#1659-seitenaufbau-page-builder-gegenüber-netgen-layouts)).
+   können ([16.5.9](#1659-seitenaufbau-page-builder-gegenüber-exponential-layouts)).
 
 ### Ziel B: Exponential 6.0, allein oder als Exponential Platform Legacy
 
@@ -140,7 +140,7 @@ lesen kann; ob daneben ein Symfony-Stack weiterläuft, ist eine zweite Entscheid
 |---|---|---|
 | Eigene Symfony-Bundles, Twig-Templates, REST- oder GraphQL-Clients | Behalten Sie sie; dieselbe Generation bedeutet dieselben APIs | Neu schreiben als Legacy-Extensions, TPL-Templates und Module; REST über die Legacy-REST-Schicht |
 | Inhalte in RichText (`ezrichtext`) | Bleiben, wie sie sind | Konvertieren oder anpassen ([16.6.3](#1663-feldtypen)) |
-| Landing Pages aus Page Builder (`ezlandingpage`, kommerziell) | Kein Page Builder; mit Netgen Layouts neu aufbauen | Keine Entsprechung; mit Exponential Layouts neu aufbauen |
+| Landing Pages aus Page Builder (`ezlandingpage`, kommerziell) | Kein Page Builder; mit Exponential Layouts neu aufbauen | Keine Entsprechung; mit Exponential Layouts neu aufbauen |
 | Redakteure, die die Symfony-Administration kennen | Dieselbe Generation der Administrationsoberfläche | Die Legacy-Administration (Design `admin3`), ein anderes Werkzeug |
 | Ein Team, das INI, TPL und Legacy-Extensions kennt | Muss den Symfony-Stack lernen | Arbeitet mit dem, was es kennt |
 | Server mit PHP 8.0 oder 8.1 | Nexus 1.0.0.x / 1.1.0.x (oder die Platform-3.x-Forks) | Ganz 6.0 |
@@ -648,14 +648,14 @@ neu auf, wenn die Prüfung in [16.8](#168-die-migration-prüfen) fehlschlägt:
 php bin/console exponential:urls:regenerate-aliases
 ```
 
-### 16.5.9 Seitenaufbau: Page Builder gegenüber Netgen Layouts
+### 16.5.9 Seitenaufbau: Page Builder gegenüber Exponential Layouts
 
-Nexus baut Seiten mit Netgen Layouts auf (`netgen/layouts-*` 1.4 unter 2.5 bis 4.6, 2.0 unter v5, der Fork
+Nexus baut Seiten mit Exponential Layouts auf (`netgen/layouts-*` 1.4 unter 2.5 bis 4.6, 2.0 unter v5, der Fork
 `se7enxweb/layouts-core` unter PHP 8.4). Der kommerzielle Page Builder (`ezlandingpage`, Tabellen `ezpage_*`) hat in
 Nexus kein Gegenstück, und kein Werkzeug konvertiert Landing Pages in Layouts. Planen Sie es als inhaltliche Aufgabe:
 
 1. Listen Sie die Landing Pages auf: `SELECT COUNT(*) FROM ezcontentobject_attribute WHERE data_type_string = 'ezlandingpage';`
-2. Bauen Sie für jedes Landing-Page-Layout ein Layout in Netgen Layouts mit denselben Zonen und einer Regel, die es dem
+2. Bauen Sie für jedes Landing-Page-Layout ein Layout in Exponential Layouts mit denselben Zonen und einer Regel, die es dem
    Ort zuordnet, und legen Sie die Blöcke (Listen, Inhalte, HTML) als Layout-Blöcke mit Collections neu an.
 3. Entfernen Sie das Feld `ezlandingpage` aus den Inhaltsklassen, sobald die Layouts live sind, oder behalten Sie das
    Feld und lassen Sie das Template es bis dahin ignorieren.
@@ -843,7 +843,7 @@ einen Standardwert ([16.6.4](#1664-die-datenbank-schritt-für-schritt)). Spalten
 | RichText als gespeichertes DocBook, bis es konvertiert ist | XmlText mit Custom Tags, die Legacy-Inhaltsdatentypen (Matrix, Option, Price, Star Rating mit seiner Extension, ezflow-Page) |
 | REST v2 und GraphQL des Symfony-Stacks | Die Legacy-REST-Schicht (`rest.ini`), die Legacy-JSON-Aufrufe von `ezjscore` |
 | Page Builder, Form Builder, Workflow (kommerziell) | Die Legacy-Workflow-Ereignisse, Informationssammlung, Shop, RSS-Import und -Export, Newsletter (`cjw_newsletter`) |
-| Netgen Layouts auf Symfony | Exponential Layouts, die Legacy-Portierung von Netgen Layouts ([16.6.7](#1667-eine-durchgeführte-portierung-netgen-layouts-und-die-media-site)) |
+| Exponential Layouts auf Symfony (Nexus) | Exponential Layouts im Legacy-Kernel ([16.6.7](#1667-eine-durchgeführte-portierung-exponential-layouts-und-die-media-site)) |
 | Messenger, Symfony-Cron | `runcronjobs.php` und die Cronjob-Teile |
 | | Velocity als Webserver, SQLite als Produktions-Engine, Treiber für MongoDB und Oracle, das Audit-Protokoll und das Subsystem für Mail-Einstellungen von 6.0.15 |
 
@@ -1134,7 +1134,7 @@ Twig-Template einbinden (`symfony_include`); siehe [Site-Bundles](../funktionen/
 [ngsymfonytools](../funktionen/6.0/erweiterungen/ngsymfonytools.md). Zum Template-System selbst lesen Sie die
 [Anleitung zu Templates und Design](../anleitungen/templates-und-design.md).
 
-### 16.6.7 Eine durchgeführte Portierung: Netgen Layouts und die Media Site
+### 16.6.7 Eine durchgeführte Portierung: Exponential Layouts und die Media Site
 
 Die Exponential-Installation hinter diesem Handbuch ist diesen Weg mit einer ganzen Site gegangen: Die Netgen Media Site,
 wie sie auf dem Symfony-Stack läuft (die Nexus-Referenz), wurde mit ihren Layouts, ihrem Design und ihren Inhalten auf
@@ -1142,10 +1142,10 @@ den Legacy-Kernel 6.0 portiert. Das Vorgehen, in der Reihenfolge, in der es durc
 
 1. **Der Seitenbaukasten wurde zu Legacy-Extensions.** Exponential Layouts (`se7enxweb/explayouts` und seine
    Schwester-Repositorys `explayouts_core`, `explayouts_standard`, `explayouts_site_api`, `explayouts_ui`,
-   `explayouts_ui_api` und weitere) implementiert Netgen Layouts für den Legacy-Kernel neu: `eZPersistentObject`-Klassen
+   `explayouts_ui_api` und weitere) implementiert die Upstream-Layouts-Pakete für den Legacy-Kernel neu: `eZPersistentObject`-Klassen
    auf `explayouts_*`-Tabellen statt Doctrine auf `nglayouts_*`, Block- und Layout-Typen in `explayouts.ini` statt in
    YAML, Block-Templates in der Design-Kaskade statt in Twig, Regeln, die `expLayoutsResolver` auflöst, und der Editor
-   als Legacy-Modul. „The port follows the Netgen Layouts data shape, so a Netgen XML/JSON export can be
+   als Legacy-Modul. „The port follows the data shape of the upstream layouts packages, so an XML/JSON export from them can be
    imported with minimal transformation“ ([Exponential Layouts](../bc/6.0/layouts.md#migration-und-gleichwertigkeit),
    [Import und Export](../bc/6.0/layouts.md#import-export-und-freigabelinks)).
 2. **Die Daten zogen über ihre IDs um.** Regeln, Collections und manuelle Collection-Einträge verweisen per ID auf
@@ -1302,7 +1302,7 @@ redaktionellen Stopp als diese Zeit zuzüglich eines Puffers.
 - [ ] Weg A: Forks installiert, keine Upstream-Duplikate, Flex-Rezepte aus `se7enxweb/sevenx-recipes`.
 - [ ] Weg A: Cron- und Deployment-Skripte verwenden die `exponential:`-Befehle (unter v5 zwingend).
 - [ ] Weg A: REST-Clients auf dem Präfix der Generation, GraphQL-Schema neu erzeugt.
-- [ ] Weg A: Landing Pages mit Netgen Layouts neu aufgebaut oder bewusst außen vor gelassen.
+- [ ] Weg A: Landing Pages mit Exponential Layouts neu aufgebaut oder bewusst außen vor gelassen.
 - [ ] Weg B: Jeder `data_type_string` hat einen Legacy-Datentyp; RichText konvertiert oder gerendert.
 - [ ] Weg B: 5.0-Namen zurückbenannt oder Übersetzer aktiv; Ausgabe von `ezsqldiff.php` geprüft und ausgeführt; Standardwert für die Schlüsselwort-Verknüpfung; Versionszeilen.
 - [ ] Weg B: INI-Einstellungen für Siteaccesses, Sprachen, Designs, Bild-Aliase und Overrides; Speicher mit demselben `VarDir` kopiert.

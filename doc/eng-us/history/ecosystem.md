@@ -21,7 +21,7 @@ The history covers 6556 ledger changes in 53 repositories since December 2023. 1
 |---|---|---|---|
 | [exponential-platform-nexus-starter](ecosystem/exponential-platform-nexus-starter.md) | Nexus for Platform v5 (Symfony 7.4, PHP 8.4+, SQLite starter). | composer + one install command gives a v5 site with layouts, REST, GraphQL and admin. | 16 / 248 |
 | [exponential-platform-dxp](ecosystem/exponential-platform-dxp.md) | Metapackage se7enxweb/exponential-platform-dxp for Platform v5. | One package name for a full v5 install. | 20 / 112 |
-| [exponential-platform-nexus](ecosystem/exponential-platform-nexus.md) | Exponential Platform Nexus: Netgen Layouts + Media Site + tags + platform and legacy. | A working site with demo content, layouts and an admin, installed in minutes. | 97 / 97 |
+| [exponential-platform-nexus](ecosystem/exponential-platform-nexus.md) | Exponential Platform Nexus: Exponential Layouts + Media Site + tags + platform and legacy. | A working site with demo content, layouts and an admin, installed in minutes. | 97 / 97 |
 | [cjw-exponential-platform-nexus](ecosystem/cjw-exponential-platform-nexus.md) | CJW flavour of Nexus (se7enxweb/cjw-exponential-platform-nexus). | Nexus with the CJW starter content. | 89 / 89 |
 | [exponential-platform-legacy](ecosystem/exponential-platform-legacy.md) | Exponential Platform Legacy 2.5 distribution (platform plus legacy). | Composer project for the 2.5 LTS line on PHP 8.1 and 8.2. | 46 / 46 |
 | [exponential-platform-v4x-dxp-skeleton](ecosystem/exponential-platform-v4x-dxp-skeleton.md) | Project skeleton for the Platform 4.6.x DXP. | create-project for 4.6. | 19 / 25 |
@@ -94,7 +94,7 @@ The history covers 6556 ledger changes in 53 repositories since December 2023. 1
 
 | Repository | What it is | What a user gets | Changes (own / total) |
 |---|---|---|---|
-| [layouts-core](ecosystem/layouts-core.md) | Netgen Layouts core (PHP/Symfony page builder engine), fork se7enxweb/layouts-core. | Layout page builder on PHP 8.4: getter shims make Twig read parameters. | 1 / 450 |
+| [layouts-core](ecosystem/layouts-core.md) | Exponential Layouts core (PHP/Symfony page builder engine), fork se7enxweb/layouts-core. | Layout page builder on PHP 8.4: getter shims make Twig read parameters. | 1 / 450 |
 | [ibexa-recipes](ecosystem/ibexa-recipes.md) | Symfony Flex recipes of the platform packages. | Flex configures bundles on composer require. | 1 / 142 |
 
 ## Framework forks

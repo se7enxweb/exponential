@@ -177,8 +177,8 @@ Aus [Mitwirkende und Pull-Requests](../wer-ist-die-exponential-foundation.md#mit
 - **Der erste Pull-Request neuer Mitwirkender wartet auf die Genehmigung eines Maintainers**, bevor irgendein
   Workflow läuft.
 - **Die Arbeit anderer wird gewürdigt.** Das Projekt hat die LoveStack-Verbesserungen von Mugo Web „with full credit to
-  Mugo Web“ (unter voller Nennung von Mugo Web) neu aufgebaut, und Exponential Layouts portiert das Konzept von Netgen
-  Layouts (README, zitiert auf der Seite der Foundation).
+  Mugo Web“ (unter voller Nennung von Mugo Web) neu aufgebaut, und Exponential Layouts portiert das Konzept der
+  Upstream-Layouts-Pakete (README, zitiert auf der Seite der Foundation).
 
 Für einen Projektplan bedeutet das: Ein Beitrag hängt nicht davon ab, eine Diskussion zu gewinnen. Planen Sie die Zeit
 ein, ihn gut zu schreiben und zu testen; der Merge selbst ist nicht der unsichere Teil.

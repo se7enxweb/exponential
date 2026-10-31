@@ -28,7 +28,7 @@ entscheiden.
 2. **Gibt es eine Exponential-6-Website, die bleiben soll?** Dann halten die Distributionen mit zwei Kerneln (Legacy,
    die früheren Nexus-Linien) sie neben Symfony am Laufen.
 3. **Müssen Redakteure Seiten mit Blöcken anordnen?** Die DXP liefert nur den Layouts Core mit, keinen Editor. Nexus
-   liefert den Editor von Netgen Layouts mit; Exponential 6 hat Exponential Layouts.
+   liefert den Editor von Exponential Layouts für Symfony mit; Exponential 6 hat Exponential Layouts im Legacy-Kernel.
 
 ## Der Vergleich
 
@@ -38,7 +38,7 @@ entscheiden.
 | Framework | Symfony 7.4 | Symfony (je Linie) | Symfony (je Linie; 7.4 für 1.3 und den v5-Starter) | keines |
 | PHP | 8.3 oder neuer | je Linie | 8.4 oder neuer für 1.3 und den v5-Starter | siehe [Erste Schritte](../erste-schritte.md) |
 | Templates | Twig | Twig und `.tpl` | Twig (und `.tpl` auf den Linien mit zwei Kerneln) | `.tpl` |
-| Seitenbaukasten | nur Layouts Core, kein Editor | je Linie | Netgen Layouts mit seinem Editor | Exponential Layouts |
+| Seitenbaukasten | nur Layouts Core, kein Editor | je Linie | Exponential Layouts mit seinem Editor | Exponential Layouts |
 | Demo-Inhalte | keine | je Linie | ja | Seitenpakete |
 | Beginnen mit | [DXP-Skeleton](../../funktionen/6.0/plattform-dxp-skeleton.md) | [Legacy Bridge](../../funktionen/6.0/legacy-bridge.md) | [Nexus-Starter](../../funktionen/6.0/plattform-nexus-starter.md) | [Erste Schritte](../erste-schritte.md) |
 
@@ -52,7 +52,7 @@ Quellen: die Anforderungen des Metapakets,
 | Situation | Wählen Sie | Warum |
 |---|---|---|
 | Neues Projekt, Symfony-Team, Inhalte über APIs und Twig | DXP | sauberer einzelner Kernel, REST und GraphQL enthalten |
-| Neues Projekt, Redakteure müssen Seiten aus Blöcken bauen, Symfony-Team | Nexus (1.3 oder der v5-Starter) | liefert den Editor von Netgen Layouts und eine Demo-Website mit |
+| Neues Projekt, Redakteure müssen Seiten aus Blöcken bauen, Symfony-Team | Nexus (1.3 oder der v5-Starter) | liefert den Editor von Exponential Layouts und eine Demo-Website mit |
 | Eine Exponential-6-Website, die weiterlaufen muss, während ein Symfony-Frontend wächst | Legacy | die Legacy Bridge bedient beide Kernel aus einer Datenbank |
 | Eine Website auf eZ Platform 3.3 oder Ibexa OSS 4.6, die modernisiert werden soll | DXP (v5) oder das [Skeleton 4.6.x](das-skeleton-v4x.md) | dieselbe Abstammung des Inhaltsmodells ([Umstieg von Ibexa OSS oder eZ Platform](umstieg-von-ibexa-oss-oder-ez-platform.md)) |
 | Ein CMS mit Shop, Workflows und Multisite nur auf PHP | Exponential 6 | diese Funktionen sind in seinem Kernel |
@@ -72,7 +72,7 @@ Quellen: die Anforderungen des Metapakets,
 
 ## Später umentscheiden
 
-- Von DXP zu Nexus: Beides sind Projekte auf Platform v5; die Pakete von Netgen Layouts hinzuzufügen, die ein
+- Von DXP zu Nexus: Beides sind Projekte auf Platform v5; die Layouts-Pakete hinzuzufügen, die ein
   Nexus-Projekt verwendet, ist eine Änderung in Composer, aber testen Sie sie an einer Kopie, denn Layouts 2.0 braucht
   PHP 8.4 ([Layouts auf der Plattform](../../funktionen/6.0/plattform-layouts-core-fork.md#grenzen)).
 - Von Exponential 6 zur Plattform: Planen Sie eine Inhaltsmigration oder betreiben Sie während des Umzugs beide Kernel

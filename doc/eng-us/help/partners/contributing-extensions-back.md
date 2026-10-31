@@ -48,7 +48,7 @@ fixes you keep for your customers, are not affected. See
 - Rename only if needed (for example to publish on Packagist under your vendor), and say where it came from.
 - Offer your fork's improvements back if the original revives.
 
-The project does the same: Exponential Layouts "brings the Netgen Layouts concept to the Exponential kernel"
+The project does the same: Exponential Layouts "brings the concept of the upstream layouts packages to the Exponential kernel"
 (README), and the LoveStack improvements were rebuilt "with full credit to Mugo Web" (README).
 
 ## 5. Taking over maintenance

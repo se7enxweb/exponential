@@ -55,7 +55,7 @@ Requirements of the metapackage itself: `"php": ">=8.3"`, `ext-ctype`, `ext-icon
 
 | Not included | Why it matters | Source |
 |---|---|---|
-| A layouts editor | Only `se7enxweb/layouts-core` is required: no layouts UI, no standard blocks, no Ibexa integration package of Netgen Layouts | Metapackage requirements |
+| A layouts editor | Only `se7enxweb/layouts-core` is required: no layouts UI, no standard blocks, no Ibexa integration package for layouts | Metapackage requirements |
 | An approval workflow | No workflow package is required | Metapackage requirements |
 | A scheduler for publishing | No scheduler package is required | Metapackage requirements |
 | The Exponential 6 kernel | No legacy bridge, no `se7enxweb/exponential` | Skeleton README: "No LegacyBridge, no classic legacy kernel" |

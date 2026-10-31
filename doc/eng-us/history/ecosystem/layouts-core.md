@@ -4,7 +4,7 @@ The history of `layouts-core`, one of the platform repositories around Exponenti
 
 ## What it is
 
-Netgen Layouts core (PHP/Symfony page builder engine), fork se7enxweb/layouts-core.
+Exponential Layouts core (PHP/Symfony page builder engine), fork se7enxweb/layouts-core.
 
 ## How it relates to Exponential
 

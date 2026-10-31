@@ -66,7 +66,7 @@ Seite mit den Release Notes der Erweiterung und verlinken Sie sie.
 - Viele Erweiterungen entstanden in den Jahren von eZ Publish und tragen historische Namen wie `eztags` oder `ezjscore`.
   Das sind Bezeichner im Code, und sie werden nie umbenannt ([Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#bezeichner-im-code-bleiben-wie-sie-sind)).
 - Nennen Sie die Herkunft, wo die Quellen sie nennen: `cjw_newsletter` stammt von CJW Network; Exponential Layouts
-  bringt "the Netgen Layouts concept to the Exponential kernel" ([Wer ist 7x?, Beitragende und Freunde](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
+  bringt "the concept of the upstream layouts packages to the Exponential kernel" ([Wer ist 7x?, Beitragende und Freunde](../wer-ist-7x.md#mitwirkende-und-freunde-des-projekts)).
 - Nennen Sie keinen einzelnen Entwickler, wenn er nicht zugestimmt hat; nennen Sie das Projekt oder die Organisation
   ([Aussagen zuordnen](aussagen-zuordnen.md)).
 

@@ -10,7 +10,7 @@ dazu die Tags `v2.5.0.x`), `se7enxweb/exponential-platform-nexus-starter` (Platf
 
 ## Was es ist
 
-Nexus ist ein fertiges Website-Projekt. Sie führen einmal Composer aus, führen einen Installationsbefehl aus, und Sie haben eine Website mit Demo-Inhalten, dem Seiten-Baukasten Netgen Layouts, einem Twig-Frontend, einer Administrationsoberfläche, einer REST-API und einer GraphQL-API. Sie ändern das Inhaltsmodell und das Design anschließend, statt zuerst Bundles zusammenzustellen.
+Nexus ist ein fertiges Website-Projekt. Sie führen einmal Composer aus, führen einen Installationsbefehl aus, und Sie haben eine Website mit Demo-Inhalten, dem Seiten-Baukasten Exponential Layouts, einem Twig-Frontend, einer Administrationsoberfläche, einer REST-API und einer GraphQL-API. Sie ändern das Inhaltsmodell und das Design anschließend, statt zuerst Bundles zusammenzustellen.
 
 Es gibt eine Linie pro Plattformgeneration, und Sie wählen nach der Plattform, die Sie betreiben wollen. Gelesen aus
 `composer.json` und `composer.lock` jedes Branches und Tags:
@@ -40,9 +40,9 @@ Zwei Dinge über Versionen, die Sie vor der Installation wissen sollten:
 Aus der README des Repositorys:
 
 - das Open-Source-Content-Repository von Ibexa DXP v5 (Inhaltsklassen, Versionen, Übersetzungen, Platzierungen);
-- Netgen Layouts 2.0.x als Seiten-Baukasten, mit Netgen Content Browser und der Ibexa Site API;
+- Exponential Layouts 2.0.x als Seiten-Baukasten, mit Netgen Content Browser und der Ibexa Site API;
 - Netgen Information Collection für Kontaktformulare, Netgen Tags für die Taxonomie;
-- die Administrationsoberfläche von Platform v5 unter `/adminui/`, den Admin von Netgen Layouts unter `/nglayouts/admin`;
+- die Administrationsoberfläche von Platform v5 unter `/adminui/`, den Admin von Exponential Layouts unter `/nglayouts/admin`;
 - REST API v2 mit JWT-Anmeldung, einen GraphQL-Endpunkt unter `/graphql`;
 - einen Build mit Webpack Encore 5 für die Assets der Website, Unterstützung mehrerer Siteaccesses, optional Solr, Varnish und Redis;
 - SQLite ohne Konfiguration, sodass ein Laptop oder ein Demo-Server keinen Datenbankserver braucht.
@@ -75,7 +75,7 @@ symfony server:start
 
 Hinweise zu den Befehlen:
 
-- Es gibt zwei Installationstypen. `exponential-media` installiert die Nexus-Demo (Layouts, Inhalte, Tags und die Konfiguration von Netgen Layouts); er wird von `ExponentialMediaInstaller` im Paket `se7enxweb/exponential-platform-dxp-core` bereitgestellt und ist eine datenbankübergreifende Alternative zum nur für MySQL verfügbaren Typ `netgen-media`: Er lädt `media_schema.sql` und `media_data.sql` für MySQL / MariaDB, PostgreSQL oder SQLite, je nachdem, was Ihre `DATABASE_URL` verwendet. `exponential-oss` installiert nur die saubere Plattform ohne Demo-Inhalte (der Starter registriert dafür seinen eigenen `App\Installer\ExponentialOssInstaller`). `php bin/console help exponential:install` zeigt die Typen Ihres Checkouts.
+- Es gibt zwei Installationstypen. `exponential-media` installiert die Nexus-Demo (Layouts, Inhalte, Tags und die Konfiguration von Exponential Layouts); er wird von `ExponentialMediaInstaller` im Paket `se7enxweb/exponential-platform-dxp-core` bereitgestellt und ist eine datenbankübergreifende Alternative zum nur für MySQL verfügbaren Typ `netgen-media`: Er lädt `media_schema.sql` und `media_data.sql` für MySQL / MariaDB, PostgreSQL oder SQLite, je nachdem, was Ihre `DATABASE_URL` verwendet. `exponential-oss` installiert nur die saubere Plattform ohne Demo-Inhalte (der Starter registriert dafür seinen eigenen `App\Installer\ExponentialOssInstaller`). `php bin/console help exponential:install` zeigt die Typen Ihres Checkouts.
 - Die README des Starter-Repositorys klont ebenfalls `exponential-platform-nexus`; welches Sie auch klonen, prüfen Sie,
   dass `composer.json` `se7enxweb/exponential-platform-dxp` und PHP `>=8.4` verlangt, bevor Sie `composer install` ausführen.
 - Die Branches 1.1.0.x und 1.2.0.x installieren auf dieselbe Weise (`exponential:install exponential-media`) auf ihrer
@@ -94,7 +94,7 @@ Nach der Installation antworten diese Adressen:
 | `https://127.0.0.1:8000/adminui/` | Administrationsoberfläche von Platform v5 |
 | `https://127.0.0.1:8000/api/ibexa/v2/` | REST API v2, per JWT authentifiziert (`ibexa.rest.path_prefix`; `/api/ezp/v2` war das Präfix vor 4.0) |
 | `https://127.0.0.1:8000/graphql` | GraphQL-Endpunkt |
-| `https://127.0.0.1:8000/nglayouts/admin` | Admin von Netgen Layouts |
+| `https://127.0.0.1:8000/nglayouts/admin` | Admin von Exponential Layouts |
 
 Die vollständige Schritt-für-Schritt-Anleitung (Webserver-Konfiguration, Berechtigungen, Checkliste für die Produktion, Cron, Solr, Varnish, Fehlerbehebung, Datenbankkonvertierung) ist `doc/sevenx/INSTALL.md` im Starter-Repository.
 

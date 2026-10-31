@@ -29,7 +29,7 @@ ob „or any later version“ gilt. Für viele davon gibt es Seiten in der Dokum
 
 ## Seiten bauen: Exponential Layouts
 
-Ein visueller Seitenbaukasten, aus den Paketen von Netgen Layouts nach Exponential portiert. Dreizehn Pakete, die zeigen,
+Ein visueller Seitenbaukasten, aus den Upstream-Layouts-Paketen nach Exponential portiert. Dreizehn Pakete, die zeigen,
 wie eine große Funktion in einen fachlichen Kern, eine API, eine Benutzeroberfläche und austauschbare Abfrage-Handler
 aufgeteilt wird.
 

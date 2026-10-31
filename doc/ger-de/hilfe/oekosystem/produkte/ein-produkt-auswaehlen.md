@@ -49,7 +49,7 @@ Prüfen Sie jede Aussage an der eigenen `composer.json` der Distribution, bevor 
 - Exponential 6 + Velocity + Layouts + Intelligence: die Standardinstallation von 6.0.15, da alle in `composer.json`
   verlangt werden (Intelligence sendet nichts, bevor ein Schlüssel eines Anbieters eingetragen ist).
 - Exponential 6 + Symfony: Legacy oder Nexus.
-- Nexus + Exponential 6 + Netgen Layouts: was Nexus mitliefert.
+- Nexus + Exponential 6 + Exponential Layouts: was Nexus mitliefert.
 
 ## Verwandte Seiten
 

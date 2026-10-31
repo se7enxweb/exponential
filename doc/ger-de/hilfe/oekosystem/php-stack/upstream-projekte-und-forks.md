@@ -4,7 +4,7 @@ audience: ecosystem, developer, partner, advocate
 category: ecosystem
 order: 35
 summary: Die PHP-Projekte, auf denen das Ökosystem von Exponential steht und denen es etwas zurückgibt - PHP, Composer, Zeta Components, Symfony, Twig, Doctrine, die Projekte von Netgen, der Webserver Qbix, AdminNeo und die Frontend-Bibliotheken -, wofür jedes verwendet wird, die Forks, die 7x pflegt, und wie Sie respektvoll mit Ursprungsprojekten umgehen.
-keywords: Upstream, Ursprungsprojekte, Forks, Zeta Components, Symfony, Twig, Doctrine, Netgen Layouts, Media Site, Qbix, AdminNeo, jQuery, TinyMCE, zurückgeben, Pull-Requests an Upstream, upstream, forks, give back, pull requests upstream
+keywords: Upstream, Ursprungsprojekte, Forks, Zeta Components, Symfony, Twig, Doctrine, Media Site, Qbix, AdminNeo, jQuery, TinyMCE, zurückgeben, Pull-Requests an Upstream, upstream, forks, give back, pull requests upstream
 type: help
 ---
 # Upstream-Projekte und Forks
@@ -23,7 +23,7 @@ type: help
 | Composer und Packagist | Installation des Kernels und jeder Erweiterung | 219 von se7enxweb veröffentlichte Pakete | `composer.json`, Packagist |
 | Zeta Components | Die Bibliotheken des Kernels (Cache, Datenbank, Feed, Bildumwandlung ...) | "Forked and patched 47+ Zeta Components repos", über 47 Repositorys geforkt und gepatcht; "14 security PRs submitted upstream to zetacomponents", 14 Sicherheits-Pull-Requests an zetacomponents | Profil-README von se7enxweb |
 | Symfony, Twig, Doctrine | Die Platform-Linie | Gepflegte Forks für PHP 8.4 und 8.5 | [Das Ökosystem der Exponential-Plattform](../../../geschichte/oekosystem.md) |
-| Netgen Layouts, Media Site, Site API | Exponential Layouts und Nexus | Portierungen auf den Kernel von Exponential; ein Fork von layouts-core | `README.md` |
+| Upstream-Layouts-Pakete, Media Site, Site API | Exponential Layouts und Nexus | Portierungen auf den Kernel von Exponential; ein Fork von layouts-core | `README.md` |
 | Webserver Qbix | Die Engine von Velocity | Ein darauf gebauter Produktionsserver | README von Velocity |
 | AdminNeo | Der Editor für Datenbankquellen | | [sevenx_dse](../../../funktionen/6.0/erweiterungen/sevenx_dse.md) |
 | jQuery, TinyMCE, Bootstrap Icons | Die Skripte, der Editor und die Symbole der Administration | | [Oktober 2026](../../../geschichte/2026/2026-10.md) |

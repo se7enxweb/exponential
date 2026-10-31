@@ -4,13 +4,13 @@ audience: press
 category: press-media
 order: 157
 summary: Ein achtminütiges Videoskript für den Seitenbaukasten Exponential Layouts - das Layouts-Dashboard, ein neues Layout, Blöcke hinzufügen, einstellen, verschieben und duplizieren, verknüpfte Zonen gemeinsamer Layouts, Veröffentlichen oder Verwerfen und Zuordnungen - mit genauen Namen der Schaltflächen, Nennung von Netgen und dem, was Sie nicht behaupten sollten.
-keywords: Demo-Skript, Exponential Layouts, Seitenbaukasten, Layout-Editor, Zonen, Blöcke, gemeinsames Layout, verknüpfte Zone, Zuordnungen, Regeln, Netgen Layouts, Video, Creator, demo script, page builder, layouts editor, zones, blocks, shared layout, linked zone, mappings, rules
+keywords: Demo-Skript, Exponential Layouts, Seitenbaukasten, Layout-Editor, Zonen, Blöcke, gemeinsames Layout, verknüpfte Zone, Zuordnungen, Regeln, Video, Creator, demo script, page builder, layouts editor, zones, blocks, shared layout, linked zone, mappings, rules
 type: help
 ---
 # Demo-Skript: Exponential Layouts
 
-Diese Seite ist für Creator, die den Seitenbaukasten von Exponential zeigen. Exponential Layouts bringt "the Netgen
-Layouts concept to the Exponential kernel" (`README.md`, zitiert in
+Diese Seite ist für Creator, die den Seitenbaukasten von Exponential zeigen. Exponential Layouts bringt "the concept of the upstream
+layouts packages to the Exponential kernel" (`README.md`, zitiert in
 [Marken- und Namensregeln](../geschaeft/marken-und-namensregeln.md#andere-unternehmen-und-produkte)); nennen Sie Netgen, wenn
 Sie es zeigen. Das Skript dauert etwa acht Minuten und arbeitet mit einer Kopie eines Layouts, sodass sich auf Ihrer
 Demo-Website nichts ändert, solange Sie nicht veröffentlichen. Jeder Klick stammt aus [Der Layout-Editor](../layout-editor.md)
@@ -97,14 +97,14 @@ Wenn Sie vor der Kamera veröffentlichen und der Editor fragt, ob Caches geleert
 | Sagen Sie nicht | Sagen Sie stattdessen |
 |---|---|
 | „Jedes Exponential-Produkt hat diesen Editor.“ | „Exponential Platform DXP liefert keinen Layout-Editor.“ ([Die Produktfamilie kennen](../fuersprecher/die-produktfamilie-kennen.md#häufige-verwechslungen)) |
-| „Das ist Netgen Layouts.“ | „Es bringt das Konzept von Netgen Layouts in den Kernel von Exponential.“ |
+| „Das ist Netgen Layouts.“ | „Es bringt das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential.“ |
 | „Netgen hat das für Exponential gemacht.“ | Nennen Sie nur das Konzept; die Quellen sagen nicht, dass Netgen die Portierung gebaut hat |
 | „Jeder kann jede Seite ändern.“ | „Rollen entscheiden, wer den Tab Layouts sieht; Zuordnungen bestimmen ganze Teile der Website.“ |
 
 ```text
 BESCHREIBUNGSBLOCK
 Zeigt Exponential Layouts in Exponential <Version>, auf meiner eigenen Testinstallation.
-Exponential Layouts bringt das Konzept von Netgen Layouts in den Kernel von Exponential.
+Exponential Layouts bringt das Konzept der Upstream-Layouts-Pakete in den Kernel von Exponential.
 Der Layout-Editor: <Link zu „Der Layout-Editor“>
 Rundgang mit Screenshots: <Link zu „Ein Rundgang durch die Administration, In der Praxis: der Layout-Editor“>
 ```

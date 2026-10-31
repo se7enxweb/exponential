@@ -71,7 +71,7 @@ gefasst:
 - **APIs.** Die Legacy-REST-Schicht (`ezprestapi`, v1 und v2) und Serverfunktionen von `ezjscore` statt REST v2 und
   GraphQL des Symfony-Stacks ([Die REST-API](die-rest-api.md)).
 - **Funktionen, die Sie gewinnen.** Workflow-Events, Informationssammlung, der Shop, RSS-Import und -Export,
-  Newsletter, Exponential Layouts (die Portierung von Netgen Layouts), Velocity als Webserver sowie Treiber für
+  Newsletter, Exponential Layouts (aus den Upstream-Layouts-Paketen portiert), Velocity als Webserver sowie Treiber für
   SQLite, MongoDB und Oracle.
 
 ## Feldtypen und Datentypen

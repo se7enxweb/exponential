@@ -25,7 +25,7 @@ type: help
 | **Layouts** | Exponential Layouts, the visual page builder | [Exponential Layouts](products/exponential-layouts.md) |
 | **Legacy bridge** | Runs the Exponential 6 kernel inside the Symfony platform | [Legacy bridge](../../features/6.0/legacy-bridge.md) |
 | **Meta package** | A Composer package that only requires others, such as `exponential-platform-dxp` | [Exponential Platform DXP](products/platform-dxp.md) |
-| **Nexus** | Exponential Platform Nexus: platform plus Exponential 6, Netgen Layouts and Media Site | [The Platform line](products/the-platform-line.md) |
+| **Nexus** | Exponential Platform Nexus: platform plus Exponential 6, Exponential Layouts and Media Site | [The Platform line](products/the-platform-line.md) |
 | **Package server** | The server of the setup wizard's site packages | [Site packages and the package server](packages/site-packages-and-the-package-server.md) |
 | **Packagist** | The public Composer repository where se7enxweb publishes its packages | [Composer and Packagist](packages/composer-and-packagist.md) |
 | **Partner** | A company in the Exponential Partner Program | [Partners in the ecosystem](organizations/partners-in-the-ecosystem.md) |

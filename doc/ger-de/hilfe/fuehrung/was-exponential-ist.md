@@ -123,7 +123,7 @@ Beschreibungen, mit Quellen und dem Stand jedes Produkts, finden Sie unter
 | **Exponential 6** | Der Kernel für CMS, CMF und Shop, auf dem diese Installation läuft | Organisationen mit strukturierten Inhalten, mehreren Sites oder mehreren Sprachen; Entwickler, die auf seinem Framework aufbauen |
 | **Exponential Platform 3.2.9** | Reines Symfony-CMS aus der letzten freien eZ Platform | Teams auf dem Stack von eZ Platform 3, die ein aktuelles PHP möchten |
 | **Exponential Platform Legacy** | Die Symfony-Plattform plus Exponential 6 („Dual Kernel“) | Bestehende Sites, die Exponential 6 behalten und Symfony daneben hinzufügen |
-| **Exponential Platform Nexus** | Platform plus Exponential 6, Netgen Layouts und Media Site, mit Demo-Inhalten | Agenturen und Teams, die schnell eine vollständige Site möchten |
+| **Exponential Platform Nexus** | Platform plus Exponential 6, Exponential Layouts und Media Site, mit Demo-Inhalten | Agenturen und Teams, die schnell eine vollständige Site möchten |
 | **Exponential Platform DXP** | Eine reine Symfony-Plattform für digitale Erlebnisse, die Fortführung der Linie Ibexa DXP OSS | Neue Symfony-Projekte |
 | **Exponential Basic** | Das einfache CMS der Linie eZ Publish 2 | Bildung, private Nutzung, kleine Sites |
 | **Exponential Velocity** | Ein in PHP geschriebener Web- und Anwendungsserver | Alle, die Exponential ausliefern |

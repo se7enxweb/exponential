@@ -101,8 +101,8 @@ eine Seite sagt, lautet die ehrliche Antwort „Die Dokumentation macht dazu kei
 
 ## Redakteure bauen Seiten selbst
 
-**Was Sie sagen.** Exponential Layouts ist „ein visueller Seitenbaukasten für Exponential. Er bringt das Konzept von
-Netgen Layouts in den Kernel von Exponential: Ein Layout ist eine gespeicherte Anordnung von Blöcken in Zonen, und eine
+**Was Sie sagen.** Exponential Layouts ist „ein visueller Seitenbaukasten für Exponential. Er bringt das Konzept der
+Upstream-Layouts-Pakete in den Kernel von Exponential: Ein Layout ist eine gespeicherte Anordnung von Blöcken in Zonen, und eine
 Regel entscheidet, welche Seiten es erhalten“ (`README.md`, „Exponential Layouts“). Redakteure ziehen Blöcke in Zonen,
 ändern sie in einem Tab **Content** und einem Tab **Design** und arbeiten an einem Entwurf, den die Site erst zeigt,
 wenn sie veröffentlichen ([Der Layout-Editor](../layout-editor.md)).

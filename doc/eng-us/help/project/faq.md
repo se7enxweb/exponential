@@ -171,7 +171,7 @@ the 6.0.14 release; the repository's requirements, which also cover PHP 7.4 and 
 ### Can I run Exponential on PHP 7.4?
 
 Yes, from 6.0.15, for sites that cannot change the PHP of their server yet. The kernel and the bundled extensions run
-on PHP 7.4; Velocity, Netgen Layouts, two-factor authentication and a few other extensions need PHP 8 and are not
+on PHP 7.4; Velocity, Exponential Layouts, two-factor authentication and a few other extensions need PHP 8 and are not
 installed there. Composer picks the right packages by itself through the metapackage
 `se7enxweb/exponential-php-floor`. PHP 7.4 gets no security fixes from the PHP project any more, so run it only
 where your operating system vendor or host still patches it, and plan the move to PHP 8. The whole story, with a
