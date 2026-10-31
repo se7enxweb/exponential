@@ -9,7 +9,8 @@
  *   children(parentId, classes, sortField, sortOrder, depth, limit, offset, first, after)
  *   currentUser, siteaccess, translations
  *
- * and the mutations of expGraphQLMutations, unless graphql.ini MutationsEnabled (enabled by default) switches them off.
+ * and the mutations of expGraphQLMutations, unless graphql.ini MutationsEnabled (enabled by default) switches them off,
+ * and the subscriptions of expGraphQLSubscriptions, unless Subscriptions (enabled by default) does.
  *
  * The schema hash (schemaHash()) changes when a class, an attribute, the naming or the mutations change; it is sent with every
  * answer (header X-GraphQL-Schema, siteaccess { schemaHash }). Loaded only after webonyx/graphql-php.
@@ -98,7 +99,7 @@ class expGraphQLSchemaBuilder
     public function schemaHash()
     {
         $hashed = self::VERSION . '|' . $this->catalogue->hash() . '|' . $this->naming->style() . '|' . json_encode( $this->typeNames )
-                  . ( expGraphQLMutations::enabled() ? '|mutations' : '' );
+                  . ( expGraphQLMutations::enabled() ? '|mutations' : '' ) . ( expGraphQLSubscriptions::enabled() ? '|subscriptions' : '' );
         if ( $this->extensions )
             $hashed .= '|' . implode( ',', expGraphQLSchemaExtensions::names( $this->extensions ) );
         return substr( sha1( $hashed ), 0, 12 );
@@ -290,6 +291,8 @@ class expGraphQLSchemaBuilder
             // the mutations unless they are switched off (graphql.ini MutationsEnabled, on by default): a schema without them
             // tells a client so, and the hash changes with them
             'mutation' => expGraphQLMutations::enabled() ? expGraphQLMutations::type( $types ) : null,
+            // the subscriptions (graphql.ini Subscriptions, on by default): answered at /api/graphql/subscribe only
+            'subscription' => expGraphQLSubscriptions::enabled() ? expGraphQLSubscriptions::type( $types ) : null,
             'types' => function () use ( $builder ) {
                 $all = array();
                 foreach ( $builder->catalogue()->identifiers() as $identifier )

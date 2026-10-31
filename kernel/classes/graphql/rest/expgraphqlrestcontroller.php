@@ -55,6 +55,66 @@ class expGraphQLRestController extends ezpRestMvcController
     }
 
     /**
+     * /api/graphql/subscribe: a subscription as an event stream (expGraphQLSubscriptions). The stream is written
+     * here, as it happens; the answer the REST layer writes afterwards is empty (expGraphQLRestStreamResponse). A
+     * refused request (switched off, not signed in, over a limit, not valid) is an ordinary JSON answer.
+     */
+    public function doSubscribe()
+    {
+        expGraphQLMessage::useLanguage( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ? (string)$_SERVER['HTTP_ACCEPT_LANGUAGE'] : '' );
+        if ( !expGraphQL::isEnabled() )
+            return self::answer( 404, expGraphQLServer::refusal( expGraphQLMessage::tr( 'The GraphQL API is switched off in this siteaccess.' ), expGraphQLError::DISABLED ) );
+        if ( !expGraphQL::loadLibrary() )
+            return self::answer( 503, expGraphQLServer::refusal( expGraphQLMessage::tr( 'The GraphQL library is not installed.' ), expGraphQLError::INTERNAL ) );
+        $request = expGraphQLServer::parseHttpRequest( $this->request->originalProtocol === 'http-get' ? 'GET' : 'POST',
+                                                       isset( $_SERVER['CONTENT_TYPE'] ) ? (string)$_SERVER['CONTENT_TYPE'] : '',
+                                                       (string)$this->request->body, (array)$this->request->get, (array)$this->request->post );
+        if ( isset( $request['error'] ) )
+            return self::answer( 400, expGraphQLServer::refusal( $request['error'], expGraphQLError::BAD_USER_INPUT ) );
+
+        $user = eZUser::currentUser();
+        $key = class_exists( 'expApiKeyRest' ) ? expApiKeyRest::current() : null;
+        if ( $key !== null )
+            $mode = expGraphQLContext::AUTH_API_KEY;
+        else
+            $mode = $user->isAnonymous() ? expGraphQLContext::AUTH_ANONYMOUS : expGraphQLContext::AUTH_TOKEN;
+        $hit = expGraphQLRateLimiter::hitRequest( $mode, $user, $key !== null ? (int)$key->attribute( 'id' ) : null );
+        $rateHeaders = $hit === null ? array() : expGraphQLRateLimiter::headers( $hit );
+        if ( $hit !== null && !$hit['allowed'] )
+            return self::answer( 429, expGraphQLRateLimiter::refusal( $hit ), $rateHeaders );
+        $builder = expGraphQLSchemaBuilder::fromSettings();
+        $context = new expGraphQLContext( $user, $mode, new expGraphQLRepository( $builder->catalogue() ), expGraphQLContext::requestBaseUrl() );
+        $context->apiKeyId = $key !== null ? (int)$key->attribute( 'id' ) : null;
+        $context->apiKeyScopes = $key !== null ? $key->scopeList() : null;
+        $context->httpMethod = $this->request->originalProtocol === 'http-get' ? 'GET' : 'POST';
+
+        $subscriptions = expGraphQLSubscriptions::fromSettings();
+        // the stream may run as long as the setting says (and a little for the end); Velocity ends it at StreamTimeout
+        @set_time_limit( (int)$subscriptions->settings()['maxDuration'] + 60 );
+        // (the CORS headers were sent by the REST kernel when the request began)
+        $answer = $subscriptions->respond( $builder, $request, $context, $_SERVER,
+            function ( $status, array $headers ) use ( $rateHeaders ) {
+                // what was printed before is not part of the stream; what follows leaves at every flush
+                $floor = class_exists( 'Q_WebServer_Capture', false ) ? (int)Q_WebServer_Capture::level() : 0;
+                eZExecution::discardOutputBuffers( $floor );
+                http_response_code( (int)$status );
+                foreach ( $headers + $rateHeaders as $name => $value )
+                    header( $name . ': ' . $value );
+            },
+            function ( $text ) {
+                echo $text;
+                flush();
+                return connection_aborted() !== 1;
+            },
+            function () { return connection_aborted() === 1; } );
+        if ( $answer['refusal'] !== null )
+            return self::answer( (int)$answer['status'], $answer['refusal'], $rateHeaders );
+        $result = new ezpRestMvcResult();
+        $result->status = new expGraphQLRestStreamResponse();
+        return $result;
+    }
+
+    /**
      * /api/graphql/playground: the playground of the administration, signed in with the session of the browser.
      */
     public function doPlayground()

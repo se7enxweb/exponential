@@ -79065,6 +79065,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>សម្រាប់ការចូលគេហទំព័រ %siteaccess ដែលបង្ហាញទំព័រនេះ។</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>ព្រឹត្តិការណ៍នីមួយៗដែលចំណុចបញ្ចប់ស្នើ (publish, update, trash, delete, move, hide, reveal, mutation) ត្រូវបានផ្ញើទៅវា ដោយមានហត្ថលេខា ដោយផ្នែក cronjob graphqlwebhooks។ ./console exp:graphql:webhooks ធ្វើដូចគ្នានឹងផ្នែកនេះ។</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ព្រឹត្តិការណ៍</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>ទាំងអស់</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>ការចូលគេហទំព័រទាំងអស់</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>ខូច</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>គ្មានការសម្ងាត់</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>កំពុងរង់ចាំ</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>បោះបង់ %count</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>ការបញ្ជូនចុងក្រោយ</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>ផ្ញើការសាកល្បង</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>បាទ/ចាស លុប Webhook នេះ</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>មិនទាន់មាន Webhook នៅឡើយទេ។</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>បន្ថែម Webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>បន្ថែម</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>ការបញ្ជូនថ្មីៗ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ពេលវេលា</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>លទ្ធផល</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>ការជាវ</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>ការធ្វើបច្ចុប្បន្នភាពផ្ទាល់សម្រាប់ម៉ាស៊ីនភ្ញៀវ៖ ស្ទ្រីមព្រឹត្តិការណ៍នៅ /api/graphql/subscribe និង WebSocket (graphql-transport-ws) នៅលើ Velocity។ ព្រឹត្តិការណ៍នីមួយៗទៅដល់តែអ្នកជាវដែលអាចអានខ្លឹមសាររបស់វាប៉ុណ្ណោះ។</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>កំពុងបើកឥឡូវ</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>បើកច្រើនបំផុត</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>សរុប %total, %user ក្នុងមួយអ្នកប្រើ, %address ក្នុងមួយអាសយដ្ឋាន</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>ការជាវអនាមិក</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>រយៈពេលស្ទ្រីម</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>មិនអាចបន្ថែម Webhook បានទេ៖ %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Webhook %name ត្រូវបានផ្លាស់ប្ដូរ។ ការសម្ងាត់ហត្ថលេខារបស់វានៅដដែល។</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>មិនអាចរក្សាទុកការសម្ងាត់ហត្ថលេខាបានទេ (ការរៀបចំ &gt; ការសម្ងាត់)។</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Webhook %name ត្រូវបានបន្ថែម។ ការសម្ងាត់ហត្ថលេខារបស់វា បង្ហាញតែម្ដងនេះប៉ុណ្ណោះ៖ %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>គ្មាន Webhook %name ទេ។</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Webhook %name មិនបានឆ្លើយតបទេ៖ %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Webhook %name បានឆ្លើយតប %status ក្នុងរយៈពេល %ms ms។</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>សូមធីកប្រអប់នៅក្បែរ Webhook ដើម្បីលុបវា។</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Webhook %name ត្រូវបានលុប។</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>មិនមែនជាវិសាលភាពនៃ GraphQL API ទេ៖ %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>សូមផ្ញើការជាវទៅ /api/graphql/subscribe (ស្ទ្រីមព្រឹត្តិការណ៍ ឬ WebSocket)។</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>សំណើមិនបានដាក់ឈ្មោះប្រតិបត្តិការណាមួយនៃឯកសារទេ។</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>ការជាវមួយស្នើសុំវាលតែមួយគត់។</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>មានការជាវបើកច្រើនពេក។ សូមព្យាយាមម្ដងទៀតពេលក្រោយ។</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>អ្នកមានការជាវបើក %max ដែលជាចំនួនអតិបរមាដែលអនុញ្ញាត។</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>អាសយដ្ឋានរបស់អ្នកមានការជាវបើក %max ដែលជាចំនួនអតិបរមាដែលអនុញ្ញាត។</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>ការជាវត្រូវបានបិទនៅក្នុងការចូលគេហទំព័រនេះ។</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>សូមចូលដើម្បីជាវ (តូខឹន ឬកូនសោ API ផ្ទាល់ខ្លួន)។</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>សូមផ្ញើម្យូតេសិនទៅ /api/graphql។</translation>
     </message>
 </context>
 </TS>

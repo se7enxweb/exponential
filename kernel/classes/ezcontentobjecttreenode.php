@@ -5415,6 +5415,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
             ezpEvent::getInstance()->notify( 'content/move', array( (int)$nodeID, (int)$node->attribute( 'contentobject_id' ), (int)$oldParentNodeID, (int)$newParentNodeID ) );
             if ( class_exists( 'expDataSyncListener' ) )
                 expDataSyncListener::moved( (int)$nodeID, (int)$node->attribute( 'contentobject_id' ) );
+            if ( class_exists( 'expGraphQLEventListener' ) )
+                expGraphQLEventListener::moved( (int)$nodeID, (int)$node->attribute( 'contentobject_id' ), (int)$oldParentNodeID, (int)$newParentNodeID );
 
             $newParentNode = eZContentObjectTreeNode::fetch( $newParentNodeID );
             $newParentPath = $newParentNode->attribute( 'path_string' );
@@ -7379,6 +7381,9 @@ class eZContentObjectTreeNode extends eZPersistentObject
                               'before' => array( 'hidden' => (bool)$node->attribute( 'is_hidden' ), 'invisible' => (bool)$node->attribute( 'is_invisible' ) ),
                               'after' => array( 'hidden' => $modifyRootNode ? true : (bool)$node->attribute( 'is_hidden' ), 'invisible' => true ) );
             } );
+        // the GraphQL event journal (webhooks, subscriptions): the node hidden itself, not a subtree's update
+        if ( $modifyRootNode && class_exists( 'expGraphQLEventListener' ) )
+            expGraphQLEventListener::hidden( $node, true );
 
         $db->begin();
 
@@ -7448,6 +7453,8 @@ class eZContentObjectTreeNode extends eZPersistentObject
                               'after' => array( 'hidden' => $modifyRootNode ? false : (bool)$node->attribute( 'is_hidden' ),
                                                 'invisible' => (bool)$parentNode->attribute( 'is_invisible' ) ) );
             } );
+        if ( $modifyRootNode && class_exists( 'expGraphQLEventListener' ) )
+            expGraphQLEventListener::hidden( $node, false );
 
         $db = eZDB::instance();
 

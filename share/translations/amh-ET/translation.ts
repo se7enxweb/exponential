@@ -79063,6 +79063,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>ይህን ገጽ ለሚያሳየው የጣቢያ መዳረሻ %siteaccess።</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>ዌብሁኮች</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>አንድ መድረሻ ነጥብ የሚጠይቀው እያንዳንዱ ክስተት (publish, update, trash, delete, move, hide, reveal, mutation) በcronjob ክፍሉ graphqlwebhooks ተፈርሞ ይላክለታል። ./console exp:graphql:webhooks ይህ ክፍል የሚያደርገውን ያደርጋል።</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>ክስተቶች</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>ሁሉም</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>እያንዳንዱ የጣቢያ መዳረሻ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>የተበላሸ</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>ሚስጥር የለም</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>በመጠባበቅ ላይ</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count ተትተዋል</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>የመጨረሻ ማድረስ</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>ሙከራ ላክ</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>አዎ፣ ይህን ዌብሁክ አስወግድ</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>እስካሁን ዌብሁክ የለም።</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>ዌብሁክ አክል</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>አክል</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>የቅርብ ጊዜ ማድረሶች</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ጊዜ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጤት</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>ምዝገባዎች</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>ለደንበኞች የቀጥታ ዝማኔዎች፦ በ/api/graphql/subscribe የክስተት ዥረት፣ እና በVelocity ላይ WebSocket (graphql-transport-ws)። እያንዳንዱ ክስተት ይዘቱን ማንበብ ለሚችሉ ተመዝጋቢዎች ብቻ ይሄዳል።</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>አሁን ክፍት</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>ከፍተኛው ክፍት</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>በአጠቃላይ %total፣ በተጠቃሚ %user፣ በአድራሻ %address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>ስም-አልባ ምዝገባዎች</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>የዥረት ርዝመት</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>ዌብሁኩ ሊታከል አልቻለም፦ %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>ዌብሁክ %name ተቀይሯል፤ የመፈረሚያ ሚስጥሩ እንዳለ ይቆያል።</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>የመፈረሚያ ሚስጥሩ ሊቀመጥ አልቻለም (ዝግጅት &gt; ሚስጥሮች)።</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>ዌብሁክ %name ታክሏል። የመፈረሚያ ሚስጥሩ፣ አሁን አንድ ጊዜ ብቻ የሚታየው፦ %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>ዌብሁክ %name የለም።</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>ዌብሁክ %name አልመለሰም፦ %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>ዌብሁክ %name በ%ms ms ውስጥ %status መለሰ።</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>ዌብሁኩን ለማስወገድ ከጎኑ ያለውን ሳጥን ምልክት ያድርጉ።</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>ዌብሁክ %name ተወግዷል።</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79337,6 +79473,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>የGraphQL API ወሰን አይደለም፦ %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>ምዝገባዎችን ወደ /api/graphql/subscribe ይላኩ (የክስተት ዥረት ወይም WebSocket)።</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>ጥያቄው የሰነዱን ምንም ክዋኔ አይጠቅስም።</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>ምዝገባ በትክክል አንድ መስክ ይጠይቃል።</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>በጣም ብዙ ምዝገባዎች ክፍት ናቸው፤ ቆይተው እንደገና ይሞክሩ።</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>%max ምዝገባዎች ክፍት አለዎት፣ ይህም የተፈቀደው ከፍተኛ ነው።</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>አድራሻዎ %max ምዝገባዎች ክፍት አሉት፣ ይህም የተፈቀደው ከፍተኛ ነው።</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>ምዝገባዎች በዚህ የጣቢያ መዳረሻ ውስጥ ጠፍተዋል።</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>ለመመዝገብ ይግቡ (ቶከን ወይም የግል የAPI ቁልፍ)።</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>ሚውቴሽኖችን ወደ /api/graphql ይላኩ።</translation>
     </message>
 </context>
 </TS>

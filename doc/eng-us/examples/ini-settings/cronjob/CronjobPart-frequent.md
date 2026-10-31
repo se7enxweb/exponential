@@ -25,8 +25,10 @@ Never edit `settings/cronjob.ini` itself: an update replaces it. Put the setting
 > checkpoint (audit.ini \[AuditRotationSettings\] RotateAfter). Here so that an installation  
 > running only the frequent group needs no extra crontab line.  
 > The bounce mailbox (mailpreferences.ini \[BounceSettings\]; does nothing until it is set up)  
+> The GraphQL webhooks: the events of the journal to their end points, with retries (graphql.ini \[GraphQLWebhooks\];  
+> does nothing until one is configured)  
 
-Default: a list of 6: `notification.php`, `workflow.php`, `contentjobs.php`, `datatablesync.php`, `audit.php`, `mailbounces.php`.
+Default: a list of 7: `notification.php`, `workflow.php`, `contentjobs.php`, `datatablesync.php`, `audit.php`, `mailbounces.php`, `graphqlwebhooks.php`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -40,6 +42,7 @@ Scripts[]=contentjobs.php
 Scripts[]=datatablesync.php
 Scripts[]=audit.php
 Scripts[]=mailbounces.php
+Scripts[]=graphqlwebhooks.php
 */ ?>
 ```
 

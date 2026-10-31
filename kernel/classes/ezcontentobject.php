@@ -2239,6 +2239,9 @@ class eZContentObject extends eZPersistentObject
         // the live mirror of the data tables removes the object's rows at the end of the request
         if ( class_exists( 'expDataSyncListener' ) )
             expDataSyncListener::gone( (int)$delID );
+        // the GraphQL event journal (webhooks, subscriptions): described now, while the object is still there
+        if ( class_exists( 'expGraphQLEventListener' ) )
+            expGraphQLEventListener::deleted( $this );
         // Who purges which object (doc/eng-us/bc/6.0/audit.md, content.object.purge); a subtree removal or the trash
         // records it as its child, eZContentObjectTreeNode::removeNodeFromTree() as content.object.remove
         if ( class_exists( 'expAuditHook' ) )
@@ -2389,6 +2392,11 @@ class eZContentObject extends eZPersistentObject
         // rows go; another location left: they stay)
         if ( class_exists( 'expDataSyncListener' ) )
             expDataSyncListener::removed( array( (int)$delID ) );
+        // the GraphQL event journal (webhooks, subscriptions): the object goes to the trash (not only one of its
+        // locations); described now, while its nodes are still there
+        if ( class_exists( 'expGraphQLEventListener' ) && expGraphQLEventListener::active()
+             && ( $nodeID === null || (int)$this->attribute( 'main_node_id' ) === (int)$nodeID || count( (array)$this->attribute( 'assigned_nodes' ) ) <= 1 ) )
+            expGraphQLEventListener::trashed( $this );
 
         // Who moves which object to the trash (doc/eng-us/bc/6.0/audit.md, content.node.remove.trash); inside
         // eZContentObjectTreeNode::removeNodeFromTree() the node removal is the record and this one is muted

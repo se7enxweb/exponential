@@ -79098,6 +79098,142 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Pro aditu situs %siteaccess, qui hanc paginam ostendit.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Uncini interretiales</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Omnis eventus quem punctum finale petit (publish, update, trash, delete, move, hide, reveal, mutation) ei mittitur, signatus, a parte cronjob graphqlwebhooks. ./console exp:graphql:webhooks idem facit quod haec sectio.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eventus</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>omnes</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Omnis aditus situs</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>fractus</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>sine secreto</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Exspectantes</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count omissae</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Ultima traditio</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Mitte probationem</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Ita, remove hunc uncinum</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Nullus uncinus adhuc.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Adde uncinum</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Adde</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Traditiones recentes</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tempus</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Exitus</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Subscriptiones</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Renovationes vivae clientibus: fluxus eventuum ad /api/graphql/subscribe, et WebSocket (graphql-transport-ws) in Velocity. Quisque eventus solum ad subscriptores it qui contentum eius legere possunt.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Nunc apertae</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Plurimae apertae</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total in summa, %user per usorem, %address per inscriptionem</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Subscriptiones anonymae</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Longitudo fluxus</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Uncinus addi non potuit: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Uncinus %name mutatus est; secretum signandi eius manet.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Secretum signandi servari non potuit (Configuratio &gt; Secreta).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Uncinus %name additus est. Secretum signandi eius, hac sola vice ostensum: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Nullus est uncinus %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Uncinus %name non respondit: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Uncinus %name respondit %status in %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Nota capsulam iuxta uncinum ut eum removeas.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Uncinus %name remotus est.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79372,6 +79508,42 @@ Classem nodi functione permutandi mutare debebis.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Non est ambitus API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Mitte subscriptiones ad /api/graphql/subscribe (fluxum eventuum aut WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Petitio nullam operationem documenti nominat.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Subscriptio unum campum exacte petit.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Nimis multae subscriptiones apertae sunt; postea iterum conare.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Habes %max subscriptiones apertas, plurimas permissas.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Inscriptio tua %max subscriptiones apertas habet, plurimas permissas.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Subscriptiones in hoc aditu situs exstinctae sunt.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Inscribe te ut subscribas (signo aut clave API personali).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Mitte mutationes ad /api/graphql.</translation>
     </message>
 </context>
 </TS>

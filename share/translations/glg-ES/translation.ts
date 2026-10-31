@@ -79065,6 +79065,142 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Para o acceso ao sitio %siteaccess, que mostra esta páxina.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Cada evento que pide un punto final (publish, update, trash, delete, move, hide, reveal, mutation) envíaselle, asinado, mediante a parte de cronjob graphqlwebhooks. ./console exp:graphql:webhooks fai o mesmo ca esta sección.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Eventos</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>todos</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Todos os accesos ao sitio</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>roto</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>sen segredo</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>En espera</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count abandonadas</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Última entrega</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Enviar unha proba</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Si, eliminar este webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Aínda non hai ningún webhook.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Engadir un webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Engadir</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Entregas recentes</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultado</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Subscricións</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Actualizacións en directo para os clientes: un fluxo de eventos en /api/graphql/subscribe e un WebSocket (graphql-transport-ws) en Velocity. Cada evento só chega aos subscritores que poden ler o seu contido.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Abertas agora</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Máximo abertas</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total en total, %user por usuario, %address por enderezo</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Subscricións anónimas</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Duración do fluxo</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Non se puido engadir o webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Cambiouse o webhook %name; o seu segredo de sinatura mantense.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Non se puido gardar o segredo de sinatura (Configuración &gt; Segredos).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Engadiuse o webhook %name. O seu segredo de sinatura, que se mostra só esta vez: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Non existe o webhook %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>O webhook %name non respondeu: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>O webhook %name respondeu %status en %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Marca a caixa xunto ao webhook para eliminalo.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Eliminouse o webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Non é un ámbito da API GraphQL: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Envía as subscricións a /api/graphql/subscribe (un fluxo de eventos ou un WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>A petición non nomea ningunha operación do documento.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Unha subscrición pide exactamente un campo.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Hai demasiadas subscricións abertas; téntao de novo máis tarde.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Tes %max subscricións abertas, o máximo permitido.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>O teu enderezo ten %max subscricións abertas, o máximo permitido.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>As subscricións están desactivadas neste acceso ao sitio.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Inicia sesión para subscribirte (un token ou unha clave de API persoal).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Envía as mutacións a /api/graphql.</translation>
     </message>
 </context>
 </TS>

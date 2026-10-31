@@ -79095,6 +79095,142 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Prieigai prie svetainės %siteaccess, kuri rodo šį puslapį.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Žiniatinklio kabliukai</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Kiekvieną įvykį, kurio prašo galinis taškas (publish, update, trash, delete, move, hide, reveal, mutation), jam pasirašytą siunčia cronjob dalis graphqlwebhooks. ./console exp:graphql:webhooks daro tą patį, ką ši skiltis.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Įvykiai</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>visi</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Kiekviena prieiga prie svetainės</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>sugedęs</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>be paslapties</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Laukia</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count atsisakyta</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Paskutinis pristatymas</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Siųsti bandymą</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Taip, pašalinti šį žiniatinklio kabliuką</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Žiniatinklio kabliukų dar nėra.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Pridėti žiniatinklio kabliuką</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Pridėti</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Naujausi pristatymai</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laikas</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultatas</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Prenumeratos</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Tiesioginiai atnaujinimai klientams: įvykių srautas adresu /api/graphql/subscribe ir WebSocket (graphql-transport-ws) per Velocity. Kiekvienas įvykis siunčiamas tik tiems prenumeratoriams, kurie gali skaityti jo turinį.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Atvirų dabar</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Daugiausia atvirų</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>Iš viso %total, %user vienam naudotojui, %address vienam adresui</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anoniminės prenumeratos</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Srauto trukmė</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Žiniatinklio kabliuko pridėti nepavyko: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Žiniatinklio kabliukas %name pakeistas; jo pasirašymo paslaptis lieka.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Pasirašymo paslapties išsaugoti nepavyko (Sąranka &gt; Slaptieji duomenys).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Žiniatinklio kabliukas %name pridėtas. Jo pasirašymo paslaptis, rodoma tik šį kartą: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Žiniatinklio kabliuko %name nėra.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Žiniatinklio kabliukas %name neatsakė: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Žiniatinklio kabliukas %name atsakė %status per %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Pažymėkite langelį šalia žiniatinklio kabliuko, kad jį pašalintumėte.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Žiniatinklio kabliukas %name pašalintas.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79369,6 +79505,42 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Ne GraphQL API aprėptis: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Prenumeratas siųskite adresu /api/graphql/subscribe (įvykių srautas arba WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Prašyme nenurodyta jokia dokumento operacija.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Prenumerata prašo lygiai vieno lauko.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Atvira per daug prenumeratų; bandykite vėliau.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Turite %max atvirų prenumeratų, daugiausia leidžiamų.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Jūsų adresas turi %max atvirų prenumeratų, daugiausia leidžiamų.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Šioje prieigoje prie svetainės prenumeratos išjungtos.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Prisijunkite, kad galėtumėte prenumeruoti (žetonu arba asmeniniu API raktu).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Mutacijas siųskite adresu /api/graphql.</translation>
     </message>
 </context>
 </TS>

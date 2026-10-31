@@ -33,7 +33,8 @@ class expGraphQLNaming
                                   'GeoLocation', 'Rating', 'Metadata', 'EnhancedLink', 'Option', 'OptionList', 'OptionGroup', 'Range',
                                   'CurrencyPrice', 'EnumValue', 'SearchResult', 'SearchFacet', 'SearchFacetValue', 'Tag', 'Layout',
                                   'LayoutZone', 'LayoutBlock', 'LayoutBlockParameter',
-                                  'Upload', 'FieldInput', 'FieldFormat', 'MutationStatus', 'ContentPayload', 'PreviewToken' );
+                                  'Upload', 'FieldInput', 'FieldFormat', 'MutationStatus', 'ContentPayload', 'PreviewToken',
+                                  'ContentEvent', 'ContentEventKind' );
 
     /** The fields every content type has (the interface Content): an attribute of the same name gets _field. */
     const CONTENT_FIELDS = array( 'id', 'remoteId', 'name', 'classIdentifier', 'className', 'published', 'modified', 'language',

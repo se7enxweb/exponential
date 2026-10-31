@@ -79095,6 +79095,142 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Vietnes piekļuvei %siteaccess, kas rāda šo lapu.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Tīmekļa āķi</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Katru notikumu, ko galapunkts pieprasa (publish, update, trash, delete, move, hide, reveal, mutation), tam parakstītu nosūta cronjob daļa graphqlwebhooks. ./console exp:graphql:webhooks dara to pašu, ko šī sadaļa.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Notikumi</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>visi</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Katra vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>bojāts</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>bez noslēpuma</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Gaida</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count atmesti</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Pēdējā piegāde</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Sūtīt testu</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Jā, noņemt šo tīmekļa āķi</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Vēl nav neviena tīmekļa āķa.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Pievienot tīmekļa āķi</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Pievienot</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Nesenās piegādes</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laiks</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultāts</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Abonementi</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Tiešraides atjauninājumi klientiem: notikumu straume adresē /api/graphql/subscribe un WebSocket (graphql-transport-ws) uz Velocity. Katrs notikums tiek nosūtīts tikai tiem abonentiem, kuri drīkst lasīt tā saturu.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Atvērti tagad</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Maksimāli atvērti</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>Kopā %total, %user uz lietotāju, %address uz adresi</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Anonīmi abonementi</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Straumes ilgums</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Tīmekļa āķi nevarēja pievienot: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Tīmekļa āķis %name tika mainīts; tā parakstīšanas noslēpums paliek.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Parakstīšanas noslēpumu nevarēja saglabāt (Iestatīšana &gt; Noslēpumi).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Tīmekļa āķis %name tika pievienots. Tā parakstīšanas noslēpums, parādīts tikai šoreiz: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>Nav tīmekļa āķa %name.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Tīmekļa āķis %name neatbildēja: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Tīmekļa āķis %name atbildēja %status %ms ms laikā.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Atzīmējiet rūtiņu blakus tīmekļa āķim, lai to noņemtu.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Tīmekļa āķis %name tika noņemts.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79369,6 +79505,42 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>Nav GraphQL API tvērums: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Sūtiet abonementus uz /api/graphql/subscribe (notikumu straume vai WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Pieprasījums nenosauc nevienu dokumenta operāciju.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Abonements pieprasa tieši vienu lauku.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Atvērts pārāk daudz abonementu; mēģiniet vēlāk vēlreiz.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Jums ir atvērti %max abonementi, maksimālais atļautais skaits.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Jūsu adresei ir atvērti %max abonementi, maksimālais atļautais skaits.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Šajā vietnes piekļuvē abonementi ir izslēgti.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Pierakstieties, lai abonētu (marķieris vai personīga API atslēga).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Sūtiet mutācijas uz /api/graphql.</translation>
     </message>
 </context>
 </TS>

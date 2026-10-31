@@ -79073,6 +79073,142 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>For di siteaccess %siteaccess, wey dey show dis page.</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Webhooks</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Every event wey end point ask for (publish, update, trash, delete, move, hide, reveal, mutation), di cronjob part graphqlwebhooks dey send am go there, wit signature. ./console exp:graphql:webhooks dey do di same tin as dis section.</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Events</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>all of dem</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>All siteaccess</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>don spoil</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>no get secret</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Dey wait</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count wey dem don leave</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Last delivery</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Send test</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Yes, comot dis webhook</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>No webhook yet.</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Add webhook</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Add</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Deliveries wey just happen</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Time</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Result</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Subscriptions</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Live updates for clients: event stream for /api/graphql/subscribe, and WebSocket (graphql-transport-ws) for Velocity. Each event dey go only to subscribers wey fit read di content.</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Dey open now</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Di most wey fit open</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>%total for all, %user for each user, %address for each address</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Subscriptions wey no get name</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>How long stream go last</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>We no fit add di webhook: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>Dem don change di webhook %name; im signing secret still dey.</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>We no fit keep di signing secret (Setup &gt; Secrets).</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>Dem don add di webhook %name. Im signing secret, wey we go show only dis one time: %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>No webhook %name dey.</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>Di webhook %name no answer: %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>Di webhook %name answer %status inside %ms ms.</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Tick di box near di webhook to comot am.</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>Dem don comot di webhook %name.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79347,6 +79483,42 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>E no be scope of di GraphQL API: %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Send subscriptions go /api/graphql/subscribe (event stream or WebSocket).</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Di request no name any operation for di document.</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>One subscription dey ask for only one field.</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Too many subscriptions dey open; try again later.</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>You get %max subscriptions wey dey open, na di most wey dem allow.</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Your address get %max subscriptions wey dey open, na di most wey dem allow.</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Dem don off subscriptions for dis siteaccess.</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Sign in to subscribe (token or your own API key).</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Send mutations go /api/graphql.</translation>
     </message>
 </context>
 </TS>

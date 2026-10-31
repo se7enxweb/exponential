@@ -79065,6 +79065,142 @@ You will need to change the class of the node by using the swap functionality.</
         <source>For the siteaccess %siteaccess, which shows this page.</source>
         <translation>Կայքի %siteaccess մուտքի կետի համար, որը ցույց է տալիս այս էջը։</translation>
     </message>
+    <message>
+        <source>Webhooks</source>
+        <translation>Վեբհուքեր</translation>
+    </message>
+    <message>
+        <source>Every event an end point asks for (publish, update, trash, delete, move, hide, reveal, mutation) is sent to it, signed, by the cronjob part graphqlwebhooks. ./console exp:graphql:webhooks does the same as this section.</source>
+        <translation>Յուրաքանչյուր իրադարձություն, որ վերջնակետը խնդրում է (publish, update, trash, delete, move, hide, reveal, mutation), ստորագրված ուղարկվում է նրան cronjob-ի graphqlwebhooks մասի կողմից։ Հրամանը ./console exp:graphql:webhooks անում է նույնը, ինչ այս բաժինը։</translation>
+    </message>
+    <message>
+        <source>Events</source>
+        <translation>Իրադարձություններ</translation>
+    </message>
+    <message>
+        <source>all</source>
+        <translation>բոլորը</translation>
+    </message>
+    <message>
+        <source>Every siteaccess</source>
+        <translation>Կայքի յուրաքանչյուր մուտքի կետ</translation>
+    </message>
+    <message>
+        <source>broken</source>
+        <translation>խափանված</translation>
+    </message>
+    <message>
+        <source>no secret</source>
+        <translation>առանց գաղտնիքի</translation>
+    </message>
+    <message>
+        <source>Waiting</source>
+        <translation>Սպասող</translation>
+    </message>
+    <message>
+        <source>%count given up</source>
+        <translation>%count հրաժարված</translation>
+    </message>
+    <message>
+        <source>Last delivery</source>
+        <translation>Վերջին առաքում</translation>
+    </message>
+    <message>
+        <source>Send a test</source>
+        <translation>Ուղարկել փորձնական</translation>
+    </message>
+    <message>
+        <source>Yes, remove this webhook</source>
+        <translation>Այո, հեռացնել այս վեբհուքը</translation>
+    </message>
+    <message>
+        <source>No webhook yet.</source>
+        <translation>Վեբհուք դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>Add a webhook</source>
+        <translation>Ավելացնել վեբհուք</translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation>Ավելացնել</translation>
+    </message>
+    <message>
+        <source>Recent deliveries</source>
+        <translation>Վերջին առաքումներ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ժամ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Արդյունք</translation>
+    </message>
+    <message>
+        <source>Subscriptions</source>
+        <translation>Բաժանորդագրություններ</translation>
+    </message>
+    <message>
+        <source>Live updates for clients: an event stream at /api/graphql/subscribe, and a WebSocket (graphql-transport-ws) on Velocity. Each event goes only to subscribers who may read its content.</source>
+        <translation>Կենդանի թարմացումներ հաճախորդների համար՝ իրադարձությունների հոսք /api/graphql/subscribe հասցեում և WebSocket (graphql-transport-ws) Velocity-ում։ Յուրաքանչյուր իրադարձություն գնում է միայն այն բաժանորդներին, որոնք կարող են կարդալ դրա բովանդակությունը։</translation>
+    </message>
+    <message>
+        <source>Open now</source>
+        <translation>Այժմ բաց</translation>
+    </message>
+    <message>
+        <source>Most open</source>
+        <translation>Առավելագույնը բաց</translation>
+    </message>
+    <message>
+        <source>%total in all, %user per user, %address per address</source>
+        <translation>ընդամենը %total, %user մեկ օգտատիրոջ համար, %address մեկ հասցեի համար</translation>
+    </message>
+    <message>
+        <source>Anonymous subscriptions</source>
+        <translation>Անանուն բաժանորդագրություններ</translation>
+    </message>
+    <message>
+        <source>Stream length</source>
+        <translation>Հոսքի տևողություն</translation>
+    </message>
+    <message>
+        <source>The webhook could not be added: %error</source>
+        <translation>Վեբհուքը հնարավոր չեղավ ավելացնել՝ %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name was changed; its signing secret stays.</source>
+        <translation>%name վեբհուքը փոխվեց, դրա ստորագրման գաղտնիքը մնում է։</translation>
+    </message>
+    <message>
+        <source>The signing secret could not be stored (Setup &gt; Secrets).</source>
+        <translation>Ստորագրման գաղտնիքը հնարավոր չեղավ պահել (Կարգաբերում &gt; Գաղտնիքներ)։</translation>
+    </message>
+    <message>
+        <source>The webhook %name was added. Its signing secret, shown this once: %secret</source>
+        <translation>%name վեբհուքն ավելացվեց։ Դրա ստորագրման գաղտնիքը, որ ցուցադրվում է միայն այս անգամ՝ %secret</translation>
+    </message>
+    <message>
+        <source>There is no webhook %name.</source>
+        <translation>%name վեբհուք չկա։</translation>
+    </message>
+    <message>
+        <source>The webhook %name did not answer: %error</source>
+        <translation>%name վեբհուքը չպատասխանեց՝ %error</translation>
+    </message>
+    <message>
+        <source>The webhook %name answered %status in %ms ms.</source>
+        <translation>%name վեբհուքը պատասխանեց %status %ms ms ընթացքում։</translation>
+    </message>
+    <message>
+        <source>Tick the box beside the webhook to remove it.</source>
+        <translation>Նշեք վեբհուքի կողքի վանդակը՝ այն հեռացնելու համար։</translation>
+    </message>
+    <message>
+        <source>The webhook %name was removed.</source>
+        <translation>%name վեբհուքը հեռացվեց։</translation>
+    </message>
 </context>
 <context>
     <name>kernel/graphql</name>
@@ -79339,6 +79475,42 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Not a scope of the GraphQL API: %scope (graphql:read, graphql:write)</source>
         <translation>GraphQL API-ի շրջանակ չէ՝ %scope (graphql:read, graphql:write)</translation>
+    </message>
+    <message>
+        <source>Send subscriptions to /api/graphql/subscribe (an event stream or a WebSocket).</source>
+        <translation>Ուղարկեք բաժանորդագրությունները /api/graphql/subscribe հասցեով (իրադարձությունների հոսք կամ WebSocket)։</translation>
+    </message>
+    <message>
+        <source>The request names no operation of the document.</source>
+        <translation>Հայտը չի անվանում փաստաթղթի որևէ գործողություն։</translation>
+    </message>
+    <message>
+        <source>A subscription asks for exactly one field.</source>
+        <translation>Բաժանորդագրությունը խնդրում է ճիշտ մեկ դաշտ։</translation>
+    </message>
+    <message>
+        <source>Too many subscriptions are open; try again later.</source>
+        <translation>Չափազանց շատ բաժանորդագրություններ են բաց, փորձեք ավելի ուշ։</translation>
+    </message>
+    <message>
+        <source>You have %max subscriptions open, the most allowed.</source>
+        <translation>Դուք ունեք %max բաց բաժանորդագրություն՝ թույլատրված առավելագույնը։</translation>
+    </message>
+    <message>
+        <source>Your address has %max subscriptions open, the most allowed.</source>
+        <translation>Ձեր հասցեն ունի %max բաց բաժանորդագրություն՝ թույլատրված առավելագույնը։</translation>
+    </message>
+    <message>
+        <source>Subscriptions are switched off in this siteaccess.</source>
+        <translation>Բաժանորդագրություններն անջատված են կայքի այս մուտքի կետում։</translation>
+    </message>
+    <message>
+        <source>Sign in to subscribe (a token or a personal API key).</source>
+        <translation>Մուտք գործեք՝ բաժանորդագրվելու համար (թոքեն կամ անձնական API բանալի)։</translation>
+    </message>
+    <message>
+        <source>Send mutations to /api/graphql.</source>
+        <translation>Ուղարկեք մուտացիաները /api/graphql հասցեով։</translation>
     </message>
 </context>
 </TS>
