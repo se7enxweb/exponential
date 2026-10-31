@@ -24699,7 +24699,7 @@ c268c18a2be5130cdc99d8336a339e80  kernel/private/rest/classes/auth/apikey_rest.p
 05991905a247858e55fd8c07fc0a4b05  kernel/private/rest/classes/auth/password_auth_filter.php
 91ccf413836b26121bfee1a92fe70e27  kernel/private/rest/classes/auth/styles/abstract_auth_style.php
 0adebbcf8c5de788a2803ec2b5d46aad  kernel/private/rest/classes/auth/styles/basic_auth.php
-83a0a52715aac77a59f3c8a8fd2de764  kernel/private/rest/classes/auth/styles/no_auth.php
+33383c1d4bb5ba8b5908eabf8d52f7b5  kernel/private/rest/classes/auth/styles/no_auth.php
 326f03b7815ed932843faab9113f5778  kernel/private/rest/classes/auth/styles/oauth.php
 1cf01fcc10bc99e95e50526e9e570424  kernel/private/rest/classes/cache/apc.php
 cb2343f4f305b17cccc5348ef4a8e81c  kernel/private/rest/classes/cache/clear_routes.php
@@ -27588,6 +27588,7 @@ f48c7d872800688288addaa642455d68  tests/tests/kernel/classes/reauth/expReauthFac
 fe6993b4ed4e71c5455d512d4e756159  tests/tests/kernel/classes/requestrules/ezpRequestRuleEngineTest.php
 0f48dfc34c92e132dcf7260930b53b53  tests/tests/kernel/classes/rest/ezpOauthUtilityTokenTest.php
 8a321a99dbb6c2168c71dd3a5ec6f922  tests/tests/kernel/classes/rest/ezpRestHttpRequestParserTest.php
+fa5ffec1af84e4cc4b3f2f45d759aac0  tests/tests/kernel/classes/rest/ezpRestNoAuthStyleTest.php
 4a04075e53961aaaf5099d2765ebb8b0  tests/tests/kernel/classes/rest/ezpRestPrefixFilterTest.php
 214a07ba9ddb185b69509f6b7b255b55  tests/tests/kernel/classes/rest/ezpRestRoutesTest.php
 50f974a7c652f382b4bde537a05bea3a  tests/tests/kernel/classes/rest/ezpRestStatusResponseTest.php
