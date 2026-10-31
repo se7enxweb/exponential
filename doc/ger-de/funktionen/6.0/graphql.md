@@ -8,9 +8,11 @@ Attribut ein Feld. Jede Abfrage läuft als ein Benutzer der Installation, angeme
 persönlichen API-Schlüssel, der Sitzung der Administration oder als anonymer Benutzer, und die Rollen und Richtlinien
 dieses Benutzers entscheiden, was er lesen darf, genau wie in der Weboberfläche.
 
-Die API liest Inhalte (Abfragen, gespeicherte Abfragen mit Antwort-Cache, Suche, Tags und Layouts) und ändert sie,
-wo [Mutationen](#mutationen) eingeschaltet sind, mit denselben Richtlinien, Workflows und demselben Audit wie die
-Administration. Was spätere Phasen hinzufügen, steht unter [Was als Nächstes kommt](#was-als-nächstes-kommt).
+Die API liest Inhalte (Abfragen, gespeicherte Abfragen mit Antwort-Cache, Suche, Tags und Layouts), ändert sie, wo
+[Mutationen](#mutationen) eingeschaltet sind, mit denselben Richtlinien, Workflows und demselben Audit wie die
+Administration, und sagt anderen, was sich ändert, während es geschieht:
+[signierte Webhooks und Subscriptions](#echtzeit-webhooks-und-subscriptions) über SSE und WebSocket. Was spätere
+Phasen hinzufügen, steht unter [Was als Nächstes kommt](#was-als-nächstes-kommt).
 
 | | |
 |---|---|
@@ -19,10 +21,11 @@ Administration. Was spätere Phasen hinzufügen, steht unter [Was als Nächstes 
 | Bibliothek | `webonyx/graphql-php` 15, verlangt von der `composer.json` im Wurzelverzeichnis |
 | Anmeldung | ein OAuth-Token, ein persönlicher API-Schlüssel mit dem Bereich `graphql:read` (und `graphql:write` für Mutationen), die Sitzung (Playground) oder keine (anonym) |
 | Mutationen | zusammen mit dem Endpunkt eingeschaltet (`MutationsEnabled=enabled`, der Standard; `disabled` je Siteaccess für eine API, die nur liest); gegen Richtlinien geprüft, mit Workflows, im Audit, nur `POST`, nur angemeldet |
+| Echtzeit | Webhooks (signierte POSTs der Ereignisse publish, update, trash, delete, move, hide, reveal und mutation, mit Wiederholungen) und Subscriptions (`/api/graphql/subscribe`: SSE überall, ein WebSocket mit `graphql-transport-ws` mit Velocity), jedes Ereignis gegen die Rechte des Abonnenten geprüft |
 | Rechte | immer die Rollen und Richtlinien des Benutzers; die Schema-Einstellungen entscheiden, was überhaupt gefragt werden kann |
 | Administration | Setup > GraphQL (Richtlinie `graphql/playground`): die Endpunkte, das Schema, die Siteaccesses, die Grenzen, der Antwort-Cache, die gespeicherten Abfragen, die Schlüssel und ein Playground; Schalter mit `graphql/administrate` |
-| Konsole | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys`, `exp:graphql:starter`, `exp:graphql:bench` |
-| Einstellungen | [graphql.ini [GraphQLSettings]](../../beispiele/ini-einstellungen/graphql/GraphQLSettings.md), [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md) |
+| Konsole | `exp:graphql:enable`, `exp:graphql:disable`, `exp:graphql:status`, `exp:graphql:schema`, `exp:graphql:query`, `exp:graphql:persist`, `exp:graphql:keys`, `exp:graphql:starter`, `exp:graphql:bench`, `exp:graphql:webhooks` |
+| Einstellungen | [graphql.ini [GraphQLSettings]](../../beispiele/ini-einstellungen/graphql/GraphQLSettings.md), [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md), [[GraphQLEvents]](../../beispiele/ini-einstellungen/graphql/GraphQLEvents.md), [[GraphQLWebhooks]](../../beispiele/ini-einstellungen/graphql/GraphQLWebhooks.md) |
 
 ## Inhalt
 
@@ -33,15 +36,16 @@ Administration. Was spätere Phasen hinzufügen, steht unter [Was als Nächstes 
 5. [Abfragen, mit Beispielen](#abfragen-mit-beispielen)
 6. [Mutationen](#mutationen)
 7. [Gespeicherte Abfragen](#gespeicherte-abfragen)
-8. [Sicherheit](#sicherheit)
-9. [Geschwindigkeit](#geschwindigkeit)
-10. [Fehler](#fehler)
-11. [Der Playground und der Sitzungs-Endpunkt](#der-playground-und-der-sitzungs-endpunkt)
-12. [Schema-Erweiterungen](#schema-erweiterungen)
-13. [Konsolenbefehle](#konsolenbefehle)
-14. [Die Bibliothek](#die-bibliothek)
-15. [Einstellungen](#einstellungen)
-16. [Was als Nächstes kommt](#was-als-nächstes-kommt)
+8. [Echtzeit: Webhooks und Subscriptions](#echtzeit-webhooks-und-subscriptions)
+9. [Sicherheit](#sicherheit)
+10. [Geschwindigkeit](#geschwindigkeit)
+11. [Fehler](#fehler)
+12. [Der Playground und der Sitzungs-Endpunkt](#der-playground-und-der-sitzungs-endpunkt)
+13. [Schema-Erweiterungen](#schema-erweiterungen)
+14. [Konsolenbefehle](#konsolenbefehle)
+15. [Die Bibliothek](#die-bibliothek)
+16. [Einstellungen](#einstellungen)
+17. [Was als Nächstes kommt](#was-als-nächstes-kommt)
 
 ## Schnellstart in 60 Sekunden
 
@@ -807,6 +811,272 @@ ausführen; `enabled` tut das für jede Anfrage an `/api/graphql`. Eine Ad-hoc-A
 `PERSISTED_QUERY_REQUIRED` abgelehnt. Der Playground (der Sitzungs-Endpunkt) und die Konsole führen jede Abfrage aus.
 `PersistedQueries=disabled` schaltet gespeicherte Abfragen ab (`PERSISTED_QUERY_NOT_SUPPORTED`).
 
+## Echtzeit: Webhooks und Subscriptions
+
+Zwei Wege, von Änderungen an Inhalten zu erfahren, während sie geschehen, beide aus demselben **Ereignisjournal**:
+
+| | Webhooks | Subscriptions |
+|---|---|---|
+| Wer hört zu | ein anderer Server (ein Shop, ein Suchindex, ein CDN, ein Chat-Kanal) | ein Client: ein Browser, eine App, ein Dashboard |
+| Wie | die Installation sendet einen signierten JSON-Body per POST an eine URL | der Client hält einen Stream offen: SSE unter `/api/graphql/subscribe` oder ein WebSocket (`graphql-transport-ws`) mit Velocity |
+| Rechte | von einem Administrator eingerichtet, gesendet unabhängig von den Richtlinien des Inhalts | jedes Ereignis nur an Abonnenten, die seinen Inhalt lesen dürfen, je Ereignis geprüft |
+| Eingerichtet mit | `./console exp:graphql:webhooks --add=... --apply`, Setup > GraphQL | `subscription { ... }` vom Client |
+| Zustellung | mindestens einmal, mit Wiederholungen über Stunden, protokolliert | solange der Stream offen ist; ein Client, der sich mit `Last-Event-ID` wieder verbindet, verpasst nichts, was das Journal noch hat |
+
+### Das Ereignisjournal
+
+Wo immer sich Inhalte ändern (in der Administration, durch eine GraphQL-Mutation, einen Befehl, einen Cronjob, einen
+Import), notiert der Kernel es und schreibt am Ende dieser Anfrage, nach ihrer Transaktion, eine JSON-Zeile je Ereignis
+nach `var/<site>/graphql/events/`:
+
+| Ereignis | Wann |
+|---|---|
+| `publish` | die erste Version eines Objekts wird veröffentlicht (neuer Inhalt) |
+| `update` | eine spätere Version wird veröffentlicht |
+| `trash` | ein Objekt kommt in den Papierkorb |
+| `delete` | ein Objekt wird endgültig entfernt |
+| `move` | ein Ort wird unter einen anderen Elternknoten verschoben |
+| `hide`, `reveal` | ein Ort wird verborgen oder wieder sichtbar |
+| `mutation` | eine GraphQL-Mutation war erfolgreich (`mutation` nennt sie: `createContent`, `moveContent` ...) |
+
+Ein Ereignis enthält die Objekt-ID und die Remote-ID, die Version, die Klasse, den Namen, die Sprache und die Sprachen
+der Version, die Orte und ihre Elternknoten und die Zeit. Aus der Anfrage, die den Inhalt geändert hat, wird nichts
+gesendet: Die Webhooks sendet ein Cronjob-Teil, und eine Subscription liest das Journal selbst. Das Journal wird nur
+geschrieben, solange die API eingeschaltet ist und jemand zuhört (Subscriptions an oder ein Webhook eingerichtet); eine
+Datei wächst bis `[GraphQLEvents] JournalMaxBytes` (5 MB), dann beginnt die nächste, und die neuesten `JournalKeep` (3)
+Dateien bleiben. Dateien statt einer Tabelle: Eine Subscription folgt dem Journal ohne Datenbankverbindung, jeder
+PHP-FPM- und Velocity-Worker sieht dieselben Ereignisse, und ein Schreiber hängt unter einer exklusiven Sperre an.
+
+### Webhooks
+
+```bash
+# ein Probelauf zeigt die Änderung an settings/override/graphql.ini.append.php
+./console exp:graphql:webhooks --add=shop --url=https://shop.example.com/hooks/exponential \
+    --events=publish,update,trash --classes=ng_article --siteaccess=site
+# schreiben, das Signiergeheimnis erzeugen und einmal zeigen
+./console exp:graphql:webhooks --add=shop --url=https://shop.example.com/hooks/exponential \
+    --events=publish,update,trash --classes=ng_article --siteaccess=site --apply
+./console exp:graphql:webhooks --test=shop --apply       # ein Testereignis (ping), sofort
+./console exp:graphql:webhooks                           # die Liste, ihr Zustand, wartende und aufgegebene
+./console exp:graphql:webhooks --log --limit=50          # das Zustellprotokoll
+./console exp:graphql:webhooks --remove=shop --apply
+```
+
+Dasselbe geht in Setup > GraphQL, Abschnitt *Webhooks* (mit der Richtlinie `graphql/administrate`), der auch die
+letzten Zustellungen zeigt. In beiden Fällen wird der Endpunkt zu Einstellungen:
+
+```ini
+[GraphQLWebhooks]
+EndpointList[]=shop
+
+[GraphQLWebhook_shop]
+URL=https://shop.example.com/hooks/exponential
+Events[]=publish
+Events[]=update
+Events[]=trash
+SiteAccessList[]=site
+ClassList[]=ng_article
+Secret=graphql.webhook.shop
+Payload=event
+```
+
+`Events[]` leer: jedes Ereignis. `SiteAccessList[]`: nur Inhalte unter dem Wurzelknoten dieser Siteaccesses
+(`content.ini [NodeSettings] RootNode`), in ihren Sprachen (`SiteLanguageList[]`). `SubtreeList[]`: nur Inhalte an
+oder unter diesen Knoten. `Enabled=disabled` behält einen Endpunkt, sendet ihm aber nichts.
+
+**Die Anfrage.** `POST`, `Content-Type: application/json`:
+
+```json
+{"data":{"contentEvent":{"id":"1761815702120381-5b0c2e7a","event":"publish","time":"2026-10-30T09:15:02.120Z",
+  "objectId":312,"remoteId":"8f2c...","version":1,"classIdentifier":"ng_article","name":"Ten minutes of mobility",
+  "language":"eng-US","languages":["eng-US"],"nodeIds":[868],"mainNodeId":868,"parentNodeIds":[556],
+  "oldParentNodeId":null,"newParentNodeId":null,"mutation":null}},
+ "extensions":{"schema":"exp-graphql-webhook/1","webhook":"shop","delivery":"1761815760004112-c41d9e02","attempt":1}}
+```
+
+mit den Headern `X-Exponential-Webhook`, `X-Exponential-Event`, `X-Exponential-Event-Id`, `X-Exponential-Delivery`,
+`X-Exponential-Timestamp` (Sekunden seit der Epoche) und `X-Exponential-Signature: sha256=<hex>`, dem HMAC-SHA-256 von
+`<timestamp>.<body>` mit dem Signiergeheimnis des Endpunkts. `Payload=query` sendet stattdessen die Antwort einer
+gespeicherten Abfrage (`Query=`, ihr Name oder SHA-256), ausgeführt als `QueryUser` (ein Login; standardmäßig der
+anonyme Benutzer) mit den Variablen `objectId`, `nodeId` (der Hauptort), `version`, `language` und `event`; das
+Ereignis steht dann in `extensions.event`.
+
+**Die Prüfung** auf der Empfängerseite: die Signatur über den Zeitstempel und den unveränderten Body, in konstanter Zeit
+verglichen, und ein Zeitstempel, der höchstens fünf Minuten abweicht (so kann eine aufgezeichnete Anfrage später nicht
+wiederholt werden):
+
+```php
+$body = file_get_contents( 'php://input' );
+$ts = $_SERVER['HTTP_X_EXPONENTIAL_TIMESTAMP'] ?? '';
+$expected = 'sha256=' . hash_hmac( 'sha256', $ts . '.' . $body, getenv( 'EXPONENTIAL_WEBHOOK_SECRET' ) );
+if ( !ctype_digit( $ts ) || abs( time() - (int)$ts ) > 300
+     || !hash_equals( $expected, $_SERVER['HTTP_X_EXPONENTIAL_SIGNATURE'] ?? '' ) )
+{
+    http_response_code( 401 );
+    exit;
+}
+```
+
+```js
+// Node.js (express.raw({ type: 'application/json' }) behält den Body, wie er kam)
+const crypto = require('crypto');
+const ts = req.get('X-Exponential-Timestamp');
+const expected = 'sha256=' + crypto.createHmac('sha256', process.env.EXPONENTIAL_WEBHOOK_SECRET)
+  .update(ts + '.' + req.body).digest('hex');
+const given = req.get('X-Exponential-Signature') || '';
+const fresh = Math.abs(Date.now() / 1000 - Number(ts)) <= 300;
+if (!fresh || given.length !== expected.length || !crypto.timingSafeEqual(Buffer.from(given), Buffer.from(expected))) {
+  return res.sendStatus(401);
+}
+```
+
+Eine Kernel-Installation kann `expGraphQLWebhooks::verify( $secret, $timestamp, $body, $signature )` verwenden (`''`,
+wenn gültig, sonst `stale_timestamp` oder `bad_signature`).
+
+**Senden, Wiederholungen, das Protokoll.** Der Cronjob-Teil `graphqlwebhooks` (in der Gruppe `frequent` und allein als
+`php runcronjobs.php graphqlwebhooks` für einen kürzeren Abstand) liest das Journal ab der Stelle, an der sein letzter
+Lauf aufhörte, legt für jeden Endpunkt, der ein Ereignis haben will, eine Zustellung in den Ausgang und sendet, was
+fällig ist. Eine 2xx-Antwort stellt sie zu; alles andere (ein Fehlerstatus, eine Zeitüberschreitung nach `Timeout`
+Sekunden, keine Antwort) wird nach `RetryBackoff` Sekunden (30) erneut versucht, jedes Mal doppelt so spät bis
+`MaxBackoff` (eine Stunde), höchstens `MaxAttempts` (8) Mal; dann bleibt die Zustellung in
+`var/<site>/graphql/webhooks/failed/`. Eine Zustellung behält ihre ID (`X-Exponential-Delivery`) über ihre
+Wiederholungen und ein Ereignis seine ID über alle Endpunkte: Ein Empfänger entfernt damit Doppelte, denn zugestellt
+wird mindestens einmal. Weiterleitungen werden nicht verfolgt. Jeder Versuch ist eine Zeile von
+`var/<site>/graphql/webhooks/deliveries.jsonl` (Zeit, Webhook, Ereignis, Ergebnis, Status, Millisekunden, Fehler; nie
+ein Body oder ein Geheimnis). Ein erster Lauf beginnt am Ende des Journals: Ein Endpunkt bekommt, was nach seiner
+Einrichtung geschieht.
+
+**Das Signiergeheimnis** steht nie in einer Einstellungsdatei, einem Protokoll oder, nachdem es erzeugt wurde, auf einer
+Seite: `--add` und Setup > GraphQL erzeugen 32 Zufallsbytes, legen sie im [Geheimnisspeicher](geheimnisspeicher.md) des
+Kernels ab (verschlüsselt, Setup > Secrets) unter dem Namen, den `Secret` nennt (`graphql.webhook.<name>`), und zeigen
+sie einmal. `Secret=env:SHOP_HOOK_SECRET` liest stattdessen eine Umgebungsvariable. Um ein Geheimnis zu wechseln, setzen
+Sie in Setup > Secrets und beim Empfänger einen neuen Wert; `--remove` entfernt das Geheimnis des Endpunkts aus dem
+Speicher mit.
+
+### Subscriptions
+
+```graphql
+subscription NewArticles {
+  contentPublished(classes: ["ng_article"], parentId: 556) {
+    event
+    objectId
+    time
+    content {
+      name
+      url
+      ... on ng_article { teaser_intro { text } }
+    }
+  }
+}
+```
+
+| Feld von `Subscription` | Ereignisse |
+|---|---|
+| `contentEvents(events: [ContentEventKind!], classes, parentId, subtreeId)` | die aus `events` (keine: alle) |
+| `contentPublished(classes, parentId, subtreeId)` | `publish` und `update` |
+| `contentUpdated(...)` | `update` |
+| `contentDeleted(...)` | `trash` und `delete` (`content` ist `null`) |
+| `contentMoved(...)` | `move` |
+| `contentHidden(...)` | `hide` und `reveal` |
+
+`classes` nennt Klassenbezeichner, `parentId` den Knoten, direkt unter dem der Inhalt liegt, `subtreeId` einen Knoten,
+an oder irgendwo unter dem er liegt. Jedes Feld antwortet mit einem `ContentEvent`: `id`, `event`, `time`, `objectId`,
+`remoteId`, `version`, `classIdentifier`, `name`, `language`, `languages`, `nodeIds`, `mainNodeId`, `parentNodeIds`,
+`oldParentNodeId`, `newParentNodeId`, `mutation` und `content` (der Inhalt, wie er jetzt ist, mit jedem Feld des
+Schemas). Eine Subscription fragt nach genau einem dieser Felder; sie wird wie eine Abfrage geprüft (Tiefe,
+Komplexität, Introspection), bevor ihr Stream öffnet. `/api/graphql` lehnt eine Subscription ab; senden Sie sie an
+`/api/graphql/subscribe`.
+
+**Server-Sent Events**, mit PHP-FPM hinter Apache und mit Velocity gleichermaßen, im Protokoll von
+[graphql-sse](https://github.com/enisdenjo/graphql-sse/blob/master/PROTOCOL.md) („distinct connections“):
+
+```bash
+curl -N -H 'Accept: text/event-stream' -H 'Content-Type: application/json' -H 'Authorization: Bearer <Token oder Schlüssel>' \
+     -d '{"query":"subscription { contentPublished(classes: [\"ng_article\"]) { event objectId content { name url } } }"}' \
+     https://example.com/api/graphql/subscribe
+```
+
+```text
+: subscribed
+
+event: next
+id: 4.182211
+data: {"data":{"contentPublished":{"event":"publish","objectId":312,"content":{"name":"Ten minutes of mobility","url":"/Fit-Healthy/Ten-minutes-of-mobility"}}}}
+
+: heartbeat
+```
+
+```js
+import { createClient } from 'graphql-sse';
+const client = createClient({ url: '/api/graphql/subscribe', headers: { Authorization: 'Bearer ' + token } });
+for await (const result of client.iterate({ query: 'subscription { contentPublished { objectId content { name url } } }' })) {
+  console.log(result.data.contentPublished);
+}
+```
+
+Ein `GET` mit `query` (und `variables`, `operationName`) in der Adresse geht auch, so dass eine einfache `EventSource`
+abonnieren kann (sie kann keine Header senden: anonym, mit `AnonymousSubscriptions=enabled`, oder mit dem
+Token-Parameter der REST-Schicht). Hören Sie auf das Ereignis `next`. Eine Abfrage an `/api/graphql/subscribe` wird
+als ein `next` und ein `complete` beantwortet.
+
+**WebSocket**, mit Velocity: Der Server nimmt unter `/api/graphql/subscribe` einen WebSocket an, der das Unterprotokoll
+`graphql-transport-ws` anbietet (velocity.ini `[ServerSettings] GraphQLWebSocketPaths[]`), spricht das
+[Protokoll](https://github.com/enisdenjo/graphql-ws/blob/master/PROTOCOL.md) selbst und öffnet für jede Subscription
+den Event-Stream von oben über seine Worker. Jeder `graphql-ws`-Client (Apollo Clients `GraphQLWsLink`, urql, Relay)
+funktioniert:
+
+```js
+import { createClient } from 'graphql-ws';
+const client = createClient({ url: 'wss://example.com/api/graphql/subscribe',
+                              connectionParams: { Authorization: 'Bearer ' + token } });
+client.subscribe({ query: 'subscription { contentDeleted { event objectId name } }' },
+                 { next: (r) => console.log(r.data), error: console.error, complete: () => {} });
+```
+
+`Authorization`, `X-Api-Key`, `X-Siteaccess` und `Accept-Language` aus dem Payload von `connection_init` (und ein
+String `token`, gesendet als Bearer-Token) gehen mit jeder Anfrage der Verbindung mit; ein Browser kann bei einem
+WebSocket keine Header setzen. Apache mit PHP-FPM spricht kein WebSocket: Nutzen Sie dort SSE, oder setzen Sie Velocity
+vor `/api/graphql/subscribe`.
+
+**Rechte, je Ereignis.** Eine Subscription läuft als der Benutzer, der sie geöffnet hat, und jedes Ereignis wird für
+diesen Benutzer geprüft, wenn es geschieht: Der Benutzer wird neu gelesen, der Inhalt muss lesbar sein (`content/read`
+mit seinen Einschränkungen, verborgene Orte so, wie die Einstellungen des Benutzers es sagen), und erst dann wird die
+Auswahl der Subscription darauf ausgeführt. Ein Objekt im Papierkorb oder ein gelöschtes Objekt ist nicht mehr lesbar,
+also wird sein Ereignis gegen die Richtlinien geprüft, die die Rollen des Benutzers geben, mit dem, was das Ereignis
+festhielt (Klasse, Sektion, Besitzer, Orte, Objektzustände); eine Einschränkung, die sich so nicht beurteilen lässt,
+lehnt ab. Ein Benutzer, der das Recht verliert, etwas zu lesen, bekommt dessen Ereignisse sofort nicht mehr; ein
+widerrufener Schlüssel endet beim nächsten Start des Streams.
+
+**Keine Datenbank beim Warten.** Ein Stream hält einen PHP-Prozess (ein PHP-FPM-Kind oder einen Velocity-Worker
+innerhalb seines `StreamShare`), solange er offen ist, aber keine Datenbankverbindung: Er schließt die Verbindung der
+Anfrage, bevor er zu warten beginnt, folgt dem Journal über Dateien und öffnet für jedes Ereignis, das er zustellt, eine
+Verbindung, die er gleich danach wieder schließt.
+
+**Grenzen.**
+
+- `MaxSubscriptions` (200) gleichzeitig offen in der Installation, `MaxSubscriptionsPerUser` (5) für einen angemeldeten
+  Benutzer, `MaxSubscriptionsPerAddress` (10) für eine IP-Adresse; darüber wird die Anfrage mit `429` und
+  `SUBSCRIPTION_LIMIT` abgelehnt. Gezählt wird in `var/<site>/graphql/subscriptions/` von jedem Worker gleich; ein
+  Stream, der keinen Herzschlag mehr gibt, zählt nach drei Herzschlägen (mindestens einer Minute) nicht mehr.
+- `AnonymousSubscriptions=disabled` (der Standard) lehnt anonyme Subscriptions mit `FORBIDDEN` ab.
+- Ein Kommentar (`: heartbeat`) alle `SubscriptionHeartbeat` Sekunden (15) hält Proxys davon ab, den Stream zu
+  schließen, und findet einen Client, der gegangen ist.
+- Ein Stream endet nach `SubscriptionMaxDuration` Sekunden (280, unter Velocitys `StreamTimeout` von 300) oder nach
+  `SubscriptionIdleTimeout` Sekunden ohne Ereignis (0: nie); der Client verbindet sich mit `Last-Event-ID` wieder
+  (SSE-Clients und die Brücke von Velocity tun das selbst) und bekommt die verpassten Ereignisse, solange das Journal
+  sie noch hat.
+- Mit Velocity muss ein WebSocket `connection_init` innerhalb von 10 Sekunden senden, wird nach 60 Sekunden ohne
+  Subscription geschlossen, alle 30 Sekunden angepingt und hält höchstens 20 Subscriptions (velocity.ini
+  `GraphQLWebSocketInitTimeout`, `GraphQLWebSocketIdleTimeout`, `GraphQLWebSocketPingInterval`,
+  `GraphQLWebSocketMaxSubscriptions`).
+- Die Ratenbegrenzung zählt die Anfrage, die einen Stream öffnet, wie jede Anfrage.
+
+**Einrichten.** Subscriptions kommen mit dem Endpunkt (`Subscriptions=enabled`). Halten Sie `MaxSubscriptions` unter
+dem, was für Seiten bleibt: Jeder offene Stream hält ein PHP-FPM-Kind (`pm.max_children`) oder einen Velocity-Worker
+(`StreamShare` von `Workers`, standardmäßig ein Viertel); über dieser Grenze antwortet Velocity mit `503` und
+`Retry-After`. Ein Reverse-Proxy davor darf die Antwort nicht puffern (für nginx wird `X-Accel-Buffering: no` gesendet)
+und muss sie `SubscriptionMaxDuration` lang offen lassen.
+
 ## Sicherheit
 
 - **Die Richtlinien gelten immer.** Jedes Inhaltsobjekt, jeder Ort und jede Relation wird über das Rechtesystem mit
@@ -854,6 +1124,17 @@ ausführen; `enabled` tut das für jede Anfrage an `/api/graphql`. Eine Ad-hoc-A
 - **Fehler verraten nichts.** Ein Fehler des Codes (eine PHP-Exception) wird als `Internal server error` mit `INTERNAL`
   beantwortet; die Einzelheiten gehen ins Fehlerprotokoll. `Debug=enabled` schreibt die Meldung und den Trace in
   `extensions.debug`: nur auf einem Entwicklungs-Siteaccess.
+- **Echtzeit ohne Weg an den Rechten vorbei.** Eine Subscription bekommt ein Ereignis nur, wenn ihr Benutzer den
+  Inhalt in diesem Moment lesen darf (ein entferntes Objekt: nach den Richtlinien gegen das, was das Ereignis
+  festhielt); der anonyme Benutzer darf nur abonnieren, wenn `AnonymousSubscriptions=enabled` ist; offene Streams sind
+  je Installation, Benutzer und Adresse begrenzt; ein Stream hält beim Warten keine Datenbankverbindung. Webhooks
+  richten nur Administratoren ein (`graphql/administrate`, die Konsole); gesendet werden sie von einem Cronjob-Teil und
+  nie aus der Anfrage, die Inhalte geändert hat, signiert mit HMAC-SHA-256 über den Zeitstempel und den Body (ein
+  Empfänger lehnt einen Zeitstempel ab, der mehr als fünf Minuten abweicht, so dass sich eine aufgezeichnete Anfrage
+  nicht wiederholen lässt), nie weitergeleitet, und ihre Signiergeheimnisse liegen im Geheimnisspeicher, nie in einer
+  Einstellungsdatei, einem Protokoll oder dem Zustellprotokoll. Die URL eines Webhooks wählt der Administrator: Richten
+  Sie sie nur auf Systeme, die bekommen sollen, was er sendet (`Payload=event` sendet IDs, Klasse, Name und Sprachen;
+  `query`, was die gespeicherte Abfrage als `QueryUser` liest).
 - **Aus, bis sie eingeschaltet wird**, je Siteaccess: Ein Siteaccess ohne sie antwortet mit `404` und `DISABLED`, und
   sonst ändert sich nichts.
 
@@ -991,6 +1272,7 @@ Ein Fehler folgt der GraphQL-Spezifikation, mit `extensions.code` und `extension
 | `PERSISTED_QUERY_NOT_SUPPORTED` | gespeicherte Abfragen sind abgeschaltet (`PersistedQueries=disabled`; die Meldung ist `PersistedQueryNotSupported`) |
 | `PERSISTED_QUERY_REQUIRED` | eine Ad-hoc-Abfrage, wo nur gespeicherte Abfragen angenommen werden (`PersistedQueriesOnly`) |
 | `RATE_LIMITED` | über der Ratenbegrenzung (HTTP 429, mit `Retry-After`) |
+| `SUBSCRIPTION_LIMIT` | eine Subscription über `MaxSubscriptions`, `MaxSubscriptionsPerUser` oder `MaxSubscriptionsPerAddress` (HTTP 429) |
 
 Die Codes sind ein stabiler Vertrag: Ein veröffentlichter Code behält Namen und Bedeutung, neue Codes kommen nur hinzu.
 
@@ -1104,6 +1386,7 @@ zum Schema-Hash, also sehen Clients, dass sich das Schema ändert. `exp:graphql:
 | [`exp:graphql:starter`](../../beispiele/befehle/expgraphqlstarter.md) | erzeugt ein Starter-Frontend in ein neues Verzeichnis (`--kit=html\|next\|nuxt\|astro\|expo`, `--to=`, `--endpoint=`, `--list`): die Dateien des Kits und aus dem Schema erzeugte Abfragen (das Menü, eine Seite nach URL-Alias, jedes Feld jeder Klasse), jede vorher gegen das Schema geprüft; siehe [Schritt für Schritt](../../anleitungen/graphql-schritt-fuer-schritt.md); ein Probelauf ohne `--apply` |
 | [`exp:graphql:keys`](../../beispiele/befehle/expgraphqlkeys.md) | die persönlichen API-Schlüssel mit einem GraphQL-Bereich: die Liste (`--format=text\|json`), `--create --for=<login>` (`--name`, `--scope`, `--days`; das Token wird einmal gezeigt), `--revoke=<Präfix oder ID>`; ein Probelauf ohne `--apply` |
 | [`exp:graphql:bench`](../../beispiele/befehle/expgraphqlbench.md) | misst die Geschwindigkeit eines Endpunkts an Entscheidung 18 ([Geschwindigkeit](#geschwindigkeit)): zwischengespeichertes `GET`, `304`, zwischengespeichertes `POST`, eine zwischengespeicherte Antwort über den Kernel, ohne Zwischenspeicher (`--query-file`); Median, p95 und Maximum je Zeile, PASS oder FAIL gegen die harte Grenze von 33 ms; `--format=text\|json` |
+| [`exp:graphql:webhooks`](../../beispiele/befehle/expgraphqlwebhooks.md) | die [Webhooks](#webhooks): die Liste (`--format=text\|json`), `--add=<name> --url=` (`--events`, `--siteaccess`, `--classes`, `--subtree`, `--payload=event\|query`, `--query`, `--as`, `--secret-name`; ein neues Signiergeheimnis wird einmal gezeigt), `--remove=<name>`, `--test=<name>` (sofort gesendet), `--deliver` (die Arbeit des Cronjob-Teils, sofort), `--log` (`--limit`); ein Probelauf ohne `--apply` |
 
 ```bash
 ./console exp:graphql:status --format=json
@@ -1138,8 +1421,9 @@ läuft als anonymer Benutzer, außer `--as` nennt ein Login.
 
 `exp:graphql:enable` antwortet 0, wenn erledigt oder gezeigt, 1, wenn eine Datei nicht geschrieben oder der Schlüssel
 nicht erzeugt werden konnte, 2 bei falschen Optionen (ein unbekannter Siteaccess oder Benutzer, ein Origin, der keiner
-ist, ein Bereich, den der Benutzer nicht haben darf), 3, wenn die Bibliothek fehlt; `exp:graphql:disable` und
-`exp:graphql:keys` antworten 0, 1 und 2 ebenso. Die Einstellungsbefehle schreiben über den INI-Editor des Kernels, wie
+ist, ein Bereich, den der Benutzer nicht haben darf), 3, wenn die Bibliothek fehlt; `exp:graphql:disable`,
+`exp:graphql:keys` und `exp:graphql:webhooks` antworten 0, 1 und 2 ebenso (`exp:graphql:webhooks` 1 auch, wenn ein
+Test nicht mit 2xx beantwortet wird oder eine Zustellung scheitert). Die Einstellungsbefehle schreiben über den INI-Editor des Kernels, wie
 `exp:ini`: Zeile für Zeile, vorher eine Sicherung in `var/backup/ini/`, im Audit aufgezeichnet, abgelehnt, wo die
 Konfiguration verwaltet wird.
 
@@ -1151,8 +1435,9 @@ Konfiguration verwaltet wird.
 ```
 
 Die maschinenlesbare Ausgabe ist versioniert: `exp-graphql-status/1` (`status --format=json`),
-`exp-graphql-schema-summary/1` (`schema --format=summary`) und `exp-graphql-keys/1` (`keys --format=json`) nennen sich
-in ihrem Feld `schema`. `exp:graphql:status` sagt auch, ob die Mutationen an sind (`mutations`).
+`exp-graphql-schema-summary/1` (`schema --format=summary`), `exp-graphql-keys/1` (`keys --format=json`) und
+`exp-graphql-webhook/1` (`webhooks --format=json` und `extensions.schema` jedes Webhook-Bodys) nennen sich in ihrem
+Feld `schema`. `exp:graphql:status` sagt auch, ob die Mutationen an sind (`mutations`).
 
 **Ein stabiler Vertrag.** Wie die [Befehle `exp:template:*`](../../anleitungen/template-syntaxpruefung.md#kompatibilitätsversprechen)
 sind die Befehle `exp:graphql:*` eine öffentliche Schnittstelle, die Jahrzehnte halten soll: Befehlsnamen und Aliase,
@@ -1200,28 +1485,33 @@ lesen.
 `PersistedQueryDirectoryList[]`, `MaxQueryLength`, `ResponseCache`, `ResponseCacheTtl`, `CredentialCacheTtl`, `RateLimit`,
 `RateLimitAnonymous`, `RateLimitWindow`, `SchemaExtensionList[]`, `ImageAliasList[]`, `MutationsEnabled`,
 `AnonymousMutations`, `MaxUploadSize`, `UploadCheckList[]`, `FileDatatypeList[]`, `UploadFromUrlHostList[]`,
-`PreviewTokenTtl`, `MaxPreviewTokenTtl`, `Debug`) und [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md)
-(`TypeNames[]`, `FieldNames[]`). Ändern Sie nie die ausgelieferte Datei: Änderungen gehören in
-`settings/override/graphql.ini.append.php` oder in die `graphql.ini.append.php` eines Siteaccess.
+`PreviewTokenTtl`, `MaxPreviewTokenTtl`, `Subscriptions`, `AnonymousSubscriptions`, `MaxSubscriptions`,
+`MaxSubscriptionsPerUser`, `MaxSubscriptionsPerAddress`, `SubscriptionHeartbeat`, `SubscriptionMaxDuration`,
+`SubscriptionIdleTimeout`, `SubscriptionPollInterval`, `Debug`), [[GraphQLNaming]](../../beispiele/ini-einstellungen/graphql/GraphQLNaming.md)
+(`TypeNames[]`, `FieldNames[]`), [[GraphQLEvents]](../../beispiele/ini-einstellungen/graphql/GraphQLEvents.md)
+(`JournalMaxBytes`, `JournalKeep`) und [[GraphQLWebhooks]](../../beispiele/ini-einstellungen/graphql/GraphQLWebhooks.md)
+(`EndpointList[]`, `Timeout`, `MaxAttempts`, `RetryBackoff`, `MaxBackoff`, `BatchSize`, `LogMaxBytes`; jeder Endpunkt
+ein Block `[GraphQLWebhook_<name>]`). Ändern Sie nie die ausgelieferte Datei: Änderungen gehören in
+`settings/override/graphql.ini.append.php` oder in die `graphql.ini.append.php` eines Siteaccess. Der Cronjob-Teil
+`graphqlwebhooks` steht in `cronjob.ini` (`[CronjobPart-frequent]` und `[CronjobPart-graphqlwebhooks]`); der WebSocket
+von Velocity ist `velocity.ini [ServerSettings] GraphQLWebSocketPaths[]` mit seinen Einstellungen `GraphQLWebSocket*`.
 
 In `settings/rest.ini`: `[ApiProvider] ProviderClass[graphql]=expGraphQLRestProvider` (die Route `/api/graphql`; die
 Adresse eines Providers funktioniert jetzt auch ohne Schrägstrich danach), `[ApiKeySettings] Scopes[graphql:read]`, `Scopes[graphql:write]` und
-`RouteScopes[expGraphQLRestController_query]`, `[RouteSettings] OptionalAuthentication[]` und
-`[expGraphQLRestController_CacheSettings]`. Das Modul `graphql` steht in `module.ini [ModuleSettings] ModuleList[]`,
+`RouteScopes[expGraphQLRestController_query]` und `RouteScopes[expGraphQLRestController_subscribe]`,
+`[RouteSettings] OptionalAuthentication[]` und `[expGraphQLRestController_CacheSettings]`. Das Modul `graphql` steht in `module.ini [ModuleSettings] ModuleList[]`,
 seine Ansichten und Richtlinien stehen unter [Modulansichten](../../beispiele/modulansichten/graphql/README.md) und
 [Richtlinien](../../beispiele/richtlinien/graphql.md), und Setup > GraphQL ist `menu.ini [Leftmenu_setup] Links[graphql]`.
 
 ## Was als Nächstes kommt
 
 Die API liest Inhalte (Abfragen, gespeicherte Abfragen mit ihrem Antwort-Cache, Suche, Tags, Layouts und die
-Datentypen des Kernels und seiner Erweiterungen) und ändert sie mit Mutationen. Spätere Phasen sollen hinzufügen, noch
-ohne Termine:
+Datentypen des Kernels und seiner Erweiterungen), ändert sie mit Mutationen und sagt anderen mit Webhooks und
+Subscriptions, was sich ändert. Spätere Phasen sollen hinzufügen, noch ohne Termine:
 
 - **Dynamische Sammlungen**: die Einträge der Abfrage eines Blocks, so wie die Seite sie rendert.
-- **Webhooks**: ein Aufruf an ein anderes System, wenn sich Inhalte ändern.
-- **Subscriptions**: Änderungen, die einem Client gleich beim Geschehen zugestellt werden.
 
-Nichts davon ist schon Teil von 6.0.15. Die veröffentlichten Namen bleiben, wie sie sind; die späteren Phasen fügen nur
+Das ist noch nicht Teil von 6.0.15. Die veröffentlichten Namen bleiben, wie sie sind; die späteren Phasen fügen nur
 hinzu.
 
 ## Verwandte Seiten

@@ -9,7 +9,7 @@ generated: exp:help:examples
 ---
 # velocity.ini [ServerSettings]
 
-Der Block `[ServerSettings]` von `settings/velocity.ini`, mit 43 Einstellung(en).
+Der Block `[ServerSettings]` von `settings/velocity.ini`, mit 48 Einstellung(en).
 
 Bearbeiten Sie `settings/velocity.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -683,6 +683,82 @@ Standard: leer.
 # settings/override/velocity.ini.append.php
 [ServerSettings]
 RetryWithin=
+*/ ?>
+```
+
+## GraphQLWebSocketPaths
+
+> GraphQL-Subscriptions über einen WebSocket (das Protokoll graphql-transport-ws;  
+> doc/ger-de/funktionen/6.0/graphql.md, „Subscriptions“). Auf diesen Pfaden nimmt  
+> der Server den WebSocket selbst an und öffnet für jede Subscription den Event-Stream  
+> des Kernels auf demselben Pfad, über die Worker: Jede offene Subscription ist ein  
+> Stream (StreamShare und StreamTimeout oben gelten für ihn; endet ein Stream nach  
+> graphql.ini SubscriptionMaxDuration, öffnet der Server ihn dort wieder, wo er  
+> aufhörte). Kein Pfad: kein WebSocket. Braucht eine Engine mit der Brücke (Velocity  
+> nach v0.0.4.57); eine ältere ignoriert diese Einstellungen.  
+
+Standard: eine Liste mit 1: `/api/graphql/subscribe`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+# ein leeres "GraphQLWebSocketPaths[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+GraphQLWebSocketPaths[]
+GraphQLWebSocketPaths[]=/api/graphql/subscribe
+*/ ?>
+```
+
+## GraphQLWebSocketInitTimeout
+
+> Sekunden, die ein Client hat, um connection\_init zu senden (leer: 10), die eine  
+> Verbindung ohne Subscription offen bleiben darf (leer: 60), zwischen zwei Pings an  
+> den Client (leer: 30; 0: keine), und die Subscriptions, die eine Verbindung halten  
+> darf (leer: 20).  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+GraphQLWebSocketInitTimeout=
+*/ ?>
+```
+
+## GraphQLWebSocketIdleTimeout
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+GraphQLWebSocketIdleTimeout=
+*/ ?>
+```
+
+## GraphQLWebSocketPingInterval
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+GraphQLWebSocketPingInterval=
+*/ ?>
+```
+
+## GraphQLWebSocketMaxSubscriptions
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/velocity.ini.append.php
+[ServerSettings]
+GraphQLWebSocketMaxSubscriptions=
 */ ?>
 ```
 

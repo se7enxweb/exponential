@@ -9,7 +9,7 @@ generated: exp:help:examples
 ---
 # graphql.ini [GraphQLSettings]
 
-The block `[GraphQLSettings]` of `settings/graphql.ini`, with 36 setting(s).
+The block `[GraphQLSettings]` of `settings/graphql.ini`, with 45 setting(s).
 
 Never edit `settings/graphql.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -585,6 +585,140 @@ Default: `86400`.
 # settings/override/graphql.ini.append.php
 [GraphQLSettings]
 MaxPreviewTokenTtl=86400
+*/ ?>
+```
+
+## Subscriptions
+
+> Subscriptions (subscription { contentPublished(classes: \["article"\]) { objectId content { name } } }): enabled (the  
+> default) or disabled. They come on with the end point, at /api/graphql/subscribe: an event stream (SSE, the protocol  
+> graphql-sse) with PHP-FPM and with Velocity, and a WebSocket (graphql-transport-ws) through Velocity. Every event is  
+> sent only when the subscriber may read its content (the rights of that moment). A stream holds one PHP process (or  
+> Velocity worker) while it is open, but never a database connection: it follows the event journal (\[GraphQLEvents\])  
+> and opens a connection for each event it sends. Disabled: the schema has no type Subscription and /subscribe answers  
+> 404 with DISABLED.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+Subscriptions=enabled
+*/ ?>
+```
+
+## AnonymousSubscriptions
+
+> Subscriptions of anonymous requests: disabled (the default) refuses them with FORBIDDEN; enabled lets a visitor  
+> subscribe (a live page), within MaxSubscriptionsPerAddress and the Anonymous role's rights.  
+
+Default: `disabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+AnonymousSubscriptions=disabled
+*/ ?>
+```
+
+## MaxSubscriptions
+
+> The most subscriptions open at once on the installation, for one signed-in user, and from one IP address; past a  
+> limit a subscription is refused with SUBSCRIPTION\_LIMIT (HTTP 429). 0: no limit. Each open stream holds a process:  
+> keep MaxSubscriptions below what PHP-FPM's pool (pm.max\_children) or Velocity's StreamShare leaves for pages.  
+
+Default: `200`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxSubscriptions=200
+*/ ?>
+```
+
+## MaxSubscriptionsPerUser
+
+Default: `5`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxSubscriptionsPerUser=5
+*/ ?>
+```
+
+## MaxSubscriptionsPerAddress
+
+Default: `10`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+MaxSubscriptionsPerAddress=10
+*/ ?>
+```
+
+## SubscriptionHeartbeat
+
+> Seconds between two keep-alive comments of a stream; they keep proxies from closing it and find clients that left.  
+
+Default: `15`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+SubscriptionHeartbeat=15
+*/ ?>
+```
+
+## SubscriptionMaxDuration
+
+> Seconds a stream stays open; then it ends and the client opens it again with Last-Event-ID, missing no event the  
+> journal still has (EventSource and graphql-sse clients do so by themselves; Velocity's WebSocket bridge too). Keep it  
+> below Velocity's StreamTimeout (300 by default) and PHP's max\_execution\_time is raised to it.  
+
+Default: `280`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+SubscriptionMaxDuration=280
+*/ ?>
+```
+
+## SubscriptionIdleTimeout
+
+> Seconds a stream may go without sending an event before it ends the same way; 0 (the default): only  
+> SubscriptionMaxDuration ends it.  
+
+Default: `0`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+SubscriptionIdleTimeout=0
+*/ ?>
+```
+
+## SubscriptionPollInterval
+
+> Milliseconds between two looks at the journal while nothing happens.  
+
+Default: `500`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/graphql.ini.append.php
+[GraphQLSettings]
+SubscriptionPollInterval=500
 */ ?>
 ```
 

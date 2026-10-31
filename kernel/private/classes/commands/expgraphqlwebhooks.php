@@ -52,7 +52,7 @@ class Expgraphqlwebhooks extends \Exponential\Runnable\Command
                                           'deliver' => 'read the journal and send the deliveries that are due, as the cronjob part does',
                                           'log' => 'the last lines of the delivery log',
                                           'url' => 'the end point (--add): http:// or https://',
-                                          'events' => 'the events it wants (--add), comma separated: ' . implode( ', ', \expGraphQLEvents::ALL ) . '; none: every event',
+                                          'events' => 'the events it wants (--add), comma separated: publish, update, trash, delete, move, hide, reveal, mutation; none: every event',
                                           'siteaccess' => 'only content of these siteaccesses (their root node and languages), comma separated',
                                           'classes' => 'only these class identifiers, comma separated',
                                           'subtree' => 'only content at or below these node ids, comma separated',
