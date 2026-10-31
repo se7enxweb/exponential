@@ -6777,7 +6777,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 09c137108d069f3a15ad57e13a5af159  doc/eng-us/guides/upgrade-steps-for-extensions.md
 1a709feaff4a290854e94bdea8179971  doc/eng-us/guides/upgrading-with-the-console.md
-38f9d2d693253bbabeb6760bf50d4e42  doc/eng-us/guides/upgrading.md
+ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
@@ -9683,7 +9683,7 @@ e9b98cb4d4ac0ad7b33d4fb93a00d5b8  doc/eng-us/help/hosting/panels/cron-and-shell-
 02f0b6f878d6f51fb84486254a5219ad  doc/eng-us/help/hosting/panels/directadmin.md
 d9f1c859b5b87e1fe68ee30d0ce32aca  doc/eng-us/help/hosting/panels/ispconfig.md
 2f468809ed9106ff2791a922c427732a  doc/eng-us/help/hosting/panels/php-selection-and-fpm-pools.md
-d16b3aab9a9a776c77fa8c440af244fd  doc/eng-us/help/hosting/panels/plesk.md
+2c4c392a97979f3592137fdb91828011  doc/eng-us/help/hosting/panels/plesk.md
 7b6b68c8afc76e95480aa1882cd741cd  doc/eng-us/help/hosting/panels/tls-certificates-in-panels.md
 93d8ae29e038311a5e7d8b2151f19df9  doc/eng-us/help/hosting/panels/webmin.md
 0a9a21fe62d1b1173e191e2f74eff5ad  doc/eng-us/help/hosting/performance/README.md
@@ -12480,7 +12480,7 @@ d3248ba618a795e355b992750019bb49  doc/eng-us/install/04-choosing-an-install-meth
 cbda8dec23b0413752f3eb9abfe7326d  doc/eng-us/install/05-setup-wizard.md
 0880fdb1b36259cc57bb7c74ed5dfb8f  doc/eng-us/install/06-kickstarter.md
 2715303134a3c94a032f71a9015fbc35  doc/eng-us/install/07-console-install.md
-4078419e970cd85a2d8d010d9d836f7a  doc/eng-us/install/08-serving-the-site.md
+07aad3b63fb725e2ca3a48aa954e39f6  doc/eng-us/install/08-serving-the-site.md
 775ac59139d5fbe41099044e578388be  doc/eng-us/install/09-databases.md
 9cecda935c0e6b1bf89e5fe5b7f9e810  doc/eng-us/install/10-after-installing.md
 b5204dac86baddd7878d56bee973589c  doc/eng-us/install/11-upgrading.md
@@ -12829,7 +12829,7 @@ d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
 cb8ebc4c8cababd26cc0ab9a21519dc2  doc/ger-de/anleitungen/README.md
 0794f5d304ae87c4c987d5994c3f9967  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
-fe1332f511de414c406f1b200934d5b1  doc/ger-de/anleitungen/aktualisieren.md
+4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
 0e14fb80e8b544030c16681a1eb70987  doc/ger-de/anleitungen/benachrichtigungen-entwickler.md
@@ -18098,7 +18098,7 @@ e1c536b3ea3db7c2dac7859b32dec02f  doc/ger-de/hilfe/hosting/control-panels/datenb
 99f96ea5b74805149145b892dfa96a5c  doc/ger-de/hilfe/hosting/control-panels/directadmin.md
 0961e9999abe536f82a2fb92133aa699  doc/ger-de/hilfe/hosting/control-panels/ispconfig.md
 66d4e7b921f9e47a50cc4ef055f26cdf  doc/ger-de/hilfe/hosting/control-panels/php-auswahl-und-fpm-pools.md
-a8a8d29e367d39fd69011f6b28a34b4c  doc/ger-de/hilfe/hosting/control-panels/plesk.md
+c87da4a2e664e3e434d463a3026a86ba  doc/ger-de/hilfe/hosting/control-panels/plesk.md
 9b4cce24edc81c0911763fbad4b6eb5f  doc/ger-de/hilfe/hosting/control-panels/tls-zertifikate-in-panels.md
 1fe2a0ac44082168ae7e9aa6c466e5fb  doc/ger-de/hilfe/hosting/control-panels/webmin.md
 3df2375b691647d76edb197d2ac5db98  doc/ger-de/hilfe/hosting/geschaeft/README.md
@@ -21566,7 +21566,7 @@ adeb73cb2ec8cb9a95b495ee6ef781fb  doc/ger-de/installation/03-den-code-beschaffen
 bd55c455539242e9d2c29297f6356496  doc/ger-de/installation/05-setup-assistent.md
 bb19e39caf6993f1bcf9f5b660eb3d9d  doc/ger-de/installation/06-kickstarter.md
 19a73d7020c9efdd3373bc905a7a6752  doc/ger-de/installation/07-installation-ueber-die-konsole.md
-99a2e6535c1f64948369834e551208ab  doc/ger-de/installation/08-die-website-ausliefern.md
+49d3969dc5eb57efeccff41886e3a9a0  doc/ger-de/installation/08-die-website-ausliefern.md
 c7ee2583299b7d3cc39b8f46e97d32c8  doc/ger-de/installation/09-datenbanken.md
 e34fdc1d32d662c3da6ba883562fa080  doc/ger-de/installation/10-nach-der-installation.md
 ee872efd6414186944be53df7afc2bb0  doc/ger-de/installation/11-aktualisieren.md

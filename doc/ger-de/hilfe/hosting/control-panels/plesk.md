@@ -227,6 +227,12 @@ Der Entwicklungsserver betreibt Velocity neben dem Apache von Plesk auf derselbe
 - [ ] Document Root = Wurzelverzeichnis der Installation; `.htaccess` aus `.htaccess_root` kopiert (`exp:setup:status` bestätigt es).
 - [ ] Mit SOAP an: `index_soap.php` in **Zusätzliche Direktiven für HTTPS** (oder `.htaccess`) durchgelassen, nicht nur
       das alte `soap.php` ([Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../../../bc/6.0/soap-einstiegsskript-index-soap.md#plesk)).
+- [ ] Mit WebDAV an: `index_webdav.php` in **Zusätzliche Direktiven für HTTPS** und **für HTTP** (oder `.htaccess`)
+      durchgelassen, nicht nur das alte `webdav.php`
+      ([Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../../../bc/6.0/webdav-einstiegsskript-index-webdav.md#plesk-zusätzliche-apache-anweisungen)).
+- [ ] Nach dem Ändern der Direktiven über HTTPS mit `curl` getestet (SOAP: ein GET von `/index_soap.php?wsdl` antwortet
+      mit `200`; WebDAV: ein `PROPFIND` von `/index_webdav.php/` antwortet mit `207`), nicht mit `404` oder einer Seite
+      der Website.
 - [ ] Composer, Konsole und Cron nutzen `/opt/plesk/php/<version>/bin/php`.
 - [ ] `PhpCliPath` gesetzt; Cron-Zeilen in der Crontab des Benutzers der Domain.
 - [ ] `plesk-php<XY>-fpm` nach Änderungen an PHP neu laden; `PhpFpmService` in `exp:velocity deploy --dry-run` richtig.

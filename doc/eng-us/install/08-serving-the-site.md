@@ -154,6 +154,16 @@ working through a forwarding shim that will be removed in a later major version.
 test (`curl -X PROPFIND -H 'Depth: 1'`, expect `207 Multi-Status`) are in
 [The WebDAV entry script is now index_webdav.php](../bc/6.0/webdav-entry-script-index-webdav.md).
 
+**SOAP is not in this list either.** It is off by default (`soap.ini` `EnableSOAP=false`). To serve it, uncomment
+`RewriteRule ^index_soap\.php - [L]` in `.htaccess` (or write the same rule into the HTTPS virtual host). Velocity and
+the FrankenPHP configuration do not serve SOAP; use Apache or nginx with PHP-FPM for it. **Since 6.0.15 the script is
+`index_soap.php`, not `soap.php`:** rules and clients that use the old name keep working through a forwarding shim
+that will be removed in a later major version. After the reload, test it:
+`curl -sS -i 'https://www.example.com/index_soap.php?wsdl'` answers `200` with
+`Error: this web page does only understand POST methods`; a `404` or a page of the site means the rule is missing.
+The rules for each server and the full test are in
+[The SOAP entry script is now index_soap.php](../bc/6.0/soap-entry-script-index-soap.md).
+
 ---
 
 ## 8.3 Exponential Velocity, the recommended way

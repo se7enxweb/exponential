@@ -164,6 +164,16 @@ weiterleitenden Shim weiter, der in einer späteren Hauptversion entfernt wird. 
 (`curl -X PROPFIND -H 'Depth: 1'`, erwartet: `207 Multi-Status`) stehen in
 [Das WebDAV-Einstiegsskript heißt jetzt index_webdav.php](../bc/6.0/webdav-einstiegsskript-index-webdav.md).
 
+**Auch SOAP steht nicht in dieser Liste.** Es ist standardmäßig aus (`soap.ini` `EnableSOAP=false`). Um es
+auszuliefern, kommentieren Sie `RewriteRule ^index_soap\.php - [L]` in `.htaccess` ein (oder schreiben dieselbe Regel
+in den HTTPS-Host). Velocity und die FrankenPHP-Konfiguration liefern SOAP nicht aus; verwenden Sie dafür Apache oder
+nginx mit PHP-FPM. **Seit 6.0.15 heißt das Skript `index_soap.php`, nicht `soap.php`:** Regeln und Clients mit dem
+alten Namen funktionieren über einen weiterleitenden Shim weiter, der in einer späteren Hauptversion entfernt wird.
+Testen Sie es nach dem Neuladen: `curl -sS -i 'https://www.example.com/index_soap.php?wsdl'` antwortet mit `200` und
+`Error: this web page does only understand POST methods`; ein `404` oder eine Seite der Website bedeutet, dass die
+Regel fehlt. Die Regeln für jeden Server und der vollständige Test stehen in
+[Das SOAP-Einstiegsskript heißt jetzt index_soap.php](../bc/6.0/soap-einstiegsskript-index-soap.md).
+
 ---
 
 ## 8.3 Exponential Velocity, der empfohlene Weg
