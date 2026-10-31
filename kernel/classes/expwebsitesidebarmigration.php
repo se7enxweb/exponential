@@ -13,8 +13,9 @@
  *   policies   every websitetoolbar/use and websitetoolbar/* becomes expwt/use, expwt/edit, expwt/create and
  *              expwt/structure in the same role, with the same limitations (the toolbar gave all of it); several
  *              toolbar policies of one role give one grant per function with the joined limitations where that grants
- *              nothing more, and nothing the role holds already is granted again; the Editor role gets those four
- *              and the Administrator role expwt/* where they do not hold them already
+ *              nothing more, and nothing the role holds already is granted again; the Editor role gets expwt/* without
+ *              limitations in place of narrower expwt grants (F22), the Administrator role expwt/* where it does not
+ *              hold it; the role of visitors who are not signed in (Anonymous) never gets anything
  *   settings   websitetoolbar.ini [WebsiteToolbarSettings] HiddenContentClasses[] of settings/override and of every
  *              siteaccess becomes expwt.ini [CreateSettings] HiddenClassList[] beside it; what has no counterpart
  *              (the eZODF buttons, the custom toolbar templates) is reported, not copied
@@ -22,8 +23,8 @@
  *              (siteaccesses) become expwt at the same place, or are removed where the file activates expwt already;
  *              ezwt is no longer loaded
  *
- * Whether the sidebar shows (expwt.ini [ExpwtSettings] Enabled) is left at expwt's default: off until expwt 1.0
- * (rollout behind a setting, F14); exp:wt:enable switches it on per siteaccess.
+ * Where ezwt was active, the sidebar is switched on: expwt.ini [ExpwtSettings] Enabled=enabled beside the
+ * site.ini that activated it, unless that file sets Enabled already (F18); elsewhere it stays at expwt's default.
  *
  * The plans work on plain arrays and text and are tested without a database or files
  * (tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php); collect() reads the installation and apply()
@@ -43,6 +44,7 @@ class expWebsiteSidebarMigration
 
     const EDITOR_ROLE = 'Editor';
     const ADMINISTRATOR_ROLE = 'Administrator';
+    const ANONYMOUS_ROLE = 'Anonymous';
 
     /**
      * Whether policies grant module/function in any form (*, module/*, module/function), limited or not.
@@ -73,6 +75,18 @@ class expWebsiteSidebarMigration
         $plan = array();
         foreach ( $roles as $role )
         {
+            // never the role of visitors who are not signed in: expwt/use there is the site's own decision
+            // (expwt.ini ShowToAnonymous=policy), never one this migration makes
+            if ( self::isAnonymousRole( $role ) )
+                continue;
+            // F22: the Editor role holds expwt/* without limitations (the kernel policies of what an editor changes
+            // still apply), in place of the narrower expwt grants it may hold
+            if ( $role['name'] === self::EDITOR_ROLE )
+            {
+                foreach ( self::editorPlan( $role ) as $step )
+                    $plan[] = $step;
+                continue;
+            }
             $policies = $role['policies'];
             $add = function ( $function, array $limitations, $why ) use ( &$plan, &$policies, $role ) {
                 foreach ( $policies as $p )
@@ -119,14 +133,6 @@ class expWebsiteSidebarMigration
                 foreach ( self::mergeLimitations( $todo ) as $limitations )
                     $add( $function, $limitations, implode( ', ', $why ) );
             }
-            if ( $role['name'] === self::EDITOR_ROLE )
-            {
-                foreach ( self::EDITOR as $function )
-                {
-                    if ( !self::covers( $policies, 'expwt', $function ) )
-                        $add( $function, array(), 'the Editor role' );
-                }
-            }
             if ( $role['name'] === self::ADMINISTRATOR_ROLE && !self::covers( $policies, 'expwt', '*' ) )
             {
                 $any = false;
@@ -140,6 +146,47 @@ class expWebsiteSidebarMigration
     }
 
     /** @return bool the same limitations, the values in any order */
+    /**
+     * The role of visitors who are not signed in: named Anonymous, or assigned to the anonymous user (roles() marks
+     * it, anonymous: true).
+     *
+     * @param array $role
+     * @return bool
+     */
+    public static function isAnonymousRole( array $role )
+    {
+        return !empty( $role['anonymous'] ) || strcasecmp( (string)$role['name'], self::ANONYMOUS_ROLE ) === 0;
+    }
+
+    /**
+     * F22: the Editor role's steps to expwt/* without limitations: nothing when it holds that already (or every
+     * module, *); else the grant, and every other expwt policy of the role taken away (expwt/<function>, or expwt/*
+     * with limitations), which the grant covers. Running it again plans nothing.
+     *
+     * @param array $role id, name, policies (each: id, module, function, limitations)
+     * @return array steps: role, name, function, limitations, why, and remove (the policy's id) for a removal
+     */
+    public static function editorPlan( array $role )
+    {
+        foreach ( $role['policies'] as $p )
+        {
+            $limited = !empty( $p['limitations'] );
+            if ( ( $p['module'] === '*' || ( $p['module'] === 'expwt' && $p['function'] === '*' ) ) && !$limited )
+                return array();
+        }
+        $steps = array( array( 'role' => (int)$role['id'], 'name' => (string)$role['name'], 'function' => '*',
+                               'limitations' => array(), 'why' => 'the Editor role, without limitations' ) );
+        foreach ( $role['policies'] as $p )
+        {
+            if ( $p['module'] !== 'expwt' || !isset( $p['id'] ) )
+                continue;
+            $steps[] = array( 'role' => (int)$role['id'], 'name' => (string)$role['name'], 'function' => (string)$p['function'],
+                              'limitations' => isset( $p['limitations'] ) ? (array)$p['limitations'] : array(),
+                              'why' => 'replaced by expwt/* without limitations', 'remove' => (int)$p['id'] );
+        }
+        return $steps;
+    }
+
     public static function sameLimitations( array $a, array $b )
     {
         $norm = function ( array $l ) {
@@ -335,6 +382,51 @@ class expWebsiteSidebarMigration
     }
 
     /**
+     * F18: where ezwt was active, the sidebar is switched on: for every site.ini.append(.php) that activates ezwt
+     * (ActiveExtensions[] in settings/override: every siteaccess; ActiveAccessExtensions[] in a siteaccess: that one),
+     * expwt.ini [ExpwtSettings] Enabled=enabled beside it, unless that file sets Enabled already (whatever to: the
+     * installation's choice stays). Pure.
+     *
+     * @param array $site path of a site.ini.append(.php) => its text
+     * @param array $existing path of an expwt.ini.append.php => its text (the files there are, or will be, there)
+     * @return array path of an expwt.ini.append.php => its new text
+     */
+    public static function enablePlan( array $site, array $existing = array() )
+    {
+        $writes = array();
+        foreach ( $site as $path => $text )
+        {
+            if ( self::activationChange( $text ) === null )
+                continue;
+            $target = dirname( $path ) . '/expwt.ini.append.php';
+            $current = isset( $writes[$target] ) ? $writes[$target] : ( isset( $existing[$target] ) ? $existing[$target] : null );
+            if ( $current !== null && preg_match( '/^\s*Enabled\s*=/m', $current ) )
+                continue;
+            $writes[$target] = self::withEnabled( $current );
+        }
+        return $writes;
+    }
+
+    /**
+     * @param string|null $text an expwt.ini.append.php there is, or null
+     * @return string the file with [ExpwtSettings] Enabled=enabled
+     */
+    public static function withEnabled( $text )
+    {
+        $line = "# switched on where ezwt was active, by exp:wt:migrate-from-ezwt\nEnabled=enabled\n";
+        if ( $text === null || trim( $text ) === '' )
+            return "<?php /* #?ini charset=\"utf-8\"?\n\n[ExpwtSettings]\n" . $line . "\n*/ ?>\n";
+        if ( preg_match( '/^\[ExpwtSettings\]\s*$/m', $text, $m, PREG_OFFSET_CAPTURE ) )
+        {
+            $at = $m[0][1] + strlen( $m[0][0] );
+            return substr( $text, 0, $at ) . "\n" . rtrim( $line, "\n" ) . substr( $text, $at );
+        }
+        $close = strrpos( $text, '*/' );
+        $block = "\n[ExpwtSettings]\n" . $line;
+        return $close === false ? rtrim( $text ) . "\n" . $block : substr( $text, 0, $close ) . $block . "\n" . substr( $text, $close );
+    }
+
+    /**
      * ezwt out, expwt in, at the same place of each list.
      *
      * @param string $text a site.ini.append(.php)
@@ -410,13 +502,18 @@ class expWebsiteSidebarMigration
         return $out;
     }
 
-    /** @return array id, name, policies of every role */
+    /** @return array id, name, policies, anonymous (the role is assigned to the anonymous user) of every role */
     public static function roles()
     {
+        $anonymous = array();
+        $anonymousId = (int)eZINI::instance()->variable( 'UserSettings', 'AnonymousUserID' );
+        if ( $anonymousId > 0 )
+            $anonymous = array_map( 'intval', (array)eZRole::fetchIDListByUser( array( $anonymousId ) ) );
         $out = array();
         foreach ( eZRole::fetchList() as $role )
             $out[] = array( 'id' => (int)$role->attribute( 'id' ), 'name' => (string)$role->attribute( 'name' ),
-                            'policies' => expEditorPolicies::policiesOf( $role ) );
+                            'policies' => expEditorPolicies::policiesOf( $role ),
+                            'anonymous' => in_array( (int)$role->attribute( 'id' ), $anonymous, true ) );
         return $out;
     }
 
@@ -439,8 +536,10 @@ class expWebsiteSidebarMigration
         $settings = self::settingsPlan( $files['toolbar'], $files['expwt'] );
         foreach ( array_keys( $settings['writes'] ) as $path )
             $lines[] = "copy the hidden classes of ezwt to $path";
+        foreach ( array_keys( self::enablePlan( $files['site'], $files['expwt'] ) ) as $path )
+            $lines[] = "switch the sidebar on (Enabled=enabled) in $path, where ezwt was active";
         foreach ( self::policyPlan( self::roles() ) as $grant )
-            $lines[] = 'grant ' . self::grantText( $grant );
+            $lines[] = ( isset( $grant['remove'] ) ? 'take away ' : 'grant ' ) . self::grantText( $grant );
         return $lines;
     }
 
@@ -492,6 +591,18 @@ class expWebsiteSidebarMigration
             file_put_contents( $path, $text );
             $done[] = "wrote $path";
         }
+        // F18: where ezwt was active, the sidebar is switched on (planned from the files as they were, before the
+        // activation changes below take ezwt out; on top of the hidden classes just written)
+        $written = $files['expwt'];
+        foreach ( $settings['writes'] as $path => $text )
+            $written[$path] = $text;
+        foreach ( self::enablePlan( $files['site'], $written ) as $path => $text )
+        {
+            if ( is_file( $path ) && !isset( $settings['writes'][$path] ) )
+                self::backup( $path );
+            file_put_contents( $path, $text );
+            $done[] = "switched the sidebar on in $path";
+        }
         foreach ( $files['site'] as $path => $text )
         {
             $change = self::activationChange( $text );
@@ -508,6 +619,12 @@ class expWebsiteSidebarMigration
         {
             if ( !isset( $byId[$grant['role']] ) )
                 continue;
+            if ( isset( $grant['remove'] ) )
+            {
+                eZPolicy::removeByID( (int)$grant['remove'] );
+                $done[] = 'took away ' . self::grantText( $grant );
+                continue;
+            }
             $byId[$grant['role']]->appendPolicy( 'expwt', $grant['function'], $grant['limitations'] );
             $done[] = 'granted ' . self::grantText( $grant );
         }

@@ -23411,7 +23411,7 @@ acae6bbb77fcc05695116d119c0879f5  kernel/classes/expvelocitywatchdog.php
 35ecc21bdffdb4e710505fdd826df48a  kernel/classes/expviewaccess.php
 60d22591b81ac4d724cf627f169f2aeb  kernel/classes/expviewparameters.php
 2476f9c0f8ba75823eb320fe33bc0ab5  kernel/classes/expweakpasswordlist.php
-5e13d93e8f3d8772b8b98d14299820b8  kernel/classes/expwebsitesidebarmigration.php
+93be149be27fe50ac77b4f33cbf4ca49  kernel/classes/expwebsitesidebarmigration.php
 19df831ef09fa7411d27bf3b6c4cfea4  kernel/classes/ezaudit.php
 2deb8dd5796ace6c5bb4c7b85ee06ea4  kernel/classes/ezbasket.php
 49db61a7999663c74b1b6cbe4b852d89  kernel/classes/ezbinaryfilehandler.php
@@ -27407,7 +27407,7 @@ d82f876705fd85722ea8409d0cd97fe7  tests/tests/kernel/classes/expVelocityStopRest
 805242b566e7eb9a4614ce5c30430c32  tests/tests/kernel/classes/expVelocityWatchdogTest.php
 343c0121d4e5e9a067c7b31b5e462c9c  tests/tests/kernel/classes/expViewAccessTest.php
 0745ffa213053f2a3bc03b9a9fbb664e  tests/tests/kernel/classes/expViewParametersTest.php
-b3ee2101db7708e4fadb810bdda72201  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
+cd0b59256170242053b1448b811c307e  tests/tests/kernel/classes/expWebsiteSidebarMigrationTest.php
 eb6e31ad5a2ad5e5836bdcb781fb7114  tests/tests/kernel/classes/extensions/cycle1/extension.xml
 b03633d619dfa27944eb552972d7f02d  tests/tests/kernel/classes/extensions/cycle2/extension.xml
 d471fa62de2a662dc597fb5efeadea08  tests/tests/kernel/classes/extensions/ezdepextends/extension.xml
