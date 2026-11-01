@@ -15090,6 +15090,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <translation>A telepítés fájlokban tárolt módosításai: állapotuk, a futtatások, futtatás és visszavonás.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Friss tartalom</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>A legújabb tartalom, az ellenőrzésre visszatartott tartalom és műveletek a kijelölésen.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Egy webhely statikus másolatának közzététele a GitHub Pages szolgáltatáson vagy bármely git-tárhelyen.</translation>
     </message>
@@ -80614,6 +80622,670 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Módosítva</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Létrehozva</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Osztály</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Szakasz</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Létrehozó</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Friss tartalom</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>A teljes webhely legutóbb létrehozott és módosított tartalma, a legújabbal kezdve: amit a látogatók beküldtek, ami ellenőrzésre visszatartva vár, és a közzétételre váró piszkozatok. Jelöljön ki elemeket, hogy feloldja, visszatartsa, elrejtse, felfedje, eltávolítsa őket, vagy másik szakaszba vagy állapotba helyezze őket.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>A lista nem olvasható be: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Az ellenőrzésre visszatartás még nincs beállítva, ezért semmi sincs visszatartva, és a visszatartási műveletek nem érhetők el. A 6.0.15-review-hold frissítési lépés állítja be: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>A lista szűrése</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ettől</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Eddig</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dátum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Létrehozva (első közzététel)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Mind</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Közzétéve</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Piszkozat, sosem tették közzé</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Függőben (jóváhagyásra vagy időpontra vár)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>A lomtárban</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ellenőrzésre visszatartva</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Visszatartva</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nincs visszatartva</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Rejtett</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Látható</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Beküldés webhely-hozzáférése</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Bármely webhely-hozzáférés</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Csak amit a napló rögzített.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Most: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Felhasználónév vagy felhasználóazonosító.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Szűrés</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Szűrők törlése</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elemek</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nincs elem</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(beolvasva %ms ms alatt)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Műveletek a kijelölt elemeken</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Az oldal összes elemének kijelölése</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count kijelölve</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Művelet</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Válasszon műveletet</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Visszatartás feloldása</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Visszatartás ellenőrzésre</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Elrejtés</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Felfedés</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Áthelyezés a lomtárba</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Törlés</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Szakasz hozzárendelése</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Állapot hozzárendelése</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Indok</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>A visszatartáshoz szükséges; a visszatartással és a naplóban együtt megőrződik.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Válasszon szakaszt</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Válasszon állapotot</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Alkalmazás a kijelöltekre</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Minden elemet a saját jogosultságai alapján ellenőrzünk. A lomtárba helyezés és a törlés megerősítést kér. %count elemnél többet a háttérben dolgozunk fel.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Kijelölés</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Közzététel</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Beküldés címe</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name kijelölése</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>még nem</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(nincs név)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Azonosító: %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Piszkozat</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Függőben</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>A szülője miatt rejtett</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Visszatartva: új beküldés</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version. verzió függőben</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version. verzió szerkesztés alatt</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Piszkozat, %version. verzió</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version. verzió közzétéve</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ütemezve: %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nincs cím</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nincs rögzítve</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Semmi sem felel meg ezeknek a szűrőknek.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Összes megjelenítése</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Még nincs tartalom.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Oldalanként</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count elem megjelenítése oldalanként.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>A beküldés címe és böngészője a naplóindexből származik, amely itt nem érhető el: az oszlopban „nincs rögzítve” áll.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>A cím és a böngésző az, amit a napló az elemről rögzített (az automatikus visszatartás mindig rögzíti; a közzététel és a létrehozás csak ott, ahol be van kapcsolva), az adatvédelmi beállításai szerint megőrizve.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elem</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>A törlés véglegesen eltávolítja az elemeket, az összes verziójukkal és fordításukkal együtt. Nem vonható vissza.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Az elemek a lomtárba kerülnek, ahonnan visszaállíthatók.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Minden elemet a saját jogosultságai alapján ellenőrzünk; az alelemekkel rendelkező elem változatlan marad (távolítsa el a tartalomstruktúrában). Meg kell erősítenie, hogy Ön az.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ez a háttérben fut: megnyílik a folyamatoldala, és ha elkészült, elemenként megjelenik az eredmény.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>A kijelölt elemek</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>és még %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Mégse</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nem történt semmi</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Indok: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>A művelet még fut a háttérben.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>A folyamata</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>A háttérművelet sikertelen: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kész</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Elutasítva</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Sikertelen</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Elemenként</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elem</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Eredmény</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Miért</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Vissza a listához</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nem történt semmi</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Megerősítés</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Válasszon műveletet.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Jelöljön ki legalább egy elemet.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Egyszerre legfeljebb 1000 elemet jelöljön ki.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Adja meg, miért tartja vissza az elemeket.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Válassza ki a szakaszt.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Válassza ki az állapotot.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Az űrlap nem olvasható be.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Friss tartalom</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>A darabszámok nem olvashatók be: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ellenőrzésre visszatartva</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Mai újak</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Az ellenőrzésre visszatartás még nincs beállítva (a 6.0.15-review-hold frissítési lépés).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Minden friss tartalom</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Nem futtathat moderálási műveleteket (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>A moderálási művelet nem teljes: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderálás: %action %count objektumon</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total objektum: %ok kész, %refused elutasítva, %failed sikertelen</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok kész, %refused elutasítva, %failed sikertelen</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Már nem létezik.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nincs helye (nincs közzétéve).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Nem rejtheti el (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Nem fedheti fel (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Már rejtett.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nem rejtett.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Elrejtve.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Felfedve.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>A lomtárban van: ott ürítse ki vagy állítsa vissza.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Egy sosem közzétett piszkozat nem helyezhető a lomtárba: törölje.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Nem törölheti (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Törölve.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Nem távolíthatja el (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Alelemei vannak: távolítsa el a tartalomstruktúrában, ahol fel vannak sorolva.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nem lett eltávolítva (egy munkafolyamat visszatarthatja az eltávolítást).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Áthelyezve a lomtárba.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>A szakasz nem létezik.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Már ebben a szakaszban van.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Nem rendelheti hozzá ezt a szakaszt (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>A szakasz nem lett hozzárendelve.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Szakasz hozzárendelve.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Az állapot nem létezik.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Már ebben az állapotban van.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Nem rendelheti hozzá ezt az állapotot (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Az állapot nem lett hozzárendelve (egy munkafolyamat visszatarthatja a változtatást).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Állapot hozzárendelve.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Nincs ilyen művelet.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Az ellenőrzésre visszatartás nincs beállítva (a 6.0.15-review-hold frissítési lépés).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Adja meg, miért tartja vissza.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Már vissza van tartva.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Nem tarthatja vissza (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>A visszatartás nem lett beállítva (egy munkafolyamat visszatarthatja a változtatást).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Visszatartva.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nincs visszatartva.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Nem oldhatja fel (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>A visszatartás nem lett feloldva (egy munkafolyamat visszatarthatja a változtatást).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Feloldva; továbbra is rejtett: nem fedheti fel (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Feloldva.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80759,7 +81431,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Egy GitHub-projektwebhely a /&lt;repository&gt;/ alatt található; a relatív hivatkozások ott és bárhol máshol is működnek.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Az összeállítás a(z) %site minden oldalát úgy tölti le, ahogy egy be nem jelentkezett látogató látja, átírja a hivatkozásokat, átmásolja a fájlokat, és az eredményt a cél mappájába írja. Semmi sem kerül közzétételre, amíg Ön nem ellenőrzi az összeállítást, és meg nem nyomja a Közzététel gombot.</translation>
     </message>
     <message>
@@ -80807,7 +81479,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Az az oldal, amely a tisztítás után is hibakeresési kimenetet, űrlaptokent vagy munkamenet-azonosítót tartalmaz, soha nem kerül közzétételre.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
         <translation>A visszavonás szakértőknek való: jelölje be a „Tudom, mit változtat ez” lehetőséget, és írja be újra a címke nevét.</translation>
     </message>
     <message>
@@ -81319,7 +81991,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Az előnézet megnyitása</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Megnyitja az összeállítást úgy, ahogy a tárhely ki fogja szolgálni, a cél mappájából. A hivatkozás egy óráig működik az Ön számára.</translation>
     </message>
     <message>
@@ -81495,7 +82167,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Rendszer &gt; Titkos értékek</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
         <translation>Listákban jelenik meg, például „Nyilvános webhely a GitHub Pages szolgáltatáson”.</translation>
     </message>
     <message>
@@ -81703,7 +82375,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>A webhely visszatér annak a közzétételnek a fájljaihoz; egy még közzé nem tett összeállítást előbb közzé kell tenni vagy el kell vetni.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>A webhely saját oldala a nem létező címekhez.</translation>
     </message>
     <message>
@@ -81711,7 +82383,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>A célt nem sikerült menteni: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
         <translation>A cél még nem ezzel a kulccsal jelentkezik be: válassza az „Ehhez a célhoz készült telepítési kulcs” lehetőséget a beállításaiban.</translation>
     </message>
     <message>
@@ -81747,7 +82419,7 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <translation>Elveti ezt az összeállítást: a mappa ismét az utolsó közzétételt tartalmazza. Az élő webhely nem változik.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <source>Tick "I have checked the changes" first.</source>
         <translation>Előbb jelölje be az „Ellenőriztem a változásokat” lehetőséget.</translation>
     </message>
     <message>

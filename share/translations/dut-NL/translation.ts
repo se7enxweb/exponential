@@ -15585,6 +15585,14 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
         <translation>Wijzigingen aan de installatie bewaard als bestanden: hun stand, de uitvoeringen, uitvoeren en terugdraaien.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Recente inhoud</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>De nieuwste inhoud, wat voor controle is tegengehouden, en acties op een selectie.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publiceer een statische kopie van een site naar GitHub Pages of een andere git-host.</translation>
     </message>
@@ -22172,7 +22180,7 @@ Let op: de pakketten worden niet gedeïnstalleerd.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>De statische cache levert pagina&apos;s vanaf deze server. Gebruik statisch publiceren om een statische kopie van een site ergens anders te publiceren, op GitHub Pages of een andere git-host.</translation>
+        <translation>De statische cache levert pagina's vanaf deze server. Gebruik statisch publiceren om een statische kopie van een site ergens anders te publiceren, op GitHub Pages of een andere git-host.</translation>
     </message>
 </context>
 <context>
@@ -81809,6 +81817,670 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Gewijzigd</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Aangemaakt</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sectie</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Auteur</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Recente inhoud</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>De meest recent aangemaakte en gewijzigde inhoud van de hele site, nieuwste eerst: wat bezoekers hebben ingediend, wat voor controle is tegengehouden, concepten die op hun publicatie wachten. Selecteer elementen om ze vrij te geven, tegen te houden, te verbergen, zichtbaar te maken, te verwijderen of naar een andere sectie of status te verplaatsen.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>De lijst kon niet worden gelezen: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Het tegenhouden voor controle is nog niet ingericht, dus wordt niets tegengehouden en worden de acties om tegen te houden niet aangeboden. De upgradestap 6.0.15-review-hold richt het in: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>De lijst filteren</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Van</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Tot</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Aangemaakt (eerst gepubliceerd)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Publicatiestatus</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Gepubliceerd</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Concept, nooit gepubliceerd</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>In wachtrij (wacht op goedkeuring of een datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In de prullenbak</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Tegengehouden voor controle</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Tegengehouden</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Niet tegengehouden</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Verborgen</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Zichtbaar</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Ingediend via</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Elke siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Alleen wat de audit heeft vastgelegd.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nu: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Een loginnaam of een gebruikers-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filteren</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filters wissen</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tot %to van %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Geen element</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(gelezen in %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Acties op de geselecteerde elementen</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alles op deze pagina selecteren</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count geselecteerd</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Actie</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Kies een actie</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Tegenhouden opheffen</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Tegenhouden voor controle</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Verbergen</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Zichtbaar maken</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Naar prullenbak verplaatsen</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Sectie toewijzen</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Status toewijzen</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Reden</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Nodig om tegen te houden; wordt bij het tegenhouden en in de audit bewaard.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Kies een sectie</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Kies een status</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Op de selectie toepassen</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Elk element wordt gecontroleerd aan de hand van uw eigen rechten. Verplaatsen naar de prullenbak en verwijderen vragen om bevestiging. Meer dan %count elementen worden op de achtergrond uitgevoerd.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selecteren</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicatie</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Ingediend vanaf</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name selecteren</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>nog niet</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(geen naam)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Concept</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>In wachtrij</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Verborgen door de bovenliggende node</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Tegengehouden: nieuwe inzending</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versie %version in wachtrij</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versie %version in bewerking</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Concept, versie %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versie %version gepubliceerd</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Gepland voor %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>geen adres</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>niet vastgelegd</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Niets voldoet aan deze filters.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alles tonen</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Er is nog geen inhoud.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count elementen per pagina tonen.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Het adres en de browser van een inzending komen uit de auditindex, die hier niet beschikbaar is: de kolom toont &quot;niet vastgelegd&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Het adres en de browser zijn die welke de audit voor het element heeft vastgelegd (het automatisch tegenhouden legt ze altijd vast; publiceren en aanmaken alleen waar dat is ingeschakeld), zoals de privacyinstellingen ze bewaren.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elementen</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Verwijderen haalt de elementen definitief weg, met al hun versies en vertalingen. Dit kan niet ongedaan worden gemaakt.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>De elementen gaan naar de prullenbak, waaruit ze kunnen worden hersteld.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Elk element wordt gecontroleerd aan de hand van uw eigen rechten; een element met onderliggende elementen blijft zoals het is (verwijder het in de inhoudsstructuur). U wordt gevraagd te bevestigen dat u het bent.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dit wordt op de achtergrond uitgevoerd: de voortgangspagina wordt geopend en het resultaat per element wordt getoond wanneer het klaar is.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>De geselecteerde elementen</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>en nog %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annuleren</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Er is niets gedaan</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Reden: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>De actie loopt nog op de achtergrond.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>De voortgang</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>De achtergrondactie is mislukt: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Gedaan</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Geweigerd</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislukt</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Waarom</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Terug naar de lijst</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Niets gedaan</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bevestigen</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Kies een actie.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Selecteer ten minste één element.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Selecteer maximaal 1000 elementen tegelijk.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Geef aan waarom de elementen worden tegengehouden.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Kies de sectie.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Kies de status.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Het formulier kon niet worden gelezen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Recente inhoud</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>De aantallen konden niet worden gelezen: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Tegengehouden voor controle</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nieuw vandaag</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Het tegenhouden voor controle is nog niet ingericht (de upgradestap 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Alle recente inhoud</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>U mag geen moderatieacties uitvoeren (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>De moderatieactie is niet voltooid: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderatie: %action op %count objecten</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done van %total objecten: %ok gedaan, %refused geweigerd, %failed mislukt</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok gedaan, %refused geweigerd, %failed mislukt</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Het bestaat niet meer.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Het heeft geen locatie (niet gepubliceerd).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>U mag het niet verbergen (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>U mag het niet zichtbaar maken (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Het is al verborgen.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Het is niet verborgen.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Verborgen.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Zichtbaar gemaakt.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Het staat in de prullenbak: leeg de prullenbak of herstel het daar.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Een concept dat nooit is gepubliceerd, kan niet naar de prullenbak: verwijder het.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>U mag het niet verwijderen (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Verwijderd.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>U mag het niet weghalen (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Het heeft onderliggende elementen: verwijder het in de inhoudsstructuur, waar die worden getoond.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Het is niet verwijderd (mogelijk houdt een workflow het verwijderen tegen).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Naar de prullenbak verplaatst.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>De sectie bestaat niet.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Het staat al in deze sectie.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>U mag deze sectie niet toewijzen (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>De sectie is niet toegewezen.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sectie toegewezen.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>De status bestaat niet.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Het heeft deze status al.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>U mag deze status niet toewijzen (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>De status is niet toegewezen (mogelijk houdt een workflow de wijziging tegen).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Status toegewezen.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Deze actie bestaat niet.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Het tegenhouden voor controle is niet ingericht (de upgradestap 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Geef aan waarom het wordt tegengehouden.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Het wordt al tegengehouden.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>U mag het niet tegenhouden (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Het tegenhouden is niet ingesteld (mogelijk houdt een workflow de wijziging tegen).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Tegengehouden.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Het wordt niet tegengehouden.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>U mag het niet vrijgeven (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Het tegenhouden is niet opgeheven (mogelijk houdt een workflow de wijziging tegen).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Vrijgegeven; nog steeds verborgen: u mag het niet zichtbaar maken (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Vrijgegeven.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -81824,7 +82496,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Stale pages</source>
-        <translation>Verouderde pagina&apos;s</translation>
+        <translation>Verouderde pagina's</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -81883,7 +82555,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>%pages pages written</source>
-        <translation>%pages pagina&apos;s geschreven</translation>
+        <translation>%pages pagina's geschreven</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
@@ -81954,7 +82626,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Een GitHub-projectsite staat onder /&lt;repository&gt;/; relatieve links werken daar en overal elders.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Een build haalt elke pagina van %site op zoals een niet-aangemelde bezoeker die ziet, herschrijft de links, kopieert de bestanden en schrijft het resultaat naar de map van het doel. Er wordt niets gepubliceerd totdat je de build controleert en op Publiceren drukt.</translation>
     </message>
     <message>
@@ -82002,8 +82674,8 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Een pagina die na het opschonen nog debuguitvoer, een formuliertoken of een sessie-id bevat, wordt nooit gepubliceerd.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Terugdraaien is voor experts: vink &quot;Ik weet wat dit verandert&quot; aan en typ de naam van het versielabel opnieuw.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Terugdraaien is voor experts: vink "Ik weet wat dit verandert" aan en typ de naam van het versielabel opnieuw.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -82163,7 +82835,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
-        <translation>Debuguitvoer, formuliertokens, sessie-id&apos;s en nonces worden altijd verwijderd.</translation>
+        <translation>Debuguitvoer, formuliertokens, sessie-id's en nonces worden altijd verwijderd.</translation>
     </message>
     <message>
         <source>Deploy key</source>
@@ -82203,11 +82875,11 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Extras</source>
-        <translation>Extra&apos;s</translation>
+        <translation>Extra's</translation>
     </message>
     <message>
         <source>Fetch the pages from</source>
-        <translation>Pagina&apos;s ophalen van</translation>
+        <translation>Pagina's ophalen van</translation>
     </message>
     <message>
         <source>File</source>
@@ -82367,7 +83039,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Leave out these pages</source>
-        <translation>Deze pagina&apos;s weglaten</translation>
+        <translation>Deze pagina's weglaten</translation>
     </message>
     <message>
         <source>Leave out these sections</source>
@@ -82419,7 +83091,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Most pages</source>
-        <translation>De meeste pagina&apos;s</translation>
+        <translation>De meeste pagina's</translation>
     </message>
     <message>
         <source>Name</source>
@@ -82503,7 +83175,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
-        <translation>Alleen wat de pagina&apos;s noemen</translation>
+        <translation>Alleen wat de pagina's noemen</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
@@ -82514,7 +83186,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>De voorvertoning openen</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Opent de build zoals de host hem zal leveren, vanuit de map van het doel. De link werkt een uur lang voor jou.</translation>
     </message>
     <message>
@@ -82531,15 +83203,15 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Pages</source>
-        <translation>Pagina&apos;s</translation>
+        <translation>Pagina's</translation>
     </message>
     <message>
         <source>Pages of the target</source>
-        <translation>Pagina&apos;s van het doel</translation>
+        <translation>Pagina's van het doel</translation>
     </message>
     <message>
         <source>Pages refused</source>
-        <translation>Geweigerde pagina&apos;s</translation>
+        <translation>Geweigerde pagina's</translation>
     </message>
     <message>
         <source>Post-processing</source>
@@ -82663,7 +83335,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>Sectie-id&apos;s, gescheiden door komma&apos;s.</translation>
+        <translation>Sectie-id's, gescheiden door komma's.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
@@ -82690,8 +83362,8 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Setup &gt; Geheimen</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Getoond in lijsten, bijvoorbeeld &quot;Openbare site op GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Getoond in lijsten, bijvoorbeeld "Openbare site op GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82719,7 +83391,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>Stale pages</source>
-        <translation>Verouderde pagina&apos;s</translation>
+        <translation>Verouderde pagina's</translation>
     </message>
     <message>
         <source>Started</source>
@@ -82855,11 +83527,11 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>De lijst met pagina&apos;s voor zoekmachines; vereist het openbare adres.</translation>
+        <translation>De lijst met pagina's voor zoekmachines; vereist het openbare adres.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>De pagina&apos;s worden opgehaald zoals een niet-aangemelde bezoeker ze ziet. Beheer- en bewerkingssiteaccesses worden nooit aangeboden.</translation>
+        <translation>De pagina's worden opgehaald zoals een niet-aangemelde bezoeker ze ziet. Beheer- en bewerkingssiteaccesses worden nooit aangeboden.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -82898,7 +83570,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>De site gaat terug naar de bestanden van die publicatie; een build die nog niet is gepubliceerd, moet eerst worden gepubliceerd of weggegooid.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>De eigen pagina van de site voor adressen die niet bestaan.</translation>
     </message>
     <message>
@@ -82906,8 +83578,8 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Het doel kon niet worden opgeslagen: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Het doel meldt zich nog niet aan met deze sleutel: kies &quot;Een deploysleutel die voor dit doel is gemaakt&quot; in de instellingen ervan.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Het doel meldt zich nog niet aan met deze sleutel: kies "Een deploysleutel die voor dit doel is gemaakt" in de instellingen ervan.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82942,8 +83614,8 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <translation>Gooit deze build weg: de map bevat weer de laatste publicatie. De live-site verandert niet.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Vink eerst &quot;Ik heb de wijzigingen gecontroleerd&quot; aan.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Vink eerst "Ik heb de wijzigingen gecontroleerd" aan.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -82987,7 +83659,7 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Wat de pagina&apos;s noemen, en elke afbeelding van gepubliceerde inhoud</translation>
+        <translation>Wat de pagina's noemen, en elke afbeelding van gepubliceerde inhoud</translation>
     </message>
     <message>
         <source>When</source>

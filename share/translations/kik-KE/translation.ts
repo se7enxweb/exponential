@@ -15151,6 +15151,14 @@ Rũmbũiya: Ikĩohe ndigaruta mũingĩrĩrie.</translation>
         <translation>Mũgarũrũko wa ũhandi ũigĩtwo ta faĩlo: ũrĩa ũrĩ, mĩtengerio, gũtengeria na gũcookia.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Ũhoro mwerũ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ũhoro mwerũ mũno, ũrĩa ũnyiitĩtwo nĩ ũndũ wa gũthimwo, na mawĩra harĩ iria ithuurĩtwo.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Cabithia kobi ya tũtũ ya saiti kũrĩ GitHub Pages kana host o yothe ya git.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Nĩ gĩcenjetio</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Nĩ kĩumbĩtwo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Rĩĩtwa</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kĩrathi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Gĩcunjĩ</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Mũumbi</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ũhoro mwerũ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ũhoro ũrĩa ũumbĩtwo na ũgacenjio o rĩu saiti-inĩ yothe, ũrĩa mwerũ mbere: ũrĩa ageni maatũmire, ũrĩa ũnyiitĩtwo nĩ ũndũ wa gũthimwo, ndrafti iria irĩetereire gũcabithio. Thuura indo nĩguo ũcirekererie, ũcinyiite, ũcihithe, ũcionanie, ũcieherie kana ũcithamĩrie gĩcunjĩ-inĩ kana hali-inĩ ĩngĩ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Mũhari ndũngĩathomekire: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Kũnyiitwo nĩ ũndũ wa gũthimwo gũtirĩ kwambĩrĩrio, nĩ ũndũ ũcio gũtirĩ kĩnyiitĩtwo na mawĩra ma kũnyiita matiheanagwo. Ikinya rĩa gũcenjia 6.0.15-review-hold nĩrĩo rĩkwambagĩrĩria: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Thuurania mũhari</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuuma</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nginya</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tarehe</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Nĩ kĩumbĩtwo (rĩrĩa gĩacabithirio mbere)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ciothe</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ũrĩa kĩrĩ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Nĩ gĩcabithĩtio</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Ndrafti, gĩtiacabithirio</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Nĩ ĩretereire (gwĩtĩkĩrio kana tarehe)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Kĩgira-inĩ kĩa mahuti</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kĩnyiitĩtwo nĩ ũndũ wa gũthimwo</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Kĩnyiitĩtwo</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Gĩtinyiitĩtwo</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Kĩhithe</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Kĩonekaga</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Gĩatũmirwo na</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Njĩra o yothe ya saiti</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>O ũrĩa gũthingata kwandĩkire.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Rĩu: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Rĩĩtwa rĩa gũtoonya kana namba ya mũhũthĩri.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Thuurania</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Eheria mathuurania</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Indo</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from nginya %to thĩinĩ wa %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Gũtirĩ kĩndũ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(gĩathomirwo thĩinĩ wa ms %ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Mawĩra ma indo iria ithuurĩtwo</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Thuura ciothe harĩ karatathi gaka</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ithuurĩtwo</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ũndũ ũgwĩkwo</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Thuura ũndũ ũgwĩkwo</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Rekereria kũnyiitwo</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Nyiita nĩ ũndũ wa gũthimwo</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Hitha</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Onania</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Ikia kĩgira-inĩ kĩa mahuti</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Thiria</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Hĩta gĩcunjĩ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Hĩta hali</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Gĩtũmi</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Nĩ kĩbatarĩte nĩguo kũnyiita; kĩigagwo hamwe na kũnyiitwo na thĩinĩ wa gũthingata.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Thuura gĩcunjĩ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Hali</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Thuura hali</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Hũthĩra harĩ iria ithuurĩtwo</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>O kĩndũ gĩthimagwo kũringana na rũtha rwaku. Gũikia kĩgira-inĩ kĩa mahuti na gũthiria nĩ igũkũũria ũtĩkĩrie. Indo nyingĩ gũkĩra %count ciĩkagwo na thuutha.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Thuura</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Gũcabithia</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Gĩatũmirwo kuuma</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Thuura %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>o na rĩu ti-ũguo</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(gũtirĩ rĩĩtwa)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Namba %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ndrafti</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Nĩ ĩretereire</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Nĩ ĩhithĩtwo nĩ ĩrĩa ĩrĩ igũrũ yayo</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Kĩnyiitĩtwo: gĩtũmwo kĩerũ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Ũrutwo %version nĩ ũretereire</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Ũrutwo %version nĩ ũrarutwo wĩra</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Ndrafti, ũrutwo %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Ũrutwo %version nĩ ũcabithĩtio</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Nĩ kĩbangĩtwo harĩ %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>gũtirĩ aderethi</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>gĩtiandĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Gũtirĩ kĩndũ gĩkũiganana na mathuurania macio.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rora ciothe</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Gũtirĩ ũhoro o na rĩu.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>O karatathi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Onania indo %count o karatathi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Aderethi na mũthigiriri wa gĩtũmwo ciumaga indeksi-inĩ ya gũthingata, ĩrĩa ĩtarĩ haha: gĩcunjĩ kiuga "gĩtiandĩkĩtwo".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Aderethi na mũthigiriri nĩ iria gũthingata kwandĩkire nĩ ũndũ wa kĩndũ kĩu (kũnyiita gwa kĩũmbe kũrĩ hĩndĩ ciothe nĩ gũciandĩkaga; gũcabithia na kũumba o harĩa hahingũrĩtwo), o ta ũrĩa mbangĩ ciakĩo cia hitho iciigaga.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: indo %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Gũthiria nĩ kweheragia indo tene na tene, hamwe na irutwo ciacio ciothe na ũtaũri wacio. Gũtingĩcokio.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Indo nĩ ciathiĩ kĩgira-inĩ kĩa mahuti, kũrĩa ingĩcokio.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>O kĩndũ gĩthimagwo kũringana na rũtha rwaku; kĩndũ kĩrĩ na indo nini rungu rwakĩo gĩtigagwo o ũrĩa kĩrĩ (gĩeherie mũbangĩre-inĩ wa ũhoro). Nĩũkũũrio ũtĩkĩrie atĩ nĩ wee.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ũndũ ũyũ wĩkagwo na thuutha: karatathi ka ũrĩa ũthiĩte nĩ kahingũkaga, na ũthiĩ wa o kĩndũ nĩ ũkuonanio warĩkia.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Indo iria ithuurĩtwo</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>na %count ingĩ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Tiga</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Gũtirĩ ũndũ wĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Gĩtũmi: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Ũndũ ũcio o na rĩu nĩ ũrĩkwo na thuutha.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ũrĩa ũthiĩte</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Ũndũ wa thuutha nĩ ũoire: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Nĩ ĩrĩkĩrĩte</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Nĩ ĩregetwo</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nĩ ĩoire</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>O kĩndũ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Kĩndũ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ũthiĩ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Nĩ kĩĩ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Cooka mũhari-inĩ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Mwambĩrĩria</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Gũtirĩ ũndũ wĩkĩtwo</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Tĩkĩria</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Thuura ũndũ ũgwĩkwo.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Thuura kĩndũ o na kĩmwe.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Thuura indo itakĩrĩte 1000 hĩndĩ ĩmwe.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Ugĩ nĩ kĩĩ indo inyiitĩtwo.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Thuura gĩcunjĩ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Thuura hali.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Fomu ndĩngĩathomekire.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ũhoro mwerũ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Mũtarũ ndũngĩathomekire: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kĩnyiitĩtwo nĩ ũndũ wa gũthimwo</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Kĩerũ ũmũthĩ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Kũnyiitwo nĩ ũndũ wa gũthimwo gũtirĩ kwambĩrĩrio (ikinya rĩa gũcenjia 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ũhoro wothe mwerũ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ndũrĩ na rũtha rwa gwĩka mawĩra ma ũrũgamĩrĩri (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Ũndũ wa ũrũgamĩrĩri ndũrĩ mũrĩkie: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Ũrũgamĩrĩri: %action harĩ indo %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done thĩinĩ wa %total cia indo: %ok irĩkĩrĩte, %refused iregetwo, %failed ioire</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok irĩkĩrĩte, %refused iregetwo, %failed ioire</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Gĩtirĩ ho rĩngĩ.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Gĩtirĩ na handũ (gĩtiacabithirio).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ndũrĩ na rũtha rwa gũkĩhitha (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ndũrĩ na rũtha rwa gũkĩonania (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Nĩ kĩhithe tayari.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Gĩtihithe.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Nĩ kĩhithĩtwo.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Nĩ kĩonanĩtio.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Kĩrĩ kĩgira-inĩ kĩa mahuti: gĩthirie kana ũgĩcokie kuo.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ndrafti ĩtarĩ yacabithio ndĩngĩthiĩ kĩgira-inĩ kĩa mahuti: ĩthirie.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ndũrĩ na rũtha rwa gũkĩthiria (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Nĩ gĩthirĩtio.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ndũrĩ na rũtha rwa gũkĩeheria (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Kĩrĩ na indo nini rungu rwakĩo: gĩeherie mũbangĩre-inĩ wa ũhoro, kũrĩa ciandĩkĩtwo.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Gĩtieheririo (mũtaratara wa wĩra no ũkorwo ũnyiitĩte kweheria).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Nĩ gĩikĩtio kĩgira-inĩ kĩa mahuti.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Gĩcunjĩ gĩtirĩ ho.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Kĩrĩ gĩcunjĩ-inĩ gĩkĩ tayari.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ndũrĩ na rũtha rwa kũhĩta gĩcunjĩ gĩkĩ (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Gĩcunjĩ gĩtiahĩtirwo.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Gĩcunjĩ nĩ kĩhĩtĩtwo.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Hali ĩyo ndĩrĩ ho.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Kĩrĩ hali-inĩ ĩno tayari.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ndũrĩ na rũtha rwa kũhĩta hali ĩno (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Hali ndĩahĩtirwo (mũtaratara wa wĩra no ũkorwo ũnyiitĩte ũcenjio).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Hali nĩ ĩhĩtĩtwo.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Gũtirĩ ũndũ ũgwĩkwo ta ũcio.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Kũnyiitwo nĩ ũndũ wa gũthimwo gũtirĩ kwambĩrĩrio (ikinya rĩa gũcenjia 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Ugĩ nĩ kĩĩ kĩnyiitĩtwo.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Nĩ kĩnyiitĩtwo tayari.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ndũrĩ na rũtha rwa gũkĩnyiita (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Kũnyiitwo gũtiaigirwo (mũtaratara wa wĩra no ũkorwo ũnyiitĩte ũcenjio).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Nĩ kĩnyiitĩtwo.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Gĩtinyiitĩtwo.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ndũrĩ na rũtha rwa gũkĩrekereria (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Kũnyiitwo gũtiarekereirio (mũtaratara wa wĩra no ũkorwo ũnyiitĩte ũcenjio).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Nĩ kĩrekereirio; o na rĩu nĩ kĩhithe: ndũrĩ na rũtha rwa gũkĩonania (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Nĩ kĩrekereirio.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Saiti ya mũrimo wa GitHub ĩikaraga rungu rwa /&lt;repository&gt;/; ikĩgwatanio cia gũtwarana nĩ irutaga wĩra kũu na handũ hangĩ o hothe.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Mwako nĩ ũrehaga o karatathi ka %site o ta ũrĩa mũgeni ũtatoonyete akonaga, ũkandĩka ikĩgwatanio rĩngĩ, ũkoya kobi ya faili na ũkandĩka maumĩrĩra foda-inĩ ya kĩrorirwo. Gũtirĩ kĩndũ gĩgũcabithio nginya ũthuthurie mwako na ũhihinyie Cabithia.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Karatathi karĩ na maandĩko ma debug, token ya fomu kana id ya session o na thuutha wa gũthambio gatirĩ hĩndĩ gacabithagio.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Gũcookia nĩ kwa ataalamu: ĩkĩra kĩmenyithia &quot;Nĩ njũĩ kĩrĩa ũndũ ũyũ ũgũcenjia&quot; na wandĩke rĩĩtwa rĩa kĩmenyithia rĩngĩ.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Gũcookia nĩ kwa ataalamu: ĩkĩra kĩmenyithia "Nĩ njũĩ kĩrĩa ũndũ ũyũ ũgũcenjia" na wandĩke rĩĩtwa rĩa kĩmenyithia rĩngĩ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Hingũra kũrora mbere</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Ĩhingũraga mwako o ta ũrĩa host ĩkaũheana, kuuma foda ya kĩrorirwo. Kĩgwatanio nĩ kĩrutaga wĩra nĩ ũndũ waku ihinda rĩa ithaa rĩmwe.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Mwambĩrĩria &gt; Matumbĩ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Ĩonanagio thĩinĩ wa mĩrongo, ta &quot;Saiti ya andũ othe kũrĩ GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ĩonanagio thĩinĩ wa mĩrongo, ta "Saiti ya andũ othe kũrĩ GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Saiti nĩ ĩcookaga faili-inĩ cia gũcabithia kũu; mwako ũtarĩ mũcabithie no nginya ũcabithio kana ũtewo mbere.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Karatathi ka saiti kene nĩ ũndũ wa address iria itarĩ ho.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Kĩrorirwo gĩtingĩaigirwo: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Kĩrorirwo gĩtirĩ gĩgĩtoonya na kĩhingũro gĩkĩ rĩu: thuura &quot;Kĩhingũro kĩa gũtũma gĩthondekeirwo kĩrorirwo gĩkĩ&quot; mĩtaratara-inĩ yakĩo.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Kĩrorirwo gĩtirĩ gĩgĩtoonya na kĩhingũro gĩkĩ rĩu: thuura "Kĩhingũro kĩa gũtũma gĩthondekeirwo kĩrorirwo gĩkĩ" mĩtaratara-inĩ yakĩo.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <translation>Nĩ ĩtaga mwako ũyũ: foda nĩ ĩrĩ na gũcabithia kwa mũthia rĩngĩ. Saiti ĩrĩa ĩrĩ muoyo ndĩcenjagia.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Ĩkĩra kĩmenyithia &quot;Nĩ ndathuthuria mĩgarũrũko&quot; mbere.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Ĩkĩra kĩmenyithia "Nĩ ndathuthuria mĩgarũrũko" mbere.</translation>
     </message>
     <message>
         <source>Time</source>

@@ -15151,6 +15151,14 @@ Nota: Pakej tersebut tidak akan dinyahpasang.</translation>
         <translation>Perubahan pada pemasangan yang disimpan sebagai fail: keadaannya, larian, jalankan dan gulung balik.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Kandungan terkini</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Kandungan terbaharu, yang ditahan untuk semakan, dan tindakan pada pilihan.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Terbitkan salinan statik sesebuah laman ke GitHub Pages atau mana-mana hos git.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Diubah suai</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Dicipta</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksyen</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Pencipta</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kandungan terkini</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Kandungan yang paling baru dicipta dan diubah suai di seluruh laman, yang terbaru dahulu: kiriman pelawat, kandungan yang ditahan untuk semakan, draf yang menunggu penerbitan. Pilih item untuk melepaskan tahanan, menahan, menyembunyikan, menunjukkan, mengalih keluar atau mengalihkannya ke seksyen atau keadaan lain.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Senarai tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Tahanan untuk semakan belum disediakan, jadi tiada yang ditahan dan tindakan tahanan tidak ditawarkan. Langkah naik taraf 6.0.15-review-hold menyediakannya: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tapis senarai</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dari</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hingga</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tarikh</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Dicipta (pertama kali diterbitkan)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Semua</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Diterbitkan</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Draf, tidak pernah diterbitkan</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Belum selesai (menunggu kelulusan atau tarikh)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Dalam tong sampah</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ditahan untuk semakan</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Ditahan</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Tidak ditahan</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Tersembunyi</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Kelihatan</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Dihantar pada</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Mana-mana akses laman</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Hanya yang direkodkan oleh audit.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Sekarang: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Nama log masuk atau ID pengguna.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tapis</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Kosongkan penapis</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Item</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hingga %to daripada %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tiada item</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(dibaca dalam %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Tindakan pada item yang dipilih</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Pilih semua di halaman ini</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count dipilih</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tindakan</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Pilih tindakan</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Lepaskan tahanan</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Tahan untuk semakan</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Sembunyikan</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Tunjukkan</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Alih ke tong sampah</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Padam</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Tetapkan seksyen</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Tetapkan keadaan</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sebab</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Diperlukan untuk menahan; disimpan bersama tahanan dan dalam audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Pilih seksyen</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Keadaan</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Pilih keadaan</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Guna pada yang dipilih</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Setiap item disemak berdasarkan kebenaran anda sendiri. Mengalih ke tong sampah dan memadam meminta pengesahan anda. Lebih daripada %count item dijalankan di latar belakang.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Pilih</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Penerbitan</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Dihantar dari</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Pilih %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>belum lagi</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(tiada nama)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draf</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Belum selesai</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Disembunyikan oleh induknya</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Ditahan: kiriman baharu</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versi %version belum selesai</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versi %version sedang diusahakan</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Draf, versi %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versi %version diterbitkan</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Dijadualkan pada %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>tiada alamat</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>tidak direkodkan</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Tiada yang sepadan dengan penapis ini.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tunjukkan semua</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Belum ada kandungan.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Setiap halaman</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Tunjukkan %count item setiap halaman.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Alamat dan pelayar sesuatu kiriman datang daripada indeks audit, yang tidak tersedia di sini: lajur menyatakan "tidak direkodkan".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Alamat dan pelayar ialah yang direkodkan oleh audit untuk item itu (tahanan automatik sentiasa merekodkannya; penerbitan dan penciptaan hanya jika diaktifkan), sebagaimana disimpan oleh tetapan privasinya.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count item</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Memadam akan membuang item secara kekal, bersama semua versi dan terjemahannya. Ia tidak boleh dibuat asal.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Item dialihkan ke tong sampah, dari mana ia boleh dipulihkan.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Setiap item disemak berdasarkan kebenaran anda sendiri; item yang mempunyai subitem dibiarkan seperti sedia ada (alih keluarnya dalam struktur kandungan). Anda akan diminta mengesahkan bahawa ini memang anda.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ini berjalan di latar belakang: halaman kemajuannya dibuka, dan hasil bagi setiap item ditunjukkan apabila selesai.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Item yang dipilih</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>dan %count lagi</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Tiada apa-apa dilakukan</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sebab: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Tindakan masih berjalan di latar belakang.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Kemajuannya</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Tindakan latar belakang gagal: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ditolak</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Bagi setiap item</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Item</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hasil</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Mengapa</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Kembali ke senarai</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Persediaan</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Tiada yang dilakukan</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Sahkan</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Pilih tindakan.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Pilih sekurang-kurangnya satu item.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Pilih paling banyak 1000 item pada satu masa.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Nyatakan sebab item ditahan.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Pilih seksyen.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Pilih keadaan.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Borang tidak dapat dibaca.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Kandungan terkini</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Bilangan tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ditahan untuk semakan</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Baharu hari ini</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tahanan untuk semakan belum disediakan (langkah naik taraf 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Semua kandungan terkini</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Anda tidak dibenarkan menjalankan tindakan moderasi (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Tindakan moderasi tidak lengkap: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasi: %action pada %count objek</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done daripada %total objek: %ok selesai, %refused ditolak, %failed gagal</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok selesai, %refused ditolak, %failed gagal</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ia tidak wujud lagi.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ia tiada lokasi (tidak diterbitkan).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Anda tidak dibenarkan menyembunyikannya (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Anda tidak dibenarkan menunjukkannya (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ia sudah tersembunyi.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ia tidak tersembunyi.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Disembunyikan.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Ditunjukkan.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ia berada dalam tong sampah: kosongkan atau pulihkannya di sana.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Draf yang tidak pernah diterbitkan tidak boleh masuk ke tong sampah: padamkannya.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Anda tidak dibenarkan memadamnya (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Dipadam.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Anda tidak dibenarkan mengalih keluarnya (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ia mempunyai subitem: alih keluarnya dalam struktur kandungan, tempat subitem itu disenaraikan.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ia tidak dialih keluar (aliran kerja mungkin menahan pengalihan keluar).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Dialihkan ke tong sampah.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Seksyen tidak wujud.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ia sudah berada dalam seksyen ini.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Anda tidak dibenarkan menetapkan seksyen ini (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Seksyen tidak ditetapkan.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seksyen ditetapkan.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Keadaan tidak wujud.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ia sudah berada dalam keadaan ini.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Anda tidak dibenarkan menetapkan keadaan ini (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Keadaan tidak ditetapkan (aliran kerja mungkin menahan perubahan).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Keadaan ditetapkan.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Tindakan sedemikian tidak wujud.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tahanan untuk semakan belum disediakan (langkah naik taraf 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Nyatakan sebab ia ditahan.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ia sudah ditahan.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Anda tidak dibenarkan menahannya (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Tahanan tidak dikenakan (aliran kerja mungkin menahan perubahan).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Ditahan.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ia tidak ditahan.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Anda tidak dibenarkan melepaskannya (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Tahanan tidak dilepaskan (aliran kerja mungkin menahan perubahan).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Dilepaskan; masih tersembunyi: anda tidak dibenarkan menunjukkannya (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Dilepaskan.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Laman projek GitHub terletak di bawah /&lt;repository&gt;/; pautan relatif berfungsi di sana dan di tempat lain.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Binaan mengambil setiap halaman %site seperti yang dilihat oleh pelawat yang tidak log masuk, menulis semula pautan, menyalin fail dan menulis hasilnya ke folder sasaran. Tiada apa-apa diterbitkan sehingga anda menyemak binaan dan menekan Terbitkan.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Halaman yang masih membawa output nyahpepijat, token borang atau ID sesi selepas pelucutan tidak akan diterbitkan.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Gulung balik adalah untuk pakar: tandakan &quot;Saya tahu apa yang diubah oleh ini&quot; dan taip nama tanda sekali lagi.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Gulung balik adalah untuk pakar: tandakan "Saya tahu apa yang diubah oleh ini" dan taip nama tanda sekali lagi.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Buka pratonton</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Membuka binaan sebagaimana hos akan menyajikannya, dari folder sasaran. Pautan berfungsi untuk anda selama sejam.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Persediaan &gt; Rahsia</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Dipaparkan dalam senarai, contohnya &quot;Laman awam di GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Dipaparkan dalam senarai, contohnya "Laman awam di GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Laman kembali kepada fail terbitan itu; binaan yang belum diterbitkan mesti diterbitkan atau dibuang dahulu.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Halaman laman sendiri untuk alamat yang tidak wujud.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Sasaran tidak dapat disimpan: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Sasaran belum log masuk dengan kunci ini: pilih &quot;Kunci deploy yang dibuat untuk sasaran ini&quot; dalam tetapannya.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Sasaran belum log masuk dengan kunci ini: pilih "Kunci deploy yang dibuat untuk sasaran ini" dalam tetapannya.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <translation>Membuang binaan ini: folder menyimpan terbitan terakhir semula. Laman langsung tidak berubah.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Tandakan &quot;Saya telah menyemak perubahan&quot; dahulu.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Tandakan "Saya telah menyemak perubahan" dahulu.</translation>
     </message>
     <message>
         <source>Time</source>

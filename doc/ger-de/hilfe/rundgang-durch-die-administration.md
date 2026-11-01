@@ -62,6 +62,9 @@ Die linke Spalte ändert sich mit dem Reiter:
   mit einem Assistenten angelegt, ein Build im Hintergrund, die Änderungen vor **Veröffentlichen** geprüft und jede
   Veröffentlichung aufbewahrt, um zu ihr zurückzukehren
   ([Statisches Veröffentlichen](statisches-veroeffentlichen/README.md)).
+  Eine weitere ist **Neue Inhalte** in der Gruppe **Inhaltsmodell**: die
+  neuesten Inhalte der ganzen Site, was zur Prüfung zurückgehalten ist, wer es eingereicht hat, und Aktionen auf
+  einer Auswahl ([Neue Inhalte](neue-inhalte.md)).
 
 ![Das Menü eines Objekts im Baum](bilder/context-menu.webp)
 

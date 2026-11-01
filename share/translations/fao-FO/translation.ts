@@ -15151,6 +15151,14 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
         <translation>Broytingar í innleggingini goymdar sum fílur: støða teirra, koyringarnar, koyr og tak aftur.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Nýtt innihald</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nýggjasta innihaldið, tað sum er hildið aftur til eftirmeting, og gerðir á einum vali.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Útgev eitt støðugt avrit av eini heimasíðu á GitHub Pages ella hvørjum sum helst git-hýsara.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Broytt</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Stovnað</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Flokkur</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Deild</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Stovnari</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nýtt innihald</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Seinast stovnaða og broytta innihaldið á allari heimasíðuni, nýggjast fyrst: tað, sum vitjandi sendu inn, tað, sum er hildið aftur til eftirmeting, og kladdur, sum bíða eftir útgávu. Vel lutir fyri at loysa, halda aftur, fjala, vísa, taka burtur ella flyta teir til eina aðra deild ella støðu.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Listin kundi ikki lesast: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Afturhaldið til eftirmeting er ikki sett upp enn, so einki er hildið aftur, og afturhaldsgerðirnar verða ikki bjóðaðar. Dagføringsstigið 6.0.15-review-hold setur tað upp: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrera listan</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Frá</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dagfesting</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Stovnað (fyrst útgivið)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Øll</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Støða</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Útgivið</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Kladda, aldri útgivin</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Bíðar (eftir góðkenning ella dagfesting)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Í ruskspannini</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Hildið aftur til eftirmeting</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Hildið aftur</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ikki hildið aftur</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Fjaldur</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sjónligur</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Sent inn á atgongd til vevstað</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Hvør sum helst atgongd til vevstað</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Bert tað, sum eftirlitið skrásetti.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nú: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Eitt brúkaranavn ella eitt brúkara-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrera</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Strika filtur</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Lutir</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to av %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Eingin lutur</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lisið á %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Gerðir á valdu lutunum</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Vel øll á hesi síðuni</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count valdir</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gerð</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Vel eina gerð</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Loys afturhaldið</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Halt aftur til eftirmeting</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Fjal</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Vís</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Flyt í ruskspannina</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Strika</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Tilluta deild</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Tilluta støðu</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Orsøk</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Krevst fyri at halda aftur; goymd saman við afturhaldinum og í eftirlitinum.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Vel eina deild</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Støða</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Vel eina støðu</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Nýt á tey valdu</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Hvør lutur verður kannaður ímóti tínum egnu rættindum. At flyta í ruskspannina og at strika krevja váttan. Fleiri enn %count lutir verða viðgjørdir í bakgrundini.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Vel</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Útgáva</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Sent inn frá</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Vel %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ikki enn</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(einki navn)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Eyðmerki %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Kladda</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Bíðar</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Fjaldur av foreldrinum</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Hildið aftur: nýggj innsending</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Útgáva %version bíðar</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Útgáva %version í gerð</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Kladda, útgáva %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Útgáva %version útgivin</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ætlað til %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>eingin adressa</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ikki skrásett</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Einki samsvarar hesum filtrum.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Vís øll</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Einki innihald er enn.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fyri hvørja síðu</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Vís %count lutir fyri hvørja síðu.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Adressan og kagin hjá eini innsending koma úr eftirlitsyvirlitinum, sum ikki er tøkt her: í teiginum stendur „ikki skrásett“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adressan og kagin eru tey, sum eftirlitið skrásetti fyri lutin (sjálvvirkna afturhaldið skrásetir tey altíð; útgáva og stovnan bert har tað er tendrað), sum privatlívsstillingarnar goyma tey.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count lutir</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Striking tekur lutirnar burtur fyri alla tíð, við øllum teirra útgávum og týðingum. Tað kann ikki angrast.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Lutirnir fara í ruskspannina, haðani teir kunnu endurskapast.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Hvør lutur verður kannaður ímóti tínum egnu rættindum; ein lutur við undirlutum verður latin vera, sum hann er (tak hann burtur í innihaldsbygnaðinum). Tú verður biðin um at vátta, at tað ert tú.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Hetta koyrir í bakgrundini: framgongdarsíðan letur seg upp, og úrslitið fyri hvønn lut verður víst, tá ið tað er liðugt.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Valdu lutirnir</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>og %count afturat</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ógilda</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Einki varð gjørt</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Orsøk: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Gerðin koyrir enn í bakgrundini.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Framgongd hennara</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Bakgrundsgerðin miseydnaðist: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Liðugt</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Avvíst</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Miseydnaðist</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Fyri hvønn lut</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Lutur</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Úrslit</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Hví</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Aftur til listan</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Uppseting</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Einki gjørt</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Vátta</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Vel eina gerð.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Vel í minsta lagi ein lut.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Vel í mesta lagi 1000 lutir í senn.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sig, hví lutirnir verða hildnir aftur.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Vel deildina.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Vel støðuna.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Oyðublaðið kundi ikki lesast.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nýtt innihald</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Tølini kundu ikki lesast: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Hildið aftur til eftirmeting</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nýtt í dag</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Afturhaldið til eftirmeting er ikki sett upp enn (dagføringsstigið 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Alt nýtt innihald</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Tú hevur ikki loyvi at koyra umsjónargerðir (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Umsjónargerðin er ikki liðug: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Umsjón: %action á %count lutum</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done av %total lutum: %ok liðugir, %refused avvístir, %failed miseydnaðust</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok liðugir, %refused avvístir, %failed miseydnaðust</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Hann er ikki til longur.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Hann hevur einki stað (ikki útgivin).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Tú hevur ikki loyvi at fjala hann (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Tú hevur ikki loyvi at vísa hann (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Hann er longu fjaldur.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Hann er ikki fjaldur.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Fjaldur.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Vístur.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Hann er í ruskspannini: tøm hana ella endurskapa hann har.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ein kladda, sum aldri er útgivin, kann ikki fara í ruskspannina: strika hana.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Tú hevur ikki loyvi at strika hann (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Strikaður.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Tú hevur ikki loyvi at taka hann burtur (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Hann hevur undirlutir: tak hann burtur í innihaldsbygnaðinum, har teir eru listaðir.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Hann varð ikki tikin burtur (eitt arbeiðsflow kann halda burturtøkuni aftur).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Fluttur í ruskspannina.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Deildin er ikki til.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Hann er longu í hesi deildini.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Tú hevur ikki loyvi at tilluta hesa deildina (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Deildin varð ikki tillutað.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Deild tillutað.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Støðan er ikki til.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Hann er longu í hesi støðuni.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Tú hevur ikki loyvi at tilluta hesa støðuna (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Støðan varð ikki tillutað (eitt arbeiðsflow kann halda broytingini aftur).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Støða tillutað.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Eingin slík gerð er til.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Afturhaldið til eftirmeting er ikki sett upp (dagføringsstigið 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sig, hví hann verður hildin aftur.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Hann er longu hildin aftur.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Tú hevur ikki loyvi at halda hann aftur (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Afturhaldið varð ikki sett (eitt arbeiðsflow kann halda broytingini aftur).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Hildin aftur.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Hann er ikki hildin aftur.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Tú hevur ikki loyvi at loysa hann (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Afturhaldið varð ikki loyst (eitt arbeiðsflow kann halda broytingini aftur).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Loystur; enn fjaldur: tú hevur ikki loyvi at vísa hann (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Loystur.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Ein GitHub verkætlanarsíða liggur undir /&lt;repository&gt;/; viðvíkjandi leinki virka har og allastaðni aðrastaðni.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Ein bygging heintar hvørja síðu av %site, sum ein vitjandi, ið ikki er innritaður, sær hana, skrivar leinkini um, avritar fílurnar og skrivar úrslitið í mappuna hjá málinum. Einki verður útgivið, fyrr enn tú hevur kannað bygging og trýst á Útgev.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Ein síða, sum eftir reinsing enn inniheldur kembingarúttak, eitt oyðublaðstoken ella eitt setu-id, verður ongantíð útgivin.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Ein afturtøka er fyri serfrøðingar: set kross við &quot;Eg veit, hvat hetta broytir&quot; og skriva navnið á merkinum aftur.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Ein afturtøka er fyri serfrøðingar: set kross við "Eg veit, hvat hetta broytir" og skriva navnið á merkinum aftur.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Opna forsýningina</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Opnar bygging, sum hýsarin fer at veita hana, úr mappuni hjá málinum. Leinkið virkar fyri teg í ein tíma.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Uppseting &gt; Loyndarmál</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Víst í listum, til dømis &quot;Almenn heimasíða á GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Víst í listum, til dømis "Almenn heimasíða á GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Heimasíðan fer aftur til fílurnar úr teirri útgávuni; ein bygging, sum ikki er útgivin enn, má fyrst útgevast ella kastast.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Egna síða heimasíðunnar fyri adressur, sum ikki eru til.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Málið kundi ikki goymast: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Málið ritar ikki inn við hesum lyklinum enn: vel &quot;Ein deploy-lykil gjørdur til hetta málið&quot; í stillingunum.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Málið ritar ikki inn við hesum lyklinum enn: vel "Ein deploy-lykil gjørdur til hetta málið" í stillingunum.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <translation>Kastar hesa bygging: mappan inniheldur aftur seinastu útgávuna. Livandi heimasíðan broytist ikki.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Set fyrst kross við &quot;Eg havi kannað broytingarnar&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Set fyrst kross við "Eg havi kannað broytingarnar".</translation>
     </message>
     <message>
         <source>Time</source>

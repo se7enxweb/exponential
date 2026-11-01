@@ -15151,6 +15151,14 @@ Hoʻomaopopo: ʻAʻole wehe ʻia ka hoʻokomo ʻana o nā pūʻolo.</translation
         <translation>Nā loli i ka hoʻokomo i mālama ʻia ma ke ʻano he mau faila: ko lākou kūlana, nā holo, ka holo ʻana a me ka hoʻihoʻi ʻana.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Ka ʻike hou</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ka ʻike hou loa, ka mea i kāohi ʻia no ka loiloi, a me nā hana ma kekahi koho ʻana.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>E hoʻopuka i kope paʻa o kekahi pūnaewele ma GitHub Pages a i ʻole kekahi mea hoʻokipa git.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Hoʻololi ʻia</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Hana ʻia</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Inoa</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Papa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Māhele</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Mea hana</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ka ʻike hou</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ka ʻike i hana ʻia a hoʻololi ʻia ma mua loa o ka pūnaewele holoʻokoʻa, ka mea hou loa ma mua: ka mea a nā malihini i hoʻouna mai ai, ka mea i kāohi ʻia no ka loiloi, nā kāmua e kali ana i ko lākou hoʻopuka ʻia. E koho i nā mea e hoʻokuʻu ai, kāohi, hūnā, hōʻike, wehe a hoʻoneʻe paha i kekahi māhele a kūlana ʻē aʻe.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ʻAʻole i hiki ke heluhelu i ka papa inoa: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ʻAʻole i hoʻonohonoho ʻia ke kāohi loiloi, no laila ʻaʻohe mea i kāohi ʻia a ʻaʻole hāʻawi ʻia nā hana kāohi. Na ka ʻanuʻu hoʻopiʻi 6.0.15-review-hold e hoʻonohonoho: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Kānana i ka papa inoa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>A hiki i</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Lā</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Hana ʻia (hoʻopuka mua ʻia)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nā mea a pau</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Kūlana</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Hoʻopuka ʻia</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Kāmua, ʻaʻole i hoʻopuka ʻia</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>E kali ana (e kali ana i ka ʻae a i kekahi lā)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>I loko o ka pahu ʻōpala</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kāohi ʻia no ka loiloi</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Kāohi ʻia</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ʻAʻole kāohi ʻia</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Hūnā ʻia</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ʻIke ʻia</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Hoʻouna ʻia ma</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Kekahi siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ʻO ka mea wale nō i kākau ʻia e ka loiloi moʻokāki.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>I kēia manawa: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>He inoa komo a i ʻole he id mea hoʻohana.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Kānana</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Holoi i nā kānana</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Nā mea</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a hiki i %to o %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ʻAʻohe mea</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(heluhelu ʻia i loko o %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Nā hana no nā mea i koho ʻia</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Koho i nā mea a pau ma kēia ʻaoʻao</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count i koho ʻia</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hana</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Koho i kekahi hana</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Hoʻokuʻu i ke kāohi</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Kāohi no ka loiloi</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Hūnā</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Hōʻike</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Hoʻoneʻe i ka pahu ʻōpala</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Holoi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Hāʻawi i ka māhele</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Hāʻawi i ke kūlana</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Kumu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Pono no ke kāohi; mālama ʻia me ke kāohi a ma ka loiloi moʻokāki.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Koho i kekahi māhele</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kūlana mea</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Koho i kekahi kūlana</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Hoʻohana i nā mea i koho ʻia</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Nānā ʻia kēlā me kēia mea e like me kou mau ʻae ponoʻī. Noi ka hoʻoneʻe ʻana i ka pahu ʻōpala a me ka holoi ʻana iā ʻoe e hōʻoia. Holo ma hope ke ʻoi aku ma mua o %count mau mea.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Koho</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Hoʻopuka ʻana</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Hoʻouna ʻia mai</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Koho iā %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ʻaʻole i kēia manawa</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ʻaʻohe inoa)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Kāmua</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>E kali ana</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Hūnā ʻia e kona makua</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Kāohi ʻia: hoʻouna hou</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Mana %version e kali ana</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Mana %version e hana ʻia ana</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Kāmua, mana %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Mana %version hoʻopuka ʻia</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Hoʻonohonoho ʻia no %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ʻaʻohe helu wahi</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ʻaʻole i kākau ʻia</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ʻAʻohe mea e kūlike me kēia mau kānana.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hōʻike i nā mea a pau</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ʻAʻohe ʻike i kēia manawa.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ma kēlā me kēia ʻaoʻao</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hōʻike i %count mau mea ma kēlā me kēia ʻaoʻao.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Mai ka papa kuhikuhi loiloi moʻokāki mai ka helu wahi a me ka polokalamu kele pūnaewele o kekahi hoʻouna ʻana, a ʻaʻole loaʻa ia ma ʻaneʻi: ʻōlelo ke kolamu "ʻaʻole i kākau ʻia".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ʻO ka helu wahi a me ka polokalamu kele pūnaewele nā mea i kākau ʻia e ka loiloi moʻokāki no ka mea (kākau mau ke kāohi ʻakomi iā lākou; ka hoʻopuka ʻana a me ka hana ʻana inā hoʻā ʻia wale nō), e like me kā kona mau hoʻonohonoho pilikino e mālama ai.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count mau mea</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Wehe mau loa ka holoi ʻana i nā mea, me ko lākou mau mana a me nā unuhina a pau. ʻAʻole hiki ke hoʻihoʻi ʻia.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Hele nā mea i ka pahu ʻōpala, kahi e hiki ai ke hoʻihoʻi ʻia.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Nānā ʻia kēlā me kēia mea e like me kou mau ʻae ponoʻī; waiho ʻia ka mea me nā mea lalo e like me ia (e wehe iā ia ma ke kūkulu ʻike). E noi ʻia ʻoe e hōʻoia ʻo ʻoe nō kēia.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Holo kēia ma hope: wehe ʻia kona ʻaoʻao holomua, a hōʻike ʻia ka hopena o kēlā me kēia mea ke pau.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Nā mea i koho ʻia</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>a me %count hou aku</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kāpae</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ʻAʻohe mea i hana ʻia</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Kumu: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Ke holo nei ka hana ma hope.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Kona holomua</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Ua hāʻule ka hana ma hope: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Pau</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hōʻole ʻia</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Hāʻule</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Ma kēlā me kēia mea</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Mea</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hopena</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>No ke aha</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Hoʻi i ka papa inoa</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Hoʻonohonoho</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ʻAʻohe mea i pau</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Hōʻoia</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Koho i kekahi hana.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Koho i hoʻokahi mea ma ka liʻiliʻi loa.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Koho i 1000 mau mea ma ka nui loa i ka manawa hoʻokahi.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>E haʻi i ke kumu i kāohi ʻia ai nā mea.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Koho i ka māhele.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Koho i ke kūlana.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ʻAʻole i hiki ke heluhelu i ka palapala.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ka ʻike hou</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ʻAʻole i hiki ke heluhelu i nā helu: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kāohi ʻia no ka loiloi</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Hou i kēia lā</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ʻAʻole i hoʻonohonoho ʻia ke kāohi loiloi (ka ʻanuʻu hoʻopiʻi 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ka ʻike hou a pau</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e holo i nā hana kaʻapuni (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>ʻAʻole i piha ka hana kaʻapuni: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Kaʻapuni: %action ma %count mau mea</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done o %total mau mea: %ok pau, %refused hōʻole ʻia, %failed hāʻule</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok pau, %refused hōʻole ʻia, %failed hāʻule</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ʻAʻole ia i laila hou.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ʻAʻohe ona wahi (ʻaʻole hoʻopuka ʻia).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e hūnā iā ia (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e hōʻike iā ia (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ua hūnā ʻia ia.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ʻAʻole ia i hūnā ʻia.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Hūnā ʻia.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Hōʻike ʻia.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Aia ia i loko o ka pahu ʻōpala: e hoʻonele a hoʻihoʻi paha iā ia ma laila.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ʻAʻole hiki i kekahi kāmua i hoʻopuka ʻole ʻia ke hele i ka pahu ʻōpala: e holoi iā ia.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e holoi iā ia (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Holoi ʻia.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e wehe iā ia (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>He mau mea lalo kona: e wehe iā ia ma ke kūkulu ʻike, kahi i helu ʻia ai lākou.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ʻAʻole ia i wehe ʻia (ma ke kaʻina hana paha e kāohi ʻia ai ka wehe ʻana).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Hoʻoneʻe ʻia i ka pahu ʻōpala.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ʻAʻohe māhele pēlā.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Aia ia i kēia māhele.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e hāʻawi i kēia māhele (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>ʻAʻole i hāʻawi ʻia ka māhele.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Hāʻawi ʻia ka māhele.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ʻAʻohe kūlana pēlā.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Aia ia i kēia kūlana.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e hāʻawi i kēia kūlana (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ʻAʻole i hāʻawi ʻia ke kūlana (ma ke kaʻina hana paha e kāohi ʻia ai ka hoʻololi).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Hāʻawi ʻia ke kūlana.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ʻAʻohe hana pēlā.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ʻAʻole i hoʻonohonoho ʻia ke kāohi loiloi (ka ʻanuʻu hoʻopiʻi 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>E haʻi i ke kumu i kāohi ʻia ai.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ua kāohi ʻia ia.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e kāohi iā ia (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ʻAʻole i kau ʻia ke kāohi (ma ke kaʻina hana paha e kāohi ʻia ai ka hoʻololi).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Kāohi ʻia.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ʻAʻole ia i kāohi ʻia.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ʻAʻole ʻae ʻia ʻoe e hoʻokuʻu iā ia (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ʻAʻole i hoʻokuʻu ʻia ke kāohi (ma ke kaʻina hana paha e kāohi ʻia ai ka hoʻololi).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Hoʻokuʻu ʻia; hūnā ʻia nō: ʻaʻole ʻae ʻia ʻoe e hōʻike iā ia (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Hoʻokuʻu ʻia.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Noho ka pūnaewele papahana GitHub ma lalo o /&lt;repository&gt;/; hana nā loulou pili ma laila a ma nā wahi ʻē aʻe.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Kiʻi ke kūkulu ʻana i kēlā me kēia ʻaoʻao o %site e like me ka ʻike ʻana o ka malihini i komo ʻole, kākau hou i nā loulou, kope i nā faila a kākau i ka hopena i ka wahi faila o ka pahuhopu. ʻAʻohe mea e hoʻopuka ʻia a hiki i kou nānā ʻana i ke kūkulu ʻana a kaomi i Hoʻopuka.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>ʻAʻole loa e hoʻopuka ʻia ka ʻaoʻao e lawe mau ana i ka puka hoʻomaʻemaʻe hewa, ka hōʻailona palapala a i ʻole ka id kau ma hope o ka holoi ʻana.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>No ka poʻe akamai ka hoʻihoʻi ʻana: e kaha i &quot;Ua ʻike au i ka mea e hoʻololi ʻia&quot; a e kikokiko hou i ka inoa o ka lepili.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>No ka poʻe akamai ka hoʻihoʻi ʻana: e kaha i "Ua ʻike au i ka mea e hoʻololi ʻia" a e kikokiko hou i ka inoa o ka lepili.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Wehe i ka nānā mua</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Wehe i ke kūkulu ʻana e like me ka hāʻawi ʻana a ka mea hoʻokipa, mai ka wahi faila o ka pahuhopu. Hana ka loulou nou no hoʻokahi hola.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Hoʻonohonoho &gt; Nā mea huna</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Hōʻike ʻia ma nā papa inoa, no ka laʻana &quot;Pūnaewele ākea ma GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Hōʻike ʻia ma nā papa inoa, no ka laʻana "Pūnaewele ākea ma GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Hoʻi ka pūnaewele i nā faila o ia hoʻopuka; pono e hoʻopuka a kiola mua ʻia ke kūkulu ʻana i hoʻopuka ʻole ʻia.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Ka ʻaoʻao ponoʻī o ka pūnaewele no nā helu wahi i loaʻa ʻole.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>ʻAʻole hiki ke mālama i ka pahuhopu: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>ʻAʻole naʻe komo ka pahuhopu me kēia kī: e koho i &quot;He kī hoʻolaha i hana ʻia no kēia pahuhopu&quot; ma kona mau hoʻonohonoho.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ʻAʻole naʻe komo ka pahuhopu me kēia kī: e koho i "He kī hoʻolaha i hana ʻia no kēia pahuhopu" ma kona mau hoʻonohonoho.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <translation>Kiola i kēia kūkulu ʻana: paʻa hou ka wahi faila i ka hoʻopuka hope loa. ʻAʻole loli ka pūnaewele ola.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>E kaha mua i &quot;Ua nānā au i nā hoʻololi&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>E kaha mua i "Ua nānā au i nā hoʻololi".</translation>
     </message>
     <message>
         <source>Time</source>

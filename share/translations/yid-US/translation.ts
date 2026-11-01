@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ענדערונגען אין דער אינסטאַלאַציע געהאַלטן ווי טעקעס: זייער סטאַטוס, די לויפֿן, אויספֿירן און צוריקדרייען.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>לעצטער אינהאַלט</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>דער נייַסטער אינהאַלט, וואָס ווערט אָפּגעהאַלטן צו דורכקוקן, און אַקציעס אויף אַן אויסקלייַב.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>פֿאַרעפֿנטלעכן אַ סטאַטישע קאָפּיע פֿון אַ וועבזײַטל אויף GitHub Pages אָדער סײַ וועלכן git־האָסט.</translation>
     </message>
@@ -80584,6 +80592,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>געענדערט</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>געשאַפֿן</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>נאָמען</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>קלאַס</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>אָפּטייל</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>שאַפֿער</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>לעצטער אינהאַלט</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>דער לעצט געשאַפֿענער און געענדערטער אינהאַלט פֿונעם גאַנצן וועבזייַטל, דער נייַסטער ערשט: וואָס באַזוכער האָבן אייַנגעשיקט, וואָס ווערט אָפּגעהאַלטן צו דורכקוקן, שׂרטוטים וואָס וואַרטן אויף זייער פֿאַרעפֿנטלעכונג. קלייַבט אויס עלעמענטן כּדי זיי באַפֿרייַען, אָפּהאַלטן, באַהאַלטן, ווייַזן, אַוועקנעמען אָדער אַריבערפֿירן אין אַן אַנדער אָפּטייל אָדער צושטאַנד.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>מען האָט ניט געקענט לייענען די רשימה: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>דאָס אָפּהאַלטן צו דורכקוקן איז נאָך ניט אייַנגעשטעלט, דערפֿאַר ווערט גאָרנישט אָפּגעהאַלטן און די אָפּהאַלט־אַקציעס ווערן ניט אָנגעבאָטן. דער דערהייַנטיקונג־שריט 6.0.15-review-hold שטעלט עס אייַן: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>פֿילטרירן די רשימה</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>פֿון</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ביז</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>דאַטע</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>געשאַפֿן (ערשטע פֿאַרעפֿנטלעכונג)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>אַלע</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>סטאַטוס</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>פֿאַרעפֿנטלעכט</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>שׂרטוט, קיינמאָל ניט פֿאַרעפֿנטלעכט</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>וואַרטנדיק (וואַרט אויף אַ באַשטעטיקונג אָדער אַ דאַטע)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>אין מיסטקאַסטן</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>אָפּגעהאַלטן צו דורכקוקן</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>אָפּגעהאַלטן</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ניט אָפּגעהאַלטן</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>באַהאַלטן</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>קענטיק</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>אייַנגעשיקט דעם</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>יעדער וועבזייַטל־צוטריט</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>נאָר וואָס דער אויפֿזיכט־זשורנאַל האָט פֿאַרשריבן.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>איצט: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>אַ לאָגין אָדער אַ באַניצער־נומער.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>פֿילטער</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>אויסמעקן די פֿילטערס</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>עלעמענטן</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ביז %to פֿון %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>קיין עלעמענט</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(געלייענט אין %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>אַקציעס אויף די אויסגעקליבענע עלעמענטן</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>אויסקלייַבן אַלץ אויף דעם בלאַט</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count אויסגעקליבן</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>אַקציע</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>קלייַבט אויס אַן אַקציע</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>באַפֿרייַען פֿונעם אָפּהאַלט</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>אָפּהאַלטן צו דורכקוקן</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>באַהאַלטן</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ווייַזן</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>אַרייַנלייגן אין מיסטקאַסטן</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>אויסמעקן</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>צוטיילן אַן אָפּטייל</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>צוטיילן אַ צושטאַנד</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>סיבה</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>נייטיק צום אָפּהאַלטן; ווערט אָפּגעהיט מיטן אָפּהאַלט און אינעם אויפֿזיכט־זשורנאַל.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>קלייַבט אויס אַן אָפּטייל</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>צושטאַנד</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>קלייַבט אויס אַ צושטאַנד</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>צולייגן צו די אויסגעקליבענע</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>יעדער עלעמענט ווערט געפּרוּווט לויט אייַערע אייגענע רעכט. אַרייַנלייגן אין מיסטקאַסטן און אויסמעקן בעטן אייַך צו באַשטעטיקן. מער ווי %count עלעמענטן לויפֿן אין הינטערגרונט.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>אויסקלייַבן</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>פֿאַרעפֿנטלעכונג</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>אייַנגעשיקט פֿון</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>אויסקלייַבן %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>נאָך ניט</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(אָן נאָמען)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>נומער %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>שׂרטוט</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>וואַרטנדיק</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>באַהאַלטן דורך זייַן עלטערן־עלעמענט</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>אָפּגעהאַלטן: נייַע אייַנשיקונג</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ווערסיע %version וואַרט</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ווערסיע %version אין אַרבעט</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>שׂרטוט, ווערסיע %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ווערסיע %version פֿאַרעפֿנטלעכט</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>פּלאַנירט אויף %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>קיין אַדרעס</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ניט פֿאַרשריבן</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>גאָרנישט פּאַסט צו די פֿילטערס.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ווייַזן אַלץ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>עס איז נאָך ניטאָ קיין אינהאַלט.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>פּער בלאַט</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ווייַזן %count עלעמענטן פּער בלאַט.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>דער אַדרעס און דער בלעטערער פֿון אַן אייַנשיקונג קומען פֿונעם אינדעקס פֿונעם אויפֿזיכט־זשורנאַל, וואָס איז דאָ ניט צוטריטלעך: די קאָלאָנע זאָגט „ניט פֿאַרשריבן“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>דער אַדרעס און דער בלעטערער זענען די וואָס דער אויפֿזיכט־זשורנאַל האָט פֿאַרשריבן פֿאַרן עלעמענט (דאָס אויטאָמאַטישע אָפּהאַלטן פֿאַרשרייבט זיי שטענדיק; פֿאַרעפֿנטלעכן און שאַפֿן נאָר וווּ עס איז אייַנגעשאַלטן), אַזוי ווי זייַנע פּריוואַטקייט־אייַנשטעלונגען היטן זיי אָפּ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count עלעמענטן</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>אויסמעקן נעמט אַוועק די עלעמענטן אויף אייביק, מיט אַלע זייערע ווערסיעס און איבערזעצונגען. מען קען עס ניט צוריקמאַכן.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>די עלעמענטן גייען אין מיסטקאַסטן, פֿון וואַנעט מען קען זיי צוריקשטעלן.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>יעדער עלעמענט ווערט געפּרוּווט לויט אייַערע אייגענע רעכט; אַן עלעמענט מיט אונטער־עלעמענטן בלייַבט ווי ער איז (נעמט אים אַוועק אין דער אינהאַלט־סטרוקטור). מען וועט אייַך בעטן באַשטעטיקן אַז דאָס זענט איר.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>דאָס לויפֿט אין הינטערגרונט: זייַן פֿאָרשריט־בלאַט עפֿנט זיך, און דער רעזולטאַט פֿאַר יעדן עלעמענט ווערט געוויזן ווען עס איז פֿאַרטיק.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>די אויסגעקליבענע עלעמענטן</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>און נאָך %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>אַנולירן</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>גאָרנישט איז געטאָן געוואָרן</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>סיבה: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>די אַקציע לויפֿט נאָך אין הינטערגרונט.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>איר פֿאָרשריט</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>די הינטערגרונט־אַקציע איז דורכגעפֿאַלן: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>פֿאַרטיק</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>אָפּגעוואָרפֿן</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>פֿאַר יעדן עלעמענט</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>עלעמענט</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>רעזולטאַט</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>פֿאַר וואָס</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>צוריק צו דער רשימה</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>אייַנריכטונג</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>גאָרנישט געטאָן</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>באַשטעטיקן</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>קלייַבט אויס אַן אַקציע.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>קלייַבט אויס כאָטש איין עלעמענט.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>קלייַבט אויס מאַקסימום 1000 עלעמענטן אויף אַ מאָל.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>זאָגט פֿאַר וואָס די עלעמענטן ווערן אָפּגעהאַלטן.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>קלייַבט אויס דעם אָפּטייל.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>קלייַבט אויס דעם צושטאַנד.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>מען האָט ניט געקענט לייענען דעם פֿאָרמולאַר.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>לעצטער אינהאַלט</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>מען האָט ניט געקענט לייענען די צאָלן: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>אָפּגעהאַלטן צו דורכקוקן</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>נייַ הייַנט</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>דאָס אָפּהאַלטן צו דורכקוקן איז נאָך ניט אייַנגעשטעלט (דער דערהייַנטיקונג־שריט 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>דער גאַנצער לעצטער אינהאַלט</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>איר טאָרט ניט דורכפֿירן מאָדעראַציע־אַקציעס (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>די מאָדעראַציע־אַקציע איז ניט פֿאַרענדיקט: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>מאָדעראַציע: %action אויף %count אָביעקטן</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done פֿון %total אָביעקטן: %ok געטאָן, %refused אָפּגעוואָרפֿן, %failed דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok געטאָן, %refused אָפּגעוואָרפֿן, %failed דורכגעפֿאַלן</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>עס עקזיסטירט מער ניט.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>עס האָט ניט קיין אָרט (ניט פֿאַרעפֿנטלעכט).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>איר טאָרט עס ניט באַהאַלטן (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>איר טאָרט עס ניט ווייַזן (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>עס איז שוין באַהאַלטן.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>עס איז ניט באַהאַלטן.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>באַהאַלטן.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>געוויזן.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>עס איז אין מיסטקאַסטן: ליידיקט אים אויס אָדער שטעלט עס דאָרט צוריק.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>אַ שׂרטוט וואָס איז קיינמאָל ניט פֿאַרעפֿנטלעכט געוואָרן קען ניט גיין אין מיסטקאַסטן: מעקט אים אויס.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>איר טאָרט עס ניט אויסמעקן (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>אויסגעמעקט.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>איר טאָרט עס ניט אַוועקנעמען (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>עס האָט אונטער־עלעמענטן: נעמט עס אַוועק אין דער אינהאַלט־סטרוקטור, וווּ זיי זענען אויסגערעכנט.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>עס איז ניט אַוועקגענומען געוואָרן (אַ אַרבעטס־גאַנג קען אָפּהאַלטן דאָס אַוועקנעמען).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>אַרייַנגעלייגט אין מיסטקאַסטן.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>דער אָפּטייל עקזיסטירט ניט.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>עס איז שוין אין דעם אָפּטייל.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>איר טאָרט ניט צוטיילן דעם אָפּטייל (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>דער אָפּטייל איז ניט צוגעטיילט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>אָפּטייל צוגעטיילט.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>דער צושטאַנד עקזיסטירט ניט.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>עס איז שוין אין דעם צושטאַנד.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>איר טאָרט ניט צוטיילן דעם צושטאַנד (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>דער צושטאַנד איז ניט צוגעטיילט געוואָרן (אַ אַרבעטס־גאַנג קען אָפּהאַלטן די ענדערונג).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>צושטאַנד צוגעטיילט.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>אַזאַ אַקציע איז ניטאָ.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>דאָס אָפּהאַלטן צו דורכקוקן איז ניט אייַנגעשטעלט (דער דערהייַנטיקונג־שריט 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>זאָגט פֿאַר וואָס עס ווערט אָפּגעהאַלטן.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>עס איז שוין אָפּגעהאַלטן.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>איר טאָרט עס ניט אָפּהאַלטן (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>דער אָפּהאַלט איז ניט געשטעלט געוואָרן (אַ אַרבעטס־גאַנג קען אָפּהאַלטן די ענדערונג).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>אָפּגעהאַלטן.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>עס איז ניט אָפּגעהאַלטן.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>איר טאָרט עס ניט באַפֿרייַען (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>דער אָפּהאַלט איז ניט אָפּגעשאַפֿן געוואָרן (אַ אַרבעטס־גאַנג קען אָפּהאַלטן די ענדערונג).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>באַפֿרייַט; נאָך אַלץ באַהאַלטן: איר טאָרט עס ניט ווייַזן (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>באַפֿרייַט.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אַ GitHub־פּראָיעקט־וועבזײַטל געפֿינט זיך אונטער /&lt;repository&gt;/; רעלאַטיווע לינקען אַרבעטן דאָרט און אומעטום אַנדערש.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>אַן אויפֿבוי ברענגט יעדע זײַט פֿון %site אַזוי ווי אַ באַזוכער וואָס איז ניט אַרײַנגעלאָגירט זעט זי, שרײַבט איבער די לינקען, קאָפּירט די טעקעס און שרײַבט דעם רעזולטאַט אין דער מאַפּע פֿונעם ציל. גאָרנישט ווערט פֿאַרעפֿנטלעכט ביז איר קאָנטראָלירט דעם אויפֿבוי און דריקט פֿאַרעפֿנטלעכן.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אַ זײַט וואָס טראָגט נאָך דעם אָפּשיילן נאָך אַלץ דיבאַג־אויסגאַבע, אַ פֿאָרמע־טאָקען אָדער אַ סעסיע־ID ווערט קיינמאָל ניט פֿאַרעפֿנטלעכט.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>אַ צוריקדרייונג איז פֿאַר מומחים: צייכנט אָן &quot;איך ווייס וואָס דאָס ענדערט&quot; און שרײַבט נאָך אַ מאָל דעם נאָמען פֿונעם צייכן.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>אַ צוריקדרייונג איז פֿאַר מומחים: צייכנט אָן "איך ווייס וואָס דאָס ענדערט" און שרײַבט נאָך אַ מאָל דעם נאָמען פֿונעם צייכן.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>עפֿענען דעם פֿאָרויסבליק</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>עפֿנט דעם אויפֿבוי ווי דער האָסט וועט אים באַדינען, פֿון דער מאַפּע פֿונעם ציל. דער לינק אַרבעט פֿאַר אײַך אַ שעה.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>אייַנריכטונג &gt; סודות</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>געוויזן אין רשימות, למשל &quot;עפֿנטלעך וועבזײַטל אויף GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>געוויזן אין רשימות, למשל "עפֿנטלעך וועבזײַטל אויף GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81578,7 +82250,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>דער אויפֿבוי איז דער זעלביקער ווי די לעצטע פֿאַרעפֿנטלעכונג: ס&apos;איז ניטאָ וואָס צו פֿאַרעפֿנטלעכן.</translation>
+        <translation>דער אויפֿבוי איז דער זעלביקער ווי די לעצטע פֿאַרעפֿנטלעכונג: ס'איז ניטאָ וואָס צו פֿאַרעפֿנטלעכן.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
@@ -81673,7 +82345,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>דאָס וועבזײַטל גייט צוריק צו די טעקעס פֿון יענער פֿאַרעפֿנטלעכונג; אַן אויפֿבוי וואָס איז נאָך ניט פֿאַרעפֿנטלעכט מוז פֿריִער פֿאַרעפֿנטלעכט אָדער אַוועקגעוואָרפֿן ווערן.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>דעם וועבזײַטלס אייגענע זײַט פֿאַר אַדרעסן וואָס עקזיסטירן ניט.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>מע האָט ניט געקענט אויפֿהיטן דעם ציל: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>דער ציל לאָגירט זיך נאָך ניט אַרײַן מיט דעם שליסל: קלײַבט אויס &quot;אַ דיפּלוי־שליסל געמאַכט פֿאַר דעם ציל&quot; אין זײַנע באַשטימונגען.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>דער ציל לאָגירט זיך נאָך ניט אַרײַן מיט דעם שליסל: קלײַבט אויס "אַ דיפּלוי־שליסל געמאַכט פֿאַר דעם ציל" אין זײַנע באַשטימונגען.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81690,7 +82362,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>There is no build to check yet.</source>
-        <translation>ס&apos;איז נאָך ניטאָ קיין אויפֿבוי צו קאָנטראָלירן.</translation>
+        <translation>ס'איז נאָך ניטאָ קיין אויפֿבוי צו קאָנטראָלירן.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
@@ -81717,8 +82389,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>וואַרפֿט אַוועק דעם אויפֿבוי: די מאַפּע האַלט ווידער די לעצטע פֿאַרעפֿנטלעכונג. דאָס לעבעדיקע וועבזײַטל ענדערט זיך ניט.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>צייכנט פֿריִער אָן &quot;איך האָב קאָנטראָלירט די ענדערונגען&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>צייכנט פֿריִער אָן "איך האָב קאָנטראָלירט די ענדערונגען".</translation>
     </message>
     <message>
         <source>Time</source>

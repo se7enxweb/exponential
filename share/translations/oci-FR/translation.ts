@@ -15151,8 +15151,16 @@ Nòta: los paquets seràn pas desinstallats.</translation>
         <translation>Modificacions de l’installacion gardadas coma fichièrs : lor estat, las execucions, executar e anullar.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Contengut recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Lo contengut mai novèl, çò qu'es retengut per verificacion e d'accions sus una seleccion.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Publicatz una còpia estatica d&apos;un site sus GitHub Pages o sus quin òste git que siá.</translation>
+        <translation>Publicatz una còpia estatica d'un site sus GitHub Pages o sus quin òste git que siá.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22168,7 +22176,7 @@ Nòta: los paquets seràn pas desinstallats.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>L&apos;escondedor estatic servís las paginas a partir d&apos;aqueste servidor. Per publicar una còpia estatica d&apos;un site endacòm mai, sus GitHub Pages o sus quin òste git que siá, utilizatz la publicacion estatica.</translation>
+        <translation>L'escondedor estatic servís las paginas a partir d'aqueste servidor. Per publicar una còpia estatica d'un site endacòm mai, sus GitHub Pages o sus quin òste git que siá, utilizatz la publicacion estatica.</translation>
     </message>
 </context>
 <context>
@@ -76228,7 +76236,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Publicatz una còpia estatica d&apos;un site sus GitHub Pages o sus quin òste git que siá.</translation>
+        <translation>Publicatz una còpia estatica d'un site sus GitHub Pages o sus quin òste git que siá.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80584,6 +80592,670 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modificat</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creat</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seccion</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contengut recent</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Lo contengut creat e modificat mai recentament de tot lo site, lo mai novèl en primièr : çò que los visitaires mandèron, çò qu'es retengut per verificacion, los borrolhons qu'espèran lor publicacion. Seleccionatz d'elements per los liberar, los retenir, los amagar, los mostrar, los suprimir o los desplaçar cap a una autra seccion o un autre estat.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>La lista se poguèt pas legir : %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>La retenguda per verificacion es pas encara configurada : res es pas retengut e las accions de retenguda son pas prepausadas. L'etapa de mesa a jorn 6.0.15-review-hold la configura : ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrar la lista</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Al</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Creacion (primièra publicacion)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Totes</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Estatut</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicat</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Borrolhon, jamai publicat</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>En espèra (d'una aprovacion o d'una data)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Dins l'escobilhièr</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retengut per verificacion</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retengut</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Pas retengut</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Amagat</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Afichat</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Mandat lo</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Quin accès al site que siá</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Sonque çò que l'auditoria enregistrèt.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ara : %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Un identificant de connexion o un ID d'utilizaire.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrar</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Escafar los filtres</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elements</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to sus %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Cap d'element</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(legit en %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Accions suls elements seleccionats</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Seleccionar tot sus aquesta pagina</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count seleccionat(s)</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Accion</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Causissètz una accion</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Levar la retenguda</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Retenir per verificacion</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Amagar</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Mostrar</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Metre a l'escobilhièr</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Suprimir</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Atribuir una seccion</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Atribuir un estat</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Motiu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Requesit per retenir ; gardat amb la retenguda e dins l'auditoria.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Causissètz una seccion</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estat</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Causissètz un estat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aplicar a la seleccion</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Cada element es verificat segon vòstres pròpris dreches. La mesa a l'escobilhièr e la supression demandan una confirmacion. Al delà de %count elements, l'accion s'executa en rèire-plan.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Seleccionar</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicacion</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Mandat dempuèi</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Seleccionar %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>pas encara</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(sens nom)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Borrolhon</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>En espèra</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Amagat per son parent</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retengut : novèla somission</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Version %version en espèra</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Version %version en cors</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Borrolhon, version %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Version %version publicada</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Planificat pel %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>cap d'adreça</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>pas enregistrat</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Res correspond pas a aquestes filtres.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tot afichar</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>I a pas encara cap de contengut.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Afichar %count elements per pagina.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>L'adreça e lo navegador d'una somission venon de l'indèx d'auditoria, que es pas disponible aicí : la colomna indica « pas enregistrat ».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>L'adreça e lo navegador son los que l'auditoria enregistrèt per l'element (la retenguda automatica los enregistra totjorn ; la publicacion e la creacion sonque ont es activat), tal coma sos paramètres de confidencialitat los gardan.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action : %count elements</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>La supression escafa los elements per totjorn, amb totas lors versions e traduccions. Se pòt pas anullar.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Los elements van a l'escobilhièr, d'ont pòdon èsser restablits.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Cada element es verificat segon vòstres pròpris dreches ; un element amb de sots-elements es daissat coma es (levatz-lo dins l'estructura de contengut). Vos serà demandat de confirmar qu'es plan vos.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Aquò s'executa en rèire-plan : sa pagina de progression se dobrís, e lo resultat per element s'aficha un còp acabat.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Los elements seleccionats</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>e %count de mai</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anullar</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Res es pas estat fach</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Motiu : %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>L'accion s'executa encara en rèire-plan.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Sa progression</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>L'accion en rèire-plan a fracassat : %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fach</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refusat</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fracassat</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Perqué</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Tornar a la lista</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuracion</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Res de fach</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmar</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Causissètz una accion.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Seleccionatz almens un element.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Seleccionatz al maximum 1000 elements a l'encòp.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Indicatz perqué los elements son retenguts.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Causissètz la seccion.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Causissètz l'estat.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Lo formulari se poguèt pas legir.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Contengut recent</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Los comptes se poguèron pas legir : %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retenguts per verificacion</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Novèls uèi</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retenguda per verificacion es pas encara configurada (l'etapa de mesa a jorn 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tot lo contengut recent</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Avètz pas lo drech d'executar d'accions de moderacion (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>L'accion de moderacion es pas acabada : %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderacion : %action sus %count objèctes</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done sus %total objèctes : %ok fachs, %refused refusats, %failed fracassats</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok fachs, %refused refusats, %failed fracassats</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Existís pas pus.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>A pas cap d'emplaçament (pas publicat).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Avètz pas lo drech de l'amagar (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Avètz pas lo drech de lo mostrar (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Es ja amagat.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Es pas amagat.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Amagat.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Mostrat.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Es dins l'escobilhièr : voidatz-lo o restablissètz-lo d'aquí.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Un borrolhon jamai publicat pòt pas anar a l'escobilhièr : suprimissètz-lo.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Avètz pas lo drech de lo suprimir (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Suprimit.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Avètz pas lo drech de lo levar (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>A de sots-elements : levatz-lo dins l'estructura de contengut, ont son listats.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Es pas estat levat (un flux de trabalh pòt retenir la supression).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Mes a l'escobilhièr.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>La seccion existís pas.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Es ja dins aquesta seccion.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Avètz pas lo drech d'atribuir aquesta seccion (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>La seccion es pas estada atribuida.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seccion atribuida.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>L'estat existís pas.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Es ja dins aqueste estat.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Avètz pas lo drech d'atribuir aqueste estat (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>L'estat es pas estat atribuit (un flux de trabalh pòt retenir la modificacion).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Estat atribuit.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Aquesta accion existís pas.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retenguda per verificacion es pas configurada (l'etapa de mesa a jorn 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Indicatz perqué es retengut.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Es ja retengut.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Avètz pas lo drech de lo retenir (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>La retenguda es pas estada plaçada (un flux de trabalh pòt retenir la modificacion).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retengut.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Es pas retengut.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Avètz pas lo drech de lo liberar (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>La retenguda es pas estada levada (un flux de trabalh pòt retenir la modificacion).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Liberat ; totjorn amagat : avètz pas lo drech de lo mostrar (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Liberat.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80662,7 +81334,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%path fa %size, mai que çò que l&apos;òste permet per un fichièr.</translation>
+        <translation>%path fa %size, mai que çò que l'òste permet per un fichièr.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -80674,7 +81346,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag es la publicacion qu&apos;a lo site ara.</translation>
+        <translation>%tag es la publicacion qu'a lo site ara.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -80686,7 +81358,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/depaus/ per un site de projècte GitHub; void per un domeni personalizat o un site d&apos;utilizaire.</translation>
+        <translation>/depaus/ per un site de projècte GitHub; void per un domeni personalizat o un site d'utilizaire.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -80694,7 +81366,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>2. The host</source>
-        <translation>2. L&apos;òste</translation>
+        <translation>2. L'òste</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
@@ -80729,7 +81401,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Un site de projècte GitHub se tròba jos /&lt;repository&gt;/; los ligams relatius i foncionan, e pertot endacòm mai.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Una construccion recupèra cada pagina de %site coma la vei un visitaire pas connectat, reescriu los ligams, còpia los fichièrs e escriu lo resultat dins lo dossièr de la cibla. Res es pas publicat abans que verifiquètz la construccion e que quichètz Publicar.</translation>
     </message>
     <message>
@@ -80750,7 +81422,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>Una clau de desplegament se connècta per SSH: cambiatz l&apos;adreça git per l&apos;adreça SSH (git@github.com:owner/repo.git).</translation>
+        <translation>Una clau de desplegament se connècta per SSH: cambiatz l'adreça git per l'adreça SSH (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
@@ -80758,11 +81430,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Un prètzfait d&apos;aquesta cibla es encara en cors (%detail). Esperatz que s&apos;acabe.</translation>
+        <translation>Un prètzfait d'aquesta cibla es encara en cors (%detail). Esperatz que s'acabe.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Un prètzfait d&apos;aquesta cibla es encara en cors. Esperatz que s&apos;acabe.</translation>
+        <translation>Un prètzfait d'aquesta cibla es encara en cors. Esperatz que s'acabe.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -80777,12 +81449,12 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Una pagina que pòrta encara de sortida de desbugatge, un geton de formulari o un identificant de session aprèp lo netejatge es pas jamai publicada.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Un retorn en arrièr es per los expèrts: marcatz &quot;Sabi çò que cambia aquò&quot; e tornatz picar lo nom de l&apos;etiqueta.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Un retorn en arrièr es per los expèrts: marcatz "Sabi çò que cambia aquò" e tornatz picar lo nom de l'etiqueta.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Un site pòt far fins a %site, un fichièr fins a %file, amb environ 100 Go de trafic per mes. Amb un plan gratuit lo depaus deu èsser public. GitHub Pages es pas fach per las botigas o d&apos;autras transaccions comercialas.</translation>
+        <translation>Un site pòt far fins a %site, un fichièr fins a %file, amb environ 100 Go de trafic per mes. Amb un plan gratuit lo depaus deu èsser public. GitHub Pages es pas fach per las botigas o d'autras transaccions comercialas.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -80890,7 +81562,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Check it first</source>
-        <translation>Verificatz-la d&apos;en primièr</translation>
+        <translation>Verificatz-la d'en primièr</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -80918,11 +81590,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Valida la construccion, l&apos;etiqueta e la manda cap a %remote. Un mandadís es pas jamai forçat; podètz tornar a quina publicacion que siá mai tard.</translation>
+        <translation>Valida la construccion, l'etiqueta e la manda cap a %remote. Un mandadís es pas jamai forçat; podètz tornar a quina publicacion que siá mai tard.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>Comparat al dossièr d&apos;abans: %added apondudas, %changed modificadas, %removed suprimidas, %unchanged sens cambiament.</translation>
+        <translation>Comparat al dossièr d'abans: %added apondudas, %changed modificadas, %removed suprimidas, %unchanged sens cambiament.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
@@ -80962,7 +81634,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Void: l&apos;adreça del site. Siquenon, una adreça intèrna del meteis site.</translation>
+        <translation>Void: l'adreça del site. Siquenon, una adreça intèrna del meteis site.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -80974,7 +81646,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Cada publicacion es una validacion amb una etiqueta static/%id/&lt;n&gt;. Tornar en arrièr fa una validacion novèla amb los fichièrs d&apos;una publicacion anteriora: l&apos;istoric demòra, cap d&apos;etiqueta se desplaça pas e res es pas forçat.</translation>
+        <translation>Cada publicacion es una validacion amb una etiqueta static/%id/&lt;n&gt;. Tornar en arrièr fa una validacion novèla amb los fichièrs d'una publicacion anteriora: l'istoric demòra, cap d'etiqueta se desplaça pas e res es pas forçat.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81014,7 +81686,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Per una adreça SSH. La clau es creada aprèp l&apos;enregistrament; apondètz sa mitat publica al depaus.</translation>
+        <translation>Per una adreça SSH. La clau es creada aprèp l'enregistrament; apondètz sa mitat publica al depaus.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
@@ -81030,7 +81702,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Albergament gratuit a partir d&apos;un depaus GitHub.</translation>
+        <translation>Albergament gratuit a partir d'un depaus GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81082,7 +81754,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Help with the wizard</source>
-        <translation>Ajuda per l&apos;assistent</translation>
+        <translation>Ajuda per l'assistent</translation>
     </message>
     <message>
         <source>Hide them</source>
@@ -81122,7 +81794,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>S&apos;executa en rèire-plan coma %user; podètz tampar aquesta pagina.</translation>
+        <translation>S'executa en rèire-plan coma %user; podètz tampar aquesta pagina.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81182,7 +81854,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Creatz d&apos;en primièr lo depaus sus l&apos;òste; un depaus void conven.</translation>
+        <translation>Creatz d'en primièr lo depaus sus l'òste; un depaus void conven.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81230,7 +81902,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
-        <translation>Pas encara cap d&apos;etiqueta.</translation>
+        <translation>Pas encara cap d'etiqueta.</translation>
     </message>
     <message>
         <source>No target yet.</source>
@@ -81282,19 +81954,19 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Sonque amb un geton. env:NAME legís allòc una variabla d&apos;environament del servidor.</translation>
+        <translation>Sonque amb un geton. env:NAME legís allòc una variabla d'environament del servidor.</translation>
     </message>
     <message>
         <source>Open the preview</source>
-        <translation>Dobrir l&apos;apercebut</translation>
+        <translation>Dobrir l'apercebut</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
-        <translation>Dobrís la construccion coma l&apos;òste la servirà, a partir del dossièr de la cibla. Lo ligam fonciona per vos pendent una ora.</translation>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Dobrís la construccion coma l'òste la servirà, a partir del dossièr de la cibla. Lo ligam fonciona per vos pendent una ora.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
-        <translation>Opcional. Void: çò qu&apos;es estat publicat.</translation>
+        <translation>Opcional. Void: çò qu'es estat publicat.</translation>
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
@@ -81354,7 +82026,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Publicatz una còpia estatica d&apos;un site sus GitHub Pages o sus quin òste git que siá: construsissètz-la, verificatz los cambiaments, publicatz e tornatz a una publicacion anteriora quand ne cal.</translation>
+        <translation>Publicatz una còpia estatica d'un site sus GitHub Pages o sus quin òste git que siá: construsissètz-la, verificatz los cambiaments, publicatz e tornatz a una publicacion anteriora quand ne cal.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -81394,7 +82066,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>Remplaçar la clau: l&apos;anciana fonciona pas pus</translation>
+        <translation>Remplaçar la clau: l'anciana fonciona pas pus</translation>
     </message>
     <message>
         <source>Report</source>
@@ -81465,12 +82137,12 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>Configuracion &gt; Secrets</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Afichat dins las listas, per exemple &quot;Site public sus GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Afichat dins las listas, per exemple "Site public sus GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>La connexion amb una GitHub App arribarà amb l&apos;integracion GitHub.</translation>
+        <translation>La connexion amb una GitHub App arribarà amb l'integracion GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -81522,7 +82194,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
-        <translation>La publicacion estatica es desactivada. Activatz-la d&apos;en primièr dins Configuracion &gt; Publicacion estatica.</translation>
+        <translation>La publicacion estatica es desactivada. Activatz-la d'en primièr dins Configuracion &gt; Publicacion estatica.</translation>
     </message>
     <message>
         <source>Static publishing is switched on.</source>
@@ -81566,7 +82238,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>Las ciblas se pòdon crear e modificar, mas res es pas construch ni publicat fins qu&apos;es activada.</translation>
+        <translation>Las ciblas se pòdon crear e modificar, mas res es pas construch ni publicat fins qu'es activada.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
@@ -81630,11 +82302,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>La lista de las paginas pels motors de recèrca; necessita l&apos;adreça publica.</translation>
+        <translation>La lista de las paginas pels motors de recèrca; necessita l'adreça publica.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Las paginas son recuperadas coma las vei un visitaire pas connectat. Los siteaccess d&apos;administracion e d&apos;edicion son pas jamai prepausats.</translation>
+        <translation>Las paginas son recuperadas coma las vei un visitaire pas connectat. Los siteaccess d'administracion e d'edicion son pas jamai prepausats.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -81650,11 +82322,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>L&apos;emmagazinatge dels secrets es pas encara configurat (./console exp:upgrade --apply crea sa taula), doncas cap de clau pòt pas èsser gardada.</translation>
+        <translation>L'emmagazinatge dels secrets es pas encara configurat (./console exp:upgrade --apply crea sa taula), doncas cap de clau pòt pas èsser gardada.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Lo servidor se connècta el meteis (sa pròpria clau SSH o son assistent d&apos;identificants), o lo depaus es sus aqueste servidor.</translation>
+        <translation>Lo servidor se connècta el meteis (sa pròpria clau SSH o son assistent d'identificants), o lo depaus es sus aqueste servidor.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
@@ -81670,10 +82342,10 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Lo site torna als fichièrs d&apos;aquesta publicacion; una construccion pas encara publicada deu èsser publicada o abandonada d&apos;en primièr.</translation>
+        <translation>Lo site torna als fichièrs d'aquesta publicacion; una construccion pas encara publicada deu èsser publicada o abandonada d'en primièr.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>La pagina pròpria del site per las adreças que existisson pas.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <translation>La cibla a pas pogut èsser enregistrada: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>La cibla se connècta pas encara amb aquesta clau: causissètz &quot;Una clau de desplegament creada per aquesta cibla&quot; dins sos paramètres.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>La cibla se connècta pas encara amb aquesta clau: causissètz "Una clau de desplegament creada per aquesta cibla" dins sos paramètres.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81694,7 +82366,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Aquesta installacion a pas cap de siteaccess public. Los siteaccess d&apos;administracion e d&apos;edicion son pas jamai publicats.</translation>
+        <translation>Aquesta installacion a pas cap de siteaccess public. Los siteaccess d'administracion e d'edicion son pas jamai publicats.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
@@ -81710,15 +82382,15 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>This target has one.</source>
-        <translation>Aquesta cibla n&apos;a una.</translation>
+        <translation>Aquesta cibla n'a una.</translation>
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
         <translation>Abandona aquesta construccion: lo dossièr conten tornamai la darrièra publicacion. Lo site en linha càmbia pas.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Marcatz d&apos;en primièr &quot;Ai verificat los cambiaments&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Marcatz d'en primièr "Ai verificat los cambiaments".</translation>
     </message>
     <message>
         <source>Time</source>
@@ -81730,7 +82402,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Type the name of the tag again</source>
-        <translation>Tornatz picar lo nom de l&apos;etiqueta</translation>
+        <translation>Tornatz picar lo nom de l'etiqueta</translation>
     </message>
     <message>
         <source>Unchanged</source>
@@ -81750,11 +82422,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>What each file is; always written.</source>
-        <translation>Çò qu&apos;es cada fichièr; totjorn escrich.</translation>
+        <translation>Çò qu'es cada fichièr; totjorn escrich.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Çò qu&apos;a fach lo prètzfait e son jornal. Un prètzfait aviat aicí contunha en rèire-plan quand aquesta pagina es tampada.</translation>
+        <translation>Çò qu'a fach lo prètzfait e son jornal. Un prètzfait aviat aicí contunha en rèire-plan quand aquesta pagina es tampada.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
@@ -81786,11 +82458,11 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>D&apos;ont la còpia estatica es servida.</translation>
+        <translation>D'ont la còpia estatica es servida.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Quin site es publicat, e cossí s&apos;apèla la cibla.</translation>
+        <translation>Quin site es publicat, e cossí s'apèla la cibla.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -81798,7 +82470,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
-        <translation>Escrich cada còp qu&apos;un domeni personalizat es definit.</translation>
+        <translation>Escrich cada còp qu'un domeni personalizat es definit.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -81934,7 +82606,7 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: escrich dins lo fichièr CNAME. Fasètz pontar lo DNS del domeni cap a l&apos;òste coma o explica; l&apos;HTTPS pòt metre un moment a s&apos;activar.</translation>
+        <translation>www.example.com: escrich dins lo fichièr CNAME. Fasètz pontar lo DNS del domeni cap a l'òste coma o explica; l'HTTPS pòt metre un moment a s'activar.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>

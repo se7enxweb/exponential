@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ফাইল ওইনা থম্লিবা ইনস্টলেসনগী অহোংবশিং: মখোয়গী স্থিতি, রনশিং, রন তৌবা অমসুং রোলবেক তৌবা.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>অনৌবা কন্টেন্ট</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>অনৌবা কন্টেন্ট, য়েংশিনবগীদমক থিংলিবা, অমসুং সিলেক্সন অমদা কামশিং.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>সাইট অমগী স্টেটিক কোপি GitHub Pages নত্রগা git হোস্ট কনাগুম্বা অমদা প্রকাশ তৌবা.</translation>
     </message>
@@ -80584,6 +80592,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>সুধরবা</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>সেম্বা</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>মমিং</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ক্লাস</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>সেক্সন</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>সেম্বা মীওই</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>অনৌবা কন্টেন্ট</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>সাইট পুম্নমক্কী হৌজিক্কী সেম্বা অমসুং সুধরবা কন্টেন্ট, অনৌবশিং অহানবদা: য়েংলকপশিংনা পীখিবা, য়েংশিনবগীদমক থিংলিবা, প্রকাশ তৌনবা ঙাইরিবা ড্রাফ্টশিং. আইটেমশিং সিলেক্ট তৌরগা মখোয়বু থাদোকপা, থিংবা, লুম্বা, ফংহনবা, থোক্কনবা নত্ত্রগা অতোপ্পা সেক্সন নত্ত্রগা স্টেট অমদা লোইশিনবা তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>তালিকা পাবা ঙমদ্রে: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>য়েংশিনবগীদমক থিংবা অসি হৌজিক ফাওবা সেটআপ তৌদ্রি, মরম অদুনা কয়াসু থিংদ্রি অমসুং থিংবগী কামশিং পীদ্রি. অপগ্রেদ খোংথাং 6.0.15-review-hold না মসি সেটআপ তৌই: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>তালিকা ফিল্টর তৌবা</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>দগী</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ফাওবা</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>তারিখ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>সেম্বা (অহানবা প্রকাশ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>খুদিংমক</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্থিতি</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>প্রকাশ তৌরবা</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ড্রাফ্ট, কদাইদসু প্রকাশ তৌদ্রবা</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ঙাক্লিবা (অয়াবা নত্ত্রগা তারিখ অমগীদমক ঙাইরিবা)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ট্রেশদা</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>য়েংশিনবগীদমক থিংলিবা</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>থিংলিবা</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>থিংদ্রবা</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>লুমখ্রবা</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ফংবা</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>পীখিবা তারিখ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>সাইট একসেস কনাগুম্বা অমা</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>অডিটনা রেকর্দ তৌখিবা খক্তা.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>হৌজিক: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>লগইন অমা নত্ত্রগা শিজিন্নরিবা মীওইগী আইদী অমা.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ফিল্টর</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ফিল্টরশিং মুথৎপা</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>আইটেমশিং</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count দগী %from দগী %to ফাওবা</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>আইটেম অমাসু লৈদে</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms মি.সে.দা পাখি)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>সিলেক্ট তৌরবা আইটেমশিংদা কাম</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>লমাই অসিগী খুদিংমক সিলেক্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count সিলেক্ট তৌরে</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>কাম</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>কাম অমা খনবা</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>থিংবা থাদোকপা</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>য়েংশিনবগীদমক থিংবা</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>লুম্বা</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ফংহনবা</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ট্রেশদা সন্নবা</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ফাহনবা</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>সেক্সন পীবা</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>স্টেট পীবা</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>মরম</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>থিংনবা মথৌ তাই; থিংবগা লোয়ননা অমসুং অডিটতা থম্মি.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>সেক্সন অমা খনবা</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>স্টেট</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>স্টেট অমা খনবা</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>সিলেক্ট তৌরবশিংদা শিজিন্নবা</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>আইটেম খুদিংমক নঙ্গী অনুমতিশিংগা চান্নবা য়েংই. ট্রেশদা সন্নবা অমসুং ফাহনবা মমাংদা নঙবু শোয়দনা হায়নবা হংই. %count হেনবা আইটেমশিং ব্যাকগ্রাউন্দতা চলই.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>সিলেক্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>প্রকাশন</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>পীখিবা মফম</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name সিলেক্ট তৌবা</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>অনৌ নত্তে</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(মমিং লৈতে)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>আইদী %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ড্রাফ্ট</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ঙাক্লিবা</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>মা-আইটেমনা লুমখ্রবা</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>থিংলিবা: অনৌবা পীখিবা</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ভর্সন %version ঙাক্লিবা</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ভর্সন %version চলরি</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ড্রাফ্ট, ভর্সন %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ভর্সন %version প্রকাশ তৌরে</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date গীদমক থিরে</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ঠিকানা লৈতে</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>রেকর্দ তৌদ্রি</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ফিল্টরশিং অসিগা কয়াসু মান্নদে.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>খুদিংমক ফংবা</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>হৌজিক ফাওবা কন্টেন্ট অমাসু লৈদ্রি.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>লমাই খুদিংগী</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>লমাই খুদিংদা আইটেম %count উৎপা.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>পীখিবা অমগী ঠিকানা অমসুং ব্রাউজর অডিট ইন্দেক্সতগী লাকই, মসি মফম অসিদা লৈতে: কলমদা "রেকর্দ তৌদ্রি" হায়না ইরি.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ঠিকানা অমসুং ব্রাউজর অসি আইটেম অদুগীদমক অডিটনা রেকর্দ তৌখিবশিংনি (মশাগী মথন্তা থিংবনা মতম পুম্নমক্তা মখোয় রেকর্দ তৌই; প্রকাশ তৌবা অমসুং সেম্বা অসি হৌদোকপা মফমদা খক্তা), মসিগী প্রাইভেসি সেটিংশিংনা থম্বগুম্না.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: আইটেম %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ফাহনবনা আইটেমশিং মখোয়গী ভর্সন অমসুং হন্দোকপা পুম্নমক্কা লোয়ননা লোইনা মুথৎলগনি. মসি হন্দোকপা ঙমদে.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>আইটেমশিং ট্রেশদা চৎই, মফম অদুদগী মখোয়বু হন্দোকপা ঙম্মি.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>আইটেম খুদিংমক নঙ্গী অনুমতিশিংগা চান্নবা য়েংই; মখাগী আইটেম লৈবা আইটেম অমা লৈরিবা মওংদুম্নমক থম্মি (মদু কন্টেন্ট তৃদা থোক্কনবা). মসি নঙনি হায়বা শোয়দনা হায়নবা নঙবু হংগনি.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>মসি ব্যাকগ্রাউন্দতা চলই: মসিগী চংশিনবগী লমাই হাংদোকই, অমসুং লোইরবা মতমদা আইটেম খুদিংগী রেজল্ট উৎলি.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>সিলেক্ট তৌরবা আইটেমশিং</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>অমসুং অহেনবা %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>কেন্সেল তৌবা</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>কয়াসু তৌদ্রে</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>মরম: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>কাম অসি হৌজিকসু ব্যাকগ্রাউন্দতা চলরি.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>মসিগী চংশিনবা</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ব্যাকগ্রাউন্দকী কাম অসি ঙমদ্রে: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ফাংখ্রে</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>য়াখিদে</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>আইটেম খুদিংগী</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>আইটেম</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>রেজল্ট</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>করিগীনো</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>তালিকাদা লেপ্পা</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>সেটআপ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>কয়াসু তৌদ্রি</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ঠিক তৌবা</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>কাম অমা খনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>খ্বাইদগী নীংথনা আইটেম অমা সিলেক্ট তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>অমুক্তা হেনখ্রবদা আইটেম 1000 সিলেক্ট তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>আইটেমশিং করিগীনো থিংলিবা হায়বা তাক্কদবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>সেক্সন অদু খনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>স্টেট অদু খনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ফোর্ম অদু পাবা ঙমদ্রে.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>অনৌবা কন্টেন্ট</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>মশিংশিং পাবা ঙমদ্রে: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>য়েংশিনবগীদমক থিংলিবা</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ঙসিগী অনৌবা</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>য়েংশিনবগীদমক থিংবা অসি হৌজিক ফাওবা সেটআপ তৌদ্রি (অপগ্রেদ খোংথাং 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>অনৌবা কন্টেন্ট খুদিংমক</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>নঙনা মোদরেসনগী কামশিং চলহনবা য়াদে (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>মোদরেসনগী কাম অসি মপুং ফাদ্রি: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>মোদরেসন: অবজেক্ট %count দা %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>অবজেক্ট %total দগী %done: %ok ফাংখ্রে, %refused য়াখিদে, %failed ঙমদ্রে</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ফাংখ্রে, %refused য়াখিদে, %failed ঙমদ্রে</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>মসি হৌজিক লৈরে.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>মসিগী মফম লৈতে (প্রকাশ তৌদ্রি).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>নঙনা মসি লুম্বা য়াদে (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>নঙনা মসি ফংহনবা য়াদে (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>মসি হান্নদগী লুমখ্রে.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>মসি লুমদ্রি.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>লুমখ্রে.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ফংহন্নখ্রে.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>মসি ট্রেশদা লৈ: মফম অদুদা ট্রেশ অসি থাদোকপা নত্ত্রগা মসি হন্দোকপা তৌবিয়ু.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>কদাইদসু প্রকাশ তৌদ্রবা ড্রাফ্ট অমা ট্রেশদা চৎপা ঙমদে: মসি ফাহনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>নঙনা মসি ফাহনবা য়াদে (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ফাহনখ্রে.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>নঙনা মসি থোক্কনবা য়াদে (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>মসিদা মখাগী আইটেমশিং লৈ: মখোয় তালিকাভুক্ত ওইরিবা কন্টেন্ট তৃদা মসি থোক্কনবিয়ু.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>মসি থোক্কনদ্রে (ৱর্কফ্লো অমনা থোক্কনবা অসি থিংবা য়াই).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ট্রেশদা সন্নখ্রে.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>সেক্সন অদু লৈতে.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>মসি হান্নদগী সেক্সন অসিদা লৈ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>নঙনা সেক্সন অসি পীবা য়াদে (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>সেক্সন অদু পীদ্রে.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>সেক্সন পীখ্রে.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>স্টেট অদু লৈতে.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>মসি হান্নদগী স্টেট অসিদা লৈ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>নঙনা স্টেট অসি পীবা য়াদে (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>স্টেট অদু পীদ্রে (ৱর্কফ্লো অমনা অহোংবা অসি থিংবা য়াই).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>স্টেট পীখ্রে.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>অসিগুম্বা কাম অমা লৈতে.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>য়েংশিনবগীদমক থিংবা অসি সেটআপ তৌদ্রি (অপগ্রেদ খোংথাং 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>মসি করিগীনো থিংলিবা হায়বা তাক্কদবিয়ু.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>মসি হান্নদগী থিংলে.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>নঙনা মসি থিংবা য়াদে (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>থিংবা অসি থম্বা ঙমদ্রে (ৱর্কফ্লো অমনা অহোংবা অসি থিংবা য়াই).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>থিংখ্রে.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>মসি থিংদ্রি.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>নঙনা মসি থাদোকপা য়াদে (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>থিংবা অসি থাদোকপা ঙমদ্রে (ৱর্কফ্লো অমনা অহোংবা অসি থিংবা য়াই).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>থাদোকখ্রে; হৌজিকসু লুমখ্রি: নঙনা মসি ফংহনবা য়াদে (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>থাদোকখ্রে.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub প্রোজেক্ট সাইট অমা /&lt;repository&gt;/ গী মখাদা লৈ; রিলেটিভ লিঙ্কশিং মফম অদুদা অমসুং অতোপ্পা কনাগুম্বা মফমদা থবক তৌই.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>বিল্ড অমনা %site গী পেজ খুদিংমক সাইন ইন তৌদবা ভিজিটর অমনা উবগুম্না পুরকই, লিঙ্কশিং অনৌবা ওইনা ইই, ফাইলশিং কোপি তৌই অমসুং মহৈ অদু টার্গেটকী ফোল্দরদা ইই. নহাক্না বিল্ড চেক তৌরগা প্রকাশ তৌবা নম্বা মতম ফাওবা করিসু প্রকাশ তৌরোই.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>থোক্কনবা মতুংদসু দিবগ আউটপুট, ফোর্ম টোকেন নত্রগা সেসন id লৈরিবা পেজ অমা কদাইদসু প্রকাশ তৌরোই.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>রোলবেক অসি এক্সপার্টশিংগীদমকনি: &quot;মসিনা করি হোংদোকপগে হায়বা ঈহাক্না খঙই&quot; টিক তৌবিয়ু অমসুং টেগকী মমিং অমুক হন্না টাইপ তৌবিয়ু.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>রোলবেক অসি এক্সপার্টশিংগীদমকনি: "মসিনা করি হোংদোকপগে হায়বা ঈহাক্না খঙই" টিক তৌবিয়ু অমসুং টেগকী মমিং অমুক হন্না টাইপ তৌবিয়ু.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>প্রিভিউ হাংদোকপা</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>বিল্ড অদু হোস্টনা পীগদবা মওং অদুম্না টার্গেটকী ফোল্দরদগী হাংদোকই. লিঙ্ক অসি নহাক্কীদমক পুং অমা থবক তৌই.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>সেটআপ &gt; সিক্রেটশিং</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>লিস্টশিংদা উৎই, খুদম ওইনা &quot;GitHub Pages তা লৈবা পব্লিক সাইট&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>লিস্টশিংদা উৎই, খুদম ওইনা "GitHub Pages তা লৈবা পব্লিক সাইট".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>সাইট অদু প্রকাশন অদুগী ফাইলশিংদা হল্লক্লি; হৌজিক ফাওবা প্রকাশ তৌদ্রিবা বিল্ড অমা অহানবা প্রকাশ তৌগদবনি নত্রগা হুন্থোকপা তাই.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>লৈতবা এড্রেসশিংগীদমক সাইটকী মশাগী পেজ.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>টার্গেট অদু থম্বা ঙমদ্রে: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>টার্গেট অসিনা হৌজিক ফাওবা কী অসিনা সাইন ইন তৌদ্রি: মগী সেটিংশিংদা &quot;টার্গেট অসিগীদমক শেমখিবা ডিপ্লোয় কী&quot; খনবিয়ু.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>টার্গেট অসিনা হৌজিক ফাওবা কী অসিনা সাইন ইন তৌদ্রি: মগী সেটিংশিংদা "টার্গেট অসিগীদমক শেমখিবা ডিপ্লোয় কী" খনবিয়ু.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>বিল্ড অসি হুন্থোকই: ফোল্দর অদুদা অরোইবা প্রকাশন অমুক হন্না লৈ. লাইভ সাইট হোংদে.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>অহানবা &quot;অহোংবশিং অদু ঈহাক্না চেক তৌরে&quot; টিক তৌবিয়ু.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>অহানবা "অহোংবশিং অদু ঈহাক্না চেক তৌরে" টিক তৌবিয়ু.</translation>
     </message>
     <message>
         <source>Time</source>

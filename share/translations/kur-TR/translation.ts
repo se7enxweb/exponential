@@ -15149,6 +15149,14 @@ Têbînî: Sazkirina pakêtan nayê rakirin.</translation>
         <translation>Guhertinên sazkirinê yên wek pel hatine parastin: rewşa wan, xebitandin, xebitandin û paşvekişandin.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Naveroka nû</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Naveroka herî nû, tiştên ku ji bo nirxandinê hatine ragirtin, û kiryarên li ser hilbijartinekê.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Kopiyeke statîk a malperê li ser GitHub Pages an her mêvandarekî git biweşîne.</translation>
     </message>
@@ -80582,6 +80590,670 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Dîroka guhertinê</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Dîroka afirandinê</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Çîn</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Beş</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Afirîner</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Naveroka nû</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Naveroka herî dawî ya hemû malperê ku hatiye afirandin û guhertin, ya herî nû pêşî: tiştên ku mêvanan şandine, tiştên ku ji bo nirxandinê hatine ragirtin, reşnivîsên ku li benda weşandinê ne. Hêmanan hilbijêrin da ku wan berdin, ragirin, veşêrin, eşkere bikin, rakin an jî bibin beşek an rewşek din.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Lîste nehat xwendin: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Ragirtina ji bo nirxandinê hîn nehatiye sazkirin, ji ber vê yekê tiştek nayê ragirtin û kiryarên ragirtinê nayên pêşkêşkirin. Gava nûkirinê 6.0.15-review-hold wê saz dike: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lîsteyê fîlter bike</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Ji</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Heta</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dîrok</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Dîroka afirandinê (weşana yekem)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hemû</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Rewşa weşanê</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Weşandî</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Reşnivîs, qet nehatiye weşandin</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Li bendê (li benda pejirandinê an dîrokekê)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Di çopdankê de</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ji bo nirxandinê hatiye ragirtin</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Hatiye ragirtin</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nehatiye ragirtin</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Veşartî</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Xuya</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Gihîştina malperê ya şandinê</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Her gihîştina malperê</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Tenê tiştên ku kontrolê tomar kirine.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Niha: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Navê têketinê an nasnameya bikarhêner.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Fîlter bike</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Fîlteran paqij bike</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Hêman</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from heta %to ji %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tu hêman tune</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(di %ms ms de hat xwendin)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Kiryarên li ser hêmanên hilbijartî</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Hemûyan li vê rûpelê hilbijêre</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count hatin hilbijartin</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Kiryar</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Kiryarekê hilbijêre</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Ragirtinê rake</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Ji bo nirxandinê ragire</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Veşêre</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Eşkere bike</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Bibe çopdankê</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Jê bibe</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Beşê destnîşan bike</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Rewşê destnîşan bike</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sedem</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ji bo ragirtinê pêwîst e; bi ragirtinê re û di kontrolê de tê parastin.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Beşekê hilbijêre</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Rewş</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Rewşekê hilbijêre</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Li ser yên hilbijartî bicîh bîne</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Her hêman li gorî destûrên we yên xwe tê kontrolkirin. Birina çopdankê û jêbirin ji we piştrastkirinê dixwazin. Ji %count hêmanan zêdetir di paşperdeyê de dixebitin.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Hilbijêre</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Weşan</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Ji ku hatiye şandin</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name hilbijêre</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>hîn na</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bê nav)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Nasname %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Reşnivîs</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Li bendê</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ji aliyê dêûbavê xwe ve hatiye veşartin</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Hatiye ragirtin: şandina nû</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Guherto %version li bendê ye</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Guherto %version di amadekirinê de ye</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Reşnivîs, guherto %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Guherto %version hat weşandin</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ji bo %date hatiye plankirin</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>navnîşan tune</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nehatiye tomarkirin</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Tiştek li gorî van fîlteran nayê.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hemûyan nîşan bide</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Hîn naverok tune.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Her rûpel</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Li her rûpelê %count hêmanan nîşan bide.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Navnîşan û gerokê şandinekê ji îndeksa kontrolê tên, ku li vir tune ye: stûn dibêje “nehatiye tomarkirin”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Navnîşan û gerok ew in ku kontrolê ji bo hêmanê tomar kirine (ragirtina xweber wan her tim tomar dike; weşandin û afirandin tenê li cihê ku hatiye vekirin), wekî ku mîhengên nepeniyê wan diparêzin.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count hêman</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Jêbirin hêmanan bi hemû guherto û wergerên wan re bi temamî radike. Nayê vegerandin.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Hêman diçin çopdankê, ji wir dikarin werin vegerandin.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Her hêman li gorî destûrên we yên xwe tê kontrolkirin; hêmanek ku binhêmanên wê hene wekî xwe tê hiştin (wê di avahiya naverokê de rakin). Dê ji we were xwestin ku hûn piştrast bikin ku hûn in.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ev di paşperdeyê de dixebite: rûpela pêşveçûna wê vedibe, û dema ku qediya encama her hêmanê tê nîşandan.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Hêmanên hilbijartî</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>û %count yên din</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Betal</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Tiştek nehat kirin</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sedem: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Kiryar hîn di paşperdeyê de dixebite.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Pêşveçûna wê</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Kiryara paşperdeyê bi ser neket: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Qediya</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hat redkirin</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Bi ser neket</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Ji bo her hêmanê</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Hêman</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Encam</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Çima</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Vegere lîsteyê</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sazkirin</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Tiştek nehat kirin</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Piştrast bike</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Kiryarekê hilbijêre.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Herî kêm hêmanekê hilbijêre.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Di carekê de herî zêde 1000 hêmanan hilbijêre.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Binivîse ka çima hêman têne ragirtin.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Beşê hilbijêre.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Rewşê hilbijêre.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Form nehat xwendin.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Naveroka nû</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Hejmar nehatin xwendin: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ji bo nirxandinê hatiye ragirtin</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Îro nû</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ragirtina ji bo nirxandinê hîn nehatiye sazkirin (gava nûkirinê 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Hemû naveroka nû</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Hûn nikarin kiryarên moderasyonê bimeşînin (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Kiryara moderasyonê temam nebûye: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasyon: %action li ser %count heyberan</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ji %total heyberan: %ok qediyan, %refused hatin redkirin, %failed bi ser neketin</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok qediyan, %refused hatin redkirin, %failed bi ser neketin</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ew êdî tune ye.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Cihê wê tune ye (nehatiye weşandin).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Hûn nikarin wê veşêrin (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Hûn nikarin wê eşkere bikin (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ew jixwe veşartî ye.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ew ne veşartî ye.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Hat veşartin.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Hat eşkerekirin.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ew di çopdankê de ye: li wir wê vala bikin an vegerînin.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Reşnivîsek ku qet nehatiye weşandin nikare biçe çopdankê: wê jê bibin.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Hûn nikarin wê jê bibin (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Hat jêbirin.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Hûn nikarin wê rakin (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Binhêmanên wê hene: wê di avahiya naverokê de rakin, li cihê ku ew tên rêzkirin.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ew nehat rakirin (dibe ku herikîna kar rakirinê ragire).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Hat birin çopdankê.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Beş tune ye.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ew jixwe di vê beşê de ye.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Hûn nikarin vê beşê destnîşan bikin (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Beş nehat destnîşankirin.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Beş hat destnîşankirin.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Rewş tune ye.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ew jixwe di vê rewşê de ye.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Hûn nikarin vê rewşê destnîşan bikin (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Rewş nehat destnîşankirin (dibe ku herikîna kar guhertinê ragire).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Rewş hat destnîşankirin.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Kiryarek wiha tune ye.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ragirtina ji bo nirxandinê nehatiye sazkirin (gava nûkirinê 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Binivîse ka çima ew tê ragirtin.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ew jixwe hatiye ragirtin.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Hûn nikarin wê ragirin (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ragirtin nehat danîn (dibe ku herikîna kar guhertinê ragire).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Hat ragirtin.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ew nehatiye ragirtin.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Hûn nikarin wê berdin (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ragirtin nehat rakirin (dibe ku herikîna kar guhertinê ragire).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Hat berdan; hîn veşartî ye: hûn nikarin wê eşkere bikin (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Hat berdan.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80727,7 +81399,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Malpera projeyeke GitHub di bin /&lt;repository&gt;/ de ye; girêdanên nisbî li wir û li her derê din dixebitin.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Avakirinek her rûpela %site wekî ku mêvanekî ku neketiye hundir dibîne tîne, girêdanan ji nû ve dinivîse, pelan kopî dike û encamê di peldanka armancê de dinivîse. Heta ku tu avakirinê kontrol nekî û li Biweşîne nexî, tiştek nayê weşandin.</translation>
     </message>
     <message>
@@ -80775,8 +81447,8 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Rûpeleke ku piştî paqijkirinê hîn derketina debugê, tokeneke formê an nasnameya danişînê hildigire qet nayê weşandin.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Paşvekişandin ji bo pisporan e: &quot;Ez dizanim ev çi diguherîne&quot; nîşan bike û navê etîketê dîsa binivîse.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Paşvekişandin ji bo pisporan e: "Ez dizanim ev çi diguherîne" nîşan bike û navê etîketê dîsa binivîse.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81287,7 +81959,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Pêşdîtinê veke</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Avakirinê wekî ku mêvandar dê pêşkêş bike, ji peldanka armancê vedike. Girêdan ji bo te saetekê dixebite.</translation>
     </message>
     <message>
@@ -81463,8 +82135,8 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Sazkirin &gt; Nepenî</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Di lîsteyan de tê nîşandan, mînak &quot;Malpera giştî li ser GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Di lîsteyan de tê nîşandan, mînak "Malpera giştî li ser GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81671,7 +82343,7 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Malper vedigere pelên wê weşanê; avakirineke ku hîn nehatiye weşandin divê pêşî were weşandin an avêtin.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Rûpela malperê ya xwe ji bo navnîşanên ku tune ne.</translation>
     </message>
     <message>
@@ -81679,8 +82351,8 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Armanc nehat tomarkirin: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Armanc hîn bi vê miftê nakeve hundir: di mîhengên wê de &quot;Mifteyeke bicihkirinê ku ji bo vê armancê hatiye çêkirin&quot; hilbijêre.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Armanc hîn bi vê miftê nakeve hundir: di mîhengên wê de "Mifteyeke bicihkirinê ku ji bo vê armancê hatiye çêkirin" hilbijêre.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81715,8 +82387,8 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <translation>Vê avakirinê davêje: peldank dîsa weşana dawî dihewîne. Malpera zindî nayê guhertin.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Pêşî &quot;Min guhertin kontrol kirin&quot; nîşan bike.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Pêşî "Min guhertin kontrol kirin" nîşan bike.</translation>
     </message>
     <message>
         <source>Time</source>

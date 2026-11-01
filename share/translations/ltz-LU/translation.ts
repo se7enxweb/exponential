@@ -15151,6 +15151,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <translation>Ännerunge vun der Installatioun, als Dateien gehalen: hiren Zoustand, d&apos;Leef, lafe loossen an zréckrollen.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Nei Inhalter</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Déi neist Inhalter, wat fir d'Iwwerpréiwung zréckgehal gëtt, an Aktiounen op eng Auswiel.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Geännert</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Erstallt</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Numm</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klass</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sektioun</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Ersteller</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nei Inhalter</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Déi lescht erstallt a geännert Inhalter vum ganze Site, déi neisten als éischt: wat Visiteuren agereecht hunn, wat fir d'Iwwerpréiwung zréckgehal gëtt, Entwërf, déi op hir Publikatioun waarden. Wielt Elementer aus, fir se fräizeginn, zréckzehalen, ze verstoppen, ze weisen, ewechzehuelen oder an eng aner Sektioun oder an en anere Zoustand ze réckelen.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>D'Lëscht konnt net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>D'Zréckhale fir d'Iwwerpréiwung ass nach net ageriicht, dofir gëtt näischt zréckgehalen an d'Aktioune fir zréckzehalen ginn net ugebueden. Den Aktualiséierungsschrëtt 6.0.15-review-hold riicht et an: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>D'Lëscht filteren</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Vun</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Bis</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Erstallt (fir d'éischt publizéiert)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alles</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Publikatiounsstatus</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publizéiert</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Entworf, ni publizéiert</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Amgaang (waart op Fräigab oder en Datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>An der Dreckskëscht</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Fir d'Iwwerpréiwung zréckgehal</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Zréckgehal</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Net zréckgehal</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Verstoppt</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Siichtbar</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Agereecht iwwer</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>All Site-Zougang</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Just dat, wat den Audit opgezeechent huet.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Elo: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>E Login oder eng Benotzer-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filteren</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filteren zrécksetzen</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementer</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from bis %to vun %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Keen Element</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(gelies an %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Aktiounen op déi ausgewielt Elementer</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>All op dëser Säit auswielen</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ausgewielt</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aktioun</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Eng Aktioun wielen</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>D'Zréckhalen ophiewen</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Fir d'Iwwerpréiwung zréckhalen</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Verstoppen</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Weisen</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>An d'Dreckskëscht réckelen</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Läschen</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Sektioun zouweisen</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Zoustand zouweisen</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Grond</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Néideg fir zréckzehalen; gëtt mam Zréckhalen an am Audit gespäichert.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Eng Sektioun wielen</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zoustand</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>En Zoustand wielen</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Op déi ausgewielt uwenden</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>All Element gëtt géint Är eege Rechter gepréift. Fir d'Réckelen an d'Dreckskëscht an d'Läsche musst Dir confirméieren. Méi wéi %count Elementer lafen am Hannergrond.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Auswielen</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikatioun</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Agereecht vun</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name auswielen</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>nach net</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(keen Numm)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Entworf</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Amgaang</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Duerch säin iwwergeuerdent Element verstoppt</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Zréckgehal: nei Areechung</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versioun %version amgaang</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versioun %version a Bearbechtung</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Entworf, Versioun %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versioun %version publizéiert</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Geplangt fir %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>keng Adress</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>net opgezeechent</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Näischt passt op dës Filteren.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>All weisen</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Et gëtt nach keng Inhalter.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pro Säit</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count Elementer pro Säit weisen.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>D'Adress an de Browser vun enger Areechung kommen aus dem Audit-Index, deen hei net disponibel ass: d'Kolonn weist „net opgezeechent“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>D'Adress an de Browser sinn déi, déi den Audit fir d'Element opgezeechent huet (dat automatescht Zréckhalen zeechent se ëmmer op; Publizéieren an Erstellen nëmmen do, wou et ageschalt ass), sou wéi seng Dateschutzastellungen se behalen.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count Elementer</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>D'Läsche läscht d'Elementer definitiv, mat all hire Versiounen an Iwwersetzungen. Dat kann net réckgängeg gemaach ginn.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>D'Elementer kommen an d'Dreckskëscht, vu wou se erëmhiergestallt kënne ginn.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>All Element gëtt géint Är eege Rechter gepréift; en Element mat Ënnerelementer bleift wéi et ass (huelt et an der Inhaltsstruktur ewech). Dir gitt gefrot ze confirméieren, datt Dir et sidd.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dat leeft am Hannergrond: seng Fortschrëttssäit geet op, an d'Resultat pro Element gëtt gewisen, wann et fäerdeg ass.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Déi ausgewielt Elementer</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>an nach %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ofbriechen</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Et gouf näischt gemaach</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Grond: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>D'Aktioun leeft nach am Hannergrond.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Hire Fortschrëtt</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>D'Hannergrondaktioun ass feelgeschloen: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Gemaach</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ofgeleent</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Pro Element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Firwat</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Zréck op d'Lëscht</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguratioun</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Näischt gemaach</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirméieren</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Wielt eng Aktioun.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Wielt mindestens een Element aus.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Wielt héchstens 1000 Elementer op eemol aus.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sot, firwat d'Elementer zréckgehal ginn.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Wielt d'Sektioun.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Wielt den Zoustand.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>De Formulaire konnt net gelies ginn.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nei Inhalter</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>D'Zuele konnten net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Fir d'Iwwerpréiwung zréckgehal</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Haut nei</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>D'Zréckhale fir d'Iwwerpréiwung ass nach net ageriicht (den Aktualiséierungsschrëtt 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>All nei Inhalter</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Dir däerft keng Moderatiounsaktioune maachen (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>D'Moderatiounsaktioun ass net komplett: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderatioun: %action op %count Objeten</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done vun %total Objeten: %ok gemaach, %refused ofgeleent, %failed feelgeschloen</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok gemaach, %refused ofgeleent, %failed feelgeschloen</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Et existéiert net méi.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Et huet keng Plaz (net publizéiert).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Dir däerft et net verstoppen (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Dir däerft et net weisen (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Et ass schonn verstoppt.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Et ass net verstoppt.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Verstoppt.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Gewisen.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Et ass an der Dreckskëscht: eidelt se oder stellt et do erëm hier.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>En Entworf, deen ni publizéiert gouf, kann net an d'Dreckskëscht: läscht en.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Dir däerft et net läschen (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Geläscht.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Dir däerft et net ewechhuelen (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Et huet Ënnerelementer: huelt et an der Inhaltsstruktur ewech, wou se opgelëscht sinn.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Et gouf net ewechgeholl (vläicht hält en Aarbechtsoflaf d'Ewechhuelen zréck).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>An d'Dreckskëscht geréckelt.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>D'Sektioun existéiert net.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Et ass schonn an dëser Sektioun.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Dir däerft dës Sektioun net zouweisen (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>D'Sektioun gouf net zougewisen.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sektioun zougewisen.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Den Zoustand existéiert net.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Et ass schonn an dësem Zoustand.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Dir däerft dësen Zoustand net zouweisen (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Den Zoustand gouf net zougewisen (vläicht hält en Aarbechtsoflaf d'Ännerung zréck).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Zoustand zougewisen.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Et gëtt keng esou Aktioun.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>D'Zréckhale fir d'Iwwerpréiwung ass net ageriicht (den Aktualiséierungsschrëtt 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sot, firwat et zréckgehal gëtt.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Et gëtt schonn zréckgehal.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Dir däerft et net zréckhalen (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>D'Zréckhale gouf net gesat (vläicht hält en Aarbechtsoflaf d'Ännerung zréck).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Zréckgehal.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Et gëtt net zréckgehal.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Dir däerft et net fräiginn (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>D'Zréckhale gouf net opgehuewen (vläicht hält en Aarbechtsoflaf d'Ännerung zréck).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Fräiginn; ëmmer nach verstoppt: Dir däerft et net weisen (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Fräiginn.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80615,7 +81287,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>D&apos;Ziler konnten net gelies ginn: %problem</translation>
+        <translation>D'Ziler konnten net gelies ginn: %problem</translation>
     </message>
     <message>
         <source>a job is going on</source>
@@ -80674,7 +81346,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag ass d&apos;Publikatioun, déi de Site elo huet.</translation>
+        <translation>%tag ass d'Publikatioun, déi de Site elo huet.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -80729,8 +81401,8 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>E GitHub-Projetssite läit ënner /&lt;repository&gt;/; relativ Linke funktionéieren do an iwwerall soss.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>E Build rifft all Säit vun %site of, esou wéi e Besucher, deen net ugemellt ass, se gesäit, schreift d&apos;Linken ëm, kopéiert d&apos;Fichieren a schreift d&apos;Resultat an den Dossier vum Zil. Näischt gëtt publizéiert, ier Dir de Build kontrolléiert an op Publizéieren dréckt.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>E Build rifft all Säit vun %site of, esou wéi e Besucher, deen net ugemellt ass, se gesäit, schreift d'Linken ëm, kopéiert d'Fichieren a schreift d'Resultat an den Dossier vum Zil. Näischt gëtt publizéiert, ier Dir de Build kontrolléiert an op Publizéieren dréckt.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -80750,7 +81422,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>En Deploy-Key mellt sech iwwer SSH un: ännert d&apos;git-Adress op déi SSH-Adress (git@github.com:owner/repo.git).</translation>
+        <translation>En Deploy-Key mellt sech iwwer SSH un: ännert d'git-Adress op déi SSH-Adress (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
@@ -80766,7 +81438,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>E Link vun der Säit /news/ op d&apos;Säit /about-us/team gëtt esou geschriwwen</translation>
+        <translation>E Link vun der Säit /news/ op d'Säit /about-us/team gëtt esou geschriwwen</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
@@ -80777,7 +81449,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Eng Säit, déi nom Botzen nach Debug-Ausgab, e Formulaire-Token oder eng Sessiouns-ID dréit, gëtt ni publizéiert.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
         <translation>Eng Zréckrollung ass fir Experten: kräizt „Ech weess, wat dat ännert“ un a tippt den Numm vum Tag nach eng Kéier.</translation>
     </message>
     <message>
@@ -80786,7 +81458,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>En Zil ass ee Site, deen an een git-Depot publizéiert gëtt. Hei gëtt näischt gebaut oder publizéiert: Späicheren schreift d&apos;Astellungen an settings/override/staticcache.ini.append.php.</translation>
+        <translation>En Zil ass ee Site, deen an een git-Depot publizéiert gëtt. Hei gëtt näischt gebaut oder publizéiert: Späicheren schreift d'Astellungen an settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
@@ -80890,7 +81562,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Check it first</source>
-        <translation>Fir d&apos;éischt kontrolléieren</translation>
+        <translation>Fir d'éischt kontrolléieren</translation>
     </message>
     <message>
         <source>Check these settings</source>
@@ -80902,7 +81574,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
-        <translation>Wielt d&apos;Publikatioun, op déi zréckgaange gëtt.</translation>
+        <translation>Wielt d'Publikatioun, op déi zréckgaange gëtt.</translation>
     </message>
     <message>
         <source>Comes with a later release.</source>
@@ -80962,7 +81634,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Eidel: d&apos;Adress vum Site. Soss eng intern Adress vum selwechte Site.</translation>
+        <translation>Eidel: d'Adress vum Site. Soss eng intern Adress vum selwechte Site.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -80974,7 +81646,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>All Publikatioun ass e Commit mat engem Tag static/%id/&lt;n&gt;. Zréckgoen mécht en neie Commit mat de Fichiere vun enger fréierer Publikatioun: d&apos;Geschicht bleift, keen Tag gëtt verréckelt an näischt gëtt forcéiert.</translation>
+        <translation>All Publikatioun ass e Commit mat engem Tag static/%id/&lt;n&gt;. Zréckgoen mécht en neie Commit mat de Fichiere vun enger fréierer Publikatioun: d'Geschicht bleift, keen Tag gëtt verréckelt an näischt gëtt forcéiert.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -80982,7 +81654,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Fetch the pages from</source>
-        <translation>D&apos;Säiten ofruffe vun</translation>
+        <translation>D'Säiten ofruffe vun</translation>
     </message>
     <message>
         <source>File</source>
@@ -81062,7 +81734,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
-        <translation>GitHub Pages publizéiert d&apos;Fichieren esou wéi se sinn (néideg fir Fichieren, déi mat _ ufänken).</translation>
+        <translation>GitHub Pages publizéiert d'Fichieren esou wéi se sinn (néideg fir Fichieren, déi mat _ ufänken).</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
@@ -81106,7 +81778,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>I have checked the changes</source>
-        <translation>Ech hunn d&apos;Ännerunge kontrolléiert</translation>
+        <translation>Ech hunn d'Ännerunge kontrolléiert</translation>
     </message>
     <message>
         <source>I know what this changes</source>
@@ -81166,7 +81838,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
-        <translation>Klengbuschtawen, Zifferen, _ an -, zum Beispill github-public. Et benennt den Dossier an d&apos;Tags (static/&lt;id&gt;/&lt;n&gt;) a kann duerno net méi geännert ginn.</translation>
+        <translation>Klengbuschtawen, Zifferen, _ an -, zum Beispill github-public. Et benennt den Dossier an d'Tags (static/&lt;id&gt;/&lt;n&gt;) a kann duerno net méi geännert ginn.</translation>
     </message>
     <message>
         <source>Make a new key</source>
@@ -81182,7 +81854,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Maacht den Depot fir d&apos;éischt um Host; en eidelen ass an der Rei.</translation>
+        <translation>Maacht den Depot fir d'éischt um Host; en eidelen ass an der Rei.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81278,7 +81950,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
-        <translation>Nëmmen dat, wat d&apos;Säiten nennen</translation>
+        <translation>Nëmmen dat, wat d'Säiten nennen</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
@@ -81286,10 +81958,10 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Open the preview</source>
-        <translation>D&apos;Virschau opmaachen</translation>
+        <translation>D'Virschau opmaachen</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Mécht de Build op, esou wéi den Host en servéiere wäert, aus dem Dossier vum Zil. De Link funktionéiert fir Iech eng Stonn laang.</translation>
     </message>
     <message>
@@ -81354,7 +82026,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren: en bauen, d&apos;Ännerunge kontrolléieren, publizéieren an op eng fréier Publikatioun zréckgoen, wann et néideg ass.</translation>
+        <translation>Eng statesch Kopie vun engem Site op GitHub Pages oder all anere git-Host publizéieren: en bauen, d'Ännerunge kontrolléieren, publizéieren an op eng fréier Publikatioun zréckgoen, wann et néideg ass.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -81414,7 +82086,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>D&apos;Iwwerpréiwung kontrolléiert all Astellung a weist d&apos;Zeilen, déi geschriwwe ginn. Nach näischt ass gespäichert.</translation>
+        <translation>D'Iwwerpréiwung kontrolléiert all Astellung a weist d'Zeilen, déi geschriwwe ginn. Nach näischt ass gespäichert.</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -81465,12 +82137,12 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Konfiguratioun &gt; Geheimnisser</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
         <translation>An de Lëschte gewisen, zum Beispill „Ëffentleche Site op GitHub Pages“.</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>D&apos;Umeldung mat enger GitHub App kënnt mat der GitHub-Integratioun.</translation>
+        <translation>D'Umeldung mat enger GitHub App kënnt mat der GitHub-Integratioun.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -81522,7 +82194,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
-        <translation>Statescht Publizéieren ass ausgeschalt. Schalt et fir d&apos;éischt an Konfiguratioun &gt; Statescht Publizéieren un.</translation>
+        <translation>Statescht Publizéieren ass ausgeschalt. Schalt et fir d'éischt an Konfiguratioun &gt; Statescht Publizéieren un.</translation>
     </message>
     <message>
         <source>Static publishing is switched on.</source>
@@ -81586,7 +82258,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>D&apos;Standardastellunge passe fir déi meescht Siten.</translation>
+        <translation>D'Standardastellunge passe fir déi meescht Siten.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
@@ -81598,23 +82270,23 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>D&apos;Aufgab konnt net virbereet ginn: %detail</translation>
+        <translation>D'Aufgab konnt net virbereet ginn: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>D&apos;Aufgab konnt net gestart ginn.</translation>
+        <translation>D'Aufgab konnt net gestart ginn.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>D&apos;Aufgab ass fäerdeg. Hire Rapport gëtt gelueden.</translation>
+        <translation>D'Aufgab ass fäerdeg. Hire Rapport gëtt gelueden.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
-        <translation>D&apos;Aufgab brauch en ugemellte Benotzer.</translation>
+        <translation>D'Aufgab brauch en ugemellte Benotzer.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>D&apos;Aufgab gouf gestart, mee huet hir Prozess-ID net gemellt. Kontrolléiert %detail.</translation>
+        <translation>D'Aufgab gouf gestart, mee huet hir Prozess-ID net gemellt. Kontrolléiert %detail.</translation>
     </message>
     <message>
         <source>The key</source>
@@ -81626,19 +82298,19 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The lines that will be written</source>
-        <translation>D&apos;Zeilen, déi geschriwwe ginn</translation>
+        <translation>D'Zeilen, déi geschriwwe ginn</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>D&apos;Lëscht vun de Säite fir Sichmaschinnen; brauch d&apos;ëffentlech Adress.</translation>
+        <translation>D'Lëscht vun de Säite fir Sichmaschinnen; brauch d'ëffentlech Adress.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>D&apos;Säite ginn esou ofgeruff, wéi e Besucher, deen net ugemellt ass, se gesäit. Administratiouns- a Redaktiouns-Siteaccesse ginn ni ugebueden.</translation>
+        <translation>D'Säite ginn esou ofgeruff, wéi e Besucher, deen net ugemellt ass, se gesäit. Administratiouns- a Redaktiouns-Siteaccesse ginn ni ugebueden.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>De Fortschrëtt konnt net verfollegt ginn. Luet d&apos;Säit nei, fir ze gesinn, wéi d&apos;Aufgab virugeet.</translation>
+        <translation>De Fortschrëtt konnt net verfollegt ginn. Luet d'Säit nei, fir ze gesinn, wéi d'Aufgab virugeet.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -81646,7 +82318,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The root of the branch</source>
-        <translation>D&apos;Wuerzel vum Zweig</translation>
+        <translation>D'Wuerzel vum Zweig</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
@@ -81658,35 +82330,35 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>D&apos;Astellung konnt net geschriwwe ginn: %problem</translation>
+        <translation>D'Astellung konnt net geschriwwe ginn: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
-        <translation>D&apos;Astellunge si gülteg. Dës Zeile ginn geschriwwen:</translation>
+        <translation>D'Astellunge si gülteg. Dës Zeile ginn geschriwwen:</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
-        <translation>D&apos;Astellungsdatei ka net gelies ginn: %problem</translation>
+        <translation>D'Astellungsdatei ka net gelies ginn: %problem</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>De Site geet zréck op d&apos;Fichiere vun där Publikatioun; e Build, deen nach net publizéiert ass, muss fir d&apos;éischt publizéiert oder verworf ginn.</translation>
+        <translation>De Site geet zréck op d'Fichiere vun där Publikatioun; e Build, deen nach net publizéiert ass, muss fir d'éischt publizéiert oder verworf ginn.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Déi eege Säit vum Site fir Adressen, déi net existéieren.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>D&apos;Zil konnt net gespäichert ginn: %problem</translation>
+        <translation>D'Zil konnt net gespäichert ginn: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>D&apos;Zil mellt sech nach net mat dësem Schlëssel un: wielt „En Deploy-Key, dee fir dëst Zil gemaach gouf“ a sengen Astellungen.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>D'Zil mellt sech nach net mat dësem Schlëssel un: wielt „En Deploy-Key, dee fir dëst Zil gemaach gouf“ a sengen Astellungen.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>D&apos;Ziler konnten net gelies ginn: %problem</translation>
+        <translation>D'Ziler konnten net gelies ginn: %problem</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
@@ -81698,7 +82370,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Dës Säit verfollegt d&apos;Aufgab, während se leeft; se leeft am Hannergrond weider, wann d&apos;Säit zougemaach gëtt.</translation>
+        <translation>Dës Säit verfollegt d'Aufgab, während se leeft; se leeft am Hannergrond weider, wann d'Säit zougemaach gëtt.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -81717,8 +82389,8 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <translation>Geheit dëse Build ewech: den Dossier enthält erëm déi lescht Publikatioun. De Live-Site ännert sech net.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Kräizt fir d&apos;éischt „Ech hunn d&apos;Ännerunge kontrolléiert“ un.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Kräizt fir d'éischt „Ech hunn d'Ännerunge kontrolléiert“ un.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -81754,15 +82426,15 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Wat d&apos;Aufgab gemaach huet an hire Protokoll. Eng Aufgab, déi hei gestart gouf, leeft am Hannergrond weider, wann dës Säit zougemaach gëtt.</translation>
+        <translation>Wat d'Aufgab gemaach huet an hire Protokoll. Eng Aufgab, déi hei gestart gouf, leeft am Hannergrond weider, wann dës Säit zougemaach gëtt.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Wat d&apos;Aufgab als Feeler ausginn huet</translation>
+        <translation>Wat d'Aufgab als Feeler ausginn huet</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Wat d&apos;Säiten nennen, an all Bild vum publizéierten Inhalt</translation>
+        <translation>Wat d'Säiten nennen, an all Bild vum publizéierten Inhalt</translation>
     </message>
     <message>
         <source>When</source>
@@ -81782,7 +82454,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Wouhi Linke féieren, déi op eppes weisen, wat d&apos;Kopie net enthält (d&apos;Sich, d&apos;Umeldung).</translation>
+        <translation>Wouhi Linke féieren, déi op eppes weisen, wat d'Kopie net enthält (d'Sich, d'Umeldung).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
@@ -81790,7 +82462,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Wéi ee Site publizéiert gëtt, a wéi d&apos;Zil heescht.</translation>
+        <translation>Wéi ee Site publizéiert gëtt, a wéi d'Zil heescht.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -81846,7 +82518,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
-        <translation>https://owner.github.io/repository/, fir d&apos;Sitemap an d&apos;kanonesch Linken.</translation>
+        <translation>https://owner.github.io/repository/, fir d'Sitemap an d'kanonesch Linken.</translation>
     </message>
     <message>
         <source>image</source>
@@ -81866,7 +82538,7 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     </message>
     <message>
         <source>none: commits stay in the folder</source>
-        <translation>keen: d&apos;Commits bleiwen am Dossier</translation>
+        <translation>keen: d'Commits bleiwen am Dossier</translation>
     </message>
     <message>
         <source>none: nothing changed</source>

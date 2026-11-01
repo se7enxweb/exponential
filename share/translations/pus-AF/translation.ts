@@ -15149,6 +15149,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>په نصب کې بدلونونه چې د فایلونو په توګه ساتل کېږي: د هغوی حالت، اجراوې، اجرا کول او بېرته ګرځول.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>وروستۍ منځپانګه</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>تر ټولو نوې منځپانګه، هغه څه چې د بیاکتنې لپاره ساتل شوي، او پر یوې ټاکنې کړنې.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>د یوه سایټ ثابته کاپي GitHub Pages یا هر git کوربه ته خپره کړئ.</translation>
     </message>
@@ -80582,6 +80590,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>بدل شوی</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>جوړ شوی</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نوم</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>برخه</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>جوړونکی</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>وروستۍ منځپانګه</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>د ټول سایټ تر ټولو وروستۍ جوړه شوې او بدله شوې منځپانګه، نوې لومړی: هغه څه چې لیدونکو استولي، هغه څه چې د بیاکتنې لپاره ساتل شوي، او هغه مسودې چې د خپرېدو په تمه دي. توکي وټاکئ ترڅو یې خوشې کړئ، وساتئ، پټ یې کړئ، ښکاره یې کړئ، لرې یې کړئ یا یې بلې برخې یا حالت ته ولېږدوئ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>لېست ونه لوستل شو: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>د بیاکتنې ساتنه لا نه ده جوړه شوې، نو هېڅ شی نه ساتل کېږي او د ساتنې کړنې نه وړاندې کېږي. د لوړونې ګام 6.0.15-review-hold یې جوړوي: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>لېست فلټر کړئ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>له</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تر</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>نېټه</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>جوړ شوی (لومړۍ خپرونه)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ټول</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>خپور شوی</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>مسوده، هېڅکله نه ده خپره شوې</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>په تمه کې (د تایید یا یوې نېټې په تمه)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>په کثافت‌دانۍ کې</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>د بیاکتنې لپاره ساتل شوی</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ساتل شوی</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>نه دی ساتل شوی</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>پټ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ښکاره</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>د استولو نېټه</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>هر د سایټ لاسرسی</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>یوازې هغه څه چې پلټنې ثبت کړي.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>اوس: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>د ننوتو نوم یا د کارن پېژند.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فلټر</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>فلټرونه پاک کړئ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>توکي</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>له %count څخه %from تر %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>هېڅ توکی نشته</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(په %ms ملي ثانیو کې لوستل شوی)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>پر ټاکل شویو توکو کړنې</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>په دې پاڼه کې ټول ټاکل</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ټاکل شوي</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>کړنه</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>یوه کړنه وټاکئ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ساتنه لرې کړئ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>د بیاکتنې لپاره وساتئ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>پټول</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ښکاره کول</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>کثافت‌دانۍ ته لېږدول</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ړنګول</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>برخه ټاکل</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>حالت ټاکل</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>دلیل</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>د ساتلو لپاره اړین؛ له ساتنې سره او په پلټنه کې ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>یوه برخه وټاکئ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>یو حالت وټاکئ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>پر ټاکل شویو یې پلي کړئ</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>هر توکی ستاسو د خپلو اجازو پر وړاندې کتل کېږي. کثافت‌دانۍ ته لېږدول او ړنګول ستاسو تایید غواړي. له %count څخه ډېر توکي په شالید کې چلېږي.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ټاکل</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>خپرونه</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>له دې ځایه استول شوی</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name وټاکئ</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>لا نه</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(بې نومه)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>پېژند %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مسوده</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>په تمه کې</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>د خپل مور توکي له امله پټ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ساتل شوی: نوې استونه</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>نسخه %version په تمه کې</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>نسخه %version د سمون په حال کې</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>مسوده، نسخه %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>نسخه %version خپره شوه</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>د %date لپاره ټاکل شوی</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>پته نشته</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>نه دی ثبت شوی</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>له دې فلټرونو سره هېڅ شی سمون نه خوري.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ټول وښایئ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>لا هېڅ منځپانګه نشته.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>په هره پاڼه کې</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>په هره پاڼه کې %count توکي وښایئ.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>د یوې استونې پته او براوزر د پلټنې له لړلیک څخه راځي، چې دلته شتون نه لري: ستنه &quot;نه دی ثبت شوی&quot; ښيي.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>پته او براوزر هغه دي چې پلټنې د دې توکي لپاره ثبت کړي (اتومات ساتنه یې تل ثبتوي؛ خپرول او جوړول یوازې هلته چې فعال وي)، لکه څنګه چې د هغې د محرمیت امستنې یې ساتي.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count توکي</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ړنګول توکي د تل لپاره له خپلو ټولو نسخو او ژباړو سره لرې کوي. بېرته نه راګرځول کېږي.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>توکي کثافت‌دانۍ ته ځي، له کومه ځایه چې بېرته راګرځول کېدای شي.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>هر توکی ستاسو د خپلو اجازو پر وړاندې کتل کېږي؛ هغه توکی چې فرعي توکي لري لکه څنګه چې دی پرېښودل کېږي (هغه د منځپانګې په جوړښت کې لرې کړئ). له تاسو به وغوښتل شي چې تایید کړئ چې تاسو یاست.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>دا په شالید کې چلېږي: د پرمختګ پاڼه یې پرانیستل کېږي، او کله چې بشپړ شي د هر توکي پایله ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ټاکل شوي توکي</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>او %count نور</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغوه کول</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>هېڅ کار ونه شو</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>دلیل: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>کړنه لا هم په شالید کې روانه ده.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>پرمختګ یې</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>د شالید کړنه ناکامه شوه: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>بشپړ شو</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رد شو</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>د هر توکي لپاره</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>توکی</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>پایله</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ولې</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>لېست ته بېرته</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>جوړونه</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>هېڅ ونه شول</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تاییدول</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>یوه کړنه وټاکئ.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>لږ تر لږه یو توکی وټاکئ.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>په یو وار کې تر 1000 توکو ډېر مه ټاکئ.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ووایئ چې توکي ولې ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>برخه وټاکئ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>حالت وټاکئ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فورمه ونه لوستل شوه.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>وروستۍ منځپانګه</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>شمېرې ونه لوستل شوې: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>د بیاکتنې لپاره ساتل شوي</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>نن نوي</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>د بیاکتنې ساتنه لا نه ده جوړه شوې (د لوړونې ګام 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ټوله وروستۍ منځپانګه</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>تاسو د څارنې کړنې نه شئ چلولی (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>د څارنې کړنه بشپړه نه ده: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>څارنه: پر %count شیانو %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>له %total شیانو %done: %ok بشپړ، %refused رد، %failed ناکام</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok بشپړ، %refused رد، %failed ناکام</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>دا نور شتون نه لري.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ځای نه لري (نه دی خپور شوی).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>تاسو یې نه شئ پټولی (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>تاسو یې نه شئ ښکاره کولی (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>دا دمخه پټ دی.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>دا پټ نه دی.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>پټ شو.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ښکاره شو.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>دا په کثافت‌دانۍ کې دی: هلته یې تش کړئ یا بېرته راوګرځوئ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>هغه مسوده چې هېڅکله نه ده خپره شوې کثافت‌دانۍ ته نه شي تلای: ړنګه یې کړئ.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>تاسو یې نه شئ ړنګولی (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ړنګ شو.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>تاسو یې نه شئ لرې کولی (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>فرعي توکي لري: د منځپانګې په جوړښت کې یې لرې کړئ، چېرته چې هغوی لېست شوي.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>لرې نه شو (کېدای شي یو کاري بهیر لرې کول ساتلي وي).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>کثافت‌دانۍ ته ولېږدول شو.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>برخه شتون نه لري.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>دا دمخه په دې برخه کې دی.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>تاسو دا برخه نه شئ ټاکلی (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>برخه ونه ټاکل شوه.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>برخه وټاکل شوه.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>حالت شتون نه لري.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>دا دمخه په دې حالت کې دی.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>تاسو دا حالت نه شئ ټاکلی (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>حالت ونه ټاکل شو (کېدای شي یو کاري بهیر بدلون ساتلی وي).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>حالت وټاکل شو.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>داسې کړنه نشته.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>د بیاکتنې ساتنه نه ده جوړه شوې (د لوړونې ګام 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ووایئ چې ولې ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>دا دمخه ساتل شوی.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>تاسو یې نه شئ ساتلی (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ساتنه ونه لګول شوه (کېدای شي یو کاري بهیر بدلون ساتلی وي).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>وساتل شو.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>دا ساتل شوی نه دی.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>تاسو یې نه شئ خوشې کولی (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ساتنه لرې نه شوه (کېدای شي یو کاري بهیر بدلون ساتلی وي).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>خوشې شو؛ لا هم پټ دی: تاسو یې نه شئ ښکاره کولی (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>خوشې شو.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80727,7 +81399,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>د GitHub پروژې سایټ د /&lt;repository&gt;/ لاندې دی؛ نسبي لینکونه هلته او هر بل ځای کار کوي.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>یو جوړښت د %site هره پاڼه هغسې راوړي لکه څنګه یې یو نه ننوتلی لیدونکی ویني، لینکونه بیا لیکي، دوتنې کاپي کوي او پایله د موخې فولډر ته لیکي. تر هغه چې تاسو جوړښت ونه ګورئ او خپرول کېکاږئ، هیڅ نه خپرېږي.</translation>
     </message>
     <message>
@@ -80775,8 +81447,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>هغه پاڼه چې له پاکولو وروسته لا هم د ډیبګ محصول، د فورم ټوکن یا د ناستې پېژند ولري هېڅکله نه خپرېږي.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>بېرته ګرځونه د ماهرانو لپاره ده: &quot;زه پوهېږم چې دا څه بدلوي&quot; نښه کړئ او د نښې نوم بیا ولیکئ.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>بېرته ګرځونه د ماهرانو لپاره ده: "زه پوهېږم چې دا څه بدلوي" نښه کړئ او د نښې نوم بیا ولیکئ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81287,7 +81959,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>مخکتنه پرانیزئ</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>جوړښت هغسې پرانیزي لکه څنګه چې کوربه به یې وړاندې کړي، د موخې له فولډر څخه. لینک ستاسو لپاره یو ساعت کار کوي.</translation>
     </message>
     <message>
@@ -81463,8 +82135,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جوړونه &gt; رازونه</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>په لېستونو کې ښودل کېږي، د بېلګې په توګه &quot;په GitHub Pages کې عامه سایټ&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>په لېستونو کې ښودل کېږي، د بېلګې په توګه "په GitHub Pages کې عامه سایټ".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81671,7 +82343,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سایټ د هغې خپرونې دوتنو ته بېرته ګرځي؛ هغه جوړښت چې لا نه دی خپور شوی باید لومړی خپور یا لرې وغورځول شي.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>د سایټ خپله پاڼه د هغو پتو لپاره چې شتون نه لري.</translation>
     </message>
     <message>
@@ -81679,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>موخه خوندي نه شوه: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>موخه لا په دې کیلي نه ننوځي: په امستنو کې یې &quot;د دې موخې لپاره جوړه شوې ډیپلای کیلي&quot; وټاکئ.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>موخه لا په دې کیلي نه ننوځي: په امستنو کې یې "د دې موخې لپاره جوړه شوې ډیپلای کیلي" وټاکئ.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81715,8 +82387,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>دا جوړښت لرې غورځوي: فولډر بیا وروستۍ خپرونه لري. ژوندی سایټ نه بدلېږي.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>لومړی &quot;ما بدلونونه کتلي دي&quot; نښه کړئ.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>لومړی "ما بدلونونه کتلي دي" نښه کړئ.</translation>
     </message>
     <message>
         <source>Time</source>

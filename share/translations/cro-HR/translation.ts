@@ -15508,6 +15508,14 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <translation>Promjene instalacije čuvane kao datoteke: njihovo stanje, pokretanja, izvođenje i poništavanje.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnoviji sadržaj, ono što je zadržano radi pregleda, i radnje na odabiru.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Objavite statičku kopiju web-mjesta na GitHub Pages ili bilo kojem git poslužitelju.</translation>
     </message>
@@ -81637,6 +81645,670 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Izmijenjeno</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Stvoreno</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naziv</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Odjeljak</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Kreirao</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Najnovije stvoreni i izmijenjeni sadržaj cijelog web-mjesta, od najnovijeg: što su poslali posjetitelji, što je zadržano radi pregleda, skice koje čekaju objavu. Odaberite stavke kako biste ih otpustili, zadržali, sakrili, otkrili, uklonili ili premjestili u drugi odjeljak ili stanje.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Popis nije moguće pročitati: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Zadržavanje radi pregleda još nije postavljeno, pa ništa nije zadržano i radnje zadržavanja nisu ponuđene. Postavlja ga korak nadogradnje 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtriraj popis</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Stvoreno (prva objava)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sve</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status objave</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Objavljeno</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Skica, nikad objavljena</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Na čekanju (čeka odobrenje ili datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>U smeću</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zadržano radi pregleda</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Zadržano</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nije zadržano</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Skriveno</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidljivo</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Poslano</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Bilo koji pristup web-mjestu</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Samo ono što je revizija zabilježila.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Sada: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Korisničko ime ili ID korisnika.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtriraj</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Očisti filtre</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Stavke</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to od %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nema stavki</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(pročitano za %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Radnje na odabranim stavkama</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Odaberi sve na ovoj stranici</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Odabrano: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Radnja</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Odaberite radnju</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Otpusti zadržavanje</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Zadrži radi pregleda</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Sakrij</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Otkrij</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Premjesti u smeće</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Izbriši</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Dodijeli odjeljak</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Dodijeli stanje</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Razlog</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Potreban za zadržavanje; čuva se uz zadržavanje i u reviziji.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Odaberite odjeljak</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Odaberite stanje</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Primijeni na odabrano</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Svaka se stavka provjerava prema vašim vlastitim dozvolama. Premještanje u smeće i brisanje traže potvrdu. Više od %count stavki izvodi se u pozadini.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Odaberi</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Objava</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Poslano s</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Odaberi %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>još ne</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bez naziva)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Skica</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Na čekanju</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Skriveno zbog nadređenog</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Zadržano: nova prijava</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Verzija %version na čekanju</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Verzija %version u izradi</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Skica, verzija %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Verzija %version objavljena</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Zakazano za %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nema adrese</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nije zabilježeno</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ništa ne odgovara ovim filtrima.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Prikaži sve</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Još nema sadržaja.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po stranici</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Prikaži %count stavki po stranici.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adresa i preglednik prijave dolaze iz indeksa revizije, koji ovdje nije dostupan: u stupcu piše „nije zabilježeno”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adresa i preglednik su oni koje je revizija zabilježila za stavku (automatsko zadržavanje ih uvijek bilježi; objavljivanje i stvaranje samo ondje gdje je uključeno), onako kako ih čuvaju njezine postavke privatnosti.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count stavki</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Brisanje trajno uklanja stavke, sa svim njihovim verzijama i prijevodima. To se ne može poništiti.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Stavke odlaze u smeće, odakle se mogu vratiti.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Svaka se stavka provjerava prema vašim vlastitim dozvolama; stavka s podstavkama ostaje kakva jest (uklonite je u strukturi sadržaja). Bit ćete zamoljeni da potvrdite da ste to vi.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ovo se izvodi u pozadini: otvara se stranica napretka, a rezultat za svaku stavku prikazuje se kad završi.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Odabrane stavke</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>i još %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Odustani</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ništa nije učinjeno</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Razlog: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Radnja se još izvodi u pozadini.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Njezin napredak</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Radnja u pozadini nije uspjela: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Gotovo</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odbijeno</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspjelo</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Po stavci</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Stavka</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Zašto</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Natrag na popis</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Postavljanje</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ništa učinjeno</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Potvrdi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Odaberite radnju.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Odaberite barem jednu stavku.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Odaberite najviše 1000 stavki odjednom.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Navedite zašto su stavke zadržane.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Odaberite odjeljak.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Odaberite stanje.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Obrazac nije moguće pročitati.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Brojeve nije moguće pročitati: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zadržano radi pregleda</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Novo danas</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadržavanje radi pregleda još nije postavljeno (korak nadogradnje 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Sav novi sadržaj</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ne smijete izvoditi radnje moderiranja (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Radnja moderiranja nije dovršena: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderiranje: %action na %count objekata</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done od %total objekata: %ok uspjelo, %refused odbijeno, %failed neuspjelo</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok uspjelo, %refused odbijeno, %failed neuspjelo</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Više ne postoji.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nema lokaciju (nije objavljeno).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ne smijete ga sakriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ne smijete ga otkriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Već je skriveno.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nije skriveno.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Skriveno.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Otkriveno.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>U smeću je: ondje ispraznite smeće ili ga vratite.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Skica koja nikad nije objavljena ne može u smeće: izbrišite je.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ne smijete ga izbrisati (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Izbrisano.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ne smijete ga ukloniti (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ima podstavke: uklonite ga u strukturi sadržaja, gdje su navedene.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nije uklonjeno (tijek rada možda zadržava uklanjanje).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Premješteno u smeće.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Odjeljak ne postoji.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Već je u ovom odjeljku.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ne smijete dodijeliti ovaj odjeljak (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Odjeljak nije dodijeljen.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Odjeljak dodijeljen.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Stanje ne postoji.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Već je u ovom stanju.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ne smijete dodijeliti ovo stanje (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Stanje nije dodijeljeno (tijek rada možda zadržava promjenu).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stanje dodijeljeno.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Takva radnja ne postoji.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadržavanje radi pregleda nije postavljeno (korak nadogradnje 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Navedite zašto je zadržano.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Već je zadržano.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ne smijete ga zadržati (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Zadržavanje nije postavljeno (tijek rada možda zadržava promjenu).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Zadržano.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nije zadržano.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ne smijete ga otpustiti (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Zadržavanje nije otpušteno (tijek rada možda zadržava promjenu).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Otpušteno; i dalje skriveno: ne smijete ga otkriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Otpušteno.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -81782,7 +82454,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Web-mjesto GitHub projekta nalazi se ispod /&lt;repository&gt;/; relativne poveznice rade ondje i bilo gdje drugdje.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Izgradnja dohvaća svaku stranicu web-mjesta %site onako kako je vidi posjetitelj koji nije prijavljen, prepisuje poveznice, kopira datoteke i zapisuje rezultat u mapu odredišta. Ništa se ne objavljuje dok ne provjerite izgradnju i ne pritisnete Objavi.</translation>
     </message>
     <message>
@@ -81830,8 +82502,8 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Stranica koja nakon čišćenja još sadrži ispis za otklanjanje pogrešaka, token obrasca ili ID sesije nikad se ne objavljuje.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Poništavanje je za stručnjake: označite &quot;Znam što ovo mijenja&quot; i ponovno upišite naziv oznake.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Poništavanje je za stručnjake: označite "Znam što ovo mijenja" i ponovno upišite naziv oznake.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -82342,7 +83014,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Otvori pretpregled</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Otvara izgradnju onako kako će je poslužitelj posluživati, iz mape odredišta. Poveznica vam radi jedan sat.</translation>
     </message>
     <message>
@@ -82518,8 +83190,8 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Postavljanje &gt; Tajne</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Prikazuje se u popisima, na primjer &quot;Javno web-mjesto na GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Prikazuje se u popisima, na primjer "Javno web-mjesto na GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -82726,7 +83398,7 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Web-mjesto se vraća na datoteke te objave; izgradnja koja još nije objavljena mora se najprije objaviti ili odbaciti.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Vlastita stranica web-mjesta za adrese koje ne postoje.</translation>
     </message>
     <message>
@@ -82734,8 +83406,8 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Odredište nije bilo moguće spremiti: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Odredište se još ne prijavljuje ovim ključem: u njegovim postavkama odaberite &quot;Ključ za implementaciju izrađen za ovo odredište&quot;.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Odredište se još ne prijavljuje ovim ključem: u njegovim postavkama odaberite "Ključ za implementaciju izrađen za ovo odredište".</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -82770,8 +83442,8 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <translation>Odbacuje ovu izgradnju: mapa ponovno sadrži posljednju objavu. Javno web-mjesto se ne mijenja.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Najprije označite &quot;Promjene su provjerene&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Najprije označite "Promjene su provjerene".</translation>
     </message>
     <message>
         <source>Time</source>

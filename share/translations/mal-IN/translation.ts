@@ -15149,6 +15149,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ഫയലുകളായി സൂക്ഷിച്ച ഇൻസ്റ്റലേഷനിലെ മാറ്റങ്ങൾ: അവയുടെ നില, റണ്ണുകൾ, പ്രവർത്തിപ്പിക്കുക, തിരികെയാക്കുക.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>സമീപകാല ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ഏറ്റവും പുതിയ ഉള്ളടക്കം, അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്, ഒരു തിരഞ്ഞെടുപ്പിലെ പ്രവർത്തനങ്ങൾ.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>ഒരു സൈറ്റിന്റെ സ്റ്റാറ്റിക് പകർപ്പ് GitHub Pages-ലോ ഏതെങ്കിലും git ഹോസ്റ്റിലോ പ്രസിദ്ധീകരിക്കുക.</translation>
     </message>
@@ -80582,6 +80590,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>പരിഷ്കരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>സൃഷ്ടിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>പേര്</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ക്ലാസ്</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>വിഭാഗം</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>സൃഷ്ടാവ്</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>സമീപകാല ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>മുഴുവൻ സൈറ്റിലും അടുത്തിടെ സൃഷ്ടിച്ചതും പരിഷ്കരിച്ചതുമായ ഉള്ളടക്കം, ഏറ്റവും പുതിയത് ആദ്യം: സന്ദർശകർ സമർപ്പിച്ചത്, അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്, പ്രസിദ്ധീകരണത്തിനായി കാത്തിരിക്കുന്ന ഡ്രാഫ്റ്റുകൾ. തടഞ്ഞുവയ്ക്കൽ നീക്കാനോ, തടഞ്ഞുവയ്ക്കാനോ, മറയ്ക്കാനോ, വെളിപ്പെടുത്താനോ, നീക്കം ചെയ്യാനോ, മറ്റൊരു വിഭാഗത്തിലേക്കോ സ്ഥിതിയിലേക്കോ മാറ്റാനോ ഇനങ്ങൾ തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ലിസ്റ്റ് വായിക്കാൻ കഴിഞ്ഞില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>അവലോകന തടഞ്ഞുവയ്ക്കൽ ഇതുവരെ സജ്ജീകരിച്ചിട്ടില്ല, അതിനാൽ ഒന്നും തടഞ്ഞുവച്ചിട്ടില്ല, തടഞ്ഞുവയ്ക്കൽ പ്രവർത്തനങ്ങൾ ലഭ്യമല്ല. നവീകരണ ഘട്ടം 6.0.15-review-hold ഇത് സജ്ജീകരിക്കുന്നു: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ലിസ്റ്റ് ഫിൽട്ടർ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>മുതൽ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>വരെ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>തീയതി</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>സൃഷ്ടിച്ചത് (ആദ്യം പ്രസിദ്ധീകരിച്ചത്)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>എല്ലാം</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>നില</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>പ്രസിദ്ധീകരിച്ചത്</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ഡ്രാഫ്റ്റ്, ഒരിക്കലും പ്രസിദ്ധീകരിച്ചിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>തീർച്ചപ്പെടുത്താത്തത് (അംഗീകാരത്തിനോ തീയതിക്കോ കാത്തിരിക്കുന്നു)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ട്രാഷിൽ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>തടഞ്ഞുവച്ചത്</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>തടഞ്ഞുവച്ചിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>മറച്ചത്</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ദൃശ്യമായത്</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>സമർപ്പിച്ചത് ഇവിടെ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ഏത് സൈറ്റ്ആക്സസും</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ഓഡിറ്റ് രേഖപ്പെടുത്തിയത് മാത്രം.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ഇപ്പോൾ: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ഒരു ലോഗിൻ നാമം അല്ലെങ്കിൽ ഉപയോക്തൃ ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ഫിൽട്ടർ ചെയ്യുക</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ഫിൽട്ടറുകൾ മായ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ഇനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ൽ %from മുതൽ %to വരെ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ഇനങ്ങളൊന്നുമില്ല</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms ൽ വായിച്ചു)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>തിരഞ്ഞെടുത്ത ഇനങ്ങളിലെ പ്രവർത്തനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ഈ പേജിലെ എല്ലാം തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count തിരഞ്ഞെടുത്തു</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>പ്രവർത്തനം</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ഒരു പ്രവർത്തനം തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>തടഞ്ഞുവയ്ക്കൽ നീക്കുക</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>അവലോകനത്തിനായി തടഞ്ഞുവയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>മറയ്ക്കുക</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>വെളിപ്പെടുത്തുക</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ട്രാഷിലേക്ക് നീക്കുക</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ഇല്ലാതാക്കുക</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>വിഭാഗം നിയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>സ്ഥിതി നിയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>കാരണം</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>തടഞ്ഞുവയ്ക്കാൻ ആവശ്യമാണ്; തടഞ്ഞുവയ്ക്കലിനൊപ്പവും ഓഡിറ്റിലും സൂക്ഷിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ഒരു വിഭാഗം തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>സ്ഥിതി</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ഒരു സ്ഥിതി തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>തിരഞ്ഞെടുത്തവയിൽ പ്രയോഗിക്കുക</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ഓരോ ഇനവും നിങ്ങളുടെ സ്വന്തം അനുമതികളുമായി പരിശോധിക്കുന്നു. ട്രാഷിലേക്ക് നീക്കുന്നതും ഇല്ലാതാക്കുന്നതും സ്ഥിരീകരണം ആവശ്യപ്പെടുന്നു. %count ൽ കൂടുതൽ ഇനങ്ങൾ പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>പ്രസിദ്ധീകരണം</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>സമർപ്പിച്ച ഉറവിടം</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name തിരഞ്ഞെടുക്കുക</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ഇതുവരെ ഇല്ല</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(പേരില്ല)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ഡ്രാഫ്റ്റ്</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>തീർച്ചപ്പെടുത്താത്തത്</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>പാരന്റ് മറച്ചത്</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>തടഞ്ഞുവച്ചത്: പുതിയ സമർപ്പണം</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>പതിപ്പ് %version തീർച്ചപ്പെടുത്താത്തത്</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>പതിപ്പ് %version പുരോഗതിയിൽ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ഡ്രാഫ്റ്റ്, പതിപ്പ് %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>പതിപ്പ് %version പ്രസിദ്ധീകരിച്ചു</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date ന് ഷെഡ്യൂൾ ചെയ്തു</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>വിലാസമില്ല</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>രേഖപ്പെടുത്തിയിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ഈ ഫിൽട്ടറുകളുമായി ഒന്നും പൊരുത്തപ്പെടുന്നില്ല.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>എല്ലാം കാണിക്കുക</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ഇതുവരെ ഉള്ളടക്കമൊന്നുമില്ല.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ഓരോ പേജിലും</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ഓരോ പേജിലും %count ഇനങ്ങൾ കാണിക്കുക.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>ഒരു സമർപ്പണത്തിന്റെ വിലാസവും ബ്രൗസറും ഓഡിറ്റ് സൂചികയിൽ നിന്നാണ് വരുന്നത്, അത് ഇവിടെ ലഭ്യമല്ല: കോളം &quot;രേഖപ്പെടുത്തിയിട്ടില്ല&quot; എന്ന് കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>വിലാസവും ബ്രൗസറും ആ ഇനത്തിനായി ഓഡിറ്റ് രേഖപ്പെടുത്തിയവയാണ് (സ്വയം-തടഞ്ഞുവയ്ക്കൽ എപ്പോഴും അവ രേഖപ്പെടുത്തുന്നു; പ്രസിദ്ധീകരിക്കലും സൃഷ്ടിക്കലും ഓണാക്കിയിടത്ത് മാത്രം), അതിന്റെ സ്വകാര്യതാ ക്രമീകരണങ്ങൾ സൂക്ഷിക്കുന്നതുപോലെ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ഇനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ഇല്ലാതാക്കുന്നത് ഇനങ്ങളെ അവയുടെ എല്ലാ പതിപ്പുകളും വിവർത്തനങ്ങളും സഹിതം ശാശ്വതമായി നീക്കം ചെയ്യുന്നു. ഇത് പഴയപടിയാക്കാൻ കഴിയില്ല.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ഇനങ്ങൾ ട്രാഷിലേക്ക് പോകുന്നു, അവിടെ നിന്ന് അവ പുനഃസ്ഥാപിക്കാം.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ഓരോ ഇനവും നിങ്ങളുടെ സ്വന്തം അനുമതികളുമായി പരിശോധിക്കുന്നു; ഉപ ഇനങ്ങളുള്ള ഒരു ഇനം അതേപടി വിടുന്നു (അത് ഉള്ളടക്ക ഘടനയിൽ നീക്കം ചെയ്യുക). അത് നിങ്ങളാണെന്ന് സ്ഥിരീകരിക്കാൻ ആവശ്യപ്പെടും.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ഇത് പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കുന്നു: അതിന്റെ പുരോഗതി പേജ് തുറക്കുന്നു, പൂർത്തിയാകുമ്പോൾ ഓരോ ഇനത്തിന്റെയും ഫലം കാണിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>തിരഞ്ഞെടുത്ത ഇനങ്ങൾ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>കൂടാതെ %count എണ്ണം കൂടി</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>റദ്ദാക്കുക</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ഒന്നും ചെയ്തില്ല</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>കാരണം: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>പ്രവർത്തനം ഇപ്പോഴും പശ്ചാത്തലത്തിൽ പ്രവർത്തിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>അതിന്റെ പുരോഗതി</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>പശ്ചാത്തല പ്രവർത്തനം പരാജയപ്പെട്ടു: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>പൂർത്തിയായി</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>നിരസിച്ചു</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ഓരോ ഇനത്തിനും</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ഇനം</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ഫലം</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>എന്തുകൊണ്ട്</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ലിസ്റ്റിലേക്ക് മടങ്ങുക</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>സജ്ജീകരണം</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ഒന്നും ചെയ്തിട്ടില്ല</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>സ്ഥിരീകരിക്കുക</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ഒരു പ്രവർത്തനം തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>കുറഞ്ഞത് ഒരു ഇനമെങ്കിലും തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ഒരു സമയം പരമാവധി 1000 ഇനങ്ങൾ തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ഇനങ്ങൾ എന്തുകൊണ്ട് തടഞ്ഞുവച്ചു എന്ന് പറയുക.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>വിഭാഗം തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>സ്ഥിതി തിരഞ്ഞെടുക്കുക.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ഫോം വായിക്കാൻ കഴിഞ്ഞില്ല.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>സമീപകാല ഉള്ളടക്കം</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>എണ്ണങ്ങൾ വായിക്കാൻ കഴിഞ്ഞില്ല: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>അവലോകനത്തിനായി തടഞ്ഞുവച്ചത്</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ഇന്ന് പുതിയത്</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>അവലോകന തടഞ്ഞുവയ്ക്കൽ ഇതുവരെ സജ്ജീകരിച്ചിട്ടില്ല (നവീകരണ ഘട്ടം 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>എല്ലാ സമീപകാല ഉള്ളടക്കവും</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>നിങ്ങൾക്ക് മോഡറേഷൻ പ്രവർത്തനങ്ങൾ നടത്താൻ അനുവാദമില്ല (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>മോഡറേഷൻ പ്രവർത്തനം പൂർത്തിയായിട്ടില്ല: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>മോഡറേഷൻ: %count ഒബ്ജക്റ്റുകളിൽ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total ൽ %done ഒബ്ജക്റ്റുകൾ: %ok പൂർത്തിയായി, %refused നിരസിച്ചു, %failed പരാജയപ്പെട്ടു</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok പൂർത്തിയായി, %refused നിരസിച്ചു, %failed പരാജയപ്പെട്ടു</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ഇത് ഇനി നിലവിലില്ല.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ഇതിന് സ്ഥാനമില്ല (പ്രസിദ്ധീകരിച്ചിട്ടില്ല).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് മറയ്ക്കാൻ അനുവാദമില്ല (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് വെളിപ്പെടുത്താൻ അനുവാദമില്ല (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ഇത് ഇതിനകം മറച്ചിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ഇത് മറച്ചിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>മറച്ചു.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>വെളിപ്പെടുത്തി.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ഇത് ട്രാഷിലാണ്: അവിടെ ശൂന്യമാക്കുകയോ പുനഃസ്ഥാപിക്കുകയോ ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ഒരിക്കലും പ്രസിദ്ധീകരിക്കാത്ത ഡ്രാഫ്റ്റ് ട്രാഷിലേക്ക് പോകാൻ കഴിയില്ല: അത് ഇല്ലാതാക്കുക.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് ഇല്ലാതാക്കാൻ അനുവാദമില്ല (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ഇല്ലാതാക്കി.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് നീക്കം ചെയ്യാൻ അനുവാദമില്ല (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ഇതിന് ഉപ ഇനങ്ങളുണ്ട്: അവ ലിസ്റ്റ് ചെയ്തിരിക്കുന്ന ഉള്ളടക്ക ഘടനയിൽ ഇത് നീക്കം ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ഇത് നീക്കം ചെയ്തില്ല (ഒരു വർക്ക്ഫ്ലോ നീക്കം ചെയ്യൽ തടഞ്ഞുവച്ചിരിക്കാം).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ട്രാഷിലേക്ക് നീക്കി.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>വിഭാഗം നിലവിലില്ല.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ഇത് ഇതിനകം ഈ വിഭാഗത്തിലാണ്.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>നിങ്ങൾക്ക് ഈ വിഭാഗം നിയോഗിക്കാൻ അനുവാദമില്ല (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>വിഭാഗം നിയോഗിച്ചില്ല.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>വിഭാഗം നിയോഗിച്ചു.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>സ്ഥിതി നിലവിലില്ല.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ഇത് ഇതിനകം ഈ സ്ഥിതിയിലാണ്.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>നിങ്ങൾക്ക് ഈ സ്ഥിതി നിയോഗിക്കാൻ അനുവാദമില്ല (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>സ്ഥിതി നിയോഗിച്ചില്ല (ഒരു വർക്ക്ഫ്ലോ മാറ്റം തടഞ്ഞുവച്ചിരിക്കാം).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>സ്ഥിതി നിയോഗിച്ചു.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>അങ്ങനെയൊരു പ്രവർത്തനമില്ല.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>അവലോകന തടഞ്ഞുവയ്ക്കൽ സജ്ജീകരിച്ചിട്ടില്ല (നവീകരണ ഘട്ടം 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ഇത് എന്തുകൊണ്ട് തടഞ്ഞുവച്ചു എന്ന് പറയുക.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ഇത് ഇതിനകം തടഞ്ഞുവച്ചിരിക്കുന്നു.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് തടഞ്ഞുവയ്ക്കാൻ അനുവാദമില്ല (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>തടഞ്ഞുവയ്ക്കൽ സ്ഥാപിച്ചില്ല (ഒരു വർക്ക്ഫ്ലോ മാറ്റം തടഞ്ഞുവച്ചിരിക്കാം).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>തടഞ്ഞുവച്ചു.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ഇത് തടഞ്ഞുവച്ചിട്ടില്ല.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>നിങ്ങൾക്ക് ഇത് വിട്ടുകൊടുക്കാൻ അനുവാദമില്ല (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>തടഞ്ഞുവയ്ക്കൽ നീക്കിയില്ല (ഒരു വർക്ക്ഫ്ലോ മാറ്റം തടഞ്ഞുവച്ചിരിക്കാം).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>വിട്ടുകൊടുത്തു; ഇപ്പോഴും മറച്ചിരിക്കുന്നു: നിങ്ങൾക്ക് ഇത് വെളിപ്പെടുത്താൻ അനുവാദമില്ല (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>വിട്ടുകൊടുത്തു.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80727,7 +81399,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ഒരു GitHub പ്രോജക്റ്റ് സൈറ്റ് /&lt;repository&gt;/ എന്നതിന് താഴെയാണ്; ആപേക്ഷിക ലിങ്കുകൾ അവിടെയും മറ്റെവിടെയും പ്രവർത്തിക്കും.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ഒരു ബിൽഡ് %site-ന്റെ ഓരോ പേജും സൈൻ ഇൻ ചെയ്യാത്ത സന്ദർശകൻ കാണുന്നതുപോലെ കൊണ്ടുവരുന്നു, ലിങ്കുകൾ മാറ്റിയെഴുതുന്നു, ഫയലുകൾ പകർത്തുന്നു, ഫലം ലക്ഷ്യത്തിന്റെ ഫോൾഡറിൽ എഴുതുന്നു. നിങ്ങൾ ബിൽഡ് പരിശോധിച്ച് പ്രസിദ്ധീകരിക്കുക അമർത്തുന്നതുവരെ ഒന്നും പ്രസിദ്ധീകരിക്കില്ല.</translation>
     </message>
     <message>
@@ -80775,8 +81447,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>വൃത്തിയാക്കിയ ശേഷവും ഡീബഗ് ഔട്ട്പുട്ട്, ഫോം ടോക്കൺ അല്ലെങ്കിൽ സെഷൻ ഐഡി ഉള്ള പേജ് ഒരിക്കലും പ്രസിദ്ധീകരിക്കില്ല.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>റോൾബാക്ക് വിദഗ്ധർക്കുള്ളതാണ്: &quot;ഇത് എന്ത് മാറ്റുമെന്ന് എനിക്കറിയാം&quot; ടിക്ക് ചെയ്ത് ടാഗിന്റെ പേര് വീണ്ടും ടൈപ്പ് ചെയ്യുക.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>റോൾബാക്ക് വിദഗ്ധർക്കുള്ളതാണ്: "ഇത് എന്ത് മാറ്റുമെന്ന് എനിക്കറിയാം" ടിക്ക് ചെയ്ത് ടാഗിന്റെ പേര് വീണ്ടും ടൈപ്പ് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81287,7 +81959,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>പ്രിവ്യൂ തുറക്കുക</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>ഹോസ്റ്റ് നൽകുന്നതുപോലെ ലക്ഷ്യത്തിന്റെ ഫോൾഡറിൽ നിന്ന് ബിൽഡ് തുറക്കുന്നു. ലിങ്ക് നിങ്ങൾക്ക് ഒരു മണിക്കൂർ പ്രവർത്തിക്കും.</translation>
     </message>
     <message>
@@ -81463,8 +82135,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>സജ്ജീകരണം &gt; രഹസ്യങ്ങൾ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>പട്ടികകളിൽ കാണിക്കുന്നു, ഉദാഹരണത്തിന് &quot;GitHub Pages-ലെ പൊതു സൈറ്റ്&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>പട്ടികകളിൽ കാണിക്കുന്നു, ഉദാഹരണത്തിന് "GitHub Pages-ലെ പൊതു സൈറ്റ്".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81671,7 +82343,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>സൈറ്റ് ആ പ്രസിദ്ധീകരണത്തിന്റെ ഫയലുകളിലേക്ക് തിരികെ പോകുന്നു; ഇതുവരെ പ്രസിദ്ധീകരിക്കാത്ത ബിൽഡ് ആദ്യം പ്രസിദ്ധീകരിക്കുകയോ ഉപേക്ഷിക്കുകയോ വേണം.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>നിലവിലില്ലാത്ത വിലാസങ്ങൾക്കുള്ള സൈറ്റിന്റെ സ്വന്തം പേജ്.</translation>
     </message>
     <message>
@@ -81679,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ലക്ഷ്യം സംരക്ഷിക്കാനായില്ല: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>ലക്ഷ്യം ഇതുവരെ ഈ കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുന്നില്ല: അതിന്റെ ക്രമീകരണങ്ങളിൽ &quot;ഈ ലക്ഷ്യത്തിനായി സൃഷ്ടിച്ച ഡിപ്ലോയ് കീ&quot; തിരഞ്ഞെടുക്കുക.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ലക്ഷ്യം ഇതുവരെ ഈ കീ ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുന്നില്ല: അതിന്റെ ക്രമീകരണങ്ങളിൽ "ഈ ലക്ഷ്യത്തിനായി സൃഷ്ടിച്ച ഡിപ്ലോയ് കീ" തിരഞ്ഞെടുക്കുക.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81715,8 +82387,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ഈ ബിൽഡ് ഉപേക്ഷിക്കുന്നു: ഫോൾഡറിൽ വീണ്ടും അവസാന പ്രസിദ്ധീകരണം വരും. ലൈവ് സൈറ്റ് മാറുന്നില്ല.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>ആദ്യം &quot;ഞാൻ മാറ്റങ്ങൾ പരിശോധിച്ചു&quot; ടിക്ക് ചെയ്യുക.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ആദ്യം "ഞാൻ മാറ്റങ്ങൾ പരിശോധിച്ചു" ടിക്ക് ചെയ്യുക.</translation>
     </message>
     <message>
         <source>Time</source>

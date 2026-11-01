@@ -15149,6 +15149,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <translation>Mgbanwe na nrụnye echekwara dị ka faịlụ: ọnọdụ ha, ọgbụgba ha, ịgba na ịtụgharị azụ.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Ọdịnaya ọhụrụ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ọdịnaya kachasị ọhụrụ, ihe e jidere maka nyocha, na omume na ihe ndị a họọrọ.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Bipụta otu nnomi nkwụsi ike nke saịtị na GitHub Pages ma ọ bụ ọgbakọ git ọ bụla.</translation>
     </message>
@@ -22166,7 +22174,7 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Cache nkwụsi ike na-enye peeji site na sava a. Iji bipụta otu nnomi nkwụsi ike nke saịtị n&apos;ebe ọzọ, na GitHub Pages ma ọ bụ ọgbakọ git ọ bụla, jiri mbipụta nkwụsi ike.</translation>
+        <translation>Cache nkwụsi ike na-enye peeji site na sava a. Iji bipụta otu nnomi nkwụsi ike nke saịtị n'ebe ọzọ, na GitHub Pages ma ọ bụ ọgbakọ git ọ bụla, jiri mbipụta nkwụsi ike.</translation>
     </message>
 </context>
 <context>
@@ -80582,6 +80590,670 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Gbanwere</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Emepụtara</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Aha</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasị</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ngalaba</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Onye kere</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ọdịnaya ọhụrụ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ọdịnaya e mepụtara na nke a gbanwere n&apos;oge na-adịbeghị anya na saịtị niile, nke kachasị ọhụrụ na mbụ: ihe ndị ọbịa zitere, ihe e jidere maka nyocha, ndepụta mbụ na-eche mbipụta ha. Họrọ ihe iji hapụ ha, jide ha, zoo ha, mee ka a hụ ha, wepụ ha ma ọ bụ bufee ha na ngalaba ma ọ bụ ọnọdụ ọzọ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ndepụta ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Edobebeghị njide maka nyocha, ya mere ọ dịghị ihe e jidere, a naghịkwa enye omume njide. Nzọụkwụ nkwalite 6.0.15-review-hold na-edozi ya: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Zachaa ndepụta ahụ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Site na</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ruo</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ụbọchị</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Emepụtara (mbipụta mbụ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ha niile</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ebipụtara</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Ndepụta mbụ, ebipụtabeghị ya ọ bụla</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Na-eche (na-eche nkwado ma ọ bụ ụbọchị)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Na Mkpọkọta ahịhịa</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>E jidere maka nyocha</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>E jidere</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>E jideghị</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Zoro ezo</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Hụrụ anya</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>E zitere na</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Nnweta saịtị ọ bụla</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Naanị ihe nyocha akụkọ dekọrọ.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ugbu a: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Aha nbanye ma ọ bụ ID onye ọrụ.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Nzacha</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Kpochapụ nzacha</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ihe ndị a</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ruo %to n&apos;ime %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Enweghị ihe ọ bụla</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(agụrụ n&apos;ime %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Omume na ihe ndị a họọrọ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Họrọ ha niile na ibe a</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Ahọrọla %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Họrọ omume</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Hapụ njide ahụ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Jide maka nyocha</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Zoo</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Mee ka ọ hụrụ anya</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Kpugharịa na Mkpọkọta ahịhịa</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Hichapụ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Kenye ngalaba</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Kenye ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Ihe mere</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Achọrọ ya iji jide; a na-edebe ya na njide ahụ na n&apos;ime nyocha akụkọ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Họrọ ngalaba</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Họrọ ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Tinye na ndị a họọrọ</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>A na-enyocha ihe ọ bụla megide ikike gị. Ibuga na Mkpọkọta ahịhịa na ihichapụ na-arịọ gị ka ị kwenye. Ihe karịrị %count na-arụ ọrụ n&apos;azụ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Họrọ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Mbipụta</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>E zitere site na</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Họrọ %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ọ bụbeghị</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(enweghị aha)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Nọmba ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ndepụta mbụ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Na-eche</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Nne na nna ya zoro ya</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>E jidere: nziga ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Ụdị %version na-eche</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Ụdị %version na-aga n&apos;ihu</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Ndepụta mbụ, ụdị %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Ebipụtara ụdị %version</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ahazịrị maka %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>enweghị adreesị</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>edeghị ya</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ọ dịghị ihe dabara na nzacha ndị a.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Gosi ha niile</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Enwebeghị ọdịnaya ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>N&apos;otu ibe</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Gosi ihe %count n&apos;otu ibe.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adreesị na ihe nchọgharị nke nziga si na ndeksi nyocha akụkọ, nke na-adịghị ebe a: kọlụm ahụ na-ekwu &quot;edeghị ya&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adreesị na ihe nchọgharị bụ ndị nyocha akụkọ dekọrọ maka ihe ahụ (njide akpaghị aka na-edekọ ha mgbe niile; mbipụta na mmepụta naanị ebe agbanyere ya), dịka ntọala nzuzo ya si edebe ha.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: ihe %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ihichapụ na-ewepụ ihe ndị ahụ kpamkpam, ya na ụdị ha niile na ntụgharị ha. Enweghị ike ịlaghachi ya.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Ihe ndị ahụ na-aga na Mkpọkọta ahịhịa, ebe enwere ike iweghachi ha.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>A na-enyocha ihe ọ bụla megide ikike gị; a na-ahapụ ihe nwere ihe ndị dị n&apos;okpuru ya otu ọ dị (wepụ ya na nhazi ọdịnaya). A ga-arịọ gị ka ị gosi na ọ bụ gị.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Nke a na-arụ ọrụ n&apos;azụ: ibe ọganihu ya na-emeghe, a na-egosikwa nsonaazụ nke ihe ọ bụla mgbe ọ gwụchara.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ihe ndị a họọrọ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>na %count ọzọ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kagbuo</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Emeghị ihe ọ bụla</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Ihe mere: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Omume ahụ ka na-arụ ọrụ n&apos;azụ.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ọganihu ya</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Omume n&apos;azụ ahụ adaala: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Emechala</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A jụrụ ya</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Adaala</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Kwa ihe</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ihe</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nsonaazụ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Gịnị kpatara</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Laghachi na ndepụta</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nrụnye</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ọ dịghị ihe e mere</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kwenye</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Họrọ omume.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Họrọ opekata mpe otu ihe.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Họrọ ihe na-erughị 1000 n&apos;otu oge.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Kwuo ihe mere e ji jide ihe ndị ahụ.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Họrọ ngalaba ahụ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Họrọ ọnọdụ ahụ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Enweghị ike ịgụ fọm ahụ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ọdịnaya ọhụrụ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ọnụọgụ ndị ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>E jidere maka nyocha</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ọhụrụ taa</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Edobebeghị njide maka nyocha (nzọụkwụ nkwalite 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ọdịnaya ọhụrụ niile</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>I nweghị ike ịrụ omume nlekọta ọdịnaya (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Omume nlekọta ọdịnaya ahụ ezughị ezu: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Nlekọta ọdịnaya: %action na ihe %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done n&apos;ime ihe %total: %ok emechala, %refused a jụrụ, %failed adaala</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok emechala, %refused a jụrụ, %failed adaala</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ọ dịkwaghị.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>O nweghị ọnọdụ ebe (ebipụtaghị ya).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>I nweghị ike izo ya (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>I nweghị ike ime ka a hụ ya (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>E zoola ya.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>E zoghị ya.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>E zoro ya.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>E mere ka a hụ ya.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ọ nọ na Mkpọkọta ahịhịa: tọgbọọ ya ma ọ bụ weghachi ya n&apos;ebe ahụ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ndepụta mbụ a na-ebipụtabeghị enweghị ike ịga na Mkpọkọta ahịhịa: hichapụ ya.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>I nweghị ike ihichapụ ya (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Ehichapụla.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>I nweghị ike iwepụ ya (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>O nwere ihe ndị dị n&apos;okpuru ya: wepụ ya na nhazi ọdịnaya, ebe e depụtara ha.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ewepụghị ya (usoro ọrụ nwere ike ijide mwepụ ahụ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>E bugara ya na Mkpọkọta ahịhịa.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Ngalaba ahụ adịghị.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ọ nọlarị na ngalaba a.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>I nweghị ike ikenye ngalaba a (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>E kenyeghị ngalaba ahụ.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>E kenyela ngalaba.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ọnọdụ ahụ adịghị.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ọ nọlarị n&apos;ọnọdụ a.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>I nweghị ike ikenye ọnọdụ a (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>E kenyeghị ọnọdụ ahụ (usoro ọrụ nwere ike ijide mgbanwe ahụ).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>E kenyela ọnọdụ.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ọ dịghị ụdị omume ahụ.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Edobeghị njide maka nyocha (nzọụkwụ nkwalite 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Kwuo ihe mere e ji jide ya.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>E jidelarị ya.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>I nweghị ike ijide ya (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>E dobeghị njide ahụ (usoro ọrụ nwere ike ijide mgbanwe ahụ).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>E jidere ya.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>E jideghị ya.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>I nweghị ike ịhapụ ya (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>A hapụghị njide ahụ (usoro ọrụ nwere ike ijide mgbanwe ahụ).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>A hapụla ya; ọ ka zoro ezo: i nweghị ike ime ka a hụ ya (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>A hapụla ya.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80593,7 +81265,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Bipụta otu nnomi nkwụsi ike nke saịtị gị n&apos;efu na GitHub Pages:</translation>
+        <translation>Bipụta otu nnomi nkwụsi ike nke saịtị gị n'efu na GitHub Pages:</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -80617,7 +81289,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>a job is going on</source>
-        <translation>otu ọrụ na-aga n&apos;ihu</translation>
+        <translation>otu ọrụ na-aga n'ihu</translation>
     </message>
     <message>
         <source>build to check</source>
@@ -80648,7 +81320,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>%bytes of %limit (%percent %)</source>
-        <translation>%bytes n&apos;ime %limit (%percent %)</translation>
+        <translation>%bytes n'ime %limit (%percent %)</translation>
     </message>
     <message>
         <source>%count more are not listed.</source>
@@ -80696,7 +81368,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>3. Signing in to the repository</source>
-        <translation>3. Ịbanye n&apos;ebe nchekwa ahụ</translation>
+        <translation>3. Ịbanye n'ebe nchekwa ahụ</translation>
     </message>
     <message>
         <source>4. The repository</source>
@@ -80724,10 +81396,10 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>Saịtị ọrụ GitHub na-adị n&apos;okpuru /&lt;repository&gt;/; njikọ mmekọ na-arụ ọrụ ebe ahụ na ebe ọ bụla ọzọ.</translation>
+        <translation>Saịtị ọrụ GitHub na-adị n'okpuru /&lt;repository&gt;/; njikọ mmekọ na-arụ ọrụ ebe ahụ na ebe ọ bụla ọzọ.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Nrụpụta na-ebute peeji ọ bụla nke %site dịka onye ọbịa na-abanyeghị si ahụ ya, na-edegharị njikọ, na-eṅomi faịlụ ma na-ede nsonaazụ ya na folda ebumnuche ahụ. Ọ dịghị ihe a na-ebipụta ruo mgbe ị nyochara nrụpụta ahụ ma pịa Bipụta.</translation>
     </message>
     <message>
@@ -80740,7 +81412,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Igodo mbunye na-ekwe ka ntinye a mee nziga n&apos;otu ebe nchekwa site na SSH, ọ bụghị ebe ọzọ. Akụkụ nzuzo ya na-anọ na Nrụnye &gt; Ihe nzuzo; ọ bụ naanị akụkụ ọha ya ka a na-egosi.</translation>
+        <translation>Igodo mbunye na-ekwe ka ntinye a mee nziga n'otu ebe nchekwa site na SSH, ọ bụghị ebe ọzọ. Akụkụ nzuzo ya na-anọ na Nrụnye &gt; Ihe nzuzo; ọ bụ naanị akụkụ ọha ya ka a na-egosi.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -80752,15 +81424,15 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Otu ọrụ na-aga n&apos;ihu, nke %user malitere</translation>
+        <translation>Otu ọrụ na-aga n'ihu, nke %user malitere</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Ọrụ nke ebumnuche a ka na-aga n&apos;ihu (%detail). Chere ka ọ kwụsị.</translation>
+        <translation>Ọrụ nke ebumnuche a ka na-aga n'ihu (%detail). Chere ka ọ kwụsị.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Ọrụ nke ebumnuche a ka na-aga n&apos;ihu. Chere ka ọ kwụsị.</translation>
+        <translation>Ọrụ nke ebumnuche a ka na-aga n'ihu. Chere ka ọ kwụsị.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -80768,27 +81440,27 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>E mepụtara igodo mbunye ọhụrụ. Tinye akụkụ ọha ya n&apos;ebe nchekwa ahụ ugbu a.</translation>
+        <translation>E mepụtara igodo mbunye ọhụrụ. Tinye akụkụ ọha ya n'ebe nchekwa ahụ ugbu a.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
         <translation>A naghị ebipụta peeji ka nwere mmepụta debug, tokin fọm ma ọ bụ id nnọkọ mgbe e hichachara ya.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Ntụgharị azụ bụ maka ndị ọkachamara: kaa akara &quot;Amaara m ihe nke a na-agbanwe&quot; ma pịnyegharịa aha mkpado ahụ ọzọ.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Ntụgharị azụ bụ maka ndị ọkachamara: kaa akara "Amaara m ihe nke a na-agbanwe" ma pịnyegharịa aha mkpado ahụ ọzọ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Saịtị nwere ike iru %site, otu faịlụ iru %file, ya na ihe dị ka 100 GB nke okporo ụzọ kwa ọnwa. Na atụmatụ n&apos;efu, ebe nchekwa ahụ ga-abụrịrị nke ọha. E meghị GitHub Pages maka ụlọ ahịa ma ọ bụ azụmahịa ndị ọzọ.</translation>
+        <translation>Saịtị nwere ike iru %site, otu faịlụ iru %file, ya na ihe dị ka 100 GB nke okporo ụzọ kwa ọnwa. Na atụmatụ n'efu, ebe nchekwa ahụ ga-abụrịrị nke ọha. E meghị GitHub Pages maka ụlọ ahịa ma ọ bụ azụmahịa ndị ọzọ.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>Ebumnuche bụ otu saịtị e bipụtara n&apos;otu ebe nchekwa git. Ọ dịghị ihe a na-arụpụta ma ọ bụ ebipụta ebe a: Chekwaa na-ede ntọala ndị ahụ na settings/override/staticcache.ini.append.php.</translation>
+        <translation>Ebumnuche bụ otu saịtị e bipụtara n'otu ebe nchekwa git. Ọ dịghị ihe a na-arụpụta ma ọ bụ ebipụta ebe a: Chekwaa na-ede ntọala ndị ahụ na settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Ebumnuche bụ otu saịtị e bipụtara n&apos;otu ebe, dịka ọmụmaatụ saịtị ọha gị na GitHub Pages.</translation>
+        <translation>Ebumnuche bụ otu saịtị e bipụtara n'otu ebe, dịka ọmụmaatụ saịtị ọha gị na GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -80800,7 +81472,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Tinye igodo ọha a n&apos;ebe nchekwa ahụ ya na ikike ide. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, kaa akara Allow write access.</translation>
+        <translation>Tinye igodo ọha a n'ebe nchekwa ahụ ya na ikike ide. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, kaa akara Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -80828,7 +81500,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Below a base path</source>
-        <translation>N&apos;okpuru ụzọ ntọala</translation>
+        <translation>N'okpuru ụzọ ntọala</translation>
     </message>
     <message>
         <source>Branch</source>
@@ -80864,11 +81536,11 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>By</source>
-        <translation>Site n&apos;aka</translation>
+        <translation>Site n'aka</translation>
     </message>
     <message>
         <source>By hand, here</source>
-        <translation>Site n&apos;aka, ebe a</translation>
+        <translation>Site n'aka, ebe a</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -80968,7 +81640,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Every link starts with the base path.</source>
-        <translation>Njikọ ọ bụla na-amalite n&apos;ụzọ ntọala ahụ.</translation>
+        <translation>Njikọ ọ bụla na-amalite n'ụzọ ntọala ahụ.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
@@ -81012,11 +81684,11 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Maka adreesị SSH. A na-emepụta igodo ahụ mgbe e chekwachara; ị ga-etinye akụkụ ọha ya n&apos;ebe nchekwa ahụ.</translation>
+        <translation>Maka adreesị SSH. A na-emepụta igodo ahụ mgbe e chekwachara; ị ga-etinye akụkụ ọha ya n'ebe nchekwa ahụ.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
-        <translation>Maka adreesị https://. GitHub: tokin nwere ikike zuru oke, ya na Contents ịgụ na ide n&apos;ebe nchekwa ahụ.</translation>
+        <translation>Maka adreesị https://. GitHub: tokin nwere ikike zuru oke, ya na Contents ịgụ na ide n'ebe nchekwa ahụ.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
@@ -81028,7 +81700,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Nnabata n&apos;efu site n&apos;ebe nchekwa GitHub.</translation>
+        <translation>Nnabata n'efu site n'ebe nchekwa GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81120,7 +81792,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>Ọ na-agba n&apos;azụ dịka %user; ị nwere ike imechi peeji a.</translation>
+        <translation>Ọ na-agba n'azụ dịka %user; ị nwere ike imechi peeji a.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81180,7 +81852,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Buru ụzọ mepụta ebe nchekwa ahụ n&apos;ọgbakọ ahụ; nke tọgbọ chakoo dị mma.</translation>
+        <translation>Buru ụzọ mepụta ebe nchekwa ahụ n'ọgbakọ ahụ; nke tọgbọ chakoo dị mma.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81224,7 +81896,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>Achọtaghị usoro ahịrị iwu php. Debe migration.ini [AdminSettings] PhpCliPath n&apos;ụzọ zuru oke ya.</translation>
+        <translation>Achọtaghị usoro ahịrị iwu php. Debe migration.ini [AdminSettings] PhpCliPath n'ụzọ zuru oke ya.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81264,15 +81936,15 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
-        <translation>Na sava: ./console exp:static:serve %id na-enye ya n&apos;otu ụzọ ahụ.</translation>
+        <translation>Na sava: ./console exp:static:serve %id na-enye ya n'otu ụzọ ahụ.</translation>
     </message>
     <message>
         <source>One path per line, * matches any part: /members/*</source>
-        <translation>Otu ụzọ n&apos;ahịrị ọ bụla, * dabara na akụkụ ọ bụla: /members/*</translation>
+        <translation>Otu ụzọ n'ahịrị ọ bụla, * dabara na akụkụ ọ bụla: /members/*</translation>
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>Ọ bụ naanị aha ka e chekwara ya na ebumnuche ahụ; tokin ma ọ bụ igodo n&apos;onwe ya na-anọ na Nrụnye &gt; Ihe nzuzo, ọ naghịkwa apụta na ndekọ.</translation>
+        <translation>Ọ bụ naanị aha ka e chekwara ya na ebumnuche ahụ; tokin ma ọ bụ igodo n'onwe ya na-anọ na Nrụnye &gt; Ihe nzuzo, ọ naghịkwa apụta na ndekọ.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
@@ -81287,7 +81959,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Mepee ọhụụ mbụ</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Na-emepe nrụpụta ahụ dịka ọgbakọ ahụ ga-enye ya, site na folda ebumnuche ahụ. Njikọ ahụ na-arụ ọrụ maka gị otu awa.</translation>
     </message>
     <message>
@@ -81463,8 +82135,8 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Nrụnye &gt; Ihe nzuzo</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>A na-egosi ya na ndepụta, dịka ọmụmaatụ &quot;Saịtị ọha na GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>A na-egosi ya na ndepụta, dịka ọmụmaatụ "Saịtị ọha na GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81528,7 +82200,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Step %step of %total</source>
-        <translation>Nzọụkwụ %step n&apos;ime %total</translation>
+        <translation>Nzọụkwụ %step n'ime %total</translation>
     </message>
     <message>
         <source>Steps</source>
@@ -81652,7 +82324,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Sava ahụ na-abanye n&apos;onwe ya (site n&apos;igodo SSH nke ya ma ọ bụ credential helper), ma ọ bụ ebe nchekwa ahụ dị na sava a.</translation>
+        <translation>Sava ahụ na-abanye n'onwe ya (site n'igodo SSH nke ya ma ọ bụ credential helper), ma ọ bụ ebe nchekwa ahụ dị na sava a.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
@@ -81671,7 +82343,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Saịtị ahụ na-alaghachi na faịlụ nke mbipụta ahụ; a ga-ebu ụzọ bipụta ma ọ bụ tụfuo nrụpụta a na-ebipụtabeghị.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Peeji nke saịtị ahụ maka adreesị na-adịghị.</translation>
     </message>
     <message>
@@ -81679,8 +82351,8 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Enweghị ike ịchekwa ebumnuche ahụ: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Ebumnuche ahụ anaghị abanye n&apos;igodo a ka: họrọ &quot;Igodo mbunye e mere maka ebumnuche a&quot; na ntọala ya.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ebumnuche ahụ anaghị abanye n'igodo a ka: họrọ "Igodo mbunye e mere maka ebumnuche a" na ntọala ya.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81696,7 +82368,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Peeji a na-eso ọrụ ahụ ka ọ na-aga; ọ na-aga n&apos;ihu n&apos;azụ mgbe e mechiri peeji ahụ.</translation>
+        <translation>Peeji a na-eso ọrụ ahụ ka ọ na-aga; ọ na-aga n'ihu n'azụ mgbe e mechiri peeji ahụ.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -81715,8 +82387,8 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <translation>Na-atụfu nrụpụta a: folda ahụ nwere mbipụta ikpeazụ ọzọ. Saịtị dị ndụ anaghị agbanwe.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Buru ụzọ kaa akara &quot;Enyochala m mgbanwe ndị ahụ&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Buru ụzọ kaa akara "Enyochala m mgbanwe ndị ahụ".</translation>
     </message>
     <message>
         <source>Time</source>
@@ -81752,7 +82424,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Ihe ọrụ ahụ mere na ndekọ ya. Ọrụ a malitere ebe a na-aga n&apos;ihu n&apos;azụ mgbe e mechiri peeji a.</translation>
+        <translation>Ihe ọrụ ahụ mere na ndekọ ya. Ọrụ a malitere ebe a na-aga n'ihu n'azụ mgbe e mechiri peeji a.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
@@ -81792,7 +82464,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>Work below any path. The default.</source>
-        <translation>Na-arụ ọrụ n&apos;okpuru ụzọ ọ bụla. Nke ndabara.</translation>
+        <translation>Na-arụ ọrụ n'okpuru ụzọ ọ bụla. Nke ndabara.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
@@ -81804,7 +82476,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>Ị nwere ike ịrụpụta ma bipụta site n&apos;aka mgbe niile ebe a na na console.</translation>
+        <translation>Ị nwere ike ịrụpụta ma bipụta site n'aka mgbe niile ebe a na na console.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -81812,7 +82484,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>below %path</source>
-        <translation>n&apos;okpuru %path</translation>
+        <translation>n'okpuru %path</translation>
     </message>
     <message>
         <source>ended without a report</source>
@@ -81840,7 +82512,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
-        <translation>https://github.com/owner/repo.git (ya na tokin) ma ọ bụ git@github.com:owner/repo.git (ya na igodo mbunye); ọ dịghị mgbe paswọọdụ ma ọ bụ tokin na-anọ n&apos;ime ya.</translation>
+        <translation>https://github.com/owner/repo.git (ya na tokin) ma ọ bụ git@github.com:owner/repo.git (ya na igodo mbunye); ọ dịghị mgbe paswọọdụ ma ọ bụ tokin na-anọ n'ime ya.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
@@ -81924,7 +82596,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>running</source>
-        <translation>na-aga n&apos;ihu</translation>
+        <translation>na-aga n'ihu</translation>
     </message>
     <message>
         <source>the folder only</source>
@@ -81932,7 +82604,7 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: e dere ya na faịlụ CNAME. Duzie DNS nke ngalaba aha ahụ gaa n&apos;ọgbakọ ahụ dịka o si kọwaa; HTTPS nwere ike iwe oge tupu ọ malite.</translation>
+        <translation>www.example.com: e dere ya na faịlụ CNAME. Duzie DNS nke ngalaba aha ahụ gaa n'ọgbakọ ahụ dịka o si kọwaa; HTTPS nwere ike iwe oge tupu ọ malite.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>

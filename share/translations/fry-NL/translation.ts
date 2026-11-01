@@ -15151,6 +15151,14 @@ Let op: de pakketten wurde net de-ynstallearre.</translation>
         <translation>Wizigingen oan de ynstallaasje bewarre as triemmen: harren steat, de útfieringen, útfiere en weromdraaie.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Resinte ynhâld</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>De nijste ynhâld, wat foar kontrôle tsjinhâlden wurdt, en aksjes op in seleksje.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>In statyske kopy fan in website publisearje op GitHub Pages of in oare git-host.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Wizige</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Makke</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namme</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksje</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Makker</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Resinte ynhâld</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>De meast resint makke en wizige ynhâld fan de hiele side, nijste earst: wat besikers ynstjoerd hawwe, wat foar kontrôle tsjinhâlden wurdt, konsepten dy't op harren publikaasje wachtsje. Selektearje ûnderdielen om se frij te jaan, tsjin te hâlden, te ferbergjen, te toanen, fuort te heljen of nei in oare seksje of steat te ferpleatsen.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>De list koe net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>It tsjinhâlden foar kontrôle is noch net ynrjochte, dus wurdt neat tsjinhâlden en wurde de aksjes om tsjin te hâlden net oanbean. De opwurdearringsstap 6.0.15-review-hold rjochtet it yn: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>De list filterje</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fan</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Oant</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Makke (earst publisearre)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Publikaasjestatus</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publisearre</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Konsept, nea publisearre</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Yn ôfwachting (wachtet op goedkarring of in datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Yn it jiskefet</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Foar kontrôle tsjinhâlden</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Tsjinhâlden</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Net tsjinhâlden</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Ferburgen</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtber</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Ynstjoerd fia</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Elke websidetagong</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Allinnich wat de kontrôle fêstlein hat.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>No: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>In oanmeldnamme of in brûkers-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filterje</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filters wiskje</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ûnderdielen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from oant %to fan %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Gjin ûnderdiel</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lêzen yn %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Aksjes op de selektearre ûnderdielen</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alles op dizze side selektearje</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count selektearre</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksje</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Kies in aksje</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Tsjinhâlden opheffe</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Foar kontrôle tsjinhâlde</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ferbergje</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Toane</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Ferpleatse nei it jiskefet</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Fuortsmite</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Seksje tawize</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Steat tawize</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Reden</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Nedich om tsjin te hâlden; wurdt by it tsjinhâlden en yn de kontrôle bewarre.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Kies in seksje</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Steat</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Kies in steat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Op de seleksje tapasse</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Elk ûnderdiel wurdt kontrolearre oan de hân fan jo eigen rjochten. Ferpleatsen nei it jiskefet en fuortsmiten freegje om befêstiging. Mear as %count ûnderdielen wurde op de eftergrûn útfierd.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selektearje</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikaasje</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Ynstjoerd fan</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name selektearje</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>noch net</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(gjin namme)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Konsept</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yn ôfwachting</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ferburgen troch it boppelizzende ûnderdiel</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Tsjinhâlden: nije ynstjoering</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Ferzje %version yn ôfwachting</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Ferzje %version yn bewurking</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Konsept, ferzje %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Ferzje %version publisearre</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Pland foar %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>gjin adres</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>net fêstlein</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Neat foldocht oan dizze filters.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alles toane</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Der is noch gjin ynhâld.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per side</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count ûnderdielen per side toane.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>It adres en de browser fan in ynstjoering komme út de kontrôleyndeks, dy't hjir net beskikber is: de kolom toant "net fêstlein".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>It adres en de browser binne dy't de kontrôle foar it ûnderdiel fêstlein hat (it automatysk tsjinhâlden leit se altyd fêst; publisearjen en meitsjen allinnich wêr't dat ynskeakele is), sa as de privacyynstellings se bewarje.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ûnderdielen</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Fuortsmiten hellet de ûnderdielen foargoed fuort, mei al harren ferzjes en oersettingen. Dit kin net ûngedien makke wurde.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>De ûnderdielen geane nei it jiskefet, wêrút't se weromset wurde kinne.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Elk ûnderdiel wurdt kontrolearre oan de hân fan jo eigen rjochten; in ûnderdiel mei ûnderlizzende ûnderdielen bliuwt sa't it is (helje it fuort yn de ynhâldsstruktuer). Jo wurde frege om te befêstigjen dat jo it binne.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dit rint op de eftergrûn: de fuortgongsside iepenet, en it resultaat per ûnderdiel wurdt toand as it klear is.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>De selektearre ûnderdielen</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>en noch %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annulearje</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Der is neat dien</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Reden: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>De aksje rint noch op de eftergrûn.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>De fuortgong</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>De eftergrûnaksje is mislearre: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Dien</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wegere</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislearre</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per ûnderdiel</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ûnderdiel</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Wêrom</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Werom nei de list</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ynstelle</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Neat dien</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Befêstigje</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Kies in aksje.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Selektearje op syn minst ien ûnderdiel.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Selektearje op syn heechst 1000 ûnderdielen tagelyk.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sis wêrom't de ûnderdielen tsjinhâlden wurde.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Kies de seksje.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Kies de steat.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>It formulier koe net lêzen wurde.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Resinte ynhâld</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>De oantallen koene net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Foar kontrôle tsjinhâlden</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nij hjoed</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>It tsjinhâlden foar kontrôle is noch net ynrjochte (de opwurdearringsstap 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Alle resinte ynhâld</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Jo meie gjin moderaasjeaksjes útfiere (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>De moderaasjeaksje is net folslein: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderaasje: %action op %count objekten</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done fan %total objekten: %ok dien, %refused wegere, %failed mislearre</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok dien, %refused wegere, %failed mislearre</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>It bestiet net mear.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>It hat gjin lokaasje (net publisearre).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Jo meie it net ferbergje (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Jo meie it net toane (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>It is al ferburgen.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>It is net ferburgen.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Ferburgen.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Toand.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>It sit yn it jiskefet: leegje it of set it dêr werom.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>In konsept dat nea publisearre is, kin net nei it jiskefet: smyt it fuort.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Jo meie it net fuortsmite (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Fuortsmiten.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Jo meie it net fuortheljen (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>It hat ûnderlizzende ûnderdielen: helje it fuort yn de ynhâldsstruktuer, wêr't dy opnoege wurde.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>It is net fuorthelle (miskien hâldt in wurkstream it fuortheljen tsjin).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Ferpleatst nei it jiskefet.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>De seksje bestiet net.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>It sit al yn dizze seksje.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Jo meie dizze seksje net tawize (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>De seksje is net tawiisd.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seksje tawiisd.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>De steat bestiet net.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>It hat dizze steat al.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Jo meie dizze steat net tawize (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>De steat is net tawiisd (miskien hâldt in wurkstream de wiziging tsjin).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Steat tawiisd.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Sa'n aksje bestiet net.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>It tsjinhâlden foar kontrôle is net ynrjochte (de opwurdearringsstap 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sis wêrom't it tsjinhâlden wurdt.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>It wurdt al tsjinhâlden.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Jo meie it net tsjinhâlde (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>It tsjinhâlden is net ynsteld (miskien hâldt in wurkstream de wiziging tsjin).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Tsjinhâlden.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>It wurdt net tsjinhâlden.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Jo meie it net frijjaan (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>It tsjinhâlden is net opheft (miskien hâldt in wurkstream de wiziging tsjin).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Frijjûn; noch altyd ferburgen: jo meie it net toane (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Frijjûn.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80674,7 +81346,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag is de publikaasje dy&apos;t de website no hat.</translation>
+        <translation>%tag is de publikaasje dy't de website no hat.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -80718,7 +81390,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>8. When it is published</source>
-        <translation>8. Wannear&apos;t publisearre wurdt</translation>
+        <translation>8. Wannear't publisearre wurdt</translation>
     </message>
     <message>
         <source>9. Review and save</source>
@@ -80729,8 +81401,8 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <translation>In GitHub-projektside stiet ûnder /&lt;repository&gt;/; relative keppelingen wurkje dêr en oeral oars.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>In bou hellet elke side fan %site op sa&apos;t in besiker dy&apos;t net oanmeld is him sjocht, skriuwt de keppelingen om, kopiearret de bestannen en skriuwt it resultaat nei de map fan it doel. Der wurdt neat publisearre oant jo de bou kontrolearje en op Publisearje drukke.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>In bou hellet elke side fan %site op sa't in besiker dy't net oanmeld is him sjocht, skriuwt de keppelingen om, kopiearret de bestannen en skriuwt it resultaat nei de map fan it doel. Der wurdt neat publisearre oant jo de bou kontrolearje en op Publisearje drukke.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -80774,15 +81446,15 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>In side dy&apos;t nei it opskjinjen noch debugútfier, in formuliertoken of in sesje-ID befettet, wurdt nea publisearre.</translation>
+        <translation>In side dy't nei it opskjinjen noch debugútfier, in formuliertoken of in sesje-ID befettet, wurdt nea publisearre.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
         <translation>In weromnimming is foar saakkundigen: finkje „Ik wit wat dit feroaret“ oan en typ de namme fan it merk nochris.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>In website mei oant %site grut wêze, ien bestân oant %file, mei sa&apos;n 100 GB dataferkear yn &apos;e moanne. Mei in fergees abonnemint moat it repositoarium iepenbier wêze. GitHub Pages is net bedoeld foar winkels of oare kommersjele transaksjes.</translation>
+        <translation>In website mei oant %site grut wêze, ien bestân oant %file, mei sa'n 100 GB dataferkear yn 'e moanne. Mei in fergees abonnemint moat it repositoarium iepenbier wêze. GitHub Pages is net bedoeld foar winkels of oare kommersjele transaksjes.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -80938,7 +81610,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
-        <translation>Debugútfier, formuliertokens, sesje-ID&apos;s en nonces wurde altyd fuorthelle.</translation>
+        <translation>Debugútfier, formuliertokens, sesje-ID's en nonces wurde altyd fuorthelle.</translation>
     </message>
     <message>
         <source>Deploy key</source>
@@ -80978,7 +81650,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>Extras</source>
-        <translation>Ekstra&apos;s</translation>
+        <translation>Ekstra's</translation>
     </message>
     <message>
         <source>Fetch the pages from</source>
@@ -81002,7 +81674,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>Files that could not be collected</source>
-        <translation>Bestannen dy&apos;t net sammele wurde koene</translation>
+        <translation>Bestannen dy't net sammele wurde koene</translation>
     </message>
     <message>
         <source>Fingerprint</source>
@@ -81062,11 +81734,11 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
-        <translation>GitHub Pages publisearret de bestannen sa&apos;t se binne (nedich foar bestannen dy&apos;t mei _ begjinne).</translation>
+        <translation>GitHub Pages publisearret de bestannen sa't se binne (nedich foar bestannen dy't mei _ begjinne).</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
-        <translation>GitHub leveret de tûke sa&apos;t er ferstjoerd is. De standert.</translation>
+        <translation>GitHub leveret de tûke sa't er ferstjoerd is. De standert.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
@@ -81102,7 +81774,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>How GitHub Pages receives the build</source>
-        <translation>Hoe&apos;t GitHub Pages de bou ûntfangt</translation>
+        <translation>Hoe't GitHub Pages de bou ûntfangt</translation>
     </message>
     <message>
         <source>I have checked the changes</source>
@@ -81289,8 +81961,8 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <translation>It foarbyld iepenje</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
-        <translation>Iepenet de bou sa&apos;t de host him leverje sil, út de map fan it doel. De keppeling wurket in oere foar jo.</translation>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Iepenet de bou sa't de host him leverje sil, út de map fan it doel. De keppeling wurket in oere foar jo.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -81414,7 +82086,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>De kontrôle hifket elke ynstelling en lit de rigels sjen dy&apos;t skreaun wurde. Der is noch neat bewarre.</translation>
+        <translation>De kontrôle hifket elke ynstelling en lit de rigels sjen dy't skreaun wurde. Der is noch neat bewarre.</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -81438,7 +82110,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>Seksje-ID&apos;s, skieden troch komma&apos;s.</translation>
+        <translation>Seksje-ID's, skieden troch komma's.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
@@ -81465,7 +82137,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <translation>Ynstelle &gt; Geheimen</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
         <translation>Toand yn listen, bygelyks „Publike website op GitHub Pages“.</translation>
     </message>
     <message>
@@ -81590,7 +82262,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
-        <translation>De map befettet in bou dy&apos;t noch net publisearre is; in nije bou ferfangt him.</translation>
+        <translation>De map befettet in bou dy't noch net publisearre is; in nije bou ferfangt him.</translation>
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
@@ -81626,7 +82298,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>The lines that will be written</source>
-        <translation>De rigels dy&apos;t skreaun wurde</translation>
+        <translation>De rigels dy't skreaun wurde</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
@@ -81634,11 +82306,11 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>De siden wurde ophelle sa&apos;t in besiker dy&apos;t net oanmeld is se sjocht. Behear- en bewurkingswebsidetagongen wurde nea oanbean.</translation>
+        <translation>De siden wurde ophelle sa't in besiker dy't net oanmeld is se sjocht. Behear- en bewurkingswebsidetagongen wurde nea oanbean.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>De foarútgong koe net folge wurde. Laad de side opnij om te sjen hoe&apos;t it mei de taak giet.</translation>
+        <translation>De foarútgong koe net folge wurde. Laad de side opnij om te sjen hoe't it mei de taak giet.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -81670,18 +82342,18 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>De website giet werom nei de bestannen fan dy publikaasje; in bou dy&apos;t noch net publisearre is moat earst publisearre of fuortsmiten wurde.</translation>
+        <translation>De website giet werom nei de bestannen fan dy publikaasje; in bou dy't noch net publisearre is moat earst publisearre of fuortsmiten wurde.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
-        <translation>De eigen side fan de website foar adressen dy&apos;t net besteane.</translation>
+        <source>The site's own page for addresses that do not exist.</source>
+        <translation>De eigen side fan de website foar adressen dy't net besteane.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
         <translation>It doel koe net bewarre wurde: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
         <translation>It doel meldet noch net oan mei dizze kaai: kies „In deploy-kaai makke foar dit doel“ yn de ynstellingen.</translation>
     </message>
     <message>
@@ -81717,7 +82389,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <translation>Smyt dizze bou fuort: de map befettet wer de lêste publikaasje. De live website feroaret net.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <source>Tick "I have checked the changes" first.</source>
         <translation>Finkje earst „Ik haw de wizigingen kontrolearre“ oan.</translation>
     </message>
     <message>
@@ -81754,7 +82426,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Wat de taak dien hat en syn ferslach. In taak dy&apos;t hjir begûn is rint op de eftergrûn troch as dizze side sletten wurdt.</translation>
+        <translation>Wat de taak dien hat en syn ferslach. In taak dy't hjir begûn is rint op de eftergrûn troch as dizze side sletten wurdt.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
@@ -81782,15 +82454,15 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Wêr&apos;t keppelingen hinne geane nei wat de kopy net befettet (it sykjen, it oanmelden).</translation>
+        <translation>Wêr't keppelingen hinne geane nei wat de kopy net befettet (it sykjen, it oanmelden).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>Wêrwei&apos;t de statyske kopy levere wurdt.</translation>
+        <translation>Wêrwei't de statyske kopy levere wurdt.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Hokker website publisearre wurdt, en hoe&apos;t it doel hjit.</translation>
+        <translation>Hokker website publisearre wurdt, en hoe't it doel hjit.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -81934,7 +82606,7 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: skreaun nei it bestân CNAME. Rjochtsje de DNS fan it domein op de host sa&apos;t dy it útleit; HTTPS kin efkes duorje foar&apos;t it wurket.</translation>
+        <translation>www.example.com: skreaun nei it bestân CNAME. Rjochtsje de DNS fan it domein op de host sa't dy it útleit; HTTPS kin efkes duorje foar't it wurket.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>

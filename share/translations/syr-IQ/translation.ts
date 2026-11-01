@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ܫܘ̈ܚܠܦܐ ܕܐܩܡܬܐ ܕܡܬܢܛܪܝܢ ܐܝܟ ܦܢܩ̈ܝܬܐ: ܡܩܡܗܘܢ، ܡܪ̈ܗܛܐ، ܡܪܗܛܐ ܘܡܗܦܟܐ ܠܒܣܬܪ.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>ܡܠܝܘܬܐ ܚܕܬܬܐ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ܡܠܝܘܬܐ ܚܕܬܬܐ, ܡܕܡ ܕܟܠܝܐ ܠܒܘܚܢܐ, ܘܣܘܥܪܢܐ ܥܠ ܓܒܝܬܐ.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>ܦܪܣܐ ܕܨܘܪܬܐ ܩܒܝܥܬܐ ܕܐܬܪܐ ܥܠ GitHub Pages ܐܘ ܥܠ ܟܠ ܡܐܪܚܢܐ ܕ git.</translation>
     </message>
@@ -80592,6 +80600,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ܡܫܘܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ܒܪܝܐ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ܫܡܐ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ܙܢܐ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ܦܠܓܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ܥܒܘܕܐ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ܡܠܝܘܬܐ ܚܕܬܬܐ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ܡܠܝܘܬܐ ܕܐܬܒܪܝܘ ܘܐܫܬܚܠܦܘ ܠܚܪܬܐ ܒܟܠܗ ܐܬܪܐ, ܚܕܬܐ ܩܕܡܝܬܐ: ܡܕܡ ܕܫܕܪܘ ܡܣܬܟܠܢܐ, ܡܕܡ ܕܟܠܝܐ ܠܒܘܚܢܐ, ܣܘܪܛܐ ܕܡܣܟܝܢ ܠܦܘܪܣܗܘܢ. ܓܒܘ ܡܢܘܬܐ ܠܡܫܪܐ, ܠܡܟܠܐ, ܠܡܛܫܝܘ, ܠܡܚܘܝܘ, ܠܡܫܩܠܘ ܐܘ ܠܡܫܢܝܘ ܠܦܠܓܘܬܐ ܐܘ ܠܐܣܟܡܐ ܐܚܪܬܐ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ܠܐ ܐܫܬܟܚܬ ܠܡܩܪܝܗ ܠܪܫܝܡܬܐ: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ܟܠܝܬܐ ܠܒܘܚܢܐ ܠܐ ܐܬܬܩܢܬ ܥܕܟܝܠ, ܡܛܠ ܗܢܐ ܡܕܡ ܠܐ ܟܠܝܐ ܘܣܘܥܪܢܐ ܕܟܠܝܬܐ ܠܐ ܡܬܩܪܒܝܢ. ܕܪܓܐ ܕܚܘܕܬܐ 6.0.15-review-hold ܡܬܩܢ ܠܗ: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ܨܠܠܘ ܠܪܫܝܡܬܐ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ܡܢ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ܥܕ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ܬܐܪܝܟܐ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ܒܪܝܐ (ܦܘܪܣܐ ܩܕܡܝܐ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ܟܠ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ܡܩܡܐ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ܦܪܝܣܐ</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ܣܘܪܛܐ, ܡܢ ܡܬܘܡ ܠܐ ܦܪܝܣ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ܡܣܟܝܐ (ܡܣܟܐ ܠܫܘܪܪܐ ܐܘ ܠܬܐܪܝܟܐ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ܒܡܙܒܠܬܐ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ܟܠܝܐ ܠܒܘܚܢܐ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ܟܠܝܐ</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ܠܐ ܟܠܝܐ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ܛܫܝܐ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ܡܬܚܙܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ܐܫܬܕܪ ܒܝܘܡ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ܟܠ ܡܥܠܢܐ ܕܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ܒܠܚܘܕ ܡܕܡ ܕܟܬܒ ܒܘܩܝܐ.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ܗܫܐ: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ܫܡܐ ܕܡܦܠܚܢܐ ܐܘ ܡܢܝܢܐ ܕܡܦܠܚܢܐ.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ܡܨܠܠܢܐ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ܕܟܝܘ ܠܡܨܠܠܢܐ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ܡܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ܥܕ %to ܡܢ %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ܠܝܬ ܡܢܬܐ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(ܐܬܩܪܝ ܒ%ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ܣܘܥܪܢܐ ܥܠ ܡܢܘܬܐ ܓܒܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ܓܒܝܐ ܕܟܠ ܒܗܕܐ ܦܐܬܐ</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ܓܒܝܝܢ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ܣܘܥܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ܓܒܘ ܣܘܥܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ܫܪܝܐ ܕܟܠܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ܟܠܝܐ ܠܒܘܚܢܐ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ܡܛܫܝܐ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ܡܚܘܝܐ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ܫܢܝܐ ܠܡܙܒܠܬܐ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ܫܝܦܐ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>ܡܫܚܐ ܕܦܠܓܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ܡܫܚܐ ܕܐܣܟܡܐ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>ܥܠܬܐ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ܣܢܝܩܐ ܠܡܟܠܝܬܐ; ܡܬܢܛܪܐ ܥܡ ܟܠܝܬܐ ܘܒܒܘܩܝܐ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ܓܒܘ ܦܠܓܘܬܐ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ܐܣܟܡܐ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ܓܒܘ ܐܣܟܡܐ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ܡܦܠܚܐ ܥܠ ܓܒܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ܟܠ ܡܢܬܐ ܡܬܒܚܢܐ ܠܘܬ ܫܘܠܛܢܝܟܘܢ. ܫܢܝܐ ܠܡܙܒܠܬܐ ܘܫܝܦܐ ܫܐܠܝܢ ܠܫܘܪܪܐ. ܝܬܝܪ ܡܢ %count ܡܢܘܬܐ ܡܬܥܒܕܢ ܒܛܫܝܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ܓܒܝܐ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ܦܘܪܣܐ</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ܐܫܬܕܪ ܡܢ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>ܓܒܝܐ %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ܠܐ ܥܕܟܝܠ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ܕܠܐ ܫܡܐ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ܡܢܝܢܐ %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ܣܘܪܛܐ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ܡܣܟܝܐ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ܛܫܝܐ ܡܢ ܐܒܘܗܝ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ܟܠܝܐ: ܡܫܕܪܢܘܬܐ ܚܕܬܐ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ܡܦܩܬܐ %version ܡܣܟܝܐ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ܡܦܩܬܐ %version ܒܥܒܕܐ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ܣܘܪܛܐ, ܡܦܩܬܐ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ܡܦܩܬܐ %version ܦܪܝܣܐ</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>ܡܛܟܣܐ ܠ%date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ܕܠܐ ܡܘܢܥܐ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ܠܐ ܟܬܝܒܐ</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ܡܕܡ ܠܐ ܫܘܐ ܠܗܠܝܢ ܡܨܠܠܢܐ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ܡܚܘܝܐ ܕܟܠ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ܠܝܬ ܡܠܝܘܬܐ ܥܕܟܝܠ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ܒܟܠ ܦܐܬܐ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ܚܘܘ %count ܡܢܘܬܐ ܒܟܠ ܦܐܬܐ.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ܡܘܢܥܐ ܘܚܝܪܢܐ ܕܡܫܕܪܢܘܬܐ ܐܬܝܢ ܡܢ ܡܚܘܝܬܐ ܕܒܘܩܝܐ, ܕܠܐ ܐܝܬܝܗ ܗܪܟܐ: ܥܡܘܕܐ ܐܡܪ „ܠܐ ܟܬܝܒܐ”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ܡܘܢܥܐ ܘܚܝܪܢܐ ܐܢܘܢ ܗܠܝܢ ܕܟܬܒ ܒܘܩܝܐ ܠܡܢܬܐ (ܟܠܝܬܐ ܕܡܢ ܢܦܫܗ ܟܬܒܐ ܠܗܘܢ ܐܡܝܢܝܘܬ; ܦܘܪܣܐ ܘܒܪܝܬܐ ܒܠܚܘܕ ܐܝܟܐ ܕܐܬܥܝܪܘ), ܐܝܟ ܕܢܛܪܝܢ ܠܗܘܢ ܛܟܣܐ ܕܢܟܝܘܬܗ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ܡܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ܫܝܦܐ ܫܩܠ ܠܡܢܘܬܐ ܠܥܠܡ, ܥܡ ܟܠܗܝܢ ܡܦܩܬܗܝܢ ܘܬܘܪܓܡܝܗܝܢ. ܠܐ ܡܫܟܚ ܕܢܬܗܦܟ.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ܡܢܘܬܐ ܐܙܠܢ ܠܡܙܒܠܬܐ, ܡܢ ܬܡܢ ܡܫܟܚܢ ܕܢܬܕܥܪܢ.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ܟܠ ܡܢܬܐ ܡܬܒܚܢܐ ܠܘܬ ܫܘܠܛܢܝܟܘܢ; ܡܢܬܐ ܕܐܝܬ ܠܗ ܡܢܘܬܐ ܬܚܬܝܬܐ ܡܫܬܒܩܐ ܐܝܟ ܕܐܝܬܝܗ (ܫܩܠܘܗ ܒܒܢܝܢܐ ܕܡܠܝܘܬܐ). ܬܫܬܐܠܘܢ ܕܬܫܪܪܘܢ ܕܐܢܬܘܢ ܐܢܬܘܢ.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ܗܢܐ ܡܬܥܒܕ ܒܛܫܝܘܬܐ: ܦܐܬܐ ܕܡܩܕܡܢܘܬܗ ܡܬܦܬܚܐ, ܘܦܠܛܐ ܕܟܠ ܡܢܬܐ ܡܬܚܙܐ ܟܕ ܢܫܬܡܠܐ.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ܡܢܘܬܐ ܓܒܝܬܐ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ܘ%count ܐܚܪܢܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ܒܘܛܠܐ</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ܡܕܡ ܠܐ ܐܬܥܒܕ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>ܥܠܬܐ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ܣܘܥܪܢܐ ܥܕܟܝܠ ܡܬܥܒܕ ܒܛܫܝܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ܡܩܕܡܢܘܬܗ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ܣܘܥܪܢܐ ܕܒܛܫܝܘܬܐ ܠܐ ܐܨܠܚ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ܓܡܝܪܐ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ܣܠܝܐ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ܠܟܠ ܡܢܬܐ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ܡܢܬܐ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ܦܠܛܐ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ܠܡܢܐ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ܠܒܣܬܪ ܠܪܫܝܡܬܐ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ܛܘܝܒܐ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ܡܕܡ ܠܐ ܐܬܥܒܕ ܗܪܟܐ</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ܫܪܪܐ</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ܓܒܘ ܣܘܥܪܢܐ.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ܓܒܘ ܠܟܠ ܗܠܦܚܘܬ ܡܢܬܐ ܚܕܐ.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ܓܒܘ ܠܟܠ ܗܝܘܬܪ 1000 ܡܢܘܬܐ ܒܙܒܢܐ ܚܕ.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ܐܡܪܘ ܠܡܢܐ ܟܠܝܝܢ ܡܢܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>ܓܒܘ ܦܠܓܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ܓܒܘ ܐܣܟܡܐ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ܠܐ ܐܫܬܟܚ ܠܡܩܪܝܗ ܠܦܢܩܝܬܐ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ܡܠܝܘܬܐ ܚܕܬܬܐ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ܠܐ ܐܫܬܟܚܘ ܠܡܩܪܝܘ ܠܡܢܝܢܝܐ: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ܟܠܝܐ ܠܒܘܚܢܐ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ܚܕܬܐ ܝܘܡܢܐ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ܟܠܝܬܐ ܠܒܘܚܢܐ ܠܐ ܐܬܬܩܢܬ ܥܕܟܝܠ (ܕܪܓܐ ܕܚܘܕܬܐ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ܟܠܗ ܡܠܝܘܬܐ ܚܕܬܬܐ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܥܒܕܘܢ ܣܘܥܪܢܐ ܕܒܘܚܢܐ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>ܣܘܥܪܢܐ ܕܒܘܚܢܐ ܠܐ ܓܡܝܪ: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ܒܘܚܢܐ: %action ܥܠ %count ܨܒܘܬܐ</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ܡܢ %total ܨܒܘܬܐ: %ok ܓܡܝܪܢ, %refused ܣܠܝܝܢ, %failed ܠܐ ܐܨܠܚܘ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ܓܡܝܪܢ, %refused ܣܠܝܝܢ, %failed ܠܐ ܐܨܠܚܘ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ܠܐ ܐܝܬܘܗܝ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ܠܝܬ ܠܗ ܕܘܟܬܐ (ܠܐ ܦܪܝܣܐ).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܛܫܘܢܗ (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܚܘܘܢܗ (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ܛܫܝܐ ܗܝ ܡܢ ܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ܠܐ ܛܫܝܐ.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ܐܬܛܫܝܬ.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ܐܬܚܙܝܬ.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ܒܡܙܒܠܬܐ ܐܝܬܝܗ: ܣܪܩܘܗ ܐܘ ܕܥܪܘܗ ܡܢ ܬܡܢ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ܣܘܪܛܐ ܕܡܢ ܡܬܘܡ ܠܐ ܐܬܦܪܣ ܠܐ ܡܫܟܚ ܕܢܐܙܠ ܠܡܙܒܠܬܐ: ܫܘܦܘܗܝ.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܫܘܦܘܢܗ (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ܐܬܫܝܦ.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܫܩܠܘܢܗ (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ܐܝܬ ܠܗ ܡܢܘܬܐ ܬܚܬܝܬܐ: ܫܩܠܘܗ ܒܒܢܝܢܐ ܕܡܠܝܘܬܐ, ܐܝܟܐ ܕܡܬܚܙܝܢ.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ܠܐ ܐܫܬܩܠ (ܪܕܝܐ ܕܥܒܕܐ ܡܫܟܚ ܕܢܟܠܐ ܠܫܩܠܐ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ܐܫܬܢܝ ܠܡܙܒܠܬܐ.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ܦܠܓܘܬܐ ܠܐ ܐܝܬܝܗ.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ܒܗܕܐ ܦܠܓܘܬܐ ܐܝܬܝܗ ܡܢ ܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܡܫܚܘܢ ܗܕܐ ܦܠܓܘܬܐ (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>ܦܠܓܘܬܐ ܠܐ ܐܬܡܫܚܬ.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>ܦܠܓܘܬܐ ܐܬܡܫܚܬ.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ܐܣܟܡܐ ܠܐ ܐܝܬܘܗܝ.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ܒܗܢܐ ܐܣܟܡܐ ܐܝܬܝܗ ܡܢ ܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܡܫܚܘܢ ܗܢܐ ܐܣܟܡܐ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ܐܣܟܡܐ ܠܐ ܐܬܡܫܚ (ܪܕܝܐ ܕܥܒܕܐ ܡܫܟܚ ܕܢܟܠܐ ܠܫܘܚܠܦܐ).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>ܐܣܟܡܐ ܐܬܡܫܚ.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ܠܝܬ ܣܘܥܪܢܐ ܗܟܢܐ.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ܟܠܝܬܐ ܠܒܘܚܢܐ ܠܐ ܐܬܬܩܢܬ (ܕܪܓܐ ܕܚܘܕܬܐ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ܐܡܪܘ ܠܡܢܐ ܟܠܝܐ.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ܟܠܝܐ ܗܝ ܡܢ ܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܟܠܘܢܗ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ܟܠܝܬܐ ܠܐ ܐܬܣܝܡܬ (ܪܕܝܐ ܕܥܒܕܐ ܡܫܟܚ ܕܢܟܠܐ ܠܫܘܚܠܦܐ).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ܐܬܟܠܝܝܬ.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ܠܐ ܟܠܝܐ.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ܠܐ ܡܨܝܬܘܢ ܕܬܫܪܘܢܗ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ܟܠܝܬܐ ܠܐ ܐܫܬܪܝܬ (ܪܕܝܐ ܕܥܒܕܐ ܡܫܟܚ ܕܢܟܠܐ ܠܫܘܚܠܦܐ).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ܐܫܬܪܝܬ; ܥܕܟܝܠ ܛܫܝܐ: ܠܐ ܡܨܝܬܘܢ ܕܬܚܘܘܢܗ (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ܐܫܬܪܝܬ.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80737,7 +81409,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܐܬܪܐ ܕܦܪܘܝܩܛ ܕ GitHub ܥܡܪ ܠܬܚܬ /&lt;repository&gt;/؛ ܐܣܘܪ̈ܐ ܡܬܢܣܒܢܝ̈ܐ ܦܠܚܝܢ ܬܡܢ ܘܒܟܠ ܕܘܟܐ ܐܚܪܬܐ.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ܒܢܝܢܐ ܡܝܬܐ ܟܠ ܦܐܬܐ ܕ %site ܐܝܟ ܕܚܙܐ ܠܗ ܣܥܘܪܐ ܕܠܐ ܥܠ، ܟܬܒ ܬܘܒ ܐܣܘܪ̈ܐ، ܢܣܚ ܦܢܩܝ̈ܬܐ ܘܟܬܒ ܦܐܪܐ ܒܬܝܩܐ ܕܢܝܫܐ. ܡܕܡ ܠܐ ܡܬܦܪܣ ܥܕܡܐ ܕܒܨܝܬܘܢ ܒܢܝܢܐ ܘܕܚܨܬܘܢ ܥܠ ܦܪܣܐ.</translation>
     </message>
     <message>
@@ -80785,8 +81457,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܦܐܬܐ ܕܥܕܟܝܠ ܛܥܝܢܐ ܦܘܪܥܢܐ ܕܬܘܪܨ ܡܘܡܐ، ܬܘܟܢܐ ܕܛܘܦܣܐ ܐܘ ܫܘܕܥܐ ܕܡܘܬܒܐ ܒܬܪ ܡܥܛܠܢܐ ܡܡܬܘܡ ܠܐ ܡܬܦܪܣܐ.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>ܗܘܦܟܐ ܠܒܣܬܪ ܠܡܗܝܪ̈ܐ ܗܘ: ܐܬܘ ܥܠ &quot;ܝܕܥ ܐܢܐ ܡܐ ܕܗܕܐ ܡܫܚܠܦܐ&quot; ܘܟܬܘܒܘ ܫܡܐ ܕܛܐܓ ܬܘܒ.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>ܗܘܦܟܐ ܠܒܣܬܪ ܠܡܗܝܪ̈ܐ ܗܘ: ܐܬܘ ܥܠ "ܝܕܥ ܐܢܐ ܡܐ ܕܗܕܐ ܡܫܚܠܦܐ" ܘܟܬܘܒܘ ܫܡܐ ܕܛܐܓ ܬܘܒ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81297,7 +81969,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܦܬܚ ܚܙܝܐ ܩܕܡܝܐ</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>ܦܬܚ ܒܢܝܢܐ ܐܝܟ ܕܡܐܪܚܢܐ ܢܫܡܫܝܘܗܝ، ܡܢ ܬܝܩܐ ܕܢܝܫܐ. ܐܣܘܪܐ ܦܠܚ ܠܟܘܢ ܫܥܬܐ ܚܕܐ.</translation>
     </message>
     <message>
@@ -81473,8 +82145,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܛܘܝܒܐ &gt; ܐܪ̈ܙܐ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>ܡܬܚܘܐ ܒܡܢܝ̈ܢܐ، ܠܡܬܠ &quot;ܐܬܪܐ ܓܠܝܐ ܥܠ GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>ܡܬܚܘܐ ܒܡܢܝ̈ܢܐ، ܠܡܬܠ "ܐܬܪܐ ܓܠܝܐ ܥܠ GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81681,7 +82353,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܐܬܪܐ ܗܦܟ ܠܦܢܩܝ̈ܬܐ ܕܗܘ ܦܪܣܐ؛ ܒܢܝܢܐ ܕܠܐ ܐܬܦܪܣ ܥܕܡܐ ܠܗܫܐ ܠܐܡ ܕܢܬܦܪܣ ܐܘ ܢܫܬܕܐ ܠܘܩܕܡ.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>ܦܐܬܐ ܕܐܬܪܐ ܒܢܦܫܗ ܠܡܘܢ̈ܥܐ ܕܠܐ ܐܝܬܝܗܘܢ.</translation>
     </message>
     <message>
@@ -81689,8 +82361,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܢܝܫܐ ܠܐ ܐܫܬܟܚ ܠܡܬܢܛܪܘ: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>ܢܝܫܐ ܥܕܡܐ ܠܗܫܐ ܠܐ ܥܐܠ ܒܗܢܐ ܩܠܝܕܐ: ܓܒܘ &quot;ܩܠܝܕܐ ܕܫܘܕܪܐ ܕܐܬܥܒܕ ܠܗܢܐ ܢܝܫܐ&quot; ܒܛܘܝ̈ܒܐ ܕܝܠܗ.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ܢܝܫܐ ܥܕܡܐ ܠܗܫܐ ܠܐ ܥܐܠ ܒܗܢܐ ܩܠܝܕܐ: ܓܒܘ "ܩܠܝܕܐ ܕܫܘܕܪܐ ܕܐܬܥܒܕ ܠܗܢܐ ܢܝܫܐ" ܒܛܘܝ̈ܒܐ ܕܝܠܗ.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81725,8 +82397,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ܫܕܐ ܠܗܢܐ ܒܢܝܢܐ: ܬܝܩܐ ܛܥܝܢ ܬܘܒ ܦܪܣܐ ܐܚܪܝܐ. ܐܬܪܐ ܚܝܐ ܠܐ ܡܫܬܚܠܦ.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>ܐܬܘ ܥܠ &quot;ܒܨܝܬ ܫܘ̈ܚܠܦܐ&quot; ܠܘܩܕܡ.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>ܐܬܘ ܥܠ "ܒܨܝܬ ܫܘ̈ܚܠܦܐ" ܠܘܩܕܡ.</translation>
     </message>
     <message>
         <source>Time</source>

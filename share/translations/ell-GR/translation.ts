@@ -15090,6 +15090,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>Αλλαγές στην εγκατάσταση που φυλάσσονται ως αρχεία: η κατάστασή τους, οι εκτελέσεις, εκτέλεση και αναίρεση.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Πρόσφατο περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Το νεότερο περιεχόμενο, ό,τι κρατείται για έλεγχο, και ενέργειες σε μια επιλογή.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Δημοσιεύστε ένα στατικό αντίγραφο ενός ιστότοπου στο GitHub Pages ή σε οποιονδήποτε διακομιστή git.</translation>
     </message>
@@ -80614,6 +80622,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Τροποποιήθηκε</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Δημιουργήθηκε</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Κλάση</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ενότητα</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Δημιουργός</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Πρόσφατο περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Το πιο πρόσφατα δημιουργημένο και τροποποιημένο περιεχόμενο ολόκληρου του ιστότοπου, με τα νεότερα πρώτα: ό,τι υπέβαλαν οι επισκέπτες, ό,τι κρατείται για έλεγχο, προσχέδια που περιμένουν τη δημοσίευσή τους. Επιλέξτε στοιχεία για να άρετε την κράτησή τους, να τα κρατήσετε, να τα αποκρύψετε, να τα εμφανίσετε, να τα αφαιρέσετε ή να τα μετακινήσετε σε άλλη ενότητα ή κατάσταση.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση της λίστας: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Η κράτηση για έλεγχο δεν έχει ρυθμιστεί ακόμη, οπότε τίποτα δεν κρατείται και οι ενέργειες κράτησης δεν προσφέρονται. Το βήμα αναβάθμισης 6.0.15-review-hold τη ρυθμίζει: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Φιλτράρισμα της λίστας</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Από</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Έως</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ημερομηνία</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Δημιουργία (πρώτη δημοσίευση)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Όλα</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Δημοσιευμένο</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Προσχέδιο, δεν δημοσιεύτηκε ποτέ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Σε εκκρεμότητα (αναμένει έγκριση ή ημερομηνία)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Στον κάδο απορριμμάτων</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Σε κράτηση για έλεγχο</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Σε κράτηση</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Χωρίς κράτηση</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Κρυφό</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ορατό</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Υποβλήθηκε στο</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Οποιαδήποτε πρόσβαση ιστότοπου</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Μόνο ό,τι κατέγραψε το αρχείο ελέγχου.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Τώρα: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Ένα όνομα σύνδεσης ή ένα αναγνωριστικό χρήστη.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Φίλτρο</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Καθαρισμός φίλτρων</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Στοιχεία</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from έως %to από %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Κανένα στοιχείο</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(ανάγνωση σε %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ενέργειες για τα επιλεγμένα στοιχεία</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Επιλογή όλων σε αυτή τη σελίδα</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count επιλεγμένα</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ενέργεια</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Επιλέξτε ενέργεια</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Άρση της κράτησης</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Κράτηση για έλεγχο</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Απόκρυψη</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Μετακίνηση στον κάδο απορριμμάτων</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Ανάθεση ενότητας</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Ανάθεση κατάστασης</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Αιτία</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Απαιτείται για την κράτηση· φυλάσσεται μαζί με την κράτηση και στο αρχείο ελέγχου.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Επιλέξτε ενότητα</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Κατάσταση</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Επιλέξτε κατάσταση</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Εφαρμογή στα επιλεγμένα</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Κάθε στοιχείο ελέγχεται σύμφωνα με τα δικά σας δικαιώματα. Η μετακίνηση στον κάδο απορριμμάτων και η διαγραφή ζητούν επιβεβαίωση. Περισσότερα από %count στοιχεία εκτελούνται στο παρασκήνιο.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Επιλογή</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Δημοσίευση</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Υποβλήθηκε από</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Επιλογή %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>όχι ακόμη</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(χωρίς όνομα)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Αναγνωριστικό %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Προσχέδιο</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Σε εκκρεμότητα</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Κρυφό λόγω του γονικού του</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Σε κράτηση: νέα υποβολή</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Η έκδοση %version εκκρεμεί</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Η έκδοση %version είναι σε εξέλιξη</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Προσχέδιο, έκδοση %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Η έκδοση %version δημοσιεύτηκε</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Προγραμματισμένο για %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>χωρίς διεύθυνση</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>δεν καταγράφηκε</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Τίποτα δεν ταιριάζει με αυτά τα φίλτρα.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Εμφάνιση όλων</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Δεν υπάρχει ακόμη περιεχόμενο.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ανά σελίδα</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Εμφάνιση %count στοιχείων ανά σελίδα.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Η διεύθυνση και ο περιηγητής μιας υποβολής προέρχονται από το ευρετήριο του αρχείου ελέγχου, το οποίο δεν είναι διαθέσιμο εδώ: η στήλη γράφει «δεν καταγράφηκε».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Η διεύθυνση και ο περιηγητής είναι αυτά που κατέγραψε το αρχείο ελέγχου για το στοιχείο (η αυτόματη κράτηση τα καταγράφει πάντα· η δημοσίευση και η δημιουργία μόνο όπου είναι ενεργοποιημένο), όπως τα διατηρούν οι ρυθμίσεις απορρήτου του.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count στοιχεία</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Η διαγραφή αφαιρεί οριστικά τα στοιχεία, με όλες τις εκδόσεις και τις μεταφράσεις τους. Δεν μπορεί να αναιρεθεί.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Τα στοιχεία μεταφέρονται στον κάδο απορριμμάτων, από όπου μπορούν να επαναφερθούν.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Κάθε στοιχείο ελέγχεται σύμφωνα με τα δικά σας δικαιώματα· ένα στοιχείο με υποστοιχεία μένει ως έχει (αφαιρέστε το στη δομή περιεχομένου). Θα σας ζητηθεί να επιβεβαιώσετε ότι είστε εσείς.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Αυτό εκτελείται στο παρασκήνιο: ανοίγει η σελίδα προόδου του και το αποτέλεσμα ανά στοιχείο εμφανίζεται όταν ολοκληρωθεί.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Τα επιλεγμένα στοιχεία</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>και %count ακόμη</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Άκυρο</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Δεν έγινε τίποτα</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Αιτία: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Η ενέργεια εκτελείται ακόμη στο παρασκήνιο.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Η πρόοδός της</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Η ενέργεια στο παρασκήνιο απέτυχε: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ολοκληρώθηκε</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Απορρίφθηκε</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Απέτυχε</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Ανά στοιχείο</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Στοιχείο</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Αποτέλεσμα</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Γιατί</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Επιστροφή στη λίστα</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ρυθμίσεις συστήματος</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Τίποτα δεν έγινε</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Επιβεβαίωση</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Επιλέξτε ενέργεια.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Επιλέξτε τουλάχιστον ένα στοιχείο.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Επιλέξτε το πολύ 1000 στοιχεία κάθε φορά.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Αναφέρετε γιατί κρατούνται τα στοιχεία.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Επιλέξτε την ενότητα.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Επιλέξτε την κατάσταση.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση της φόρμας.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Πρόσφατο περιεχόμενο</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση των μετρήσεων: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Σε κράτηση για έλεγχο</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Νέα σήμερα</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Η κράτηση για έλεγχο δεν έχει ρυθμιστεί ακόμη (το βήμα αναβάθμισης 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Όλο το πρόσφατο περιεχόμενο</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Δεν επιτρέπεται να εκτελείτε ενέργειες εποπτείας (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Η ενέργεια εποπτείας δεν ολοκληρώθηκε: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Εποπτεία: %action σε %count αντικείμενα</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done από %total αντικείμενα: %ok ολοκληρώθηκαν, %refused απορρίφθηκαν, %failed απέτυχαν</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ολοκληρώθηκαν, %refused απορρίφθηκαν, %failed απέτυχαν</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Δεν υπάρχει πλέον.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Δεν έχει θέση (δεν έχει δημοσιευτεί).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Δεν επιτρέπεται να το αποκρύψετε (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Δεν επιτρέπεται να το εμφανίσετε (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Είναι ήδη κρυφό.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Δεν είναι κρυφό.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Αποκρύφθηκε.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Εμφανίστηκε.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Βρίσκεται στον κάδο απορριμμάτων: αδειάστε τον ή επαναφέρετέ το από εκεί.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ένα προσχέδιο που δεν δημοσιεύτηκε ποτέ δεν μπορεί να πάει στον κάδο απορριμμάτων: διαγράψτε το.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Δεν επιτρέπεται να το διαγράψετε (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Διαγράφηκε.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Δεν επιτρέπεται να το αφαιρέσετε (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Έχει υποστοιχεία: αφαιρέστε το στη δομή περιεχομένου, όπου εμφανίζονται.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Δεν αφαιρέθηκε (μια ροή εργασιών μπορεί να κρατά την αφαίρεση).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Μετακινήθηκε στον κάδο απορριμμάτων.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Η ενότητα δεν υπάρχει.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Βρίσκεται ήδη σε αυτή την ενότητα.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Δεν επιτρέπεται να αναθέσετε αυτή την ενότητα (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Η ενότητα δεν ανατέθηκε.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Η ενότητα ανατέθηκε.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Η κατάσταση δεν υπάρχει.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Βρίσκεται ήδη σε αυτή την κατάσταση.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Δεν επιτρέπεται να αναθέσετε αυτή την κατάσταση (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Η κατάσταση δεν ανατέθηκε (μια ροή εργασιών μπορεί να κρατά την αλλαγή).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Η κατάσταση ανατέθηκε.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Δεν υπάρχει τέτοια ενέργεια.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Η κράτηση για έλεγχο δεν έχει ρυθμιστεί (το βήμα αναβάθμισης 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Αναφέρετε γιατί κρατείται.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Βρίσκεται ήδη σε κράτηση.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Δεν επιτρέπεται να το θέσετε σε κράτηση (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Η κράτηση δεν τέθηκε (μια ροή εργασιών μπορεί να κρατά την αλλαγή).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Σε κράτηση.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Δεν βρίσκεται σε κράτηση.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Δεν επιτρέπεται να άρετε την κράτησή του (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Η κράτηση δεν άρθηκε (μια ροή εργασιών μπορεί να κρατά την αλλαγή).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Η κράτηση άρθηκε· παραμένει κρυφό: δεν επιτρέπεται να το εμφανίσετε (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Η κράτηση άρθηκε.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80759,7 +81431,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ένας ιστότοπος έργου GitHub βρίσκεται κάτω από το /&lt;repository&gt;/· οι σχετικοί σύνδεσμοι λειτουργούν εκεί και οπουδήποτε αλλού.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Μια δόμηση λαμβάνει κάθε σελίδα του %site όπως τη βλέπει ένας επισκέπτης που δεν έχει συνδεθεί, ξαναγράφει τους συνδέσμους, αντιγράφει τα αρχεία και γράφει το αποτέλεσμα στον φάκελο του προορισμού. Τίποτα δεν δημοσιεύεται μέχρι να ελέγξετε τη δόμηση και να πατήσετε Δημοσίευση.</translation>
     </message>
     <message>
@@ -80807,8 +81479,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Μια σελίδα που μετά τον καθαρισμό εξακολουθεί να περιέχει έξοδο αποσφαλμάτωσης, διακριτικό φόρμας ή αναγνωριστικό συνεδρίας δεν δημοσιεύεται ποτέ.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Η αναίρεση είναι για έμπειρους χρήστες: επιλέξτε &quot;Ξέρω τι αλλάζει αυτό&quot; και πληκτρολογήστε ξανά το όνομα της σήμανσης.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Η αναίρεση είναι για έμπειρους χρήστες: επιλέξτε "Ξέρω τι αλλάζει αυτό" και πληκτρολογήστε ξανά το όνομα της σήμανσης.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81312,14 +81984,14 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Μόνο με διακριτικό. Το env:NAME διαβάζει αντί γι&apos; αυτό μια μεταβλητή περιβάλλοντος του διακομιστή.</translation>
+        <translation>Μόνο με διακριτικό. Το env:NAME διαβάζει αντί γι' αυτό μια μεταβλητή περιβάλλοντος του διακομιστή.</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>Άνοιγμα της προεπισκόπησης</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Ανοίγει τη δόμηση όπως θα την εξυπηρετήσει ο διακομιστής, από τον φάκελο του προορισμού. Ο σύνδεσμος λειτουργεί για εσάς για μία ώρα.</translation>
     </message>
     <message>
@@ -81495,8 +82167,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ρυθμίσεις συστήματος &gt; Μυστικά</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Εμφανίζεται σε λίστες, για παράδειγμα &quot;Δημόσιος ιστότοπος στο GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Εμφανίζεται σε λίστες, για παράδειγμα "Δημόσιος ιστότοπος στο GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81703,7 +82375,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ο ιστότοπος επιστρέφει στα αρχεία εκείνης της δημοσίευσης· μια δόμηση που δεν έχει δημοσιευτεί ακόμη πρέπει πρώτα να δημοσιευτεί ή να απορριφθεί.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Η σελίδα του ίδιου του ιστότοπου για διευθύνσεις που δεν υπάρχουν.</translation>
     </message>
     <message>
@@ -81711,8 +82383,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Δεν ήταν δυνατή η αποθήκευση του προορισμού: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Ο προορισμός δεν συνδέεται ακόμη με αυτό το κλειδί: επιλέξτε &quot;Ένα κλειδί ανάπτυξης δημιουργημένο για αυτόν τον προορισμό&quot; στις ρυθμίσεις του.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ο προορισμός δεν συνδέεται ακόμη με αυτό το κλειδί: επιλέξτε "Ένα κλειδί ανάπτυξης δημιουργημένο για αυτόν τον προορισμό" στις ρυθμίσεις του.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81747,8 +82419,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Απορρίπτει αυτή τη δόμηση: ο φάκελος περιέχει ξανά την τελευταία δημοσίευση. Ο ζωντανός ιστότοπος δεν αλλάζει.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Επιλέξτε πρώτα &quot;Έλεγξα τις αλλαγές&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Επιλέξτε πρώτα "Έλεγξα τις αλλαγές".</translation>
     </message>
     <message>
         <source>Time</source>

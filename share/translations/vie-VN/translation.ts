@@ -15151,6 +15151,14 @@ Lưu ý: Các gói sẽ không bị gỡ cài đặt.</translation>
         <translation>Các thay đổi của bản cài đặt được lưu thành tệp: tình trạng, các lượt chạy, chạy và hoàn tác.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Nội dung mới</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Nội dung mới nhất, những gì đang bị giữ lại để duyệt, và các hành động trên các mục được chọn.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Xuất bản một bản sao tĩnh của trang web lên GitHub Pages hoặc bất kỳ máy chủ git nào.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Đã sửa đổi</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Đã tạo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tên</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Lớp</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Khu vực</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Người tạo</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nội dung mới</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Nội dung được tạo và sửa đổi gần đây nhất của toàn bộ trang, mới nhất trước: những gì khách truy cập đã gửi, những gì đang bị giữ lại để duyệt, các bản nháp đang chờ xuất bản. Chọn các mục để bỏ giữ lại, giữ lại, ẩn, hiện, gỡ bỏ hoặc chuyển chúng sang khu vực hoặc trạng thái khác.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Không đọc được danh sách: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Chức năng giữ lại để duyệt chưa được thiết lập, vì vậy không có gì bị giữ lại và các hành động giữ lại không được cung cấp. Bước nâng cấp 6.0.15-review-hold sẽ thiết lập nó: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lọc danh sách</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Từ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Đến</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ngày</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Đã tạo (lần xuất bản đầu tiên)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tất cả</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tình trạng</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Đã xuất bản</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Bản nháp, chưa từng xuất bản</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Đang chờ (chờ phê duyệt hoặc đến ngày)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Trong thùng rác</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Bị giữ lại để duyệt</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Bị giữ lại</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Không bị giữ lại</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Bị ẩn</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Hiển thị</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Gửi lúc</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Mọi điểm truy cập trang</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Chỉ những gì nhật ký kiểm tra đã ghi lại.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Hiện tại: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Tên đăng nhập hoặc ID người dùng.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Lọc</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Xóa bộ lọc</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Mục</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from đến %to trong số %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Không có mục nào</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(đọc trong %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Hành động trên các mục đã chọn</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Chọn tất cả trên trang này</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Đã chọn %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Hành động</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Chọn một hành động</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Bỏ giữ lại</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Giữ lại để duyệt</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ẩn</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Hiện</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Chuyển vào thùng rác</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Xóa</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Gán khu vực</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Gán trạng thái</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Lý do</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Bắt buộc khi giữ lại; được lưu cùng việc giữ lại và trong nhật ký kiểm tra.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Chọn một khu vực</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Trạng thái</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Chọn một trạng thái</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Áp dụng cho các mục đã chọn</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Mỗi mục được kiểm tra theo quyền của chính bạn. Chuyển vào thùng rác và xóa sẽ yêu cầu bạn xác nhận. Hơn %count mục sẽ chạy ở chế độ nền.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Chọn</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Xuất bản</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Gửi từ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Chọn %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>chưa có</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(không có tên)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Bản nháp</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Đang chờ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Bị ẩn bởi mục cha</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Bị giữ lại: bài gửi mới</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Phiên bản %version đang chờ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Phiên bản %version đang soạn</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Bản nháp, phiên bản %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Phiên bản %version đã xuất bản</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Đã lên lịch vào %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>không có địa chỉ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>không được ghi lại</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Không có gì khớp với các bộ lọc này.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hiện tất cả</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Chưa có nội dung nào.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Mỗi trang</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hiển thị %count mục mỗi trang.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Địa chỉ và trình duyệt của một bài gửi lấy từ chỉ mục nhật ký kiểm tra, vốn không có sẵn ở đây: cột này ghi "không được ghi lại".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Địa chỉ và trình duyệt là những gì nhật ký kiểm tra đã ghi lại cho mục này (việc tự động giữ lại luôn ghi lại chúng; việc xuất bản và tạo chỉ khi được bật), theo mức mà các thiết lập quyền riêng tư của nó lưu giữ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count mục</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Xóa sẽ loại bỏ vĩnh viễn các mục, cùng với tất cả phiên bản và bản dịch của chúng. Không thể hoàn tác.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Các mục được chuyển vào thùng rác, từ đó có thể khôi phục chúng.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Mỗi mục được kiểm tra theo quyền của chính bạn; một mục có mục con sẽ được giữ nguyên (hãy gỡ bỏ nó trong cấu trúc nội dung). Bạn sẽ được yêu cầu xác minh rằng đó là bạn.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Việc này chạy ở chế độ nền: trang tiến trình của nó sẽ mở ra, và kết quả của từng mục được hiển thị khi hoàn tất.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Các mục đã chọn</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>và %count mục khác</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Hủy</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Không có gì được thực hiện</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Lý do: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Hành động vẫn đang chạy ở chế độ nền.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Tiến trình của nó</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Hành động nền đã thất bại: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hoàn tất</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Bị từ chối</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Thất bại</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Theo từng mục</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Mục</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Kết quả</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Tại sao</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Quay lại danh sách</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Thiết lập</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Chưa làm gì</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Xác nhận</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Hãy chọn một hành động.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Hãy chọn ít nhất một mục.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Mỗi lần chỉ chọn tối đa 1000 mục.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Hãy cho biết lý do các mục bị giữ lại.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Hãy chọn khu vực.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Hãy chọn trạng thái.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Không đọc được biểu mẫu.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nội dung mới</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Không đọc được số liệu: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Bị giữ lại để duyệt</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Mới hôm nay</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Chức năng giữ lại để duyệt chưa được thiết lập (bước nâng cấp 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tất cả nội dung mới</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Bạn không được phép thực hiện các hành động kiểm duyệt (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Hành động kiểm duyệt chưa hoàn tất: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Kiểm duyệt: %action trên %count đối tượng</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done trong số %total đối tượng: %ok hoàn tất, %refused bị từ chối, %failed thất bại</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok hoàn tất, %refused bị từ chối, %failed thất bại</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Nó không còn tồn tại.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nó không có vị trí (chưa xuất bản).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Bạn không được phép ẩn nó (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Bạn không được phép hiện nó (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Nó đã bị ẩn rồi.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nó không bị ẩn.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Đã ẩn.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Đã hiện.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Nó đang ở trong thùng rác: hãy làm trống hoặc khôi phục nó ở đó.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Một bản nháp chưa từng được xuất bản không thể chuyển vào thùng rác: hãy xóa nó.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Bạn không được phép xóa nó (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Đã xóa.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Bạn không được phép gỡ bỏ nó (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Nó có mục con: hãy gỡ bỏ nó trong cấu trúc nội dung, nơi chúng được liệt kê.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nó chưa được gỡ bỏ (có thể một quy trình làm việc đang giữ việc gỡ bỏ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Đã chuyển vào thùng rác.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Khu vực không tồn tại.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Nó đã ở trong khu vực này rồi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Bạn không được phép gán khu vực này (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Khu vực chưa được gán.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Đã gán khu vực.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Trạng thái không tồn tại.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Nó đã ở trạng thái này rồi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Bạn không được phép gán trạng thái này (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Trạng thái chưa được gán (có thể một quy trình làm việc đang giữ thay đổi).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Đã gán trạng thái.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Không có hành động như vậy.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Chức năng giữ lại để duyệt chưa được thiết lập (bước nâng cấp 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Hãy cho biết lý do nó bị giữ lại.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Nó đã bị giữ lại rồi.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Bạn không được phép giữ lại nó (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Việc giữ lại chưa được áp dụng (có thể một quy trình làm việc đang giữ thay đổi).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Đã giữ lại.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nó không bị giữ lại.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Bạn không được phép bỏ giữ lại nó (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Việc giữ lại chưa được bỏ (có thể một quy trình làm việc đang giữ thay đổi).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Đã bỏ giữ lại; vẫn bị ẩn: bạn không được phép hiện nó (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Đã bỏ giữ lại.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Trang dự án GitHub nằm dưới /&lt;repository&gt;/; liên kết tương đối hoạt động ở đó và ở mọi nơi khác.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Một bản dựng tải mọi trang của %site như khách truy cập chưa đăng nhập nhìn thấy, viết lại các liên kết, sao chép các tệp và ghi kết quả vào thư mục của đích. Không có gì được xuất bản cho đến khi bạn kiểm tra bản dựng và nhấn Xuất bản.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Một trang vẫn còn đầu ra gỡ lỗi, token biểu mẫu hoặc mã phiên sau khi lọc sẽ không bao giờ được xuất bản.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Hoàn tác dành cho chuyên gia: đánh dấu &quot;Tôi biết điều này thay đổi gì&quot; và nhập lại tên của thẻ.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Hoàn tác dành cho chuyên gia: đánh dấu "Tôi biết điều này thay đổi gì" và nhập lại tên của thẻ.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Mở bản xem trước</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Mở bản dựng như máy chủ lưu trữ sẽ phục vụ, từ thư mục của đích. Liên kết hoạt động với bạn trong một giờ.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Thiết lập &gt; Bí mật</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Hiển thị trong danh sách, ví dụ &quot;Trang web công khai trên GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Hiển thị trong danh sách, ví dụ "Trang web công khai trên GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Trang web quay về các tệp của lần xuất bản đó; một bản dựng chưa xuất bản phải được xuất bản hoặc loại bỏ trước.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Trang riêng của trang web cho các địa chỉ không tồn tại.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Không thể lưu đích: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Đích chưa đăng nhập bằng khóa này: hãy chọn &quot;Một khóa triển khai được tạo cho đích này&quot; trong thiết lập của nó.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Đích chưa đăng nhập bằng khóa này: hãy chọn "Một khóa triển khai được tạo cho đích này" trong thiết lập của nó.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <translation>Loại bỏ bản dựng này: thư mục lại chứa lần xuất bản gần nhất. Trang web thật không thay đổi.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Hãy đánh dấu &quot;Tôi đã kiểm tra các thay đổi&quot; trước.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Hãy đánh dấu "Tôi đã kiểm tra các thay đổi" trước.</translation>
     </message>
     <message>
         <source>Time</source>

@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>انسٽاليشن ۾ تبديليون فائلن طور محفوظ: انهن جي حالت، رنز، هلائڻ ۽ واپس ڪرڻ.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>تازو مواد</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>سڀ کان تازو مواد، جيڪو جائزي لاءِ روڪيو ويو آهي، ۽ ڪنهن چونڊ تي عمل.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>سائيٽ جي اسٽيٽڪ ڪاپي GitHub Pages يا ڪنهن به git هوسٽ تي شايع ڪريو.</translation>
     </message>
@@ -80584,6 +80592,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>تبديل ٿيل</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ٺاهيل</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نالو</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ڪلاس</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>سيڪشن</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ٺاهيندڙ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>تازو مواد</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>سڄي سائيٽ جو تازو ٺاهيل ۽ تبديل ٿيل مواد، نئين پهرين: جيڪو گهمڻ وارن موڪليو، جيڪو جائزي لاءِ روڪيو ويو آهي، ۽ اشاعت جا منتظر مسودا. آئٽم چونڊيو ته جيئن انهن کي آزاد ڪريو، روڪيو، لڪايو، ظاهر ڪريو، هٽايو يا ڪنهن ٻئي سيڪشن يا حالت ۾ منتقل ڪريو.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>فهرست پڙهي نه سگهي: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>جائزي لاءِ روڪ اڃا سيٽ نه ڪئي وئي آهي، تنهن ڪري ڪجهه به روڪيو نٿو وڃي ۽ روڪڻ جا عمل پيش نٿا ڪيا وڃن. اپ گريڊ قدم 6.0.15-review-hold ان کي سيٽ ڪري ٿو: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>فهرست کي فلٽر ڪريو</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>کان</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تائين</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>تاريخ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ٺاهيل (پهرين اشاعت)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سڀ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>اسٽيٽس</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>شايع ٿيل</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>مسودو، ڪڏهن به شايع نه ٿيو</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>التوا ۾ (منظوري يا ڪنهن تاريخ جو انتظار)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ڪچرادان ۾</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>جائزي لاءِ روڪيل</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>روڪيل</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>روڪيل ناهي</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>لڪيل</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ظاهر</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>موڪلڻ جي تاريخ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ڪا به سائيٽ رسائي</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>صرف اهو جيڪو آڊٽ درج ڪيو.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>هاڻي: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>لاگ ان نالو يا يوزر آئي ڊي.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فلٽر</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>فلٽر صاف ڪريو</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>آئٽم</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count مان %from کان %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ڪو آئٽم ناهي</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ملي سيڪنڊن ۾ پڙهيو ويو)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>چونڊيل آئٽمن تي عمل</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>هن صفحي تي سڀ چونڊيو</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count چونڊيل</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>عمل</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ڪو عمل چونڊيو</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>روڪ ختم ڪريو</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>جائزي لاءِ روڪيو</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>لڪايو</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ظاهر ڪريو</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ڪچرادان ۾ موڪليو</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ختم ڪريو</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>سيڪشن مقرر ڪريو</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>حالت مقرر ڪريو</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>سبب</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>روڪڻ لاءِ ضروري؛ روڪ سان گڏ ۽ آڊٽ ۾ رکيو ويندو آهي.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ڪو سيڪشن چونڊيو</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ڪا حالت چونڊيو</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>چونڊيلن تي لاڳو ڪريو</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>هر آئٽم توهان جي پنهنجي اجازتن سان جانچيو ويندو آهي. ڪچرادان ۾ موڪلڻ ۽ ختم ڪرڻ کان اڳ توهان کان تصديق گهري ويندي آهي. %count کان وڌيڪ آئٽم پس منظر ۾ هلن ٿا.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>چونڊيو</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>اشاعت</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>هتان موڪليو ويو</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name چونڊيو</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>اڃا نه</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(بنا نالي)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>آئي ڊي %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مسودو</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>التوا ۾</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>پنهنجي والدين سبب لڪيل</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>روڪيل: نئين موڪل</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ورزن %version التوا ۾</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ورزن %version تي ڪم جاري</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>مسودو، ورزن %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ورزن %version شايع ٿيل</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date لاءِ مقرر</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ڪو پتو ناهي</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>درج ناهي</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>انهن فلٽرن سان ڪجهه به نٿو ملي.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>سڀ ڏيکاريو</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>اڃا ڪو مواد ناهي.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>في صفحو</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>في صفحو %count آئٽم ڏيکاريو.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ڪنهن موڪل جو پتو ۽ برائوزر آڊٽ انڊيڪس مان اچن ٿا، جيڪو هتي موجود ناهي: ڪالم ۾ "درج ناهي" لکيل آهي.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>پتو ۽ برائوزر اهي آهن جيڪي آڊٽ هن آئٽم لاءِ درج ڪيا (خودڪار روڪ انهن کي هميشه درج ڪري ٿي؛ اشاعت ۽ ٺاهڻ صرف جتي چالو هجي)، جيئن ان جون رازداري سيٽنگون انهن کي رکن ٿيون.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count آئٽم</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ختم ڪرڻ آئٽمن کي انهن جي سڀني ورزنن ۽ ترجمن سميت هميشه لاءِ هٽائي ڇڏي ٿو. ان کي واپس نٿو ڪري سگهجي.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>آئٽم ڪچرادان ۾ وڃن ٿا، جتان انهن کي بحال ڪري سگهجي ٿو.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>هر آئٽم توهان جي پنهنجي اجازتن سان جانچيو ويندو آهي؛ جنهن آئٽم جا ذيلي آئٽم هجن اهو جيئن آهي تيئن رهي ٿو (ان کي مواد جي بناوت ۾ هٽايو). توهان کان تصديق ڪرڻ لاءِ چيو ويندو ته اهو توهان ئي آهيو.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>اهو پس منظر ۾ هلي ٿو: ان جي پيش رفت جو صفحو کلي ٿو، ۽ مڪمل ٿيڻ تي هر آئٽم جو نتيجو ڏيکاريو ويندو آهي.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>چونڊيل آئٽم</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>۽ %count وڌيڪ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>رد ڪريو</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ڪجهه به نه ڪيو ويو</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>سبب: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>عمل اڃا پس منظر ۾ هلي رهيو آهي.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ان جي پيش رفت</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>پس منظر جو عمل ناڪام ٿيو: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>مڪمل</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رد ڪيل</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناڪام</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>هر آئٽم</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>آئٽم</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتيجو</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ڇو</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>فهرست ڏانهن واپس</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>سيٽ اپ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ڪجهه نه ڪيو ويو</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تصديق ڪريو</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ڪو عمل چونڊيو.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>گهٽ ۾ گهٽ هڪ آئٽم چونڊيو.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>هڪ وقت ۾ وڌ ۾ وڌ 1000 آئٽم چونڊيو.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ٻڌايو ته آئٽم ڇو روڪيا ويا آهن.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>سيڪشن چونڊيو.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>حالت چونڊيو.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فارم پڙهي نه سگهيو.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>تازو مواد</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ڳڻپ پڙهي نه سگهي: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>جائزي لاءِ روڪيل</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>اڄ نوان</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>جائزي لاءِ روڪ اڃا سيٽ نه ڪئي وئي آهي (اپ گريڊ قدم 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>سڄو تازو مواد</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>توهان کي نگراني جا عمل هلائڻ جي اجازت ناهي (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>نگراني جو عمل مڪمل ناهي: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>نگراني: %count شين تي %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total مان %done شيون: %ok مڪمل، %refused رد، %failed ناڪام</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok مڪمل، %refused رد، %failed ناڪام</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>اهو هاڻي موجود ناهي.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ان جي ڪا جاءِ ناهي (شايع ناهي ٿيو).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>توهان کي ان کي لڪائڻ جي اجازت ناهي (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>توهان کي ان کي ظاهر ڪرڻ جي اجازت ناهي (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>اهو اڳ ۾ ئي لڪيل آهي.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>اهو لڪيل ناهي.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>لڪايو ويو.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ظاهر ڪيو ويو.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>اهو ڪچرادان ۾ آهي: ان کي اتي ئي خالي يا بحال ڪريو.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>جيڪو مسودو ڪڏهن شايع نه ٿيو اهو ڪچرادان ۾ نٿو وڃي سگهي: ان کي ختم ڪريو.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>توهان کي ان کي ختم ڪرڻ جي اجازت ناهي (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ختم ڪيو ويو.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>توهان کي ان کي هٽائڻ جي اجازت ناهي (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ان جا ذيلي آئٽم آهن: ان کي مواد جي بناوت ۾ هٽايو، جتي اهي درج آهن.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>اهو هٽايو نه ويو (ٿي سگهي ٿو ڪو ورڪ فلو هٽائڻ کي روڪي رهيو هجي).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ڪچرادان ۾ موڪليو ويو.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>سيڪشن موجود ناهي.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>اهو اڳ ۾ ئي هن سيڪشن ۾ آهي.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>توهان کي هي سيڪشن مقرر ڪرڻ جي اجازت ناهي (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>سيڪشن مقرر نه ٿيو.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>سيڪشن مقرر ڪيو ويو.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>حالت موجود ناهي.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>اهو اڳ ۾ ئي هن حالت ۾ آهي.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>توهان کي هي حالت مقرر ڪرڻ جي اجازت ناهي (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>حالت مقرر نه ٿي (ٿي سگهي ٿو ڪو ورڪ فلو تبديلي کي روڪي رهيو هجي).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>حالت مقرر ڪئي وئي.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>اهڙو ڪو عمل ناهي.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>جائزي لاءِ روڪ سيٽ نه ڪئي وئي آهي (اپ گريڊ قدم 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ٻڌايو ته اهو ڇو روڪيو ويو آهي.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>اهو اڳ ۾ ئي روڪيل آهي.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>توهان کي ان کي روڪڻ جي اجازت ناهي (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>روڪ نه لڳائي وئي (ٿي سگهي ٿو ڪو ورڪ فلو تبديلي کي روڪي رهيو هجي).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>روڪيو ويو.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>اهو روڪيل ناهي.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>توهان کي ان کي آزاد ڪرڻ جي اجازت ناهي (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>روڪ ختم نه ٿي (ٿي سگهي ٿو ڪو ورڪ فلو تبديلي کي روڪي رهيو هجي).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>آزاد ڪيو ويو؛ اڃا لڪيل: توهان کي ان کي ظاهر ڪرڻ جي اجازت ناهي (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>آزاد ڪيو ويو.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub پروجيڪٽ سائيٽ /&lt;repository&gt;/ هيٺ هوندي آهي؛ لاڳاپيل لنڪس اتي ۽ ٻين سڀني هنڌن تي ڪم ڪن ٿيون.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>هڪ بلڊ %site جو هر صفحو ائين آڻي ٿو جيئن سائن ان نه ٿيل گهمندڙ ان کي ڏسي ٿو، لنڪس ٻيهر لکي ٿو، فائلون ڪاپي ڪري ٿو ۽ نتيجو ٽارگيٽ جي فولڊر ۾ لکي ٿو. جيستائين توهان بلڊ جانچي شايع ڪريو نه دٻايو، ڪجهه به شايع نٿو ٿئي.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>جنهن صفحي ۾ صفائي کان پوءِ به ڊيبگ آئوٽ پٽ، فارم ٽوڪن يا سيشن آءِ ڊي هجي، اهو ڪڏهن به شايع نٿو ٿئي.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>واپسي ماهرن لاءِ آهي: &quot;مان ڄاڻان ٿو ته هي ڇا بدلائي ٿو&quot; تي نشان لڳايو ۽ ٽيگ جو نالو ٻيهر لکو.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>واپسي ماهرن لاءِ آهي: "مان ڄاڻان ٿو ته هي ڇا بدلائي ٿو" تي نشان لڳايو ۽ ٽيگ جو نالو ٻيهر لکو.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>پريويو کوليو</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>بلڊ کي ائين کولي ٿو جيئن هوسٽ ان کي پيش ڪندو، ٽارگيٽ جي فولڊر مان. لنڪ توهان لاءِ هڪ ڪلاڪ ڪم ڪري ٿي.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سيٽ اپ &gt; ڳجهيون معلومات</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>فهرستن ۾ ڏيکاريو ويندو آهي، مثال طور &quot;GitHub Pages تي عوامي سائيٽ&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>فهرستن ۾ ڏيکاريو ويندو آهي، مثال طور "GitHub Pages تي عوامي سائيٽ".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>سائيٽ ان اشاعت جي فائلن ڏانهن واپس وڃي ٿي؛ اڃا شايع نه ٿيل بلڊ کي پهريان شايع يا ڦٽو ڪرڻو پوندو.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>اڻ موجود پتن لاءِ سائيٽ جو پنهنجو صفحو.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ٽارگيٽ محفوظ نه ٿي سگهيو: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>ٽارگيٽ اڃا هن ڪنجي سان سائن ان نٿو ٿئي: ان جي سيٽنگن ۾ &quot;هن ٽارگيٽ لاءِ ٺاهيل ڊيپلاءِ ڪنجي&quot; چونڊيو.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ٽارگيٽ اڃا هن ڪنجي سان سائن ان نٿو ٿئي: ان جي سيٽنگن ۾ "هن ٽارگيٽ لاءِ ٺاهيل ڊيپلاءِ ڪنجي" چونڊيو.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>هن بلڊ کي ڦٽو ڪري ٿو: فولڊر ۾ ٻيهر آخري اشاعت هوندي. لائيو سائيٽ نٿي بدلجي.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>پهريان &quot;مون تبديليون جانچي ورتيون آهن&quot; تي نشان لڳايو.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>پهريان "مون تبديليون جانچي ورتيون آهن" تي نشان لڳايو.</translation>
     </message>
     <message>
         <source>Time</source>

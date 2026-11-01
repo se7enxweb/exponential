@@ -15151,6 +15151,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <translation>Newidiadau i&apos;r gosodiad wedi&apos;u cadw fel ffeiliau: eu cyflwr, y rhediadau, rhedeg a dychwelyd.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Cynnwys diweddar</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Y cynnwys mwyaf newydd, yr hyn sy'n cael ei ddal i'w adolygu, a gweithredoedd ar ddetholiad.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Cyhoeddi copi statig o wefan i GitHub Pages neu unrhyw westeiwr git.</translation>
     </message>
@@ -22168,7 +22176,7 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Mae&apos;r storfa statig yn gweini tudalennau o&apos;r gweinydd hwn. I gyhoeddi copi statig o wefan yn rhywle arall, ar GitHub Pages neu unrhyw westeiwr git, defnyddiwch gyhoeddi statig.</translation>
+        <translation>Mae'r storfa statig yn gweini tudalennau o'r gweinydd hwn. I gyhoeddi copi statig o wefan yn rhywle arall, ar GitHub Pages neu unrhyw westeiwr git, defnyddiwch gyhoeddi statig.</translation>
     </message>
 </context>
 <context>
@@ -80584,6 +80592,670 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Addaswyd</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Crëwyd</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Enw</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Dosbarth</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Adran</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Crëwr</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Cynnwys diweddar</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Y cynnwys a grëwyd ac a addaswyd fwyaf diweddar ar draws y wefan gyfan, y mwyaf newydd yn gyntaf: yr hyn a gyflwynodd ymwelwyr, yr hyn sy'n cael ei ddal i'w adolygu, drafftiau sy'n aros i gael eu cyhoeddi. Dewiswch eitemau i'w rhyddhau, eu dal, eu cuddio, eu datguddio, eu tynnu neu eu symud i adran neu gyflwr arall.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y rhestr: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Nid yw'r daliad adolygu wedi'i osod eto, felly nid oes dim yn cael ei ddal ac ni chynigir y gweithredoedd dal. Mae'r cam uwchraddio 6.0.15-review-hold yn ei osod: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Hidlo'r rhestr</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>O</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dyddiad</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Crëwyd (cyhoeddwyd gyntaf)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Y cyfan</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statws</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Wedi'i gyhoeddi</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Drafft, heb ei gyhoeddi erioed</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Yn aros (am gymeradwyaeth neu ddyddiad)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Yn y sbwriel</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Wedi'i ddal i'w adolygu</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Wedi'i ddal</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Heb ei ddal</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Wedi'i guddio</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Gweladwy</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Cyflwynwyd ar</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Unrhyw fynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Dim ond yr hyn a gofnododd yr archwiliad.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nawr: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Enw mewngofnodi neu ID defnyddiwr.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Hidlo</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Clirio'r hidlwyr</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Eitemau</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from i %to o %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Dim eitem</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(darllenwyd mewn %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Gweithredoedd ar yr eitemau a ddewiswyd</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Dewis y cyfan ar y dudalen hon</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count wedi'u dewis</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gweithred</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Dewiswch weithred</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Rhyddhau'r daliad</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Dal i'w adolygu</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Cuddio</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Datguddio</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Symud i'r sbwriel</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Dileu</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Neilltuo adran</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Neilltuo cyflwr</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Rheswm</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Angen er mwyn dal; yn cael ei gadw gyda'r daliad ac yn yr archwiliad.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Dewiswch adran</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cyflwr</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Dewiswch gyflwr</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Gweithredu ar y rhai a ddewiswyd</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Mae pob eitem yn cael ei gwirio yn erbyn eich caniatâd chi. Mae symud i'r sbwriel a dileu yn gofyn i chi gadarnhau. Mae mwy na %count eitem yn rhedeg yn y cefndir.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Dewis</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Cyhoeddi</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Cyflwynwyd o</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Dewis %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>dim eto</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(dim enw)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Drafft</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yn aros</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Wedi'i guddio gan ei riant</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Wedi'i ddal: cyflwyniad newydd</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Fersiwn %version yn aros</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Fersiwn %version ar y gweill</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Drafft, fersiwn %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Fersiwn %version wedi'i chyhoeddi</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Wedi'i drefnu ar gyfer %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>dim cyfeiriad</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>heb ei gofnodi</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nid oes dim yn cyfateb i'r hidlwyr hyn.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Dangos y cyfan</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Nid oes cynnwys eto.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fesul tudalen</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Dangos %count eitem fesul tudalen.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Daw cyfeiriad a phorwr cyflwyniad o fynegai'r archwiliad, nad yw ar gael yma: mae'r golofn yn dweud "heb ei gofnodi".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Y cyfeiriad a'r porwr yw'r rhai a gofnododd yr archwiliad ar gyfer yr eitem (mae'r daliad awtomatig bob amser yn eu cofnodi; cyhoeddi a chreu dim ond lle mae wedi'i droi ymlaen), fel y mae ei osodiadau preifatrwydd yn eu cadw.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count eitem</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Mae dileu yn tynnu'r eitemau am byth, gyda'u holl fersiynau a chyfieithiadau. Ni ellir ei ddadwneud.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Mae'r eitemau'n mynd i'r sbwriel, lle gellir eu hadfer.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Mae pob eitem yn cael ei gwirio yn erbyn eich caniatâd chi; mae eitem ag is-eitemau yn cael ei gadael fel y mae (tynnwch hi yn strwythur y cynnwys). Gofynnir i chi wirio mai chi sydd yno.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Mae hyn yn rhedeg yn y cefndir: mae ei dudalen gynnydd yn agor, a dangosir y canlyniad ar gyfer pob eitem pan fydd wedi gorffen.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Yr eitemau a ddewiswyd</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>a %count arall</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Canslo</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ni wnaed dim</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Rheswm: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Mae'r weithred yn dal i redeg yn y cefndir.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ei chynnydd</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Methodd y weithred gefndir: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wedi'i wneud</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Gwrthodwyd</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Methwyd</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Fesul eitem</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Eitem</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Canlyniad</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Pam</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Yn ôl i'r rhestr</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gosod</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Dim wedi'i wneud</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Cadarnhau</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Dewiswch weithred.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Dewiswch o leiaf un eitem.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Dewiswch 1000 eitem ar y mwyaf ar y tro.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Dywedwch pam mae'r eitemau'n cael eu dal.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Dewiswch yr adran.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Dewiswch y cyflwr.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Nid oedd modd darllen y ffurflen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Cynnwys diweddar</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y cyfrifon: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Wedi'i ddal i'w adolygu</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Newydd heddiw</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Nid yw'r daliad adolygu wedi'i osod eto (y cam uwchraddio 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Yr holl gynnwys diweddar</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ni chewch redeg gweithredoedd cymedroli (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Nid yw'r weithred gymedroli'n gyflawn: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Cymedroli: %action ar %count gwrthrych</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done o %total gwrthrych: %ok wedi'u gwneud, %refused wedi'u gwrthod, %failed wedi methu</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok wedi'u gwneud, %refused wedi'u gwrthod, %failed wedi methu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Nid yw'n bodoli mwyach.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nid oes ganddo leoliad (heb ei gyhoeddi).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ni chewch ei guddio (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ni chewch ei ddatguddio (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Mae wedi'i guddio eisoes.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nid yw wedi'i guddio.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Wedi'i guddio.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Wedi'i ddatguddio.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Mae yn y sbwriel: gwagiwch y sbwriel neu adferwch ef yno.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ni all drafft na chyhoeddwyd erioed fynd i'r sbwriel: dilëwch ef.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ni chewch ei ddileu (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Wedi'i ddileu.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ni chewch ei dynnu (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Mae ganddo is-eitemau: tynnwch ef yn strwythur y cynnwys, lle maen nhw wedi'u rhestru.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ni chafodd ei dynnu (efallai fod llif gwaith yn dal y tynnu).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Wedi'i symud i'r sbwriel.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Nid yw'r adran yn bodoli.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Mae yn yr adran hon eisoes.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ni chewch neilltuo'r adran hon (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Ni neilltuwyd yr adran.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Adran wedi'i neilltuo.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Nid yw'r cyflwr yn bodoli.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Mae yn y cyflwr hwn eisoes.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ni chewch neilltuo'r cyflwr hwn (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ni neilltuwyd y cyflwr (efallai fod llif gwaith yn dal y newid).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Cyflwr wedi'i neilltuo.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Nid oes gweithred o'r fath.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Nid yw'r daliad adolygu wedi'i osod (y cam uwchraddio 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Dywedwch pam mae'n cael ei ddal.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Mae wedi'i ddal eisoes.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ni chewch ei ddal (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ni osodwyd y daliad (efallai fod llif gwaith yn dal y newid).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Wedi'i ddal.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nid yw wedi'i ddal.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ni chewch ei ryddhau (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ni ryddhawyd y daliad (efallai fod llif gwaith yn dal y newid).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Wedi'i ryddhau; yn dal wedi'i guddio: ni chewch ei ddatguddio (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Wedi'i ryddhau.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80595,7 +81267,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Cyhoeddwch gopi statig o&apos;ch gwefan am ddim ar GitHub Pages:</translation>
+        <translation>Cyhoeddwch gopi statig o'ch gwefan am ddim ar GitHub Pages:</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -80607,7 +81279,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Static publishing is switched off.</source>
-        <translation>Mae cyhoeddi statig wedi&apos;i ddiffodd.</translation>
+        <translation>Mae cyhoeddi statig wedi'i ddiffodd.</translation>
     </message>
     <message>
         <source>Target</source>
@@ -80623,7 +81295,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>build to check</source>
-        <translation>adeiladwaith i&apos;w wirio</translation>
+        <translation>adeiladwaith i'w wirio</translation>
     </message>
     <message>
         <source>hide this</source>
@@ -80646,7 +81318,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <name>design/admin/staticpublish</name>
     <message>
         <source>%added added, %changed changed, %removed removed</source>
-        <translation>%added wedi&apos;u hychwanegu, %changed wedi&apos;u newid, %removed wedi&apos;u tynnu</translation>
+        <translation>%added wedi'u hychwanegu, %changed wedi'u newid, %removed wedi'u tynnu</translation>
     </message>
     <message>
         <source>%bytes of %limit (%percent %)</source>
@@ -80654,19 +81326,19 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>%count more are not listed.</source>
-        <translation>Nid yw %count arall wedi&apos;u rhestru.</translation>
+        <translation>Nid yw %count arall wedi'u rhestru.</translation>
     </message>
     <message>
         <source>%pages pages written</source>
-        <translation>%pages tudalen wedi&apos;u hysgrifennu</translation>
+        <translation>%pages tudalen wedi'u hysgrifennu</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>Mae %path yn %size, mwy nag y mae&apos;r gwesteiwr yn ei ganiatáu i ffeil.</translation>
+        <translation>Mae %path yn %size, mwy nag y mae'r gwesteiwr yn ei ganiatáu i ffeil.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
-        <translation>%percent % o&apos;r terfyn</translation>
+        <translation>%percent % o'r terfyn</translation>
     </message>
     <message>
         <source>%seconds s</source>
@@ -80674,7 +81346,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>%tag is the publish the site has now.</source>
-        <translation>%tag yw&apos;r cyhoeddiad sydd gan y wefan nawr.</translation>
+        <translation>%tag yw'r cyhoeddiad sydd gan y wefan nawr.</translation>
     </message>
     <message>
         <source>%target: job %id</source>
@@ -80698,7 +81370,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>3. Signing in to the repository</source>
-        <translation>3. Mewngofnodi i&apos;r ystorfa</translation>
+        <translation>3. Mewngofnodi i'r ystorfa</translation>
     </message>
     <message>
         <source>4. The repository</source>
@@ -80714,7 +81386,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>7. What the build holds</source>
-        <translation>7. Beth mae&apos;r adeiladwaith yn ei gynnwys</translation>
+        <translation>7. Beth mae'r adeiladwaith yn ei gynnwys</translation>
     </message>
     <message>
         <source>8. When it is published</source>
@@ -80729,8 +81401,8 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <translation>Mae gwefan prosiect GitHub yn byw o dan /&lt;repository&gt;/; mae dolenni cymharol yn gweithio yno ac yn unrhyw le arall.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Mae adeiladwaith yn nôl pob tudalen o %site fel y&apos;i gwelir gan ymwelydd nad yw wedi mewngofnodi, yn ailysgrifennu&apos;r dolenni, yn copïo&apos;r ffeiliau ac yn ysgrifennu&apos;r canlyniad i ffolder y targed. Ni chyhoeddir dim nes i chi wirio&apos;r adeiladwaith a phwyso Cyhoeddi.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Mae adeiladwaith yn nôl pob tudalen o %site fel y'i gwelir gan ymwelydd nad yw wedi mewngofnodi, yn ailysgrifennu'r dolenni, yn copïo'r ffeiliau ac yn ysgrifennu'r canlyniad i ffolder y targed. Ni chyhoeddir dim nes i chi wirio'r adeiladwaith a phwyso Cyhoeddi.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -80742,7 +81414,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Mae allwedd defnyddio yn gadael i&apos;r gosodiad hwn wthio i un ystorfa dros SSH a dim unman arall. Mae ei hanner preifat yn aros yn Gosod &gt; Cyfrinachau; dim ond yr hanner cyhoeddus a ddangosir.</translation>
+        <translation>Mae allwedd defnyddio yn gadael i'r gosodiad hwn wthio i un ystorfa dros SSH a dim unman arall. Mae ei hanner preifat yn aros yn Gosod &gt; Cyfrinachau; dim ond yr hanner cyhoeddus a ddangosir.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -80750,11 +81422,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>Mae allwedd defnyddio yn mewngofnodi dros SSH: newidiwch y cyfeiriad git i&apos;r un SSH (git@github.com:owner/repo.git).</translation>
+        <translation>Mae allwedd defnyddio yn mewngofnodi dros SSH: newidiwch y cyfeiriad git i'r un SSH (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Mae tasg ar waith, wedi&apos;i dechrau gan %user</translation>
+        <translation>Mae tasg ar waith, wedi'i dechrau gan %user</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
@@ -80766,7 +81438,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>Bydd dolen o&apos;r dudalen /news/ i&apos;r dudalen /about-us/team yn cael ei hysgrifennu fel</translation>
+        <translation>Bydd dolen o'r dudalen /news/ i'r dudalen /about-us/team yn cael ei hysgrifennu fel</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
@@ -80774,23 +81446,23 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>Ni chyhoeddir byth dudalen sy&apos;n dal i gynnwys allbwn dadfygio, tocyn ffurflen neu ID sesiwn ar ôl ei glanhau.</translation>
+        <translation>Ni chyhoeddir byth dudalen sy'n dal i gynnwys allbwn dadfygio, tocyn ffurflen neu ID sesiwn ar ôl ei glanhau.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Mae dychweliad ar gyfer arbenigwyr: ticiwch &quot;Rwy&apos;n gwybod beth mae hyn yn ei newid&quot; a theipiwch enw&apos;r nod eto.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Mae dychweliad ar gyfer arbenigwyr: ticiwch "Rwy'n gwybod beth mae hyn yn ei newid" a theipiwch enw'r nod eto.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Gall gwefan fod hyd at %site, un ffeil hyd at %file, gyda thua 100 GB o draffig y mis. Ar gynllun am ddim rhaid i&apos;r ystorfa fod yn gyhoeddus. Nid yw GitHub Pages wedi&apos;i fwriadu ar gyfer siopau na thrafodion masnachol eraill.</translation>
+        <translation>Gall gwefan fod hyd at %site, un ffeil hyd at %file, gyda thua 100 GB o draffig y mis. Ar gynllun am ddim rhaid i'r ystorfa fod yn gyhoeddus. Nid yw GitHub Pages wedi'i fwriadu ar gyfer siopau na thrafodion masnachol eraill.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>Un wefan wedi&apos;i chyhoeddi i un ystorfa git yw targed. Nid oes dim yn cael ei adeiladu na&apos;i gyhoeddi yma: mae Cadw yn ysgrifennu&apos;r gosodiadau i settings/override/staticcache.ini.append.php.</translation>
+        <translation>Un wefan wedi'i chyhoeddi i un ystorfa git yw targed. Nid oes dim yn cael ei adeiladu na'i gyhoeddi yma: mae Cadw yn ysgrifennu'r gosodiadau i settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Un wefan wedi&apos;i chyhoeddi i un lle yw targed, er enghraifft eich gwefan gyhoeddus ar GitHub Pages.</translation>
+        <translation>Un wefan wedi'i chyhoeddi i un lle yw targed, er enghraifft eich gwefan gyhoeddus ar GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -80862,7 +81534,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Build to check</source>
-        <translation>Adeiladwaith i&apos;w wirio</translation>
+        <translation>Adeiladwaith i'w wirio</translation>
     </message>
     <message>
         <source>By</source>
@@ -80898,7 +81570,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Check what the build changes, look at it, then publish it or throw it away.</source>
-        <translation>Gwiriwch beth mae&apos;r adeiladwaith yn ei newid, edrychwch arno, yna cyhoeddwch ef neu ei daflu.</translation>
+        <translation>Gwiriwch beth mae'r adeiladwaith yn ei newid, edrychwch arno, yna cyhoeddwch ef neu ei daflu.</translation>
     </message>
     <message>
         <source>Choose the publish to go back to.</source>
@@ -80918,15 +81590,15 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Mae&apos;n ymrwymo&apos;r adeiladwaith, yn ei nodi ac yn ei wthio i %remote. Ni orfodir gwthiad byth; gallwch fynd yn ôl i unrhyw gyhoeddiad yn nes ymlaen.</translation>
+        <translation>Mae'n ymrwymo'r adeiladwaith, yn ei nodi ac yn ei wthio i %remote. Ni orfodir gwthiad byth; gallwch fynd yn ôl i unrhyw gyhoeddiad yn nes ymlaen.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>O&apos;i gymharu â&apos;r ffolder o&apos;r blaen: %added wedi&apos;u hychwanegu, %changed wedi&apos;u newid, %removed wedi&apos;u tynnu, %unchanged heb eu newid.</translation>
+        <translation>O'i gymharu â'r ffolder o'r blaen: %added wedi'u hychwanegu, %changed wedi'u newid, %removed wedi'u tynnu, %unchanged heb eu newid.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
-        <translation>O&apos;i gymharu â&apos;r cyhoeddiad diwethaf.</translation>
+        <translation>O'i gymharu â'r cyhoeddiad diwethaf.</translation>
     </message>
     <message>
         <source>Credential</source>
@@ -80954,7 +81626,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Discard the build</source>
-        <translation>Taflu&apos;r adeiladwaith</translation>
+        <translation>Taflu'r adeiladwaith</translation>
     </message>
     <message>
         <source>Domain</source>
@@ -80970,11 +81642,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Every link starts with the base path.</source>
-        <translation>Mae pob dolen yn dechrau gyda&apos;r llwybr sylfaen.</translation>
+        <translation>Mae pob dolen yn dechrau gyda'r llwybr sylfaen.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Mae pob cyhoeddiad yn ymrwymiad gyda nod static/%id/&lt;n&gt;. Mae mynd yn ôl yn creu ymrwymiad newydd gyda ffeiliau cyhoeddiad cynharach: mae&apos;r hanes yn aros, nid oes nod yn symud ac ni orfodir dim.</translation>
+        <translation>Mae pob cyhoeddiad yn ymrwymiad gyda nod static/%id/&lt;n&gt;. Mae mynd yn ôl yn creu ymrwymiad newydd gyda ffeiliau cyhoeddiad cynharach: mae'r hanes yn aros, nid oes nod yn symud ac ni orfodir dim.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81022,7 +81694,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>Ar gyfer arbenigwyr. Mae&apos;r wefan gyhoeddus yn newid cyn gynted ag y bydd y gwthiad wedi&apos;i gwblhau.</translation>
+        <translation>Ar gyfer arbenigwyr. Mae'r wefan gyhoeddus yn newid cyn gynted ag y bydd y gwthiad wedi'i gwblhau.</translation>
     </message>
     <message>
         <source>Forms</source>
@@ -81034,7 +81706,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>From the branch</source>
-        <translation>O&apos;r gangen</translation>
+        <translation>O'r gangen</translation>
     </message>
     <message>
         <source>Git address</source>
@@ -81062,11 +81734,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
-        <translation>Mae GitHub Pages yn cyhoeddi&apos;r ffeiliau fel y maent (angenrheidiol ar gyfer ffeiliau sy&apos;n dechrau gyda _).</translation>
+        <translation>Mae GitHub Pages yn cyhoeddi'r ffeiliau fel y maent (angenrheidiol ar gyfer ffeiliau sy'n dechrau gyda _).</translation>
     </message>
     <message>
         <source>GitHub serves the branch as it is pushed. The default.</source>
-        <translation>Mae GitHub yn gweini&apos;r gangen fel y&apos;i gwthiwyd. Y rhagosodiad.</translation>
+        <translation>Mae GitHub yn gweini'r gangen fel y'i gwthiwyd. Y rhagosodiad.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
@@ -81082,7 +81754,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Help with the wizard</source>
-        <translation>Cymorth gyda&apos;r dewin</translation>
+        <translation>Cymorth gyda'r dewin</translation>
     </message>
     <message>
         <source>Hide them</source>
@@ -81106,11 +81778,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>I have checked the changes</source>
-        <translation>Rwyf wedi gwirio&apos;r newidiadau</translation>
+        <translation>Rwyf wedi gwirio'r newidiadau</translation>
     </message>
     <message>
         <source>I know what this changes</source>
-        <translation>Rwy&apos;n gwybod beth mae hyn yn ei newid</translation>
+        <translation>Rwy'n gwybod beth mae hyn yn ei newid</translation>
     </message>
     <message>
         <source>Id</source>
@@ -81118,11 +81790,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>It is switched off: nothing can be built until it is on.</source>
-        <translation>Mae wedi&apos;i ddiffodd: nid oes modd adeiladu dim nes ei fod ymlaen.</translation>
+        <translation>Mae wedi'i ddiffodd: nid oes modd adeiladu dim nes ei fod ymlaen.</translation>
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>Mae&apos;n rhedeg yn y cefndir fel %user; gallwch gau&apos;r dudalen hon.</translation>
+        <translation>Mae'n rhedeg yn y cefndir fel %user; gallwch gau'r dudalen hon.</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81130,7 +81802,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Kept as the secret %secret.</source>
-        <translation>Wedi&apos;i chadw fel y gyfrinach %secret.</translation>
+        <translation>Wedi'i chadw fel y gyfrinach %secret.</translation>
     </message>
     <message>
         <source>Kind</source>
@@ -81154,7 +81826,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Links rewritten</source>
-        <translation>Dolenni wedi&apos;u hailysgrifennu</translation>
+        <translation>Dolenni wedi'u hailysgrifennu</translation>
     </message>
     <message>
         <source>Live site</source>
@@ -81166,7 +81838,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
-        <translation>Llythrennau bach, digidau, _ a -, er enghraifft github-public. Mae&apos;n enwi&apos;r ffolder a&apos;r nodau (static/&lt;id&gt;/&lt;n&gt;) ac ni ellir ei newid yn nes ymlaen.</translation>
+        <translation>Llythrennau bach, digidau, _ a -, er enghraifft github-public. Mae'n enwi'r ffolder a'r nodau (static/&lt;id&gt;/&lt;n&gt;) ac ni ellir ei newid yn nes ymlaen.</translation>
     </message>
     <message>
         <source>Make a new key</source>
@@ -81178,7 +81850,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Make the key</source>
-        <translation>Creu&apos;r allwedd</translation>
+        <translation>Creu'r allwedd</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
@@ -81202,7 +81874,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Name of the token in Setup &gt; Secrets</source>
-        <translation>Enw&apos;r tocyn yn Gosod &gt; Cyfrinachau</translation>
+        <translation>Enw'r tocyn yn Gosod &gt; Cyfrinachau</translation>
     </message>
     <message>
         <source>New target</source>
@@ -81226,7 +81898,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>Ni chanfuwyd rhaglen llinell orchymyn php. Gosodwch migration.ini [AdminSettings] PhpCliPath i&apos;w llwybr llawn.</translation>
+        <translation>Ni chanfuwyd rhaglen llinell orchymyn php. Gosodwch migration.ini [AdminSettings] PhpCliPath i'w llwybr llawn.</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81246,11 +81918,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Nothing was published yet.</source>
-        <translation>Nid oes dim wedi&apos;i gyhoeddi eto.</translation>
+        <translation>Nid oes dim wedi'i gyhoeddi eto.</translation>
     </message>
     <message>
         <source>Nothing was published yet: every file is new.</source>
-        <translation>Nid oes dim wedi&apos;i gyhoeddi eto: mae pob ffeil yn newydd.</translation>
+        <translation>Nid oes dim wedi'i gyhoeddi eto: mae pob ffeil yn newydd.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -81274,11 +81946,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>Dim ond enw a gedwir gyda&apos;r targed; mae&apos;r tocyn neu&apos;r allwedd ei hun yn aros yn Gosod &gt; Cyfrinachau ac nid yw byth yn ymddangos mewn log.</translation>
+        <translation>Dim ond enw a gedwir gyda'r targed; mae'r tocyn neu'r allwedd ei hun yn aros yn Gosod &gt; Cyfrinachau ac nid yw byth yn ymddangos mewn log.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
-        <translation>Dim ond yr hyn y mae&apos;r tudalennau&apos;n ei enwi</translation>
+        <translation>Dim ond yr hyn y mae'r tudalennau'n ei enwi</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
@@ -81289,8 +81961,8 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <translation>Agor y rhagolwg</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
-        <translation>Mae&apos;n agor yr adeiladwaith fel y bydd y gwesteiwr yn ei weini, o ffolder y targed. Mae&apos;r ddolen yn gweithio i chi am awr.</translation>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Mae'n agor yr adeiladwaith fel y bydd y gwesteiwr yn ei weini, o ffolder y targed. Mae'r ddolen yn gweithio i chi am awr.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -81310,7 +81982,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Pages of the target</source>
-        <translation>Tudalennau&apos;r targed</translation>
+        <translation>Tudalennau'r targed</translation>
     </message>
     <message>
         <source>Pages refused</source>
@@ -81334,7 +82006,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Preview the build</source>
-        <translation>Rhagolwg o&apos;r adeiladwaith</translation>
+        <translation>Rhagolwg o'r adeiladwaith</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -81354,7 +82026,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Cyhoeddi copi statig o wefan i GitHub Pages neu unrhyw westeiwr git: ei adeiladu, gwirio&apos;r newidiadau, cyhoeddi, a mynd yn ôl i gyhoeddiad cynharach pan fydd angen.</translation>
+        <translation>Cyhoeddi copi statig o wefan i GitHub Pages neu unrhyw westeiwr git: ei adeiladu, gwirio'r newidiadau, cyhoeddi, a mynd yn ôl i gyhoeddiad cynharach pan fydd angen.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -81414,7 +82086,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>Mae Adolygu yn gwirio pob gosodiad ac yn dangos y llinellau a gaiff eu hysgrifennu. Nid oes dim wedi&apos;i gadw eto.</translation>
+        <translation>Mae Adolygu yn gwirio pob gosodiad ac yn dangos y llinellau a gaiff eu hysgrifennu. Nid oes dim wedi'i gadw eto.</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -81438,11 +82110,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>IDs adrannau, wedi&apos;u gwahanu gan atalnodau.</translation>
+        <translation>IDs adrannau, wedi'u gwahanu gan atalnodau.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
-        <translation>Eu hanfon i&apos;r wefan fyw</translation>
+        <translation>Eu hanfon i'r wefan fyw</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -81465,12 +82137,12 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <translation>Gosod &gt; Cyfrinachau</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Yn cael ei ddangos mewn rhestrau, er enghraifft &quot;Gwefan gyhoeddus ar GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Yn cael ei ddangos mewn rhestrau, er enghraifft "Gwefan gyhoeddus ar GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>Daw mewngofnodi gydag GitHub App gyda&apos;r integreiddio GitHub.</translation>
+        <translation>Daw mewngofnodi gydag GitHub App gyda'r integreiddio GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -81478,7 +82150,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Site to publish</source>
-        <translation>Gwefan i&apos;w chyhoeddi</translation>
+        <translation>Gwefan i'w chyhoeddi</translation>
     </message>
     <message>
         <source>Size</source>
@@ -81514,19 +82186,19 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Static publishing is switched off</source>
-        <translation>Mae cyhoeddi statig wedi&apos;i ddiffodd</translation>
+        <translation>Mae cyhoeddi statig wedi'i ddiffodd</translation>
     </message>
     <message>
         <source>Static publishing is switched off.</source>
-        <translation>Mae cyhoeddi statig wedi&apos;i ddiffodd.</translation>
+        <translation>Mae cyhoeddi statig wedi'i ddiffodd.</translation>
     </message>
     <message>
         <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
-        <translation>Mae cyhoeddi statig wedi&apos;i ddiffodd. Trowch ef ymlaen yn Gosod &gt; Cyhoeddi statig yn gyntaf.</translation>
+        <translation>Mae cyhoeddi statig wedi'i ddiffodd. Trowch ef ymlaen yn Gosod &gt; Cyhoeddi statig yn gyntaf.</translation>
     </message>
     <message>
         <source>Static publishing is switched on.</source>
-        <translation>Mae cyhoeddi statig wedi&apos;i droi ymlaen.</translation>
+        <translation>Mae cyhoeddi statig wedi'i droi ymlaen.</translation>
     </message>
     <message>
         <source>Step %step of %total</source>
@@ -81566,31 +82238,31 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
-        <translation>Gellir creu a newid targedau, ond nid oes dim yn cael ei adeiladu na&apos;i gyhoeddi nes ei fod wedi&apos;i droi ymlaen.</translation>
+        <translation>Gellir creu a newid targedau, ond nid oes dim yn cael ei adeiladu na'i gyhoeddi nes ei fod wedi'i droi ymlaen.</translation>
     </message>
     <message>
         <source>Tells search engines what to read.</source>
-        <translation>Mae&apos;n dweud wrth beiriannau chwilio beth i&apos;w ddarllen.</translation>
+        <translation>Mae'n dweud wrth beiriannau chwilio beth i'w ddarllen.</translation>
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
-        <translation>Nid oedd modd taflu&apos;r adeiladwaith: %problem</translation>
+        <translation>Nid oedd modd taflu'r adeiladwaith: %problem</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>Mae&apos;r adeiladwaith yr un fath â&apos;r cyhoeddiad diwethaf: nid oes dim i&apos;w gyhoeddi.</translation>
+        <translation>Mae'r adeiladwaith yr un fath â'r cyhoeddiad diwethaf: nid oes dim i'w gyhoeddi.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>Taflwyd yr adeiladwaith: mae&apos;r ffolder yn dal y cyhoeddiad diwethaf eto.</translation>
+        <translation>Taflwyd yr adeiladwaith: mae'r ffolder yn dal y cyhoeddiad diwethaf eto.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
-        <translation>Mae&apos;r rhagosodiadau&apos;n addas i&apos;r rhan fwyaf o wefannau.</translation>
+        <translation>Mae'r rhagosodiadau'n addas i'r rhan fwyaf o wefannau.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
-        <translation>Mae&apos;r ffolder yn dal adeiladwaith nad yw wedi&apos;i gyhoeddi eto; bydd adeiladwaith newydd yn cymryd ei le.</translation>
+        <translation>Mae'r ffolder yn dal adeiladwaith nad yw wedi'i gyhoeddi eto; bydd adeiladwaith newydd yn cymryd ei le.</translation>
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
@@ -81598,19 +82270,19 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>Nid oedd modd paratoi&apos;r dasg: %detail</translation>
+        <translation>Nid oedd modd paratoi'r dasg: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>Nid oedd modd dechrau&apos;r dasg.</translation>
+        <translation>Nid oedd modd dechrau'r dasg.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>Mae&apos;r dasg wedi gorffen. Yn llwytho ei hadroddiad.</translation>
+        <translation>Mae'r dasg wedi gorffen. Yn llwytho ei hadroddiad.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
-        <translation>Mae&apos;r dasg angen defnyddiwr sydd wedi mewngofnodi.</translation>
+        <translation>Mae'r dasg angen defnyddiwr sydd wedi mewngofnodi.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
@@ -81634,11 +82306,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Caiff y tudalennau eu nôl fel y&apos;u gwelir gan ymwelydd nad yw wedi mewngofnodi. Ni chynigir mynedfeydd i&apos;r wefan ar gyfer gweinyddu a golygu byth.</translation>
+        <translation>Caiff y tudalennau eu nôl fel y'u gwelir gan ymwelydd nad yw wedi mewngofnodi. Ni chynigir mynedfeydd i'r wefan ar gyfer gweinyddu a golygu byth.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>Nid oedd modd dilyn y cynnydd. Ail-lwythwch y dudalen i weld sut mae&apos;r dasg yn dod yn ei blaen.</translation>
+        <translation>Nid oedd modd dilyn y cynnydd. Ail-lwythwch y dudalen i weld sut mae'r dasg yn dod yn ei blaen.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -81650,19 +82322,19 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>Nid yw&apos;r storfa gyfrinachau wedi&apos;i gosod eto (mae ./console exp:upgrade --apply yn creu ei thabl), felly nid oes modd cadw allwedd.</translation>
+        <translation>Nid yw'r storfa gyfrinachau wedi'i gosod eto (mae ./console exp:upgrade --apply yn creu ei thabl), felly nid oes modd cadw allwedd.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Mae&apos;r gweinydd yn mewngofnodi ar ei ben ei hun (ei allwedd SSH ei hun neu helpwr manylion mewngofnodi), neu mae&apos;r ystorfa ar y gweinydd hwn.</translation>
+        <translation>Mae'r gweinydd yn mewngofnodi ar ei ben ei hun (ei allwedd SSH ei hun neu helpwr manylion mewngofnodi), neu mae'r ystorfa ar y gweinydd hwn.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>Nid oedd modd ysgrifennu&apos;r gosodiad: %problem</translation>
+        <translation>Nid oedd modd ysgrifennu'r gosodiad: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
-        <translation>Mae&apos;r gosodiadau&apos;n ddilys. Caiff y llinellau hyn eu hysgrifennu:</translation>
+        <translation>Mae'r gosodiadau'n ddilys. Caiff y llinellau hyn eu hysgrifennu:</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81670,19 +82342,19 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Mae&apos;r wefan yn mynd yn ôl i ffeiliau&apos;r cyhoeddiad hwnnw; rhaid cyhoeddi neu daflu adeiladwaith nad yw wedi&apos;i gyhoeddi eto yn gyntaf.</translation>
+        <translation>Mae'r wefan yn mynd yn ôl i ffeiliau'r cyhoeddiad hwnnw; rhaid cyhoeddi neu daflu adeiladwaith nad yw wedi'i gyhoeddi eto yn gyntaf.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Tudalen y wefan ei hun ar gyfer cyfeiriadau nad ydynt yn bodoli.</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>Nid oedd modd cadw&apos;r targed: %problem</translation>
+        <translation>Nid oedd modd cadw'r targed: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Nid yw&apos;r targed yn mewngofnodi gyda&apos;r allwedd hon eto: dewiswch &quot;Allwedd defnyddio a grëwyd ar gyfer y targed hwn&quot; yn ei osodiadau.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Nid yw'r targed yn mewngofnodi gyda'r allwedd hon eto: dewiswch "Allwedd defnyddio a grëwyd ar gyfer y targed hwn" yn ei osodiadau.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81690,15 +82362,15 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>There is no build to check yet.</source>
-        <translation>Nid oes adeiladwaith i&apos;w wirio eto.</translation>
+        <translation>Nid oes adeiladwaith i'w wirio eto.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
-        <translation>Nid oes gan y gosodiad hwn fynediad blaen i&apos;r wefan. Ni chyhoeddir mynedfeydd i&apos;r wefan ar gyfer gweinyddu a golygu byth.</translation>
+        <translation>Nid oes gan y gosodiad hwn fynediad blaen i'r wefan. Ni chyhoeddir mynedfeydd i'r wefan ar gyfer gweinyddu a golygu byth.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Mae&apos;r dudalen hon yn dilyn y dasg wrth iddi fynd; mae&apos;n parhau yn y cefndir pan fydd y dudalen ar gau.</translation>
+        <translation>Mae'r dudalen hon yn dilyn y dasg wrth iddi fynd; mae'n parhau yn y cefndir pan fydd y dudalen ar gau.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -81706,7 +82378,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>This target has not been built here yet.</source>
-        <translation>Nid yw&apos;r targed hwn wedi&apos;i adeiladu yma eto.</translation>
+        <translation>Nid yw'r targed hwn wedi'i adeiladu yma eto.</translation>
     </message>
     <message>
         <source>This target has one.</source>
@@ -81714,11 +82386,11 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
-        <translation>Mae&apos;n taflu&apos;r adeiladwaith hwn: mae&apos;r ffolder yn dal y cyhoeddiad diwethaf eto. Nid yw&apos;r wefan fyw yn newid.</translation>
+        <translation>Mae'n taflu'r adeiladwaith hwn: mae'r ffolder yn dal y cyhoeddiad diwethaf eto. Nid yw'r wefan fyw yn newid.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Ticiwch &quot;Rwyf wedi gwirio&apos;r newidiadau&quot; yn gyntaf.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Ticiwch "Rwyf wedi gwirio'r newidiadau" yn gyntaf.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -81730,7 +82402,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Type the name of the tag again</source>
-        <translation>Teipiwch enw&apos;r nod eto</translation>
+        <translation>Teipiwch enw'r nod eto</translation>
     </message>
     <message>
         <source>Unchanged</source>
@@ -81746,7 +82418,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>What changes</source>
-        <translation>Beth sy&apos;n newid</translation>
+        <translation>Beth sy'n newid</translation>
     </message>
     <message>
         <source>What each file is; always written.</source>
@@ -81754,7 +82426,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Beth wnaeth y dasg a&apos;i chofnod. Mae tasg a ddechreuwyd yma yn parhau yn y cefndir pan fydd y dudalen hon ar gau.</translation>
+        <translation>Beth wnaeth y dasg a'i chofnod. Mae tasg a ddechreuwyd yma yn parhau yn y cefndir pan fydd y dudalen hon ar gau.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
@@ -81762,7 +82434,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
-        <translation>Yr hyn y mae&apos;r tudalennau&apos;n ei enwi, a phob delwedd o gynnwys cyhoeddedig</translation>
+        <translation>Yr hyn y mae'r tudalennau'n ei enwi, a phob delwedd o gynnwys cyhoeddedig</translation>
     </message>
     <message>
         <source>When</source>
@@ -81782,15 +82454,15 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Ble mae dolenni i&apos;r hyn nad yw yn y copi yn mynd (y chwilio, y mewngofnodi).</translation>
+        <translation>Ble mae dolenni i'r hyn nad yw yn y copi yn mynd (y chwilio, y mewngofnodi).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>O ble mae&apos;r copi statig yn cael ei weini.</translation>
+        <translation>O ble mae'r copi statig yn cael ei weini.</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
-        <translation>Pa wefan a gyhoeddir, a beth yw enw&apos;r targed.</translation>
+        <translation>Pa wefan a gyhoeddir, a beth yw enw'r targed.</translation>
     </message>
     <message>
         <source>Work below any path. The default.</source>
@@ -81810,7 +82482,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
-        <translation>enw yn unig; mae&apos;r gwerth yn aros yn Gosod &gt; Cyfrinachau</translation>
+        <translation>enw yn unig; mae'r gwerth yn aros yn Gosod &gt; Cyfrinachau</translation>
     </message>
     <message>
         <source>below %path</source>
@@ -81834,7 +82506,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>gh-pages, or main with the folder docs.</source>
-        <translation>gh-pages, neu main gyda&apos;r ffolder docs.</translation>
+        <translation>gh-pages, neu main gyda'r ffolder docs.</translation>
     </message>
     <message>
         <source>git host</source>
@@ -81846,7 +82518,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
-        <translation>https://owner.github.io/repository/, ar gyfer y map gwefan a&apos;r dolenni canonaidd.</translation>
+        <translation>https://owner.github.io/repository/, ar gyfer y map gwefan a'r dolenni canonaidd.</translation>
     </message>
     <message>
         <source>image</source>
@@ -81866,7 +82538,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>none: commits stay in the folder</source>
-        <translation>dim: mae ymrwymiadau&apos;n aros yn y ffolder</translation>
+        <translation>dim: mae ymrwymiadau'n aros yn y ffolder</translation>
     </message>
     <message>
         <source>none: nothing changed</source>
@@ -81890,7 +82562,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>Mae proc_open wedi&apos;i analluogi, felly nid oes modd dechrau tasg yma. Defnyddiwch ./console exp:static:build ar y gweinydd.</translation>
+        <translation>Mae proc_open wedi'i analluogi, felly nid oes modd dechrau tasg yma. Defnyddiwch ./console exp:static:build ar y gweinydd.</translation>
     </message>
     <message>
         <source>publish</source>
@@ -81906,7 +82578,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>pushed</source>
-        <translation>wedi&apos;i wthio</translation>
+        <translation>wedi'i wthio</translation>
     </message>
     <message>
         <source>refused</source>
@@ -81934,7 +82606,7 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: caiff ei ysgrifennu i&apos;r ffeil CNAME. Pwyntiwch DNS y parth at y gwesteiwr fel y mae&apos;n egluro; gall HTTPS gymryd amser i ddechrau.</translation>
+        <translation>www.example.com: caiff ei ysgrifennu i'r ffeil CNAME. Pwyntiwch DNS y parth at y gwesteiwr fel y mae'n egluro; gall HTTPS gymryd amser i ddechrau.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>

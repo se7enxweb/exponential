@@ -15149,6 +15149,14 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
         <translation>Canje-canje ga shigarwa da aka ajiye a matsayin fayiloli: matsayinsu, ayyukan, gudanarwa da mayarwa.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Abubuwan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Sababbin abubuwa, abin da aka riƙe don dubawa, da ayyuka kan abubuwan da aka zaɓa.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Wallafa kwafin shafi na tsaye zuwa GitHub Pages ko kowane masaukin git.</translation>
     </message>
@@ -22166,7 +22174,7 @@ Lura: Ba za a cire shigarwar fakitin ba.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Ma&apos;ajiyar ɗan lokaci ta tsaye tana ba da shafuka daga wannan sabar. Don wallafa kwafin shafi na tsaye a wani wuri, a GitHub Pages ko kowane masaukin git, yi amfani da wallafawa ta tsaye.</translation>
+        <translation>Ma'ajiyar ɗan lokaci ta tsaye tana ba da shafuka daga wannan sabar. Don wallafa kwafin shafi na tsaye a wani wuri, a GitHub Pages ko kowane masaukin git, yi amfani da wallafawa ta tsaye.</translation>
     </message>
 </context>
 <context>
@@ -80582,6 +80590,670 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>An gyara</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>An ƙirƙira</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Suna</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Rukuni</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sashe</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Mai ƙirƙira</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Abubuwan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Abubuwan da aka ƙirƙira kuma aka gyara kwanan nan a duk shafin, sababbi farko: abin da baƙi suka aiko, abin da aka riƙe don dubawa, daftarorin da ke jiran wallafawa. Zaɓi abubuwa don sakin su, riƙe su, ɓoye su, bayyana su, cire su ko mayar da su zuwa wani sashe ko matsayi.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Ba a iya karanta jerin ba: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Ba a saita riƙewa don dubawa ba tukuna, don haka babu abin da aka riƙe kuma ba a bayar da ayyukan riƙewa. Matakin haɓakawa 6.0.15-review-hold ne ke saita shi: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tace jerin</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Daga</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Zuwa</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Kwanan wata</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>An ƙirƙira (wallafawa ta farko)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Duka</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Matsayi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>An wallafa</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Daftari, ba a taɓa wallafawa ba</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ana jira (ana jiran amincewa ko wata rana)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>A cikin shara</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>An riƙe don dubawa</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>An riƙe</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ba a riƙe ba</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Boyayye</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Mai gani</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>An aiko a ranar</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Kowace hanyar shiga shafi</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Abin da binciken ya rubuta kawai.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Yanzu: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Sunan shiga ko lambar ID ta mai amfani.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tace</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Share matatun</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Abubuwa</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from zuwa %to cikin %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Babu abu</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(an karanta cikin %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ayyuka kan abubuwan da aka zaɓa</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Zaɓi duka a wannan shafi</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>An zaɓi %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aiki</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Zaɓi aiki</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Saki riƙewar</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Riƙe don dubawa</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Boye</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Bayyana</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Mayar zuwa shara</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Goge</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Ba da sashe</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Ba da matsayi</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Dalili</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ana buƙata don riƙewa; ana adana shi tare da riƙewar da kuma cikin binciken.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Zaɓi sashe</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Matsayi</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Zaɓi matsayi</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aiwatar kan waɗanda aka zaɓa</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Ana duba kowane abu bisa izininka. Mayarwa zuwa shara da gogewa suna neman ka tabbatar. Fiye da abubuwa %count suna gudana a bayan fage.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Zaɓi</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Wallafawa</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>An aiko daga</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Zaɓi %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>tukuna ba</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(babu suna)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Lambar ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Daftari</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ana jira</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Mahaifinsa ya ɓoye shi</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>An riƙe: sabon aiko</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Sigar %version na jira</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Sigar %version na gudana</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Daftari, sigar %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>An wallafa sigar %version</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>An tsara don %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>babu adireshi</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ba a rubuta ba</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Babu abin da ya dace da waɗannan matatun.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Nuna duka</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Babu abun ciki tukuna.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>A kowane shafi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Nuna abubuwa %count a kowane shafi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adireshi da burauzar wani aiko suna fitowa daga fihirisar bincike, wadda babu a nan: ginshiƙin yana cewa &quot;ba a rubuta ba&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adireshi da burauzar sune waɗanda binciken ya rubuta don abun (riƙewa ta atomatik koyaushe tana rubuta su; wallafawa da ƙirƙira kawai inda aka kunna), kamar yadda saitunan sirrinsa ke adana su.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: abubuwa %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Gogewa tana cire abubuwan har abada, tare da duk sigoginsu da fassarorinsu. Ba za a iya mayar da shi ba.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Abubuwan suna zuwa shara, inda za a iya dawo da su.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Ana duba kowane abu bisa izininka; abu mai ƙananan abubuwa ana barin sa yadda yake (cire shi a tsarin abun ciki). Za a nemi ka tabbatar cewa kai ne.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Wannan yana gudana a bayan fage: shafin ci gabansa yana buɗewa, kuma ana nuna sakamakon kowane abu idan ya gama.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Abubuwan da aka zaɓa</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>da ƙarin %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Soke</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ba a yi komai ba</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Dalili: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Aikin yana ci gaba da gudana a bayan fage.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ci gabansa</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Aikin bayan fage ya kasa: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>An gama</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>An ƙi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ya kasa</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Kowane abu</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Abu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sakamako</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Me ya sa</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Koma zuwa jerin</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Saitin farko</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ba a yi komai ba tukuna</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Tabbatar</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Zaɓi aiki.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Zaɓi aƙalla abu ɗaya.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Zaɓi abubuwa 1000 a mafi yawa a lokaci ɗaya.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Faɗi dalilin da yasa aka riƙe abubuwan.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Zaɓi sashen.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Zaɓi matsayin.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ba a iya karanta fom ɗin ba.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Abubuwan baya-bayan nan</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Ba a iya karanta ƙididdigar ba: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>An riƙe don dubawa</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Sababbi a yau</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ba a saita riƙewa don dubawa ba tukuna (matakin haɓakawa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Duk abubuwan baya-bayan nan</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ba a yarda ka gudanar da ayyukan tantancewa ba (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Aikin tantancewa bai cika ba: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Tantancewa: %action kan abubuwa %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done cikin abubuwa %total: %ok an gama, %refused an ƙi, %failed sun kasa</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok an gama, %refused an ƙi, %failed sun kasa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ba ya wanzu kuma.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ba shi da wuri (ba a wallafa ba).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ba a yarda ka ɓoye shi ba (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ba a yarda ka bayyana shi ba (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>An riga an ɓoye shi.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ba a ɓoye shi ba.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>An ɓoye.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>An bayyana.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Yana cikin shara: zubar da shi ko dawo da shi a can.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Daftarin da ba a taɓa wallafawa ba ba zai iya zuwa shara ba: goge shi.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ba a yarda ka goge shi ba (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>An goge.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ba a yarda ka cire shi ba (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Yana da ƙananan abubuwa: cire shi a tsarin abun ciki, inda aka jera su.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ba a cire shi ba (wani tsarin aiki yana iya riƙe cirewar).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>An mayar zuwa shara.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sashen ba ya wanzu.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>An riga yana cikin wannan sashe.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ba a yarda ka ba da wannan sashe ba (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Ba a ba da sashen ba.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>An ba da sashe.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Matsayin ba ya wanzu.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>An riga yana cikin wannan matsayi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ba a yarda ka ba da wannan matsayi ba (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ba a ba da matsayin ba (wani tsarin aiki yana iya riƙe canjin).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>An ba da matsayi.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Babu irin wannan aiki.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ba a saita riƙewa don dubawa ba (matakin haɓakawa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Faɗi dalilin da yasa aka riƙe shi.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>An riga an riƙe shi.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ba a yarda ka riƙe shi ba (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ba a sanya riƙewar ba (wani tsarin aiki yana iya riƙe canjin).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>An riƙe.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ba a riƙe shi ba.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ba a yarda ka sake shi ba (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ba a saki riƙewar ba (wani tsarin aiki yana iya riƙe canjin).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>An sake shi; har yanzu a ɓoye: ba a yarda ka bayyana shi ba (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>An sake shi.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80696,11 +81368,11 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
-        <translation>3. Shiga ma&apos;ajiyar</translation>
+        <translation>3. Shiga ma'ajiyar</translation>
     </message>
     <message>
         <source>4. The repository</source>
-        <translation>4. Ma&apos;ajiyar</translation>
+        <translation>4. Ma'ajiyar</translation>
     </message>
     <message>
         <source>5. Links and base path</source>
@@ -80724,10 +81396,10 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>Shafin aikin GitHub yana ƙarƙashin /&lt;repository&gt;/; hanyoyin haɗi masu dangantaka suna aiki a can da ko&apos;ina.</translation>
+        <translation>Shafin aikin GitHub yana ƙarƙashin /&lt;repository&gt;/; hanyoyin haɗi masu dangantaka suna aiki a can da ko'ina.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Gini yana ɗauko kowane shafi na %site kamar yadda baƙo wanda bai shiga ba yake ganinsa, yana sake rubuta hanyoyin haɗi, yana kwafin fayiloli kuma yana rubuta sakamakon zuwa babban fayil na maƙasudin. Ba a wallafa komai ba sai ka duba ginin ka danna Wallafa.</translation>
     </message>
     <message>
@@ -80740,7 +81412,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Maɓallin turawa yana bari wannan shigarwa ta tura zuwa ma&apos;ajiya ɗaya ta SSH ba wani wuri ba. Rabinsa na sirri yana zama a Saitin farko &gt; Sirrika; rabin jama&apos;a kawai ake nunawa.</translation>
+        <translation>Maɓallin turawa yana bari wannan shigarwa ta tura zuwa ma'ajiya ɗaya ta SSH ba wani wuri ba. Rabinsa na sirri yana zama a Saitin farko &gt; Sirrika; rabin jama'a kawai ake nunawa.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -80768,27 +81440,27 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>An ƙirƙiri sabon maɓallin turawa. Ƙara rabinsa na jama&apos;a zuwa ma&apos;ajiyar yanzu.</translation>
+        <translation>An ƙirƙiri sabon maɓallin turawa. Ƙara rabinsa na jama'a zuwa ma'ajiyar yanzu.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
         <translation>Shafin da har yanzu yake ɗauke da fitarwar gyara kurakurai, token na fom ko id na zama bayan tsaftacewa ba a taɓa wallafa shi ba.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Janyewa na ƙwararru ne: duba &quot;Na san abin da wannan ke canzawa&quot; kuma sake rubuta sunan alamar.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Janyewa na ƙwararru ne: duba "Na san abin da wannan ke canzawa" kuma sake rubuta sunan alamar.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>Shafi zai iya kai %site, fayil ɗaya %file, tare da kusan 100 GB na zirga-zirga a wata. A tsarin kyauta dole ma&apos;ajiyar ta zama ta jama&apos;a. GitHub Pages ba don shaguna ko wasu cinikayya ba ne.</translation>
+        <translation>Shafi zai iya kai %site, fayil ɗaya %file, tare da kusan 100 GB na zirga-zirga a wata. A tsarin kyauta dole ma'ajiyar ta zama ta jama'a. GitHub Pages ba don shaguna ko wasu cinikayya ba ne.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>Maƙasudi shafi ɗaya ne da ake wallafawa zuwa ma&apos;ajiyar git ɗaya. Ba a gina ko wallafa komai a nan: Ajiye yana rubuta saitunan zuwa settings/override/staticcache.ini.append.php.</translation>
+        <translation>Maƙasudi shafi ɗaya ne da ake wallafawa zuwa ma'ajiyar git ɗaya. Ba a gina ko wallafa komai a nan: Ajiye yana rubuta saitunan zuwa settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>Maƙasudi shafi ɗaya ne da ake wallafawa zuwa wuri ɗaya, misali shafinka na jama&apos;a a GitHub Pages.</translation>
+        <translation>Maƙasudi shafi ɗaya ne da ake wallafawa zuwa wuri ɗaya, misali shafinka na jama'a a GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
@@ -80796,11 +81468,11 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>Wani tsarin aiki na ma&apos;ajiyar yana wallafa shi.</translation>
+        <translation>Wani tsarin aiki na ma'ajiyar yana wallafa shi.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
-        <translation>Ƙara wannan maɓallin jama&apos;a zuwa ma&apos;ajiyar tare da izinin rubutu. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, duba Allow write access.</translation>
+        <translation>Ƙara wannan maɓallin jama'a zuwa ma'ajiyar tare da izinin rubutu. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, duba Allow write access.</translation>
     </message>
     <message>
         <source>Added</source>
@@ -81012,15 +81684,15 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Don adireshin SSH. Ana ƙirƙirar maɓallin bayan ajiyewa; kai ne za ka ƙara rabinsa na jama&apos;a zuwa ma&apos;ajiyar.</translation>
+        <translation>Don adireshin SSH. Ana ƙirƙirar maɓallin bayan ajiyewa; kai ne za ka ƙara rabinsa na jama'a zuwa ma'ajiyar.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
-        <translation>Don adireshin https://. GitHub: token mai cikakken iko (fine-grained) tare da Contents na karatu da rubutu a kan ma&apos;ajiyar.</translation>
+        <translation>Don adireshin https://. GitHub: token mai cikakken iko (fine-grained) tare da Contents na karatu da rubutu a kan ma'ajiyar.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
-        <translation>Na ƙwararru. Shafin jama&apos;a yana canzawa da zarar turawar ta kammala.</translation>
+        <translation>Na ƙwararru. Shafin jama'a yana canzawa da zarar turawar ta kammala.</translation>
     </message>
     <message>
         <source>Forms</source>
@@ -81028,7 +81700,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Masauki kyauta daga ma&apos;ajiyar GitHub.</translation>
+        <translation>Masauki kyauta daga ma'ajiyar GitHub.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81068,7 +81740,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>GitLab, Gitea, your own server: any git repository.</source>
-        <translation>GitLab, Gitea, sabarka ta kanka: kowace ma&apos;ajiyar git.</translation>
+        <translation>GitLab, Gitea, sabarka ta kanka: kowace ma'ajiyar git.</translation>
     </message>
     <message>
         <source>Go back to an earlier publish</source>
@@ -81180,7 +81852,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Ƙirƙiri ma&apos;ajiyar a masaukin da farko; mara komai ma ya yi.</translation>
+        <translation>Ƙirƙiri ma'ajiyar a masaukin da farko; mara komai ma ya yi.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81212,7 +81884,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>A&apos;a</translation>
+        <translation>A'a</translation>
     </message>
     <message>
         <source>No commit yet.</source>
@@ -81260,7 +81932,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>On the console</source>
-        <translation>A kan na&apos;ura mai kwakwalwa</translation>
+        <translation>A kan na'ura mai kwakwalwa</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
@@ -81287,7 +81959,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Buɗe samfoti</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Yana buɗe ginin kamar yadda masaukin zai ba da shi, daga babban fayil na maƙasudin. Hanyar haɗin tana aiki a gare ka na awa ɗaya.</translation>
     </message>
     <message>
@@ -81340,11 +82012,11 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Public address</source>
-        <translation>Adireshin jama&apos;a</translation>
+        <translation>Adireshin jama'a</translation>
     </message>
     <message>
         <source>Public key</source>
-        <translation>Maɓallin jama&apos;a</translation>
+        <translation>Maɓallin jama'a</translation>
     </message>
     <message>
         <source>Publish</source>
@@ -81404,7 +82076,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>Repository</source>
-        <translation>Ma&apos;ajiya</translation>
+        <translation>Ma'ajiya</translation>
     </message>
     <message>
         <source>Review</source>
@@ -81463,8 +82135,8 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Saitin farko &gt; Sirrika</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Ana nunawa a cikin jeri, misali &quot;Shafin jama&apos;a a GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ana nunawa a cikin jeri, misali "Shafin jama'a a GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81628,7 +82300,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>Jerin shafuka don injunan bincike; yana buƙatar adireshin jama&apos;a.</translation>
+        <translation>Jerin shafuka don injunan bincike; yana buƙatar adireshin jama'a.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
@@ -81640,7 +82312,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
-        <translation>Rabin jama&apos;a na maɓallin:</translation>
+        <translation>Rabin jama'a na maɓallin:</translation>
     </message>
     <message>
         <source>The root of the branch</source>
@@ -81648,11 +82320,11 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>Ba a saita ma&apos;ajiyar sirrika ba tukuna (./console exp:upgrade --apply yana ƙirƙirar teburinta), don haka ba za a iya ajiye maɓalli ba.</translation>
+        <translation>Ba a saita ma'ajiyar sirrika ba tukuna (./console exp:upgrade --apply yana ƙirƙirar teburinta), don haka ba za a iya ajiye maɓalli ba.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
-        <translation>Sabar tana shiga da kanta (maɓallin SSH nata ko mai taimakon shaidar shiga), ko ma&apos;ajiyar tana kan wannan sabar.</translation>
+        <translation>Sabar tana shiga da kanta (maɓallin SSH nata ko mai taimakon shaidar shiga), ko ma'ajiyar tana kan wannan sabar.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
@@ -81671,7 +82343,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Shafin yana komawa fayilolin waccan wallafawa; dole a wallafa ko a watsar da ginin da ba a wallafa ba tukuna da farko.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Shafin shafin na kansa don adiresoshin da babu su.</translation>
     </message>
     <message>
@@ -81679,8 +82351,8 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Ba a iya ajiye maƙasudin ba: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Maƙasudin bai fara shiga da wannan maɓalli ba tukuna: zaɓi &quot;Maɓallin turawa da aka ƙirƙira don wannan maƙasudi&quot; a cikin saitunansa.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Maƙasudin bai fara shiga da wannan maɓalli ba tukuna: zaɓi "Maɓallin turawa da aka ƙirƙira don wannan maƙasudi" a cikin saitunansa.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81715,8 +82387,8 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <translation>Yana watsar da wannan gini: babban fayil ɗin ya sake ɗauke da wallafawa ta ƙarshe. Shafin kai tsaye ba ya canzawa.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Duba &quot;Na duba canje-canjen&quot; da farko.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Duba "Na duba canje-canjen" da farko.</translation>
     </message>
     <message>
         <source>Time</source>
@@ -81804,7 +82476,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>Koyaushe za ka iya gini da wallafawa da hannu a nan da kuma a na&apos;ura mai kwakwalwa.</translation>
+        <translation>Koyaushe za ka iya gini da wallafawa da hannu a nan da kuma a na'ura mai kwakwalwa.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -81856,7 +82528,7 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
     </message>
     <message>
         <source>no</source>
-        <translation>a&apos;a</translation>
+        <translation>a'a</translation>
     </message>
     <message>
         <source>no remote</source>

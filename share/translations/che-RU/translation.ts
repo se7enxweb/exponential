@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ДӀахӀоттаман хийцамаш файлаш санна лардина: церан хьал, дӀадахьарш, дӀадахьар а юхадерзор а.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Керла чулацам</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Уггар керла чулацам, талламна сацийнарг, харжинчуьнца гӀуллакхаш.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Сайтан статикан копи GitHub Pages чохь я муьлххачу git хостехь арахеца.</translation>
     </message>
@@ -80584,6 +80592,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Хийцина</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Кхоьллина</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ЦӀе</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Класс</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Дакъа</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Кхоллархо</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Керла чулацам</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Массо сайтан тӀаьххьара кхоьллина а, хийцина а чулацам, уггар керланиг хьалха: хьешаша дахьийтинарг, талламна сацийнарг, арахеца хьоьжуш болу черновикаш. Элементаш харжа, уьш сацорах мукъа баха, саца, къайлабаха, гайта, дӀабаха я кхечу дакъа я хьал чу дехьабаха.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>МогӀам ца белла деша: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Талламна сацор хӀинца а дӀахӀоттийна дац, цундела цхьа а хӀума ца сацадо, сацоран гӀуллакхаш а ца лелайо. Иза 6.0.15-review-hold керлачу дахаран гӀулч дӀахӀоттадо: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>МогӀам фильтр ян</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ТӀера</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Кхаччалц</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Терахь</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Кхоьллина (хьалхара арахецар)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Массо</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Арахецна</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Черновик, цкъа а арахецна доцу</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Хьоьжуш (тӀечӀагӀдаре я терахье)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Нехийн тускарахь</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Талламна сацийна</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Сацийна</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Сацийна доцу</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Къайлаха</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Гуш</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Дахьийтина сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Муьлхха а сайте тӀекхачар</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Аудито дӀаяздинарг бен.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ХӀинца: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Логин я пайдаэцархочун ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фильтр</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Фильтраш дӀацӀанъян</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Элементаш</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count чуьра %from – %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Элемент дац</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms мс чохь дешна)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Харжинчу элементашца гӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ХӀокху агӀонехь массо харжа</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count харжина</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ГӀуллакх</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ГӀуллакх харжа</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Сацор дӀадаккха</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Талламна саца</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Къайладаккха</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Гайта</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Нехийн тускар чу дехьадаккха</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ДӀадайа</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Дакъа тӀедилла</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Хьал тӀедилла</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Бахьана</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Сацорна оьшу; сацорца а, аудитехь а лардо.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Дакъа харжа</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Хьал</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Хьал харжа</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Харжинчарна тӀетоха</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ХӀора элемент шун шен бакъонашца талла. Нехийн тускар чу дехьадаккхарна а, дӀадайарна а тӀечӀагӀдар оьшу. %count элемент сов дерш фонехь бо.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Харжа</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Арахецар</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Дахьийтина адрес</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name харжа</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>хӀинца а дац</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(цӀе йоцуш)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Черновик</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Хьоьжуш</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Лакхарчо къайладаьхна</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Сацийна: керла дахьийтинарг</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Верси %version хьоьжуш</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Верси %version болх беш</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Черновик, верси %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Верси %version арахецна</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date терахьна хьажийна</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>адрес яц</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>дӀаяздина дац</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ХӀокху фильтрашна цхьа а хӀума ца догӀу.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Массо гайта</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ХӀинца а чулацам бац.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ХӀора агӀонехь</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ХӀора агӀонехь %count элемент гайта.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Дахьийтинчун адрес а, браузер а аудитан индексера схьаоьцу, иза кхузахь тӀекхочуш яц: бӀогӀамехь «дӀаяздина дац» боху.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Адрес а, браузер а — элементана аудито дӀаяздинарш ду (автосацоро уьш гуттар дӀаяздо; арахецаро а, кхолларо а — иза латийна болчу меттехь бен), цуьнан къайлаллин нисдарша лардеш ма-хиллара.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count элемент</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ДӀадайаро элементаш даиман дӀадохуш ду, церан массо версешца а, гочдаршца а. Иза юхадерзо йиш яц.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Элементаш нехийн тускар чу доьду, цигара уьш меттахӀитто йиш ю.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ХӀора элемент шун шен бакъонашца талла; кӀелара элементаш долу элемент ма-дарра дуьту (чулацаман структурехь дӀадаккха иза). Иза шу дуйла тӀечӀагӀдан дийхар хир ду.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Иза фонехь до: цуьнан дӀадахаран агӀо схьайоьллу, хӀора элементан жамӀ чекхдаьлча гойтур ду.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Харжина элементаш</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>кхин а %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Юхадаккха</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Цхьа а хӀума ца дина</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Бахьана: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ГӀуллакх хӀинца а фонехь лелаш ду.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Цуьнан дӀадахар</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Фонан гӀуллакх ца кхиъна: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Кхочушдина</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Дуьхьал дина</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ца кхиъна</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ХӀора элементехь</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Элемент</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ЖамӀ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Хьанна</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>МогӀа тӀе юхадерза</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ДӀахӀоттор</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Цхьа а хӀума ца дина</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ТӀечӀагӀдан</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ГӀуллакх харжа.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Цхьаъ мукъане а элемент харжа.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Цкъачунна 1000 элемент сов ма харжа.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Элементаш хӀунда сацийна ду дийца.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Дакъа харжа.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Хьал харжа.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Форма ца белла деша.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Керла чулацам</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Дагардарш ца белла деша: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Талламна сацийна</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Тахана керла</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Талламна сацор хӀинца а дӀахӀоттийна дац (6.0.15-review-hold керлачу дахаран гӀулч).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Массо керла чулацам</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Шун модерацин гӀуллакхаш дан бакъо яц (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Модерацин гӀуллакх чекх ца даьлла: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модераци: %count объектана %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total объектах %done: %ok кхочушдина, %refused дуьхьал дина, %failed ца кхиъна</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok кхочушдина, %refused дуьхьал дина, %failed ца кхиъна</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Иза кхин дац.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Цуьнан меттиг яц (арахецна дац).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Шун иза къайладаккха бакъо яц (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Шун иза гайта бакъо яц (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Иза хьалха дуьйна къайлаха ду.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Иза къайлаха дац.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Къайладаьккхина.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Гайтина.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Иза нехийн тускарахь ду: тускар дӀацӀанъе я цигара иза меттахӀоттаде.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Цкъа а арахецна доцу черновик нехийн тускар чу ца долу: иза дӀадайа.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Шун иза дӀадайа бакъо яц (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ДӀадайина.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Шун иза дӀадаккха бакъо яц (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Цуьнан кӀелара элементаш ду: уьш гойтучу чулацаман структурехь дӀадаккха иза.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Иза дӀа ца даьккхина (белхан некъо дӀадаккхар сацийна хила тарло).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Нехийн тускар чу дехьадаьккхина.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Дакъа дац.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Иза хьалха дуьйна хӀокху декъехь ду.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Шун хӀара дакъа тӀедилла бакъо яц (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Дакъа тӀе ца диллина.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Дакъа тӀедиллина.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Хьал дац.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Иза хьалха дуьйна хӀокху хьолехь ду.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Шун хӀара хьал тӀедилла бакъо яц (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Хьал тӀе ца диллина (белхан некъо хийцам сацийна хила тарло).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Хьал тӀедиллина.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Иштта гӀуллакх дац.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Талламна сацор дӀахӀоттийна дац (6.0.15-review-hold керлачу дахаран гӀулч).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Иза хӀунда сацийна ду дийца.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Иза хьалха дуьйна сацийна ду.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Шун иза саца бакъо яц (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Сацор ца хӀоттийна (белхан некъо хийцам сацийна хила тарло).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Сацийна.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Иза сацийна дац.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Шун иза мукъа даккха бакъо яц (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Сацор дӀа ца даьккхина (белхан некъо хийцам сацийна хила тарло).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Мукъа даьккхина; хӀинца а къайлаха ду: шун иза гайта бакъо яц (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Мукъа даьккхина.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,8 +81401,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub-ан проектан сайт /&lt;repository&gt;/ кӀел ю; релятивни хьажоргаша цигахь а, кхечу муьлххачу меттехь а болх бо.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Гулдаро %site-н хӀора агӀо чу ца велла хьаьшша гуш санна схьаэцу, хьажоргаш юха язйо, файлаш копи йо, жамӀ Ӏалашонан папке дӀаяздо. Аша гулдар таллалц а, &quot;Арахеца&quot; тӀетаӀийталц а цхьа а хӀума арахоьцуш дац.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Гулдаро %site-н хӀора агӀо чу ца велла хьаьшша гуш санна схьаэцу, хьажоргаш юха язйо, файлаш копи йо, жамӀ Ӏалашонан папке дӀаяздо. Аша гулдар таллалц а, "Арахеца" тӀетаӀийталц а цхьа а хӀума арахоьцуш дац.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -80777,8 +81449,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ЦӀандинчул тӀаьхьа а дебаг-аракхолладар, формин токен я сессин id долу агӀо цкъа а арахоьцуш яц.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Юхадерзор говзанчашна ду: &quot;Ас хаьа хӀокхо хӀун хуьйцу&quot; билгалде, тегин цӀе юха язъе.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Юхадерзор говзанчашна ду: "Ас хаьа хӀокхо хӀун хуьйцу" билгалде, тегин цӀе юха язъе.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Хьалххе хьажар схьаделла</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Гулдар хоста лур долчу кепехь Ӏалашонан папкера схьадиллу. Хьажорг шуна цхьана сохьтана болх беш ю.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ДӀахӀоттор &gt; Къайле хӀуманаш</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>МогӀамашкахь гойту, масала &quot;GitHub Pages чохь юкъара сайт&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>МогӀамашкахь гойту, масала "GitHub Pages чохь юкъара сайт".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Сайт цу арахецаран файлашка юхаверзар ву; хӀинца а арахецна доцу гулдар хьалха арахеца я дӀатасса деза.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Йоцучу адресашна сайтан шен агӀо.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>Ӏалашо Ӏалашъян ца елира: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Ӏалашо хӀинца а хӀокху догӀаца чу ца гӀо: цуьнан нисдаршкахь &quot;ХӀокху Ӏалашонна кхоьллина деплойн догӀа&quot; харжа.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Ӏалашо хӀинца а хӀокху догӀаца чу ца гӀо: цуьнан нисдаршкахь "ХӀокху Ӏалашонна кхоьллина деплойн догӀа" харжа.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ХӀара гулдар дӀатосу: папкехь юха а тӀаьххьара арахецар хир ду. Болх беш болу сайт ца хийцало.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Хьалха &quot;Ас хийцамаш талла бина&quot; билгалде.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Хьалха "Ас хийцамаш талла бина" билгалде.</translation>
     </message>
     <message>
         <source>Time</source>

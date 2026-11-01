@@ -15151,6 +15151,14 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <translation>Mbongwana ya bobongisi oyo ebombami lokola bafisye: ezalela na yango, mitambwisi, kotambwisa mpe kozongisa.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Makambo ya sika</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Makambo ya sika koleka, oyo esimbami mpo na botaleli, mpe misala na oyo eponami.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Bimisá copie static ya site na GitHub Pages to na hôte git nyonso.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Ebongolami</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Esalemi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nkómbó</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kalasi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Eteni</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Mokeli</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Makambo ya sika</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Makambo oyo esalemaki mpe ebongolamaki sika na site mobimba, oyo ya sika liboso: oyo bapaya batindaki, oyo esimbami mpo na botaleli, ba-brouillon oyo ezali kozela kobimisama. Ponà biloko mpo na kotika yango, kosimba yango, kobomba yango, kolakisa yango, kolongola yango to kotia yango na eteni to ezalela mosusu.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Liste ekokaki kotángama te: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Bosimbi mpo na botaleli ebongisami naino te, yango wana eloko moko te esimbami mpe misala ya bosimbi elakisami te. Etape ya bobongisi 6.0.15-review-hold ebongisaka yango: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Póná na kati ya liste</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Euti na</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Epai ya</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Mokɔ́lɔ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Esalemi (ebimisamaki mbala ya liboso)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ezalela ya sikoyo</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ebimisami</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Brouillon, ebimisamá naino te</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ezali kozela (bondimi to mokɔ́lɔ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Na kitunga ya bosoto</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Esimbami mpo na botaleli</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Esimbami</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Esimbami te</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Ebombami</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Emonanaka</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Etindamaki na</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Siteaccess nyonso</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Kaka oyo audit ekomaki.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Sikoyo: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Nkómbó ya kokɔta to nimero ya mosaleli.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Pónisá</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Longolá ba-filtre</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Biloko</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tii %to na kati ya %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Eloko moko te</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(etángamaki na ms %ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Misala na biloko oyo eponami</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Ponà nyɔ́nsɔ na lokasa oyo</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count eponami</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Mosala</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Ponà mosala</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Tiká bosimbi</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Simbá mpo na botaleli</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Bombá</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Lakisá</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Tyá na kitunga ya bosoto</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Pangusá</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Pesá eteni</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Pesá ezalela</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Ntína</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Esengeli mpo na kosimba; ebombami elongo na bosimbi mpe na audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Ponà eteni</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ezalela</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Ponà ezalela</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Salelá na oyo eponami</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Eloko nyonso etalelami na kotalela bandingisa na yo moko. Kotya na kitunga ya bosoto mpe kopangusa esengaka yo ondimisa. Koleka biloko %count esalemaka na nsima.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Ponà</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Bobimisi</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Etindamaki uta</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Ponà %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>naino te</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(nkómbó te)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Nimero %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Brouillon</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ezali kozela</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ebombami na oyo ya likoló</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Esimbami: etindami ya sika</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Version %version ezali kozela</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Version %version ezali kosalema</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Brouillon, version %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Version %version ebimisami</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ebongisami mpo na %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>adrɛsi te</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ekomamaki te</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Eloko moko te ekokani na ba-filtre oyo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Lakisá nyɔ́nsɔ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Makambo ezali naino te.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na lokasa</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Lakisá biloko %count na lokasa.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Adrɛsi mpe navigateur ya etindami euti na index ya audit, oyo ezali awa te: colonne elobi "ekomamaki te".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adrɛsi mpe navigateur ezali oyo audit ekomaki mpo na eloko (bosimbi ya otomatiki ekomaka yango ntango nyonso; bobimisi mpe bosali kaka epai epelisami), lokola mibeko na yango ya sekele ebombaka yango.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: biloko %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Kopangusa elongolaka biloko libela, elongo na ba-version na yango nyonso mpe mabongoli na yango. Ekoki kozongisama te.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Biloko ekokende na kitunga ya bosoto, epai ekoki kozongisama.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Eloko nyonso etalelami na kotalela bandingisa na yo moko; eloko oyo ezali na biloko na nse na yango etikalaka ndenge ezali (longolá yango na ebongiseli ya makambo). Okosɛngama ondimisa ete ozali yo.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Oyo esalemaka na nsima: lokasa ya bokoli na yango efungwami, mpe mbuma ya eloko moko moko elakisami soki esili.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Biloko oyo eponami</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>mpe %count mosusu</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Tiká</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Eloko moko te esalemaki</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Ntína: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Mosala ezali naino kosalema na nsima.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Bokoli na yango</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Mosala ya nsima elongaki te: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Esili</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Eboyami</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Esalemi te</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Na eloko moko moko</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Eloko</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Mbuma</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Mpo na nini</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Zongá na liste</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Bobongisi</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Eloko moko te esalemaki</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Ndimisá</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Ponà mosala.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Ponà ata eloko moko.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Ponà biloko koleka 1000 te na mbala moko.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Lobá mpo na nini biloko esimbami.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Ponà eteni.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Ponà ezalela.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulaire ekokaki kotángama te.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Makambo ya sika</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Mitango ekokaki kotángama te: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Esimbami mpo na botaleli</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ya sika lelo</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Bosimbi mpo na botaleli ebongisami naino te (etape ya bobongisi 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Makambo nyonso ya sika</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ozali na ndingisa te ya kosala misala ya botaleli (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Mosala ya botaleli esili te: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Botaleli: %action na biloko %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done na kati ya %total biloko: %ok esili, %refused eboyami, %failed esalemi te</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok esili, %refused eboyami, %failed esalemi te</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ezali lisusu te.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ezali na esika te (ebimisami te).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ozali na ndingisa te ya kobomba yango (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ozali na ndingisa te ya kolakisa yango (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ebombami kala.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ebombami te.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Ebombami.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Elakisami.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ezali na kitunga ya bosoto: pangusá to zongisá yango kuna.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Brouillon oyo ebimisamaki te ekoki kokende na kitunga ya bosoto te: pangusá yango.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ozali na ndingisa te ya kopangusa yango (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Epangusami.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ozali na ndingisa te ya kolongola yango (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ezali na biloko na nse na yango: longolá yango na ebongiseli ya makambo, epai bikomami.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Elongolamaki te (nzela ya mosala ekoki kosimba bolongoli).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Etyami na kitunga ya bosoto.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Eteni ezali te.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ezali kala na eteni oyo.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ozali na ndingisa te ya kopesa eteni oyo (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Eteni epesamaki te.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Eteni epesami.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ezalela ezali te.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ezali kala na ezalela oyo.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ozali na ndingisa te ya kopesa ezalela oyo (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ezalela epesamaki te (nzela ya mosala ekoki kosimba mbongwana).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Ezalela epesami.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Mosala ya ndenge wana ezali te.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Bosimbi mpo na botaleli ebongisami te (etape ya bobongisi 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Lobá mpo na nini esimbami.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Esimbami kala.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ozali na ndingisa te ya kosimba yango (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Bosimbi etyamaki te (nzela ya mosala ekoki kosimba mbongwana).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Esimbami.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Esimbami te.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ozali na ndingisa te ya kotika yango (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Bosimbi etikamaki te (nzela ya mosala ekoki kosimba mbongwana).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Etikami; ebombami naino: ozali na ndingisa te ya kolakisa yango (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Etikami.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,8 +81401,8 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Site ya projet GitHub efandi na nse ya /&lt;repository&gt;/; ba-lien ya relatif esalaka kuna mpe esika nyonso mosusu.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>Botongi ezwaka lokasa nyonso ya %site ndenge mopaya oyo akɔti te amonaka yango, ekomaka lisusu ba-lien, ekopiaka ba-fichier mpe ekomaka mbano na dossier ya esika ya kotinda. Eloko moko te ebimisamaka liboso ete otala botongi mpe ofinola &quot;Bimisá&quot;.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Botongi ezwaka lokasa nyonso ya %site ndenge mopaya oyo akɔti te amonaka yango, ekomaka lisusu ba-lien, ekopiaka ba-fichier mpe ekomaka mbano na dossier ya esika ya kotinda. Eloko moko te ebimisamaka liboso ete otala botongi mpe ofinola "Bimisá".</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -80777,8 +81449,8 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Lokasa oyo ezali naino na makambo ya débogage, jeton ya formulaire to ID ya session sima ya bopetoli ebimisamaka ata mokolo moko te.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Bozongisi ezali mpo na bato ya mayele: pona &quot;Nayebi oyo yango ebongoli&quot; mpe komá lisusu nkómbó ya elembo.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Bozongisi ezali mpo na bato ya mayele: pona "Nayebi oyo yango ebongoli" mpe komá lisusu nkómbó ya elembo.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -80786,7 +81458,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>Esika ya kotinda ezali site moko oyo ebimisami na ebombelo git moko. Awa eloko moko te etongami to ebimisami: &quot;Bómbá&quot; ekomaka bibongiseli na settings/override/staticcache.ini.append.php.</translation>
+        <translation>Esika ya kotinda ezali site moko oyo ebimisami na ebombelo git moko. Awa eloko moko te etongami to ebimisami: "Bómbá" ekomaka bibongiseli na settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
@@ -81289,7 +81961,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Fungolá kotala liboso</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Efungolaka botongi ndenge hôte ekopesa yango, uta na dossier ya esika ya kotinda. Lien esalaka mpo na yo ngonga moko.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Bobongisi &gt; Bisekele</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Emonisami na ba-liste, ndakisa &quot;Site ya polele na GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Emonisami na ba-liste, ndakisa "Site ya polele na GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Site ezongaka na ba-fichier ya bobimisi wana; botongi oyo ebimisami naino te esengeli liboso kobimisama to kobwakama.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Lokasa ya site mpo na ba-adresse oyo ezali te.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Esika ya kotinda ekokaki kobombama te: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Esika ya kotinda ekɔtaka naino na fungola oyo te: pona &quot;Fungola ya botindi oyo esalemi mpo na esika ya kotinda oyo&quot; na bibongiseli na yango.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Esika ya kotinda ekɔtaka naino na fungola oyo te: pona "Fungola ya botindi oyo esalemi mpo na esika ya kotinda oyo" na bibongiseli na yango.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <translation>Ebwakaka botongi oyo: dossier ezali lisusu na bobimisi ya nsuka. Site ya bomoi ebongwanaka te.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Pona liboso &quot;Natali mbongwana&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Pona liboso "Natali mbongwana".</translation>
     </message>
     <message>
         <source>Time</source>

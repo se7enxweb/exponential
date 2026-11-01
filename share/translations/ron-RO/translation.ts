@@ -15090,6 +15090,14 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <translation>Modificări ale instalării păstrate ca fișiere: starea lor, rulările, rulare și anulare.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Conținut recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Cel mai nou conținut, ce este reținut pentru verificare și acțiuni asupra unei selecții.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publicați o copie statică a unui site pe GitHub Pages sau pe orice gazdă git.</translation>
     </message>
@@ -80614,6 +80622,670 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modificat</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creat</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Clasă</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secțiune</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Conținut recent</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Conținutul creat și modificat cel mai recent din tot site-ul, de la cel mai nou: ce au trimis vizitatorii, ce este reținut pentru verificare, ciornele care își așteaptă publicarea. Selectați elemente pentru a le elibera, reține, ascunde, afișa, elimina sau muta în altă secțiune sau stare.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Lista nu a putut fi citită: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Reținerea pentru verificare nu este încă configurată, deci nimic nu este reținut și acțiunile de reținere nu sunt oferite. Pasul de actualizare 6.0.15-review-hold o configurează: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrați lista</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De la</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Până la</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dată</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Creat (prima publicare)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Toate</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Situație</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicat</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Ciornă, niciodată publicată</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>În așteptare (a unei aprobări sau a unei date)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>În coșul de reciclare</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Reținut pentru verificare</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Reținut</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nereținut</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Ascuns</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vizibil</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Trimis pe</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Orice acces la site</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Doar ce a înregistrat auditul.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Acum: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Un nume de autentificare sau un ID de utilizator.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrare</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Ștergeți filtrele</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elemente</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from – %to din %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Niciun element</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(citit în %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Acțiuni pentru elementele selectate</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Selectați tot de pe această pagină</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count selectate</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acțiune</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Alegeți o acțiune</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Eliberați reținerea</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Rețineți pentru verificare</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ascundere</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Afișare</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Mutare în coșul de reciclare</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ștergere</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Atribuire secțiune</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Atribuire stare</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Motiv</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Necesar pentru reținere; păstrat împreună cu reținerea și în audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Alegeți o secțiune</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stare</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Alegeți o stare</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aplicați la cele selectate</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Fiecare element este verificat în funcție de propriile dumneavoastră permisiuni. Mutarea în coșul de reciclare și ștergerea cer confirmare. Peste %count elemente, acțiunea rulează în fundal.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selectare</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicare</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Trimis de la</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Selectați %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>încă nu</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(fără nume)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ciornă</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>În așteptare</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ascuns de părintele său</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Reținut: trimitere nouă</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versiunea %version în așteptare</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versiunea %version în lucru</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Ciornă, versiunea %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versiunea %version publicată</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Programat pentru %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nicio adresă</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>neînregistrat</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nimic nu corespunde acestor filtre.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Afișați tot</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Nu există încă niciun conținut.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Pe pagină</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Afișați %count elemente pe pagină.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adresa și browserul unei trimiteri provin din indexul de audit, care nu este disponibil aici: coloana afișează „neînregistrat”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adresa și browserul sunt cele pe care auditul le-a înregistrat pentru element (reținerea automată le înregistrează întotdeauna; publicarea și crearea doar acolo unde este activat), așa cum le păstrează setările sale de confidențialitate.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elemente</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ștergerea elimină elementele definitiv, cu toate versiunile și traducerile lor. Nu poate fi anulată.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementele ajung în coșul de reciclare, de unde pot fi restaurate.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Fiecare element este verificat în funcție de propriile dumneavoastră permisiuni; un element cu subelemente este lăsat așa cum este (eliminați-l din structura de conținut). Vi se va cere să confirmați că sunteți dumneavoastră.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Aceasta rulează în fundal: se deschide pagina sa de progres, iar rezultatul pentru fiecare element este afișat la final.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Elementele selectate</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>și încă %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulare</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nu s-a făcut nimic</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Motiv: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Acțiunea încă rulează în fundal.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Progresul său</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Acțiunea din fundal a eșuat: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Efectuat</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refuzat</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Eșuat</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Pe element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>De ce</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Înapoi la listă</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configurare</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nimic efectuat</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirmare</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Alegeți o acțiune.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Selectați cel puțin un element.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Selectați cel mult 1000 de elemente odată.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Spuneți de ce sunt reținute elementele.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Alegeți secțiunea.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Alegeți starea.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formularul nu a putut fi citit.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Conținut recent</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Numerele nu au putut fi citite: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Reținute pentru verificare</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Noi astăzi</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Reținerea pentru verificare nu este încă configurată (pasul de actualizare 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tot conținutul recent</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Nu aveți voie să rulați acțiuni de moderare (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Acțiunea de moderare nu este completă: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderare: %action pentru %count obiecte</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done din %total obiecte: %ok efectuate, %refused refuzate, %failed eșuate</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok efectuate, %refused refuzate, %failed eșuate</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Nu mai există.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nu are nicio locație (nepublicat).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Nu aveți voie să îl ascundeți (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Nu aveți voie să îl afișați (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Este deja ascuns.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nu este ascuns.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Ascuns.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Afișat.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Este în coșul de reciclare: goliți-l sau restaurați elementul de acolo.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>O ciornă care nu a fost niciodată publicată nu poate ajunge în coșul de reciclare: ștergeți-o.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Nu aveți voie să îl ștergeți (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Șters.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Nu aveți voie să îl eliminați (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Are subelemente: eliminați-l din structura de conținut, unde sunt listate.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nu a fost eliminat (un flux de lucru poate reține eliminarea).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Mutat în coșul de reciclare.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Secțiunea nu există.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Este deja în această secțiune.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Nu aveți voie să atribuiți această secțiune (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Secțiunea nu a fost atribuită.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Secțiune atribuită.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Starea nu există.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Este deja în această stare.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Nu aveți voie să atribuiți această stare (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Starea nu a fost atribuită (un flux de lucru poate reține modificarea).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stare atribuită.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Această acțiune nu există.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Reținerea pentru verificare nu este configurată (pasul de actualizare 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Spuneți de ce este reținut.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Este deja reținut.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Nu aveți voie să îl rețineți (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Reținerea nu a fost aplicată (un flux de lucru poate reține modificarea).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Reținut.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nu este reținut.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Nu aveți voie să îl eliberați (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Reținerea nu a fost eliberată (un flux de lucru poate reține modificarea).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Eliberat; încă ascuns: nu aveți voie să îl afișați (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Eliberat.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80759,7 +81431,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Un site de proiect GitHub se află sub /&lt;repository&gt;/; linkurile relative funcționează acolo și oriunde altundeva.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Un build preia fiecare pagină a %site așa cum o vede un vizitator neautentificat, rescrie linkurile, copiază fișierele și scrie rezultatul în folderul țintei. Nimic nu este publicat până nu verificați build-ul și apăsați Publică.</translation>
     </message>
     <message>
@@ -80807,7 +81479,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>O pagină care după curățare încă mai conține ieșire de depanare, un token de formular sau un id de sesiune nu este publicată niciodată.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
         <translation>O anulare este pentru experți: bifați „Știu ce schimbă aceasta” și tastați din nou numele etichetei.</translation>
     </message>
     <message>
@@ -81319,7 +81991,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Deschide previzualizarea</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Deschide build-ul așa cum îl va servi gazda, din folderul țintei. Linkul funcționează pentru dumneavoastră timp de o oră.</translation>
     </message>
     <message>
@@ -81495,7 +82167,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Configurare &gt; Secrete</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
         <translation>Afișat în liste, de exemplu „Site public pe GitHub Pages”.</translation>
     </message>
     <message>
@@ -81703,7 +82375,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Site-ul revine la fișierele acelei publicări; un build încă nepublicat trebuie mai întâi publicat sau aruncat.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Pagina proprie a site-ului pentru adresele care nu există.</translation>
     </message>
     <message>
@@ -81711,7 +82383,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Ținta nu a putut fi salvată: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
         <translation>Ținta nu se autentifică încă cu această cheie: alegeți „O cheie de implementare creată pentru această țintă” în setările ei.</translation>
     </message>
     <message>
@@ -81747,7 +82419,7 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <translation>Aruncă acest build: folderul conține din nou ultima publicare. Site-ul live nu se schimbă.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <source>Tick "I have checked the changes" first.</source>
         <translation>Bifați mai întâi „Am verificat modificările”.</translation>
     </message>
     <message>

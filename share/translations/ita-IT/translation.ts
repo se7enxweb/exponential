@@ -15658,6 +15658,14 @@ Nota: I pacchetti non verranno disinstallati.</translation>
         <translation>Modifiche all&apos;installazione conservate come file: il loro stato, le esecuzioni, eseguire e annullare.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Contenuti recenti</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>I contenuti più recenti, ciò che è trattenuto per revisione e azioni su una selezione.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Pubblica una copia statica di un sito su GitHub Pages o su qualsiasi host git.</translation>
     </message>
@@ -81991,6 +81999,670 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modificato</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creato</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classe</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sezione</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Autore</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contenuti recenti</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>I contenuti creati e modificati più di recente in tutto il sito, dal più nuovo: ciò che i visitatori hanno inviato, ciò che è trattenuto per revisione, le bozze in attesa di pubblicazione. Seleziona gli elementi per rilasciarli, trattenerli, nasconderli, mostrarli, rimuoverli o spostarli in un&apos;altra sezione o in un altro stato.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Impossibile leggere l&apos;elenco: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Il blocco per revisione non è ancora configurato, quindi nulla è trattenuto e le azioni di blocco non sono disponibili. Il passo di aggiornamento 6.0.15-review-hold lo configura: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtra l&apos;elenco</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>A</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Creato (prima pubblicazione)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tutti</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Situazione</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Pubblicato</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Bozza, mai pubblicata</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>In attesa (di approvazione o di una data)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Nel cestino</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Trattenuto per revisione</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Trattenuto</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Non trattenuto</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Nascosto</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visibile</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Inviato su</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Qualsiasi siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Solo ciò che l&apos;audit ha registrato.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ora: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Un login o un ID utente.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtra</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Azzera i filtri</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementi</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>Da %from a %to di %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nessun elemento</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(letto in %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Azioni sugli elementi selezionati</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Seleziona tutto in questa pagina</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count selezionati</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Azione</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Scegli un&apos;azione</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Rilascia il blocco</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Trattieni per revisione</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Nascondi</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Rivela</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Sposta nel cestino</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Assegna sezione</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Assegna stato</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Motivo</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Necessario per trattenere; conservato con il blocco e nell&apos;audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Scegli una sezione</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Scegli uno stato</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Applica ai selezionati</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Ogni elemento viene verificato in base ai tuoi permessi. Lo spostamento nel cestino e l&apos;eliminazione chiedono una conferma. Oltre %count elementi l&apos;azione viene eseguita in background.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Seleziona</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Pubblicazione</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Inviato da</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Seleziona %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>non ancora</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(senza nome)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Bozza</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>In attesa</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Nascosto dal genitore</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Trattenuto: nuovo invio</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versione %version in attesa</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versione %version in lavorazione</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Bozza, versione %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versione %version pubblicata</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Programmato per il %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nessun indirizzo</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>non registrato</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nessun risultato per questi filtri.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mostra tutto</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Non ci sono ancora contenuti.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pagina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mostra %count elementi per pagina.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>L&apos;indirizzo e il browser di un invio provengono dall&apos;indice dell&apos;audit, che qui non è disponibile: la colonna indica «non registrato».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>L&apos;indirizzo e il browser sono quelli che l&apos;audit ha registrato per l&apos;elemento (il blocco automatico li registra sempre; la pubblicazione e la creazione solo dove è attivato), come li conservano le sue impostazioni sulla privacy.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elementi</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>L&apos;eliminazione rimuove gli elementi definitivamente, con tutte le loro versioni e traduzioni. Non può essere annullata.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Gli elementi vanno nel cestino, da dove possono essere ripristinati.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Ogni elemento viene verificato in base ai tuoi permessi; un elemento con sottoelementi viene lasciato com&apos;è (rimuovilo nella struttura dei contenuti). Ti verrà chiesto di confermare la tua identità.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>L&apos;azione viene eseguita in background: si apre la sua pagina di avanzamento e, al termine, viene mostrato il risultato per ogni elemento.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Gli elementi selezionati</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>e altri %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annulla</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Non è stato fatto nulla</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Motivo: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>L&apos;azione è ancora in esecuzione in background.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Il suo avanzamento</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>L&apos;azione in background non è riuscita: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fatto</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rifiutato</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Non riuscito</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per elemento</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elemento</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Risultato</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Motivo</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Torna all&apos;elenco</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Impostazioni</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nulla di fatto</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Conferma</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Scegli un&apos;azione.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Seleziona almeno un elemento.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Seleziona al massimo 1000 elementi alla volta.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Indica perché gli elementi sono trattenuti.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Scegli la sezione.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Scegli lo stato.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Impossibile leggere il modulo.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Contenuti recenti</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Impossibile leggere i conteggi: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Trattenuti per revisione</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nuovi oggi</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Il blocco per revisione non è ancora configurato (il passo di aggiornamento 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tutti i contenuti recenti</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Non hai il permesso di eseguire azioni di moderazione (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>L&apos;azione di moderazione non è completa: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderazione: %action su %count oggetti</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done di %total oggetti: %ok eseguiti, %refused rifiutati, %failed non riusciti</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok eseguiti, %refused rifiutati, %failed non riusciti</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Non esiste più.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Non ha una collocazione (non pubblicato).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Non hai il permesso di nasconderlo (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Non hai il permesso di rivelarlo (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>È già nascosto.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Non è nascosto.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Nascosto.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Rivelato.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>È nel cestino: svuota il cestino o ripristinalo da lì.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Una bozza mai pubblicata non può andare nel cestino: eliminala.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Non hai il permesso di eliminarlo (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Eliminato.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Non hai il permesso di rimuoverlo (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ha dei sottoelementi: rimuovilo nella struttura dei contenuti, dove sono elencati.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Non è stato rimosso (un workflow potrebbe trattenere la rimozione).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Spostato nel cestino.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>La sezione non esiste.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>È già in questa sezione.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Non hai il permesso di assegnare questa sezione (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>La sezione non è stata assegnata.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sezione assegnata.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Lo stato non esiste.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>È già in questo stato.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Non hai il permesso di assegnare questo stato (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Lo stato non è stato assegnato (un workflow potrebbe trattenere la modifica).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stato assegnato.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Questa azione non esiste.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Il blocco per revisione non è configurato (il passo di aggiornamento 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Indica perché è trattenuto.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>È già trattenuto.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Non hai il permesso di trattenerlo (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Il blocco non è stato applicato (un workflow potrebbe trattenere la modifica).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Trattenuto.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Non è trattenuto.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Non hai il permesso di rilasciarlo (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Il blocco non è stato rilasciato (un workflow potrebbe trattenere la modifica).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Rilasciato; ancora nascosto: non hai il permesso di rivelarlo (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Rilasciato.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -82026,7 +82698,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>a job is going on</source>
-        <translation>un&apos;attività è in corso</translation>
+        <translation>un'attività è in corso</translation>
     </message>
     <message>
         <source>build to check</source>
@@ -82069,7 +82741,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
-        <translation>%path è di %size, più di quanto l&apos;host consenta per un file.</translation>
+        <translation>%path è di %size, più di quanto l'host consenta per un file.</translation>
     </message>
     <message>
         <source>%percent % of the limit</source>
@@ -82101,7 +82773,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>2. The host</source>
-        <translation>2. L&apos;host</translation>
+        <translation>2. L'host</translation>
     </message>
     <message>
         <source>3. Signing in to the repository</source>
@@ -82136,12 +82808,12 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Un sito di progetto GitHub si trova sotto /&lt;repository&gt;/; i link relativi funzionano lì e ovunque.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Una build recupera ogni pagina di %site come la vede un visitatore non connesso, riscrive i link, copia i file e scrive il risultato nella cartella della destinazione. Nulla viene pubblicato finché non verifichi la build e premi Pubblica.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
-        <translation>Un&apos;espressione cron, per esempio 0 3 * * *</translation>
+        <translation>Un'espressione cron, per esempio 0 3 * * *</translation>
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
@@ -82149,7 +82821,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>Una chiave di deploy permette a questa installazione di eseguire il push su un solo repository via SSH e da nessun&apos;altra parte. La sua metà privata resta in Impostazioni &gt; Segreti; viene mostrata solo la metà pubblica.</translation>
+        <translation>Una chiave di deploy permette a questa installazione di eseguire il push su un solo repository via SSH e da nessun'altra parte. La sua metà privata resta in Impostazioni &gt; Segreti; viene mostrata solo la metà pubblica.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -82157,19 +82829,19 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>Una chiave di deploy accede via SSH: cambia l&apos;indirizzo git con quello SSH (git@github.com:owner/repo.git).</translation>
+        <translation>Una chiave di deploy accede via SSH: cambia l'indirizzo git con quello SSH (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>Un&apos;attività è in corso, avviata da %user</translation>
+        <translation>Un'attività è in corso, avviata da %user</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>Un&apos;attività di questa destinazione è ancora in corso (%detail). Attendi che finisca.</translation>
+        <translation>Un'attività di questa destinazione è ancora in corso (%detail). Attendi che finisca.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>Un&apos;attività di questa destinazione è ancora in corso. Attendi che finisca.</translation>
+        <translation>Un'attività di questa destinazione è ancora in corso. Attendi che finisca.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
@@ -82184,8 +82856,8 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Una pagina che dopo la pulizia contiene ancora output di debug, un token di modulo o un id di sessione non viene mai pubblicata.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Il ripristino è per esperti: spunta &quot;So cosa cambia&quot; e digita di nuovo il nome del tag.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Il ripristino è per esperti: spunta "So cosa cambia" e digita di nuovo il nome del tag.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -82333,7 +83005,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
-        <translation>Rispetto all&apos;ultima pubblicazione.</translation>
+        <translation>Rispetto all'ultima pubblicazione.</translation>
     </message>
     <message>
         <source>Credential</source>
@@ -82369,7 +83041,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Vuoto: l&apos;indirizzo del sito. Altrimenti un indirizzo interno dello stesso sito.</translation>
+        <translation>Vuoto: l'indirizzo del sito. Altrimenti un indirizzo interno dello stesso sito.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -82589,7 +83261,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Crea prima il repository sull&apos;host; va bene anche vuoto.</translation>
+        <translation>Crea prima il repository sull'host; va bene anche vuoto.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -82689,15 +83361,15 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Solo con un token. env:NAME legge invece una variabile d&apos;ambiente del server.</translation>
+        <translation>Solo con un token. env:NAME legge invece una variabile d'ambiente del server.</translation>
     </message>
     <message>
         <source>Open the preview</source>
-        <translation>Apri l&apos;anteprima</translation>
+        <translation>Apri l'anteprima</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
-        <translation>Apre la build come la servirà l&apos;host, dalla cartella della destinazione. Il link funziona per te per un&apos;ora.</translation>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Apre la build come la servirà l'host, dalla cartella della destinazione. Il link funziona per te per un'ora.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -82872,12 +83544,12 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Impostazioni &gt; Segreti</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Mostrato negli elenchi, per esempio &quot;Sito pubblico su GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Mostrato negli elenchi, per esempio "Sito pubblico su GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>L&apos;accesso con una GitHub App arriverà con l&apos;integrazione GitHub.</translation>
+        <translation>L'accesso con una GitHub App arriverà con l'integrazione GitHub.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -82985,11 +83657,11 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
-        <translation>La build è uguale all&apos;ultima pubblicazione: non c&apos;è nulla da pubblicare.</translation>
+        <translation>La build è uguale all'ultima pubblicazione: non c'è nulla da pubblicare.</translation>
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>La build è stata scartata: la cartella contiene di nuovo l&apos;ultima pubblicazione.</translation>
+        <translation>La build è stata scartata: la cartella contiene di nuovo l'ultima pubblicazione.</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
@@ -83005,23 +83677,23 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>Impossibile preparare l&apos;attività: %detail</translation>
+        <translation>Impossibile preparare l'attività: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>Impossibile avviare l&apos;attività.</translation>
+        <translation>Impossibile avviare l'attività.</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>L&apos;attività è terminata. Caricamento del rapporto.</translation>
+        <translation>L'attività è terminata. Caricamento del rapporto.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
-        <translation>L&apos;attività richiede un utente connesso.</translation>
+        <translation>L'attività richiede un utente connesso.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>L&apos;attività è stata avviata ma non ha comunicato l&apos;id del processo. Controlla %detail.</translation>
+        <translation>L'attività è stata avviata ma non ha comunicato l'id del processo. Controlla %detail.</translation>
     </message>
     <message>
         <source>The key</source>
@@ -83037,7 +83709,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
-        <translation>L&apos;elenco delle pagine per i motori di ricerca; richiede l&apos;indirizzo pubblico.</translation>
+        <translation>L'elenco delle pagine per i motori di ricerca; richiede l'indirizzo pubblico.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
@@ -83045,7 +83717,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>Impossibile seguire l&apos;avanzamento. Ricarica la pagina per vedere a che punto è l&apos;attività.</translation>
+        <translation>Impossibile seguire l'avanzamento. Ricarica la pagina per vedere a che punto è l'attività.</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -83057,7 +83729,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
-        <translation>L&apos;archivio dei segreti non è ancora configurato (./console exp:upgrade --apply crea la sua tabella), quindi non è possibile conservare alcuna chiave.</translation>
+        <translation>L'archivio dei segreti non è ancora configurato (./console exp:upgrade --apply crea la sua tabella), quindi non è possibile conservare alcuna chiave.</translation>
     </message>
     <message>
         <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
@@ -83065,7 +83737,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>Impossibile scrivere l&apos;impostazione: %problem</translation>
+        <translation>Impossibile scrivere l'impostazione: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
@@ -83080,7 +83752,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Il sito torna ai file di quella pubblicazione; una build non ancora pubblicata deve prima essere pubblicata o scartata.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>La pagina del sito per gli indirizzi che non esistono.</translation>
     </message>
     <message>
@@ -83088,8 +83760,8 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <translation>Impossibile salvare la destinazione: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>La destinazione non accede ancora con questa chiave: scegli &quot;Una chiave di deploy creata per questa destinazione&quot; nelle sue impostazioni.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>La destinazione non accede ancora con questa chiave: scegli "Una chiave di deploy creata per questa destinazione" nelle sue impostazioni.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -83097,7 +83769,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
-        <translation>Non c&apos;è ancora nessuna build da verificare.</translation>
+        <translation>Non c'è ancora nessuna build da verificare.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
@@ -83105,7 +83777,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
-        <translation>Questa pagina segue l&apos;attività mentre procede; l&apos;attività continua in background quando la pagina viene chiusa.</translation>
+        <translation>Questa pagina segue l'attività mentre procede; l'attività continua in background quando la pagina viene chiusa.</translation>
     </message>
     <message>
         <source>This target has no deploy key yet.</source>
@@ -83121,11 +83793,11 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
-        <translation>Scarta questa build: la cartella contiene di nuovo l&apos;ultima pubblicazione. Il sito live non cambia.</translation>
+        <translation>Scarta questa build: la cartella contiene di nuovo l'ultima pubblicazione. Il sito live non cambia.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Spunta prima &quot;Ho verificato le modifiche&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Spunta prima "Ho verificato le modifiche".</translation>
     </message>
     <message>
         <source>Time</source>
@@ -83161,11 +83833,11 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Cosa ha fatto l&apos;attività e il suo registro. Un&apos;attività avviata qui prosegue in background quando questa pagina viene chiusa.</translation>
+        <translation>Cosa ha fatto l'attività e il suo registro. Un'attività avviata qui prosegue in background quando questa pagina viene chiusa.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
-        <translation>Ciò che l&apos;attività ha stampato come errori</translation>
+        <translation>Ciò che l'attività ha stampato come errori</translation>
     </message>
     <message>
         <source>What the pages name, and every image of published content</source>
@@ -83189,7 +83861,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>Dove portano i link a ciò che la copia non contiene (la ricerca, l&apos;accesso).</translation>
+        <translation>Dove portano i link a ciò che la copia non contiene (la ricerca, l'accesso).</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
@@ -83297,7 +83969,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>proc_open è disabilitato, quindi qui non è possibile avviare un&apos;attività. Usa ./console exp:static:build sul server.</translation>
+        <translation>proc_open è disabilitato, quindi qui non è possibile avviare un'attività. Usa ./console exp:static:build sul server.</translation>
     </message>
     <message>
         <source>publish</source>
@@ -83341,7 +84013,7 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: scritto nel file CNAME. Punta il DNS del dominio all&apos;host come indicato da quest&apos;ultimo; l&apos;HTTPS può richiedere un po&apos; di tempo per attivarsi.</translation>
+        <translation>www.example.com: scritto nel file CNAME. Punta il DNS del dominio all'host come indicato da quest'ultimo; l'HTTPS può richiedere un po' di tempo per attivarsi.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>

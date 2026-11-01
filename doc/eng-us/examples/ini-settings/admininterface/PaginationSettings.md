@@ -2,14 +2,14 @@
 title: admininterface.ini [PaginationSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [PaginationSettings] in admininterface.ini: DefaultItemsPerPage, ItemsPerPage, ItemsPerPageList_search_stats, ItemsPerPageList_shop_currencylist, ItemsPerPageList_shop_productsoverview, ItemsPerPageList_workflow_processlist, ItemsPerPageList_setup_session"
-keywords: admininterface.ini, PaginationSettings, INI, setting, DefaultItemsPerPage, ItemsPerPage, ItemsPerPageList_search_stats, ItemsPerPageList_shop_currencylist, ItemsPerPageList_shop_productsoverview, ItemsPerPageList_workflow_processlist, ItemsPerPageList_setup_session
+summary: "The settings of [PaginationSettings] in admininterface.ini: DefaultItemsPerPage, ItemsPerPage, ItemsPerPageList_search_stats, ItemsPerPageList_shop_currencylist, ItemsPerPageList_shop_productsoverview, ItemsPerPageList_workflow_processlist, ItemsPerPageList_setup_session ..."
+keywords: admininterface.ini, PaginationSettings, INI, setting, DefaultItemsPerPage, ItemsPerPage, ItemsPerPageList_search_stats, ItemsPerPageList_shop_currencylist, ItemsPerPageList_shop_productsoverview, ItemsPerPageList_workflow_processlist, ItemsPerPageList_setup_session, ItemsPerPageList_moderation_recent
 type: generated
 generated: exp:help:examples
 ---
 # admininterface.ini [PaginationSettings]
 
-The block `[PaginationSettings]` of `settings/admininterface.ini`, with 7 setting(s).
+The block `[PaginationSettings]` of `settings/admininterface.ini`, with 8 setting(s).
 
 Never edit `settings/admininterface.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -161,6 +161,27 @@ ItemsPerPageList_setup_session[]
 ItemsPerPageList_setup_session[]=50
 ItemsPerPageList_setup_session[]=25
 ItemsPerPageList_setup_session[]=100
+*/ ?>
+```
+
+## ItemsPerPageList_moderation_recent
+
+> Setup > Recent content (moderation/recent): the objects shown at once. The first size is the default; the viewer's  
+> choice is remembered (the preference admin\_moderation\_limit). At most 1000 are shown whatever is set here.  
+
+Default: a list of 5: `25`, `100`, `300`, `700`, `1000`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/admininterface.ini.append.php
+[PaginationSettings]
+# an empty "ItemsPerPageList_moderation_recent[]" first replaces the shipped list; without it the items are added
+ItemsPerPageList_moderation_recent[]
+ItemsPerPageList_moderation_recent[]=25
+ItemsPerPageList_moderation_recent[]=100
+ItemsPerPageList_moderation_recent[]=300
+ItemsPerPageList_moderation_recent[]=700
+ItemsPerPageList_moderation_recent[]=1000
 */ ?>
 ```
 

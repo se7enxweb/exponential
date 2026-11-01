@@ -15090,8 +15090,16 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
         <translation>Veranderinge aan die installasie as lêers bewaar: hul toestand, die lopies, uitvoer en terugrol.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Onlangse inhoud</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Die nuutste inhoud, wat vir hersiening teruggehou word, en aksies op &apos;n keuse.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Publiseer &apos;n statiese kopie van &apos;n werf na GitHub Pages of enige git-gasheer.</translation>
+        <translation>Publiseer 'n statiese kopie van 'n werf na GitHub Pages of enige git-gasheer.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22099,7 +22107,7 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
     </message>
     <message>
         <source>Publish a static copy to GitHub Pages or any git host</source>
-        <translation>Publiseer &apos;n statiese kopie na GitHub Pages of enige git-gasheer</translation>
+        <translation>Publiseer 'n statiese kopie na GitHub Pages of enige git-gasheer</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -22107,7 +22115,7 @@ Let wel: Die pakkette sal nie gedeïnstalleer word nie.</translation>
     </message>
     <message>
         <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
-        <translation>Die statiese kas bedien bladsye vanaf hierdie bediener. Gebruik statiese publisering om &apos;n statiese kopie van &apos;n werf elders te publiseer, op GitHub Pages of enige git-gasheer.</translation>
+        <translation>Die statiese kas bedien bladsye vanaf hierdie bediener. Gebruik statiese publisering om 'n statiese kopie van 'n werf elders te publiseer, op GitHub Pages of enige git-gasheer.</translation>
     </message>
 </context>
 <context>
@@ -76167,7 +76175,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
-        <translation>Publiseer &apos;n statiese kopie van &apos;n werf na GitHub Pages of enige git-gasheer.</translation>
+        <translation>Publiseer 'n statiese kopie van 'n werf na GitHub Pages of enige git-gasheer.</translation>
     </message>
     <message>
         <source>Static publishing</source>
@@ -80614,6 +80622,670 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Gewysig</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Geskep</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Afdeling</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Skepper</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Onlangse inhoud</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Die mees onlangs geskepte en gewysigde inhoud van die hele werf, nuutste eerste: wat besoekers ingedien het, wat vir hersiening teruggehou word, konsepte wat op hul publikasie wag. Kies elemente om hulle vry te stel, terug te hou, te versteek, sigbaar te maak, te verwyder of na &apos;n ander afdeling of toestand te skuif.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Die lys kon nie gelees word nie: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Die terughouding vir hersiening is nog nie opgestel nie, dus word niks teruggehou nie en die terughou-aksies word nie aangebied nie. Die opgraderingstap 6.0.15-review-hold stel dit op: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtreer die lys</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Van</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Tot</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Geskep (eerste gepubliseer)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alles</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Publikasiestatus</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Gepubliseer</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Konsep, nooit gepubliseer nie</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Hangend (wag op goedkeuring of &apos;n datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>In die asblik</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Teruggehou vir hersiening</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Teruggehou</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nie teruggehou nie</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Versteek</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sigbaar</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Ingedien via</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Enige werftoegang</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Slegs wat die ouditering aangeteken het.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nou: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>&apos;n Aanmeldnaam of &apos;n gebruiker-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtreer</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Vee filters uit</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elemente</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from tot %to van %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Geen element nie</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(gelees in %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Aksies op die gekose elemente</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Kies alles op hierdie bladsy</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count gekies</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksie</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Kies &apos;n aksie</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Hef die terughouding op</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Hou terug vir hersiening</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Versteek</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Maak sigbaar</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Skuif na asblik</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Skrap</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Ken afdeling toe</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Ken toestand toe</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Rede</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Nodig om terug te hou; word saam met die terughouding en in die ouditering bewaar.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Kies &apos;n afdeling</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Toestand</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Kies &apos;n toestand</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Pas toe op die gekose</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Elke element word teen u eie toestemmings nagegaan. Skuif na die asblik en skrap vra u om te bevestig. Meer as %count elemente loop in die agtergrond.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Kies</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikasie</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Ingedien vanaf</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Kies %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>nog nie</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(geen naam nie)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Konsep</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Hangend</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Versteek deur sy ouer</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Teruggehou: nuwe indiening</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Weergawe %version hangend</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Weergawe %version word bewerk</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Konsep, weergawe %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Weergawe %version gepubliseer</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Geskeduleer vir %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>geen adres nie</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nie aangeteken nie</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Niks pas by hierdie filters nie.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wys alles</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Daar is nog geen inhoud nie.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per bladsy</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Wys %count elemente per bladsy.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Die adres en die blaaier van &apos;n indiening kom uit die ouditeringsindeks, wat hier nie beskikbaar is nie: die kolom sê &quot;nie aangeteken nie&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Die adres en die blaaier is dié wat die ouditering vir die element aangeteken het (die outomatiese terughouding teken hulle altyd aan; publiseer en skep slegs waar dit aangeskakel is), soos sy privaatheidsinstellings hulle bewaar.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elemente</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Skrap verwyder die elemente vir altyd, met al hul weergawes en vertalings. Dit kan nie ongedaan gemaak word nie.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Die elemente gaan na die asblik, waaruit hulle herstel kan word.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Elke element word teen u eie toestemmings nagegaan; &apos;n element met subelemente word gelaat soos dit is (verwyder dit in die inhoudstruktuur). U sal gevra word om te bevestig dat dit u is.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dit loop in die agtergrond: sy vorderingsbladsy maak oop, en die resultaat per element word gewys wanneer dit klaar is.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Die gekose elemente</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>en nog %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselleer</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Niks is gedoen nie</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Rede: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Die aksie loop nog in die agtergrond.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Sy vordering</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Die agtergrondaksie het misluk: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Gedoen</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Geweier</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Misluk</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Waarom</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Terug na die lys</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Opstelling</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Niks gedoen nie</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bevestig</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Kies &apos;n aksie.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Kies ten minste een element.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Kies hoogstens 1000 elemente op &apos;n slag.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sê waarom die elemente teruggehou word.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Kies die afdeling.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Kies die toestand.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Die vorm kon nie gelees word nie.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Onlangse inhoud</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Die tellings kon nie gelees word nie: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Teruggehou vir hersiening</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nuut vandag</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Die terughouding vir hersiening is nog nie opgestel nie (die opgraderingstap 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Alle onlangse inhoud</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>U mag nie moderasie-aksies uitvoer nie (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Die moderasie-aksie is nie voltooi nie: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasie: %action op %count objekte</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done van %total objekte: %ok gedoen, %refused geweier, %failed misluk</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok gedoen, %refused geweier, %failed misluk</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Dit bestaan nie meer nie.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Dit het geen ligging nie (nie gepubliseer nie).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>U mag dit nie versteek nie (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>U mag dit nie sigbaar maak nie (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Dit is reeds versteek.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Dit is nie versteek nie.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Versteek.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Sigbaar gemaak.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Dit is in die asblik: maak dit daar leeg of herstel dit daar.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>&apos;n Konsep wat nooit gepubliseer is nie, kan nie na die asblik gaan nie: skrap dit.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>U mag dit nie skrap nie (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Geskrap.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>U mag dit nie verwyder nie (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Dit het subelemente: verwyder dit in die inhoudstruktuur, waar hulle gelys word.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Dit is nie verwyder nie (&apos;n werkvloei hou dalk die verwydering terug).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Na die asblik geskuif.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Die afdeling bestaan nie.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Dit is reeds in hierdie afdeling.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>U mag nie hierdie afdeling toeken nie (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Die afdeling is nie toegeken nie.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Afdeling toegeken.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Die toestand bestaan nie.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Dit is reeds in hierdie toestand.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>U mag nie hierdie toestand toeken nie (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Die toestand is nie toegeken nie (&apos;n werkvloei hou dalk die verandering terug).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Toestand toegeken.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Daar is nie so &apos;n aksie nie.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Die terughouding vir hersiening is nie opgestel nie (die opgraderingstap 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sê waarom dit teruggehou word.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Dit word reeds teruggehou.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>U mag dit nie terughou nie (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Die terughouding is nie geplaas nie (&apos;n werkvloei hou dalk die verandering terug).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Teruggehou.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Dit word nie teruggehou nie.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>U mag dit nie vrystel nie (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Die terughouding is nie opgehef nie (&apos;n werkvloei hou dalk die verandering terug).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Vrygestel; steeds versteek: u mag dit nie sigbaar maak nie (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Vrygestel.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80625,7 +81297,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Publish a free static copy of your site on GitHub Pages:</source>
-        <translation>Publiseer &apos;n gratis statiese kopie van u werf op GitHub Pages:</translation>
+        <translation>Publiseer 'n gratis statiese kopie van u werf op GitHub Pages:</translation>
     </message>
     <message>
         <source>Stale pages</source>
@@ -80649,7 +81321,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>a job is going on</source>
-        <translation>&apos;n taak is aan die gang</translation>
+        <translation>'n taak is aan die gang</translation>
     </message>
     <message>
         <source>build to check</source>
@@ -80661,7 +81333,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>make a target</source>
-        <translation>skep &apos;n teiken</translation>
+        <translation>skep 'n teiken</translation>
     </message>
     <message>
         <source>never</source>
@@ -80716,7 +81388,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
-        <translation>/bewaarplek/ vir &apos;n GitHub-projekwerf; leeg vir &apos;n eie domein of &apos;n gebruikerswerf.</translation>
+        <translation>/bewaarplek/ vir 'n GitHub-projekwerf; leeg vir 'n eie domein of 'n gebruikerswerf.</translation>
     </message>
     <message>
         <source>1. The site</source>
@@ -80756,79 +81428,79 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
-        <translation>&apos;n GitHub-projekwerf woon onder /&lt;repository&gt;/; relatiewe skakels werk daar en oral elders.</translation>
+        <translation>'n GitHub-projekwerf woon onder /&lt;repository&gt;/; relatiewe skakels werk daar en oral elders.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>&apos;n Bou haal elke bladsy van %site af soos &apos;n besoeker wat nie aangemeld is nie dit sien, herskryf die skakels, kopieer die lêers en skryf die resultaat na die teiken se gids. Niks word gepubliseer voordat u die bou nagaan en op Publiseer druk nie.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>'n Bou haal elke bladsy van %site af soos 'n besoeker wat nie aangemeld is nie dit sien, herskryf die skakels, kopieer die lêers en skryf die resultaat na die teiken se gids. Niks word gepubliseer voordat u die bou nagaan en op Publiseer druk nie.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
-        <translation>&apos;n Cron-uitdrukking, byvoorbeeld 0 3 * * *</translation>
+        <translation>'n Cron-uitdrukking, byvoorbeeld 0 3 * * *</translation>
     </message>
     <message>
         <source>A deploy key is kept as the secret %secret.</source>
-        <translation>&apos;n Ontplooiingsleutel word as die geheim %secret bewaar.</translation>
+        <translation>'n Ontplooiingsleutel word as die geheim %secret bewaar.</translation>
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>&apos;n Ontplooiingsleutel laat hierdie installasie toe om oor SSH na een bewaarplek te stoot en nêrens anders nie. Sy private helfte bly in Opstelling &gt; Geheime; slegs die publieke helfte word gewys.</translation>
+        <translation>'n Ontplooiingsleutel laat hierdie installasie toe om oor SSH na een bewaarplek te stoot en nêrens anders nie. Sy private helfte bly in Opstelling &gt; Geheime; slegs die publieke helfte word gewys.</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
-        <translation>&apos;n Ontplooiingsleutel wat vir hierdie teiken gemaak is</translation>
+        <translation>'n Ontplooiingsleutel wat vir hierdie teiken gemaak is</translation>
     </message>
     <message>
         <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
-        <translation>&apos;n Ontplooiingsleutel meld oor SSH aan: verander die git-adres na die SSH-adres (git@github.com:owner/repo.git).</translation>
+        <translation>'n Ontplooiingsleutel meld oor SSH aan: verander die git-adres na die SSH-adres (git@github.com:owner/repo.git).</translation>
     </message>
     <message>
         <source>A job is going on, started by %user</source>
-        <translation>&apos;n Taak is aan die gang, begin deur %user</translation>
+        <translation>'n Taak is aan die gang, begin deur %user</translation>
     </message>
     <message>
         <source>A job of this target is still going on (%detail). Wait for it to end.</source>
-        <translation>&apos;n Taak van hierdie teiken is nog aan die gang (%detail). Wag totdat dit klaar is.</translation>
+        <translation>'n Taak van hierdie teiken is nog aan die gang (%detail). Wag totdat dit klaar is.</translation>
     </message>
     <message>
         <source>A job of this target is still going on. Wait for it to end.</source>
-        <translation>&apos;n Taak van hierdie teiken is nog aan die gang. Wag totdat dit klaar is.</translation>
+        <translation>'n Taak van hierdie teiken is nog aan die gang. Wag totdat dit klaar is.</translation>
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>&apos;n Skakel van die bladsy /news/ na die bladsy /about-us/team sal geskryf word as</translation>
+        <translation>'n Skakel van die bladsy /news/ na die bladsy /about-us/team sal geskryf word as</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>&apos;n Nuwe ontplooiingsleutel is gemaak. Voeg nou sy publieke helfte by die bewaarplek.</translation>
+        <translation>'n Nuwe ontplooiingsleutel is gemaak. Voeg nou sy publieke helfte by die bewaarplek.</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
-        <translation>&apos;n Bladsy wat ná die stroping steeds ontfoutingsuitvoer, &apos;n vormteken of &apos;n sessie-ID bevat, word nooit gepubliseer nie.</translation>
+        <translation>'n Bladsy wat ná die stroping steeds ontfoutingsuitvoer, 'n vormteken of 'n sessie-ID bevat, word nooit gepubliseer nie.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>&apos;n Terugrolling is vir kenners: merk &quot;Ek weet wat dit verander&quot; en tik die naam van die etiket weer.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>'n Terugrolling is vir kenners: merk "Ek weet wat dit verander" en tik die naam van die etiket weer.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>&apos;n Werf mag tot %site groot wees, een lêer tot %file, met ongeveer 100 GB verkeer per maand. Op &apos;n gratis plan moet die bewaarplek publiek wees. GitHub Pages is nie bedoel vir winkels of ander kommersiële transaksies nie.</translation>
+        <translation>'n Werf mag tot %site groot wees, een lêer tot %file, met ongeveer 100 GB verkeer per maand. Op 'n gratis plan moet die bewaarplek publiek wees. GitHub Pages is nie bedoel vir winkels of ander kommersiële transaksies nie.</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>&apos;n Teiken is een werf wat na een git-bewaarplek gepubliseer word. Niks word hier gebou of gepubliseer nie: Stoor skryf die instellings na settings/override/staticcache.ini.append.php.</translation>
+        <translation>'n Teiken is een werf wat na een git-bewaarplek gepubliseer word. Niks word hier gebou of gepubliseer nie: Stoor skryf die instellings na settings/override/staticcache.ini.append.php.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
-        <translation>&apos;n Teiken is een werf wat na een plek gepubliseer word, byvoorbeeld u publieke werf op GitHub Pages.</translation>
+        <translation>'n Teiken is een werf wat na een plek gepubliseer word, byvoorbeeld u publieke werf op GitHub Pages.</translation>
     </message>
     <message>
         <source>A token from Setup &gt; Secrets</source>
-        <translation>&apos;n Toegangsteken uit Opstelling &gt; Geheime</translation>
+        <translation>'n Toegangsteken uit Opstelling &gt; Geheime</translation>
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>&apos;n Werkvloei van die bewaarplek publiseer dit.</translation>
+        <translation>'n Werkvloei van die bewaarplek publiseer dit.</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
@@ -80840,11 +81512,11 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Another git host</source>
-        <translation>&apos;n Ander git-gasheer</translation>
+        <translation>'n Ander git-gasheer</translation>
     </message>
     <message>
         <source>Another process works on this target: %detail</source>
-        <translation>&apos;n Ander proses werk aan hierdie teiken: %detail</translation>
+        <translation>'n Ander proses werk aan hierdie teiken: %detail</translation>
     </message>
     <message>
         <source>Back</source>
@@ -80860,7 +81532,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Below a base path</source>
-        <translation>Onder &apos;n basispad</translation>
+        <translation>Onder 'n basispad</translation>
     </message>
     <message>
         <source>Branch</source>
@@ -80936,7 +81608,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Comes with a later release.</source>
-        <translation>Kom met &apos;n latere vrystelling.</translation>
+        <translation>Kom met 'n latere vrystelling.</translation>
     </message>
     <message>
         <source>Commit</source>
@@ -80948,7 +81620,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
-        <translation>Lê die bou vas, etiketteer dit en stoot dit na %remote. &apos;n Stoot word nooit afgedwing nie; u kan later na enige publikasie terugkeer.</translation>
+        <translation>Lê die bou vas, etiketteer dit en stoot dit na %remote. 'n Stoot word nooit afgedwing nie; u kan later na enige publikasie terugkeer.</translation>
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
@@ -80968,7 +81640,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
-        <translation>Ontfoutingsuitvoer, vormtekens, sessie-ID&apos;s en nonces word altyd verwyder.</translation>
+        <translation>Ontfoutingsuitvoer, vormtekens, sessie-ID's en nonces word altyd verwyder.</translation>
     </message>
     <message>
         <source>Deploy key</source>
@@ -80992,7 +81664,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>Leeg: die adres van die werf. Andersins &apos;n interne adres van dieselfde werf.</translation>
+        <translation>Leeg: die adres van die werf. Andersins 'n interne adres van dieselfde werf.</translation>
     </message>
     <message>
         <source>Ended</source>
@@ -81004,7 +81676,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
-        <translation>Elke publikasie is &apos;n vaslegging met &apos;n etiket static/%id/&lt;n&gt;. Terugkeer maak &apos;n nuwe vaslegging met die lêers van &apos;n vroeëre publikasie: die geskiedenis bly, geen etiket skuif nie en niks word afgedwing nie.</translation>
+        <translation>Elke publikasie is 'n vaslegging met 'n etiket static/%id/&lt;n&gt;. Terugkeer maak 'n nuwe vaslegging met die lêers van 'n vroeëre publikasie: die geskiedenis bly, geen etiket skuif nie en niks word afgedwing nie.</translation>
     </message>
     <message>
         <source>Extras</source>
@@ -81044,11 +81716,11 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
-        <translation>Vir &apos;n SSH-adres. Die sleutel word ná die stoor gemaak; u voeg sy publieke helfte by die bewaarplek.</translation>
+        <translation>Vir 'n SSH-adres. Die sleutel word ná die stoor gemaak; u voeg sy publieke helfte by die bewaarplek.</translation>
     </message>
     <message>
         <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
-        <translation>Vir &apos;n https://-adres. GitHub: &apos;n fynkorrelige toegangsteken met Contents lees en skryf op die bewaarplek.</translation>
+        <translation>Vir 'n https://-adres. GitHub: 'n fynkorrelige toegangsteken met Contents lees en skryf op die bewaarplek.</translation>
     </message>
     <message>
         <source>For experts. The public site changes as soon as the push is through.</source>
@@ -81060,7 +81732,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Free hosting from a GitHub repository.</source>
-        <translation>Gratis gasheerdiens vanuit &apos;n GitHub-bewaarplek.</translation>
+        <translation>Gratis gasheerdiens vanuit 'n GitHub-bewaarplek.</translation>
     </message>
     <message>
         <source>From the branch</source>
@@ -81084,7 +81756,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>GitHub Pages allows a site of %site and a file of %file.</source>
-        <translation>GitHub Pages laat &apos;n werf van %site en &apos;n lêer van %file toe.</translation>
+        <translation>GitHub Pages laat 'n werf van %site en 'n lêer van %file toe.</translation>
     </message>
     <message>
         <source>GitHub Pages limits</source>
@@ -81104,7 +81776,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Go back to an earlier publish</source>
-        <translation>Gaan terug na &apos;n vroeëre publikasie</translation>
+        <translation>Gaan terug na 'n vroeëre publikasie</translation>
     </message>
     <message>
         <source>Help</source>
@@ -81200,11 +81872,11 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Make a new key</source>
-        <translation>Maak &apos;n nuwe sleutel</translation>
+        <translation>Maak 'n nuwe sleutel</translation>
     </message>
     <message>
         <source>Make a target</source>
-        <translation>Skep &apos;n teiken</translation>
+        <translation>Skep 'n teiken</translation>
     </message>
     <message>
         <source>Make the key</source>
@@ -81212,7 +81884,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>Skep eers die bewaarplek op die gasheer; &apos;n leë een is goed.</translation>
+        <translation>Skep eers die bewaarplek op die gasheer; 'n leë een is goed.</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81288,7 +81960,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>On a schedule</source>
-        <translation>Volgens &apos;n skedule</translation>
+        <translation>Volgens 'n skedule</translation>
     </message>
     <message>
         <source>On the console</source>
@@ -81304,7 +81976,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
-        <translation>Slegs &apos;n naam word saam met die teiken gestoor; die toegangsteken of sleutel self bly in Opstelling &gt; Geheime en verskyn nooit in &apos;n logboek nie.</translation>
+        <translation>Slegs 'n naam word saam met die teiken gestoor; die toegangsteken of sleutel self bly in Opstelling &gt; Geheime en verskyn nooit in 'n logboek nie.</translation>
     </message>
     <message>
         <source>Only what the pages name</source>
@@ -81312,15 +81984,15 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
-        <translation>Slegs met &apos;n toegangsteken. env:NAME lees eerder &apos;n omgewingsveranderlike van die bediener.</translation>
+        <translation>Slegs met 'n toegangsteken. env:NAME lees eerder 'n omgewingsveranderlike van die bediener.</translation>
     </message>
     <message>
         <source>Open the preview</source>
         <translation>Open die voorskou</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
-        <translation>Open die bou soos die gasheer dit sal bedien, vanuit die teiken se gids. Die skakel werk vir u vir &apos;n uur.</translation>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
+        <translation>Open die bou soos die gasheer dit sal bedien, vanuit die teiken se gids. Die skakel werk vir u vir 'n uur.</translation>
     </message>
     <message>
         <source>Optional. Empty: what was published.</source>
@@ -81328,7 +82000,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Optional. With a domain the site is served at its root.</source>
-        <translation>Opsioneel. Met &apos;n domein word die werf by sy wortel bedien.</translation>
+        <translation>Opsioneel. Met 'n domein word die werf by sy wortel bedien.</translation>
     </message>
     <message>
         <source>Output</source>
@@ -81384,7 +82056,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>Publiseer &apos;n statiese kopie van &apos;n werf na GitHub Pages of enige git-gasheer: bou dit, gaan die veranderinge na, publiseer, en gaan terug na &apos;n vroeëre publikasie wanneer u moet.</translation>
+        <translation>Publiseer 'n statiese kopie van 'n werf na GitHub Pages of enige git-gasheer: bou dit, gaan die veranderinge na, publiseer, en gaan terug na 'n vroeëre publikasie wanneer u moet.</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -81468,7 +82140,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Section ids, separated by commas.</source>
-        <translation>Afdeling-ID&apos;s, geskei deur kommas.</translation>
+        <translation>Afdeling-ID's, geskei deur kommas.</translation>
     </message>
     <message>
         <source>Send them to the live site</source>
@@ -81495,12 +82167,12 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Opstelling &gt; Geheime</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Getoon in lyste, byvoorbeeld &quot;Publieke werf op GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Getoon in lyste, byvoorbeeld "Publieke werf op GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
-        <translation>Aanmelding met &apos;n GitHub App kom met die GitHub-integrasie.</translation>
+        <translation>Aanmelding met 'n GitHub App kom met die GitHub-integrasie.</translation>
     </message>
     <message>
         <source>Site</source>
@@ -81620,7 +82292,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>The folder holds a build that is not published yet; a new build replaces it.</source>
-        <translation>Die gids bevat &apos;n bou wat nog nie gepubliseer is nie; &apos;n nuwe bou vervang dit.</translation>
+        <translation>Die gids bevat 'n bou wat nog nie gepubliseer is nie; 'n nuwe bou vervang dit.</translation>
     </message>
     <message>
         <source>The folder of the jobs cannot be written: %detail</source>
@@ -81640,7 +82312,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
-        <translation>Die taak benodig &apos;n aangemelde gebruiker.</translation>
+        <translation>Die taak benodig 'n aangemelde gebruiker.</translation>
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
@@ -81664,7 +82336,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
-        <translation>Die bladsye word afgehaal soos &apos;n besoeker wat nie aangemeld is nie hulle sien. Administrasie- en redigeerwerftoegange word nooit aangebied nie.</translation>
+        <translation>Die bladsye word afgehaal soos 'n besoeker wat nie aangemeld is nie hulle sien. Administrasie- en redigeerwerftoegange word nooit aangebied nie.</translation>
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
@@ -81700,10 +82372,10 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
-        <translation>Die werf gaan terug na die lêers van daardie publikasie; &apos;n bou wat nog nie gepubliseer is nie, moet eers gepubliseer of weggegooi word.</translation>
+        <translation>Die werf gaan terug na die lêers van daardie publikasie; 'n bou wat nog nie gepubliseer is nie, moet eers gepubliseer of weggegooi word.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Die werf se eie bladsy vir adresse wat nie bestaan nie.</translation>
     </message>
     <message>
@@ -81711,8 +82383,8 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Die teiken kon nie gestoor word nie: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Die teiken meld nog nie met hierdie sleutel aan nie: kies &quot;&apos;n Ontplooiingsleutel wat vir hierdie teiken gemaak is&quot; in sy instellings.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Die teiken meld nog nie met hierdie sleutel aan nie: kies "'n Ontplooiingsleutel wat vir hierdie teiken gemaak is" in sy instellings.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81747,8 +82419,8 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
         <translation>Gooi hierdie bou weg: die gids bevat weer die laaste publikasie. Die lewendige werf verander nie.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Merk eers &quot;Ek het die veranderinge nagegaan&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Merk eers "Ek het die veranderinge nagegaan".</translation>
     </message>
     <message>
         <source>Time</source>
@@ -81784,7 +82456,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
-        <translation>Wat die taak gedoen het en sy logboek. &apos;n Taak wat hier begin is, gaan in die agtergrond voort wanneer hierdie bladsy toegemaak word.</translation>
+        <translation>Wat die taak gedoen het en sy logboek. 'n Taak wat hier begin is, gaan in die agtergrond voort wanneer hierdie bladsy toegemaak word.</translation>
     </message>
     <message>
         <source>What the job printed as errors</source>
@@ -81800,11 +82472,11 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>When a publish fails</source>
-        <translation>Wanneer &apos;n publikasie misluk</translation>
+        <translation>Wanneer 'n publikasie misluk</translation>
     </message>
     <message>
         <source>When a publish succeeds</source>
-        <translation>Wanneer &apos;n publikasie slaag</translation>
+        <translation>Wanneer 'n publikasie slaag</translation>
     </message>
     <message>
         <source>When content is published</source>
@@ -81828,7 +82500,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>Written whenever a custom domain is set.</source>
-        <translation>Geskryf wanneer &apos;n eie domein gestel is.</translation>
+        <translation>Geskryf wanneer 'n eie domein gestel is.</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -81840,7 +82512,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
-        <translation>slegs &apos;n naam; die waarde bly in Opstelling &gt; Geheime</translation>
+        <translation>slegs 'n naam; die waarde bly in Opstelling &gt; Geheime</translation>
     </message>
     <message>
         <source>below %path</source>
@@ -81848,7 +82520,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>ended without a report</source>
-        <translation>geëindig sonder &apos;n verslag</translation>
+        <translation>geëindig sonder 'n verslag</translation>
     </message>
     <message>
         <source>extra</source>
@@ -81872,7 +82544,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
-        <translation>https://github.com/owner/repo.git (met &apos;n toegangsteken) of git@github.com:owner/repo.git (met &apos;n ontplooiingsleutel); nooit &apos;n wagwoord of toegangsteken daarin nie.</translation>
+        <translation>https://github.com/owner/repo.git (met 'n toegangsteken) of git@github.com:owner/repo.git (met 'n ontplooiingsleutel); nooit 'n wagwoord of toegangsteken daarin nie.</translation>
     </message>
     <message>
         <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
@@ -81920,7 +82592,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
-        <translation>proc_open is gedeaktiveer, dus kan &apos;n taak nie hier begin word nie. Gebruik ./console exp:static:build op die bediener.</translation>
+        <translation>proc_open is gedeaktiveer, dus kan 'n taak nie hier begin word nie. Gebruik ./console exp:static:build op die bediener.</translation>
     </message>
     <message>
         <source>publish</source>
@@ -81964,7 +82636,7 @@ Die klas van die nodus moet met die ruil-funksie verander word.</translation>
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: in die lêer CNAME geskryf. Rig die DNS van die domein na die gasheer soos dit verduidelik; HTTPS kan &apos;n rukkie neem om te begin.</translation>
+        <translation>www.example.com: in die lêer CNAME geskryf. Rig die DNS van die domein na die gasheer soos dit verduidelik; HTTPS kan 'n rukkie neem om te begin.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>

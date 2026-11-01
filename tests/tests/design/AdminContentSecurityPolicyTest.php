@@ -39,7 +39,7 @@
  *   attributes of a4_actions.js, which their page_head_script.tpl loads (design/admin/javascript/a4_actions.js, the same
  *   file as admin4's), the data-menu-* attributes of ezpopupmenu.js for the context menus, and the page scripts they
  *   share with admin4 byte for byte (CLASSIC_PAGE_SCRIPTS: the date picker, the package file viewer, the register form,
- *   the live progress of a migration run).
+ *   the live progress of a migration run, the selection of Setup > Recent content).
  *
  * Run: php vendor/bin/phpunit tests/tests/design/AdminContentSecurityPolicyTest.php
  *
@@ -98,6 +98,7 @@ class AdminContentSecurityPolicyTest extends PHPUnit\Framework\TestCase
         'page/package_view_full.js' => array( 'design/admin/templates/package/view/full.tpl' ),
         'page/user_register.js' => array( 'design/admin/templates/user/register.tpl' ),
         'page/migration_log.js' => array( 'design/admin/templates/migration/log.tpl' ),
+        'page/moderation_recent.js' => array( 'design/admin/templates/moderation/recent.tpl' ),
     );
 
     /** The extensions this repository ships (share/filelist.md5): checked always; an allowlisted one missing fails under CI=1 */

@@ -15151,6 +15151,14 @@ Pokazka: pakety so njewotinstaluja.</translation>
         <translation>Změny instalacije jako dataje: jich staw, běhi, wuwjesć a wróćo wzać.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Nowy wobsah</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnowši wobsah, štož je za přepruwowanje zadźeržane, a akcije za wuběr.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Statisku kopiju sydła na GitHub Pages abo na kóždym git-hostingu wozjewić.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Změnjeny</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Wutworjeny</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Mjeno</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Wotrězk</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Awtor</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nowy wobsah</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Najnowši wutworjeny a změnjeny wobsah cyłeho sydła, najnowši najprjedy: štož su wopytowarjo zapodali, štož je za přepruwowanje zadźeržane, naćiski, kotrež na wozjewjenje čakaja. Wubjerće zapiski, zo byšće je wuwolnili, zadźeržali, schowali, pokazali, wotstronili abo do druheho wotrězka abo stawa přesunyli.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Lisćina njeda so čitać: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Zadźerženje za přepruwowanje hišće nastajene njeje, tohodla ničo zadźeržane njeje a akcije zadźerženja so njeposkićeja. Aktualizowanski krok 6.0.15-review-hold to nastaji: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Lisćinu filtrować</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Wot</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Wutworjeny (prěnje wozjewjenje)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Wšě</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Staw wozjewjenja</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Wozjewjeny</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Naćisk, ženje njewozjewjeny</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Čakacy (čaka na schwalenje abo datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>W papjerniku</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Za přepruwowanje zadźeržany</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Zadźeržany</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Njezadźeržany</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Schowany</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Widźomny</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Zapodaty dnja</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Kóždy siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Jenož, štož je audit zapisał.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nětko: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Přizjewjenje abo ID wužiwarja.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrować</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filtry wotstronić</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Zapiski</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to z %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Žadyn zapisk</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(čitane w %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Akcije za wubrane zapiski</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Wšě na tutej stronje wubrać</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count wubranych</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcija</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Wubjerće akciju</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Zadźerženje zběhnyć</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Za přepruwowanje zadźeržeć</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Schować</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Pokazać</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Do papjernika přesunyć</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Zhašeć</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Wotrězk přirjadować</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Staw přirjadować</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Přičina</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Trěbna za zadźerženje; so ze zadźerženjom a w auditje składuje.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Wubjerće wotrězk</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staw</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Wubjerće staw</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Na wubrane nałožić</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Kóždy zapisk so po wašich prawach pruwuje. Přesunjenje do papjernika a zhašenje dyrbiće wobkrućić. Wjace hač %count zapiskow běži w pozadku.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Wubrać</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Wozjewjenje</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Zapodaty z</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name wubrać</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>hišće nic</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bjez mjena)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Naćisk</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Čakacy</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Schowany přez nadrjadowany zapisk</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Zadźeržany: nowe zapodaće</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Wersija %version čaka</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Wersija %version so wobdźěłuje</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Naćisk, wersija %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Wersija %version wozjewjena</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Planowany na %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>žana adresa</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>njezapisane</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ničo tutym filtram njewotpowěduje.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wšě pokazać</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Hišće žadyn wobsah njeje.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stronu</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count zapiskow na stronu pokazać.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Adresa a wobhladowak zapodaća pochadźataj z indeksa audita, kotryž tu k dispoziciji njeje: stołp praji „njezapisane“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adresa a wobhladowak stej te, kotrejž je audit za zapisk zapisał (awtomatiske zadźerženje je přeco zapisuje; wozjewjenje a wutworjenje jenož tam, hdźež je to zapinane), kaž jeho nastajenja priwatnosće je składuja.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count zapiskow</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Zhašenje zapiski na přeco wotstroni, ze wšěmi jich wersijemi a přełožkami. Njeda so wróćo činić.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Zapiski póńdu do papjernika, z kotrehož dadźa so wobnowić.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Kóždy zapisk so po wašich prawach pruwuje; zapisk z podzapiskami wostanje, kaž je (wotstrońće jón w strukturje wobsaha). Dyrbiće wobkrućić, zo sće to wy.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>To běži w pozadku: jeho strona postupa so wočini, a wuslědk za kóždy zapisk so pokaza, hdyž je hotowe.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Wubrane zapiski</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>a %count dalšich</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Přetorhnyć</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ničo so njeje činiło</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Přičina: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Akcija hišće w pozadku běži.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Jeje postup</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Akcija w pozadku je so njeporadźiła: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hotowe</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wotpokazane</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Njeporadźene</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Po zapisku</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Zapisk</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wuslědk</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Čehodla</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Wróćo k lisćinje</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Zarjadowanje</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ničo činjene</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Wobkrućić</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Wubjerće akciju.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Wubjerće znajmjeńša jedyn zapisk.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Wubjerće najwjace 1000 zapiskow naraz.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Prajće, čehodla su zapiski zadźeržane.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Wubjerće wotrězk.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Wubjerće staw.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formular njeda so čitać.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nowy wobsah</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Ličby njedachu so čitać: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Za přepruwowanje zadźeržane</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nowe dźensa</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadźerženje za přepruwowanje hišće nastajene njeje (aktualizowanski krok 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Wšón nowy wobsah</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Njesměće akcije moderacije wuwjesć (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Akcija moderacije dospołna njeje: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderacija: %action na %count objektach</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done z %total objektow: %ok hotowe, %refused wotpokazane, %failed njeporadźene</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok hotowe, %refused wotpokazane, %failed njeporadźene</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Wjace njeeksistuje.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nima žane městno (njewozjewjeny).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Njesměće jón schować (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Njesměće jón pokazać (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Je hižo schowany.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Njeje schowany.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Schowany.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Pokazany.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Je w papjerniku: wuprózdńće abo wobnowće jón tam.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Naćisk, kotryž ženje wozjewjeny njebě, njemóže do papjernika: zhašejće jón.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Njesměće jón zhašeć (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Zhašany.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Njesměće jón wotstronić (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ma podzapiski: wotstrońće jón w strukturje wobsaha, hdźež su nalistowane.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Njebu wotstronjeny (dźěłowy tok móže wotstronjenje zadźeržeć).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Do papjernika přesunjeny.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Wotrězk njeeksistuje.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Je hižo w tutym wotrězku.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Njesměće tutón wotrězk přirjadować (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Wotrězk njebu přirjadowany.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Wotrězk přirjadowany.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Staw njeeksistuje.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Je hižo w tutym stawje.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Njesměće tutón staw přirjadować (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Staw njebu přirjadowany (dźěłowy tok móže změnu zadźeržeć).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Staw přirjadowany.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Tajka akcija njeeksistuje.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadźerženje za přepruwowanje nastajene njeje (aktualizowanski krok 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Prajće, čehodla je zadźeržany.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Je hižo zadźeržany.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Njesměće jón zadźeržeć (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Zadźerženje njebu nastajene (dźěłowy tok móže změnu zadźeržeć).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Zadźeržany.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Njeje zadźeržany.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Njesměće jón wuwolnić (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Zadźerženje njebu zběhnjene (dźěłowy tok móže změnu zadźeržeć).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Wuwolnjeny; hišće schowany: njesměće jón pokazać (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Wuwolnjeny.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>GitHub-projektowe sydło leži pod /&lt;repository&gt;/; relatiwne wotkazy tam a wšudźe hewak funguja.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Zestajenje wotwoła kóždu stronu sydła %site tak, kaž ju njepřizjewjeny wopytowar widźi, přepisa wotkazy, kopěruje dataje a zapisa wuslědk do rjadowaka cila. Ničo so njewozjewi, doniž zestajenje njepřepruwujeće a Wozjewić njetłóčiće.</translation>
     </message>
     <message>
@@ -80777,7 +81449,7 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Strona, kotraž po čisćenju hišće debugowe wudaće, formularny token abo ID posedźenja wobsahuje, so ženje njewozjewi.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
         <translation>Wróćowzaće je za fachowcow: markěrujće „Wěm, štož to změni“ a zapodajće mjeno etikety hišće raz.</translation>
     </message>
     <message>
@@ -81289,7 +81961,7 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Přehlad wočinić</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Wočini zestajenje tak, kaž budźe hosting jo dodawać, z rjadowaka cila. Wotkaz funguje za Was jednu hodźinu.</translation>
     </message>
     <message>
@@ -81465,7 +82137,7 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Zarjadowanje &gt; Tajnosće</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
         <translation>Pokazane w lisćinach, na přikład „Zjawne sydło na GitHub Pages“.</translation>
     </message>
     <message>
@@ -81673,7 +82345,7 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Sydło so na dataje tutoho wozjewjenja wróći; zestajenje, kotrež hišće njeje wozjewjene, dyrbi so najprjedy wozjewić abo zaćisnyć.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Swójska strona sydła za adresy, kotrež njeeksistuja.</translation>
     </message>
     <message>
@@ -81681,7 +82353,7 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Cil njeda so składować: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
         <translation>Cil so hišće z tutym klučom njepřizjewja: wubjerće „Deploy-kluč wutworjeny za tutón cil“ w jeho nastajenjach.</translation>
     </message>
     <message>
@@ -81717,7 +82389,7 @@ Musyće klasu suka z funkciju wuměny změnić.</translation>
         <translation>Zaćisnje tute zestajenje: rjadowak zaso poslednje wozjewjenje wobsahuje. Žiwe sydło so njezměni.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <source>Tick "I have checked the changes" first.</source>
         <translation>Markěrujće najprjedy „Změny su přepruwowane“.</translation>
     </message>
     <message>

@@ -15090,6 +15090,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <translation>Ikkussinermi allannguutit fiilitut toqqorsimasut: killiffiat, ingerlatsinerit, ingerlatsineq utertitsinerlu.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Imarisaat nutaat</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Imarisaat nutaanerpaat, misissorneqarnissaannut unitsitat, toqqakkanullu iliuusissat.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Nittartakkap assilinera aalaakkaasoq GitHub Pages-imut imaluunniit git-ip angerlarsimaffianut sumulluunniit saqqummiuguk.</translation>
     </message>
@@ -80614,6 +80622,670 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Allanngortinneqarfia</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Pilersinneqarfia</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ateq</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klassi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Immikkoortoq</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Pilersitsisoq</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Imarisaat nutaat</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Nittartakkami tamarmi imarisaat kingullermik pilersinneqartut allanngortinneqartullu, nutaanerpaat siulliullugit: takornarissat nassiussaat, misissorneqarnissaminnut unitsitat, missingiutillu saqqummiunneqarnissaminnik utaqqisut. Immikkoortut toqqakkit taakku iperarniarlugit, unitsinniarlugit, isertorniarlugit, takutinniarlugit, peerniarlugit imaluunniit immikkoortumut allamut qanoq innermulluunniit nuunniarlugit.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Allattorsimaffik atuarneqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Misissuinissamut unitsitsineq suli aaqqissuunneqanngilaq, taamaattumik sunik unitsitsisoqanngilaq unitsitsinermullu iliuusissat neqeroorutigineqanngillat. Nutarterinermi alloriarneq 6.0.15-review-hold taanna aaqqissuussaaq: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Allattorsimaffik filterikkuk</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Aallarnerfik</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Naggatissaq</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ulloq</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Pilersinneqarfia (siullermik saqqummiunneqarfia)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tamarmik</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Killiffik</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Saqqummiunneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Missingiut, saqqummiunneqarsimanngisaannartoq</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Utaqqisoq (akuerineqarnissaq ulluluunniit utaqqillugu)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Eqqaavimmiittoq</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Misissorneqarnissaanut unitsitaq</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Unitsitaq</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Unitsitaanngitsoq</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Isertorneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Takuneqarsinnaasoq</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Nittartakkamut isaariaq nassiussiffik</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Nittartakkamut isaariaq sunaluunniit</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Nakkutilliinermi nalunaarsorneqartut kisimik.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Massakkut: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Atuisup aqqa imaluunniit atuisup normua.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filterikkuk</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filterit peerkit</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Immikkoortut</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from-miit %to-mut %count-iniit</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Immikkoortoqanngilaq</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms-ini atuarneqarpoq)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Immikkoortunut toqqakkanut iliuusissat</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Quppernermi uani tamaasa toqqakkit</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count toqqagaapput</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Iliuuseq</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Iliuuseq toqqaruk</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Unitsitsineq atorunnaarsiguk</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Misissorneqarnissaanut unitsiguk</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Isertoruk</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Takutiguk</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Eqqaavimmut nuukkuk</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Peeruk</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Immikkoortoq tunniukkuk</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Qanoq innera tunniukkuk</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Pissutaa</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Unitsitsinermut pisariaqarpoq; unitsitsinermut nakkutilliinermilu toqqortarineqassaaq.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Immikkoortoq toqqaruk</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Qanoq innera</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Qanoq innera toqqaruk</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Toqqakkanut atortiguk</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Immikkoortut tamarmik illit pisinnaatitaaffiit naapertorlugit misissorneqartarput. Eqqaavimmut nuussineq peersinerlu uppernarsarneqartariaqarput. Immikkoortut %count sinnerlugit tunuliaqutaani suliarineqartarput.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Toqqaruk</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Saqqummiussineq</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Nassiussiffik</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name toqqaruk</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>suli naamik</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ateqanngitsoq)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Normu %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Missingiut</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Utaqqisoq</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Angajoqqaavata pissutigalugu isertorneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Unitsitaq: nassiussaq nutaaq</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Ilusaa %version utaqqisoq</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Ilusaa %version suliarineqartoq</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Missingiut, ilusaa %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Ilusaa %version saqqummiunneqarsimasoq</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date-mut pilersaarutigineqarpoq</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>najugaqanngilaq</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nalunaarsorneqanngilaq</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Filterinut uku naapertuuttoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tamaasa takutikkit</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Suli imarisaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Quppernermut ataatsimut</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Quppernermut ataatsimut immikkoortut %count takutikkit.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Nassiussap najugaa internetsimullu isaariaa nakkutilliinermi allattorsimaffimmeersuupput, maani pissarsiarineqarsinnaanngitsumi: tukimut allassimavoq &quot;nalunaarsorneqanngilaq&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Najugaq internetsimullu isaariaq nakkutilliinermi immikkoortumut nalunaarsorneqartut tassaapput (unitsitsineq nammineerluni ingerlasoq taakku nalunaarsortuartarpai; saqqummiussineq pilersitsinerlu ingerlatinneqarfianni kisimi), namminermut tunngasut pillugit aaqqissuussinerisut toqqortarineqartut.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: immikkoortut %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Peersinikkut immikkoortut naammaginartumik peerneqartarput, ilusaat nutsernerilu tamaasa ilanngullugit. Utertinneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Immikkoortut eqqaavimmut nuunneqartarput, tassanngaanniit uterteqqinneqarsinnaapput.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Immikkoortut tamarmik illit pisinnaatitaaffiit naapertorlugit misissorneqartarput; immikkoortoq ataani immikkoortulik qimanneqartarpoq (imarisanut aaqqissuussinermi peeruk). Illit tassaanerit uppernarsassavat.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Una tunuliaqutaani ingerlavoq: ingerlaneranut quppernera ammassaaq, inerpallu immikkoortumut ataatsimut inernera takutinneqassaaq.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Immikkoortut toqqakkat</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>aamma %count allat</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Taamaatiguk</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Suliaqartoqanngilaq</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Pissutaa: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Iliuuseq suli tunuliaqutaani ingerlavoq.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ingerlanera</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Tunuliaqutaani iliuuseq iluatsinngilaq: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Naammassineqarpoq</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Itigartitaq</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Immikkoortumut ataatsimut</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Immikkoortoq</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Inernera</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Sooq</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Allattorsimaffimmut uterit</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Aaqqissuussineq</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Suliaqartoqanngilaq</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Uppernarsaruk</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Iliuuseq toqqaruk.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Minnerpaamik immikkoortoq ataaseq toqqaruk.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Ataatsikkut immikkoortut 1000 sinnerlugit toqqarnagit.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Immikkoortut sooq unitsinneqarnersut oqaatigiuk.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Immikkoortoq toqqaruk.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Qanoq innera toqqaruk.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Immersugassaq atuarneqarsinnaanngilaq.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Imarisaat nutaat</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Amerlassusii atuarneqarsinnaanngillat: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Misissorneqarnissaanut unitsitat</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ullumi nutaat</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Misissuinissamut unitsitsineq suli aaqqissuunneqanngilaq (nutarterinermi alloriarneq 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Imarisaat nutaat tamarmik</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Nakkutilliinermi iliuusissanik ingerlatsisinnaanngilatit (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Nakkutilliinermi iliuuseq naammassinngilaq: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Nakkutilliineq: %action objektini %count-ini</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>Objektit %total-init %done: %ok naammassineqarput, %refused itigartitaapput, %failed iluatsinngillat</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok naammassineqarput, %refused itigartitaapput, %failed iluatsinngillat</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Atanngeqqippoq.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Inissaqanngilaq (saqqummiunneqanngilaq).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Isertorsinnaanngilat (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Takutissinnaanngilat (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Isertorneqareerpoq.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Isertorneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Isertorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Takutinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Eqqaavimmiippoq: tassani imaarsiguk imaluunniit uterteqqiguk.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Missingiut saqqummiunneqarsimanngisaannartoq eqqaavimmut nuunneqarsinnaanngilaq: peeruk.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Peersinnaanngilat (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Peerneqarpoq.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Peersinnaanngilat (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ataani immikkoortoqarpoq: imarisanut aaqqissuussinermi peeruk, tassani allattorsimapput.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Peerneqanngilaq (suliassat ingerlarnerat peersinermik unitsitsisinnaavoq).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Eqqaavimmut nuunneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Immikkoortoq atanngilaq.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Immikkoortumiippoq una.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Immikkoortoq una tunniussinnaanngilat (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Immikkoortoq tunniunneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Immikkoortoq tunniunneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Qanoq innera atanngilaq.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Qanoq innermi uaniippoq.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Qanoq innera una tunniussinnaanngilat (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Qanoq innera tunniunneqanngilaq (suliassat ingerlarnerat allanngortitsinermik unitsitsisinnaavoq).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Qanoq innera tunniunneqarpoq.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Iliuuseq taamaattoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Misissuinissamut unitsitsineq aaqqissuunneqanngilaq (nutarterinermi alloriarneq 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sooq unitsinneqarnersoq oqaatigiuk.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Unitsinneqareerpoq.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Unitsissinnaanngilat (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Unitsitsineq ingerlanneqanngilaq (suliassat ingerlarnerat allanngortitsinermik unitsitsisinnaavoq).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Unitsinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Unitsinneqanngilaq.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Iperarsinnaanngilat (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Unitsitsineq atorunnaarsinneqanngilaq (suliassat ingerlarnerat allanngortitsinermik unitsitsisinnaavoq).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Iperagaavoq; suli isertorneqarsimavoq: takutissinnaanngilat (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Iperagaavoq.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80759,7 +81431,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>GitHub-imi suliniummut nittartagaq /&lt;repository&gt;/ ataaniittarpoq; innersuussutit ataqatigiissut tassani allanilu sumiluunniit atuupput.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Sanaaq %site-ip quppernerinik tamanik pulartup iserfigisimanngitsup takusartagaattut aallersisarpoq, innersuussutinik allanngortitsilluni, fiilinik assiliilluni inernerlu saqqummiuffiup mappianut allattarlugu. Sanaaq misissorlugu Saqqummiuguk tooreqqaanngikkukku saqqummiussisoqassanngilaq.</translation>
     </message>
     <message>
@@ -80807,7 +81479,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Quppernerup suli piiaanerup kingorna debug-imik anitsinermik, formularip token-ianik imaluunniit session-ip kinaassutsimik imaqartup saqqummiunneqartanngilaq.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
         <translation>Utertitsineq ilisimasalinnut kisiannut: »Ilisimavara una suna allanngortinneraa« nalunaaqutsiguk taaguullu aqqa ilaqqiguk.</translation>
     </message>
     <message>
@@ -81319,7 +81991,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Siumut takuneq ammaruk</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Sanaaq angerlarsimaffiup tunniussinissaatut saqqummiuffiup mappianit ammarpaa. Innersuussut nalunaaquttap akunnera ataaseq illit atorsinnaavat.</translation>
     </message>
     <message>
@@ -81495,7 +82167,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Aaqqissuussineq &gt; Isertugat</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
         <translation>Allattorsimaffinni takutinneqartarpoq, assersuutigalugu »Nittartagaq tamanut ammasoq GitHub Pages-imi«.</translation>
     </message>
     <message>
@@ -81703,7 +82375,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Nittartagaq saqqummiussinerup taassuma fiiliinut uterpoq; sanaaq suli saqqummiunneqanngitsoq siullermik saqqummiunneqassaaq igineqassalluunniit.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Nittartakkap quppernera nammineq najukkanut atuanngitsunut.</translation>
     </message>
     <message>
@@ -81711,7 +82383,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Saqqummiuffik toqqorneqarsinnaanngilaq: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
         <translation>Saqqummiuffik suli matuersaammik matuminnga iserneq ajorpoq: aaqqissuussinerini »Ikkussinermut matuersaat saqqummiuffimmut matumunnga pilersitaq« toqqaruk.</translation>
     </message>
     <message>
@@ -81747,7 +82419,7 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <translation>Sanaaq una igissavaa: mappimi saqqummiussineq kingulleq aterpoq. Nittartagaq atuuttoq allanngunngilaq.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <source>Tick "I have checked the changes" first.</source>
         <translation>Siullermik »Allannguutit misissorpakka« nalunaaqutsiguk.</translation>
     </message>
     <message>

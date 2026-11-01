@@ -15149,6 +15149,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ફાઇલો તરીકે રાખેલા ઇન્સ્ટોલેશનના ફેરફારો: તેમની સ્થિતિ, રન, ચલાવો અને પાછા ફેરવો.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>તાજેતરની સામગ્રી</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>સૌથી નવી સામગ્રી, સમીક્ષા માટે જે રોકેલ છે, અને પસંદગી પર ક્રિયાઓ.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>સાઇટની સ્ટેટિક નકલ GitHub Pages અથવા કોઈપણ git હોસ્ટ પર પ્રકાશિત કરો.</translation>
     </message>
@@ -80582,6 +80590,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>સુધારેલ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>બનાવેલ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>નામ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ક્લાસ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>વિભાગ</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>સર્જક</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>તાજેતરની સામગ્રી</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>આખી સાઇટની સૌથી તાજેતરમાં બનાવેલી અને સુધારેલી સામગ્રી, નવી પહેલા: મુલાકાતીઓએ જે સબમિટ કર્યું, જે સમીક્ષા માટે રોકી રાખેલ છે, પ્રકાશનની રાહ જોતા ડ્રાફ્ટ. આઇટમ પસંદ કરીને તેમને મુક્ત કરો, રોકો, છુપાવો, દૃશ્યમાન કરો, દૂર કરો અથવા બીજા વિભાગ કે સ્થિતિમાં ખસેડો.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>યાદી વાંચી શકાઈ નથી: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>સમીક્ષા માટે રોકવાની વ્યવસ્થા હજી સેટ કરવામાં આવી નથી, તેથી કંઈ રોકાયેલું નથી અને રોકવાની ક્રિયાઓ ઉપલબ્ધ નથી. અપગ્રેડ પગલું 6.0.15-review-hold તેને સેટ કરે છે: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>યાદી ફિલ્ટર કરો</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>થી</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>સુધી</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>તારીખ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>બનાવેલ (પ્રથમ પ્રકાશન)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>બધા</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>સ્થિતિ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>પ્રકાશિત</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ડ્રાફ્ટ, ક્યારેય પ્રકાશિત નથી</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>બાકી (મંજૂરી અથવા તારીખની રાહમાં)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>કચરાપેટીમાં</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>સમીક્ષા માટે રોકેલ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>રોકેલ</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>રોકેલ નથી</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>છુપાયેલ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>દૃશ્યમાન</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>સબમિટ કર્યાની તારીખ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>કોઈપણ સાઇટઍક્સેસ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ફક્ત ઓડિટે જે નોંધ્યું છે.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>હવે: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>લૉગિન અથવા વપરાશકર્તા આઈડી.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ફિલ્ટર</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ફિલ્ટર સાફ કરો</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>આઇટમ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count માંથી %from થી %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>કોઈ આઇટમ નથી</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms મિ.સે.માં વાંચ્યું)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>પસંદ કરેલી આઇટમ પર ક્રિયાઓ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>આ પાના પરના બધા પસંદ કરો</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count પસંદ કરેલ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ક્રિયા</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ક્રિયા પસંદ કરો</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>રોક હટાવો</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>સમીક્ષા માટે રોકો</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>છુપાવો</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>દૃશ્યમાન કરો</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>કચરાપેટીમાં ખસેડો</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>કાઢી નાખો</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>વિભાગ સોંપો</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>સ્થિતિ સોંપો</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>કારણ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>રોકવા માટે જરૂરી; રોક સાથે અને ઓડિટમાં રાખવામાં આવે છે.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>વિભાગ પસંદ કરો</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>સ્થિતિ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>સ્થિતિ પસંદ કરો</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>પસંદ કરેલ પર લાગુ કરો</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>દરેક આઇટમ તમારી પોતાની પરવાનગીઓ સામે તપાસવામાં આવે છે. કચરાપેટીમાં ખસેડતાં અને કાઢી નાખતાં પહેલાં પુષ્ટિ માંગવામાં આવે છે. %count થી વધુ આઇટમ પૃષ્ઠભૂમિમાં ચાલે છે.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>પસંદ કરો</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>પ્રકાશન</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ક્યાંથી સબમિટ થયું</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name પસંદ કરો</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>હજી નહીં</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(નામ નથી)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>આઈડી %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ડ્રાફ્ટ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>બાકી</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>તેના પેરન્ટ દ્વારા છુપાયેલ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>રોકેલ: નવું સબમિશન</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>આવૃત્તિ %version બાકી</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>આવૃત્તિ %version પ્રગતિમાં</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ડ્રાફ્ટ, આવૃત્તિ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>આવૃત્તિ %version પ્રકાશિત</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date માટે નિર્ધારિત</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>કોઈ સરનામું નથી</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>નોંધાયેલ નથી</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>આ ફિલ્ટર સાથે કંઈ મેળ ખાતું નથી.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>બધા બતાવો</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>હજી કોઈ સામગ્રી નથી.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>પાના દીઠ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>પાના દીઠ %count આઇટમ બતાવો.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>સબમિશનનું સરનામું અને બ્રાઉઝર ઓડિટ ઇન્ડેક્સમાંથી આવે છે, જે અહીં ઉપલબ્ધ નથી: કૉલમમાં &quot;નોંધાયેલ નથી&quot; લખેલું હોય છે.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>સરનામું અને બ્રાઉઝર એ છે જે ઓડિટે આઇટમ માટે નોંધ્યું છે (સ્વચાલિત રોક હંમેશા તેને નોંધે છે; પ્રકાશન અને બનાવવું ફક્ત જ્યાં ચાલુ હોય ત્યાં), જેમ તેની ગોપનીયતા સેટિંગ્સ તેને રાખે છે.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count આઇટમ</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>કાઢી નાખવાથી આઇટમ તેમની બધી આવૃત્તિઓ અને અનુવાદો સાથે કાયમ માટે દૂર થાય છે. તેને પૂર્વવત્ કરી શકાતું નથી.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>આઇટમ કચરાપેટીમાં જાય છે, જ્યાંથી તેમને પુનઃસ્થાપિત કરી શકાય છે.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>દરેક આઇટમ તમારી પોતાની પરવાનગીઓ સામે તપાસવામાં આવે છે; પેટા આઇટમ ધરાવતી આઇટમ જેમ છે તેમ રહે છે (તેને સામગ્રી માળખામાં દૂર કરો). તમને ચકાસવા કહેવામાં આવશે કે તે તમે જ છો.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>આ પૃષ્ઠભૂમિમાં ચાલે છે: તેનું પ્રગતિ પાનું ખુલે છે, અને પૂર્ણ થાય ત્યારે દરેક આઇટમનું પરિણામ બતાવવામાં આવે છે.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>પસંદ કરેલી આઇટમ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>અને વધુ %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>રદ કરો</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>કંઈ કરવામાં આવ્યું નથી</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>કારણ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ક્રિયા હજી પૃષ્ઠભૂમિમાં ચાલી રહી છે.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>તેની પ્રગતિ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>પૃષ્ઠભૂમિ ક્રિયા નિષ્ફળ ગઈ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>પૂર્ણ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>નકારેલ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>નિષ્ફળ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>આઇટમ દીઠ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>આઇટમ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>પરિણામ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>શા માટે</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>યાદી પર પાછા જાઓ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>સેટઅપ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>કંઈ કર્યું નથી</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>પુષ્ટિ કરો</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ક્રિયા પસંદ કરો.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ઓછામાં ઓછી એક આઇટમ પસંદ કરો.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>એક સાથે વધુમાં વધુ 1000 આઇટમ પસંદ કરો.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>આઇટમ શા માટે રોકવામાં આવી છે તે જણાવો.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>વિભાગ પસંદ કરો.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>સ્થિતિ પસંદ કરો.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ફોર્મ વાંચી શકાયું નથી.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>તાજેતરની સામગ્રી</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ગણતરીઓ વાંચી શકાઈ નથી: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>સમીક્ષા માટે રોકેલ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>આજે નવું</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>સમીક્ષા માટે રોકવાની વ્યવસ્થા હજી સેટ કરવામાં આવી નથી (અપગ્રેડ પગલું 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>બધી તાજેતરની સામગ્રી</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>તમે મોડરેશન ક્રિયાઓ ચલાવી શકતા નથી (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>મોડરેશન ક્રિયા પૂર્ણ નથી: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>મોડરેશન: %count ઑબ્જેક્ટ પર %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total માંથી %done ઑબ્જેક્ટ: %ok પૂર્ણ, %refused નકારેલ, %failed નિષ્ફળ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok પૂર્ણ, %refused નકારેલ, %failed નિષ્ફળ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>તે હવે અસ્તિત્વમાં નથી.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>તેનું કોઈ સ્થાન નથી (પ્રકાશિત નથી).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>તમે તેને છુપાવી શકતા નથી (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>તમે તેને દૃશ્યમાન કરી શકતા નથી (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>તે પહેલેથી છુપાયેલ છે.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>તે છુપાયેલ નથી.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>છુપાવ્યું.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>દૃશ્યમાન કર્યું.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>તે કચરાપેટીમાં છે: ત્યાં કચરાપેટી ખાલી કરો અથવા તેને પુનઃસ્થાપિત કરો.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ક્યારેય પ્રકાશિત ન થયેલો ડ્રાફ્ટ કચરાપેટીમાં જઈ શકતો નથી: તેને કાઢી નાખો.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>તમે તેને કાઢી શકતા નથી (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>કાઢી નાખ્યું.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>તમે તેને દૂર કરી શકતા નથી (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>તેમાં પેટા આઇટમ છે: તેને સામગ્રી માળખામાં દૂર કરો, જ્યાં તે સૂચિબદ્ધ છે.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>તે દૂર કરવામાં આવ્યું નથી (કોઈ વર્કફ્લો દૂર કરવાનું રોકી શકે છે).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>કચરાપેટીમાં ખસેડ્યું.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>વિભાગ અસ્તિત્વમાં નથી.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>તે પહેલેથી આ વિભાગમાં છે.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>તમે આ વિભાગ સોંપી શકતા નથી (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>વિભાગ સોંપાયો નથી.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>વિભાગ સોંપ્યો.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>સ્થિતિ અસ્તિત્વમાં નથી.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>તે પહેલેથી આ સ્થિતિમાં છે.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>તમે આ સ્થિતિ સોંપી શકતા નથી (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>સ્થિતિ સોંપાઈ નથી (કોઈ વર્કફ્લો ફેરફાર રોકી શકે છે).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>સ્થિતિ સોંપી.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>આવી કોઈ ક્રિયા નથી.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>સમીક્ષા માટે રોકવાની વ્યવસ્થા સેટ નથી (અપગ્રેડ પગલું 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>તે શા માટે રોકવામાં આવ્યું છે તે જણાવો.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>તે પહેલેથી રોકેલ છે.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>તમે તેને રોકી શકતા નથી (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>રોક લગાવી શકાઈ નથી (કોઈ વર્કફ્લો ફેરફાર રોકી શકે છે).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>રોક્યું.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>તે રોકેલ નથી.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>તમે તેને મુક્ત કરી શકતા નથી (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>રોક હટાવાઈ નથી (કોઈ વર્કફ્લો ફેરફાર રોકી શકે છે).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>મુક્ત કર્યું; હજી છુપાયેલ: તમે તેને દૃશ્યમાન કરી શકતા નથી (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>મુક્ત કર્યું.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80727,7 +81399,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub પ્રોજેક્ટ સાઇટ /&lt;repository&gt;/ હેઠળ રહે છે; રિલેટિવ લિંક ત્યાં અને બીજે ક્યાંય પણ કામ કરે છે.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>બિલ્ડ %site નું દરેક પૃષ્ઠ સાઇન ઇન ન કરેલા મુલાકાતીને દેખાય તે રીતે મેળવે છે, લિંક ફરીથી લખે છે, ફાઇલોની નકલ કરે છે અને પરિણામ લક્ષ્યના ફોલ્ડરમાં લખે છે. તમે બિલ્ડ તપાસીને પ્રકાશિત કરો દબાવો નહીં ત્યાં સુધી કંઈ પ્રકાશિત થતું નથી.</translation>
     </message>
     <message>
@@ -80775,8 +81447,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>સાફ કર્યા પછી પણ જે પૃષ્ઠમાં ડીબગ આઉટપુટ, ફોર્મ ટોકન અથવા સેશન id હોય તે ક્યારેય પ્રકાશિત થતું નથી.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>રોલબૅક નિષ્ણાતો માટે છે: &quot;આ શું બદલે છે તે હું જાણું છું&quot; પર ટિક કરો અને ટૅગનું નામ ફરીથી લખો.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>રોલબૅક નિષ્ણાતો માટે છે: "આ શું બદલે છે તે હું જાણું છું" પર ટિક કરો અને ટૅગનું નામ ફરીથી લખો.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81287,7 +81959,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>પૂર્વાવલોકન ખોલો</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>હોસ્ટ જે રીતે આપશે તે રીતે બિલ્ડને લક્ષ્યના ફોલ્ડરમાંથી ખોલે છે. લિંક તમારા માટે એક કલાક સુધી કામ કરે છે.</translation>
     </message>
     <message>
@@ -81463,8 +82135,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>સેટઅપ &gt; સિક્રેટ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>સૂચિઓમાં બતાવાય છે, ઉદાહરણ તરીકે &quot;GitHub Pages પર જાહેર સાઇટ&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>સૂચિઓમાં બતાવાય છે, ઉદાહરણ તરીકે "GitHub Pages પર જાહેર સાઇટ".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81671,7 +82343,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>સાઇટ તે પ્રકાશનની ફાઇલો પર પાછી જાય છે; હજી પ્રકાશિત ન થયેલું બિલ્ડ પહેલાં પ્રકાશિત કરવું અથવા કાઢી નાખવું જોઈએ.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>ન હોય તેવાં સરનામાં માટે સાઇટનું પોતાનું પૃષ્ઠ.</translation>
     </message>
     <message>
@@ -81679,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>લક્ષ્ય સાચવી શકાયું નહીં: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>લક્ષ્ય હજી આ કી વડે સાઇન ઇન કરતું નથી: તેની સેટિંગ્સમાં &quot;આ લક્ષ્ય માટે બનાવેલી ડિપ્લોય કી&quot; પસંદ કરો.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>લક્ષ્ય હજી આ કી વડે સાઇન ઇન કરતું નથી: તેની સેટિંગ્સમાં "આ લક્ષ્ય માટે બનાવેલી ડિપ્લોય કી" પસંદ કરો.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81715,8 +82387,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>આ બિલ્ડ કાઢી નાખે છે: ફોલ્ડરમાં ફરીથી છેલ્લું પ્રકાશન આવે છે. લાઇવ સાઇટ બદલાતી નથી.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>પહેલાં &quot;મેં ફેરફારો તપાસ્યા છે&quot; પર ટિક કરો.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>પહેલાં "મેં ફેરફારો તપાસ્યા છે" પર ટિક કરો.</translation>
     </message>
     <message>
         <source>Time</source>

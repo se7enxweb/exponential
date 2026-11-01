@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ගොනු ලෙස තබා ඇති ස්ථාපනයේ වෙනස්කම්: ඒවායේ තත්ත්වය, ධාවන, ධාවනය සහ ආපසු හැරවීම.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>මෑත අන්තර්ගතය</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>අලුත්ම අන්තර්ගතය, සමාලෝචනය සඳහා රඳවා ඇති දේ, සහ තේරීමක් මත ක්‍රියා.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>අඩවියක ස්ථිතික පිටපතක් GitHub Pages හෝ ඕනෑම git සත්කාරකයක ප්‍රකාශනය කරන්න.</translation>
     </message>
@@ -80584,6 +80592,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>වෙනස් කළ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>සෑදූ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>නම</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>පන්තිය</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>කොටස</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>සාදන්නා</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>මෑත අන්තර්ගතය</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>සම්පූර්ණ අඩවියේ වඩාත් මෑතකදී සෑදූ සහ වෙනස් කළ අන්තර්ගතය, අලුත්ම ඒවා මුලින්: අමුත්තන් ඉදිරිපත් කළ දේ, සමාලෝචනය සඳහා රඳවා ඇති දේ, ප්‍රකාශනය සඳහා බලා සිටින කෙටුම්පත්. අයිතම තෝරා ඒවා නිදහස් කරන්න, රඳවන්න, සඟවන්න, පෙන්වන්න, ඉවත් කරන්න හෝ වෙනත් කොටසකට හෝ තත්ත්වයකට ගෙන යන්න.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ලැයිස්තුව කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>සමාලෝචනය සඳහා රඳවා තැබීම තවම පිහිටුවා නැත, එබැවින් කිසිවක් රඳවා නැති අතර රඳවා තැබීමේ ක්‍රියා ලබා නොදේ. උත්ශ්‍රේණි පියවර 6.0.15-review-hold එය පිහිටුවයි: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ලැයිස්තුව පෙරන්න</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>සිට</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>දක්වා</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>දිනය</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>සෑදූ (පළමු ප්‍රකාශනය)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>සියල්ල</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ප්‍රකාශිත</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>කෙටුම්පත, කිසි දිනෙක ප්‍රකාශ නොකළ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>පොරොත්තුවෙන් (අනුමැතිය හෝ දිනයක් සඳහා බලා සිටී)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>කුණු බඳුනේ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>සමාලෝචනය සඳහා රඳවා ඇත</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>රඳවා ඇත</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>රඳවා නැත</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>සැඟවුණු</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>දෘශ්‍යමාන</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ඉදිරිපත් කළ දිනය</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ඕනෑම අඩවි ප්‍රවේශයක්</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>විගණනය වාර්තා කළ දේ පමණි.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>දැන්: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>පිවිසුම් නාමයක් හෝ පරිශීලක හැඳුනුම්පතක්.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>පෙරහන</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>පෙරහන් හිස් කරන්න</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>අයිතම</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count න් %from සිට %to දක්වා</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>අයිතමයක් නැත</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(මි.තත්. %ms කින් කියවන ලදී)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>තෝරාගත් අයිතම මත ක්‍රියා</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>මෙම පිටුවේ සියල්ල තෝරන්න</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ක් තෝරා ඇත</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ක්‍රියාව</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ක්‍රියාවක් තෝරන්න</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>රඳවා තැබීම ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>සමාලෝචනය සඳහා රඳවන්න</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>සඟවන්න</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>කුණු බඳුනට යවන්න</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>මකන්න</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>කොටස පවරන්න</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>තත්ත්වය පවරන්න</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>හේතුව</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>රඳවා තැබීමට අවශ්‍යයි; රඳවා තැබීම සමඟ සහ විගණනයේ තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>කොටසක් තෝරන්න</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>තත්ත්වයක් තෝරන්න</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>තෝරාගත් ඒවාට යොදන්න</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>සෑම අයිතමයක්ම ඔබගේම අවසර සමඟ පරීක්ෂා කෙරේ. කුණු බඳුනට යැවීම සහ මැකීම සඳහා ඔබෙන් තහවුරු කිරීමක් ඉල්ලයි. අයිතම %count කට වඩා පසුබිමේ ක්‍රියාත්මක වේ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>තෝරන්න</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ප්‍රකාශනය</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ඉදිරිපත් කළ ස්ථානය</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name තෝරන්න</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>තවම නැත</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(නමක් නැත)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>හැඳුනුම %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>කෙටුම්පත</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>පොරොත්තුවෙන්</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>එහි මාපියා විසින් සඟවා ඇත</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>රඳවා ඇත: නව ඉදිරිපත් කිරීම</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>අනුවාදය %version පොරොත්තුවෙන්</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>අනුවාදය %version ක්‍රියාත්මක වෙමින්</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>කෙටුම්පත, අනුවාදය %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>අනුවාදය %version ප්‍රකාශිතයි</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date සඳහා සැලසුම් කර ඇත</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ලිපිනයක් නැත</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>වාර්තා කර නැත</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>මෙම පෙරහන්වලට කිසිවක් ගැළපෙන්නේ නැත.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>සියල්ල පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>තවම අන්තර්ගතයක් නැත.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>පිටුවකට</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>පිටුවකට අයිතම %count ක් පෙන්වන්න.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ඉදිරිපත් කිරීමක ලිපිනය සහ බ්‍රවුසරය විගණන දර්ශකයෙන් පැමිණේ, එය මෙහි ලබා ගත නොහැක: තීරුවේ "වාර්තා කර නැත" ලෙස සඳහන් වේ.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ලිපිනය සහ බ්‍රවුසරය යනු අයිතමය සඳහා විගණනය වාර්තා කළ ඒවා වේ (ස්වයංක්‍රීය රඳවා තැබීම සැමවිටම ඒවා වාර්තා කරයි; ප්‍රකාශ කිරීම සහ සෑදීම සක්‍රිය කර ඇති තැන්වල පමණි), එහි පෞද්ගලිකත්ව සැකසුම් ඒවා තබා ගන්නා පරිදි.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: අයිතම %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>මැකීමෙන් අයිතම ඒවායේ සියලු අනුවාද සහ පරිවර්තන සමඟ සදහටම ඉවත් කෙරේ. එය අහෝසි කළ නොහැක.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>අයිතම කුණු බඳුනට යයි, එතැනින් ඒවා ප්‍රතිසාධනය කළ හැක.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>සෑම අයිතමයක්ම ඔබගේම අවසර සමඟ පරීක්ෂා කෙරේ; උප අයිතම ඇති අයිතමයක් එලෙසම තබනු ලැබේ (එය අන්තර්ගත ව්‍යුහයේ ඉවත් කරන්න). එය ඔබ බව තහවුරු කිරීමට ඔබෙන් ඉල්ලනු ඇත.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>මෙය පසුබිමේ ක්‍රියාත්මක වේ: එහි ප්‍රගති පිටුව විවෘත වන අතර, අවසන් වූ විට එක් එක් අයිතමයේ ප්‍රතිඵලය පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>තෝරාගත් අයිතම</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>සහ තවත් %count ක්</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>අවලංගු කරන්න</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>කිසිවක් කළේ නැත</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>හේතුව: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ක්‍රියාව තවමත් පසුබිමේ ක්‍රියාත්මක වේ.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>එහි ප්‍රගතිය</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>පසුබිම් ක්‍රියාව අසාර්ථක විය: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>අවසන්</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ප්‍රතික්ෂේප විය</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>අයිතමයකට</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>අයිතමය</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ප්‍රතිඵලය</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ඇයි</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ලැයිස්තුවට ආපසු</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>පිහිටුවීම</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>කිසිවක් කළේ නැත</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>තහවුරු කරන්න</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ක්‍රියාවක් තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>අවම වශයෙන් එක් අයිතමයක් තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>වරකට උපරිම අයිතම 1000 ක් තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>අයිතම රඳවා ඇත්තේ ඇයිදැයි පවසන්න.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>කොටස තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>තත්ත්වය තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>පෝරමය කියවිය නොහැකි විය.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>මෑත අන්තර්ගතය</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ගණන් කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>සමාලෝචනය සඳහා රඳවා ඇත</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>අද අලුත්</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>සමාලෝචනය සඳහා රඳවා තැබීම තවම පිහිටුවා නැත (උත්ශ්‍රේණි පියවර 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>සියලු මෑත අන්තර්ගතය</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ඔබට මධ්‍යස්ථ ක්‍රියා ධාවනය කළ නොහැක (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>මධ්‍යස්ථ ක්‍රියාව සම්පූර්ණ නැත: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>මධ්‍යස්ථකරණය: වස්තු %count ක් මත %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>වස්තු %total න් %done: %ok අවසන්, %refused ප්‍රතික්ෂේපිත, %failed අසාර්ථක</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok අවසන්, %refused ප්‍රතික්ෂේපිත, %failed අසාර්ථක</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>එය තවදුරටත් නොපවතී.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>එයට ස්ථානයක් නැත (ප්‍රකාශ කර නැත).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ඔබට එය සැඟවිය නොහැක (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ඔබට එය පෙන්විය නොහැක (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>එය දැනටමත් සඟවා ඇත.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>එය සඟවා නැත.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>සඟවන ලදී.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>පෙන්වන ලදී.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>එය කුණු බඳුනේ ඇත: එහිදී කුණු බඳුන හිස් කරන්න හෝ එය ප්‍රතිසාධනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>කිසි දිනෙක ප්‍රකාශ නොකළ කෙටුම්පතකට කුණු බඳුනට යා නොහැක: එය මකන්න.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ඔබට එය මැකිය නොහැක (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>මකන ලදී.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ඔබට එය ඉවත් කළ නොහැක (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>එයට උප අයිතම ඇත: ඒවා ලැයිස්තුගත කර ඇති අන්තර්ගත ව්‍යුහයේ එය ඉවත් කරන්න.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>එය ඉවත් කළේ නැත (කාර්ය ප්‍රවාහයක් ඉවත් කිරීම රඳවා තැබිය හැක).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>කුණු බඳුනට යවන ලදී.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>කොටස නොපවතී.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>එය දැනටමත් මෙම කොටසේ ඇත.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ඔබට මෙම කොටස පැවරිය නොහැක (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>කොටස පවරා නැත.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>කොටස පවරන ලදී.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>තත්ත්වය නොපවතී.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>එය දැනටමත් මෙම තත්ත්වයේ ඇත.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ඔබට මෙම තත්ත්වය පැවරිය නොහැක (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>තත්ත්වය පවරා නැත (කාර්ය ප්‍රවාහයක් වෙනස රඳවා තැබිය හැක).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>තත්ත්වය පවරන ලදී.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>එවැනි ක්‍රියාවක් නැත.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>සමාලෝචනය සඳහා රඳවා තැබීම පිහිටුවා නැත (උත්ශ්‍රේණි පියවර 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>එය රඳවා ඇත්තේ ඇයිදැයි පවසන්න.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>එය දැනටමත් රඳවා ඇත.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ඔබට එය රඳවා තැබිය නොහැක (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>රඳවා තැබීම යෙදුවේ නැත (කාර්ය ප්‍රවාහයක් වෙනස රඳවා තැබිය හැක).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>රඳවන ලදී.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>එය රඳවා නැත.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ඔබට එය නිදහස් කළ නොහැක (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>රඳවා තැබීම ඉවත් කළේ නැත (කාර්ය ප්‍රවාහයක් වෙනස රඳවා තැබිය හැක).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>නිදහස් කරන ලදී; තවමත් සඟවා ඇත: ඔබට එය පෙන්විය නොහැක (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>නිදහස් කරන ලදී.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,8 +81401,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub ව්‍යාපෘති අඩවියක් /&lt;repository&gt;/ යටතේ පවතී; සාපේක්ෂ සබැඳි එහි සහ වෙනත් ඕනෑම තැනක ක්‍රියා කරයි.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
-        <translation>ගොඩනැගීමක් %site හි සෑම පිටුවක්ම පිවිසී නොමැති අමුත්තෙකු දකින ආකාරයට ලබා ගනී, සබැඳි නැවත ලියයි, ගොනු පිටපත් කරයි සහ ප්‍රතිඵලය ඉලක්කයේ ෆෝල්ඩරයට ලියයි. ඔබ ගොඩනැගීම පරීක්ෂා කර &quot;ප්‍රකාශනය කරන්න&quot; ඔබන තෙක් කිසිවක් ප්‍රකාශනය නොවේ.</translation>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ගොඩනැගීමක් %site හි සෑම පිටුවක්ම පිවිසී නොමැති අමුත්තෙකු දකින ආකාරයට ලබා ගනී, සබැඳි නැවත ලියයි, ගොනු පිටපත් කරයි සහ ප්‍රතිඵලය ඉලක්කයේ ෆෝල්ඩරයට ලියයි. ඔබ ගොඩනැගීම පරීක්ෂා කර "ප්‍රකාශනය කරන්න" ඔබන තෙක් කිසිවක් ප්‍රකාශනය නොවේ.</translation>
     </message>
     <message>
         <source>A cron expression, for example 0 3 * * *</source>
@@ -80777,8 +81449,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>පිරිසිදු කිරීමෙන් පසුවත් දෝෂ නිරාකරණ ප්‍රතිදානය, ආකෘති ටෝකනයක් හෝ සැසි හැඳුනුම්කාරකයක් ඇති පිටුවක් කිසිදා ප්‍රකාශනය නොවේ.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>ආපසු හැරවීම ප්‍රවීණයන් සඳහා ය: &quot;මෙය වෙනස් කරන දේ මම දනිමි&quot; සලකුණු කර ටැගයේ නම නැවත ටයිප් කරන්න.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>ආපසු හැරවීම ප්‍රවීණයන් සඳහා ය: "මෙය වෙනස් කරන දේ මම දනිමි" සලකුණු කර ටැගයේ නම නැවත ටයිප් කරන්න.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -80786,7 +81458,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
-        <translation>ඉලක්කයක් යනු එක් git ගබඩාවකට ප්‍රකාශනය කරන එක් අඩවියකි. මෙහි කිසිවක් ගොඩනඟන්නේ හෝ ප්‍රකාශනය කරන්නේ නැත: &quot;සුරකින්න&quot; සැකසුම් settings/override/staticcache.ini.append.php වෙත ලියයි.</translation>
+        <translation>ඉලක්කයක් යනු එක් git ගබඩාවකට ප්‍රකාශනය කරන එක් අඩවියකි. මෙහි කිසිවක් ගොඩනඟන්නේ හෝ ප්‍රකාශනය කරන්නේ නැත: "සුරකින්න" සැකසුම් settings/override/staticcache.ini.append.php වෙත ලියයි.</translation>
     </message>
     <message>
         <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
@@ -81289,7 +81961,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>පෙරදසුන විවෘත කරන්න</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>සත්කාරකය සපයන ආකාරයටම ඉලක්කයේ ෆෝල්ඩරයෙන් ගොඩනැගීම විවෘත කරයි. සබැඳිය ඔබට පැයක් ක්‍රියා කරයි.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>පිහිටුවීම &gt; රහස්</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>ලැයිස්තුවල පෙන්වයි, උදාහරණයක් ලෙස &quot;GitHub Pages හි පොදු අඩවිය&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>ලැයිස්තුවල පෙන්වයි, උදාහරණයක් ලෙස "GitHub Pages හි පොදු අඩවිය".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>අඩවිය එම ප්‍රකාශනයේ ගොනු වෙත ආපසු යයි; තවම ප්‍රකාශනය නොකළ ගොඩනැගීමක් පළමුව ප්‍රකාශනය කිරීම හෝ ඉවත දැමීම කළ යුතුය.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>නොපවතින ලිපින සඳහා අඩවියේම පිටුව.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ඉලක්කය සුරැකිය නොහැකි විය: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>ඉලක්කය තවම මෙම යතුරෙන් පිවිසෙන්නේ නැත: එහි සැකසුම්වල &quot;මෙම ඉලක්කය සඳහා සාදන ලද යෙදවුම් යතුරක්&quot; තෝරන්න.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>ඉලක්කය තවම මෙම යතුරෙන් පිවිසෙන්නේ නැත: එහි සැකසුම්වල "මෙම ඉලක්කය සඳහා සාදන ලද යෙදවුම් යතුරක්" තෝරන්න.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>මෙම ගොඩනැගීම ඉවත දමයි: ෆෝල්ඩරයේ නැවතත් අවසන් ප්‍රකාශනය ඇත. සජීවී අඩවිය වෙනස් නොවේ.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>පළමුව &quot;මම වෙනස්කම් පරීක්ෂා කළෙමි&quot; සලකුණු කරන්න.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>පළමුව "මම වෙනස්කම් පරීක්ෂා කළෙමි" සලකුණු කරන්න.</translation>
     </message>
     <message>
         <source>Time</source>

@@ -15151,6 +15151,14 @@ Xamal ne: paket yi dootuñu ñu dindi samp.</translation>
         <translation>Coppite yu samp gi yu ñu denc ni dosiye: seen sitiwaasiyoŋ, doxal yi, doxal ak dellu ginnaaw.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Ëmbit yu bees</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ëmbit yi gëna bees, li ñu téye ngir saytu, ak jëf yi ci yi ñu tànn.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Siiwal benn kopi bu taxaw bu sit ci GitHub Pages walla ci bépp host git.</translation>
     </message>
@@ -80584,6 +80592,670 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Soppi nañu ko</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Sos nañu ko</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Tur</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klaas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Xaaj</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Sooskat</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ëmbit yu bees</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ëmbit yi ñu mujj a sos ak a soppi ci sit bi yépp, yu gëna bees yi jiitu: li gan yi yónne, li ñu téye ngir saytu ko, brouyoŋ yi di xaar ñu siiwal leen. Tànnal ay elemaa ngir bàyyi leen, téye leen, nëbb leen, wone leen, dindi leen walla yóbbu leen ci beneen xaaj walla beneen xaalaat.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Mënuñu woon a jàng limu bi: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Téyeg saytu gi defaruñu ko ba tey, kon dara téyewul te jëfi téye yi joxeesu leen. Tappu yeesal gi 6.0.15-review-hold moo koy defar: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sef limu bi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dale</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ba</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Bés</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Sos nañu ko (siiwal gu jëkk)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Yépp</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Sitiwaasiyoŋ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Siiwalees na</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Brouyoŋ, siiwaluñu ko mukk</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Mu ngi xaar (mu ngi xaar ndigal walla benn bés)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Mu ngi ci mbalit</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Téye nañu ko ngir saytu</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Téye nañu ko</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Téyeuñu ko</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Nëbbu</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Feeñ</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Yónne nañu ko ci</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Buntu sit bu mu mën a doon</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Li saytu gi bind rekk.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Leegi: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Turu dugg walla ID jëfandikukat.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sef</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Far sef yi</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elemaa yi</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ba %to ci %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Amul benn elemaa</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(jàng nañu ko ci %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Jëf yi ci elemaa yi ñu tànn</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Tànn yépp ci xët wii</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count lañu tànn</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Jëf</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Tànnal benn jëf</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Bàyyi téye gi</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Téye ngir saytu</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Nëbb</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Wone</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Yóbbu ci mbalit</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Far</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Jox xaaj</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Jox xaalaat</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Lu tax</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Soxla na ngir téye; dañu koy denc ak téye gi ak ci saytu gi.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Tànnal benn xaaj</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Xaalaat</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Tànnal benn xaalaat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Def ko ci yi ñu tànn</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Elemaa bu nekk dañu koy saytu ci say sañ-sañ. Yóbbu ci mbalit ak far dañuy laaj nga dëggal. Lu ëpp %count elemaa dafay dox ci ginaaw.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tànn</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Siiwal</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Yónne nañu ko dale</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Tànn %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ba tey dara</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(amul tur)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID bi %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Brouyoŋ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Mu ngi xaar</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Way-juram moo ko nëbb</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Téye nañu ko: yónnent bu bees</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Wersiyoŋ %version mu ngi xaar</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Wersiyoŋ %version mu ngi dox</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Brouyoŋ, wersiyoŋ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Wersiyoŋ %version siiwalees na</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Yéene nañu ko ci %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>amul adrees</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>binduñu ko</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Dara dëppóowul ak sef yii.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Wone yépp</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Amagul benn ëmbit.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ci xët</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Wone %count elemaa ci xët wu nekk.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Adrees ak navigatëer bu yónnent dañuy jóge ci indeksu saytu gi, te nekkul fii: kolon bi dafay wax "binduñu ko".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adrees ak navigatëer yi ñooy yi saytu gi bind ngir elemaa bi (téye gu boppam dafay bind leen saa su nekk; siiwal ak sos fu ñu ko tàkk rekk), ni ay tànnéefu sutura denc leen.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elemaa</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Far dafay dindi elemaa yi ba fàww, ak seeni wersiyoŋ ak seeni tekki yépp. Mënuñu ko dellu.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elemaa yi dañuy dem ci mbalit, fu ñu leen mën a delloo.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Elemaa bu nekk dañu koy saytu ci say sañ-sañ; elemaa bu am ay elemaa ci suufam dañu koy bàyyi ni mu mel (dindi ko ci tabaxu ëmbit bi). Dinañu la laaj nga dëggal ne yaa ko.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Lii dafay dox ci ginaaw: xëtu yokkute bi dafay ubbiku, te njureelu elemaa bu nekk dinañu ko wone bu jeexee.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Elemaa yi ñu tànn</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ak %count yeneen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Neenal</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Dara deful</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Lu tax: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Jëf ji mu ngi dox ba tey ci ginaaw.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Yokkuteem</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Jëf ji ci ginaaw fakkastalu na: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Jeex na</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Bañ nañu ko</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Fakkastalu na</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Elemaa bu nekk</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elemaa</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Njureel</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Lu tax</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Dellu ci limu bi</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Defar</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Dara defuñu</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Dëggal</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Tànnal benn jëf.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Tànnal lu mu néew néew benn elemaa.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Bul tànn lu ëpp 1000 elemaa ci benn yoon.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Waxal lu tax ñu téye elemaa yi.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Tànnal xaaj bi.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Tànnal xaalaat bi.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Mënuñu woon a jàng formileer bi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ëmbit yu bees</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Mënuñu woon a jàng lim yi: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Téye nañu ko ngir saytu</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Yu bees tey</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Téyeg saytu gi defaruñu ko ba tey (tappu yeesal gi 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ëmbit yu bees yépp</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Amuloo sañ-sañ def jëfi saytu ëmbit (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Jëfu saytu ëmbit bi matul: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Saytu ëmbit: %action ci %count objee</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ci %total objee: %ok jeex na, %refused bañ nañu leen, %failed fakkastalu nañu</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok jeex na, %refused bañ nañu leen, %failed fakkastalu nañu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Amatul.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Amul béréb (siiwaluñu ko).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Amuloo sañ-sañ nëbb ko (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Amuloo sañ-sañ wone ko (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Nëbbu na ba noppi.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nëbbuwul.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Nëbb nañu ko.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Wone nañu ko.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Mu ngi ci mbalit: sotti ko walla delloo ko fa.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Brouyoŋ bu ñu siiwalul mukk mënul dem ci mbalit: far ko.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Amuloo sañ-sañ far ko (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Far nañu ko.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Amuloo sañ-sañ dindi ko (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Am na ay elemaa ci suufam: dindi ko ci tabaxu ëmbit bi, fu ñu leen limaale.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Dindiwuñu ko (benn doxinu liggéey mën na téye dindi gi).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Yóbbu nañu ko ci mbalit.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Xaaj bi amul.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Mu ngi ci xaaj bii ba noppi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Amuloo sañ-sañ jox xaaj bii (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Joxuñu xaaj bi.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Jox nañu xaaj bi.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Xaalaat bi amul.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Mu ngi ci xaalaat bii ba noppi.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Amuloo sañ-sañ jox xaalaat bii (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Joxuñu xaalaat bi (benn doxinu liggéey mën na téye soppi gi).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Jox nañu xaalaat bi.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Jëf ju mel noonu amul.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Téyeg saytu gi defaruñu ko (tappu yeesal gi 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Waxal lu tax ñu téye ko.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Téye nañu ko ba noppi.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Amuloo sañ-sañ téye ko (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Teguñu téye gi (benn doxinu liggéey mën na téye soppi gi).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Téye nañu ko.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Téyeuñu ko.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Amuloo sañ-sañ bàyyi ko (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Bàyyiwuñu téye gi (benn doxinu liggéey mën na téye soppi gi).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Bàyyi nañu ko; mu ngi nëbbu ba tey: amuloo sañ-sañ wone ko (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Bàyyi nañu ko.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Situ projet GitHub dafa nekk ci suufu /&lt;repository&gt;/; lëkkalekaay yu relatif yi dañuy dox fa ak fépp feneen.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Tabax dafay yóbbu xët bu nekk bu %site ni ko ganaa bu duggul di gise, di bindaat lëkkalekaay yi, di duppi fisie yi te di bind njureel gi ci dosieu jëmuwaay bi. Dara du siiwalu ba nga saytu tabax bi te bës ci Siiwal.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Xët bu ci des ba léegi génnu debug, token bu formulaar walla id bu sesiyoŋ ginnaaw ba ñu ko setal, duñu ko siiwal mukk.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Dellu ginnaaw ngir boroom xam-xam la: tànnal &quot;Xam naa li lii di soppi&quot; te bindaat turu màndarga mi.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Dellu ginnaaw ngir boroom xam-xam la: tànnal "Xam naa li lii di soppi" te bindaat turu màndarga mi.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Ubbi xool lu jiitu</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Dafay ubbi tabax bi ni host bi koy joxe, ci dosieu jëmuwaay bi. Lëkkalekaay bi dafay dox ci yaw benn waxtu.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Defar &gt; Mbóot yi</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Dañu koy wone ci lim yi, misaal &quot;Sit bu siiwu ci GitHub Pages&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Dañu koy wone ci lim yi, misaal "Sit bu siiwu ci GitHub Pages".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Sit bi dafay dellu ci fisie yu siiwal boobu; tabax bu ñu siiwalagul war nañu ko siiwal walla sànni ko njëkk.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Xët bu sit bi ci boppam ngir adrees yu amul.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Mënuñu woon a denc jëmuwaay bi: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Jëmuwaay bi duggagul ak caabi bii: tànnal &quot;Caabi yónnee bu ñu defar ngir jëmuwaay bii&quot; ci tànneefam.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Jëmuwaay bi duggagul ak caabi bii: tànnal "Caabi yónnee bu ñu defar ngir jëmuwaay bii" ci tànneefam.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ War nga soppi klaasu noo bi ak fonksiyoŋu wuutu bi.</translation>
         <translation>Dafay sànni tabax bii: dosie bi dafa ëmbaat siiwal bu mujj bi. Sit bu dund bi du soppiku.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Tànnal &quot;Saytu naa coppite yi&quot; njëkk.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Tànnal "Saytu naa coppite yi" njëkk.</translation>
     </message>
     <message>
         <source>Time</source>

@@ -15151,6 +15151,14 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <translation>Instalazioaren aldaketak fitxategi gisa gordeta: haien egoera, exekuzioak, exekutatu eta desegin.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Azken edukiak</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eduki berrienak, berrikusteko atxikita dagoena eta hautapen baten gaineko ekintzak.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Argitaratu gune baten kopia estatiko bat GitHub Pages-en edo edozein git zerbitzaritan.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Aldatua</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Sortua</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Izena</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasea</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Atala</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Sortzailea</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Azken edukiak</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Gune osoko azken sortutako eta aldatutako edukiak, berrienak lehenik: bisitariek bidalitakoa, berrikusteko atxikita dagoena, argitaratzeko zain dauden zirriborroak. Hautatu elementuak askatzeko, atxikitzeko, ezkutatzeko, erakusteko, kentzeko edo beste atal edo egoera batera eramateko.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Ezin izan da zerrenda irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Berrikusteko atxikipena ez dago oraindik konfiguratuta; beraz, ez dago ezer atxikita eta ez dira atxikipen-ekintzak eskaintzen. 6.0.15-review-hold eguneratze-urratsak konfiguratzen du: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Iragazi zerrenda</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Noiztik</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Noiz arte</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Sortua (lehen argitalpena)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Denak</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Argitaratua</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Zirriborroa, inoiz argitaratu gabea</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Zain (onarpenaren edo data baten zain)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Zakarrontzian</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Berrikusteko atxikita</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Atxikita</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Atxiki gabe</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Ezkutatuta</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ikusgai</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Bidaltze-data</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Edozein gune-sarbide</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ikuskaritzak erregistratutakoa soilik.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Orain: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Saio-hasierako izen bat edo erabiltzaile-ID bat.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Iragazi</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Garbitu iragazkiak</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementuak</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Elementurik ez</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms-tan irakurria)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Hautatutako elementuen gaineko ekintzak</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Hautatu orri honetako denak</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count hautatuta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ekintza</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Aukeratu ekintza bat</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Askatu atxikipena</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Atxiki berrikusteko</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ezkutatu</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Eraman zakarrontzira</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ezabatu</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Esleitu atala</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Esleitu egoera</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Arrazoia</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Atxikitzeko beharrezkoa; atxikipenarekin eta ikuskaritzan gordetzen da.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Aukeratu atal bat</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Aukeratu egoera bat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aplikatu hautatutakoei</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Elementu bakoitza zure baimenen arabera egiaztatzen da. Zakarrontzira eramateak eta ezabatzeak berrespena eskatzen dute. %count elementu baino gehiago atzeko planoan exekutatzen dira.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Hautatu</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Argitalpena</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Nondik bidalia</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Hautatu %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>oraindik ez</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(izenik gabe)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Zirriborroa</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Zain</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Gurasoak ezkutatuta</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Atxikita: bidalketa berria</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version bertsioa zain</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version bertsioa abian</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Zirriborroa, %version bertsioa</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version bertsioa argitaratua</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date datarako programatua</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>helbiderik ez</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>erregistratu gabe</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ezerk ez du bat egiten iragazki hauekin.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Erakutsi denak</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Oraindik ez dago edukirik.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Orriko</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Erakutsi %count elementu orriko.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Bidalketa baten helbidea eta nabigatzailea ikuskaritza-indizetik datoz, eta hori ez dago erabilgarri hemen: zutabeak "erregistratu gabe" dio.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Helbidea eta nabigatzailea ikuskaritzak elementuarentzat erregistratu zituenak dira (atxikipen automatikoak beti erregistratzen ditu; argitaratzeak eta sortzeak aktibatuta dagoen tokian soilik), bere pribatutasun-ezarpenek gordetzen dituzten moduan.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elementu</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ezabatzeak elementuak behin betiko kentzen ditu, bertsio eta itzulpen guztiekin. Ezin da desegin.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementuak zakarrontzira doaz, eta handik leheneratu daitezke.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Elementu bakoitza zure baimenen arabera egiaztatzen da; azpi-elementuak dituen elementua dagoen bezala uzten da (kendu eduki-egituran). Zu zarela egiaztatzeko eskatuko zaizu.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Hau atzeko planoan exekutatzen da: bere aurrerapen-orria irekitzen da, eta elementu bakoitzaren emaitza amaitzean erakusten da.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Hautatutako elementuak</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>eta beste %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Utzi</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ez da ezer egin</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Arrazoia: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Ekintza atzeko planoan exekutatzen ari da oraindik.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Bere aurrerapena</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Atzeko planoko ekintzak huts egin du: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Eginda</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ukatua</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Huts egin du</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Elementuko</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elementua</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Emaitza</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Zergatik</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Itzuli zerrendara</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazioa</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ez da ezer egin</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Berretsi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Aukeratu ekintza bat.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Hautatu gutxienez elementu bat.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Hautatu gehienez 1000 elementu aldi berean.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Esan zergatik atxikitzen diren elementuak.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Aukeratu atala.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Aukeratu egoera.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ezin izan da formularioa irakurri.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Azken edukiak</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Ezin izan dira zenbaketak irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Berrikusteko atxikita</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Berriak gaur</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Berrikusteko atxikipena ez dago oraindik konfiguratuta (6.0.15-review-hold eguneratze-urratsa).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Azken eduki guztiak</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ezin duzu moderazio-ekintzarik exekutatu (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderazio-ekintza ez dago osatuta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderazioa: %action %count objektutan</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total objektu: %ok eginda, %refused ukatuta, %failed huts eginda</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok eginda, %refused ukatuta, %failed huts eginda</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ez da existitzen jada.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ez du kokapenik (argitaratu gabea).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ezin duzu ezkutatu (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ezin duzu erakutsi (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ezkutatuta dago jada.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ez dago ezkutatuta.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Ezkutatuta.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Erakutsita.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Zakarrontzian dago: hustu edo leheneratu han.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Inoiz argitaratu ez den zirriborro bat ezin da zakarrontzira joan: ezabatu.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ezin duzu ezabatu (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Ezabatuta.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ezin duzu kendu (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Azpi-elementuak ditu: kendu eduki-egituran, han zerrendatzen baitira.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ez da kendu (lan-fluxu batek kentzea atxiki dezake).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Zakarrontzira eramana.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Atala ez da existitzen.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Atal honetan dago jada.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ezin duzu atal hau esleitu (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Ez da atala esleitu.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Atala esleituta.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Egoera ez da existitzen.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Egoera honetan dago jada.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ezin duzu egoera hau esleitu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ez da egoera esleitu (lan-fluxu batek aldaketa atxiki dezake).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Egoera esleituta.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ez dago horrelako ekintzarik.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Berrikusteko atxikipena ez dago konfiguratuta (6.0.15-review-hold eguneratze-urratsa).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Esan zergatik dagoen atxikita.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Atxikita dago jada.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ezin duzu atxiki (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ez da atxikipena ezarri (lan-fluxu batek aldaketa atxiki dezake).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Atxikita.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ez dago atxikita.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ezin duzu askatu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ez da atxikipena askatu (lan-fluxu batek aldaketa atxiki dezake).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Askatuta; ezkutatuta jarraitzen du: ezin duzu erakutsi (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Askatuta.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>GitHub proiektu-gune bat /&lt;repository&gt;/ azpian dago; esteka erlatiboek bertan eta beste edozein lekutan funtzionatzen dute.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Konpilazio batek %site guneko orri guztiak eskuratzen ditu saioa hasi gabeko bisitari batek ikusten dituen bezala, estekak berridazten ditu, fitxategiak kopiatzen ditu eta emaitza helburuaren karpetan idazten du. Ez da ezer argitaratzen konpilazioa egiaztatu eta Argitaratu sakatu arte.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Garbiketaren ondoren arazketa-irteera, inprimaki-token bat edo saio-ID bat duen orria ez da inoiz argitaratzen.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Desegitea adituentzat da: markatu &quot;Badakit honek zer aldatzen duen&quot; eta idatzi berriro etiketaren izena.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Desegitea adituentzat da: markatu "Badakit honek zer aldatzen duen" eta idatzi berriro etiketaren izena.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Ireki aurrebista</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Konpilazioa zerbitzariak zerbitzatuko duen bezala irekitzen du, helburuaren karpetatik. Estekak ordubetez funtzionatzen du zuretzat.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Konfigurazioa &gt; Sekretuak</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Zerrendetan erakusten da, adibidez &quot;Gune publikoa GitHub Pages-en&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Zerrendetan erakusten da, adibidez "Gune publikoa GitHub Pages-en".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Gunea argitalpen horren fitxategietara itzultzen da; oraindik argitaratu gabeko konpilazio bat lehenik argitaratu edo baztertu behar da.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Gunearen beraren orria existitzen ez diren helbideetarako.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Ezin izan da helburua gorde: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Helburuak ez du oraindik gako honekin saioa hasten: aukeratu &quot;Helburu honetarako sortutako hedapen-gakoa&quot; haren ezarpenetan.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Helburuak ez du oraindik gako honekin saioa hasten: aukeratu "Helburu honetarako sortutako hedapen-gakoa" haren ezarpenetan.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <translation>Konpilazio hau baztertzen du: karpetak azken argitalpena du berriro. Zuzeneko gunea ez da aldatzen.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Markatu lehenik &quot;Aldaketak egiaztatu ditut&quot;.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Markatu lehenik "Aldaketak egiaztatu ditut".</translation>
     </message>
     <message>
         <source>Time</source>

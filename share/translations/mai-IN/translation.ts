@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>फाइलक रूपमे राखल इंस्टॉलेशनक परिवर्तन: ओकर स्थिति, रन, चलाउ आ पाछाँ घुमाउ।</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>हालक सामग्री</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>नवीनतम सामग्री, समीक्षाक लेल की रोकल गेल अछि, आ चयन पर कार्रवाई।</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>साइटक स्टैटिक प्रति GitHub Pages वा कोनो git होस्ट पर प्रकाशित करू।</translation>
     </message>
@@ -80592,6 +80600,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>संशोधित</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>बनाओल गेल</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>वर्ग</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>खण्ड</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>निर्माता</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>हालक सामग्री</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>पूरा साइटक सबसँ हालमे बनाओल आ संशोधित सामग्री, नवीनतम पहिने: आगंतुक सभ की पठओलनि, समीक्षाक लेल की रोकल गेल अछि, कोन ड्राफ़्ट प्रकाशनक प्रतीक्षामे अछि। आइटम चुनि ओकरा रोकसँ मुक्त करू, रोकू, नुकाउ, देखाउ, हटाउ वा दोसर खण्ड वा स्थितिमे ल' जाउ।</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>सूची नहि पढ़ल जा सकल: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>समीक्षा रोक एखन धरि सेट अप नहि अछि, तेँ किछु नहि रोकल जाइत अछि आ रोकक कार्रवाई उपलब्ध नहि अछि। अपग्रेड चरण 6.0.15-review-hold एकरा सेट अप करैत अछि: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>सूची फ़िल्टर करू</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>सँ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>धरि</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>तिथि</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>बनाओल गेल (पहिल बेर प्रकाशित)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सभ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>प्रकाशित</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ड्राफ़्ट, कहियो प्रकाशित नहि</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>लंबित (स्वीकृति वा कोनो तिथिक प्रतीक्षामे)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>कूड़ादानमे</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>समीक्षाक लेल रोकल</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>रोकल</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>नहि रोकल</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>नुकाएल</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>देखाइत</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>पठएबाक तिथि</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>कोनो साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>मात्र ओ जे ऑडिट दर्ज कएलक।</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>एखन: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>एकटा लॉगिन वा प्रयोक्ता आईडी।</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>फ़िल्टर करू</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>फ़िल्टर हटाउ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>आइटम सभ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count मे सँ %from सँ %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>कोनो आइटम नहि</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms मे पढ़ल गेल)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>चुनल आइटम पर कार्रवाई</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>एहि पृष्ठ पर सभ चुनू</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count चुनल गेल</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>कार्रवाई</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>एकटा कार्रवाई चुनू</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>रोक हटाउ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>समीक्षाक लेल रोकू</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>नुकाउ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>देखाउ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>कूड़ादानमे ल' जाउ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>मेटाउ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>खण्ड सौंपू</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>स्थिति सौंपू</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>कारण</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>रोकबाक लेल आवश्यक; रोकक संग आ ऑडिटमे राखल जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>एकटा खण्ड चुनू</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>एकटा स्थिति चुनू</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>चुनल पर लागू करू</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>प्रत्येक आइटमक जाँच अहाँक अपन अनुमतिक आधार पर होइत अछि। कूड़ादानमे ल' जएबासँ आ मेटएबासँ पहिने पुष्टि माँगल जाइत अछि। %count सँ बेसी आइटम पृष्ठभूमिमे चलैत अछि।</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>चुनू</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>एतयसँ पठाओल गेल</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name चुनू</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>एखन नहि</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(कोनो नाम नहि)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>आईडी %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ड्राफ़्ट</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>लंबित</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>अपन पैरेंट द्वारा नुकाएल</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>रोकल: नव प्रविष्टि</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>संस्करण %version लंबित</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>संस्करण %version पर काज चलि रहल अछि</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ड्राफ़्ट, संस्करण %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>संस्करण %version प्रकाशित</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date लेल निर्धारित</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>कोनो पता नहि</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>दर्ज नहि</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>एहि फ़िल्टर सभसँ किछु मेल नहि खाइत अछि।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>सभ देखाउ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>एखन धरि कोनो सामग्री नहि अछि।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>प्रति पृष्ठ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>प्रति पृष्ठ %count आइटम देखाउ।</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>प्रविष्टिक पता आ ब्राउज़र ऑडिट इंडेक्ससँ अबैत अछि, जे एतय उपलब्ध नहि अछि: स्तंभमे "दर्ज नहि" लिखल रहैत अछि।</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>पता आ ब्राउज़र ओएह अछि जे ऑडिट आइटमक लेल दर्ज कएलक (स्वचालित रोक ओकरा सदिखन दर्ज करैत अछि; प्रकाशन आ निर्माण मात्र जतय चालू हो), जेना ओकर गोपनीयता सेटिंग ओकरा रखैत अछि।</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count आइटम</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>मेटएलासँ आइटम अपन सभ संस्करण आ अनुवादक संग सदाक लेल हटि जाइत अछि। एकरा पलटल नहि जा सकैत अछि।</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>आइटम कूड़ादानमे जाइत अछि, जतयसँ ओकरा पुनर्स्थापित कएल जा सकैत अछि।</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>प्रत्येक आइटमक जाँच अहाँक अपन अनुमतिक आधार पर होइत अछि; जाहि आइटमक उप-आइटम अछि ओकरा ओहिना छोड़ि देल जाइत अछि (ओकरा सामग्री संरचनामे हटाउ)। अहाँसँ पुष्टि करबाक लेल कहल जाएत जे ई अहीं छी।</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ई पृष्ठभूमिमे चलैत अछि: एकर प्रगति पृष्ठ खुजैत अछि, आ पूरा भेला पर प्रत्येक आइटमक परिणाम देखाओल जाइत अछि।</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>चुनल आइटम</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>आ %count आओर</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करू</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>किछु नहि कएल गेल</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>कारण: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>कार्रवाई एखनो पृष्ठभूमिमे चलि रहल अछि।</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>एकर प्रगति</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>पृष्ठभूमिक कार्रवाई विफल भेल: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>पूरा भेल</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>अस्वीकृत</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफल</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>प्रति आइटम</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>आइटम</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणाम</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>किएक</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>सूची पर वापस</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>किछु नहि कएल गेल</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>पुष्टि करू</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>एकटा कार्रवाई चुनू।</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>कमसँ कम एकटा आइटम चुनू।</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>एक बेरमे बेसीसँ बेसी 1000 आइटम चुनू।</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>कहू जे आइटम किएक रोकल गेल अछि।</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>खण्ड चुनू।</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>स्थिति चुनू।</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>फ़ॉर्म नहि पढ़ल जा सकल।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>हालक सामग्री</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>गिनती नहि पढ़ल जा सकल: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>समीक्षाक लेल रोकल</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>आइ नव</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>समीक्षा रोक एखन धरि सेट अप नहि अछि (अपग्रेड चरण 6.0.15-review-hold)।</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>सभ हालक सामग्री</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>अहाँ मॉडरेशन कार्रवाई नहि चला सकैत छी (moderation/act)।</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>मॉडरेशन कार्रवाई पूरा नहि भेल: %errors।</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>मॉडरेशन: %count ऑब्जेक्ट पर %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total मे सँ %done ऑब्जेक्ट: %ok पूरा, %refused अस्वीकृत, %failed विफल</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok पूरा, %refused अस्वीकृत, %failed विफल</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ई आब मौजूद नहि अछि।</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>एकर कोनो स्थान नहि अछि (प्रकाशित नहि)।</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>अहाँ एकरा नुका नहि सकैत छी (content/hide)।</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>अहाँ एकरा देखा नहि सकैत छी (content/hide)।</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ई पहिनहि नुकाएल अछि।</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ई नुकाएल नहि अछि।</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>नुकाओल गेल।</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>देखाओल गेल।</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ई कूड़ादानमे अछि: ओतहि एकरा खाली करू वा पुनर्स्थापित करू।</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>जे ड्राफ़्ट कहियो प्रकाशित नहि भेल ओ कूड़ादानमे नहि जा सकैत अछि: ओकरा मेटाउ।</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>अहाँ एकरा मेटा नहि सकैत छी (content/remove)।</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>मेटाओल गेल।</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>अहाँ एकरा हटा नहि सकैत छी (content/remove)।</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>एकर उप-आइटम अछि: एकरा सामग्री संरचनामे हटाउ, जतय ओ सूचीबद्ध अछि।</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ई नहि हटाओल गेल (कोनो वर्कफ़्लो हटएबाकेँ रोकि सकैत अछि)।</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>कूड़ादानमे ल' जाओल गेल।</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>खण्ड मौजूद नहि अछि।</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ई पहिनहि एहि खण्डमे अछि।</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>अहाँ ई खण्ड नहि सौंपि सकैत छी (section/assign)।</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>खण्ड नहि सौंपल गेल।</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>खण्ड सौंपल गेल।</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>स्थिति मौजूद नहि अछि।</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ई पहिनहि एहि स्थितिमे अछि।</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>अहाँ ई स्थिति नहि सौंपि सकैत छी (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>स्थिति नहि सौंपल गेल (कोनो वर्कफ़्लो बदलावकेँ रोकि सकैत अछि)।</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>स्थिति सौंपल गेल।</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>एहन कोनो कार्रवाई नहि अछि।</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>समीक्षा रोक सेट अप नहि अछि (अपग्रेड चरण 6.0.15-review-hold)।</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>कहू जे ई किएक रोकल गेल अछि।</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ई पहिनहि रोकल अछि।</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>अहाँ एकरा रोकि नहि सकैत छी (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>रोक नहि लगाओल गेल (कोनो वर्कफ़्लो बदलावकेँ रोकि सकैत अछि)।</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>रोकल गेल।</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ई रोकल नहि अछि।</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>अहाँ एकरा मुक्त नहि क' सकैत छी (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>रोक नहि हटाओल गेल (कोनो वर्कफ़्लो बदलावकेँ रोकि सकैत अछि)।</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>मुक्त कएल गेल; एखनो नुकाएल: अहाँ एकरा देखा नहि सकैत छी (content/hide)।</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>मुक्त कएल गेल।</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80737,7 +81409,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub प्रोजेक्ट साइट /&lt;repository&gt;/ क नीचाँ रहैत अछि; सापेक्ष लिंक ओतहु आ आन कतहु काज करैत अछि।</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>बिल्ड %site क प्रत्येक पृष्ठ ओहिना आनैत अछि जेना साइन इन नहि कएल आगंतुक देखैत छथि, लिंक फेरसँ लिखैत अछि, फाइल कॉपी करैत अछि आ परिणाम लक्ष्यक फोल्डरमे लिखैत अछि। जा धरि अहाँ बिल्ड जाँचि केँ प्रकाशित करू नहि दबाबी, ता धरि किछु प्रकाशित नहि होइत अछि।</translation>
     </message>
     <message>
@@ -80785,12 +81457,12 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>जाहि पृष्ठ मे सफाईक बादो डिबग आउटपुट, फॉर्म टोकन वा सेशन आईडी रहैत अछि, से कहियो प्रकाशित नहि होइत अछि।</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>रोलबैक विशेषज्ञ सभक लेल अछि: &quot;हम जनैत छी जे ई की बदलैत अछि&quot; पर टिक करू आ टैगक नाम फेरसँ टाइप करू।</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>रोलबैक विशेषज्ञ सभक लेल अछि: "हम जनैत छी जे ई की बदलैत अछि" पर टिक करू आ टैगक नाम फेरसँ टाइप करू।</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>एकटा साइट %site धरि, एकटा फाइल %file धरि भ&apos; सकैत अछि, आ मासमे लगभग 100 GB ट्रैफिक। मुफ्त प्लान पर रिपॉजिटरी सार्वजनिक होएब आवश्यक अछि। GitHub Pages दोकान वा आन व्यावसायिक लेन-देनक लेल नहि अछि।</translation>
+        <translation>एकटा साइट %site धरि, एकटा फाइल %file धरि भ' सकैत अछि, आ मासमे लगभग 100 GB ट्रैफिक। मुफ्त प्लान पर रिपॉजिटरी सार्वजनिक होएब आवश्यक अछि। GitHub Pages दोकान वा आन व्यावसायिक लेन-देनक लेल नहि अछि।</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -80822,7 +81494,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Another process works on this target: %detail</source>
-        <translation>आन प्रक्रिया एहि लक्ष्य पर काज क&apos; रहल अछि: %detail</translation>
+        <translation>आन प्रक्रिया एहि लक्ष्य पर काज क' रहल अछि: %detail</translation>
     </message>
     <message>
         <source>Back</source>
@@ -81130,7 +81802,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>It runs in the background as %user; you can close this page.</source>
-        <translation>ई पृष्ठभूमिमे %user क रूपमे चलैत अछि; अहाँ ई पृष्ठ बंद क&apos; सकैत छी।</translation>
+        <translation>ई पृष्ठभूमिमे %user क रूपमे चलैत अछि; अहाँ ई पृष्ठ बंद क' सकैत छी।</translation>
     </message>
     <message>
         <source>Job %id</source>
@@ -81297,7 +81969,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>पूर्वावलोकन खोलू</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>बिल्डकेँ लक्ष्यक फोल्डरसँ ओहिना खोलैत अछि जेना होस्ट परोसत। ई लिंक अहाँक लेल एक घंटा धरि काज करैत अछि।</translation>
     </message>
     <message>
@@ -81402,7 +82074,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
-        <translation>की बदलू: पुरान की काज करब बंद क&apos; दैत अछि</translation>
+        <translation>की बदलू: पुरान की काज करब बंद क' दैत अछि</translation>
     </message>
     <message>
         <source>Report</source>
@@ -81473,8 +82145,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>सेटअप &gt; गोपनीय मान सभ</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>सूचीमे देखाओल जाइत अछि, उदाहरणक लेल &quot;GitHub Pages पर सार्वजनिक साइट&quot;।</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>सूचीमे देखाओल जाइत अछि, उदाहरणक लेल "GitHub Pages पर सार्वजनिक साइट"।</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81614,7 +82286,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>कार्य समाप्त भ&apos; गेल। ओकर रिपोर्ट लोड भ&apos; रहल अछि।</translation>
+        <translation>कार्य समाप्त भ' गेल। ओकर रिपोर्ट लोड भ' रहल अछि।</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
@@ -81681,7 +82353,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>साइट ओहि प्रकाशनक फाइल पर वापस जाइत अछि; जे बिल्ड एखन धरि प्रकाशित नहि भेल अछि ओकरा पहिने प्रकाशित करू वा फेकि दिअ।</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>नहि रहल पता सभक लेल साइटक अपन पृष्ठ।</translation>
     </message>
     <message>
@@ -81689,8 +82361,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>लक्ष्य नहि सहेजल जा सकल: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>लक्ष्य एखन धरि एहि कीसँ साइन इन नहि करैत अछि: ओकर सेटिंगमे &quot;एहि लक्ष्यक लेल बनाओल गेल डिप्लॉय की&quot; चुनू।</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>लक्ष्य एखन धरि एहि कीसँ साइन इन नहि करैत अछि: ओकर सेटिंगमे "एहि लक्ष्यक लेल बनाओल गेल डिप्लॉय की" चुनू।</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81725,8 +82397,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ई बिल्ड फेकि दैत अछि: फोल्डरमे फेरसँ अंतिम प्रकाशन रहैत अछि। लाइव साइट नहि बदलैत अछि।</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>पहिने &quot;हम परिवर्तन जाँचि लेलहुँ अछि&quot; पर टिक करू।</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>पहिने "हम परिवर्तन जाँचि लेलहुँ अछि" पर टिक करू।</translation>
     </message>
     <message>
         <source>Time</source>
@@ -81814,7 +82486,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>अहाँ सदिखन एतय आ कंसोल पर हाथसँ बिल्ड आ प्रकाशित क&apos; सकैत छी।</translation>
+        <translation>अहाँ सदिखन एतय आ कंसोल पर हाथसँ बिल्ड आ प्रकाशित क' सकैत छी।</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>

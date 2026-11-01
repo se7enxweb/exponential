@@ -15090,6 +15090,14 @@ Shënim: paketat nuk do të çinstalohen.</translation>
         <translation>Ndryshime të instalimit të ruajtura si skedarë: gjendja e tyre, ekzekutimet, ekzekuto dhe kthe mbrapsht.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Përmbajtja e fundit</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Përmbajtja më e re, çfarë mbahet për shqyrtim dhe veprime mbi një përzgjedhje.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Publikoni një kopje statike të një sajti në GitHub Pages ose në çdo host git.</translation>
     </message>
@@ -80614,6 +80622,670 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modifikuar</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Krijuar</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Emri</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksioni</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Krijuesi</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Përmbajtja e fundit</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Përmbajtja e krijuar dhe e modifikuar së fundi në të gjithë sajtin, më e reja e para: çfarë kanë dërguar vizitorët, çfarë mbahet për shqyrtim, skica që presin publikimin e tyre. Përzgjidhni elemente për t&apos;i liruar, mbajtur, fshehur, shfaqur, hequr ose zhvendosur në një seksion ose gjendje tjetër.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Lista nuk mund të lexohej: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Mbajtja për shqyrtim nuk është konfiguruar ende, ndaj asgjë nuk mbahet dhe veprimet e mbajtjes nuk ofrohen. Hapi i përditësimit 6.0.15-review-hold e konfiguron: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtroni listën</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Nga</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Deri më</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Krijuar (publikimi i parë)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Të gjitha</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statusi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>I publikuar</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Skicë, e papublikuar kurrë</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Në pritje (pret miratim ose një datë)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Në kosh</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Mbajtur për shqyrtim</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Mbajtur</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Jo i mbajtur</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>I fshehur</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>I dukshëm</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Dërguar më</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Çdo qasje në sajt</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Vetëm çfarë regjistroi auditimi.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Tani: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Një emër hyrjeje ose një ID përdoruesi.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtro</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Pastro filtrat</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementet</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from deri %to nga %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Asnjë element</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lexuar në %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Veprime mbi elementet e përzgjedhura</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Përzgjidh të gjitha në këtë faqe</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count të përzgjedhura</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Veprimi</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Zgjidhni një veprim</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Liro mbajtjen</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Mbaj për shqyrtim</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Fshih</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Shfaq</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Zhvendos në kosh</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Fshi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Cakto seksionin</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Cakto gjendjen</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Arsyeja</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>E nevojshme për mbajtjen; ruhet me mbajtjen dhe në auditim.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Zgjidhni një seksion</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gjendja</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Zgjidhni një gjendje</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Zbato te të përzgjedhurat</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Çdo element kontrollohet sipas lejeve tuaja. Zhvendosja në kosh dhe fshirja kërkojnë konfirmimin tuaj. Më shumë se %count elemente ekzekutohen në sfond.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Përzgjidh</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikimi</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Dërguar nga</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Përzgjidh %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ende jo</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(pa emër)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Skicë</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Në pritje</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>I fshehur nga prindi i tij</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Mbajtur: dërgesë e re</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versioni %version në pritje</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versioni %version në punim</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Skicë, versioni %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versioni %version i publikuar</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Planifikuar për %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>pa adresë</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>i paregjistruar</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Asgjë nuk përputhet me këto filtra.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Shfaq të gjitha</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Ende nuk ka përmbajtje.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Për faqe</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Shfaq %count elemente për faqe.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adresa dhe shfletuesi i një dërgese vijnë nga indeksi i auditimit, i cili nuk është i disponueshëm këtu: kolona thotë „i paregjistruar”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adresa dhe shfletuesi janë ato që auditimi regjistroi për elementin (mbajtja automatike i regjistron gjithmonë; publikimi dhe krijimi vetëm aty ku është aktivizuar), ashtu siç i ruajnë cilësimet e tij të privatësisë.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elemente</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Fshirja i heq elementet përgjithmonë, me të gjitha versionet dhe përkthimet e tyre. Nuk mund të zhbëhet.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementet shkojnë në kosh, prej nga mund të rikthehen.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Çdo element kontrollohet sipas lejeve tuaja; një element me nënelemente lihet siç është (hiqeni te struktura e përmbajtjes). Do t&apos;ju kërkohet të verifikoni që jeni ju.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Kjo ekzekutohet në sfond: hapet faqja e ecurisë dhe rezultati për çdo element shfaqet kur të përfundojë.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Elementet e përzgjedhura</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>dhe %count të tjera</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulo</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nuk u bë asgjë</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Arsyeja: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Veprimi po ekzekutohet ende në sfond.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ecuria e tij</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Veprimi në sfond dështoi: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>U krye</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>U refuzua</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Dështoi</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Për element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elementi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultati</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Pse</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Kthehu te lista</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurimi</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Asgjë e bërë</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Konfirmo</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Zgjidhni një veprim.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Përzgjidhni të paktën një element.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Përzgjidhni më së shumti 1000 elemente njëherësh.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Tregoni pse mbahen elementet.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Zgjidhni seksionin.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Zgjidhni gjendjen.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulari nuk mund të lexohej.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Përmbajtja e fundit</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Numërimet nuk mund të lexoheshin: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Mbajtur për shqyrtim</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Të reja sot</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Mbajtja për shqyrtim nuk është konfiguruar ende (hapi i përditësimit 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>E gjithë përmbajtja e fundit</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Nuk keni leje të ekzekutoni veprime moderimi (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Veprimi i moderimit nuk është i plotë: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderimi: %action mbi %count objekte</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done nga %total objekte: %ok të kryera, %refused të refuzuara, %failed të dështuara</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok të kryera, %refused të refuzuara, %failed të dështuara</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Nuk ekziston më.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nuk ka vendndodhje (i papublikuar).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Nuk keni leje ta fshihni (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Nuk keni leje ta shfaqni (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Është tashmë i fshehur.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nuk është i fshehur.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>U fsheh.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>U shfaq.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Është në kosh: zbrazeni ose riktheheni atje.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Një skicë që nuk është publikuar kurrë nuk mund të shkojë në kosh: fshijeni.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Nuk keni leje ta fshini (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>U fshi.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Nuk keni leje ta hiqni (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ka nënelemente: hiqeni te struktura e përmbajtjes, ku ato renditen.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nuk u hoq (një rrjedhë pune mund ta mbajë heqjen).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>U zhvendos në kosh.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Seksioni nuk ekziston.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Është tashmë në këtë seksion.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Nuk keni leje ta caktoni këtë seksion (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Seksioni nuk u caktua.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seksioni u caktua.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Gjendja nuk ekziston.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Është tashmë në këtë gjendje.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Nuk keni leje ta caktoni këtë gjendje (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Gjendja nuk u caktua (një rrjedhë pune mund ta mbajë ndryshimin).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Gjendja u caktua.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Nuk ka një veprim të tillë.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Mbajtja për shqyrtim nuk është konfiguruar (hapi i përditësimit 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Tregoni pse mbahet.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Është tashmë i mbajtur.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Nuk keni leje ta mbani (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Mbajtja nuk u vendos (një rrjedhë pune mund ta mbajë ndryshimin).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>U mbajt.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nuk është i mbajtur.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Nuk keni leje ta lironi (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Mbajtja nuk u lirua (një rrjedhë pune mund ta mbajë ndryshimin).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>U lirua; ende i fshehur: nuk keni leje ta shfaqni (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>U lirua.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80653,7 +81325,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>build to check</source>
-        <translation>ndërtim për t&apos;u kontrolluar</translation>
+        <translation>ndërtim për t'u kontrolluar</translation>
     </message>
     <message>
         <source>hide this</source>
@@ -80759,7 +81431,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Një sajt projekti GitHub ndodhet nën /&lt;repository&gt;/; lidhjet relative funksionojnë atje dhe kudo tjetër.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Një ndërtim merr çdo faqe të %site ashtu siç e sheh një vizitor që nuk ka hyrë, rishkruan lidhjet, kopjon skedarët dhe e shkruan rezultatin në dosjen e destinacionit. Asgjë nuk publikohet derisa ta kontrolloni ndërtimin dhe të shtypni Publiko.</translation>
     </message>
     <message>
@@ -80807,7 +81479,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Një faqe që pas pastrimit ende përmban dalje korrigjimi, një token formulari ose një identifikues sesioni nuk publikohet kurrë.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
         <translation>Kthimi mbrapsht është për ekspertë: shënoni „E di çfarë ndryshon kjo“ dhe shkruani sërish emrin e etiketës.</translation>
     </message>
     <message>
@@ -80892,7 +81564,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>Build to check</source>
-        <translation>Ndërtim për t&apos;u kontrolluar</translation>
+        <translation>Ndërtim për t'u kontrolluar</translation>
     </message>
     <message>
         <source>By</source>
@@ -81319,7 +81991,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Hap pamjen paraprake</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Hap ndërtimin ashtu siç do ta shërbejë hosti, nga dosja e destinacionit. Lidhja funksionon për ju për një orë.</translation>
     </message>
     <message>
@@ -81495,7 +82167,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Konfigurimi &gt; Sekretet</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
         <translation>Shfaqet në lista, për shembull „Sajti publik në GitHub Pages“.</translation>
     </message>
     <message>
@@ -81508,7 +82180,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>Site to publish</source>
-        <translation>Sajti për t&apos;u publikuar</translation>
+        <translation>Sajti për t'u publikuar</translation>
     </message>
     <message>
         <source>Size</source>
@@ -81703,7 +82375,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Sajti kthehet te skedarët e atij publikimi; një ndërtim ende i papublikuar duhet fillimisht të publikohet ose të hidhet poshtë.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Faqja e vetë sajtit për adresat që nuk ekzistojnë.</translation>
     </message>
     <message>
@@ -81711,7 +82383,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>Destinacioni nuk mund të ruhej: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
         <translation>Destinacioni ende nuk hyn me këtë çelës: zgjidhni „Një çelës vendosjeje i krijuar për këtë destinacion“ te cilësimet e tij.</translation>
     </message>
     <message>
@@ -81720,7 +82392,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>There is no build to check yet.</source>
-        <translation>Ende nuk ka asnjë ndërtim për t&apos;u kontrolluar.</translation>
+        <translation>Ende nuk ka asnjë ndërtim për t'u kontrolluar.</translation>
     </message>
     <message>
         <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
@@ -81747,7 +82419,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <translation>E hedh poshtë këtë ndërtim: dosja përmban sërish publikimin e fundit. Sajti i drejtpërdrejtë nuk ndryshon.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <source>Tick "I have checked the changes" first.</source>
         <translation>Shënoni fillimisht „I kam kontrolluar ndryshimet“.</translation>
     </message>
     <message>
@@ -81964,7 +82636,7 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: shkruhet në skedarin CNAME. Drejtojeni DNS-në e domenit te hosti siç e shpjegon ai; HTTPS mund të kërkojë pak kohë për t&apos;u nisur.</translation>
+        <translation>www.example.com: shkruhet në skedarin CNAME. Drejtojeni DNS-në e domenit te hosti siç e shpjegon ai; HTTPS mund të kërkojë pak kohë për t'u nisur.</translation>
     </message>
     <message>
         <source>yes, not published yet</source>

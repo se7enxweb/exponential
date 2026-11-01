@@ -15151,6 +15151,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <translation>O‘rnatmadagi fayl sifatida saqlangan o‘zgarishlar: ularning holati, ishga tushirishlar, bajarish va orqaga qaytarish.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>Yangi kontent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eng yangi kontent, tekshiruv uchun ushlab turilganlar va tanlov ustida amallar.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>Sayt statik nusxasini GitHub Pages yoki istalgan git xostiga nashr qilish.</translation>
     </message>
@@ -80584,6 +80592,670 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Oʻzgartirilgan</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Yaratilgan</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sinf</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Boʻlim</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Yaratuvchi</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Yangi kontent</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Butun saytning eng soʻnggi yaratilgan va oʻzgartirilgan kontenti, eng yangisi birinchi: tashrif buyuruvchilar yuborganlari, tekshiruv uchun ushlab turilganlari, nashr qilinishini kutayotgan qoralamalar. Elementlarni qoʻyib yuborish, ushlab turish, yashirish, koʻrsatish, olib tashlash yoki boshqa boʻlim yoki holatga koʻchirish uchun ularni tanlang.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Roʻyxatni oʻqib boʻlmadi: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Tekshiruv uchun ushlab turish hali sozlanmagan, shuning uchun hech narsa ushlab turilmaydi va ushlab turish amallari taklif qilinmaydi. Uni 6.0.15-review-hold yangilash bosqichi sozlaydi: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Roʻyxatni filtrlash</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Dan</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gacha</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Sana</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Yaratilgan (birinchi nashr)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hammasi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Nashr maqomi</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Nashr qilingan</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Qoralama, hech qachon nashr qilinmagan</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Kutilmoqda (tasdiq yoki sanani kutmoqda)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Savatda</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Tekshiruv uchun ushlab turilgan</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Ushlab turilgan</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ushlab turilmagan</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Yashirin</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Koʻrinadigan</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Yuborilgan sayt kirish nuqtasi</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Har qanday sayt kirish nuqtasi</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Faqat audit qayd etganlari.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Hozir: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Login yoki foydalanuvchi identifikatori.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrlash</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filtrlarni tozalash</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementlar</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count tadan %from–%to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Element yoʻq</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms da oʻqildi)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Tanlangan elementlar ustida amallar</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Ushbu sahifadagi hammasini tanlash</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ta tanlandi</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Amal</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Amalni tanlang</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Ushlab turishni bekor qilish</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Tekshiruv uchun ushlab turish</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Yashirish</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Koʻrsatish</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Savatga koʻchirish</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Oʻchirish</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Boʻlim tayinlash</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Holat tayinlash</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sabab</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ushlab turish uchun kerak; ushlab turish bilan birga va auditda saqlanadi.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Boʻlimni tanlang</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Holat</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Holatni tanlang</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Tanlanganlarga qoʻllash</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Har bir element sizning ruxsatlaringiz boʻyicha tekshiriladi. Savatga koʻchirish va oʻchirish tasdiqlashni soʻraydi. %count tadan ortiq element fonda bajariladi.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tanlash</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Nashr</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Qayerdan yuborilgan</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ni tanlash</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>hali emas</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(nomsiz)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Identifikator %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Qoralama</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Kutilmoqda</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ota elementi tomonidan yashirilgan</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Ushlab turilgan: yangi yuborilgan</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version-versiya kutilmoqda</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version-versiya ustida ish olib borilmoqda</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Qoralama, %version-versiya</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version-versiya nashr qilingan</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date ga rejalashtirilgan</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>manzil yoʻq</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>qayd etilmagan</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Bu filtrlarga hech narsa mos kelmaydi.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hammasini koʻrsatish</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Hali kontent yoʻq.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sahifada</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Sahifada %count ta element koʻrsatish.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Yuborilgan elementning manzili va brauzeri audit indeksidan olinadi, u esa bu yerda mavjud emas: ustunda “qayd etilmagan” deb yoziladi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Manzil va brauzer audit element uchun qayd etganlaridir (avtomatik ushlab turish ularni doim qayd etadi; nashr qilish va yaratish faqat yoqilgan joyda), maxfiylik sozlamalari ularni qanday saqlasa, shunday.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ta element</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Oʻchirish elementlarni barcha versiyalari va tarjimalari bilan butunlay olib tashlaydi. Buni bekor qilib boʻlmaydi.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementlar savatga tushadi, u yerdan ularni tiklash mumkin.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Har bir element sizning ruxsatlaringiz boʻyicha tekshiriladi; ichki elementlari bor element oʻz holicha qoldiriladi (uni kontent tuzilmasida olib tashlang). Sizdan bu siz ekanligingizni tasdiqlash soʻraladi.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Bu fonda bajariladi: uning jarayon sahifasi ochiladi va tugagach, har bir element boʻyicha natija koʻrsatiladi.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Tanlangan elementlar</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>va yana %count ta</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Bekor qilish</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Hech narsa bajarilmadi</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sabab: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Amal hali ham fonda bajarilmoqda.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Uning jarayoni</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Fondagi amal muvaffaqiyatsiz tugadi: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Bajarildi</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rad etildi</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Har bir element boʻyicha</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Natija</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Nega</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Roʻyxatga qaytish</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sozlash</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Hech narsa bajarilmadi</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Tasdiqlash</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Amalni tanlang.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Kamida bitta elementni tanlang.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Bir vaqtda koʻpi bilan 1000 ta element tanlang.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Elementlar nega ushlab turilishini yozing.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Boʻlimni tanlang.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Holatni tanlang.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formani oʻqib boʻlmadi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Yangi kontent</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Sonlarni oʻqib boʻlmadi: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Tekshiruv uchun ushlab turilgan</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Bugun yangi</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tekshiruv uchun ushlab turish hali sozlanmagan (6.0.15-review-hold yangilash bosqichi).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Barcha yangi kontent</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Siz moderatsiya amallarini bajara olmaysiz (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderatsiya amali tugallanmadi: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderatsiya: %count ta obyektda %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total ta obyektdan %done tasi: %ok tasi bajarildi, %refused tasi rad etildi, %failed tasi muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok tasi bajarildi, %refused tasi rad etildi, %failed tasi muvaffaqiyatsiz</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>U endi mavjud emas.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Uning joylashuvi yoʻq (nashr qilinmagan).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Siz uni yashira olmaysiz (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Siz uni koʻrsata olmaysiz (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>U allaqachon yashirin.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>U yashirin emas.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Yashirildi.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Koʻrsatildi.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>U savatda: uni oʻsha yerda boʻshating yoki tiklang.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Hech qachon nashr qilinmagan qoralama savatga tusha olmaydi: uni oʻchiring.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Siz uni oʻchira olmaysiz (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Oʻchirildi.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Siz uni olib tashlay olmaysiz (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Uning ichki elementlari bor: uni ular koʻrsatilgan kontent tuzilmasida olib tashlang.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>U olib tashlanmadi (ish jarayoni olib tashlashni ushlab turgan boʻlishi mumkin).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Savatga koʻchirildi.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Boʻlim mavjud emas.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>U allaqachon bu boʻlimda.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Siz bu boʻlimni tayinlay olmaysiz (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Boʻlim tayinlanmadi.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Boʻlim tayinlandi.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Holat mavjud emas.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>U allaqachon bu holatda.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Siz bu holatni tayinlay olmaysiz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Holat tayinlanmadi (ish jarayoni oʻzgarishni ushlab turgan boʻlishi mumkin).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Holat tayinlandi.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Bunday amal yoʻq.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tekshiruv uchun ushlab turish sozlanmagan (6.0.15-review-hold yangilash bosqichi).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>U nega ushlab turilishini yozing.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>U allaqachon ushlab turilgan.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Siz uni ushlab tura olmaysiz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ushlab turish qoʻyilmadi (ish jarayoni oʻzgarishni ushlab turgan boʻlishi mumkin).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Ushlab turildi.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>U ushlab turilmagan.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Siz uni qoʻyib yubora olmaysiz (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ushlab turish bekor qilinmadi (ish jarayoni oʻzgarishni ushlab turgan boʻlishi mumkin).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Qoʻyib yuborildi; hali ham yashirin: siz uni koʻrsata olmaysiz (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Qoʻyib yuborildi.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80729,7 +81401,7 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>GitHub loyiha sayti /&lt;repository&gt;/ ostida joylashadi; nisbiy havolalar u yerda ham, boshqa har qanday joyda ham ishlaydi.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>Yig‘ma %site saytining har bir sahifasini tizimga kirmagan tashrifchi ko‘rganidek yuklab oladi, havolalarni qayta yozadi, fayllarni nusxalaydi va natijani maqsad papkasiga yozadi. Siz yig‘mani tekshirib, Nashr qilish tugmasini bosmaguningizcha hech narsa nashr qilinmaydi.</translation>
     </message>
     <message>
@@ -80777,8 +81449,8 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Tozalashdan keyin ham nosozliklarni tuzatish chiqishi, forma tokeni yoki seans identifikatori qolgan sahifa hech qachon nashr qilinmaydi.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>Orqaga qaytarish mutaxassislar uchun: &quot;Bu nimani o‘zgartirishini bilaman&quot; belgisini qo‘ying va teg nomini qayta kiriting.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>Orqaga qaytarish mutaxassislar uchun: "Bu nimani o‘zgartirishini bilaman" belgisini qo‘ying va teg nomini qayta kiriting.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81289,7 +81961,7 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Oldindan ko‘rishni ochish</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>Yig‘mani maqsad papkasidan, xost uni qanday bersa, shunday ochadi. Havola siz uchun bir soat ishlaydi.</translation>
     </message>
     <message>
@@ -81465,8 +82137,8 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Sozlash &gt; Maxfiy qiymatlar</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>Ro‘yxatlarda ko‘rsatiladi, masalan &quot;GitHub Pages’dagi ochiq sayt&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>Ro‘yxatlarda ko‘rsatiladi, masalan "GitHub Pages’dagi ochiq sayt".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81673,7 +82345,7 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Sayt o‘sha nashr fayllariga qaytadi; hali nashr qilinmagan yig‘ma avval nashr qilinishi yoki tashlab yuborilishi kerak.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>Mavjud bo‘lmagan manzillar uchun saytning o‘z sahifasi.</translation>
     </message>
     <message>
@@ -81681,8 +82353,8 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Maqsadni saqlab bo‘lmadi: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>Maqsad hali bu kalit bilan kirmaydi: uning sozlamalarida &quot;Shu maqsad uchun yaratilgan joylashtirish kaliti&quot; ni tanlang.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>Maqsad hali bu kalit bilan kirmaydi: uning sozlamalarida "Shu maqsad uchun yaratilgan joylashtirish kaliti" ni tanlang.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81717,8 +82389,8 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <translation>Bu yig‘mani tashlab yuboradi: papkada yana oxirgi nashr turadi. Jonli sayt o‘zgarmaydi.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>Avval &quot;O‘zgarishlarni tekshirdim&quot; belgisini qo‘ying.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>Avval "O‘zgarishlarni tekshirdim" belgisini qo‘ying.</translation>
     </message>
     <message>
         <source>Time</source>

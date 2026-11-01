@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>ফাইল হিচাপে ৰখা ইনষ্টলেশ্বনৰ পৰিৱৰ্তন: সেইবোৰৰ স্থিতি, চলনসমূহ, চলোৱা আৰু উভতাই নিয়া।</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>শেহতীয়া সমল</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>নতুন সমল, পৰ্যালোচনাৰ বাবে যি ধৰি ৰখা হৈছে, আৰু বাছনিৰ ওপৰত কাৰ্য।</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>এটা ছাইটৰ স্থিতিশীল কপি GitHub Pages বা যিকোনো git হোষ্টত প্ৰকাশ কৰক।</translation>
     </message>
@@ -80584,6 +80592,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>সলনি কৰা</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>সৃষ্টি কৰা</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>নাম</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>শ্ৰেণী</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>শাখা</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>সৃষ্টিকাৰী</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>শেহতীয়া সমল</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>গোটেই ছাইটৰ শেহতীয়াকৈ সৃষ্টি আৰু সলনি কৰা সমল, নতুনবোৰ প্ৰথমে: দৰ্শকে যি জমা দিছে, যি পৰ্যালোচনাৰ বাবে ৰখা হৈছে, প্ৰকাশৰ অপেক্ষাত থকা খচৰা। বস্তু বাছনি কৰি সেইবোৰ মুকলি কৰক, ধৰি ৰাখক, লুকুৱাওক, দেখুৱাওক, আঁতৰাওক বা আন শাখা বা অৱস্থালৈ স্থানান্তৰ কৰক।</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>তালিকাখন পঢ়িব পৰা নগ'ল: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখাৰ ব্যৱস্থা এতিয়াও সাজু কৰা হোৱা নাই, সেয়েহে একো ধৰি ৰখা হোৱা নাই আৰু ধৰি ৰখাৰ কাৰ্যবোৰ দিয়া হোৱা নাই। উন্নীতকৰণৰ পদক্ষেপ 6.0.15-review-hold এ ইয়াক সাজু কৰে: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>তালিকা ফিল্টাৰ কৰক</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>পৰা</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>লৈকে</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>তাৰিখ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>সৃষ্টি কৰা (প্ৰথম প্ৰকাশ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>সকলো</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্থিতি</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>প্ৰকাশিত</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>খচৰা, কেতিয়াও প্ৰকাশিত হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>বিবেচনাধীন (অনুমোদন বা কোনো তাৰিখৰ অপেক্ষাত)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>আবৰ্জনাত</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখা</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ধৰি ৰখা</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ধৰি ৰখা নহয়</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>লুকুৱা</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>দৃশ্যমান</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>জমা দিয়াৰ তাৰিখ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>যিকোনো ছাইট প্ৰৱেশ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>কেৱল অডিটে যি লিপিবদ্ধ কৰিছে।</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>এতিয়া: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>এটা লগইন বা এটা ব্যৱহাৰকাৰী আইডি।</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ফিল্টাৰ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ফিল্টাৰ আঁতৰাওক</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>বস্তুবোৰ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ৰ ভিতৰত %from ৰ পৰা %to লৈকে</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>কোনো বস্তু নাই</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms মি.ছে.ত পঢ়া হৈছে)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>বাছনি কৰা বস্তুবোৰৰ ওপৰত কাৰ্য</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>এই পৃষ্ঠাৰ সকলো বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count টা বাছনি কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>কাৰ্য</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>এটা কাৰ্য বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ধৰি ৰখা মুকলি কৰক</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰাখক</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>লুকুৱাওক</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>আবৰ্জনালৈ পঠিয়াওক</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>মচক</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>শাখা নিৰ্ধাৰণ কৰক</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>অৱস্থা নিৰ্ধাৰণ কৰক</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>কাৰণ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ধৰি ৰাখিবলৈ প্ৰয়োজনীয়; ধৰি ৰখাৰ লগত আৰু অডিটত ৰখা হয়।</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>এটা শাখা বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অৱস্থা</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>এটা অৱস্থা বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>বাছনি কৰাবোৰত প্ৰয়োগ কৰক</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>প্ৰতিটো বস্তু আপোনাৰ নিজৰ অনুমতিৰ সৈতে পৰীক্ষা কৰা হয়। আবৰ্জনালৈ পঠিওৱা আৰু মচাৰ আগতে আপোনাক নিশ্চিত কৰিবলৈ কোৱা হয়। %count টাতকৈ অধিক বস্তু পটভূমিত চলে।</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>প্ৰকাশন</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>য'ৰ পৰা জমা দিয়া হৈছে</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>এতিয়াও নহয়</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(নাম নাই)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>আইডি %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>খচৰা</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>বিবেচনাধীন</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ইয়াৰ মূল বস্তুৱে লুকুৱাইছে</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ধৰি ৰখা: নতুন জমা</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>সংস্কৰণ %version বিবেচনাধীন</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>সংস্কৰণ %version চলি আছে</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>খচৰা, সংস্কৰণ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>সংস্কৰণ %version প্ৰকাশিত</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date ৰ বাবে নিৰ্ধাৰিত</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ঠিকনা নাই</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>লিপিবদ্ধ কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>এই ফিল্টাৰবোৰৰ সৈতে একো নিমিলে।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>সকলো দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>এতিয়াও কোনো সমল নাই।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>প্ৰতি পৃষ্ঠাত</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>প্ৰতি পৃষ্ঠাত %count টা বস্তু দেখুৱাওক।</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>এটা জমাৰ ঠিকনা আৰু ব্ৰাউজাৰ অডিট সূচীৰ পৰা আহে, যি ইয়াত উপলব্ধ নহয়: স্তম্ভটোত "লিপিবদ্ধ কৰা হোৱা নাই" লিখা থাকে।</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ঠিকনা আৰু ব্ৰাউজাৰ হৈছে বস্তুটোৰ বাবে অডিটে লিপিবদ্ধ কৰা তথ্য (স্বয়ংক্ৰিয় ধৰি ৰখাই সদায় সেইবোৰ লিপিবদ্ধ কৰে; প্ৰকাশ আৰু সৃষ্টিয়ে কেৱল য'ত সক্ৰিয় কৰা আছে), ইয়াৰ গোপনীয়তা ছেটিঙে যিদৰে ৰাখে।</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count টা বস্তু</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>মচিলে বস্তুবোৰ সিহঁতৰ সকলো সংস্কৰণ আৰু অনুবাদৰ সৈতে চিৰদিনৰ বাবে আঁতৰোৱা হয়। ইয়াক পূৰ্বৰ অৱস্থালৈ ঘূৰাই অনা নাযায়।</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>বস্তুবোৰ আবৰ্জনালৈ যায়, য'ৰ পৰা সেইবোৰ পুনৰুদ্ধাৰ কৰিব পাৰি।</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>প্ৰতিটো বস্তু আপোনাৰ নিজৰ অনুমতিৰ সৈতে পৰীক্ষা কৰা হয়; উপ-বস্তু থকা বস্তু যেনে আছে তেনেকৈয়ে ৰখা হয় (সমলৰ গঠনত ইয়াক আঁতৰাওক)। এয়া আপুনিয়েই বুলি সত্যাপন কৰিবলৈ আপোনাক কোৱা হ'ব।</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>এইটো পটভূমিত চলে: ইয়াৰ অগ্ৰগতিৰ পৃষ্ঠা খোল খায়, আৰু শেষ হ'লে প্ৰতিটো বস্তুৰ ফলাফল দেখুওৱা হয়।</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>বাছনি কৰা বস্তুবোৰ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>আৰু আৰু %count টা</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>বাতিল কৰক</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>একো কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>কাৰণ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>কাৰ্যটো এতিয়াও পটভূমিত চলি আছে।</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ইয়াৰ অগ্ৰগতি</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>পটভূমিৰ কাৰ্য ব্যৰ্থ হ'ল: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>সম্পূৰ্ণ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>নাকচ কৰা হ'ল</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যৰ্থ হ'ল</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>প্ৰতিটো বস্তু অনুসৰি</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>বস্তু</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ফলাফল</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>কিয়</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>তালিকালৈ উভতি যাওক</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ছেটআপ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>একো কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>নিশ্চিত কৰক</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>এটা কাৰ্য বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>অন্ততঃ এটা বস্তু বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>এবাৰত সৰ্বাধিক 1000 টা বস্তু বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>বস্তুবোৰ কিয় ধৰি ৰখা হৈছে কওক।</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>শাখাটো বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>অৱস্থাটো বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ফৰ্মখন পঢ়িব পৰা নগ'ল।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>শেহতীয়া সমল</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>গণনাবোৰ পঢ়িব পৰা নগ'ল: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখা</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>আজি নতুন</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখাৰ ব্যৱস্থা এতিয়াও সাজু কৰা হোৱা নাই (উন্নীতকৰণৰ পদক্ষেপ 6.0.15-review-hold)।</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>সকলো শেহতীয়া সমল</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>আপুনি মডাৰেচন কাৰ্য চলাব নোৱাৰে (moderation/act)।</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>মডাৰেচন কাৰ্য সম্পূৰ্ণ হোৱা নাই: %errors।</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>মডাৰেচন: %count টা বস্তুত %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total টাৰ ভিতৰত %done টা বস্তু: %ok টা সম্পূৰ্ণ, %refused টা নাকচ, %failed টা ব্যৰ্থ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok টা সম্পূৰ্ণ, %refused টা নাকচ, %failed টা ব্যৰ্থ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ই আৰু অস্তিত্বত নাই।</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ইয়াৰ কোনো অৱস্থান নাই (প্ৰকাশিত নহয়)।</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>আপুনি ইয়াক লুকুৱাব নোৱাৰে (content/hide)।</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>আপুনি ইয়াক দেখুৱাব নোৱাৰে (content/hide)।</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ই ইতিমধ্যে লুকুৱা আছে।</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ই লুকুৱা নহয়।</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>লুকুওৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>দেখুওৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ই আবৰ্জনাত আছে: তাতেই আবৰ্জনা খালী কৰক বা ইয়াক পুনৰুদ্ধাৰ কৰক।</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>কেতিয়াও প্ৰকাশিত নোহোৱা খচৰা আবৰ্জনালৈ যাব নোৱাৰে: ইয়াক মচক।</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>আপুনি ইয়াক মচিব নোৱাৰে (content/remove)।</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>মচা হ'ল।</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>আপুনি ইয়াক আঁতৰাব নোৱাৰে (content/remove)।</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ইয়াৰ উপ-বস্তু আছে: সমলৰ গঠনত ইয়াক আঁতৰাওক, য'ত সেইবোৰ তালিকাভুক্ত।</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ইয়াক আঁতৰোৱা নহ'ল (কোনো কাৰ্যপ্ৰবাহে আঁতৰোৱাটো ধৰি ৰাখিব পাৰে)।</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>আবৰ্জনালৈ পঠিওৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>শাখাটো অস্তিত্বত নাই।</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ই ইতিমধ্যে এই শাখাত আছে।</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>আপুনি এই শাখা নিৰ্ধাৰণ কৰিব নোৱাৰে (section/assign)।</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>শাখাটো নিৰ্ধাৰণ কৰা নহ'ল।</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>শাখা নিৰ্ধাৰণ কৰা হ'ল।</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>অৱস্থাটো অস্তিত্বত নাই।</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ই ইতিমধ্যে এই অৱস্থাত আছে।</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>আপুনি এই অৱস্থা নিৰ্ধাৰণ কৰিব নোৱাৰে (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>অৱস্থাটো নিৰ্ধাৰণ কৰা নহ'ল (কোনো কাৰ্যপ্ৰবাহে সলনিটো ধৰি ৰাখিব পাৰে)।</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>অৱস্থা নিৰ্ধাৰণ কৰা হ'ল।</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>এনে কোনো কাৰ্য নাই।</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখাৰ ব্যৱস্থা সাজু কৰা হোৱা নাই (উন্নীতকৰণৰ পদক্ষেপ 6.0.15-review-hold)।</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ইয়াক কিয় ধৰি ৰখা হৈছে কওক।</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ইয়াক ইতিমধ্যে ধৰি ৰখা হৈছে।</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>আপুনি ইয়াক ধৰি ৰাখিব নোৱাৰে (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ধৰি ৰখা নহ'ল (কোনো কাৰ্যপ্ৰবাহে সলনিটো ধৰি ৰাখিব পাৰে)।</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ধৰি ৰখা হ'ল।</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ইয়াক ধৰি ৰখা হোৱা নাই।</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>আপুনি ইয়াক মুকলি কৰিব নোৱাৰে (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ধৰি ৰখা মুকলি কৰা নহ'ল (কোনো কাৰ্যপ্ৰবাহে সলনিটো ধৰি ৰাখিব পাৰে)।</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>মুকলি কৰা হ'ল; এতিয়াও লুকুৱা: আপুনি ইয়াক দেখুৱাব নোৱাৰে (content/hide)।</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>মুকলি কৰা হ'ল।</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80615,7 +81287,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>লক্ষ্যসমূহ পঢ়িব পৰা নগ&apos;ল: %problem</translation>
+        <translation>লক্ষ্যসমূহ পঢ়িব পৰা নগ'ল: %problem</translation>
     </message>
     <message>
         <source>a job is going on</source>
@@ -80646,7 +81318,7 @@ You will need to change the class of the node by using the swap functionality.</
     <name>design/admin/staticpublish</name>
     <message>
         <source>%added added, %changed changed, %removed removed</source>
-        <translation>%added যোগ কৰা হ&apos;ল, %changed সলনি কৰা হ&apos;ল, %removed আঁতৰোৱা হ&apos;ল</translation>
+        <translation>%added যোগ কৰা হ'ল, %changed সলনি কৰা হ'ল, %removed আঁতৰোৱা হ'ল</translation>
     </message>
     <message>
         <source>%bytes of %limit (%percent %)</source>
@@ -80658,7 +81330,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>%pages pages written</source>
-        <translation>%pages টা পৃষ্ঠা লিখা হ&apos;ল</translation>
+        <translation>%pages টা পৃষ্ঠা লিখা হ'ল</translation>
     </message>
     <message>
         <source>%path is %size, more than the host allows a file.</source>
@@ -80729,7 +81401,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub প্ৰকল্প ছাইট /&lt;repository&gt;/ ৰ তলত থাকে; আপেক্ষিক লিংক তাত আৰু আন যিকোনো ঠাইত কাম কৰে।</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>এটা বিল্ডে %site ৰ প্ৰতিটো পৃষ্ঠা ছাইন ইন নকৰা দৰ্শনাৰ্থীয়ে দেখাৰ দৰে আনে, লিংকবোৰ পুনৰ লিখে, ফাইলবোৰ কপি কৰে আৰু ফলাফল লক্ষ্যৰ ফোল্ডাৰত লিখে। আপুনি বিল্ড পৰীক্ষা কৰি প্ৰকাশ কৰক টিপা নহালৈকে একো প্ৰকাশ কৰা নহয়।</translation>
     </message>
     <message>
@@ -80742,7 +81414,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
-        <translation>এটা ডিপ্লয় কি-য়ে এই ইনষ্টলেশ্বনক SSH ৰ জৰিয়তে কেৱল এটা ৰিপজিটৰীলৈ পুশ্ব কৰিবলৈ দিয়ে, আন ক&apos;তো নহয়। ইয়াৰ ব্যক্তিগত অংশ ছেটআপ &gt; গোপন মান-ত থাকে; কেৱল ৰাজহুৱা অংশ দেখুওৱা হয়।</translation>
+        <translation>এটা ডিপ্লয় কি-য়ে এই ইনষ্টলেশ্বনক SSH ৰ জৰিয়তে কেৱল এটা ৰিপজিটৰীলৈ পুশ্ব কৰিবলৈ দিয়ে, আন ক'তো নহয়। ইয়াৰ ব্যক্তিগত অংশ ছেটআপ &gt; গোপন মান-ত থাকে; কেৱল ৰাজহুৱা অংশ দেখুওৱা হয়।</translation>
     </message>
     <message>
         <source>A deploy key made for this target</source>
@@ -80766,23 +81438,23 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A link from the page /news/ to the page /about-us/team will be written as</source>
-        <translation>/news/ পৃষ্ঠাৰ পৰা /about-us/team পৃষ্ঠালৈ এটা লিংক এনেদৰে লিখা হ&apos;ব</translation>
+        <translation>/news/ পৃষ্ঠাৰ পৰা /about-us/team পৃষ্ঠালৈ এটা লিংক এনেদৰে লিখা হ'ব</translation>
     </message>
     <message>
         <source>A new deploy key was made. Add its public half to the repository now.</source>
-        <translation>এটা নতুন ডিপ্লয় কি সৃষ্টি কৰা হ&apos;ল। ইয়াৰ ৰাজহুৱা অংশ এতিয়াই ৰিপজিটৰীত যোগ কৰক।</translation>
+        <translation>এটা নতুন ডিপ্লয় কি সৃষ্টি কৰা হ'ল। ইয়াৰ ৰাজহুৱা অংশ এতিয়াই ৰিপজিটৰীত যোগ কৰক।</translation>
     </message>
     <message>
         <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
         <translation>পৰিষ্কাৰ কৰাৰ পিছতো ডিবাগ আউটপুট, ফৰ্ম টোকেন বা ছেছন আইডি থকা পৃষ্ঠা কেতিয়াও প্ৰকাশ কৰা নহয়।</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>উভতাই নিয়া বিশেষজ্ঞৰ বাবে: &quot;মই জানো ই কি সলনি কৰে&quot; টিক দিয়ক আৰু টেগৰ নামটো পুনৰ টাইপ কৰক।</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>উভতাই নিয়া বিশেষজ্ঞৰ বাবে: "মই জানো ই কি সলনি কৰে" টিক দিয়ক আৰু টেগৰ নামটো পুনৰ টাইপ কৰক।</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
-        <translation>এটা ছাইট %site লৈকে, এটা ফাইল %file লৈকে হ&apos;ব পাৰে, মাহে প্ৰায় 100 GB ট্ৰাফিকৰ সৈতে। বিনামূলীয়া প্লেনত ৰিপজিটৰী ৰাজহুৱা হ&apos;ব লাগিব। GitHub Pages দোকান বা আন বাণিজ্যিক লেনদেনৰ বাবে নহয়।</translation>
+        <translation>এটা ছাইট %site লৈকে, এটা ফাইল %file লৈকে হ'ব পাৰে, মাহে প্ৰায় 100 GB ট্ৰাফিকৰ সৈতে। বিনামূলীয়া প্লেনত ৰিপজিটৰী ৰাজহুৱা হ'ব লাগিব। GitHub Pages দোকান বা আন বাণিজ্যিক লেনদেনৰ বাবে নহয়।</translation>
     </message>
     <message>
         <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
@@ -80798,7 +81470,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>A workflow of the repository publishes it.</source>
-        <translation>ৰিপজিটৰীৰ এটা ৱৰ্কফ্ল&apos;ৱে ইয়াক প্ৰকাশ কৰে।</translation>
+        <translation>ৰিপজিটৰীৰ এটা ৱৰ্কফ্ল'ৱে ইয়াক প্ৰকাশ কৰে।</translation>
     </message>
     <message>
         <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
@@ -80806,7 +81478,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Added</source>
-        <translation>যোগ কৰা হ&apos;ল</translation>
+        <translation>যোগ কৰা হ'ল</translation>
     </message>
     <message>
         <source>Another git host</source>
@@ -80882,7 +81554,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Changed</source>
-        <translation>সলনি কৰা হ&apos;ল</translation>
+        <translation>সলনি কৰা হ'ল</translation>
     </message>
     <message>
         <source>Changes</source>
@@ -80922,7 +81594,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
-        <translation>আগৰ ফোল্ডাৰৰ সৈতে তুলনা: %added যোগ কৰা হ&apos;ল, %changed সলনি কৰা হ&apos;ল, %removed আঁতৰোৱা হ&apos;ল, %unchanged অপৰিৱৰ্তিত।</translation>
+        <translation>আগৰ ফোল্ডাৰৰ সৈতে তুলনা: %added যোগ কৰা হ'ল, %changed সলনি কৰা হ'ল, %removed আঁতৰোৱা হ'ল, %unchanged অপৰিৱৰ্তিত।</translation>
     </message>
     <message>
         <source>Compared with the last publish.</source>
@@ -80962,11 +81634,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
-        <translation>খালী: ছাইটৰ ঠিকনা। নহ&apos;লে একেটা ছাইটৰ এটা আভ্যন্তৰীণ ঠিকনা।</translation>
+        <translation>খালী: ছাইটৰ ঠিকনা। নহ'লে একেটা ছাইটৰ এটা আভ্যন্তৰীণ ঠিকনা।</translation>
     </message>
     <message>
         <source>Ended</source>
-        <translation>শেষ হ&apos;ল</translation>
+        <translation>শেষ হ'ল</translation>
     </message>
     <message>
         <source>Every link starts with the base path.</source>
@@ -81182,7 +81854,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Make the repository on the host first; an empty one is fine.</source>
-        <translation>প্ৰথমে হোষ্টত ৰিপজিটৰীটো সৃষ্টি কৰক; খালী এটা হ&apos;লেও হ&apos;ব।</translation>
+        <translation>প্ৰথমে হোষ্টত ৰিপজিটৰীটো সৃষ্টি কৰক; খালী এটা হ'লেও হ'ব।</translation>
     </message>
     <message>
         <source>Manifest</source>
@@ -81222,11 +81894,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>No key was made: %problem</source>
-        <translation>কোনো কি সৃষ্টি কৰা নহ&apos;ল: %problem</translation>
+        <translation>কোনো কি সৃষ্টি কৰা নহ'ল: %problem</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>কোনো php কমাণ্ড লাইন বাইনেৰী পোৱা নগ&apos;ল। migration.ini [AdminSettings] PhpCliPath ত ইয়াৰ সম্পূৰ্ণ পথ ছেট কৰক।</translation>
+        <translation>কোনো php কমাণ্ড লাইন বাইনেৰী পোৱা নগ'ল। migration.ini [AdminSettings] PhpCliPath ত ইয়াৰ সম্পূৰ্ণ পথ ছেট কৰক।</translation>
     </message>
     <message>
         <source>No tag yet.</source>
@@ -81262,7 +81934,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>On the console</source>
-        <translation>কনচ&apos;লত</translation>
+        <translation>কনচ'লত</translation>
     </message>
     <message>
         <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
@@ -81289,7 +81961,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>পূৰ্বদৰ্শন খোলক</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>হোষ্টে পৰিৱেশন কৰাৰ দৰে লক্ষ্যৰ ফোল্ডাৰৰ পৰা বিল্ডটো খোলে। লিংকটো আপোনাৰ বাবে এঘণ্টা কাম কৰে।</translation>
     </message>
     <message>
@@ -81354,7 +82026,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
-        <translation>এটা ছাইটৰ স্থিতিশীল কপি GitHub Pages বা যিকোনো git হোষ্টত প্ৰকাশ কৰক: বিল্ড কৰক, পৰিৱৰ্তন পৰীক্ষা কৰক, প্ৰকাশ কৰক, আৰু প্ৰয়োজন হ&apos;লে আগৰ এটা প্ৰকাশনলৈ উভতি যাওক।</translation>
+        <translation>এটা ছাইটৰ স্থিতিশীল কপি GitHub Pages বা যিকোনো git হোষ্টত প্ৰকাশ কৰক: বিল্ড কৰক, পৰিৱৰ্তন পৰীক্ষা কৰক, প্ৰকাশ কৰক, আৰু প্ৰয়োজন হ'লে আগৰ এটা প্ৰকাশনলৈ উভতি যাওক।</translation>
     </message>
     <message>
         <source>Publish to go back to</source>
@@ -81390,7 +82062,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Removed</source>
-        <translation>আঁতৰোৱা হ&apos;ল</translation>
+        <translation>আঁতৰোৱা হ'ল</translation>
     </message>
     <message>
         <source>Replace the key: the old one stops working</source>
@@ -81414,7 +82086,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
-        <translation>পৰ্যালোচনাই প্ৰতিটো ছেটিং পৰীক্ষা কৰে আৰু লিখা হ&apos;বলগীয়া শাৰীবোৰ দেখুৱায়। এতিয়ালৈ একো সঞ্চয় কৰা হোৱা নাই।</translation>
+        <translation>পৰ্যালোচনাই প্ৰতিটো ছেটিং পৰীক্ষা কৰে আৰু লিখা হ'বলগীয়া শাৰীবোৰ দেখুৱায়। এতিয়ালৈ একো সঞ্চয় কৰা হোৱা নাই।</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -81465,8 +82137,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ছেটআপ &gt; গোপন মান</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>তালিকাত দেখুওৱা হয়, উদাহৰণস্বৰূপে &quot;GitHub Pages-ত ৰাজহুৱা ছাইট&quot;।</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>তালিকাত দেখুওৱা হয়, উদাহৰণস্বৰূপে "GitHub Pages-ত ৰাজহুৱা ছাইট"।</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81574,7 +82246,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The build could not be thrown away: %problem</source>
-        <translation>বিল্ডটো পেলাই দিব পৰা নগ&apos;ল: %problem</translation>
+        <translation>বিল্ডটো পেলাই দিব পৰা নগ'ল: %problem</translation>
     </message>
     <message>
         <source>The build is the same as the last publish: there is nothing to publish.</source>
@@ -81582,7 +82254,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The build was thrown away: the folder holds the last publish again.</source>
-        <translation>বিল্ডটো পেলাই দিয়া হ&apos;ল: ফোল্ডাৰত পুনৰ শেহতীয়া প্ৰকাশনটো আছে।</translation>
+        <translation>বিল্ডটো পেলাই দিয়া হ'ল: ফোল্ডাৰত পুনৰ শেহতীয়া প্ৰকাশনটো আছে।</translation>
     </message>
     <message>
         <source>The defaults suit most sites.</source>
@@ -81598,15 +82270,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The job could not be prepared: %detail</source>
-        <translation>কাৰ্যটো প্ৰস্তুত কৰিব পৰা নগ&apos;ল: %detail</translation>
+        <translation>কাৰ্যটো প্ৰস্তুত কৰিব পৰা নগ'ল: %detail</translation>
     </message>
     <message>
         <source>The job could not be started.</source>
-        <translation>কাৰ্যটো আৰম্ভ কৰিব পৰা নগ&apos;ল।</translation>
+        <translation>কাৰ্যটো আৰম্ভ কৰিব পৰা নগ'ল।</translation>
     </message>
     <message>
         <source>The job has ended. Loading its report.</source>
-        <translation>কাৰ্যটো শেষ হ&apos;ল। ইয়াৰ প্ৰতিবেদন লোড কৰি থকা হৈছে।</translation>
+        <translation>কাৰ্যটো শেষ হ'ল। ইয়াৰ প্ৰতিবেদন লোড কৰি থকা হৈছে।</translation>
     </message>
     <message>
         <source>The job needs a signed-in user.</source>
@@ -81614,7 +82286,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The job was started but did not report its process id. Check %detail.</source>
-        <translation>কাৰ্যটো আৰম্ভ হ&apos;ল কিন্তু ইয়াৰ প্ৰক্ৰিয়া আইডি জনোৱা নাই। %detail পৰীক্ষা কৰক।</translation>
+        <translation>কাৰ্যটো আৰম্ভ হ'ল কিন্তু ইয়াৰ প্ৰক্ৰিয়া আইডি জনোৱা নাই। %detail পৰীক্ষা কৰক।</translation>
     </message>
     <message>
         <source>The key</source>
@@ -81626,7 +82298,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The lines that will be written</source>
-        <translation>লিখা হ&apos;বলগীয়া শাৰীসমূহ</translation>
+        <translation>লিখা হ'বলগীয়া শাৰীসমূহ</translation>
     </message>
     <message>
         <source>The list of pages for search engines; needs the public address.</source>
@@ -81638,7 +82310,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
-        <translation>অগ্ৰগতি অনুসৰণ কৰিব পৰা নগ&apos;ল। কাৰ্যটো কেনে চলি আছে চাবলৈ পৃষ্ঠাটো পুনৰ লোড কৰক।</translation>
+        <translation>অগ্ৰগতি অনুসৰণ কৰিব পৰা নগ'ল। কাৰ্যটো কেনে চলি আছে চাবলৈ পৃষ্ঠাটো পুনৰ লোড কৰক।</translation>
     </message>
     <message>
         <source>The public half of the key:</source>
@@ -81658,11 +82330,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The setting could not be written: %problem</source>
-        <translation>ছেটিংটো লিখিব পৰা নগ&apos;ল: %problem</translation>
+        <translation>ছেটিংটো লিখিব পৰা নগ'ল: %problem</translation>
     </message>
     <message>
         <source>The settings are valid. These lines will be written:</source>
-        <translation>ছেটিংছবোৰ বৈধ। এই শাৰীবোৰ লিখা হ&apos;ব:</translation>
+        <translation>ছেটিংছবোৰ বৈধ। এই শাৰীবোৰ লিখা হ'ব:</translation>
     </message>
     <message>
         <source>The settings file cannot be read: %problem</source>
@@ -81673,20 +82345,20 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>ছাইটটো সেই প্ৰকাশনৰ ফাইললৈ উভতি যায়; এতিয়াও প্ৰকাশ নোহোৱা বিল্ড প্ৰথমে প্ৰকাশ কৰিব বা পেলাই দিব লাগিব।</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>নথকা ঠিকনাৰ বাবে ছাইটৰ নিজা পৃষ্ঠা।</translation>
     </message>
     <message>
         <source>The target could not be saved: %problem</source>
-        <translation>লক্ষ্যটো সঞ্চয় কৰিব পৰা নগ&apos;ল: %problem</translation>
+        <translation>লক্ষ্যটো সঞ্চয় কৰিব পৰা নগ'ল: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>লক্ষ্যটোৱে এতিয়াও এই কি-ৰে ছাইন ইন নকৰে: ইয়াৰ ছেটিংছত &quot;এই লক্ষ্যৰ বাবে সৃষ্টি কৰা এটা ডিপ্লয় কি&quot; বাছক।</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>লক্ষ্যটোৱে এতিয়াও এই কি-ৰে ছাইন ইন নকৰে: ইয়াৰ ছেটিংছত "এই লক্ষ্যৰ বাবে সৃষ্টি কৰা এটা ডিপ্লয় কি" বাছক।</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
-        <translation>লক্ষ্যসমূহ পঢ়িব পৰা নগ&apos;ল: %problem</translation>
+        <translation>লক্ষ্যসমূহ পঢ়িব পৰা নগ'ল: %problem</translation>
     </message>
     <message>
         <source>There is no build to check yet.</source>
@@ -81717,8 +82389,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>এই বিল্ডটো পেলাই দিয়ে: ফোল্ডাৰত পুনৰ শেহতীয়া প্ৰকাশনটো থাকে। লাইভ ছাইট সলনি নহয়।</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>প্ৰথমে &quot;মই পৰিৱৰ্তনসমূহ পৰীক্ষা কৰিছো&quot; টিক দিয়ক।</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>প্ৰথমে "মই পৰিৱৰ্তনসমূহ পৰীক্ষা কৰিছো" টিক দিয়ক।</translation>
     </message>
     <message>
         <source>Time</source>
@@ -81782,11 +82454,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Where links to what the copy does not hold go (the search, the login).</source>
-        <translation>কপিত নথকা বস্তুলৈ লিংকবোৰ ক&apos;লৈ যায় (সন্ধান, লগইন)।</translation>
+        <translation>কপিত নথকা বস্তুলৈ লিংকবোৰ ক'লৈ যায় (সন্ধান, লগইন)।</translation>
     </message>
     <message>
         <source>Where the static copy is served from.</source>
-        <translation>স্থিতিশীল কপিটো ক&apos;ৰ পৰা পৰিৱেশন কৰা হয়।</translation>
+        <translation>স্থিতিশীল কপিটো ক'ৰ পৰা পৰিৱেশন কৰা হয়।</translation>
     </message>
     <message>
         <source>Which site is published, and what the target is called.</source>
@@ -81806,7 +82478,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>You can always build and publish by hand here and on the console.</source>
-        <translation>আপুনি সদায় ইয়াত আৰু কনচ&apos;লত হাতেৰে বিল্ড আৰু প্ৰকাশ কৰিব পাৰে।</translation>
+        <translation>আপুনি সদায় ইয়াত আৰু কনচ'লত হাতেৰে বিল্ড আৰু প্ৰকাশ কৰিব পাৰে।</translation>
     </message>
     <message>
         <source>a name only; the value stays in Setup &gt; Secrets</source>
@@ -81818,7 +82490,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>ended without a report</source>
-        <translation>প্ৰতিবেদন অবিহনে শেষ হ&apos;ল</translation>
+        <translation>প্ৰতিবেদন অবিহনে শেষ হ'ল</translation>
     </message>
     <message>
         <source>extra</source>
@@ -81862,7 +82534,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>no remote</source>
-        <translation>কোনো ৰিম&apos;ট নাই</translation>
+        <translation>কোনো ৰিম'ট নাই</translation>
     </message>
     <message>
         <source>none: commits stay in the folder</source>
@@ -81906,7 +82578,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>pushed</source>
-        <translation>পুশ্ব কৰা হ&apos;ল</translation>
+        <translation>পুশ্ব কৰা হ'ল</translation>
     </message>
     <message>
         <source>refused</source>
@@ -81922,7 +82594,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>rolled back</source>
-        <translation>উভতাই নিয়া হ&apos;ল</translation>
+        <translation>উভতাই নিয়া হ'ল</translation>
     </message>
     <message>
         <source>running</source>
@@ -81934,7 +82606,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
-        <translation>www.example.com: CNAME ফাইলত লিখা হয়। ডমেইনৰ DNS হোষ্টে বুজোৱাৰ দৰে হোষ্টলৈ নিৰ্দেশ কৰক; HTTPS আৰম্ভ হ&apos;বলৈ কিছু সময় লাগিব পাৰে।</translation>
+        <translation>www.example.com: CNAME ফাইলত লিখা হয়। ডমেইনৰ DNS হোষ্টে বুজোৱাৰ দৰে হোষ্টলৈ নিৰ্দেশ কৰক; HTTPS আৰম্ভ হ'বলৈ কিছু সময় লাগিব পাৰে।</translation>
     </message>
     <message>
         <source>yes, not published yet</source>

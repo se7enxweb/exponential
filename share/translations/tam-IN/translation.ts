@@ -15149,6 +15149,14 @@ Note: The packages will not be uninstalled.</source>
         <translation>கோப்புகளாக வைக்கப்பட்ட நிறுவல் மாற்றங்கள்: அவற்றின் நிலை, இயக்கங்கள், இயக்குதல் மற்றும் திரும்பப்பெறுதல்.</translation>
     </message>
     <message>
+        <source>Recent content</source>
+        <translation>சமீபத்திய உள்ளடக்கம்</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>புதிய உள்ளடக்கம், மதிப்பாய்வுக்காக நிறுத்திவைக்கப்பட்டவை, ஒரு தேர்வின் மீதான செயல்கள்.</translation>
+    </message>
+    <message>
         <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
         <translation>ஒரு தளத்தின் நிலையான நகலை GitHub Pages அல்லது எந்த git வழங்கியிலும் வெளியிடுங்கள்.</translation>
     </message>
@@ -80582,6 +80590,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
 </context>
 <context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>மாற்றப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>உருவாக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>பெயர்</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>வகுப்பு</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>பிரிவு</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>உருவாக்கியவர்</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>சமீபத்திய உள்ளடக்கம்</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>முழு தளத்தின் மிகச் சமீபத்தில் உருவாக்கப்பட்ட மற்றும் மாற்றப்பட்ட உள்ளடக்கம், புதியவை முதலில்: பார்வையாளர்கள் சமர்ப்பித்தவை, மதிப்பாய்வுக்காக நிறுத்திவைக்கப்பட்டவை, வெளியீட்டுக்காகக் காத்திருக்கும் வரைவுகள். உருப்படிகளைத் தேர்ந்தெடுத்து அவற்றை விடுவிக்கவும், நிறுத்திவைக்கவும், மறைக்கவும், வெளிப்படுத்தவும், அகற்றவும் அல்லது வேறு பிரிவுக்கோ நிலைக்கோ நகர்த்தவும்.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>பட்டியலைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>மதிப்பாய்வுக்கான நிறுத்திவைப்பு இன்னும் அமைக்கப்படவில்லை, எனவே எதுவும் நிறுத்திவைக்கப்படவில்லை, நிறுத்திவைப்புச் செயல்களும் வழங்கப்படவில்லை. மேம்படுத்தல் படி 6.0.15-review-hold இதை அமைக்கிறது: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>பட்டியலை வடிகட்டு</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>இருந்து</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>வரை</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>தேதி</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>உருவாக்கப்பட்டது (முதல் வெளியீடு)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>அனைத்தும்</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>வெளியிடப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>வரைவு, ஒருபோதும் வெளியிடப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>நிலுவையில் (ஒப்புதல் அல்லது ஒரு தேதிக்காகக் காத்திருக்கிறது)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>குப்பையில்</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>மதிப்பாய்வுக்காக நிறுத்திவைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>நிறுத்திவைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>நிறுத்திவைக்கப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>மறைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>தெரிவது</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>சமர்ப்பித்த தேதி</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>எந்தத் தள அணுகலும்</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>தணிக்கை பதிவுசெய்தவை மட்டும்.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>இப்போது: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ஒரு உள்நுழைவுப் பெயர் அல்லது ஒரு பயனர் அடையாள எண்.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>வடிகட்டி</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>வடிகட்டிகளை அழி</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>உருப்படிகள்</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count இல் %from முதல் %to வரை</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>உருப்படி இல்லை</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms மி.வி.யில் படிக்கப்பட்டது)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>தேர்ந்தெடுத்த உருப்படிகளின் மீதான செயல்கள்</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>இந்தப் பக்கத்தில் அனைத்தையும் தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count தேர்ந்தெடுக்கப்பட்டன</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>செயல்</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ஒரு செயலைத் தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>நிறுத்திவைப்பை விடுவி</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>மதிப்பாய்வுக்காக நிறுத்திவை</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>மறை</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>வெளிப்படுத்து</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>குப்பைக்கு நகர்த்து</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>நீக்கு</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>பிரிவை ஒதுக்கு</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>நிலையை ஒதுக்கு</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>காரணம்</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>நிறுத்திவைக்கத் தேவை; நிறுத்திவைப்புடனும் தணிக்கையிலும் வைக்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ஒரு பிரிவைத் தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>நிலை</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ஒரு நிலையைத் தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>தேர்ந்தெடுத்தவற்றுக்குப் பயன்படுத்து</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ஒவ்வொரு உருப்படியும் உங்கள் சொந்த அனுமதிகளுடன் சரிபார்க்கப்படுகிறது. குப்பைக்கு நகர்த்துவதும் நீக்குவதும் உங்களிடம் உறுதிப்படுத்தல் கேட்கின்றன. %count க்கும் மேற்பட்ட உருப்படிகள் பின்னணியில் இயங்குகின்றன.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>வெளியீடு</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>சமர்ப்பித்த இடம்</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ஐத் தேர்ந்தெடு</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>இன்னும் இல்லை</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(பெயர் இல்லை)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>அடையாள எண் %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>வரைவு</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>நிலுவையில்</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>அதன் பெற்றோரால் மறைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>நிறுத்திவைக்கப்பட்டது: புதிய சமர்ப்பிப்பு</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>பதிப்பு %version நிலுவையில்</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>பதிப்பு %version செயலில் உள்ளது</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>வரைவு, பதிப்பு %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>பதிப்பு %version வெளியிடப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date க்குத் திட்டமிடப்பட்டது</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>முகவரி இல்லை</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>பதிவுசெய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>இந்த வடிகட்டிகளுடன் எதுவும் பொருந்தவில்லை.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>அனைத்தையும் காட்டு</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>இன்னும் உள்ளடக்கம் இல்லை.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ஒரு பக்கத்திற்கு</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ஒரு பக்கத்திற்கு %count உருப்படிகளைக் காட்டு.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>ஒரு சமர்ப்பிப்பின் முகவரியும் உலாவியும் தணிக்கை அட்டவணையிலிருந்து வருகின்றன, அது இங்கே கிடைக்கவில்லை: நெடுவரிசையில் &quot;பதிவுசெய்யப்படவில்லை&quot; எனக் காட்டப்படும்.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>முகவரியும் உலாவியும் உருப்படிக்காகத் தணிக்கை பதிவுசெய்தவை (தானியங்கு நிறுத்திவைப்பு அவற்றை எப்போதும் பதிவுசெய்கிறது; வெளியிடுதலும் உருவாக்குதலும் இயக்கப்பட்ட இடங்களில் மட்டும்), அதன் தனியுரிமை அமைப்புகள் அவற்றை வைத்திருக்கும் விதத்தில்.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count உருப்படிகள்</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>நீக்குவது உருப்படிகளை அவற்றின் அனைத்துப் பதிப்புகள் மற்றும் மொழிபெயர்ப்புகளுடன் நிரந்தரமாக அகற்றும். இதைச் செயல்தவிர்க்க முடியாது.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>உருப்படிகள் குப்பைக்குச் செல்கின்றன, அங்கிருந்து அவற்றை மீட்டெடுக்கலாம்.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ஒவ்வொரு உருப்படியும் உங்கள் சொந்த அனுமதிகளுடன் சரிபார்க்கப்படுகிறது; துணை உருப்படிகள் உள்ள உருப்படி அப்படியே விடப்படும் (அதை உள்ளடக்க அமைப்பில் அகற்றவும்). அது நீங்கள்தான் என்பதைச் சரிபார்க்கக் கேட்கப்படுவீர்கள்.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>இது பின்னணியில் இயங்குகிறது: அதன் முன்னேற்றப் பக்கம் திறக்கும், முடிந்ததும் ஒவ்வொரு உருப்படியின் முடிவும் காட்டப்படும்.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>தேர்ந்தெடுத்த உருப்படிகள்</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>மேலும் %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ரத்துசெய்</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>எதுவும் செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>காரணம்: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>செயல் இன்னும் பின்னணியில் இயங்குகிறது.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>அதன் முன்னேற்றம்</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>பின்னணிச் செயல் தோல்வியடைந்தது: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>முடிந்தது</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>மறுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>தோல்வியடைந்தது</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ஒவ்வொரு உருப்படிக்கும்</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>உருப்படி</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>முடிவு</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ஏன்</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>பட்டியலுக்குத் திரும்பு</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>அமைவு</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>எதுவும் செய்யப்படவில்லை</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>உறுதிசெய்</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ஒரு செயலைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>குறைந்தது ஒரு உருப்படியைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ஒரே நேரத்தில் அதிகபட்சம் 1000 உருப்படிகளைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>உருப்படிகள் ஏன் நிறுத்திவைக்கப்படுகின்றன என்று கூறவும்.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>பிரிவைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>நிலையைத் தேர்ந்தெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>படிவத்தைப் படிக்க முடியவில்லை.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>சமீபத்திய உள்ளடக்கம்</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>எண்ணிக்கைகளைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>மதிப்பாய்வுக்காக நிறுத்திவைக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>இன்று புதியவை</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>மதிப்பாய்வுக்கான நிறுத்திவைப்பு இன்னும் அமைக்கப்படவில்லை (மேம்படுத்தல் படி 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>அனைத்துச் சமீபத்திய உள்ளடக்கமும்</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>நீங்கள் நெறிப்படுத்தல் செயல்களை இயக்க முடியாது (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>நெறிப்படுத்தல் செயல் முழுமையடையவில்லை: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>நெறிப்படுத்தல்: %count பொருள்களில் %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total இல் %done பொருள்கள்: %ok முடிந்தன, %refused மறுக்கப்பட்டன, %failed தோல்வியடைந்தன</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok முடிந்தன, %refused மறுக்கப்பட்டன, %failed தோல்வியடைந்தன</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>இது இனி இல்லை.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>இதற்கு இருப்பிடம் இல்லை (வெளியிடப்படவில்லை).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>நீங்கள் இதை மறைக்க முடியாது (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>நீங்கள் இதை வெளிப்படுத்த முடியாது (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>இது ஏற்கனவே மறைக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>இது மறைக்கப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>மறைக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>வெளிப்படுத்தப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>இது குப்பையில் உள்ளது: அங்கே குப்பையைக் காலிசெய்யவும் அல்லது இதை மீட்டெடுக்கவும்.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ஒருபோதும் வெளியிடப்படாத வரைவு குப்பைக்குச் செல்ல முடியாது: அதை நீக்கவும்.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>நீங்கள் இதை நீக்க முடியாது (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>நீக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>நீங்கள் இதை அகற்ற முடியாது (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>இதற்குத் துணை உருப்படிகள் உள்ளன: அவை பட்டியலிடப்பட்டுள்ள உள்ளடக்க அமைப்பில் இதை அகற்றவும்.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>இது அகற்றப்படவில்லை (ஒரு பணிப்பாய்வு அகற்றலை நிறுத்திவைக்கலாம்).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>குப்பைக்கு நகர்த்தப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>பிரிவு இல்லை.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>இது ஏற்கனவே இந்தப் பிரிவில் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>நீங்கள் இந்தப் பிரிவை ஒதுக்க முடியாது (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>பிரிவு ஒதுக்கப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>பிரிவு ஒதுக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>நிலை இல்லை.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>இது ஏற்கனவே இந்த நிலையில் உள்ளது.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>நீங்கள் இந்த நிலையை ஒதுக்க முடியாது (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>நிலை ஒதுக்கப்படவில்லை (ஒரு பணிப்பாய்வு மாற்றத்தை நிறுத்திவைக்கலாம்).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>நிலை ஒதுக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>அப்படி ஒரு செயல் இல்லை.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>மதிப்பாய்வுக்கான நிறுத்திவைப்பு அமைக்கப்படவில்லை (மேம்படுத்தல் படி 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>இது ஏன் நிறுத்திவைக்கப்படுகிறது என்று கூறவும்.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>இது ஏற்கனவே நிறுத்திவைக்கப்பட்டுள்ளது.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>நீங்கள் இதை நிறுத்திவைக்க முடியாது (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>நிறுத்திவைப்பு இடப்படவில்லை (ஒரு பணிப்பாய்வு மாற்றத்தை நிறுத்திவைக்கலாம்).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>நிறுத்திவைக்கப்பட்டது.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>இது நிறுத்திவைக்கப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>நீங்கள் இதை விடுவிக்க முடியாது (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>நிறுத்திவைப்பு விடுவிக்கப்படவில்லை (ஒரு பணிப்பாய்வு மாற்றத்தை நிறுத்திவைக்கலாம்).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>விடுவிக்கப்பட்டது; இன்னும் மறைக்கப்பட்டுள்ளது: நீங்கள் இதை வெளிப்படுத்த முடியாது (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>விடுவிக்கப்பட்டது.</translation>
+    </message>
+</context>
+<context>
     <name>design/admin/dashboard/staticpublish</name>
     <message>
         <source>All targets</source>
@@ -80727,7 +81399,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>GitHub திட்டத் தளம் /&lt;repository&gt;/ இன் கீழ் இருக்கும்; சார்பு இணைப்புகள் அங்கும் வேறு எங்கும் வேலை செய்யும்.</translation>
     </message>
     <message>
-        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target's folder. Nothing is published until you check the build and press Publish.</source>
         <translation>ஓர் உருவாக்கம் %site இன் ஒவ்வொரு பக்கத்தையும் உள்நுழையாத பார்வையாளர் பார்ப்பது போலவே பெற்று, இணைப்புகளை மாற்றி எழுதி, கோப்புகளை நகலெடுத்து, முடிவை இலக்கின் கோப்புறையில் எழுதுகிறது. நீங்கள் உருவாக்கத்தைச் சரிபார்த்து வெளியிடு என்பதை அழுத்தும் வரை எதுவும் வெளியிடப்படாது.</translation>
     </message>
     <message>
@@ -80775,8 +81447,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>அகற்றுதலுக்குப் பிறகும் பிழைத்திருத்த வெளியீடு, படிவ டோக்கன் அல்லது அமர்வு அடையாளம் கொண்ட பக்கம் ஒருபோதும் வெளியிடப்படாது.</translation>
     </message>
     <message>
-        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
-        <translation>திரும்பப்பெறுதல் நிபுணர்களுக்கானது: &quot;இது என்ன மாற்றும் என்று எனக்குத் தெரியும்&quot; என்பதைத் தேர்வுசெய்து குறிச்சொல்லின் பெயரை மீண்டும் தட்டச்சு செய்யுங்கள்.</translation>
+        <source>A rollback is for experts: tick "I know what this changes" and type the name of the tag again.</source>
+        <translation>திரும்பப்பெறுதல் நிபுணர்களுக்கானது: "இது என்ன மாற்றும் என்று எனக்குத் தெரியும்" என்பதைத் தேர்வுசெய்து குறிச்சொல்லின் பெயரை மீண்டும் தட்டச்சு செய்யுங்கள்.</translation>
     </message>
     <message>
         <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
@@ -81287,7 +81959,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>முன்னோட்டத்தைத் திற</translation>
     </message>
     <message>
-        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <source>Opens the build as the host will serve it, from the target's folder. The link works for you for an hour.</source>
         <translation>இலக்கின் கோப்புறையிலிருந்து, வழங்கி வழங்குவது போலவே உருவாக்கத்தைத் திறக்கிறது. இணைப்பு உங்களுக்கு ஒரு மணி நேரம் வேலை செய்யும்.</translation>
     </message>
     <message>
@@ -81463,8 +82135,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>அமைவு &gt; ரகசியங்கள்</translation>
     </message>
     <message>
-        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
-        <translation>பட்டியல்களில் காட்டப்படும், எடுத்துக்காட்டாக &quot;GitHub Pages இல் உள்ள பொதுத் தளம்&quot;.</translation>
+        <source>Shown in lists, for example "Public site on GitHub Pages".</source>
+        <translation>பட்டியல்களில் காட்டப்படும், எடுத்துக்காட்டாக "GitHub Pages இல் உள்ள பொதுத் தளம்".</translation>
     </message>
     <message>
         <source>Signing in with a GitHub App comes with the GitHub integration.</source>
@@ -81671,7 +82343,7 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>தளம் அந்த வெளியீட்டின் கோப்புகளுக்குத் திரும்பும்; இன்னும் வெளியிடப்படாத உருவாக்கத்தை முதலில் வெளியிட வேண்டும் அல்லது நிராகரிக்க வேண்டும்.</translation>
     </message>
     <message>
-        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <source>The site's own page for addresses that do not exist.</source>
         <translation>இல்லாத முகவரிகளுக்கான தளத்தின் சொந்தப் பக்கம்.</translation>
     </message>
     <message>
@@ -81679,8 +82351,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>இலக்கைச் சேமிக்க முடியவில்லை: %problem</translation>
     </message>
     <message>
-        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
-        <translation>இலக்கு இன்னும் இந்த விசையுடன் உள்நுழையவில்லை: அதன் அமைப்புகளில் &quot;இந்த இலக்குக்காக உருவாக்கப்பட்ட வரிசைப்படுத்தல் விசை&quot; என்பதைத் தேர்ந்தெடுங்கள்.</translation>
+        <source>The target does not sign in with this key yet: choose "A deploy key made for this target" in its settings.</source>
+        <translation>இலக்கு இன்னும் இந்த விசையுடன் உள்நுழையவில்லை: அதன் அமைப்புகளில் "இந்த இலக்குக்காக உருவாக்கப்பட்ட வரிசைப்படுத்தல் விசை" என்பதைத் தேர்ந்தெடுங்கள்.</translation>
     </message>
     <message>
         <source>The targets could not be read: %problem</source>
@@ -81715,8 +82387,8 @@ You will need to change the class of the node by using the swap functionality.</
         <translation>இந்த உருவாக்கத்தை நிராகரிக்கிறது: கோப்புறையில் மீண்டும் கடைசி வெளியீடு இருக்கும். நேரடித் தளம் மாறாது.</translation>
     </message>
     <message>
-        <source>Tick &quot;I have checked the changes&quot; first.</source>
-        <translation>முதலில் &quot;மாற்றங்களைச் சரிபார்த்துவிட்டேன்&quot; என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
+        <source>Tick "I have checked the changes" first.</source>
+        <translation>முதலில் "மாற்றங்களைச் சரிபார்த்துவிட்டேன்" என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
     </message>
     <message>
         <source>Time</source>
