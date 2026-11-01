@@ -3809,7 +3809,7 @@ b305522be865436b7a3a275f3de09f66  doc/eng-us/examples/cookbook/custom-template-o
 882106989884d5a5814aea987db89825  doc/eng-us/examples/cookbook/translations.md
 f66b9e74007c1d4210a19f7589c77f2a  doc/eng-us/examples/cookbook/velocity-deploy.md
 887cdef07ed4d69158538a1f8912c363  doc/eng-us/examples/cookbook/workflow-event.md
-3427e15516adbfef6a5025b597e5e32e  doc/eng-us/examples/cronjobs/README.md
+23f35c741d6ef1b7f7a8f1c2b84fc080  doc/eng-us/examples/cronjobs/README.md
 210485740c82ce0e37a4207e656bd5af  doc/eng-us/examples/cronjobs/audit.md
 0a159913bc026f0b924084b49403d07c  doc/eng-us/examples/cronjobs/basket_cleanup.md
 b6ab06485c1c62781c9105ea9a4a8c4e  doc/eng-us/examples/cronjobs/cachecleanup.md
@@ -4182,7 +4182,7 @@ bf0341ba077d9d6d42a4c7244c597b32  doc/eng-us/examples/ini-settings/audit/AuditCh
 6b3438c9e6e52e66c4e55e52daf2bd22  doc/eng-us/examples/ini-settings/audit/AuditChannel_system.md
 3035f14c2ef5b52fffce7cff39a0abcc  doc/eng-us/examples/ini-settings/audit/AuditCompatSettings.md
 f47fbeb89ade05fd697a532738c11847  doc/eng-us/examples/ini-settings/audit/AuditConsoleSettings.md
-dd4989ec47124907c92a84bb456e6795  doc/eng-us/examples/ini-settings/audit/AuditEventSettings.md
+3e0bd8bebaceb802f511a2127c52847a  doc/eng-us/examples/ini-settings/audit/AuditEventSettings.md
 5327268a11f3a018456c1190ffcf8170  doc/eng-us/examples/ini-settings/audit/AuditIndexSettings.md
 e8cca0af4940cf6452307d6a8df5acff  doc/eng-us/examples/ini-settings/audit/AuditKeySettings.md
 a713f61d621ef37c5a4c95db20adb4c1  doc/eng-us/examples/ini-settings/audit/AuditPrivacySettings.md
@@ -4595,7 +4595,7 @@ b1f673056948bb0d843a086f10fd10c5  doc/eng-us/examples/ini-settings/cronjob/Cronj
 5d1c06f1e358e22b920ced44aa0f0992  doc/eng-us/examples/ini-settings/cronjob/CronjobSettings.md
 550bb528977e081a799dda3a4a944d62  doc/eng-us/examples/ini-settings/cronjob/CrontabSettings.md
 9c6d78f34677e9f3222a67cdac15ca34  doc/eng-us/examples/ini-settings/cronjob/PauseSettings.md
-93d1421ee68d974ac37bd388d5f2d2fe  doc/eng-us/examples/ini-settings/cronjob/README.md
+94f338e3f61643ae434fdc8242070b40  doc/eng-us/examples/ini-settings/cronjob/README.md
 c51dc5ef2e976eb21f45099f0476b1b0  doc/eng-us/examples/ini-settings/cronjob/ScriptDocumentation.md
 9d982e789a162727c090ccad0c41fc08  doc/eng-us/examples/ini-settings/cronjob/linkCheckSettings.md
 3e8012935d68e29961356e00e3bcd156  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_all_latest_content.md
@@ -5373,9 +5373,9 @@ e94a792189737daf9faba5d983f30005  doc/eng-us/examples/ini-settings/soap/GeneralS
 1215b8a22acf431ee66a14e1fd3077e5  doc/eng-us/examples/ini-settings/solr/README.md
 bf02cda33caea946f6ca68a305e6dbdd  doc/eng-us/examples/ini-settings/solr/SolrSettings.md
 73d85b9ae40a5d141847ad3e1143a768  doc/eng-us/examples/ini-settings/staticcache/CacheSettings.md
-cc65b1430b019b350864602b61c6b05d  doc/eng-us/examples/ini-settings/staticcache/README.md
-01ed1aaae5782fd20d5170e72a25974f  doc/eng-us/examples/ini-settings/staticcache/StaticPublishSettings.md
-cc9c2ff66cb9248ce16173605c82eb04  doc/eng-us/examples/ini-settings/staticcache/Target_example.md
+eb5bbc6705d4c06e2586c8b4ab8f7fa3  doc/eng-us/examples/ini-settings/staticcache/README.md
+0ad3cf2d2ecfb67adc1e7e4e669802d1  doc/eng-us/examples/ini-settings/staticcache/StaticPublishSettings.md
+ceee2efde7d2da1bf8ef81cf5b22bf32  doc/eng-us/examples/ini-settings/staticcache/Target_example.md
 b7966a1493a890a2069df8cbf21fb616  doc/eng-us/examples/ini-settings/subitems/Defaults_media.md
 69e73f81beb54abd96703666a1a0712d  doc/eng-us/examples/ini-settings/subitems/Defaults_users.md
 ca7c9510412159019e2908e2d8b6a88e  doc/eng-us/examples/ini-settings/subitems/Preset_editorial.md
@@ -5599,7 +5599,7 @@ ef6349083925cd2714e8bf8d03ea0cb6  doc/eng-us/examples/ini-settings/units/BinaryP
 d56bd0119117724ec28451b955cf9040  doc/eng-us/examples/ini-settings/units/FakeBinaryPrefixes.md
 dd6d7906b719b6760aa1bc4f73629d05  doc/eng-us/examples/ini-settings/units/README.md
 0e232771066dcceaa317c813e63cbefe  doc/eng-us/examples/ini-settings/upgrade/README.md
-5613d9fc8d338996851bc83f5935cdda  doc/eng-us/examples/ini-settings/upgrade/UpgradeSettings.md
+35ab430068449ece60171707c3c6d779  doc/eng-us/examples/ini-settings/upgrade/UpgradeSettings.md
 9e1b1ccf30cd6e71aea2f74dba8e332d  doc/eng-us/examples/ini-settings/upload/BugFileUpload.md
 250a3b352f951ffa60262e4294242ab6  doc/eng-us/examples/ini-settings/upload/CreateSettings.md
 fab0fc00ce80a0f18ebccd6e6f08f37d  doc/eng-us/examples/ini-settings/upload/LocationSettings.md
@@ -6756,7 +6756,7 @@ fe1c6abb641c7c1556cdce16bb86142c  doc/eng-us/features/6.0/smarty-templates.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
 a46d405f5296bc36483dd00721014cbc  doc/eng-us/features/6.0/sqlite-database.md
 935ec6788e61b1717356146c44579111  doc/eng-us/features/6.0/static-cache-generator.md
-ec826c8497b417a177a08c8198480886  doc/eng-us/features/6.0/static-publishing.md
+f54692e115b9f816e60176aceeaea32e  doc/eng-us/features/6.0/static-publishing.md
 afd23090dc06207591ccdb4eb6b91806  doc/eng-us/features/6.0/store-dashboard.md
 9f9bea9c87ecaffffafb0e1ac4361b00  doc/eng-us/features/6.0/string-template-operators.md
 e0fe70a6b6d52d4ec6f29e9cee750368  doc/eng-us/features/6.0/subitems-copy-selected.md
@@ -6795,7 +6795,7 @@ e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-co
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
 f5369a8e40538e4fa46a98c65aa2320d  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
-967893a8642c6f727ac548e956b6449c  doc/eng-us/guides/README.md
+aacee0d9f1847155d29744f98527cb6a  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 a68843766fba12d6bf9d1878a045e9eb  doc/eng-us/guides/approving-new-editor-accounts.md
 158d25c3e5f52e97b5cfaad49c8e6a00  doc/eng-us/guides/benchmarking.md
@@ -6818,7 +6818,7 @@ cdac22058aa72ebee655751b3f933e83  doc/eng-us/guides/finding-an-error-by-its-refe
 996ecbfce279c75c2c2fdfdd94d6a171  doc/eng-us/guides/getting-started.md
 6301c1c013d5581b176c0ec1a1dbf1ac  doc/eng-us/guides/graphql-recipes.md
 39b2ec78e026ac8f19a5466682cc008a  doc/eng-us/guides/graphql-walkthrough.md
-749f9b1acbb1f4533893fe64bc8b5e6e  doc/eng-us/guides/host-static-sites-on-github-pages.md
+4f6d60153bdb63c3163d10c0ff7e97b7  doc/eng-us/guides/host-static-sites-on-github-pages.md
 fbcbc9cf7bbfb1f95906327d9513b2c6  doc/eng-us/guides/images/account-approval/approval-item.png
 8bcb3ac63cc2341e4ef7d3045867af4b  doc/eng-us/guides/images/account-approval/approved.png
 4a8739c9f2f5b65580e85608c8d2f948  doc/eng-us/guides/images/account-approval/section-workflow.png
@@ -6933,7 +6933,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 2f30879faf2946e9e4df285ae7705cdf  doc/eng-us/guides/upgrade-steps-for-extensions.md
-79bfb11951db194192a4ca566b98468c  doc/eng-us/guides/upgrading-with-the-console.md
+f0a5835cf753cb6c412ce2d1bec158e3  doc/eng-us/guides/upgrading-with-the-console.md
 ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
@@ -13007,8 +13007,8 @@ d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-eve
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
-d078be5c86b15046c7a3aa388fa3cee2  doc/ger-de/anleitungen/README.md
-1dfb2fc7054fd491e5981b2d526abdc4  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
+2b227a8fcf4b8df310334309c6a76fe1  doc/ger-de/anleitungen/README.md
+5b1be37c1e97426f2e6fb5d89b9bb85a  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
@@ -13100,7 +13100,7 @@ e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 65397ae907e9925c848b87c52e153223  doc/ger-de/anleitungen/setup-dateien-von-der-konsole.md
 3d68e8329fa2aaef4030a2530bd4e3a1  doc/ger-de/anleitungen/sicherheit-und-audit.md
 9e388232668d81a22e1a5ec8da626be5  doc/ger-de/anleitungen/sitzungen.md
-0f214ca95e8ab1d55c728eccce2dd8cd  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
+e98b72346e5191639aa32fa9deda11a5  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
 22181fd2efb68afb99149172011da890  doc/ger-de/anleitungen/statisches-veroeffentlichen-deploy-keys.md
 8e203a6a4d9a9d457d7550ab6a18fe04  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
 e0ae991ca3d22de9371e2f23ca4e32c1  doc/ger-de/anleitungen/statisches-veroeffentlichen-verlauf-und-zuruecknehmen.md
@@ -13410,7 +13410,7 @@ c4b403a4b80b17564eb0d05ec13190b4  doc/ger-de/beispiele/befehle/velocity-warmup.m
 c6cf303261c67d6acabbdeef50381dae  doc/ger-de/beispiele/befehle/verify_aliases.md
 b14622add6b22e81ce9224e095dbacfb  doc/ger-de/beispiele/befehle/warm.md
 cf0e283c1c4260fcab5330e16469b085  doc/ger-de/beispiele/befehle/webserver.md
-c4280c3da17352cebe96d19531d08d59  doc/ger-de/beispiele/cronjobs/README.md
+61678f88f66148a945aa4f1fd470fbae  doc/ger-de/beispiele/cronjobs/README.md
 6d4dcc721e61f9974abff80e9379abcd  doc/ger-de/beispiele/cronjobs/audit.md
 028b510de4cc66d02d472216a46476fe  doc/ger-de/beispiele/cronjobs/basket_cleanup.md
 512296be00d3a134f3edb42906993f16  doc/ger-de/beispiele/cronjobs/cachecleanup.md
@@ -13771,7 +13771,7 @@ f5eae67f1962f16ab71b0d875e6ca1b0  doc/ger-de/beispiele/ini-einstellungen/audit/A
 3973abef3c90270b350a6c2b85ff09a0  doc/ger-de/beispiele/ini-einstellungen/audit/AuditChannel_system.md
 85cd3487de43e2b6600871b1cd5c2358  doc/ger-de/beispiele/ini-einstellungen/audit/AuditCompatSettings.md
 f1f0feb504284d632f6ff434e6012b22  doc/ger-de/beispiele/ini-einstellungen/audit/AuditConsoleSettings.md
-858f27db2276eddc490455446753478d  doc/ger-de/beispiele/ini-einstellungen/audit/AuditEventSettings.md
+0aca6875371ff8bd135a254e8994e629  doc/ger-de/beispiele/ini-einstellungen/audit/AuditEventSettings.md
 912d00a9294aab7b8d3fd8721eeee987  doc/ger-de/beispiele/ini-einstellungen/audit/AuditIndexSettings.md
 d208d8d59cddfc77b583ed8860dc51b0  doc/ger-de/beispiele/ini-einstellungen/audit/AuditKeySettings.md
 38548c921ca0f0b84aca37a374568644  doc/ger-de/beispiele/ini-einstellungen/audit/AuditPrivacySettings.md
@@ -14184,7 +14184,7 @@ e34d23e69c0b771123ce5bfa08f6ef63  doc/ger-de/beispiele/ini-einstellungen/cronjob
 e40bbe46d3b4b6a00f10d05186795ac8  doc/ger-de/beispiele/ini-einstellungen/cronjob/CronjobSettings.md
 3cd28d178293c017581678189dd1d47b  doc/ger-de/beispiele/ini-einstellungen/cronjob/CrontabSettings.md
 88bd2fc942cedb63af0e763a5ccf9b7d  doc/ger-de/beispiele/ini-einstellungen/cronjob/PauseSettings.md
-c2a6cb485a2dffaa0285b3c073712896  doc/ger-de/beispiele/ini-einstellungen/cronjob/README.md
+41e95d1f1ea49f094fe0fe4038aba695  doc/ger-de/beispiele/ini-einstellungen/cronjob/README.md
 b084e45e9a1a3dfdc503efcea81bb852  doc/ger-de/beispiele/ini-einstellungen/cronjob/ScriptDocumentation.md
 ca55de8d2ad5e781c4fda60a1ec433d7  doc/ger-de/beispiele/ini-einstellungen/cronjob/linkCheckSettings.md
 11fcb186f658c74a11cfe1da27dc2e55  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_all_latest_content.md
@@ -14962,9 +14962,9 @@ eabb9e584ae2dc964d7c94eb5c49117e  doc/ger-de/beispiele/ini-einstellungen/soap/Ge
 272d2872646e9284a607ada05ee5d104  doc/ger-de/beispiele/ini-einstellungen/solr/README.md
 b0dc36b499f6bb53381464cc91bb464a  doc/ger-de/beispiele/ini-einstellungen/solr/SolrSettings.md
 e1b3e3f084109414fed2281625e0b949  doc/ger-de/beispiele/ini-einstellungen/staticcache/CacheSettings.md
-f54fa16caadb8622c5bd5388bac1a3ca  doc/ger-de/beispiele/ini-einstellungen/staticcache/README.md
-0d488ad42b2e6525631c3e6d8aa4da12  doc/ger-de/beispiele/ini-einstellungen/staticcache/StaticPublishSettings.md
-b957f3b5e5e48e85c3e4e0615d0b37de  doc/ger-de/beispiele/ini-einstellungen/staticcache/Target_example.md
+2ae6c89ff003ffddc0e54613eac2746b  doc/ger-de/beispiele/ini-einstellungen/staticcache/README.md
+018317ed61d626e0114076f47f03e341  doc/ger-de/beispiele/ini-einstellungen/staticcache/StaticPublishSettings.md
+74cd4c5339da3edce3cc66375f12dab6  doc/ger-de/beispiele/ini-einstellungen/staticcache/Target_example.md
 19f8469ff6b1b9290ce0160dfbf35547  doc/ger-de/beispiele/ini-einstellungen/subitems/Defaults_media.md
 31681049d4d11f5823b75dc5fcb1b3d2  doc/ger-de/beispiele/ini-einstellungen/subitems/Defaults_users.md
 bd9579a93d6b61e7aaabeb52f2a150ec  doc/ger-de/beispiele/ini-einstellungen/subitems/Preset_editorial.md
@@ -15188,7 +15188,7 @@ b80d91f48a316d71afedc15c7bf57aba  doc/ger-de/beispiele/ini-einstellungen/units/B
 7d73da3d624f4d95dffac9afb3b2eead  doc/ger-de/beispiele/ini-einstellungen/units/FakeBinaryPrefixes.md
 4615118eede2cfc79ae051f4835cfafd  doc/ger-de/beispiele/ini-einstellungen/units/README.md
 3a432e0af5def7799b0fbc776d2c94bd  doc/ger-de/beispiele/ini-einstellungen/upgrade/README.md
-34fca13f54a00e134a79ff1d3c43c6cd  doc/ger-de/beispiele/ini-einstellungen/upgrade/UpgradeSettings.md
+d0766e7ccba64615a53409bd0279fc4a  doc/ger-de/beispiele/ini-einstellungen/upgrade/UpgradeSettings.md
 0dc8102f5b228f057be7e8c35f20b372  doc/ger-de/beispiele/ini-einstellungen/upload/BugFileUpload.md
 cd3c81229920639bc272e2b4ea8a979c  doc/ger-de/beispiele/ini-einstellungen/upload/CreateSettings.md
 b2b59b4789cee4c4727815f9b3894b84  doc/ger-de/beispiele/ini-einstellungen/upload/LocationSettings.md
@@ -16138,7 +16138,7 @@ c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-beste
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 1c981d8a54aac59d03d7a8849d066c38  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
-01ac6b6451a335a2b5177080979b9a5d  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
+2fd7c74fa36a6469c4a58f7610e2dca5  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
 e3f9f4f40efea9ae4d8d4382d03600b1  doc/ger-de/funktionen/6.0/systemkarte.md
 fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-ueberschreibungen.md
 1e6bfbed65344611a4fb28e0213bf0e1  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
@@ -24045,7 +24045,7 @@ a4256533dc1c0a8afd51c4fe5de6c60d  kernel/classes/role/exprolepolicysentence.php
 1c4fa7096fba89e218b26115fc26bd37  kernel/classes/shopaccounthandlers/ezsimpleshopaccounthandler.php
 a6942c619908de9aff2835601b137d63  kernel/classes/shopaccounthandlers/ezusershopaccounthandler.php
 4c27e245a401bd764beda0c02e40fe82  kernel/classes/staticpublish/expstaticassetcollector.php
-fb00d2da58e13ab4eda476453e074d9e  kernel/classes/staticpublish/expstaticbuild.php
+8eb8cf7fb07fea0fc5360414931e9e45  kernel/classes/staticpublish/expstaticbuild.php
 31b862bf263a5d8d33a9d0b51b41a6bf  kernel/classes/staticpublish/expstaticcredentials.php
 807b2f0f3987120c6f4ff11c4985de40  kernel/classes/staticpublish/expstaticextras.php
 7f2d293dedb7a328f2321f3a7535d4fe  kernel/classes/staticpublish/expstaticlinkchecker.php
@@ -24058,7 +24058,7 @@ f3ffb95c95bae76d1044ce8526760a46  kernel/classes/staticpublish/expstaticpostproc
 386e04254e4cd64f9912ebeefa255b22  kernel/classes/staticpublish/expstaticserve.php
 f9f2e22898cc0425f92f7f6792326803  kernel/classes/staticpublish/expstaticserverouter.php
 551e1d761f336415f4bd57d410f74a49  kernel/classes/staticpublish/expstaticstatus.php
-2e3e148e91a356ae860f95d81469ff85  kernel/classes/staticpublish/expstatictarget.php
+1ca0725830f05ac664818170b30a934c  kernel/classes/staticpublish/expstatictarget.php
 8dc08d612605dc3249fa264c73a92331  kernel/classes/subitems/columns/expsubitemscolumnhandlers.php
 61eeadc7de74c2da9153f74ea3b567c6  kernel/classes/subitems/columns/expsubitemscolumntables.php
 31c9f791eb77ca61a55d700796d030dd  kernel/classes/subitems/columns/expsubitemsdatecolumn.php
@@ -24506,16 +24506,16 @@ d8ae82aa3dbce2b193abb8a3a5a17510  kernel/private/classes/commands/expmigrationmi
 180ff4f1bb02469aa440dc45a57033af  kernel/private/classes/commands/expmigrationresume.php
 9c156aa9bf248209f4c361d0455eec7c  kernel/private/classes/commands/expmigrationrollback.php
 c22b8f05181328d28e0b44a498863941  kernel/private/classes/commands/expmigrationstatus.php
-d271ba3273ca00f4c5969812260906f3  kernel/private/classes/commands/expstaticbase.php
-ec529cf0234b2b8edc059aec24e63fd0  kernel/private/classes/commands/expstaticbuild.php
-9c775811f3a55a1e34117ae08a4f889b  kernel/private/classes/commands/expstaticdiff.php
+06d94fdab5d8a298323db29359e8ac5a  kernel/private/classes/commands/expstaticbase.php
+1ca73f016833e0349050db800d7fbe34  kernel/private/classes/commands/expstaticbuild.php
+3575ea0c498f5d1b43b9bbe9f4e37c09  kernel/private/classes/commands/expstaticdiff.php
 9050c471774f26f38413231b3dafd3a5  kernel/private/classes/commands/expstatickeys.php
 60cf2007a013e5e3f96900f9239ecfc8  kernel/private/classes/commands/expstaticpublish.php
 e9e177f5f74fd093a7d29c09a8e79be0  kernel/private/classes/commands/expstaticpush.php
 980b1630a769cb917d6f1ac471669504  kernel/private/classes/commands/expstaticrollback.php
-790ffd558849532f1a7e0d3d6fc0ac1b  kernel/private/classes/commands/expstaticserve.php
+9e5cc1b845eeaadc7528791962171a01  kernel/private/classes/commands/expstaticserve.php
 21cb174a056e59f81d0df4f47b4e3711  kernel/private/classes/commands/expstaticstatus.php
-8a29cd49a803c5dca1cd51791fef2389  kernel/private/classes/commands/expstatictargets.php
+e98479faee108603669af7a925ccc96f  kernel/private/classes/commands/expstatictargets.php
 37d546edd18d055578fe7332962ac345  kernel/private/classes/commands/exptemplatecheck.php
 5f75a347e07ce301b5928a3094ed9a2f  kernel/private/classes/commands/exptemplateconvert.php
 48bb0429d52869b440a518393d7fd1c7  kernel/private/classes/commands/exptemplateconvertdiff.php
@@ -25343,12 +25343,12 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-5a2e76f2fa8c02daf129c8c473782c8e  kernel/sql/mysql/kernel_schema.sql
-ddb1f564fa20c3037da2b878f8c55cf3  kernel/sql/postgresql/kernel_schema.sql
+7f270dddaf26b614e19cc85aef9a0d8f  kernel/sql/mysql/kernel_schema.sql
+6df6b6f9c0f9cd13705e513b673b5924  kernel/sql/postgresql/kernel_schema.sql
 67721f5188e529651254baaf73115a2d  kernel/sql/postgresql/sequence.sql.template
 24f4bdbc332642858d8c0a98a94541d5  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
-e0403e14a0d21311b1a9e48b5a312bf1  kernel/sql/sqlite/schema.sql
+43758790f5ec6c915e0602d788bbcf7d  kernel/sql/sqlite/schema.sql
 4ceffdfdd3df6dad001c45ecbfc14f26  kernel/state/assign.php
 1876c01f370cc8092ddb92cb64870718  kernel/state/edit.php
 51d446ac0be7f9efa76a6406a8e2ba76  kernel/state/group.php
@@ -25708,7 +25708,7 @@ c981f3e6ff32017cd87f4b02adc3dfa9  robots.txt
 242b474556fa73a01c4a1cc2b0348abb  runcronjobs.php
 17f0220e8e577b7bf95ffbea6f562fd2  schemas/translation/ts.rng
 384d863a64ec6bf359da051874b0d222  settings/admininterface.ini
-f908af11eebeac8b067d02029dc34a3b  settings/audit.ini
+8976225b13e89cea1d52e3c58a1d679a  settings/audit.ini
 1b4240b9c4d8b7cfa57f7c76b8e2d1a7  settings/binaryfile.ini
 d907d9b953748fe4b792931bf477a890  settings/bookmark.ini
 f99a41a30ace913f63ff7525de52d0ff  settings/browse.ini
@@ -25721,7 +25721,7 @@ de45042ac0530e8a52e3a2ac0e519d8a  settings/collaboration.ini
 1dbcfc8da1b2cb204ea10c28c2caec6b  settings/contentstructuremenu.ini
 93a7d156b36f22f7daa9640f36e8f569  settings/country.ini
 ee38fe027250131e8952f8dacf0f18c9  settings/countrygroups.ini
-0ece18c7060f16e9fad03a5a4b3222b6  settings/cronjob.ini
+23430c8f27209a589a71202816b5c6a3  settings/cronjob.ini
 1beebb3ffb638ca97b7ee057bba1f10b  settings/dashboard.ini
 1dc1ef94d1fa90f311786af722de75af  settings/datatable.ini
 d5020c505e699f2d0f7606e505c9a8d2  settings/datatype.ini
@@ -25776,7 +25776,7 @@ f40649f9c1546c9938a536e156ec294e  settings/site.ini
 52dd1a738a1a703bfd45ac4eae0fbcba  settings/smarty.ini
 16959b1c9cb408528496ee6aeabe3a64  settings/soap.ini
 6f619e35e9ab075d6bfac58736897d8a  settings/solr.ini
-24307b48ca5309f27394bb686f2c80a7  settings/staticcache.ini
+e9dbf77e66795b1e5a460d1c1a058eca  settings/staticcache.ini
 d4db8f52a92806d9486a1cd58e595a09  settings/subitems.ini
 977e56784d1ea230cb7bdb18665defdf  settings/subitemscolumns.ini
 d991cf1227c1908a98f4ca754bae65c1  settings/syscard.ini
@@ -25789,7 +25789,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-288e80dd6ef6e2a55eed00a91a1200f5  settings/upgrade.ini
+909bf01afd40ae783f0daf157bf01cf3  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 53f363dfc5d11e88ff40763bed4b0471  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -25846,7 +25846,7 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a2b80831488ff635f2b4e7b922434d9d  share/db_data.dba
-1287caac0a521b0d376d6525365a16ff  share/db_schema.dba
+c77960b94ac5dfbb565474f4eaafdc2e  share/db_schema.dba
 a053460928304f8f2beb6a8903551954  share/graphql/starters/astro/README.md
 9c5fe3be955c8a73d36f804d2542a088  share/graphql/starters/astro/_env
 7fc461a54ac538970c597a60c3be8367  share/graphql/starters/astro/astro.config.mjs
@@ -27468,7 +27468,7 @@ efeb92c386aa5b9febaf3ee6029dbc92  tests/tests/kernel/classes/audit/expAuditMailR
 908a441e3f86685b3007887aea40c01b  tests/tests/kernel/classes/audit/expAuditPrivacyTest.php
 af4f27cae92e7df2d5b7254676c4705e  tests/tests/kernel/classes/audit/expAuditReaderChunkTest.php
 be1773f7ec01e6432df7c0fa18e96f3c  tests/tests/kernel/classes/audit/expAuditRecentChannelsTest.php
-169f109f0b6ec621f3f8197808ab262c  tests/tests/kernel/classes/audit/expAuditRecordTest.php
+6e7ddcf93389a0a35cd1a20d6d49b8f5  tests/tests/kernel/classes/audit/expAuditRecordTest.php
 9b5253e655ffc477e63c6a2abb93f299  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 760b1c6f215983f292cf424433c05b9d  tests/tests/kernel/classes/audit/expAuditSourceTest.php
 c5cbdbb5d277236b64c83a19a74981a8  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php
@@ -28118,7 +28118,7 @@ c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopRe
 6ff327ab616500ef1a0e2f54fb092cca  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 8c0728b2f967cd40690522b1d6c5fdb0  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
 4d8bf7a6a7a1f84830c02495599ea130  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
-53691584efe12216a63af85954ebf649  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
+9931a67d9b212983bd1fe065be75a7c0  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 639a46427444d0bd50714f20af42b88a  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
 2c3fc5c8adacfc04a0802560a185f7ff  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
 f9f6e7d3550d867ef242158560604dfb  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
@@ -29011,7 +29011,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-c68d9b5030f9a74ba8c27fed7b0e6fd0  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+7e0362465d303f6f5d4e7fa81d367a5d  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -29070,9 +29070,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-fdd2af3bed3145a7823d9f8c7fdbc0a8  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+0ce6ac3de30d2a26822b1cc01f1e0de4  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-228541a1df4cc0e7152860b09af30db1  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+a36d2454bf042cb00b530dd873b52fdc  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php
