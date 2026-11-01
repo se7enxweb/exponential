@@ -55,7 +55,9 @@ The left column changes with the tab:
   started in the background, and the log of each run
   ([Migrations in the administration](migrations/in-the-administration.md); what migrations are, for administrators:
   [Migrations for administrators](migrations/migrations-for-administrators.md); everything else:
-  [Migrations](migrations/README.md)).
+  [Migrations](migrations/README.md)). Another is **Recent content** in the group **Content model**: the newest
+  content of the whole site, what is held for review, who submitted it, and actions on a selection
+  ([Recent content](moderation/README.md)).
 
 ![The menu of an item in the tree](images/context-menu.webp)
 
@@ -95,7 +97,9 @@ The dashboard is the first page after signing in. From the top:
 Administrators also see blocks about the system, updates and security events, and the **Migrations** block: how
 many migrations are pending or failed, the orphans (recorded, their file gone), the last run with its state, a note
 while a run is going on, and **All migrations**, a link to Setup > Migrations. The block shows only to users who may
-see the migrations ([The dashboard block](migrations/status-and-history.md#the-dashboard-block)).
+see the migrations ([The dashboard block](migrations/status-and-history.md#the-dashboard-block)). Moderators see the
+**Recent content** block: how many items are held for review and how many were created today, each a link to the
+list filtered on them.
 
 ![My bookmarks: the items you bookmarked with Add to bookmarks, to open them again in one click](images/accounts/my-bookmarks.webp)
 

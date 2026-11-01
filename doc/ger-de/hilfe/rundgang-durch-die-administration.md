@@ -57,7 +57,9 @@ Die linke Spalte ändert sich mit dem Reiter:
   eine Rücknahme im Hintergrund und das Protokoll jedes Laufs
   ([Migrationen in der Administration](migrationen/in-der-administration.md); was Migrationen sind, für Administratoren:
   [Migrationen für Administratoren](migrationen/migrationen-fuer-administratoren.md); alles Weitere:
-  [Migrationen](migrationen/README.md)).
+  [Migrationen](migrationen/README.md)). Eine weitere ist **Neue Inhalte** in der Gruppe **Inhaltsmodell**: die
+  neuesten Inhalte der ganzen Site, was zur Prüfung zurückgehalten ist, wer es eingereicht hat, und Aktionen auf
+  einer Auswahl ([Neue Inhalte](moderation/README.md)).
 
 ![Das Menü eines Objekts im Baum](bilder/context-menu.webp)
 
