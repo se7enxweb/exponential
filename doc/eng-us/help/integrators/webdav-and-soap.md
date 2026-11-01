@@ -45,8 +45,9 @@ something newer. Their status against the standards is in
 > HTTPS) and rewrite rules, then test them: [The WebDAV entry script is now index_webdav.php](../../bc/6.0/webdav-entry-script-index-webdav.md).
 
 The entry point is `index_webdav.php` at the installation root. It runs the Zeta Components WebDAV server
-(`zetacomponents/webdav ~1.2`) with the content backend `kernel/private/classes/webdav/ezwebdavcontentbackend.php` and
-basic authentication against Exponential users (`ezwebdavcontentbackendauth.php`).
+(`se7enxweb/expcomponents-webdav ~1.2.2`) with the content backend
+`kernel/private/classes/webdav/ezwebdavcontentbackend.php` and basic authentication against Exponential users
+(`ezwebdavcontentbackendauth.php`).
 
 Switch it on in `settings/override/webdav.ini.append.php`:
 
