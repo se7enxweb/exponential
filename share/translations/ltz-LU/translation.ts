@@ -80546,5 +80546,221 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
         <source>The run could not be started.</source>
         <translation>De Laf konnt net gestart ginn.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ännerungen ophuelen</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Soulaang eng Opnam leeft, gëtt dat, wat Dir an der Administratioun oder an der Säiteläischt vum Site ännert, als Schrëtt vun enger Migratioun gehalen: Inhalt, Klassen, Rollen a Richtlinnen, Sektiounen, Benotzer a Gruppen, URL-Aliasen, Astellungen. Stoppt se, wann Dir fäerdeg sidd, kuckt, wat se festgehalen huet, a generéiert eng Migratioun doraus.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>D'Opname konnten net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>D'Tabelle vun den Opnamen ginn et nach net: Lancéiert fir d'éischt den Upgrade (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>D'Ophuelen ass a migration.ini ausgeschalt ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Meng Ännerungen</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Hëlt just dat op, wat Dir ännert, egal wou, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Opnam</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>zënter %time, bis elo %count Ännerung(en).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etikett (fakultativ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Weisen, wat se festgehalen huet</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Opnam stoppen</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Ufänken, meng Ännerungen opzehuelen</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fënster fir de ganze Site</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Hëlt all Ännerung vun all Benotzer a vun der Konsol op, bis se zougemaach gëtt. Beim Opmaache musst Dir bestätegen, datt Dir et sidd.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Op</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Fënster zoumaachen</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fënster fir de ganze Site opmaachen</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Opnamen</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>De Kont vun engem Benotzer (Login, E-Mail, Passwuert) an d'Felder vu Benotzerkonten ginn ni opgeholl.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ännerungen</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ganze Site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ännerunge vum %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Gestoppt</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Nach keng Opnam.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Opnam %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>All Opnamen</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>D'Migratioun, déi doraus géif entstoen</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>D'Ännerungen zesummegefaasst an ee Schrëtt pro geännert Saach: wat eng aus dëser Opnam generéiert Migratioun géif maachen.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Eng Migratioun kann doraus generéiert ginn, soubal dës Installatioun d'YAML-Schrëtttypen %types huet.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bewosst ewechgelooss: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Näischt gouf opgeholl.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Wat se festgehalen huet</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count Ännerung(en), an der Reiefolleg, an där se gemaach goufen.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ännerung</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Schrëtt</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Betrëfft</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Nach %count: ./console exp:migration:record:show weist se all.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerfen</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Läscht d'Opnam an dat, wat se festgehalen huet. Wat geännert gouf, bleift geännert.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Jo, dës Opnam verwerfen</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Hëlt op…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Är Ännerunge ginn fir eng Migratioun opgeholl.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>All Ännerung op dësem Site gëtt fir eng Migratioun opgeholl (Fënster fir de ganze Site).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>D'Opnam fir de ganze Site huet ugefaangen: all Ännerung vun all Benotzer gëtt opgeholl, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>D'Opnam huet ugefaangen: Är Ännerunge ginn opgeholl, bis Dir se stoppt.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Opnam gestoppt. Wat se festgehalen huet, bleift, bis Dir se verwerft.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>D'Opnam an hir Evenementer goufe geläscht.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Et gëtt keng Opnam %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Kräizt fir d'éischt „Jo, dës Opnam verwerfen“ un.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Just de Benotzer, deen opgeholl huet, däerf eng Sessiounsopnam stoppen.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Wielt d'Opnam, déi gestoppt soll ginn.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Eng Opnam vun dëser Zort leeft schonn.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>D'Opnam konnt net geännert ginn: %reason</translation>
+    </message>
 </context>
 </TS>

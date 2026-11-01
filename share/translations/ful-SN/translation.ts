@@ -80546,5 +80546,221 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>The run could not be started.</source>
         <translation>Dogal ngal waawaa fuɗɗeede.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Winndugol bayle</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Tuma nde winndugol ngol ɗon jokki, ko waylataa e toppitagol walla e baaraagal kombowal lowre ndee ɗon mardee wano daawe eggol: loowdi, kalasiiji, golle e laabi, taƴe, huutortooɓe e fedde, inɗe goɗɗe URL, teelte. Daru ɗum so a gasii, ndaar ko ɗum nangi, tafaa eggol e mayre.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Winnduɗe ɗee njanngaaki: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Taabule winnduɗe ɗee ngalaa tawo: adan huutoraade hesɗitinal (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Winndugol ko uddaaɗo e migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Bayle am</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ɗum winndata tan ko waylataa, nder nokku kala, haa nde daraɗaa ɗum.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Winndugol</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>gila %time, bayle %count haa jooni.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Maandel (suɓaade)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Hollu ko ɗum nangi</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Daru winndugol</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Fuɗɗo winndugol bayle am</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Henorde lowre ndee fof</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ɗum winndata kala bayl huutortooɗo kala e konsol haa nde ɗum uddaa. So a udditi ɗum, a naamnete teeŋtinaade wonde ko an.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Udditaama</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Uddu henorde</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Udditu henorde lowre ndee fof</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Winnduɗe</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Konte huutortooɗo (innde naatgol, iimeel, finnde) e nokkuuji konte huutortooɓe winndetaake abadaa.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Bayle</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Lowre ndee fof</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Bayle %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Daraama</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Alaa winndugol tawo.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Winndugol %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Winnduɗe ɗee fof</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Eggol ngol ɗum waɗata</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Bayle mooftaaɗe e daawal gootal ngam kala huunde waylaande: ko eggol tafaangol e ndee winndugol waɗata.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Eggol waawi tafeede e mayre so ndee aafgol heɓii noone daawe YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Accaama e anniya: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Alaa ko winndaa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ko ɗum nangi</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Bayle %count, e doggol ɗe ngaɗaa.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Bayl</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Daawal</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Fii</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Goɗɗe %count: ./console exp:migration:record:show ɗon holla ɗe fof.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Werlu</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ɗum momtata winndugol ngol e ko ɗum nangi. Ko waylaa luttat waylaaɗo.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Eey, werlu ndee winndugol</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ɗon winnda…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Bayle maa ɗon winndee ngam eggol.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kala bayl e ndee lowre ɗon winndee ngam eggol (henorde lowre ndee fof).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Winndugol lowre ndee fof fuɗɗii: kala bayl huutortooɗo kala winndete haa nde daraɗaa ɗum.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Winndugol fuɗɗii: bayle maa winndete haa nde daraɗaa ɗum.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Winndugol daraama. Ko ɗum nangi luttat haa nde werlaɗaa ɗum.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Winndugol e huunde mum momtaama.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Alaa winndugol %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Adan maandin "Eey, werlu ndee winndugol".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ko huutortooɗo winndunooɗo tan waawi darnude winndugol jokkondiral.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Suɓo winndugol darneteengol.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Winndugol ngol noone ɗon jokki kadi.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Winndugol waylaaki: %reason</translation>
+    </message>
 </context>
 </TS>

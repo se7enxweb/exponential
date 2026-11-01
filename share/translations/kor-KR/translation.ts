@@ -80576,5 +80576,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>실행을 시작할 수 없습니다.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>변경 사항 기록</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>기록이 진행되는 동안 관리 화면이나 사이트 사이드바에서 변경한 내용은 마이그레이션의 단계로 보관됩니다: 콘텐츠, 클래스, 역할과 정책, 섹션, 사용자와 그룹, URL 별칭, 설정. 작업이 끝나면 기록을 중지하고, 기록된 내용을 확인한 뒤 마이그레이션을 생성하세요.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>기록을 읽을 수 없습니다: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>기록 테이블이 아직 없습니다: 먼저 업그레이드를 실행하세요 (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini에서 기록이 꺼져 있습니다 ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>내 변경 사항</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>중지할 때까지 내가 변경한 내용만, 어디에서 변경하든 기록합니다.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>기록</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time 이후, 지금까지 변경 %count 건.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>레이블 (선택)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>기록된 내용 보기</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>기록 중지</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>내 변경 사항 기록 시작</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>사이트 전체 창</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>닫을 때까지 모든 사용자와 콘솔의 모든 변경을 기록합니다. 열 때 본인 확인을 요청합니다.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>열림</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>창 닫기</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>사이트 전체 창 열기</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>기록 목록</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>사용자 계정 (로그인, 이메일, 비밀번호)과 사용자 계정의 필드는 절대 기록되지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>변경 수</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>사이트 전체</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name 님의 변경 사항</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>중지됨</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>아직 기록이 없습니다.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>기록 %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>모든 기록</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>생성될 마이그레이션</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>변경된 항목마다 한 단계로 합친 변경 사항: 이 기록에서 생성한 마이그레이션이 할 일.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>이 설치에 YAML 단계 유형 %types 이(가) 있으면 여기에서 마이그레이션을 생성할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>의도적으로 제외됨: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>기록된 것이 없습니다.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>기록된 내용</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>변경 %count 건, 이루어진 순서대로.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>변경</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>단계</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>대상</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count 건 더: ./console exp:migration:record:show 로 모두 볼 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>폐기</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>기록과 기록된 내용을 삭제합니다. 변경된 것은 변경된 상태로 남습니다.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>예, 이 기록을 폐기합니다</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>기록 중…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>변경 사항이 마이그레이션을 위해 기록되고 있습니다.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>이 사이트의 모든 변경이 마이그레이션을 위해 기록되고 있습니다 (사이트 전체 창).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>사이트 전체 기록이 시작되었습니다: 중지할 때까지 모든 사용자의 모든 변경이 기록됩니다.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>기록이 시작되었습니다: 중지할 때까지 변경 사항이 기록됩니다.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>기록이 중지되었습니다. 기록된 내용은 폐기할 때까지 남아 있습니다.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>기록과 그 이벤트가 삭제되었습니다.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>기록 %id 이(가) 없습니다.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>먼저 "예, 이 기록을 폐기합니다"를 선택하세요.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>세션 기록은 기록한 사용자만 중지할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>중지할 기록을 선택하세요.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>이 종류의 기록이 이미 진행 중입니다.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>기록을 변경할 수 없습니다: %reason</translation>
+    </message>
 </context>
 </TS>

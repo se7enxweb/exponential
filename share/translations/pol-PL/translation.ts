@@ -81758,5 +81758,221 @@ Należy zmienić klasę węzła za pomocą funkcji zamiany.</translation>
         <source>The run could not be started.</source>
         <translation>Nie udało się uruchomić przebiegu.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Nagrywanie zmian</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Podczas nagrywania to, co zmieniasz w administracji lub na pasku bocznym witryny, jest zapisywane jako kroki migracji: treść, klasy, role i zasady, sekcje, użytkownicy i grupy, aliasy URL, ustawienia. Zatrzymaj nagrywanie, gdy skończysz, sprawdź, co zarejestrowało, i wygeneruj z niego migrację.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nie udało się odczytać nagrań: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabele nagrań jeszcze nie istnieją: najpierw uruchom aktualizację (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Nagrywanie jest wyłączone w migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Moje zmiany</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nagrywa tylko to, co zmieniasz, gdziekolwiek to zmieniasz, dopóki go nie zatrzymasz.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Nagrywanie</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>od %time, dotąd zmian: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etykieta (opcjonalna)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Pokaż, co zarejestrowało</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Zatrzymaj nagrywanie</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Rozpocznij nagrywanie moich zmian</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Okno dla całej witryny</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Nagrywa każdą zmianę każdego użytkownika i konsoli, dopóki okno nie zostanie zamknięte. Przy otwieraniu musisz potwierdzić, że to Ty.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otwarte</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Zamknij okno</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Otwórz okno dla całej witryny</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Nagrania</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Konto użytkownika (login, e-mail, hasło) i pola kont użytkowników nigdy nie są nagrywane.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Zmiany</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Cała witryna</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Zmiany użytkownika %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Zatrzymane</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Jeszcze nie ma nagrań.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Nagranie %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Wszystkie nagrania</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migracja, która by z niego powstała</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Zmiany zebrane w jeden krok na każdy zmieniony element: co zrobiłaby migracja wygenerowana z tego nagrania.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migrację z niego będzie można wygenerować, gdy ta instalacja będzie mieć typy kroków YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Celowo pominięte: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nic nie zostało nagrane.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Co zarejestrowało</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Zmian: %count, w kolejności, w jakiej je wprowadzono.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Zmiana</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Krok</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Dotyczy</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Jeszcze %count: ./console exp:migration:record:show wyświetla wszystkie.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Odrzuć</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Usuwa nagranie i to, co zarejestrowało. To, co zostało zmienione, pozostaje zmienione.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Tak, odrzuć to nagranie</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nagrywanie…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Twoje zmiany są nagrywane dla migracji.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Każda zmiana w tej witrynie jest nagrywana dla migracji (okno dla całej witryny).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nagrywanie całej witryny się rozpoczęło: każda zmiana każdego użytkownika jest nagrywana, dopóki go nie zatrzymasz.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nagrywanie się rozpoczęło: Twoje zmiany są nagrywane, dopóki go nie zatrzymasz.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Nagrywanie zatrzymane. To, co zarejestrowało, zostaje, dopóki go nie odrzucisz.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Nagranie i jego zdarzenia zostały usunięte.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nie ma nagrania %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Najpierw zaznacz „Tak, odrzuć to nagranie”.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Tylko użytkownik, który nagrywał, może zatrzymać nagrywanie sesji.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Wybierz nagranie do zatrzymania.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Nagrywanie tego rodzaju już trwa.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nie udało się zmienić nagrania: %reason</translation>
+    </message>
 </context>
 </TS>

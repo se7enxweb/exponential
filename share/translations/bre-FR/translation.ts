@@ -80546,5 +80546,221 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>The run could not be started.</source>
         <translation>N&apos;eus ket bet gallet kregiñ al lañsadenn.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Enrollañ ar c'hemmoù</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>E-pad ma 'z a en-dro un enrolladenn, ar pezh a cheñchit er merañ pe e barrenn gostez al lec'hienn a vez miret evel pazennoù ur migradur: endalc'had, klasoù, rolloù ha politikerezhioù, rannoù, implijerien ha strolladoù, aliasoù URL, arventennoù. Paouezit ganti pa vo echu ganeoc'h, sellit ouzh ar pezh he deus paket ha krouit ur migradur diwarni.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>N'haller ket lenn an enrolladennoù: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>N'eus ket eus taolennoù an enrolladennoù c'hoazh: lañsit an hizivadur da gentañ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Diweredekaet eo an enrollañ e migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ma c'hemmoù</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ne enroll nemet ar pezh a cheñchit, n'eus forzh pelec'h, betek ma paouezot ganti.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Enrolladenn</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>abaoe %time, %count kemm betek-henn.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Tikedenn (diret)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Diskouez ar pezh he deus paket</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Paouez da enrollañ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Kregiñ da enrollañ ma c'hemmoù</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Prenestr evit al lec'hienn a-bezh</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Enrollañ a ra pep kemm gant pep implijer hag ar c'honsol betek ma vo serret. Pa vez digoret e vez goulennet diganeoc'h gwiriañ ez eo c'hwi.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Digor</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Serriñ ar prenestr</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Digeriñ ar prenestr evit al lec'hienn a-bezh</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Enrolladennoù</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Kont un implijer (anv kevreañ, postel, ger-tremen) ha maeziennoù kontoù an implijerien n'int biskoazh enrollet.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Kemmoù</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Al lec'hienn a-bezh</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Kemmoù %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Paouezet</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Enrolladenn ebet c'hoazh.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Enrolladenn %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>An holl enrolladennoù</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ar migradur a vefe graet diwarni</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ar c'hemmoù strollet en ur bazenn evit pep tra cheñchet: ar pezh a rafe ur migradur krouet diwar an enrolladenn-mañ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Gallout a raio bezañ krouet ur migradur diwarni pa vo ar seurtoù pazennoù YAML %types gant ar staliadur-mañ.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Lezet er-maez a-ratozh: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Netra n'eo bet enrollet.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ar pezh he deus paket</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count kemm, en urzh ma 'z int bet graet.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Kemm</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pazenn</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>A sell ouzh</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count all: ./console exp:migration:record:show a ro roll anezho holl.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Dilezel</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Lemel a ra an enrolladenn hag ar pezh he deus paket. Ar pezh a zo bet cheñchet a chom cheñchet.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ya, dilezel an enrolladenn-mañ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Oc'h enrollañ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Enrollet e vez ho kemmoù evit ur migradur.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Pep kemm el lec'hienn-mañ a vez enrollet evit ur migradur (prenestr evit al lec'hienn a-bezh).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Kroget eo an enrolladenn evit al lec'hienn a-bezh: pep kemm gant pep implijer a vez enrollet betek ma paouezot ganti.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Kroget eo an enrolladenn: ho kemmoù a vez enrollet betek ma paouezot ganti.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Paouezet eo an enrolladenn. Ar pezh he deus paket a chom betek ma tilezot anezhi.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Lamet eo bet an enrolladenn hag he darvoudoù.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>N'eus enrolladenn %id ebet.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Askit da gentañ "Ya, dilezel an enrolladenn-mañ".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>An implijer en deus enrollet hepken a c'hall paouez gant un enrolladenn dalc'h.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Dibabit an enrolladenn da baouez.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Un enrolladenn eus ar seurt-se a ya en-dro dija.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>N'haller ket kemmañ an enrolladenn: %reason</translation>
+    </message>
 </context>
 </TS>

@@ -80546,5 +80546,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ไม่สามารถเริ่มการเรียกใช้ได้</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>บันทึกการเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ขณะที่การบันทึกทำงานอยู่ สิ่งที่คุณเปลี่ยนในส่วนผู้ดูแลหรือในแถบด้านข้างของเว็บไซต์จะถูกเก็บเป็นขั้นตอนของการย้ายข้อมูล: เนื้อหา คลาส บทบาทและนโยบาย ส่วน ผู้ใช้และกลุ่ม นามแฝง URL การตั้งค่า เมื่อเสร็จแล้วให้หยุด ดูว่ามันเก็บอะไรไว้ แล้วสร้างการย้ายข้อมูลจากมัน</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>อ่านการบันทึกไม่ได้: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ยังไม่มีตารางของการบันทึก: ให้รันการอัปเกรดก่อน (exp:upgrade --apply)</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>การบันทึกถูกปิดใน migration.ini ([RecordingSettings] Recording=disabled)</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>การเปลี่ยนแปลงของฉัน</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>บันทึกเฉพาะสิ่งที่คุณเปลี่ยน ไม่ว่าจะเปลี่ยนที่ใด จนกว่าคุณจะหยุด</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>การบันทึก</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ตั้งแต่ %time จนถึงตอนนี้ %count การเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ป้ายกำกับ (ไม่บังคับ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>แสดงสิ่งที่เก็บไว้</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>หยุดการบันทึก</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>เริ่มบันทึกการเปลี่ยนแปลงของฉัน</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>หน้าต่างสำหรับทั้งเว็บไซต์</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>บันทึกทุกการเปลี่ยนแปลงของผู้ใช้ทุกคนและของคอนโซลจนกว่าจะปิด เมื่อเปิดจะขอให้คุณยืนยันว่าเป็นคุณ</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>เปิดอยู่</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ปิดหน้าต่าง</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>เปิดหน้าต่างสำหรับทั้งเว็บไซต์</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>รายการบันทึก</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>บัญชีของผู้ใช้ (ชื่อเข้าระบบ อีเมล รหัสผ่าน) และฟิลด์ของบัญชีผู้ใช้จะไม่ถูกบันทึกเลย</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>จำนวนการเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ทั้งเว็บไซต์</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>การเปลี่ยนแปลงของ %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>หยุดแล้ว</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ยังไม่มีการบันทึก</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>การบันทึก %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>การบันทึกทั้งหมด</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>การย้ายข้อมูลที่จะได้</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>การเปลี่ยนแปลงที่รวมเป็นหนึ่งขั้นตอนต่อสิ่งที่ถูกเปลี่ยน: สิ่งที่การย้ายข้อมูลที่สร้างจากการบันทึกนี้จะทำ</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>จะสร้างการย้ายข้อมูลจากมันได้เมื่อการติดตั้งนี้มีชนิดขั้นตอน YAML %types</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ละไว้โดยเจตนา: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ไม่มีสิ่งใดถูกบันทึก</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>สิ่งที่เก็บไว้</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count การเปลี่ยนแปลง ตามลำดับที่ทำ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>การเปลี่ยนแปลง</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ขั้นตอน</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>เกี่ยวกับ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>อีก %count รายการ: ./console exp:migration:record:show แสดงทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ทิ้ง</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ลบการบันทึกและสิ่งที่มันเก็บไว้ สิ่งที่ถูกเปลี่ยนยังคงถูกเปลี่ยน</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ใช่ ทิ้งการบันทึกนี้</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>กำลังบันทึก…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>การเปลี่ยนแปลงของคุณกำลังถูกบันทึกเพื่อการย้ายข้อมูล</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ทุกการเปลี่ยนแปลงบนเว็บไซต์นี้กำลังถูกบันทึกเพื่อการย้ายข้อมูล (หน้าต่างสำหรับทั้งเว็บไซต์)</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>การบันทึกทั้งเว็บไซต์เริ่มแล้ว: ทุกการเปลี่ยนแปลงของผู้ใช้ทุกคนจะถูกบันทึกจนกว่าคุณจะหยุด</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>การบันทึกเริ่มแล้ว: การเปลี่ยนแปลงของคุณจะถูกบันทึกจนกว่าคุณจะหยุด</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>หยุดการบันทึกแล้ว สิ่งที่เก็บไว้จะยังอยู่จนกว่าคุณจะทิ้ง</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ลบการบันทึกและเหตุการณ์ของมันแล้ว</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ไม่มีการบันทึก %id</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>เลือก "ใช่ ทิ้งการบันทึกนี้" ก่อน</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>เฉพาะผู้ใช้ที่บันทึกเท่านั้นที่หยุดการบันทึกเซสชันได้</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>เลือกการบันทึกที่จะหยุด</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>การบันทึกชนิดนี้ทำงานอยู่แล้ว</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>เปลี่ยนการบันทึกไม่ได้: %reason</translation>
+    </message>
 </context>
 </TS>

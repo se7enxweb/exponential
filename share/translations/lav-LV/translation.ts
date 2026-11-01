@@ -80576,5 +80576,221 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>The run could not be started.</source>
         <translation>Izpildi neizdevās sākt.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Izmaiņu ierakstīšana</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Kamēr notiek ierakstīšana, tas, ko maināt administrācijā vai vietnes sānjoslā, tiek saglabāts kā migrācijas soļi: saturs, klases, lomas un politikas, sadaļas, lietotāji un grupas, URL aizstājvārdi, iestatījumi. Kad esat pabeidzis, apturiet to, apskatiet, ko tā fiksēja, un izveidojiet no tās migrāciju.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ierakstus neizdevās nolasīt: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ierakstu tabulas vēl nepastāv: vispirms palaidiet jaunināšanu (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ierakstīšana ir izslēgta failā migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Manas izmaiņas</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ieraksta tikai to, ko maināt jūs, lai kur jūs to mainītu, līdz jūs to apturat.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ierakstīšana</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>kopš %time, līdz šim izmaiņu: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiķete (neobligāti)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Rādīt, ko tā fiksēja</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Apturēt ierakstīšanu</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Sākt manu izmaiņu ierakstīšanu</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Visas vietnes logs</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ieraksta katru katra lietotāja un konsoles izmaiņu, līdz logs tiek aizvērts. Atverot jums jāapstiprina, ka tas esat jūs.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Atvērts</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Aizvērt logu</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Atvērt visas vietnes logu</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ieraksti</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Lietotāja konts (pieteikumvārds, e-pasts, parole) un lietotāju kontu lauki nekad netiek ierakstīti.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Izmaiņas</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Visa vietne</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Lietotāja %name izmaiņas</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Apturēts</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Vēl nav neviena ieraksta.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ieraksts %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Visi ieraksti</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrācija, kas no tā rastos</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Izmaiņas, apvienotas vienā solī katrai mainītajai lietai: ko darītu no šī ieraksta izveidota migrācija.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>No tā varēs izveidot migrāciju, kad šai instalācijai būs YAML soļu tipi %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Apzināti izlaists: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nekas netika ierakstīts.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ko tā fiksēja</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Izmaiņu: %count, tādā secībā, kādā tās veiktas.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Izmaiņa</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Solis</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Attiecas uz</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Vēl %count: ./console exp:migration:record:show uzskaita visas.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Atmest</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Noņem ierakstu un to, ko tas fiksēja. Tas, kas mainīts, paliek mainīts.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Jā, atmest šo ierakstu</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Notiek ierakstīšana…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Jūsu izmaiņas tiek ierakstītas migrācijai.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Katra izmaiņa šajā vietnē tiek ierakstīta migrācijai (visas vietnes logs).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Visas vietnes ierakstīšana ir sākusies: katra katra lietotāja izmaiņa tiek ierakstīta, līdz jūs to apturat.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ierakstīšana ir sākusies: jūsu izmaiņas tiek ierakstītas, līdz jūs to apturat.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ierakstīšana apturēta. Tas, ko tā fiksēja, paliek, līdz jūs to atmetat.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ieraksts un tā notikumi ir noņemti.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ieraksta %id nav.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Vispirms atzīmējiet “Jā, atmest šo ierakstu”.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Sesijas ierakstīšanu drīkst apturēt tikai lietotājs, kurš ierakstīja.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Izvēlieties ierakstīšanu, ko apturēt.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Šāda veida ierakstīšana jau notiek.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ierakstu neizdevās mainīt: %reason</translation>
+    </message>
 </context>
 </TS>

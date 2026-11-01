@@ -80546,5 +80546,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ບໍ່ສາມາດເລີ່ມການດຳເນີນການໄດ້.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ການບັນທຶກການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ໃນຂະນະທີ່ການບັນທຶກກຳລັງດຳເນີນຢູ່ ສິ່ງທີ່ທ່ານປ່ຽນໃນການຄຸ້ມຄອງ ຫຼື ໃນແຖບຂ້າງຂອງເວັບໄຊ ຈະຖືກເກັບໄວ້ເປັນຂັ້ນຕອນຂອງການຍ້າຍ: ເນື້ອຫາ, ຄລາສ, ບົດບາດ ແລະ ນະໂຍບາຍ, ພາກສ່ວນ, ຜູ້ໃຊ້ ແລະ ກຸ່ມ, ຊື່ແທນ URL, ການຕັ້ງຄ່າ. ຢຸດມັນເມື່ອທ່ານເຮັດແລ້ວ, ເບິ່ງວ່າມັນຈັບຫຍັງໄວ້, ແລ້ວສ້າງການຍ້າຍຈາກມັນ.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ບໍ່ສາມາດອ່ານການບັນທຶກໄດ້: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ຕາຕະລາງຂອງການບັນທຶກຍັງບໍ່ມີ: ໃຫ້ດຳເນີນການອັບເກຣດກ່ອນ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ການບັນທຶກຖືກປິດໃນ migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ການປ່ຽນແປງຂອງຂ້ອຍ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ບັນທຶກພຽງສິ່ງທີ່ທ່ານປ່ຽນ, ບໍ່ວ່າທ່ານຈະປ່ຽນຢູ່ໃສ, ຈົນກວ່າທ່ານຈະຢຸດມັນ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ການບັນທຶກ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ຕັ້ງແຕ່ %time, ມາຮອດປັດຈຸບັນ %count ການປ່ຽນແປງ.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ປ້າຍ (ບໍ່ບັງຄັບ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ສະແດງສິ່ງທີ່ມັນຈັບໄວ້</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ຢຸດການບັນທຶກ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ເລີ່ມບັນທຶກການປ່ຽນແປງຂອງຂ້ອຍ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ໜ້າຕ່າງສຳລັບທັງເວັບໄຊ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ບັນທຶກທຸກການປ່ຽນແປງຂອງຜູ້ໃຊ້ທຸກຄົນ ແລະ ຂອງຄອນໂຊນ ຈົນກວ່າຈະຖືກປິດ. ເມື່ອເປີດ ທ່ານຈະຖືກຂໍໃຫ້ຢືນຢັນວ່າແມ່ນທ່ານ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ເປີດຢູ່</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ປິດໜ້າຕ່າງ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ເປີດໜ້າຕ່າງສຳລັບທັງເວັບໄຊ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ລາຍການບັນທຶກ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ບັນຊີຂອງຜູ້ໃຊ້ (ຊື່ເຂົ້າລະບົບ, ອີເມວ, ລະຫັດຜ່ານ) ແລະ ຊ່ອງຂໍ້ມູນຂອງບັນຊີຜູ້ໃຊ້ ບໍ່ເຄີຍຖືກບັນທຶກ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ການປ່ຽນແປງ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ທັງເວັບໄຊ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>ການປ່ຽນແປງຂອງ %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ຢຸດແລ້ວ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ຍັງບໍ່ມີການບັນທຶກ.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ການບັນທຶກ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ການບັນທຶກທັງໝົດ</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ການຍ້າຍທີ່ມັນຈະສ້າງ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ການປ່ຽນແປງທີ່ລວມເປັນຂັ້ນຕອນດຽວສຳລັບແຕ່ລະສິ່ງທີ່ຖືກປ່ຽນ: ສິ່ງທີ່ການຍ້າຍທີ່ສ້າງຈາກການບັນທຶກນີ້ຈະເຮັດ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ສາມາດສ້າງການຍ້າຍຈາກມັນໄດ້ເມື່ອການຕິດຕັ້ງນີ້ມີປະເພດຂັ້ນຕອນ YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ຕັ້ງໃຈປະໄວ້: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ບໍ່ມີຫຍັງຖືກບັນທຶກ.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ສິ່ງທີ່ມັນຈັບໄວ້</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ການປ່ຽນແປງ, ຕາມລຳດັບທີ່ເຮັດ.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ການປ່ຽນແປງໜຶ່ງ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ຂັ້ນຕອນ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ກ່ຽວກັບ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ອີກ %count: ./console exp:migration:record:show ສະແດງທັງໝົດ.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ຖິ້ມ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ລຶບການບັນທຶກ ແລະ ສິ່ງທີ່ມັນຈັບໄວ້. ສິ່ງທີ່ຖືກປ່ຽນຍັງຄົງປ່ຽນ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ແມ່ນ, ຖິ້ມການບັນທຶກນີ້</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ກຳລັງບັນທຶກ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ການປ່ຽນແປງຂອງທ່ານກຳລັງຖືກບັນທຶກສຳລັບການຍ້າຍ.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ທຸກການປ່ຽນແປງໃນເວັບໄຊນີ້ກຳລັງຖືກບັນທຶກສຳລັບການຍ້າຍ (ໜ້າຕ່າງສຳລັບທັງເວັບໄຊ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ການບັນທຶກທັງເວັບໄຊໄດ້ເລີ່ມແລ້ວ: ທຸກການປ່ຽນແປງຂອງຜູ້ໃຊ້ທຸກຄົນຈະຖືກບັນທຶກຈົນກວ່າທ່ານຈະຢຸດມັນ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ການບັນທຶກໄດ້ເລີ່ມແລ້ວ: ການປ່ຽນແປງຂອງທ່ານຈະຖືກບັນທຶກຈົນກວ່າທ່ານຈະຢຸດມັນ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ຢຸດການບັນທຶກແລ້ວ. ສິ່ງທີ່ມັນຈັບໄວ້ຈະຍັງຢູ່ຈົນກວ່າທ່ານຈະຖິ້ມມັນ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ການບັນທຶກ ແລະ ເຫດການຂອງມັນຖືກລຶບແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ບໍ່ມີການບັນທຶກ %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ໝາຍ "ແມ່ນ, ຖິ້ມການບັນທຶກນີ້" ກ່ອນ.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ມີແຕ່ຜູ້ໃຊ້ທີ່ບັນທຶກເທົ່ານັ້ນທີ່ສາມາດຢຸດການບັນທຶກເຊດຊັນໄດ້.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ເລືອກການບັນທຶກທີ່ຈະຢຸດ.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ການບັນທຶກປະເພດນີ້ກຳລັງດຳເນີນຢູ່ແລ້ວ.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ບໍ່ສາມາດປ່ຽນການບັນທຶກໄດ້: %reason</translation>
+    </message>
 </context>
 </TS>

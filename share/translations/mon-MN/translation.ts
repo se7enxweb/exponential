@@ -80546,5 +80546,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Ажиллуулалтыг эхлүүлж чадсангүй.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Өөрчлөлтийг бичих</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Бичлэг явагдаж байх үед удирдлагад эсвэл сайтын хажуугийн самбарт таны өөрчилсөн зүйл шилжүүлгийн алхмууд болж хадгалагдана: агуулга, анги, үүрэг ба бодлого, хэсэг, хэрэглэгч ба бүлэг, URL нэр, тохиргоо. Дуусмагц зогсоож, юу барьж авсныг хараад, түүнээс шилжүүлэг үүсгэнэ үү.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Бичлэгүүдийг уншиж чадсангүй: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Бичлэгийн хүснэгтүүд хараахан алга: эхлээд шинэчлэлийг ажиллуулна уу (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Бичлэг migration.ini дотор унтраалттай ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Миний өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Таныг зогсоох хүртэл зөвхөн таны өөрчилсөн зүйлийг, хаана ч өөрчилсөн, бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Бичлэг</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time-с хойш, одоогоор %count өөрчлөлт.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Шошго (заавал биш)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Юу барьж авсныг харуулах</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Бичлэгийг зогсоох</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Миний өөрчлөлтийг бичиж эхлэх</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Бүх сайтын цонх</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Хаагдах хүртэл хэрэглэгч бүрийн болон консолын өөрчлөлт бүрийг бичнэ. Нээх үед таныг өөрөө мөн эсэхийг баталгаажуулахыг хүснэ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Нээлттэй</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Цонхыг хаах</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Бүх сайтын цонхыг нээх</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Бичлэгүүд</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Хэрэглэгчийн бүртгэл (нэвтрэх нэр, имэйл, нууц үг) болон хэрэглэгчийн бүртгэлийн талбаруудыг хэзээ ч бичихгүй.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Бүх сайт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name-ийн өөрчлөлтүүд</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Зогсоосон</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Одоогоор бичлэг алга.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Бичлэг %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Бүх бичлэг</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Түүнээс гарах шилжүүлэг</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Өөрчлөгдсөн зүйл бүрт нэг алхам болгон нэгтгэсэн өөрчлөлтүүд: энэ бичлэгээс үүсгэсэн шилжүүлэг юу хийхийг.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Энэ суулгацад YAML алхмын төрлүүд %types бий болоход түүнээс шилжүүлэг үүсгэж болно.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Санаатайгаар орхисон: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Юу ч бичигдсэнгүй.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Юу барьж авсан</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count өөрчлөлт, хийгдсэн дарааллаараа.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өөрчлөлт</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Алхам</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Холбогдох</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Бас %count: ./console exp:migration:record:show бүгдийг жагсаана.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Хаях</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Бичлэг болон түүний барьж авсныг устгана. Өөрчлөгдсөн зүйл өөрчлөгдсөн хэвээр үлдэнэ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Тийм, энэ бичлэгийг хаях</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Бичиж байна…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Таны өөрчлөлтүүдийг шилжүүлэгт зориулан бичиж байна.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Энэ сайт дахь өөрчлөлт бүрийг шилжүүлэгт зориулан бичиж байна (бүх сайтын цонх).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Бүх сайтын бичлэг эхэллээ: таныг зогсоох хүртэл хэрэглэгч бүрийн өөрчлөлт бүрийг бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Бичлэг эхэллээ: таныг зогсоох хүртэл таны өөрчлөлтүүдийг бичнэ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Бичлэг зогслоо. Барьж авсан зүйл таныг хаях хүртэл үлдэнэ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Бичлэг болон түүний үйл явдлуудыг устгалаа.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id бичлэг алга.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Эхлээд «Тийм, энэ бичлэгийг хаях»-ыг тэмдэглэнэ үү.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Сешний бичлэгийг зөвхөн бичсэн хэрэглэгч зогсоож чадна.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Зогсоох бичлэгээ сонгоно уу.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Энэ төрлийн бичлэг аль хэдийн явагдаж байна.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Бичлэгийг өөрчилж чадсангүй: %reason</translation>
+    </message>
 </context>
 </TS>

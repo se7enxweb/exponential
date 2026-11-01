@@ -80576,5 +80576,221 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>The run could not be started.</source>
         <translation>It-tħaddim ma setax jinbeda.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Reġistrazzjoni tal-bidliet</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Waqt li reġistrazzjoni tkun għaddejja, dak li tbiddel fl-amministrazzjoni jew fil-faxxa tal-ġenb tas-sit jinżamm bħala passi ta' migrazzjoni: kontenut, klassijiet, rwoli u politiki, taqsimiet, utenti u gruppi, psewdonimi tal-URL, settings. Waqqafha meta tlesti, ara x'qabdet u iġġenera minnha migrazzjoni.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ir-reġistrazzjonijiet ma setgħux jinqraw: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>It-tabelli tar-reġistrazzjonijiet għadhom ma jeżistux: l-ewwel ħaddem l-aġġornament (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ir-reġistrazzjoni hija mitfija f'migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Il-bidliet tiegħi</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Tirreġistra biss dak li tbiddel int, kull fejn tbiddlu, sakemm twaqqafha.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Reġistrazzjoni</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>minn %time, s'issa %count bidla/bidliet.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Tikketta (mhux obbligatorja)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Uri x'qabdet</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Waqqaf ir-reġistrazzjoni</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Ibda rreġistra l-bidliet tiegħi</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Tieqa għas-sit kollu</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Tirreġistra kull bidla ta' kull utent u tal-console sakemm tingħalaq. Meta tiftaħha, tintalab tivverifika li int.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Miftuħa</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Agħlaq it-tieqa</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Iftaħ it-tieqa għas-sit kollu</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Reġistrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Il-kont ta' utent (login, e-mail, password) u l-oqsma tal-kontijiet tal-utenti qatt ma jiġu rreġistrati.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Bidliet</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Is-sit kollu</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Bidliet ta' %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Imwaqqfa</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Għad m'hemm l-ebda reġistrazzjoni.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Reġistrazzjoni %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ir-reġistrazzjonijiet kollha</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Il-migrazzjoni li toħroġ minnha</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Il-bidliet miġbura f'pass wieħed għal kull ħaġa mibdula: x'tagħmel migrazzjoni ġġenerata minn din ir-reġistrazzjoni.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Tista' tiġi ġġenerata migrazzjoni minnha ladarba din l-installazzjoni jkollha t-tipi ta' passi YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Imħolli barra apposta: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ma ġie rreġistrat xejn.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>X'qabdet</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count bidla/bidliet, fl-ordni li saru.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Bidla</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pass</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Jikkonċerna</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count oħra: ./console exp:migration:record:show jelenkahom kollha.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Armi</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Tneħħi r-reġistrazzjoni u dak li qabdet. Dak li nbidel jibqa' mibdul.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Iva, armi din ir-reġistrazzjoni</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Qed tirreġistra…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Il-bidliet tiegħek qed jiġu rreġistrati għal migrazzjoni.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kull bidla f'dan is-sit qed tiġi rreġistrata għal migrazzjoni (tieqa għas-sit kollu).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ir-reġistrazzjoni tas-sit kollu bdiet: kull bidla ta' kull utent tiġi rreġistrata sakemm twaqqafha.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ir-reġistrazzjoni bdiet: il-bidliet tiegħek jiġu rreġistrati sakemm twaqqafha.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ir-reġistrazzjoni twaqqfet. Dak li qabdet jibqa' sakemm tarmiha.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ir-reġistrazzjoni u l-avvenimenti tagħha tneħħew.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>M'hemmx reġistrazzjoni %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>L-ewwel immarka "Iva, armi din ir-reġistrazzjoni".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>L-utent li rreġistra biss jista' jwaqqaf reġistrazzjoni ta' sessjoni.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Agħżel ir-reġistrazzjoni li trid twaqqaf.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Diġà għaddejja reġistrazzjoni ta' dan it-tip.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ir-reġistrazzjoni ma setgħetx tinbidel: %reason</translation>
+    </message>
 </context>
 </TS>

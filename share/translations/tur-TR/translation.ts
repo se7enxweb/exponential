@@ -80551,5 +80551,221 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
         <source>The run could not be started.</source>
         <translation>Çalıştırma başlatılamadı.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Değişiklikleri kaydetme</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Bir kayıt sürerken yönetim panelinde veya site kenar çubuğunda değiştirdiğiniz her şey bir geçişin adımları olarak tutulur: içerik, sınıflar, roller ve politikalar, bölümler, kullanıcılar ve gruplar, URL takma adları, ayarlar. İşiniz bitince durdurun, neleri yakaladığına bakın ve ondan bir geçiş oluşturun.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Kayıtlar okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Kayıt tabloları henüz yok: önce yükseltmeyi çalıştırın (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Kayıt, migration.ini içinde kapalı ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Değişikliklerim</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Siz durdurana kadar yalnızca sizin değiştirdiklerinizi, nerede değiştirirseniz değiştirin kaydeder.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Kayıt</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time zamanından beri, şimdiye kadar %count değişiklik.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiket (isteğe bağlı)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Neleri yakaladığını göster</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Kaydı durdur</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Değişikliklerimi kaydetmeye başla</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Tüm site penceresi</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Kapatılana kadar her kullanıcının ve konsolun her değişikliğini kaydeder. Açarken siz olduğunuzu doğrulamanız istenir.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Açık</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Pencereyi kapat</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Tüm site penceresini aç</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Kayıtlar</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Bir kullanıcının hesabı (kullanıcı adı, e-posta, parola) ve kullanıcı hesaplarının alanları asla kaydedilmez.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Değişiklikler</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tüm site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Değişiklikleri yapan: %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Durduruldu</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Henüz kayıt yok.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Kayıt %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tüm kayıtlar</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ortaya çıkacak geçiş</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Değişiklikler, değişen her şey için tek adımda toplanmış hâlde: bu kayıttan oluşturulan bir geçişin yapacakları.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Bu kurulumda %types YAML adım türleri olduğunda ondan bir geçiş oluşturulabilir.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bilerek dışarıda bırakıldı: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Hiçbir şey kaydedilmedi.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Neleri yakaladı</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count değişiklik, yapıldıkları sırayla.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Değişiklik</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Adım</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>İlgili</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count tane daha: ./console exp:migration:record:show hepsini listeler.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>At</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Kaydı ve yakaladıklarını kaldırır. Değiştirilen değişmiş olarak kalır.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Evet, bu kaydı at</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Kaydediliyor…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Değişiklikleriniz bir geçiş için kaydediliyor.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Bu sitedeki her değişiklik bir geçiş için kaydediliyor (tüm site penceresi).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Tüm site kaydı başladı: siz durdurana kadar her kullanıcının her değişikliği kaydedilir.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Kayıt başladı: siz durdurana kadar değişiklikleriniz kaydedilir.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Kayıt durduruldu. Yakaladıkları, siz atana kadar kalır.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Kayıt ve olayları kaldırıldı.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id adlı kayıt yok.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Önce "Evet, bu kaydı at" kutusunu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Bir oturum kaydını yalnızca kaydı yapan kullanıcı durdurabilir.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Durdurulacak kaydı seçin.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Bu türde bir kayıt zaten sürüyor.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Kayıt değiştirilemedi: %reason</translation>
+    </message>
 </context>
 </TS>

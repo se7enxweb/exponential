@@ -80576,5 +80576,221 @@ Musyśo klasu suka z funkciju wuměnjenja změniś.</translation>
         <source>The run could not be started.</source>
         <translation>Běg njejo se dał startowaś.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Změny nagrawaś</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mjaztym až nagrawanje běžy, se to, což w administraciji abo w bocnej lejsće sedła změnjaśo, ako kšace migracije zachowajo: wopśimjeśe, klase, role a pšawidła, wótrězki, wužywarje a kupki, URL-aliase, nastajenja. Zastajśo jo, gaž sćo gótowe, glědajśo, což jo zapópadnuło, a napórajśo z njogo migraciju.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nagrawki njejsu se dali cytaś: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabele nagrawkow hyšći njeeksistěruju: wuwjeźćo nejpjerwjej aktualizaciju (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Nagrawanje jo w migration.ini wótšaltowane ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Móje změny</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nagrawa jano to, což wy změnjaśo, źožkuli to změnjaśo, daniž jo njezastajiśo.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Nagrawanje</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>wót %time, dotychměst změnow: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiket (opcionalny)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Pokazaś, což jo zapópadnuło</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Nagrawanje zastajiś</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Nagrawanje mójich změnow zachopiś</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Wokno za ceło sedło</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Nagrawa kuždu změnu kuždego wužywarja a konsole, daniž se njezacynijo. Pśi wótcynjanju musyśo wobkšuśiś, až sćo to wy.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Wótcynjone</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Wokno zacyniś</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Wokno za ceło sedło wótcyniś</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Nagrawki</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Konto wužywarja (pśizjawjeńske mě, e-mail, gronidło) a póla wužywarskich kontow se nigda njenagrawaju.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Změny</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ceło sedło</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Změny wužywarja %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Zastajone</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Hyšći žedna nagrawka.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Nagrawka %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Wše nagrawki</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migracija, kótaraž by z njeje nastała</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Změny zjadnośone do jadnogo kšaca na kuždu změnjonu wěc: což by migracija napórana z toś teje nagrawki cyniła.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migracija dajo se z njeje napóraś, ako skóro ako toś ta instalacija YAML-družyny kšacow %types ma.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Wědobnje wuwóstajone: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nic njejo se nagrało.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Což jo zapópadnuło</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Změnow: %count, w pórěźe, w kótaremž su se pśewjadli.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změna</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Kšac</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Pótrjefijo</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Hyšći %count: ./console exp:migration:record:show wše nalicyjo.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Zachyśiś</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Wótpórajo nagrawku a to, což jo zapópadnuła. Což jo se změniło, wóstanjo změnjone.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Jo, toś tu nagrawku zachyśiś</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nagrawa se…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Wašne změny se za migraciju nagrawaju.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kužda změna na toś tom sedle se za migraciju nagrawa (wokno za ceło sedło).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nagrawanje cełego sedła jo se zachopiło: kužda změna kuždego wužywarja se nagrawa, daniž jo njezastajiśo.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nagrawanje jo se zachopiło: wašne změny se nagrawaju, daniž jo njezastajiśo.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Nagrawanje zastajone. Což jo zapópadnuło, wóstanjo, daniž jo njezachyśiśo.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Nagrawka a jeje tšojenja su wótpórane.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nagrawka %id njeeksistěrujo.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Markěrujśo nejpjerwjej „Jo, toś tu nagrawku zachyśiś“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Jano wužywaŕ, kótaryž jo nagrawał, smějo nagrawanje pósejźenja zastajiś.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Wubjeŕśo nagrawanje, kótarež ma se zastajiś.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Nagrawanje toś teje družyny južo běžy.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nagrawka njedajo se změniś: %reason</translation>
+    </message>
 </context>
 </TS>

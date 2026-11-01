@@ -80546,5 +80546,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Не ўдалося пачаць запуск.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Запіс змен</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Пакуль ідзе запіс, усё, што вы змяняеце ў адміністраванні або на бакавой панэлі сайта, захоўваецца як крокі міграцыі: змесціва, класы, ролі і палітыкі, раздзелы, карыстальнікі і групы, псеўданімы URL, налады. Спыніце запіс, калі скончыце, паглядзіце, што ён зафіксаваў, і стварыце з яго міграцыю.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Не ўдалося прачытаць запісы: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Табліц запісаў яшчэ няма: спачатку выканайце абнаўленне (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Запіс адключаны ў migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Мае змены</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Запісвае толькі тое, што змяняеце вы, дзе б вы гэта ні змянялі, пакуль вы яго не спыніце.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Запіс</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>з %time, пакуль змен: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Метка (неабавязкова)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Паказаць, што ён зафіксаваў</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Спыніць запіс</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Пачаць запіс маіх змен</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Акно для ўсяго сайта</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Запісвае кожную змену кожнага карыстальніка і кансолі, пакуль акно не зачынена. Пры адкрыцці вас папросяць пацвердзіць, што гэта вы.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Адкрыта</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Зачыніць акно</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Адкрыць акно для ўсяго сайта</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Запісы</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Уліковы запіс карыстальніка (лагін, e-mail, пароль) і палі ўліковых запісаў карыстальнікаў ніколі не запісваюцца.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Змены</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Увесь сайт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Змены карыстальніка %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Спынены</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Запісаў пакуль няма.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Запіс %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Усе запісы</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Міграцыя, якая з яго атрымаецца</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Змены, зведзеныя ў адзін крок на кожны зменены аб'ект: што зрабіла б міграцыя, створаная з гэтага запісу.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Міграцыю з яго можна будзе стварыць, калі ў гэтай усталёўцы з'явяцца тыпы крокаў YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Наўмысна прапушчана: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Нічога не запісана.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Што ён зафіксаваў</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Змен: %count, у тым парадку, у якім іх зроблена.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Змена</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Крок</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Аб'ект</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Яшчэ %count: ./console exp:migration:record:show паказвае ўсе.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Адкінуць</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Выдаляе запіс і тое, што ён зафіксаваў. Зменены застаецца змененым.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Так, адкінуць гэты запіс</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ідзе запіс…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Вашы змены запісваюцца для міграцыі.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Кожная змена на гэтым сайце запісваецца для міграцыі (акно для ўсяго сайта).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Запіс для ўсяго сайта пачаўся: кожная змена кожнага карыстальніка запісваецца, пакуль вы яго не спыніце.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Запіс пачаўся: вашы змены запісваюцца, пакуль вы яго не спыніце.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Запіс спынены. Тое, што ён зафіксаваў, захоўваецца, пакуль вы яго не адкінеце.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Запіс і яго падзеі выдалены.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Запісу %id няма.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Спачатку адзначце «Так, адкінуць гэты запіс».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Спыніць запіс сеанса можа толькі карыстальнік, які яго вёў.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Выберыце запіс, які трэба спыніць.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Запіс гэтага віду ўжо ідзе.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Не ўдалося змяніць запіс: %reason</translation>
+    </message>
 </context>
 </TS>

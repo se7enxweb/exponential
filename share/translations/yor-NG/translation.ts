@@ -80544,5 +80544,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>A kò lè bẹ̀rẹ̀ ìṣiṣẹ́ náà.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ìgbàsílẹ̀ àwọn àyípadà</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Nígbà tí ìgbàsílẹ̀ bá ń lọ lọ́wọ́, ohun tí o bá yípadà nínú ìṣàkóso tàbí nínú ọ̀pá ẹ̀gbẹ́ ojú-òpó ni a ń tọ́jú gẹ́gẹ́ bí ìgbésẹ̀ ìṣípòpadà: àkóónú, àwọn kíláàsì, àwọn ipa àti ìlànà, àwọn ìpín, àwọn olùṣàmúlò àti ẹgbẹ́, àwọn orúkọ àfidípò URL, àwọn ètò. Dá a dúró nígbà tí o bá parí, wo ohun tí ó mú, kí o sì ṣẹ̀dá ìṣípòpadà láti inú rẹ̀.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>A kò lè ka àwọn ìgbàsílẹ̀: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Àwọn tábìlì ìgbàsílẹ̀ kò tíì sí: kọ́kọ́ ṣe àtúnṣe (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ìgbàsílẹ̀ ti wà ní pípa nínú migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Àwọn àyípadà mi</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ó ń gba ohun tí o yípadà nìkan sílẹ̀, níbikíbi tí o bá ti yí i padà, títí tí o fi dá a dúró.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ìgbàsílẹ̀</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>láti %time, àyípadà %count títí di báyìí.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Àmì (àṣàyàn)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Fi ohun tí ó mú hàn</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Dá ìgbàsílẹ̀ dúró</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Bẹ̀rẹ̀ ìgbàsílẹ̀ àwọn àyípadà mi</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fèrèsé fún gbogbo ojú-òpó</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ó ń gba gbogbo àyípadà olùṣàmúlò kọ̀ọ̀kan àti ti kọ́ńsólù sílẹ̀ títí tí a ó fi tì í. Nígbà tí o bá ṣí i, a ó ní kí o jẹ́rìí pé ìwọ ni.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ṣíṣí</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Ti fèrèsé</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ṣí fèrèsé fún gbogbo ojú-òpó</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Àwọn ìgbàsílẹ̀</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>A kò ní gba àkọọ́lẹ̀ olùṣàmúlò (orúkọ ìwọlé, ímeèlì, ọ̀rọ̀ aṣínà) àti àwọn ààyè àkọọ́lẹ̀ olùṣàmúlò sílẹ̀ láé.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Àwọn àyípadà</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Gbogbo ojú-òpó</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Àwọn àyípadà %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Ti dúró</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Kò sí ìgbàsílẹ̀ kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ìgbàsílẹ̀ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Gbogbo ìgbàsílẹ̀</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ìṣípòpadà tí yóò ṣe</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Àwọn àyípadà tí a kó pọ̀ sí ìgbésẹ̀ kan fún ohun kọ̀ọ̀kan tí ó yípadà: ohun tí ìṣípòpadà tí a ṣẹ̀dá láti inú ìgbàsílẹ̀ yìí yóò ṣe.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>A lè ṣẹ̀dá ìṣípòpadà láti inú rẹ̀ nígbà tí ìfisórí yìí bá ní àwọn irú ìgbésẹ̀ YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Ti fi sílẹ̀ mọ̀ọ́mọ̀: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Kò sí ohun tí a gbà sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ohun tí ó mú</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Àyípadà %count, ní ìtẹ̀léra tí a ṣe wọ́n.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Àyípadà</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Ìgbésẹ̀</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Nípa</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count sí i: ./console exp:migration:record:show ń ṣe àkójọ gbogbo wọn.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Jù sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ó ń yọ ìgbàsílẹ̀ àti ohun tí ó mú kúrò. Ohun tí ó yípadà ń bá a lọ ní yíyípadà.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Bẹ́ẹ̀ni, ju ìgbàsílẹ̀ yìí sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ó ń gbà sílẹ̀…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>A ń gba àwọn àyípadà rẹ sílẹ̀ fún ìṣípòpadà kan.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>A ń gba gbogbo àyípadà lórí ojú-òpó yìí sílẹ̀ fún ìṣípòpadà kan (fèrèsé fún gbogbo ojú-òpó).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ìgbàsílẹ̀ gbogbo ojú-òpó ti bẹ̀rẹ̀: a ó gba gbogbo àyípadà olùṣàmúlò kọ̀ọ̀kan sílẹ̀ títí tí o fi dá a dúró.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ìgbàsílẹ̀ ti bẹ̀rẹ̀: a ó gba àwọn àyípadà rẹ sílẹ̀ títí tí o fi dá a dúró.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ìgbàsílẹ̀ ti dúró. Ohun tí ó mú yóò wà títí tí o fi jù ú sílẹ̀.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>A ti yọ ìgbàsílẹ̀ àti àwọn ìṣẹ̀lẹ̀ rẹ̀ kúrò.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Kò sí ìgbàsílẹ̀ %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Kọ́kọ́ sàmì sí "Bẹ́ẹ̀ni, ju ìgbàsílẹ̀ yìí sílẹ̀".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Olùṣàmúlò tí ó gbà sílẹ̀ nìkan ló lè dá ìgbàsílẹ̀ àkókò ìlò dúró.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Yan ìgbàsílẹ̀ tí a ó dá dúró.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ìgbàsílẹ̀ irú yìí ti ń lọ lọ́wọ́.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>A kò lè yí ìgbàsílẹ̀ padà: %reason</translation>
+    </message>
 </context>
 </TS>

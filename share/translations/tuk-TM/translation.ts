@@ -80546,5 +80546,221 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>The run could not be started.</source>
         <translation>Işledilmäni başladyp bolmady.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Üýtgeşmeleri ýazga almak</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Ýazga alyş dowam edýärkä, dolandyryşda ýa-da saýtyň gapdal panelinde üýtgedýän zatlaryňyz göçürişiň ädimleri hökmünde saklanýar: mazmun, synplar, rollar we syýasatlar, bölümler, ulanyjylar we toparlar, URL lakamlary, sazlamalar. Gutaranyňyzda ony duruzyň, nämäni tutandygyna serediň we ondan göçüriş dörediň.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ýazgylary okap bolmady: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ýazgylaryň tablisalary heniz ýok: ilki täzelenmäni işlediň (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ýazga alyş migration.ini-de öçürilen ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Meniň üýtgeşmelerim</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Siz duruzýançaňyz diňe siziň üýtgedýän zadyňyzy, nirede üýtgetseňiz-de, ýazga alýar.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ýazgy</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time bäri, häzire çenli %count üýtgeşme.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Bellik (hökmany däl)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Nämäni tutandygyny görkez</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Ýazga alyşy duruz</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Üýtgeşmelerimi ýazga almaga başla</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Tutuş saýtyň penjiresi</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ýapylýança her ulanyjynyň we konsolyň her üýtgeşmesini ýazga alýar. Açanyňyzda özüňizdigini tassyklamak soralýar.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Açyk</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Penjiräni ýap</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Tutuş saýtyň penjiresini aç</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ýazgylar</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ulanyjynyň hasaby (giriş ady, e-poçta, parol) we ulanyjy hasaplarynyň meýdanlary hiç haçan ýazga alynmaýar.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Üýtgeşmeler</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tutuş saýt</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name üýtgeşmeleri</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Duruzyldy</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Heniz ýazgy ýok.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ýazgy %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ähli ýazgylar</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ondan çykjak göçüriş</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Üýtgän her zat üçin bir ädime birleşdirilen üýtgeşmeler: bu ýazgydan döredilen göçürişiň etjek zatlary.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Bu gurnamada YAML ädim görnüşleri %types bolanda ondan göçüriş döredip bolar.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bilkastlaýyn galdyryldy: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Hiç zat ýazga alynmady.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Nämäni tutdy</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count üýtgeşme, edilen tertibinde.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Üýtgeşme</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Ädim</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Degişli</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ýene %count: ./console exp:migration:record:show hemmesini sanaýar.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ret et</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ýazgyny we onuň tutan zatlaryny aýyrýar. Üýtgän zat üýtgän bolup galýar.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Hawa, bu ýazgyny ret et</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ýazga alynýar…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Üýtgeşmeleriňiz göçüriş üçin ýazga alynýar.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Bu saýtdaky her üýtgeşme göçüriş üçin ýazga alynýar (tutuş saýtyň penjiresi).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Tutuş saýtyň ýazgysy başlandy: siz duruzýançaňyz her ulanyjynyň her üýtgeşmesi ýazga alynýar.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ýazga alyş başlandy: siz duruzýançaňyz üýtgeşmeleriňiz ýazga alynýar.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ýazga alyş duruzyldy. Tutan zatlary siz ret edýänçäňiz galýar.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ýazgy we onuň wakalary aýryldy.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id ýazgysy ýok.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ilki «Hawa, bu ýazgyny ret et» belläň.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Sessiýa ýazgysyny diňe ýazga alan ulanyjy duruzyp biler.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Duruzyljak ýazgyny saýlaň.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Bu görnüşdäki ýazgy eýýäm dowam edýär.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ýazgyny üýtgedip bolmady: %reason</translation>
+    </message>
 </context>
 </TS>

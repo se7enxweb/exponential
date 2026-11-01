@@ -80544,5 +80544,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ਰਨ ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ਤਬਦੀਲੀਆਂ ਦੀ ਰਿਕਾਰਡਿੰਗ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ਜਦੋਂ ਤੱਕ ਰਿਕਾਰਡਿੰਗ ਚੱਲਦੀ ਹੈ, ਤੁਸੀਂ ਪ੍ਰਬੰਧ ਵਿੱਚ ਜਾਂ ਸਾਈਟ ਦੀ ਸਾਈਡਬਾਰ ਵਿੱਚ ਜੋ ਬਦਲਦੇ ਹੋ ਉਹ ਇੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ ਦੇ ਕਦਮਾਂ ਵਜੋਂ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ: ਸਮੱਗਰੀ, ਕਲਾਸਾਂ, ਭੂਮਿਕਾਵਾਂ ਅਤੇ ਨੀਤੀਆਂ, ਸੈਕਸ਼ਨ, ਵਰਤੋਂਕਾਰ ਅਤੇ ਸਮੂਹ, URL ਉਪਨਾਮ, ਸੈਟਿੰਗਾਂ। ਕੰਮ ਪੂਰਾ ਹੋਣ ਤੇ ਇਸਨੂੰ ਰੋਕੋ, ਦੇਖੋ ਇਸਨੇ ਕੀ ਫੜਿਆ, ਅਤੇ ਇਸ ਤੋਂ ਇੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ ਬਣਾਓ।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ਰਿਕਾਰਡਿੰਗਾਂ ਪੜ੍ਹੀਆਂ ਨਹੀਂ ਜਾ ਸਕੀਆਂ: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ ਦੀਆਂ ਸਾਰਣੀਆਂ ਅਜੇ ਮੌਜੂਦ ਨਹੀਂ: ਪਹਿਲਾਂ ਅੱਪਗ੍ਰੇਡ ਚਲਾਓ (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ਵਿੱਚ ਰਿਕਾਰਡਿੰਗ ਬੰਦ ਹੈ ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ਮੇਰੀਆਂ ਤਬਦੀਲੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ਸਿਰਫ਼ ਉਹੀ ਰਿਕਾਰਡ ਕਰਦੀ ਹੈ ਜੋ ਤੁਸੀਂ ਬਦਲਦੇ ਹੋ, ਜਿੱਥੇ ਵੀ ਬਦਲੋ, ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਇਸਨੂੰ ਰੋਕ ਨਾ ਦਿਓ।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time ਤੋਂ, ਹੁਣ ਤੱਕ %count ਤਬਦੀਲੀਆਂ।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ਲੇਬਲ (ਚੋਣਵਾਂ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ਦਿਖਾਓ ਇਸਨੇ ਕੀ ਫੜਿਆ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ਮੇਰੀਆਂ ਤਬਦੀਲੀਆਂ ਦੀ ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ਪੂਰੀ ਸਾਈਟ ਦੀ ਖਿੜਕੀ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ਬੰਦ ਹੋਣ ਤੱਕ ਹਰ ਵਰਤੋਂਕਾਰ ਅਤੇ ਕੰਸੋਲ ਦੀ ਹਰ ਤਬਦੀਲੀ ਰਿਕਾਰਡ ਕਰਦੀ ਹੈ। ਖੋਲ੍ਹਣ ਵੇਲੇ ਤੁਹਾਡੇ ਤੋਂ ਪੁਸ਼ਟੀ ਮੰਗੀ ਜਾਂਦੀ ਹੈ ਕਿ ਇਹ ਤੁਸੀਂ ਹੀ ਹੋ।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ਖੁੱਲ੍ਹੀ</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ਖਿੜਕੀ ਬੰਦ ਕਰੋ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ਪੂਰੀ ਸਾਈਟ ਦੀ ਖਿੜਕੀ ਖੋਲ੍ਹੋ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ਰਿਕਾਰਡਿੰਗਾਂ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ਵਰਤੋਂਕਾਰ ਦਾ ਖਾਤਾ (ਲੌਗਇਨ, ਈ-ਮੇਲ, ਪਾਸਵਰਡ) ਅਤੇ ਵਰਤੋਂਕਾਰ ਖਾਤਿਆਂ ਦੇ ਖੇਤਰ ਕਦੇ ਰਿਕਾਰਡ ਨਹੀਂ ਹੁੰਦੇ।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ਤਬਦੀਲੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ਪੂਰੀ ਸਾਈਟ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ਦੀਆਂ ਤਬਦੀਲੀਆਂ</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ਰੁਕੀ ਹੋਈ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ਅਜੇ ਕੋਈ ਰਿਕਾਰਡਿੰਗ ਨਹੀਂ।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ਸਾਰੀਆਂ ਰਿਕਾਰਡਿੰਗਾਂ</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ਇਸ ਤੋਂ ਬਣਨ ਵਾਲੀ ਮਾਈਗ੍ਰੇਸ਼ਨ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ਹਰ ਬਦਲੀ ਚੀਜ਼ ਲਈ ਇੱਕ ਕਦਮ ਵਿੱਚ ਇਕੱਠੀਆਂ ਤਬਦੀਲੀਆਂ: ਇਸ ਰਿਕਾਰਡਿੰਗ ਤੋਂ ਬਣੀ ਮਾਈਗ੍ਰੇਸ਼ਨ ਕੀ ਕਰੇਗੀ।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ਜਦੋਂ ਇਸ ਸਥਾਪਨਾ ਵਿੱਚ YAML ਕਦਮ ਕਿਸਮਾਂ %types ਹੋਣਗੀਆਂ ਤਾਂ ਇਸ ਤੋਂ ਮਾਈਗ੍ਰੇਸ਼ਨ ਬਣਾਈ ਜਾ ਸਕੇਗੀ।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ਜਾਣ-ਬੁੱਝ ਕੇ ਛੱਡਿਆ: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ਕੁਝ ਵੀ ਰਿਕਾਰਡ ਨਹੀਂ ਹੋਇਆ।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ਇਸਨੇ ਕੀ ਫੜਿਆ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ਤਬਦੀਲੀਆਂ, ਉਸੇ ਕ੍ਰਮ ਵਿੱਚ ਜਿਸ ਵਿੱਚ ਕੀਤੀਆਂ ਗਈਆਂ।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ਤਬਦੀਲੀ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ਕਦਮ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ਸੰਬੰਧਿਤ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ਹੋਰ %count: ./console exp:migration:record:show ਸਭ ਦੀ ਸੂਚੀ ਦਿੰਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ਤਿਆਗੋ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ ਅਤੇ ਇਸਨੇ ਜੋ ਫੜਿਆ ਉਸਨੂੰ ਹਟਾਉਂਦਾ ਹੈ। ਜੋ ਬਦਲਿਆ ਗਿਆ ਉਹ ਬਦਲਿਆ ਹੀ ਰਹਿੰਦਾ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ਹਾਂ, ਇਹ ਰਿਕਾਰਡਿੰਗ ਤਿਆਗੋ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ ਜਾਰੀ ਹੈ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ਤੁਹਾਡੀਆਂ ਤਬਦੀਲੀਆਂ ਇੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ ਲਈ ਰਿਕਾਰਡ ਹੋ ਰਹੀਆਂ ਹਨ।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ਇਸ ਸਾਈਟ ਦੀ ਹਰ ਤਬਦੀਲੀ ਇੱਕ ਮਾਈਗ੍ਰੇਸ਼ਨ ਲਈ ਰਿਕਾਰਡ ਹੋ ਰਹੀ ਹੈ (ਪੂਰੀ ਸਾਈਟ ਦੀ ਖਿੜਕੀ)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ਪੂਰੀ ਸਾਈਟ ਦੀ ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਹੋ ਗਈ: ਹਰ ਵਰਤੋਂਕਾਰ ਦੀ ਹਰ ਤਬਦੀਲੀ ਉਦੋਂ ਤੱਕ ਰਿਕਾਰਡ ਹੋਵੇਗੀ ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਇਸਨੂੰ ਨਾ ਰੋਕੋ।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਹੋ ਗਈ: ਤੁਹਾਡੀਆਂ ਤਬਦੀਲੀਆਂ ਉਦੋਂ ਤੱਕ ਰਿਕਾਰਡ ਹੋਣਗੀਆਂ ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਇਸਨੂੰ ਨਾ ਰੋਕੋ।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ ਰੁਕ ਗਈ। ਇਸਨੇ ਜੋ ਫੜਿਆ ਉਹ ਤਿਆਗਣ ਤੱਕ ਰਹੇਗਾ।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ ਅਤੇ ਇਸ ਦੀਆਂ ਘਟਨਾਵਾਂ ਹਟਾ ਦਿੱਤੀਆਂ ਗਈਆਂ।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ਕੋਈ ਰਿਕਾਰਡਿੰਗ %id ਨਹੀਂ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ਪਹਿਲਾਂ "ਹਾਂ, ਇਹ ਰਿਕਾਰਡਿੰਗ ਤਿਆਗੋ" ਤੇ ਨਿਸ਼ਾਨ ਲਗਾਓ।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ਸੈਸ਼ਨ ਰਿਕਾਰਡਿੰਗ ਸਿਰਫ਼ ਉਹੀ ਵਰਤੋਂਕਾਰ ਰੋਕ ਸਕਦਾ ਹੈ ਜਿਸਨੇ ਰਿਕਾਰਡ ਕੀਤਾ।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ਰੋਕਣ ਲਈ ਰਿਕਾਰਡਿੰਗ ਚੁਣੋ।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ਇਸ ਕਿਸਮ ਦੀ ਰਿਕਾਰਡਿੰਗ ਪਹਿਲਾਂ ਹੀ ਚੱਲ ਰਹੀ ਹੈ।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ਰਿਕਾਰਡਿੰਗ ਬਦਲੀ ਨਹੀਂ ਜਾ ਸਕੀ: %reason</translation>
+    </message>
 </context>
 </TS>

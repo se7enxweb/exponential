@@ -80546,5 +80546,221 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>The run could not be started.</source>
         <translation>Ezin izan da exekuzioa hasi.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Aldaketak grabatu</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Grabazio bat martxan dagoen bitartean, administrazioan edo gunearen alboko barran aldatzen duzuna migrazio baten urrats gisa gordetzen da: edukia, klaseak, rolak eta politikak, sekzioak, erabiltzaileak eta taldeak, URL aliasak, ezarpenak. Gelditu ezazu amaitzen duzunean, begiratu zer harrapatu duen eta sortu migrazio bat bertatik.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ezin izan dira grabazioak irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Grabazioen taulak ez daude oraindik: exekutatu lehenik eguneratzea (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Grabazioa desaktibatuta dago migration.ini fitxategian ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Nire aldaketak</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Zuk aldatzen duzuna bakarrik grabatzen du, edonon aldatzen duzula ere, gelditu arte.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Grabazioa</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time-(e)tik, orain arte %count aldaketa.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiketa (aukerakoa)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Erakutsi zer harrapatu duen</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Gelditu grabazioa</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Hasi nire aldaketak grabatzen</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Gune osorako leihoa</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Erabiltzaile guztien eta kontsolaren aldaketa guztiak grabatzen ditu itxi arte. Irekitzean zu zarela egiaztatzeko eskatzen zaizu.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Irekita</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Itxi leihoa</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ireki gune osorako leihoa</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Grabazioak</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Erabiltzaile baten kontua (saio-izena, posta elektronikoa, pasahitza) eta erabiltzaile-kontuen eremuak ez dira inoiz grabatzen.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Aldaketak</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Gune osoa</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name erabiltzailearen aldaketak</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Geldituta</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Oraindik ez dago grabaziorik.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>%id grabazioa</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Grabazio guztiak</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Sortuko lukeen migrazioa</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Aldaketak urrats bakarrean bilduta aldatutako gauza bakoitzeko: grabazio honetatik sortutako migrazio batek egingo lukeena.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migrazio bat sortu ahal izango da bertatik instalazio honek %types YAML urrats motak dituenean.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Nahita kanpoan utzia: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ez da ezer grabatu.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Harrapatu duena</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count aldaketa, egin ziren ordenan.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Aldaketa</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Urratsa</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Honi buruz</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Beste %count: ./console exp:migration:record:show-k guztiak zerrendatzen ditu.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Baztertu</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Grabazioa eta harrapatu duena kentzen ditu. Aldatu dena aldatuta geratzen da.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Bai, baztertu grabazio hau</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Grabatzen…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Zure aldaketak migrazio baterako grabatzen ari dira.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Gune honetako aldaketa guztiak migrazio baterako grabatzen ari dira (gune osorako leihoa).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Gune osoaren grabazioa hasi da: erabiltzaile guztien aldaketa guztiak grabatzen dira gelditu arte.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Grabazioa hasi da: zure aldaketak grabatzen dira gelditu arte.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Grabazioa geldituta. Harrapatu duena geratzen da baztertu arte.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Grabazioa eta bere gertaerak kendu dira.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ez dago %id grabaziorik.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Markatu lehenik "Bai, baztertu grabazio hau".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Grabatu duen erabiltzaileak bakarrik gelditu dezake saio-grabazio bat.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Aukeratu gelditu beharreko grabazioa.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Mota honetako grabazio bat martxan dago dagoeneko.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ezin izan da grabazioa aldatu: %reason</translation>
+    </message>
 </context>
 </TS>

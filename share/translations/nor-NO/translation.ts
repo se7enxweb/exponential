@@ -81804,5 +81804,221 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>The run could not be started.</source>
         <translation>Kjøringen kunne ikke startes.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ta opp endringer</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mens et opptak pågår, lagres det du endrer i administrasjonen eller i nettstedets sidefelt som steg i en migrering: innhold, klasser, roller og policyer, seksjoner, brukere og grupper, URL-aliaser, innstillinger. Stopp det når du er ferdig, se hva det fanget, og generer en migrering fra det.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Opptakene kunne ikke leses: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabellene for opptak finnes ikke ennå: kjør først oppgraderingen (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Opptak er slått av i migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mine endringer</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Tar bare opp det du endrer, uansett hvor du endrer det, til du stopper det.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Opptak</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>siden %time, så langt %count endring(er).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etikett (valgfri)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Vis hva det fanget</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stopp opptaket</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Start opptak av mine endringer</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Vindu for hele nettstedet</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Tar opp hver endring fra hver bruker og fra konsollen til det lukkes. Når du åpner det, blir du bedt om å bekrefte at det er deg.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Åpent</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Lukk vinduet</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Åpne vinduet for hele nettstedet</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Opptakene</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>En brukers konto (pålogging, e-post, passord) og feltene i brukerkontoer blir aldri tatt opp.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Endringer</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Hele nettstedet</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Endringer av %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stoppet</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ingen opptak ennå.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Opptak %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Alle opptak</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migreringen det ville gi</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Endringene samlet i ett steg per endret ting: hva en migrering generert fra dette opptaket ville gjøre.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>En migrering kan genereres fra det når denne installasjonen har YAML-stegtypene %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Utelatt med vilje: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ingenting ble tatt opp.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Hva det fanget</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count endring(er), i den rekkefølgen de ble gjort.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Endring</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Steg</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Gjelder</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count til: ./console exp:migration:record:show viser alle.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Forkast</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Fjerner opptaket og det det fanget. Det som er endret, forblir endret.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, forkast dette opptaket</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Tar opp…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Endringene dine tas opp for en migrering.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Hver endring på dette nettstedet tas opp for en migrering (vindu for hele nettstedet).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Opptaket for hele nettstedet har startet: hver endring fra hver bruker tas opp til du stopper det.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Opptaket har startet: endringene dine tas opp til du stopper det.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Opptaket er stoppet. Det det fanget, blir værende til du forkaster det.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Opptaket og hendelsene er fjernet.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Det finnes ikke noe opptak %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Kryss først av for «Ja, forkast dette opptaket».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Bare brukeren som tok opp, kan stoppe et øktopptak.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Velg opptaket som skal stoppes.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Et opptak av denne typen pågår allerede.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Opptaket kunne ikke endres: %reason</translation>
+    </message>
 </context>
 </TS>

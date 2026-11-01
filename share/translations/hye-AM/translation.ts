@@ -80546,5 +80546,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Չհաջողվեց սկսել գործարկումը։</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Փոփոխությունների ձայնագրում</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Քանի դեռ ձայնագրումն ընթանում է, այն, ինչ փոխում եք կառավարման մեջ կամ կայքի կողային վահանակում, պահվում է որպես միգրացիայի քայլեր՝ բովանդակություն, դասեր, դերեր և քաղաքականություններ, բաժիններ, օգտատերեր և խմբեր, URL կեղծանուններ, կարգավորումներ։ Ավարտելուց հետո կանգնեցրեք այն, նայեք՝ ինչ է այն ֆիքսել, և դրանից ստեղծեք միգրացիա։</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ձայնագրումները հնարավոր չեղավ կարդալ. %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ձայնագրումների աղյուսակները դեռ գոյություն չունեն. նախ գործարկեք թարմացումը (exp:upgrade --apply)։</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ձայնագրումն անջատված է migration.ini-ում ([RecordingSettings] Recording=disabled)։</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Իմ փոփոխությունները</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ձայնագրում է միայն այն, ինչ դուք եք փոխում, որտեղ էլ փոխեք, մինչև կանգնեցնեք այն։</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ձայնագրում</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time-ից ի վեր, մինչ այժմ %count փոփոխություն։</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Պիտակ (ըստ ցանկության)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ցույց տալ, ինչ է ֆիքսել</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Կանգնեցնել ձայնագրումը</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Սկսել իմ փոփոխությունների ձայնագրումը</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ամբողջ կայքի պատուհան</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ձայնագրում է յուրաքանչյուր օգտատիրոջ և վահանակի յուրաքանչյուր փոփոխություն, մինչև այն փակվի։ Բացելիս ձեզնից կպահանջվի հաստատել, որ դա դուք եք։</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Բաց</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Փակել պատուհանը</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Բացել ամբողջ կայքի պատուհանը</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ձայնագրումներ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Օգտատիրոջ հաշիվը (մուտքանուն, էլ. փոստ, գաղտնաբառ) և օգտատիրական հաշիվների դաշտերը երբեք չեն ձայնագրվում։</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Փոփոխություններ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ամբողջ կայքը</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name-ի փոփոխությունները</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Կանգնեցված</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Դեռ ձայնագրում չկա։</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ձայնագրում %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Բոլոր ձայնագրումները</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Միգրացիան, որը կստացվեր</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Փոփոխությունները՝ միավորված մեկ քայլի մեջ յուրաքանչյուր փոխված առարկայի համար. ինչ կաներ այս ձայնագրումից ստեղծված միգրացիան։</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Դրանից կարելի կլինի միգրացիա ստեղծել, երբ այս տեղադրումն ունենա YAML քայլերի %types տեսակները։</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Դիտմամբ բաց թողնված. %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ոչինչ չի ձայնագրվել։</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ինչ է ֆիքսել</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count փոփոխություն՝ կատարման հերթականությամբ։</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Փոփոխություն</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Քայլ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Վերաբերում է</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Եվս %count. ./console exp:migration:record:show-ը ցուցակում է բոլորը։</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Մերժել</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Հեռացնում է ձայնագրումը և այն, ինչ այն ֆիքսել է։ Փոխվածը մնում է փոխված։</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Այո, մերժել այս ձայնագրումը</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ձայնագրվում է…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ձեր փոփոխությունները ձայնագրվում են միգրացիայի համար։</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Այս կայքի յուրաքանչյուր փոփոխություն ձայնագրվում է միգրացիայի համար (ամբողջ կայքի պատուհան)։</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ամբողջ կայքի ձայնագրումը սկսվել է. յուրաքանչյուր օգտատիրոջ յուրաքանչյուր փոփոխություն կձայնագրվի, մինչև կանգնեցնեք այն։</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ձայնագրումը սկսվել է. ձեր փոփոխությունները կձայնագրվեն, մինչև կանգնեցնեք այն։</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ձայնագրումը կանգնեցվեց։ Ֆիքսվածը կմնա, մինչև մերժեք այն։</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ձայնագրումը և դրա իրադարձությունները հեռացվել են։</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id ձայնագրում չկա։</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Նախ նշեք «Այո, մերժել այս ձայնագրումը»։</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Սեսիայի ձայնագրումը կարող է կանգնեցնել միայն այն օգտատերը, ով ձայնագրել է։</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Ընտրեք կանգնեցվող ձայնագրումը։</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Այս տեսակի ձայնագրում արդեն ընթանում է։</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ձայնագրումը հնարավոր չեղավ փոխել. %reason</translation>
+    </message>
 </context>
 </TS>

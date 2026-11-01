@@ -80544,5 +80544,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>রানটি শুরু করা যায়নি।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>পরিবর্তন রেকর্ড করা</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>রেকর্ডিং চলাকালীন আপনি প্রশাসনে বা সাইটের সাইডবারে যা পরিবর্তন করেন তা একটি মাইগ্রেশনের ধাপ হিসেবে রাখা হয়: বিষয়বস্তু, ক্লাস, ভূমিকা ও নীতি, সেকশন, ব্যবহারকারী ও গোষ্ঠী, URL উপনাম, সেটিংস। কাজ শেষ হলে এটি থামান, দেখুন এটি কী ধরেছে, এবং এটি থেকে একটি মাইগ্রেশন তৈরি করুন।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>রেকর্ডিংগুলো পড়া যায়নি: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>রেকর্ডিংয়ের টেবিলগুলো এখনও নেই: আগে আপগ্রেড চালান (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini-তে রেকর্ডিং বন্ধ আছে ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>আমার পরিবর্তন</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>শুধু আপনি যা পরিবর্তন করেন তা-ই রেকর্ড করে, যেখানেই করুন, যতক্ষণ না আপনি থামান।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>রেকর্ডিং</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time থেকে, এখন পর্যন্ত %count পরিবর্তন।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>লেবেল (ঐচ্ছিক)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>এটি কী ধরেছে দেখান</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>রেকর্ডিং থামান</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>আমার পরিবর্তনের রেকর্ডিং শুরু করুন</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>পুরো সাইটের জানালা</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>বন্ধ না হওয়া পর্যন্ত প্রত্যেক ব্যবহারকারী ও কনসোলের প্রতিটি পরিবর্তন রেকর্ড করে। খোলার সময় আপনাকে নিশ্চিত করতে বলা হয় যে এটি আপনি।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>খোলা</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>জানালা বন্ধ করুন</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>পুরো সাইটের জানালা খুলুন</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>রেকর্ডিংসমূহ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ব্যবহারকারীর অ্যাকাউন্ট (লগইন, ই-মেইল, পাসওয়ার্ড) এবং ব্যবহারকারী অ্যাকাউন্টের ঘরগুলো কখনও রেকর্ড করা হয় না।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>পরিবর্তনসমূহ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>পুরো সাইট</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name-এর পরিবর্তন</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>থামানো</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>এখনও কোনো রেকর্ডিং নেই।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>রেকর্ডিং %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>সব রেকর্ডিং</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>এ থেকে যে মাইগ্রেশন হবে</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>প্রতিটি পরিবর্তিত জিনিসের জন্য এক ধাপে একত্র করা পরিবর্তন: এই রেকর্ডিং থেকে তৈরি মাইগ্রেশন যা করবে।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>এই ইনস্টলেশনে YAML ধাপের ধরন %types থাকলে এটি থেকে মাইগ্রেশন তৈরি করা যাবে।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ইচ্ছাকৃতভাবে বাদ: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>কিছুই রেকর্ড হয়নি।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>এটি কী ধরেছে</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count পরিবর্তন, যে ক্রমে করা হয়েছে।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>পরিবর্তন</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ধাপ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>বিষয়</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>আরও %count: ./console exp:migration:record:show সবগুলোর তালিকা দেয়।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>বাতিল করুন</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>রেকর্ডিং এবং এটি যা ধরেছে তা সরিয়ে দেয়। যা পরিবর্তিত হয়েছে তা পরিবর্তিতই থাকে।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>হ্যাঁ, এই রেকর্ডিং বাতিল করুন</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>রেকর্ড হচ্ছে…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>আপনার পরিবর্তন একটি মাইগ্রেশনের জন্য রেকর্ড হচ্ছে।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>এই সাইটের প্রতিটি পরিবর্তন একটি মাইগ্রেশনের জন্য রেকর্ড হচ্ছে (পুরো সাইটের জানালা)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>পুরো সাইটের রেকর্ডিং শুরু হয়েছে: আপনি না থামানো পর্যন্ত প্রত্যেক ব্যবহারকারীর প্রতিটি পরিবর্তন রেকর্ড হবে।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>রেকর্ডিং শুরু হয়েছে: আপনি না থামানো পর্যন্ত আপনার পরিবর্তন রেকর্ড হবে।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>রেকর্ডিং থেমেছে। এটি যা ধরেছে তা বাতিল না করা পর্যন্ত থাকবে।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>রেকর্ডিং ও এর ঘটনাগুলো সরানো হয়েছে।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>কোনো রেকর্ডিং %id নেই।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>আগে "হ্যাঁ, এই রেকর্ডিং বাতিল করুন" চিহ্নিত করুন।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>সেশন রেকর্ডিং শুধু সেই ব্যবহারকারী থামাতে পারেন যিনি রেকর্ড করেছেন।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>থামানোর জন্য রেকর্ডিং বেছে নিন।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>এই ধরনের একটি রেকর্ডিং ইতিমধ্যে চলছে।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>রেকর্ডিং পরিবর্তন করা যায়নি: %reason</translation>
+    </message>
 </context>
 </TS>

@@ -80546,5 +80546,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>ДӀадахьар доло ца делира.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Хийцамаш дӀаяздар</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ДӀаяздар доллушехь, ахь администрацехь я сайтан агӀонан панелехь хийцинарг миграцин гӀулчаш санна латтадо: чулацам, классаш, рольш а политикаш а, декъаш, лелорхой а тобанаш а, URL цӀерш, нисдарш. Чекхдаьккхинчул тӀаьхьа сацае иза, хьажа цо хӀун лаьцна, цунна тӀера миграци кхолла.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ДӀаяздарш дешан ца делира: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ДӀаяздаран таблицаш хӀинца а яц: хьалха карлайаккхар лелае (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ДӀаяздар migration.ini чохь дӀадайина ду ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Сан хийцамаш</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ахь сацаделла ца даллалц ахь хийцинарг бен дӀа ца йоззу, мичча хийцахь а.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ДӀаяздар</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time тӀера, хӀинцалц %count хийцам.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Билгало (лаахь)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Цо хӀун лаьцна гайта</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ДӀаяздар сацо</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Сан хийцамаш дӀаяздар доладан</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ерриге сайтан кор</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ДӀакъовлуш долчу хенахь кхаччалц хӀора лелорхочун а консолан а хӀора хийцам дӀа йоззу. Схьайоьллуш хьо хьо вуйла тӀечӀагӀдан деза.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Схьаелла</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Кор дӀакъовла</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ерриге сайтан кор схьаелла</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ДӀаяздарш</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Лелорхочун аккаунт (логин, электронан пошт, пароль) а лелорхойн аккаунтийн аренаш а цкъа а дӀа ца йоззу.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Хийцамаш</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ерриге сайт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name хийцамаш</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Сацийна</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ХӀинца а дӀаяздар дац.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ДӀаяздар %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Массо а дӀаяздарш</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Цунна тӀера хила йолу миграци</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ХӀора хийцинчу хӀуманна цхьа гӀулч чу тоьхна хийцамаш: хӀокху дӀаяздарна тӀера кхоьллинчу миграцис хӀун дийр ду.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ХӀокху дӀахӀоттамна YAML гӀулчийн тайпанаш %types хилча цунна тӀера миграци кхолла йиш хир ю.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Хуъушехь дӀатесна: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Цхьа а хӀума дӀа ца яздина.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Цо хӀун лаьцна</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count хийцам, бина рогӀаллехь.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Хийцам</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ГӀулч</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Хьокъехь</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Кхин %count: ./console exp:migration:record:show массо а гойту.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ДӀатаса</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ДӀаяздар а цо лаьцнарг а дӀаайъа. Хийцинарг хийцина латта.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ХӀаъ, хӀара дӀаяздар дӀатаса</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ДӀаяздеш ду…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Хьан хийцамаш миграцина дӀаяздеш ду.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ХӀокху сайтехь хӀора хийцам миграцина дӀаяздеш бу (ерриге сайтан кор).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ерриге сайтан дӀаяздар доладелла: ахь сацадаллалц хӀора лелорхочун хӀора хийцам дӀаяздийр бу.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ДӀаяздар доладелла: ахь сацадаллалц хьан хийцамаш дӀаяздийр бу.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ДӀаяздар сацийна. Цо лаьцнарг ахь дӀатосаллалц латтар ду.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ДӀаяздар а цуьнан хиламаш а дӀаайина.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id дӀаяздар дац.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Хьалха «ХӀаъ, хӀара дӀаяздар дӀатаса» билгалде.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Сессин дӀаяздар дӀаяздинчу лелорхочо бен сацо ца мега.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Сацо деза дӀаяздар харжа.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ХӀокху тайпанара дӀаяздар хӀинцале а доллуш ду.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ДӀаяздар хийца ца делира: %reason</translation>
+    </message>
 </context>
 </TS>

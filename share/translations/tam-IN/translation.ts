@@ -80544,5 +80544,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>இயக்கத்தைத் தொடங்க முடியவில்லை.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>மாற்றங்களைப் பதிவுசெய்தல்</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>பதிவு நடக்கும்போது நிர்வாகத்திலோ தளத்தின் பக்கப்பட்டியிலோ நீங்கள் மாற்றுவது ஒரு இடம்பெயர்வின் படிகளாக வைக்கப்படும்: உள்ளடக்கம், வகுப்புகள், பாத்திரங்களும் கொள்கைகளும், பிரிவுகள், பயனர்களும் குழுக்களும், URL மாற்றுப்பெயர்கள், அமைப்புகள். முடிந்ததும் நிறுத்தி, அது என்ன பிடித்தது எனப் பார்த்து, அதிலிருந்து ஒரு இடம்பெயர்வை உருவாக்குங்கள்.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>பதிவுகளைப் படிக்க முடியவில்லை: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>பதிவுகளின் அட்டவணைகள் இன்னும் இல்லை: முதலில் மேம்படுத்தலை இயக்குங்கள் (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini இல் பதிவு அணைக்கப்பட்டுள்ளது ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>என் மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>நீங்கள் நிறுத்தும் வரை, நீங்கள் மாற்றுவதை மட்டும், எங்கு மாற்றினாலும், பதிவுசெய்கிறது.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>பதிவு</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time முதல், இதுவரை %count மாற்றங்கள்.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>லேபிள் (விருப்பம்)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>அது என்ன பிடித்தது எனக் காட்டு</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>பதிவை நிறுத்து</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>என் மாற்றங்களைப் பதிவுசெய்யத் தொடங்கு</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>முழுத் தளத்துக்கான சாளரம்</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>மூடப்படும் வரை ஒவ்வொரு பயனரின் மற்றும் கன்சோலின் ஒவ்வொரு மாற்றத்தையும் பதிவுசெய்கிறது. திறக்கும்போது நீங்கள்தான் என உறுதிசெய்யக் கேட்கப்படும்.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>திறந்துள்ளது</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>சாளரத்தை மூடு</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>முழுத் தளத்துக்கான சாளரத்தைத் திற</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>பதிவுகள்</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>பயனரின் கணக்கு (உள்நுழைவுப் பெயர், மின்னஞ்சல், கடவுச்சொல்) மற்றும் பயனர் கணக்குகளின் புலங்கள் ஒருபோதும் பதிவுசெய்யப்படுவதில்லை.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>முழுத் தளம்</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name இன் மாற்றங்கள்</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>நிறுத்தப்பட்டது</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>இன்னும் பதிவு இல்லை.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>பதிவு %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>எல்லாப் பதிவுகளும்</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>இதிலிருந்து உருவாகும் இடம்பெயர்வு</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>மாற்றப்பட்ட ஒவ்வொன்றுக்கும் ஒரு படியாகத் தொகுக்கப்பட்ட மாற்றங்கள்: இந்தப் பதிவிலிருந்து உருவாக்கப்படும் இடம்பெயர்வு செய்வது.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>இந்த நிறுவலில் YAML படி வகைகள் %types இருக்கும்போது இதிலிருந்து இடம்பெயர்வை உருவாக்கலாம்.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>வேண்டுமென்றே விடப்பட்டது: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>எதுவும் பதிவுசெய்யப்படவில்லை.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>அது என்ன பிடித்தது</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count மாற்றங்கள், செய்யப்பட்ட வரிசையில்.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>மாற்றம்</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>படி</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>தொடர்புடையது</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>மேலும் %count: ./console exp:migration:record:show அனைத்தையும் பட்டியலிடும்.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>நிராகரி</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>பதிவையும் அது பிடித்ததையும் நீக்குகிறது. மாற்றப்பட்டது மாற்றப்பட்டதாகவே இருக்கும்.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ஆம், இந்தப் பதிவை நிராகரி</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>பதிவுசெய்கிறது…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>உங்கள் மாற்றங்கள் ஒரு இடம்பெயர்வுக்காகப் பதிவுசெய்யப்படுகின்றன.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>இந்தத் தளத்தின் ஒவ்வொரு மாற்றமும் ஒரு இடம்பெயர்வுக்காகப் பதிவுசெய்யப்படுகிறது (முழுத் தளத்துக்கான சாளரம்).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>முழுத் தளப் பதிவு தொடங்கியது: நீங்கள் நிறுத்தும் வரை ஒவ்வொரு பயனரின் ஒவ்வொரு மாற்றமும் பதிவுசெய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>பதிவு தொடங்கியது: நீங்கள் நிறுத்தும் வரை உங்கள் மாற்றங்கள் பதிவுசெய்யப்படும்.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>பதிவு நிறுத்தப்பட்டது. அது பிடித்தது நீங்கள் நிராகரிக்கும் வரை இருக்கும்.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>பதிவும் அதன் நிகழ்வுகளும் நீக்கப்பட்டன.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>பதிவு %id இல்லை.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>முதலில் "ஆம், இந்தப் பதிவை நிராகரி" என்பதைத் தேர்வுசெய்யுங்கள்.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>அமர்வுப் பதிவைப் பதிவுசெய்த பயனர் மட்டுமே நிறுத்தலாம்.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>நிறுத்த வேண்டிய பதிவைத் தேர்ந்தெடுங்கள்.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>இந்த வகைப் பதிவு ஏற்கனவே நடக்கிறது.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>பதிவை மாற்ற முடியவில்லை: %reason</translation>
+    </message>
 </context>
 </TS>

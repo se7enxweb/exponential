@@ -80576,5 +80576,221 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>The run could not be started.</source>
         <translation>No s&apos;ha pogut iniciar l&apos;execució.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Enregistrar canvis</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mentre un enregistrament està en marxa, el que canvies a l'administració o a la barra lateral del lloc es guarda com a passos d'una migració: contingut, classes, rols i polítiques, seccions, usuaris i grups, àlies d'URL, configuració. Atura'l quan acabis, mira el que ha capturat i genera'n una migració.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>No s'han pogut llegir els enregistraments: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Les taules dels enregistraments encara no existeixen: executa primer l'actualització (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>L'enregistrament està desactivat a migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Els meus canvis</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Enregistra només el que tu canvies, allà on ho canviïs, fins que l'aturis.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Enregistrament</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>des de %time, %count canvi(s) fins ara.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiqueta (opcional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Mostra el que ha capturat</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Atura l'enregistrament</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Comença a enregistrar els meus canvis</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Finestra per a tot el lloc</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Enregistra cada canvi de cada usuari i de la consola fins que es tanqui. En obrir-la se't demana que verifiquis que ets tu.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Oberta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tanca la finestra</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Obre la finestra per a tot el lloc</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Enregistraments</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>El compte d'un usuari (nom d'usuari, correu electrònic, contrasenya) i els camps dels comptes d'usuari no s'enregistren mai.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Canvis</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tot el lloc</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Canvis de %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Aturat</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Encara no hi ha cap enregistrament.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Enregistrament %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tots els enregistraments</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migració que en sortiria</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Els canvis agrupats en un pas per cada element canviat: el que faria una migració generada a partir d'aquest enregistrament.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Se'n podrà generar una migració quan aquesta instal·lació tingui els tipus de pas YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Omès expressament: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>No s'ha enregistrat res.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>El que ha capturat</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count canvi(s), en l'ordre en què es van fer.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Canvi</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pas</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Afecta</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count més: ./console exp:migration:record:show els llista tots.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Descarta</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Elimina l'enregistrament i el que ha capturat. El que s'ha canviat continua canviat.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Sí, descarta aquest enregistrament</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Enregistrant…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Els teus canvis s'enregistren per a una migració.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Cada canvi en aquest lloc s'enregistra per a una migració (finestra per a tot el lloc).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>L'enregistrament de tot el lloc ha començat: cada canvi de cada usuari s'enregistra fins que l'aturis.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>L'enregistrament ha començat: els teus canvis s'enregistren fins que l'aturis.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Enregistrament aturat. El que ha capturat es manté fins que el descartis.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>S'han eliminat l'enregistrament i els seus esdeveniments.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>No hi ha cap enregistrament %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Marca primer «Sí, descarta aquest enregistrament».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Només l'usuari que ha enregistrat pot aturar un enregistrament de sessió.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tria l'enregistrament que vols aturar.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ja hi ha un enregistrament d'aquest tipus en marxa.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>No s'ha pogut canviar l'enregistrament: %reason</translation>
+    </message>
 </context>
 </TS>

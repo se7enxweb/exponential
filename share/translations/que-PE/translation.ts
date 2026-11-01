@@ -80546,5 +80546,221 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>The run could not be started.</source>
         <translation>Purichiyta mana qallariyta atikurqanchu.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Tikraykunata qillqay</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Qillqay purichkaptinqa, kamachiypi utaq kitiq waqta barranpi tikrasqaykiqa huk astakuypa purikunan hina waqaychakun: willakuy, laya, ruraykuna kamachikuykunapas, rakikuna, llamk'aqkuna huñukunapas, URL huk sutikuna, churakuykuna. Tukuspaqa sayachiy, ima hap'isqanta qhaway, chaymantataq huk astakuyta ruray.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Qillqasqakunata mana ñawinchayta atikurqanchu: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Qillqasqakunap tablankuna manaraq kanchu: ñawpaqta musuqyachiyta puriy (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Qillqayqa migration.ini nisqapi wañuchisqa ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Tikraykunay</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Qam tikrasqallaykita qillqan, maypipas tikraptiyki, sayachinaykikama.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Qillqasqa</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time pachamanta, kunankama %count tikray.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Unanchay (munaspaqa)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ima hap'isqanta rikuchiy</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Qillqayta sayachiy</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tikraykunayta qillqayta qallariy</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Llapan kitipaq ventana</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Sapanka llamk'aqpa konsolpa sapanka tikraynintam qillqan wichq'akunankama. Kicharispaqa qam kasqaykita takyachinaykitam mañakunqa.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Kichasqa</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Ventanata wichq'ay</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Llapan kitipaq ventanata kichay</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Qillqasqakuna</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Llamk'aqpa yupanmi (yaykuna suti, e-mail, pakasqa simi) llamk'aqkunap yupanpa chaqrankunapas mana hayk'appas qillqakunchu.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Tikraykuna</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Llapan kiti</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name nisqap tikraynin</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Sayachisqa</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Manaraq qillqasqa kanchu.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Qillqasqa %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Llapan qillqasqakuna</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Chaymanta lluqsiq astakuy</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Sapanka tikrasqa kaqpaq huk purikunapi huñusqa tikraykuna: kay qillqasqamanta rurasqa astakuy ima ruranan.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Kay churakuyqa YAML purikuna layakunata %types kapuptinqa, chaymanta astakuyta rurakunman.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Yachaspa saqisqa: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Manam imapas qillqasqachu.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ima hap'isqan</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count tikray, rurasqa kasqanman hina.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Tikray</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Puriku</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Imamanta</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Astawan %count: ./console exp:migration:record:show llapanta sutinchan.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Wikch'uy</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Qillqasqata ima hap'isqantapas qichun. Tikrasqaqa tikrasqallam qipan.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Arí, kay qillqasqata wikch'uy</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Qillqachkan…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Tikraykunaykiqa huk astakuypaqmi qillqakuchkan.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Kay kitipi sapanka tikrayqa huk astakuypaqmi qillqakuchkan (llapan kitipaq ventana).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Llapan kitip qillqaynin qallarirqanña: sapanka llamk'aqpa sapanka tikraynin qillqakunqa sayachinaykikama.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Qillqay qallarirqanña: tikraykunayki qillqakunqa sayachinaykikama.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Qillqay sayachisqa. Ima hap'isqanqa wikch'unaykikamam qipanqa.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Qillqasqapas imakuna pasasqanpas qichusqañam.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Manam qillqasqa %id kanchu.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ñawpaqta "Arí, kay qillqasqata wikch'uy" nisqata akllay.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Qillqaq llamk'aqllam huñunakuy qillqayta sayachiyta atin.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Sayachinapaq qillqasqata akllay.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Kay layapi qillqayqa purichkanñam.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Qillqasqata mana tikrayta atikurqanchu: %reason</translation>
+    </message>
 </context>
 </TS>

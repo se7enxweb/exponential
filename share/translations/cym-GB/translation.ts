@@ -80546,5 +80546,221 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>The run could not be started.</source>
         <translation>Nid oedd modd cychwyn y rhediad.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Recordio newidiadau</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Tra bo recordiad ar waith, mae'r hyn rydych yn ei newid yn y weinyddiaeth neu ym mar ochr y wefan yn cael ei gadw fel camau mudo: cynnwys, dosbarthiadau, rolau a pholisïau, adrannau, defnyddwyr a grwpiau, arallenwau URL, gosodiadau. Stopiwch ef pan fyddwch wedi gorffen, edrychwch ar yr hyn a ddaliodd a chynhyrchwch fudo ohono.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y recordiadau: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Nid yw tablau'r recordiadau'n bodoli eto: rhedwch yr uwchraddiad yn gyntaf (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Mae recordio wedi'i ddiffodd yn migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Fy newidiadau</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Yn recordio dim ond yr hyn rydych chi'n ei newid, ble bynnag rydych chi'n ei newid, nes i chi ei stopio.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Recordiad</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ers %time, %count newid hyd yma.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (dewisol)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Dangos yr hyn a ddaliodd</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Stopio recordio</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Dechrau recordio fy newidiadau</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ffenestr i'r wefan gyfan</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Yn recordio pob newid gan bob defnyddiwr a'r consol nes iddi gael ei chau. Wrth ei hagor gofynnir i chi gadarnhau mai chi sydd yno.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ar agor</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Cau'r ffenestr</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Agor y ffenestr i'r wefan gyfan</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Recordiadau</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ni chaiff cyfrif defnyddiwr (enw mewngofnodi, e-bost, cyfrinair) na meysydd cyfrifon defnyddwyr byth eu recordio.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Newidiadau</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Y wefan gyfan</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Newidiadau %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Wedi'i stopio</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Dim recordiad eto.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Recordiad %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Pob recordiad</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Y mudo a ddeuai ohono</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Y newidiadau wedi'u cyfuno'n un cam fesul peth a newidiwyd: yr hyn y byddai mudo a gynhyrchir o'r recordiad hwn yn ei wneud.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Gellir cynhyrchu mudo ohono unwaith y bydd gan y gosodiad hwn y mathau o gamau YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Wedi'i adael allan yn fwriadol: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ni recordiwyd dim.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Yr hyn a ddaliodd</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count newid, yn y drefn y'u gwnaed.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Newid</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Cam</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Yn ymwneud â</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count arall: mae ./console exp:migration:record:show yn eu rhestru i gyd.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Taflu</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Yn tynnu'r recordiad a'r hyn a ddaliodd. Mae'r hyn a newidiwyd yn aros wedi'i newid.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ie, taflu'r recordiad hwn</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Yn recordio…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Mae eich newidiadau'n cael eu recordio ar gyfer mudo.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Mae pob newid ar y wefan hon yn cael ei recordio ar gyfer mudo (ffenestr i'r wefan gyfan).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Mae'r recordiad i'r wefan gyfan wedi dechrau: caiff pob newid gan bob defnyddiwr ei recordio nes i chi ei stopio.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Mae'r recordiad wedi dechrau: caiff eich newidiadau eu recordio nes i chi ei stopio.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Recordio wedi'i stopio. Mae'r hyn a ddaliodd yn aros nes i chi ei daflu.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Mae'r recordiad a'i ddigwyddiadau wedi'u tynnu.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nid oes recordiad %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ticiwch "Ie, taflu'r recordiad hwn" yn gyntaf.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Dim ond y defnyddiwr a recordiodd all stopio recordiad sesiwn.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Dewiswch y recordiad i'w stopio.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Mae recordiad o'r math hwn eisoes ar waith.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nid oedd modd newid y recordiad: %reason</translation>
+    </message>
 </context>
 </TS>

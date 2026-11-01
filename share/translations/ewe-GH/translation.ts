@@ -80546,5 +80546,221 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>The run could not be started.</source>
         <translation>Womete ŋu dze wɔwɔa gɔme o.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Tɔtrɔwo ŋɔŋlɔ ɖi</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Esime ŋɔŋlɔɖi le edzi yim la, nusi nètrɔna le dɔdzikpɔla me alo le nyatakakadzraɖoƒea ƒe axadzi bar dzi la, wodzraa wo ɖo abe ʋuʋu ƒe afɔɖeɖewo ene: nyatakakawo, hatiwo, dɔwo kple ɖoɖowo, akpawo, zãlawo kple hawo, URL ŋkɔ bubuwo, ɖoɖowo. Tɔ̃e ne èwu enu, kpɔ nusi wòlé, eye nàwɔ ʋuʋu tso eme.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Womete ŋu xlẽ ŋɔŋlɔɖiwo o: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Ŋɔŋlɔɖiwo ƒe kplɔ̃wo meli haɖe o: gbã la, wɔ yeyewɔwɔ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Wotsi ŋɔŋlɔɖi le migration.ini me ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Nye tɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nusi nètrɔna ko wòŋlɔna ɖi, afi sia afi si nètrɔe le, va se ɖe esime nàtɔ̃e.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ŋɔŋlɔɖi</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>tso %time, tɔtrɔ %count va se ɖe fifia.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Dzesi (ne èlɔ̃)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Fia nusi wòlé</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Tɔ̃ ŋɔŋlɔɖi</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Dze nye tɔtrɔwo ŋɔŋlɔ ɖi gɔme</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fesre na nyatakakadzraɖoƒea katã</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Eŋlɔa zãla ɖesiaɖe kple console ƒe tɔtrɔ ɖesiaɖe ɖi va se ɖe esime woatui. Ne èʋui la, woabia wò be nàɖo kpe edzi be wòe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Eʋu</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tu fesre</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ʋu fesre na nyatakakadzraɖoƒea katã</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ŋɔŋlɔɖiwo</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Womeŋlɔa zãla ƒe akɔnta (ŋkɔ si wotsɔna gena ɖe eme, e-mail, nyaɣaɣla) kple zãlawo ƒe akɔntawo ƒe teƒewo ɖi gbeɖe o.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Tɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Nyatakakadzraɖoƒea katã</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ƒe tɔtrɔwo</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Etɔ̃</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ŋɔŋlɔɖi aɖeke meli haɖe o.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ŋɔŋlɔɖi %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ŋɔŋlɔɖiwo katã</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ʋuʋu si ado tso eme</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Tɔtrɔ siwo woƒo ƒu wòzu afɔɖeɖe ɖeka na nu ɖesiaɖe si wotrɔ: nusi ʋuʋu si wowɔ tso ŋɔŋlɔɖi sia me awɔ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Woate ŋu awɔ ʋuʋu tso eme ne ɖoɖo sia kpɔ YAML afɔɖeɖe ƒomevi %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Wogblee ɖi ɖe tame me: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Naneke womeŋlɔ ɖi o.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Nusi wòlé</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Tɔtrɔ %count, le ɖoɖo si nu wowɔ wo le.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Tɔtrɔ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Afɔɖeɖe</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ku ɖe</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Bubu %count: ./console exp:migration:record:show ŋlɔa wo katã ɖe ŋgɔ.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ƒu gbe</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Eɖea ŋɔŋlɔɖi la kple nusi wòlé ɖa. Nusi wotrɔ la gakpɔtɔ nye esi wotrɔ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ɛ̃, ƒu ŋɔŋlɔɖi sia gbe</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ele ŋɔŋlɔm ɖi…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Wole wò tɔtrɔwo ŋlɔm ɖi na ʋuʋu.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Wole tɔtrɔ ɖesiaɖe le nyatakakadzraɖoƒe sia ŋlɔm ɖi na ʋuʋu (fesre na nyatakakadzraɖoƒea katã).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nyatakakadzraɖoƒea katã ƒe ŋɔŋlɔɖi dze egɔme: woaŋlɔ zãla ɖesiaɖe ƒe tɔtrɔ ɖesiaɖe ɖi va se ɖe esime nàtɔ̃e.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ŋɔŋlɔɖi dze egɔme: woaŋlɔ wò tɔtrɔwo ɖi va se ɖe esime nàtɔ̃e.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Wotɔ̃ ŋɔŋlɔɖi. Nusi wòlé anɔ anyi va se ɖe esime nàƒu egbe.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Woɖe ŋɔŋlɔɖi la kple eƒe nudzɔdzɔwo ɖa.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ŋɔŋlɔɖi %id meli o.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Gbã la, tia "Ɛ̃, ƒu ŋɔŋlɔɖi sia gbe".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Zãla si ŋlɔe ɖi ko ate ŋu atɔ̃ kpekpe ƒe ŋɔŋlɔɖi.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tia ŋɔŋlɔɖi si woatɔ̃.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ŋɔŋlɔɖi ƒomevi sia le edzi yim xoxo.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Womete ŋu trɔ ŋɔŋlɔɖi la o: %reason</translation>
+    </message>
 </context>
 </TS>

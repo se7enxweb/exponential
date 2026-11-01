@@ -80546,5 +80546,221 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>चलोवणी सुरू करूंक मेळूंक ना.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>बदलांचें रेकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>रेकॉर्डिंग चालू आसा तेन्ना तुमी प्रशासनांत वा सायटीच्या साइडबारांत जें बदलतात तें एका स्थलांतराच्यो पांवड्यो म्हूण दवरतात: मजकूर, वर्ग, भूमिका आनी धोरणां, विभाग, वापरपी आनी गट, URL उपनांवां, सेटिंग्स. काम जालें की तें थांबयात, ताणें कितें धरलां तें पळयात आनी तातूंतल्यान एक स्थलांतर तयार करात.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>रेकॉर्डिंग वाचूंक जालीं ना: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>रेकॉर्डिंगाचीं कोष्टकां अजून ना: पयलीं अपग्रेड चलयात (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini त रेकॉर्डिंग बंद आसा ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>म्हजे बदल</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>तुमी थांबयसर फकत तुमी जें बदलतात तेंच, खंयच्यानय बदलात, रेकॉर्ड करता.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>रेकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time सावन, आतां मेरेन %count बदल.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>लेबल (वैकल्पीक)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ताणें कितें धरलां तें दाखयात</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>रेकॉर्डिंग थांबयात</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>म्हज्या बदलांचें रेकॉर्डिंग सुरू करात</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>पुराय सायटीचें जनेल</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>बंद जायसर दर वापरप्याचो आनी कन्सोलाचो दर बदल रेकॉर्ड करता. उगडटना तुमीच म्हूण पडताळणी मागतात.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>उगडें</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>जनेल बंद करात</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>पुराय सायटीचें जनेल उगडात</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>रेकॉर्डिंगां</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>वापरप्याचें खातें (लॉगिन, ई-मेल, पासवर्ड) आनी वापरपी खात्यांचीं फील्डां केन्नाच रेकॉर्ड जायनात.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>बदल</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>पुराय सायट</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name हांचे बदल</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>थांबयल्लें</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>अजून एकूय रेकॉर्डिंग ना.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>रेकॉर्डिंग %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>सगळीं रेकॉर्डिंगां</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>तातूंतल्यान जावपी स्थलांतर</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>दर बदल्ल्या वस्तूखातीर एका पावंड्यांत एकठांय केल्ले बदल: ह्या रेकॉर्डिंगांतल्यान तयार केल्लें स्थलांतर कितें करतलें.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ह्या स्थापनेंत YAML पांवड्याचे प्रकार %types आयले की तातूंतल्यान स्थलांतर तयार करूं येता.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>जाणून बुजून सोडलां: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>कांयच रेकॉर्ड जालें ना.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ताणें कितें धरलां</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count बदल, जे क्रमान केले त्या क्रमान.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>बदल (एक)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>पावंडो</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>संबंदीत</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>आनीक %count: ./console exp:migration:record:show सगळ्यांची वळेरी दिता.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>सोडून दियात</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>रेकॉर्डिंग आनी ताणें धरिल्लें काडून उडयता. जें बदल्लां तें बदल्लेलेंच उरता.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>हय, हें रेकॉर्डिंग सोडून दियात</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>रेकॉर्डिंग चालू आसा…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>तुमचे बदल एका स्थलांतराखातीर रेकॉर्ड जायत आसात.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ह्या सायटीचो दर बदल एका स्थलांतराखातीर रेकॉर्ड जायत आसा (पुराय सायटीचें जनेल).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>पुराय सायटीचें रेकॉर्डिंग सुरू जालें: तुमी थांबयसर दर वापरप्याचो दर बदल रेकॉर्ड जातलो.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>रेकॉर्डिंग सुरू जालें: तुमी थांबयसर तुमचे बदल रेकॉर्ड जातले.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>रेकॉर्डिंग थांबलें. ताणें धरिल्लें तुमी सोडून दिवसर उरतलें.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>रेकॉर्डिंग आनी ताचे घडणुको काडून उडयल्यो.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>रेकॉर्डिंग %id ना.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>पयलीं "हय, हें रेकॉर्डिंग सोडून दियात" हाचेर खूण करात.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>सत्र रेकॉर्डिंग फकत रेकॉर्ड करपी वापरपीच थांबोवंक शकता.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>थांबोवपाचें रेकॉर्डिंग वेंचात.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ह्या प्रकारचें रेकॉर्डिंग आदींच चालू आसा.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>रेकॉर्डिंग बदलूंक जालें ना: %reason</translation>
+    </message>
 </context>
 </TS>
