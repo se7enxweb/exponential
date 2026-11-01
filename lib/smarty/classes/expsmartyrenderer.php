@@ -414,7 +414,7 @@ class expSmartyRenderer
                 $child->assign( $name, $value );
             $key = spl_object_id( $child );
             // the debug bar's template tree, as eZTemplate::processURI() notes an {include}; nothing without debug output
-            if ( !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' ) )
+            if ( ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' ) )
                 $treeIndex = expRenderStats::templateEnter( $uri !== null ? $uri : $file, $file, $templateName, $child->getCompiled()->exists );
             $output = $child->fetch();
         }

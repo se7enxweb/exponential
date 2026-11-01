@@ -2711,21 +2711,6 @@ CREATE TABLE expuser_audit (
 
 
 
-CREATE TABLE expupgrade_step (
-    applied_at integer DEFAULT 0 NOT NULL,
-    applied_by character varying(150) DEFAULT ''::character varying NOT NULL,
-    checksum character varying(64) DEFAULT ''::character varying NOT NULL,
-    duration_ms integer DEFAULT 0 NOT NULL,
-    engine character varying(30) DEFAULT ''::character varying NOT NULL,
-    message character varying(1000) DEFAULT ''::character varying NOT NULL,
-    stage character varying(20) DEFAULT ''::character varying NOT NULL,
-    state character varying(20) DEFAULT ''::character varying NOT NULL,
-    step_id character varying(150) DEFAULT ''::character varying NOT NULL,
-    "version" character varying(30) DEFAULT ''::character varying NOT NULL
-);
-
-
-
 CREATE TABLE exp_migration (
     caption_id character varying(150) DEFAULT ''::character varying NOT NULL,
     checksum character varying(64) DEFAULT ''::character varying NOT NULL,
@@ -5437,11 +5422,6 @@ ALTER TABLE ONLY expuser_session_info
 
 ALTER TABLE ONLY expuser_audit
     ADD CONSTRAINT expuser_audit_pkey PRIMARY KEY (id);
-
-
-
-ALTER TABLE ONLY expupgrade_step
-    ADD CONSTRAINT expupgrade_step_pkey PRIMARY KEY (step_id);
 
 
 

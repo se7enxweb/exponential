@@ -38,12 +38,15 @@ class expMigrationGraph
     /**
      * @param expMigrationDefinition[] $definitions as the locator found them
      * @param array $options 'environment' => string (null: every migration), 'extensions' => string[] the active
-     *                       extensions (null: extension requirements are not checked)
+     *                       extensions (null: extension requirements are not checked), 'kernel' => string[] the ids of
+     *                       the kernel's upgrade steps (expMigrationUpgradeSource): a requirement naming one is met by
+     *                       the order, as the steps run before every other migration
      */
     public function __construct( array $definitions, array $options = array() )
     {
         $environment = isset( $options['environment'] ) ? (string)$options['environment'] : null;
         $extensions = isset( $options['extensions'] ) ? array_flip( (array)$options['extensions'] ) : null;
+        $kernel = isset( $options['kernel'] ) ? array_flip( array_map( 'strval', (array)$options['kernel'] ) ) : array();
 
         $all = array();
         foreach ( $definitions as $definition )
@@ -74,6 +77,8 @@ class expMigrationGraph
                     $this->errors[] = "the migration $id requires itself";
                     continue;
                 }
+                if ( !isset( $all[$dep] ) && isset( $kernel[$dep] ) )
+                    continue;
                 if ( !isset( $all[$dep] ) )
                     $this->errors[] = "the migration $id requires $dep, which does not exist";
                 else if ( !isset( $byId[$dep] ) )

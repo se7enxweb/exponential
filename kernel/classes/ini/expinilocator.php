@@ -11,10 +11,12 @@
  * Every file that sets a variable, in the order eZINI loads them for a siteaccess, and the effective value.
  *
  * The order is not re-derived: it is eZINI's own. For a siteaccess, eZSiteAccess::getIni( $sa, 'site.ini' ) builds
- * the site.ini of that siteaccess on a local instance -- eZSiteAccess::load() prepends settings/siteaccess/<sa>,
- * activates the extensions (eZExtension::activateExtensions() puts every active extension's settings directory in
- * the 'extension' scope) and the extension siteaccess directories (eZExtension::prependSiteAccess(): 'sa-extension'
- * and the extension override directories) -- and its override directories (overrideDirs( false )) are copied to a
+ * the site.ini of that siteaccess on a local instance -- eZSiteAccess::load() puts the settings directory of every
+ * extension in ActiveExtensions[] in the 'extension' scope (eZExtension::activateExtensions( 'default' )),
+ * settings/siteaccess/<sa> and the extensions' siteaccess and override directories in the 'siteaccess' scope
+ * (eZExtension::prependSiteAccess()), and the settings directory of every extension in the siteaccess's
+ * ActiveAccessExtensions[] in the 'sa-extension' scope (activateExtensions( 'access' )) -- and its override
+ * directories (overrideDirs( false )) are copied to a
  * fresh, uncached eZINI of the requested file, exactly as getIni() does for any file other than site.ini. That
  * instance's own findInputFiles() then lists the files: settings/<file>.ini first, then the override directories
  * in eZINI's scope order sa-extension, siteaccess, extension, override (eZINI::overrideDirsByScope()), each as

@@ -32,8 +32,12 @@ gewinnt**:
 
 1. `extension/<ext>/settings/` der Erweiterungen in `ActiveAccessExtensions[]` (`sa-extension`),
 2. die Siteaccess-Verzeichnisse der Erweiterungen, dann `settings/siteaccess/<sa>/` (beide `siteaccess`),
-3. `extension/<ext>/settings/` jeder aktiven Erweiterung (`extension`),
+3. `extension/<ext>/settings/` der Erweiterungen in `ActiveExtensions[]` (`extension`),
 4. `settings/override/` (`override`).
+
+`settings/` einer Erweiterung liegt also je nachdem, wie sie eingeschaltet ist, vor oder nach `settings/siteaccess/<sa>/`:
+in `ActiveExtensions[]` wird es nach dem Siteaccess gelesen und gewinnt gegen ihn; in `ActiveAccessExtensions[]` eines
+Siteaccess wird es vor dem Siteaccess gelesen und verliert gegen ihn.
 
 Der Code ist eine Zeile:
 
@@ -44,11 +48,12 @@ return array_merge( $dirs['sa-extension'], $dirs['siteaccess'], $dirs['extension
 Innerhalb einer Ebene steht ein Verzeichnis, das später mit `eZINI::prependOverrideDir()` registriert wird, weiter vorn
 in der Liste und hat deshalb eine niedrigere Priorität. Für Erweiterungen heißt das: **Eine Erweiterung, die in
 `ActiveExtensions[]` früher steht, gewinnt** gegen eine spätere; deshalb steht die eigene Einstellungserweiterung einer
-Installation meist an erster Stelle.
+Installation meist an erster Stelle. Dasselbe gilt unter den Erweiterungen von `ActiveAccessExtensions[]` innerhalb der
+Ebene `sa-extension`.
 
 > **Hinweis**
 > Beachten Sie, dass die Ebene `extension` **nach** der Ebene `siteaccess` gelesen wird. Ein Wert, den eine Erweiterung
-> in `extension/<ext>/settings/` mitbringt, schlägt denselben Wert in `settings/siteaccess/<sa>/`. Braucht eine Website
+> in `ActiveExtensions[]` in `extension/<ext>/settings/` mitbringt, schlägt denselben Wert in `settings/siteaccess/<sa>/`. Braucht eine Website
 > einen anderen Wert als den Standard einer Erweiterung, legen Sie ihn in `settings/override/` (das für jeden
 > Siteaccess gilt), oder entfernen Sie den Schlüssel aus der `settings/`-Datei der Erweiterung. Die eigenen
 > Siteaccess-Ordner der Erweiterung helfen nicht: Sie gehören ebenfalls zur Ebene `siteaccess`, und `settings/` der

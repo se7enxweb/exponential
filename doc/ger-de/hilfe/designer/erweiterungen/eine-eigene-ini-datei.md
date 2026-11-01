@@ -57,7 +57,7 @@ die für Open Graph als Artikel gelten, aus `cjw_jumper.ini [OpenGraph] ArticleC
 
 5. Sagen Sie Nutzern im README, wie sie den Wert überschreiben: in `settings/override/mytheme.ini.append.php`, nie in
    der eigenen Datei des Themes (ein Update würde sie überschreiben). Ein Siteaccess-Ordner wirkt nicht für einen
-   Schlüssel, den die Datei des Themes setzt, denn die `settings/` der Erweiterungen werden nach den
+   Schlüssel, den die Datei des Themes setzt, denn die `settings/` der Erweiterungen in `ActiveExtensions[]` werden nach den
    Siteaccess-Einstellungen gelesen und gewinnen.
 
 ## Bewährte Praxis

@@ -41,6 +41,11 @@ installation, the record says so and it never runs there again.
 
 Migrations and `exp:upgrade` share the record table `exp_migration`, the installation lock and the captions, so an
 upgrade and a migration run never write at the same time and `exp:upgrade:captions` lists the captions of both.
+The upgrade steps are migrations too, of the source `kernel`: `exp:migration:status` lists them first, and
+`exp:migration:migrate --apply` applies the pending ones of the stages `database` and `scripts` before the site's
+migrations; the stages `code`, `libraries` and `finish` stay with `exp:upgrade`
+([The steps among the migrations](upgrading-with-the-console.md#the-steps-among-the-migrations)). A migration that
+needs a step's change names the step in `requires`.
 
 ## The life cycle
 
@@ -125,8 +130,9 @@ command. A migration that is not for the environment, or not for the database en
 | `migrations/status/<environment>.json` | the record mirrored into the migrations repository (no users, no messages) |
 | `migrations/runs/<run-id>.log` | one line per event of a run, cleaned of secrets and e-mail addresses |
 
-The upgrade step `6.0.15-migration-tables` creates both tables and copies the rows of the older `expupgrade_step`;
-`./console exp:upgrade --apply` runs it. Until then nothing is read or written and the status says so.
+The upgrade step `6.0.15-migration-tables` creates both tables; on an installation of a pre-release of 6.0.15, the step
+`6.0.15-upgrade-record-table` then copies the rows of its older table `expupgrade_step` and drops that table;
+`./console exp:upgrade --apply` runs both. Until then nothing is read or written and the status says so.
 
 States: `done`, `pending`, `not-needed`, `failed`, `unknown`. A migration recorded as done whose file has changed
 since is refused, and the run with it, unless the run is given `--force --reason=<text>`: the new checksum is then
