@@ -289,8 +289,10 @@ class eZURLAliasQuery
                 [ '$match' => $match ],
                 [ '$sort'  => [ $sortField => $sortDir ] ],
                 [ '$skip'  => (int) $this->offset ],
-                [ '$limit' => (int) $this->limit ],
             ];
+            // limit false (or 0): every item, as the SQL branch reads it; $limit takes no 0
+            if ( (int) $this->limit > 0 )
+                $pipeline[] = [ '$limit' => (int) $this->limit ];
             $rows = $db->aggregate( 'ezurlalias_ml', $pipeline );
             $this->items = count( $rows ) > 0 ? eZURLAliasQuery::makeList( $rows ) : [];
             return $this->items;

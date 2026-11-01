@@ -574,6 +574,7 @@ class expMigrationYaml implements expMigration
      */
     public function plan( $context )
     {
+        $this->tellFile( $context );
         $lines = array();
         $pending = array();
         $idmapErrors = array();
@@ -695,9 +696,22 @@ class expMigrationYaml implements expMigration
      */
     public function up( $context )
     {
+        $this->tellFile( $context );
         $lines = array();
         $this->runSteps( $this->document['steps'], 'steps', $context, array(), $lines );
         return $lines;
+    }
+
+    /**
+     * Tells the context which migration's steps run, so a step finds the files next to it (expMigrationContext::
+     * migrationFile()).
+     *
+     * @param expMigrationContext|null $context
+     */
+    protected function tellFile( $context )
+    {
+        if ( $context instanceof expMigrationContext )
+            $context->setMigrationFile( $this->file() );
     }
 
     /**
@@ -735,6 +749,7 @@ class expMigrationYaml implements expMigration
     {
         if ( !$this->reversible() )
             throw new RuntimeException( $this->id() . ' cannot be undone by itself (no down: and a step that cannot revert itself); restore the caption taken before it' );
+        $this->tellFile( $context );
         $lines = array();
         if ( $this->document['down'] !== null )
         {
