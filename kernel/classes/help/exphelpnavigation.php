@@ -8,6 +8,8 @@
  * The HTML of the whole tree is built once per index signature, siteaccess and language and cached in
  * <help cache>/nav/; a request only marks its current page and open folders in it, so a tree of 1 200 pages costs a
  * file read. Nothing is capped: every visible document of expHelpDocumentIndex::tree() is listed, at any depth.
+ * That whole tree is the contents page's (html()). The viewer shows only the way to its page (pathHtml()): the
+ * other folders are closed and their lists are loaded when they are opened (exphelp/navigation, folderHtml()).
  *
  * Folder names: exphelp.ini [NavigationSettings] FolderNames[<path>], else the title of the folder's README/index,
  * else the built-in names below, else the humanized directory name.
@@ -39,7 +41,7 @@ class expHelpNavigation
     );
 
     /** Bumped when the markup changes, so cached trees of an older layout are not served */
-    const VERSION = 2;
+    const VERSION = 3;
 
     /** Where a folded folder's pages go once the current page is inside it (never in a page: built here only) */
     const FOLD_MARK = '<!--exphelp-fold:%s-->';
@@ -60,7 +62,11 @@ class expHelpNavigation
     {
         $this->index = $index !== null ? $index : expHelpDocumentIndex::instance();
         $this->viewerBase = expHelpLinks::absolute( expHelp::url( 'viewer' ) );
+        $this->navigationBase = expHelpLinks::absolute( expHelp::url( 'navigation' ) );
     }
+
+    /** @var string the address of the folder listings with the siteaccess prefix, a folder is appended to it */
+    protected $navigationBase;
 
     /**
      * The tree with the folders on the way to $currentId open and its link marked as the current page.
@@ -92,6 +98,230 @@ class expHelpNavigation
         }
         $href = 'href="' . self::escape( $this->pageUrl( $currentId ) ) . '"';
         return self::stripFoldMarks( str_replace( $href, $href . ' aria-current="page"', $html ) );
+    }
+
+    /** Where the list items of a folder's level start and end in a cached level (never in a page: built here only) */
+    const LEVEL_MARK = '<!--exphelp-level:%s-->';
+    const LEVEL_END_MARK = '<!--/exphelp-level:%s-->';
+
+    /**
+     * The tree of the viewer: only the way to $currentId is open. The top-level folders are listed, each folder on
+     * the way to the page is open with its own pages and folders, and the page is marked with aria-current. Every
+     * other folder is a closed <details> with its overview link and a link to its own listing (exphelp/navigation/
+     * <folder>), whose list exphelp.js loads into it when it is opened (data-nav-lazy, the fragment address). A page
+     * of the help carries a few dozen links instead of every page (6 500 on alpha, 1.5 MB on every page).
+     *
+     * Each level (a folder's direct folders and pages) is built once per index signature and cached in <help cache>/nav/,
+     * so a request reads a handful of small files and never walks the tree.
+     *
+     * @param string $currentId the page shown ('' for none)
+     * @return string HTML (safe: every text and address is escaped)
+     */
+    public function pathHtml( $currentId = '' )
+    {
+        $currentId = trim( (string)$currentId, '/' );
+        $html = '<ul class="a4-help-nav-list is-top" role="list">' . $this->cachedLevel( '' ) . '</ul>';
+        if ( $currentId !== '' )
+        {
+            $segments = explode( '/', $currentId );
+            array_pop( $segments );
+            $dir = '';
+            foreach ( $segments as $segment )
+            {
+                $dir = $dir === '' ? $segment : $dir . '/' . $segment;
+                $expanded = self::expand( $html, $dir, $this->cachedLevel( $dir ) );
+                if ( $expanded === null )
+                    break;
+                $html = $expanded;
+            }
+            $href = 'href="' . self::escape( $this->pageUrl( $currentId ) ) . '"';
+            $html = str_replace( $href, $href . ' aria-current="page"', $html );
+        }
+        return self::stripLevelMarks( $html );
+    }
+
+    /**
+     * The list items of one folder (its overview link, its folders closed and loaded on demand, its pages): the
+     * fragment exphelp/navigation/<folder>/(format)/fragment answers with, and the listing of that view.
+     *
+     * @param string $path the folder, '' for the top
+     * @param string $currentId a page to mark with aria-current ('' for none)
+     * @return string|null HTML, null when the tree has no such folder
+     */
+    public function folderHtml( $path, $currentId = '' )
+    {
+        $path = trim( (string)$path, '/' );
+        $html = $this->cachedLevel( $path );
+        if ( $html === null )
+            return null;
+        if ( $currentId !== '' )
+        {
+            $href = 'href="' . self::escape( $this->pageUrl( trim( (string)$currentId, '/' ) ) ) . '"';
+            $html = str_replace( $href, $href . ' aria-current="page"', $html );
+        }
+        return self::stripLevelMarks( $html );
+    }
+
+    /** @var array|null expHelpDocumentIndex::tree(), walked at most once per instance */
+    protected $tree = null;
+
+    /**
+     * @return array the index's tree, built once for this instance (it walks every page)
+     */
+    protected function tree()
+    {
+        if ( $this->tree === null )
+            $this->tree = $this->index->tree();
+        return $this->tree;
+    }
+
+    /**
+     * The tree's node of a folder, its title and its page count, or null when there is none.
+     *
+     * @param string $path
+     * @return array|null array( 'path', 'title', 'count', 'index_id' )
+     */
+    public function folderInfo( $path )
+    {
+        $node = self::findNode( $this->tree(), trim( (string)$path, '/' ) );
+        if ( $node === null )
+            return null;
+        return array( 'path' => (string)$node['path'], 'title' => $node['path'] === '' ? '' : self::folderTitle( $node, self::folderNames() ),
+                      'count' => self::countPages( $node ), 'index_id' => empty( $node['index_id'] ) ? '' : (string)$node['index_id'] );
+    }
+
+    /**
+     * Opens the closed folder $dir in $html and puts its level in.
+     *
+     * @param string $html
+     * @param string $dir
+     * @param string|null $level cachedLevel( $dir )
+     * @return string|null null when $html has no such closed folder
+     */
+    protected static function expand( $html, $dir, $level )
+    {
+        $escaped = self::escape( $dir );
+        $start = sprintf( self::LEVEL_MARK, $escaped );
+        $end = sprintf( self::LEVEL_END_MARK, $escaped );
+        $from = strpos( $html, $start );
+        $to = $from === false ? false : strpos( $html, $end, $from );
+        if ( $level === null || $from === false || $to === false )
+            return null;
+        $html = substr( $html, 0, $from ) . $level . substr( $html, $to + strlen( $end ) );
+        $open = '<details class="a4-help-nav-details" data-nav-path="' . $escaped . '" data-nav-lazy="';
+        $at = strpos( $html, $open );
+        if ( $at === false )
+            return $html;
+        $close = strpos( $html, '">', $at + strlen( $open ) );
+        return substr( $html, 0, $at ) . '<details open class="a4-help-nav-details" data-nav-path="' . $escaped . '">' . substr( $html, $close + 2 );
+    }
+
+    /**
+     * @param string $html
+     * @return string without the level marks
+     */
+    protected static function stripLevelMarks( $html )
+    {
+        return strpos( $html, '<!--' ) === false ? $html : (string)preg_replace( '#<!--/?exphelp-level:[^>]*-->#', '', $html );
+    }
+
+    /**
+     * A folder's node in the tree.
+     *
+     * @param array $tree
+     * @param string $path '' for the top
+     * @return array|null
+     */
+    public static function findNode( array $tree, $path )
+    {
+        $node = $tree;
+        if ( $path === '' )
+            return $node;
+        $dir = '';
+        foreach ( explode( '/', $path ) as $segment )
+        {
+            $dir = $dir === '' ? $segment : $dir . '/' . $segment;
+            $found = null;
+            foreach ( isset( $node['children'] ) ? $node['children'] : array() as $child )
+                if ( isset( $child['path'] ) && (string)$child['path'] === $dir )
+                {
+                    $found = $child;
+                    break;
+                }
+            if ( $found === null )
+                return null;
+            $node = $found;
+        }
+        return $node;
+    }
+
+    /**
+     * One level of the viewer's tree, from the cache or built and stored: the top's "About" link or a folder's
+     * overview link, its folders closed (each with its own level marks around its overview and listing links, so
+     * pathHtml() can open it) and its pages.
+     *
+     * @param string $path '' for the top
+     * @return string|null null when the tree has no such folder (or it lists no page)
+     */
+    protected function cachedLevel( $path )
+    {
+        $file = $this->cacheFile( 'level' . "\0" . $path );
+        if ( is_file( $file ) && is_string( $html = @file_get_contents( $file ) ) && $html !== '' )
+            return $html === '-' ? null : $html;
+        $node = self::findNode( $this->tree(), $path );
+        $html = $node === null || ( $path !== '' && self::countPages( $node ) === 0 ) ? null : $this->buildLazyLevel( $node );
+        $this->store( $file, $html === null ? '-' : $html );
+        return $html;
+    }
+
+    /**
+     * @param array $node
+     * @return string the list items of one level, its folders closed and loaded on demand
+     */
+    protected function buildLazyLevel( array $node )
+    {
+        $names = self::folderNames();
+        $overview = ezpI18n::tr( expHelp::I18N_CONTEXT, 'Overview' );
+        $out = '';
+        if ( !empty( $node['index_id'] ) )
+            $out .= '<li class="a4-help-nav-page"><a class="a4-help-nav-link is-index" href="' . self::escape( $this->pageUrl( $node['index_id'] ) ) . '">'
+                . self::escape( (string)$node['path'] === '' ? ezpI18n::tr( expHelp::I18N_CONTEXT, 'About this documentation' ) : $overview ) . '</a></li>';
+        foreach ( isset( $node['children'] ) ? $node['children'] : array() as $child )
+        {
+            $count = self::countPages( $child );
+            if ( $count === 0 )
+                continue;
+            $path = (string)$child['path'];
+            $escaped = self::escape( $path );
+            $listing = $this->folderUrl( $path );
+            $out .= '<li class="a4-help-nav-folder"><details class="a4-help-nav-details" data-nav-path="' . $escaped . '" data-nav-lazy="'
+                . self::escape( $listing . '/(format)/fragment' ) . '">'
+                . '<summary class="a4-help-nav-summary"><span class="a4-help-nav-text" dir="auto">' . self::escape( self::folderTitle( $child, $names ) ) . '</span>'
+                . '<span class="a4-help-nav-count" aria-hidden="true">' . (int)$count . '</span><span class="a4-sr-only"> ' . self::escape( ezpI18n::tr( expHelp::I18N_CONTEXT, '%count pages', null, array( '%count' => $count ) ) ) . '</span></summary>'
+                . '<ul class="a4-help-nav-list" role="list">' . sprintf( self::LEVEL_MARK, $escaped );
+            if ( !empty( $child['index_id'] ) )
+                $out .= '<li class="a4-help-nav-page"><a class="a4-help-nav-link is-index" href="' . self::escape( $this->pageUrl( $child['index_id'] ) ) . '">'
+                    . self::escape( $overview ) . '</a></li>';
+            $out .= '<li class="a4-help-nav-page a4-help-nav-more"><a class="a4-help-nav-link is-more" href="' . self::escape( $listing ) . '">'
+                . self::escape( ezpI18n::tr( expHelp::I18N_CONTEXT, 'All pages of this folder' ) ) . '</a></li>'
+                . sprintf( self::LEVEL_END_MARK, $escaped ) . '</ul></details></li>';
+        }
+        foreach ( isset( $node['documents'] ) ? $node['documents'] : array() as $document )
+        {
+            $title = isset( $document['title'] ) && trim( (string)$document['title'] ) !== '' ? $document['title'] : basename( (string)$document['id'] );
+            $out .= '<li class="a4-help-nav-page"><a class="a4-help-nav-link" href="' . self::escape( $this->pageUrl( $document['id'] ) ) . '" dir="auto">'
+                . self::escape( $title ) . '</a></li>';
+        }
+        return $out;
+    }
+
+    /**
+     * @param string $path a folder
+     * @return string the address of its listing (exphelp/navigation/<folder>), with the siteaccess prefix
+     */
+    protected function folderUrl( $path )
+    {
+        return $this->navigationBase . ( $path === '' ? '' : '/' . implode( '/', array_map( 'rawurlencode', explode( '/', ltrim( (string)$path, '/' ) ) ) ) );
     }
 
     /**
