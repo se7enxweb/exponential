@@ -42,6 +42,9 @@ cronjob part staticpublish tries again. Every publish is a row of exp_static_run
 | `--message` | required | The commit message (default: what was published, or which publish is restored) |
 | `--no-push` |  | Commit and tag, but do not push (exp:static:push pushes later) |
 | `--format` | required | text (default) or json (the machine output exp-static/1) |
+| `--login` | required | Run as this user (the administration starts its jobs so); recorded as who ran it |
+| `--run-id` | required | The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job's id) |
+| `--progress` | required | Also append the progress, one JSON object per line, to this file (the administration follows it) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

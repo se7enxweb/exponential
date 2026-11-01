@@ -3689,6 +3689,10 @@ CREATE INDEX ezcontentobject_pub ON ezcontentobject USING btree (published);
 
 
 
+CREATE INDEX ezcontentobject_modified ON ezcontentobject USING btree (modified);
+
+
+
 
 
 

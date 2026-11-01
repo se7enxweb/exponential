@@ -15150,6 +15150,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ဖိုင်များအဖြစ် သိမ်းထားသော တပ်ဆင်မှုပြောင်းလဲချက်များ: ၎င်းတို့၏ အနေအထား၊ လုပ်ဆောင်မှုများ၊ လုပ်ဆောင်ခြင်းနှင့် ပြန်လှည့်ခြင်း။</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>အသစ်ဆုံး အကြောင်းအရာ၊ ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်များနှင့် ရွေးချယ်မှုအပေါ် လုပ်ဆောင်ချက်များ။</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ဆိုက်တစ်ခု၏ static မိတ္တူကို GitHub Pages သို့မဟုတ် မည်သည့် git ဟို့စ်သို့မဆို ထုတ်ဝေပါ။</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static ထုတ်ဝေခြင်း</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API ၏ သိမ်းဆည်းထားသော မေးမြန်းမှုများ၏ အဖြေများနှင့် ၎င်း၏ ဇယားဖွဲ့စည်းပုံ၏ အကြောင်းအရာ အတန်းအစားများ။</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>static မိတ္တူကို GitHub Pages သို့မဟုတ် မည်သည့် git ဟို့စ်သို့မဆို ထုတ်ဝေပါ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static ထုတ်ဝေခြင်း</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Static ကက်ရှ်သည် ဤဆာဗာမှ စာမျက်နှာများကို ပေးပို့သည်။ ဆိုက်တစ်ခု၏ static မိတ္တူကို အခြားနေရာ၊ GitHub Pages သို့မဟုတ် မည်သည့် git ဟို့စ်တွင်မဆို ထုတ်ဝေရန် Static ထုတ်ဝေခြင်းကို အသုံးပြုပါ။</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ဖိုင်များအဖြစ် သိမ်းထားသော တပ်ဆင်မှုပြောင်းလဲချက်များ: ၎င်းတို့၏ အနေအထား၊ လုပ်ဆောင်မှုများ၊ လုပ်ဆောင်ခြင်းနှင့် ပြန်လှည့်ခြင်း။</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ဆိုက်တစ်ခု၏ static မိတ္တူကို GitHub Pages သို့မဟုတ် မည်သည့် git ဟို့စ်သို့မဆို ထုတ်ဝေပါ။</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static ထုတ်ဝေခြင်း</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80769,6 +80805,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>မှတ်တမ်းကို ပြောင်း၍မရပါ- %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ပြင်ဆင်ပြီး</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ဖန်တီးပြီး</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>အမည်</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>အတန်းအစား</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>အပိုင်း</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ဖန်တီးသူ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ဆိုက်တစ်ခုလုံး၏ မကြာသေးမီက ဖန်တီးပြီး ပြင်ဆင်ထားသော အကြောင်းအရာ၊ အသစ်ဆုံး အရင်: ဧည့်သည်များ တင်သွင်းထားသည်များ၊ ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်များ၊ ထုတ်ဝေရန် စောင့်နေသော မူကြမ်းများ။ ထိန်းထားမှုကို ဖြုတ်ရန်၊ ထိန်းထားရန်၊ ဝှက်ရန်၊ ပြရန်၊ ဖယ်ရှားရန် သို့မဟုတ် အခြား အပိုင်း သို့မဟုတ် အခြေအနေသို့ ရွှေ့ရန် အရာများကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>စာရင်းကို ဖတ်၍ မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားမှုကို မသတ်မှတ်ရသေးပါ၊ ထို့ကြောင့် မည်သည့်အရာမျှ ထိန်းမထားဘဲ ထိန်းထားသည့် လုပ်ဆောင်ချက်များကို မပေးပါ။ အဆင့်မြှင့်တင်ခြင်း အဆင့် 6.0.15-review-hold က ၎င်းကို သတ်မှတ်ပေးသည်: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>စာရင်းကို စစ်ထုတ်ရန်</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>မှ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>အထိ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ရက်စွဲ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ဖန်တီးပြီး (ပထမဆုံး ထုတ်ဝေချိန်)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>အားလုံး</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>အနေအထား</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ထုတ်ဝေပြီး</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>မူကြမ်း၊ တစ်ခါမျှ မထုတ်ဝေရသေး</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ဆိုင်းငံ့ (အတည်ပြုချက် သို့မဟုတ် ရက်စွဲကို စောင့်နေသည်)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>အမှိုက်ပုံးထဲတွင်</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ထိန်းထားသည်</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ထိန်းမထားပါ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ဝှက်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>မြင်ရသည်</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>တင်သွင်းသည့်ရက်</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>မည်သည့် ဆိုက်ဝင်ရောက်မှုမဆို</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>စာရင်းစစ်က မှတ်တမ်းတင်ထားသည်များသာ။</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ယခု: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ဝင်ရောက်အမည် သို့မဟုတ် အသုံးပြုသူ ID။</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>စစ်ထုတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>စစ်ထုတ်မှုများကို ရှင်းရန်</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>အရာများ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ခုအနက် %from မှ %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>အရာ မရှိပါ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms အတွင်း ဖတ်ခဲ့သည်)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ရွေးထားသော အရာများအပေါ် လုပ်ဆောင်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ဤစာမျက်နှာရှိ အားလုံးကို ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ခု ရွေးထားသည်</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>လုပ်ဆောင်ချက်</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>လုပ်ဆောင်ချက်တစ်ခု ရွေးပါ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ထိန်းထားမှုကို ဖြုတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားရန်</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ဝှက်ရန်</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ပြရန်</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>အမှိုက်ပုံးသို့ ရွှေ့ရန်</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>အပိုင်း သတ်မှတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>အခြေအနေ သတ်မှတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>အကြောင်းရင်း</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ထိန်းထားရန် လိုအပ်သည်; ထိန်းထားမှုနှင့်အတူ စာရင်းစစ်ထဲတွင်ပါ သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>အပိုင်းတစ်ခု ရွေးပါ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>အခြေအနေ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>အခြေအနေတစ်ခု ရွေးပါ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ရွေးထားသည်များတွင် အသုံးချရန်</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>အရာတစ်ခုစီကို သင့်ကိုယ်ပိုင် ခွင့်ပြုချက်များနှင့် စစ်ဆေးသည်။ အမှိုက်ပုံးသို့ ရွှေ့ခြင်းနှင့် ဖျက်ခြင်းသည် အတည်ပြုရန် တောင်းဆိုသည်။ အရာ %count ခုထက် ပိုလျှင် နောက်ခံတွင် လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ထုတ်ဝေမှု</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>တင်သွင်းသည့်နေရာ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ကို ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>မရှိသေးပါ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(အမည်မရှိ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>မူကြမ်း</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ဆိုင်းငံ့</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>မိခင်အရာက ဝှက်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ထိန်းထားသည်: တင်သွင်းမှုအသစ်</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ဗားရှင်း %version ဆိုင်းငံ့ထားသည်</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ဗားရှင်း %version ပြင်ဆင်နေဆဲ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>မူကြမ်း၊ ဗားရှင်း %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ဗားရှင်း %version ထုတ်ဝေပြီး</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date အတွက် စီစဉ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>လိပ်စာ မရှိပါ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>မှတ်တမ်းမတင်ထားပါ</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ဤစစ်ထုတ်မှုများနှင့် ကိုက်ညီသည့်အရာ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>အားလုံးကို ပြရန်</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>အကြောင်းအရာ မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>တစ်မျက်နှာလျှင်</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>တစ်မျက်နှာလျှင် အရာ %count ခု ပြရန်။</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>တင်သွင်းမှုတစ်ခု၏ လိပ်စာနှင့် ဘရောက်ဇာသည် စာရင်းစစ် အညွှန်းမှ လာသည်၊ ၎င်းကို ဤနေရာတွင် မရရှိနိုင်ပါ: ကော်လံတွင် "မှတ်တမ်းမတင်ထားပါ" ဟု ပြသည်။</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>လိပ်စာနှင့် ဘရောက်ဇာသည် စာရင်းစစ်က ထိုအရာအတွက် မှတ်တမ်းတင်ထားသည်များ ဖြစ်သည် (အလိုအလျောက် ထိန်းထားမှုက အမြဲ မှတ်တမ်းတင်သည်; ထုတ်ဝေခြင်းနှင့် ဖန်တီးခြင်းမှာ ဖွင့်ထားမှသာ)၊ ၎င်း၏ ကိုယ်ရေးလုံခြုံမှု ဆက်တင်များက ထိန်းသိမ်းထားသည့်အတိုင်း။</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: အရာ %count ခု</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ဖျက်ခြင်းသည် အရာများကို ၎င်းတို့၏ ဗားရှင်းများနှင့် ဘာသာပြန်များ အားလုံးနှင့်အတူ အပြီးတိုင် ဖယ်ရှားသည်။ ပြန်ပြင်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>အရာများသည် အမှိုက်ပုံးသို့ ရောက်သွားပြီး ထိုနေရာမှ ပြန်လည်ရယူနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>အရာတစ်ခုစီကို သင့်ကိုယ်ပိုင် ခွင့်ပြုချက်များနှင့် စစ်ဆေးသည်; အရာခွဲများ ပါသော အရာကို မူလအတိုင်း ထားခဲ့သည် (အကြောင်းအရာ ဖွဲ့စည်းပုံတွင် ဖယ်ရှားပါ)။ သင်ကိုယ်တိုင် ဖြစ်ကြောင်း အတည်ပြုရန် တောင်းဆိုပါမည်။</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>၎င်းသည် နောက်ခံတွင် လုပ်ဆောင်သည်: ၎င်း၏ တိုးတက်မှု စာမျက်နှာ ပွင့်လာပြီး ပြီးဆုံးသောအခါ အရာတစ်ခုစီ၏ ရလဒ်ကို ပြသည်။</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ရွေးထားသော အရာများ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>နှင့် နောက်ထပ် %count ခု</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ပယ်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ဘာမျှ မလုပ်ဆောင်ခဲ့ပါ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>အကြောင်းရင်း: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>လုပ်ဆောင်ချက်သည် နောက်ခံတွင် လုပ်ဆောင်နေဆဲ ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>၎င်း၏ တိုးတက်မှု</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>နောက်ခံ လုပ်ဆောင်ချက် မအောင်မြင်ပါ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ပြီးပါပြီ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ငြင်းပယ်ခံရသည်</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>အရာတစ်ခုစီအလိုက်</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>အရာ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ရလဒ်</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>အဘယ်ကြောင့်</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>စာရင်းသို့ ပြန်သွားရန်</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>စနစ်ထည့်သွင်းမှု</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ဘာမျှ မလုပ်ရသေးပါ</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>အတည်ပြုရန်</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>လုပ်ဆောင်ချက်တစ်ခု ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>အနည်းဆုံး အရာတစ်ခု ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>တစ်ကြိမ်လျှင် အရာ 1000 ခုအထိသာ ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>အရာများကို ထိန်းထားရသည့် အကြောင်းရင်းကို ပြောပါ။</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>အပိုင်းကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>အခြေအနေကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ဖောင်ကို ဖတ်၍ မရပါ။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>အရေအတွက်များကို ဖတ်၍ မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ယနေ့ အသစ်</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားမှုကို မသတ်မှတ်ရသေးပါ (အဆင့်မြှင့်တင်ခြင်း အဆင့် 6.0.15-review-hold)။</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ အားလုံး</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>သင်သည် စိစစ်ရေး လုပ်ဆောင်ချက်များကို လုပ်ဆောင်ခွင့် မရှိပါ (moderation/act)။</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>စိစစ်ရေး လုပ်ဆောင်ချက် မပြီးဆုံးပါ: %errors။</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>စိစစ်ရေး: အရာဝတ္ထု %count ခုအပေါ် %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>အရာဝတ္ထု %total ခုအနက် %done ခု: %ok ခု ပြီးပြီ၊ %refused ခု ငြင်းပယ်ခံရ၊ %failed ခု မအောင်မြင်</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ခု ပြီးပြီ၊ %refused ခု ငြင်းပယ်ခံရ၊ %failed ခု မအောင်မြင်</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>၎င်းသည် မရှိတော့ပါ။</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>၎င်းတွင် တည်နေရာ မရှိပါ (မထုတ်ဝေရသေးပါ)။</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>သင်သည် ၎င်းကို ဝှက်ခွင့် မရှိပါ (content/hide)။</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>သင်သည် ၎င်းကို ပြခွင့် မရှိပါ (content/hide)။</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>၎င်းကို ဝှက်ထားပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>၎င်းကို ဝှက်မထားပါ။</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ဝှက်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ပြပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>၎င်းသည် အမှိုက်ပုံးထဲတွင် ရှိသည်: ထိုနေရာတွင် ရှင်းလင်းပါ သို့မဟုတ် ပြန်လည်ရယူပါ။</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>တစ်ခါမျှ မထုတ်ဝေရသေးသော မူကြမ်းကို အမှိုက်ပုံးသို့ ပို့၍ မရပါ: ၎င်းကို ဖျက်ပါ။</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>သင်သည် ၎င်းကို ဖျက်ခွင့် မရှိပါ (content/remove)။</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ဖျက်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>သင်သည် ၎င်းကို ဖယ်ရှားခွင့် မရှိပါ (content/remove)။</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>၎င်းတွင် အရာခွဲများ ရှိသည်: ၎င်းတို့ကို စာရင်းပြထားသော အကြောင်းအရာ ဖွဲ့စည်းပုံတွင် ဖယ်ရှားပါ။</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>၎င်းကို မဖယ်ရှားရပါ (လုပ်ငန်းစဉ်တစ်ခုက ဖယ်ရှားမှုကို ထိန်းထားနိုင်သည်)။</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>အမှိုက်ပုံးသို့ ရွှေ့ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>အပိုင်း မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>၎င်းသည် ဤအပိုင်းတွင် ရှိပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>သင်သည် ဤအပိုင်းကို သတ်မှတ်ခွင့် မရှိပါ (section/assign)။</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>အပိုင်းကို မသတ်မှတ်ရပါ။</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>အပိုင်း သတ်မှတ်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>အခြေအနေ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>၎င်းသည် ဤအခြေအနေတွင် ရှိပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>သင်သည် ဤအခြေအနေကို သတ်မှတ်ခွင့် မရှိပါ (state/assign)။</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>အခြေအနေကို မသတ်မှတ်ရပါ (လုပ်ငန်းစဉ်တစ်ခုက ပြောင်းလဲမှုကို ထိန်းထားနိုင်သည်)။</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>အခြေအနေ သတ်မှတ်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ထိုကဲ့သို့ လုပ်ဆောင်ချက် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားမှုကို မသတ်မှတ်ထားပါ (အဆင့်မြှင့်တင်ခြင်း အဆင့် 6.0.15-review-hold)။</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>၎င်းကို ထိန်းထားရသည့် အကြောင်းရင်းကို ပြောပါ။</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>၎င်းကို ထိန်းထားပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>သင်သည် ၎င်းကို ထိန်းထားခွင့် မရှိပါ (state/assign)။</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ထိန်းထားမှုကို မချမှတ်ရပါ (လုပ်ငန်းစဉ်တစ်ခုက ပြောင်းလဲမှုကို ထိန်းထားနိုင်သည်)။</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ထိန်းထားပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>၎င်းကို ထိန်းမထားပါ။</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>သင်သည် ၎င်းကို ဖြုတ်ခွင့် မရှိပါ (state/assign)။</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ထိန်းထားမှုကို မဖြုတ်ရပါ (လုပ်ငန်းစဉ်တစ်ခုက ပြောင်းလဲမှုကို ထိန်းထားနိုင်သည်)။</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ဖြုတ်ပြီးပါပြီ; ဝှက်ထားဆဲ: သင်သည် ၎င်းကို ပြခွင့် မရှိပါ (content/hide)။</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ဖြုတ်ပြီးပါပြီ။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>ပစ်မှတ်အားလုံး</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>နောက်ဆုံး ထုတ်ဝေမှု</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>သင့်ဆိုက်၏ အခမဲ့ static မိတ္တူကို GitHub Pages တွင် ထုတ်ဝေပါ:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ခေတ်မမီသော စာမျက်နှာများ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static ထုတ်ဝေခြင်း</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Static ထုတ်ဝေခြင်းကို ပိတ်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ပစ်မှတ်</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ပစ်မှတ်များကို ဖတ်၍မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>အလုပ်တစ်ခု လုပ်ဆောင်နေသည်</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>စစ်ဆေးရန် တည်ဆောက်မှု</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ဤအရာကို ဝှက်ရန်</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ပစ်မှတ်တစ်ခု ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ဘယ်တော့မှ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>လမ်းညွှန်ကို ဖတ်ရန်</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ထည့်ထား၊ %changed ပြောင်းထား၊ %removed ဖယ်ထား</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit အနက် %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>နောက်ထပ် %count ခုကို စာရင်းမပြထားပါ။</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>စာမျက်နှာ %pages ခု ရေးပြီး</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path သည် %size ရှိပြီး ဟို့စ်က ဖိုင်တစ်ခုအတွက် ခွင့်ပြုသည်ထက် ပိုများသည်။</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>ကန့်သတ်ချက်၏ %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds စက္ကန့်</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag သည် ဆိုက်တွင် ယခုရှိနေသော ထုတ်ဝေမှု ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: အလုပ် %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub ပရောဂျက်ဆိုက်အတွက် /သိုလှောင်ရာ/; စိတ်ကြိုက်ဒိုမိန်း သို့မဟုတ် အသုံးပြုသူဆိုက်အတွက် ဗလာထားပါ။</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>၁။ ဆိုက်</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>၂။ ဟို့စ်</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>၃။ သိုလှောင်ရာသို့ ဝင်ရောက်ခြင်း</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>၄။ သိုလှောင်ရာ</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>၅။ လင့်ခ်များနှင့် အခြေခံလမ်းကြောင်း</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>၆။ သင့်ကိုယ်ပိုင် ဒိုမိန်း</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>၇။ တည်ဆောက်မှုတွင် ပါဝင်သည့်အရာ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>၈။ ထုတ်ဝေမည့်အချိန်</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>၉။ ပြန်လည်သုံးသပ်ပြီး သိမ်းရန်</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub ပရောဂျက်ဆိုက်သည် /&lt;repository&gt;/ အောက်တွင် ရှိသည်; ဆက်စပ်လင့်ခ်များသည် ထိုနေရာနှင့် အခြားမည်သည့်နေရာတွင်မဆို အလုပ်လုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>တည်ဆောက်မှုတစ်ခုသည် %site ၏ စာမျက်နှာတိုင်းကို ဝင်ရောက်မထားသော ဧည့်သည်မြင်သည့်အတိုင်း ရယူပြီး လင့်ခ်များကို ပြန်ရေး၊ ဖိုင်များကို ကူးယူကာ ရလဒ်ကို ပစ်မှတ်၏ ဖိုင်တွဲထဲ ရေးသားသည်။ သင် တည်ဆောက်မှုကို စစ်ဆေးပြီး ထုတ်ဝေရန် ကို မနှိပ်မချင်း မည်သည့်အရာမျှ ထုတ်ဝေမည် မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>cron ဖော်ပြချက်၊ ဥပမာ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>deploy ကီးကို လျှို့ဝှက်ချက် %secret အဖြစ် သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>deploy ကီးသည် ဤထည့်သွင်းမှုကို SSH ဖြင့် သိုလှောင်ရာတစ်ခုတည်းသို့သာ push လုပ်ခွင့်ပေးပြီး အခြားမည်သည့်နေရာမျှ မဟုတ်ပါ။ ၎င်း၏ ကိုယ်ပိုင်တစ်ဝက်သည် စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ တွင် ကျန်ရှိပြီး အများသုံးတစ်ဝက်ကိုသာ ပြသည်။</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ဤပစ်မှတ်အတွက် ပြုလုပ်ထားသော deploy ကီး</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>deploy ကီးသည် SSH ဖြင့် ဝင်ရောက်သည်: git လိပ်စာကို SSH လိပ်စာ (git@github.com:owner/repo.git) သို့ ပြောင်းပါ။</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>အလုပ်တစ်ခု လုပ်ဆောင်နေသည်၊ %user က စတင်ခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ဤပစ်မှတ်၏ အလုပ်တစ်ခု ဆက်လုပ်ဆောင်နေဆဲ (%detail)။ ပြီးဆုံးသည်အထိ စောင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ဤပစ်မှတ်၏ အလုပ်တစ်ခု ဆက်လုပ်ဆောင်နေဆဲ ဖြစ်သည်။ ပြီးဆုံးသည်အထိ စောင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>စာမျက်နှာ /news/ မှ စာမျက်နှာ /about-us/team သို့ လင့်ခ်ကို ဤသို့ ရေးသားမည်</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>deploy ကီးအသစ် ပြုလုပ်ပြီးပါပြီ။ ၎င်း၏ အများသုံးတစ်ဝက်ကို သိုလှောင်ရာသို့ ယခု ထည့်ပါ။</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>ဖယ်ရှားပြီးနောက်တွင်ပင် debug ထွက်ရှိမှု၊ ဖောင်တိုကင် သို့မဟုတ် session ID ပါနေဆဲ စာမျက်နှာကို ဘယ်တော့မှ ထုတ်ဝေမည် မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ပြန်လှည့်မှုသည် ကျွမ်းကျင်သူများအတွက် ဖြစ်သည်: &quot;ဤအရာက ဘာကို ပြောင်းလဲသည်ကို ကျွန်ုပ်သိသည်&quot; ကို အမှန်ခြစ်ပြီး တဂ်အမည်ကို ထပ်ရိုက်ပါ။</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ဆိုက်တစ်ခုသည် %site အထိ၊ ဖိုင်တစ်ခုသည် %file အထိ ရှိနိုင်ပြီး လစဉ် အသွားအလာ 100 GB ခန့် ရှိနိုင်သည်။ အခမဲ့အစီအစဉ်တွင် သိုလှောင်ရာသည် အများသုံး ဖြစ်ရမည်။ GitHub Pages သည် ဆိုင်များ သို့မဟုတ် အခြားစီးပွားရေး ငွေပေးငွေယူများအတွက် ရည်ရွယ်ထားခြင်း မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ပစ်မှတ်ဆိုသည်မှာ git သိုလှောင်ရာတစ်ခုသို့ ထုတ်ဝေသော ဆိုက်တစ်ခု ဖြစ်သည်။ ဤနေရာတွင် မည်သည့်အရာမျှ တည်ဆောက်ခြင်း သို့မဟုတ် ထုတ်ဝေခြင်း မပြုပါ: သိမ်းရန် က ဆက်တင်များကို settings/override/staticcache.ini.append.php သို့ ရေးသားသည်။</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ပစ်မှတ်ဆိုသည်မှာ နေရာတစ်ခုသို့ ထုတ်ဝေသော ဆိုက်တစ်ခု ဖြစ်သည်၊ ဥပမာ GitHub Pages ပေါ်ရှိ သင့်အများသုံးဆိုက်။</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ မှ တိုကင်</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>သိုလှောင်ရာ၏ workflow တစ်ခုက ၎င်းကို ထုတ်ဝေသည်။</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ဤအများသုံးကီးကို ရေးခွင့်ဖြင့် သိုလှောင်ရာသို့ ထည့်ပါ။ GitHub: Settings &gt; Deploy keys &gt; Add deploy key၊ Allow write access ကို အမှန်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ထည့်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>အခြား git ဟို့စ်</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>အခြားလုပ်ငန်းစဉ်တစ်ခုက ဤပစ်မှတ်ပေါ်တွင် အလုပ်လုပ်နေသည်: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>နောက်သို့</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>အခြေခံလမ်းကြောင်း</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ယခင်</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>အခြေခံလမ်းကြောင်းအောက်တွင်</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ဘရန့်ချ်</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>ပျက်နေသော လင့်ခ်များ</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>တည်ဆောက်မှုထဲရှိ ပျက်နေသော လင့်ခ်များ</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>တည်ဆောက်မှု</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user ၏ တည်ဆောက်မှု %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name ကို တည်ဆောက်ရန်</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ယခု တည်ဆောက်ရန်</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>စစ်ဆေးရန် တည်ဆောက်မှု</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ပြုလုပ်သူ</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>လက်ဖြင့်၊ ဤနေရာတွင်</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ပယ်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ပြောင်းရန်</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ပြောင်းထားသည်</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ဦးစွာ စစ်ဆေးပါ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ဤဆက်တင်များကို စစ်ဆေးပါ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>တည်ဆောက်မှုက ဘာကို ပြောင်းလဲသည်ကို စစ်ဆေး၊ ကြည့်ရှုပြီးနောက် ထုတ်ဝေပါ သို့မဟုတ် စွန့်ပစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ပြန်သွားမည့် ထုတ်ဝေမှုကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>နောက်ထွက်ရှိမည့် ဗားရှင်းတွင် ပါလာမည်။</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ကွန်မစ်</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>ကွန်မစ်များ</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>တည်ဆောက်မှုကို commit လုပ်၊ tag တပ်ပြီး %remote သို့ push လုပ်သည်။ push ကို ဘယ်တော့မှ အတင်းမလုပ်ပါ; နောက်ပိုင်းတွင် မည်သည့်ထုတ်ဝေမှုသို့မဆို ပြန်သွားနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ယခင်ဖိုင်တွဲနှင့် နှိုင်းယှဉ်ချက်: %added ထည့်ထား၊ %changed ပြောင်းထား၊ %removed ဖယ်ထား၊ %unchanged မပြောင်းလဲ။</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>နောက်ဆုံး ထုတ်ဝေမှုနှင့် နှိုင်းယှဉ်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ဝင်ရောက်ခွင့် အထောက်အထား</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>စိတ်ကြိုက် ဒိုမိန်း</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>debug ထွက်ရှိမှု၊ ဖောင်တိုကင်များ၊ session ID များနှင့် nonce များကို အမြဲ ဖယ်ရှားသည်။</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Deploy ကီး</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ၏ deploy ကီး</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>စွန့်ပစ်ရန်</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>တည်ဆောက်မှုကို စွန့်ပစ်ရန်</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ဒိုမိန်း</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ဗလာ: ဆိုက်၏ လိပ်စာ။ မဟုတ်ပါက တူညီသောဆိုက်၏ အတွင်းလိပ်စာ။</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ပြီးဆုံးချိန်</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>လင့်ခ်တိုင်းသည် အခြေခံလမ်းကြောင်းဖြင့် စတင်သည်။</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ထုတ်ဝေမှုတိုင်းသည် တဂ် static/%id/&lt;n&gt; ပါသော commit တစ်ခု ဖြစ်သည်။ ပြန်သွားခြင်းသည် ယခင်ထုတ်ဝေမှု၏ ဖိုင်များဖြင့် commit အသစ် ပြုလုပ်သည်: မှတ်တမ်း ကျန်ရှိပြီး မည်သည့်တဂ်မျှ မရွှေ့ဘဲ မည်သည့်အရာမျှ အတင်းမလုပ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>အပိုများ</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>စာမျက်နှာများကို ရယူမည့်နေရာ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ဖိုင်</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ဖိုင်များ</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ဖိုင်များ ပျောက်နေသည်</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ဖိုင်များ -</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>စုဆောင်း၍ မရသော ဖိုင်များ</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>လက်ဗွေ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ဖိုင်တွဲ</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH လိပ်စာအတွက်။ သိမ်းပြီးနောက် ကီးကို ပြုလုပ်မည်; ၎င်း၏ အများသုံးတစ်ဝက်ကို သင်က သိုလှောင်ရာသို့ ထည့်ရမည်။</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// လိပ်စာအတွက်။ GitHub: သိုလှောင်ရာပေါ်တွင် Contents ဖတ်ခွင့်နှင့် ရေးခွင့်ရှိသော fine-grained တိုကင်။</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ကျွမ်းကျင်သူများအတွက်။ push ပြီးဆုံးသည်နှင့် အများသုံးဆိုက် ပြောင်းလဲသွားမည်။</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ဖောင်များ</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub သိုလှောင်ရာမှ အခမဲ့ hosting။</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ဘရန့်ချ်မှ</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages သည် %site ဆိုက်နှင့် %file ဖိုင်ကို ခွင့်ပြုသည်။</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ကန့်သတ်ချက်များ</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages သည် ဖိုင်များကို ရှိသည့်အတိုင်း ထုတ်ဝေသည် (_ ဖြင့် စသော ဖိုင်များအတွက် လိုအပ်သည်)။</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub သည် ဘရန့်ချ်ကို push လုပ်ထားသည့်အတိုင်း ပေးပို့သည်။ မူလသတ်မှတ်ချက်။</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab၊ Gitea၊ သင့်ကိုယ်ပိုင်ဆာဗာ: မည်သည့် git သိုလှောင်ရာမဆို။</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ယခင်ထုတ်ဝေမှုသို့ ပြန်သွားရန်</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>အကူအညီ</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>wizard အတွက် အကူအညီ</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>၎င်းတို့ကို ဝှက်ရန်</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name ၏ မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ဟို့စ်</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages က တည်ဆောက်မှုကို လက်ခံပုံ</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ပြောင်းလဲမှုများကို ကျွန်ုပ် စစ်ဆေးပြီးပါပြီ</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ဤအရာက ဘာကို ပြောင်းလဲသည်ကို ကျွန်ုပ်သိသည်</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>အမှတ်စဉ်</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>၎င်းကို ပိတ်ထားသည်: ဖွင့်သည်အထိ မည်သည့်အရာမျှ တည်ဆောက်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>၎င်းသည် %user အဖြစ် နောက်ခံတွင် လုပ်ဆောင်သည်; ဤစာမျက်နှာကို ပိတ်နိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>အလုပ် %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>လျှို့ဝှက်ချက် %secret အဖြစ် သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>အမျိုးအစား</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>နောက်ဆုံး ထုတ်ဝေမှု</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ဤစာမျက်နှာများကို ချန်ထားရန်</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ဤကဏ္ဍများကို ချန်ထားရန်</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>လင့်ခ်များ</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>ပြန်ရေးထားသော လင့်ခ်များ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>တိုက်ရိုက်ဆိုက်</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>တည်ဆောက်မှုကို ကြည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>စာလုံးအသေး၊ ဂဏန်း၊ _ နှင့် -၊ ဥပမာ github-public။ ၎င်းသည် ဖိုင်တွဲနှင့် တဂ်များ (static/&lt;id&gt;/&lt;n&gt;) ကို အမည်ပေးပြီး နောက်ပိုင်းတွင် ပြောင်း၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ကီးအသစ် ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ပစ်မှတ်တစ်ခု ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ကီးကို ပြုလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ဟို့စ်ပေါ်တွင် သိုလှောင်ရာကို ဦးစွာ ပြုလုပ်ပါ; ဗလာတစ်ခု ဖြစ်လည်း ရသည်။</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>manifest ဖိုင်</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>စာ</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>စာမျက်နှာအများစု</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>အမည်</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ ရှိ တိုကင်အမည်</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>ပစ်မှတ်အသစ်</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ရှေ့သို့</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>မဟုတ်ပါ</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>commit မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>ကီး မပြုလုပ်ရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php command line binary မတွေ့ပါ။ migration.ini [AdminSettings] PhpCliPath ကို ၎င်း၏ လမ်းကြောင်းအပြည့်သို့ သတ်မှတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>တဂ် မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ပစ်မှတ် မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>မရှိ</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>တည်ဆောက်မှုထဲတွင် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>မည်သည့်အရာမျှ မထုတ်ဝေရသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>မည်သည့်အရာမျှ မထုတ်ဝေရသေးပါ: ဖိုင်တိုင်း အသစ်ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>အသိပေးရန်</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>အချိန်ဇယားအတိုင်း</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>ကွန်ဆိုးလ်ပေါ်တွင်</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>ဆာဗာပေါ်တွင်: ./console exp:static:serve %id သည် ၎င်းကို အလားတူ ပေးပို့သည်။</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>တစ်ကြောင်းလျှင် လမ်းကြောင်းတစ်ခု၊ * သည် မည်သည့်အပိုင်းနှင့်မဆို ကိုက်ညီသည်: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ပစ်မှတ်နှင့်အတူ အမည်ကိုသာ သိမ်းသည်; တိုကင် သို့မဟုတ် ကီးကိုယ်တိုင်သည် စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ တွင် ကျန်ရှိပြီး မှတ်တမ်းတွင် ဘယ်တော့မှ မပေါ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>စာမျက်နှာများက ဖော်ပြသည့်အရာများသာ</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>တိုကင်ဖြင့်သာ။ env:NAME သည် ယင်းအစား ဆာဗာ၏ environment variable ကို ဖတ်သည်။</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>အစမ်းကြည့်ရှုမှုကို ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ဟို့စ်က ပေးပို့မည့်အတိုင်း တည်ဆောက်မှုကို ပစ်မှတ်၏ ဖိုင်တွဲမှ ဖွင့်သည်။ လင့်ခ်သည် သင့်အတွက် တစ်နာရီ အလုပ်လုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ရွေးချယ်နိုင်သည်။ ဗလာ: ထုတ်ဝေခဲ့သည့်အရာ။</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ရွေးချယ်နိုင်သည်။ ဒိုမိန်းရှိပါက ဆိုက်ကို ၎င်း၏ root တွင် ပေးပို့သည်။</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ထွက်ရှိမှု</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>စာမျက်နှာများ</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ပစ်မှတ်၏ စာမျက်နှာများ</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ငြင်းပယ်ထားသော စာမျက်နှာများ</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>နောက်ဆက်တွဲ လုပ်ဆောင်ခြင်း</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>အစမ်းကြည့်ရှုမှု</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>အစမ်းကြည့်ပြီး ထုတ်ဝေရန်</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ကို အစမ်းကြည့်ပြီး ထုတ်ဝေရန်</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>တည်ဆောက်မှုကို အစမ်းကြည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>တိုးတက်မှု</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>အများသုံး လိပ်စာ</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>အများသုံး ကီး</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ထုတ်ဝေရန်</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ဆိုက်တစ်ခု၏ static မိတ္တူကို GitHub Pages သို့မဟုတ် မည်သည့် git ဟို့စ်သို့မဆို ထုတ်ဝေပါ: တည်ဆောက်၊ ပြောင်းလဲမှုများကို စစ်ဆေး၊ ထုတ်ဝေပြီး လိုအပ်သည့်အခါ ယခင်ထုတ်ဝေမှုသို့ ပြန်သွားပါ။</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>ပြန်သွားမည့် ထုတ်ဝေမှု</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ထုတ်ဝေမှုများ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ပို့ခြင်း</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>လမ်းညွှန်ကို ဖတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ငြင်းပယ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ဆက်စပ်</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ပြန်ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ဖယ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>ကီးကို အစားထိုးရန်: အဟောင်းသည် အလုပ်မလုပ်တော့ပါ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>အစီရင်ခံစာ</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>တည်ဆောက်မှု၏ အစီရင်ခံစာ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>သိုလှောင်ရာ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ပြန်လည်သုံးသပ်ခြင်း</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>ပြန်လည်သုံးသပ်ခြင်းသည် ဆက်တင်တိုင်းကို စစ်ဆေးပြီး ရေးသားမည့် စာကြောင်းများကို ပြသည်။ မည်သည့်အရာမျှ မသိမ်းရသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ပြန်လှည့်ရန်</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ပြန်လှည့်မှု</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>သိမ်းရန်</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>အချိန်ဇယား</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ရှာဖွေရေး စာမျက်နှာ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ကဏ္ဍ ID များ၊ ကော်မာဖြင့် ခွဲထားသည်။</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>၎င်းတို့ကို တိုက်ရိုက်ဆိုက်သို့ ပို့ရန်</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ဆက်တင်</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ဆက်တင်များ</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ၏ ဆက်တင်များ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>စနစ်ထည့်သွင်းမှု</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>စာရင်းများတွင် ပြသည်၊ ဥပမာ &quot;GitHub Pages ပေါ်ရှိ အများသုံးဆိုက်&quot;။</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App ဖြင့် ဝင်ရောက်ခြင်းသည် GitHub ပေါင်းစည်းမှုနှင့်အတူ ပါလာမည်။</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>ဆိုက်</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ထုတ်ဝေမည့် ဆိုက်</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>အရွယ်အစား</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>အရွယ်အစားနှင့် ကန့်သတ်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>တည်ဆောက်မှု၏ အရွယ်အစား</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ခေတ်မမီသော စာမျက်နှာများ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>စတင်ချိန်</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user က %time တွင် စတင်ခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>အခြေအနေ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Static ထုတ်ဝေခြင်း</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Static ထုတ်ဝေခြင်းကို ပိတ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Static ထုတ်ဝေခြင်းကို ပိတ်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Static ထုတ်ဝေခြင်းကို ပိတ်ထားသည်။ စနစ်ထည့်သွင်းမှု &gt; Static ထုတ်ဝေခြင်း တွင် ဦးစွာ ဖွင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Static ထုတ်ဝေခြင်းကို ဖွင့်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>အဆင့် %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>အဆင့်များ</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>ဖယ်ရှားခြင်း</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ပိတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Static ထုတ်ဝေခြင်းကို ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>တဂ်</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>တဂ်များ</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ပစ်မှတ်</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ပစ်မှတ်များကို ပြုလုပ်ပြီး ပြောင်းလဲနိုင်သော်လည်း ဖွင့်သည်အထိ မည်သည့်အရာမျှ တည်ဆောက်ခြင်း သို့မဟုတ် ထုတ်ဝေခြင်း မပြုပါ။</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>ရှာဖွေရေးအင်ဂျင်များအား ဘာကို ဖတ်ရမည်ကို ပြောပြသည်။</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>တည်ဆောက်မှုကို စွန့်ပစ်၍ မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>တည်ဆောက်မှုသည် နောက်ဆုံးထုတ်ဝေမှုနှင့် တူညီသည်: ထုတ်ဝေရန် ဘာမျှ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>တည်ဆောက်မှုကို စွန့်ပစ်ပြီးပါပြီ: ဖိုင်တွဲတွင် နောက်ဆုံးထုတ်ဝေမှု ပြန်ရှိနေပါပြီ။</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>မူလသတ်မှတ်ချက်များသည် ဆိုက်အများစုအတွက် သင့်တော်သည်။</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ဖိုင်တွဲတွင် မထုတ်ဝေရသေးသော တည်ဆောက်မှု ရှိသည်; တည်ဆောက်မှုအသစ်က ၎င်းကို အစားထိုးမည်။</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>အလုပ်များ၏ ဖိုင်တွဲကို ရေး၍ မရပါ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>အလုပ်ကို ပြင်ဆင်၍ မရပါ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>အလုပ်ကို စတင်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>အလုပ် ပြီးဆုံးပါပြီ။ ၎င်း၏ အစီရင်ခံစာကို ဖွင့်နေသည်။</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>အလုပ်အတွက် ဝင်ရောက်ထားသော အသုံးပြုသူ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>အလုပ်ကို စတင်ခဲ့သော်လည်း ၎င်း၏ process ID ကို မပြောပြပါ။ %detail ကို စစ်ဆေးပါ။</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ကီး</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>အကြီးဆုံးဖိုင်: %path, %size။</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ရေးသားမည့် စာကြောင်းများ</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>ရှာဖွေရေးအင်ဂျင်များအတွက် စာမျက်နှာစာရင်း; အများသုံးလိပ်စာ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>စာမျက်နှာများကို ဝင်ရောက်မထားသော ဧည့်သည်မြင်သည့်အတိုင်း ရယူသည်။ စီမံခန့်ခွဲမှုနှင့် တည်းဖြတ်မှု siteaccess များကို ဘယ်တော့မှ မပေးပါ။</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>တိုးတက်မှုကို လိုက်ကြည့်၍ မရပါ။ အလုပ်၏ အခြေအနေကို ကြည့်ရန် စာမျက်နှာကို ပြန်ဖွင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>ကီး၏ အများသုံးတစ်ဝက်:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ဘရန့်ချ်၏ root</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>လျှို့ဝှက်ချက်သိုလှောင်ရာကို စနစ်မထည့်သွင်းရသေးပါ (./console exp:upgrade --apply က ၎င်း၏ ဇယားကို ပြုလုပ်သည်)၊ ထို့ကြောင့် ကီးကို သိမ်း၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>ဆာဗာသည် ကိုယ်တိုင် ဝင်ရောက်သည် (၎င်း၏ ကိုယ်ပိုင် SSH ကီး သို့မဟုတ် credential helper)၊ သို့မဟုတ် သိုလှောင်ရာသည် ဤဆာဗာပေါ်တွင် ရှိသည်။</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>ဆက်တင်ကို ရေး၍ မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ဆက်တင်များ မှန်ကန်သည်။ ဤစာကြောင်းများကို ရေးသားမည်:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>ဆက်တင်ဖိုင်ကို ဖတ်၍ မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>ဆိုက်သည် ထိုထုတ်ဝေမှု၏ ဖိုင်များသို့ ပြန်သွားသည်; မထုတ်ဝေရသေးသော တည်ဆောက်မှုကို ဦးစွာ ထုတ်ဝေရမည် သို့မဟုတ် စွန့်ပစ်ရမည်။</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>မရှိသော လိပ်စာများအတွက် ဆိုက်၏ ကိုယ်ပိုင်စာမျက်နှာ။</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ပစ်မှတ်ကို သိမ်း၍ မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ပစ်မှတ်သည် ဤကီးဖြင့် မဝင်ရောက်ရသေးပါ: ၎င်း၏ ဆက်တင်များတွင် &quot;ဤပစ်မှတ်အတွက် ပြုလုပ်ထားသော deploy ကီး&quot; ကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ပစ်မှတ်များကို ဖတ်၍မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>စစ်ဆေးရန် တည်ဆောက်မှု မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ဤထည့်သွင်းမှုတွင် ရှေ့ siteaccess မရှိပါ။ စီမံခန့်ခွဲမှုနှင့် တည်းဖြတ်မှု siteaccess များကို ဘယ်တော့မှ မထုတ်ဝေပါ။</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ဤစာမျက်နှာသည် အလုပ်လုပ်ဆောင်နေစဉ် လိုက်ကြည့်သည်; စာမျက်နှာကို ပိတ်လျှင် နောက်ခံတွင် ဆက်လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ဤပစ်မှတ်တွင် deploy ကီး မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ဤပစ်မှတ်ကို ဤနေရာတွင် မတည်ဆောက်ရသေးပါ။</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ဤပစ်မှတ်တွင် တစ်ခု ရှိသည်။</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ဤတည်ဆောက်မှုကို စွန့်ပစ်သည်: ဖိုင်တွဲတွင် နောက်ဆုံးထုတ်ဝေမှု ပြန်ရှိမည်။ တိုက်ရိုက်ဆိုက် မပြောင်းလဲပါ။</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>&quot;ပြောင်းလဲမှုများကို ကျွန်ုပ် စစ်ဆေးပြီးပါပြီ&quot; ကို ဦးစွာ အမှန်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>အချိန်</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>စတင်စေသည့်အရာများ</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>တဂ်အမည်ကို ထပ်ရိုက်ပါ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>မပြောင်းလဲ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ဘာ</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ပြောင်းလဲမည့်အရာ</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ဖိုင်တစ်ခုစီ ဘာဖြစ်သည်; အမြဲ ရေးသားသည်။</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>အလုပ်က လုပ်ခဲ့သည့်အရာနှင့် ၎င်း၏ မှတ်တမ်း။ ဤနေရာတွင် စတင်သော အလုပ်သည် ဤစာမျက်နှာကို ပိတ်လျှင် နောက်ခံတွင် ဆက်လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>အလုပ်က အမှားအဖြစ် ထုတ်ပြခဲ့သည့်အရာ</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>စာမျက်နှာများက ဖော်ပြသည့်အရာများနှင့် ထုတ်ဝေထားသော အကြောင်းအရာ၏ ပုံတိုင်း</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ဘယ်အချိန်</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ထုတ်ဝေမှု မအောင်မြင်သည့်အခါ</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ထုတ်ဝေမှု အောင်မြင်သည့်အခါ</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>အကြောင်းအရာ ထုတ်ဝေသည့်အခါ</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>မိတ္တူတွင် မပါသည့်အရာများသို့ လင့်ခ်များ သွားမည့်နေရာ (ရှာဖွေမှု၊ ဝင်ရောက်မှု)။</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>static မိတ္တူကို ပေးပို့မည့်နေရာ။</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>မည်သည့်ဆိုက်ကို ထုတ်ဝေမည်နှင့် ပစ်မှတ်၏ အမည်။</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>မည်သည့်လမ်းကြောင်းအောက်တွင်မဆို အလုပ်လုပ်သည်။ မူလသတ်မှတ်ချက်။</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>စိတ်ကြိုက်ဒိုမိန်း သတ်မှတ်ထားတိုင်း ရေးသားသည်။</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ဟုတ်ကဲ့</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ဤနေရာနှင့် ကွန်ဆိုးလ်ပေါ်တွင် လက်ဖြင့် အမြဲ တည်ဆောက်ပြီး ထုတ်ဝေနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>အမည်သာ; တန်ဖိုးသည် စနစ်ထည့်သွင်းမှု &gt; လျှို့ဝှက်ချက်များ တွင် ကျန်ရှိသည်</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path အောက်တွင်</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>အစီရင်ခံစာမပါဘဲ ပြီးဆုံးသည်</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>အပို</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>မအောင်မြင်</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ဖိုင်</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages သို့မဟုတ် docs ဖိုင်တွဲပါသော main။</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git ဟို့စ်</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (တိုကင်ဖြင့်) သို့မဟုတ် git@github.com:owner/repo.git (deploy ကီးဖြင့်); ၎င်းထဲတွင် စကားဝှက် သို့မဟုတ် တိုကင် ဘယ်တော့မှ မထည့်ပါနှင့်။</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, ဆိုက်မြေပုံနှင့် canonical လင့်ခ်များအတွက်။</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ပုံ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ဘယ်တော့မှ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>မဟုတ်</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>remote မရှိ</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>မရှိ: commit များ ဖိုင်တွဲထဲတွင် ကျန်ရှိသည်</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>မရှိ: ဘာမျှ မပြောင်းလဲ</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>push မလုပ်ရသေး</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ဘာမျှ မပြောင်းလဲ</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>စာမျက်နှာ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>အောင်မြင်</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ကို ပိတ်ထားသဖြင့် ဤနေရာတွင် အလုပ်ကို စတင်၍ မရပါ။ ဆာဗာပေါ်တွင် ./console exp:static:build ကို အသုံးပြုပါ။</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ထုတ်ဝေမှု</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ထုတ်ဝေပြီး</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>push စောင့်ဆိုင်းဆဲ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>push လုပ်ပြီး</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ငြင်းပယ်ထား</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ဆက်စပ်</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ပြန်လှည့်မှု</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ပြန်လှည့်ပြီး</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>လုပ်ဆောင်နေ</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ဖိုင်တွဲသာ</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME ဖိုင်သို့ ရေးသားသည်။ ဒိုမိန်း၏ DNS ကို ဟို့စ်က ရှင်းပြသည့်အတိုင်း ဟို့စ်သို့ ညွှန်ပါ; HTTPS စတင်ရန် အချိန်အနည်းငယ် ကြာနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ဟုတ်၊ မထုတ်ဝေရသေး</translation>
     </message>
 </context>
 </TS>

@@ -124,7 +124,30 @@ class eZContentObjectState extends eZPersistentObject
                "WHERE $conditionsSQL " .
                "ORDER BY ezcobj_state.priority";
 
-        $rows = $db->arrayQuery( $sql, array( 'limit' => $limit, 'offset' => $offset ) );
+        if ( $db->databaseName() === 'mongo' )
+        {
+            // three tables joined: MongoDB answers single-table selects only, so the states are read with a pipeline
+            // (the language of the first translation; MongoDB installations have one language per state so far)
+            $match = eZContentObjectStateGroup::mongoMatch( array_slice( $conditions, 0, count( $conditions ) - count( $defaultConditions ) ), 'ezcobj_state' );
+            if ( $match === null )
+                return array();
+            $pipeline = $match ? [ [ '$match' => $match ] ] : [];
+            $pipeline = array_merge( $pipeline, [
+                [ '$lookup' => [ 'from' => 'ezcobj_state_language', 'localField' => 'id', 'foreignField' => 'contentobject_state_id', 'as' => '_lang' ] ],
+                [ '$unwind' => [ 'path' => '$_lang', 'preserveNullAndEmptyArrays' => true ] ],
+                [ '$addFields' => [ 'language_id' => '$_lang.language_id', 'name' => '$_lang.name', 'description' => '$_lang.description',
+                                    'contentobject_state_id' => '$_lang.contentobject_state_id' ] ],
+                [ '$project' => [ '_id' => 0, '_lang' => 0 ] ],
+                [ '$sort' => [ 'priority' => 1 ] ],
+            ] );
+            if ( $offset > 0 ) $pipeline[] = [ '$skip' => (int)$offset ];
+            if ( $limit > 0 ) $pipeline[] = [ '$limit' => (int)$limit ];
+            $rows = $db->aggregate( 'ezcobj_state', $pipeline );
+            if ( $rows === false )
+                $rows = array();
+        }
+        else
+            $rows = $db->arrayQuery( $sql, array( 'limit' => $limit, 'offset' => $offset ) );
 
         $states = array();
         foreach ( $rows as $row )

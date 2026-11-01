@@ -15150,6 +15150,22 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Ŝanĝoj al la instalaĵo konservataj kiel dosieroj: ilia stato, la ruloj, ruli kaj malfari.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Lastatempa enhavo</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>La plej nova enhavo, kio estas retenita por revizio, kaj agoj pri elekto.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publikigu statikan kopion de retejo ĉe GitHub Pages aŭ ĉe ajna git-gastiganto.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statika publikigo</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Noto: La pakoj ne estos malinstalitaj.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Respondoj de la konservitaj informpetoj de la GraphQL-API kaj la enhavklasoj de ĝia skemo.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publikigu statikan kopion ĉe GitHub Pages aŭ ĉe ajna git-gastiganto</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statika publikigo</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>La statika kaŝmemoro servas paĝojn el ĉi tiu servilo. Por publikigi statikan kopion de retejo aliloke, ĉe GitHub Pages aŭ ĉe ajna git-gastiganto, uzu la statikan publikigon.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Ŝanĝoj al la instalaĵo konservataj kiel dosieroj: ilia stato, la ruloj, ruli kaj malfari.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publikigu statikan kopion de retejo ĉe GitHub Pages aŭ ĉe ajna git-gastiganto.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statika publikigo</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80769,6 +80805,2028 @@ Vi devos ŝanĝi la klason de la nodo per la interŝanĝa funkcio.</translation>
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>La registraĵo ne ŝanĝeblis: %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modifita</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Kreita</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomo</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klaso</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcio</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Kreinto</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Lastatempa enhavo</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>La plej lastatempe kreita kaj modifita enhavo de la tuta retejo, la plej nova unue: kion vizitantoj sendis, kio estas retenita por revizio, malnetoj atendantaj sian publikigon. Elektu erojn por liberigi, reteni, kaŝi, montri, forigi ilin aŭ movi ilin al alia sekcio aŭ stato.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>La listo ne legeblis: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>La retenado por revizio ankoraŭ ne estas agordita, do nenio estas retenita kaj la retenaj agoj ne estas proponataj. La ĝisdatiga paŝo 6.0.15-review-hold agordas ĝin: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtri la liston</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ĝis</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Kreita (unua publikigo)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ĉiuj</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statuso</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publikigita</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Malneto, neniam publikigita</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Atendanta (aprobon aŭ daton)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>En la rubujo</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retenita por revizio</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retenita</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ne retenita</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Kaŝita</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Videbla</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Sendita je</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Ajna retejaliro</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Nur kion la kontrolprotokolo registris.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nun: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Ensalutnomo aŭ uzanto-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtri</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Forigi filtrilojn</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Eroj</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ĝis %to el %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Neniu ero</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(legita en %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Agoj pri la elektitaj eroj</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Elekti ĉion en ĉi tiu paĝo</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count elektitaj</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ago</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Elektu agon</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Liberigi la retenon</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Reteni por revizio</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Kaŝi</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Montri</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Movi al la rubujo</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Forigi</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Atribui sekcion</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Atribui staton</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Kialo</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Necesa por reteni; konservata kun la reteno kaj en la kontrolprotokolo.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Elektu sekcion</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Elektu staton</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Apliki al la elektitaj</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Ĉiu ero estas kontrolata laŭ viaj propraj permesoj. Movi al la rubujo kaj forigi petas vian konfirmon. Pli ol %count eroj ruliĝas fone.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Elekti</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikigo</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Sendita de</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Elekti %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ankoraŭ ne</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(sen nomo)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Malneto</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Atendanta</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Kaŝita de sia gepatro</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retenita: nova sendaĵo</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versio %version atendanta</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versio %version prilaborata</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Malneto, versio %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versio %version publikigita</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Planita por %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>neniu adreso</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ne registrita</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nenio kongruas kun ĉi tiuj filtriloj.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Montri ĉion</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Ankoraŭ ne estas enhavo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po paĝo</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Montri %count erojn po paĝo.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>La adreso kaj la retumilo de sendaĵo venas el la kontrolprotokola indekso, kiu ne disponeblas ĉi tie: la kolumno diras "ne registrita".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>La adreso kaj la retumilo estas tiuj, kiujn la kontrolprotokolo registris por la ero (la aŭtomata reteno ĉiam registras ilin; publikigo kaj kreado nur kie tio estas ŝaltita), tiel kiel ĝiaj privatecaj agordoj konservas ilin.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count eroj</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Forigo forviŝas la erojn definitive, kun ĉiuj iliaj versioj kaj tradukoj. Ĝi ne estas malfarebla.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>La eroj iras al la rubujo, el kie ili estas restaŭreblaj.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Ĉiu ero estas kontrolata laŭ viaj propraj permesoj; ero kun subaj eroj restas kiel ĝi estas (forigu ĝin en la enhavstrukturo). Oni petos vin konfirmi, ke temas pri vi.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ĉi tio ruliĝas fone: ĝia progresa paĝo malfermiĝas, kaj la rezulto por ĉiu ero aperas kiam ĝi finiĝis.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>La elektitaj eroj</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>kaj %count pliaj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Nuligi</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nenio estis farita</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Kialo: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>La ago ankoraŭ ruliĝas fone.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ĝia progreso</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>La fona ago malsukcesis: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Farita</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rifuzita</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Malsukcesis</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Po ero</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ero</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezulto</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kial</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Reen al la listo</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Agordado</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nenio farita</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Konfirmi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Elektu agon.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Elektu almenaŭ unu eron.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Elektu maksimume 1000 erojn samtempe.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Diru, kial la eroj estas retenitaj.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Elektu la sekcion.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Elektu la staton.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>La formularo ne legeblis.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Lastatempa enhavo</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>La nombroj ne legeblis: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retenita por revizio</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Novaj hodiaŭ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retenado por revizio ankoraŭ ne estas agordita (la ĝisdatiga paŝo 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ĉiu lastatempa enhavo</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Vi ne rajtas ruli moderigajn agojn (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>La moderiga ago ne estas kompleta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderigo: %action sur %count objektoj</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done el %total objektoj: %ok faritaj, %refused rifuzitaj, %failed malsukcesaj</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok faritaj, %refused rifuzitaj, %failed malsukcesaj</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ĝi ne plu ekzistas.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ĝi havas neniun lokon (ne publikigita).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Vi ne rajtas kaŝi ĝin (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Vi ne rajtas montri ĝin (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ĝi jam estas kaŝita.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ĝi ne estas kaŝita.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Kaŝita.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Montrita.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ĝi estas en la rubujo: malplenigu aŭ restaŭru ĝin tie.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Malneto neniam publikigita ne povas iri al la rubujo: forigu ĝin.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Vi ne rajtas forigi ĝin (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Forigita.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Vi ne rajtas forpreni ĝin (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ĝi havas subajn erojn: forprenu ĝin en la enhavstrukturo, kie ili estas listigitaj.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ĝi ne estis forprenita (laborfluo eble retenas la forprenon).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Movita al la rubujo.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>La sekcio ne ekzistas.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ĝi jam estas en ĉi tiu sekcio.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Vi ne rajtas atribui ĉi tiun sekcion (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>La sekcio ne estis atribuita.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sekcio atribuita.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>La stato ne ekzistas.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ĝi jam estas en ĉi tiu stato.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Vi ne rajtas atribui ĉi tiun staton (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>La stato ne estis atribuita (laborfluo eble retenas la ŝanĝon).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stato atribuita.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ne ekzistas tia ago.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retenado por revizio ne estas agordita (la ĝisdatiga paŝo 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Diru, kial ĝi estas retenita.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ĝi jam estas retenita.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Vi ne rajtas reteni ĝin (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>La reteno ne estis metita (laborfluo eble retenas la ŝanĝon).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retenita.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ĝi ne estas retenita.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Vi ne rajtas liberigi ĝin (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>La reteno ne estis liberigita (laborfluo eble retenas la ŝanĝon).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Liberigita; ankoraŭ kaŝita: vi ne rajtas montri ĝin (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Liberigita.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Ĉiuj celoj</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Lasta publikigo</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publikigu senpagan statikan kopion de via retejo ĉe GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Malaktualaj paĝoj</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statika publikigo</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statika publikigo estas malŝaltita.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Celo</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>La celoj ne legeblis: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>tasko estas plenumata</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>kompilaĵo kontrolota</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>kaŝi ĉi tion</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>krei celon</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>neniam</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>legi la lernilon</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added aldonitaj, %changed ŝanĝitaj, %removed forigitaj</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes el %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count pliaj ne estas listigitaj.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages paĝoj skribitaj</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path havas %size, pli ol la gastiganto permesas por unu dosiero.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % de la limo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag estas la publikigo, kiun la retejo nun havas.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: tasko %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/deponejo/ por projekta retejo ĉe GitHub; malplena por propra domajno aŭ uzanta retejo.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. La retejo</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. La gastiganto</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Ensaluto al la deponejo</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. La deponejo</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Ligiloj kaj baza vojo</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Via propra domajno</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Kion la kompilaĵo enhavas</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Kiam ĝi estas publikigata</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Kontroli kaj konservi</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Projekta retejo ĉe GitHub loĝas sub /&lt;repository&gt;/; relativaj ligiloj funkcias tie kaj ĉie ajn.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Kompilado elŝutas ĉiun paĝon de %site tiel, kiel neensalutinta vizitanto vidas ĝin, reskribas la ligilojn, kopias la dosierojn kaj skribas la rezulton al la dosierujo de la celo. Nenio estas publikigata, ĝis vi kontrolas la kompilaĵon kaj premas Publikigi.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron-esprimo, ekzemple 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Deploja ŝlosilo estas konservata kiel la sekreto %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Deploja ŝlosilo permesas al ĉi tiu instalaĵo puŝi al unu deponejo per SSH kaj nenien alien. Ĝia privata duono restas en Agordado &gt; Sekretoj; nur la publika duono estas montrata.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Deploja ŝlosilo kreita por ĉi tiu celo</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Deploja ŝlosilo ensalutas per SSH: ŝanĝu la git-adreson al la SSH-adreso (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Tasko estas plenumata, startigita de %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Tasko de ĉi tiu celo ankoraŭ estas plenumata (%detail). Atendu, ĝis ĝi finiĝos.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Tasko de ĉi tiu celo ankoraŭ estas plenumata. Atendu, ĝis ĝi finiĝos.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Ligilo de la paĝo /news/ al la paĝo /about-us/team estos skribita kiel</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Nova deploja ŝlosilo estis kreita. Aldonu ĝian publikan duonon al la deponejo nun.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Paĝo, kiu post la purigado ankoraŭ enhavas sencimigan eligon, formularan ĵetonon aŭ seancan identigilon, neniam estas publikigata.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Malfaro estas por spertuloj: marku &quot;Mi scias, kion tio ŝanĝas&quot; kaj tajpu denove la nomon de la marko.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Retejo povas havi ĝis %site, unu dosiero ĝis %file, kun ĉirkaŭ 100 GB da trafiko monate. Kun senpaga plano la deponejo devas esti publika. GitHub Pages ne estas celita por butikoj aŭ aliaj komercaj transakcioj.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Celo estas unu retejo publikigata al unu git-deponejo. Ĉi tie nenio estas kompilata aŭ publikigata: Konservi skribas la agordojn al settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Celo estas unu retejo publikigata al unu loko, ekzemple via publika retejo ĉe GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Ĵetono el Agordado &gt; Sekretoj</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Laborfluo de la deponejo publikigas ĝin.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Aldonu ĉi tiun publikan ŝlosilon al la deponejo kun skribrajto. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, marku Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Aldonita</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Alia git-gastiganto</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Alia procezo laboras pri ĉi tiu celo: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Reen</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Baza vojo</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Antaŭe</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Sub baza vojo</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Branĉo</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Rompitaj ligiloj</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Rompitaj ligiloj en la kompilaĵo</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Kompilaĵo</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Kompilaĵo %id de %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Kompili %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Kompili nun</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Kompilaĵo kontrolota</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>De</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Mane, ĉi tie</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Nuligi</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ŝanĝi</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ŝanĝita</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ŝanĝoj</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Unue kontroli ĝin</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Kontrolu ĉi tiujn agordojn</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Kontrolu, kion la kompilaĵo ŝanĝas, rigardu ĝin, kaj poste publikigu aŭ forĵetu ĝin.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Elektu la publikigon, al kiu reiri.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Venos en posta eldono.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Enmeto</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Enmetoj</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Enmetas la kompilaĵon, markas ĝin kaj puŝas ĝin al %remote. Puŝo neniam estas devigata; vi povas poste reiri al ajna publikigo.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Kompare kun la antaŭa dosierujo: %added aldonitaj, %changed ŝanĝitaj, %removed forigitaj, %unchanged neŝanĝitaj.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Kompare kun la lasta publikigo.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Akreditaĵo</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Propra domajno</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Sencimiga eligo, formularaj ĵetonoj, seancaj identigiloj kaj nonce-oj ĉiam estas forigataj.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Deploja ŝlosilo</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Deploja ŝlosilo de %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Forĵeti</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Forĵeti la kompilaĵon</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domajno</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Malplena: la adreso de la retejo. Alie interna adreso de la sama retejo.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Finiĝis</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Ĉiu ligilo komenciĝas per la baza vojo.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Ĉiu publikigo estas enmeto kun marko static/%id/&lt;n&gt;. Reiro faras novan enmeton kun la dosieroj de pli frua publikigo: la historio restas, neniu marko moviĝas kaj nenio estas devigata.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Aldonaĵoj</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Elŝuti la paĝojn de</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Dosiero</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Dosieroj</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Mankantaj dosieroj</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Dosieroj de</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Dosieroj, kiuj ne kolekteblis</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Fingrospuro</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Dosierujo</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Por SSH-adreso. La ŝlosilo estas kreata post la konservo; vi aldonas ĝian publikan duonon al la deponejo.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Por https://-adreso. GitHub: detalgranula ĵetono kun Contents legi kaj skribi en la deponejo.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Por spertuloj. La publika retejo ŝanĝiĝas tuj kiam la puŝo finiĝas.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formularoj</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Senpaga gastigado el GitHub-deponejo.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>El la branĉo</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-adreso</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages permesas retejon de %site kaj dosieron de %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Limoj de GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publikigas la dosierojn tiaj, kiaj ili estas (necese por dosieroj, kiuj komenciĝas per _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub servas la branĉon tia, kia ĝi estas puŝita. La defaŭlto.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, via propra servilo: ajna git-deponejo.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Reiri al pli frua publikigo</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Helpo</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Helpo pri la asistanto</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Kaŝi ilin</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historio</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historio de %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Gastiganto</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Kiel GitHub Pages ricevas la kompilaĵon</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Mi kontrolis la ŝanĝojn</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Mi scias, kion tio ŝanĝas</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Identigilo</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Ĝi estas malŝaltita: nenio kompileblas, ĝis ĝi estos ŝaltita.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ĝi ruliĝas fone kiel %user; vi povas fermi ĉi tiun paĝon.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Tasko %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Konservata kiel la sekreto %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Speco</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Lasta publikigo</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Ellasi ĉi tiujn paĝojn</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Ellasi ĉi tiujn sekciojn</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Ligiloj</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Reskribitaj ligiloj</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Viva retejo</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Rigardi la kompilaĵon</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Minusklaj literoj, ciferoj, _ kaj -, ekzemple github-public. Ĝi nomas la dosierujon kaj la markojn (static/&lt;id&gt;/&lt;n&gt;) kaj ne ŝanĝeblas poste.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Krei novan ŝlosilon</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Krei celon</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Krei la ŝlosilon</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Unue kreu la deponejon ĉe la gastiganto; malplena taŭgas.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifesto</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mesaĝo</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>La plej multaj paĝoj</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomo</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Nomo de la ĵetono en Agordado &gt; Sekretoj</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Nova celo</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Sekva</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Ankoraŭ neniu enmeto.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Neniu ŝlosilo estis kreita: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Neniu komandlinia php-programo troviĝis. Agordu migration.ini [AdminSettings] PhpCliPath al ĝia plena vojo.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Ankoraŭ neniu marko.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Ankoraŭ neniu celo.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Neniu</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Ne en la kompilaĵo.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Nenio estis publikigita ankoraŭ.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Nenio estis publikigita ankoraŭ: ĉiu dosiero estas nova.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Sciigi</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Laŭ horaro</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>En la konzolo</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>En la servilo: ./console exp:static:serve %id servas ĝin same.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Unu vojo po linio, * kongruas kun ajna parto: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Nur nomo estas konservata kun la celo; la ĵetono aŭ ŝlosilo mem restas en Agordado &gt; Sekretoj kaj neniam aperas en protokolo.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Nur tio, kion la paĝoj nomas</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Nur kun ĵetono. env:NAME anstataŭe legas medivariablon de la servilo.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Malfermi la antaŭrigardon</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Malfermas la kompilaĵon tiel, kiel la gastiganto servos ĝin, el la dosierujo de la celo. La ligilo funkcias por vi dum unu horo.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Nedeviga. Malplena: tio, kio estis publikigita.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Nedeviga. Kun domajno la retejo estas servata ĉe ĝia radiko.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Eligo</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Paĝoj</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Paĝoj de la celo</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Rifuzitaj paĝoj</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Postprilaboro</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Antaŭrigardo</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Antaŭrigardi kaj publikigi</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Antaŭrigardi kaj publikigi %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Antaŭrigardi la kompilaĵon</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progreso</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Publika adreso</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Publika ŝlosilo</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publikigi</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publikigu statikan kopion de retejo ĉe GitHub Pages aŭ ĉe ajna git-gastiganto: kompilu ĝin, kontrolu la ŝanĝojn, publikigu, kaj reiru al pli frua publikigo, kiam necese.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publikigo, al kiu reiri</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publikigoj</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Puŝo</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Legu la lernilon</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Registro</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rifuzita</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relativaj</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Reŝargi</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Forigita</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Anstataŭigi la ŝlosilon: la malnova ĉesas funkcii</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Raporto</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Raporto de la kompilaĵo</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Deponejo</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Kontrolo</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>La kontrolo ekzamenas ĉiun agordon kaj montras la liniojn, kiuj estos skribitaj. Nenio estas konservita ankoraŭ.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Malfari</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Malfaro</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Konservi</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Horaro</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Serĉpaĝo</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Identigiloj de sekcioj, apartigitaj per komoj.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Sendi ilin al la viva retejo</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Agordo</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Agordoj</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Agordoj de %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Agordado</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Agordado &gt; Sekretoj</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Montrata en listoj, ekzemple &quot;Publika retejo ĉe GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Ensaluto per GitHub App venos kun la GitHub-integriĝo.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Retejo</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Publikigota retejo</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Grando</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Grando kaj limoj</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Grando de la kompilaĵo</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Malaktualaj paĝoj</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Startigita</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Startigita de %user je %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stato</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statika publikigo</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statika publikigo estas malŝaltita</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statika publikigo estas malŝaltita.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statika publikigo estas malŝaltita. Unue ŝaltu ĝin en Agordado &gt; Statika publikigo.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statika publikigo estas ŝaltita.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Paŝo %step el %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Paŝoj</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Purigado</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Malŝalti</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ŝalti</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Ŝalti la statikan publikigon</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Marko</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Markoj</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Celo</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Celoj kreeblas kaj ŝanĝeblas, sed nenio estas kompilata aŭ publikigata, ĝis ĝi estos ŝaltita.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Diras al serĉiloj, kion legi.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>La kompilaĵo ne forĵeteblis: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>La kompilaĵo samas al la lasta publikigo: estas nenio por publikigi.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>La kompilaĵo estis forĵetita: la dosierujo denove enhavas la lastan publikigon.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>La defaŭltoj taŭgas por la plej multaj retejoj.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>La dosierujo enhavas kompilaĵon ankoraŭ ne publikigitan; nova kompilaĵo anstataŭigas ĝin.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>La dosierujo de la taskoj ne skribeblas: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>La tasko ne prepareblis: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>La tasko ne startigeblis.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>La tasko finiĝis. Ŝargante ĝian raporton.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>La tasko bezonas ensalutintan uzanton.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>La tasko estis startigita, sed ne raportis sian procezan identigilon. Kontrolu %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>La ŝlosilo</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>La plej granda dosiero: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>La linioj, kiuj estos skribitaj</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>La listo de paĝoj por serĉiloj; bezonas la publikan adreson.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>La paĝoj estas elŝutataj tiel, kiel neensalutinta vizitanto vidas ilin. Administraj kaj redaktaj retejalirejoj neniam estas proponataj.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>La progreso ne sekveblis. Reŝargu la paĝon por vidi, kiel la tasko progresas.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>La publika duono de la ŝlosilo:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>La radiko de la branĉo</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>La sekreta konservejo ankoraŭ ne estas pretigita (./console exp:upgrade --apply kreas ĝian tabelon), do neniu ŝlosilo konserveblas.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>La servilo ensalutas per si mem (per sia propra SSH-ŝlosilo aŭ akreditaĵa helpilo), aŭ la deponejo estas en ĉi tiu servilo.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>La agordo ne skribeblis: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>La agordoj validas. Ĉi tiuj linioj estos skribitaj:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>La agorda dosiero ne legeblas: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>La retejo reiras al la dosieroj de tiu publikigo; kompilaĵo ankoraŭ ne publikigita devas unue esti publikigita aŭ forĵetita.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>La propra paĝo de la retejo por adresoj, kiuj ne ekzistas.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>La celo ne konserveblis: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>La celo ankoraŭ ne ensalutas per ĉi tiu ŝlosilo: elektu &quot;Deploja ŝlosilo kreita por ĉi tiu celo&quot; en ĝiaj agordoj.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>La celoj ne legeblis: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Ankoraŭ ne estas kompilaĵo kontrolota.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ĉi tiu instalaĵo ne havas publikan retejalirejon. Administraj kaj redaktaj retejalirejoj neniam estas publikigataj.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Ĉi tiu paĝo sekvas la taskon dum ĝi progresas; la tasko daŭras fone, kiam la paĝo estas fermita.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ĉi tiu celo ankoraŭ ne havas deplojan ŝlosilon.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Ĉi tiu celo ankoraŭ ne estis kompilita ĉi tie.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ĉi tiu celo havas unu.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Forĵetas ĉi tiun kompilaĵon: la dosierujo denove enhavas la lastan publikigon. La viva retejo ne ŝanĝiĝas.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Unue marku &quot;Mi kontrolis la ŝanĝojn&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tempo</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Ekigiloj</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Tajpu denove la nomon de la marko</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Neŝanĝita</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Retkroĉilo</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Kio</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Kio ŝanĝiĝas</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Kio estas ĉiu dosiero; ĉiam skribata.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Kion la tasko faris kaj ĝia registro. Tasko startigita ĉi tie daŭras fone, kiam ĉi tiu paĝo estas fermita.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Kion la tasko eligis kiel erarojn</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Tio, kion la paĝoj nomas, kaj ĉiu bildo de publikigita enhavo</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kiam</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Kiam publikigo malsukcesas</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Kiam publikigo sukcesas</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Kiam enhavo estas publikigata</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kien iras ligiloj al tio, kion la kopio ne enhavas (la serĉo, la ensaluto).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>De kie la statika kopio estas servata.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Kiu retejo estas publikigata, kaj kiel la celo nomiĝas.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Funkcias sub ajna vojo. La defaŭlto.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Skribata, kiam ajn propra domajno estas agordita.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jes</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Vi ĉiam povas kompili kaj publikigi mane, ĉi tie kaj en la konzolo.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>nur nomo; la valoro restas en Agordado &gt; Sekretoj</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>sub %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>finiĝis sen raporto</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>aldonaĵo</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>malsukcesis</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>dosiero</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, aŭ main kun la dosierujo docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-gastiganto</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (kun ĵetono) aŭ git@github.com:owner/repo.git (kun deploja ŝlosilo); neniam pasvorto aŭ ĵetono en ĝi.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, por la retejmapo kaj la kanonaj ligiloj.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>bildo</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>neniam</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ne</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>neniu fora deponejo</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>neniu: enmetoj restas en la dosierujo</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>neniu: nenio ŝanĝiĝis</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ne puŝita</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>nenio ŝanĝiĝis</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>paĝo</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>sukcesis</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open estas malŝaltita, do tasko ne startigeblas ĉi tie. Uzu ./console exp:static:build en la servilo.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publikigo</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publikigita</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>puŝo atendata</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>puŝita</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rifuzita</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relativaj</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>malfaro</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>malfarita</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>plenumata</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>nur la dosierujo</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: skribata al la dosiero CNAME. Direktu la DNS de la domajno al la gastiganto, kiel ĝi klarigas; HTTPS povas bezoni iom da tempo por ekfunkcii.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>jes, ankoraŭ ne publikigita</translation>
     </message>
 </context>
 </TS>

@@ -197,8 +197,9 @@ PhpBinary=
 > The help's manuals built from the Markdown help in the background (a new installation queues it), doc/eng-us/features/6.0/help-content.md  
 > A background run of an import or export tool (Export, CIE ...) when there is no job queue,  
 > doc/eng-us/features/6.0/transfer-runs.md (transfer.ini)  
+> A mass action of Setup > Recent content on more than \[ModerationSettings\] JobThreshold objects, doc/eng-us/features/6.0/moderation.md  
 
-Default: a hash of 13: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`, `helpmanuals=expContentJobHelpManuals` ....
+Default: a hash of 14: `remove=expContentJobRemoveSubtree`, `copy=expContentJobCopySubtree`, `move=expContentJobMoveSubtree`, `hide=expContentJobHideSubtree`, `reveal=expContentJobRevealSubtree`, `section=expContentJobSectionSubtree`, `state=expContentJobStateSubtree`, `addlocation=expContentJobAddLocation`, `removelocation=expContentJobRemoveLocation`, `packageinstall=expContentJobPackageInstall`, `auditexport=expContentJobAuditExport`, `helpmanuals=expContentJobHelpManuals` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -219,6 +220,7 @@ JobTypes[packageinstall]=expContentJobPackageInstall
 JobTypes[auditexport]=expContentJobAuditExport
 JobTypes[helpmanuals]=expContentJobHelpManuals
 JobTypes[transfer]=expContentJobTransfer
+JobTypes[moderation]=expContentJobModeration
 */ ?>
 ```
 

@@ -2,14 +2,14 @@
 title: staticcache.ini [StaticPublishSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail"
-keywords: staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail
+summary: "The settings of [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail ..."
+keywords: staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail, JobHistory
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [StaticPublishSettings]
 
-The block `[StaticPublishSettings]` of `settings/staticcache.ini`, with 8 setting(s).
+The block `[StaticPublishSettings]` of `settings/staticcache.ini`, with 9 setting(s).
 
 Never edit `settings/staticcache.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -140,6 +140,21 @@ Default: empty.
 # settings/override/staticcache.ini.append.php
 [StaticPublishSettings]
 CommitEmail=
+*/ ?>
+```
+
+## JobHistory
+
+> How many jobs (builds, publishes, rollbacks started in the administration) keep their files  
+> in <WorkDir>/.jobs; older ones are removed. A job that is running is always kept.  
+
+Default: `50`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+JobHistory=50
 */ ?>
 ```
 

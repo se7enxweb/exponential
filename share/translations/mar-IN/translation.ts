@@ -15148,6 +15148,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>फाइल्स म्हणून ठेवलेले इन्स्टॉलेशनमधील बदल: त्यांची स्थिती, रन्स, चालवणे आणि मागे घेणे.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>अलीकडील आशय</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>नवीनतम आशय, पुनरावलोकनासाठी काय रोखले आहे, आणि निवडीवरील क्रिया.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>साइटची स्टॅटिक प्रत GitHub Pages वर किंवा कोणत्याही git होस्टवर प्रकाशित करा.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टॅटिक प्रकाशन</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22147,6 +22163,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API च्या जतन केलेल्या क्वेरींची उत्तरे आणि तिच्या स्कीमाचे आशय वर्ग.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>स्टॅटिक प्रत GitHub Pages वर किंवा कोणत्याही git होस्टवर प्रकाशित करा</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टॅटिक प्रकाशन</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>स्टॅटिक कॅशे या सर्व्हरवरून पृष्ठे देते. साइटची स्टॅटिक प्रत इतरत्र, GitHub Pages वर किंवा कोणत्याही git होस्टवर प्रकाशित करण्यासाठी स्टॅटिक प्रकाशन वापरा.</translation>
     </message>
 </context>
 <context>
@@ -76204,6 +76232,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>फाइल्स म्हणून ठेवलेले इन्स्टॉलेशनमधील बदल: त्यांची स्थिती, रन्स, चालवणे आणि मागे घेणे.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>साइटची स्टॅटिक प्रत GitHub Pages वर किंवा कोणत्याही git होस्टवर प्रकाशित करा.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टॅटिक प्रकाशन</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80767,6 +80803,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>रेकॉर्डिंग बदलता आले नाही: %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>सुधारित</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>तयार केले</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाव</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>वर्ग</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>विभाग</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>निर्माता</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>अलीकडील आशय</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>संपूर्ण साइटवरील सर्वात अलीकडे तयार केलेला आणि सुधारित आशय, नवीनतम आधी: अभ्यागतांनी काय पाठवले, पुनरावलोकनासाठी काय रोखून ठेवले आहे, कोणते मसुदे प्रकाशनाची वाट पाहत आहेत. आयटम निवडून त्यांना रोखातून मुक्त करा, रोखा, लपवा, दृश्यमान करा, काढा किंवा दुसऱ्या विभागात किंवा स्थितीत हलवा.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>यादी वाचता आली नाही: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>पुनरावलोकन रोख अद्याप सेट केलेला नाही, म्हणून काहीही रोखले जात नाही आणि रोखण्याच्या क्रिया उपलब्ध नाहीत. अपग्रेड पायरी 6.0.15-review-hold तो सेट करते: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>यादी फिल्टर करा</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>पासून</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>पर्यंत</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>दिनांक</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>तयार केले (प्रथम प्रकाशित)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सर्व</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिती</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>प्रकाशित</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>मसुदा, कधीही प्रकाशित नाही</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>प्रलंबित (मंजुरीची किंवा दिनांकाची प्रतीक्षा)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>कचरापेटीत</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>पुनरावलोकनासाठी रोखलेले</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>रोखलेले</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>रोखलेले नाही</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>लपवलेले</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>दृश्यमान</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>पाठवल्याचा दिनांक</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>कोणताही साइटअॅक्सेस</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>फक्त ऑडिटने नोंदवलेले.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>आता: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>लॉगिन किंवा वापरकर्ता आयडी.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>फिल्टर करा</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>फिल्टर साफ करा</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>आयटम</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count पैकी %from ते %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>एकही आयटम नाही</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms मध्ये वाचले)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>निवडलेल्या आयटमवरील क्रिया</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>या पानावरील सर्व निवडा</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count निवडले</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>क्रिया</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>एक क्रिया निवडा</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>रोख काढा</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>पुनरावलोकनासाठी रोखा</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>लपवा</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>दृश्यमान करा</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>कचरापेटीत हलवा</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>हटवा</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>विभाग नियुक्त करा</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>स्थिती नियुक्त करा</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>कारण</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>रोखण्यासाठी आवश्यक; रोखासोबत आणि ऑडिटमध्ये ठेवले जाते.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>एक विभाग निवडा</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिती</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>एक स्थिती निवडा</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>निवडलेल्यांवर लागू करा</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>प्रत्येक आयटम तुमच्या स्वतःच्या परवानग्यांनुसार तपासला जातो. कचरापेटीत हलवण्यापूर्वी आणि हटवण्यापूर्वी पुष्टी विचारली जाते. %count पेक्षा जास्त आयटम पार्श्वभूमीत चालतात.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>निवडा</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>येथून पाठवले</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name निवडा</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>अद्याप नाही</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(नाव नाही)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>आयडी %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>मसुदा</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>प्रलंबित</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>पालकामुळे लपवलेले</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>रोखलेले: नवीन सबमिशन</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>आवृत्ती %version प्रलंबित</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>आवृत्ती %version वर काम सुरू</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>मसुदा, आवृत्ती %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>आवृत्ती %version प्रकाशित</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date साठी नियोजित</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>पत्ता नाही</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>नोंदवलेले नाही</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>या फिल्टरशी काहीही जुळत नाही.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>सर्व दाखवा</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>अद्याप कोणताही आशय नाही.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>प्रति पान</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>प्रति पान %count आयटम दाखवा.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>सबमिशनचा पत्ता आणि ब्राउझर ऑडिट इंडेक्समधून येतात, जो येथे उपलब्ध नाही: स्तंभात &quot;नोंदवलेले नाही&quot; असे दिसते.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>पत्ता आणि ब्राउझर हे ऑडिटने आयटमसाठी नोंदवलेले आहेत (स्वयंचलित रोख ते नेहमी नोंदवतो; प्रकाशन आणि निर्मिती फक्त जेथे सुरू केले असेल तेथे), त्याच्या गोपनीयता सेटिंग्ज ठेवतात तसे.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count आयटम</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>हटवल्याने आयटम त्यांच्या सर्व आवृत्त्या आणि भाषांतरांसह कायमचे काढले जातात. हे पूर्ववत करता येत नाही.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>आयटम कचरापेटीत जातात, जेथून ते पुनर्संचयित करता येतात.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>प्रत्येक आयटम तुमच्या स्वतःच्या परवानग्यांनुसार तपासला जातो; उप-आयटम असलेला आयटम तसाच ठेवला जातो (तो आशय रचनेत काढा). हे तुम्हीच आहात याची पडताळणी करण्यास सांगितले जाईल.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>हे पार्श्वभूमीत चालते: त्याचे प्रगती पान उघडते, आणि पूर्ण झाल्यावर प्रत्येक आयटमचा निकाल दाखवला जातो.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>निवडलेले आयटम</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>आणि आणखी %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करा</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>काहीही केले नाही</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>कारण: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>क्रिया अजूनही पार्श्वभूमीत चालू आहे.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>तिची प्रगती</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>पार्श्वभूमीतील क्रिया अयशस्वी झाली: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>पूर्ण</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>नाकारले</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>अयशस्वी</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>प्रति आयटम</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>आयटम</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>निकाल</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>का</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>यादीकडे परत</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>काहीही केले नाही</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>पुष्टी करा</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>एक क्रिया निवडा.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>किमान एक आयटम निवडा.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>एका वेळी जास्तीत जास्त 1000 आयटम निवडा.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>आयटम का रोखले आहेत ते सांगा.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>विभाग निवडा.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>स्थिती निवडा.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>फॉर्म वाचता आला नाही.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>अलीकडील आशय</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>संख्या वाचता आल्या नाहीत: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>पुनरावलोकनासाठी रोखलेले</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>आज नवीन</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>पुनरावलोकन रोख अद्याप सेट केलेला नाही (अपग्रेड पायरी 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>सर्व अलीकडील आशय</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>तुम्ही मॉडरेशन क्रिया चालवू शकत नाही (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>मॉडरेशन क्रिया पूर्ण झाली नाही: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>मॉडरेशन: %count ऑब्जेक्टवर %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total पैकी %done ऑब्जेक्ट: %ok पूर्ण, %refused नाकारले, %failed अयशस्वी</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok पूर्ण, %refused नाकारले, %failed अयशस्वी</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ते आता अस्तित्वात नाही.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>त्याला कोणतेही स्थान नाही (प्रकाशित नाही).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>तुम्ही ते लपवू शकत नाही (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>तुम्ही ते दृश्यमान करू शकत नाही (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ते आधीच लपवलेले आहे.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ते लपवलेले नाही.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>लपवले.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>दृश्यमान केले.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ते कचरापेटीत आहे: तेथेच ती रिकामी करा किंवा ते पुनर्संचयित करा.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>कधीही प्रकाशित न झालेला मसुदा कचरापेटीत जाऊ शकत नाही: तो हटवा.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>तुम्ही ते हटवू शकत नाही (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>हटवले.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>तुम्ही ते काढू शकत नाही (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>त्याला उप-आयटम आहेत: ते आशय रचनेत काढा, जेथे ते सूचीबद्ध आहेत.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ते काढले गेले नाही (एखादा वर्कफ्लो काढणे रोखू शकतो).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>कचरापेटीत हलवले.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>विभाग अस्तित्वात नाही.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ते आधीच या विभागात आहे.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>तुम्ही हा विभाग नियुक्त करू शकत नाही (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>विभाग नियुक्त झाला नाही.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>विभाग नियुक्त केला.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>स्थिती अस्तित्वात नाही.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ते आधीच या स्थितीत आहे.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>तुम्ही ही स्थिती नियुक्त करू शकत नाही (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>स्थिती नियुक्त झाली नाही (एखादा वर्कफ्लो हा बदल रोखू शकतो).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>स्थिती नियुक्त केली.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>अशी कोणतीही क्रिया नाही.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>पुनरावलोकन रोख सेट केलेला नाही (अपग्रेड पायरी 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ते का रोखले आहे ते सांगा.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ते आधीच रोखलेले आहे.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>तुम्ही ते रोखू शकत नाही (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>रोख लावला गेला नाही (एखादा वर्कफ्लो हा बदल रोखू शकतो).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>रोखले.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ते रोखलेले नाही.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>तुम्ही ते मुक्त करू शकत नाही (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>रोख काढला गेला नाही (एखादा वर्कफ्लो हा बदल रोखू शकतो).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>मुक्त केले; अजूनही लपवलेले: तुम्ही ते दृश्यमान करू शकत नाही (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>मुक्त केले.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>सर्व लक्ष्ये</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>शेवटचे प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>आपल्या साइटची मोफत स्टॅटिक प्रत GitHub Pages वर प्रकाशित करा:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>जुनी पृष्ठे</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टॅटिक प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>स्टॅटिक प्रकाशन बंद आहे.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>लक्ष्य</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>लक्ष्ये वाचता आली नाहीत: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>एक कार्य सुरू आहे</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>तपासायचा बिल्ड</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>हे लपवा</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>लक्ष्य तयार करा</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>कधीच नाही</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ट्युटोरियल वाचा</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added जोडल्या, %changed बदलल्या, %removed काढल्या</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit पैकी %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>आणखी %count सूचीबद्ध केलेल्या नाहीत.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages पृष्ठे लिहिली</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path चा आकार %size आहे, होस्ट एका फाइलसाठी परवानगी देतो त्यापेक्षा जास्त.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>मर्यादेच्या %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds से.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag हे साइटचे सध्याचे प्रकाशन आहे.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: कार्य %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub प्रोजेक्ट साइटसाठी /repository/; कस्टम डोमेन किंवा वापरकर्ता साइटसाठी रिकामे.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. साइट</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. होस्ट</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. रिपॉझिटरीमध्ये साइन इन</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. रिपॉझिटरी</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. लिंक आणि बेस पाथ</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. आपले स्वतःचे डोमेन</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. बिल्डमध्ये काय असते</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. ते केव्हा प्रकाशित होते</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. पुनरावलोकन करा आणि जतन करा</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub प्रोजेक्ट साइट /&lt;repository&gt;/ खाली असते; सापेक्ष लिंक तेथे आणि इतर कोठेही चालतात.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>बिल्ड %site चे प्रत्येक पृष्ठ साइन इन न केलेल्या अभ्यागताला दिसते तसे आणतो, लिंक पुन्हा लिहितो, फाइल्स कॉपी करतो आणि निकाल लक्ष्याच्या फोल्डरमध्ये लिहितो. आपण बिल्ड तपासून प्रकाशित करा दाबेपर्यंत काहीही प्रकाशित होत नाही.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>एक cron अभिव्यक्ती, उदाहरणार्थ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>डिप्लॉय की %secret या गुपिताच्या रूपात ठेवली जाते.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>डिप्लॉय की या इन्स्टॉलेशनला SSH द्वारे फक्त एकाच रिपॉझिटरीमध्ये पुश करू देते, इतर कोठेही नाही. तिचा खाजगी भाग सेटअप &gt; गुपिते मध्ये राहतो; फक्त सार्वजनिक भाग दाखवला जातो.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>या लक्ष्यासाठी तयार केलेली डिप्लॉय की</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>डिप्लॉय की SSH द्वारे साइन इन करते: git पत्ता SSH पत्त्यात बदला (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>एक कार्य सुरू आहे, %user यांनी सुरू केलेले</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>या लक्ष्याचे एक कार्य अजून सुरू आहे (%detail). ते संपेपर्यंत थांबा.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>या लक्ष्याचे एक कार्य अजून सुरू आहे. ते संपेपर्यंत थांबा.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ या पृष्ठावरून /about-us/team या पृष्ठाकडे जाणारी लिंक अशी लिहिली जाईल</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>नवीन डिप्लॉय की तयार केली. तिचा सार्वजनिक भाग आता रिपॉझिटरीमध्ये जोडा.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>साफसफाईनंतरही डीबग आउटपुट, फॉर्म टोकन किंवा सेशन आयडी असलेले पृष्ठ कधीच प्रकाशित होत नाही.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>रोलबॅक तज्ज्ञांसाठी आहे: &quot;हे काय बदलते ते मला माहीत आहे&quot; वर खूण करा आणि टॅगचे नाव पुन्हा टाइप करा.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>साइट %site पर्यंत, एक फाइल %file पर्यंत असू शकते, आणि दरमहा सुमारे 100 GB ट्रॅफिक. मोफत प्लॅनवर रिपॉझिटरी सार्वजनिक असणे आवश्यक आहे. GitHub Pages दुकाने किंवा इतर व्यावसायिक व्यवहारांसाठी नाही.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>लक्ष्य म्हणजे एका git रिपॉझिटरीमध्ये प्रकाशित केलेली एक साइट. येथे काहीही बिल्ड किंवा प्रकाशित होत नाही: जतन करा सेटिंग्ज settings/override/staticcache.ini.append.php मध्ये लिहिते.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>लक्ष्य म्हणजे एका ठिकाणी प्रकाशित केलेली एक साइट, उदाहरणार्थ GitHub Pages वरील आपली सार्वजनिक साइट.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>सेटअप &gt; गुपिते मधील टोकन</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>रिपॉझिटरीचा एक वर्कफ्लो ते प्रकाशित करतो.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ही सार्वजनिक की लेखन प्रवेशासह रिपॉझिटरीमध्ये जोडा. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access वर खूण करा.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>जोडले</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>दुसरा git होस्ट</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>दुसरी प्रक्रिया या लक्ष्यावर काम करत आहे: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>मागे</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>बेस पाथ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>आधी</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>बेस पाथच्या खाली</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>शाखा</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>तुटलेल्या लिंक</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>बिल्डमधील तुटलेल्या लिंक</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>बिल्ड</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user यांचा बिल्ड %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name चा बिल्ड</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>आता बिल्ड करा</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>तपासायचा बिल्ड</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>द्वारे</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>हाताने, येथे</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करा</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>बदला</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>बदलले</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>बदल</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>आधी ते तपासा</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ही सेटिंग्ज तपासा</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>बिल्ड काय बदलतो ते तपासा, तो पाहा, मग तो प्रकाशित करा किंवा टाकून द्या.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>परत जायचे प्रकाशन निवडा.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>नंतरच्या रिलीझमध्ये येईल.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>कमिट</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>कमिट्स</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>बिल्ड कमिट करते, त्याला टॅग लावते आणि %remote वर पुश करते. पुश कधीच जबरदस्तीने केला जात नाही; आपण नंतर कोणत्याही प्रकाशनाकडे परत जाऊ शकता.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>आधीच्या फोल्डरशी तुलना: %added जोडल्या, %changed बदलल्या, %removed काढल्या, %unchanged न बदललेल्या.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>शेवटच्या प्रकाशनाशी तुलना.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>क्रेडेन्शियल</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>कस्टम डोमेन</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>डीबग आउटपुट, फॉर्म टोकन, सेशन आयडी आणि नॉन्स नेहमी काढले जातात.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>डिप्लॉय की</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ची डिप्लॉय की</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>टाकून द्या</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>बिल्ड टाकून द्या</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>डोमेन</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>रिकामे: साइटचा पत्ता. अन्यथा त्याच साइटचा अंतर्गत पत्ता.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>संपले</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>प्रत्येक लिंक बेस पाथने सुरू होते.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>प्रत्येक प्रकाशन static/%id/&lt;n&gt; टॅग असलेले एक कमिट असते. परत जाण्याने आधीच्या प्रकाशनाच्या फाइल्ससह नवीन कमिट तयार होते: इतिहास राहतो, कोणताही टॅग हलत नाही आणि काहीही जबरदस्तीने केले जात नाही.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>अतिरिक्त फाइल्स</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>पृष्ठे येथून आणा</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>फाइल्स</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>गहाळ फाइल्स</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>यांच्या फाइल्स</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>गोळा करता न आलेल्या फाइल्स</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>फिंगरप्रिंट</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>फोल्डर</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH पत्त्यासाठी. जतन केल्यानंतर की तयार होते; तिचा सार्वजनिक भाग आपण रिपॉझिटरीमध्ये जोडता.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// पत्त्यासाठी. GitHub: रिपॉझिटरीवर Contents साठी वाचन आणि लेखन असलेले fine-grained टोकन.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>तज्ज्ञांसाठी. पुश पूर्ण होताच सार्वजनिक साइट बदलते.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>फॉर्म</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub रिपॉझिटरीमधून मोफत होस्टिंग.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>शाखेमधून</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git पत्ता</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site ची साइट आणि %file ची फाइल परवानगी देते.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages च्या मर्यादा</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages फाइल्स जशा आहेत तशा प्रकाशित करते (_ ने सुरू होणाऱ्या फाइल्ससाठी आवश्यक).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub शाखा जशी पुश केली तशीच देते. डीफॉल्ट.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, आपला स्वतःचा सर्व्हर: कोणतीही git रिपॉझिटरी.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>आधीच्या प्रकाशनाकडे परत जा</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>मदत</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>विझार्डसाठी मदत</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>त्यांना लपवा</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>इतिहास</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name चा इतिहास</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>होस्ट</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ला बिल्ड कसा मिळतो</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>मी बदल तपासले आहेत</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>हे काय बदलते ते मला माहीत आहे</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>आयडी</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>हे बंद आहे: ते सुरू होईपर्यंत काहीही बिल्ड करता येणार नाही.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>हे पार्श्वभूमीत %user म्हणून चालते; आपण हे पृष्ठ बंद करू शकता.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>कार्य %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret या गुपिताच्या रूपात ठेवले.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>प्रकार</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>शेवटचे प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ही पृष्ठे वगळा</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>हे विभाग वगळा</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>लिंक</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>पुन्हा लिहिलेल्या लिंक</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>लाइव्ह साइट</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>बिल्ड पाहा</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>लहान अक्षरे, अंक, _ आणि -, उदाहरणार्थ github-public. हे फोल्डर आणि टॅग (static/&lt;id&gt;/&lt;n&gt;) यांना नाव देते आणि नंतर बदलता येत नाही.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>नवीन की तयार करा</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>लक्ष्य तयार करा</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>की तयार करा</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>आधी होस्टवर रिपॉझिटरी तयार करा; रिकामी असली तरी चालेल.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>मॅनिफेस्ट</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>संदेश</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>बहुतेक पृष्ठे</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाव</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>सेटअप &gt; गुपिते मधील टोकनचे नाव</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>नवीन लक्ष्य</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>पुढे</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>नाही</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>अजून कोणतेही कमिट नाही.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>कोणतीही की तयार झाली नाही: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php कमांड लाइन बायनरी सापडली नाही. migration.ini [AdminSettings] PhpCliPath तिच्या पूर्ण पाथवर सेट करा.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>अजून कोणताही टॅग नाही.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>अजून कोणतेही लक्ष्य नाही.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>काहीही नाही</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>बिल्डमध्ये नाही.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>अजून काहीही प्रकाशित झालेले नाही.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>अजून काहीही प्रकाशित झालेले नाही: प्रत्येक फाइल नवीन आहे.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>सूचित करा</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>वेळापत्रकानुसार</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>कन्सोलवर</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>सर्व्हरवर: ./console exp:static:serve %id ते त्याच प्रकारे देते.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>प्रत्येक ओळीत एक पाथ, * कोणत्याही भागाशी जुळतो: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>लक्ष्यासोबत फक्त नाव साठवले जाते; टोकन किंवा की स्वतः सेटअप &gt; गुपिते मध्ये राहते आणि कधीही लॉगमध्ये दिसत नाही.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>फक्त पृष्ठे ज्यांचा उल्लेख करतात ते</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>फक्त टोकनसह. env:NAME त्याऐवजी सर्व्हरचे पर्यावरण व्हेरिएबल वाचते.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>पूर्वावलोकन उघडा</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>होस्ट जसा देईल तसा बिल्ड लक्ष्याच्या फोल्डरमधून उघडतो. ही लिंक आपल्यासाठी एक तास चालते.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>पर्यायी. रिकामे: जे प्रकाशित झाले ते.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>पर्यायी. डोमेन असल्यास साइट त्याच्या रूटवर दिली जाते.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>आउटपुट</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>पृष्ठे</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>लक्ष्याची पृष्ठे</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>नाकारलेली पृष्ठे</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>पश्च-प्रक्रिया</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>पूर्वावलोकन</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>पूर्वावलोकन आणि प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name चे पूर्वावलोकन आणि प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>बिल्डचे पूर्वावलोकन करा</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>प्रगती</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>सार्वजनिक पत्ता</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>सार्वजनिक की</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>प्रकाशित करा</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>साइटची स्टॅटिक प्रत GitHub Pages वर किंवा कोणत्याही git होस्टवर प्रकाशित करा: ती बिल्ड करा, बदल तपासा, प्रकाशित करा, आणि गरज असेल तेव्हा आधीच्या प्रकाशनाकडे परत जा.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>परत जायचे प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>प्रकाशने</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>पुश</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>ट्युटोरियल वाचा</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>नोंद</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>नाकारले</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>सापेक्ष</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>पुन्हा लोड करा</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>काढले</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>की बदला: जुनी की काम करणे थांबवते</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>अहवाल</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>बिल्डचा अहवाल</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>रिपॉझिटरी</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>पुनरावलोकन</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>पुनरावलोकन प्रत्येक सेटिंग तपासते आणि लिहिल्या जाणाऱ्या ओळी दाखवते. अजून काहीही जतन झालेले नाही.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>मागे घ्या</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>रोलबॅक</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>जतन करा</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>वेळापत्रक</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>शोध पृष्ठ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>विभाग आयडी, स्वल्पविरामाने वेगळे केलेले.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>त्यांना लाइव्ह साइटवर पाठवा</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>सेटिंग</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>सेटिंग्ज</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ची सेटिंग्ज</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>सेटअप &gt; गुपिते</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>सूचींमध्ये दाखवले जाते, उदाहरणार्थ &quot;GitHub Pages वरील सार्वजनिक साइट&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App द्वारे साइन इन GitHub एकत्रीकरणासोबत येईल.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>साइट</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>प्रकाशित करायची साइट</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>आकार</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>आकार आणि मर्यादा</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>बिल्डचा आकार</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>जुनी पृष्ठे</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>सुरू झाले</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user यांनी %time वाजता सुरू केले.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिती</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>स्टॅटिक प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>स्टॅटिक प्रकाशन बंद आहे</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>स्टॅटिक प्रकाशन बंद आहे.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>स्टॅटिक प्रकाशन बंद आहे. आधी सेटअप &gt; स्टॅटिक प्रकाशन मध्ये ते सुरू करा.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>स्टॅटिक प्रकाशन सुरू आहे.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total पैकी पायरी %step</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>पायऱ्या</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>साफसफाई</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>बंद करा</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>सुरू करा</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>स्टॅटिक प्रकाशन सुरू करा</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>टॅग</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>टॅग्ज</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>लक्ष्य</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>लक्ष्ये तयार करता आणि बदलता येतात, पण हे सुरू होईपर्यंत काहीही बिल्ड किंवा प्रकाशित होत नाही.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>सर्च इंजिनांना काय वाचायचे ते सांगते.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>बिल्ड टाकून देता आला नाही: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>बिल्ड शेवटच्या प्रकाशनासारखाच आहे: प्रकाशित करण्यासारखे काहीही नाही.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>बिल्ड टाकून दिला: फोल्डरमध्ये पुन्हा शेवटचे प्रकाशन आहे.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>डीफॉल्ट मूल्ये बहुतेक साइट्ससाठी योग्य आहेत.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>फोल्डरमध्ये अजून प्रकाशित न झालेला बिल्ड आहे; नवीन बिल्ड त्याची जागा घेतो.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>कार्यांचे फोल्डर लिहिता येत नाही: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>कार्य तयार करता आले नाही: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>कार्य सुरू करता आले नाही.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>कार्य संपले आहे. त्याचा अहवाल लोड होत आहे.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>कार्यासाठी साइन इन केलेला वापरकर्ता आवश्यक आहे.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>कार्य सुरू झाले पण त्याने प्रक्रिया आयडी कळवला नाही. %detail तपासा.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>की</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>सर्वात मोठी फाइल: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>लिहिल्या जाणाऱ्या ओळी</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>सर्च इंजिनांसाठी पृष्ठांची सूची; सार्वजनिक पत्ता आवश्यक आहे.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>साइन इन न केलेल्या अभ्यागताला दिसतात तशी पृष्ठे आणली जातात. प्रशासन आणि संपादन siteaccess कधीही दिले जात नाहीत.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>प्रगतीचा मागोवा घेता आला नाही. कार्य कसे चालले आहे ते पाहण्यासाठी पृष्ठ पुन्हा लोड करा.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>कीचा सार्वजनिक भाग:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>शाखेचे रूट</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>गुपित संग्रह अजून सेट केलेला नाही (./console exp:upgrade --apply त्याचे टेबल तयार करते), त्यामुळे कोणतीही की ठेवता येत नाही.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>सर्व्हर स्वतःच साइन इन करतो (त्याची स्वतःची SSH की किंवा क्रेडेन्शियल हेल्पर), किंवा रिपॉझिटरी याच सर्व्हरवर आहे.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>सेटिंग लिहिता आली नाही: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>सेटिंग्ज वैध आहेत. या ओळी लिहिल्या जातील:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>सेटिंग्ज फाइल वाचता येत नाही: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>साइट त्या प्रकाशनाच्या फाइल्सकडे परत जाते; अजून प्रकाशित न झालेला बिल्ड आधी प्रकाशित करणे किंवा टाकून देणे आवश्यक आहे.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>अस्तित्वात नसलेल्या पत्त्यांसाठी साइटचे स्वतःचे पृष्ठ.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>लक्ष्य जतन करता आले नाही: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>लक्ष्य अजून या कीने साइन इन करत नाही: त्याच्या सेटिंग्जमध्ये &quot;या लक्ष्यासाठी तयार केलेली डिप्लॉय की&quot; निवडा.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>लक्ष्ये वाचता आली नाहीत: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>तपासण्यासाठी अजून कोणताही बिल्ड नाही.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>या इन्स्टॉलेशनमध्ये कोणताही फ्रंट siteaccess नाही. प्रशासन आणि संपादन siteaccess कधीही प्रकाशित होत नाहीत.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>हे पृष्ठ कार्य चालू असताना त्याचा मागोवा घेते; पृष्ठ बंद केल्यावर ते पार्श्वभूमीत चालू राहते.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>या लक्ष्याला अजून डिप्लॉय की नाही.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>हे लक्ष्य अजून येथे बिल्ड झालेले नाही.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>या लक्ष्याला एक आहे.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>हा बिल्ड टाकून देते: फोल्डरमध्ये पुन्हा शेवटचे प्रकाशन येते. लाइव्ह साइट बदलत नाही.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>आधी &quot;मी बदल तपासले आहेत&quot; वर खूण करा.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>वेळ</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ट्रिगर्स</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>टॅगचे नाव पुन्हा टाइप करा</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>न बदललेले</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>वेबहुक</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>काय</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>काय बदलते</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>प्रत्येक फाइल काय आहे; नेहमी लिहिले जाते.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>कार्याने काय केले आणि त्याची नोंद. येथे सुरू केलेले कार्य हे पृष्ठ बंद केल्यावर पार्श्वभूमीत चालू राहते.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>कार्याने त्रुटी म्हणून काय छापले</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>पृष्ठे ज्यांचा उल्लेख करतात ते, आणि प्रकाशित सामग्रीची प्रत्येक प्रतिमा</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>केव्हा</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>प्रकाशन अयशस्वी झाल्यावर</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>प्रकाशन यशस्वी झाल्यावर</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>सामग्री प्रकाशित झाल्यावर</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>प्रतीमध्ये नसलेल्या गोष्टींच्या लिंक कोठे जातात (शोध, लॉगिन).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>स्टॅटिक प्रत कोठून दिली जाते.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>कोणती साइट प्रकाशित होते, आणि लक्ष्याचे नाव काय आहे.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>कोणत्याही पाथखाली चालते. डीफॉल्ट.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>कस्टम डोमेन सेट केले असेल तेव्हा लिहिले जाते.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>होय</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>आपण नेहमी येथे आणि कन्सोलवर हाताने बिल्ड आणि प्रकाशित करू शकता.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>फक्त नाव; मूल्य सेटअप &gt; गुपिते मध्ये राहते</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path खाली</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>अहवालाशिवाय संपले</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>अतिरिक्त</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>अयशस्वी</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>फाइल</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, किंवा docs फोल्डरसह main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git होस्ट</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (टोकनसह) किंवा git@github.com:owner/repo.git (डिप्लॉय कीसह); त्यात कधीही पासवर्ड किंवा टोकन नाही.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, साइटमॅप आणि कॅनॉनिकल लिंकसाठी.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>प्रतिमा</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>कधीच नाही</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>नाही</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>रिमोट नाही</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>काहीही नाही: कमिट्स फोल्डरमध्येच राहतात</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>काहीही नाही: काहीच बदलले नाही</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>पुश केलेले नाही</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>काहीच बदलले नाही</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>पृष्ठ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>यशस्वी</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open अक्षम आहे, त्यामुळे येथे कार्य सुरू करता येत नाही. सर्व्हरवर ./console exp:static:build वापरा.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>प्रकाशन</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>प्रकाशित</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>पुश प्रलंबित</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>पुश केले</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>नाकारले</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>सापेक्ष</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>रोलबॅक</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>मागे घेतले</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>चालू आहे</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>फक्त फोल्डर</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME फाइलमध्ये लिहिले जाते. डोमेनचा DNS होस्ट सांगतो त्याप्रमाणे होस्टकडे निर्देशित करा; HTTPS सुरू होण्यास थोडा वेळ लागू शकतो.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>होय, अजून प्रकाशित नाही</translation>
     </message>
 </context>
 </TS>

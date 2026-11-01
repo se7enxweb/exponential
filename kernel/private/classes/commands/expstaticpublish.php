@@ -34,11 +34,14 @@ class Expstaticpublish extends ExpstaticBase
                              "./console exp:static:publish github-public --message=\"New opening hours\"\n" .
                              "./console exp:static:publish github-public --no-push                commit and tag only",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[build][message:][no-push][format:]', '[target]', array(
+        return (array)$this->startup( '[build][message:][no-push][format:][login:][run-id:][progress:]', '[target]', array(
             'build' => 'Build the target first (as exp:static:build); nothing is committed when the build does not finish',
             'message' => 'The commit message (default: what was published, or which publish is restored)',
             'no-push' => 'Commit and tag, but do not push (exp:static:push pushes later)',
             'format' => 'text (default) or json (the machine output exp-static/1)',
+            'login' => 'Run as this user (the administration starts its jobs so); recorded as who ran it',
+            'run-id' => 'The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job\'s id)',
+            'progress' => 'Also append the progress, one JSON object per line, to this file (the administration follows it)',
         ) );
     }
 
@@ -47,13 +50,16 @@ class Expstaticpublish extends ExpstaticBase
         $options = $this->begin();
         $format = $this->format( $options );
         $message = isset( $options['message'] ) && $options['message'] !== false ? (string)$options['message'] : '';
+        $job = $this->jobOptions( $options );
         $target = $this->target( $options, $format );
         $this->requireEnabled( $target, 'publish', $format );
         $db = $this->database( $format );
         $command = $this;
         $publisher = $this->publisher( $target, $db, array(
-            'emit' => $format === 'json' ? null : function ( $type, $text ) use ( $command ) { $command->progress( $type, $text ); },
+            'emit' => self::bothEmit( $format === 'json' ? null : function ( $type, $text ) use ( $command ) { $command->progress( $type, $text ); }, $job['progress'] ),
             'push' => !empty( $options['no-push'] ) ? false : null,
+            'by' => $job['by'],
+            'run_id' => $job['run_id'],
         ) );
         $this->finish( $publisher->publish( array( 'build' => !empty( $options['build'] ), 'message' => $message ) ), $format );
     }

@@ -75,6 +75,49 @@ The upgrade step `6.0.15-review-hold` does everything, idempotently:
 Nothing changes for editors until an object is held. To undo it, remove the limitation from the policies and the state
 group in Setup > States.
 
+## Auto-hold
+
+Content that visitors submit (comments, reviews, forum posts) can be held automatically until a moderator has looked
+at it:
+
+```ini
+# content.ini (or settings/siteaccess/<public siteaccess>/content.ini.append.php)
+[ReviewHoldSettings]
+AutoHold=enabled
+AutoHoldClassList[]=comment
+AutoHoldClassList[]=review
+ExemptPolicyList[]=state/assign
+ExemptPolicyList[]=moderation/act
+```
+
+The **first publication** of an object of a listed class, made by a user who has none of the exempt policies, is put
+into `review_hold/held` and **its locations are hidden**. It happens in the publish operation itself (the step
+`auto-review-hold`, after the object is published and before the content edit handlers, the commit, the view cache and
+the search index), so the page never shows it, whatever published it: a web form, the REST API, a cronjob, an approval.
+Later versions of the object are not auto-held. `content.object.hold.auto` is recorded with the submitter's address and
+browser. Exempt: a user who may place the held state on the object (`state/assign`, e.g. the role Review hold),
+`content/hide` of its location, `moderation/act`, or any other `module/function` listed.
+
+Why hidden and not unreadable: the kernel's own visibility (the hidden flag, `ShowHiddenNodes`) is what every view,
+fetch, menu, sitemap, feed and search engine already honour for visitors, with no change to any role. Making held
+objects unreadable would mean adding the review hold limitation to every `content/read` policy of the visitors' roles,
+and would also hide pages an editor holds on purpose while visitors should keep seeing the published version. So a
+hold by itself never hides; the auto-hold hides what it holds, and remembers which locations it hid.
+
+**Releasing** (Setup > Recent content, *Release the hold*, or the website sidebar's Page panel) sets `not_held` and
+reveals exactly the locations the auto-hold hid, when the releasing user may hide them (`content/hide`); otherwise the
+result says it stays hidden. A location an editor hid themselves is never revealed by a release. The kept data (who,
+when, why, which locations) is in `ezsite_data` as `review_hold_<object id>` while the hold lasts.
+
+### Auto-hold and expwt's HideNew
+
+The website sidebar has its own pre-moderation of comments, expwt.ini `[Comments] HideNew`: a new comment by someone
+who may not hide it is hidden (not held), and the sidebar's *Approve* reveals it. When both are on, the auto-hold runs
+first; HideNew sees the comment hidden already and leaves it, and *Approve* in the sidebar also releases the hold. We
+recommend the auto-hold: it works for any class, for every way of publishing, without the sidebar, it shows in Setup >
+Recent content with the submitter's address, and a held comment cannot be edited or republished by its author until a
+moderator releases it. Keep HideNew only on installations that do not run the review hold yet.
+
 ## For developers
 
 ```php

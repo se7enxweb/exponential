@@ -15089,6 +15089,22 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Bidliet fl-installazzjoni miżmuma bħala fajls: l-istat tagħhom, it-tħaddimiet, tħaddim u treġġigħ lura.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kontenut riċenti</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>L-aktar kontenut ġdid, dak li qed jinżamm għar-reviżjoni, u azzjonijiet fuq għażla.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Ippubblika kopja statika ta&apos; sit fuq GitHub Pages jew fuq kwalunkwe host tal-git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Pubblikazzjoni statika</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22104,18 @@ Nota: il-pakketti mhux se jiġu ddiżinstallati.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Tweġibiet tal-mistoqsijiet maħżuna tal-API GraphQL, u l-klassijiet tal-kontenut tal-iskema tagħha.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Ippubblika kopja statika fuq GitHub Pages jew fuq kwalunkwe host tal-git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Pubblikazzjoni statika</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Il-cache statika sservi l-paġni minn dan is-server. Biex tippubblika kopja statika ta&apos; sit x&apos;imkien ieħor, fuq GitHub Pages jew fuq kwalunkwe host tal-git, uża l-pubblikazzjoni statika.</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76173,14 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Bidliet fl-installazzjoni miżmuma bħala fajls: l-istat tagħhom, it-tħaddimiet, tħaddim u treġġigħ lura.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Ippubblika kopja statika ta&apos; sit fuq GitHub Pages jew fuq kwalunkwe host tal-git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Pubblikazzjoni statika</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80799,6 +80835,2028 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>Ir-reġistrazzjoni ma setgħetx tinbidel: %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Immodifikat</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Maħluq</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klassi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Taqsima</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Ħallieq</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Kontenut riċenti</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>L-aktar kontenut maħluq u mmodifikat riċentement tas-sit kollu, l-aktar ġdid l-ewwel: dak li bagħtu l-viżitaturi, dak li qed jinżamm għar-reviżjoni, abbozzi li qed jistennew il-pubblikazzjoni tagħhom. Agħżel oġġetti biex teħlishom, iżżommhom, taħbihom, turihom, tneħħihom jew tmexxihom għal taqsima jew stat ieħor.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Il-lista ma setgħetx tinqara: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Iż-żamma għar-reviżjoni għadha mhix issettjata, għalhekk xejn mhu miżmum u l-azzjonijiet taż-żamma mhumiex offruti. Il-pass tal-aġġornament 6.0.15-review-hold jissettjaha: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Iffiltra l-lista</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sa</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Maħluq (l-ewwel pubblikazzjoni)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kollha</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stat tal-pubblikazzjoni</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ippubblikat</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Abbozz, qatt ma ġie ppubblikat</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pendenti (jistenna approvazzjoni jew data)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Fil-barmil</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Miżmum għar-reviżjoni</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Miżmum</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Mhux miżmum</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Moħbi</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Viżibbli</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Mibgħut fil-</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Kwalunkwe aċċess għas-sit</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Biss dak li rreġistra l-awditu.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Issa: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Isem tal-login jew ID tal-utent.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Iffiltra</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Neħħi l-filtri</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Oġġetti</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sa %to minn %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>L-ebda oġġett</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(moqri f&apos;%ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Azzjonijiet fuq l-oġġetti magħżula</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Agħżel kollox f&apos;din il-paġna</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count magħżula</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Azzjoni</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Agħżel azzjoni</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Eħles iż-żamma</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Żomm għar-reviżjoni</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Aħbi</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Uri</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Mexxi għall-barmil</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ħassar</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Assenja taqsima</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Assenja stat</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Raġuni</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Meħtieġa biex iżżomm; tinżamm maż-żamma u fl-awditu.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Agħżel taqsima</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stat</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Agħżel stat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Applika għal dawk magħżula</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Kull oġġett jiġi ċċekkjat skont il-permessi tiegħek. It-tmexxija għall-barmil u t-tħassir jitolbuk tikkonferma. Aktar minn %count oġġetti jaħdmu fl-isfond.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Agħżel</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Pubblikazzjoni</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Mibgħut minn</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Agħżel %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>għadu le</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bla isem)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Abbozz</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendenti</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Moħbi mill-ġenitur tiegħu</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Miżmum: sottomissjoni ġdida</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Verżjoni %version pendenti</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Verżjoni %version għaddejja</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Abbozz, verżjoni %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Verżjoni %version ippubblikata</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Skedat għal %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>l-ebda indirizz</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>mhux irreġistrat</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Xejn ma jaqbel ma&apos; dawn il-filtri.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Uri kollox</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Għad m&apos;hemmx kontenut.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Għal kull paġna</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Uri %count oġġetti għal kull paġna.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>L-indirizz u l-browser ta&apos; sottomissjoni ġejjin mill-indiċi tal-awditu, li mhuwiex disponibbli hawn: il-kolonna tgħid &quot;mhux irreġistrat&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>L-indirizz u l-browser huma dawk li l-awditu rreġistra għall-oġġett (iż-żamma awtomatika dejjem tirreġistrahom; il-pubblikazzjoni u l-ħolqien biss fejn huwa attivat), kif iżommhom is-settings tal-privatezza tiegħu.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count oġġetti</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>It-tħassir ineħħi l-oġġetti għal dejjem, bil-verżjonijiet u t-traduzzjonijiet kollha tagħhom. Ma jistax jitreġġa&apos; lura.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>L-oġġetti jmorru fil-barmil, minn fejn jistgħu jiġu rrestawrati.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Kull oġġett jiġi ċċekkjat skont il-permessi tiegħek; oġġett b&apos;sotto-oġġetti jitħalla kif inhu (neħħih fl-istruttura tal-kontenut). Tintalab tivverifika li int.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dan jaħdem fl-isfond: tinfetaħ il-paġna tal-progress tiegħu, u r-riżultat għal kull oġġett jintwera meta jispiċċa.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>L-oġġetti magħżula</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>u %count oħra</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ikkanċella</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ma sar xejn</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Raġuni: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>L-azzjoni għadha għaddejja fl-isfond.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Il-progress tagħha</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>L-azzjoni fl-isfond falliet: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Lest</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rifjutat</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Falla</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Għal kull oġġett</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Oġġett</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Riżultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Għaliex</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Lura għal-lista</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazzjoni</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Xejn ma sar</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Ikkonferma</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Agħżel azzjoni.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Agħżel mill-inqas oġġett wieħed.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Agħżel l-aktar 1000 oġġett kull darba.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Għid għaliex l-oġġetti qed jinżammu.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Agħżel it-taqsima.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Agħżel l-istat.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Il-formola ma setgħetx tinqara.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Kontenut riċenti</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>L-għadd ma setax jinqara: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Miżmum għar-reviżjoni</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ġodda llum</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Iż-żamma għar-reviżjoni għadha mhix issettjata (il-pass tal-aġġornament 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Il-kontenut riċenti kollu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ma tistax tħaddem azzjonijiet ta&apos; moderazzjoni (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>L-azzjoni ta&apos; moderazzjoni mhix kompluta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderazzjoni: %action fuq %count oġġetti</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done minn %total oġġetti: %ok lesti, %refused rifjutati, %failed fallew</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok lesti, %refused rifjutati, %failed fallew</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ma għadux jeżisti.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>M&apos;għandux post (mhux ippubblikat).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ma tistax taħbih (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ma tistax turih (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Diġà moħbi.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Mhuwiex moħbi.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Moħbi.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Muri.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Jinsab fil-barmil: battal jew irrestawrah hemmhekk.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Abbozz li qatt ma ġie ppubblikat ma jistax imur fil-barmil: ħassru.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ma tistax tħassru (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Imħassar.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ma tistax tneħħih (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Għandu sotto-oġġetti: neħħih fl-istruttura tal-kontenut, fejn huma elenkati.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ma tneħħiex (workflow jista&apos; jżomm it-tneħħija).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Imċaqlaq għall-barmil.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>It-taqsima ma teżistix.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Diġà jinsab f&apos;din it-taqsima.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ma tistax tassenja din it-taqsima (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>It-taqsima ma ġietx assenjata.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Taqsima assenjata.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>L-istat ma jeżistix.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Diġà jinsab f&apos;dan l-istat.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ma tistax tassenja dan l-istat (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>L-istat ma ġiex assenjat (workflow jista&apos; jżomm il-bidla).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stat assenjat.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>M&apos;hemmx azzjoni bħal din.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Iż-żamma għar-reviżjoni mhix issettjata (il-pass tal-aġġornament 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Għid għaliex qed jinżamm.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Diġà miżmum.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ma tistax iżżommu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Iż-żamma ma tqegħditx (workflow jista&apos; jżomm il-bidla).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Miżmum.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Mhuwiex miżmum.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ma tistax teħilsu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Iż-żamma ma nħelsitx (workflow jista&apos; jżomm il-bidla).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Meħlus; għadu moħbi: ma tistax turih (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Meħlus.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Il-miri kollha</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>L-aħħar pubblikazzjoni</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Ippubblika kopja statika b&apos;xejn tas-sit tiegħek fuq GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Paġni skaduti</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Pubblikazzjoni statika</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Il-pubblikazzjoni statika hija mitfija.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Mira</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Il-miri ma setgħux jinqraw: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>kompitu għaddej</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>bini biex jiġi ċċekkjat</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>aħbi dan</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>oħloq mira</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>qatt</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>aqra t-tutorja</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added miżjuda, %changed mibdula, %removed imneħħija</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes minn %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count oħra mhumiex elenkati.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Paġni miktuba: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path huwa %size, aktar milli l-host jippermetti għal fajl wieħed.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % tal-limitu</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag hija l-pubblikazzjoni li għandu s-sit issa.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: kompitu %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repożitorju/ għal sit ta&apos; proġett fuq GitHub; vojt għal dominju proprju jew sit ta&apos; utent.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Is-sit</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Il-host</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Dħul fir-repożitorju</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Ir-repożitorju</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Links u l-mogħdija bażi</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Id-dominju tiegħek</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. X&apos;fih il-bini</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Meta jiġi ppubblikat</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Irrevedi u ssalva</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Sit ta&apos; proġett fuq GitHub jinsab taħt /&lt;repository&gt;/; il-links relattivi jaħdmu hemm u kullimkien ieħor.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Bini jġib kull paġna ta&apos; %site kif jaraha viżitatur li mhux illoggjat, jikteb mill-ġdid il-links, jikkopja l-fajls u jikteb ir-riżultat fil-folder tal-mira. Xejn ma jiġi ppubblikat qabel ma tiċċekkja l-bini u tagħfas Ippubblika.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Espressjoni cron, pereżempju 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ċavetta tal-iskjerament tinżamm bħala s-sigriet %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ċavetta tal-iskjerament tħalli din l-installazzjoni tibgħat lejn repożitorju wieħed permezz ta&apos; SSH u mkien ieħor. In-nofs privat tagħha jibqa&apos; f&apos;Konfigurazzjoni &gt; Sigrieti; jintwera biss in-nofs pubbliku.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ċavetta tal-iskjerament magħmula għal din il-mira</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ċavetta tal-iskjerament tidħol permezz ta&apos; SSH: ibdel l-indirizz tal-git għal dak SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Kompitu għaddej, mibdi minn %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Kompitu ta&apos; din il-mira għadu għaddej (%detail). Stenna sakemm jispiċċa.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Kompitu ta&apos; din il-mira għadu għaddej. Stenna sakemm jispiċċa.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Link mill-paġna /news/ għall-paġna /about-us/team se jinkiteb bħala</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Saret ċavetta tal-iskjerament ġdida. Żid in-nofs pubbliku tagħha mar-repożitorju issa.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Paġna li wara t-tneħħija għad fiha output tad-debug, token ta&apos; formola jew id ta&apos; sessjoni qatt ma tiġi ppubblikata.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Treġġigħ lura huwa għall-esperti: immarka &quot;Naf x&apos;jibdel dan&quot; u erġa&apos; ikteb l-isem tat-tikketta.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Sit jista&apos; jkun sa %site, fajl wieħed sa %file, b&apos;madwar 100 GB traffiku fix-xahar. Fuq pjan b&apos;xejn ir-repożitorju għandu jkun pubbliku. GitHub Pages mhuwiex maħsub għal ħwienet jew tranżazzjonijiet kummerċjali oħra.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Mira hija sit wieħed ippubblikat f&apos;repożitorju tal-git wieħed. Hawn xejn ma jinbena jew jiġi ppubblikat: Salva jikteb l-issettjar f&apos;settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Mira hija sit wieħed ippubblikat f&apos;post wieħed, pereżempju s-sit pubbliku tiegħek fuq GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token minn Konfigurazzjoni &gt; Sigrieti</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Workflow tar-repożitorju jippubblikah.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Żid din iċ-ċavetta pubblika mar-repożitorju b&apos;aċċess għall-kitba. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, immarka Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Miżjud</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Host ieħor tal-git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Proċess ieħor qed jaħdem fuq din il-mira: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Lura</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Mogħdija bażi</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Qabel</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Taħt mogħdija bażi</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Fergħa</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Links miksura</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Links miksura fil-bini</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Bini</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Bini %id minn %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Ibni %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Ibni issa</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Bini biex jiġi ċċekkjat</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Minn</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Bl-idejn, hawn</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ikkanċella</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ibdel</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Mibdul</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Bidliet</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Iċċekkjah l-ewwel</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Iċċekkja dan l-issettjar</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Iċċekkja x&apos;jibdel il-bini, ħarisha lejh, imbagħad ippubblikah jew armih.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Agħżel il-pubblikazzjoni li trid tmur lura għaliha.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Ġej f&apos;rilaxx aktar tard.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kommissjoni</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Kommissjonijiet</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Jagħmel kommissjoni tal-bini, jagħtih tikketta u jibagħtu lejn %remote. Il-bgħit qatt ma jkun sfurzat; tista&apos; tmur lura għal kwalunkwe pubblikazzjoni aktar tard.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Imqabbel mal-folder ta&apos; qabel: %added miżjuda, %changed mibdula, %removed imneħħija, %unchanged mhux mibdula.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Imqabbel mal-aħħar pubblikazzjoni.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredenzjali</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Dominju proprju</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>L-output tad-debug, it-tokens tal-formoli, l-ids tas-sessjoni u n-nonces jitneħħew dejjem.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ċavetta tal-iskjerament</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Ċavetta tal-iskjerament ta&apos; %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Armi</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Armi l-bini</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Dominju</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Vojt: l-indirizz tas-sit. Inkella indirizz intern tal-istess sit.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Spiċċa</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Kull link jibda bil-mogħdija bażi.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Kull pubblikazzjoni hija kommissjoni b&apos;tikketta static/%id/&lt;n&gt;. Il-mixi lura jagħmel kommissjoni ġdida bil-fajls ta&apos; pubblikazzjoni preċedenti: l-istorja tibqa&apos;, l-ebda tikketta ma tiċċaqlaq u xejn ma jiġi sfurzat.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Fajls żejda</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Ġib il-paġni minn</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fajl</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fajls</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Fajls nieqsa</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fajls ta&apos;</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fajls li ma setgħux jinġabru</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Impronta</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Folder</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Għal indirizz SSH. Iċ-ċavetta ssir wara li ssalva; int iżżid in-nofs pubbliku tagħha mar-repożitorju.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Għal indirizz https://. GitHub: token fine-grained b&apos;Contents għall-qari u l-kitba fuq ir-repożitorju.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Għall-esperti. Is-sit pubbliku jinbidel hekk kif il-bgħit jitlesta.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formoli</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Hosting b&apos;xejn minn repożitorju fuq GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Mill-fergħa</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Indirizz tal-git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages jippermetti sit ta&apos; %site u fajl ta&apos; %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Il-limiti ta&apos; GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages jippubblika l-fajls kif inhuma (meħtieġ għal fajls li jibdew b&apos;_).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub iservi l-fergħa kif intbagħtet. Id-default.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, is-server tiegħek: kwalunkwe repożitorju tal-git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Mur lura għal pubblikazzjoni preċedenti</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Għajnuna</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Għajnuna bil-wizard</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Aħbihom</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Storja</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Storja ta&apos; %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Kif GitHub Pages jirċievi l-bini</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Iċċekkjajt il-bidliet</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Naf x&apos;jibdel dan</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Huwa mitfi: xejn ma jista&apos; jinbena sakemm jinxtegħel.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Jaħdem fl-isfond bħala %user; tista&apos; tagħlaq din il-paġna.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Kompitu %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Miżmum bħala s-sigriet %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>L-aħħar pubblikazzjoni</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Ħalli barra dawn il-paġni</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Ħalli barra dawn is-sezzjonijiet</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Links</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Links miktuba mill-ġdid</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Is-sit ħaj</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Ħares lejn il-bini</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Ittri żgħar, numri, _ u -, pereżempju github-public. Jagħti isem lill-folder u lit-tikketti (static/&lt;id&gt;/&lt;n&gt;) u ma jistax jinbidel aktar tard.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Agħmel ċavetta ġdida</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Oħloq mira</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Agħmel iċ-ċavetta</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Oħloq ir-repożitorju fuq il-host l-ewwel; wieħed vojt huwa tajjeb.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Messaġġ</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Ħafna mill-paġni</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Isem</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Isem it-token f&apos;Konfigurazzjoni &gt; Sigrieti</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Mira ġdida</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Li jmiss</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Le</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Għad m&apos;hemm l-ebda kommissjoni.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Ma saret l-ebda ċavetta: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ma nstab l-ebda binarju tal-linja tal-kmand php. Issettja migration.ini [AdminSettings] PhpCliPath għall-mogħdija sħiħa tiegħu.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Għad m&apos;hemm l-ebda tikketta.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Għad m&apos;hemm l-ebda mira.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Xejn</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Mhux fil-bini.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Għadu ma ġie ppubblikat xejn.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Għadu ma ġie ppubblikat xejn: kull fajl huwa ġdid.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Notifiki</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Skont skeda</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Fuq il-console</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Fuq is-server: ./console exp:static:serve %id iservih bl-istess mod.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Mogħdija waħda f&apos;kull linja, * taqbel ma&apos; kwalunkwe parti: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Mal-mira jinħażen isem biss; it-token jew iċ-ċavetta nfisha tibqa&apos; f&apos;Konfigurazzjoni &gt; Sigrieti u qatt ma tidher f&apos;log.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Biss dak li jsemmu l-paġni</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Biss b&apos;token. env:NAME minflok jaqra varjabbli tal-ambjent tas-server.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Iftaħ id-dehra minn qabel</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Jiftaħ il-bini kif se jservih il-host, mill-folder tal-mira. Il-link jaħdem għalik għal siegħa.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Mhux obbligatorju. Vojt: dak li ġie ppubblikat.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Mhux obbligatorju. B&apos;dominju s-sit jiġi servut fl-għerq tiegħu.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Output</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Paġni</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Paġni tal-mira</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Paġni rrifjutati</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Ipproċessar ta&apos; wara</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Dehra minn qabel</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Dehra minn qabel u pubblikazzjoni</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Dehra minn qabel u pubblikazzjoni ta&apos; %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Ara l-bini minn qabel</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progress</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Indirizz pubbliku</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Ċavetta pubblika</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Ippubblika</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Ippubblika kopja statika ta&apos; sit fuq GitHub Pages jew fuq kwalunkwe host tal-git: ibnih, iċċekkja l-bidliet, ippubblika, u mur lura għal pubblikazzjoni preċedenti meta jkollok bżonn.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Pubblikazzjoni li tmur lura għaliha</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Pubblikazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Bgħit</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Aqra t-tutorja</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Reġistru</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Irrifjutat</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relattivi</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Erġa&apos; għabbi</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Imneħħi</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Ibdel iċ-ċavetta: il-qadima tieqaf taħdem</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapport</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Rapport tal-bini</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repożitorju</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Reviżjoni</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Ir-reviżjoni tiċċekkja kull issettjar u turi l-linji li se jinkitbu. Għadu ma ġie ssejvjat xejn.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Reġġa&apos; lura</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Treġġigħ lura</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salva</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Skeda</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Paġna tat-tfittxija</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Ids tas-sezzjonijiet, separati b&apos;virgoli.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Ibgħathom lejn is-sit ħaj</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Issettjar</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Issettjar</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Issettjar ta&apos; %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazzjoni</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Konfigurazzjoni &gt; Sigrieti</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Jintwera fil-listi, pereżempju &quot;Sit pubbliku fuq GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Id-dħul b&apos;GitHub App jasal mal-integrazzjoni ma&apos; GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Sit</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Sit li jiġi ppubblikat</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Daqs</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Daqs u limiti</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Daqs tal-bini</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Paġni skaduti</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Beda</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Mibdi minn %user fil-%time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stat</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Pubblikazzjoni statika</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Il-pubblikazzjoni statika hija mitfija</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Il-pubblikazzjoni statika hija mitfija.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Il-pubblikazzjoni statika hija mitfija. Ixgħelha l-ewwel f&apos;Konfigurazzjoni &gt; Pubblikazzjoni statika.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Il-pubblikazzjoni statika hija mixgħula.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Pass %step minn %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Passi</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Tneħħija</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Itfi</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ixgħel</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Ixgħel il-pubblikazzjoni statika</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Tikketta</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Tikketti</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Mira</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Il-miri jistgħu jinħolqu u jinbidlu, iżda xejn ma jinbena jew jiġi ppubblikat sakemm tinxtegħel.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Tgħid lill-magni tat-tfittxija x&apos;għandhom jaqraw.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Il-bini ma setax jintrema: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Il-bini huwa l-istess bħall-aħħar pubblikazzjoni: m&apos;hemm xejn x&apos;jiġi ppubblikat.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Il-bini ntrema: il-folder fih l-aħħar pubblikazzjoni mill-ġdid.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>L-issettjar default jaqbel ma&apos; ħafna siti.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Il-folder fih bini li għadu ma ġiex ippubblikat; bini ġdid jissostitwih.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Il-folder tal-kompiti ma jistax jinkiteb: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Il-kompitu ma setax jitħejja: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Il-kompitu ma setax jinbeda.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Il-kompitu spiċċa. Qed jitgħabba r-rapport tiegħu.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Il-kompitu jeħtieġ utent illoggjat.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Il-kompitu nbeda iżda ma rrappurtax l-id tal-proċess tiegħu. Iċċekkja %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Iċ-ċavetta</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>L-akbar fajl: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Il-linji li se jinkitbu</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Il-lista tal-paġni għall-magni tat-tfittxija; teħtieġ l-indirizz pubbliku.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Il-paġni jinġiebu kif jarahom viżitatur li mhux illoggjat. L-aċċessi għall-amministrazzjoni u għall-editjar qatt ma jiġu offruti.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Il-progress ma setax jiġi segwit. Erġa&apos; għabbi l-paġna biex tara kif miexi l-kompitu.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>In-nofs pubbliku taċ-ċavetta:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>L-għerq tal-fergħa</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Il-ħażna tas-sigrieti għadha mhix issettjata (./console exp:upgrade --apply joħloq it-tabella tagħha), għalhekk l-ebda ċavetta ma tista&apos; tinżamm.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Is-server jidħol waħdu (biċ-ċavetta SSH tiegħu jew b&apos;credential helper), jew ir-repożitorju jinsab fuq dan is-server.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>L-issettjar ma setax jinkiteb: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>L-issettjar huwa validu. Dawn il-linji se jinkitbu:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Il-fajl tal-issettjar ma jistax jinqara: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Is-sit imur lura għall-fajls ta&apos; dik il-pubblikazzjoni; bini li għadu ma ġiex ippubblikat irid jiġi ppubblikat jew mormi l-ewwel.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Il-paġna tas-sit stess għal indirizzi li ma jeżistux.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Il-mira ma setgħetx tiġi ssejvjata: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Il-mira għadha ma tidħolx b&apos;din iċ-ċavetta: agħżel &quot;Ċavetta tal-iskjerament magħmula għal din il-mira&quot; fl-issettjar tagħha.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Il-miri ma setgħux jinqraw: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Għad m&apos;hemm l-ebda bini biex jiġi ċċekkjat.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Din l-installazzjoni m&apos;għandha l-ebda aċċess pubbliku għas-sit. L-aċċessi għall-amministrazzjoni u għall-editjar qatt ma jiġu ppubblikati.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Din il-paġna ssegwi l-kompitu waqt li jimxi; jibqa&apos; għaddej fl-isfond meta l-paġna tingħalaq.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Din il-mira għad m&apos;għandhiex ċavetta tal-iskjerament.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Din il-mira għadha ma nbnietx hawn.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Din il-mira għandha waħda.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Jarmi dan il-bini: il-folder fih l-aħħar pubblikazzjoni mill-ġdid. Is-sit ħaj ma jinbidilx.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>L-ewwel immarka &quot;Iċċekkjajt il-bidliet&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ħin</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Skattaturi</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Erġa&apos; ikteb l-isem tat-tikketta</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Mhux mibdul</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>X&apos;inhu</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>X&apos;jinbidel</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>X&apos;inhu kull fajl; jinkiteb dejjem.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>X&apos;għamel il-kompitu u r-reġistru tiegħu. Kompitu mibdi hawn jibqa&apos; għaddej fl-isfond meta din il-paġna tingħalaq.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>X&apos;stampa l-kompitu bħala żbalji</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Dak li jsemmu l-paġni, u kull immaġni ta&apos; kontenut ippubblikat</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Meta</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Meta pubblikazzjoni tfalli</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Meta pubblikazzjoni tirnexxi</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Meta jiġi ppubblikat kontenut</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Fejn imorru l-links lejn dak li l-kopja m&apos;għandhiex (it-tfittxija, il-login).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Minn fejn tiġi servuta l-kopja statika.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Liema sit jiġi ppubblikat, u x&apos;jismu l-mira.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Jaħdem taħt kwalunkwe mogħdija. Id-default.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Jinkiteb kull meta jkun issettjat dominju proprju.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Iva</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Dejjem tista&apos; tibni u tippubblika bl-idejn hawn u fuq il-console.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>isem biss; il-valur jibqa&apos; f&apos;Konfigurazzjoni &gt; Sigrieti</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>taħt %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>spiċċa mingħajr rapport</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>żejjed</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>falla</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fajl</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, jew main bil-folder docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>host tal-git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (b&apos;token) jew git@github.com:owner/repo.git (b&apos;ċavetta tal-iskjerament); qatt password jew token fih.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, għas-sitemap u l-links kanoniċi.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>immaġni</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>qatt</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>le</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>l-ebda remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>xejn: il-kommissjonijiet jibqgħu fil-folder</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>xejn: ma nbidel xejn</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>mhux mibgħut</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ma nbidel xejn</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>paġna</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>irnexxa</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open huwa diżattivat, għalhekk kompitu ma jistax jinbeda hawn. Uża ./console exp:static:build fuq is-server.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>pubblikazzjoni</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ippubblikat</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>bgħit pendenti</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>mibgħut</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>irrifjutat</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relattivi</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>treġġigħ lura</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>imreġġa&apos; lura</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>għaddej</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>il-folder biss</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: jinkiteb fil-fajl CNAME. Ipponta d-DNS tad-dominju lejn il-host kif jispjega hu; l-HTTPS jista&apos; jieħu ftit ħin biex jibda.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>iva, għadu mhux ippubblikat</translation>
     </message>
 </context>
 </TS>

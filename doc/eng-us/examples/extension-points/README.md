@@ -22,7 +22,7 @@ Where an extension plugs into the kernel through settings: INI settings that nam
 | [bookmark.ini](bookmark.md) | kernel | 1 | TypeClass |
 | [browse.ini](browse.md) | kernel | 3 | Class, Class, Class |
 | [collaboration.ini](collaboration.md) | kernel | 1 | Repositories |
-| [content.ini](content.md) | kernel | 33 | VersionHistoryClass, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, AvailableClasses, AvailableClasses ... |
+| [content.ini](content.md) | kernel | 34 | VersionHistoryClass, ExtensionDirectories, ExtensionDirectories, ExtensionDirectories, AvailableClasses, AvailableClasses ... |
 | [contentcheck.ini](contentcheck.md) | kernel | 3 | AssetClassList, StorageParentClassList, Handlers |
 | [contentstructuremenu.ini](contentstructuremenu.md) | kernel | 2 | ShowClasses, ChapterClasses |
 | [cronjob.ini](cronjob.md) | kernel | 1 | ExtensionDirectories |

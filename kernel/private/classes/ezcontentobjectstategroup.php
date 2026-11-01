@@ -123,7 +123,13 @@ class eZContentObjectStateGroup extends eZPersistentObject
 
         if ( $db->databaseName() === 'mongo' )
         {
-            $pipeline = [
+            // the conditions of this class as a $match: without it every lookup by identifier or id got the first
+            // group (ez_lock), so the review hold's group was never found and a new one could not be told apart
+            $match = self::mongoMatch( array_slice( $conditions, 0, count( $conditions ) - count( $defaultConditions ) ) );
+            if ( $match === null )
+                return array();
+            $pipeline = $match ? [ [ '$match' => $match ] ] : [];
+            $pipeline = array_merge( $pipeline, [
                 [ '$lookup' => [
                     'from'         => 'ezcobj_state_group_language',
                     'localField'   => 'id',
@@ -139,7 +145,7 @@ class eZContentObjectStateGroup extends eZPersistentObject
                     'contentobject_state_group_id' => '$_lang.contentobject_state_group_id',
                 ] ],
                 [ '$project' => [ '_id' => 0, '_lang' => 0 ] ],
-            ];
+            ] );
             if ( $offset > 0 ) $pipeline[] = [ '$skip'  => (int)$offset ];
             if ( $limit > 0  ) $pipeline[] = [ '$limit' => (int)$limit  ];
             $rows = $db->aggregate( 'ezcobj_state_group', $pipeline );
@@ -160,6 +166,38 @@ class eZContentObjectStateGroup extends eZPersistentObject
         }
 
         return $stateGroups;
+    }
+
+    /**
+     * The conditions this class and eZContentObjectState put into their SQL, as a MongoDB $match: an identifier, an
+     * id, a group id, "identifier NOT LIKE 'ez%'". Another condition cannot be translated: null, and the caller
+     * returns nothing rather than every row. Pure.
+     *
+     * @param string[] $conditions
+     * @param string $table ezcobj_state_group or ezcobj_state (whose ezcobj_state_group.id is its group_id)
+     * @return array|null the $match (empty: no condition)
+     */
+    public static function mongoMatch( array $conditions, $table = 'ezcobj_state_group' )
+    {
+        $match = array();
+        foreach ( $conditions as $condition )
+        {
+            $condition = trim( (string)$condition );
+            if ( preg_match( "/^(?:(ezcobj_state_group|ezcobj_state)\\.)?identifier\\s*=\\s*'((?:[^'\\\\]|\\\\.)*)'$/", $condition, $m ) )
+            {
+                if ( $m[1] === '' || $m[1] === $table )
+                    $match['identifier'] = stripslashes( $m[2] );
+                else
+                    return null;
+            }
+            elseif ( preg_match( '/^(ezcobj_state_group|ezcobj_state)\\.id\\s*=\\s*(\\d+)$/', $condition, $m ) )
+                $match[$m[1] === $table ? 'id' : 'group_id'] = (int)$m[2];
+            elseif ( preg_match( "/^identifier NOT LIKE 'ez%'$/i", $condition ) )
+                $match['identifier'] = array( '$not' => new \MongoDB\BSON\Regex( '^ez' ) );
+            else
+                return null;
+        }
+        return $match;
     }
 
     /**

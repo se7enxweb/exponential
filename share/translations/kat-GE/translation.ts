@@ -15150,6 +15150,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ინსტალაციის ცვლილებები, შენახული ფაილებად: მათი მდგომარეობა, გაშვებები, გაშვება და დაბრუნება.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ახალი შიგთავსი</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>უახლესი შიგთავსი, რაც შემოწმებისთვის არის შეჩერებული, და მოქმედებები მონიშნულზე.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>საიტის სტატიკური ასლის გამოქვეყნება GitHub Pages-ზე ან ნებისმიერ git ჰოსტზე.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>სტატიკური გამოქვეყნება</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API-ს შენახული მოთხოვნების პასუხები და მისი სქემის კონტენტის კლასები.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>სტატიკური ასლის გამოქვეყნება GitHub Pages-ზე ან ნებისმიერ git ჰოსტზე</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>სტატიკური გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>სტატიკური ქეში გვერდებს ამ სერვერიდან ემსახურება. საიტის სტატიკური ასლის სხვაგან გამოსაქვეყნებლად, GitHub Pages-ზე ან ნებისმიერ git ჰოსტზე, გამოიყენეთ სტატიკური გამოქვეყნება.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ინსტალაციის ცვლილებები, შენახული ფაილებად: მათი მდგომარეობა, გაშვებები, გაშვება და დაბრუნება.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>საიტის სტატიკური ასლის გამოქვეყნება GitHub Pages-ზე ან ნებისმიერ git ჰოსტზე.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>სტატიკური გამოქვეყნება</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80769,6 +80805,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>ჩანაწერის შეცვლა ვერ მოხერხდა: %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>შეცვლილი</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>შექმნილი</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>სახელი</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>კლასი</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>სექცია</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>შემქმნელი</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ახალი შიგთავსი</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>მთელი საიტის ბოლოს შექმნილი და შეცვლილი შიგთავსი, უახლესი პირველი: რაც სტუმრებმა გამოაგზავნეს, რაც შემოწმებისთვის არის შეჩერებული, მონახაზები, რომლებიც გამოქვეყნებას ელოდება. მონიშნეთ ელემენტები, რომ გაათავისუფლოთ, შეაჩეროთ, დამალოთ, გამოაჩინოთ, მოაცილოთ ან სხვა სექციაში ან მდგომარეობაში გადაიტანოთ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>სიის წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>შემოწმებისთვის შეჩერება ჯერ არ არის გამართული, ამიტომ არაფერი შეჩერებულა და შეჩერების მოქმედებები არ შემოითავაზება. მას აწყობს განახლების ნაბიჯი 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>სიის გაფილტვრა</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>დან</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>მდე</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>თარიღი</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>შექმნილი (პირველი გამოქვეყნება)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ყველა</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>გამოქვეყნების სტატუსი</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>გამოქვეყნებული</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>მონახაზი, არასოდეს გამოქვეყნებული</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>მოლოდინში (ელოდება დამტკიცებას ან თარიღს)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>სანაგვეში</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>შეჩერებულია შემოწმებისთვის</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>შეჩერებული</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>შეუჩერებელი</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>დამალული</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ხილული</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>გამოგზავნის საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ნებისმიერი საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>მხოლოდ ის, რაც აუდიტმა ჩაიწერა.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ახლა: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>მომხმარებლის სახელი ან ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>გაფილტვრა</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ფილტრების გასუფთავება</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ელემენტები</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, სულ %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ელემენტი არ არის</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(წაკითხულია %ms მწ-ში)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>მოქმედებები მონიშნულ ელემენტებზე</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ამ გვერდზე ყველას მონიშვნა</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>მონიშნულია %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>მოქმედება</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>აირჩიეთ მოქმედება</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>შეჩერების მოხსნა</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>შემოწმებისთვის შეჩერება</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>დამალვა</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>გამოჩენა</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>სანაგვეში გადატანა</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>წაშლა</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>სექციის მინიჭება</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>მდგომარეობის მინიჭება</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>მიზეზი</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>საჭიროა შესაჩერებლად; ინახება შეჩერებასთან ერთად და აუდიტში.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>აირჩიეთ სექცია</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>აირჩიეთ მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>მონიშნულზე გამოყენება</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>თითოეული ელემენტი მოწმდება თქვენი საკუთარი ნებართვებით. სანაგვეში გადატანა და წაშლა დადასტურებას ითხოვს. %count-ზე მეტი ელემენტი ფონურ რეჟიმში სრულდება.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>მონიშვნა</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>საიდან გამოიგზავნა</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name-ის მონიშვნა</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ჯერ არა</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(უსახელო)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>იდენტიფიკატორი %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>მონახაზი</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>მოლოდინში</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>დამალულია მშობლის მიერ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>შეჩერებული: ახალი გამოგზავნა</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ვერსია %version მოლოდინშია</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ვერსია %version მუშავდება</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>მონახაზი, ვერსია %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ვერსია %version გამოქვეყნდა</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>დაგეგმილია %date-ზე</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>მისამართი არ არის</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>არ ჩაწერილა</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ამ ფილტრებს არაფერი შეესაბამება.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ყველას ჩვენება</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>შიგთავსი ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>გვერდზე</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>გვერდზე %count ელემენტის ჩვენება.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>გამოგზავნის მისამართი და ბრაუზერი აუდიტის ინდექსიდან მოდის, რომელიც აქ ხელმისაწვდომი არ არის: სვეტში წერია „არ ჩაწერილა“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>მისამართი და ბრაუზერი არის ის, რაც აუდიტმა ელემენტისთვის ჩაიწერა (ავტომატური შეჩერება მათ ყოველთვის იწერს; გამოქვეყნება და შექმნა მხოლოდ იქ, სადაც ჩართულია), ისე, როგორც მათ კონფიდენციალურობის პარამეტრები ინახავს.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ელემენტი</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>წაშლა ელემენტებს სამუდამოდ შლის, ყველა მათი ვერსიითა და თარგმანით. მისი გაუქმება შეუძლებელია.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ელემენტები სანაგვეში გადადის, საიდანაც მათი აღდგენა შეიძლება.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>თითოეული ელემენტი მოწმდება თქვენი საკუთარი ნებართვებით; ქვეელემენტების მქონე ელემენტი ხელუხლებელი რჩება (მოაცილეთ ის შიგთავსის სტრუქტურაში). გთხოვენ, დაადასტუროთ, რომ ეს თქვენ ხართ.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ეს ფონურ რეჟიმში სრულდება: იხსნება მისი მიმდინარეობის გვერდი, ხოლო დასრულებისას ნაჩვენებია შედეგი თითოეული ელემენტისთვის.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>მონიშნული ელემენტები</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>და კიდევ %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>გაუქმება</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>არაფერი გაკეთებულა</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>მიზეზი: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>მოქმედება ჯერ კიდევ ფონურ რეჟიმში სრულდება.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>მისი მიმდინარეობა</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ფონური მოქმედება ვერ შესრულდა: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>დასრულებულია</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>უარყოფილია</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ელემენტების მიხედვით</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ელემენტი</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>შედეგი</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>რატომ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>სიაში დაბრუნება</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>კონფიგურაცია</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>არაფერი გაკეთებულა</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>დადასტურება</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>აირჩიეთ მოქმედება.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>მონიშნეთ მინიმუმ ერთი ელემენტი.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ერთდროულად მონიშნეთ მაქსიმუმ 1000 ელემენტი.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>მიუთითეთ, რატომ არის ელემენტები შეჩერებული.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>აირჩიეთ სექცია.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>აირჩიეთ მდგომარეობა.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ფორმის წაკითხვა ვერ მოხერხდა.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ახალი შიგთავსი</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>რაოდენობების წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>შეჩერებულია შემოწმებისთვის</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>დღეს ახალი</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>შემოწმებისთვის შეჩერება ჯერ არ არის გამართული (განახლების ნაბიჯი 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>მთელი ახალი შიგთავსი</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>თქვენ არ შეგიძლიათ მოდერაციის მოქმედებების შესრულება (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>მოდერაციის მოქმედება დასრულებული არ არის: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>მოდერაცია: %action %count ობიექტზე</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done %total ობიექტიდან: %ok დასრულდა, %refused უარყოფილია, %failed ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok დასრულდა, %refused უარყოფილია, %failed ვერ შესრულდა</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ის აღარ არსებობს.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>მას მდებარეობა არ აქვს (არ არის გამოქვეყნებული).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი დამალვა (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი გამოჩენა (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ის უკვე დამალულია.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ის დამალული არ არის.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>დამალულია.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>გამოჩენილია.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ის სანაგვეშია: იქ გაასუფთავეთ ან აღადგინეთ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>არასოდეს გამოქვეყნებული მონახაზი სანაგვეში ვერ გადავა: წაშალეთ ის.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი წაშლა (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>წაშლილია.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი მოცილება (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>მას ქვეელემენტები აქვს: მოაცილეთ ის შიგთავსის სტრუქტურაში, სადაც ისინი ჩამოთვლილია.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ის არ მოცილდა (შესაძლოა სამუშაო პროცესი აჩერებს მოცილებას).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>გადატანილია სანაგვეში.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>სექცია არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ის უკვე ამ სექციაშია.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>თქვენ არ შეგიძლიათ ამ სექციის მინიჭება (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>სექცია არ მიენიჭა.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>სექცია მიენიჭა.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>მდგომარეობა არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ის უკვე ამ მდგომარეობაშია.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>თქვენ არ შეგიძლიათ ამ მდგომარეობის მინიჭება (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>მდგომარეობა არ მიენიჭა (შესაძლოა სამუშაო პროცესი აჩერებს ცვლილებას).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>მდგომარეობა მიენიჭა.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ასეთი მოქმედება არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>შემოწმებისთვის შეჩერება გამართული არ არის (განახლების ნაბიჯი 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>მიუთითეთ, რატომ არის ის შეჩერებული.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ის უკვე შეჩერებულია.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი შეჩერება (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>შეჩერება არ დაწესდა (შესაძლოა სამუშაო პროცესი აჩერებს ცვლილებას).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>შეჩერებულია.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ის შეჩერებული არ არის.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი გათავისუფლება (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>შეჩერება არ მოიხსნა (შესაძლოა სამუშაო პროცესი აჩერებს ცვლილებას).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>გათავისუფლდა; კვლავ დამალულია: თქვენ არ შეგიძლიათ მისი გამოჩენა (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>გათავისუფლდა.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>ყველა სამიზნე</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ბოლო გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>გამოაქვეყნეთ თქვენი საიტის უფასო სტატიკური ასლი GitHub Pages-ზე:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>მოძველებული გვერდები</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>სტატიკური გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>სტატიკური გამოქვეყნება გამორთულია.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>სამიზნე</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>სამიზნეების წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>მიმდინარეობს დავალება</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>შესამოწმებელი აწყობა</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>დამალვა</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>სამიზნის შექმნა</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>არასდროს</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>სახელმძღვანელოს წაკითხვა</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added დამატებული, %changed შეცვლილი, %removed წაშლილი</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes %limit-დან (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>კიდევ %count არ არის ჩამოთვლილი.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>ჩაწერილია %pages გვერდი</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path არის %size, რაც მეტია, ვიდრე ჰოსტი ერთ ფაილს უშვებს.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>ლიმიტის %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds წმ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag არის გამოქვეყნება, რომელიც საიტს ახლა აქვს.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: დავალება %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/რეპოზიტორი/ GitHub-ის პროექტის საიტისთვის; ცარიელი საკუთარი დომენის ან მომხმარებლის საიტისთვის.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. საიტი</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. ჰოსტი</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. რეპოზიტორიში შესვლა</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. რეპოზიტორი</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. ბმულები და საბაზო გზა</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. თქვენი საკუთარი დომენი</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. რას შეიცავს აწყობა</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. როდის ქვეყნდება</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. გადახედვა და შენახვა</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub-ის პროექტის საიტი მდებარეობს /&lt;repository&gt;/ ქვეშ; ფარდობითი ბმულები მუშაობს იქაც და სხვაგანაც.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>აწყობა ჩამოტვირთავს %site-ის ყოველ გვერდს ისე, როგორც მას ხედავს სისტემაში შეუსვლელი სტუმარი, გადაწერს ბმულებს, აკოპირებს ფაილებს და შედეგს წერს სამიზნის საქაღალდეში. არაფერი ქვეყნდება, სანამ არ შეამოწმებთ აწყობას და არ დააჭერთ „გამოქვეყნებას“.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>cron გამოსახულება, მაგალითად 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>განთავსების გასაღები ინახება როგორც საიდუმლოება %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>განთავსების გასაღები ამ ინსტალაციას საშუალებას აძლევს, SSH-ით გაგზავნოს მხოლოდ ერთ რეპოზიტორიში და სხვაგან არსად. მისი პირადი ნაწილი რჩება აქ: კონფიგურაცია &gt; საიდუმლოებები; ნაჩვენებია მხოლოდ საჯარო ნაწილი.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ამ სამიზნისთვის შექმნილი განთავსების გასაღები</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>განთავსების გასაღები შედის SSH-ით: შეცვალეთ git მისამართი SSH მისამართით (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>მიმდინარეობს დავალება, დაიწყო %user-მა</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ამ სამიზნის დავალება ჯერ კიდევ მიმდინარეობს (%detail). დაელოდეთ მის დასრულებას.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ამ სამიზნის დავალება ჯერ კიდევ მიმდინარეობს. დაელოდეთ მის დასრულებას.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>ბმული გვერდიდან /news/ გვერდზე /about-us/team ჩაიწერება ასე:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>შეიქმნა ახალი განთავსების გასაღები. ახლავე დაამატეთ მისი საჯარო ნაწილი რეპოზიტორიში.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>გვერდი, რომელიც გასუფთავების შემდეგაც შეიცავს გამართვის გამონატანს, ფორმის ტოკენს ან სესიის id-ს, არასდროს ქვეყნდება.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>დაბრუნება ექსპერტებისთვისაა: მონიშნეთ „ვიცი, რას ცვლის ეს“ და ხელახლა აკრიფეთ თეგის სახელი.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>საიტი შეიძლება იყოს %site-მდე, ერთი ფაილი %file-მდე, თვეში დაახლოებით 100 GB ტრაფიკით. უფასო გეგმაზე რეპოზიტორი საჯარო უნდა იყოს. GitHub Pages არ არის განკუთვნილი მაღაზიებისთვის ან სხვა კომერციული ტრანზაქციებისთვის.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>სამიზნე არის ერთი საიტი, რომელიც ქვეყნდება ერთ git რეპოზიტორიში. აქ არაფერი იწყობა და არაფერი ქვეყნდება: „შენახვა“ წერს პარამეტრებს ფაილში settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>სამიზნე არის ერთი საიტი, რომელიც ქვეყნდება ერთ ადგილას, მაგალითად თქვენი საჯარო საიტი GitHub Pages-ზე.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>ტოკენი აქედან: კონფიგურაცია &gt; საიდუმლოებები</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>მას აქვეყნებს რეპოზიტორის სამუშაო ნაკადი (workflow).</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>დაამატეთ ეს საჯარო გასაღები რეპოზიტორიში ჩაწერის უფლებით. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, მონიშნეთ Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>დამატებული</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>სხვა git ჰოსტი</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>ამ სამიზნეზე სხვა პროცესი მუშაობს: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>უკან</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>საბაზო გზა</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>მანამდე</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>საბაზო გზის ქვეშ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ტოტი</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>გაწყვეტილი ბმულები</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>გაწყვეტილი ბმულები აწყობაში</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>აწყობა</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>აწყობა %id, ავტორი: %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name-ის აწყობა</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ახლავე აწყობა</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>შესამოწმებელი აწყობა</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ვინ</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>ხელით, აქ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>გაუქმება</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>შეცვლა</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>შეცვლილი</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ცვლილებები</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ჯერ შეამოწმეთ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>შეამოწმეთ ეს პარამეტრები</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>შეამოწმეთ, რას ცვლის აწყობა, დაათვალიერეთ ის, შემდეგ გამოაქვეყნეთ ან გადააგდეთ.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>აირჩიეთ გამოქვეყნება, რომელზეც უნდა დაბრუნდეთ.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>ხელმისაწვდომი იქნება შემდეგ გამოშვებაში.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>კომიტი</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>კომიტები</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>აწყობას აკომიტებს, უსვამს თეგს და აგზავნის %remote-ში. გაგზავნა არასდროს ხდება იძულებით; მოგვიანებით ნებისმიერ გამოქვეყნებაზე შეგიძლიათ დაბრუნება.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>წინა საქაღალდესთან შედარებით: %added დამატებული, %changed შეცვლილი, %removed წაშლილი, %unchanged უცვლელი.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>ბოლო გამოქვეყნებასთან შედარებით.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ავტორიზაციის მონაცემი</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>საკუთარი დომენი</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>გამართვის გამონატანი, ფორმის ტოკენები, სესიის id-ები და nonce-ები ყოველთვის იშლება.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>განთავსების გასაღები</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name-ის განთავსების გასაღები</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>გადაგდება</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>აწყობის გადაგდება</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>დომენი</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ცარიელი: საიტის მისამართი. სხვა შემთხვევაში იმავე საიტის შიდა მისამართი.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>დასრულდა</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ყოველი ბმული იწყება საბაზო გზით.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ყოველი გამოქვეყნება არის კომიტი თეგით static/%id/&lt;n&gt;. დაბრუნება ქმნის ახალ კომიტს ადრინდელი გამოქვეყნების ფაილებით: ისტორია რჩება, არცერთი თეგი არ გადაადგილდება და არაფერი ხდება იძულებით.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>დამატებითი ფაილები</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>გვერდების ჩამოტვირთვის მისამართი</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ფაილი</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ფაილები</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>დაკარგული ფაილები</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ფაილები:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ფაილები, რომელთა შეგროვება ვერ მოხერხდა</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>თითის ანაბეჭდი</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>საქაღალდე</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH მისამართისთვის. გასაღები იქმნება შენახვის შემდეგ; მის საჯარო ნაწილს თქვენ ამატებთ რეპოზიტორიში.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// მისამართისთვის. GitHub: fine-grained ტოკენი Contents-ის წაკითხვისა და ჩაწერის უფლებით რეპოზიტორზე.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ექსპერტებისთვის. საჯარო საიტი იცვლება, როგორც კი გაგზავნა დასრულდება.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ფორმები</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>უფასო ჰოსტინგი GitHub-ის რეპოზიტორიდან.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ტოტიდან</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git მისამართი</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages უშვებს %site ზომის საიტს და %file ზომის ფაილს.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages-ის ლიმიტები</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages აქვეყნებს ფაილებს ისე, როგორც არის (საჭიროა _-ით დაწყებული ფაილებისთვის).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ემსახურება ტოტს ისე, როგორც ის გაიგზავნა. ნაგულისხმევი.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, თქვენი საკუთარი სერვერი: ნებისმიერი git რეპოზიტორი.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ადრინდელ გამოქვეყნებაზე დაბრუნება</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>დახმარება</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>დახმარება ოსტატთან</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>დამალვა</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ისტორია</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name-ის ისტორია</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ჰოსტი</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>როგორ იღებს GitHub Pages აწყობას</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ცვლილებები შევამოწმე</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ვიცი, რას ცვლის ეს</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>გამორთულია: სანამ არ ჩაირთვება, ვერაფერი აიწყობა.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ის ფონურ რეჟიმში მუშაობს %user-ის სახელით; შეგიძლიათ ეს გვერდი დახუროთ.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>დავალება %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>ინახება როგორც საიდუმლოება %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ტიპი</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ბოლო გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ამ გვერდების გამოტოვება</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ამ განყოფილებების გამოტოვება</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>ბმულები</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>გადაწერილი ბმულები</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ცოცხალი საიტი</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>აწყობის დათვალიერება</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>პატარა ასოები, ციფრები, _ და -, მაგალითად github-public. ის ასახელებს საქაღალდეს და თეგებს (static/&lt;id&gt;/&lt;n&gt;) და მოგვიანებით ვერ შეიცვლება.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ახალი გასაღების შექმნა</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>სამიზნის შექმნა</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>გასაღების შექმნა</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ჯერ შექმენით რეპოზიტორი ჰოსტზე; ცარიელიც გამოდგება.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>მანიფესტი</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>შეტყობინება</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>გვერდების უმეტესობა</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>სახელი</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>ტოკენის სახელი აქ: კონფიგურაცია &gt; საიდუმლოებები</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>ახალი სამიზნე</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>შემდეგი</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>არა</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>კომიტი ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>გასაღები არ შეიქმნა: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php-ის ბრძანების ხაზის პროგრამა ვერ მოიძებნა. მიუთითეთ მისი სრული გზა აქ: migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>თეგი ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>სამიზნე ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>არცერთი</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>აწყობაში არ არის.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ჯერ არაფერი გამოქვეყნებულა.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ჯერ არაფერი გამოქვეყნებულა: ყველა ფაილი ახალია.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>შეტყობინებები</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>განრიგით</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>კონსოლში</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>სერვერზე: ./console exp:static:serve %id მას ასევე ემსახურება.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ერთი გზა თითო ხაზზე, * ემთხვევა ნებისმიერ ნაწილს: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>სამიზნესთან ინახება მხოლოდ სახელი; თავად ტოკენი ან გასაღები რჩება აქ: კონფიგურაცია &gt; საიდუმლოებები და არასდროს ჩნდება ჟურნალში.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>მხოლოდ ის, რასაც გვერდები ასახელებენ</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>მხოლოდ ტოკენით. env:NAME ამის ნაცვლად კითხულობს სერვერის გარემოს ცვლადს.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>წინასწარი ნახვის გახსნა</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ხსნის აწყობას სამიზნის საქაღალდიდან ისე, როგორც ჰოსტი მოემსახურება. ბმული თქვენთვის ერთი საათის განმავლობაში მუშაობს.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>არასავალდებულო. ცარიელი: რაც გამოქვეყნდა.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>არასავალდებულო. დომენის შემთხვევაში საიტი მის ძირეულ მისამართზე იხსნება.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>გამონატანი</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>გვერდები</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>სამიზნის გვერდები</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>უარყოფილი გვერდები</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>შემდგომი დამუშავება</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>წინასწარი ნახვა</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>წინასწარი ნახვა და გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name-ის წინასწარი ნახვა და გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>აწყობის წინასწარი ნახვა</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>პროგრესი</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>საჯარო მისამართი</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>საჯარო გასაღები</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>საიტის სტატიკური ასლის გამოქვეყნება GitHub Pages-ზე ან ნებისმიერ git ჰოსტზე: ააწყვეთ, შეამოწმეთ ცვლილებები, გამოაქვეყნეთ და საჭიროების შემთხვევაში დაუბრუნდით ადრინდელ გამოქვეყნებას.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>გამოქვეყნება, რომელზეც უნდა დაბრუნდეთ</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>გამოქვეყნებები</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>გაგზავნა</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>სახელმძღვანელოს წაკითხვა</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ჩანაწერი</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>უარყოფილი</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ფარდობითი</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>გადატვირთვა</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>წაშლილი</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>გასაღების ჩანაცვლება: ძველი შეწყვეტს მუშაობას</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ანგარიში</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>აწყობის ანგარიში</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>რეპოზიტორი</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>გადახედვა</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>გადახედვა ამოწმებს ყოველ პარამეტრს და აჩვენებს ხაზებს, რომლებიც ჩაიწერება. ჯერ არაფერი ინახება.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>დაბრუნება</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>დაბრუნება</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>შენახვა</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>განრიგი</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ძიების გვერდი</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>განყოფილებების ID-ები, მძიმით გამოყოფილი.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ცოცხალ საიტზე გაგზავნა</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>პარამეტრი</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>პარამეტრები</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name-ის პარამეტრები</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>კონფიგურაცია</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>კონფიგურაცია &gt; საიდუმლოებები</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ჩანს სიებში, მაგალითად „საჯარო საიტი GitHub Pages-ზე“.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App-ით შესვლა ხელმისაწვდომი გახდება GitHub-ის ინტეგრაციასთან ერთად.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>საიტი</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>გამოსაქვეყნებელი საიტი</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ზომა</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>ზომა და ლიმიტები</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>აწყობის ზომა</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>მოძველებული გვერდები</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>დაიწყო</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>დაიწყო %user-მა, დრო: %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>სტატიკური გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>სტატიკური გამოქვეყნება გამორთულია</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>სტატიკური გამოქვეყნება გამორთულია.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>სტატიკური გამოქვეყნება გამორთულია. ჯერ ჩართეთ აქ: კონფიგურაცია &gt; სტატიკური გამოქვეყნება.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>სტატიკური გამოქვეყნება ჩართულია.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>ნაბიჯი %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ნაბიჯები</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>გასუფთავება</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>გამორთვა</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ჩართვა</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>სტატიკური გამოქვეყნების ჩართვა</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>თეგი</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>თეგები</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>სამიზნე</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>სამიზნეების შექმნა და შეცვლა შესაძლებელია, მაგრამ სანამ არ ჩაირთვება, არაფერი აიწყობა და არაფერი გამოქვეყნდება.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>საძიებო სისტემებს ეუბნება, რა წაიკითხონ.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>აწყობის გადაგდება ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>აწყობა ბოლო გამოქვეყნების იდენტურია: გამოსაქვეყნებელი არაფერია.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>აწყობა გადაგდებულია: საქაღალდე კვლავ ბოლო გამოქვეყნებას შეიცავს.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>ნაგულისხმევი მნიშვნელობები საიტების უმეტესობას შეეფერება.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>საქაღალდე შეიცავს აწყობას, რომელიც ჯერ არ გამოქვეყნებულა; ახალი აწყობა მას ჩაანაცვლებს.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>დავალებების საქაღალდეში ჩაწერა შეუძლებელია: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>დავალების მომზადება ვერ მოხერხდა: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>დავალების დაწყება ვერ მოხერხდა.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>დავალება დასრულდა. მისი ანგარიში იტვირთება.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>დავალებას სჭირდება სისტემაში შესული მომხმარებელი.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>დავალება დაიწყო, მაგრამ თავისი პროცესის id არ შეატყობინა. შეამოწმეთ %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>გასაღები</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>უდიდესი ფაილი: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ხაზები, რომლებიც ჩაიწერება</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>გვერდების სია საძიებო სისტემებისთვის; სჭირდება საჯარო მისამართი.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>გვერდები ჩამოიტვირთება ისე, როგორც მათ ხედავს სისტემაში შეუსვლელი სტუმარი. ადმინისტრირებისა და რედაქტირების siteaccess-ები არასდროს არის შეთავაზებული.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>პროგრესის თვალყურის დევნება ვერ მოხერხდა. გადატვირთეთ გვერდი, რომ ნახოთ, როგორ მიდის დავალება.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>გასაღების საჯარო ნაწილი:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ტოტის ძირეული საქაღალდე</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>საიდუმლოებების საცავი ჯერ არ არის მომზადებული (./console exp:upgrade --apply ქმნის მის ცხრილს), ამიტომ გასაღების შენახვა შეუძლებელია.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>სერვერი თავად შედის (საკუთარი SSH გასაღებით ან credential helper-ით), ან რეპოზიტორი ამ სერვერზეა.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>პარამეტრის ჩაწერა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>პარამეტრები სწორია. ჩაიწერება ეს ხაზები:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>პარამეტრების ფაილის წაკითხვა შეუძლებელია: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>საიტი უბრუნდება იმ გამოქვეყნების ფაილებს; ჯერ გამოუქვეყნებელი აწყობა ჯერ უნდა გამოქვეყნდეს ან გადაიგდოს.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>საიტის საკუთარი გვერდი არარსებული მისამართებისთვის.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>სამიზნის შენახვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>სამიზნე ჯერ არ შედის ამ გასაღებით: მის პარამეტრებში აირჩიეთ „ამ სამიზნისთვის შექმნილი განთავსების გასაღები“.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>სამიზნეების წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>შესამოწმებელი აწყობა ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ამ ინსტალაციას არ აქვს საჯარო siteaccess. ადმინისტრირებისა და რედაქტირების siteaccess-ები არასდროს ქვეყნდება.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ეს გვერდი თვალყურს ადევნებს დავალების მსვლელობას; გვერდის დახურვისას ის ფონურ რეჟიმში გრძელდება.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ამ სამიზნეს ჯერ არ აქვს განთავსების გასაღები.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ეს სამიზნე აქ ჯერ არ აწყობილა.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ამ სამიზნეს უკვე აქვს.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ეს აწყობა გადაიგდება: საქაღალდე კვლავ ბოლო გამოქვეყნებას შეიცავს. ცოცხალი საიტი არ იცვლება.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ჯერ მონიშნეთ „ცვლილებები შევამოწმე“.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>დრო</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ტრიგერები</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ხელახლა აკრიფეთ თეგის სახელი</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>უცვლელი</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ვებჰუკი</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>რა</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>რა იცვლება</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>რას წარმოადგენს თითოეული ფაილი; ყოველთვის იწერება.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>რა გააკეთა დავალებამ და მისი ჩანაწერი. აქ დაწყებული დავალება ფონურ რეჟიმში გრძელდება ამ გვერდის დახურვისას.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>რა დაბეჭდა დავალებამ შეცდომებად</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>რასაც გვერდები ასახელებენ და გამოქვეყნებული შიგთავსის ყოველი სურათი</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>როდის</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>როცა გამოქვეყნება ვერ ხერხდება</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>როცა გამოქვეყნება წარმატებულია</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>როცა შიგთავსი ქვეყნდება</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>სად მიდის ბმულები იმისკენ, რასაც ასლი არ შეიცავს (ძიება, შესვლა).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>საიდან ემსახურება სტატიკური ასლი.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>რომელი საიტი ქვეყნდება და რა ჰქვია სამიზნეს.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>მუშაობს ნებისმიერი გზის ქვეშ. ნაგულისხმევი.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>იწერება, როცა საკუთარი დომენია მითითებული.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>დიახ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ყოველთვის შეგიძლიათ ხელით ააწყოთ და გამოაქვეყნოთ აქ და კონსოლში.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>მხოლოდ სახელი; მნიშვნელობა რჩება აქ: კონფიგურაცია &gt; საიდუმლოებები</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path-ის ქვეშ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>დასრულდა ანგარიშის გარეშე</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>დამატებითი</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ფაილი</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ან main საქაღალდით docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git ჰოსტი</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ტოკენით) ან git@github.com:owner/repo.git (განთავსების გასაღებით); მასში არასდროს უნდა იყოს პაროლი ან ტოკენი.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, საიტის რუკისა და კანონიკური ბმულებისთვის.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>სურათი</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>არასდროს</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>არა</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>დისტანციური რეპოზიტორი არ არის</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>არცერთი: კომიტები საქაღალდეში რჩება</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>არცერთი: არაფერი შეცვლილა</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>არ გაგზავნილა</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>არაფერი შეცვლილა</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>გვერდი</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>წარმატებული</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open გამორთულია, ამიტომ აქ დავალების დაწყება შეუძლებელია. სერვერზე გამოიყენეთ ./console exp:static:build.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>გამოქვეყნებული</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>გაგზავნა მოლოდინშია</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>გაგზავნილი</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>უარყოფილი</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ფარდობითი</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>დაბრუნება</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>დაბრუნებული</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>მიმდინარეობს</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>მხოლოდ საქაღალდე</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: იწერება ფაილში CNAME. მიმართეთ დომენის DNS ჰოსტზე, როგორც ის განმარტავს; HTTPS-ის ამოქმედებას შეიძლება გარკვეული დრო დასჭირდეს.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>დიახ, ჯერ არ გამოქვეყნებულა</translation>
     </message>
 </context>
 </TS>

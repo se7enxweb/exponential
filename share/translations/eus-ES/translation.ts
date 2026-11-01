@@ -15150,6 +15150,22 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Instalazioaren aldaketak fitxategi gisa gordeta: haien egoera, exekuzioak, exekutatu eta desegin.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Azken edukiak</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Eduki berrienak, berrikusteko atxikita dagoena eta hautapen baten gaineko ekintzak.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Argitaratu gune baten kopia estatiko bat GitHub Pages-en edo edozein git zerbitzaritan.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Argitalpen estatikoa</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Oharra: paketeak ez dira desinstalatuko.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL APIaren gordetako kontsulten erantzunak eta bere eskemaren eduki-klaseak.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Argitaratu kopia estatiko bat GitHub Pages-en edo edozein git zerbitzaritan</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Argitalpen estatikoa</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Cache estatikoak zerbitzari honetatik zerbitzatzen ditu orriak. Gune baten kopia estatiko bat beste nonbait argitaratzeko, GitHub Pages-en edo edozein git zerbitzaritan, erabili argitalpen estatikoa.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Instalazioaren aldaketak fitxategi gisa gordeta: haien egoera, exekuzioak, exekutatu eta desegin.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Argitaratu gune baten kopia estatiko bat GitHub Pages-en edo edozein git zerbitzaritan.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Argitalpen estatikoa</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80769,6 +80805,2028 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>Ezin izan da grabazioa aldatu: %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Aldatua</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Sortua</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Izena</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasea</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Atala</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Sortzailea</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Azken edukiak</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Gune osoko azken sortutako eta aldatutako edukiak, berrienak lehenik: bisitariek bidalitakoa, berrikusteko atxikita dagoena, argitaratzeko zain dauden zirriborroak. Hautatu elementuak askatzeko, atxikitzeko, ezkutatzeko, erakusteko, kentzeko edo beste atal edo egoera batera eramateko.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Ezin izan da zerrenda irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Berrikusteko atxikipena ez dago oraindik konfiguratuta; beraz, ez dago ezer atxikita eta ez dira atxikipen-ekintzak eskaintzen. 6.0.15-review-hold eguneratze-urratsak konfiguratzen du: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Iragazi zerrenda</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Noiztik</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Noiz arte</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Sortua (lehen argitalpena)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Denak</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Argitaratua</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Zirriborroa, inoiz argitaratu gabea</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Zain (onarpenaren edo data baten zain)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Zakarrontzian</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Berrikusteko atxikita</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Atxikita</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Atxiki gabe</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Ezkutatuta</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ikusgai</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Bidaltze-data</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Edozein gune-sarbide</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ikuskaritzak erregistratutakoa soilik.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Orain: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Saio-hasierako izen bat edo erabiltzaile-ID bat.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Iragazi</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Garbitu iragazkiak</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementuak</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Elementurik ez</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms-tan irakurria)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Hautatutako elementuen gaineko ekintzak</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Hautatu orri honetako denak</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count hautatuta</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ekintza</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Aukeratu ekintza bat</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Askatu atxikipena</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Atxiki berrikusteko</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ezkutatu</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Erakutsi</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Eraman zakarrontzira</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ezabatu</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Esleitu atala</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Esleitu egoera</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Arrazoia</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Atxikitzeko beharrezkoa; atxikipenarekin eta ikuskaritzan gordetzen da.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Aukeratu atal bat</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Aukeratu egoera bat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aplikatu hautatutakoei</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Elementu bakoitza zure baimenen arabera egiaztatzen da. Zakarrontzira eramateak eta ezabatzeak berrespena eskatzen dute. %count elementu baino gehiago atzeko planoan exekutatzen dira.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Hautatu</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Argitalpena</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Nondik bidalia</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Hautatu %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>oraindik ez</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(izenik gabe)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Zirriborroa</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Zain</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Gurasoak ezkutatuta</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Atxikita: bidalketa berria</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version bertsioa zain</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version bertsioa abian</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Zirriborroa, %version bertsioa</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version bertsioa argitaratua</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date datarako programatua</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>helbiderik ez</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>erregistratu gabe</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ezerk ez du bat egiten iragazki hauekin.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Erakutsi denak</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Oraindik ez dago edukirik.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Orriko</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Erakutsi %count elementu orriko.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Bidalketa baten helbidea eta nabigatzailea ikuskaritza-indizetik datoz, eta hori ez dago erabilgarri hemen: zutabeak "erregistratu gabe" dio.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Helbidea eta nabigatzailea ikuskaritzak elementuarentzat erregistratu zituenak dira (atxikipen automatikoak beti erregistratzen ditu; argitaratzeak eta sortzeak aktibatuta dagoen tokian soilik), bere pribatutasun-ezarpenek gordetzen dituzten moduan.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elementu</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ezabatzeak elementuak behin betiko kentzen ditu, bertsio eta itzulpen guztiekin. Ezin da desegin.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementuak zakarrontzira doaz, eta handik leheneratu daitezke.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Elementu bakoitza zure baimenen arabera egiaztatzen da; azpi-elementuak dituen elementua dagoen bezala uzten da (kendu eduki-egituran). Zu zarela egiaztatzeko eskatuko zaizu.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Hau atzeko planoan exekutatzen da: bere aurrerapen-orria irekitzen da, eta elementu bakoitzaren emaitza amaitzean erakusten da.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Hautatutako elementuak</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>eta beste %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Utzi</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ez da ezer egin</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Arrazoia: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Ekintza atzeko planoan exekutatzen ari da oraindik.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Bere aurrerapena</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Atzeko planoko ekintzak huts egin du: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Eginda</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ukatua</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Huts egin du</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Elementuko</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Elementua</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Emaitza</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Zergatik</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Itzuli zerrendara</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazioa</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ez da ezer egin</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Berretsi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Aukeratu ekintza bat.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Hautatu gutxienez elementu bat.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Hautatu gehienez 1000 elementu aldi berean.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Esan zergatik atxikitzen diren elementuak.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Aukeratu atala.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Aukeratu egoera.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ezin izan da formularioa irakurri.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Azken edukiak</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Ezin izan dira zenbaketak irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Berrikusteko atxikita</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Berriak gaur</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Berrikusteko atxikipena ez dago oraindik konfiguratuta (6.0.15-review-hold eguneratze-urratsa).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Azken eduki guztiak</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ezin duzu moderazio-ekintzarik exekutatu (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderazio-ekintza ez dago osatuta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderazioa: %action %count objektutan</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total objektu: %ok eginda, %refused ukatuta, %failed huts eginda</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok eginda, %refused ukatuta, %failed huts eginda</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ez da existitzen jada.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Ez du kokapenik (argitaratu gabea).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ezin duzu ezkutatu (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ezin duzu erakutsi (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ezkutatuta dago jada.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ez dago ezkutatuta.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Ezkutatuta.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Erakutsita.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Zakarrontzian dago: hustu edo leheneratu han.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Inoiz argitaratu ez den zirriborro bat ezin da zakarrontzira joan: ezabatu.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ezin duzu ezabatu (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Ezabatuta.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ezin duzu kendu (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Azpi-elementuak ditu: kendu eduki-egituran, han zerrendatzen baitira.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ez da kendu (lan-fluxu batek kentzea atxiki dezake).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Zakarrontzira eramana.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Atala ez da existitzen.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Atal honetan dago jada.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ezin duzu atal hau esleitu (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Ez da atala esleitu.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Atala esleituta.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Egoera ez da existitzen.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Egoera honetan dago jada.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ezin duzu egoera hau esleitu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ez da egoera esleitu (lan-fluxu batek aldaketa atxiki dezake).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Egoera esleituta.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ez dago horrelako ekintzarik.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Berrikusteko atxikipena ez dago konfiguratuta (6.0.15-review-hold eguneratze-urratsa).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Esan zergatik dagoen atxikita.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Atxikita dago jada.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ezin duzu atxiki (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ez da atxikipena ezarri (lan-fluxu batek aldaketa atxiki dezake).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Atxikita.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ez dago atxikita.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ezin duzu askatu (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ez da atxikipena askatu (lan-fluxu batek aldaketa atxiki dezake).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Askatuta; ezkutatuta jarraitzen du: ezin duzu erakutsi (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Askatuta.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Helburu guztiak</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Azken argitalpena</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Argitaratu zure gunearen kopia estatiko bat doan GitHub Pages-en:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Orri zaharkituak</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Argitalpen estatikoa</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Argitalpen estatikoa desaktibatuta dago.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Helburua</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Ezin izan dira helburuak irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>zeregin bat abian dago</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>egiaztatzeko konpilazioa</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ezkutatu hau</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>sortu helburu bat</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>inoiz ez</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>irakurri tutoriala</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added gehituta, %changed aldatuta, %removed kenduta</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Beste %count ez dira zerrendatzen.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages orri idatzita</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path fitxategiak %size ditu, zerbitzariak fitxategi bakoitzeko onartzen duena baino gehiago.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>Mugaren %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag da guneak orain duen argitalpena.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: %id zeregina</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/biltegia/ GitHub proiektu-gune baterako; hutsik domeinu propio baterako edo erabiltzaile-gune baterako.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Gunea</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Zerbitzaria</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Biltegian saioa hastea</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Biltegia</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Estekak eta oinarrizko bidea</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Zure domeinu propioa</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Zer duen konpilazioak</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Noiz argitaratzen den</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Berrikusi eta gorde</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub proiektu-gune bat /&lt;repository&gt;/ azpian dago; esteka erlatiboek bertan eta beste edozein lekutan funtzionatzen dute.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Konpilazio batek %site guneko orri guztiak eskuratzen ditu saioa hasi gabeko bisitari batek ikusten dituen bezala, estekak berridazten ditu, fitxategiak kopiatzen ditu eta emaitza helburuaren karpetan idazten du. Ez da ezer argitaratzen konpilazioa egiaztatu eta Argitaratu sakatu arte.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron adierazpen bat, adibidez 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Hedapen-gakoa %secret sekretu gisa gordetzen da.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Hedapen-gako batek instalazio honi biltegi bakar batera SSH bidez bidaltzeko aukera ematen dio, eta ez beste inora. Haren erdi pribatua Konfigurazioa &gt; Sekretuak atalean geratzen da; erdi publikoa bakarrik erakusten da.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Helburu honetarako sortutako hedapen-gakoa</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Hedapen-gako batek SSH bidez hasten du saioa: aldatu git helbidea SSH helbidera (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Zeregin bat abian dago, %user erabiltzaileak hasia</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Helburu honen zeregin bat abian dago oraindik (%detail). Itxaron amaitu arte.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Helburu honen zeregin bat abian dago oraindik. Itxaron amaitu arte.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ orritik /about-us/team orrirako esteka honela idatziko da:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Hedapen-gako berri bat sortu da. Gehitu orain haren erdi publikoa biltegira.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Garbiketaren ondoren arazketa-irteera, inprimaki-token bat edo saio-ID bat duen orria ez da inoiz argitaratzen.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Desegitea adituentzat da: markatu &quot;Badakit honek zer aldatzen duen&quot; eta idatzi berriro etiketaren izena.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Gune batek %site arte izan ditzake, fitxategi batek %file arte, eta hilean 100 GB inguruko trafikoa. Doako plan batean biltegiak publikoa izan behar du. GitHub Pages ez dago dendetarako edo bestelako transakzio komertzialetarako pentsatuta.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Helburu bat git biltegi batean argitaratutako gune bat da. Hemen ez da ezer konpilatzen edo argitaratzen: Gorde botoiak ezarpenak settings/override/staticcache.ini.append.php fitxategian idazten ditu.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Helburu bat leku batean argitaratutako gune bat da, adibidez zure gune publikoa GitHub Pages-en.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Konfigurazioa &gt; Sekretuak ataleko token bat</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Biltegiko lan-fluxu batek argitaratzen du.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Gehitu gako publiko hau biltegira idazteko baimenarekin. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, markatu Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Gehituak</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Beste git zerbitzari bat</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Beste prozesu bat ari da helburu honekin lanean: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Atzera</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Oinarrizko bidea</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Aurretik</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Oinarrizko bide baten azpian</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Adarra</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Esteka hautsiak</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Konpilazioko esteka hautsiak</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Konpilazioa</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%id konpilazioa, %user erabiltzailearena</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Konpilatu %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Konpilatu orain</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Egiaztatzeko konpilazioa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Nork</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Eskuz, hemen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Utzi</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Aldatu</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Aldatuak</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Aldaketak</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Egiaztatu lehenik</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Egiaztatu ezarpen hauek</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Egiaztatu konpilazioak zer aldatzen duen, begiratu, eta gero argitaratu edo baztertu.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Aukeratu zein argitalpenera itzuli.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Geroagoko bertsio batean etorriko da.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Baieztapena</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Baieztapenak</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Konpilazioa baieztatzen du, etiketatzen du eta %remote helbidera bidaltzen du. Bidalketa ez da inoiz behartzen; geroago edozein argitalpenera itzul zaitezke.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Aurreko karpetarekin alderatuta: %added gehituta, %changed aldatuta, %removed kenduta, %unchanged aldatu gabe.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Azken argitalpenarekin alderatuta.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredentziala</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domeinu propioa</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Arazketa-irteera, inprimaki-tokenak, saio-IDak eta nonce-ak beti kentzen dira.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Hedapen-gakoa</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name helburuaren hedapen-gakoa</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Baztertu</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Baztertu konpilazioa</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domeinua</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Hutsik: gunearen helbidea. Bestela, gune bereko barne-helbide bat.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Amaiera</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Esteka guztiak oinarrizko bidearekin hasten dira.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Argitalpen bakoitza static/%id/&lt;n&gt; etiketa duen baieztapen bat da. Atzera itzultzeak baieztapen berri bat sortzen du aurreko argitalpen baten fitxategiekin: historia geratzen da, ez da etiketarik mugitzen eta ez da ezer behartzen.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Gehigarriak</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Eskuratu orriak hemendik</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fitxategia</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fitxategiak</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Falta diren fitxategiak</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Honen fitxategiak:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Bildu ezin izan diren fitxategiak</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Hatz-marka</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Karpeta</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH helbide baterako. Gakoa gorde ondoren sortzen da; zuk gehitzen duzu haren erdi publikoa biltegira.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// helbide baterako. GitHub: biltegian Contents irakurtzeko eta idazteko baimena duen token xehatu bat.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Adituentzat. Gune publikoa bidalketa amaitu bezain laster aldatzen da.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Inprimakiak</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Doako ostatua GitHub biltegi batetik.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Adarretik</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git helbidea</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages-ek %site arteko gunea eta %file arteko fitxategia onartzen ditu.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages-en mugak</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages-ek fitxategiak dauden bezala argitaratzen ditu (_ karakterearekin hasten diren fitxategietarako beharrezkoa).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub-ek adarra bidali den bezala zerbitzatzen du. Lehenetsia.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, zure zerbitzari propioa: edozein git biltegi.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Itzuli aurreko argitalpen batera</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Laguntza</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Laguntza morroiarekin</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Ezkutatu</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historia</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name helburuaren historia</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Zerbitzaria</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Nola jasotzen duen GitHub Pages-ek konpilazioa</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Aldaketak egiaztatu ditut</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Badakit honek zer aldatzen duen</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>IDa</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Desaktibatuta dago: ezin da ezer konpilatu aktibatu arte.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Atzeko planoan exekutatzen da %user gisa; orri hau itxi dezakezu.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>%id zeregina</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret sekretu gisa gordeta.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Mota</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Azken argitalpena</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Baztertu orri hauek</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Baztertu atal hauek</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Estekak</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Berridatzitako estekak</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Zuzeneko gunea</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Ikusi konpilazioa</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Letra xeheak, digituak, _ eta -, adibidez github-public. Karpetari eta etiketei (static/&lt;id&gt;/&lt;n&gt;) ematen die izena, eta ezin da geroago aldatu.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Sortu gako berri bat</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Sortu helburu bat</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Sortu gakoa</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Sortu lehenik biltegia zerbitzarian; hutsik egon daiteke.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifestua</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mezua</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Orri gehienak</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Izena</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Tokenaren izena Konfigurazioa &gt; Sekretuak atalean</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Helburu berria</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Hurrengoa</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ez</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Ez dago baieztapenik oraindik.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Ez da gakorik sortu: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ez da php komando-lerroko bitarrik aurkitu. Ezarri migration.ini [AdminSettings] PhpCliPath haren bide osora.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Ez dago etiketarik oraindik.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Ez dago helbururik oraindik.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Bat ere ez</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Ez dago konpilazioan.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Ez da ezer argitaratu oraindik.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Ez da ezer argitaratu oraindik: fitxategi guztiak berriak dira.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Jakinarazi</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Programazio baten arabera</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Kontsolan</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Zerbitzarian: ./console exp:static:serve %id komandoak modu berean zerbitzatzen du.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Bide bat lerro bakoitzeko, * edozein zatirekin bat dator: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Helburuarekin izen bat bakarrik gordetzen da; tokena edo gakoa bera Konfigurazioa &gt; Sekretuak atalean geratzen da eta ez da inoiz egunkari batean agertzen.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Orriek aipatzen dutena bakarrik</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Token batekin bakarrik. env:NAME zerbitzariaren ingurune-aldagai bat irakurtzen du horren ordez.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Ireki aurrebista</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Konpilazioa zerbitzariak zerbitzatuko duen bezala irekitzen du, helburuaren karpetatik. Estekak ordubetez funtzionatzen du zuretzat.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Aukerakoa. Hutsik: argitaratu zena.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Aukerakoa. Domeinu batekin, gunea haren erroan zerbitzatzen da.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Irteera</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Orriak</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Helburuaren orriak</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Baztertutako orriak</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Ondorengo prozesamendua</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Aurrebista</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Aurrebista eta argitalpena</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name: aurrebista eta argitalpena</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Konpilazioaren aurrebista</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Aurrerapena</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Helbide publikoa</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Gako publikoa</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Argitaratu</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Argitaratu gune baten kopia estatiko bat GitHub Pages-en edo edozein git zerbitzaritan: konpilatu, egiaztatu aldaketak, argitaratu, eta itzuli aurreko argitalpen batera behar duzunean.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Itzultzeko argitalpena</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Argitalpenak</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Bidalketa</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Irakurri tutoriala</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Erregistroa</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Baztertuak</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Erlatiboa</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Birkargatu</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Kenduak</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Ordeztu gakoa: zaharrak funtzionatzeari uzten dio</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Txostena</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Konpilazioaren txostena</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Biltegia</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Berrikuspena</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Berrikuspenak ezarpen guztiak egiaztatzen ditu eta idatziko diren lerroak erakusten ditu. Oraindik ez da ezer gorde.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Desegin</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Desegitea</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Gorde</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Programazioa</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Bilaketa-orria</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Atalen IDak, komaz bereizita.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Bidali zuzeneko gunera</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Ezarpena</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Ezarpenak</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name helburuaren ezarpenak</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfigurazioa</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Konfigurazioa &gt; Sekretuak</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Zerrendetan erakusten da, adibidez &quot;Gune publikoa GitHub Pages-en&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App batekin saioa hastea GitHub integrazioarekin etorriko da.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Gunea</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Argitaratzeko gunea</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Tamaina</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Tamaina eta mugak</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Konpilazioaren tamaina</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Orri zaharkituak</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Hasiera</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user erabiltzaileak hasia, %time-(e)an.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Egoera</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Argitalpen estatikoa</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Argitalpen estatikoa desaktibatuta dago</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Argitalpen estatikoa desaktibatuta dago.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Argitalpen estatikoa desaktibatuta dago. Aktibatu lehenik Konfigurazioa &gt; Argitalpen estatikoa atalean.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Argitalpen estatikoa aktibatuta dago.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%step. urratsa / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Urratsak</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Garbiketa</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Desaktibatu</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aktibatu</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Aktibatu argitalpen estatikoa</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiketa</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Etiketak</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Helburua</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Helburuak sortu eta alda daitezke, baina ez da ezer konpilatzen edo argitaratzen aktibatu arte.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Bilatzaileei zer irakurri behar duten esaten die.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Ezin izan da konpilazioa baztertu: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Konpilazioa azken argitalpenaren berdina da: ez dago argitaratzeko ezer.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Konpilazioa baztertu da: karpetak azken argitalpena du berriro.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Balio lehenetsiak gune gehienetarako egokiak dira.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Karpetak oraindik argitaratu gabeko konpilazio bat du; konpilazio berri batek ordezten du.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Ezin da zereginen karpetan idatzi: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Ezin izan da zeregina prestatu: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Ezin izan da zeregina abiarazi.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Zeregina amaitu da. Bere txostena kargatzen.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Zereginak saioa hasita duen erabiltzaile bat behar du.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Zeregina abiarazi da, baina ez du bere prozesu-IDa jakinarazi. Egiaztatu %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Gakoa</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Fitxategirik handiena: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Idatziko diren lerroak</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Bilatzaileentzako orrien zerrenda; helbide publikoa behar du.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Orriak saioa hasi gabeko bisitari batek ikusten dituen bezala eskuratzen dira. Administrazio- eta edizio-siteaccessak ez dira inoiz eskaintzen.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Ezin izan da aurrerapena jarraitu. Birkargatu orria zeregina nola doan ikusteko.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Gakoaren erdi publikoa:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Adarraren erroa</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Sekretuen biltegia ez dago konfiguratuta oraindik (./console exp:upgrade --apply komandoak sortzen du bere taula), beraz ezin da gakorik gorde.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Zerbitzariak berak hasten du saioa (bere SSH gakoarekin edo kredentzial-laguntzailearekin), edo biltegia zerbitzari honetan dago.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Ezin izan da ezarpena idatzi: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Ezarpenak baliozkoak dira. Lerro hauek idatziko dira:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Ezin da ezarpen-fitxategia irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Gunea argitalpen horren fitxategietara itzultzen da; oraindik argitaratu gabeko konpilazio bat lehenik argitaratu edo baztertu behar da.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Gunearen beraren orria existitzen ez diren helbideetarako.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Ezin izan da helburua gorde: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Helburuak ez du oraindik gako honekin saioa hasten: aukeratu &quot;Helburu honetarako sortutako hedapen-gakoa&quot; haren ezarpenetan.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Ezin izan dira helburuak irakurri: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Ez dago egiaztatzeko konpilaziorik oraindik.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Instalazio honek ez du siteaccess publikorik. Administrazio- eta edizio-siteaccessak ez dira inoiz argitaratzen.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Orri honek zeregina jarraitzen du aurrera doan bitartean; atzeko planoan jarraitzen du orria ixten denean.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Helburu honek ez du hedapen-gakorik oraindik.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Helburu hau ez da hemen konpilatu oraindik.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Helburu honek badu bat.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Konpilazio hau baztertzen du: karpetak azken argitalpena du berriro. Zuzeneko gunea ez da aldatzen.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Markatu lehenik &quot;Aldaketak egiaztatu ditut&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ordua</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Abiarazleak</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Idatzi berriro etiketaren izena</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Aldatu gabeak</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhooka</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Zer</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Zer aldatzen den</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Fitxategi bakoitza zer den; beti idazten da.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Zereginak zer egin zuen eta bere erregistroa. Hemen hasitako zeregin batek atzeko planoan jarraitzen du orri hau ixten denean.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Zereginak errore gisa inprimatu zuena</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Orriek aipatzen dutena, eta argitaratutako edukiaren irudi guztiak</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Noiz</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Argitalpen batek huts egiten duenean</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Argitalpen bat ondo ateratzen denean</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Edukia argitaratzen denean</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kopiak ez duenerako estekak nora doazen (bilaketa, saio-hasiera).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Kopia estatikoa nondik zerbitzatzen den.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Zein gune argitaratzen den, eta helburuak zer izen duen.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Edozein bideren azpian funtzionatzen du. Lehenetsia.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Domeinu propio bat ezarrita dagoen bakoitzean idazten da.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Bai</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Beti konpila eta argitara dezakezu eskuz hemen eta kontsolan.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>izen bat bakarrik; balioa Konfigurazioa &gt; Sekretuak atalean geratzen da</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path azpian</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>txostenik gabe amaitua</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>gehigarria</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>huts egin du</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fitxategia</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, edo main docs karpetarekin.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git zerbitzaria</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (token batekin) edo git@github.com:owner/repo.git (hedapen-gako batekin); inoiz ez pasahitzik edo tokenik barruan.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, gune-maparako eta esteka kanonikoetarako.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>irudia</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>inoiz ez</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ez</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>urruneko biltegirik ez</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>bat ere ez: baieztapenak karpetan geratzen dira</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>bat ere ez: ez da ezer aldatu</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>bidali gabea</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ez da ezer aldatu</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>orria</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>gainditua</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open desgaituta dago, beraz ezin da hemen zereginik abiarazi. Erabili ./console exp:static:build zerbitzarian.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>argitalpena</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>argitaratua</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>bidalketa zain</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>bidalia</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>baztertua</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>erlatiboa</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>desegitea</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>desegina</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>abian</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>karpeta bakarrik</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME fitxategian idazten da. Bideratu domeinuaren DNSa zerbitzarira hark azaltzen duen bezala; HTTPS aktibatzeko denbora pixka bat behar izan daiteke.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>bai, oraindik argitaratu gabea</translation>
     </message>
 </context>
 </TS>

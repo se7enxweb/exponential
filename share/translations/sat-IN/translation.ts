@@ -15150,6 +15150,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ᱯᱷᱟᱭᱤᱞ ᱞᱮᱠᱟ ᱫᱚᱦᱚ ᱟᱠᱟᱱ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱵᱚᱫᱚᱞ ᱠᱚ: ᱚᱱᱟ ᱠᱚᱣᱟᱜ ᱦᱟᱞᱛ, ᱪᱟᱞᱟᱣ ᱠᱚ, ᱪᱟᱞᱟᱣ ᱟᱨ ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ᱾</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ᱱᱟᱣᱟ ᱨᱮᱫ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ᱱᱟᱣᱟ ᱨᱮᱫ, ᱧᱮᱞ ᱡᱟᱹᱝᱪ ᱞᱟᱹᱜᱤᱫ ᱡᱟᱦᱟᱸ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱᱟ, ᱟᱨ ᱵᱟᱪᱷᱟᱣ ᱨᱮ ᱠᱟᱹᱢᱤ ᱠᱚ᱾</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ᱢᱤᱫ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱥᱴᱮᱴᱤᱠ ᱠᱚᱯᱤ GitHub Pages ᱟᱨᱵᱟᱝ ᱡᱟᱦᱟᱸ ᱜᱮ git ᱦᱚᱥᱴ ᱨᱮ ᱥᱟᱦᱴᱟ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API ᱨᱮᱭᱟᱜ ᱥᱟᱺᱪᱟᱣ ᱠᱟᱱ ᱠᱣᱮᱨᱤ ᱠᱚᱨᱮᱭᱟᱜ ᱛᱮᱞᱟ, ᱟᱨ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱥᱠᱤᱢᱟ ᱨᱮᱭᱟᱜ ᱡᱤᱱᱤᱥ ᱠᱞᱟᱥ᱾</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱠᱚᱯᱤ GitHub Pages ᱟᱨᱵᱟᱝ ᱡᱟᱦᱟᱸ ᱜᱮ git ᱦᱚᱥᱴ ᱨᱮ ᱥᱟᱦᱴᱟ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱠᱮᱥ ᱫᱚ ᱱᱚᱶᱟ ᱥᱟᱨᱵᱷᱟᱨ ᱠᱷᱚᱱ ᱯᱷᱚᱛᱟ ᱠᱚ ᱮᱢᱚᱜᱼᱟ᱾ ᱢᱤᱫ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱥᱴᱮᱴᱤᱠ ᱠᱚᱯᱤ ᱮᱴᱟᱜ ᱡᱟᱭᱜᱟ, GitHub Pages ᱟᱨᱵᱟᱝ ᱡᱟᱦᱟᱸ ᱜᱮ git ᱦᱚᱥᱴ ᱨᱮ ᱥᱟᱦᱴᱟ ᱞᱟᱹᱜᱤᱫ, ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ ᱵᱮᱵᱷᱟᱨ ᱢᱮ᱾</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ᱯᱷᱟᱭᱤᱞ ᱞᱮᱠᱟ ᱫᱚᱦᱚ ᱟᱠᱟᱱ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮᱭᱟᱜ ᱵᱚᱫᱚᱞ ᱠᱚ: ᱚᱱᱟ ᱠᱚᱣᱟᱜ ᱦᱟᱞᱛ, ᱪᱟᱞᱟᱣ ᱠᱚ, ᱪᱟᱞᱟᱣ ᱟᱨ ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ᱾</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ᱢᱤᱫ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱥᱴᱮᱴᱤᱠ ᱠᱚᱯᱤ GitHub Pages ᱟᱨᱵᱟᱝ ᱡᱟᱦᱟᱸ ᱜᱮ git ᱦᱚᱥᱴ ᱨᱮ ᱥᱟᱦᱴᱟ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80769,6 +80805,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>ᱨᱮᱠᱚᱨᱰᱤᱝ ᱵᱚᱫᱚᱞ ᱵᱟᱝ ᱜᱟᱱ ᱞᱮᱱᱟ: %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ᱵᱚᱫᱚᱞ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ᱛᱮᱭᱟᱨ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ᱧᱩᱛᱩᱢ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ᱠᱞᱟᱥ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ᱥᱮᱠᱥᱚᱱ</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ᱛᱮᱭᱟᱨ ᱠᱟᱹᱢᱤ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ᱱᱟᱣᱟ ᱨᱮᱫ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ᱡᱚᱛᱚ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱱᱤᱛᱚᱜ ᱛᱮᱭᱟᱨ ᱟᱨ ᱵᱚᱫᱚᱞ ᱟᱠᱟᱱ ᱨᱮᱫ, ᱱᱟᱣᱟ ᱟᱜᱟᱢ ᱛᱮ: ᱧᱮᱞᱚᱜ ᱦᱚᱲ ᱠᱚ ᱡᱟᱦᱟᱸ ᱮᱢ ᱟᱠᱟᱫᱟ, ᱡᱟᱦᱟᱸ ᱧᱮᱞ ᱡᱟᱹᱝᱪ ᱞᱟᱹᱜᱤᱫ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱᱟ, ᱥᱟᱦᱴᱟ ᱞᱟᱹᱜᱤᱫ ᱛᱟᱺᱜᱤ ᱠᱟᱱ ᱠᱟᱪᱷᱟ ᱜᱷᱟᱛᱤ ᱠᱚ᱾ ᱟᱭᱴᱮᱢ ᱠᱚ ᱵᱟᱪᱷᱟᱣ ᱠᱟᱛᱮ ᱚᱱᱟ ᱠᱚ ᱮᱲᱮ, ᱛᱤᱧᱜᱩ, ᱪᱟᱯᱟᱣ, ᱧᱮᱞᱟᱣ, ᱚᱪᱚᱜ ᱟᱨᱵᱟᱝ ᱮᱴᱟᱜ ᱥᱮᱠᱥᱚᱱ ᱟᱨᱵᱟᱝ ᱟᱣᱛᱟ ᱛᱮ ᱪᱟᱞᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ᱛᱟᱞᱠᱟ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ᱧᱮᱞ ᱡᱟᱹᱝᱪ ᱛᱤᱧᱜᱩ ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱝ ᱥᱮᱴᱟᱯ ᱟᱠᱟᱱᱟ, ᱚᱱᱟᱛᱮ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱᱟ ᱟᱨ ᱛᱤᱧᱜᱩ ᱠᱟᱹᱢᱤ ᱠᱚ ᱵᱟᱝ ᱮᱢ ᱠᱟᱱᱟ᱾ ᱟᱯᱜᱨᱮᱰ ᱫᱷᱟᱯ 6.0.15-review-hold ᱱᱚᱶᱟ ᱥᱮᱴᱟᱯ ᱮᱫᱟᱭ: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ᱛᱟᱞᱠᱟ ᱯᱷᱤᱞᱴᱟᱨ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ᱠᱷᱚᱱ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ᱦᱟᱹᱵᱤᱡ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ᱢᱟᱦᱟ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ᱛᱮᱭᱟᱨ ᱟᱠᱟᱫ (ᱯᱩᱭᱞᱩ ᱥᱟᱦᱴᱟ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ᱡᱚᱛᱚ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ᱦᱟᱞᱛ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ᱥᱟᱦᱴᱟ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ᱠᱟᱪᱷᱟ ᱜᱷᱟᱛᱤ, ᱪᱮᱛᱮᱫ ᱚᱠᱛᱚ ᱦᱚᱸ ᱥᱟᱦᱴᱟ ᱵᱟᱝ ᱦᱩᱭ ᱟᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ (ᱢᱟᱱᱮᱜ ᱟᱨᱵᱟᱝ ᱢᱤᱫ ᱢᱟᱦᱟ ᱞᱟᱹᱜᱤᱫ ᱛᱟᱺᱜᱤ ᱠᱟᱱᱟ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ᱵᱷᱟᱜᱟᱱ ᱯᱷᱚᱞᱟ ᱨᱮ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ᱧᱮᱞ ᱡᱟᱹᱝᱪ ᱞᱟᱹᱜᱤᱫ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ᱵᱟᱝ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ᱪᱟᱯᱟᱜ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ᱧᱮᱞ ᱫᱟᱲᱮᱭᱟᱜ</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ᱮᱢ ᱢᱟᱦᱟ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ᱡᱟᱦᱟᱸᱱ ᱥᱟᱭᱤᱴ ᱥᱟᱵᱷᱤᱥ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ᱚᱰᱤᱴ ᱡᱟᱦᱟᱸ ᱚᱞ ᱟᱠᱟᱫᱟ ᱚᱱᱟ ᱜᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ᱱᱤᱛ: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ᱢᱤᱫ ᱞᱚᱜᱤᱱ ᱟᱨᱵᱟᱝ ᱵᱮᱵᱷᱟᱨᱤᱭᱟᱹ ᱟᱭᱰᱤ᱾</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ᱯᱷᱤᱞᱴᱟᱨ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ᱯᱷᱤᱞᱴᱟᱨ ᱠᱚ ᱢᱮᱴᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ᱟᱭᱴᱮᱢ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ᱛᱮᱫ %from ᱠᱷᱚᱱ %to ᱦᱟᱹᱵᱤᱡ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ᱪᱮᱫ ᱟᱭᱴᱮᱢ ᱵᱟᱹᱱᱩᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ᱢᱤ.ᱥᱮ. ᱨᱮ ᱯᱟᱲᱦᱟᱣ ᱟᱠᱟᱱ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ ᱟᱭᱴᱮᱢ ᱠᱚ ᱨᱮ ᱠᱟᱹᱢᱤ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱟᱦᱴᱟ ᱨᱮ ᱡᱚᱛᱚ ᱵᱟᱪᱷᱟᱣ</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ᱠᱟᱹᱢᱤ</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱵᱟᱪᱷᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ᱛᱤᱧᱜᱩ ᱮᱲᱮ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ᱧᱮᱞ ᱡᱟᱹᱝᱪ ᱞᱟᱹᱜᱤᱫ ᱛᱤᱧᱜᱩ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ᱪᱟᱯᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ᱧᱮᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ᱵᱷᱟᱜᱟᱱ ᱯᱷᱚᱞᱟ ᱨᱮ ᱪᱟᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ᱢᱮᱴᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>ᱥᱮᱠᱥᱚᱱ ᱮᱢ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ᱟᱣᱛᱟ ᱮᱢ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>ᱠᱟᱨᱚᱬ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ᱛᱤᱧᱜᱩ ᱞᱟᱹᱜᱤᱫ ᱞᱟᱹᱠᱛᱤ; ᱛᱤᱧᱜᱩ ᱥᱟᱶ ᱟᱨ ᱚᱰᱤᱴ ᱨᱮ ᱫᱚᱦᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ᱢᱤᱫ ᱥᱮᱠᱥᱚᱱ ᱵᱟᱪᱷᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ᱟᱣᱛᱟ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ᱢᱤᱫ ᱟᱣᱛᱟ ᱵᱟᱪᱷᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ ᱨᱮ ᱞᱟᱜᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ᱡᱚᱛᱚ ᱟᱭᱴᱮᱢ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱥᱟᱶ ᱧᱮᱞ ᱡᱟᱹᱝᱪᱚᱜᱼᱟ᱾ ᱵᱷᱟᱜᱟᱱ ᱯᱷᱚᱞᱟ ᱨᱮ ᱪᱟᱞᱟᱣ ᱟᱨ ᱢᱮᱴᱟᱣ ᱞᱟᱦᱟ ᱨᱮ ᱴᱷᱤᱠ ᱞᱟᱹᱜᱤᱫ ᱠᱩᱞᱤᱭᱚᱜᱼᱟ᱾ %count ᱠᱷᱚᱱ ᱵᱟᱹᱲᱛᱤ ᱟᱭᱴᱮᱢ ᱥᱟᱛᱟᱨ ᱨᱮ ᱪᱟᱞᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ᱵᱟᱪᱷᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ᱚᱠᱟ ᱠᱷᱚᱱ ᱮᱢ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ᱵᱟᱪᱷᱟᱣ</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱝ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ᱧᱩᱛᱩᱢ ᱵᱟᱹᱱᱩᱜᱼᱟ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ᱟᱭᱰᱤ %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ᱠᱟᱪᱷᱟ ᱜᱷᱟᱛᱤ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ᱵᱟᱵᱟ ᱛᱮ ᱪᱟᱯᱟᱜ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱ: ᱱᱟᱣᱟ ᱮᱢ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ᱵᱷᱟᱨᱥᱚᱱ %version ᱡᱟᱜᱟᱣ ᱢᱮᱱᱟᱜ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ᱵᱷᱟᱨᱥᱚᱱ %version ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ᱠᱟᱪᱷᱟ ᱜᱷᱟᱛᱤ, ᱵᱷᱟᱨᱥᱚᱱ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ᱵᱷᱟᱨᱥᱚᱱ %version ᱥᱟᱦᱴᱟ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date ᱞᱟᱹᱜᱤᱫ ᱴᱷᱤᱠ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ᱴᱷᱤᱠᱟᱱᱟ ᱵᱟᱹᱱᱩᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ᱵᱟᱝ ᱚᱞ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ᱱᱚᱶᱟ ᱯᱷᱤᱞᱴᱟᱨ ᱠᱚ ᱥᱟᱶ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱢᱤᱞᱟᱹᱜ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ᱡᱚᱛᱚ ᱧᱮᱞᱟᱣ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫ ᱨᱮᱫ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ᱯᱨᱚᱛᱤ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ᱯᱨᱚᱛᱤ ᱥᱟᱦᱴᱟ ᱨᱮ %count ᱟᱭᱴᱮᱢ ᱧᱮᱞᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ᱢᱤᱫ ᱮᱢ ᱨᱮᱭᱟᱜ ᱴᱷᱤᱠᱟᱱᱟ ᱟᱨ ᱵᱽᱨᱟᱣᱡᱟᱨ ᱚᱰᱤᱴ ᱥᱩᱪᱤ ᱠᱷᱚᱱ ᱦᱤᱡᱩᱜᱼᱟ, ᱚᱱᱟ ᱱᱚᱰᱮ ᱵᱟᱝ ᱧᱟᱢᱚᱜᱼᱟ: ᱠᱚᱞᱚᱢ ᱨᱮ "ᱵᱟᱝ ᱚᱞ ᱟᱠᱟᱱ" ᱚᱞ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ᱴᱷᱤᱠᱟᱱᱟ ᱟᱨ ᱵᱽᱨᱟᱣᱡᱟᱨ ᱫᱚ ᱚᱱᱟ ᱠᱟᱱᱟ ᱡᱟᱦᱟᱸ ᱚᱰᱤᱴ ᱟᱭᱴᱮᱢ ᱞᱟᱹᱜᱤᱫ ᱚᱞ ᱟᱠᱟᱫᱟ (ᱟᱡ ᱛᱮ ᱛᱤᱧᱜᱩ ᱡᱟᱣᱜᱮ ᱚᱱᱟ ᱠᱚ ᱚᱞᱟ; ᱥᱟᱦᱴᱟ ᱟᱨ ᱛᱮᱭᱟᱨ ᱚᱠᱟ ᱨᱮ ᱮᱦᱚᱵ ᱢᱮᱱᱟᱜ ᱚᱱᱰᱮ ᱜᱮ), ᱡᱮᱞᱮᱠᱟ ᱩᱱᱤᱭᱟᱜ ᱫᱟᱱᱟᱝ ᱥᱟᱡᱟᱣ ᱠᱚ ᱫᱚᱦᱚ ᱮᱫᱟ᱾</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ᱟᱭᱴᱮᱢ</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ᱢᱮᱴᱟᱣ ᱞᱮᱠᱷᱟᱱ ᱟᱭᱴᱮᱢ ᱠᱚ ᱟᱡᱟᱜ ᱡᱚᱛᱚ ᱵᱷᱟᱨᱥᱚᱱ ᱟᱨ ᱛᱚᱨᱡᱚᱢᱟ ᱥᱟᱶ ᱡᱩᱜ ᱞᱟᱹᱜᱤᱫ ᱚᱪᱚᱜᱚᱜᱼᱟ᱾ ᱱᱚᱶᱟ ᱫᱚ ᱫᱚᱦᱲᱟ ᱵᱟᱝ ᱨᱩᱣᱟᱹᱲ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ᱟᱭᱴᱮᱢ ᱠᱚ ᱵᱷᱟᱜᱟᱱ ᱯᱷᱚᱞᱟ ᱨᱮ ᱪᱟᱞᱟᱜ ᱠᱚᱣᱟ, ᱚᱱᱰᱮ ᱠᱷᱚᱱ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ᱡᱚᱛᱚ ᱟᱭᱴᱮᱢ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱥᱟᱶ ᱧᱮᱞ ᱡᱟᱹᱝᱪᱚᱜᱼᱟ; ᱦᱩᱰᱤᱧ ᱟᱭᱴᱮᱢ ᱢᱮᱱᱟᱜ ᱟᱭᱴᱮᱢ ᱡᱮᱞᱮᱠᱟ ᱢᱮᱱᱟᱜᱼᱟ ᱚᱱᱠᱟ ᱜᱮ ᱛᱟᱦᱮᱸᱱᱟ (ᱨᱮᱫ ᱫᱟᱨᱮ ᱨᱮ ᱚᱪᱚᱜ ᱢᱮ)᱾ ᱱᱚᱶᱟ ᱟᱢ ᱜᱮ ᱢᱮᱱᱟᱢᱟ ᱚᱱᱟ ᱥᱟᱹᱵᱤᱛ ᱞᱟᱹᱜᱤᱫ ᱠᱩᱞᱤᱭᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱟᱛᱟᱨ ᱨᱮ ᱪᱟᱞᱟᱜᱼᱟ: ᱩᱱᱤᱭᱟᱜ ᱞᱟᱦᱟᱱᱛᱤ ᱥᱟᱦᱴᱟ ᱡᱷᱤᱡᱚᱜᱼᱟ, ᱟᱨ ᱪᱟᱵᱟ ᱞᱮᱠᱷᱟᱱ ᱡᱚᱛᱚ ᱟᱭᱴᱮᱢ ᱨᱮᱭᱟᱜ ᱵᱟᱰᱟᱭ ᱯᱷᱚᱞ ᱧᱮᱞᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ᱵᱟᱪᱷᱟᱣ ᱟᱠᱟᱱ ᱟᱭᱴᱮᱢ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ᱟᱨ %count ᱵᱟᱹᱲᱛᱤ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ᱵᱟᱛᱟᱞ</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>ᱠᱟᱨᱚᱬ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱱᱤᱛ ᱦᱚᱸ ᱥᱟᱛᱟᱨ ᱨᱮ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ᱩᱱᱤᱭᱟᱜ ᱞᱟᱦᱟᱱᱛᱤ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ᱥᱟᱛᱟᱨ ᱠᱟᱹᱢᱤ ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱᱟ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ᱪᱟᱵᱟ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ᱵᱟᱹᱰ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ᱯᱨᱚᱛᱤ ᱟᱭᱴᱮᱢ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ᱟᱭᱴᱮᱢ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ᱵᱟᱰᱟᱭ ᱯᱷᱚᱞ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ᱪᱮᱫᱟᱜ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ᱛᱟᱞᱠᱟ ᱛᱮ ᱛᱟᱭᱚᱢ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ᱥᱮᱴᱟᱯ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ᱴᱷᱤᱠ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ᱠᱚᱢ ᱠᱷᱚᱱ ᱠᱚᱢ ᱢᱤᱫ ᱟᱭᱴᱮᱢ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ᱢᱤᱫ ᱫᱷᱟᱣ ᱨᱮ ᱡᱟᱹᱥᱛᱤ ᱠᱷᱚᱱ ᱡᱟᱹᱥᱛᱤ 1000 ᱟᱭᱴᱮᱢ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ᱟᱭᱴᱮᱢ ᱠᱚ ᱪᱮᱫᱟᱜ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱᱟ ᱢᱮᱛᱟᱭ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>ᱥᱮᱠᱥᱚᱱ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ᱟᱣᱛᱟ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ᱯᱷᱚᱨᱢ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫᱟ᱾</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ᱱᱟᱣᱟ ᱨᱮᱫ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ᱞᱮᱠᱷᱟ ᱠᱚ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ᱧᱮᱞ ᱡᱟᱹᱝᱪ ᱞᱟᱹᱜᱤᱫ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ᱛᱮᱦᱮᱧ ᱱᱟᱣᱟ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ᱧᱮᱞ ᱡᱟᱹᱝᱪ ᱛᱤᱧᱜᱩ ᱱᱤᱛ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱝ ᱥᱮᱴᱟᱯ ᱟᱠᱟᱱᱟ (ᱟᱯᱜᱨᱮᱰ ᱫᱷᱟᱯ 6.0.15-review-hold)᱾</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ᱡᱚᱛᱚ ᱱᱟᱣᱟ ᱨᱮᱫ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ᱢᱚᱰᱟᱨᱮᱥᱚᱱ ᱠᱟᱹᱢᱤ ᱪᱟᱞᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (moderation/act)᱾</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>ᱢᱚᱰᱟᱨᱮᱥᱚᱱ ᱠᱟᱹᱢᱤ ᱵᱟᱝ ᱪᱟᱵᱟ ᱟᱠᱟᱱᱟ: %errors᱾</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ᱢᱚᱰᱟᱨᱮᱥᱚᱱ: %count ᱡᱤᱱᱤᱥ ᱨᱮ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total ᱛᱮᱫ %done ᱡᱤᱱᱤᱥ: %ok ᱪᱟᱵᱟ, %refused ᱵᱟᱹᱰ, %failed ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ᱪᱟᱵᱟ, %refused ᱵᱟᱹᱰ, %failed ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ᱱᱚᱶᱟ ᱫᱚ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ᱱᱚᱶᱟ ᱨᱮᱭᱟᱜ ᱪᱮᱫ ᱴᱷᱮᱜᱟ ᱵᱟᱹᱱᱩᱜᱼᱟ (ᱥᱟᱦᱴᱟ ᱵᱟᱝ ᱦᱩᱭ ᱟᱠᱟᱱᱟ)᱾</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱟᱯᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (content/hide)᱾</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ᱱᱚᱶᱟ ᱧᱮᱞᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (content/hide)᱾</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱦᱟ ᱠᱷᱚᱱ ᱜᱮ ᱪᱟᱯᱟᱜ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ᱱᱚᱶᱟ ᱵᱟᱝ ᱪᱟᱯᱟᱜ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ᱪᱟᱯᱟᱣ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ᱧᱮᱞᱟᱣ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ᱱᱚᱶᱟ ᱵᱷᱟᱜᱟᱱ ᱯᱷᱚᱞᱟ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ: ᱚᱱᱰᱮ ᱵᱷᱟᱜᱟᱱ ᱯᱷᱚᱞᱟ ᱠᱷᱟᱹᱞᱤ ᱢᱮ ᱟᱨᱵᱟᱝ ᱱᱚᱶᱟ ᱟᱨᱦᱚᱸ ᱥᱟᱯᱲᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ᱪᱮᱛᱮᱫ ᱚᱠᱛᱚ ᱦᱚᱸ ᱥᱟᱦᱴᱟ ᱵᱟᱝ ᱦᱩᱭ ᱟᱠᱟᱱ ᱠᱟᱪᱷᱟ ᱜᱷᱟᱛᱤ ᱵᱷᱟᱜᱟᱱ ᱯᱷᱚᱞᱟ ᱨᱮ ᱵᱟᱝ ᱪᱟᱞᱟᱜ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ: ᱱᱚᱶᱟ ᱢᱮᱴᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ᱱᱚᱶᱟ ᱢᱮᱴᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (content/remove)᱾</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ᱢᱮᱴᱟᱣ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ᱱᱚᱶᱟ ᱚᱪᱚᱜ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (content/remove)᱾</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ᱱᱚᱶᱟ ᱨᱮ ᱦᱩᱰᱤᱧ ᱟᱭᱴᱮᱢ ᱢᱮᱱᱟᱜᱼᱟ: ᱨᱮᱫ ᱫᱟᱨᱮ ᱨᱮ ᱚᱪᱚᱜ ᱢᱮ, ᱚᱠᱟ ᱨᱮ ᱚᱱᱟ ᱠᱚ ᱛᱟᱞᱠᱟ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ᱱᱚᱶᱟ ᱵᱟᱝ ᱚᱪᱚᱜ ᱞᱮᱱᱟ (ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱨᱟᱦᱟ ᱚᱪᱚᱜ ᱛᱤᱧᱜᱩ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ)᱾</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ᱵᱷᱟᱜᱟᱱ ᱯᱷᱚᱞᱟ ᱨᱮ ᱪᱟᱞᱟᱣ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ᱥᱮᱠᱥᱚᱱ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱦᱟ ᱠᱷᱚᱱ ᱜᱮ ᱱᱚᱶᱟ ᱥᱮᱠᱥᱚᱱ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱮᱠᱥᱚᱱ ᱮᱢ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (section/assign)᱾</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>ᱥᱮᱠᱥᱚᱱ ᱵᱟᱝ ᱮᱢ ᱞᱮᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>ᱥᱮᱠᱥᱚᱱ ᱮᱢ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ᱟᱣᱛᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱦᱟ ᱠᱷᱚᱱ ᱜᱮ ᱱᱚᱶᱟ ᱟᱣᱛᱟ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ᱱᱚᱶᱟ ᱟᱣᱛᱟ ᱮᱢ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (state/assign)᱾</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ᱟᱣᱛᱟ ᱵᱟᱝ ᱮᱢ ᱞᱮᱱᱟ (ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱨᱟᱦᱟ ᱵᱚᱫᱚᱞ ᱛᱤᱧᱜᱩ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ)᱾</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>ᱟᱣᱛᱟ ᱮᱢ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱮᱠᱟᱱ ᱪᱮᱫ ᱠᱟᱹᱢᱤ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ᱧᱮᱞ ᱡᱟᱹᱝᱪ ᱛᱤᱧᱜᱩ ᱵᱟᱝ ᱥᱮᱴᱟᱯ ᱟᱠᱟᱱᱟ (ᱟᱯᱜᱨᱮᱰ ᱫᱷᱟᱯ 6.0.15-review-hold)᱾</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱮᱫᱟᱜ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱᱟ ᱢᱮᱛᱟᱭ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱦᱟ ᱠᱷᱚᱱ ᱜᱮ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ᱱᱚᱶᱟ ᱛᱤᱧᱜᱩ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (state/assign)᱾</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ᱛᱤᱧᱜᱩ ᱵᱟᱝ ᱞᱟᱜᱟᱣ ᱞᱮᱱᱟ (ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱨᱟᱦᱟ ᱵᱚᱫᱚᱞ ᱛᱤᱧᱜᱩ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ)᱾</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ᱱᱚᱶᱟ ᱵᱟᱝ ᱛᱤᱧᱜᱩ ᱟᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ᱱᱚᱶᱟ ᱮᱲᱮ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (state/assign)᱾</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ᱛᱤᱧᱜᱩ ᱵᱟᱝ ᱮᱲᱮ ᱞᱮᱱᱟ (ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱨᱟᱦᱟ ᱵᱚᱫᱚᱞ ᱛᱤᱧᱜᱩ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ)᱾</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ᱮᱲᱮ ᱟᱠᱟᱱ; ᱱᱤᱛ ᱦᱚᱸ ᱪᱟᱯᱟᱜ: ᱱᱚᱶᱟ ᱧᱮᱞᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱟᱢᱟᱜ ᱵᱷᱟᱜᱟ ᱵᱟᱝ ᱢᱮᱱᱟᱜᱼᱟ (content/hide)᱾</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ᱮᱲᱮ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>ᱡᱚᱛᱚ ᱞᱟᱠᱷᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ᱢᱩᱪᱟᱹᱫ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>ᱟᱢᱟᱜ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱢᱟᱹᱜᱽᱱᱟ ᱥᱴᱮᱴᱤᱠ ᱠᱚᱯᱤ GitHub Pages ᱨᱮ ᱥᱟᱦᱴᱟ ᱢᱮ:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ᱯᱩᱨᱟᱹᱱ ᱯᱷᱚᱛᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ ᱵᱚᱸᱫᱚ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ᱞᱟᱠᱷᱟᱭ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ᱞᱟᱠᱷᱟ ᱠᱚ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ᱡᱟᱸᱪ ᱞᱟᱹᱜᱤᱫ ᱵᱤᱞᱰ</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ᱱᱚᱶᱟ ᱩᱠᱩ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ᱞᱟᱠᱷᱟᱭ ᱛᱮᱭᱟᱨ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ᱛᱤᱱᱟᱹᱜ ᱦᱚᱸ ᱵᱟᱝ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ᱥᱮᱪᱮᱫ ᱯᱟᱲᱦᱟᱣ ᱢᱮ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ᱡᱚᱲᱟᱣ ᱟᱠᱟᱫ, %changed ᱵᱚᱫᱚᱞ ᱟᱠᱟᱫ, %removed ᱚᱪᱚᱜ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit ᱠᱷᱚᱱ %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>ᱟᱨᱦᱚᱸ %count ᱛᱟᱞᱠᱟ ᱨᱮ ᱵᱟᱹᱱᱩᱜ ᱠᱚᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages ᱯᱷᱚᱛᱟ ᱚᱞ ᱟᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ᱨᱮᱭᱟᱜ ᱢᱟᱯ %size, ᱦᱚᱥᱴ ᱢᱤᱫ ᱯᱷᱟᱭᱤᱞ ᱞᱟᱹᱜᱤᱫ ᱡᱟᱦᱟᱸ ᱮᱢ ᱮᱫᱟ ᱚᱱᱟ ᱠᱷᱚᱱ ᱵᱟᱹᱲᱛᱤ᱾</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>ᱥᱤᱢᱟᱹ ᱨᱮᱭᱟᱜ %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ᱥᱮᱠᱮᱱᱰ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ᱫᱚ ᱥᱟᱭᱤᱴ ᱨᱮ ᱱᱤᱛᱚᱜ ᱢᱮᱱᱟᱜ ᱥᱟᱦᱴᱟ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ᱠᱟᱹᱢᱤ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub ᱯᱨᱚᱡᱮᱠᱴ ᱥᱟᱭᱤᱴ ᱞᱟᱹᱜᱤᱫ /ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ/; ᱱᱤᱡᱮᱨᱟᱜ ᱰᱚᱢᱮᱱ ᱟᱨᱵᱟᱝ ᱵᱮᱵᱷᱟᱨᱤᱭᱟᱹ ᱥᱟᱭᱤᱴ ᱞᱟᱹᱜᱤᱫ ᱠᱷᱟᱹᱞᱤ᱾</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. ᱥᱟᱭᱤᱴ</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. ᱦᱚᱥᱴ</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱨᱮ ᱵᱚᱞᱚ</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. ᱞᱤᱝᱠ ᱠᱚ ᱟᱨ ᱵᱮᱥ ᱰᱟᱦᱨ</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. ᱟᱢᱟᱜ ᱱᱤᱡᱮᱨᱟᱜ ᱰᱚᱢᱮᱱ</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. ᱵᱤᱞᱰ ᱨᱮ ᱪᱮᱫ ᱢᱮᱱᱟᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. ᱪᱤᱞᱤᱝ ᱥᱟᱦᱴᱟᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. ᱧᱮᱞ ᱪᱟᱪᱟᱹ ᱟᱨ ᱨᱟᱠᱷᱟᱣ</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub ᱯᱨᱚᱡᱮᱠᱴ ᱥᱟᱭᱤᱴ ᱫᱚ /&lt;repository&gt;/ ᱞᱟᱛᱟᱨ ᱨᱮ ᱛᱟᱦᱮᱸᱱᱟ; ᱥᱟᱯᱮᱠᱷ ᱞᱤᱝᱠ ᱠᱚ ᱚᱸᱰᱮ ᱟᱨ ᱡᱟᱦᱟᱸ ᱜᱮ ᱡᱟᱭᱜᱟ ᱨᱮ ᱠᱟᱹᱢᱤᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ᱢᱤᱫ ᱵᱤᱞᱰ %site ᱨᱮᱭᱟᱜ ᱡᱚᱛᱚ ᱯᱷᱚᱛᱟ ᱵᱟᱝ ᱵᱚᱞᱚ ᱟᱠᱟᱱ ᱧᱮᱞᱤᱭᱟᱹ ᱡᱮᱞᱮᱠᱟ ᱧᱮᱞᱟ ᱚᱱᱟ ᱞᱮᱠᱟᱛᱮ ᱟᱹᱜᱩᱭᱟ, ᱞᱤᱝᱠ ᱠᱚ ᱫᱚᱦᱲᱟ ᱚᱞᱟ, ᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱠᱚᱯᱤᱭᱟ ᱟᱨ ᱵᱟᱰᱟᱭ ᱯᱷᱚᱞ ᱞᱟᱠᱷᱟᱭ ᱨᱮᱭᱟᱜ ᱯᱷᱚᱞᱰᱟᱨ ᱨᱮ ᱚᱞᱟ᱾ ᱟᱢ ᱵᱤᱞᱰ ᱡᱟᱸᱪ ᱠᱟᱛᱮ &quot;ᱥᱟᱦᱴᱟ ᱢᱮ&quot; ᱞᱟᱹᱛᱷᱟ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱥᱟᱦᱴᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>ᱢᱤᱫ cron ᱮᱠᱥᱯᱨᱮᱥᱚᱱ, ᱫᱟᱹᱭᱠᱟᱹ ᱞᱮᱠᱟᱛᱮ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ ᱫᱚ %secret ᱨᱟᱯᱩᱫ ᱞᱮᱠᱟᱛᱮ ᱫᱚᱦᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ ᱫᱚ ᱱᱚᱶᱟ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱠᱮ SSH ᱛᱮ ᱢᱤᱫ ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱨᱮ ᱜᱮ ᱯᱩᱥ ᱞᱟᱹᱜᱤᱫ ᱮᱢᱟᱭᱟ, ᱮᱴᱟᱜ ᱡᱟᱭᱜᱟ ᱵᱟᱝ᱾ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱱᱤᱡᱮᱨᱟᱜ ᱦᱟᱹᱴᱤᱧ ᱥᱮᱴᱟᱯ &gt; ᱨᱟᱯᱩᱫ ᱠᱚ ᱨᱮ ᱛᱟᱦᱮᱸᱱᱟ; ᱥᱩᱢᱩᱝ ᱯᱟᱵᱞᱤᱠ ᱦᱟᱹᱴᱤᱧ ᱩᱫᱩᱜᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱠᱷᱟᱭ ᱞᱟᱹᱜᱤᱫ ᱛᱮᱭᱟᱨ ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ SSH ᱛᱮ ᱵᱚᱞᱚᱜᱼᱟ: git ᱴᱷᱤᱠᱬᱟᱹ ᱫᱚ SSH ᱴᱷᱤᱠᱬᱟᱹ ᱛᱮ ᱵᱚᱫᱚᱞ ᱢᱮ (git@github.com:owner/repo.git)᱾</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ, %user ᱮᱛᱠᱟᱣ ᱠᱮᱫᱟᱭ</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱠᱷᱟᱭ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱱᱤᱛᱚᱜ ᱦᱚᱸ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ (%detail)᱾ ᱪᱟᱵᱟ ᱦᱟᱹᱵᱤᱡ ᱛᱟᱺᱜᱤ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱠᱷᱟᱭ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱠᱟᱹᱢᱤ ᱱᱤᱛᱚᱜ ᱦᱚᱸ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ᱾ ᱪᱟᱵᱟ ᱦᱟᱹᱵᱤᱡ ᱛᱟᱺᱜᱤ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ ᱯᱷᱚᱛᱟ ᱠᱷᱚᱱ /about-us/team ᱯᱷᱚᱛᱟ ᱛᱮ ᱢᱤᱫ ᱞᱤᱝᱠ ᱱᱚᱶᱟ ᱞᱮᱠᱟ ᱚᱞᱚᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>ᱢᱤᱫ ᱱᱟᱶᱟ ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ ᱛᱮᱭᱟᱨ ᱮᱱᱟ᱾ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱯᱟᱵᱞᱤᱠ ᱦᱟᱹᱴᱤᱧ ᱱᱤᱛᱚᱜ ᱜᱮ ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱨᱮ ᱥᱮᱞᱮᱫ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>ᱥᱟᱯᱷᱟ ᱛᱟᱭᱚᱢ ᱦᱚᱸ ᱡᱟᱦᱟᱸ ᱯᱷᱚᱛᱟ ᱨᱮ ᱰᱮᱵᱚᱜ ᱟᱣᱴᱯᱩᱴ, ᱯᱷᱚᱨᱢ ᱴᱚᱠᱮᱱ ᱟᱨᱵᱟᱝ ᱥᱮᱥᱚᱱ ID ᱛᱟᱦᱮᱸᱱᱟ, ᱚᱱᱟ ᱛᱤᱱᱟᱹᱜ ᱦᱚᱸ ᱵᱟᱝ ᱥᱟᱦᱴᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ ᱫᱚ ᱵᱤᱥᱮᱥᱚᱜᱤᱭᱟᱹ ᱠᱚ ᱞᱟᱹᱜᱤᱫ: &quot;ᱱᱚᱶᱟ ᱪᱮᱫ ᱵᱚᱫᱚᱞᱟ ᱤᱧ ᱵᱟᱰᱟᱭᱟ&quot; ᱴᱤᱠ ᱢᱮ ᱟᱨ ᱴᱮᱜ ᱨᱮᱭᱟᱜ ᱧᱩᱛᱩᱢ ᱫᱚᱦᱲᱟ ᱚᱞ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ᱥᱟᱭᱤᱴ %site ᱦᱟᱹᱵᱤᱡ, ᱢᱤᱫ ᱯᱷᱟᱭᱤᱞ %file ᱦᱟᱹᱵᱤᱡ ᱦᱩᱭ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ, ᱪᱟᱸᱫᱚ ᱨᱮ ᱥᱟᱱᱟᱢ 100 GB ᱴᱨᱟᱯᱷᱤᱠ ᱥᱟᱶ᱾ ᱢᱟᱹᱜᱽᱱᱟ ᱯᱞᱟᱱ ᱨᱮ ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱯᱟᱵᱞᱤᱠ ᱦᱩᱭ ᱞᱟᱹᱠᱛᱤᱭᱟ᱾ GitHub Pages ᱫᱚ ᱫᱚᱠᱟᱱ ᱟᱨᱵᱟᱝ ᱮᱴᱟᱜ ᱠᱟᱨᱵᱟᱨ ᱞᱮᱱᱫᱮᱱ ᱞᱟᱹᱜᱤᱫ ᱵᱟᱝ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ᱢᱤᱫ ᱞᱟᱠᱷᱟᱭ ᱫᱚ ᱢᱤᱫ git ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱨᱮ ᱥᱟᱦᱴᱟ ᱢᱤᱫ ᱥᱟᱭᱤᱴ ᱠᱟᱱᱟ᱾ ᱱᱚᱸᱰᱮ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱵᱤᱞᱰ ᱟᱨᱵᱟᱝ ᱥᱟᱦᱴᱟᱜᱼᱟ: &quot;ᱨᱟᱠᱷᱟᱣ&quot; ᱫᱚ ᱥᱮᱴᱤᱝ ᱠᱚ settings/override/staticcache.ini.append.php ᱨᱮ ᱚᱞᱟ᱾</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ᱢᱤᱫ ᱞᱟᱠᱷᱟᱭ ᱫᱚ ᱢᱤᱫ ᱡᱟᱭᱜᱟ ᱨᱮ ᱥᱟᱦᱴᱟ ᱢᱤᱫ ᱥᱟᱭᱤᱴ ᱠᱟᱱᱟ, ᱫᱟᱹᱭᱠᱟᱹ ᱞᱮᱠᱟᱛᱮ GitHub Pages ᱨᱮ ᱟᱢᱟᱜ ᱯᱟᱵᱞᱤᱠ ᱥᱟᱭᱤᱴ᱾</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>ᱥᱮᱴᱟᱯ &gt; ᱨᱟᱯᱩᱫ ᱠᱚ ᱠᱷᱚᱱ ᱢᱤᱫ ᱴᱚᱠᱮᱱ</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱣᱟᱨᱠᱯᱷᱞᱚ ᱚᱱᱟ ᱥᱟᱦᱴᱟᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ᱱᱚᱶᱟ ᱯᱟᱵᱞᱤᱠ ᱪᱟᱵᱤ ᱚᱞ ᱮᱠᱛᱤᱭᱟᱨ ᱥᱟᱶ ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱨᱮ ᱥᱮᱞᱮᱫ ᱢᱮ᱾ GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access ᱴᱤᱠ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ᱡᱚᱲᱟᱣ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>ᱮᱴᱟᱜ git ᱦᱚᱥᱴ</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>ᱮᱴᱟᱜ ᱢᱤᱫ ᱯᱨᱚᱥᱮᱥ ᱱᱚᱶᱟ ᱞᱟᱠᱷᱟᱭ ᱨᱮ ᱠᱟᱹᱢᱤ ᱠᱟᱱᱟ: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>ᱛᱟᱭᱚᱢ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>ᱵᱮᱥ ᱰᱟᱦᱨ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ᱞᱟᱦᱟ</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ᱵᱮᱥ ᱰᱟᱦᱨ ᱞᱟᱛᱟᱨ ᱨᱮ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ᱵᱽᱨᱟᱧᱪ</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>ᱨᱟᱹᱯᱩᱫ ᱞᱤᱝᱠ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>ᱵᱤᱞᱰ ᱨᱮ ᱨᱟᱹᱯᱩᱫ ᱞᱤᱝᱠ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ᱵᱤᱞᱰ</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user ᱨᱮᱭᱟᱜ ᱵᱤᱞᱰ %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>ᱵᱤᱞᱰ %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ᱱᱤᱛᱚᱜ ᱵᱤᱞᱰ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>ᱡᱟᱸᱪ ᱞᱟᱹᱜᱤᱫ ᱵᱤᱞᱰ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ᱠᱟᱹᱢᱤᱭᱤᱡ</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>ᱛᱤᱼᱛᱮ, ᱱᱚᱸᱰᱮ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ᱵᱟᱛᱟᱞ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ᱵᱚᱫᱚᱞ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ᱵᱚᱫᱚᱞ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ᱵᱚᱫᱚᱞ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ᱯᱟᱹᱦᱤᱞ ᱡᱟᱸᱪ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱮᱴᱤᱝ ᱠᱚ ᱡᱟᱸᱪ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>ᱵᱤᱞᱰ ᱪᱮᱫ ᱵᱚᱫᱚᱞᱟ ᱚᱱᱟ ᱡᱟᱸᱪ ᱢᱮ, ᱧᱮᱞ ᱢᱮ, ᱛᱟᱭᱚᱢ ᱥᱟᱦᱴᱟ ᱢᱮ ᱟᱨᱵᱟᱝ ᱵᱟᱹᱜᱤ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ᱡᱟᱦᱟᱸ ᱥᱟᱦᱴᱟ ᱛᱮ ᱨᱩᱣᱟᱹᱲ ᱦᱩᱭᱩᱜᱼᱟ ᱚᱱᱟ ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱤᱞᱤᱡ ᱨᱮ ᱦᱮᱡᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ᱠᱚᱢᱤᱴ</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>ᱠᱚᱢᱤᱴ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ᱵᱤᱞᱰ ᱠᱚᱢᱤᱴ ᱠᱟᱛᱮ, ᱴᱮᱜ ᱠᱟᱛᱮ %remote ᱛᱮ ᱯᱩᱥ ᱮᱫᱟ᱾ ᱯᱩᱥ ᱫᱚ ᱛᱤᱱᱟᱹᱜ ᱦᱚᱸ ᱡᱚᱵᱚᱨᱫᱚᱥᱛᱤ ᱵᱟᱝ ᱦᱩᱭᱩᱜᱼᱟ; ᱛᱟᱭᱚᱢ ᱡᱟᱦᱟᱸ ᱜᱮ ᱥᱟᱦᱴᱟ ᱛᱮ ᱨᱩᱣᱟᱹᱲ ᱫᱟᱲᱮᱭᱟᱜ ᱟᱢ᱾</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ᱞᱟᱦᱟ ᱨᱮᱭᱟᱜ ᱯᱷᱚᱞᱰᱟᱨ ᱥᱟᱶ ᱥᱚᱢᱟᱱ ᱧᱮᱞ: %added ᱡᱚᱲᱟᱣ ᱟᱠᱟᱫ, %changed ᱵᱚᱫᱚᱞ ᱟᱠᱟᱫ, %removed ᱚᱪᱚᱜ ᱟᱠᱟᱫ, %unchanged ᱵᱟᱝ ᱵᱚᱫᱚᱞ᱾</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>ᱢᱩᱪᱟᱹᱫ ᱥᱟᱦᱴᱟ ᱥᱟᱶ ᱥᱚᱢᱟᱱ ᱧᱮᱞ᱾</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ᱵᱚᱞᱚ ᱪᱤᱱᱦᱟᱹ</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>ᱱᱤᱡᱮᱨᱟᱜ ᱰᱚᱢᱮᱱ</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>ᱰᱮᱵᱚᱜ ᱟᱣᱴᱯᱩᱴ, ᱯᱷᱚᱨᱢ ᱴᱚᱠᱮᱱ, ᱥᱮᱥᱚᱱ ID ᱟᱨ nonce ᱠᱚ ᱡᱟᱣᱜᱮ ᱚᱪᱚᱜᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ᱨᱮᱭᱟᱜ ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ᱵᱟᱹᱜᱤ</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ᱵᱤᱞᱰ ᱵᱟᱹᱜᱤ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ᱰᱚᱢᱮᱱ</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ᱠᱷᱟᱹᱞᱤ: ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱴᱷᱤᱠᱬᱟᱹ᱾ ᱵᱟᱝᱠᱷᱟᱱ ᱚᱱᱟᱜᱮ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱵᱷᱤᱛᱨᱤ ᱴᱷᱤᱠᱬᱟᱹ᱾</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ᱪᱟᱵᱟ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ᱡᱚᱛᱚ ᱞᱤᱝᱠ ᱵᱮᱥ ᱰᱟᱦᱨ ᱛᱮ ᱮᱛᱠᱟᱣᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ᱡᱚᱛᱚ ᱥᱟᱦᱴᱟ ᱫᱚ static/%id/&lt;n&gt; ᱴᱮᱜ ᱥᱟᱶ ᱢᱤᱫ ᱠᱚᱢᱤᱴ ᱠᱟᱱᱟ᱾ ᱨᱩᱣᱟᱹᱲ ᱫᱚ ᱢᱤᱫ ᱞᱟᱦᱟ ᱥᱟᱦᱴᱟ ᱨᱮᱭᱟᱜ ᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱥᱟᱶ ᱢᱤᱫ ᱱᱟᱶᱟ ᱠᱚᱢᱤᱴ ᱛᱮᱭᱟᱨᱟ: ᱤᱛᱷᱟᱥ ᱛᱟᱦᱮᱸᱱᱟ, ᱪᱮᱫᱚᱜ ᱴᱮᱜ ᱵᱟᱝ ᱥᱮᱨᱮᱫᱚᱜᱼᱟ ᱟᱨ ᱪᱮᱫ ᱦᱚᱸ ᱡᱚᱵᱚᱨᱫᱚᱥᱛᱤ ᱵᱟᱝ ᱦᱩᱭᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>ᱵᱟᱹᱲᱛᱤ ᱯᱷᱟᱭᱤᱞ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>ᱯᱷᱚᱛᱟ ᱠᱚ ᱱᱚᱸᱰᱮ ᱠᱷᱚᱱ ᱟᱹᱜᱩ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ᱯᱷᱟᱭᱤᱞ</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ᱯᱷᱟᱭᱤᱞ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱵᱟᱹᱱᱩᱜ ᱠᱚᱭᱟ</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱯᱷᱟᱭᱤᱞ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ᱡᱟᱦᱟᱸ ᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱵᱟᱝ ᱡᱚᱢᱟ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>ᱪᱤᱱᱦᱟᱹ ᱪᱟᱯ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ᱯᱷᱚᱞᱰᱟᱨ</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH ᱴᱷᱤᱠᱬᱟᱹ ᱞᱟᱹᱜᱤᱫ᱾ ᱨᱟᱠᱷᱟᱣ ᱛᱟᱭᱚᱢ ᱪᱟᱵᱤ ᱛᱮᱭᱟᱨᱚᱜᱼᱟ; ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱯᱟᱵᱞᱤᱠ ᱦᱟᱹᱴᱤᱧ ᱟᱢ ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱨᱮ ᱥᱮᱞᱮᱫ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// ᱴᱷᱤᱠᱬᱟᱹ ᱞᱟᱹᱜᱤᱫ᱾ GitHub: ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱨᱮ Contents ᱯᱟᱲᱦᱟᱣ ᱟᱨ ᱚᱞ ᱮᱠᱛᱤᱭᱟᱨ ᱥᱟᱶ ᱢᱤᱫ fine-grained ᱴᱚᱠᱮᱱ᱾</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ᱵᱤᱥᱮᱥᱚᱜᱤᱭᱟᱹ ᱠᱚ ᱞᱟᱹᱜᱤᱫ᱾ ᱯᱩᱥ ᱪᱟᱵᱟ ᱮᱱ ᱥᱟᱶ ᱜᱮ ᱯᱟᱵᱞᱤᱠ ᱥᱟᱭᱤᱴ ᱵᱚᱫᱚᱞᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ᱯᱷᱚᱨᱢ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱠᱷᱚᱱ ᱢᱟᱹᱜᱽᱱᱟ ᱦᱚᱥᱴᱤᱝ᱾</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ᱵᱽᱨᱟᱧᱪ ᱠᱷᱚᱱ</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git ᱴᱷᱤᱠᱬᱟᱹ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub ᱮᱯ</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site ᱨᱮᱭᱟᱜ ᱥᱟᱭᱤᱴ ᱟᱨ %file ᱨᱮᱭᱟᱜ ᱯᱷᱟᱭᱤᱞ ᱮᱢᱚᱜ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ᱥᱤᱢᱟᱹ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱡᱮᱞᱮᱠᱟ ᱢᱮᱱᱟᱜ ᱠᱚᱭᱟ ᱚᱱᱟ ᱞᱮᱠᱟᱛᱮ ᱥᱟᱦᱴᱟᱭᱟ (_ ᱛᱮ ᱮᱛᱠᱟᱣ ᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱞᱟᱹᱜᱤᱫ ᱞᱟᱹᱠᱛᱤ)᱾</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ᱵᱽᱨᱟᱧᱪ ᱡᱮᱞᱮᱠᱟ ᱯᱩᱥ ᱦᱩᱭ ᱟᱠᱟᱱᱟ ᱚᱱᱟ ᱞᱮᱠᱟᱛᱮ ᱮᱢᱚᱜᱼᱟ᱾ ᱰᱤᱯᱷᱚᱞᱴ᱾</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ᱟᱢᱟᱜ ᱱᱤᱡᱮᱨᱟᱜ ᱥᱟᱨᱵᱷᱟᱨ: ᱡᱟᱦᱟᱸ ᱜᱮ git ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ᱾</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ᱢᱤᱫ ᱞᱟᱦᱟ ᱥᱟᱦᱴᱟ ᱛᱮ ᱨᱩᱣᱟᱹᱲ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>ᱜᱚᱲᱚ</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>ᱣᱤᱡᱟᱨᱰ ᱞᱟᱹᱜᱤᱫ ᱜᱚᱲᱚ</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>ᱚᱱᱟ ᱠᱚ ᱩᱠᱩ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ᱤᱛᱷᱟᱥ</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name ᱨᱮᱭᱟᱜ ᱤᱛᱷᱟᱥ</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ᱦᱚᱥᱴ</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ᱵᱤᱞᱰ ᱫᱚ ᱪᱮᱫ ᱞᱮᱠᱟ ᱧᱟᱢᱟ</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ᱵᱚᱫᱚᱞ ᱠᱚ ᱤᱧ ᱡᱟᱸᱪ ᱟᱠᱟᱫᱼᱟ</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ᱱᱚᱶᱟ ᱪᱮᱫ ᱵᱚᱫᱚᱞᱟ ᱤᱧ ᱵᱟᱰᱟᱭᱟ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ᱚᱱᱟ ᱵᱚᱸᱫᱚ ᱢᱮᱱᱟᱜᱼᱟ: ᱪᱟᱹᱞᱩ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱵᱤᱞᱰ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ᱱᱚᱶᱟ %user ᱞᱮᱠᱟᱛᱮ ᱯᱤᱪᱷᱤ ᱨᱮ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ; ᱟᱢ ᱱᱚᱶᱟ ᱯᱷᱚᱛᱟ ᱵᱚᱸᱫ ᱫᱟᱲᱮᱭᱟᱜ ᱟᱢ᱾</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ᱠᱟᱹᱢᱤ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret ᱨᱟᱯᱩᱫ ᱞᱮᱠᱟᱛᱮ ᱫᱚᱦᱚ ᱟᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ᱞᱮᱠᱟ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ᱢᱩᱪᱟᱹᱫ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ᱱᱚᱶᱟ ᱯᱷᱚᱛᱟ ᱠᱚ ᱵᱟᱹᱜᱤ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ᱱᱚᱶᱟ ᱥᱮᱠᱥᱚᱱ ᱠᱚ ᱵᱟᱹᱜᱤ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>ᱞᱤᱝᱠ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>ᱫᱚᱦᱲᱟ ᱚᱞ ᱞᱤᱝᱠ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ᱞᱟᱭᱤᱵᱽ ᱥᱟᱭᱤᱴ</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ᱵᱤᱞᱰ ᱧᱮᱞ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>ᱦᱩᱰᱤᱧ ᱟᱠᱷᱚᱨ, ᱮᱞ, _ ᱟᱨ -, ᱫᱟᱹᱭᱠᱟᱹ ᱞᱮᱠᱟᱛᱮ github-public᱾ ᱱᱚᱶᱟ ᱯᱷᱚᱞᱰᱟᱨ ᱟᱨ ᱴᱮᱜ ᱠᱚ (static/&lt;id&gt;/&lt;n&gt;) ᱨᱮᱭᱟᱜ ᱧᱩᱛᱩᱢ ᱠᱟᱱᱟ ᱟᱨ ᱛᱟᱭᱚᱢ ᱵᱟᱝ ᱵᱚᱫᱚᱞ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ᱱᱟᱶᱟ ᱪᱟᱵᱤ ᱛᱮᱭᱟᱨ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ᱞᱟᱠᱷᱟᱭ ᱛᱮᱭᱟᱨ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ᱪᱟᱵᱤ ᱛᱮᱭᱟᱨ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ᱯᱟᱹᱦᱤᱞ ᱦᱚᱥᱴ ᱨᱮ ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱛᱮᱭᱟᱨ ᱢᱮ; ᱠᱷᱟᱹᱞᱤ ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱦᱚᱸ ᱴᱷᱤᱠ ᱜᱮᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ᱯᱷᱟᱭᱤᱞ ᱛᱟᱞᱠᱟ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ᱠᱷᱚᱵᱚᱨ</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>ᱟᱭᱢᱟ ᱯᱷᱚᱛᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ᱧᱩᱛᱩᱢ</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>ᱥᱮᱴᱟᱯ &gt; ᱨᱟᱯᱩᱫ ᱠᱚ ᱨᱮ ᱴᱚᱠᱮᱱ ᱨᱮᱭᱟᱜ ᱧᱩᱛᱩᱢ</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>ᱱᱟᱶᱟ ᱞᱟᱠᱷᱟᱭ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ᱤᱱᱟᱹ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ᱵᱟᱝ</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫᱚᱜ ᱠᱚᱢᱤᱴ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>ᱪᱮᱫᱚᱜ ᱪᱟᱵᱤ ᱵᱟᱝ ᱛᱮᱭᱟᱨ ᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php ᱠᱚᱢᱟᱱᱰ ᱞᱟᱭᱤᱱ ᱵᱟᱭᱤᱱᱟᱨᱤ ᱵᱟᱝ ᱧᱟᱢ ᱞᱮᱱᱟ᱾ migration.ini [AdminSettings] PhpCliPath ᱨᱮ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱯᱩᱨᱟᱹ ᱰᱟᱦᱨ ᱥᱮᱴ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫᱚᱜ ᱴᱮᱜ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫᱚᱜ ᱞᱟᱠᱷᱟᱭ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>ᱪᱮᱫᱚᱜ ᱵᱟᱝ</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ᱵᱤᱞᱰ ᱨᱮ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱥᱟᱦᱴᱟ ᱟᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱥᱟᱦᱴᱟ ᱟᱠᱟᱱᱟ: ᱡᱚᱛᱚ ᱯᱷᱟᱭᱤᱞ ᱱᱟᱶᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>ᱠᱷᱚᱵᱚᱨ ᱮᱢ</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>ᱚᱠᱛᱚ ᱞᱮᱠᱷᱟ ᱞᱮᱠᱟᱛᱮ</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>ᱠᱚᱱᱥᱚᱞ ᱨᱮ</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>ᱥᱟᱨᱵᱷᱟᱨ ᱨᱮ: ./console exp:static:serve %id ᱦᱚᱸ ᱚᱱᱟ ᱚᱱᱟᱞᱮᱠᱟ ᱜᱮ ᱮᱢᱟ᱾</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ᱢᱤᱫ ᱫᱷᱟᱹᱨᱤᱭᱟ ᱨᱮ ᱢᱤᱫ ᱰᱟᱦᱨ, * ᱫᱚ ᱡᱟᱦᱟᱸ ᱜᱮ ᱦᱟᱹᱴᱤᱧ ᱥᱟᱶ ᱢᱤᱞᱟᱹᱣᱚᱜᱼᱟ: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ᱞᱟᱠᱷᱟᱭ ᱥᱟᱶ ᱥᱩᱢᱩᱝ ᱢᱤᱫ ᱧᱩᱛᱩᱢ ᱫᱚᱦᱚᱜᱼᱟ; ᱴᱚᱠᱮᱱ ᱟᱨᱵᱟᱝ ᱪᱟᱵᱤ ᱫᱚ ᱥᱮᱴᱟᱯ &gt; ᱨᱟᱯᱩᱫ ᱠᱚ ᱨᱮ ᱛᱟᱦᱮᱸᱱᱟ ᱟᱨ ᱛᱤᱱᱟᱹᱜ ᱦᱚᱸ ᱞᱚᱜ ᱨᱮ ᱵᱟᱝ ᱧᱮᱞᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>ᱥᱩᱢᱩᱝ ᱯᱷᱚᱛᱟ ᱠᱚ ᱡᱟᱦᱟᱸ ᱧᱩᱛᱩᱢ ᱠᱚ ᱞᱟᱹᱭᱟ</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>ᱥᱩᱢᱩᱝ ᱴᱚᱠᱮᱱ ᱥᱟᱶ᱾ env:NAME ᱚᱱᱟ ᱵᱚᱫᱚᱞ ᱛᱮ ᱥᱟᱨᱵᱷᱟᱨ ᱨᱮᱭᱟᱜ ᱢᱤᱫ ᱮᱱᱣᱟᱭᱨᱚᱱᱢᱮᱱᱴ ᱵᱷᱮᱨᱤᱭᱮᱵᱚᱞ ᱯᱟᱲᱦᱟᱣᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>ᱢᱩᱪᱟᱹᱫ ᱧᱮᱞ ᱡᱷᱤᱡᱽ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ᱦᱚᱥᱴ ᱡᱮᱞᱮᱠᱟ ᱮᱢᱟ ᱚᱱᱟ ᱞᱮᱠᱟᱛᱮ ᱞᱟᱠᱷᱟᱭ ᱨᱮᱭᱟᱜ ᱯᱷᱚᱞᱰᱟᱨ ᱠᱷᱚᱱ ᱵᱤᱞᱰ ᱡᱷᱤᱡᱽᱟ᱾ ᱞᱤᱝᱠ ᱫᱚ ᱟᱢ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱴᱟᱲᱟᱝ ᱦᱟᱹᱵᱤᱡ ᱠᱟᱹᱢᱤᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ᱚᱯᱥᱚᱱᱟᱞ᱾ ᱠᱷᱟᱹᱞᱤ: ᱡᱟᱦᱟᱸ ᱥᱟᱦᱴᱟ ᱟᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ᱚᱯᱥᱚᱱᱟᱞ᱾ ᱰᱚᱢᱮᱱ ᱥᱟᱶ ᱥᱟᱭᱤᱴ ᱫᱚ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱨᱩᱴ ᱠᱷᱚᱱ ᱮᱢᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ᱟᱣᱴᱯᱩᱴ</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>ᱯᱷᱚᱛᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ᱞᱟᱠᱷᱟᱭ ᱨᱮᱭᱟᱜ ᱯᱷᱚᱛᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ᱵᱟᱝ ᱧᱟᱢ ᱯᱷᱚᱛᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱯᱨᱚᱥᱮᱥ</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ᱢᱩᱪᱟᱹᱫ ᱧᱮᱞ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>ᱢᱩᱪᱟᱹᱫ ᱧᱮᱞ ᱟᱨ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ᱨᱮᱭᱟᱜ ᱢᱩᱪᱟᱹᱫ ᱧᱮᱞ ᱟᱨ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>ᱵᱤᱞᱰ ᱨᱮᱭᱟᱜ ᱢᱩᱪᱟᱹᱫ ᱧᱮᱞ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ᱯᱨᱚᱜᱨᱮᱥ</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>ᱯᱟᱵᱞᱤᱠ ᱴᱷᱤᱠᱬᱟᱹ</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>ᱯᱟᱵᱞᱤᱠ ᱪᱟᱵᱤ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ᱥᱟᱦᱴᱟ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ᱢᱤᱫ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱥᱴᱮᱴᱤᱠ ᱠᱚᱯᱤ GitHub Pages ᱟᱨᱵᱟᱝ ᱡᱟᱦᱟᱸ ᱜᱮ git ᱦᱚᱥᱴ ᱨᱮ ᱥᱟᱦᱴᱟ ᱢᱮ: ᱵᱤᱞᱰ ᱢᱮ, ᱵᱚᱫᱚᱞ ᱠᱚ ᱡᱟᱸᱪ ᱢᱮ, ᱥᱟᱦᱴᱟ ᱢᱮ, ᱟᱨ ᱞᱟᱹᱠᱛᱤ ᱞᱮᱱᱠᱷᱟᱱ ᱢᱤᱫ ᱞᱟᱦᱟ ᱥᱟᱦᱴᱟ ᱛᱮ ᱨᱩᱣᱟᱹᱲ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>ᱨᱩᱣᱟᱹᱲ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ᱥᱟᱦᱴᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ᱯᱩᱥ</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>ᱥᱮᱪᱮᱫ ᱯᱟᱲᱦᱟᱣ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ᱨᱮᱠᱚᱨᱰ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ᱵᱟᱝ ᱧᱟᱢ</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ᱥᱟᱯᱮᱠᱷ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ᱟᱨᱦᱚᱸ ᱞᱟᱫᱮ</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ᱚᱪᱚᱜ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>ᱪᱟᱵᱤ ᱵᱚᱫᱚᱞ ᱢᱮ: ᱯᱩᱨᱟᱹᱱ ᱪᱟᱵᱤ ᱵᱟᱝ ᱠᱟᱹᱢᱤᱭᱟ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ᱨᱤᱯᱚᱨᱴ</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ᱵᱤᱞᱰ ᱨᱮᱭᱟᱜ ᱨᱤᱯᱚᱨᱴ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ᱧᱮᱞ ᱪᱟᱪᱟᱹ</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>ᱧᱮᱞ ᱪᱟᱪᱟᱹ ᱫᱚ ᱡᱚᱛᱚ ᱥᱮᱴᱤᱝ ᱡᱟᱸᱪᱟ ᱟᱨ ᱡᱟᱦᱟᱸ ᱫᱷᱟᱹᱨᱤᱭᱟ ᱚᱞᱚᱜᱼᱟ ᱚᱱᱟ ᱩᱫᱩᱜᱟ᱾ ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱨᱟᱠᱷᱟᱣ ᱟᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ᱨᱟᱠᱷᱟᱣ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ᱚᱠᱛᱚ ᱞᱮᱠᱷᱟ</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ᱯᱟᱱᱛᱮ ᱯᱷᱚᱛᱟ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ᱥᱮᱠᱥᱚᱱ ID ᱠᱚ, ᱠᱚᱢᱟ ᱛᱮ ᱦᱟᱴᱤᱧ ᱟᱠᱟᱱ᱾</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ᱚᱱᱟ ᱠᱚ ᱞᱟᱭᱤᱵᱽ ᱥᱟᱭᱤᱴ ᱛᱮ ᱵᱷᱮᱡᱟ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ᱥᱮᱴᱤᱝ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ᱥᱮᱴᱤᱝ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ᱨᱮᱭᱟᱜ ᱥᱮᱴᱤᱝ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ᱥᱮᱴᱟᱯ</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>ᱥᱮᱴᱟᱯ &gt; ᱨᱟᱯᱩᱫ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ᱛᱟᱞᱠᱟ ᱠᱚ ᱨᱮ ᱩᱫᱩᱜᱚᱜᱼᱟ, ᱫᱟᱹᱭᱠᱟᱹ ᱞᱮᱠᱟᱛᱮ &quot;GitHub Pages ᱨᱮ ᱯᱟᱵᱞᱤᱠ ᱥᱟᱭᱤᱴ&quot;᱾</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub ᱮᱯ ᱥᱟᱶ ᱵᱚᱞᱚ ᱫᱚ GitHub ᱡᱚᱲᱟᱣ ᱥᱟᱶ ᱦᱮᱡᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>ᱥᱟᱭᱤᱴ</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ᱥᱟᱦᱴᱟ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱭᱤᱴ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ᱢᱟᱯ</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>ᱢᱟᱯ ᱟᱨ ᱥᱤᱢᱟᱹ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>ᱵᱤᱞᱰ ᱨᱮᱭᱟᱜ ᱢᱟᱯ</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ᱯᱩᱨᱟᱹᱱ ᱯᱷᱚᱛᱟ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ᱮᱛᱠᱟᱣ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user %time ᱨᱮ ᱮᱛᱠᱟᱣ ᱠᱮᱫᱟᱭ᱾</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ᱦᱟᱞᱛ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ ᱵᱚᱸᱫᱚ ᱢᱮᱱᱟᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ ᱵᱚᱸᱫᱚ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ ᱵᱚᱸᱫᱚ ᱢᱮᱱᱟᱜᱼᱟ᱾ ᱯᱟᱹᱦᱤᱞ ᱥᱮᱴᱟᱯ &gt; ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ ᱨᱮ ᱪᱟᱹᱞᱩ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ ᱪᱟᱹᱞᱩ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total ᱠᱷᱚᱱ ᱥᱮᱱᱮᱞ %step</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ᱥᱮᱱᱮᱞ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>ᱥᱟᱯᱷᱟ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ᱵᱚᱸᱫᱽ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ᱪᱟᱹᱞᱩ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱥᱟᱦᱴᱟ ᱪᱟᱹᱞᱩ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ᱴᱮᱜ</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ᱴᱮᱜ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ᱞᱟᱠᱷᱟᱭ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ᱞᱟᱠᱷᱟ ᱠᱚ ᱛᱮᱭᱟᱨ ᱟᱨ ᱵᱚᱫᱚᱞ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ, ᱢᱮᱱᱠᱷᱟᱱ ᱪᱟᱹᱞᱩ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱵᱤᱞᱰ ᱟᱨᱵᱟᱝ ᱥᱟᱦᱴᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>ᱥᱮᱸᱫᱽᱨᱟ ᱤᱧᱡᱤᱱ ᱠᱚ ᱪᱮᱫ ᱯᱟᱲᱦᱟᱣ ᱦᱩᱭᱩᱜᱼᱟ ᱚᱱᱟ ᱞᱟᱹᱭ ᱮᱫᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ᱵᱤᱞᱰ ᱵᱟᱝ ᱵᱟᱹᱜᱤ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ᱵᱤᱞᱰ ᱫᱚ ᱢᱩᱪᱟᱹᱫ ᱥᱟᱦᱴᱟ ᱞᱮᱠᱟ ᱜᱮ: ᱥᱟᱦᱴᱟ ᱞᱟᱹᱜᱤᱫ ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ᱵᱤᱞᱰ ᱵᱟᱹᱜᱤ ᱮᱱᱟ: ᱯᱷᱚᱞᱰᱟᱨ ᱨᱮ ᱟᱨᱦᱚᱸ ᱢᱩᱪᱟᱹᱫ ᱥᱟᱦᱴᱟ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>ᱰᱤᱯᱷᱚᱞᱴ ᱠᱚ ᱟᱭᱢᱟ ᱥᱟᱭᱤᱴ ᱞᱟᱹᱜᱤᱫ ᱴᱷᱤᱠ ᱜᱮᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ᱯᱷᱚᱞᱰᱟᱨ ᱨᱮ ᱢᱤᱫ ᱵᱤᱞᱰ ᱢᱮᱱᱟᱜᱼᱟ ᱡᱟᱦᱟᱸ ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱝ ᱥᱟᱦᱴᱟ ᱟᱠᱟᱱᱟ; ᱢᱤᱫ ᱱᱟᱶᱟ ᱵᱤᱞᱰ ᱚᱱᱟ ᱵᱚᱫᱚᱞᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱠᱚᱣᱟᱜ ᱯᱷᱚᱞᱰᱟᱨ ᱨᱮ ᱵᱟᱝ ᱚᱞ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱵᱟᱝ ᱛᱮᱭᱟᱨ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱵᱟᱝ ᱮᱛᱠᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱪᱟᱵᱟ ᱮᱱᱟ᱾ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱨᱤᱯᱚᱨᱴ ᱞᱟᱫᱮ ᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱞᱟᱹᱜᱤᱫ ᱢᱤᱫ ᱵᱚᱞᱚ ᱟᱠᱟᱱ ᱵᱮᱣᱦᱟᱨ ᱠᱟᱹᱢᱤ ᱞᱟᱹᱠᱛᱤᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱮᱛᱠᱟᱣ ᱮᱱᱟ ᱢᱮᱱᱠᱷᱟᱱ ᱟᱡᱟᱜ ᱯᱨᱚᱥᱮᱥ ID ᱵᱟᱝ ᱞᱟᱹᱭ ᱞᱮᱫᱟ᱾ %detail ᱡᱟᱸᱪ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ᱪᱟᱵᱤ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>ᱥᱟᱱᱟᱢ ᱠᱷᱚᱱ ᱢᱟᱨᱟᱝ ᱯᱷᱟᱭᱤᱞ: %path, %size᱾</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ᱡᱟᱦᱟᱸ ᱫᱷᱟᱹᱨᱤᱭᱟ ᱠᱚ ᱚᱞᱚᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>ᱥᱮᱸᱫᱽᱨᱟ ᱤᱧᱡᱤᱱ ᱠᱚ ᱞᱟᱹᱜᱤᱫ ᱯᱷᱚᱛᱟ ᱛᱟᱞᱠᱟ; ᱯᱟᱵᱞᱤᱠ ᱴᱷᱤᱠᱬᱟᱹ ᱞᱟᱹᱠᱛᱤᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>ᱯᱷᱚᱛᱟ ᱠᱚ ᱵᱟᱝ ᱵᱚᱞᱚ ᱟᱠᱟᱱ ᱧᱮᱞᱤᱭᱟᱹ ᱡᱮᱞᱮᱠᱟ ᱧᱮᱞᱟ ᱚᱱᱟ ᱞᱮᱠᱟᱛᱮ ᱟᱹᱜᱩᱜᱼᱟ᱾ ᱮᱰᱢᱤᱱ ᱟᱨ ᱥᱟᱯᱲᱟᱣ ᱥᱟᱭᱤᱴᱮᱠᱥᱮᱥ ᱠᱚ ᱛᱤᱱᱟᱹᱜ ᱦᱚᱸ ᱵᱟᱝ ᱮᱢᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>ᱯᱨᱚᱜᱨᱮᱥ ᱵᱟᱝ ᱯᱟᱧᱡᱟ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ᱾ ᱠᱟᱹᱢᱤ ᱪᱮᱫ ᱞᱮᱠᱟ ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ ᱧᱮᱞ ᱞᱟᱹᱜᱤᱫ ᱯᱷᱚᱛᱟ ᱟᱨᱦᱚᱸ ᱞᱟᱫᱮ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>ᱪᱟᱵᱤ ᱨᱮᱭᱟᱜ ᱯᱟᱵᱞᱤᱠ ᱦᱟᱹᱴᱤᱧ:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ᱵᱽᱨᱟᱧᱪ ᱨᱮᱭᱟᱜ ᱨᱩᱴ</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>ᱨᱟᱯᱩᱫ ᱫᱚᱦᱚ ᱡᱟᱭᱜᱟ ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱝ ᱥᱮᱴ ᱟᱠᱟᱱᱟ (./console exp:upgrade --apply ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱴᱮᱵᱩᱞ ᱛᱮᱭᱟᱨᱟ), ᱚᱱᱟᱛᱮ ᱪᱮᱫᱚᱜ ᱪᱟᱵᱤ ᱵᱟᱝ ᱫᱚᱦᱚ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>ᱥᱟᱨᱵᱷᱟᱨ ᱟᱡ ᱛᱮ ᱜᱮ ᱵᱚᱞᱚᱜᱼᱟ (ᱟᱡᱟᱜ SSH ᱪᱟᱵᱤ ᱟᱨᱵᱟᱝ ᱵᱚᱞᱚ ᱪᱤᱱᱦᱟᱹ ᱜᱚᱲᱚᱤᱭᱟᱹ ᱛᱮ), ᱟᱨᱵᱟᱝ ᱨᱮᱯᱚᱡᱤᱴᱚᱨᱤ ᱱᱚᱶᱟ ᱥᱟᱨᱵᱷᱟᱨ ᱨᱮ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>ᱥᱮᱴᱤᱝ ᱵᱟᱝ ᱚᱞ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ᱥᱮᱴᱤᱝ ᱠᱚ ᱴᱷᱤᱠ ᱜᱮᱭᱟ᱾ ᱱᱚᱶᱟ ᱫᱷᱟᱹᱨᱤᱭᱟ ᱠᱚ ᱚᱞᱚᱜᱼᱟ:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>ᱥᱮᱴᱤᱝ ᱯᱷᱟᱭᱤᱞ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>ᱥᱟᱭᱤᱴ ᱚᱱᱟ ᱥᱟᱦᱴᱟ ᱨᱮᱭᱟᱜ ᱯᱷᱟᱭᱤᱞ ᱠᱚ ᱛᱮ ᱨᱩᱣᱟᱹᱲᱚᱜᱼᱟ; ᱡᱟᱦᱟᱸ ᱵᱤᱞᱰ ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱝ ᱥᱟᱦᱴᱟ ᱟᱠᱟᱱᱟ ᱚᱱᱟ ᱯᱟᱹᱦᱤᱞ ᱥᱟᱦᱴᱟ ᱟᱨᱵᱟᱝ ᱵᱟᱹᱜᱤ ᱞᱟᱹᱠᱛᱤᱭᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>ᱵᱟᱝ ᱢᱮᱱᱟᱜ ᱴᱷᱤᱠᱬᱟᱹ ᱠᱚ ᱞᱟᱹᱜᱤᱫ ᱥᱟᱭᱤᱴ ᱨᱮᱭᱟᱜ ᱱᱤᱡᱮᱨᱟᱜ ᱯᱷᱚᱛᱟ᱾</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ᱞᱟᱠᱷᱟᱭ ᱵᱟᱝ ᱨᱟᱠᱷᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ᱞᱟᱠᱷᱟᱭ ᱫᱚ ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱱᱚᱶᱟ ᱪᱟᱵᱤ ᱛᱮ ᱵᱟᱝ ᱵᱚᱞᱚᱜᱼᱟ: ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱥᱮᱴᱤᱝ ᱨᱮ &quot;ᱱᱚᱶᱟ ᱞᱟᱠᱷᱟᱭ ᱞᱟᱹᱜᱤᱫ ᱛᱮᱭᱟᱨ ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ&quot; ᱵᱟᱪᱷᱟᱣ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ᱞᱟᱠᱷᱟ ᱠᱚ ᱵᱟᱝ ᱯᱟᱲᱦᱟᱣ ᱫᱟᱲᱮᱭᱟᱫ ᱞᱮᱱᱟ: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>ᱡᱟᱸᱪ ᱞᱟᱹᱜᱤᱫ ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫᱚᱜ ᱵᱤᱞᱰ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ᱱᱚᱶᱟ ᱤᱱᱥᱴᱚᱞᱮᱥᱚᱱ ᱨᱮ ᱪᱮᱫᱚᱜ ᱥᱟᱢᱟᱝ ᱥᱟᱭᱤᱴᱮᱠᱥᱮᱥ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾ ᱮᱰᱢᱤᱱ ᱟᱨ ᱥᱟᱯᱲᱟᱣ ᱥᱟᱭᱤᱴᱮᱠᱥᱮᱥ ᱠᱚ ᱛᱤᱱᱟᱹᱜ ᱦᱚᱸ ᱵᱟᱝ ᱥᱟᱦᱴᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ᱱᱚᱶᱟ ᱯᱷᱚᱛᱟ ᱠᱟᱹᱢᱤ ᱪᱟᱞᱟᱜ ᱚᱠᱛᱚ ᱯᱟᱧᱡᱟᱭᱟ; ᱯᱷᱚᱛᱟ ᱵᱚᱸᱫ ᱞᱮᱱᱠᱷᱟᱱ ᱦᱚᱸ ᱚᱱᱟ ᱯᱤᱪᱷᱤ ᱨᱮ ᱪᱟᱞᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱠᱷᱟᱭ ᱨᱮ ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱪᱮᱫᱚᱜ ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ ᱵᱟᱹᱱᱩᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱠᱷᱟᱭ ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱱᱚᱸᱰᱮ ᱵᱟᱝ ᱵᱤᱞᱰ ᱟᱠᱟᱱᱟ᱾</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ᱱᱚᱶᱟ ᱞᱟᱠᱷᱟᱭ ᱨᱮ ᱢᱤᱫᱴᱟᱹᱝ ᱢᱮᱱᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ᱱᱚᱶᱟ ᱵᱤᱞᱰ ᱵᱟᱹᱜᱤᱭᱟ: ᱯᱷᱚᱞᱰᱟᱨ ᱨᱮ ᱟᱨᱦᱚᱸ ᱢᱩᱪᱟᱹᱫ ᱥᱟᱦᱴᱟ ᱛᱟᱦᱮᱸᱱᱟ᱾ ᱞᱟᱭᱤᱵᱽ ᱥᱟᱭᱤᱴ ᱵᱟᱝ ᱵᱚᱫᱚᱞᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ᱯᱟᱹᱦᱤᱞ &quot;ᱵᱚᱫᱚᱞ ᱠᱚ ᱤᱧ ᱡᱟᱸᱪ ᱟᱠᱟᱫᱼᱟ&quot; ᱴᱤᱠ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ᱚᱠᱛᱚ</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ᱮᱛᱠᱟᱣᱤᱭᱟᱹ ᱠᱚ</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ᱴᱮᱜ ᱨᱮᱭᱟᱜ ᱧᱩᱛᱩᱢ ᱫᱚᱦᱲᱟ ᱚᱞ ᱢᱮ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ᱵᱟᱝ ᱵᱚᱫᱚᱞ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ᱣᱮᱵᱦᱩᱠ</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ᱪᱮᱫ</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ᱪᱮᱫ ᱵᱚᱫᱚᱞᱚᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ᱡᱚᱛᱚ ᱯᱷᱟᱭᱤᱞ ᱪᱮᱫ ᱠᱟᱱᱟ; ᱡᱟᱣᱜᱮ ᱚᱞᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱪᱮᱫ ᱠᱮᱫᱟ ᱟᱨ ᱚᱱᱟ ᱨᱮᱭᱟᱜ ᱨᱮᱠᱚᱨᱰ᱾ ᱱᱚᱸᱰᱮ ᱮᱛᱠᱟᱣ ᱟᱠᱟᱱ ᱠᱟᱹᱢᱤ ᱱᱚᱶᱟ ᱯᱷᱚᱛᱟ ᱵᱚᱸᱫ ᱞᱮᱱᱠᱷᱟᱱ ᱦᱚᱸ ᱯᱤᱪᱷᱤ ᱨᱮ ᱪᱟᱞᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ᱠᱟᱹᱢᱤ ᱵᱷᱩᱞ ᱞᱮᱠᱟᱛᱮ ᱪᱮᱫ ᱪᱷᱟᱯᱟ ᱞᱮᱫᱟ</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>ᱯᱷᱚᱛᱟ ᱠᱚ ᱡᱟᱦᱟᱸ ᱧᱩᱛᱩᱢ ᱠᱚ ᱞᱟᱹᱭᱟ, ᱟᱨ ᱥᱟᱦᱴᱟ ᱟᱠᱟᱱ ᱨᱮᱫ ᱨᱮᱭᱟᱜ ᱡᱚᱛᱚ ᱪᱤᱛᱟᱨ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ᱪᱤᱞᱤᱝ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ᱥᱟᱦᱴᱟ ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱᱠᱷᱟᱱ</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ᱥᱟᱦᱴᱟ ᱦᱩᱭ ᱞᱮᱱᱠᱷᱟᱱ</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ᱨᱮᱫ ᱥᱟᱦᱴᱟ ᱞᱮᱱᱠᱷᱟᱱ</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>ᱠᱚᱯᱤ ᱨᱮ ᱡᱟᱦᱟᱸ ᱵᱟᱹᱱᱩᱜᱼᱟ ᱚᱱᱟ ᱛᱮ ᱞᱤᱝᱠ ᱠᱚ ᱚᱠᱟᱛᱮ ᱥᱮᱱᱚᱜᱼᱟ (ᱯᱟᱱᱛᱮ, ᱵᱚᱞᱚ)᱾</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>ᱥᱴᱮᱴᱤᱠ ᱠᱚᱯᱤ ᱚᱠᱟ ᱠᱷᱚᱱ ᱮᱢᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>ᱚᱠᱟ ᱥᱟᱭᱤᱴ ᱥᱟᱦᱴᱟᱜᱼᱟ, ᱟᱨ ᱞᱟᱠᱷᱟᱭ ᱨᱮᱭᱟᱜ ᱧᱩᱛᱩᱢ ᱪᱮᱫ᱾</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ᱡᱟᱦᱟᱸ ᱜᱮ ᱰᱟᱦᱨ ᱞᱟᱛᱟᱨ ᱨᱮ ᱠᱟᱹᱢᱤᱭᱟ᱾ ᱰᱤᱯᱷᱚᱞᱴ᱾</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>ᱱᱤᱡᱮᱨᱟᱜ ᱰᱚᱢᱮᱱ ᱥᱮᱴ ᱞᱮᱱᱠᱷᱟᱱ ᱡᱟᱣᱜᱮ ᱚᱞᱚᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ᱦᱚᱭ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ᱟᱢ ᱡᱟᱣᱜᱮ ᱱᱚᱸᱰᱮ ᱟᱨ ᱠᱚᱱᱥᱚᱞ ᱨᱮ ᱛᱤᱼᱛᱮ ᱵᱤᱞᱰ ᱟᱨ ᱥᱟᱦᱴᱟ ᱫᱟᱲᱮᱭᱟᱜ ᱟᱢ᱾</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ᱥᱩᱢᱩᱝ ᱢᱤᱫ ᱧᱩᱛᱩᱢ; ᱜᱚᱱᱚᱝ ᱥᱮᱴᱟᱯ &gt; ᱨᱟᱯᱩᱫ ᱠᱚ ᱨᱮ ᱛᱟᱦᱮᱸᱱᱟ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path ᱞᱟᱛᱟᱨ ᱨᱮ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ᱨᱤᱯᱚᱨᱴ ᱵᱟᱹᱱᱩᱜ ᱛᱮ ᱪᱟᱵᱟ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ᱵᱟᱹᱲᱛᱤ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ᱵᱟᱝ ᱦᱩᱭ ᱞᱮᱱ</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ᱯᱷᱟᱭᱤᱞ</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ᱟᱨᱵᱟᱝ docs ᱯᱷᱚᱞᱰᱟᱨ ᱥᱟᱶ main᱾</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git ᱦᱚᱥᱴ</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ᱴᱚᱠᱮᱱ ᱥᱟᱶ) ᱟᱨᱵᱟᱝ git@github.com:owner/repo.git (ᱰᱤᱯᱞᱚᱭ ᱪᱟᱵᱤ ᱥᱟᱶ); ᱚᱱᱟ ᱨᱮ ᱛᱤᱱᱟᱹᱜ ᱦᱚᱸ ᱯᱟᱥᱣᱟᱨᱰ ᱟᱨᱵᱟᱝ ᱴᱚᱠᱮᱱ ᱵᱟᱝ᱾</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, ᱥᱟᱭᱤᱴᱢᱮᱯ ᱟᱨ ᱠᱮᱱᱚᱱᱤᱠᱟᱞ ᱞᱤᱝᱠ ᱠᱚ ᱞᱟᱹᱜᱤᱫ᱾</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ᱪᱤᱛᱟᱨ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ᱛᱤᱱᱟᱹᱜ ᱦᱚᱸ ᱵᱟᱝ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ᱵᱟᱝ</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>ᱨᱤᱢᱚᱴ ᱵᱟᱹᱱᱩᱜᱼᱟ</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ᱪᱮᱫᱚᱜ ᱵᱟᱝ: ᱠᱚᱢᱤᱴ ᱠᱚ ᱯᱷᱚᱞᱰᱟᱨ ᱨᱮ ᱜᱮ ᱛᱟᱦᱮᱸᱱᱟ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ᱪᱮᱫᱚᱜ ᱵᱟᱝ: ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱵᱚᱫᱚᱞ ᱞᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ᱵᱟᱝ ᱯᱩᱥ ᱟᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱵᱚᱫᱚᱞ ᱞᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ᱯᱷᱚᱛᱟ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ᱦᱩᱭ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ᱵᱚᱸᱫᱚ ᱢᱮᱱᱟᱜᱼᱟ, ᱚᱱᱟᱛᱮ ᱱᱚᱸᱰᱮ ᱠᱟᱹᱢᱤ ᱵᱟᱝ ᱮᱛᱠᱟᱣ ᱫᱟᱲᱮᱭᱟᱜᱼᱟ᱾ ᱥᱟᱨᱵᱷᱟᱨ ᱨᱮ ./console exp:static:build ᱵᱮᱵᱷᱟᱨ ᱢᱮ᱾</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ᱥᱟᱦᱴᱟ</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ᱥᱟᱦᱴᱟ ᱟᱠᱟᱫ</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ᱯᱩᱥ ᱛᱟᱺᱜᱤ ᱨᱮ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ᱯᱩᱥ ᱟᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ᱵᱟᱝ ᱧᱟᱢ</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ᱥᱟᱯᱮᱠᱷ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ᱛᱟᱭᱚᱢ ᱨᱩᱣᱟᱹᱲ ᱮᱱᱟ</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ᱪᱟᱞᱟᱜ ᱠᱟᱱᱟ</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ᱥᱩᱢᱩᱝ ᱯᱷᱚᱞᱰᱟᱨ</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME ᱯᱷᱟᱭᱤᱞ ᱨᱮ ᱚᱞᱚᱜᱼᱟ᱾ ᱰᱚᱢᱮᱱ ᱨᱮᱭᱟᱜ DNS ᱦᱚᱥᱴ ᱡᱮᱞᱮᱠᱟ ᱞᱟᱹᱭ ᱮᱫᱟ ᱚᱱᱟ ᱞᱮᱠᱟᱛᱮ ᱦᱚᱥᱴ ᱛᱮ ᱥᱮᱴ ᱢᱮ; HTTPS ᱮᱛᱠᱟᱣ ᱞᱟᱹᱜᱤᱫ ᱠᱤᱪᱷᱩ ᱚᱠᱛᱚ ᱞᱟᱜᱟᱜᱼᱟ᱾</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ᱦᱚᱭ, ᱱᱤᱛᱚᱜ ᱦᱟᱹᱵᱤᱡ ᱵᱟᱝ ᱥᱟᱦᱴᱟ ᱟᱠᱟᱱᱟ</translation>
     </message>
 </context>
 </TS>

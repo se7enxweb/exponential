@@ -15089,6 +15089,22 @@ Nota: els paquets no es desinstal·laran.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Canvis a la instal·lació desats com a fitxers: el seu estat, les execucions, executar i desfer.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contingut recent</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>El contingut més nou, el que està retingut per a revisió i accions sobre una selecció.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publica una còpia estàtica d&apos;un lloc a GitHub Pages o a qualsevol servidor git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicació estàtica</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22104,18 @@ Nota: els paquets no es desinstal·laran.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Respostes de les consultes persistides de l&apos;API GraphQL, i les classes de contingut del seu esquema.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publica una còpia estàtica a GitHub Pages o a qualsevol servidor git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicació estàtica</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>La memòria cau estàtica serveix pàgines des d&apos;aquest servidor. Per publicar una còpia estàtica d&apos;un lloc en un altre indret, a GitHub Pages o a qualsevol servidor git, fes servir la publicació estàtica.</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76173,14 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Canvis a la instal·lació desats com a fitxers: el seu estat, les execucions, executar i desfer.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publica una còpia estàtica d&apos;un lloc a GitHub Pages o a qualsevol servidor git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicació estàtica</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80799,6 +80835,2028 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>No s'ha pogut canviar l'enregistrament: %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modificat</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Creat</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Classe</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Secció</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Creador</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Contingut recent</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>El contingut creat i modificat més recentment de tot el lloc, el més nou primer: el que han enviat els visitants, el que està retingut per a revisió, els esborranys que esperen la publicació. Seleccioneu elements per alliberar-los, retenir-los, ocultar-los, mostrar-los, eliminar-los o moure&apos;ls a una altra secció o estat.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>No s&apos;ha pogut llegir la llista: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>La retenció per a revisió encara no està configurada, de manera que no hi ha res retingut i no s&apos;ofereixen les accions de retenció. El pas d&apos;actualització 6.0.15-review-hold la configura: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtra la llista</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Des de</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Fins a</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Data</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Creat (primera publicació)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tots</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Situació</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicat</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Esborrany, mai publicat</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Pendent (d&apos;aprovació o d&apos;una data)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>A la paperera</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retingut per a revisió</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Retingut</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>No retingut</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Ocult</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Mostrat</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Enviat a</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Qualsevol accés al lloc</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Només el que ha registrat l&apos;auditoria.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ara: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Un nom d&apos;usuari o un ID d&apos;usuari.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtra</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Esborra els filtres</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elements</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from a %to de %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Cap element</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(llegit en %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Accions sobre els elements seleccionats</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Selecciona-ho tot en aquesta pàgina</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count seleccionats</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Acció</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Trieu una acció</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Allibera la retenció</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Retén per a revisió</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Oculta</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Mostra</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Mou a la paperera</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Suprimeix</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Assigna una secció</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Assigna un estat</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Motiu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Necessari per retenir; es desa amb la retenció i a l&apos;auditoria.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Trieu una secció</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estat</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Trieu un estat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Aplica als seleccionats</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Cada element es comprova amb els vostres propis permisos. Moure a la paperera i suprimir demanen confirmació. Amb més de %count elements, s&apos;executa en segon pla.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selecciona</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicació</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Enviat des de</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Selecciona %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>encara no</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(sense nom)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Esborrany</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Pendent</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ocult pel pare</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Retingut: enviament nou</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versió %version pendent</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versió %version en curs</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Esborrany, versió %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versió %version publicada</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Programat per al %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>sense adreça</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>no registrat</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Res no coincideix amb aquests filtres.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Mostra-ho tot</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Encara no hi ha contingut.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per pàgina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Mostra %count elements per pàgina.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>L&apos;adreça i el navegador d&apos;un enviament provenen de l&apos;índex d&apos;auditoria, que aquí no està disponible: la columna diu «no registrat».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>L&apos;adreça i el navegador són els que l&apos;auditoria ha registrat per a l&apos;element (la retenció automàtica sempre els registra; la publicació i la creació només on està activat), tal com els conserva la seva configuració de privadesa.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elements</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Suprimir elimina els elements definitivament, amb totes les seves versions i traduccions. No es pot desfer.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Els elements van a la paperera, des d&apos;on es poden restaurar.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Cada element es comprova amb els vostres propis permisos; un element amb subelements es deixa tal com està (elimineu-lo a l&apos;estructura de continguts). Se us demanarà que verifiqueu que sou vós.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>S&apos;executa en segon pla: s&apos;obre la seva pàgina de progrés i, quan acaba, es mostra el resultat per a cada element.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Els elements seleccionats</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>i %count més</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel·la</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>No s&apos;ha fet res</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Motiu: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>L&apos;acció encara s&apos;està executant en segon pla.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>El seu progrés</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>L&apos;acció en segon pla ha fallat: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fet</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rebutjat</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ha fallat</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Per què</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Torna a la llista</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuració</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>No s&apos;ha fet res</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirma</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Trieu una acció.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Seleccioneu almenys un element.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Seleccioneu com a màxim 1000 elements alhora.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Indiqueu per què es retenen els elements.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Trieu la secció.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Trieu l&apos;estat.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>No s&apos;ha pogut llegir el formulari.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Contingut recent</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>No s&apos;han pogut llegir els recomptes: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Retinguts per a revisió</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nous avui</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retenció per a revisió encara no està configurada (el pas d&apos;actualització 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Tot el contingut recent</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>No podeu executar accions de moderació (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>L&apos;acció de moderació no s&apos;ha completat: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderació: %action sobre %count objectes</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done de %total objectes: %ok fets, %refused rebutjats, %failed fallits</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok fets, %refused rebutjats, %failed fallits</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ja no existeix.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>No té cap ubicació (no està publicat).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>No el podeu ocultar (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>No el podeu mostrar (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ja està ocult.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>No està ocult.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Ocultat.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Mostrat.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>És a la paperera: buideu-la o restaureu-lo des d&apos;allà.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Un esborrany que no s&apos;ha publicat mai no pot anar a la paperera: suprimiu-lo.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>No el podeu suprimir (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Suprimit.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>No el podeu eliminar (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Té subelements: elimineu-lo a l&apos;estructura de continguts, on s&apos;hi llisten.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>No s&apos;ha eliminat (pot ser que un flux de treball retingui l&apos;eliminació).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Mogut a la paperera.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>La secció no existeix.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ja és en aquesta secció.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>No podeu assignar aquesta secció (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>No s&apos;ha assignat la secció.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Secció assignada.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>L&apos;estat no existeix.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ja és en aquest estat.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>No podeu assignar aquest estat (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>No s&apos;ha assignat l&apos;estat (pot ser que un flux de treball retingui el canvi).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Estat assignat.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Aquesta acció no existeix.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>La retenció per a revisió no està configurada (el pas d&apos;actualització 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Indiqueu per què està retingut.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ja està retingut.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>No el podeu retenir (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>No s&apos;ha aplicat la retenció (pot ser que un flux de treball retingui el canvi).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Retingut.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>No està retingut.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>No el podeu alliberar (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>No s&apos;ha alliberat la retenció (pot ser que un flux de treball retingui el canvi).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Alliberat; encara ocult: no el podeu mostrar (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Alliberat.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Totes les destinacions</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Darrera publicació</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publica una còpia estàtica gratuïta del teu lloc a GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Pàgines obsoletes</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicació estàtica</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>La publicació estàtica està desactivada.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Destinació</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>No s&apos;han pogut llegir les destinacions: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>hi ha una tasca en curs</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>compilació per revisar</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>amaga això</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>crea una destinació</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mai</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>llegeix el tutorial</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added afegits, %changed canviats, %removed eliminats</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes de %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>N&apos;hi ha %count més que no es llisten.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages pàgines escrites</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ocupa %size, més del que el servidor permet per a un fitxer.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % del límit</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag és la publicació que té ara el lloc.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: tasca %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repositori/ per a un lloc de projecte de GitHub; buit per a un domini propi o un lloc d&apos;usuari.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. El lloc</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. El servidor</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Accés al repositori</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. El repositori</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Enllaços i camí base</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. El teu propi domini</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Què conté la compilació</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Quan es publica</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Revisa i desa</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Un lloc de projecte de GitHub es troba sota /&lt;repository&gt;/; els enllaços relatius hi funcionen, i a qualsevol altre lloc també.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Una compilació obté cada pàgina de %site tal com la veu un visitant que no ha iniciat sessió, reescriu els enllaços, copia els fitxers i escriu el resultat a la carpeta de la destinació. No es publica res fins que revises la compilació i prems «Publica».</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Una expressió cron, per exemple 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>La clau de desplegament es desa com el secret %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Una clau de desplegament permet que aquesta instal·lació pugi a un sol repositori per SSH i enlloc més. La seva meitat privada es queda a Configuració &gt; Secrets; només es mostra la meitat pública.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Una clau de desplegament creada per a aquesta destinació</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Una clau de desplegament accedeix per SSH: canvia l&apos;adreça git per la de SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Hi ha una tasca en curs, iniciada per %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Encara hi ha una tasca d&apos;aquesta destinació en curs (%detail). Espera que acabi.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Encara hi ha una tasca d&apos;aquesta destinació en curs. Espera que acabi.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Un enllaç de la pàgina /news/ a la pàgina /about-us/team s&apos;escriurà així:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>S&apos;ha creat una clau de desplegament nova. Afegeix ara la seva meitat pública al repositori.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Una pàgina que després de la neteja encara conté sortida de depuració, un testimoni de formulari o un identificador de sessió no es publica mai.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Desfer és per a experts: marca «Sé què canvia això» i torna a escriure el nom de l&apos;etiqueta.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Un lloc pot ocupar fins a %site, un fitxer fins a %file, amb uns 100 GB de trànsit al mes. Amb un pla gratuït el repositori ha de ser públic. GitHub Pages no està pensat per a botigues ni altres transaccions comercials.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Una destinació és un lloc publicat en un repositori git. Aquí no es compila ni es publica res: Desa escriu la configuració a settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Una destinació és un lloc publicat en un indret, per exemple el teu lloc públic a GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Un testimoni de Configuració &gt; Secrets</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Ho publica un flux de treball del repositori.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Afegeix aquesta clau pública al repositori amb accés d&apos;escriptura. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, marca Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Afegits</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Un altre servidor git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Un altre procés treballa en aquesta destinació: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Enrere</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Camí base</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Abans</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Sota un camí base</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Branca</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Enllaços trencats</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Enllaços trencats a la compilació</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Compilació</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Compilació %id de %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Compila %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Compila ara</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Compilació per revisar</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Per</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>A mà, aquí</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel·la</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Canvia</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Canviats</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Canvis</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Revisa-ho primer</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Comprova aquesta configuració</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Comprova què canvia la compilació, mira-la i després publica-la o descarta-la.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Tria la publicació a la qual vols tornar.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Arribarà en una versió posterior.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Confirmació</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Confirmacions</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Confirma la compilació, l&apos;etiqueta i la puja a %remote. La pujada no es força mai; més endavant pots tornar a qualsevol publicació.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Comparat amb la carpeta anterior: %added afegits, %changed canviats, %removed eliminats, %unchanged sense canvis.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Comparat amb la darrera publicació.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Credencial</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domini propi</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>La sortida de depuració, els testimonis de formulari, els identificadors de sessió i els nonces sempre s&apos;eliminen.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Clau de desplegament</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Clau de desplegament de %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Descarta</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Descarta la compilació</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domini</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Buit: l&apos;adreça del lloc. Si no, una adreça interna del mateix lloc.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Acabada</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Cada enllaç comença amb el camí base.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Cada publicació és una confirmació amb una etiqueta static/%id/&lt;n&gt;. Tornar enrere crea una confirmació nova amb els fitxers d&apos;una publicació anterior: l&apos;historial es manté, cap etiqueta no es mou i no es força res.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Extres</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Obtén les pàgines de</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fitxer</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fitxers</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Falten fitxers</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fitxers de</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fitxers que no s&apos;han pogut recollir</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Empremta</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Carpeta</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Per a una adreça SSH. La clau es crea després de desar; tu afegeixes la seva meitat pública al repositori.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Per a una adreça https://. GitHub: un testimoni detallat amb Contents de lectura i escriptura al repositori.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Per a experts. El lloc públic canvia tan aviat com acaba la pujada.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formularis</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Allotjament gratuït des d&apos;un repositori de GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Des de la branca</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Adreça git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages permet un lloc de %site i un fitxer de %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Límits de GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publica els fitxers tal com són (cal per als fitxers que comencen amb _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub serveix la branca tal com s&apos;ha pujat. Opció per defecte.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, el teu propi servidor: qualsevol repositori git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Torna a una publicació anterior</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ajuda</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Ajuda amb l&apos;assistent</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Amaga&apos;ls</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historial</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Historial de %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Servidor</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Com rep GitHub Pages la compilació</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>He revisat els canvis</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Sé què canvia això</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Id</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Està desactivada: no es pot compilar res fins que s&apos;activi.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>S&apos;executa en segon pla com a %user; pots tancar aquesta pàgina.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Tasca %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Es desa com el secret %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tipus</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Darrera publicació</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Exclou aquestes pàgines</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Exclou aquestes seccions</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Enllaços</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Enllaços reescrits</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Lloc en línia</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Mira la compilació</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Lletres minúscules, xifres, _ i -, per exemple github-public. Dona nom a la carpeta i a les etiquetes (static/&lt;id&gt;/&lt;n&gt;) i no es pot canviar més endavant.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Crea una clau nova</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Crea una destinació</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Crea la clau</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Primer crea el repositori al servidor; pot estar buit.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Missatge</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>La majoria de pàgines</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Nom del testimoni a Configuració &gt; Secrets</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Destinació nova</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Següent</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Encara no hi ha cap confirmació.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>No s&apos;ha creat cap clau: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>No s&apos;ha trobat cap executable de línia d&apos;ordres de php. Defineix la ruta completa a migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Encara no hi ha cap etiqueta.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Encara no hi ha cap destinació.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Cap</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>No és a la compilació.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Encara no s&apos;ha publicat res.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Encara no s&apos;ha publicat res: tots els fitxers són nous.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Notifica</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Segons una planificació</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>A la consola</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Al servidor: ./console exp:static:serve %id ho serveix de la mateixa manera.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Un camí per línia, * coincideix amb qualsevol part: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Amb la destinació només es desa un nom; el testimoni o la clau es queda a Configuració &gt; Secrets i no apareix mai en cap registre.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Només el que anomenen les pàgines</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Només amb un testimoni. env:NAME llegeix en canvi una variable d&apos;entorn del servidor.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Obre la vista prèvia</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Obre la compilació tal com la servirà el servidor, des de la carpeta de la destinació. L&apos;enllaç et funciona durant una hora.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Opcional. Buit: el que s&apos;ha publicat.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Opcional. Amb un domini, el lloc se serveix a la seva arrel.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Sortida</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Pàgines</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Pàgines de la destinació</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Pàgines rebutjades</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Postprocessament</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Vista prèvia</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Vista prèvia i publicació</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Vista prèvia i publicació de %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Previsualitza la compilació</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progrés</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Adreça pública</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Clau pública</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publica</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publica una còpia estàtica d&apos;un lloc a GitHub Pages o a qualsevol servidor git: compila-la, comprova els canvis, publica-la i torna a una publicació anterior quan calgui.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publicació a la qual tornar</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publicacions</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Pujada</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Llegeix el tutorial</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Registre</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rebutjades</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatius</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Torna a carregar</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Eliminats</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Substitueix la clau: l&apos;antiga deixa de funcionar</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Informe</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Informe de la compilació</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repositori</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Revisió</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>La revisió comprova cada paràmetre i mostra les línies que s&apos;escriuran. Encara no s&apos;ha desat res.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Desfés</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Reversió</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Desa</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Planificació</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Pàgina de cerca</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Identificadors de secció, separats per comes.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Envia-les al lloc en línia</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Paràmetre</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Configuració</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Configuració de %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configuració</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Configuració &gt; Secrets</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Es mostra a les llistes, per exemple «Lloc públic a GitHub Pages».</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>L&apos;accés amb una GitHub App arribarà amb la integració de GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Lloc</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Lloc per publicar</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Mida</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Mida i límits</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Mida de la compilació</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Pàgines obsoletes</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Iniciada</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Iniciada per %user a les %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estat</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicació estàtica</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>La publicació estàtica està desactivada</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>La publicació estàtica està desactivada.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>La publicació estàtica està desactivada. Activa-la primer a Configuració &gt; Publicació estàtica.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>La publicació estàtica està activada.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Pas %step de %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Passos</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Neteja</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Desactiva</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Activa</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Activa la publicació estàtica</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiqueta</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Etiquetes</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Destinació</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Es poden crear i canviar destinacions, però no es compila ni es publica res fins que s&apos;activi.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Indica als motors de cerca què han de llegir.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>No s&apos;ha pogut descartar la compilació: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>La compilació és igual que la darrera publicació: no hi ha res per publicar.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>S&apos;ha descartat la compilació: la carpeta torna a contenir la darrera publicació.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Els valors per defecte serveixen per a la majoria de llocs.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>La carpeta conté una compilació encara no publicada; una compilació nova la substitueix.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>No es pot escriure a la carpeta de les tasques: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>No s&apos;ha pogut preparar la tasca: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>No s&apos;ha pogut iniciar la tasca.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>La tasca ha acabat. S&apos;està carregant el seu informe.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>La tasca necessita un usuari que hagi iniciat sessió.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>La tasca s&apos;ha iniciat però no ha informat de l&apos;identificador del procés. Comprova %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>La clau</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>El fitxer més gran: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Les línies que s&apos;escriuran</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>La llista de pàgines per als motors de cerca; necessita l&apos;adreça pública.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Les pàgines s&apos;obtenen tal com les veu un visitant que no ha iniciat sessió. Els siteaccess d&apos;administració i d&apos;edició no s&apos;ofereixen mai.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>No s&apos;ha pogut seguir el progrés. Torna a carregar la pàgina per veure com va la tasca.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>La meitat pública de la clau:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>L&apos;arrel de la branca</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>El magatzem de secrets encara no està configurat (./console exp:upgrade --apply crea la seva taula), de manera que no es pot desar cap clau.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>El servidor accedeix pel seu compte (amb la seva pròpia clau SSH o un ajudant de credencials), o el repositori és en aquest servidor.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>No s&apos;ha pogut escriure el paràmetre: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>La configuració és vàlida. S&apos;escriuran aquestes línies:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>No es pot llegir el fitxer de configuració: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>El lloc torna als fitxers d&apos;aquella publicació; abans cal publicar o descartar una compilació encara no publicada.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>La pàgina pròpia del lloc per a les adreces que no existeixen.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>No s&apos;ha pogut desar la destinació: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>La destinació encara no accedeix amb aquesta clau: tria «Una clau de desplegament creada per a aquesta destinació» a la seva configuració.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>No s&apos;han pogut llegir les destinacions: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Encara no hi ha cap compilació per revisar.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Aquesta instal·lació no té cap siteaccess públic. Els siteaccess d&apos;administració i d&apos;edició no es publiquen mai.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Aquesta pàgina segueix la tasca mentre avança; continua en segon pla quan es tanca la pàgina.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Aquesta destinació encara no té clau de desplegament.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Aquesta destinació encara no s&apos;ha compilat aquí.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Aquesta destinació en té una.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Descarta aquesta compilació: la carpeta torna a contenir la darrera publicació. El lloc en línia no canvia.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Marca primer «He revisat els canvis».</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Hora</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Activadors</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Torna a escriure el nom de l&apos;etiqueta</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Sense canvis</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Què</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Què canvia</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Què és cada fitxer; s&apos;escriu sempre.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Què ha fet la tasca i el seu registre. Una tasca iniciada aquí continua en segon pla quan es tanca aquesta pàgina.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Què ha mostrat la tasca com a errors</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>El que anomenen les pàgines, i cada imatge del contingut publicat</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Quan</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Quan una publicació falla</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Quan una publicació té èxit</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Quan es publica contingut</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>On van els enllaços a allò que la còpia no conté (la cerca, l&apos;inici de sessió).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Des d&apos;on se serveix la còpia estàtica.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Quin lloc es publica i com es diu la destinació.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Funciona sota qualsevol camí. Opció per defecte.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>S&apos;escriu sempre que hi ha un domini propi definit.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Sempre pots compilar i publicar a mà aquí i a la consola.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>només un nom; el valor es queda a Configuració &gt; Secrets</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>sota %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ha acabat sense informe</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>extra</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ha fallat</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fitxer</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, o main amb la carpeta docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>servidor git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (amb un testimoni) o git@github.com:owner/repo.git (amb una clau de desplegament); mai cap contrasenya ni testimoni a dins.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, per al mapa del lloc i els enllaços canònics.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>imatge</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>mai</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>no</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>sense remot</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>cap: les confirmacions es queden a la carpeta</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>cap: no ha canviat res</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>no pujat</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>no ha canviat res</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>pàgina</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>correcte</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open està desactivada, de manera que aquí no es pot iniciar cap tasca. Fes servir ./console exp:static:build al servidor.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publicació</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publicat</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>pujada pendent</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>pujat</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rebutjat</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatius</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>reversió</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>desfet</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>en curs</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>només la carpeta</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: s&apos;escriu al fitxer CNAME. Apunta el DNS del domini al servidor tal com ho explica; HTTPS pot trigar una estona a funcionar.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>sí, encara no publicat</translation>
     </message>
 </context>
 </TS>

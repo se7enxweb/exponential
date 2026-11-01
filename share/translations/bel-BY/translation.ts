@@ -15150,6 +15150,22 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Змены ўсталёўкі, захаваныя ў выглядзе файлаў: іх стан, запускі, выкананне і адкат.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Новыя матэрыялы</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Найноўшыя матэрыялы, тое, што затрымана на праверку, і дзеянні з выбранымі элементамі.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Публікацыя статычнай копіі сайта на GitHub Pages або любым git-хостынгу.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статычная публікацыя</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22165,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Адказы захаваных запытаў GraphQL API і класы змесціва яго схемы.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Апублікаваць статычную копію на GitHub Pages або любым git-хостынгу</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статычная публікацыя</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Статычны кэш аддае старонкі з гэтага сервера. Каб апублікаваць статычную копію сайта ў іншым месцы, на GitHub Pages або любым git-хостынгу, выкарыстоўвайце статычную публікацыю.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Змены ўсталёўкі, захаваныя ў выглядзе файлаў: іх стан, запускі, выкананне і адкат.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Публікацыя статычнай копіі сайта на GitHub Pages або любым git-хостынгу.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статычная публікацыя</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80769,6 +80805,2028 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The recording could not be changed: %reason</source>
         <translation>Не ўдалося змяніць запіс: %reason</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Зменены</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Створаны</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Клас</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Раздзел</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Стваральнік</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Новыя матэрыялы</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Апошнія створаныя і змененыя матэрыялы ўсяго сайта, спачатку найноўшыя: тое, што даслалі наведвальнікі, што затрымана на праверку, чарнавікі, якія чакаюць публікацыі. Выберыце элементы, каб зняць затрымку, затрымаць, схаваць, паказаць, выдаліць іх або перанесці ў іншы раздзел ці стан.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Не ўдалося прачытаць спіс: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Затрымка на праверку яшчэ не наладжана, таму нічога не затрымліваецца і дзеянні затрымкі недаступныя. Яе наладжвае крок абнаўлення 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Фільтраваць спіс</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>З</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Па</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Створаны (першая публікацыя)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Усе</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Апублікаваны</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Чарнавік, ніколі не апублікаваны</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>У чаканні (ухвалення або даты)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>У сметніцы</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Затрымана на праверку</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Затрымана</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Не затрымана</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Схавана</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Бачна</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Даслана праз</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Любы доступ да сайта</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Толькі тое, што запісаў аўдыт.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Цяпер: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Лагін або ID карыстальніка.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фільтр</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Скінуць фільтры</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Элементы</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to з %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Няма элементаў</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(прачытана за %ms мс)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Дзеянні з выбранымі элементамі</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Выбраць усё на гэтай старонцы</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Выбрана: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Дзеянне</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Выберыце дзеянне</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Зняць затрымку</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Затрымаць на праверку</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Схаваць</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Паказаць</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Перамясціць у сметніцу</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Выдаліць</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Прызначыць раздзел</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Прызначыць стан</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Прычына</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Патрэбна для затрымкі; захоўваецца разам з затрымкай і ў аўдыце.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Выберыце раздзел</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Выберыце стан</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Ужыць да выбраных</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Кожны элемент правяраецца паводле вашых уласных правоў. Перамяшчэнне ў сметніцу і выдаленне патрабуюць пацвярджэння. Больш за %count элементаў апрацоўваюцца ў фонавым рэжыме.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Выбраць</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Публікацыя</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Даслана з адраса</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Выбраць %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>яшчэ не</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(без назвы)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Чарнавік</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>У чаканні</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Схавана бацькоўскім элементам</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Затрымана: новае дасыланне</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Версія %version у чаканні</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Версія %version у рабоце</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Чарнавік, версія %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Версія %version апублікавана</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Запланавана на %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>няма адраса</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>не запісана</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Нічога не адпавядае гэтым фільтрам.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Паказаць усё</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Матэрыялаў пакуль няма.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На старонцы</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Паказваць %count элементаў на старонцы.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Адрас і браўзер дасылання бяруцца з індэкса аўдыту, які тут недаступны: у слупку пазначана «не запісана».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Адрас і браўзер — тыя, што аўдыт запісаў для элемента (аўтазатрымка запісвае іх заўсёды; публікацыя і стварэнне — толькі там, дзе гэта ўключана), у той меры, у якой іх захоўваюць яго налады прыватнасці.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: элементаў: %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Выдаленне знішчае элементы назаўсёды, з усімі іх версіямі і перакладамі. Гэта нельга адмяніць.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Элементы трапляюць у сметніцу, адкуль іх можна аднавіць.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Кожны элемент правяраецца паводле вашых уласных правоў; элемент з падэлементамі застаецца як ёсць (выдаліце яго ў структуры матэрыялаў). Вас папросяць пацвердзіць, што гэта вы.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Гэта выконваецца ў фонавым рэжыме: адкрыецца старонка ходу выканання, а вынік па кожным элеменце будзе паказаны пасля завяршэння.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Выбраныя элементы</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>і яшчэ %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасаваць</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Нічога не зроблена</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Прычына: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Дзеянне ўсё яшчэ выконваецца ў фонавым рэжыме.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ход выканання</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Фонавае дзеянне завяршылася памылкай: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Выканана</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Адхілена</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Памылка</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Па элементах</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Элемент</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Вынік</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Чаму</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Назад да спіса</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Канфігурацыя</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Нічога не зроблена</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Пацвердзіць</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Выберыце дзеянне.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Выберыце хоць бы адзін элемент.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Выберыце не больш за 1000 элементаў за раз.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Пазначце, чаму элементы затрыманы.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Выберыце раздзел.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Выберыце стан.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Не ўдалося прачытаць форму.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Новыя матэрыялы</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Не ўдалося прачытаць лічыльнікі: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Затрымана на праверку</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Новыя сёння</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Затрымка на праверку яшчэ не наладжана (крок абнаўлення 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Усе новыя матэрыялы</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Вам не дазволена выконваць дзеянні мадэрацыі (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Дзеянне мадэрацыі не завершана: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Мадэрацыя: %action для %count аб’ектаў</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done з %total аб’ектаў: выканана %ok, адхілена %refused, памылак %failed</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>выканана %ok, адхілена %refused, памылак %failed</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Аб’екта больш не існуе.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Аб’ект не мае размяшчэння (не апублікаваны).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Вам не дазволена хаваць аб’ект (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Вам не дазволена паказваць аб’ект (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Аб’ект ужо схаваны.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Аб’ект не схаваны.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Схавана.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Паказана.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Аб’ект у сметніцы: ачысціце сметніцу або аднавіце яго адтуль.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Чарнавік, які ніколі не публікаваўся, нельга перамясціць у сметніцу: выдаліце яго.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Вам не дазволена выдаляць аб’ект (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Выдалена.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Вам не дазволена прыбіраць аб’ект (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Аб’ект мае падэлементы: выдаліце яго ў структуры матэрыялаў, дзе яны пералічаны.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Аб’ект не быў выдалены (выдаленне можа затрымліваць працоўны працэс).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Перамешчана ў сметніцу.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Раздзел не існуе.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Аб’ект ужо ў гэтым раздзеле.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Вам не дазволена прызначаць гэты раздзел (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Раздзел не прызначаны.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Раздзел прызначаны.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Стан не існуе.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Аб’ект ужо ў гэтым стане.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Вам не дазволена прызначаць гэты стан (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Стан не прызначаны (змяненне можа затрымліваць працоўны працэс).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Стан прызначаны.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Такога дзеяння няма.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Затрымка на праверку не наладжана (крок абнаўлення 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Пазначце, чаму аб’ект затрыманы.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Аб’ект ужо затрыманы.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Вам не дазволена затрымліваць аб’ект (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Затрымка не ўсталявана (змяненне можа затрымліваць працоўны працэс).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Затрымана.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Аб’ект не затрыманы.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Вам не дазволена здымаць затрымку з аб’екта (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Затрымка не знята (змяненне можа затрымліваць працоўны працэс).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Затрымка знята; аб’ект усё яшчэ схаваны: вам не дазволена паказваць яго (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Затрымка знята.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Усе мэты</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Апошняя публікацыя</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Апублікуйце бясплатную статычную копію свайго сайта на GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Састарэлыя старонкі</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статычная публікацыя</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Статычная публікацыя выключана.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Мэта</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Не ўдалося прачытаць мэты: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>выконваецца заданне</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>зборка для праверкі</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>схаваць гэта</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>стварыць мэту</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ніколі</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>прачытаць дапаможнік</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>Дададзена: %added, зменена: %changed, выдалена: %removed</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes з %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Яшчэ %count не паказаны.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Запісана старонак: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path мае памер %size, больш, чым хост дазваляе для аднаго файла.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ад ліміту</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag — публікацыя, якая цяпер на сайце.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: заданне %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/рэпазіторый/ для сайта праекта GitHub; пуста для ўласнага дамена або сайта карыстальніка.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Сайт</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Хост</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Уваход у рэпазіторый</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Рэпазіторый</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Спасылкі і базавы шлях</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Ваш уласны дамен</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Што змяшчае зборка</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Калі яна публікуецца</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Праверка і захаванне</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Сайт праекта GitHub размяшчаецца пад /&lt;repository&gt;/; адносныя спасылкі працуюць там і ў любым іншым месцы.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Зборка атрымлівае кожную старонку %site такой, якой яе бачыць наведвальнік без уваходу, перапісвае спасылкі, капіюе файлы і запісвае вынік у папку мэты. Нічога не публікуецца, пакуль вы не праверыце зборку і не націснеце «Апублікаваць».</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Выраз cron, напрыклад 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ключ разгортвання захоўваецца як сакрэт %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ключ разгортвання дазваляе гэтай усталёўцы адпраўляць змены па SSH у адзін рэпазіторый і больш нікуды. Яго прыватная частка застаецца ў Канфігурацыя &gt; Сакрэты; паказваецца толькі публічная частка.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ключ разгортвання, створаны для гэтай мэты</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ключ разгортвання ўваходзіць па SSH: змяніце git-адрас на SSH-адрас (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Выконваецца заданне, запушчанае карыстальнікам %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Заданне гэтай мэты яшчэ выконваецца (%detail). Пачакайце, пакуль яно скончыцца.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Заданне гэтай мэты яшчэ выконваецца. Пачакайце, пакуль яно скончыцца.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Спасылка са старонкі /news/ на старонку /about-us/team будзе запісана як</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Створаны новы ключ разгортвання. Дадайце яго публічную частку ў рэпазіторый зараз.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Старонка, якая пасля ачысткі ўсё яшчэ змяшчае адладачны вывад, токен формы або ідэнтыфікатар сесіі, ніколі не публікуецца.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Адкат — для экспертаў: адзначце «Я ведаю, што гэта змяняе» і яшчэ раз увядзіце назву тэга.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Сайт можа мець памер да %site, адзін файл — да %file, трафік — каля 100 ГБ у месяц. На бясплатным тарыфе рэпазіторый павінен быць публічным. GitHub Pages не прызначаны для крам і іншых камерцыйных аперацый.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Мэта — гэта адзін сайт, які публікуецца ў адзін git-рэпазіторый. Тут нічога не збіраецца і не публікуецца: «Захаваць» запісвае налады ў settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Мэта — гэта адзін сайт, які публікуецца ў адно месца, напрыклад ваш публічны сайт на GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Токен з Канфігурацыя &gt; Сакрэты</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Яе публікуе працоўны працэс (workflow) рэпазіторыя.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Дадайце гэты публічны ключ у рэпазіторый з правам запісу. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, адзначце Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Дададзена</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Іншы git-хостынг</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>З гэтай мэтай працуе іншы працэс: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Базавы шлях</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Да</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Пад базавым шляхам</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Галіна</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Бітыя спасылкі</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Бітыя спасылкі ў зборцы</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Зборка</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Зборка %id, аўтар %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Сабраць %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Сабраць зараз</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Зборка для праверкі</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Хто</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Уручную, тут</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасаваць</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Змяніць</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Зменена</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Змены</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Спачатку праверце</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Праверце гэтыя налады</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Праверце, што змяняе зборка, паглядзіце яе, потым апублікуйце або адкіньце.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Выберыце публікацыю, да якой вярнуцца.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>З&apos;явіцца ў наступным выпуску.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коміт</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Коміты</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Робіць коміт зборкі, ставіць тэг і адпраўляе яе ў %remote. Адпраўка ніколі не прымусовая; пазней можна вярнуцца да любой публікацыі.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>У параўнанні з папкай раней: дададзена %added, зменена %changed, выдалена %removed, без змен %unchanged.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>У параўнанні з апошняй публікацыяй.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Уліковыя даныя</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Уласны дамен</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Адладачны вывад, токены форм, ідэнтыфікатары сесій і nonce заўсёды выдаляюцца.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ключ разгортвання</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Ключ разгортвання %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Адкінуць</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Адкінуць зборку</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Дамен</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Пуста: адрас сайта. Інакш — унутраны адрас таго ж сайта.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Скончана</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Кожная спасылка пачынаецца з базавага шляху.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Кожная публікацыя — гэта коміт з тэгам static/%id/&lt;n&gt;. Вяртанне стварае новы коміт з файламі ранейшай публікацыі: гісторыя захоўваецца, ніводзін тэг не перамяшчаецца і нічога не робіцца прымусова.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Дадатковыя файлы</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Атрымліваць старонкі з</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Файлы</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Адсутныя файлы</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Файлы сайта</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Файлы, якія не ўдалося сабраць</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Адбітак</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Папка</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Для SSH-адраса. Ключ ствараецца пасля захавання; вы дадаяце яго публічную частку ў рэпазіторый.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Для адраса https://. GitHub: дэталізаваны токен (fine-grained) з правамі Contents на чытанне і запіс у рэпазіторыі.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Для экспертаў. Публічны сайт змяняецца адразу пасля завяршэння адпраўкі.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Формы</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Бясплатны хостынг з рэпазіторыя GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>З галіны</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-адрас</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages дазваляе сайт памерам %site і файл памерам %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Абмежаванні GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages публікуе файлы як ёсць (патрэбна для файлаў, што пачынаюцца з _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub аддае галіну такой, якой яна адпраўлена. Па змаўчанні.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ваш уласны сервер: любы git-рэпазіторый.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Вярнуцца да ранейшай публікацыі</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Даведка</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Даведка па майстру</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Схаваць іх</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Гісторыя</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Гісторыя %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Хост</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Як GitHub Pages атрымлівае зборку</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Змены правераны</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Я ведаю, што гэта змяняе</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Ідэнтыфікатар</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Яна выключана: нічога нельга сабраць, пакуль яна не ўключана.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Яно выконваецца ў фоне ад імя %user; гэту старонку можна закрыць.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Заданне %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Захоўваецца як сакрэт %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Тып</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Апошняя публікацыя</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Не ўключаць гэтыя старонкі</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Не ўключаць гэтыя раздзелы</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Спасылкі</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Перапісана спасылак</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Рабочы сайт</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Паглядзець зборку</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Малыя літары, лічбы, _ і -, напрыклад github-public. Дае назву папцы і тэгам (static/&lt;id&gt;/&lt;n&gt;) і не можа быць зменена пазней.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Стварыць новы ключ</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Стварыць мэту</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Стварыць ключ</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Спачатку стварыце рэпазіторый на хосце; падыдзе і пусты.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Маніфест</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Паведамленне</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Большасць старонак</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Назва токена ў Канфігурацыя &gt; Сакрэты</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Новая мэта</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Далей</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Не</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Комітаў яшчэ няма.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Ключ не створаны: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Не знойдзены выканальны файл php для каманднага радка. Укажыце поўны шлях да яго ў migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Тэгаў яшчэ няма.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Мэтаў яшчэ няма.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Няма</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Няма ў зборцы.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Яшчэ нічога не апублікавана.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Яшчэ нічога не апублікавана: кожны файл новы.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Апавяшчэнні</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Па раскладзе</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>У кансолі</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>На серверы: ./console exp:static:serve %id аддае яе гэтак жа.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Адзін шлях у радку, * адпавядае любой частцы: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>З мэтай захоўваецца толькі назва; сам токен або ключ застаецца ў Канфігурацыя &gt; Сакрэты і ніколі не з&apos;яўляецца ў журнале.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Толькі тое, што называюць старонкі</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Толькі з токенам. env:NAME замест гэтага чытае зменную асяроддзя сервера.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Адкрыць папярэдні прагляд</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Адкрывае зборку з папкі мэты так, як яе будзе аддаваць хост. Спасылка працуе для вас на працягу гадзіны.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Неабавязкова. Пуста: тое, што было апублікавана.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Неабавязкова. З даменам сайт аддаецца з яго кораня.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Вывад</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Старонкі</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Старонкі мэты</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Адхіленыя старонкі</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Постапрацоўка</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Папярэдні прагляд</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Прагляд і публікацыя</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Прагляд і публікацыя %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Праглядзець зборку</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ход выканання</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Публічны адрас</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Публічны ключ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Апублікаваць</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Публікуйце статычную копію сайта на GitHub Pages або любым git-хостынгу: збірайце яе, правярайце змены, публікуйце і вяртайцеся да ранейшай публікацыі, калі трэба.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Публікацыя для вяртання</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Публікацыі</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Адпраўка</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Прачытаць дапаможнік</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Журнал</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Адхілена</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Адносныя</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Перазагрузіць</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Выдалена</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Замяніць ключ: стары перастане працаваць</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Справаздача</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Справаздача па зборцы</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Рэпазіторый</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Праверка</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Праверка правярае кожную наладу і паказвае радкі, якія будуць запісаны. Пакуль нічога не захавана.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Адкаціць</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Адкат</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Захаваць</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Расклад</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Старонка пошуку</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Ідэнтыфікатары раздзелаў праз коску.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Накіроўваць іх на рабочы сайт</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Налада</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Налады</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Налады %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Канфігурацыя</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Канфігурацыя &gt; Сакрэты</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Паказваецца ў спісах, напрыклад «Публічны сайт на GitHub Pages».</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Уваход праз GitHub App з&apos;явіцца разам з інтэграцыяй GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Сайт</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Сайт для публікацыі</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Памер</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Памер і абмежаванні</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Памер зборкі</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Састарэлыя старонкі</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Пачата</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Запушчана карыстальнікам %user у %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статычная публікацыя</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Статычная публікацыя выключана</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Статычная публікацыя выключана.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Статычная публікацыя выключана. Спачатку ўключыце яе ў Канфігурацыя &gt; Статычная публікацыя.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Статычная публікацыя ўключана.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Крок %step з %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Крокі</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Ачыстка</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Выключыць</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Уключыць</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Уключыць статычную публікацыю</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Тэг</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Тэгі</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Мэта</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Мэты можна ствараць і змяняць, але нічога не збіраецца і не публікуецца, пакуль яна не ўключана.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Паказвае пошукавым сістэмам, што чытаць.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Не ўдалося адкінуць зборку: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Зборка такая ж, як апошняя публікацыя: няма чаго публікаваць.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Зборка адкінута: у папцы зноў апошняя публікацыя.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Значэнні па змаўчанні падыходзяць большасці сайтаў.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>У папцы ёсць яшчэ не апублікаваная зборка; новая зборка заменіць яе.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Немагчыма запісаць у папку заданняў: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Не ўдалося падрыхтаваць заданне: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Не ўдалося запусціць заданне.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Заданне скончана. Загружаецца яго справаздача.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Для задання патрэбны карыстальнік, які ўвайшоў у сістэму.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Заданне запушчана, але не паведаміла ідэнтыфікатар свайго працэсу. Праверце %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Ключ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Найбольшы файл: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Радкі, якія будуць запісаны</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Спіс старонак для пошукавых сістэм; патрабуе публічнага адраса.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Старонкі атрымліваюцца такімі, якімі іх бачыць наведвальнік без уваходу. Siteaccess-ы адміністравання і рэдагавання ніколі не прапануюцца.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Не ўдалося адсочваць ход выканання. Перазагрузіце старонку, каб убачыць стан задання.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Публічная частка ключа:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Корань галіны</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Сховішча сакрэтаў яшчэ не наладжана (./console exp:upgrade --apply стварае яго табліцу), таму ключ нельга захаваць.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Сервер уваходзіць сам (уласным SSH-ключом або памочнікам уліковых даных), або рэпазіторый знаходзіцца на гэтым серверы.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Не ўдалося запісаць наладу: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Налады правільныя. Будуць запісаны гэтыя радкі:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Немагчыма прачытаць файл налад: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Сайт вяртаецца да файлаў той публікацыі; яшчэ не апублікаваную зборку трэба спачатку апублікаваць або адкінуць.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Уласная старонка сайта для адрасоў, якіх не існуе.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Не ўдалося захаваць мэту: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Мэта яшчэ не ўваходзіць з гэтым ключом: выберыце «Ключ разгортвання, створаны для гэтай мэты» ў яе наладах.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Не ўдалося прачытаць мэты: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Зборкі для праверкі яшчэ няма.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>У гэтай усталёўцы няма публічнага siteaccess. Siteaccess-ы адміністравання і рэдагавання ніколі не публікуюцца.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Гэта старонка адсочвае заданне падчас выканання; калі старонку закрыць, яно працягваецца ў фоне.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>У гэтай мэты яшчэ няма ключа разгортвання.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Гэта мэта яшчэ не збіралася тут.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>У гэтай мэты ён ёсць.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Адкідае гэту зборку: у папцы зноў апошняя публікацыя. Рабочы сайт не змяняецца.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Спачатку адзначце «Змены правераны».</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Час</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Трыгеры</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Яшчэ раз увядзіце назву тэга</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Без змен</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Вэбхук</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Што</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Што змяняецца</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Што ўяўляе кожны файл; запісваецца заўсёды.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Што зрабіла заданне і яго журнал. Заданне, запушчанае тут, працягваецца ў фоне, калі гэту старонку закрыць.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Што заданне вывела як памылкі</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Тое, што называюць старонкі, і кожная выява апублікаванага змесціва</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Калі</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Калі публікацыя не ўдаецца</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Калі публікацыя ўдаецца</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Калі публікуецца змесціва</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Куды вядуць спасылкі на тое, чаго няма ў копіі (пошук, уваход).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Адкуль аддаецца статычная копія.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Які сайт публікуецца і як называецца мэта.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Працуюць пад любым шляхам. Па змаўчанні.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Запісваецца, калі зададзены ўласны дамен.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Вы заўсёды можаце збіраць і публікаваць уручную тут і ў кансолі.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>толькі назва; значэнне застаецца ў Канфігурацыя &gt; Сакрэты</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>пад %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>скончана без справаздачы</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>дадатковы</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>не ўдалося</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>файл</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages або main з папкай docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-хостынг</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (з токенам) або git@github.com:owner/repo.git (з ключом разгортвання); ніколі не ўказвайце ў ім пароль або токен.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, для карты сайта і кананічных спасылак.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>выява</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ніколі</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>няма аддаленага рэпазіторыя</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>няма: коміты застаюцца ў папцы</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>няма: нічога не змянілася</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>не адпраўлена</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>нічога не змянілася</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>старонка</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>пройдзена</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open адключаны, таму заданне нельга запусціць тут. Выкарыстоўвайце ./console exp:static:build на серверы.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>публікацыя</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>апублікавана</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>адпраўка чакае</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>адпраўлена</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>адхілена</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>адносныя</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>адкат</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>адкочана</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>выконваецца</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>толькі папка</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: запісваецца ў файл CNAME. Накіруйце DNS дамена на хост, як ён тлумачыць; HTTPS можа запрацаваць не адразу.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>так, яшчэ не апублікавана</translation>
     </message>
 </context>
 </TS>

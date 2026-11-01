@@ -17,6 +17,8 @@
  *  SP-06 Folder=docs on Branch=main of a remote that has a README: the history is taken over, the build lands in
  *        docs/, the README stays
  *  SP-07 the lock: a publish while another holds the target's lock is refused; a build that fails commits nothing
+ *  SP-08 the preview and Discard: a build before the first publish is all new and thrown away without a trace; after a
+ *        publish a new build's diff (added, changed, removed) and Discard bring the publish back; the tags and commits
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -341,5 +343,61 @@ class expStaticPublishSqliteTest extends PHPUnit\Framework\TestCase
         $runs = expStaticStatus::runs( $this->db, 'test-site' );
         $this->assertSame( 'failed', $runs[0]['state'] );
         $this->assertSame( 'failure', end( $this->audits )[1]['result'] );
+    }
+
+    /** SP-08 */
+    public function testPreviewDiscardAndHistoryLists()
+    {
+        $bare = $this->bare( 'preview-remote' );
+        $target = $this->target( array( 'Remote' => $bare ) );
+        $checkout = $this->runnerDir() . '/out/test-site';
+        $publisher = $this->publisher( $target );
+
+        // a build before the first publish: everything is new; throwing it away leaves no file of it
+        $test = $this;
+        $build = function () use ( $test, $target ) {
+            $b = new expStaticBuild( $target, array( 'root' => $this->runnerDir() . '/root', 'var_dir' => 'var/test', 'work_dir' => $this->runnerDir() . '/out',
+                                                     'db' => null, 'fetcher' => function ( $url ) use ( $test ) { return $test->answer( $url ); },
+                                                     'base_path' => '', 'context' => self::CONTEXT ) );
+            $report = $b->run();
+            $test->assertTrue( $report['applied'], implode( '; ', $report['errors'] ) );
+        };
+        $build();
+        $this->assertNull( $publisher->repository()->committedManifest() );
+        $first = expStaticAdmin::diffDetails( null, expStaticManifest::load( $checkout ) );
+        $this->assertGreaterThan( 4, $first['counts']['added'] );
+        $result = array();
+        $this->assertTrue( $publisher->repository()->discard( $result ) );
+        $this->assertFileDoesNotExist( "$checkout/index.html" );
+        $this->assertFileDoesNotExist( "$checkout/.static-publish/manifest.json" );
+
+        // published, then the site changes and a new build is thrown away: the folder holds the publish again
+        $report = $this->publisher( $target )->publish( array( 'build' => true ) );
+        $this->assertSame( 'static/test-site/1', $report['tag_name'], implode( '; ', $report['errors'] ) );
+        $this->site['/news'] = self::page( 'News', '<h1>All the news</h1>' );
+        $this->site['/contact'] = self::page( 'Contact', '<h1>Contact</h1>' );
+        $this->site['/'] = self::page( 'Home', '<h1>Home</h1><a href="/about-us">About</a> <a href="/news">News</a> <a href="/contact">Contact</a>' );
+        $build();
+        $repo = $publisher->repository();
+        $diff = expStaticAdmin::diffDetails( $repo->committedManifest(), expStaticManifest::load( $checkout ) );
+        $this->assertContains( 'contact/index.html', array_column( $diff['added'], 'path' ) );
+        $this->assertContains( 'news/index.html', array_column( $diff['changed'], 'path' ) );
+        $this->assertContains( 'news/item-1/index.html', array_column( $diff['removed'], 'path' ) );
+        $result = array();
+        $this->assertTrue( $repo->discard( $result ), implode( '; ', $result['problems'] ) );
+        $this->assertFileDoesNotExist( "$checkout/contact/index.html" );
+        $this->assertFileExists( "$checkout/news/item-1/index.html" );
+        $this->assertSame( '', $this->gitOk( $checkout, array( 'status', '--porcelain' ) ), 'nothing left that the last publish does not hold' );
+
+        // the lists of the history
+        $tags = $repo->tagList();
+        $this->assertSame( array( 'static/test-site/1' ), array_column( $tags, 'name' ) );
+        $this->assertSame( $report['commit_id'], $tags[0]['commit'], 'the commit, not the tag object' );
+        $this->assertSame( 1, $tags[0]['number'] );
+        $this->assertGreaterThan( 0, $tags[0]['time'] );
+        $commits = $repo->commits( 5 );
+        $this->assertCount( 1, $commits );
+        $this->assertSame( 'Static Test', $commits[0]['author'] );
+        $this->assertStringStartsWith( 'Publish test-site', $commits[0]['subject'] );
     }
 }
