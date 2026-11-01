@@ -526,7 +526,11 @@ class eZURLAliasML extends eZPersistentObject
                         $languageName = false, $linkID = false, $alwaysAvailable = false, $rootID = false,
                         $cleanupElements = true, $autoAdjustName = false, $reportErrors = true, $aliasRedirects = true )
     {
-        $path = eZURLAliasML::cleanURL( $path );
+        // An absolute URL pasted as the alias (https://www.example.com/news) is stored as its path (news), not as the
+        // elements "https", "noname2", "www-example-com" and "news". One without a path stays as it was: the empty
+        // path is the root node's entry, never something a pasted address may replace.
+        $pathOfURL = eZURLAliasML::cleanURL( eZURLAliasML::stripURLOrigin( $path ) );
+        $path = $pathOfURL !== '' ? $pathOfURL : eZURLAliasML::cleanURL( $path );
         if ( $languageName === false )
         {
             $languageName = eZContentLanguage::topPriorityLanguage();
@@ -3105,6 +3109,24 @@ class eZURLAliasML extends eZPersistentObject
     static public function cleanURL( $url )
     {
         return trim( $url, '/ ' );
+    }
+
+    /**
+     * The path of an absolute URL: "https://www.example.com:8443/news/item?x=1#top" gives "/news/item". The scheme,
+     * the host, the port, the query and the fragment are not part of a URL alias. Anything that does not start with
+     * a scheme and "://" is returned as it is, so a relative path such as "news/item" or "a:b/c" is unchanged.
+     *
+     * @param string $url
+     * @return string
+     */
+    static public function stripURLOrigin( $url )
+    {
+        $url = (string)$url;
+        if ( preg_match( '#^\s*[a-z][a-z0-9+.\-]*://[^/?\#]*([^?\#]*)#i', $url, $match ) )
+        {
+            return $match[1];
+        }
+        return $url;
     }
 
     /*!

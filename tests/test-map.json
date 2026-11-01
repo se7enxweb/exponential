@@ -2576,6 +2576,9 @@
     ],
     "kernel/search/plugins/ezsearchengine/ezsearchengine.php": [
       "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
+    ],
+    "kernel/classes/ezurlaliasml.php": [
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ]
   },
   "generated": {

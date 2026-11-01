@@ -172,6 +172,22 @@ class expLegacyForkFixesTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( "(int)\$existingNode->attribute( 'parent_node_id' ) !== (int)\$nodeID", $code );
     }
 
+    public function testStorePathStoresTheAbsoluteURLsPathOnly()
+    {
+        $this->assertSame( '/news/item', eZURLAliasML::stripURLOrigin( 'https://www.example.com:8443/news/item?x=1#top' ) );
+        $this->assertSame( '/news', eZURLAliasML::stripURLOrigin( 'HTTP://example.com/news' ) );
+        $this->assertSame( '', eZURLAliasML::stripURLOrigin( 'https://www.example.com' ) );
+        $this->assertSame( '', eZURLAliasML::stripURLOrigin( 'https://www.example.com?x=1' ) );
+        // relative paths are what they were
+        $this->assertSame( 'news/item', eZURLAliasML::stripURLOrigin( 'news/item' ) );
+        $this->assertSame( '/news/item?x', eZURLAliasML::stripURLOrigin( '/news/item?x' ) );
+        $this->assertSame( 'a:b/c', eZURLAliasML::stripURLOrigin( 'a:b/c' ) );
+        $this->assertSame( '//cdn.example.com/x', eZURLAliasML::stripURLOrigin( '//cdn.example.com/x' ) );
+
+        $code = file_get_contents( self::root() . '/kernel/classes/ezurlaliasml.php' );
+        $this->assertMatchesRegularExpression( '/static function storePath\(.*?\{\s*(\/\/[^\n]*\s*)*\$pathOfURL = eZURLAliasML::cleanURL\( eZURLAliasML::stripURLOrigin\( \$path \) \);/s', $code );
+    }
+
     public function testRestKernelRegistersTheEventListeners()
     {
         $kernel = file_get_contents( self::root() . '/kernel/private/rest/classes/ezpkernelrest.php' );
