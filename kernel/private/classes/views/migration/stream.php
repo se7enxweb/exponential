@@ -123,7 +123,7 @@ class Stream extends \Exponential\Runnable\ModuleView
         echo "event: end\ndata: {}\n\n";
         flush();
         \eZExecution::cleanExit();
-        return $this->viewResult( isset( $Result ) ? $Result : null, null );
+        return $this->viewResult( null, null );
     }
 
     /**
