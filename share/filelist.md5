@@ -3351,7 +3351,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7eb9e8c28a5ca4f683cdd8122c1e5a60  doc/changelogs/6.0/6.0.15.md
+1770f60af25ea2e1e3f7303419572993  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6852,8 +6852,8 @@ ece15ec77c80cf6be557056386321c5a  doc/eng-us/guides/two-factor-login.md
 d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
-09c137108d069f3a15ad57e13a5af159  doc/eng-us/guides/upgrade-steps-for-extensions.md
-5336a06641850478131c779385ea2d27  doc/eng-us/guides/upgrading-with-the-console.md
+d1ce80800b86e31cb2ffffb6e6af7cd0  doc/eng-us/guides/upgrade-steps-for-extensions.md
+49c748e5c27057b428f964818f7109a3  doc/eng-us/guides/upgrading-with-the-console.md
 ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
@@ -11326,7 +11326,7 @@ f36b1de86c35316aeb6882b01053ec74  doc/eng-us/help/site-packages/your-own/running
 749f337878a5603d49d484cf18a3f5f9  doc/eng-us/help/site-packages/your-own/versioning-your-own-packages.md
 7f835af6af8f52b999ea026b1aced6ae  doc/eng-us/help/software-engineers/api-design-rest-ezjscore-headless.md
 deaa858891dafda4d5030ad49c9bae04  doc/eng-us/help/software-engineers/application-servers.md
-963691c235c5a6f0f773a9091cae80ec  doc/eng-us/help/software-engineers/architecture-overview.md
+cedd9c0bed62aecf3fb0a2e4c4bc2359  doc/eng-us/help/software-engineers/architecture-overview.md
 51d62b802015488af932d183df1469dd  doc/eng-us/help/software-engineers/authentication-sessions-and-2fa.md
 5c1dafaa0aa85e7f0bfea57d10ca31d7  doc/eng-us/help/software-engineers/backward-compatibility-policy.md
 5c8ece2cb5b3b8150c07099ca66ce248  doc/eng-us/help/software-engineers/cache-invalidation-and-clearing.md
@@ -11344,7 +11344,7 @@ dc916d101aeeb97158abe0e0a74e5caf  doc/eng-us/help/software-engineers/dependency-
 1773511673a35c6a7a9bf20c76c7cf0d  doc/eng-us/help/software-engineers/deploying-a-change.md
 1d10d28043f7bddd7a73c2103c3afde7  doc/eng-us/help/software-engineers/design-review-checklist.md
 633f0febcf152b6bfed334beaaad984c  doc/eng-us/help/software-engineers/documentation-as-code.md
-76da1ddba83c01fbc8faef3d9e1edf15  doc/eng-us/help/software-engineers/evaluating-exponential.md
+9a6fd316cf7eaf26a8edd55619672d93  doc/eng-us/help/software-engineers/evaluating-exponential.md
 46f8df574e714859b368d2af4633d2d5  doc/eng-us/help/software-engineers/events-extension-points-and-plugins.md
 fa45a1f8b3f6a9dbc2d398fdff75190a  doc/eng-us/help/software-engineers/exponential-for-software-engineers.md
 9c2f302ca8896e3ad7345fb277e0bf35  doc/eng-us/help/software-engineers/git-workflow.md
@@ -11360,8 +11360,8 @@ fe02a4bbaceb6232f43912ac4c3c2aca  doc/eng-us/help/software-engineers/performance
 ca5825b0a98f97cea64427e30481cdea  doc/eng-us/help/software-engineers/persistence-and-the-database-layer.md
 1cc422088252317e11c23b38c81af4d4  doc/eng-us/help/software-engineers/release-engineering.md
 46e7b9ae43c242f2e89002bc78d2818b  doc/eng-us/help/software-engineers/request-lifecycle.md
-c127569cdfbcfa6b2aa03f997c2ea00b  doc/eng-us/help/software-engineers/scaling-and-clustering.md
-af3f16605732aeb2a3d7209bf86c79c6  doc/eng-us/help/software-engineers/schema-changes-and-migrations.md
+b36ea0644245dfa7998635b4ac0a4443  doc/eng-us/help/software-engineers/scaling-and-clustering.md
+9bb225932309323afd50d5843592b251  doc/eng-us/help/software-engineers/schema-changes-and-migrations.md
 61aa763224845fe39255b84f1381e4c4  doc/eng-us/help/software-engineers/security-engineering-overview.md
 646b822e9125dbcb27437f141b008929  doc/eng-us/help/software-engineers/security-review-checklist.md
 a13eb33997c7242bca855531bfa337af  doc/eng-us/help/software-engineers/siteaccesses-and-configuration.md
@@ -11369,7 +11369,7 @@ a13eb33997c7242bca855531bfa337af  doc/eng-us/help/software-engineers/siteaccesse
 c87c7f7e83ced62b9ef3713b3a6abb2d  doc/eng-us/help/software-engineers/software-engineers-reading-path.md
 4449914a3b3c9d7dfda9be9643dc549a  doc/eng-us/help/software-engineers/software-engineers-start-here.md
 4c99a25cb32f4a58cb157fef31d0ae7b  doc/eng-us/help/software-engineers/static-analysis-and-code-style.md
-4d6420ee02e2b7acd991e17548f84deb  doc/eng-us/help/software-engineers/technical-debt.md
+227b16d91dc9557a3ec58d9b45ec1e29  doc/eng-us/help/software-engineers/technical-debt.md
 82d4fbb8f60bbf4751cfb4560aa621ff  doc/eng-us/help/software-engineers/template-engine-and-design-chain.md
 e430f479cf4e49c6bc9b4bf9491a47ef  doc/eng-us/help/software-engineers/testing-strategy.md
 235844a581c5c28b53c47a2f66ce75f2  doc/eng-us/help/software-engineers/velocity-persistent-workers.md
@@ -12179,7 +12179,7 @@ ccaa85d205accb4552a90fb5fcf5f465  doc/eng-us/help/web-framework-developers/headl
 c7ab9edee8551886d61a029fe1c090db  doc/eng-us/help/web-framework-developers/http-caching-and-reverse-proxies.md
 8c9ffd6e2f1f580afd0386bee03d782b  doc/eng-us/help/web-framework-developers/i18n-l10n-and-rtl.md
 2c0c76db189784f51a58d2ade3dda785  doc/eng-us/help/web-framework-developers/middleware-and-request-rules.md
-a5f2055986583cba7568cea632db5f37  doc/eng-us/help/web-framework-developers/migrations-and-dba-schema-files.md
+620ae73fc127f19a9d4e03c3229c2e94  doc/eng-us/help/web-framework-developers/migrations-and-dba-schema-files.md
 4223f67e4e59ceba524bb284ba2fcb3f  doc/eng-us/help/web-framework-developers/mixing-exponential-and-a-framework.md
 439d1bdd0a57f0b80b6c052530f59a16  doc/eng-us/help/web-framework-developers/orm-and-ezpersistentobject.md
 a3df67b44805465e15a4c3668de77eeb  doc/eng-us/help/web-framework-developers/packages-extensions-and-composer.md
@@ -12674,7 +12674,7 @@ df930bef620e43a1fd4749ed2955dd4b  doc/eng-us/specifications/6.0/xrowextract.md
 063ce552bc878f747754fe24aeba8d5b  doc/eng-us/standards/README.md
 252df4ad929147a4f4291beb83c99f09  doc/eng-us/standards/accessibility.md
 d2842e9200cdfb101ea6a036a64fe291  doc/eng-us/standards/apis-and-protocols.md
-0b602436e40fe94ebf14eb7fa4b2cb7a  doc/eng-us/standards/architecture/compatibility-releases-deployment.md
+f03b736a4769367898859d5cdddebee7  doc/eng-us/standards/architecture/compatibility-releases-deployment.md
 cb656231284cc62aab9930e9704740fa  doc/eng-us/standards/architecture/kernel-architecture.md
 c82ccb5029181dda770339fe7005bf37  doc/eng-us/standards/architecture/layering-and-naming.md
 cd8ba099d8dbfdc92502ae058c4f3553  doc/eng-us/standards/coding-standards.md
@@ -12914,7 +12914,7 @@ d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
 f83fe0b18f0c6f128ad952b8c94a44f8  doc/ger-de/anleitungen/README.md
-34c617771d2bb012d91bbafb14634347  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
+7611110580265b6af8b318470861bddd  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
@@ -13023,7 +13023,7 @@ d0f3ff1fc81771c32b16742e54f7ec95  doc/ger-de/anleitungen/twig-templates-rezepte.
 538acd610f602879df1d118d1a8104b3  doc/ger-de/anleitungen/ui-umschalter-einstellungen.md
 96c7e7570232e91c8971eb947b341ba1  doc/ger-de/anleitungen/umgebungsvariablen.md
 58ef9ee1db2c783c9a482cfa4b020230  doc/ger-de/anleitungen/upgrade-pruefung.md
-e709c27671aa3ac76b01aed2f1c3b0ea  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
+0b46169f6fdbb059c6db39985ff41c79  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
 8d5e959f90212c55a89c8d9a3166c3a2  doc/ger-de/anleitungen/urls-und-aliase.md
 b055f7da6714bbbb0030b07eb7b6615c  doc/ger-de/anleitungen/wartungsmodus.md
 e85dd39016eef809cb91b42a067f4bc0  doc/ger-de/anleitungen/workflows.md
@@ -19445,7 +19445,7 @@ e70ffd1c527dbdf60659a973cea6c637  doc/ger-de/hilfe/sicherheitshaertung.md
 c702aca91ab21f76627d538e4011e007  doc/ger-de/hilfe/softwareingenieure/abhaengigkeitsverwaltung-mit-composer.md
 476e52a10fdca789926b377d7d701538  doc/ger-de/hilfe/softwareingenieure/anwendungsserver.md
 f6d7722fd05bb14f5012d2a44023f56f  doc/ger-de/hilfe/softwareingenieure/api-design-rest-ezjscore-headless.md
-0e0efc7ce5efa1ff22eb4d4ad13234cf  doc/ger-de/hilfe/softwareingenieure/architekturueberblick.md
+1c9e9ee95780e5c1e7d54f555e851ac6  doc/ger-de/hilfe/softwareingenieure/architekturueberblick.md
 16ac4125a31b4e96295192ac1c725e2d  doc/ger-de/hilfe/softwareingenieure/authentifizierung-sessions-und-2fa.md
 89024482620e56e822c9ecbfb03cc5b2  doc/ger-de/hilfe/softwareingenieure/beobachtbarkeit-logs-debug-und-audit.md
 81211003c0836e9b6b2ec6d8c9abe71e  doc/ger-de/hilfe/softwareingenieure/cache-invalidierung-und-leeren.md
@@ -19459,7 +19459,7 @@ baaccc9afcaddd692fec475dd099e175  doc/ger-de/hilfe/softwareingenieure/datenbanke
 73162e3d542704fa5e2091be91e1c9ff  doc/ger-de/hilfe/softwareingenieure/dokumentation-als-code.md
 8f7890ca56a8a84cb3ca840170cf0479  doc/ger-de/hilfe/softwareingenieure/eine-aenderung-bereitstellen.md
 012507c96d3fd220755ca1e56577996b  doc/ger-de/hilfe/softwareingenieure/events-erweiterungspunkte-und-plugins.md
-d757b01d2048b7ca2ae161bd4795647f  doc/ger-de/hilfe/softwareingenieure/exponential-bewerten.md
+6bf72f04af6b0d068a55352b6122149c  doc/ger-de/hilfe/softwareingenieure/exponential-bewerten.md
 96626d245e9a04ae4f90675316a6439b  doc/ger-de/hilfe/softwareingenieure/exponential-fuer-softwareingenieure.md
 eaa2713fcad79bac50f191aec37c745d  doc/ger-de/hilfe/softwareingenieure/faq-fuer-softwareingenieure.md
 71fe1ec8fd5d9a62e01499670c157dbf  doc/ger-de/hilfe/softwareingenieure/git-arbeitsablauf.md
@@ -19480,13 +19480,13 @@ d702cef1e6eb44cd220774fabdcce50b  doc/ger-de/hilfe/softwareingenieure/kernel-lib
 ad4fd9db0ff546d028af0f9daef48b50  doc/ger-de/hilfe/softwareingenieure/portables-sql-schreiben.md
 3eab4fd6c1427d2a174c9e166efe7baf  doc/ger-de/hilfe/softwareingenieure/release-engineering.md
 8a5f8d39c43904ed91523e9b760bfa5f  doc/ger-de/hilfe/softwareingenieure/richtlinie-zur-rueckwaertskompatibilitaet.md
-b3dc678b5f729cc4db30d145683780d4  doc/ger-de/hilfe/softwareingenieure/schemaaenderungen-und-migrationen.md
+23282f00139f1b2fee2f3e55586501e0  doc/ger-de/hilfe/softwareingenieure/schemaaenderungen-und-migrationen.md
 d691687e273e9332058473aeffa18186  doc/ger-de/hilfe/softwareingenieure/sicherheitstechnik-im-ueberblick.md
 45828582a8d337ebaa4df01b28896d23  doc/ger-de/hilfe/softwareingenieure/siteaccesses-und-konfiguration.md
-1c08e17f67c2f7772e277a1c9fe6db84  doc/ger-de/hilfe/softwareingenieure/skalierung-und-clustering.md
+8078ff2c1b31668c28026823e0cec9c8  doc/ger-de/hilfe/softwareingenieure/skalierung-und-clustering.md
 4a2b91f59e9e59d52bb18bea714b5ab8  doc/ger-de/hilfe/softwareingenieure/softwareingenieure-hier-beginnen.md
 e55ccbb5eff45ccd67472dd70f8f7454  doc/ger-de/hilfe/softwareingenieure/statische-analyse-und-codestil.md
-4e15a072fed45a91b0aa22f89220b1a0  doc/ger-de/hilfe/softwareingenieure/technische-schulden.md
+ebfb6315307ca9bc33424552bf5fc8ae  doc/ger-de/hilfe/softwareingenieure/technische-schulden.md
 9e779c5fb518e5fd2d1e7d6b3bae9580  doc/ger-de/hilfe/softwareingenieure/template-engine-und-design-kette.md
 6826c63dd5292d0771eb0f99f8793418  doc/ger-de/hilfe/softwareingenieure/tests-ohne-datenbank-und-testsuiten.md
 9229c71745ff0dcf9197dcc6329ff80c  doc/ger-de/hilfe/softwareingenieure/teststrategie.md
@@ -21336,7 +21336,7 @@ f34557c3095c2b559a5d2c597cebd3c9  doc/ger-de/hilfe/web-framework-entwickler/inha
 d0b71ed6a2f0841ea1da9a4c42540223  doc/ger-de/hilfe/web-framework-entwickler/konfiguration-ini-dateien.md
 569ea8777d7c3f69d687c1fede7b6098  doc/ger-de/hilfe/web-framework-entwickler/lesepfad-fuer-web-framework-entwickler.md
 b471599697b17a361ff52aec608d6f2c  doc/ger-de/hilfe/web-framework-entwickler/middleware-und-request-regeln.md
-37b9265efdab86256273f6fff16d45b1  doc/ger-de/hilfe/web-framework-entwickler/migrationen-und-dba-schemadateien.md
+82141ea86145291e97e983588b7107f6  doc/ger-de/hilfe/web-framework-entwickler/migrationen-und-dba-schemadateien.md
 a6e2c957cd3245c6af181ed5c1ad4028  doc/ger-de/hilfe/web-framework-entwickler/orm-und-ezpersistentobject.md
 59c219ac022dce03d4ef2aa1cb81354f  doc/ger-de/hilfe/web-framework-entwickler/pakete-erweiterungen-und-composer.md
 4fc668728137029a793d934e2e3c6570  doc/ger-de/hilfe/web-framework-entwickler/responses-weiterleitungen-und-fehler.md
@@ -21787,7 +21787,7 @@ ef947859727e519aad0512f068a9b54e  doc/ger-de/sprachen.md
 9b7cd5aa113b112195b49e1fab3df878  doc/ger-de/standards/README.md
 5dc1194f57c8b1b5fbe99a36f5c6a86c  doc/ger-de/standards/apis-und-protokolle.md
 0b0f0ca714c2ab620eab9538302ed3dc  doc/ger-de/standards/architektur/kernel-architektur.md
-b17c9810f30f5515ccadf852caab4ff9  doc/ger-de/standards/architektur/kompatibilitaet-releases-deployment.md
+b1ba7030b320a504f1db415d69425f47  doc/ger-de/standards/architektur/kompatibilitaet-releases-deployment.md
 43a2f1d024a49dcd7669c76add1cc44a  doc/ger-de/standards/architektur/schichten-und-benennung.md
 8916febe41c2dbad8726da4bd03b9d9d  doc/ger-de/standards/barrierefreiheit.md
 4ea97756a72cffe60444636fa3cc53f3  doc/ger-de/standards/datenbanken-und-sql.md

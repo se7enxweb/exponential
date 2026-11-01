@@ -3,15 +3,17 @@ title: Schema changes and migrations
 audience: software-engineer, developer
 category: software-engineering
 order: 210
-summary: How a database schema change is shipped in Exponential - the .dba schema files and schema handlers, update SQL per driver, update scripts, the upgrade check that compares a site with the release schema, the absence of a migration runner, and a checklist for a change that every installation can apply.
-keywords: schema, migration, dba, db_schema.dba, update SQL, dbupdate, ezsqldumpschema, ezsqlinsertschema, upgrade check, database consistency, schema handler, software engineer
+summary: How a database schema change is shipped in Exponential - the .dba schema files and schema handlers, upgrade steps that exp:upgrade applies and records, migrations for a site's own changes, the upgrade check that compares a site with the release schema, and a checklist for a change that every installation can apply.
+keywords: schema, migration, dba, db_schema.dba, update SQL, dbupdate, ezsqldumpschema, ezsqlinsertschema, upgrade check, database consistency, schema handler, exp:upgrade, exp:migration, upgrade step, software engineer
 type: help
 ---
 # Schema changes and migrations
 
 This page is for engineers who add or change a table, a column or an index, in the kernel or in an extension.
-Exponential has no migration runner: schema changes are shipped as files and applied by the operator. That makes the
-discipline of the change itself the safety net.
+Since 6.0.15 a schema change is shipped as an **upgrade step** that `./console exp:upgrade` applies and records on
+every engine, and a site's own changes as **migrations** that `./console exp:migration:migrate` applies in order, with
+a caption before the run and a record of what ran. The SQL update files remain as a reference for installations that
+are upgraded by hand.
 
 ## Contents
 
@@ -30,6 +32,8 @@ discipline of the change itself the safety net.
 | `kernel/sql/<engine>/` | the SQL generated per engine |
 | `update/database/<driver>/6.0/` | the upgrade SQL per driver, for example `dbupdate-6.0.0-6.0.15.sql` (MySQL, PostgreSQL and SQLite files exist) |
 | `update/common/scripts/6.0/` | PHP scripts an upgrade runs, such as `createaudittables.php` |
+| `kernel/classes/upgrade/steps/`, `settings/upgrade.ini` | the kernel's upgrade steps (`expUpgradeStep`) and their list; an extension adds its own with `ExtensionStepList[]` |
+| `migrations/`, `extension/<name>/migrations/` | a site's and an extension's migrations, `YYYYMMDDHHMMSS_name.php` |
 
 Oracle's update files are in `ezoracle`; MongoDB has none, because it has no SQL schema.
 
@@ -47,9 +51,20 @@ From [Compatibility, releases and deployment](../../standards/architecture/compa
 The update file must say how to proceed on a database that already has part of it; for the 6.0.15 file, a statement
 for an existing column fails with its name, and only that statement is skipped.
 
+Steps 1 to 3 are one command since 6.0.15: `./console exp:upgrade --apply` takes a caption, applies every pending
+upgrade step on every engine, records each in `exp_migration` and deploys
+([Upgrading with the console](../../guides/upgrading-with-the-console.md)). An extension ships its schema change as an
+upgrade step of its own ([Upgrade steps for extensions](../../guides/upgrade-steps-for-extensions.md)). A change of
+one site (its own table, classes, content, roles) is a migration: `./console exp:migration:migrate --apply` runs the
+pending ones in order, in a transaction where the engine has one, restores the caption after a failure, and commits
+the record of the run ([Migrations](../../guides/migrations.md), [PHP migrations](../../guides/migrations-php.md)).
+
 ## The tools
 
 ```bash
+./console exp:upgrade:status               # every upgrade step and its state
+./console exp:migration:status             # every migration and its state
+./console exp:migration:check              # the lint of migration files, for CI
 php bin/php/ezsqldumpschema.php --help     # dump a database schema to a .dba file
 php bin/php/ezsqlinsertschema.php --help   # load a .dba schema into an engine (--type)
 php bin/php/ezsqldiff.php --help           # compare two schemas
@@ -62,6 +77,8 @@ loads the file into a throwaway SQLite database ([Schema and dba files](../creat
 ## Checklist for a schema change
 
 - [ ] The change is in `share/db_schema.dba` (and `db_data.dba` for seed rows) of the kernel or the extension.
+- [ ] An upgrade step applies it on every engine and detects it (`detect()`), so `exp:upgrade` records it and a
+      second run changes nothing; a site's own change is a migration instead.
 - [ ] An update file exists for every driver with SQL: MySQL/MariaDB, PostgreSQL, SQLite, and Oracle in `ezoracle`.
 - [ ] MongoDB is covered: the adapter or the installer creates what the code needs.
 - [ ] The update is safe on a database that already has part of it.
@@ -74,14 +91,18 @@ loads the file into a throwaway SQLite database ([Schema and dba files](../creat
 
 ## Known gaps
 
-- The update files are applied by hand; nothing records which statements ran.
+- An installation upgraded by hand with the SQL update files has no record of which statements ran;
+  `exp:upgrade` records every step it applies, and `exp:upgrade:verify` finds drift.
+- Migrations are written in PHP in 6.0.15; YAML, SQL and INI migrations are found and checked but not run yet.
 - MariaDB and Oracle have no CI job in the kernel repository.
 
 ## Related pages
 
 - [Persistence and the database layer](persistence-and-the-database-layer.md)
 - [Database schema and dba files](../extension-development/part-3-extension-developer/database-schema-and-dba-files.md)
-- [Upgrading](../../guides/upgrading.md)
+- [Upgrading](../../guides/upgrading.md), [Upgrading with the console](../../guides/upgrading-with-the-console.md)
+- [Migrations](../../guides/migrations.md), [PHP migrations](../../guides/migrations-php.md),
+  [The migration file format](../../specifications/6.0/migration-file-format.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

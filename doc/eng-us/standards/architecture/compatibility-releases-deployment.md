@@ -180,7 +180,8 @@ A template or stylesheet change needs only the template caches and Velocity's re
 
 ### Known gaps
 
-- The database update files are applied by hand; there is no migration runner that records which statements ran.
+- The database update files applied by hand leave no record of which statements ran; `exp:upgrade` and the
+  migrations (`exp:migration:migrate`, 6.0.15) apply and record every step.
 - `exp:velocity deploy` covers PHP-FPM and Velocity on one machine; several web servers are deployed one by one.
 
 ## Related pages

@@ -6,7 +6,14 @@ who upgrades sees it in `exp:upgrade:status`, gets it with `exp:upgrade --apply`
 the kernel's steps.
 
 [Guides](README.md) · Related: [Upgrading with the console](upgrading-with-the-console.md),
-[Extensions](extensions.md)
+[Extensions](extensions.md), [Migrations](migrations.md)
+
+An upgrade step or a migration? An **upgrade step** is for what every installation of the extension needs when it
+upgrades: it can look at the installation (`detect()`) and is run by `exp:upgrade` with the kernel's steps. A
+**migration** in `extension/<name>/migrations/` is a change written once and applied in order with a site's own
+migrations (`exp:migration:migrate`), with a caption before it and a record of the run; use it for changes a site
+builds on, which its own migrations can name in `requires:`. Both are recorded in the same table, `exp_migration`,
+and both run under the same lock ([PHP migrations](migrations-php.md#migrations-in-an-extension)).
 
 ## The step
 
