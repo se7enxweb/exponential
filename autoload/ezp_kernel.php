@@ -1749,6 +1749,7 @@ return array(
       'expUpgradeStepRecordTable'                                    => 'kernel/classes/upgrade/steps/expupgradesteprecordtable.php',
       'expUpgradeStepRssOpmlPodcast'                                 => 'kernel/classes/upgrade/steps/expupgradesteprssopmlpodcast.php',
       'expUpgradeStepSiteVersion'                                    => 'kernel/classes/upgrade/steps/expupgradestepsiteversion.php',
+      'expUpgradeStepSqliteCompositeKeys'                            => 'kernel/classes/upgrade/steps/expupgradestepsqlitecompositekeys.php',
       'expUpgradeStepTransferRunTable'                               => 'kernel/classes/upgrade/steps/expupgradesteptransferruntable.php',
       'expUpgradeStepTrashColumns'                                   => 'kernel/classes/upgrade/steps/expupgradesteptrashcolumns.php',
       'expUpgradeStepTrashRecordsToColumns'                          => 'kernel/classes/upgrade/steps/expupgradesteptrashrecordstocolumns.php',

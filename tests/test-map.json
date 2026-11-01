@@ -3327,6 +3327,7 @@
       "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php"
     ],
     "kernel/sql/sqlite/schema.sql": [
+      "tests/tests/kernel/classes/upgrade/expUpgradeSqliteCompositeKeysTest.php",
       "tests/tests/kernel/classes/apikey/ApiKeySchemaSqlTest.php",
       "tests/tests/kernel/classes/expUserLoginIntegrityTest.php",
       "tests/tests/kernel/classes/trash/TrashedByColumnsTest.php",

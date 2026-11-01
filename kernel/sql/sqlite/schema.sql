@@ -197,7 +197,7 @@ CREATE TABLE `ezcontentclass` (
 ,  `contentobject_name` varchar(255) DEFAULT NULL
 ,  `created` integer NOT NULL DEFAULT '0'
 ,  `creator_id` integer NOT NULL DEFAULT '0'
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `identifier` varchar(50) NOT NULL DEFAULT ''
 ,  `initial_language_id` integer NOT NULL DEFAULT '0'
 ,  `is_container` integer NOT NULL DEFAULT '0'
@@ -211,6 +211,7 @@ CREATE TABLE `ezcontentclass` (
 ,  `sort_order` integer NOT NULL DEFAULT '1'
 ,  `url_alias_name` varchar(255) DEFAULT NULL
 ,  `version` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`id`,`version`)
 );
 CREATE TABLE `ezcontentclass_attribute` (
   `can_translate` integer DEFAULT '1'
@@ -230,7 +231,7 @@ CREATE TABLE `ezcontentclass_attribute` (
 ,  `data_text4` varchar(255) DEFAULT NULL
 ,  `data_text5` longtext
 ,  `data_type_string` varchar(50) NOT NULL DEFAULT ''
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `identifier` varchar(50) NOT NULL DEFAULT ''
 ,  `is_information_collector` integer NOT NULL DEFAULT '0'
 ,  `is_required` integer NOT NULL DEFAULT '0'
@@ -240,6 +241,7 @@ CREATE TABLE `ezcontentclass_attribute` (
 ,  `serialized_description_list` longtext
 ,  `serialized_name_list` longtext NOT NULL
 ,  `version` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`id`,`version`)
 );
 CREATE TABLE `ezcontentclass_classgroup` (
   `contentclass_id` integer NOT NULL DEFAULT '0'
@@ -287,12 +289,13 @@ CREATE TABLE `ezcontentobject_attribute` (
 ,  `data_int` integer DEFAULT NULL
 ,  `data_text` longtext
 ,  `data_type_string` varchar(50) DEFAULT ''
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `language_code` varchar(20) NOT NULL DEFAULT ''
 ,  `language_id` integer NOT NULL DEFAULT '0'
 ,  `sort_key_int` integer NOT NULL DEFAULT '0'
 ,  `sort_key_string` varchar(255) NOT NULL DEFAULT ''
 ,  `version` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`id`,`version`)
 );
 CREATE TABLE `ezcontentobject_link` (
   `contentclassattribute_id` integer NOT NULL DEFAULT '0'
@@ -393,16 +396,19 @@ CREATE TABLE `ezdiscountsubrule_value` (
 CREATE TABLE `ezenumobjectvalue` (
   `contentobject_attribute_id` integer NOT NULL DEFAULT '0'
 ,  `contentobject_attribute_version` integer NOT NULL DEFAULT '0'
-,  `text` NOT NULL DEFAULT ''
+,  `enumelement` varchar(255) NOT NULL DEFAULT ''
 ,  `enumid` integer NOT NULL DEFAULT '0'
-,  PRIMARY KEY (`contentobject_attribute_id`,`contentobject_attribute_version`,`text`)
+,  `enumvalue` varchar(255) NOT NULL DEFAULT ''
+,  PRIMARY KEY (`contentobject_attribute_id`,`contentobject_attribute_version`,`enumid`)
 );
 CREATE TABLE `ezenumvalue` (
   `contentclass_attribute_id` integer NOT NULL DEFAULT '0'
 ,  `contentclass_attribute_version` integer NOT NULL DEFAULT '0'
-,  `text` NOT NULL DEFAULT ''
-,  `id` integer NOT NULL PRIMARY KEY
+,  `enumelement` varchar(255) NOT NULL DEFAULT ''
+,  `enumvalue` varchar(255) NOT NULL DEFAULT ''
+,  `id` integer
 ,  `placement` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`id`,`contentclass_attribute_id`,`contentclass_attribute_version`)
 );
 CREATE TABLE `ezforgot_password` (
   `hash_key` varchar(32) NOT NULL DEFAULT ''
@@ -568,11 +574,12 @@ CREATE TABLE `eznotificationevent` (
 ,  `status` integer NOT NULL DEFAULT '0'
 );
 CREATE TABLE `ezoperation_memento` (
-  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+  `id` integer
 ,  `main` integer NOT NULL DEFAULT '0'
 ,  `main_key` varchar(32) NOT NULL DEFAULT ''
 ,  `memento_data` longtext NOT NULL
 ,  `memento_key` varchar(32) NOT NULL DEFAULT ''
+,  PRIMARY KEY (`id`,`memento_key`)
 );
 CREATE TABLE `ezorder` (
   `account_identifier` varchar(100) NOT NULL DEFAULT 'default'
@@ -635,7 +642,7 @@ CREATE TABLE `ezpdf_export` (
 ,  `creator_id` integer DEFAULT NULL
 ,  `export_classes` varchar(255) DEFAULT NULL
 ,  `export_structure` varchar(255) DEFAULT NULL
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `intro_text` longtext
 ,  `modified` integer DEFAULT NULL
 ,  `modifier_id` integer DEFAULT NULL
@@ -645,8 +652,11 @@ CREATE TABLE `ezpdf_export` (
 ,  `source_node_id` integer DEFAULT NULL
 ,  `status` integer DEFAULT NULL
 ,  `sub_text` longtext
+,  `show_footer` integer NOT NULL DEFAULT '1'
+,  `footer_text` varchar(255) NOT NULL DEFAULT ''
 ,  `title` varchar(255) DEFAULT NULL
 ,  `version` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`id`,`version`)
 );
 CREATE TABLE `ezpending_actions` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
@@ -1005,7 +1015,7 @@ CREATE TABLE `ezrss_export` (
 ,  `created` integer DEFAULT NULL
 ,  `creator_id` integer DEFAULT NULL
 ,  `description` longtext
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `image_id` integer DEFAULT NULL
 ,  `main_node_only` integer NOT NULL DEFAULT '1'
 ,  `modified` integer DEFAULT NULL
@@ -1017,21 +1027,23 @@ CREATE TABLE `ezrss_export` (
 ,  `status` integer NOT NULL DEFAULT '0'
 ,  `title` varchar(255) DEFAULT NULL
 ,  `url` varchar(255) DEFAULT NULL
+,  PRIMARY KEY (`id`,`status`)
 );
 CREATE TABLE `ezrss_export_item` (
   `category` varchar(255) DEFAULT NULL
 ,  `class_id` integer DEFAULT NULL
 ,  `description` varchar(255) DEFAULT NULL
 ,  `enclosure` varchar(255) DEFAULT NULL
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `rssexport_id` integer DEFAULT NULL
 ,  `source_node_id` integer DEFAULT NULL
 ,  `status` integer NOT NULL DEFAULT '0'
 ,  `subnodes` integer NOT NULL DEFAULT '0'
 ,  `title` varchar(255) DEFAULT NULL
+,  PRIMARY KEY (`id`,`status`)
 );
 CREATE TABLE `ezrss_export_opml_item` (
-  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+  `id` integer
 ,  `rssexport_id` integer NOT NULL DEFAULT '0'
 ,  `parent_id` integer NOT NULL DEFAULT '0'
 ,  `priority` integer NOT NULL DEFAULT '0'
@@ -1051,6 +1063,7 @@ CREATE TABLE `ezrss_export_opml_item` (
 ,  `is_breakpoint` integer NOT NULL DEFAULT '0'
 ,  `created` integer NOT NULL DEFAULT '0'
 ,  `status` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`id`,`status`)
 );
 CREATE TABLE `ezrss_import` (
   `active` integer DEFAULT NULL
@@ -1061,7 +1074,7 @@ CREATE TABLE `ezrss_import` (
 ,  `created` integer DEFAULT NULL
 ,  `creator_id` integer DEFAULT NULL
 ,  `destination_node_id` integer DEFAULT NULL
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `import_description` longtext NOT NULL
 ,  `modified` integer DEFAULT NULL
 ,  `modifier_id` integer DEFAULT NULL
@@ -1069,6 +1082,7 @@ CREATE TABLE `ezrss_import` (
 ,  `object_owner_id` integer DEFAULT NULL
 ,  `status` integer NOT NULL DEFAULT '0'
 ,  `url` longtext
+,  PRIMARY KEY (`id`,`status`)
 );
 CREATE TABLE `ezscheduled_script` (
   `command` varchar(255) NOT NULL DEFAULT ''
@@ -1278,9 +1292,10 @@ CREATE TABLE `ezview_counter` (
 CREATE TABLE `ezwaituntildatevalue` (
   `contentclass_attribute_id` integer NOT NULL DEFAULT '0'
 ,  `contentclass_id` integer NOT NULL DEFAULT '0'
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `workflow_event_id` integer NOT NULL DEFAULT '0'
 ,  `workflow_event_version` integer NOT NULL DEFAULT '0'
+,  PRIMARY KEY (`id`,`workflow_event_id`,`workflow_event_version`)
 );
 CREATE TABLE `ezwishlist` (
   `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
@@ -1290,13 +1305,14 @@ CREATE TABLE `ezwishlist` (
 CREATE TABLE `ezworkflow` (
   `created` integer NOT NULL DEFAULT '0'
 ,  `creator_id` integer NOT NULL DEFAULT '0'
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `is_enabled` integer NOT NULL DEFAULT '0'
 ,  `modified` integer NOT NULL DEFAULT '0'
 ,  `modifier_id` integer NOT NULL DEFAULT '0'
 ,  `name` varchar(255) NOT NULL DEFAULT ''
 ,  `version` integer NOT NULL DEFAULT '0'
 ,  `workflow_type_string` varchar(50) NOT NULL DEFAULT ''
+,  PRIMARY KEY (`id`,`version`)
 );
 CREATE TABLE `ezworkflow_assign` (
   `access_type` integer NOT NULL DEFAULT '0'
@@ -1316,11 +1332,12 @@ CREATE TABLE `ezworkflow_event` (
 ,  `data_text4` varchar(255) DEFAULT NULL
 ,  `data_text5` longtext
 ,  `description` varchar(50) NOT NULL DEFAULT ''
-,  `id` integer NOT NULL PRIMARY KEY AUTOINCREMENT
+,  `id` integer
 ,  `placement` integer NOT NULL DEFAULT '0'
 ,  `version` integer NOT NULL DEFAULT '0'
 ,  `workflow_id` integer NOT NULL DEFAULT '0'
 ,  `workflow_type_string` varchar(50) NOT NULL DEFAULT ''
+,  PRIMARY KEY (`id`,`version`)
 );
 CREATE TABLE `ezworkflow_group` (
   `created` integer NOT NULL DEFAULT '0'
