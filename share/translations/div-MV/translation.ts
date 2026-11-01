@@ -79673,7 +79673,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The status could not be read: %problem</source>
-        <translation>ޙާލަތު ކިޔޭކަށް ނެތް: %problem</translation>
+        <translation>ޙާލަތު ކިޔެވޭކަށް ނެތް: %problem</translation>
     </message>
     <message>
         <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
@@ -79705,11 +79705,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Last run</source>
-        <translation>އެންމެ ފަހުގެ ހިންގުން</translation>
+        <translation>ފަހުން ހިނގި</translation>
     </message>
     <message>
         <source>none yet</source>
-        <translation>އަދި އެއްވެސް ނެތް</translation>
+        <translation>އަދި ނެތް</translation>
     </message>
     <message>
         <source>All migrations</source>
@@ -79724,7 +79724,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Dry run</source>
-        <translation>ޓެސްޓް ހިންގުން</translation>
+        <translation>ޑްރައި ރަން</translation>
     </message>
     <message>
         <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
@@ -79744,7 +79744,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The dry run failed: %problem</source>
-        <translation>ޓެސްޓް ހިންގުން ފެއިލްވެއްޖެ: %problem</translation>
+        <translation>ޑްރައި ރަން ފެއިލްވެއްޖެ: %problem</translation>
     </message>
     <message>
         <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
@@ -79768,7 +79768,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Simulation: %result in %ms ms</source>
-        <translation>ސިމިއުލޭޝަން: %result، %ms މިލިސިކުންތުގައި</translation>
+        <translation>ސިމިއުލޭޝަން: %result، %ms ms ގައި</translation>
     </message>
     <message>
         <source>No migration yet.</source>
@@ -79808,11 +79808,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
-        <translation>ކޮންމެ ހިންގުމެއް، އޭގެ ބޭނުންކުރާ މީހާ، ބޭއްވޭ ތަން، ސްނެޕްޝޮޓްތަކާއި ކޮމިޓް، ޓެގް އަދި ޕުޝްކުރި ކަންތައްތަކާއެކު. ފެއިލްވި ނުވަތަ މެދުކެނޑުނު ހިންގުމެއް ކުރިއަށް ގެންދެވޭނެ؛ ކުރިން ސްނެޕްޝޮޓެއް ނެގި ހިންގުމެއް އަނބުރާ ގެނެވޭނެ.</translation>
+        <translation>ކޮންމެ ހިންގުމެއް، އޭގެ ޔޫޒަރު، ބޭއްވޭ ތަން، ސްނެޕްޝޮޓްތަކާއި ކޮމިޓް، ޓެގް އަދި ޕުޝްކުރި ކަންތައްތަކާއެކު. ފެއިލްވި ނުވަތަ މެދުކެނޑުނު ހިންގުމެއް އަލުން ފެށޭނެ؛ ކުރިން ސްނެޕްޝޮޓެއް ނެގި ހިންގުމެއް އަނބުރާ ގެނެވޭނެ.</translation>
     </message>
     <message>
         <source>The runs could not be read: %problem</source>
-        <translation>ހިންގުންތައް ކިޔޭކަށް ނެތް: %problem</translation>
+        <translation>ހިންގުންތައް ކިޔެވޭކަށް ނެތް: %problem</translation>
     </message>
     <message>
         <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
@@ -79832,11 +79832,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Started</source>
-        <translation>ފެށި</translation>
+        <translation>ފެށުނު</translation>
     </message>
     <message>
         <source>By</source>
-        <translation>ފެށި މީހާ</translation>
+        <translation>ކުރި ފަރާތް</translation>
     </message>
     <message>
         <source>Captions</source>
@@ -79864,7 +79864,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Resume</source>
-        <translation>ކުރިއަށް ގެންދޭ</translation>
+        <translation>އަލުން ފަށާ</translation>
     </message>
     <message>
         <source>Roll back</source>
@@ -79880,11 +79880,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
-        <translation>މި ޞަފްޙާތަކުން ފެށި ހިންގުންތަކާއި ކުރިއަށް ގެންދިއުންތަކާއި އަނބުރާ ގެނައުންތައް، ކޮންމެ އެއެއްގެ ރިޕޯޓާއެކު.</translation>
+        <translation>މި ޞަފްޙާތަކުން ފެށި ހިންގުންތަކާއި އަލުން ފެށުންތަކާއި އަނބުރާ ގެނައުންތައް، ކޮންމެ އެއެއްގެ ރިޕޯޓާއެކު.</translation>
     </message>
     <message>
         <source>What</source>
-        <translation>ކޮން ކަމެއް</translation>
+        <translation>ކޮބައިތޯ</translation>
     </message>
     <message>
         <source>Result</source>
@@ -79904,11 +79904,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
-        <translation>ހިންގުމުން ކުރި ކަންތައް، އޭގެ ރެކޯޑާއި ލޮގް. މިތާނގައި ފެށި ހިންގުމެއް މި ޞަފްޙާ ބަންދުކުރިއަސް ފަސްބިމުގައި ކުރިއަށް ދޭ؛ އެ ފޮލޯކުރުމަށް ޞަފްޙާ އަލުން ހުޅުވާ.</translation>
+        <translation>ހިންގުމުން ކުރި ކަންތައް، އޭގެ ރެކޯޑާއި ލޮގް. މިތާނގައި ފެށި ހިންގުމެއް މި ޞަފްޙާ ބަންދުކުރިއަސް ބެކްގްރައުންޑުގައި ކުރިއަށް ދޭ؛ އެ ފޮލޯކުރުމަށް ޞަފްޙާ އަލުން ހުޅުވާ.</translation>
     </message>
     <message>
         <source>Resume this run</source>
-        <translation>މި ހިންގުން ކުރިއަށް ގެންދޭ</translation>
+        <translation>މި ހިންގުން އަލުން ފަށާ</translation>
     </message>
     <message>
         <source>Roll back this run</source>
@@ -79916,7 +79916,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The record could not be read: %problem</source>
-        <translation>ރެކޯޑް ކިޔޭކަށް ނެތް: %problem</translation>
+        <translation>ރެކޯޑް ކިޔެވޭކަށް ނެތް: %problem</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -79932,11 +79932,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Running %id (%index of %total)</source>
-        <translation>%id ހިންގަނީ (%total ން %index)</translation>
+        <translation>%id ހިންގަނީ (%total ގެ ތެރެއިން %index)</translation>
     </message>
     <message>
         <source>%done of %total done</source>
-        <translation>%total ން %done ނިމިއްޖެ</translation>
+        <translation>%total ގެ ތެރެއިން %done ނިމިއްޖެ</translation>
     </message>
     <message>
         <source>The migrations have run; restoring the caption if one failed</source>
@@ -79972,15 +79972,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Time</source>
-        <translation>ނެގި ވަގުތު</translation>
+        <translation>ވަގުތު</translation>
     </message>
     <message>
         <source>%ms ms</source>
-        <translation>%ms މިލިސިކުންތު</translation>
+        <translation>%ms ms</translation>
     </message>
     <message>
         <source>What the run printed as errors</source>
-        <translation>ހިންގުމުން ގޯސްތަކުގެ ގޮތުގައި ޕްރިންޓްކުރި ކަންތައް</translation>
+        <translation>ހިންގުމުން މައްސަލަތަކުގެ ގޮތުގައި ޕްރިންޓްކުރި ކަންތައް</translation>
     </message>
     <message>
         <source>Record</source>
@@ -80032,7 +80032,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>running</source>
-        <translation>ހިންގަމުންދޭ</translation>
+        <translation>ހިނގަމުންދަނީ</translation>
     </message>
     <message>
         <source>ended without a report</source>
@@ -80048,7 +80048,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>refused</source>
-        <translation>ދެކޮޅުހެދި</translation>
+        <translation>ނުބަލައިގަނެވުނު</translation>
     </message>
     <message>
         <source>the database was not reachable</source>
@@ -80056,7 +80056,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>internal error</source>
-        <translation>އެތެރޭގެ ގޯހެއް</translation>
+        <translation>ތެރެއިންގެ މައްސަލަ</translation>
     </message>
     <message>
         <source>A run is going on</source>
@@ -80100,7 +80100,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>applied</source>
-        <translation>ހިންގިއްޖެ</translation>
+        <translation>ހިންގާފައި</translation>
     </message>
     <message>
         <source>would be applied</source>
@@ -80108,11 +80108,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>taken back</source>
-        <translation>ފަސްކޮށްލެވިއްޖެ</translation>
+        <translation>އަނބުރާ ގެނެވިއްޖެ</translation>
     </message>
     <message>
         <source>would be taken back</source>
-        <translation>ފަސްކޮށްލެވޭނެ</translation>
+        <translation>އަނބުރާ ގެނެވޭނެ</translation>
     </message>
     <message>
         <source>not run</source>
@@ -80148,15 +80148,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Take back %target</source>
-        <translation>%target ފަސްކޮށްލާ</translation>
+        <translation>%target އަނބުރާ ގެންނަ</translation>
     </message>
     <message>
         <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
-        <translation>ހިންގުމެއް ފަސްކޮށްލެވެނީ އޭގެ ކުރިން ނެގި ސްނެޕްޝޮޓަށް، އެއް މައިގްރޭޝަނެއް އޭގެ down() ގެ ޒަރީއާއިން. ކުރީގެ ސްނެޕްޝޮޓެއް އަނބުރާ ގެނައުމަކީ މާހިރުންނަށް ކަމެކެވެ. ކޮންމެ އެއްޗެއް ހިންގެނީ ފަސްބިމުގައި ތިބާގެ ނަމުގައި، މިހާރުގެ ޙާލަތުގެ ސްނެޕްޝޮޓެއް ނެގުމަށްފަހު.</translation>
+        <translation>ހިންގުމެއް އަނބުރާ ގެނެވެނީ އޭގެ ކުރިން ނެގި ސްނެޕްޝޮޓަށް، އެއް މައިގްރޭޝަނެއް އޭގެ down() ގެ ޒަރީއާއިން. ކުރީގެ ސްނެޕްޝޮޓެއް އަނބުރާ ގެނައުމަކީ މާހިރުންނަށް ކަމެކެވެ. ކޮންމެ އެއްޗެއް ހިންގެނީ ބެކްގްރައުންޑުގައި ތިބާގެ ނަމުގައި، މިހާރުގެ ޙާލަތުގެ ސްނެޕްޝޮޓެއް ނެގުމަށްފަހު.</translation>
     </message>
     <message>
         <source>What can be taken back could not be read: %problem</source>
-        <translation>ފަސްކޮށްލެވޭނެ ކަންތައް ކިޔޭކަށް ނެތް: %problem</translation>
+        <translation>އަނބުރާ ގެނެވޭނެ ކަންތައް ކިޔެވޭކަށް ނެތް: %problem</translation>
     </message>
     <message>
         <source>A run</source>
@@ -80228,11 +80228,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Type the id of the caption again</source>
-        <translation>ސްނެޕްޝޮޓްގެ އައިޑީ އަލުން ޖަހާ</translation>
+        <translation>ސްނެޕްޝޮޓްގެ ID އަލުން ޖަހާ</translation>
     </message>
     <message>
         <source>Yes, take it back</source>
-        <translation>އާނ، ފަސްކޮށްލާ</translation>
+        <translation>އާނ، އަނބުރާ ގެންނަ</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -80244,7 +80244,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Choose</source>
-        <translation>ޚިޔާރުކުރޭ</translation>
+        <translation>ހިޔާރުކުރޭ</translation>
     </message>
     <message>
         <source>No run with a caption yet.</source>
@@ -80252,7 +80252,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The applied migrations that can take themselves back (they have a down()).</source>
-        <translation>އަމިއްލައަށް ފަސްކޮށްލެވޭ ހިންގި މައިގްރޭޝަންތައް (އެތަކުގައި down() އެއް އޮވޭ).</translation>
+        <translation>އަމިއްލައަށް އަނބުރާ ގެނެވޭ ހިންގި މައިގްރޭޝަންތައް (އެތަކުގައި down() އެއް އޮވޭ).</translation>
     </message>
     <message>
         <source>No applied migration has a down().</source>
@@ -80272,15 +80272,15 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
-        <translation>ހިންގުން ފަސްބިމުގައި %user ގެ ގޮތުގައި ކުރިއަށް ދޭ، އަދި އޭގެ ޞަފްޙާއިން އެ ދާ ގޮތް ދައްކާ. ފުރަތަމަ މައިގްރޭޝަނުގެ ކުރިން އިންސްޓޯލޭޝަނުގެ ސްނެޕްޝޮޓެއް ނެގޭ؛ މައިގްރޭޝަނެއް ފެއިލްވެއްޖެނަމަ ހިންގުން ހުއްޓި ސްނެޕްޝޮޓް އަނބުރާ ގެނެވޭ.</translation>
+        <translation>ހިންގުން ބެކްގްރައުންޑުގައި %user ގެ ގޮތުގައި ކުރިއަށް ދޭ، އަދި އޭގެ ޞަފްޙާއިން އެ ދާ ގޮތް ދައްކާ. ފުރަތަމަ މައިގްރޭޝަނުގެ ކުރިން އިންސްޓޯލޭޝަނުގެ ސްނެޕްޝޮޓެއް ނެގޭ؛ މައިގްރޭޝަނެއް ފެއިލްވެއްޖެނަމަ ހިންގުން ހުއްޓި ސްނެޕްޝޮޓް އަނބުރާ ގެނެވޭ.</translation>
     </message>
     <message>
         <source>Dry run first</source>
-        <translation>ފުރަތަމަ ޓެސްޓް ހިންގުމެއް</translation>
+        <translation>ފުރަތަމަ ޑްރައި ރަނެއް</translation>
     </message>
     <message>
         <source>The status could not be read: %problem</source>
-        <translation>ޙާލަތު ކިޔޭކަށް ނެތް: %problem</translation>
+        <translation>ޙާލަތު ކިޔެވޭކަށް ނެތް: %problem</translation>
     </message>
     <message>
         <source>Pending migrations</source>
@@ -80304,7 +80304,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
-        <translation>މި ފައިލުތަކަކީ ހިންގި ފައިލުތައް ނޫން. ސަބަބަކާއެކު ބަދަލު ގަބޫލު ނުކުރާހާ ހިނދަކު ހިންގުމަކުން އެތައް ދެކޮޅުހަދާ؛ އެތައް އަލުން ނުހިންގޭ، އާ ޗެކްސަމް ރެކޯޑްކުރެވި ސަބަބު އޮޑިޓް ލޮގްގައި ރައްކާކުރެވޭ.</translation>
+        <translation>މި ފައިލުތަކަކީ ހިންގި ފައިލުތައް ނޫން. ސަބަބަކާއެކު ބަދަލު ގަބޫލު ނުކުރާހާ ހިނދަކު ހިންގުމަކުން އެތައް ބަލައެއް ނުގަނޭ؛ އެތައް އަލުން ނުހިންގޭ، އާ ޗެކްސަމް ރެކޯޑްކުރެވި ސަބަބު އޮޑިޓް ލޮގްގައި ރައްކާކުރެވޭ.</translation>
     </message>
     <message>
         <source>Accept the changes</source>
@@ -80312,7 +80312,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Why</source>
-        <translation>ސަބަބު</translation>
+        <translation>ކީއްވެގެން</translation>
     </message>
     <message>
         <source>The defaults are the safe ones. Each box leaves a step out.</source>
@@ -80420,7 +80420,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Last run</source>
-        <translation>އެންމެ ފަހުގެ ހިންގުން</translation>
+        <translation>ފަހުން ހިނގި</translation>
     </message>
     <message>
         <source>The file changed after it was applied.</source>
@@ -80460,43 +80460,43 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Tick &quot;Yes, take it back&quot; first.</source>
-        <translation>ފުރަތަމަ “އާނ، ފަސްކޮށްލާ” ޓިކްކުރޭ.</translation>
+        <translation>ފުރަތަމަ &quot;އާނ، އަނބުރާ ގެންނަ&quot; ޓިކްކުރޭ.</translation>
     </message>
     <message>
         <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
-        <translation>ކުރީގެ ސްނެޕްޝޮޓެއް އަނބުރާ ގެނައުމަކީ މާހިރުންނަށް: “މިއިން އަނބުރާ ގެންނަ ކަންތައް އަހަރެން ދަނެން” ޓިކްކުރޭ.</translation>
+        <translation>ކުރީގެ ސްނެޕްޝޮޓެއް އަނބުރާ ގެނައުމަކީ މާހިރުންނަށް: &quot;މިއިން އަނބުރާ ގެންނަ ކަންތައް އަހަރެން ދަނެން&quot; ޓިކްކުރޭ.</translation>
     </message>
     <message>
         <source>Type the id of the caption again: %target</source>
-        <translation>ސްނެޕްޝޮޓްގެ އައިޑީ އަލުން ޖަހާ: %target</translation>
+        <translation>ސްނެޕްޝޮޓްގެ ID އަލުން ޖަހާ: %target</translation>
     </message>
     <message>
         <source>Choose at least one part to restore.</source>
-        <translation>އަނބުރާ ގެންނަން މަދުވެގެން އެއް ބައި ޚިޔާރުކުރޭ.</translation>
+        <translation>އަނބުރާ ގެންނަން މަދުވެގެން އެއް ބައި ހިޔާރުކުރޭ.</translation>
     </message>
     <message>
         <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
-        <translation>މި ހިންގުމުގެ ކުރިން ސްނެޕްޝޮޓެއް ނުނެގޭ: އޭގެ މައިގްރޭޝަންތައް އެއްމެއް ފަސްކޮށްލާ، ނުވަތަ ކުރީގެ ސްނެޕްޝޮޓެއް އަނބުރާ ގެންނަ.</translation>
+        <translation>މި ހިންގުމުގެ ކުރިން ސްނެޕްޝޮޓެއް ނުނެގޭ: އޭގެ މައިގްރޭޝަންތައް އެއްމެއް އަނބުރާ ގެންނަ، ނުވަތަ ކުރީގެ ސްނެޕްޝޮޓެއް އަނބުރާ ގެންނަ.</translation>
     </message>
     <message>
         <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
-        <translation>މި މައިގްރޭޝަން އަމިއްލައަށް ފަސްކޮށްނުލެވޭނެ: އެ ހިންގާފައެއް ނެތް، ނުވަތަ އޭގައި down() އެއް ނެތް.</translation>
+        <translation>މި މައިގްރޭޝަން އަމިއްލައަށް އަނބުރާ ނުގެނެވޭނެ: އެ ހިންގާފައެއް ނެތް، ނުވަތަ އޭގައި down() އެއް ނެތް.</translation>
     </message>
     <message>
         <source>The form could not be read.</source>
-        <translation>ފޯމު ކިޔޭކަށް ނެތް.</translation>
+        <translation>ފޯމު ކިޔެވޭކަށް ނެތް.</translation>
     </message>
     <message>
         <source>Choose the run to resume.</source>
-        <translation>ކުރިއަށް ގެންދާނެ ހިންގުން ޚިޔާރުކުރޭ.</translation>
+        <translation>އަލުން ފަށާނެ ހިންގުން ހިޔާރުކުރޭ.</translation>
     </message>
     <message>
         <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
-        <translation>ފުރަތަމަ “އާނ، މި މައިގްރޭޝަންތައް މިހާރު ހިންގާ” ޓިކްކުރޭ.</translation>
+        <translation>ފުރަތަމަ &quot;އާނ، މި މައިގްރޭޝަންތައް މިހާރު ހިންގާ&quot; ޓިކްކުރޭ.</translation>
     </message>
     <message>
         <source>Choose at least one migration.</source>
-        <translation>މަދުވެގެން އެއް މައިގްރޭޝަން ޚިޔާރުކުރޭ.</translation>
+        <translation>މަދުވެގެން އެއް މައިގްރޭޝަން ހިޔާރުކުރޭ.</translation>
     </message>
     <message>
         <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
@@ -80504,7 +80504,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>Give the reason why the changed migrations are accepted.</source>
-        <translation>ބަދަލުވި މައިގްރޭޝަންތައް ގަބޫލުކުރާ ސަބަބު ދީ.</translation>
+        <translation>ބަދަލުވި މައިގްރޭޝަންތައް ގަބޫލުކުރާ ސަބަބު ބަޔާންކުރޭ.</translation>
     </message>
     <message>
         <source>The reason is at most 500 characters.</source>
@@ -80520,7 +80520,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The run needs a signed-in user that exists.</source>
-        <translation>ހިންގުމަށް ސައިން އިން ވެފައިވާ، ހުރި ބޭނުންކުރާ މީހަކު ބޭނުންވޭ.</translation>
+        <translation>ހިންގުމަށް ސައިން އިން ވެފައިވާ، ހުރި ޔޫޒަރަކު ބޭނުންވޭ.</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
@@ -80528,7 +80528,7 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
-        <translation>proc_open ނިއްވާފައިވާތީ މިތާނގައި ހިންގުމެއް ނުފެށޭނެ. ސާވަރގައި ./console exp:migration:migrate --apply ހިންގާ.</translation>
+        <translation>proc_open ނިއްވާފައިވާތީ މިތާނގައި ހިންގުމެއް ނުފެށޭނެ. ސާރވަރުގައި ./console exp:migration:migrate --apply ހިންގާ.</translation>
     </message>
     <message>
         <source>The folder of the runs cannot be written: %detail</source>
@@ -80536,11 +80536,11 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The run was started but did not report its process id. Check %detail.</source>
-        <translation>ހިންގުން ފެށުނު ނަމަވެސް އޭގެ ޕްރޮސެސް އައިޑީ ރިޕޯޓެއް ނުކުރި. %detail ޗެކްކުރޭ.</translation>
+        <translation>ހިންގުން ފެށުނު ނަމަވެސް އޭގެ ޕްރޮސެސް ID ރިޕޯޓެއް ނުކުރި. %detail ޗެކްކުރޭ.</translation>
     </message>
     <message>
         <source>Name what to take back.</source>
-        <translation>ފަސްކޮށްލާނެ އެއްޗެއް ބުނޭ.</translation>
+        <translation>އަނބުރާ ގެންނާނެ އެއްޗެއް ބުނޭ.</translation>
     </message>
     <message>
         <source>The run could not be started.</source>

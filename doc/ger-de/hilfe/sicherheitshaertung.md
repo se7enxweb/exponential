@@ -174,6 +174,10 @@ die im Browser Skript ausführt (SVG, HTML), oder eine riesige oder fehlerhafte 
   bekannt ist, und die gespeicherte Datei wird mit Headern ausgeliefert, die verhindern, dass sie etwas ausführt
   ([SVG-Bilder](../bc/6.0/svg-bilder.md)).
 - Paket-Uploads brauchen die `package`-Richtlinien, und `ManagedByDeployment` sperrt sie.
+- Die Datentypen Datei, Medien und Bild lehnen jede Endung ab, die ein Webserver als Code ausführen kann
+  (`file.ini [FileSettings] FileExtensionBlackList[]`: `php` bis `php8`, `phtml`, `pht`, `phps`, `phar`, `phpt`,
+  `pgif`, `shtml`, `cgi`, `pl`, `asp`, `aspx`, `jsp`, `htaccess`), verglichen in Kleinbuchstaben
+  ([Korrekturen aus den Forks von Opencontent und Mugo Web](../funktionen/6.0/korrekturen-aus-den-legacy-forks.md#uploads-eine-längere-liste-abgelehnter-dateiendungen)).
 
 **Härten.** Halten Sie die Rewrite-Regeln nach jedem Upgrade aktuell (`.htaccess_root` oder der daraus abgeleitete
 nginx-Block; `./console exp:setup:htaccess` zeigt den Unterschied zwischen Ihrer `.htaccess` und den mitgelieferten

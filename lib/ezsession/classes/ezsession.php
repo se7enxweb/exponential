@@ -284,7 +284,8 @@ class eZSession
         $ini = eZINI::instance();
         if ( $sessionName !== false )
         {
-            if ( $sessionName !== session_name() )
+            // session_name() cannot change the name of a session already started (a warning)
+            if ( $sessionName !== session_name() && session_status() !== PHP_SESSION_ACTIVE )
             {
                 session_name( $sessionName );
             }
@@ -298,7 +299,7 @@ class eZSession
                 // Use md5 to make sure name is only consistent of alphanumeric characters
                 $sessionName .= isset( $access['name'] ) ? md5( $access['name'] ) : '';
             }
-            if ( $sessionName !== session_name() ) {
+            if ( $sessionName !== session_name() && session_status() !== PHP_SESSION_ACTIVE ) {
                 session_name( $sessionName );
             }
         }

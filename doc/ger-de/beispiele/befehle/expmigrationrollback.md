@@ -50,7 +50,7 @@ command prints the steps to restore by hand.
 | `--environment` | erforderlich | Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen |
 | `--login` | erforderlich | Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini) |
 | `--expert` |  | Einen Sicherungspunkt wiederherstellen, der nicht der vor einem Lauf angelegte ist (mit --confirm) |
-| `--confirm` | erforderlich | Die ID des Sicherungspunkts, noch einmal eingegeben, um ihn mit --expert wiederherzustellen |
+| `--confirm` | erforderlich | Die ID des Sicherungspunkts, noch einmal eingegeben, um sie mit --expert wiederherzustellen |
 | `--parts` | erforderlich | Nur diese Teile des Sicherungspunkts, eine Komma-Liste aus database, storage, settings, libraries, code (Standard [CaptionSettings] RestoreParts) |
 | `--backup-dir` | erforderlich | Wo die ohne git_manager angelegten Sicherungspunkte liegen (Standard var/backup/upgrade) |
 | `--no-safety-caption` |  | Wiederherstellen, ohne zuerst einen Sicherungspunkt des aktuellen Zustands anzulegen; auf einer Produktivinstallation ohne --force-no-caption verweigert |

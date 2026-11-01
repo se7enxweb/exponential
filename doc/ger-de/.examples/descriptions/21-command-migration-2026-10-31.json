@@ -237,7 +237,7 @@
     },
     "command:expmigrationrollback --confirm": {
         "en": "The id of the caption typed again, to restore it with --expert",
-        "de": "Die ID des Sicherungspunkts, noch einmal eingegeben, um ihn mit --expert wiederherzustellen"
+        "de": "Die ID des Sicherungspunkts, noch einmal eingegeben, um sie mit --expert wiederherzustellen"
     },
     "command:expmigrationrollback --environment": {
         "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",

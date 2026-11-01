@@ -21,7 +21,8 @@ if ( file_exists( 'config.cluster.php' ) )
 
 if ( !defined( 'CLUSTER_STORAGE_BACKEND' ) || CLUSTER_STORAGE_BACKEND === null )
 {
-    if ( CLUSTER_ENABLE_DEBUG )
+    // CLUSTER_ENABLE_DEBUG gets its default further down: an undefined constant is an Error in PHP 8
+    if ( defined( 'CLUSTER_ENABLE_DEBUG' ) && CLUSTER_ENABLE_DEBUG )
     {
         $message = "Clustering is disabled";
     }

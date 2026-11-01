@@ -130,6 +130,14 @@ jobs:
       - name: Run PHPUnit
         run: vendor/bin/phpunit --colors=always
 
+      # The Twig performance guard compares two engines in one process and skips itself while
+      # Xdebug is active: "coverage: xdebug" above sets xdebug.mode=coverage, which costs every PHP function call
+      # something, and a Twig render makes several times the calls of a compiled .tpl. Under it the twig/tpl ratio
+      # stood at 2.0-2.5 on PHP 8.2-8.5 from the day the guard arrived (budget 2.0), against 1.2-1.4 on PHP 8.5
+      # with xdebug.mode=off. Here Xdebug stays loaded but does nothing (mode off), as on a production system.
+      - name: Run the performance guard without Xdebug
+        run: php -d xdebug.mode=off vendor/bin/phpunit --colors=always tests/tests/lib/twig/expTwigPerformanceGuardTest.php
+
       - name: Clean CI Composer overlay
         if: always()
         run: rm -f "${CI_COMPOSER_FILE}" "${CI_COMPOSER_FILE%.json}.lock"
