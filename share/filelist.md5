@@ -12903,7 +12903,7 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 94bc98a826c7352b502724c0c179fb24  doc/ger-de/.examples/descriptions/19-graphql-api-starter-2026-10-30.json
 4b3123282c26437cef7e45cb65269a22  doc/ger-de/.examples/descriptions/20-editor-role-class-sets-2026-10-30.json
 3e5f3c6f2f15b756e23860af52d46bf0  doc/ger-de/.examples/descriptions/20-graphql-api-realtime-2026-10-30.json
-01c8bc579017b8db404b3c342e12d954  doc/ger-de/.examples/descriptions/21-command-migration-2026-10-31.json
+2f887927d55619aaf49e05ac1f3e4005  doc/ger-de/.examples/descriptions/21-command-migration-2026-10-31.json
 10a08e679ae26b663b8bf8d01d87cbba  doc/ger-de/.examples/descriptions/22-migration-ini-cronjob-and-template-check-2026-10-31.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
@@ -13149,7 +13149,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 a3dcf55e730c5618d14fc3750baee71e  doc/ger-de/beispiele/README.md
-b818b55b865b7522d64bb0ae55f2950e  doc/ger-de/beispiele/befehle/README.md
+b4d6b8ebf82dc2ff3e4bb9aacfb2c2eb  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 e5b188fae769a1201a72f50d98683190  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
 1b32eaf6f85858eaa99ca055cddccb7a  doc/ger-de/beispiele/befehle/adddefaultstates.md
@@ -13196,14 +13196,14 @@ cfae99e30e49125b83c0ec01171d96a8  doc/ger-de/beispiele/befehle/exphelpcontent.md
 19b04a6a050b7069674ce875bf8fb10c  doc/ger-de/beispiele/befehle/explogs.md
 2c996e08cf01a6dfd2d140fb2755efe9  doc/ger-de/beispiele/befehle/exploremipsumfill.md
 312b54fb5bb2e2fc3c3887737559e947  doc/ger-de/beispiele/befehle/explovestack.md
-3c28f759b20821c7366541acd4b2ecda  doc/ger-de/beispiele/befehle/expmigrationcaption.md
+50b2a3c85fa2783861c4c48fb3459d3d  doc/ger-de/beispiele/befehle/expmigrationcaption.md
 0363bcfb08cf88d580a327a7fbeb9d85  doc/ger-de/beispiele/befehle/expmigrationcheck.md
 78ae3ae8ddafd12ddc720900b76db1f9  doc/ger-de/beispiele/befehle/expmigrationdryrun.md
 d92554130d9e7348e96a83ad7fa4460a  doc/ger-de/beispiele/befehle/expmigrationgenerate.md
-84cf173cc0bb4a6dbfef30d5bca452bd  doc/ger-de/beispiele/befehle/expmigrationmigrate.md
+438cbc3993facaac23c8d34bae343f6a  doc/ger-de/beispiele/befehle/expmigrationmigrate.md
 92dd1af54aa80bf64dc6a4f7506e6a9b  doc/ger-de/beispiele/befehle/expmigrationpush.md
-cd2ce6835eb2520719f83a7b7376e965  doc/ger-de/beispiele/befehle/expmigrationresume.md
-c1777358836d02b41032c64d8fed5b7b  doc/ger-de/beispiele/befehle/expmigrationrollback.md
+2cbe926a6a8da828f56680bf88d77647  doc/ger-de/beispiele/befehle/expmigrationresume.md
+3c4410a7a6dc84eb8e314003b5fdb49d  doc/ger-de/beispiele/befehle/expmigrationrollback.md
 903242079d58b9a6899d0ecdce5fe5d3  doc/ger-de/beispiele/befehle/expmigrationstatus.md
 16fe7df54dc979294b4408ba544d1b42  doc/ger-de/beispiele/befehle/exppatterncatalogue.md
 26d0f974b931b2d2925b580ec98f1fce  doc/ger-de/beispiele/befehle/exprepair.md
