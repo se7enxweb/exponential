@@ -75,6 +75,7 @@ class History extends Page
         {
         }
         return self::page( 'history.tpl', array(
+            'github' => \expStaticAdmin::github( $target, true ),
             'target' => \expStaticAdmin::overview( $target ),
             'messages' => $messages,
             'runs' => $runs,

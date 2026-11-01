@@ -1,7 +1,8 @@
 {* The staticpublish/history view: the publishes and rollbacks, the tags and commits, and the rollback. Variables:
    target (expStaticAdmin::overview()), messages, runs (exp_static_run rows), tags (name, number, commit, time,
    subject; newest first), commits (commit, time, author, subject), commit_url (the host's address of a commit, '' when
-   unknown), chosen (the tag chosen in a refused rollback), running, view. *}
+   unknown), chosen (the tag chosen in a refused rollback), running, view, github (expStaticAdmin::github() with the
+   state of GitHub Pages). *}
 <div class="a4-page a4-setup-publish" id="exp-staticpublish-history">
 
 <div class="a4-pagehead">
@@ -16,6 +17,7 @@
 
 {foreach $messages as $m}<div class="a4-notice is-bad" role="alert"><p>{$m.text|wash}</p></div>{/foreach}
 {if $running}<div class="a4-notice" role="status"><p><span class="a4-status is-running"><span class="a4-dot" aria-hidden="true"></span><a href={concat( 'staticpublish/log/', $running.id )|ezurl}>{'A job is going on, started by %user'|i18n( 'design/admin/staticpublish',, hash( '%user', $running.user ) )|wash}</a></span></p></div>{/if}
+{include uri='design:staticpublish/parts/github.tpl' github=$github}
 
 <section class="a4-card is-flush a4-section" aria-labelledby="sp-runs">
     <div class="a4-card-head"><h2 class="a4-h3 a4-card-title" id="sp-runs">{'Publishes'|i18n( 'design/admin/staticpublish' )}</h2></div>

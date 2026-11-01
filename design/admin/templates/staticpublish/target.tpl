@@ -5,7 +5,9 @@
    target), credential (kind, token), siteaccesses (name, url: the front siteaccesses), secret_names, key
    (expStaticAdmin::deployKey(), null for a new target), key_secret, extras, post_process, triggers, notify,
    link_relative, link_base, errors, warnings, messages, review (bool), diff (the lines to be written), enabled,
-   enable (switch on when saving), site_limit, file_limit. *}
+   enable (switch on when saving), site_limit, file_limit, github (expStaticAdmin::github()), github_report
+   (expStaticGitHub::setupTarget() after "Set up on GitHub"), dns (expStaticDnsCheck::check() after "Check the DNS"),
+   pages_a (GitHub Pages' A records), start_step (the step to open after one of those, 0 for the first). *}
 <div class="a4-page a4-setup-publish" id="exp-staticpublish-target">
 
 <div class="a4-pagehead">
@@ -22,7 +24,7 @@
 
 {if $target}{include uri='design:staticpublish/parts/tabs.tpl' target=$target view=$view}{/if}
 
-{foreach $messages as $m}<div class="a4-notice is-bad" role="alert"><p>{$m.text|wash}</p></div>{/foreach}
+{foreach $messages as $m}<div class="a4-notice is-{if eq( $m.kind, 'warn' )}warn{else}bad{/if}" role="alert"><p>{$m.text|wash}</p></div>{/foreach}
 {if $errors|count}
 <div class="a4-notice is-bad a4-error-summary" role="alert" tabindex="-1">
     <p class="a4-notice-title">{'Check these settings'|i18n( 'design/admin/staticpublish' )}</p>
@@ -66,7 +68,7 @@
 {else}
 {* ---- the wizard ---------------------------------------------------------------------------------------------- *}
 <form method="post" action={concat( 'staticpublish/target/', cond( $is_new, 'new', $id ) )|ezurl} class="a4-form" id="sp-wizard"
-      data-text-step="{'Step %step of %total'|i18n( 'design/admin/staticpublish' )|wash}">
+      data-text-step="{'Step %step of %total'|i18n( 'design/admin/staticpublish' )|wash}" data-sp-start="{$start_step|wash}">
 {if $enable}<input type="hidden" name="EnableOnSave" value="1" />{/if}
 <input type="hidden" name="Target[Credential]" value="{$settings.Credential|wash}" />
 <ol class="a4-steps" id="sp-wizard-steps" aria-label="{'Steps'|i18n( 'design/admin/staticpublish' )|wash}">
@@ -132,7 +134,13 @@
         <div class="a4-notice is-info">
             <p class="a4-notice-title">{'GitHub Pages limits'|i18n( 'design/admin/staticpublish' )}</p>
             <p>{'A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.'|i18n( 'design/admin/staticpublish',, hash( '%site', $site_limit|si( 'byte' ), '%file', $file_limit|si( 'byte' ) ) )|wash}</p>
+            <p>{'Every push is checked against these limits first.'|i18n( 'design/admin/staticpublish' )} <a href={'exphelp/viewer/help/static-publishing/github-pages-limits-and-terms.md'|ezurl}>{'Limits and terms'|i18n( 'design/admin/staticpublish' )}</a></p>
         </div>
+        {if $github.available}
+        <p class="a4-help">{'With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).'|i18n( 'design/admin/staticpublish' )}</p>
+        {else}
+        <p class="a4-warn-text">{'The GitHub integration is not available here: %problem. Publishing to the branch works all the same; switch GitHub Pages on in the repository\'s settings.'|i18n( 'design/admin/staticpublish',, hash( '%problem', $github.problem ) )|wash}</p>
+        {/if}
     </div>
     <div class="a4-card-foot a4-actions" data-sp-nav="2" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="1">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="3">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
 </section>
@@ -148,9 +156,14 @@
                 <li><label><input type="radio" name="CredentialKind" value="token"{if eq( $credential.kind, 'token' )} checked="checked"{/if} /> <span><strong>{'A token from Setup > Secrets'|i18n( 'design/admin/staticpublish' )}</strong> <span class="a4-help">{'For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
                 <li><label><input type="radio" name="CredentialKind" value="sshkey"{if eq( $credential.kind, 'sshkey' )} checked="checked"{/if} /> <span><strong>{'A deploy key made for this target'|i18n( 'design/admin/staticpublish' )}</strong> <span class="a4-help">{'For an SSH address. The key is made after saving; you add its public half to the repository.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
                 <li><label><input type="radio" name="CredentialKind" value="none"{if eq( $credential.kind, 'none' )} checked="checked"{/if} /> <span><strong>{'None'|i18n( 'design/admin/staticpublish' )}</strong> <span class="a4-help">{'The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
-                {if eq( $credential.kind, 'app' )}<li><label><input type="radio" name="CredentialKind" value="" checked="checked" /> <span><strong>{'GitHub App'|i18n( 'design/admin/staticpublish' )}</strong> <code class="a4-code">{$settings.Credential|wash}</code></span></label></li>{/if}
+                <li><label><input type="radio" name="CredentialKind" value="app"{if eq( $credential.kind, 'app' )} checked="checked"{/if} /> <span><strong>{'A GitHub App'|i18n( 'design/admin/staticpublish' )}</strong> <span class="a4-help">{'For an https:// address on GitHub. The App set up for this installation signs in; it needs the installation id.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
             </ul>
         </fieldset>
+        <div class="a4-field">
+            <label class="a4-label" for="sp-app">{'Installation id of the GitHub App'|i18n( 'design/admin/staticpublish' )}</label>
+            <input class="a4-input" id="sp-app" name="CredentialApp" value="{$credential.app|wash}" maxlength="20" inputmode="numeric" autocomplete="off" />
+            <span class="a4-help">{'Only with a GitHub App: the number at the end of the address of the App\'s installation on GitHub. The App itself is set in staticcache.ini (GitHubAppId, GitHubAppKey).'|i18n( 'design/admin/staticpublish' )}</span>
+        </div>
         <div class="a4-field">
             <label class="a4-label" for="sp-token">{'Name of the token in Setup > Secrets'|i18n( 'design/admin/staticpublish' )}</label>
             <input class="a4-input" id="sp-token" name="CredentialToken" value="{$credential.token|wash}" list="sp-secret-names" maxlength="104" autocomplete="off" />
@@ -158,7 +171,7 @@
             <span class="a4-help">{'Only with a token. env:NAME reads an environment variable of the server instead.'|i18n( 'design/admin/staticpublish' )} <a href={'secrets/list'|ezurl}>{'Setup > Secrets'|i18n( 'design/admin/staticpublish' )}</a></span>
         </div>
         <p class="a4-help">{'A deploy key is kept as the secret %secret.'|i18n( 'design/admin/staticpublish',, hash( '%secret', $key_secret ) )|wash}{if and( $key, $key.exists )} {'This target has one.'|i18n( 'design/admin/staticpublish' )}{/if}</p>
-        <p class="a4-help">{'Signing in with a GitHub App comes with the GitHub integration.'|i18n( 'design/admin/staticpublish' )}</p>
+        <p class="a4-help"><a href={'exphelp/viewer/help/static-publishing/connect-to-github-token-key-or-app.md'|ezurl}>{'Which to choose: token, deploy key or GitHub App'|i18n( 'design/admin/staticpublish' )}</a></p>
     </div>
     <div class="a4-card-foot a4-actions" data-sp-nav="3" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="2">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="4">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
 </section>
@@ -192,9 +205,35 @@
             <legend>{'How GitHub Pages receives the build'|i18n( 'design/admin/staticpublish' )}</legend>
             <ul class="a4-radios">
                 <li><label><input type="radio" name="Target[Delivery]" value="branch"{if eq( $settings.Delivery, 'branch' )} checked="checked"{/if} /> <span><strong>{'From the branch'|i18n( 'design/admin/staticpublish' )}</strong> <span class="a4-help">{'GitHub serves the branch as it is pushed. The default.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
-                <li><label><input type="radio" name="Target[Delivery]" value="actions"{if eq( $settings.Delivery, 'actions' )} checked="checked"{/if} /> <span><strong>{'GitHub Actions'|i18n( 'design/admin/staticpublish' )}</strong> <span class="a4-help">{'A workflow of the repository publishes it.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
+                <li><label><input type="radio" name="Target[Delivery]" value="actions"{if eq( $settings.Delivery, 'actions' )} checked="checked"{/if} /> <span><strong>{'GitHub Actions'|i18n( 'design/admin/staticpublish' )}</strong> <span class="a4-help">{'A workflow of the repository publishes it. The build writes the workflow file; leave the folder empty.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
             </ul>
+            <span class="a4-help"><a href={'exphelp/viewer/help/static-publishing/choose-branch-or-github-actions.md'|ezurl}>{'Branch or GitHub Actions?'|i18n( 'design/admin/staticpublish' )}</a></span>
         </fieldset>
+        <div class="a4-inset a4-stack" id="sp-github">
+            <p class="a4-notice-title">{'On GitHub'|i18n( 'design/admin/staticpublish' )}</p>
+            {if $github_report}
+            <ul class="a4-plain" role="status">
+            {foreach $github_report.steps as $step}
+                <li><span class="a4-status is-{if eq( $step.state, 'failed' )}bad{elseif eq( $step.state, 'planned' )}warn{else}ok{/if}"><span class="a4-dot" aria-hidden="true"></span>{$step.step|wash}</span> {$step.message|wash}</li>
+            {/foreach}
+            {foreach $github_report.errors as $error}{if $github_report.steps|count|not}<li class="a4-warn-text">{$error|wash}</li>{/if}{/foreach}
+            {foreach $github_report.warnings as $warning}<li class="a4-warn-text">{$warning|wash}</li>{/foreach}
+            </ul>
+            {/if}
+            {if $github.usable}
+            <p class="a4-help">{'Creates the repository %repo when it is missing (when asked), switches GitHub Pages on from the branch or from GitHub Actions as saved, and sets the custom domain and HTTPS. It uses the saved settings: save changes first.'|i18n( 'design/admin/staticpublish',, hash( '%repo', concat( $github.owner, '/', $github.repo ) ) )|wash}</p>
+            <label class="a4-check"><input type="checkbox" name="GitHubCreate" value="1" /> <span>{'Create the repository if it does not exist'|i18n( 'design/admin/staticpublish' )}</span></label>
+            <ul class="a4-radios">
+                <li><label><input type="radio" name="GitHubVisibility" value="public" checked="checked" /> <span>{'Public'|i18n( 'design/admin/staticpublish' )} <span class="a4-help">{'Needed for GitHub Pages on a free plan.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
+                <li><label><input type="radio" name="GitHubVisibility" value="private" /> <span>{'Private'|i18n( 'design/admin/staticpublish' )} <span class="a4-help">{'GitHub Pages serves a private repository only on a paid plan.'|i18n( 'design/admin/staticpublish' )}</span></span></label></li>
+            </ul>
+            <div class="a4-actions"><button type="submit" class="a4-btn" name="GitHubSetupButton" value="1">{'Set up on GitHub'|i18n( 'design/admin/staticpublish' )}</button></div>
+            {elseif $is_new}
+            <p class="a4-help">{'After saving a target with a GitHub repository and a token or GitHub App, this step can create the repository and switch GitHub Pages on. Otherwise create the repository on GitHub first; an empty one is fine.'|i18n( 'design/admin/staticpublish' )}</p>
+            {else}
+            <p class="a4-help">{'Create the repository on GitHub and switch GitHub Pages on in its settings (Settings > Pages).'|i18n( 'design/admin/staticpublish' )}{if $github.problem} {'The GitHub steps are not available for this target: %problem.'|i18n( 'design/admin/staticpublish',, hash( '%problem', $github.problem ) )|wash}{/if}</p>
+            {/if}
+        </div>
     </div>
     <div class="a4-card-foot a4-actions" data-sp-nav="4" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="3">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="5">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>
 </section>
@@ -240,6 +279,20 @@
             <label class="a4-label" for="sp-domain">{'Custom domain'|i18n( 'design/admin/staticpublish' )}</label>
             <input class="a4-input" id="sp-domain" name="Target[CustomDomain]" value="{$settings.CustomDomain|wash}" maxlength="253" spellcheck="false" />
             <span class="a4-help">{'www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.'|i18n( 'design/admin/staticpublish' )}</span>
+        </div>
+        <div class="a4-inset a4-stack" id="sp-dns">
+            <p class="a4-help">{'GitHub Pages: a subdomain (www.example.com) needs a CNAME record to <owner>.github.io; an apex domain (example.com) the A records %ips.'|i18n( 'design/admin/staticpublish',, hash( '%ips', $pages_a|implode( ', ' ) ) )|wash} <a href={'exphelp/viewer/help/static-publishing/use-your-own-domain.md'|ezurl}>{'Use your own domain'|i18n( 'design/admin/staticpublish' )}</a></p>
+            <div class="a4-actions"><button type="submit" class="a4-btn" name="DnsCheckButton" value="1">{'Check the DNS'|i18n( 'design/admin/staticpublish' )}</button></div>
+            {if $dns}
+            <div role="status">
+                <p><span class="a4-status is-{if $dns.ok}ok{else}bad{/if}"><span class="a4-dot" aria-hidden="true"></span>{if $dns.ok}{'The DNS of %domain points at GitHub Pages.'|i18n( 'design/admin/staticpublish',, hash( '%domain', $dns.domain ) )|wash}{else}{'The DNS of %domain does not point at GitHub Pages yet.'|i18n( 'design/admin/staticpublish',, hash( '%domain', $dns.domain ) )|wash}{/if}</span></p>
+                {if $dns.problems|count}<ul>{foreach $dns.problems as $problem}<li>{$problem|wash}</li>{/foreach}</ul>{/if}
+                {if $dns.fixes|count}<p class="a4-meta">{'Set these records at the provider of the domain:'|i18n( 'design/admin/staticpublish' )}</p>
+                <pre class="a4-pre" tabindex="0">{foreach $dns.fixes as $fix}{$fix|wash}
+{/foreach}</pre>{/if}
+                {if $dns.notes|count}<ul class="a4-plain">{foreach $dns.notes as $note}<li class="a4-help">{$note|wash}</li>{/foreach}</ul>{/if}
+            </div>
+            {/if}
         </div>
     </div>
     <div class="a4-card-foot a4-actions" data-sp-nav="6" hidden="hidden"><button type="button" class="a4-btn" data-sp-next="5">{'Back'|i18n( 'design/admin/staticpublish' )}</button><button type="button" class="a4-btn a4-btn-primary" data-sp-next="7">{'Next'|i18n( 'design/admin/staticpublish' )}</button></div>

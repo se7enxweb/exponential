@@ -561,6 +561,14 @@ class expStaticBuild
             $extras['robots.txt'] = expStaticExtras::robots( $publicUrl, $writeSitemap );
         if ( $writeSitemap )
             $extras['sitemap.xml'] = (string)expStaticExtras::sitemap( $publicUrl, $sitemap );
+        // the GitHub Actions workflow that deploys the branch: with Delivery=actions, or asked for as an extra
+        if ( $target->setting( 'Kind' ) === 'github-pages' && ( $target->setting( 'Delivery' ) === 'actions' || $target->hasExtra( 'workflow' ) ) )
+        {
+            if ( trim( (string)$target->setting( 'Folder' ), '/' ) !== '' )
+                $this->warning( 'The GitHub Actions workflow is written only when the build is at the root of the branch (Folder empty): GitHub reads workflows from .github/workflows there.' );
+            else
+                $extras[expStaticGitHub::WORKFLOW_FILE] = expStaticGitHub::workflow( (string)$target->setting( 'Branch' ) );
+        }
         foreach ( $extras as $file => $content )
         {
             if ( $manifest->has( $file ) )

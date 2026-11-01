@@ -57,5 +57,7 @@
         if ( link ) link.addEventListener( 'click', function ( event ) { event.preventDefault(); show( i + 1, true ); } );
     } );
     var start = /^#sp-step-(\d)$/.exec( window.location.hash || '' );
-    show( start ? parseInt( start[1], 10 ) : 1, false );
+    // the step a GitHub action of the form came back to (data-sp-start), else the first
+    var back = parseInt( form.getAttribute( 'data-sp-start' ) || '0', 10 );
+    show( start ? parseInt( start[1], 10 ) : ( back > 0 ? back : 1 ), false );
 }());

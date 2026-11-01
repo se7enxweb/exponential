@@ -4,11 +4,13 @@
  * changes a target, one step at a time (page/staticpublish_wizard.js; without JavaScript all steps show at once):
  *
  *   1. the site: the target's id and name, the front siteaccess (administration siteaccesses are never offered)
- *   2. the host: GitHub Pages or another git host
- *   3. the credential: a token named in Setup > Secrets, a deploy key made for the target, or none
- *   4. the repository: the git address, branch, folder and (GitHub) branch or Actions
+ *   2. the host: GitHub Pages or another git host, and whether the GitHub integration can be used
+ *   3. the credential: a token named in Setup > Secrets, a deploy key made for the target, a GitHub App, or none
+ *   4. the repository: the git address, branch, folder and (GitHub) branch or Actions; for a saved GitHub target
+ *      "Set up on GitHub" (GitHubSetupButton) creates the repository when asked and switches Pages on
+ *      (expStaticGitHub::setupTarget(), "Verify it's you")
  *   5. links and base path, with a live example of a rewritten link
- *   6. the custom domain
+ *   6. the custom domain, with the DNS check (DnsCheckButton, expStaticDnsCheck)
  *   7. extras, post-processing, search, forms, exclusions, the crawl
  *   8. triggers, schedule, notifications, webhook
  *   9. review: Review checks the settings (expStaticTarget::validate()) and shows the lines that will be written to
@@ -103,6 +105,37 @@ class Target extends Page
             }
         }
 
+        // the GitHub steps: set the saved target up on GitHub (step 4), the DNS check of the domain entered (step 6);
+        // both keep what was entered in the form
+        $github = \expStaticAdmin::github( $target );
+        $githubReport = null;
+        $dns = null;
+        if ( self::isPost() && ( isset( $_POST['GitHubSetupButton'] ) || isset( $_POST['DnsCheckButton'] ) ) )
+        {
+            if ( $isNew )
+                $id = isset( $_POST['TargetIdentifier'] ) ? strtolower( trim( (string)$_POST['TargetIdentifier'] ) ) : '';
+            $settings = \expStaticAdmin::settingsFromPost( $_POST, $id ) + $settings;
+            $enable = !empty( $_POST['EnableOnSave'] );
+            if ( isset( $_POST['DnsCheckButton'] ) )
+            {
+                $domain = strtolower( trim( (string)$settings['CustomDomain'] ) );
+                if ( $domain === '' )
+                    $messages[] = array( 'kind' => 'warn', 'text' => self::t( 'Enter the custom domain first.' ) );
+                else
+                {
+                    $remote = \expStaticGitHub::parseRemote( (string)$settings['Remote'] );
+                    $dns = ( new \expStaticDnsCheck() )->check( $domain, $remote ? $remote['owner'] : '' );
+                }
+            }
+            else if ( $target === null || !$github['usable'] )
+                $messages[] = array( 'kind' => 'bad', 'text' => self::t( 'Save the target with a GitHub repository and a token or GitHub App first.' ) );
+            else
+                $githubReport = \expStaticGitHub::setupTarget( $target, array(
+                    'create' => !empty( $_POST['GitHubCreate'] ),
+                    'private' => isset( $_POST['GitHubVisibility'] ) && $_POST['GitHubVisibility'] === 'private',
+                ) );
+        }
+
         $front = array();
         foreach ( $context['siteaccesses'] as $name )
             if ( !in_array( $name, $context['admin'], true ) && !\expStaticTarget::adminName( $name ) )
@@ -135,6 +168,11 @@ class Target extends Page
             'enable' => $enable,
             'site_limit' => \expStaticAdmin::GITHUB_SITE_BYTES,
             'file_limit' => \expStaticAdmin::GITHUB_FILE_BYTES,
+            'github' => $github,
+            'github_report' => $githubReport,
+            'dns' => $dns,
+            'pages_a' => \expStaticGitHub::PAGES_A,
+            'start_step' => $dns !== null || isset( $_POST['DnsCheckButton'] ) ? 6 : ( $githubReport !== null || isset( $_POST['GitHubSetupButton'] ) ? 4 : 0 ),
         ), self::path( $isNew ? self::t( 'New target' ) : self::t( 'Settings' ), $target ) );
     }
 }

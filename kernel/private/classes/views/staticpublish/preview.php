@@ -87,6 +87,7 @@ class Preview extends Page
         $userId = (int)\eZUser::currentUser()->attribute( 'contentobject_id' );
 
         return self::page( 'preview.tpl', array(
+            'github' => \expStaticAdmin::github( $target, true ),
             'target' => \expStaticAdmin::overview( $target ),
             'messages' => $messages,
             'enabled' => \expStaticTarget::enabled(),

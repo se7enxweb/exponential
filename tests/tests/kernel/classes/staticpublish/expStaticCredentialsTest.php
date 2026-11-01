@@ -196,7 +196,7 @@ class expStaticCredentialsTest extends PHPUnit\Framework\TestCase
         $missing = $this->credentials( 'token:other_token' )->problem();
         $this->assertSame( 'the secret other_token is not set (Setup > Secrets, or env:VARIABLE)', $missing );
         $this->assertStringContainsString( 'env:EXP_STATIC_TEST_UNSET', $this->credentials( 'token:env:EXP_STATIC_TEST_UNSET', array() )->problem() );
-        $this->assertStringContainsString( 'GitHub integration', $this->credentials( 'app:4711' )->problem() );
+        $this->assertMatchesRegularExpression( '/GitHub integration|GitHub App is not set up/', $this->credentials( 'app:4711' )->problem() );
         $this->assertStringContainsString( 'no private key', $this->credentials( 'sshkey:pages_token' )->problem() );
         $this->assertStringContainsString( 'more than one line', $this->credentials( 'token:two', array( 'two' => "a\nb" ) )->problem() );
 

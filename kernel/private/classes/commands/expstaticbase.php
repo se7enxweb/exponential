@@ -38,6 +38,8 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'exp:static:push' => '[format:]',
             'exp:static:keys' => '[generate][replace][format:]',
             'exp:static:status' => '[limit:][format:]',
+            'exp:static:github' => '[create-repo][public][private][pages:][domain:][no-https][plan][client-id:][secret:][format:]',
+            'exp:static:dns' => '[owner:][format:]',
         );
     }
 
@@ -57,6 +59,8 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'exp:static:push' => '[target]',
             'exp:static:keys' => '[target]',
             'exp:static:status' => '[target]',
+            'exp:static:github' => '[action][target]',
+            'exp:static:dns' => '[domain]',
         );
     }
 
@@ -86,6 +90,16 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'generate' => 'Make a new deploy key (ed25519) and store its private half in the secret store',
             'replace' => 'With --generate: replace the target\'s deploy key (the old one stops working)',
             'limit' => 'How many of the last runs to list (default 10)',
+            'create-repo' => 'setup: create the repository when it does not exist (empty; the first publish fills it)',
+            'public' => 'With --create-repo: a public repository (the default; GitHub Pages on a free plan needs one)',
+            'private' => 'With --create-repo: a private repository (GitHub Pages serves it only on a paid plan)',
+            'pages' => 'setup: branch or actions instead of the target\'s Delivery, or off to leave GitHub Pages as it is',
+            'domain' => 'setup: this custom domain instead of the target\'s CustomDomain (none removes it)',
+            'no-https' => 'setup: do not enforce HTTPS for the custom domain',
+            'plan' => 'setup: only say what would be done, change nothing',
+            'client-id' => 'signin: the client id of the OAuth App (default [StaticPublishSettings] GitHubOAuthClientId)',
+            'secret' => 'signin: the name of the secret the token is kept as (Setup > Secrets); the target names it as Credential=token:<secret>',
+            'owner' => 'The GitHub account or organization that owns the repository (the CNAME must name <owner>.github.io)',
             'login' => 'Run as this user (the administration starts its jobs so); recorded as who ran it',
             'run-id' => 'The id of the run (date-time-6 hex digits) instead of a new one (the administration passes its job\'s id)',
             'progress' => 'Also append the progress, one JSON object per line, to this file (the administration follows it)',

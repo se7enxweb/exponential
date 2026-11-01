@@ -36,6 +36,8 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:static:push' => '[format:]',
         'exp:static:keys' => '[generate][replace][format:]',
         'exp:static:status' => '[limit:][format:]',
+        'exp:static:github' => '[create-repo][public][private][pages:][domain:][no-https][plan][client-id:][secret:][format:]',
+        'exp:static:dns' => '[owner:][format:]',
     );
 
     /** The arguments. Add, never change or remove. */
@@ -48,6 +50,8 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:static:push' => '[target]',
         'exp:static:keys' => '[target]',
         'exp:static:status' => '[target]',
+        'exp:static:github' => '[action][target]',
+        'exp:static:dns' => '[domain]',
     );
 
     /** command => entry point in bin/php */
@@ -61,6 +65,8 @@ class expStaticCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:static:push' => 'expstaticpush',
         'exp:static:keys' => 'expstatickeys',
         'exp:static:status' => 'expstaticstatus',
+        'exp:static:github' => 'expstaticgithub',
+        'exp:static:dns' => 'expstaticdns',
     );
 
     /** The keys of a publish, rollback or push report (expStaticPublisher), the push states and run states. Add only. */

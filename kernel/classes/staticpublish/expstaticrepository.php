@@ -69,14 +69,16 @@ class expStaticRepository
      * @param string $checkout the target's folder (expStaticTarget::directory())
      * @param expStaticCredentials $credentials
      * @param array $options push (bool, default true), commit_name, commit_email, git_manager (bool: use
-     *        expUpgradeGit when active, default true)
+     *        expUpgradeGit when active, default true), max_site_bytes, max_file_bytes (the limits of a github-pages target
+     *        checked before every push; default [StaticPublishSettings] MaxSiteBytes and MaxFileBytes)
      */
     public function __construct( expStaticTarget $target, $checkout, expStaticCredentials $credentials, array $options = array() )
     {
         $this->target = $target;
         $this->checkout = rtrim( str_replace( '\\', '/', (string)$checkout ), '/' );
         $this->credentials = $credentials;
-        $this->options = $options + array( 'push' => true, 'commit_name' => 'Exponential static publishing', 'commit_email' => '', 'git_manager' => true );
+        $this->options = $options + array( 'push' => true, 'commit_name' => 'Exponential static publishing', 'commit_email' => '', 'git_manager' => true,
+                                           'max_site_bytes' => null, 'max_file_bytes' => null );
     }
 
     /** @return string the checkout */
@@ -431,6 +433,18 @@ class expStaticRepository
             $result['problems'][] = "not pushed: $problem; exp:static:push tries again";
             return self::PENDING;
         }
+        $limits = $this->checkLimits();
+        if ( $limits !== null )
+        {
+            $result['limits'] = $limits;
+            $result['warnings'] = array_merge( $result['warnings'], $limits['warnings'] );
+            if ( $limits['errors'] )
+            {
+                foreach ( $limits['errors'] as $error )
+                    $result['problems'][] = "not pushed: $error; make the build smaller (Assets, ExcludePaths) and publish again";
+                return self::PENDING;
+            }
+        }
         $branch = $this->branch();
         $id = $this->target->id();
         $this->syncRemote();
@@ -450,6 +464,32 @@ class expStaticRepository
         }
         $result['problems'][] = 'the push failed (' . $this->firstLine( $push ) . '): the commit stays local and exp:static:push or the cronjob part staticpublish tries again';
         return self::PENDING;
+    }
+
+    /**
+     * The limits of GitHub Pages for the build in the checkout (expStaticGitHub::limits()), checked before every
+     * push of a github-pages target: a push over them is refused, as GitHub would refuse it or not serve it.
+     *
+     * @return array|null null for another kind of target or a checkout without a manifest
+     */
+    public function checkLimits()
+    {
+        if ( $this->target->setting( 'Kind' ) !== 'github-pages' || !class_exists( 'expStaticGitHub' ) )
+            return null;
+        $manifest = expStaticManifest::load( $this->checkout . '/' . $this->prefix() );
+        if ( $manifest === null )
+            return null;
+        $setting = function ( $name, $default )
+        {
+            if ( !class_exists( 'eZINI' ) )
+                return $default;
+            $ini = eZINI::instance( 'staticcache.ini' );
+            return $ini->hasVariable( 'StaticPublishSettings', $name ) ? (int)$ini->variable( 'StaticPublishSettings', $name ) : $default;
+        };
+        return expStaticGitHub::limits( $manifest, array(
+            'max_site_bytes' => $this->options['max_site_bytes'] !== null ? (int)$this->options['max_site_bytes'] : $setting( 'MaxSiteBytes', expStaticGitHub::SITE_BYTES ),
+            'max_file_bytes' => $this->options['max_file_bytes'] !== null ? (int)$this->options['max_file_bytes'] : $setting( 'MaxFileBytes', expStaticGitHub::FILE_BYTES ),
+        ) );
     }
 
     /**

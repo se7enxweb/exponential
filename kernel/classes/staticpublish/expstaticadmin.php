@@ -324,6 +324,8 @@ class expStaticAdmin
             $out['Credential'] = 'token:' . $token;
         else if ( $kind === 'sshkey' )
             $out['Credential'] = 'sshkey:' . expStaticCredentials::keySecretName( $targetId );
+        else if ( $kind === 'app' )
+            $out['Credential'] = 'app:' . ( isset( $post['CredentialApp'] ) ? preg_replace( '/\D/', '', (string)$post['CredentialApp'] ) : '' );
         else if ( $kind === 'none' )
             $out['Credential'] = 'none';
         if ( isset( $out['Links'], $out['BasePath'] ) && $out['Links'] === 'relative' && $out['BasePath'] === '/' )
@@ -335,14 +337,62 @@ class expStaticAdmin
      * The kind and token name of a Credential, for the wizard. Pure.
      *
      * @param string $credential
-     * @return array kind (token, sshkey, app, none), token (the secret name of a token)
+     * @return array kind (token, sshkey, app, none), token (the secret name of a token), app (the installation of a
+     *         GitHub App)
      */
     public static function credentialChoice( $credential )
     {
         $credential = (string)$credential;
         $kind = strpos( $credential, ':' ) === false ? $credential : substr( $credential, 0, strpos( $credential, ':' ) );
         return array( 'kind' => in_array( $kind, expStaticTarget::CREDENTIAL_KINDS, true ) ? $kind : 'none',
-                      'token' => $kind === 'token' ? (string)substr( $credential, 6 ) : '' );
+                      'token' => $kind === 'token' ? (string)substr( $credential, 6 ) : '',
+                      'app' => $kind === 'app' ? (string)substr( $credential, 4 ) : '' );
+    }
+
+    /**
+     * What the administration shows of a target on GitHub: whether the GitHub steps can be used for it and, when
+     * asked, its state there (one short round of API calls).
+     *
+     * @param expStaticTarget|null $target
+     * @param bool $status also ask GitHub for the repository, Pages and the last Pages build
+     * @param array $options expStaticGitHub's (http, api, credentials) for tests
+     * @return array github (the target is a github-pages one on github.com), available (the integration can be used
+     *         here), usable (and with this target's credential), problem (why not), owner, repo, pages_url, status
+     *         (expStaticGitHub::statusFor() or null)
+     */
+    public static function github( $target, $status = false, array $options = array() )
+    {
+        $out = array( 'github' => false, 'available' => expStaticGitHub::available(), 'usable' => false, 'problem' => expStaticGitHub::unavailable(),
+                      'owner' => '', 'repo' => '', 'pages_url' => '', 'status' => null );
+        if ( !$target instanceof expStaticTarget || $target->setting( 'Kind' ) !== 'github-pages' )
+            return $out;
+        $remote = expStaticGitHub::parseRemote( (string)$target->setting( 'Remote' ) );
+        if ( $remote === null )
+            return $out;
+        $out['github'] = true;
+        $out['owner'] = $remote['owner'];
+        $out['repo'] = $remote['repo'];
+        $out['pages_url'] = $target->setting( 'CustomDomain' ) !== '' ? 'https://' . $target->setting( 'CustomDomain' ) . '/' : expStaticGitHub::pagesUrl( $remote['owner'], $remote['repo'] );
+        if ( !$out['available'] && empty( $options['http'] ) )
+            return $out;
+        $kind = expStaticCredentials::parse( (string)$target->setting( 'Credential' ) )[0];
+        if ( $kind !== 'token' && $kind !== 'app' )
+        {
+            $out['problem'] = 'the GitHub steps need a token or a GitHub App as the credential';
+            return $out;
+        }
+        $out['usable'] = true;
+        $out['problem'] = '';
+        if ( $status )
+        {
+            $out['status'] = expStaticGitHub::statusFor( $target, $options + array( 'timeout' => 8 ) );
+            if ( !$out['status']['available'] )
+            {
+                $out['usable'] = false;
+                $out['problem'] = (string)reset( $out['status']['errors'] );
+            }
+        }
+        return $out;
     }
 
     /**

@@ -1,7 +1,8 @@
 {* The staticpublish/preview view: the build not yet published, before Publish. Variables: target
    (expStaticAdmin::overview()), messages, enabled, has_build, published (a publish exists), changes (files added,
    changed or removed), diff (expStaticAdmin::diffDetails()), limits (expStaticAdmin::limits()), build_job, report (the
-   last build's report, or null), running (a job going on, or null), preview_url, github_site, github_file, view. *}
+   last build's report, or null), running (a job going on, or null), preview_url, github_site, github_file, view,
+   github (expStaticAdmin::github() with the state of GitHub Pages). *}
 <div class="a4-page a4-setup-publish" id="exp-staticpublish-preview">
 
 <div class="a4-pagehead">
@@ -16,6 +17,7 @@
 
 {foreach $messages as $m}<div class="a4-notice is-{if eq( $m.kind, 'ok' )}ok{else}bad{/if}" role="{if eq( $m.kind, 'ok' )}status{else}alert{/if}"><p>{$m.text|wash}</p></div>{/foreach}
 {if $running}<div class="a4-notice" role="status"><p><span class="a4-status is-running"><span class="a4-dot" aria-hidden="true"></span><a href={concat( 'staticpublish/log/', $running.id )|ezurl}>{'A job is going on, started by %user'|i18n( 'design/admin/staticpublish',, hash( '%user', $running.user ) )|wash}</a></span></p></div>{/if}
+{include uri='design:staticpublish/parts/github.tpl' github=$github}
 
 {if $has_build|not}
 <div class="a4-empty a4-section">
