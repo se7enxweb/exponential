@@ -1,8 +1,8 @@
 ---
 title: "Migrations: the status and the history"
 audience: admin, developer
-category: administration
-order: 2
+category: migrations
+order: 11
 summary: Setup > Migrations in the administration. The status page with every migration and its state, the history of the runs with their captions, commits and pushes, the page of one run that follows it live, and the dashboard block.
 keywords: migrations, migration status, migration history, run log, run, caption, pending, failed, orphans, installation lock, dashboard block, migration/status, migration/history, migration/log, migration/read
 context: migration/status, migration/history, migration/log
@@ -123,9 +123,19 @@ Users without the policy do not see the block. Its place and policy are settings
 
 ## Related pages
 
-- [Migrations in the administration](README.md)
+- [Migrations: the hub](README.md), [All recipes](recipes/README.md), [Frequently asked questions](faq.md)
+- [The guide](../../guides/migrations.md), [the tutorial](../../guides/migrations-tutorial.md),
+  [PHP migrations](../../guides/migrations-php.md),
+  [Rollback and captions](../../guides/migrations-rollback-and-captions.md),
+  [The migrations repository](../../guides/migrations-repositories.md)
+- [In the administration](in-the-administration.md), [Commands](commands.md), [Settings](settings.md),
+  [Policies, views and events](policies-views-and-events.md)
+- [The file format](../../specifications/6.0/migration-file-format.md),
+  [The feature](../../features/6.0/migrations.md)
+- [When a migration fails](when-a-migration-fails.md),
+  [Troubleshooting messages](../../guides/migrations-troubleshooting.md)
+- [Migrations versus migrating a site](migrations-versus-migrating-a-site.md)
 - [Run, dry run and rollback](run-dry-run-and-rollback.md)
 - [Migrations in the website sidebar](expwt-panel.md)
-- [Migrations: the guide](../../guides/migrations.md) and [Rollback and captions](../../guides/migrations-rollback-and-captions.md)
 - [The views of the module migration](../../examples/module-views/migration/README.md) and
   [its policies](../../examples/policies/migration.md)
