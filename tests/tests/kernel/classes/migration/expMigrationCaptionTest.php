@@ -655,9 +655,10 @@ class expMigrationCaptionTest extends PHPUnit\Framework\TestCase
     {
         $err = '';
         $start = microtime( true );
-        $code = expUpgradeBackup::runWithEnv( 'yes x | head -c 300000 1>&2; yes y | head -c 300000; exit 3', array( 'EXP_WP4' => '1' ), $err );
+        $code = expUpgradeBackup::runWithEnv( 'yes x 2>/dev/null | head -c 300000 1>&2; yes y 2>/dev/null | head -c 300000; exit 3', array( 'EXP_WP4' => '1' ), $err );
         $this->assertSame( 3, $code );
-        // all of it ("yes" may add its broken-pipe message)
+        // all of it, in order ("yes" itself is silenced: its broken-pipe message went to the same stderr and could land
+        // between the x lines, 2026-10-31)
         $this->assertSame( str_repeat( "x\n", 150000 ), substr( $err, 0, 300000 ) );
         $this->assertLessThan( 30, microtime( true ) - $start );
     }

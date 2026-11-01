@@ -1714,6 +1714,15 @@
     "kernel/classes/help/exphelpnavigation.php": [
       "tests/tests/kernel/classes/help/expHelpNavigationTest.php"
     ],
+    "kernel/private/classes/views/exphelp/navigation.php": [
+      "tests/tests/kernel/classes/help/expHelpNavigationTest.php"
+    ],
+    "kernel/exphelp/navigation.php": [
+      "tests/tests/kernel/classes/help/expHelpNavigationTest.php"
+    ],
+    "design/admin*/templates/exphelp/navigation.tpl": [
+      "tests/tests/kernel/classes/help/expHelpNavigationTest.php"
+    ],
     "kernel/classes/help/exphelplinks.php": [
       "tests/tests/kernel/classes/help/expHelpLinksTest.php",
       "tests/tests/kernel/classes/help/expHelpMarkdownRendererTest.php"
