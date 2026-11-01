@@ -20,7 +20,10 @@
  *   <name>                     the kinds that have a name of their own: a class by its identifier (folder), a
  *                              section by its identifier (standard), a language by its locale (ger-DE), a user by
  *                              the login, a role by its name, an object state as <group>/<state> (ez_lock/locked),
- *                              a class group by its name (Content), an object state group by its identifier (ez_lock)
+ *                              a class group by its name (Content), an object state group by its identifier (ez_lock),
+ *                              a URL alias by its address from the root (about-us/team)
+ *   tags (eztags)              a tag by its id, remote:<remote id> or path:<keyword path> (path:Topics/Sport, the
+ *                              keywords of the tag and its parents); without the extension eztags a tag names nothing
  *
  * A placeholder is replaced first, so ${idmap.node.news} (the id map of the environment, expMigrationIdMap) and
  * ${ref.folder} work wherever an identifier does. Step types call resolve() for the keys their schema declares as
@@ -32,18 +35,21 @@
 class expMigrationIdentifier
 {
     /** The kinds resolve() knows. */
-    const KINDS = array( 'node', 'object', 'class', 'section', 'language', 'user', 'role', 'state', 'class_group', 'state_group' );
+    const KINDS = array( 'node', 'object', 'class', 'section', 'language', 'user', 'role', 'state', 'class_group', 'state_group',
+                        'tag', 'url_alias' );
 
     /** The prefixes of an identifier text. */
     const FORMS = array( 'remote', 'object-remote', 'path' );
 
     /** The kinds named by a name of their own, and what the name is. */
     const NAMES = array( 'class' => 'identifier', 'section' => 'identifier', 'language' => 'locale', 'user' => 'login',
-                         'role' => 'name', 'state' => '<group>/<state>', 'class_group' => 'name', 'state_group' => 'identifier' );
+                         'role' => 'name', 'state' => '<group>/<state>', 'class_group' => 'name', 'state_group' => 'identifier',
+                         'url_alias' => 'address' );
 
     /** The prefixed forms each kind takes (besides the id and, for the kinds of NAMES, the name). */
     const KIND_FORMS = array( 'node' => array( 'remote', 'object-remote', 'path' ), 'object' => array( 'remote', 'path' ),
-                              'class' => array( 'remote' ), 'user' => array( 'remote' ) );
+                              'class' => array( 'remote' ), 'user' => array( 'remote' ),
+                              'tag' => array( 'remote', 'path' ) );
 
     /**
      * The form and value of an identifier. Pure.
@@ -117,6 +123,8 @@ class expMigrationIdentifier
             case 'role':
             case 'class_group':
                 return strpos( $value, ':' ) === false;
+            case 'url_alias':
+                return strpos( $value, ':' ) === false && !preg_match( '/\s/', $value );
         }
         return false;
     }
@@ -174,6 +182,8 @@ class expMigrationIdentifier
         $parsed = self::parse( $value, $problem, $kind );
         if ( $parsed === null )
             throw new RuntimeException( 'not an identifier: ' . json_encode( $value ) );
+        if ( $kind === 'tag' && !self::tagsInstalled() )
+            throw new RuntimeException( 'tags are of the extension eztags, which is not installed here' );
         $id = in_array( $kind, array( 'node', 'object' ), true ) ? self::resolveContent( $kind, $parsed ) : self::resolveNamed( $kind, $parsed );
         if ( $id !== null && $id > 0 )
             return $id;
@@ -300,7 +310,36 @@ class expMigrationIdentifier
             case 'state_group':
                 $found = $form === 'id' ? eZContentObjectStateGroup::fetchById( $value ) : eZContentObjectStateGroup::fetchByIdentifier( $value );
                 return $found instanceof eZContentObjectStateGroup ? (int)$found->attribute( 'id' ) : null;
+            case 'tag':
+                if ( $form === 'id' )
+                    $found = eZTagsObject::fetchWithMainTranslation( $value );
+                else if ( $form === 'remote' )
+                    $found = eZTagsObject::fetchByRemoteID( $value, true );
+                else
+                    $found = eZTagsObject::fetchByUrl( $value, true );
+                return $found instanceof eZTagsObject ? (int)$found->attribute( 'id' ) : null;
+            case 'url_alias':
+                if ( $form === 'id' )
+                {
+                    $rows = eZPersistentObject::fetchObjectList( eZURLAliasML::definition(), null, array( 'id' => (int)$value ), null, array( 'limit' => 1, 'offset' => 0 ), false );
+                    return is_array( $rows ) && $rows ? (int)$rows[0]['id'] : null;
+                }
+                foreach ( (array)eZURLAliasML::fetchByPath( $value ) as $element )
+                    if ( $element instanceof eZURLAliasML && (string)$element->attribute( 'action' ) !== 'nop:' )
+                        return (int)$element->attribute( 'id' );
+                return null;
         }
         return null;
+    }
+
+    /**
+     * Whether the extension eztags is installed: its classes load. Its tables are its own; the steps of the type tag
+     * and the identifiers of the kind tag need both.
+     *
+     * @return bool
+     */
+    public static function tagsInstalled()
+    {
+        return class_exists( 'eZTagsObject' ) && class_exists( 'eZTagsKeyword' );
     }
 }

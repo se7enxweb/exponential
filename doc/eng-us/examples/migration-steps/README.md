@@ -27,6 +27,11 @@ Every step type of YAML migrations the kernel registers in `settings/migration.i
 | [section](section.md) | create, update, ensure, delete, assign | Creates, updates, ensures or deletes a section, or assigns a section to a part of the content tree |
 | [language](language.md) | create, update, ensure, delete | Adds, renames, ensures or removes a language of content |
 | [object_state_group](object_state_group.md) | create, update, ensure, delete | Creates, updates, ensures or deletes an object state group with its states and the translations of their names |
+| [tag](tag.md) | create, update, ensure, delete, move, merge | Creates, updates, ensures, deletes, moves or merges a tag of eztags, with its translations and synonyms |
+| [url_alias](url_alias.md) | create, ensure, delete | Creates, ensures or deletes a custom URL alias of a node, a global URL alias or a URL wildcard |
+| [trash](trash.md) | move, restore, purge | Moves content to the trash, restores it from the trash, or purges it for good |
+| [file](file.md) |  | Attaches a file of the migrations folder to a file attribute (ezbinaryfile, ezmedia) of an object |
+| [image](image.md) |  | Puts an image of the migrations folder into an image attribute of an object, with its alternative text, focal point and crop rectangle |
 
 - [All examples](../README.md)
 

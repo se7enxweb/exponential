@@ -7,10 +7,9 @@ in dem jeder Link umgeschrieben ist, sodass der Ordner für sich allein funktion
 unterhalb eines Pfads wie `/meine-site/`. Redakteure arbeiten weiter in Exponential; die öffentliche Website ist eine
 Kopie.
 
-Es ist neu in Exponential 6.0.15. Diese Seite beschreibt die Build-Engine und ihre Befehle, den ersten Teil, der ausgeliefert
-wird. Das Übertragen von Builds in ein Git-Repository, die Seiten unter Setup > Statisches Veröffentlichen und die
-Einrichtung bei GitHub kommen hinzu, sobald sie erscheinen; bis dahin veröffentlichen Sie einen Build selbst mit Git
-([Statische Websites auf GitHub Pages hosten](../../anleitungen/statische-websites-auf-github-pages-hosten.md) zeigt, wie).
+Es ist neu in Exponential 6.0.15. Diese Seite beschreibt die Build-Engine, das Veröffentlichen nach Git und ihre
+Befehle. Die Seiten unter Setup > Statisches Veröffentlichen und die Einrichtung bei GitHub kommen hinzu, sobald sie
+erscheinen.
 
 [Funktionen von 6.0](README.md) · Verwandt: [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md),
 [Statische Websites auf GitHub Pages hosten mit Exponential 6.0.15+](../../anleitungen/statische-websites-auf-github-pages-hosten.md),
@@ -28,6 +27,10 @@ Einrichtung bei GitHub kommen hinzu, sobald sie erscheinen; bis dahin veröffent
 - **`exp:static:diff <ziel>`**: was der letzte Build geändert hat, ob der Ordner noch zu ihm passt, und eine
   Linkprüfung jeder Seite und Datei.
 - **`exp:static:targets`**: jedes Ziel mit geprüften Einstellungen.
+- **`exp:static:publish <ziel>`**: committet den Build im eigenen Git-Repository des Ziels, taggt ihn
+  `static/<ziel>/<n>` und pusht ihn, nie erzwungen, angemeldet mit einem Token oder einem SSH-Deploy-Key, die nie auf
+  eine Befehlszeile oder in ein Log gelangen. Dazu gehören `exp:static:rollback`, `exp:static:push`, `exp:static:keys`
+  und `exp:static:status`.
 
 ## Wie ein Build abläuft
 
@@ -121,7 +124,9 @@ gebaut):
 | `PostProcess[]` | `strip` | `strip` läuft immer |
 | `ExcludePaths[]` | leer | Seiten, die nach Pfad ausgelassen werden (`/members/*`); Links darauf gehen zur Live-Website |
 | `ExcludeSections[]` | leer | Seiten, die nach der Sektion ihres Inhalts ausgelassen werden |
-| `Kind`, `Remote`, `Branch`, `Folder`, `Delivery`, `Credential` | `github-pages`, leer, `gh-pages`, leer, `branch`, `none` | Wohin der Build veröffentlicht wird; jetzt gelesen und geprüft, genutzt, wenn das Veröffentlichen nach Git kommt |
+| `Remote`, `Branch`, `Folder` | leer, `gh-pages`, leer | Die Git-Adresse, zu der der Build gepusht wird, ihr Branch, und `docs`, wenn die Website in `/docs` des Branches liegt (der Build wird dann nach `<ordner>/docs` geschrieben) |
+| `Credential` | `none` | Wie sich der Push anmeldet: `token:<geheimnis>`, `token:env:<VARIABLE>`, `sshkey:<geheimnis>`, `app:<installation>` (mit der GitHub-Anbindung) oder `none` |
+| `Kind`, `Delivery` | `github-pages`, `branch` | Jetzt gelesen und geprüft, genutzt von der Einrichtung bei GitHub |
 | `Search`, `Forms`, `Triggers[]`, `Schedule`, `Notify[]`, `Webhook` | `disabled`, `hide`, `manual` und `cli`, leer, `failure`, leer | Jetzt gelesen und geprüft, genutzt von späteren Teilen des statischen Veröffentlichens |
 
 Die erzeugte Referenz führt jede Einstellung mit ihrem Kommentar auf:
@@ -141,12 +146,44 @@ Kombinationen (eine `PublicURL`, deren Pfad nicht `BasePath` ist, eine Sitemap o
 | `exp:static:build <ziel>` | Baut; `--dry-run` meldet, was sich ändern würde, ohne den Ordner anzufassen, `--paths=/a,/b` oder `--nodes=12,34` baut nur diese Seiten und behält den Rest, `--report=<datei>` schreibt den Bericht zusätzlich, `--crawl-url` und `--max-pages` übersteuern das Ziel |
 | `exp:static:diff <ziel>` | Was der letzte Build geändert hat; `--verify` vergleicht den Ordner mit seinem Manifest; `--check-links --mount=/ --mount=/meine-site/` prüft jeden Link und jede Datei, wie ein Browser es täte |
 | `exp:static:serve <ziel>` | Liefert den Ordner unter `http://127.0.0.1:8090/<basispfad>` mit dem eingebauten Webserver von PHP aus; `--base-path=/` liefert ihn an der Wurzel aus |
+| `exp:static:publish <ziel>` | Committet den Build, taggt ihn `static/<ziel>/<n>` und pusht ihn; `--build` baut zuerst, `--message` setzt die Commit-Nachricht, `--no-push` committet und taggt nur |
+| `exp:static:rollback <ziel> <n>` | Zeigt, was die Rückkehr zu Veröffentlichung `n` (oder zum Tag `static/<ziel>/<n>`) ändern würde; `--apply` macht daraus einen neuen Commit mit dem nächsten Tag und pusht ihn |
+| `exp:static:push [<ziel>]` | Pusht die Ziele erneut, deren Push gescheitert ist (auch der Cronjob-Teil `staticpublish`) |
+| `exp:static:keys <ziel>` | `--generate` erzeugt den SSH-Deploy-Key des Ziels und zeigt seine öffentliche Hälfte; ohne zeigt es öffentliche Hälfte und Fingerabdruck |
+| `exp:static:status <ziel>` | Repository des Ziels, Zugangsdaten (lesbar oder nicht, nie der Wert), die letzten Läufe und die Seiten; `--limit` |
 
 Jeder Befehl nimmt `--format=json` und gibt dann ein JSON-Dokument aus, Schema `exp-static/1`. Die Exit-Codes sind die
 von `exp:upgrade`: 0 erledigt, 1 fehlgeschlagen, 2 Aufruffehler, 3 Datenbank nicht erreichbar, 4 interner Fehler. Die
 erzeugten Seiten: [exp:static:build](../../beispiele/befehle/expstaticbuild.md),
 [exp:static:diff](../../beispiele/befehle/expstaticdiff.md), [exp:static:serve](../../beispiele/befehle/expstaticserve.md),
-[exp:static:targets](../../beispiele/befehle/expstatictargets.md).
+[exp:static:targets](../../beispiele/befehle/expstatictargets.md),
+[exp:static:publish](../../beispiele/befehle/expstaticpublish.md), [exp:static:rollback](../../beispiele/befehle/expstaticrollback.md),
+[exp:static:push](../../beispiele/befehle/expstaticpush.md), [exp:static:keys](../../beispiele/befehle/expstatickeys.md),
+[exp:static:status](../../beispiele/befehle/expstaticstatus.md).
+
+## Veröffentlichen nach Git
+
+Der Ordner des Ziels `var/<site>/static-publish/<ziel>/` ist ein eigenes Git-Repository (nie im Repository der
+Website). `exp:static:publish` committet darin nur die Dateien des Builds, als einen Commit pro Veröffentlichung mit
+dem annotierten Tag `static/<ziel>/<n>`, und pusht Branch und Tags zum `Remote` des Ziels. Ein Push wird nie
+erzwungen, ein Tag nie verschoben; ein gescheiterter Push lässt den Commit lokal mit dem Push-Zustand `pending`, und
+`exp:static:push` oder der Cronjob-Teil `staticpublish` sendet ihn erneut. Zurücknehmen ist ein neuer Commit mit den
+Dateien eines früheren Tags, der Verlauf wächst also nur. Je Ziel läuft ein Build, eine Veröffentlichung, ein
+Zurücknehmen oder ein Push zur Zeit (eine Sperre pro Ziel).
+
+Zugangsdaten sind Namen: Ein Token unter Setup > Geheimnisse oder in einer Umgebungsvariablen gelangt über
+`GIT_ASKPASS` und die Umgebung des einen git-Prozesses zu git; ein SSH-Deploy-Key, je Ziel von `exp:static:keys`
+erzeugt, über eine Datei, die nur der Prozess für die Dauer des Pushs lesen kann, und `GIT_SSH_COMMAND`. Keines steht
+je auf einer Befehlszeile, in der Remote-Adresse oder in einem Log.
+
+Jede Veröffentlichung und jedes Zurücknehmen ist eine Zeile in `exp_static_run` (Zustand, Zahlen, Bytes, Commit, Tag,
+Push-Zustand, wer, wann), und die Seiten der letzten Veröffentlichung stehen in `exp_static_page`; der Upgrade-Schritt
+`6.0.15-static-publish-tables` legt beide Tabellen auf jeder Datenbank an. Das Audit zeichnet
+`system.staticpublish.publish`, `.rollback` und `.credential` auf.
+
+Anleitungen: [Repositorys und Zugangsdaten](../../anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md),
+[Verlauf und Zurücknehmen](../../anleitungen/statisches-veroeffentlichen-verlauf-und-zuruecknehmen.md),
+[SSH-Deploy-Keys](../../anleitungen/statisches-veroeffentlichen-deploy-keys.md).
 
 ## Datenschutz
 

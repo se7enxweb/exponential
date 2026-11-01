@@ -7,7 +7,8 @@ zu patchen oder anzugreifen. Sie bauen und veröffentlichen sie neu, wenn sich d
 
 Sie ist für Website-Betreiber und Administratoren, die eine kostenlose öffentliche Website möchten, und für
 Entwickler, die Websites von der Kommandozeile oder aus CI bauen und veröffentlichen. Diese erste Fassung behandelt
-die Kommandozeile: ein Ziel in den Einstellungen, ein Build, eine lokale Vorschau, eine Prüfung und ein Push mit Git.
+die Kommandozeile: ein Ziel in den Einstellungen, ein Build, eine lokale Vorschau, eine Prüfung und das
+Veröffentlichen mit `exp:static:publish`.
 Die Seiten in der Administration und das automatische Veröffentlichen bei GitHub kommen mit späteren Teilen des
 statischen Veröffentlichens; die Funktionsseite führt auf, was jeder Teil hinzufügt.
 
@@ -190,31 +191,30 @@ hat.
 
 ## 5. Mit Git veröffentlichen
 
-Der Ordner `var/site/static-publish/github-public` ist die Website. Ein Build fasst darin nichts an, was sein Manifest
-nicht aufführt, also kann er ein Git-Checkout des Branches `gh-pages` Ihres Repositorys sein:
+Der Ordner `var/site/static-publish/github-public` ist die Website und ihr eigenes Git-Repository. Legen Sie ein Token
+für das Repository unter Setup > Geheimnisse ab (`github_pages_token`) und setzen Sie beim Ziel
+`Credential=token:github_pages_token`, dann:
 
 ```bash
-cd var/site/static-publish/github-public
-git init -b gh-pages
-git remote add origin https://github.com/owner/meine-site.git
-git add -A
-git commit -m "Publish the site"
-git push -u origin gh-pages
+./console exp:static:publish github-public
 ```
+
+Der Befehl committet nur die Dateien des Builds auf den Branch `gh-pages`, taggt den Commit `static/github-public/1`
+und pusht beides, nie erzwungen. [Repositorys und Zugangsdaten](statisches-veroeffentlichen-repositorys-und-zugangsdaten.md)
+erklärt die Anmeldung (Token, SSH-Deploy-Key oder die Zugangsdaten des Hosts) und was geschieht, wenn ein Push
+scheitert.
 
 Öffnen Sie dann auf GitHub die **Settings > Pages** des Repositorys, wählen Sie **Deploy from a branch**, den Branch
 `gh-pages` und den Ordner `/ (root)` und speichern Sie. Nach ein, zwei Minuten liegt die Website unter
 `https://owner.github.io/meine-site/`.
 
-Nach dem nächsten Build committen und pushen Sie erneut:
+Danach baut und veröffentlicht ein Befehl:
 
 ```bash
-./console exp:static:build github-public
-cd var/site/static-publish/github-public && git add -A && git commit -m "Publish the site" && git push
+./console exp:static:publish github-public --build
 ```
 
-Nutzen Sie für den Push einen Credential-Helper oder einen SSH-Schlüssel; schreiben Sie nie ein Token in `Remote` oder
-in die Adresse des Remotes.
+Schreiben Sie nie ein Token in `Remote` oder in die Adresse des Remotes; `exp:static:targets` lehnt das ab.
 
 ## Aus CI
 
@@ -225,6 +225,7 @@ erreichbar ist. Ein CI-Job kann bauen, prüfen und pushen:
 ```bash
 ./console exp:static:build github-public --format=json --report=var/log/static-build.json
 ./console exp:static:diff github-public --check-links --format=json
+GH_PAGES_TOKEN=... ./console exp:static:publish github-public --format=json     # Credential=token:env:GH_PAGES_TOKEN
 ```
 
 ## Fehlerbehebung

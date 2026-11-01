@@ -27,6 +27,11 @@ jeden Schlüssel jedes Schritttyps nennt seine erzeugte Referenzseite
 | [`section`](../beispiele/migrationsschritte/section.md) | eine Sektion, und ihre Zuweisung an einen Teil des Baums | create, update, ensure, delete, assign |
 | [`language`](../beispiele/migrationsschritte/language.md) | fügt eine Sprache der Inhalte hinzu, benennt sie um, sichert oder entfernt sie | create, update, ensure, delete |
 | [`object_state_group`](../beispiele/migrationsschritte/object_state_group.md) | eine Objektzustandsgruppe mit ihren Zuständen | create, update, ensure, delete |
+| [`tag`](../beispiele/migrationsschritte/tag.md) | ein Tag von eztags mit seinen Übersetzungen und Synonymen | create, update, ensure, delete, move, merge |
+| [`url_alias`](../beispiele/migrationsschritte/url_alias.md) | ein eigener URL-Alias eines Knotens, ein globaler URL-Alias oder ein URL-Platzhalter | create, ensure, delete |
+| [`trash`](../beispiele/migrationsschritte/trash.md) | verschiebt Inhalte in den Papierkorb, stellt sie wieder her, löscht sie endgültig | move, restore, purge |
+| [`file`](../beispiele/migrationsschritte/file.md) | hängt eine Datei aus dem Migrationsordner an ein Dateiattribut | |
+| [`image`](../beispiele/migrationsschritte/image.md) | ein Bild aus dem Migrationsordner, sein Alternativtext, Fokuspunkt und Zuschnitt | |
 
 Jeder Schritt geht über die eigene API des Kernels, so wie die Administration: Ein neues Objekt entsteht über seine
 Klasse (`eZContentClass::instantiate()`), eine neue Version über `createNewVersionIn()`, und beide veröffentlicht die
@@ -46,6 +51,7 @@ parent: object-remote:news-folder  # der Hauptknoten des Objekts mit dieser Remo
 parent: path:media/images          # der Knoten unter diesem URL-Pfad
 class: article                     # eine Klasse über ihren Bezeichner (oder ihre ID, oder remote:<Remote-ID der Klasse>)
 section: standard                  # eine Sektion über ihren Bezeichner oder ihre ID
+tag: path:Topics/Sport             # ein Tag über seinen Schlagwortpfad (oder seine ID, oder remote:<Remote-ID des Tags>)
 parent: "${idmap.node.news}"       # die ID-Zuordnung der Umgebung
 parent: "${ref.news}"              # ein Wert, den ein früherer Schritt mit references: behalten hat
 ```
@@ -197,6 +203,67 @@ ihren Zuständen und deren Namen in jeder Sprache an; der erste Zustand ist der 
 eines entfernten Zustands bekommen den ersten verbleibenden. Die Gruppen des Kernels (`ez_lock` und die anderen
 Bezeichner, die mit `ez` beginnen) werden nicht geändert.
 
+## Tags, URL-Aliase und der Papierkorb
+
+`tag` braucht die Erweiterung eztags; ohne sie scheitert ein Tag-Schritt und sagt das, und `missing: skip` lässt ihn
+durch. Ein Tag wird über seine ID, `remote:<Remote-ID>` oder `path:<Schlagwortpfad>` genannt (die Schlagwörter von
+oben, `path:Topics/Sport`). Ein neuer Tag bekommt sein Schlagwort in der Sprache von `language:` (seiner Hauptsprache)
+und weitere Übersetzungen in `keywords:`; `synonyms:` ergänzt die fehlenden Schlagwörter als Synonyme. `ensure` findet
+den Tag über `remote_id` oder über sein Schlagwort unterhalb von `parent:`. `move` setzt ihn (mit seinen Synonymen und
+den Tags unter ihm) unter einen anderen übergeordneten Tag, `merge` gibt seine Objekte, Kinder und Synonyme an `into:`
+ab und entfernt ihn, `delete` entfernt ihn mit allem unter ihm. Jede Änderung geschieht so, wie die Tag-Seiten von
+eztags sie machen.
+
+```yaml
+- type: tag
+  mode: ensure
+  parent: "path:Topics"
+  remote_id: topic-sport
+  keyword: Sport
+  keywords: { ger-DE: Sport }
+  synonyms: [ Sports ]
+```
+
+`url_alias` schreibt die eigenen Adressen der URL-Alias-Seiten der Administration: `path:` (die Adresse ab der Wurzel)
+führt zu einem Knoten (`node:`) oder zu einer Modul-URL oder einer anderen Adresse (`destination:`);
+`redirect: false` zeigt die Seite unter dem Alias, statt auf ihre eigene Adresse weiterzuleiten, `below_parent: true`
+legt den Alias unter die Adresse des übergeordneten Knotens, wie es die Administration macht. `wildcard:` mit
+`destination:` schreibt einen URL-Platzhalter (`old-news/*` nach `news/{1}`). `mode: delete` entfernt eine Adresse
+(`path:`), jede eigene Adresse eines Knotens (`node:` mit `which: all`) oder einen Platzhalter. Die Adresse, die ein
+Knoten aus seinem Namen hat, folgt dem Namen und wird vom Schritt nie gelöscht.
+
+`trash` verschiebt ein Objekt mit allen seinen Orten in den Papierkorb (`mode: move`, über `object:` oder `node:`),
+stellt es unter seinem früheren übergeordneten Knoten oder unter `parent:` wieder her (`mode: restore`) und löscht es
+endgültig (`mode: purge`, oder `all: true` leert den ganzen Papierkorb). Jeder Modus prüft danach, dass das Objekt dort
+ist, wohin der Schritt es gebracht hat.
+
+## Dateien und Bilder
+
+`file` und `image` lesen eine Datei neben der Migration: `file:` ist ein Pfad unterhalb des Ordners der
+Migrationsdatei, nie `..`, ein absoluter Pfad, eine URL oder ein Link aus dem Ordner hinaus. Legen Sie die Dateien mit
+der Migration, die sie braucht, in das Migrations-Repository:
+
+```yaml
+- type: file
+  object: remote:annual-report
+  field: file
+  file: files/annual-report-2026.pdf
+  name: Annual report 2026.pdf
+- type: image
+  object: remote:news-welcome
+  field: image
+  file: images/welcome.jpg
+  alt: The team at the opening
+  focal: { x: 0.3, y: 0.4 }
+  crop: { x: 0, y: 0.1, width: 1, height: 0.8 }
+```
+
+`file` schreibt ein Attribut `ezbinaryfile` oder `ezmedia`, `image` ein Attribut `ezimage`; wie bei einer
+Inhaltsänderung ist das eine neue Version, die über die Veröffentlichungsoperation veröffentlicht wird, oder
+`in_place: true`. `focal:` und `crop:` setzen Fokuspunkt und Zuschnitt des Bildes wie der Bildeditor (Anteile von
+Breite und Höhe des Originals); `null` entfernt einen davon, und ein Schritt nur mit `focal:` oder `crop:` behält das
+Bild.
+
 ## Workflows und Benachrichtigungen
 
 Ein Schritt führt die Operation ohne die Workflows ihres Auslösers aus und veröffentlicht ohne
@@ -216,6 +283,9 @@ Eine Migration ohne `down:` lässt sich von selbst zurücknehmen, wenn jeder ihr
 | `content_class`, `content_class_group`, `section`, `language`, `object_state_group`, `role`, `user` create | wird wieder entfernt (eine Klasse nur, solange sie keine Objekte hat, eine Sektion oder Sprache nur, solange sie unbenutzt ist) |
 | `user_group` create mit `remote_id` | die Gruppe wird wieder entfernt |
 | `role` assign / unassign | die Zuweisung wird zurückgenommen / wieder vorgenommen |
+| `tag` create | der Tag wird wieder entfernt, solange kein Objekt ihn nutzt |
+| `url_alias` create | die Adresse oder der Platzhalter wird wieder entfernt, solange sie dorthin führen, wohin der Schritt sie gesetzt hat |
+| `trash` move (über `object:`) / restore | das Objekt wird wiederhergestellt, wo es war / wieder in den Papierkorb verschoben |
 | `reference`, `assert` | nichts zurückzunehmen |
 
 Jeder andere Schritt (ein Ändern, ein ensure, ein Löschen, ein Verschieben, eine Sektionszuweisung ...) kann nicht wissen, was vorher da war:

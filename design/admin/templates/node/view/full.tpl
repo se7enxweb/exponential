@@ -22,7 +22,7 @@
      $disable_another_language = ''
      $disabled_sub_menu = '["class-createnodefeed","class-removenodefeed"]'
      $hide_status = ''
-     $has_content_class = eq( $node.object.content_class|not, false )}
+     $has_content_class = is_object( $node.object.content_class )}
 {if $has_content_class}
     {if eq( 0, count( $node.object.content_class.can_create_languages ) )}
         {set $disable_another_language = 'edit-class-another-language'}

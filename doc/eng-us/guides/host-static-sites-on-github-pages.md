@@ -6,7 +6,7 @@ there is nothing on the public side to update, patch or attack. You rebuild and 
 
 It is for site owners and administrators who want a free public site, and for developers who build and publish
 sites from the command line or from CI. This first version covers the command line: a target set up in the settings,
-a build, a local preview, a check and a push with git. The administration screens and the automatic publishing to
+a build, a local preview, a check and the publish with `exp:static:publish`. The administration screens and the automatic publishing to
 GitHub come with later parts of static publishing; the feature page lists what each part adds.
 
 [Guides](README.md) · Related: [Static publishing](../features/6.0/static-publishing.md),
@@ -181,29 +181,28 @@ Without options, `exp:static:diff` lists what the last build added, changed and 
 
 ## 5. Publish with git
 
-The folder `var/site/static-publish/github-public` is the site. A build never touches anything in it that its
-manifest does not list, so it can be a git checkout of your repository's `gh-pages` branch:
+The folder `var/site/static-publish/github-public` is the site and its own git repository. Store a token for the
+repository in Setup > Secrets (`github_pages_token`) and set `Credential=token:github_pages_token` on the target,
+then:
 
 ```bash
-cd var/site/static-publish/github-public
-git init -b gh-pages
-git remote add origin https://github.com/owner/my-site.git
-git add -A
-git commit -m "Publish the site"
-git push -u origin gh-pages
+./console exp:static:publish github-public
 ```
+
+It commits only the build's files to the branch `gh-pages`, tags the commit `static/github-public/1` and pushes both,
+never forced. [Repositories and credentials](static-publishing-targets-and-credentials.md) explains how the push
+signs in (a token, an SSH deploy key or the host's own credentials) and what happens when a push fails.
 
 Then, on GitHub, open the repository's **Settings > Pages**, choose **Deploy from a branch**, the branch `gh-pages`
 and the folder `/ (root)`, and save. After a minute or two the site is at `https://owner.github.io/my-site/`.
 
-After the next build, commit and push again:
+From then on one command builds and publishes:
 
 ```bash
-./console exp:static:build github-public
-cd var/site/static-publish/github-public && git add -A && git commit -m "Publish the site" && git push
+./console exp:static:publish github-public --build
 ```
 
-Use a credential helper or an SSH key for the push; never write a token into `Remote` or the remote's address.
+Never write a token into `Remote` or the remote's address; `exp:static:targets` refuses one.
 
 ## From CI
 
@@ -214,6 +213,7 @@ check and push:
 ```bash
 ./console exp:static:build github-public --format=json --report=var/log/static-build.json
 ./console exp:static:diff github-public --check-links --format=json
+GH_PAGES_TOKEN=... ./console exp:static:publish github-public --format=json     # Credential=token:env:GH_PAGES_TOKEN
 ```
 
 ## Troubleshooting

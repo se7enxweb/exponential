@@ -94,7 +94,13 @@ class Expstaticbuild extends ExpstaticBase
             'db' => $db,
             'root' => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : (string)getcwd(),
         ) );
+        // one build, publish or rollback of a target at a time
+        $problem = '';
+        $lock = \expStaticLock::acquire( $build->workDirectory(), $target->id(), 'build', $problem );
+        if ( $lock === null )
+            $this->finish( array( 'mode' => 'build', 'target' => $target->id(), 'warnings' => array(), 'errors' => array( $problem ) ), $format );
         $report = $build->run();
+        $lock->release();
         if ( $reportFile !== '' )
             file_put_contents( $reportFile, json_encode( array( 'schema' => \expStaticBuild::REPORT, 'command' => $this->name() ) + $report,
                                                          JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) . "\n" );

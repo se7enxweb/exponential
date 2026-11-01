@@ -47,7 +47,7 @@ class Expstatictargets extends ExpstaticBase
         foreach ( \expStaticTarget::all() as $id => $target )
         {
             $check = $target->validate( $context );
-            $directory = $target->directory( \eZSys::varDirectory(), $workDir );
+            $directory = $target->outputDirectory( \eZSys::varDirectory(), $workDir );
             $manifest = \expStaticManifest::load( $directory );
             $meta = $manifest !== null ? $manifest->meta() : array();
             $report['targets'][] = $target->toArray() + array(
