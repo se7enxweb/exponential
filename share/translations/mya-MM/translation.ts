@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ဖိုင်များအဖြစ် သိမ်းထားသော တပ်ဆင်မှုပြောင်းလဲချက်များ: ၎င်းတို့၏ အနေအထား၊ လုပ်ဆောင်မှုများ၊ လုပ်ဆောင်ခြင်းနှင့် ပြန်လှည့်ခြင်း။</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>အသစ်ဆုံး အကြောင်းအရာ၊ ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်များနှင့် ရွေးချယ်မှုအပေါ် လုပ်ဆောင်ချက်များ။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>လုပ်ဆောင်မှုကို စတင်၍မရပါ။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ပြင်ဆင်ပြီး</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ဖန်တီးပြီး</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>အမည်</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>အတန်းအစား</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>အပိုင်း</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ဖန်တီးသူ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ဆိုက်တစ်ခုလုံး၏ မကြာသေးမီက ဖန်တီးပြီး ပြင်ဆင်ထားသော အကြောင်းအရာ၊ အသစ်ဆုံး အရင်: ဧည့်သည်များ တင်သွင်းထားသည်များ၊ ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်များ၊ ထုတ်ဝေရန် စောင့်နေသော မူကြမ်းများ။ ထိန်းထားမှုကို ဖြုတ်ရန်၊ ထိန်းထားရန်၊ ဝှက်ရန်၊ ပြရန်၊ ဖယ်ရှားရန် သို့မဟုတ် အခြား အပိုင်း သို့မဟုတ် အခြေအနေသို့ ရွှေ့ရန် အရာများကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>စာရင်းကို ဖတ်၍ မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားမှုကို မသတ်မှတ်ရသေးပါ၊ ထို့ကြောင့် မည်သည့်အရာမျှ ထိန်းမထားဘဲ ထိန်းထားသည့် လုပ်ဆောင်ချက်များကို မပေးပါ။ အဆင့်မြှင့်တင်ခြင်း အဆင့် 6.0.15-review-hold က ၎င်းကို သတ်မှတ်ပေးသည်: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>စာရင်းကို စစ်ထုတ်ရန်</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>မှ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>အထိ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ရက်စွဲ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ဖန်တီးပြီး (ပထမဆုံး ထုတ်ဝေချိန်)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>အားလုံး</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>အနေအထား</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ထုတ်ဝေပြီး</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>မူကြမ်း၊ တစ်ခါမျှ မထုတ်ဝေရသေး</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ဆိုင်းငံ့ (အတည်ပြုချက် သို့မဟုတ် ရက်စွဲကို စောင့်နေသည်)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>အမှိုက်ပုံးထဲတွင်</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ထိန်းထားသည်</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ထိန်းမထားပါ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ဝှက်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>မြင်ရသည်</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>တင်သွင်းသည့်ရက်</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>မည်သည့် ဆိုက်ဝင်ရောက်မှုမဆို</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>စာရင်းစစ်က မှတ်တမ်းတင်ထားသည်များသာ။</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ယခု: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ဝင်ရောက်အမည် သို့မဟုတ် အသုံးပြုသူ ID။</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>စစ်ထုတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>စစ်ထုတ်မှုများကို ရှင်းရန်</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>အရာများ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ခုအနက် %from မှ %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>အရာ မရှိပါ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms အတွင်း ဖတ်ခဲ့သည်)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ရွေးထားသော အရာများအပေါ် လုပ်ဆောင်ချက်များ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ဤစာမျက်နှာရှိ အားလုံးကို ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ခု ရွေးထားသည်</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>လုပ်ဆောင်ချက်</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>လုပ်ဆောင်ချက်တစ်ခု ရွေးပါ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ထိန်းထားမှုကို ဖြုတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားရန်</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ဝှက်ရန်</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ပြရန်</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>အမှိုက်ပုံးသို့ ရွှေ့ရန်</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>အပိုင်း သတ်မှတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>အခြေအနေ သတ်မှတ်ရန်</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>အကြောင်းရင်း</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ထိန်းထားရန် လိုအပ်သည်; ထိန်းထားမှုနှင့်အတူ စာရင်းစစ်ထဲတွင်ပါ သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>အပိုင်းတစ်ခု ရွေးပါ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>အခြေအနေ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>အခြေအနေတစ်ခု ရွေးပါ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ရွေးထားသည်များတွင် အသုံးချရန်</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>အရာတစ်ခုစီကို သင့်ကိုယ်ပိုင် ခွင့်ပြုချက်များနှင့် စစ်ဆေးသည်။ အမှိုက်ပုံးသို့ ရွှေ့ခြင်းနှင့် ဖျက်ခြင်းသည် အတည်ပြုရန် တောင်းဆိုသည်။ အရာ %count ခုထက် ပိုလျှင် နောက်ခံတွင် လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ထုတ်ဝေမှု</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>တင်သွင်းသည့်နေရာ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ကို ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>မရှိသေးပါ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(အမည်မရှိ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>မူကြမ်း</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ဆိုင်းငံ့</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>မိခင်အရာက ဝှက်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ထိန်းထားသည်: တင်သွင်းမှုအသစ်</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ဗားရှင်း %version ဆိုင်းငံ့ထားသည်</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ဗားရှင်း %version ပြင်ဆင်နေဆဲ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>မူကြမ်း၊ ဗားရှင်း %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ဗားရှင်း %version ထုတ်ဝေပြီး</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date အတွက် စီစဉ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>လိပ်စာ မရှိပါ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>မှတ်တမ်းမတင်ထားပါ</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ဤစစ်ထုတ်မှုများနှင့် ကိုက်ညီသည့်အရာ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>အားလုံးကို ပြရန်</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>အကြောင်းအရာ မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>တစ်မျက်နှာလျှင်</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>တစ်မျက်နှာလျှင် အရာ %count ခု ပြရန်။</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>တင်သွင်းမှုတစ်ခု၏ လိပ်စာနှင့် ဘရောက်ဇာသည် စာရင်းစစ် အညွှန်းမှ လာသည်၊ ၎င်းကို ဤနေရာတွင် မရရှိနိုင်ပါ: ကော်လံတွင် "မှတ်တမ်းမတင်ထားပါ" ဟု ပြသည်။</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>လိပ်စာနှင့် ဘရောက်ဇာသည် စာရင်းစစ်က ထိုအရာအတွက် မှတ်တမ်းတင်ထားသည်များ ဖြစ်သည် (အလိုအလျောက် ထိန်းထားမှုက အမြဲ မှတ်တမ်းတင်သည်; ထုတ်ဝေခြင်းနှင့် ဖန်တီးခြင်းမှာ ဖွင့်ထားမှသာ)၊ ၎င်း၏ ကိုယ်ရေးလုံခြုံမှု ဆက်တင်များက ထိန်းသိမ်းထားသည့်အတိုင်း။</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: အရာ %count ခု</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ဖျက်ခြင်းသည် အရာများကို ၎င်းတို့၏ ဗားရှင်းများနှင့် ဘာသာပြန်များ အားလုံးနှင့်အတူ အပြီးတိုင် ဖယ်ရှားသည်။ ပြန်ပြင်၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>အရာများသည် အမှိုက်ပုံးသို့ ရောက်သွားပြီး ထိုနေရာမှ ပြန်လည်ရယူနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>အရာတစ်ခုစီကို သင့်ကိုယ်ပိုင် ခွင့်ပြုချက်များနှင့် စစ်ဆေးသည်; အရာခွဲများ ပါသော အရာကို မူလအတိုင်း ထားခဲ့သည် (အကြောင်းအရာ ဖွဲ့စည်းပုံတွင် ဖယ်ရှားပါ)။ သင်ကိုယ်တိုင် ဖြစ်ကြောင်း အတည်ပြုရန် တောင်းဆိုပါမည်။</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>၎င်းသည် နောက်ခံတွင် လုပ်ဆောင်သည်: ၎င်း၏ တိုးတက်မှု စာမျက်နှာ ပွင့်လာပြီး ပြီးဆုံးသောအခါ အရာတစ်ခုစီ၏ ရလဒ်ကို ပြသည်။</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ရွေးထားသော အရာများ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>နှင့် နောက်ထပ် %count ခု</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ပယ်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ဘာမျှ မလုပ်ဆောင်ခဲ့ပါ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>အကြောင်းရင်း: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>လုပ်ဆောင်ချက်သည် နောက်ခံတွင် လုပ်ဆောင်နေဆဲ ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>၎င်း၏ တိုးတက်မှု</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>နောက်ခံ လုပ်ဆောင်ချက် မအောင်မြင်ပါ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ပြီးပါပြီ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ငြင်းပယ်ခံရသည်</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>အရာတစ်ခုစီအလိုက်</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>အရာ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ရလဒ်</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>အဘယ်ကြောင့်</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>စာရင်းသို့ ပြန်သွားရန်</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>စနစ်ထည့်သွင်းမှု</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ဘာမျှ မလုပ်ရသေးပါ</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>အတည်ပြုရန်</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>လုပ်ဆောင်ချက်တစ်ခု ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>အနည်းဆုံး အရာတစ်ခု ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>တစ်ကြိမ်လျှင် အရာ 1000 ခုအထိသာ ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>အရာများကို ထိန်းထားရသည့် အကြောင်းရင်းကို ပြောပါ။</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>အပိုင်းကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>အခြေအနေကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ဖောင်ကို ဖတ်၍ မရပါ။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>အရေအတွက်များကို ဖတ်၍ မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားသည်</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ယနေ့ အသစ်</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားမှုကို မသတ်မှတ်ရသေးပါ (အဆင့်မြှင့်တင်ခြင်း အဆင့် 6.0.15-review-hold)။</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>မကြာသေးမီ အကြောင်းအရာ အားလုံး</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>သင်သည် စိစစ်ရေး လုပ်ဆောင်ချက်များကို လုပ်ဆောင်ခွင့် မရှိပါ (moderation/act)။</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>စိစစ်ရေး လုပ်ဆောင်ချက် မပြီးဆုံးပါ: %errors။</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>စိစစ်ရေး: အရာဝတ္ထု %count ခုအပေါ် %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>အရာဝတ္ထု %total ခုအနက် %done ခု: %ok ခု ပြီးပြီ၊ %refused ခု ငြင်းပယ်ခံရ၊ %failed ခု မအောင်မြင်</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ခု ပြီးပြီ၊ %refused ခု ငြင်းပယ်ခံရ၊ %failed ခု မအောင်မြင်</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>၎င်းသည် မရှိတော့ပါ။</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>၎င်းတွင် တည်နေရာ မရှိပါ (မထုတ်ဝေရသေးပါ)။</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>သင်သည် ၎င်းကို ဝှက်ခွင့် မရှိပါ (content/hide)။</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>သင်သည် ၎င်းကို ပြခွင့် မရှိပါ (content/hide)။</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>၎င်းကို ဝှက်ထားပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>၎င်းကို ဝှက်မထားပါ။</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ဝှက်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ပြပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>၎င်းသည် အမှိုက်ပုံးထဲတွင် ရှိသည်: ထိုနေရာတွင် ရှင်းလင်းပါ သို့မဟုတ် ပြန်လည်ရယူပါ။</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>တစ်ခါမျှ မထုတ်ဝေရသေးသော မူကြမ်းကို အမှိုက်ပုံးသို့ ပို့၍ မရပါ: ၎င်းကို ဖျက်ပါ။</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>သင်သည် ၎င်းကို ဖျက်ခွင့် မရှိပါ (content/remove)။</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ဖျက်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>သင်သည် ၎င်းကို ဖယ်ရှားခွင့် မရှိပါ (content/remove)။</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>၎င်းတွင် အရာခွဲများ ရှိသည်: ၎င်းတို့ကို စာရင်းပြထားသော အကြောင်းအရာ ဖွဲ့စည်းပုံတွင် ဖယ်ရှားပါ။</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>၎င်းကို မဖယ်ရှားရပါ (လုပ်ငန်းစဉ်တစ်ခုက ဖယ်ရှားမှုကို ထိန်းထားနိုင်သည်)။</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>အမှိုက်ပုံးသို့ ရွှေ့ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>အပိုင်း မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>၎င်းသည် ဤအပိုင်းတွင် ရှိပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>သင်သည် ဤအပိုင်းကို သတ်မှတ်ခွင့် မရှိပါ (section/assign)။</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>အပိုင်းကို မသတ်မှတ်ရပါ။</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>အပိုင်း သတ်မှတ်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>အခြေအနေ မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>၎င်းသည် ဤအခြေအနေတွင် ရှိပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>သင်သည် ဤအခြေအနေကို သတ်မှတ်ခွင့် မရှိပါ (state/assign)။</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>အခြေအနေကို မသတ်မှတ်ရပါ (လုပ်ငန်းစဉ်တစ်ခုက ပြောင်းလဲမှုကို ထိန်းထားနိုင်သည်)။</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>အခြေအနေ သတ်မှတ်ပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ထိုကဲ့သို့ လုပ်ဆောင်ချက် မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ပြန်လည်သုံးသပ်ရန် ထိန်းထားမှုကို မသတ်မှတ်ထားပါ (အဆင့်မြှင့်တင်ခြင်း အဆင့် 6.0.15-review-hold)။</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>၎င်းကို ထိန်းထားရသည့် အကြောင်းရင်းကို ပြောပါ။</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>၎င်းကို ထိန်းထားပြီး ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>သင်သည် ၎င်းကို ထိန်းထားခွင့် မရှိပါ (state/assign)။</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ထိန်းထားမှုကို မချမှတ်ရပါ (လုပ်ငန်းစဉ်တစ်ခုက ပြောင်းလဲမှုကို ထိန်းထားနိုင်သည်)။</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ထိန်းထားပြီးပါပြီ။</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>၎င်းကို ထိန်းမထားပါ။</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>သင်သည် ၎င်းကို ဖြုတ်ခွင့် မရှိပါ (state/assign)။</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ထိန်းထားမှုကို မဖြုတ်ရပါ (လုပ်ငန်းစဉ်တစ်ခုက ပြောင်းလဲမှုကို ထိန်းထားနိုင်သည်)။</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ဖြုတ်ပြီးပါပြီ; ဝှက်ထားဆဲ: သင်သည် ၎င်းကို ပြခွင့် မရှိပါ (content/hide)။</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ဖြုတ်ပြီးပါပြီ။</translation>
     </message>
 </context>
 </TS>

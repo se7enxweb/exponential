@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Файллар итеп сакланган урнаштыру үзгәрешләре: аларның торышы, башкарулар, башкару һәм кире кайтару.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Яңа эчтәлек</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Иң яңа эчтәлек, тикшерүгә тотылганнар һәм сайланганнар белән гамәлләр.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Башкаруны башлап булмады.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Үзгәртелгән</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Булдырылган</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Исем</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Класс</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Бүлек</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Булдыручы</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Яңа эчтәлек</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Бөтен сайтның соңгы булдырылган һәм үзгәртелгән эчтәлеге, иң яңасы беренче: килүчеләр җибәргәннәр, тикшерүгә тотылганнар, бастырылуны көткән караламалар. Элементларны тотудан азат итү, тоту, яшерү, күрсәтү, бетерү яки башка бүлеккә яки халәткә күчерү өчен сайлагыз.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Исемлекне укып булмады: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Тикшерүгә тоту әле көйләнмәгән, шуңа күрә бернәрсә дә тотылмый һәм тоту гамәлләре тәкъдим ителми. Аны 6.0.15-review-hold яңарту адымы көйли: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Исемлекне фильтрлау</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Башлап</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Кадәр</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Көне</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Булдырылган (беренче бастырылу)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Барысы</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Бастырылган</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Каралама, беркайчан да бастырылмаган</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Көтелә (раслауны яки датаны)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Чүп савытында</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Тикшерүгә тотылган</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Тотылган</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Тотылмаган</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Яшерелгән</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Күренә</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Җибәрелгән керү ноктасы</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Теләсә кайсы сайтка керү ноктасы</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Аудит язганы гына.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Хәзер: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Логин яки кулланучы ID-сы.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фильтр</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Фильтрларны чистарту</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Элементлар</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count эчендә %from – %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Элемент юк</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms мс эчендә укылды)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Сайланган элементлар белән гамәлләр</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Бу биттәгеләрнең барысын сайлау</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count сайланды</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Гамәл</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Гамәлне сайлагыз</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Тотудан азат итү</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Тикшерүгә тоту</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Яшерү</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Күрсәтү</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Чүп савытына күчерү</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Бетерү</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Бүлек билгеләү</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Халәт билгеләү</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Сәбәп</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Тоту өчен кирәк; тоту белән бергә һәм аудитта саклана.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Бүлекне сайлагыз</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Халәт</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Халәтне сайлагыз</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Сайланганнарга куллану</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Һәр элемент сезнең үз хокукларыгыз буенча тикшерелә. Чүп савытына күчерү һәм бетерү раслауны сорый. %count элементтан артыгы фон режимында башкарыла.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Сайлау</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Бастыру</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Җибәрелгән адрес</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name сайлау</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>әле юк</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(исемсез)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Каралама</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Көтелә</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ата-анасы яшергән</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Тотылган: яңа җибәрү</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version версиясе көтелә</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version версиясе эшкәртелә</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Каралама, %version версиясе</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version версиясе бастырылган</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date көненә планлаштырылган</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>адрес юк</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>язылмаган</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Бу фильтрларга бернәрсә дә туры килми.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Барысын күрсәтү</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Әлегә эчтәлек юк.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Биттә</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Биттә %count элемент күрсәтү.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Җибәрүнең адресы һәм браузеры аудит индексыннан алына, ул монда юк: баганада «язылмаган» дип күрсәтелә.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Адрес һәм браузер — аудит элемент өчен язганнар (автототу аларны һәрвакыт яза; бастыру һәм булдыру кабызылган урында гына), аның хосусыйлык көйләүләре саклаганча.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count элемент</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Бетерү элементларны бөтен версияләре һәм тәрҗемәләре белән бергә мәңгегә юк итә. Моны кире кайтарып булмый.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Элементлар чүп савытына күчә, аларны шуннан торгызып була.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Һәр элемент сезнең үз хокукларыгыз буенча тикшерелә; эчке элементлары булган элемент үзгәрешсез кала (аны эчтәлек структурасында бетерегез). Сездән бу сез икәнлекне раслау соралачак.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Бу фон режимында башкарыла: аның барыш бите ачыла, ә һәр элементның нәтиҗәсе тәмамлангач күрсәтелә.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Сайланган элементлар</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>һәм тагын %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Баш тарту</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Бернәрсә дә эшләнмәде</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Сәбәп: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Гамәл әле фон режимында башкарыла.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Аның барышы</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Фон гамәле уңышсыз тәмамланды: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Башкарылды</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Кире кагылды</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Уңышсыз</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Һәр элемент буенча</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Элемент</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Нәтиҗә</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Ни өчен</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Исемлеккә кайту</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Көйләү</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Бернәрсә дә эшләнмәде</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Раслау</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Гамәлне сайлагыз.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Ким дигәндә бер элементны сайлагыз.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Бер юлы 1000 элементтан артык сайламагыз.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Элементларның ни өчен тотылганын күрсәтегез.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Бүлекне сайлагыз.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Халәтне сайлагыз.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Форманы укып булмады.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Яңа эчтәлек</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Санагычларны укып булмады: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Тикшерүгә тотылган</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Бүген яңа</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Тикшерүгә тоту әле көйләнмәгән (6.0.15-review-hold яңарту адымы).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Бөтен яңа эчтәлек</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Сезгә модерация гамәлләрен башкарырга рөхсәт юк (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Модерация гамәле тәмамланмаган: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модерация: %count объектка %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total объекттан %done: %ok башкарылды, %refused кире кагылды, %failed уңышсыз</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok башкарылды, %refused кире кагылды, %failed уңышсыз</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ул инде юк.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Аның урнашу урыны юк (бастырылмаган).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Сезгә аны яшерергә рөхсәт юк (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Сезгә аны күрсәтергә рөхсәт юк (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ул инде яшерелгән.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ул яшерелмәгән.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Яшерелде.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Күрсәтелде.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ул чүп савытында: савытны бушатыгыз яки аны шуннан торгызыгыз.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Беркайчан да бастырылмаган караламаны чүп савытына җибәреп булмый: аны бетерегез.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Сезгә аны бетерергә рөхсәт юк (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Бетерелде.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Сезгә аны алып ташларга рөхсәт юк (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Аның эчке элементлары бар: аны алар күрсәтелгән эчтәлек структурасында алып ташлагыз.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ул алып ташланмады (эш агымы алып ташлауны тотып торырга мөмкин).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Чүп савытына күчерелде.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Бүлек юк.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ул инде шушы бүлектә.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Сезгә бу бүлекне билгеләргә рөхсәт юк (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Бүлек билгеләнмәде.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Бүлек билгеләнде.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Халәт юк.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ул инде шушы халәттә.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Сезгә бу халәтне билгеләргә рөхсәт юк (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Халәт билгеләнмәде (эш агымы үзгәрешне тотып торырга мөмкин).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Халәт билгеләнде.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Мондый гамәл юк.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Тикшерүгә тоту көйләнмәгән (6.0.15-review-hold яңарту адымы).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Аның ни өчен тотылганын күрсәтегез.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ул инде тотылган.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Сезгә аны тотарга рөхсәт юк (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Тоту куелмады (эш агымы үзгәрешне тотып торырга мөмкин).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Тотылды.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ул тотылмаган.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Сезгә аны азат итәргә рөхсәт юк (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Тоту алынмады (эш агымы үзгәрешне тотып торырга мөмкин).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Азат ителде; әле дә яшерен: сезгә аны күрсәтергә рөхсәт юк (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Азат ителде.</translation>
     </message>
 </context>
 </TS>

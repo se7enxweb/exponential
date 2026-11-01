@@ -15869,6 +15869,14 @@ Merk: Pakkene blir ikke avinstallert.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Endringer i installasjonen lagret som filer: tilstanden deres, kjøringene, kjør og rull tilbake.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nytt innhold</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Det nyeste innholdet, det som holdes tilbake for gjennomgang, og handlinger på et utvalg.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -81811,6 +81819,670 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Kjøringen kunne ikke startes.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Endret</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Opprettet</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Navn</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksjon</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Opprettet av</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nytt innhold</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Det sist opprettede og endrede innholdet på hele nettstedet, nyeste først: det besøkende har sendt inn, det som holdes tilbake for gjennomgang, utkast som venter på publisering. Velg elementer for å frigi, holde tilbake, skjule, vise, fjerne eller flytte dem til en annen seksjon eller tilstand.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Listen kunne ikke leses: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Tilbakeholdingen for gjennomgang er ikke satt opp ennå, så ingenting holdes tilbake, og handlingene for tilbakeholding tilbys ikke. Oppgraderingstrinnet 6.0.15-review-hold setter den opp: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrer listen</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fra</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Til</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dato</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Opprettet (først publisert)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Publiseringsstatus</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publisert</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Utkast, aldri publisert</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Forestående (venter på godkjenning eller en dato)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>I papirkurven</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Holdt tilbake for gjennomgang</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Holdt tilbake</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ikke holdt tilbake</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Skjult</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Synlig</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Sendt inn via</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Enhver nettstedstilgang</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Bare det revisjonen har registrert.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nå: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Et brukernavn eller en bruker-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrer</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Tøm filtre</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Elementer</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from til %to av %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ingen elementer</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lest på %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Handlinger på de valgte elementene</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Velg alle på denne siden</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count valgt</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Handling</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Velg en handling</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Opphev tilbakeholdingen</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Hold tilbake for gjennomgang</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Skjul</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Vis</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Flytt til papirkurven</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Slett</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Tildel seksjon</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Tildel tilstand</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Årsak</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Påkrevd for å holde tilbake; lagres med tilbakeholdingen og i revisjonen.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Velg en seksjon</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tilstand</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Velg en tilstand</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Bruk på de valgte</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Hvert element kontrolleres mot dine egne tillatelser. Flytting til papirkurven og sletting ber deg bekrefte. Mer enn %count elementer kjøres i bakgrunnen.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Velg</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publisering</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Sendt inn fra</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Velg %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ikke ennå</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(uten navn)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Utkast</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Forestående</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Skjult av overordnet</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Holdt tilbake: ny innsending</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versjon %version venter</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versjon %version under arbeid</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Utkast, versjon %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versjon %version publisert</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Planlagt til %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ingen adresse</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ikke registrert</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ingenting samsvarer med disse filtrene.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Vis alle</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Det finnes ikke noe innhold ennå.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per side</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Vis %count elementer per side.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adressen og nettleseren for en innsending kommer fra revisjonsindeksen, som ikke er tilgjengelig her: kolonnen viser «ikke registrert».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adressen og nettleseren er de revisjonen har registrert for elementet (den automatiske tilbakeholdingen registrerer dem alltid; publisering og oppretting bare der det er slått på), slik personverninnstillingene beholder dem.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count elementer</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Sletting fjerner elementene for godt, med alle versjoner og oversettelser. Det kan ikke angres.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Elementene går til papirkurven, der de kan gjenopprettes.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Hvert element kontrolleres mot dine egne tillatelser; et element med underelementer blir stående som det er (fjern det i innholdsstrukturen). Du blir bedt om å bekrefte at det er deg.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dette kjøres i bakgrunnen: fremdriftssiden åpnes, og resultatet per element vises når det er ferdig.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>De valgte elementene</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>og %count til</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ingenting ble gjort</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Årsak: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Handlingen kjører fortsatt i bakgrunnen.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Fremdriften</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Bakgrunnshandlingen mislyktes: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Utført</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Avvist</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislyktes</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per element</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Element</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Hvorfor</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Tilbake til listen</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Oppsett</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ingenting utført</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Bekreft</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Velg en handling.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Velg minst ett element.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Velg høyst 1000 elementer om gangen.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Oppgi hvorfor elementene holdes tilbake.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Velg seksjonen.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Velg tilstanden.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Skjemaet kunne ikke leses.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nytt innhold</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Antallene kunne ikke leses: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Holdt tilbake for gjennomgang</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nytt i dag</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tilbakeholdingen for gjennomgang er ikke satt opp ennå (oppgraderingstrinnet 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Alt nytt innhold</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Du har ikke lov til å utføre moderasjonshandlinger (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderasjonshandlingen er ikke fullført: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasjon: %action på %count objekter</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done av %total objekter: %ok utført, %refused avvist, %failed mislyktes</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok utført, %refused avvist, %failed mislyktes</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Det finnes ikke lenger.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Det har ingen plassering (ikke publisert).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Du har ikke lov til å skjule det (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Du har ikke lov til å vise det (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Det er allerede skjult.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Det er ikke skjult.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Skjult.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Vist.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Det ligger i papirkurven: tøm den eller gjenopprett det der.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Et utkast som aldri er publisert, kan ikke legges i papirkurven: slett det.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Du har ikke lov til å slette det (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Slettet.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Du har ikke lov til å fjerne det (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Det har underelementer: fjern det i innholdsstrukturen, der de er listet.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Det ble ikke fjernet (en arbeidsflyt holder kanskje fjerningen tilbake).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Flyttet til papirkurven.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Seksjonen finnes ikke.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Det er allerede i denne seksjonen.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Du har ikke lov til å tildele denne seksjonen (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Seksjonen ble ikke tildelt.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seksjon tildelt.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Tilstanden finnes ikke.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Det har allerede denne tilstanden.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Du har ikke lov til å tildele denne tilstanden (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Tilstanden ble ikke tildelt (en arbeidsflyt holder kanskje endringen tilbake).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Tilstand tildelt.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Det finnes ingen slik handling.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tilbakeholdingen for gjennomgang er ikke satt opp (oppgraderingstrinnet 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Oppgi hvorfor det holdes tilbake.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Det holdes allerede tilbake.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Du har ikke lov til å holde det tilbake (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Tilbakeholdingen ble ikke satt (en arbeidsflyt holder kanskje endringen tilbake).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Holdt tilbake.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Det holdes ikke tilbake.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Du har ikke lov til å frigi det (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Tilbakeholdingen ble ikke opphevet (en arbeidsflyt holder kanskje endringen tilbake).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Frigitt; fortsatt skjult: du har ikke lov til å vise det (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Frigitt.</translation>
     </message>
 </context>
 </TS>

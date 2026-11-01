@@ -15150,6 +15150,14 @@ An aire: Cha tèid na pacaidean a dhì-stàladh.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Atharraichean air an stàladh air an cumail mar fhaidhlichean: an staid, na ruithean, ruith is cuir air ais.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Susbaint o chionn ghoirid</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>An t-susbaint as ùire, na tha ga chumail airson lèirmheas, agus gnìomhan air taghadh.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Cha b&apos; urrainn dhuinn an ruith a thòiseachadh.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Atharraichte</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Air a chruthachadh</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ainm</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Clas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Earrann</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Cruthadair</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Susbaint o chionn ghoirid</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>An t-susbaint as ùire a chaidh a chruthachadh is atharrachadh air feadh na làraich gu lèir, an tè as ùire an toiseach: na chuir aoighean a-steach, na tha ga chumail airson lèirmheas, dreachdan a tha a' feitheamh ri am foillseachadh. Tagh nithean airson an leigeil ma sgaoil, an cumail, am falach, an sealltainn, an toirt air falbh no an gluasad gu earrann no staid eile.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Cha b' urrainn dhuinn an liosta a leughadh: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Cha deach an cumail airson lèirmheas a shuidheachadh fhathast, mar sin chan eil dad ga chumail agus chan eil na gnìomhan cumail gan tairgsinn. Suidhichidh an ceum àrdachaidh 6.0.15-review-hold e: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Criathraich an liosta</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>O</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Gu</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ceann-latha</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Air a chruthachadh (a' chiad fhoillseachadh)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Na h-uile</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Inbhe</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Foillsichte</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Dreachd, nach deach fhoillseachadh a-riamh</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ri dhèiligeadh (a' feitheamh ri aonta no ceann-latha)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>San sgudal</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ga chumail airson lèirmheas</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Ga chumail</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Gun a chumail</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Falaichte</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ri fhaicinn</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Air a chur a-steach air</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Inntrigeadh làraich sam bith</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Dìreach na chlàraich an sgrùdadh.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>An-dràsta: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Ainm clàraidh a-steach no ID cleachdaiche.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Criathraich</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Falamhaich na criathragan</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Nithean</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from gu %to à %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Gun nì</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(air a leughadh ann an %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Gnìomhan air na nithean a thagh thu</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Tagh na h-uile air an duilleag seo</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count air an taghadh</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gnìomh</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Tagh gnìomh</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Leig ma sgaoil an cumail</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Cùm airson lèirmheas</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Falaich</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Seall</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Gluais dhan sgudal</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Sguab às</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Iomruin earrann</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Iomruin staid</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Adhbhar</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Feumail airson cumail; air a ghlèidheadh leis a' chumail agus san sgrùdadh.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Tagh earrann</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Staid</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Tagh staid</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Cuir an sàs air an fheadhainn a thagh thu</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Thèid gach nì a sgrùdadh a rèir nan ceadan agad fhèin. Iarraidh gluasad dhan sgudal agus sguabadh às ort dearbhadh. Ruithidh barrachd air %count nithean sa chùlaibh.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tagh</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Foillseachadh</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Air a chur a-steach o</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Tagh %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>chan ann fhathast</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(gun ainm)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Dreachd</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ri dhèiligeadh</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Falaichte le a phàrant</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Ga chumail: tagradh ùr</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Tionndadh %version ri dhèiligeadh</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Tionndadh %version a' dol</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Dreachd, tionndadh %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Tionndadh %version foillsichte</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Air an sgeideal airson %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>gun seòladh</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>gun chlàradh</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Chan eil dad a' freagairt ris na criathragan seo.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Seall na h-uile</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Chan eil susbaint ann fhathast.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Gach duilleag</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Seall %count nithean gach duilleag.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Thig seòladh is brabhsair tagraidh o chlàr-amais an sgrùdaidh, nach eil ri fhaighinn an-seo: tha an colbh ag ràdh "gun chlàradh".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>'S e an seòladh is am brabhsair an fheadhainn a chlàraich an sgrùdadh airson an nì (bidh an cumail fèin-obrachail gan clàradh an-còmhnaidh; foillseachadh is cruthachadh a-mhàin far a bheil e air), mar a ghlèidheas na roghainnean prìobhaideachd aige iad.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count nithean</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Bheir sguabadh às air falbh na nithean gu buan, le gach tionndadh is eadar-theangachadh aca. Cha ghabh seo a neo-dhèanamh.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Thèid na nithean dhan sgudal, far an gabh an aiseag.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Thèid gach nì a sgrùdadh a rèir nan ceadan agad fhèin; thèid nì le fo-nithean fhàgail mar a tha e (thoir air falbh e ann an structar na susbainte). Thèid iarraidh ort dearbhadh gur e thu fhèin a th' ann.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ruithidh seo sa chùlaibh: fosglaidh duilleag an adhartais aige, agus thèid an toradh airson gach nì a shealltainn nuair a bhios e deiseil.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Na nithean a thagh thu</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>agus %count a bharrachd</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Sguir dheth</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Cha deach dad a dhèanamh</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Adhbhar: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Tha an gnìomh fhathast a' ruith sa chùlaibh.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>An t-adhartas aige</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Dh'fhàillig an gnìomh sa chùlaibh: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Deiseil</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Air a dhiùltadh</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Air fàilligeadh</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Gach nì</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Nì</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Toradh</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Carson</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Air ais dhan liosta</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Suidheachadh</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Cha do rinneadh dad</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Dearbh</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Tagh gnìomh.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Tagh co-dhiù aon nì.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Tagh 1000 nì air a' char as motha aig an aon àm.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Innis carson a tha na nithean gan cumail.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Tagh an earrann.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Tagh an staid.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Cha b' urrainn dhuinn am foirm a leughadh.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Susbaint o chionn ghoirid</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Cha b' urrainn dhuinn na h-àireamhan a leughadh: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ga chumail airson lèirmheas</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ùr an-diugh</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Cha deach an cumail airson lèirmheas a shuidheachadh fhathast (an ceum àrdachaidh 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>A h-uile susbaint o chionn ghoirid</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Chan fhaod thu gnìomhan maorsainneachd a ruith (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Chan eil an gnìomh maorsainneachd coileanta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Maorsainneachd: %action air %count oibseactan</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done à %total oibseactan: %ok deiseil, %refused air an diùltadh, %failed air fàilligeadh</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok deiseil, %refused air an diùltadh, %failed air fàilligeadh</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Chan eil e ann tuilleadh.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Chan eil ionad aige (gun fhoillseachadh).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Chan fhaod thu fhalach (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Chan fhaod thu a shealltainn (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Tha e falaichte mu thràth.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Chan eil e falaichte.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Air fhalach.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Air a shealltainn.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Tha e san sgudal: falamhaich an sgudal no aisig e an-sin.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Chan urrainn do dhreachd nach deach fhoillseachadh a-riamh a dhol dhan sgudal: sguab às e.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Chan fhaod thu a sguabadh às (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Air a sguabadh às.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Chan fhaod thu a thoirt air falbh (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Tha fo-nithean aige: thoir air falbh e ann an structar na susbainte, far a bheil iad air an liostadh.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Cha deach a thoirt air falbh (dh'fhaoidte gu bheil sruth-obrach a' cumail an toirt air falbh).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Air a ghluasad dhan sgudal.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Chan eil an earrann ann.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Tha e san earrann seo mu thràth.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Chan fhaod thu an earrann seo iomruineadh (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Cha deach an earrann iomruineadh.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Earrann air iomruineadh.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Chan eil an staid ann.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Tha e san staid seo mu thràth.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Chan fhaod thu an staid seo iomruineadh (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Cha deach an staid iomruineadh (dh'fhaoidte gu bheil sruth-obrach a' cumail an atharrachaidh).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Staid air iomruineadh.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Chan eil a leithid de ghnìomh ann.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Cha deach an cumail airson lèirmheas a shuidheachadh (an ceum àrdachaidh 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Innis carson a tha e ga chumail.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Tha e ga chumail mu thràth.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Chan fhaod thu a chumail (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Cha deach an cumail a chur air (dh'fhaoidte gu bheil sruth-obrach a' cumail an atharrachaidh).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Ga chumail.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Chan eil e ga chumail.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Chan fhaod thu a leigeil ma sgaoil (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Cha deach an cumail a leigeil ma sgaoil (dh'fhaoidte gu bheil sruth-obrach a' cumail an atharrachaidh).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Air a leigeil ma sgaoil; fhathast falaichte: chan fhaod thu a shealltainn (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Air a leigeil ma sgaoil.</translation>
     </message>
 </context>
 </TS>

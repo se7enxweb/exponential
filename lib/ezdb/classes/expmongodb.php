@@ -614,7 +614,7 @@ class expMongoDB extends eZDBInterface
             $i++;
             if ( $keyword === 'IN' )
             {
-                $values = $this->parseWhereValueList( $tokens, $i );
+                $values = $this->parseWhereValueList( $tokens, $i, $column );
                 return $values === false ? false
                     : $this->withDeclaredDefault( $column, array( '$nin' => $values ), 'NOT IN', $values );
             }
@@ -630,7 +630,7 @@ class expMongoDB extends eZDBInterface
         if ( $token['type'] === 'keyword' && $token['value'] === 'IN' )
         {
             $i++;
-            $values = $this->parseWhereValueList( $tokens, $i );
+            $values = $this->parseWhereValueList( $tokens, $i, $column );
             return $values === false ? false
                 : $this->withDeclaredDefault( $column, array( '$in' => $values ), 'IN', $values );
         }
@@ -879,8 +879,17 @@ class expMongoDB extends eZDBInterface
         return false;
     }
 
-    protected function parseWhereValueList( array $tokens, &$i )
+    protected function parseWhereValueList( array $tokens, &$i, $column = null )
     {
+        // a quoted number in the list of a text column stays text, as "column = '123'" does: object_id IN ('200000')
+        // on expaudit_event (varchar) found nothing, the list being read as integers
+        $text = false;
+        if ( $column !== null && $this->WhereTable !== null )
+        {
+            $declared = self::declaredColumns( $this->WhereTable );
+            $numeric = self::numericColumns( $this->WhereTable );
+            $text = isset( $declared[$column] ) && !isset( $numeric[$column] );
+        }
         if ( $i >= count( $tokens ) || $tokens[$i]['type'] !== '(' )
             return false;
         $i++;
@@ -895,7 +904,7 @@ class expMongoDB extends eZDBInterface
             }
             if ( !in_array( $tokens[$i]['type'], array( 'number', 'string' ), true ) )
                 return false;
-            $values[] = self::whereValue( $tokens[$i] );
+            $values[] = $text && $tokens[$i]['type'] === 'string' ? (string)$tokens[$i]['value'] : self::whereValue( $tokens[$i] );
             $i++;
         }
 

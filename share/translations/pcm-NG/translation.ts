@@ -15150,6 +15150,14 @@ Note: Dem no go uninstall di packages.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Change dem for di installation wey dey inside file: how dem dey, di run dem, run dem and turn dem back.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>New content wey just come</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Di newest content, wetin dem hold make dem review am, and actions for di ones wey you choose.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80561,6 +80569,670 @@ You go need change di class of di node wit di swap functionality.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Di run no fit start.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Changed</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Dem don create am</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Class</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Section</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Who create am</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>New content wey just come</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Di content wey dem just create and change for di whole site, di newest first: wetin visitors send, wetin dem hold make dem review am, drafts wey dey wait make dem publish dem. Choose items make you release dem, hold dem, hide dem, show dem, comot dem or carry dem go another section or state.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>We no fit read di list: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Dem never set up di review hold, so nothing dey hold and di hold actions no dey show. Di upgrade step 6.0.15-review-hold dey set am up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filter di list</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>From when</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Reach</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Di date</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Dem don create am (first time wey dem publish am)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Everything</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>How e be</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Dem don publish am</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Draft, dem never publish am before</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>E still dey wait (e dey wait for approval or for one date)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>E dey inside trash</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Dem hold am make dem review am</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Dem hold am</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Dem no hold am</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Dem hide am</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>People fit see am</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Dem send am on</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Any siteaccess at all</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Only wetin di audit write down.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Now now: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Login name or user id.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filter am</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Clear di filters</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Di items</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from to %to of %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>No item dey</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(we read am for %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Actions for di items wey you choose</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Choose all for dis page</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>You don choose %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Wetin to do</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Choose wetin to do</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Release di hold</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Hold am make dem review am</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Hide am</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Show am</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Carry go trash</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Delete am</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Give am section</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Give am state</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Why</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>You need am to hold; dem go keep am with di hold and inside di audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Choose one section</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Di state</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Choose one state</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Do am for di ones wey you choose</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>We go check each item against your own permissions. To carry go trash and to delete go ask you make you confirm. If e pass %count items, e go run for background.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Choose</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Di publishing</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Dem send am from</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Choose %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>e never reach</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(e no get name)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draft wey never finish</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>E still dey wait</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Di parent don hide am</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Dem hold am: new one wey dem send</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Version %version still dey wait</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Dem still dey work on version %version</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Draft, na version %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Dem don publish version %version</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Dem plan am for %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>address no dey</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>dem no write am down</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nothing match dis filters.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Show everything</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Content never dey.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>For each page</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Show %count items for each page.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Di address and di browser of wetin dem send dey come from di audit index, wey no dey here: di column go talk "dem no write am down".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Di address and di browser na di ones wey di audit write down for di item (di auto-hold dey always write dem; publishing and creating only where dem switch am on), as di privacy settings take keep dem.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count items dem</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>To delete go comot di items forever, with all their versions and translations. You no fit undo am.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Di items go enter trash, where dem fit bring dem back from.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>We go check each item against your own permissions; any item wey get sub items, we go leave am as e be (comot am for di content structure). Dem go ask you make you show say na you.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dis one dey run for background: di page wey show how e dey go go open, and di result for each item go show when e don finish.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Di items wey you choose</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>and %count more again</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Cancel</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nothing happen</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Why: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Di action still dey run for background.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>How e dey go</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Di background action no work: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>E don finish</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Dem refuse am</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>E no work</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>For each item</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>One item</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Wetin come out</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Why e be so</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Go back to di list</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Set am up</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nothing dey done</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Confirm am</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Choose wetin to do.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Choose at least one item.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>No choose pass 1000 items at once.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Talk why dem hold di items.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Choose di section.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Choose di state.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>We no fit read di form.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>New content wey just come</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>We no fit read di counts: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Dem hold am make dem review am</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>New ones today</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Dem never set up di review hold (di upgrade step 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>All di new content wey just come</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>You no get permission to run moderation actions (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Di moderation action never complete: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderation: %action for %count objects</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done of %total objects: %ok don finish, %refused dem refuse, %failed no work</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok don finish, %refused dem refuse, %failed no work</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>E no dey again.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>E no get location (dem never publish am).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>You no get permission to hide am (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>You no get permission to show am (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Dem don hide am before.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Dem no hide am.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Dem don hide am.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Dem don show am.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>E dey inside trash: empty am or bring am back from there.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Draft wey dem never publish no fit go trash: delete am.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>You no get permission to delete am (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Dem don delete am.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>You no get permission to comot am (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>E get sub items: comot am for di content structure, where dem list dem.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Dem no comot am (one workflow fit dey hold di removal).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Dem don carry am go trash.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Di section no dey.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>E don already dey for dis section.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>You no get permission to give dis section (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Dem no give di section.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Dem don give di section.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Di state no dey.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>E don already dey for dis state.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>You no get permission to give dis state (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Dem no give di state (one workflow fit dey hold di change).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Dem don give di state.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Dat kind action no dey.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Dem never set up di review hold (di upgrade step 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Talk why dem hold am.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Dem don hold am before.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>You no get permission to hold am (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Dem no put di hold (one workflow fit dey hold di change).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Dem don hold am.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Dem no hold am.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>You no get permission to release am (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Dem no release di hold (one workflow fit dey hold di change).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Dem don release am; e still dey hide: you no get permission to show am (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Dem don release am.</translation>
     </message>
 </context>
 </TS>

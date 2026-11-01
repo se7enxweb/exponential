@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ინსტალაციის ცვლილებები, შენახული ფაილებად: მათი მდგომარეობა, გაშვებები, გაშვება და დაბრუნება.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ახალი შიგთავსი</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>უახლესი შიგთავსი, რაც შემოწმებისთვის არის შეჩერებული, და მოქმედებები მონიშნულზე.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>გაშვების დაწყება ვერ მოხერხდა.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>შეცვლილი</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>შექმნილი</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>სახელი</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>კლასი</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>სექცია</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>შემქმნელი</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ახალი შიგთავსი</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>მთელი საიტის ბოლოს შექმნილი და შეცვლილი შიგთავსი, უახლესი პირველი: რაც სტუმრებმა გამოაგზავნეს, რაც შემოწმებისთვის არის შეჩერებული, მონახაზები, რომლებიც გამოქვეყნებას ელოდება. მონიშნეთ ელემენტები, რომ გაათავისუფლოთ, შეაჩეროთ, დამალოთ, გამოაჩინოთ, მოაცილოთ ან სხვა სექციაში ან მდგომარეობაში გადაიტანოთ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>სიის წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>შემოწმებისთვის შეჩერება ჯერ არ არის გამართული, ამიტომ არაფერი შეჩერებულა და შეჩერების მოქმედებები არ შემოითავაზება. მას აწყობს განახლების ნაბიჯი 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>სიის გაფილტვრა</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>დან</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>მდე</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>თარიღი</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>შექმნილი (პირველი გამოქვეყნება)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ყველა</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>გამოქვეყნების სტატუსი</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>გამოქვეყნებული</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>მონახაზი, არასოდეს გამოქვეყნებული</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>მოლოდინში (ელოდება დამტკიცებას ან თარიღს)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>სანაგვეში</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>შეჩერებულია შემოწმებისთვის</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>შეჩერებული</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>შეუჩერებელი</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>დამალული</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ხილული</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>გამოგზავნის საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ნებისმიერი საიტზე წვდომა</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>მხოლოდ ის, რაც აუდიტმა ჩაიწერა.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ახლა: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>მომხმარებლის სახელი ან ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>გაფილტვრა</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ფილტრების გასუფთავება</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ელემენტები</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to, სულ %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ელემენტი არ არის</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(წაკითხულია %ms მწ-ში)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>მოქმედებები მონიშნულ ელემენტებზე</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ამ გვერდზე ყველას მონიშვნა</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>მონიშნულია %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>მოქმედება</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>აირჩიეთ მოქმედება</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>შეჩერების მოხსნა</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>შემოწმებისთვის შეჩერება</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>დამალვა</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>გამოჩენა</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>სანაგვეში გადატანა</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>წაშლა</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>სექციის მინიჭება</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>მდგომარეობის მინიჭება</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>მიზეზი</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>საჭიროა შესაჩერებლად; ინახება შეჩერებასთან ერთად და აუდიტში.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>აირჩიეთ სექცია</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>აირჩიეთ მდგომარეობა</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>მონიშნულზე გამოყენება</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>თითოეული ელემენტი მოწმდება თქვენი საკუთარი ნებართვებით. სანაგვეში გადატანა და წაშლა დადასტურებას ითხოვს. %count-ზე მეტი ელემენტი ფონურ რეჟიმში სრულდება.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>მონიშვნა</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>გამოქვეყნება</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>საიდან გამოიგზავნა</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name-ის მონიშვნა</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ჯერ არა</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(უსახელო)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>იდენტიფიკატორი %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>მონახაზი</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>მოლოდინში</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>დამალულია მშობლის მიერ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>შეჩერებული: ახალი გამოგზავნა</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ვერსია %version მოლოდინშია</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ვერსია %version მუშავდება</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>მონახაზი, ვერსია %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ვერსია %version გამოქვეყნდა</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>დაგეგმილია %date-ზე</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>მისამართი არ არის</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>არ ჩაწერილა</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ამ ფილტრებს არაფერი შეესაბამება.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ყველას ჩვენება</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>შიგთავსი ჯერ არ არის.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>გვერდზე</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>გვერდზე %count ელემენტის ჩვენება.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>გამოგზავნის მისამართი და ბრაუზერი აუდიტის ინდექსიდან მოდის, რომელიც აქ ხელმისაწვდომი არ არის: სვეტში წერია „არ ჩაწერილა“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>მისამართი და ბრაუზერი არის ის, რაც აუდიტმა ელემენტისთვის ჩაიწერა (ავტომატური შეჩერება მათ ყოველთვის იწერს; გამოქვეყნება და შექმნა მხოლოდ იქ, სადაც ჩართულია), ისე, როგორც მათ კონფიდენციალურობის პარამეტრები ინახავს.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ელემენტი</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>წაშლა ელემენტებს სამუდამოდ შლის, ყველა მათი ვერსიითა და თარგმანით. მისი გაუქმება შეუძლებელია.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ელემენტები სანაგვეში გადადის, საიდანაც მათი აღდგენა შეიძლება.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>თითოეული ელემენტი მოწმდება თქვენი საკუთარი ნებართვებით; ქვეელემენტების მქონე ელემენტი ხელუხლებელი რჩება (მოაცილეთ ის შიგთავსის სტრუქტურაში). გთხოვენ, დაადასტუროთ, რომ ეს თქვენ ხართ.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ეს ფონურ რეჟიმში სრულდება: იხსნება მისი მიმდინარეობის გვერდი, ხოლო დასრულებისას ნაჩვენებია შედეგი თითოეული ელემენტისთვის.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>მონიშნული ელემენტები</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>და კიდევ %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>გაუქმება</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>არაფერი გაკეთებულა</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>მიზეზი: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>მოქმედება ჯერ კიდევ ფონურ რეჟიმში სრულდება.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>მისი მიმდინარეობა</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ფონური მოქმედება ვერ შესრულდა: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>დასრულებულია</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>უარყოფილია</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ელემენტების მიხედვით</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ელემენტი</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>შედეგი</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>რატომ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>სიაში დაბრუნება</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>კონფიგურაცია</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>არაფერი გაკეთებულა</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>დადასტურება</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>აირჩიეთ მოქმედება.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>მონიშნეთ მინიმუმ ერთი ელემენტი.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ერთდროულად მონიშნეთ მაქსიმუმ 1000 ელემენტი.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>მიუთითეთ, რატომ არის ელემენტები შეჩერებული.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>აირჩიეთ სექცია.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>აირჩიეთ მდგომარეობა.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ფორმის წაკითხვა ვერ მოხერხდა.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ახალი შიგთავსი</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>რაოდენობების წაკითხვა ვერ მოხერხდა: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>შეჩერებულია შემოწმებისთვის</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>დღეს ახალი</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>შემოწმებისთვის შეჩერება ჯერ არ არის გამართული (განახლების ნაბიჯი 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>მთელი ახალი შიგთავსი</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>თქვენ არ შეგიძლიათ მოდერაციის მოქმედებების შესრულება (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>მოდერაციის მოქმედება დასრულებული არ არის: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>მოდერაცია: %action %count ობიექტზე</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done %total ობიექტიდან: %ok დასრულდა, %refused უარყოფილია, %failed ვერ შესრულდა</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok დასრულდა, %refused უარყოფილია, %failed ვერ შესრულდა</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ის აღარ არსებობს.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>მას მდებარეობა არ აქვს (არ არის გამოქვეყნებული).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი დამალვა (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი გამოჩენა (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ის უკვე დამალულია.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ის დამალული არ არის.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>დამალულია.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>გამოჩენილია.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ის სანაგვეშია: იქ გაასუფთავეთ ან აღადგინეთ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>არასოდეს გამოქვეყნებული მონახაზი სანაგვეში ვერ გადავა: წაშალეთ ის.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი წაშლა (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>წაშლილია.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი მოცილება (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>მას ქვეელემენტები აქვს: მოაცილეთ ის შიგთავსის სტრუქტურაში, სადაც ისინი ჩამოთვლილია.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ის არ მოცილდა (შესაძლოა სამუშაო პროცესი აჩერებს მოცილებას).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>გადატანილია სანაგვეში.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>სექცია არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ის უკვე ამ სექციაშია.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>თქვენ არ შეგიძლიათ ამ სექციის მინიჭება (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>სექცია არ მიენიჭა.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>სექცია მიენიჭა.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>მდგომარეობა არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ის უკვე ამ მდგომარეობაშია.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>თქვენ არ შეგიძლიათ ამ მდგომარეობის მინიჭება (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>მდგომარეობა არ მიენიჭა (შესაძლოა სამუშაო პროცესი აჩერებს ცვლილებას).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>მდგომარეობა მიენიჭა.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ასეთი მოქმედება არ არსებობს.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>შემოწმებისთვის შეჩერება გამართული არ არის (განახლების ნაბიჯი 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>მიუთითეთ, რატომ არის ის შეჩერებული.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ის უკვე შეჩერებულია.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი შეჩერება (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>შეჩერება არ დაწესდა (შესაძლოა სამუშაო პროცესი აჩერებს ცვლილებას).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>შეჩერებულია.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ის შეჩერებული არ არის.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>თქვენ არ შეგიძლიათ მისი გათავისუფლება (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>შეჩერება არ მოიხსნა (შესაძლოა სამუშაო პროცესი აჩერებს ცვლილებას).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>გათავისუფლდა; კვლავ დამალულია: თქვენ არ შეგიძლიათ მისი გამოჩენა (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>გათავისუფლდა.</translation>
     </message>
 </context>
 </TS>

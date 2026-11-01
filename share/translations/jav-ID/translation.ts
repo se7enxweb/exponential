@@ -15150,6 +15150,14 @@ Cathetan: Paket ora bakal dicopot pasangane.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Owah-owahan instalasi sing disimpen dadi berkas: kahanane, eksekusine, nglakokake lan mbatalake.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Konten anyar</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Konten paling anyar, sing ditahan kanggo dipriksa, lan tumindak ing pilihan.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80561,6 +80569,670 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
     <message>
         <source>The run could not be started.</source>
         <translation>Eksekusi ora bisa diwiwiti.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Diowahi</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Digawe</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Jeneng</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kelas</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksi</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Sing nggawe</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Konten anyar</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Konten sing paling anyar digawe lan diowahi ing kabeh situs, sing paling anyar dhisik: kiriman pengunjung, konten sing ditahan kanggo dipriksa, draf sing ngenteni diterbitake. Pilih item kanggo ngeculake tahanan, nahan, ndhelikake, nampilake, nyopot utawa mindhah menyang seksi utawa kahanan liyane.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Dhaptar ora bisa diwaca: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Tahanan kanggo dipriksa durung disiapake, mula ora ana sing ditahan lan tumindak tahanan ora ditawakake. Langkah pembaruan 6.0.15-review-hold nyiapake: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Saring dhaptar</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Saka</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Nganti</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Tanggal</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Digawe (pisanan diterbitake)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kabeh</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Diterbitake</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Draf, durung tau diterbitake</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Isih ngenteni (ngenteni persetujuan utawa tanggal)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Ing tong sampah</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ditahan kanggo dipriksa</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Ditahan</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ora ditahan</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Didhelikake</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Katon</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Dikirim tanggal</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Akses situs apa wae</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Mung sing dicathet audit.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Saiki: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Jeneng login utawa ID pangguna.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Saring</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Busak saringan</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Item</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from nganti %to saka %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ora ana item</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(diwaca sajrone %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Tumindak ing item sing dipilih</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Pilih kabeh ing kaca iki</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count dipilih</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Tumindak</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Pilih tumindak</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Uculake tahanan</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Tahan kanggo dipriksa</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Dhelikake</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Tampilake</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Pindhah menyang tong sampah</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Busak</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Tetepake seksi</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Tetepake kahanan</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sebab</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Dibutuhake kanggo nahan; disimpen bebarengan karo tahanan lan ing audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Pilih seksi</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Kahanan</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Pilih kahanan</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Trapake ing sing dipilih</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Saben item dipriksa miturut idin panjenengan dhewe. Mindhah menyang tong sampah lan mbusak njaluk konfirmasi panjenengan. Luwih saka %count item mlaku ing latar mburi.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Pilih</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Penerbitan</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Dikirim saka</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Pilih %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>durung</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(tanpa jeneng)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Draf</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Isih ngenteni</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Didhelikake dening induke</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Ditahan: kiriman anyar</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versi %version isih ngenteni</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versi %version lagi digarap</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Draf, versi %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versi %version diterbitake</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Dijadwalake kanggo %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ora ana alamat</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ora dicathet</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ora ana sing cocog karo saringan iki.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Tampilake kabeh</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Durung ana konten.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Saben kaca</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Tampilake %count item saben kaca.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Alamat lan browser saka kiriman asale saka indeks audit, sing ora kasedhiya ing kene: kolom kasebut nulis "ora dicathet".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Alamat lan browser yaiku sing dicathet audit kanggo item kasebut (tahanan otomatis tansah nyathet; nerbitake lan nggawe mung yen diuripake), kaya sing disimpen dening setelan privasine.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count item</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Mbusak ngilangake item kanggo selawase, karo kabeh versi lan terjemahane. Iki ora bisa dibatalake.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Item dipindhah menyang tong sampah, saka ing kono bisa dibalekake.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Saben item dipriksa miturut idin panjenengan dhewe; item sing duwe subitem ditinggal kaya saiki (copot ing struktur konten). Panjenengan bakal dijaluk mbuktekake yen iki pancen panjenengan.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Iki mlaku ing latar mburi: kaca kemajuane dibukak, lan asil saben item ditampilake yen wis rampung.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Item sing dipilih</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>lan %count liyane</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ora ana sing ditindakake</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sebab: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Tumindak isih mlaku ing latar mburi.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Kemajuane</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Tumindak latar mburi gagal: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Rampung</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ditolak</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Gagal</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Saben item</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Item</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Asil</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kenapa</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Bali menyang dhaptar</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Panyiapan</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ora ana sing digarap</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Konfirmasi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Pilih tumindak.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Pilih paling ora siji item.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Pilih paling akeh 1000 item sapisan.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sebutake sebabe item ditahan.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Pilih seksine.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Pilih kahanane.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulir ora bisa diwaca.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Konten anyar</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Cacahe ora bisa diwaca: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ditahan kanggo dipriksa</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Anyar dina iki</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tahanan kanggo dipriksa durung disiapake (langkah pembaruan 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Kabeh konten anyar</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Panjenengan ora kena nglakokake tumindak moderasi (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Tumindak moderasi durung jangkep: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasi: %action ing %count objek</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done saka %total objek: %ok rampung, %refused ditolak, %failed gagal</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok rampung, %refused ditolak, %failed gagal</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Iki wis ora ana maneh.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Iki ora duwe lokasi (durung diterbitake).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Panjenengan ora kena ndhelikake (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Panjenengan ora kena nampilake (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Iki wis didhelikake.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Iki ora didhelikake.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Didhelikake.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Ditampilake.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Iki ana ing tong sampah: kosongake utawa balekake ing kana.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Draf sing durung tau diterbitake ora bisa mlebu tong sampah: busaken.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Panjenengan ora kena mbusak (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Dibusak.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Panjenengan ora kena nyopot (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Iki duwe subitem: copot ing struktur konten, panggonan subitem kasebut kadhaptar.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Iki ora dicopot (alur kerja bisa uga nahan pencopotan).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Dipindhah menyang tong sampah.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Seksi ora ana.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Iki wis ana ing seksi iki.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Panjenengan ora kena netepake seksi iki (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Seksi ora ditetepake.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seksi ditetepake.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Kahanan ora ana.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Iki wis ana ing kahanan iki.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Panjenengan ora kena netepake kahanan iki (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Kahanan ora ditetepake (alur kerja bisa uga nahan owah-owahan).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Kahanan ditetepake.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ora ana tumindak kaya ngono.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tahanan kanggo dipriksa durung disiapake (langkah pembaruan 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sebutake sebabe iki ditahan.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Iki wis ditahan.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Panjenengan ora kena nahan (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Tahanan ora dipasang (alur kerja bisa uga nahan owah-owahan).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Ditahan.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Iki ora ditahan.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Panjenengan ora kena ngeculake (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Tahanan ora dicuculake (alur kerja bisa uga nahan owah-owahan).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Dicuculake; isih didhelikake: panjenengan ora kena nampilake (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Dicuculake.</translation>
     </message>
 </context>
 </TS>

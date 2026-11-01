@@ -15150,6 +15150,14 @@ Icyitonderwa: Amapaki ntazakurwa muri sisitemu.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Impinduka ku iyinjizwa zibitswe nka dosiye: uko zihagaze, ibikorwa, gukoresha no gusubiza inyuma.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ibirimo bishya</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ibirimo bishya cyane, ibifashwe ngo bisuzumwe, n'ibikorwa ku byatoranyijwe.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
     <message>
         <source>The run could not be started.</source>
         <translation>Igikorwa nticyashoboye gutangira.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Byahinduwe</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Byakozwe</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Izina</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Ubwoko</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Igice</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Uwakoze</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ibirimo bishya</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ibirimo byakozwe kandi byahinduwe vuba aha ku rubuga rwose, ibishya mbere: ibyo abasura bohereje, ibifashwe ngo bisuzumwe, imishinga itegereje gutangazwa. Hitamo ibintu kugira ngo ubirekure, ubifate, ubihishe, ubyerekane, ubikureho cyangwa ubyimurire mu kindi gice cyangwa indi mimerere.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Urutonde ntirwashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Ifatwa ryo gusuzuma ntiriratunganywa, bityo nta kintu gifashwe kandi ibikorwa byo gufata ntibitangwa. Intambwe yo kuvugurura 6.0.15-review-hold irabitunganya: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Iyungurura urutonde</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Kuva</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Kugeza</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Itariki</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Byakozwe (bitangajwe bwa mbere)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Byose</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Uko bihagaze</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Byatangajwe</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Umushinga, utigeze utangazwa</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Bitegereje (kwemezwa cyangwa itariki)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Mu giseke cy'imyanda</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Bifashwe ngo bisuzumwe</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Bifashwe</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Bidafashwe</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Gihishe</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Bigaragara</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Byoherejwe kuri</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Uburyo ubwo ari bwo bwose bwo kugera ku rubuga</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ibyo igenzura ryanditse gusa.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ubu: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Izina ryo kwinjira cyangwa nimero y'ukoresha.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Iyungurura</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Siba amayungurura</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ibintu</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from kugeza %to muri %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nta kintu</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(byasomwe mu ms %ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ibikorwa ku bintu byatoranyijwe</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Hitamo byose kuri uru rupapuro</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count byatoranyijwe</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Igikorwa</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Hitamo igikorwa</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Rekura ifatwa</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Fata ngo bisuzumwe</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Guhisha</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Kwerekana</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Kohereza mu giseke cy'imyanda</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Gusiba</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Guha igice</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Guha imimerere</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Impamvu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Irakenewe kugira ngo bifatwe; ibikwa hamwe n'ifatwa no mu igenzura.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Hitamo igice</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Imimerere</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Hitamo imimerere</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Shyira mu bikorwa ku byatoranyijwe</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Buri kintu kigenzurwa hakurikijwe uburenganzira bwawe. Kohereza mu giseke cy'imyanda no gusiba bigusaba kwemeza. Ibintu birenze %count bikorerwa inyuma.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Hitamo</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Itangazwa</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Byoherejwe biturutse</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Hitamo %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ntibiraba</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(nta zina)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Nimero %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Umushinga</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Bitegereje</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Byahishwe n'ikiri hejuru</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Bifashwe: ibyoherejwe bishya</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Verisiyo %version itegereje</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Verisiyo %version iri gukorwa</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Umushinga, verisiyo %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Verisiyo %version yatangajwe</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Biteganyijwe ku wa %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nta aderesi</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ntibyanditswe</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nta kintu gihuye n'aya mayungurura.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Kwerekana byose</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Nta birimo biraboneka.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Kuri buri rupapuro</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Erekana ibintu %count kuri buri rupapuro.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Aderesi na mushakisha by'ibyoherejwe biva mu rutonde rw'igenzura, rutaboneka hano: inkingi ivuga "ntibyanditswe".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Aderesi na mushakisha ni ibyo igenzura ryanditse kuri iki kintu (ifatwa ryikora rihora ribyandika; gutangaza no gukora gusa aho byafunguwe), uko amagenamiterere yaryo y'ibanga abibika.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: ibintu %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Gusiba bikuraho ibintu burundu, hamwe na verisiyo zabyo zose n'ubusobanuro bwabyo. Ntibishobora gusubizwa inyuma.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Ibintu bijya mu giseke cy'imyanda, aho bishobora kugarurwa.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Buri kintu kigenzurwa hakurikijwe uburenganzira bwawe; ikintu gifite ibindi bintu munsi yacyo gisigara uko kiri (gikureho mu miterere y'ibirimo). Uzasabwa kwemeza ko ari wowe.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ibi bikorerwa inyuma: urupapuro rw'aho bigeze rurafunguka, kandi igisubizo cya buri kintu kigaragara iyo birangiye.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ibintu byatoranyijwe</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>n'ibindi %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kureka</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nta cyakozwe</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Impamvu: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Igikorwa kiracyakorerwa inyuma.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Aho kigeze</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Igikorwa cyakorerwaga inyuma cyananiranye: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Byarangiye</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Byanzwe</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Byananiranye</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Kuri buri kintu</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ikintu</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Igisubizo</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Impamvu yabyo</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Subira ku rutonde</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gutunganya</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nta cyakozwe</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kwemeza</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Hitamo igikorwa.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Hitamo nibura ikintu kimwe.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Hitamo ibintu bitarenze 1000 icyarimwe.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Vuga impamvu ibintu bifashwe.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Hitamo igice.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Hitamo imimerere.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ifishi ntiyashoboye gusomwa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ibirimo bishya</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Imibare ntiyashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Bifashwe ngo bisuzumwe</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Bishya uyu munsi</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ifatwa ryo gusuzuma ntiriratunganywa (intambwe yo kuvugurura 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ibirimo bishya byose</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ntiwemerewe gukora ibikorwa byo kugenzura (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Igikorwa cyo kugenzura nticyuzuye: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Igenzura: %action ku bintu %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done muri %total by'ibintu: %ok byarangiye, %refused byanzwe, %failed byananiranye</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok byarangiye, %refused byanzwe, %failed byananiranye</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ntikikiriho.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nta hantu gifite (ntikiratangazwa).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ntiwemerewe kugihisha (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ntiwemerewe kukigaragaza (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Gisanzwe gihishe.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ntigihishe.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Cyahishwe.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Cyagaragajwe.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Kiri mu giseke cy'imyanda: kigasibe cyangwa ukigarure aho.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Umushinga utigeze utangazwa ntushobora kujya mu giseke cy'imyanda: siba.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ntiwemerewe kugisiba (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Cyasibwe.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ntiwemerewe kugikuraho (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Gifite ibindi bintu munsi yacyo: gikureho mu miterere y'ibirimo, aho byashyizwe ku rutonde.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nticyakuweho (urujya n'uruza rw'akazi rushobora kuba rufashe ikurwaho).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Cyoherejwe mu giseke cy'imyanda.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Igice ntikibaho.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Gisanzwe kiri muri iki gice.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ntiwemerewe gutanga iki gice (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Igice nticyatanzwe.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Igice cyatanzwe.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Imimerere ntibaho.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Gisanzwe kiri muri iyi mimerere.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ntiwemerewe gutanga iyi mimerere (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Imimerere ntiyatanzwe (urujya n'uruza rw'akazi rushobora kuba rufashe impinduka).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Imimerere yatanzwe.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Nta gikorwa nk'icyo kibaho.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ifatwa ryo gusuzuma ntiritunganyijwe (intambwe yo kuvugurura 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Vuga impamvu gifashwe.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Gisanzwe gifashwe.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ntiwemerewe kugifata (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ifatwa ntiryashyizweho (urujya n'uruza rw'akazi rushobora kuba rufashe impinduka).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Cyafashwe.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ntigifashwe.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ntiwemerewe kukirekura (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ifatwa ntiryarekuwe (urujya n'uruza rw'akazi rushobora kuba rufashe impinduka).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Cyarekuwe; kiracyahishwe: ntiwemerewe kukigaragaza (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Cyarekuwe.</translation>
     </message>
 </context>
 </TS>

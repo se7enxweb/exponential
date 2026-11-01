@@ -15089,6 +15089,14 @@ Huomautus: pakettien asennusta ei poisteta.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Tiedostoina säilytetyt asennuksen muutokset: niiden tila, ajot, ajaminen ja peruminen.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Uusin sisältö</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Uusin sisältö, tarkistettavaksi pidätetty sisältö ja toiminnot valinnalle.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80583,6 +80591,670 @@ Solmun luokka on vaihdettava vaihtotoiminnolla.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Ajoa ei voitu käynnistää.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Muokattu</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Luotu</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Luokka</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Osio</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Luoja</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Uusin sisältö</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Koko sivuston viimeksi luotu ja muokattu sisältö uusimmasta alkaen: mitä vierailijat lähettivät, mikä on pidätetty tarkistettavaksi ja mitkä luonnokset odottavat julkaisuaan. Valitse kohteita vapauttaaksesi, pidättääksesi, piilottaaksesi, näyttääksesi tai poistaaksesi ne tai siirtääksesi ne toiseen osioon tai tilaan.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Luetteloa ei voitu lukea: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Tarkistuspidätystä ei ole vielä otettu käyttöön, joten mitään ei pidätetä eikä pidätystoimintoja tarjota. Päivitysvaihe 6.0.15-review-hold ottaa sen käyttöön: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Suodata luetteloa</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Alkaen</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Asti</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Päivämäärä</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Luotu (ensimmäinen julkaisu)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Kaikki</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Julkaistu</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Luonnos, ei koskaan julkaistu</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Odottaa (hyväksyntää tai päivämäärää)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Roskakorissa</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Pidätetty tarkistettavaksi</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Pidätetty</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ei pidätetty</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Piilotettu</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Näkyvä</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Lähetetty sivustoyhteydestä</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Mikä tahansa sivustoyhteys</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Vain se, mitä audit-loki kirjasi.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nyt: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Käyttäjätunnus tai käyttäjän tunniste.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Suodata</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Tyhjennä suodattimet</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Kohteet</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to / %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Ei kohteita</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(luettu %ms ms:ssa)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Toiminnot valituille kohteille</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Valitse kaikki tältä sivulta</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count valittu</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Toiminto</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Valitse toiminto</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Vapauta pidätys</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Pidätä tarkistettavaksi</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Piilota</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Näytä</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Siirrä roskakoriin</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Poista</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Määritä osio</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Määritä tila</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Syy</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Pakollinen pidätettäessä; tallennetaan pidätyksen ja audit-lokin yhteyteen.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Valitse osio</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tila</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Valitse tila</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Käytä valittuihin</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Jokainen kohde tarkistetaan omia oikeuksiasi vasten. Roskakoriin siirtäminen ja poistaminen pyytävät vahvistuksen. Yli %count kohdetta käsitellään taustalla.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Valitse</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Julkaisu</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Lähetetty osoitteesta</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Valitse %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ei vielä</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ei nimeä)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Tunniste %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Luonnos</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Odottaa</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Piilotettu ylemmän kohteen vuoksi</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Pidätetty: uusi lähetys</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versio %version odottaa</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versio %version työn alla</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Luonnos, versio %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versio %version julkaistu</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ajastettu: %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ei osoitetta</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ei kirjattu</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Mikään ei vastaa näitä suodattimia.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Näytä kaikki</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Sisältöä ei ole vielä.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Sivulla</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Näytä %count kohdetta sivulla.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Lähetyksen osoite ja selain tulevat audit-hakemistosta, joka ei ole käytettävissä täällä: sarakkeessa lukee &quot;ei kirjattu&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Osoite ja selain ovat ne, jotka audit-loki kirjasi kohteelle (automaattinen pidätys kirjaa ne aina; julkaisu ja luonti vain, jos se on otettu käyttöön), sen yksityisyysasetusten mukaisesti säilytettyinä.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count kohdetta</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Poistaminen poistaa kohteet pysyvästi kaikkine versioineen ja käännöksineen. Sitä ei voi perua.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Kohteet siirretään roskakoriin, josta ne voidaan palauttaa.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Jokainen kohde tarkistetaan omia oikeuksiasi vasten; kohde, jolla on alikohteita, jätetään ennalleen (poista se sisältörakenteessa). Sinua pyydetään vahvistamaan henkilöllisyytesi.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Tämä suoritetaan taustalla: sen edistymissivu avautuu, ja tulos näytetään kohteittain, kun se on valmis.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Valitut kohteet</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ja %count muuta</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Peruuta</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Mitään ei tehty</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Syy: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Toiminto on yhä käynnissä taustalla.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Sen edistyminen</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Taustatoiminto epäonnistui: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tehty</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Hylätty</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Epäonnistui</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Kohteittain</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Kohde</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Tulos</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Syy</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Takaisin luetteloon</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Asetukset</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Mitään ei tehty</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Vahvista</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Valitse toiminto.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Valitse vähintään yksi kohde.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Valitse enintään 1000 kohdetta kerrallaan.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Kerro, miksi kohteet pidätetään.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Valitse osio.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Valitse tila.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Lomaketta ei voitu lukea.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Uusin sisältö</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Lukumääriä ei voitu lukea: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Pidätetty tarkistettavaksi</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Uudet tänään</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tarkistuspidätystä ei ole vielä otettu käyttöön (päivitysvaihe 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Kaikki uusin sisältö</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Sinulla ei ole oikeutta suorittaa moderointitoimintoja (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderointitoiminto ei ole valmis: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderointi: %action %count objektille</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done / %total objektia: %ok tehty, %refused hylätty, %failed epäonnistui</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok tehty, %refused hylätty, %failed epäonnistui</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Sitä ei ole enää olemassa.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Sillä ei ole sijaintia (ei julkaistu).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Sinulla ei ole oikeutta piilottaa sitä (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Sinulla ei ole oikeutta näyttää sitä (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Se on jo piilotettu.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Se ei ole piilotettu.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Piilotettu.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Näytetty.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Se on roskakorissa: tyhjennä tai palauta se siellä.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Luonnosta, jota ei ole koskaan julkaistu, ei voi siirtää roskakoriin: poista se.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Sinulla ei ole oikeutta poistaa sitä (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Poistettu.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Sinulla ei ole oikeutta siirtää sitä pois (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Sillä on alikohteita: poista se sisältörakenteessa, jossa ne on lueteltu.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Sitä ei poistettu (työnkulku voi pidättää poiston).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Siirretty roskakoriin.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Osiota ei ole olemassa.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Se on jo tässä osiossa.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Sinulla ei ole oikeutta määrittää tätä osiota (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Osiota ei määritetty.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Osio määritetty.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Tilaa ei ole olemassa.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Se on jo tässä tilassa.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Sinulla ei ole oikeutta määrittää tätä tilaa (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Tilaa ei määritetty (työnkulku voi pidättää muutoksen).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Tila määritetty.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Tällaista toimintoa ei ole.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Tarkistuspidätystä ei ole otettu käyttöön (päivitysvaihe 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Kerro, miksi se pidätetään.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Se on jo pidätetty.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Sinulla ei ole oikeutta pidättää sitä (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Pidätystä ei asetettu (työnkulku voi pidättää muutoksen).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Pidätetty.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Se ei ole pidätetty.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Sinulla ei ole oikeutta vapauttaa sitä (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Pidätystä ei vapautettu (työnkulku voi pidättää muutoksen).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Vapautettu; edelleen piilotettu: sinulla ei ole oikeutta näyttää sitä (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Vapautettu.</translation>
     </message>
 </context>
 </TS>

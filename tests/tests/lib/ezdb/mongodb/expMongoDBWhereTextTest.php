@@ -80,4 +80,35 @@ class expMongoDBWhereTextTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 1, preg_match( '#' . $regex->getPattern() . '#i', 'my-Test-Pro%duct-x' ) );
         $this->assertSame( 0, preg_match( '#' . $regex->getPattern() . '#i', 'my-test-product' ) );
     }
+
+    /** A quoted number in the IN list of a text column stays text (expaudit_event.object_id is a varchar) */
+    public function testInListOfATextColumnKeepsQuotedNumbersAsText()
+    {
+        $props = array();
+        foreach ( array( 'DeclaredColumns', 'NumericColumns' ) as $name )
+        {
+            $props[$name] = new ReflectionProperty( 'expMongoDB', $name );
+            if ( PHP_VERSION_ID < 80100 )
+                $props[$name]->setAccessible( true );
+        }
+        $saved = array( $props['DeclaredColumns']->getValue(), $props['NumericColumns']->getValue() );
+        $props['DeclaredColumns']->setValue( null, array(
+            'expaudit_event' => array( 'object_id' => array( 'type' => 'varchar', 'not_null' => false, 'default' => null ),
+                                       'object_type' => array( 'type' => 'varchar', 'not_null' => false, 'default' => null ) ),
+            'ezcontentobject_tree' => array( 'contentobject_id' => array( 'type' => 'int', 'not_null' => true, 'default' => 0 ) ) ) );
+        $props['NumericColumns']->setValue( null, array( 'ezcontentobject_tree' => array( 'contentobject_id' => 'int' ) ) );
+        try
+        {
+            $filter = json_encode( $this->where( "object_id IN ('200000', '200001')", 'expaudit_event' ) );
+            $this->assertStringContainsString( '["200000","200001"]', $filter );
+            // a numeric column reads them as numbers, as before
+            $numeric = json_encode( $this->where( "contentobject_id IN ('5', 6)", 'ezcontentobject_tree' ) );
+            $this->assertStringContainsString( '[5,6]', $numeric );
+        }
+        finally
+        {
+            $props['DeclaredColumns']->setValue( null, $saved[0] );
+            $props['NumericColumns']->setValue( null, $saved[1] );
+        }
+    }
 }

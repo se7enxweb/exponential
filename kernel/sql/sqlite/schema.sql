@@ -1566,6 +1566,7 @@ CREATE INDEX "idx_eznode_assignment_eznode_assignment_parent_node" ON "eznode_as
 CREATE INDEX "idx_ezcontentobject_ezcontentobject_classid" ON "ezcontentobject" (`contentclass_id`);
 CREATE INDEX "idx_ezcontentobject_ezcontentobject_currentversion" ON "ezcontentobject" (`current_version`);
 CREATE INDEX "idx_ezcontentobject_ezcontentobject_lmask" ON "ezcontentobject" (`language_mask`);
+CREATE INDEX "idx_ezcontentobject_ezcontentobject_modified" ON "ezcontentobject" (`modified`);
 CREATE INDEX "idx_ezcontentobject_ezcontentobject_owner" ON "ezcontentobject" (`owner_id`);
 CREATE INDEX "idx_ezcontentobject_ezcontentobject_pub" ON "ezcontentobject" (`published`);
 CREATE INDEX "idx_ezcontentobject_ezcontentobject_status" ON "ezcontentobject" (`status`);

@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Legt eine Tabelle, eine Spalte oder einen Index auf jeder Engine über die Schema-Handler des Kernels an oder entfernt sie.
 
-Ein Schritt einer YAML-Migration mit `type: schema`. Die Klasse `expMigrationStepSchemaChange` ist in `settings/migration.ini` `[StepSettings] StepTypeList[schema]` registriert.
+Ein Schritt einer YAML-Migration mit `type: schema`. Die Klasse `expMigrationStepSchemaChange` (`kernel/classes/migration/steps/expmigrationstepschemachange.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[schema]` registriert.
 
 ## Modi
 
@@ -63,4 +63,4 @@ Er berührt keinen Cache.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepschemachange.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

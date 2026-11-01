@@ -212,9 +212,27 @@
                 var current = tabs.filter(function (li) {
                     return Array.prototype.some.call(li.children, function (c) { return c.tagName === 'A' && c.hasAttribute('aria-current'); });
                 })[0];
-                for (var i = tabs.length - 1; i >= 0 && !fits(); i--) {
+                // Measured once, then moved: asking fits() after every move made the browser lay out the whole page
+                // again each time, which on a page with a long table (1000 rows) took seconds. The tabs keep their
+                // sizes in the row, so how many fit follows from their widths, the gap between them and "More".
+                var rtl = window.getComputedStyle(bar).direction === 'rtl';
+                var barBox = bar.getBoundingClientRect(), barStyle = window.getComputedStyle(bar);
+                var room = barBox.width - parseFloat(barStyle.paddingLeft || '0') - parseFloat(barStyle.paddingRight || '0');
+                var boxes = tabs.map(function (li) { return li.getBoundingClientRect(); });
+                var moreBox = more.getBoundingClientRect();
+                var gap = boxes.length > 1 ? Math.max(0, rtl ? boxes[0].left - boxes[1].right : boxes[1].left - boxes[0].right) : 0;
+                var kept = tabs.map(function () { return true; });
+                var used = function () {
+                    var w = 0, n = 0;
+                    boxes.forEach(function (b, k) { if (kept[k]) { w += b.width; n++; } });
+                    return w + gap * n + moreBox.width;
+                };
+                for (var i = tabs.length - 1; i >= 0 && used() > room + 0.5; i--) {
                     if (tabs[i] === current) continue;
-                    list.insertBefore(tabs[i], list.firstChild);
+                    kept[i] = false;
+                }
+                for (var j = tabs.length - 1; j >= 0; j--) {
+                    if (!kept[j]) list.insertBefore(tabs[j], list.firstChild);
                 }
                 if (current && !fits()) {
                     // no room even for it alone: it goes too, in its place among the tabs in the list

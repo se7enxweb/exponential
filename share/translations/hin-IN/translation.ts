@@ -15089,6 +15089,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>फ़ाइलों के रूप में रखे गए इंस्टॉलेशन के बदलाव: उनकी स्थिति, रन, चलाना और वापस लेना।</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>हाल की सामग्री</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>नवीनतम सामग्री, समीक्षा के लिए क्या रोका गया है, और चयन पर क्रियाएँ।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80583,6 +80591,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>रन शुरू नहीं किया जा सका।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>संशोधित</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>बनाया गया</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>वर्ग</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>अनुभाग</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>निर्माता</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>हाल की सामग्री</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>पूरी साइट की सबसे हाल में बनाई और संशोधित की गई सामग्री, नवीनतम पहले: आगंतुकों ने क्या भेजा, क्या समीक्षा के लिए रोका गया है, कौन से ड्राफ़्ट प्रकाशन की प्रतीक्षा में हैं। आइटम चुनकर उन्हें रोक से मुक्त करें, रोकें, छिपाएँ, दिखाएँ, हटाएँ या किसी दूसरे अनुभाग या स्थिति में ले जाएँ।</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>सूची पढ़ी नहीं जा सकी: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>समीक्षा रोक अभी सेट अप नहीं है, इसलिए कुछ भी रोका नहीं जाता और रोकने की क्रियाएँ उपलब्ध नहीं हैं। अपग्रेड चरण 6.0.15-review-hold इसे सेट अप करता है: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>सूची फ़िल्टर करें</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>से</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>तक</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>तारीख</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>बनाया गया (पहली बार प्रकाशित)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>सभी</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>प्रकाशित</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ड्राफ़्ट, कभी प्रकाशित नहीं</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>लंबित (स्वीकृति या किसी तारीख की प्रतीक्षा में)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ट्रैश में</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>समीक्षा के लिए रोका गया</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>रोका गया</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>रोका नहीं गया</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>छिपा हुआ</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>दृश्यमान</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>भेजा गया</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>कोई भी साइट एक्सेस</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>केवल वही जो ऑडिट ने दर्ज किया।</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>अभी: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>एक लॉगिन या उपयोगकर्ता आईडी।</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>फ़िल्टर करें</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>फ़िल्टर हटाएँ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>आइटम</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count में से %from से %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>कोई आइटम नहीं</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms में पढ़ा गया)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>चुने गए आइटमों पर क्रियाएँ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>इस पृष्ठ पर सब चुनें</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count चुने गए</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>क्रिया</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>एक क्रिया चुनें</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>रोक हटाएँ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>समीक्षा के लिए रोकें</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>छिपाएँ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>दिखाएँ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ट्रैश में ले जाएँ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>हटाएँ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>अनुभाग सौंपें</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>स्थिति सौंपें</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>कारण</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>रोकने के लिए आवश्यक; रोक के साथ और ऑडिट में रखा जाता है।</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>एक अनुभाग चुनें</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>एक स्थिति चुनें</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>चुने गए पर लागू करें</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>हर आइटम की जाँच आपकी अपनी अनुमतियों के आधार पर की जाती है। ट्रैश में ले जाने और हटाने से पहले आपसे पुष्टि माँगी जाती है। %count से अधिक आइटम पृष्ठभूमि में चलते हैं।</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>चुनें</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>प्रकाशन</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>यहाँ से भेजा गया</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name चुनें</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>अभी नहीं</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(कोई नाम नहीं)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>आईडी %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ड्राफ़्ट</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>लंबित</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>अपने पैरेंट द्वारा छिपा हुआ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>रोका गया: नई प्रविष्टि</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>संस्करण %version लंबित</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>संस्करण %version पर काम जारी</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ड्राफ़्ट, संस्करण %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>संस्करण %version प्रकाशित</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date के लिए निर्धारित</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>कोई पता नहीं</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>दर्ज नहीं</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>इन फ़िल्टरों से कुछ भी मेल नहीं खाता।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>सब दिखाएँ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>अभी कोई सामग्री नहीं है।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>प्रति पृष्ठ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>प्रति पृष्ठ %count आइटम दिखाएँ।</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>किसी प्रविष्टि का पता और ब्राउज़र ऑडिट इंडेक्स से आते हैं, जो यहाँ उपलब्ध नहीं है: कॉलम में &quot;दर्ज नहीं&quot; लिखा होता है।</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>पता और ब्राउज़र वही हैं जो ऑडिट ने आइटम के लिए दर्ज किए (स्वचालित रोक उन्हें हमेशा दर्ज करती है; प्रकाशन और निर्माण केवल जहाँ चालू हो), जैसा उसकी गोपनीयता सेटिंग्स उन्हें रखती हैं।</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count आइटम</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>हटाने से आइटम अपने सभी संस्करणों और अनुवादों सहित हमेशा के लिए मिट जाते हैं। इसे पूर्ववत नहीं किया जा सकता।</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>आइटम ट्रैश में जाते हैं, जहाँ से उन्हें पुनर्स्थापित किया जा सकता है।</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>हर आइटम की जाँच आपकी अपनी अनुमतियों के आधार पर की जाती है; जिस आइटम के उप-आइटम हैं उसे वैसा ही छोड़ दिया जाता है (उसे सामग्री संरचना में हटाएँ)। आपसे पुष्टि करने को कहा जाएगा कि यह आप ही हैं।</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>यह पृष्ठभूमि में चलता है: इसका प्रगति पृष्ठ खुलता है, और पूरा होने पर हर आइटम का परिणाम दिखाया जाता है।</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>चुने गए आइटम</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>और %count अन्य</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>रद्द करें</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>कुछ नहीं किया गया</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>कारण: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>क्रिया अभी भी पृष्ठभूमि में चल रही है।</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>इसकी प्रगति</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>पृष्ठभूमि की क्रिया विफल हुई: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>पूरा हुआ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>अस्वीकृत</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>विफल</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>प्रति आइटम</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>आइटम</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>परिणाम</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>क्यों</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>सूची पर वापस</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटअप</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>कुछ नहीं किया गया</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>पुष्टि करें</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>एक क्रिया चुनें।</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>कम से कम एक आइटम चुनें।</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>एक बार में अधिकतम 1000 आइटम चुनें।</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>बताएँ कि आइटम क्यों रोके गए हैं।</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>अनुभाग चुनें।</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>स्थिति चुनें।</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>फ़ॉर्म पढ़ा नहीं जा सका।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>हाल की सामग्री</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>गिनती पढ़ी नहीं जा सकी: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>समीक्षा के लिए रोका गया</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>आज नया</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>समीक्षा रोक अभी सेट अप नहीं है (अपग्रेड चरण 6.0.15-review-hold)।</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>सारी हाल की सामग्री</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>आप मॉडरेशन क्रियाएँ नहीं चला सकते (moderation/act)।</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>मॉडरेशन क्रिया पूरी नहीं हुई: %errors।</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>मॉडरेशन: %count ऑब्जेक्ट पर %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total में से %done ऑब्जेक्ट: %ok पूरे, %refused अस्वीकृत, %failed विफल</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok पूरे, %refused अस्वीकृत, %failed विफल</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>यह अब मौजूद नहीं है।</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>इसका कोई स्थान नहीं है (प्रकाशित नहीं)।</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>आप इसे छिपा नहीं सकते (content/hide)।</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>आप इसे दिखा नहीं सकते (content/hide)।</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>यह पहले से छिपा हुआ है।</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>यह छिपा हुआ नहीं है।</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>छिपाया गया।</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>दिखाया गया।</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>यह ट्रैश में है: वहीं इसे खाली करें या पुनर्स्थापित करें।</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>जो ड्राफ़्ट कभी प्रकाशित नहीं हुआ वह ट्रैश में नहीं जा सकता: उसे हटाएँ।</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>आप इसे हटा नहीं सकते (content/remove)।</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>हटाया गया।</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>आप इसे निकाल नहीं सकते (content/remove)।</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>इसके उप-आइटम हैं: इसे सामग्री संरचना में हटाएँ, जहाँ वे सूचीबद्ध हैं।</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>इसे निकाला नहीं गया (कोई वर्कफ़्लो इसे रोक सकता है)।</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ट्रैश में ले जाया गया।</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>अनुभाग मौजूद नहीं है।</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>यह पहले से इस अनुभाग में है।</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>आप यह अनुभाग नहीं सौंप सकते (section/assign)।</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>अनुभाग सौंपा नहीं गया।</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>अनुभाग सौंपा गया।</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>स्थिति मौजूद नहीं है।</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>यह पहले से इस स्थिति में है।</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>आप यह स्थिति नहीं सौंप सकते (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>स्थिति सौंपी नहीं गई (कोई वर्कफ़्लो इस बदलाव को रोक सकता है)।</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>स्थिति सौंपी गई।</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ऐसी कोई क्रिया नहीं है।</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>समीक्षा रोक सेट अप नहीं है (अपग्रेड चरण 6.0.15-review-hold)।</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>बताएँ कि इसे क्यों रोका गया है।</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>यह पहले से रोका गया है।</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>आप इसे रोक नहीं सकते (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>रोक नहीं लगाई गई (कोई वर्कफ़्लो इस बदलाव को रोक सकता है)।</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>रोका गया।</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>यह रोका नहीं गया है।</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>आप इसे मुक्त नहीं कर सकते (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>रोक हटाई नहीं गई (कोई वर्कफ़्लो इस बदलाव को रोक सकता है)।</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>मुक्त किया गया; अब भी छिपा है: आप इसे दिखा नहीं सकते (content/hide)।</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>मुक्त किया गया।</translation>
     </message>
 </context>
 </TS>

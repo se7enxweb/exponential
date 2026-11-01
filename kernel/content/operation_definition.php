@@ -189,6 +189,20 @@ $OperationList['publish'] = array( 'name' => 'publish',
                                                                                          'type' => 'integer',
                                                                                          'required' => true )
                                                                                   ) ),
+                                                    // The auto-hold (expReviewHoldAuto, content.ini [ReviewHoldSettings]):
+                                                    // the first publication of a listed class by a user who is not exempt
+                                                    // is held and hidden, before the edit handlers, the view cache and
+                                                    // the search index
+                                                    array( 'type' => 'method',
+                                                           'name' => 'auto-review-hold',
+                                                           'frequency' => 'once',
+                                                           'method' => 'autoReviewHold',
+                                                           'parameters' => array( array( 'name' => 'object_id',
+                                                                                         'type' => 'integer',
+                                                                                         'required' => true ),
+                                                                                  array( 'name' => 'version',
+                                                                                         'type' => 'integer',
+                                                                                         'required' => true ) ) ),
                                                     array( 'type' => 'method',
                                                            'name' => 'publish-object-extension-handler',
                                                            'frequency' => 'once',

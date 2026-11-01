@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Ändert eine INI-Datei von settings/override oder settings/siteaccess/<name> über den INI-Editor, mit Sicherungskopie.
 
-Ein Schritt einer YAML-Migration mit `type: settings`. Die Klasse `expMigrationStepSettings` ist in `settings/migration.ini` `[StepSettings] StepTypeList[settings]` registriert.
+Ein Schritt einer YAML-Migration mit `type: settings`. Die Klasse `expMigrationStepSettings` (`kernel/classes/migration/steps/expmigrationstepsettings.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[settings]` registriert.
 
 ## Schlüssel
 
@@ -58,4 +58,4 @@ Caches, die er berührt (nach dem Lauf geleert): `tag:ini`.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepsettings.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

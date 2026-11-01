@@ -15150,6 +15150,14 @@ Sylwer: ni fydd y pecynnau'n cael eu dadosod.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Newidiadau i&apos;r gosodiad wedi&apos;u cadw fel ffeiliau: eu cyflwr, y rhediadau, rhedeg a dychwelyd.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Cynnwys diweddar</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Y cynnwys mwyaf newydd, yr hyn sy'n cael ei ddal i'w adolygu, a gweithredoedd ar ddetholiad.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
     <message>
         <source>The run could not be started.</source>
         <translation>Nid oedd modd cychwyn y rhediad.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Addaswyd</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Crëwyd</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Enw</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Dosbarth</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Adran</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Crëwr</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Cynnwys diweddar</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Y cynnwys a grëwyd ac a addaswyd fwyaf diweddar ar draws y wefan gyfan, y mwyaf newydd yn gyntaf: yr hyn a gyflwynodd ymwelwyr, yr hyn sy'n cael ei ddal i'w adolygu, drafftiau sy'n aros i gael eu cyhoeddi. Dewiswch eitemau i'w rhyddhau, eu dal, eu cuddio, eu datguddio, eu tynnu neu eu symud i adran neu gyflwr arall.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y rhestr: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Nid yw'r daliad adolygu wedi'i osod eto, felly nid oes dim yn cael ei ddal ac ni chynigir y gweithredoedd dal. Mae'r cam uwchraddio 6.0.15-review-hold yn ei osod: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Hidlo'r rhestr</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>O</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>I</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dyddiad</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Crëwyd (cyhoeddwyd gyntaf)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Y cyfan</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statws</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Wedi'i gyhoeddi</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Drafft, heb ei gyhoeddi erioed</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Yn aros (am gymeradwyaeth neu ddyddiad)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Yn y sbwriel</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Wedi'i ddal i'w adolygu</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Wedi'i ddal</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Heb ei ddal</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Wedi'i guddio</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Gweladwy</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Cyflwynwyd ar</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Unrhyw fynediad i'r wefan</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Dim ond yr hyn a gofnododd yr archwiliad.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Nawr: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Enw mewngofnodi neu ID defnyddiwr.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Hidlo</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Clirio'r hidlwyr</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Eitemau</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from i %to o %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Dim eitem</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(darllenwyd mewn %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Gweithredoedd ar yr eitemau a ddewiswyd</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Dewis y cyfan ar y dudalen hon</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count wedi'u dewis</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Gweithred</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Dewiswch weithred</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Rhyddhau'r daliad</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Dal i'w adolygu</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Cuddio</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Datguddio</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Symud i'r sbwriel</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Dileu</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Neilltuo adran</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Neilltuo cyflwr</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Rheswm</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Angen er mwyn dal; yn cael ei gadw gyda'r daliad ac yn yr archwiliad.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Dewiswch adran</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Cyflwr</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Dewiswch gyflwr</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Gweithredu ar y rhai a ddewiswyd</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Mae pob eitem yn cael ei gwirio yn erbyn eich caniatâd chi. Mae symud i'r sbwriel a dileu yn gofyn i chi gadarnhau. Mae mwy na %count eitem yn rhedeg yn y cefndir.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Dewis</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Cyhoeddi</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Cyflwynwyd o</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Dewis %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>dim eto</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(dim enw)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Drafft</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yn aros</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Wedi'i guddio gan ei riant</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Wedi'i ddal: cyflwyniad newydd</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Fersiwn %version yn aros</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Fersiwn %version ar y gweill</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Drafft, fersiwn %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Fersiwn %version wedi'i chyhoeddi</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Wedi'i drefnu ar gyfer %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>dim cyfeiriad</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>heb ei gofnodi</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Nid oes dim yn cyfateb i'r hidlwyr hyn.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Dangos y cyfan</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Nid oes cynnwys eto.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fesul tudalen</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Dangos %count eitem fesul tudalen.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Daw cyfeiriad a phorwr cyflwyniad o fynegai'r archwiliad, nad yw ar gael yma: mae'r golofn yn dweud "heb ei gofnodi".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Y cyfeiriad a'r porwr yw'r rhai a gofnododd yr archwiliad ar gyfer yr eitem (mae'r daliad awtomatig bob amser yn eu cofnodi; cyhoeddi a chreu dim ond lle mae wedi'i droi ymlaen), fel y mae ei osodiadau preifatrwydd yn eu cadw.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count eitem</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Mae dileu yn tynnu'r eitemau am byth, gyda'u holl fersiynau a chyfieithiadau. Ni ellir ei ddadwneud.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Mae'r eitemau'n mynd i'r sbwriel, lle gellir eu hadfer.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Mae pob eitem yn cael ei gwirio yn erbyn eich caniatâd chi; mae eitem ag is-eitemau yn cael ei gadael fel y mae (tynnwch hi yn strwythur y cynnwys). Gofynnir i chi wirio mai chi sydd yno.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Mae hyn yn rhedeg yn y cefndir: mae ei dudalen gynnydd yn agor, a dangosir y canlyniad ar gyfer pob eitem pan fydd wedi gorffen.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Yr eitemau a ddewiswyd</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>a %count arall</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Canslo</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ni wnaed dim</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Rheswm: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Mae'r weithred yn dal i redeg yn y cefndir.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ei chynnydd</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Methodd y weithred gefndir: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Wedi'i wneud</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Gwrthodwyd</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Methwyd</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Fesul eitem</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Eitem</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Canlyniad</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Pam</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Yn ôl i'r rhestr</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gosod</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Dim wedi'i wneud</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Cadarnhau</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Dewiswch weithred.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Dewiswch o leiaf un eitem.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Dewiswch 1000 eitem ar y mwyaf ar y tro.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Dywedwch pam mae'r eitemau'n cael eu dal.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Dewiswch yr adran.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Dewiswch y cyflwr.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Nid oedd modd darllen y ffurflen.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Cynnwys diweddar</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Nid oedd modd darllen y cyfrifon: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Wedi'i ddal i'w adolygu</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Newydd heddiw</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Nid yw'r daliad adolygu wedi'i osod eto (y cam uwchraddio 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Yr holl gynnwys diweddar</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ni chewch redeg gweithredoedd cymedroli (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Nid yw'r weithred gymedroli'n gyflawn: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Cymedroli: %action ar %count gwrthrych</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done o %total gwrthrych: %ok wedi'u gwneud, %refused wedi'u gwrthod, %failed wedi methu</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok wedi'u gwneud, %refused wedi'u gwrthod, %failed wedi methu</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Nid yw'n bodoli mwyach.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nid oes ganddo leoliad (heb ei gyhoeddi).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ni chewch ei guddio (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ni chewch ei ddatguddio (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Mae wedi'i guddio eisoes.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nid yw wedi'i guddio.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Wedi'i guddio.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Wedi'i ddatguddio.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Mae yn y sbwriel: gwagiwch y sbwriel neu adferwch ef yno.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ni all drafft na chyhoeddwyd erioed fynd i'r sbwriel: dilëwch ef.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ni chewch ei ddileu (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Wedi'i ddileu.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ni chewch ei dynnu (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Mae ganddo is-eitemau: tynnwch ef yn strwythur y cynnwys, lle maen nhw wedi'u rhestru.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ni chafodd ei dynnu (efallai fod llif gwaith yn dal y tynnu).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Wedi'i symud i'r sbwriel.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Nid yw'r adran yn bodoli.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Mae yn yr adran hon eisoes.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ni chewch neilltuo'r adran hon (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Ni neilltuwyd yr adran.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Adran wedi'i neilltuo.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Nid yw'r cyflwr yn bodoli.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Mae yn y cyflwr hwn eisoes.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ni chewch neilltuo'r cyflwr hwn (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ni neilltuwyd y cyflwr (efallai fod llif gwaith yn dal y newid).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Cyflwr wedi'i neilltuo.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Nid oes gweithred o'r fath.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Nid yw'r daliad adolygu wedi'i osod (y cam uwchraddio 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Dywedwch pam mae'n cael ei ddal.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Mae wedi'i ddal eisoes.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ni chewch ei ddal (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Ni osodwyd y daliad (efallai fod llif gwaith yn dal y newid).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Wedi'i ddal.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nid yw wedi'i ddal.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ni chewch ei ryddhau (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Ni ryddhawyd y daliad (efallai fod llif gwaith yn dal y newid).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Wedi'i ryddhau; yn dal wedi'i guddio: ni chewch ei ddatguddio (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Wedi'i ryddhau.</translation>
     </message>
 </context>
 </TS>

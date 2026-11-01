@@ -21,7 +21,7 @@ Bearbeiten Sie `settings/dashboard.ini` nie selbst: Ein Update ersetzt die Datei
 
 > DashboardBlocks\[\]=example  
 
-Standard: eine Liste mit 7: `pending_list`, `drafts`, `latest_content`, `all_latest_content`, `audit`, `cronjobs`, `migrations`.
+Standard: eine Liste mit 8: `pending_list`, `drafts`, `latest_content`, `all_latest_content`, `audit`, `cronjobs`, `migrations`, `moderation`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -36,6 +36,7 @@ DashboardBlocks[]=all_latest_content
 DashboardBlocks[]=audit
 DashboardBlocks[]=cronjobs
 DashboardBlocks[]=migrations
+DashboardBlocks[]=moderation
 */ ?>
 ```
 

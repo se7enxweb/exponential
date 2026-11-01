@@ -15150,6 +15150,14 @@ Kia mōhio: kāore e tangohia te tāutanga o ngā mōkihi.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Ngā panonitanga ki te tāutanga e puritia ana hei kōnae: tō rātou tūnga, ngā whakahaerenga, whakahaere me te whakahoki.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ihirangi hou</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Te ihirangi hou rawa, ngā mea kua puritia mō te arotake, me ngā mahi ki tētahi tīpakonga.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ Me whakarerekē koe i te karaehe o te pona mā te whakamahi i te āhei whakawhit
     <message>
         <source>The run could not be started.</source>
         <translation>Kāore i taea te tīmata i te whakahaerenga.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Kua whakarerekētia</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Kua waihangatia</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ingoa</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Karaehe</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Wāhanga</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Kaihanga</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ihirangi hou</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Te ihirangi i waihangatia, i whakarerekētia rānei i nā tata nei puta noa i te pae katoa, ko te mea hou rawa i te tuatahi: ngā mea i tukuna mai e ngā manuhiri, ngā mea kua puritia mō te arotake, ngā hukihuki e tatari ana kia whakaputaina. Tīpakohia ngā tūemi hei tuku, hei pupuri, hei huna, hei whakaatu, hei tango, hei nuku rānei ki tētahi atu wāhanga, tūāhua rānei.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Kāore i taea te pānui i te rārangi: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Kāore anō kia whakaritea te pupuri arotake, nō reira kāore he mea e puritia ana, ā, kāore e tukuna ngā mahi pupuri. Mā te hīkoi whakahou 6.0.15-review-hold e whakarite: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Tātaritia te rārangi</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mai i</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ki</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Rā</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Kua waihangatia (i whakaputaina tuatahitia)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Katoa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Tūnga</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Kua whakaputaina</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Hukihuki, kāore anō kia whakaputaina</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>E tatari ana (e tatari ana ki te whakaaetanga, ki tētahi rā rānei)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Kei te ipupara</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kua puritia mō te arotake</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Kua puritia</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Kāore i puritia</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Huna</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Kitea</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>I tukuna i te</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Ko tētahi urunga pae</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ko ngā mea anake i tuhia e te arotake mahi.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ināianei: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>He takiuru, he id kaiwhakamahi rānei.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Tātari</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Ūkuia ngā tātari</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ngā tūemi</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ki %to o %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Kāore he tūemi</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(i pānuitia i roto i te %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ngā mahi mō ngā tūemi kua tīpakohia</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Tīpakohia ngā mea katoa i tēnei whārangi</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count kua tīpakohia</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Mahi</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Kōwhiria he mahi</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Tukua te pupuri</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Puritia mō te arotake</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Hunaia</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Whakaaturia</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Nukuhia ki te ipupara</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Mukua</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Tautapa wāhanga</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Tautapa tūāhua</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Take</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>E hiahiatia ana hei pupuri; ka tiakina me te pupuri, ki te arotake mahi hoki.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Kōwhiria he wāhanga</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Tūāhua</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Kōwhiria he tūāhua</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Whakamahia ki ngā mea kua tīpakohia</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Ka arotakehia ia tūemi ki ōu ake whakaaetanga. Ka tono te nuku ki te ipupara me te muku kia whakaūngia e koe. Ki te nui ake i te %count tūemi, ka whakahaerehia ki muri.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Tīpako</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Whakaputanga</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>I tukuna mai i</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Tīpakohia a %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>kāore anō</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(kāore he ingoa)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Hukihuki</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>E tatari ana</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Kua hunaia e tōna matua</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Kua puritia: tukunga hou</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Putanga %version e tatari ana</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Putanga %version e mahia ana</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Hukihuki, putanga %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Putanga %version kua whakaputaina</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Kua whakaritea mō te %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>kāore he wāhitau</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>kāore i tuhia</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Kāore he mea e hāngai ana ki ēnei tātari.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Whakaaturia te katoa</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Kāore anō he ihirangi.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Ia whārangi</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Whakaaturia ngā tūemi %count ia whārangi.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ko te wāhitau me te pūtirotiro o tētahi tukunga ka ahu mai i te taupū arotake mahi, kāore e wātea i konei: e kī ana te tīwae "kāore i tuhia".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Ko te wāhitau me te pūtirotiro ko ērā i tuhia e te arotake mahi mō te tūemi (ka tuhia tonutia e te pupuri aunoa; ko te whakaputa me te waihanga anake mēnā kua whakakāngia), e ai ki tā ōna tautuhinga tūmataiti e pupuri ai.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count tūemi</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ka tangohia mō ake tonu atu e te muku ngā tūemi, me ō rātou putanga me ngā whakamāoritanga katoa. Kāore e taea te whakakore.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Ka haere ngā tūemi ki te ipupara, ka taea te whakahoki mai i reira.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Ka arotakehia ia tūemi ki ōu ake whakaaetanga; ka waiho tētahi tūemi he tūemi-iti ōna ki tōna āhua (tangohia i te hanganga ihirangi). Ka tonoa koe kia manatoko ko koe tonu tēnei.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ka whakahaerehia tēnei ki muri: ka tuwhera tōna whārangi kauneke, ā, ka whakaaturia te hua mō ia tūemi ina oti.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ngā tūemi kua tīpakohia</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>me ētahi atu %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Whakakore</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Kāore he mea i mahia</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Take: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Kei te whakahaere tonu te mahi ki muri.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Tōna kauneke</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>I rahua te mahi o muri: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kua oti</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Kua whakakāhoretia</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kua rahua</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Ia tūemi</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Tūemi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Hua</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>He aha ai</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Hoki ki te rārangi</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Whakaritenga</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Kāore he mea i oti</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Whakaū</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Kōwhiria he mahi.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Tīpakohia kia kotahi te tūemi i te iti rawa.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Tīpakohia kia 1000 tūemi i te nui rawa i te wā kotahi.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Kīia te take e puritia ana ngā tūemi.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Kōwhiria te wāhanga.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Kōwhiria te tūāhua.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Kāore i taea te pānui i te puka.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ihirangi hou</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Kāore i taea te pānui i ngā tatau: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Kua puritia mō te arotake</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Hou i tēnei rā</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Kāore anō kia whakaritea te pupuri arotake (te hīkoi whakahou 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ngā ihirangi hou katoa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Kāore koe e whakaaetia ki te whakahaere i ngā mahi whakaōrite (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Kāore i oti te mahi whakaōrite: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Whakaōrite: %action ki ngā ahanoa %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done o ngā ahanoa %total: %ok kua oti, %refused kua whakakāhoretia, %failed kua rahua</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok kua oti, %refused kua whakakāhoretia, %failed kua rahua</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Kua kore kē.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Kāore ōna wāhi (kāore i whakaputaina).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Kāore koe e whakaaetia ki te huna (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Kāore koe e whakaaetia ki te whakaatu (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Kua hunaia kē.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Kāore i te hunaia.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Kua hunaia.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Kua whakaaturia.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Kei te ipupara: whakawāteatia, whakahokia mai rānei i reira.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Kāore e taea e tētahi hukihuki kāore anō kia whakaputaina te haere ki te ipupara: mukua.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Kāore koe e whakaaetia ki te muku (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Kua mukua.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Kāore koe e whakaaetia ki te tango (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>He tūemi-iti ōna: tangohia i te hanganga ihirangi, kei reira rātou e rārangi ana.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Kāore i tangohia (tērā pea kei te pupuri tētahi rerenga mahi i te tango).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Kua nukuhia ki te ipupara.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Kāore te wāhanga i te tīari.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Kei tēnei wāhanga kē.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Kāore koe e whakaaetia ki te tautapa i tēnei wāhanga (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Kāore i tautapahia te wāhanga.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Kua tautapahia te wāhanga.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Kāore te tūāhua i te tīari.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Kei tēnei tūāhua kē.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Kāore koe e whakaaetia ki te tautapa i tēnei tūāhua (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Kāore i tautapahia te tūāhua (tērā pea kei te pupuri tētahi rerenga mahi i te panoni).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Kua tautapahia te tūāhua.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Kāore he mahi pērā.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Kāore i whakaritea te pupuri arotake (te hīkoi whakahou 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Kīia te take e puritia ana.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Kua puritia kē.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Kāore koe e whakaaetia ki te pupuri (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Kāore i whakatakotoria te pupuri (tērā pea kei te pupuri tētahi rerenga mahi i te panoni).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Kua puritia.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Kāore i te puritia.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Kāore koe e whakaaetia ki te tuku (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Kāore i tukuna te pupuri (tērā pea kei te pupuri tētahi rerenga mahi i te panoni).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Kua tukuna; kei te huna tonu: kāore koe e whakaaetia ki te whakaatu (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Kua tukuna.</translation>
     </message>
 </context>
 </TS>

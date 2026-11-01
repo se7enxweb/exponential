@@ -15137,6 +15137,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80374,6 +80382,670 @@ You will need to change the class of the node by using the swap functionality.</
     </message>
     <message>
         <source>The run could not be started.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Released.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
