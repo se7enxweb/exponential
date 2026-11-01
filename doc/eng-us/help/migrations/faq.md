@@ -52,8 +52,8 @@ No: templates and settings files are code and travel with git. A migration is fo
 header, `plan()`, `up()` and `down()`. [The tutorial](../../guides/migrations-tutorial.md).
 
 **Can I write migrations in YAML or SQL?**
-Not in 6.0.15: migrations are PHP. `.yml`, `.sql` and `.ini` files are found, ordered and checked, and refused by the
-runner until their steps arrive. [Migrations](README.md#yaml-migrations).
+Yes: `.yml` files of steps, `.sql` files (one portable file, or a file per engine and a `.mongodb.json`), and `.ini`
+files for settings. [Migrations: SQL and settings](../../guides/migrations-sql-and-settings.md).
 
 **Can I use the kernel's PHP API in a migration?**
 Yes: `eZContentFunctions`, `eZContentClass`, `eZRole`, `eZINI`, `expKernelTableSchema` and the rest, always with

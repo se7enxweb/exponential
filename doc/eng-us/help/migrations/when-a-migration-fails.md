@@ -136,10 +136,11 @@ It is one of the kernel's upgrade steps of the stage `code`, `libraries` or `fin
 `exp:upgrade`; the warning names the command (`./console exp:upgrade:code --apply` ...). A migration that requires it
 waits ([Upgrade step or migration?](recipes/upgrade-step-or-migration.md)).
 
-### `migrations of type .sql cannot be run yet` (or `.ini`)
+### `no statements for <engine>` (an SQL migration)
 
-In 6.0.15 migrations are written in PHP or as YAML steps. SQL and INI files are found and checked, and refused by the
-runner.
+The migration has no file for the engine of this installation, and its portable `.sql` file (if any) is not for it
+(MongoDB takes a `.mongodb.json`). Add the engine's file, or `missing: skip` on an `sql` step that has nothing to do
+there ([Migrations: SQL and settings](../../guides/migrations-sql-and-settings.md)).
 
 ### The PHP file is refused: no class, two classes, a class declared twice
 

@@ -2525,7 +2525,11 @@
       "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationSqlSettingsStepsMongoDBTest.php"
     ],
     "tests/tests/kernel/classes/migration/expMigrationStructureStepsEngineChecks.php": [
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php",
@@ -2777,6 +2781,19 @@
     "kernel/classes/migration/expmigrationprocess.php": [
       "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsTest.php"
+    ],
+    "kernel/classes/migration/expmigrationsql.php": [
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsSqliteTest.php"
+    ],
+    "kernel/classes/migration/expmigrationini.php": [
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsSqliteTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsEngineChecks.php": [
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationSqlSettingsStepsDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationSqlSettingsStepsMongoDBTest.php"
     ]
   },
   "generated": {

@@ -73,8 +73,8 @@ die von `exp:upgrade` (0, 1 gescheitert, 2 Bedienung, 3 Datenbank nicht erreichb
 
 ## Grenzen in 6.0.15
 
-- Migrationen werden in PHP geschrieben. Dateien der Typen `yml`, `sql`, `<engine>.sql` und `ini` werden gefunden,
-  geordnet und geprüft und vom Runner abgelehnt, bis ihre Schritte kommen.
+- Migrationen werden in PHP, in YAML, in SQL (`sql`, `<engine>.sql`, `mongodb.json`) oder als INI-Einstellungen (`ini`)
+  geschrieben ([Migrationen: SQL und Einstellungen](../../anleitungen/migrationen-sql-und-einstellungen.md)).
 - Ein Migrationslauf führt von den Upgrade-Schritten des Kernels nur die der Stufen `database` und `scripts` aus; die
   Stufen `code`, `libraries` und `finish` bleiben bei `exp:upgrade` (sie werden als `deferred` gelistet).
 - Setup > Migrationen zeigt Migrationen an, führt sie aus und nimmt sie zurück; das Schreiben und Erzeugen (dafür ist

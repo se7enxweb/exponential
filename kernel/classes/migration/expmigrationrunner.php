@@ -307,8 +307,9 @@ class expMigrationRunner
     }
 
     /**
-     * The migrations of definitions, in their order. PHP and YAML migrations are loaded from their files
-     * (expMigrationPhp, expMigrationYaml); the other types (sql, ini) have no runner yet and are listed in $errors.
+     * The migrations of definitions, in their order, loaded from their files (expMigrationPhp, expMigrationYaml, and
+     * expMigrationSql and expMigrationIni, which make the YAML migration of their steps); what cannot be loaded is
+     * listed in $errors.
      *
      * @param expMigrationDefinition[] $definitions
      * @param string[] $errors
@@ -332,8 +333,10 @@ class expMigrationRunner
             {
                 if ( $definition->type() === 'yml' )
                     $migrations[] = expMigrationYaml::load( $definition );
-                else if ( $definition->type() !== 'php' )
-                    throw new RuntimeException( 'migrations of type .' . $definition->type() . ' cannot be run yet' );
+                else if ( $definition->type() === 'sql' )
+                    $migrations[] = expMigrationSql::load( $definition );
+                else if ( $definition->type() === 'ini' )
+                    $migrations[] = expMigrationIni::load( $definition );
                 else
                     $migrations[] = expMigrationPhp::load( $definition );
             }

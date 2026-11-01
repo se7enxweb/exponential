@@ -123,7 +123,7 @@ class expMigrationDefinitionTest extends PHPUnit\Framework\TestCase
         $this->assertSame( array( '20261030120000_class' ), $definition->requiredMigrations() );
         $this->assertSame( array( 'expnews' ), $definition->requiredExtensions() );
         $this->assertTrue( $definition->maintenance() );
-        $this->assertSame( array( '*' ), $definition->engines() );
+        $this->assertSame( expMigrationDefinition::SQL_ENGINES, $definition->engines(), 'a portable .sql file: the SQL engines' );
 
         $other = new expMigrationDefinition( '20261031120000_other', 'site', 'sql' );
         $other->addFile( $this->file( '20261031120000_other.sql', "-- id: 20261031120000_news\n-- engines: db2\n" ) );

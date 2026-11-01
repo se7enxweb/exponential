@@ -165,7 +165,7 @@ sich auch als YAML-Schritte schreiben, wo ein Schritttyp es abdeckt.
 
 | In 6.0.15 | Noch nicht |
 |---|---|
-| PHP- und YAML-Migrationen in der Site, in aktiven Erweiterungen und in installierten Paketen | SQL- und INI-Migrationen (gefunden und geprüft, vom Runner abgelehnt) |
+| PHP-, YAML-, SQL- und INI-Migrationen in der Site, in aktiven Erweiterungen und in installierten Paketen | |
 | der Probelauf und die Simulation mit Diff auf PostgreSQL und SQLite | eine Simulation auf MySQL/MariaDB, Oracle und MongoDB (der Plan wird gelistet) |
 | Sicherungspunkte, die automatische Wiederherstellung, die Rücknahme eines Laufs, einer Migration und jedes Sicherungspunkts | Generatoren außer dem Gerüst, ein Editor in der Administration |
 | Commit, Tag und Push der Aufzeichnung jedes Laufs; der Cronjob-Teil `migrationpush` | `exp:velocity deploy --migrate` |

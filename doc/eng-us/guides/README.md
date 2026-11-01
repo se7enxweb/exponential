@@ -163,6 +163,7 @@ Read them in this order the first time. Each one also stands on its own.
 | [Migrations: a first PHP migration, step by step](migrations-tutorial.md) | Two PHP migrations generated, filled in, checked, simulated, run, recorded, one taken back with its down(), a failure restored from its caption | 20 minutes |
 | [PHP migrations](migrations-php.md) | The class, plan(), up(), down() and detect(), the context, references, transactions, failure, maintenance mode, events, extensions, tests | reference |
 | [YAML migration steps](migrations-yaml-steps.md) | The kernel's step types: content in several languages, locations, versions; identifiers, workflows, which steps undo themselves, a step type of your own | reference |
+| [Migrations: SQL and settings](migrations-sql-and-settings.md) | Tables, columns, indexes and rows on every engine, SQL files per engine and for MongoDB, what is not transactional, INI migrations and settings steps with their backups | reference |
 | [Migrations: rollback and captions](migrations-rollback-and-captions.md) | The captions of a run, their reuse, the automatic restore after a failure, a run, one migration or any caption taken back by hand | 15 minutes |
 | [Migrations: the migrations repository](migrations-repositories.md) | The status file and run log, the site or a separate repository, one run one commit and tag, failed pushes and the cronjob part migrationpush | 10 minutes |
 | [Migrations: troubleshooting](migrations-troubleshooting.md) | Every message of the migration commands, what it means and what to do | reference |

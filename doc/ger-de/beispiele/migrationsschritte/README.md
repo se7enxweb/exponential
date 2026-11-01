@@ -41,6 +41,10 @@ Jeder Schritttyp von YAML-Migrationen, den der Kernel in `settings/migration.ini
 | [http](http.md) |  | Sendet eine HTTP-Anfrage an ein anderes System, mit Geheimnissen über ihren Namen und einer optionalen Signatur, und behält die Antwort für Referenzen |
 | [mail](mail.md) |  | Sendet eine E-Mail über den Mailtransport der Installation |
 | [command](command.md) |  | Führt einen exp:*-Konsolenbefehl der Installation aus, den migration.ini erlaubt, ohne Shell |
+| [schema](schema.md) | create_table, drop_table, add_column, drop_column, add_index, drop_index | Legt eine Tabelle, eine Spalte oder einen Index auf jeder Engine über die Schema-Handler des Kernels an oder entfernt sie |
+| [data](data.md) | insert, ensure, update, delete | Fügt Zeilen einer Tabelle auf jeder Engine ein, ändert oder löscht sie; die Werte setzt die Verbindung in Anführungszeichen |
+| [sql](sql.md) |  | Führt Anweisungen der Engine aus, auf der die Installation läuft, im Schritt geschrieben oder in Dateien neben der Migration |
+| [settings](settings.md) |  | Ändert eine INI-Datei von settings/override oder settings/siteaccess/<name> über den INI-Editor, mit Sicherungskopie |
 
 - [Alle Beispiele](../README.md)
 

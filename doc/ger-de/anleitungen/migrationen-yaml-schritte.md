@@ -41,6 +41,10 @@ jeden Schlüssel jedes Schritttyps nennt seine erzeugte Referenzseite
 | [`http`](../beispiele/migrationsschritte/http.md) | eine HTTP-Anfrage an ein anderes System, Geheimnisse über ihren Namen, auf Wunsch signiert | |
 | [`mail`](../beispiele/migrationsschritte/mail.md) | eine E-Mail über den Mailtransport der Installation | |
 | [`command`](../beispiele/migrationsschritte/command.md) | ein `exp:*`-Konsolenbefehl aus der Positivliste, ohne Shell | |
+| [`schema`](../beispiele/migrationsschritte/schema.md) | eine Tabelle, eine Spalte oder ein Index auf jeder Engine ([SQL und Einstellungen](migrationen-sql-und-einstellungen.md)) | create_table, drop_table, add_column, drop_column, add_index, drop_index |
+| [`data`](../beispiele/migrationsschritte/data.md) | Zeilen einer Tabelle, die Werte von der Verbindung in Anführungszeichen gesetzt | insert, ensure, update, delete |
+| [`sql`](../beispiele/migrationsschritte/sql.md) | Anweisungen der Engine, im Schritt oder in Dateien neben der Migration | |
+| [`settings`](../beispiele/migrationsschritte/settings.md) | eine INI-Datei von `settings/override` oder eines Siteaccess, mit Sicherungskopie | |
 
 Jeder Schritt geht über die eigene API des Kernels, so wie die Administration: Ein neues Objekt entsteht über seine
 Klasse (`eZContentClass::instantiate()`), eine neue Version über `createNewVersionIn()`, und beide veröffentlicht die

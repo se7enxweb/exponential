@@ -10,10 +10,12 @@
 /**
  * A migration file as found on disk: its name, its header and its checksum. Nothing is run or loaded here.
  *
- * File names: YYYYMMDDHHMMSS_name.<type>, where the type is php, yml, sql, ini or <engine>.sql (mysql, postgresql,
- * sqlite, oracle, mongodb). The id is the file name without the type. Files of one id that differ only in the engine
- * (20261031120000_index.mysql.sql, 20261031120000_index.postgresql.sql, and a portable 20261031120000_index.sql) are
- * one migration with a file per engine.
+ * File names: YYYYMMDDHHMMSS_name.<type>, where the type is php, yml, sql, ini, <engine>.sql (mysql, postgresql or
+ * its short name pgsql, sqlite, oracle) or mongodb.json (the MongoDB file of an SQL migration). The id is the file
+ * name without the type. Files of one id that differ only in the engine (20261031120000_index.mysql.sql,
+ * 20261031120000_index.pgsql.sql, 20261031120000_index.mongodb.json and a portable 20261031120000_index.sql) are one
+ * migration of the type sql with a file per engine. A portable .sql file is for the SQL engines: without a MongoDB
+ * file (or "engines" in the header) the migration does not run on MongoDB.
  *
  * The header is the comment block at the top of the file, one "key: value" per line, in the comment syntax of the
  * file (# in YAML and INI, -- in SQL, //, # or a /** ... *\/ block in PHP):
@@ -41,8 +43,14 @@ class expMigrationDefinition
     /** The file types. */
     const TYPES = array( 'php', 'yml', 'sql', 'ini' );
 
+    /** The engines with SQL: what a portable .sql file runs on. */
+    const SQL_ENGINES = array( 'mysql', 'postgresql', 'sqlite', 'oracle' );
+
+    /** Short names of engines in file names. */
+    const ENGINE_ALIASES = array( 'pgsql' => 'postgresql' );
+
     /** The header keys; the lists may repeat. */
-    const KEYS = array( 'id', 'description', 'environments', 'requires', 'engines', 'maintenance', 'author' );
+    const KEYS = array( 'id', 'description', 'environments', 'requires', 'engines', 'maintenance', 'author', 'transactional' );
     const LIST_KEYS = array( 'environments', 'requires', 'engines' );
 
     /** How much of a file is read for the header. */
@@ -96,10 +104,17 @@ class expMigrationDefinition
         if ( !preg_match( '/^((\d{14})_([A-Za-z0-9][A-Za-z0-9_-]*))\.(?:([a-z0-9]+)\.)?([a-z]+)$/', $basename, $m ) )
             return array( 'error' => "$basename is not a migration file name (YYYYMMDDHHMMSS_name.type, the name of letters, digits, _ and -)" );
         list( , $id, $timestamp, $name, $engine, $type ) = $m;
-        if ( !in_array( $type, self::TYPES, true ) )
-            return array( 'error' => "$basename has the unknown type .$type (" . implode( ', ', self::TYPES ) . ')' );
+        if ( isset( self::ENGINE_ALIASES[$engine] ) )
+            $engine = self::ENGINE_ALIASES[$engine];
+        // the MongoDB file of an SQL migration: commands as JSON
+        if ( $type === 'json' && $engine === 'mongodb' )
+            $type = 'sql';
+        else if ( $type === 'sql' && $engine === 'mongodb' )
+            return array( 'error' => "$basename: MongoDB takes no SQL; its file is $id.mongodb.json" );
+        else if ( !in_array( $type, self::TYPES, true ) )
+            return array( 'error' => "$basename has the unknown type .$type (" . implode( ', ', self::TYPES ) . ', mongodb.json)' );
         if ( $engine !== '' && ( $type !== 'sql' || !in_array( $engine, self::ENGINES, true ) ) )
-            return array( 'error' => "$basename: only SQL files name an engine, one of " . implode( ', ', self::ENGINES ) );
+            return array( 'error' => "$basename: only SQL files name an engine: " . implode( ', ', self::SQL_ENGINES ) . ' (.sql) or mongodb (.json)' );
         if ( !self::validTimestamp( $timestamp ) )
             return array( 'error' => "$basename does not start with a valid date and time (YYYYMMDDHHMMSS)" );
         return array( 'id' => $id, 'timestamp' => $timestamp, 'name' => $name, 'type' => $type, 'engine' => $engine === '' ? '*' : $engine );
@@ -240,7 +255,7 @@ class expMigrationDefinition
             $errors[] = "the header key $key is given twice";
             return;
         }
-        if ( $key === 'maintenance' )
+        if ( $key === 'maintenance' || $key === 'transactional' )
         {
             $flag = strtolower( $value );
             if ( in_array( $flag, array( 'yes', 'true', 'on', '1', 'enabled' ), true ) )
@@ -248,7 +263,7 @@ class expMigrationDefinition
             else if ( in_array( $flag, array( 'no', 'false', 'off', '0', 'disabled', '' ), true ) )
                 $header[$key] = false;
             else
-                $errors[] = "maintenance: $value is not yes or no";
+                $errors[] = "$key: $value is not yes or no";
             return;
         }
         $header[$key] = $value;
@@ -360,15 +375,24 @@ class expMigrationDefinition
         return !empty( $this->header['maintenance'] );
     }
 
+    /** @return bool false when the header says "transactional: no" (no transaction around the migration) */
+    public function transactional()
+    {
+        return !isset( $this->header['transactional'] ) || $this->header['transactional'];
+    }
+
     /**
      * The engines the migration is for: the header's engines, narrowed to the engine files when there is no portable
-     * file; array( '*' ) for every engine.
+     * file; array( '*' ) for every engine. A portable .sql file runs on the SQL engines, and on MongoDB only with a
+     * .mongodb.json file next to it.
      *
      * @return string[]
      */
     public function engines()
     {
         $named = isset( $this->header['engines'] ) ? $this->header['engines'] : array();
+        if ( isset( $this->files['*'] ) && $this->type === 'sql' && !$named )
+            return isset( $this->files['mongodb'] ) ? array( '*' ) : self::SQL_ENGINES;
         if ( isset( $this->files['*'] ) || !$this->files )
             return $named ? $named : array( '*' );
         $variants = array_keys( $this->files );

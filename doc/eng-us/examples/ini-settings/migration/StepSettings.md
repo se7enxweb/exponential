@@ -22,7 +22,7 @@ Never edit `settings/migration.ini` itself: an update replaces it. Put the setti
 > The step types of YAML migrations: StepTypeList\[<name>\]=<class>, where <name> is what "type:" of a step names and  
 > the class implements expMigrationStepType. An extension registers its own in its migration.ini.append.php.  
 
-Default: a hash of 27: `reference=expMigrationStepReference`, `assert=expMigrationStepAssert`, `content=expMigrationStepContent`, `location=expMigrationStepLocation`, `content_version=expMigrationStepContentVersion`, `content_class=expMigrationStepContentClass`, `content_class_group=expMigrationStepContentClassGroup`, `user=expMigrationStepUser`, `user_group=expMigrationStepUserGroup`, `role=expMigrationStepRole`, `section=expMigrationStepSection`, `language=expMigrationStepLanguage` ....
+Default: a hash of 31: `reference=expMigrationStepReference`, `assert=expMigrationStepAssert`, `content=expMigrationStepContent`, `location=expMigrationStepLocation`, `content_version=expMigrationStepContentVersion`, `content_class=expMigrationStepContentClass`, `content_class_group=expMigrationStepContentClassGroup`, `user=expMigrationStepUser`, `user_group=expMigrationStepUserGroup`, `role=expMigrationStepRole`, `section=expMigrationStepSection`, `language=expMigrationStepLanguage` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -50,7 +50,7 @@ StepTypeList[file]=expMigrationStepFile
 StepTypeList[image]=expMigrationStepImage
 StepTypeList[cache]=expMigrationStepCache
 StepTypeList[search]=expMigrationStepSearch
-# ... 7 more in the shipped file
+# ... 11 more in the shipped file
 */ ?>
 ```
 

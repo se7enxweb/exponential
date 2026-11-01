@@ -510,10 +510,15 @@ class expMigrationYaml implements expMigration
         return $this->document['down'];
     }
 
-    /** @return bool whether the migration runs in a transaction where the engine has one */
+    /**
+     * Whether the migration runs in a transaction where the engine has one: not when the document says
+     * "transactional: false" or the header "transactional: no".
+     *
+     * @return bool
+     */
     public function transactional()
     {
-        return (bool)$this->document['transactional'];
+        return (bool)$this->document['transactional'] && $this->definition->transactional();
     }
 
     /**

@@ -1,0 +1,166 @@
+{
+    "ini:settings/migration.ini [MigrationSettings] DirectoryList": {
+        "en": "The site's migration directories, relative to the installation's root or absolute. Each holds\nfiles named YYYYMMDDHHMMSS_name.<type> (php, yml, sql, <engine>.sql, mongodb.json, ini); subdirectories are not\nsearched.",
+        "de": "Die Migrationsverzeichnisse der Site, relativ zur Wurzel der Installation oder absolut. Jedes enthält\nDateien namens YYYYMMDDHHMMSS_name.<type> (php, yml, sql, <engine>.sql, mongodb.json, ini); Unterverzeichnisse werden nicht\ndurchsucht."
+    },
+    "step:data": {
+        "en": "Inserts, updates or deletes rows of a table on every engine, the values quoted by the connection",
+        "de": "Fügt Zeilen einer Tabelle auf jeder Engine ein, ändert oder löscht sie; die Werte setzt die Verbindung in Anführungszeichen"
+    },
+    "step:data all": {
+        "en": "true: every row, without where",
+        "de": "true: jede Zeile, ohne where"
+    },
+    "step:data id_column": {
+        "en": "the auto_increment column; its value of the last row inserted is the result's id",
+        "de": "die auto_increment-Spalte; ihr Wert in der zuletzt eingefügten Zeile ist die id des Ergebnisses"
+    },
+    "step:data key": {
+        "en": "the columns that find a row",
+        "de": "die Spalten, die eine Zeile finden"
+    },
+    "step:data rows": {
+        "en": "the rows, each column => value",
+        "de": "die Zeilen, jede Spalte => Wert"
+    },
+    "step:data table": {
+        "en": "the table (a collection on MongoDB)",
+        "de": "die Tabelle (eine Collection bei MongoDB)"
+    },
+    "step:data value count": {
+        "en": "how many rows were inserted, updated or deleted",
+        "de": "wie viele Zeilen eingefügt, geändert oder gelöscht wurden"
+    },
+    "step:data value id": {
+        "en": "insert, ensure: the id_column of the last row inserted (null when none was)",
+        "de": "insert, ensure: die id_column der zuletzt eingefügten Zeile (null, wenn keine eingefügt wurde)"
+    },
+    "step:data values": {
+        "en": "column => new value",
+        "de": "Spalte => neuer Wert"
+    },
+    "step:data where": {
+        "en": "column => value (a list: one of them; null: is null)",
+        "de": "Spalte => Wert (eine Liste: einer davon; null: ist null)"
+    },
+    "step:schema": {
+        "en": "Makes or drops a table, a column or an index on every engine through the kernel's schema handlers",
+        "de": "Legt eine Tabelle, eine Spalte oder einen Index auf jeder Engine über die Schema-Handler des Kernels an oder entfernt sie"
+    },
+    "step:schema column": {
+        "en": "the column",
+        "de": "die Spalte"
+    },
+    "step:schema columns": {
+        "en": "create_table: name => definition (type, length, not_null, default); add_index, drop_index: the columns of the index",
+        "de": "create_table: Name => Definition (type, length, not_null, default); add_index, drop_index: die Spalten des Index"
+    },
+    "step:schema definition": {
+        "en": "the column: type, length, not_null, default",
+        "de": "die Spalte: type, length, not_null, default"
+    },
+    "step:schema index": {
+        "en": "the name of the index",
+        "de": "der Name des Index"
+    },
+    "step:schema indexes": {
+        "en": "name => { columns: [...], unique: bool }",
+        "de": "Name => { columns: [...], unique: bool }"
+    },
+    "step:schema primary_key": {
+        "en": "the columns of the primary key",
+        "de": "die Spalten des Primärschlüssels"
+    },
+    "step:schema table": {
+        "en": "the table (a collection on MongoDB)",
+        "de": "die Tabelle (eine Collection bei MongoDB)"
+    },
+    "step:schema unique": {
+        "en": "a unique index",
+        "de": "ein eindeutiger Index"
+    },
+    "step:schema value changed": {
+        "en": "true when the step changed the schema, false when it found its work done",
+        "de": "true, wenn der Schritt das Schema geändert hat, false, wenn er seine Arbeit schon erledigt fand"
+    },
+    "step:settings": {
+        "en": "Changes one INI file of settings/override or settings/siteaccess/<name> through the INI editor, with a backup",
+        "de": "Ändert eine INI-Datei von settings/override oder settings/siteaccess/<name> über den INI-Editor, mit Sicherungskopie"
+    },
+    "step:settings add": {
+        "en": "block => variable => values added to the array",
+        "de": "Block => Variable => Werte, die dem Array hinzugefügt werden"
+    },
+    "step:settings file": {
+        "en": "the INI file: site.ini, content.ini ...",
+        "de": "die INI-Datei: site.ini, content.ini ..."
+    },
+    "step:settings remove": {
+        "en": "block => list of Var, Var[key] or Var[]=value",
+        "de": "Block => Liste aus Var, Var[key] oder Var[]=value"
+    },
+    "step:settings set": {
+        "en": "block => variable => value (a list: the array; a map: hash keys)",
+        "de": "Block => Variable => Wert (eine Liste: das Array; eine Map: Schlüssel eines Hashs)"
+    },
+    "step:settings siteaccess": {
+        "en": "the siteaccess (settings/siteaccess/<name>); without: settings/override",
+        "de": "der Siteaccess (settings/siteaccess/<name>); ohne: settings/override"
+    },
+    "step:settings value changed": {
+        "en": "true when the file changed",
+        "de": "true, wenn sich die Datei geändert hat"
+    },
+    "step:settings value file": {
+        "en": "the file written, relative to the installation",
+        "de": "die geschriebene Datei, relativ zur Installation"
+    },
+    "step:sql": {
+        "en": "Runs statements of the engine the installation runs on, written in the step or in files next to the migration",
+        "de": "Führt Anweisungen der Engine aus, auf der die Installation läuft, im Schritt geschrieben oder in Dateien neben der Migration"
+    },
+    "step:sql file": {
+        "en": "a file next to the migration; the engine's own file (<name>.<engine>.sql, <name>.mongodb.json) wins over <name>.sql",
+        "de": "eine Datei neben der Migration; die eigene Datei der Engine (<name>.<engine>.sql, <name>.mongodb.json) geht <name>.sql vor"
+    },
+    "step:sql missing": {
+        "en": "what happens on an engine with no statements: fail or skip",
+        "de": "was auf einer Engine ohne Anweisungen geschieht: fail oder skip"
+    },
+    "step:sql mongodb": {
+        "en": "commands for MongoDB: insert, update, delete, create_collection, drop_collection, create_index, drop_index",
+        "de": "Befehle für MongoDB: insert, update, delete, create_collection, drop_collection, create_index, drop_index"
+    },
+    "step:sql mysql": {
+        "en": "statements for MySQL/MariaDB (win over sql)",
+        "de": "Anweisungen für MySQL/MariaDB (gehen sql vor)"
+    },
+    "step:sql oracle": {
+        "en": "statements for Oracle (win over sql)",
+        "de": "Anweisungen für Oracle (gehen sql vor)"
+    },
+    "step:sql part": {
+        "en": "the part of the file: up, or down (after a line \"-- down\")",
+        "de": "der Teil der Datei: up, oder down (nach einer Zeile \"-- down\")"
+    },
+    "step:sql postgresql": {
+        "en": "statements for PostgreSQL (win over sql)",
+        "de": "Anweisungen für PostgreSQL (gehen sql vor)"
+    },
+    "step:sql sql": {
+        "en": "statements for every SQL engine (MySQL/MariaDB, PostgreSQL, SQLite, Oracle)",
+        "de": "Anweisungen für jede SQL-Engine (MySQL/MariaDB, PostgreSQL, SQLite, Oracle)"
+    },
+    "step:sql sqlite": {
+        "en": "statements for SQLite (win over sql)",
+        "de": "Anweisungen für SQLite (gehen sql vor)"
+    },
+    "step:sql value engine": {
+        "en": "the engine they ran on",
+        "de": "die Engine, auf der sie liefen"
+    },
+    "step:sql value statements": {
+        "en": "how many statements or commands ran",
+        "de": "wie viele Anweisungen oder Befehle liefen"
+    }
+}

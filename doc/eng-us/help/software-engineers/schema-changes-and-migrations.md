@@ -170,7 +170,8 @@ produce instead, for example with `ezsqldiff.php` or a test that loads the file 
 
 - An installation upgraded by hand with the SQL update files has no record of which statements ran;
   `exp:upgrade` records every step it applies, and `exp:upgrade:verify` finds drift.
-- Migrations are written in PHP in 6.0.15; YAML, SQL and INI migrations are found and checked but not run yet.
+- Migrations are written in PHP, YAML, SQL or INI; a schema change that must run on every engine is best a `schema`
+  step ([Migrations: SQL and settings](../../guides/migrations-sql-and-settings.md)).
 - The simulation runs on PostgreSQL and SQLite only; on MySQL/MariaDB, Oracle and MongoDB the plan is listed.
 - MariaDB and Oracle have no CI job in the kernel repository.
 

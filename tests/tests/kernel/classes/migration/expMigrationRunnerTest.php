@@ -500,9 +500,14 @@ class expMigrationRunnerTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString( '20261031140000_no_class: ', $text );
         $this->assertStringContainsString( 'no class extends expMigrationPhp', $text );
         $this->assertStringContainsString( 'more than one class extends expMigrationPhp (ExpTests\\Migrations\\Broken\\FirstOfTwo, ExpTests\\Migrations\\Broken\\SecondOfTwo)', $text );
-        $this->assertStringContainsString( 'cannot be run yet', $text );
+        // SQL and INI migrations load as the YAML migration of their steps
+        $byId = array();
         foreach ( $loaded as $migration )
-            $this->assertInstanceOf( 'expMigrationPhp', $migration );
+            $byId[$migration->id()] = $migration;
+        $this->assertInstanceOf( 'expMigrationYaml', $byId['20261003100000_news_settings'] );
+        $this->assertStringNotContainsString( 'cannot be run yet', $text );
+        foreach ( $loaded as $migration )
+            $this->assertTrue( $migration instanceof expMigrationPhp || $migration instanceof expMigrationYaml );
     }
 
     /** RN-12 */

@@ -72,8 +72,8 @@ those of `exp:upgrade` (0, 1 failed, 2 usage, 3 database unreachable, 4 internal
 
 ## Limits in 6.0.15
 
-- Migrations are written in PHP. Files of the types `yml`, `sql`, `<engine>.sql` and `ini` are found, ordered and
-  checked, and refused by the runner until their steps arrive.
+- Migrations are written in PHP, in YAML, in SQL (`sql`, `<engine>.sql`, `mongodb.json`) or as INI settings (`ini`)
+  ([Migrations: SQL and settings](../../guides/migrations-sql-and-settings.md)).
 - A migration run applies the kernel's upgrade steps of the stages `database` and `scripts` only; the stages `code`,
   `libraries` and `finish` stay with `exp:upgrade` (they are listed as `deferred`).
 - Setup > Migrations shows, runs and rolls back migrations; writing and generating them (the policy `migration/edit`

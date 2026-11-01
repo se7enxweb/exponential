@@ -146,10 +146,11 @@ Sie ist einer der Upgrade-Schritte des Kernels der Stufe `code`, `libraries` ode
 `exp:upgrade` überlässt; die Warnung nennt den Befehl (`./console exp:upgrade:code --apply` ...). Eine Migration, die sie
 braucht, wartet ([Upgrade-Schritt oder Migration?](rezepte/upgrade-schritt-oder-migration.md)).
 
-### `migrations of type .sql cannot be run yet` (oder `.ini`)
+### `no statements for <engine>` (eine SQL-Migration)
 
-In 6.0.15 werden Migrationen in PHP oder als YAML-Schritte geschrieben. SQL- und INI-Dateien werden gefunden und geprüft
-und vom Runner abgelehnt.
+Die Migration hat keine Datei für die Engine dieser Installation, und ihre portable `.sql`-Datei (falls es sie gibt)
+gilt nicht für sie (MongoDB nimmt eine `.mongodb.json`). Ergänzen Sie die Datei der Engine, oder `missing: skip` bei einem
+Schritt `sql`, der dort nichts zu tun hat ([Migrationen: SQL und Einstellungen](../../anleitungen/migrationen-sql-und-einstellungen.md)).
 
 ### Die PHP-Datei wird abgelehnt: keine Klasse, zwei Klassen, eine doppelt deklarierte Klasse
 

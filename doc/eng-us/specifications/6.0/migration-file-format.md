@@ -2,8 +2,8 @@
 
 This page is the normative description of a migration file of Exponential 6.0.15: the file name, the header, the
 PHP class, the YAML document with its steps, placeholders, conditions and loops, the id map, the checksum, and the
-formats of the record files a run writes (the status file and the run log). It covers what the 6.0.15 kernel reads
-and writes; SQL and INI migrations will be added to it when they exist. The guide is
+formats of the record files a run writes (the status file and the run log), and the SQL and INI migration files. It
+covers what the 6.0.15 kernel reads and writes. The guide is
 [Migrations](../../guides/migrations.md).
 
 Version of this specification: 1 (exp-migration/1, exp-migration-status/1, exp-migration-idmap/1).
@@ -13,6 +13,7 @@ Version of this specification: 1 (exp-migration/1, exp-migration-status/1, exp-m
 ```text
 YYYYMMDDHHMMSS_<name>.<type>
 YYYYMMDDHHMMSS_<name>.<engine>.sql
+YYYYMMDDHHMMSS_<name>.mongodb.json
 ```
 
 | Part | Rule |
@@ -20,16 +21,19 @@ YYYYMMDDHHMMSS_<name>.<engine>.sql
 | `YYYYMMDDHHMMSS` | a valid date and time (checked as a calendar date) |
 | `<name>` | letters, digits, `_` and `-` |
 | `<type>` | `php`, `yml`, `sql` or `ini` |
-| `<engine>` | only before `.sql`: `mysql`, `postgresql`, `sqlite`, `oracle` or `mongodb` |
+| `<engine>` | only before `.sql`: `mysql`, `postgresql` (or `pgsql`), `sqlite` or `oracle`; MongoDB's file is `.mongodb.json` |
 
 - The **id** is the file name without `.<type>` (and without `.<engine>`): `20261031120000_add_news_class`.
-- Files of one id that differ only in the engine (`..._index.mysql.sql`, `..._index.postgresql.sql` and a portable
-  `..._index.sql`) are **one** migration with a file per engine; the engine's own file wins, else the portable one.
+- Files of one id that differ only in the engine (`..._index.mysql.sql`, `..._index.pgsql.sql`,
+  `..._index.mongodb.json` and a portable `..._index.sql`) are **one** migration of the type `sql` with a file per
+  engine; the engine's own file wins, else the portable one. A portable file is for the SQL engines: without a
+  `.mongodb.json` (or `engines` in the header) the migration does not run on MongoDB.
 - One id has one type: a `.php` and a `.yml` with the same id are an error.
 - A file whose name does not start with 14 digits and `_` is not a migration and is skipped (a README, a `.gitkeep`);
   one that does but breaks a rule above is an error.
 - Only the files directly in a migrations folder are read; subfolders are not.
-- In 6.0.15 `php` and `yml` run; `sql` and `ini` are found, ordered and checked, and refused by the runner.
+- Every type runs: `sql` and `ini` files run as the YAML migration of their steps ([the SQL migration](#the-sql-migration),
+  [the INI migration](#the-ini-migration)).
 
 ## The header
 
@@ -54,6 +58,7 @@ by a value is prose and ignored.
 | `engines` | a list of `mysql`, `postgresql`, `sqlite`, `oracle`, `mongodb` | every engine |
 | `maintenance` | `yes` or `no` | `no` |
 | `author` | one line of text | empty |
+| `transactional` | `yes` or `no`: `no` runs the migration without a transaction | `yes` |
 
 - Lists are comma-separated; a list key may repeat and the values add up.
 - A key that is not in the table is an error (so a misspelled key does not pass silently); a key other than a list
@@ -268,6 +273,27 @@ and is an error of every YAML migration that is checked.
 - `down()` runs the `down:` steps; without `down:` a migration can be undone only when every step's type implements
   `expMigrationRevertibleStepType` and none is a loop: each step's `revert()` runs, the last first, with the
   references of the run that rolls back. `reference` and `assert` revert to nothing.
+
+## The SQL migration
+
+The files of one id (`.sql`, `.<engine>.sql`, `.mongodb.json`) are one migration. On an engine, its own file runs,
+else the portable `.sql` (on the SQL engines only). An SQL file is statements that end with `;` at the end of a line;
+lines that start with `--` are comments; a line `-- down` (also `-- down:`, any case) ends the statements that apply
+the migration and starts those that undo it. A `.mongodb.json` file is a JSON list of commands, or an object with
+`up` and `down` lists (and `description`); a command is an object with one of `insert` (`documents`), `update`
+(`filter`, `set`, `unset`), `delete` (`filter`), `create_collection`, `drop_collection`, `create_index` (`keys`,
+`name`, `unique`) and `drop_index` (`name`), whose value is the collection. The migration is the YAML migration
+`steps: [ { type: sql, file: <id>.sql } ]`, with `down: [ { type: sql, file: <id>.sql, part: down } ]` when a file
+has a down part, and `transactional` from the header. The checksum is that of the engine's file.
+
+## The INI migration
+
+An INI file whose blocks name their file: `[<file>.ini/<Block>]` for `settings/override/<file>.ini.append.php`,
+`[siteaccess:<name> <file>.ini/<Block>]` for `settings/siteaccess/<name>/<file>.ini.append.php` (`override` or
+`global` before the file name is the same as none). In a block: `Var=value` sets, `Var[]` followed by `Var[]=value`
+lines makes the array these values, `Var[]=value` without `Var[]` before it adds a value, `Var[key]=value` sets a
+key, and `-Var`, `-Var[key]`, `-Var[]=value` remove. Lines starting with `#` or `;` are comments. The migration is
+the YAML migration of one `settings` step per file, in the order the files first appear; it has no `down:`.
 
 ## The checksum
 

@@ -89,11 +89,11 @@ file whose name does not start with `YYYYMMDDHHMMSS_` (a README, a `.gitkeep`) i
 
 ## Types
 
-The type is the file's extension: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `postgresql`, `sqlite`, `oracle`,
-`mongodb`) and `ini`. In 6.0.15 a migration is written in **PHP** or in **YAML**: the engine finds, orders and checks
-the other types, and the runner refuses them with an error until their steps arrive. `exp:migration:check` reports a
-`.sql` or `.ini` migration as an error for the same reason. A PHP migration and a YAML migration can require each
-other and pass values on to each other (references) in the same run.
+The type is the file's extension: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `pgsql` or `postgresql`, `sqlite`,
+`oracle`), `mongodb.json` and `ini`. A migration is written in **PHP**, in **YAML**, in **SQL** (a file per engine, or
+one portable file) or as **INI** settings; SQL and INI migrations run as the YAML migration of their steps
+([Migrations: SQL and settings](migrations-sql-and-settings.md)). Migrations of every type can require each other
+and pass values on to each other (references) in the same run.
 
 ## YAML migrations
 
@@ -274,7 +274,7 @@ The pages: [Migrations in the administration](../help/migrations/in-the-administ
 
 ## Not in 6.0.15 yet
 
-SQL and INI migrations, the editor and the
+The editor and the
 generators in the administration (generators other than the skeleton), recording, and `exp:velocity deploy --migrate`
 are planned and not part of this release.
 

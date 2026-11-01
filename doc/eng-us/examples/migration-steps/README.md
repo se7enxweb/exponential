@@ -41,6 +41,10 @@ Every step type of YAML migrations the kernel registers in `settings/migration.i
 | [http](http.md) |  | Sends one HTTP request to another system, with secrets by name and an optional signature, and keeps the answer for references |
 | [mail](mail.md) |  | Sends one e-mail through the mail transport of the installation |
 | [command](command.md) |  | Runs one exp:* console command of the installation that migration.ini allows, without a shell |
+| [schema](schema.md) | create_table, drop_table, add_column, drop_column, add_index, drop_index | Makes or drops a table, a column or an index on every engine through the kernel's schema handlers |
+| [data](data.md) | insert, ensure, update, delete | Inserts, updates or deletes rows of a table on every engine, the values quoted by the connection |
+| [sql](sql.md) |  | Runs statements of the engine the installation runs on, written in the step or in files next to the migration |
+| [settings](settings.md) |  | Changes one INI file of settings/override or settings/siteaccess/<name> through the INI editor, with a backup |
 
 - [All examples](../README.md)
 

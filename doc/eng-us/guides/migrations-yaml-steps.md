@@ -40,6 +40,10 @@ listed on its generated reference page ([all step types](../examples/migration-s
 | [`http`](../examples/migration-steps/http.md) | one HTTP request to another system, secrets by name, signed if asked | |
 | [`mail`](../examples/migration-steps/mail.md) | one e-mail through the mail transport of the installation | |
 | [`command`](../examples/migration-steps/command.md) | one `exp:*` console command of the allowlist, without a shell | |
+| [`schema`](../examples/migration-steps/schema.md) | a table, a column or an index on every engine ([SQL and settings](migrations-sql-and-settings.md)) | create_table, drop_table, add_column, drop_column, add_index, drop_index |
+| [`data`](../examples/migration-steps/data.md) | rows of a table, the values quoted by the connection | insert, ensure, update, delete |
+| [`sql`](../examples/migration-steps/sql.md) | statements of the engine, in the step or in files next to the migration | |
+| [`settings`](../examples/migration-steps/settings.md) | one INI file of `settings/override` or of a siteaccess, with a backup | |
 
 Every step goes through the kernel's own API, the way the administration does it: a new object is made by its class
 (`eZContentClass::instantiate()`), a new version by `createNewVersionIn()`, and both are published by the publish

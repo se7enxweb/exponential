@@ -93,11 +93,11 @@ nicht durchsucht. Eine Datei, deren Name nicht mit `YYYYMMDDHHMMSS_` beginnt (ei
 
 ## Typen
 
-Der Typ ist die Endung der Datei: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `postgresql`, `sqlite`, `oracle`,
-`mongodb`) und `ini`. In 6.0.15 wird eine Migration in **PHP** oder in **YAML** geschrieben: Die Engine findet, ordnet
-und prüft die anderen Typen, und der Runner lehnt sie mit einem Fehler ab, bis ihre Schritte kommen.
-`exp:migration:check` meldet eine `.sql`- oder `.ini`-Migration aus demselben Grund als Fehler. Eine PHP- und eine
-YAML-Migration können einander voraussetzen und sich im selben Lauf Werte weitergeben (Referenzen).
+Der Typ ist die Endung der Datei: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `pgsql` oder `postgresql`, `sqlite`,
+`oracle`), `mongodb.json` und `ini`. Eine Migration wird in **PHP**, in **YAML**, in **SQL** (eine Datei je Engine oder
+eine portable Datei) oder als **INI**-Einstellungen geschrieben; SQL- und INI-Migrationen laufen als YAML-Migration
+ihrer Schritte ([Migrationen: SQL und Einstellungen](migrationen-sql-und-einstellungen.md)). Migrationen jedes Typs
+können einander voraussetzen und sich im selben Lauf Werte weitergeben (Referenzen).
 
 ## YAML-Migrationen
 
@@ -285,7 +285,7 @@ Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/in-der-admi
 
 ## Noch nicht in 6.0.15
 
-SQL- und INI-Migrationen, der Editor und die Generatoren in der Administration
+Der Editor und die Generatoren in der Administration
 (Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil
 dieses Releases.
 

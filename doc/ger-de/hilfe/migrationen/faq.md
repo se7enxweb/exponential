@@ -54,8 +54,8 @@ liegt (und für `settings/override`, das nicht in Git ist):
 `plan()`, `up()` und `down()`. [Das Tutorial](../../anleitungen/migrationen-tutorial.md).
 
 **Kann ich Migrationen in YAML oder SQL schreiben?**
-Nicht in 6.0.15: Migrationen sind PHP. Dateien `.yml`, `.sql` und `.ini` werden gefunden, eingeordnet und geprüft und
-vom Runner abgelehnt, bis ihre Schritte kommen. [Migrationen](README.md#yaml-migrationen).
+Ja: `.yml`-Dateien mit Schritten, `.sql`-Dateien (eine portable Datei oder eine Datei je Engine und eine
+`.mongodb.json`) und `.ini`-Dateien für Einstellungen. [Migrationen: SQL und Einstellungen](../../anleitungen/migrationen-sql-und-einstellungen.md).
 
 **Kann ich die PHP-API des Kernels in einer Migration nutzen?**
 Ja: `eZContentFunctions`, `eZContentClass`, `eZRole`, `eZINI`, `expKernelTableSchema` und der Rest, immer mit
