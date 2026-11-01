@@ -1,0 +1,4 @@
+# description: A note undone by its step type, without down (the WP9 engine test)
+# requires: 20261101100000_wp9_notes
+- type: wp9_note
+  text: "after the notes on ${run.engine}"
