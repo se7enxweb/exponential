@@ -83460,7 +83460,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Enter the custom domain first.</source>
-        <translation>Introduzca primero el dominio propio.</translation>
+        <translation>Introduce primero el dominio propio.</translation>
     </message>
     <message>
         <source>Every push is checked against these limits first.</source>
@@ -83552,7 +83552,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>With a GitHub repository and a token or GitHub App, the wizard can create the repository, switch GitHub Pages on and set the domain for you (step 4).</source>
-        <translation>Con un repositorio de GitHub y un token o GitHub App, el asistente puede crear el repositorio, activar GitHub Pages y configurar el dominio por usted (paso 4).</translation>
+        <translation>Con un repositorio de GitHub y un token o GitHub App, el asistente puede crear el repositorio, activar GitHub Pages y configurar el dominio por ti (paso 4).</translation>
     </message>
     <message>
         <source>building</source>
