@@ -332,6 +332,63 @@ Every `exp:migration:*` command with `--format=json` prints one JSON object with
 `runs`, `orphans`, `pushes`, `lock`. Keys may be added in later versions; none is renamed or removed within
 `exp-migration/1`.
 
+## Recorded events (exp-migration-recording-event/1)
+
+A recording of changes ([the guide](../../guides/migrations-generators-and-recording.md)) keeps each change as one
+event, the payload of a row of `exp_migration_recording_event`: a JSON object in the shape of the YAML step it stands
+for, so that a generator writes the step without reading the installation again.
+
+| Key | Meaning |
+|---|---|
+| `v` | `1` |
+| `audit` | the audit event's name, from the kernel's taxonomy (`content.object.publish` ...) |
+| `subject` | what it is about, in stable names: `object remote:<id>`, `location remote:<id>`, `class <identifier>`, `role <name>`, `section <identifier>`, `state_group <identifier>`, `user remote:<id>`, `url_alias <path>`, `setting <file> [<block>] <variable>`, `workflow_trigger <keys>` |
+| `step` | the step: `type`, `mode`, and the keys of that step (below), every id in a stable form: nodes and objects as `remote:<remote id>` (see [Identifiers and the id map](#identifiers-and-the-id-map)), classes, sections and object states by identifier, roles by name, languages by locale; the values are the state after the change |
+| `omitted` | what was left out on purpose: the account and personal fields of users, the value of a secret setting |
+| `notes` | what a generator must know: a value kept as the kernel stores it, the languages a translation added |
+
+The event never names who made the change; the row keeps the user id (`actor_id`) for the installation only. The
+rows of a recording sort by `event_id` (the millisecond, a sequence of the process, five random hex digits) in the
+order the changes were made.
+
+The audit events, the step each becomes and its keys:
+
+| Audit event | `type` / `mode` | Keys |
+|---|---|---|
+| `content.object.create` | `content` / `create` | `class`, `parent`, `remote_id`, `section`, `always_available`, `initial_language`, `states`, `fields`, `locations` |
+| `content.object.publish`, `.translate`, `.translation.remove`, `.always_available`, `.initial_language`, `.state` | `content` / `update` | `match`, `section`, `always_available`, `initial_language`, `states`, `fields`, `locations`; `changed` (publish), `remove_translations` (translation removed) |
+| `content.object.remove`, `content.object.purge` | `content` / `delete` | `match` |
+| `content.object.restore` | `trash` / `restore` | `object`, `parent` |
+| `content.node.add` | `location` / `create` | `object`, `parent`, `remote_id` |
+| `content.node.move` | `location` / `move` | `match`, `parent` |
+| `content.node.copy` | `content` / `copy` | `node`, `parent`, `remote_id`, `location_remote_id`, `subtree` |
+| `content.node.hide`, `content.node.reveal` | `location` / `hide`, `reveal` | `match` |
+| `content.node.sort`, `.priority`, `.main` | `location` / `update` | `match`; `sort_field`, `sort_order` / `child_priorities` / `main` |
+| `content.node.swap` | `location` / `swap` | `match`, `with` |
+| `content.node.remove` | `location` / `delete` | `match` |
+| `content.node.remove.trash` | `trash` / `move` | `match` |
+| `content.node.section` | `section` / `assign` | `match`, `subtree` |
+| `content.class.create`, `content.class.copy` | `class` / `create` | `identifier`, `names`, `descriptions`, `contentobject_name`, `url_alias_name`, `is_container`, `always_available`, `sort_field`, `sort_order`, `groups`, `remote_id`, `attributes` |
+| `content.class.change` | `class` / `update` | `match` and the keys of create but `identifier` |
+| `content.class.remove` | `class` / `delete` | `match` |
+| `content.section.change` | `section` / `ensure` | `match`, `identifier`, `name`, `navigation_part` |
+| `content.section.remove` | `section` / `delete` | `match` |
+| `content.state.change` | `object_state_group` / `ensure` | `match`, `identifier`, `names`, `states`, `default_language` |
+| `content.state.remove` | `object_state_group` / `delete` | `match` |
+| `content.urlalias.change` | `url_alias` / `ensure` (added), `delete` (removed) | `path`, `node` / `match`, `which` |
+| `access.role.create`, `access.role.copy` | `role` / `create` | `name`, `policies` |
+| `access.role.change`, `access.policy.add`, `access.policy.remove` | `role` / `update` | `match`, `policies` |
+| `access.role.remove` | `role` / `delete` | `match` |
+| `access.role.assign`, `access.role.unassign` | `role` / `assign`, `unassign` | `match`, `user` or `group`, `limitation` |
+| `access.user.create` | `user` / `create` | `remote_id`, `class`, `groups`, `enabled`, `fields` (only `[RecordingSettings] UserKeepAttributeList[]`) |
+| `access.user.change`, `.move`, `.activate`, `.lock`, `.unlock` | `user` / `update` | `match`, `class`, `groups`, `enabled`, `fields` |
+| `access.user.remove` | `user` / `delete` | `match` |
+| `system.setting.write` | `ini` / `set`, `remove` | `file`, `scope`, `block`, `variable`, `value` or `secret` |
+| `system.workflow.trigger.change` | `workflow_trigger` / `ensure` | `triggers` |
+
+A content object of a user class is recorded as a `user` step. `[RecordingSettings] EventList[]` may narrow the list;
+it never widens it. Events and keys may be added within `exp-migration-recording-event/1`; none is renamed or removed.
+
 ## Related pages
 
 - [Migrations](../../guides/migrations.md), [PHP migrations](../../guides/migrations-php.md)

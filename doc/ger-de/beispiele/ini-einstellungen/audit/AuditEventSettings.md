@@ -27,7 +27,7 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 > geänderte Datei), eine gescheiterte oder zurückgenommene, ein angelegter Sicherungspunkt, ein Push des  
 > Migrations-Repositorys. Eine Site, die system.\* abschaltet, behält sie mit diesen Zeilen.  
 
-Standard: eine Liste mit 39: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `content.node.move`, `content.node.remove.*`, `content.node.hide`, `content.node.reveal` ....
+Standard: eine Liste mit 40: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.record`, `content.node.move`, `content.node.remove.*`, `content.node.hide` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,7 @@ Enabled[]=system.migration.fail
 Enabled[]=system.migration.rollback
 Enabled[]=system.migration.caption
 Enabled[]=system.migration.push
+Enabled[]=system.migration.record
 Enabled[]=content.node.move
 Enabled[]=content.node.remove.*
 Enabled[]=content.node.hide
@@ -54,8 +55,7 @@ Enabled[]=content.object.purge
 Enabled[]=content.object.restore
 Enabled[]=content.object.state
 Enabled[]=content.object.translation.remove
-Enabled[]=content.version.remove
-# ... 19 weitere in der ausgelieferten Datei
+# ... 20 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

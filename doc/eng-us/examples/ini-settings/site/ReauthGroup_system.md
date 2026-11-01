@@ -35,8 +35,9 @@ Enabled=true
 
 > Migrations: a run, a resume or a simulation, a rollback, and (later) the editor and the generators; seeing them  
 > (status, history, log, the dry run) is never asked  
+> a site-wide recording window (every user's changes); a user's own recording is not asked  
 
-Default: a list of 22: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
+Default: a list of 23: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -64,7 +65,7 @@ Rules[]=migration/run
 Rules[]=migration/rollback
 Rules[]=migration/edit
 Rules[]=migration/dryrun SimulateButton
-# ... 2 more in the shipped file
+# ... 3 more in the shipped file
 */ ?>
 ```
 

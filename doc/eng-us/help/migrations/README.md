@@ -19,6 +19,7 @@ sidebar.
 | [The status and the history](status-and-history.md) | See every migration and its state, the runs with their captions and commits, follow a run as it goes, read the dashboard block |
 | [Run, dry run and rollback](run-dry-run-and-rollback.md) | See what a run would do, simulate it, run the pending migrations, resume a failed run, take a run, a migration or an earlier caption back |
 | [Migrations in the website sidebar](expwt-panel.md) | Read the state of the migrations on the site's own pages |
+| [Recording changes](recording.md) | Record your own changes, or every change in a site-wide window, as the steps of a migration; see what a recording captured; stop and discard |
 
 ## Who may do what
 
@@ -27,15 +28,17 @@ sidebar.
 | `migration/read` | the status, the history, the page of a run, the dry run, the dashboard block |
 | `migration/run` | run, resume, and simulate in the dry run |
 | `migration/rollback` | take a run, one migration or an earlier caption back |
-| `migration/edit` | reserved for writing and generating migrations in the administration; no page uses it in 6.0.15 |
+| `migration/edit` | record changes (Setup > Migrations > Recording); later also writing and generating migrations in the administration |
 
-Only the Administrator role has them in a new installation. Run, resume, simulate and rollback ask
+Only the Administrator role has them in a new installation. Run, resume, simulate, rollback and opening the site-wide
+recording window ask
 ["Verify it's you"](../../guides/verify-its-you.md) first. The policies in detail:
 [Policies of the migration module](../../examples/policies/migration.md).
 
 Writing migrations, their editor and generators in the administration, and the settings of the migrations
 repository are not part of Setup > Migrations in 6.0.15: migrations are written as files and generated with
-`./console exp:migration:generate`, and their settings are in `settings/migration.ini`.
+`./console exp:migration:generate`, and their settings are in `settings/migration.ini`. What you change can be
+recorded as the steps of a migration, though: [Recording changes](recording.md).
 
 ## Related pages
 

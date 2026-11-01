@@ -19,6 +19,7 @@ der Website-Seitenleiste.
 | [Stand und Verlauf](status-und-verlauf.md) | Jede Migration und ihren Stand sehen, die Läufe mit ihren Sicherungspunkten und Commits, einen Lauf live verfolgen, den Dashboard-Block lesen |
 | [Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md) | Sehen, was ein Lauf täte, ihn simulieren, die ausstehenden Migrationen ausführen, einen fehlgeschlagenen Lauf fortsetzen, einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen |
 | [Migrationen in der Website-Seitenleiste](expwt-panel.md) | Den Stand der Migrationen auf den Seiten der Site lesen |
+| [Änderungen aufzeichnen](aufzeichnung.md) | Die eigenen Änderungen oder in einem websiteweiten Fenster jede Änderung als Schritte einer Migration aufzeichnen; sehen, was eine Aufzeichnung erfasst hat; beenden und verwerfen |
 
 ## Wer was darf
 
@@ -27,15 +28,16 @@ der Website-Seitenleiste.
 | `migration/read` | den Stand, den Verlauf, die Seite eines Laufs, den Probelauf, den Dashboard-Block |
 | `migration/run` | Ausführen, Fortsetzen und das Simulieren im Probelauf |
 | `migration/rollback` | einen Lauf, eine Migration oder einen früheren Sicherungspunkt zurücknehmen |
-| `migration/edit` | vorgesehen für das Schreiben und Erzeugen von Migrationen in der Administration; in 6.0.15 nutzt sie keine Seite |
+| `migration/edit` | Änderungen aufzeichnen (Setup > Migrationen > Aufzeichnung); später auch das Schreiben und Erzeugen von Migrationen in der Administration |
 
-In einer neuen Installation hat sie nur die Rolle Administrator. Ausführen, Fortsetzen, Simulieren und Zurücknehmen
-fragen zuerst nach [„Identität bestätigen“](../../anleitungen/identitaet-bestaetigen.md). Die Richtlinien im
+In einer neuen Installation hat sie nur die Rolle Administrator. Ausführen, Fortsetzen, Simulieren, Zurücknehmen und
+das Öffnen des websiteweiten Aufzeichnungsfensters fragen zuerst nach [„Identität bestätigen“](../../anleitungen/identitaet-bestaetigen.md). Die Richtlinien im
 Einzelnen: [Richtlinien des Moduls migration](../../beispiele/richtlinien/migration.md).
 
 Das Schreiben von Migrationen, ihr Editor und ihre Generatoren in der Administration und die Einstellungen des
 Migrations-Repositorys gehören in 6.0.15 nicht zu Setup > Migrationen: Migrationen werden als Dateien geschrieben und
-mit `./console exp:migration:generate` erzeugt, ihre Einstellungen stehen in `settings/migration.ini`.
+mit `./console exp:migration:generate` erzeugt, ihre Einstellungen stehen in `settings/migration.ini`. Was Sie ändern,
+lässt sich aber als Schritte einer Migration aufzeichnen: [Änderungen aufzeichnen](aufzeichnung.md).
 
 ## Verwandte Seiten
 

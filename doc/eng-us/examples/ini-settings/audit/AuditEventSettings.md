@@ -27,7 +27,7 @@ Never edit `settings/audit.ini` itself: an update replaces it. Put the settings 
 > --force --reason), failed or rolled back, a caption taken, the migrations repository pushed.  
 > A site that switches system.\* off keeps them with these lines.  
 
-Default: a list of 39: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `content.node.move`, `content.node.remove.*`, `content.node.hide`, `content.node.reveal` ....
+Default: a list of 40: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.record`, `content.node.move`, `content.node.remove.*`, `content.node.hide` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +43,7 @@ Enabled[]=system.migration.fail
 Enabled[]=system.migration.rollback
 Enabled[]=system.migration.caption
 Enabled[]=system.migration.push
+Enabled[]=system.migration.record
 Enabled[]=content.node.move
 Enabled[]=content.node.remove.*
 Enabled[]=content.node.hide
@@ -54,8 +55,7 @@ Enabled[]=content.object.purge
 Enabled[]=content.object.restore
 Enabled[]=content.object.state
 Enabled[]=content.object.translation.remove
-Enabled[]=content.version.remove
-# ... 19 more in the shipped file
+# ... 20 more in the shipped file
 */ ?>
 ```
 

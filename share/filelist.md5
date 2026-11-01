@@ -3687,6 +3687,12 @@ af1f032f0b5eb70a73e6efb9b27d06ef  doc/eng-us/examples/commands/explovestack.md
 4519816b16a8c48153391eb9de64a609  doc/eng-us/examples/commands/expmigrationgenerate.md
 7abd6f7d838133c6c39f2f97400d8072  doc/eng-us/examples/commands/expmigrationmigrate.md
 fe8029a581c530b848866f3caf04ac77  doc/eng-us/examples/commands/expmigrationpush.md
+80a8c55394eeadbfb2a263ac804068f5  doc/eng-us/examples/commands/expmigrationrecorddiscard.md
+a46ec13468b78ee8aa1e74bb11d2126e  doc/eng-us/examples/commands/expmigrationrecordlist.md
+200cc3acf0b5aecb766d12e255922fa1  doc/eng-us/examples/commands/expmigrationrecordshow.md
+fbc5480605a6433f77ac1b73513bed75  doc/eng-us/examples/commands/expmigrationrecordstart.md
+1498dbad413254c97fa9c1416716d5bd  doc/eng-us/examples/commands/expmigrationrecordstatus.md
+afccb7ccc482d11849215f264e41a38d  doc/eng-us/examples/commands/expmigrationrecordstop.md
 2c910b2905e4d139834def45ec564ce2  doc/eng-us/examples/commands/expmigrationresume.md
 5e5c4baba44d1c7d0c9c1319cc7a880f  doc/eng-us/examples/commands/expmigrationrollback.md
 9b59b46ce8c2f6d0b27dd5c309082a99  doc/eng-us/examples/commands/expmigrationstatus.md
@@ -3794,6 +3800,7 @@ b0ad134a67c127b80a4837ac37edfe22  doc/eng-us/examples/cookbook/content-class.md
 49c419f180837d623e4f40d010046a79  doc/eng-us/examples/cookbook/custom-module-view.md
 b305522be865436b7a3a275f3de09f66  doc/eng-us/examples/cookbook/custom-template-operator.md
 041c68f5c40d46539130fe06069ff2e9  doc/eng-us/examples/cookbook/extension-skeleton.md
+50d8f39cd74c4fbdafe70c470da3ee9e  doc/eng-us/examples/cookbook/migrations-record-an-admin-session.md
 6b0dee5b8223e285152dee52515743f5  doc/eng-us/examples/cookbook/multisite-siteaccess.md
 5ed1e967bbe40cd5d30d9bbe0370ba96  doc/eng-us/examples/cookbook/rest-json-fetch.md
 241bd5d2a13c037fbddb89491d3ca5ac  doc/eng-us/examples/cookbook/template-override.md
@@ -4043,6 +4050,7 @@ ee8d7f6049f3faa4aaf6882433a594f9  doc/eng-us/examples/fetch-functions/infocollec
 30538ad34803515de0bfd9adbc09e81e  doc/eng-us/examples/fetch-functions/layout/README.md
 151bf30614870dca37eb23b75600b3a5  doc/eng-us/examples/fetch-functions/layout/sitedesign_list.md
 8ab4820a52c420f50f5054e287c8deb6  doc/eng-us/examples/fetch-functions/migration/README.md
+f45aa61086be7e23700c41935a026a1d  doc/eng-us/examples/fetch-functions/migration/recording.md
 6ee36fff769400cc031eea315a9e8ca6  doc/eng-us/examples/fetch-functions/migration/summary.md
 180fb76261fe2e5a31a38ea3088cad85  doc/eng-us/examples/fetch-functions/notification/README.md
 f692694c6dcc30ea20ad978d76d6630e  doc/eng-us/examples/fetch-functions/notification/digest_handlers.md
@@ -4927,6 +4935,7 @@ c91392713efb2acd856f17def1776367  doc/eng-us/examples/ini-settings/migration/Adm
 07cb473738991ec11e1d2cb081e38583  doc/eng-us/examples/ini-settings/migration/CaptionSettings.md
 71c16a665dfff48ef3f04d37a2dc4912  doc/eng-us/examples/ini-settings/migration/MigrationSettings.md
 75ea8b20d818a7a399f2a181c3fc7791  doc/eng-us/examples/ini-settings/migration/README.md
+8ad62b2558b25cf2f0a231441e4ee970  doc/eng-us/examples/ini-settings/migration/RecordingSettings.md
 94959f62b9cb34961c632d17697e39b5  doc/eng-us/examples/ini-settings/migration/RepositorySettings.md
 65047992428373d86be0b0e5b9a23c06  doc/eng-us/examples/ini-settings/migration/RunSettings.md
 51d0ea7d5def3d860ee8fd5a617bbc77  doc/eng-us/examples/ini-settings/migration/StepSettings.md
@@ -5794,6 +5803,7 @@ da87f7ec62816332537454fdaeb51450  doc/eng-us/examples/module-views/mailpreferenc
 a59248c41f4d17a978662855c91a850a  doc/eng-us/examples/module-views/migration/dryrun.md
 380f515ce0d27dfbb848af3cf9254ad4  doc/eng-us/examples/module-views/migration/history.md
 25c16a76c8375e2eb268d18331875352  doc/eng-us/examples/module-views/migration/log.md
+fa3d98bb71ee89f2c1adbcc92ef58b7f  doc/eng-us/examples/module-views/migration/recording.md
 42abe2749c29a7e6b8b1baf705dc6551  doc/eng-us/examples/module-views/migration/rollback.md
 f02e500717a9d13f06b51dc682dbbb1b  doc/eng-us/examples/module-views/migration/run.md
 26725bf6645d89e29a73c1f2dc94beee  doc/eng-us/examples/module-views/migration/status.md
@@ -6849,6 +6859,7 @@ a101a3bb9c015da9204c6718c2598563  doc/eng-us/guides/images/maintenance/installat
 5aabf1ae3d90cc32431398e0289c5d12  doc/eng-us/guides/mail-preferences-administrator.md
 d11111815c1efec3a438ecccd836072e  doc/eng-us/guides/mail-preferences-developer.md
 9090ac1bfc0b083e83885f6eb1f344b0  doc/eng-us/guides/maintenance-mode.md
+3b5cc93e4976025b968ebc4a89a0ac04  doc/eng-us/guides/migrations-generators-and-recording.md
 4ccf5993e2ea0552706a553160df253b  doc/eng-us/guides/migrations-php.md
 b1ce11a50c0108934aa655898d1ff1f1  doc/eng-us/guides/migrations-repositories.md
 b169d33c12b9f7e55a8e2afd7254058a  doc/eng-us/guides/migrations-rollback-and-captions.md
@@ -10756,6 +10767,7 @@ e6cdbd205e096f3fa39d20f244750a42  doc/eng-us/help/manual/which-cache-do-i-clear.
 952892ed18e07a289ad3932936a86799  doc/eng-us/help/media-and-uploads.md
 a99dc1dcd91f61c0c066569d93f0e3df  doc/eng-us/help/migrations/README.md
 2b880cea27328bd0cfaadce148dd0559  doc/eng-us/help/migrations/expwt-panel.md
+b366fce72cd94a992132dee204d427df  doc/eng-us/help/migrations/recording.md
 822c1d871f949e3e7b5d252c9abf5a5a  doc/eng-us/help/migrations/run-dry-run-and-rollback.md
 ccdad500c7256f8e71374ae264bdc055  doc/eng-us/help/migrations/status-and-history.md
 000adbe890d78c166cf82b3bdf8a9957  doc/eng-us/help/mobile-app-developers/auth/README.md
@@ -12977,6 +12989,7 @@ f26edba2f4dce1ecdfe95d75e31d053e  doc/ger-de/.examples/descriptions/21-legacy-fo
 10a08e679ae26b663b8bf8d01d87cbba  doc/ger-de/.examples/descriptions/22-migration-ini-cronjob-and-template-check-2026-10-31.json
 26458ad79eb818c7bca8362306c42667  doc/ger-de/.examples/descriptions/23-migration-admin-2026-11-01.json
 f070af430a26abc5390d222deec82c54  doc/ger-de/.examples/descriptions/23-migration-yaml-engine-2026-11-01.json
+092e6a5371be3b7cf5d030ec4e51496f  doc/ger-de/.examples/descriptions/24-migration-recording-2026-11-01.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
@@ -13059,6 +13072,7 @@ cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstel
 9dc66e69779c4e6a073c88dfc0948efa  doc/ger-de/anleitungen/lesezeichen.md
 19ad3fdd043c1d4d4d203bb6dd95c158  doc/ger-de/anleitungen/mail-einstellungen-administrator.md
 60703bdde17fe14d72e5fab3560aaf0c  doc/ger-de/anleitungen/mail-einstellungen-entwickler.md
+53458aeed741e9a4797d45792dbe1d77  doc/ger-de/anleitungen/migrationen-erzeugen-und-aufzeichnen.md
 6ae23882e297de7698974b9590ff224a  doc/ger-de/anleitungen/migrationen-fehlerbehebung.md
 ebcf18a7d612001f327c9d0135edca23  doc/ger-de/anleitungen/migrationen-php.md
 d2bd1d77a45baa737a330d931f2d5670  doc/ger-de/anleitungen/migrationen-repositories.md
@@ -13276,6 +13290,12 @@ cfae99e30e49125b83c0ec01171d96a8  doc/ger-de/beispiele/befehle/exphelpcontent.md
 ac0d3d53a6f26bbab075326e78267f28  doc/ger-de/beispiele/befehle/expmigrationgenerate.md
 a1cddb408d22b17e5c8a397dc5fa6f94  doc/ger-de/beispiele/befehle/expmigrationmigrate.md
 92dd1af54aa80bf64dc6a4f7506e6a9b  doc/ger-de/beispiele/befehle/expmigrationpush.md
+bbdf95c2d59a7202463e9d86a7bf6472  doc/ger-de/beispiele/befehle/expmigrationrecorddiscard.md
+db3dd9f854ea0d7bb161743bae327541  doc/ger-de/beispiele/befehle/expmigrationrecordlist.md
+aac439557a21d44d4c64795a57c18a17  doc/ger-de/beispiele/befehle/expmigrationrecordshow.md
+638f39f8399d6f26094ffb18676e18bc  doc/ger-de/beispiele/befehle/expmigrationrecordstart.md
+cf0422db64ca94e7de544782008fa08b  doc/ger-de/beispiele/befehle/expmigrationrecordstatus.md
+ca149690c3d6f4d468135015fa80d8d5  doc/ger-de/beispiele/befehle/expmigrationrecordstop.md
 13dcc55a36e6a2b554bce3b418eb7330  doc/ger-de/beispiele/befehle/expmigrationresume.md
 c6ae12322470cf8abd025f2595c8666d  doc/ger-de/beispiele/befehle/expmigrationrollback.md
 903242079d58b9a6899d0ecdce5fe5d3  doc/ger-de/beispiele/befehle/expmigrationstatus.md
@@ -13608,6 +13628,7 @@ a9b0e8c18237aeb82839731a2fb49410  doc/ger-de/beispiele/fetch-funktionen/infocoll
 8cdc4ea2c9df64011bde8b43366c77f5  doc/ger-de/beispiele/fetch-funktionen/layout/README.md
 d4860387d2fd344063f39cfce1d6896d  doc/ger-de/beispiele/fetch-funktionen/layout/sitedesign_list.md
 1e07fd99da28cc83ff20a84c7470333e  doc/ger-de/beispiele/fetch-funktionen/migration/README.md
+fe3049f2fc515d3c055122077673df02  doc/ger-de/beispiele/fetch-funktionen/migration/recording.md
 71a47d44f9eb0de82b929c55396275e1  doc/ger-de/beispiele/fetch-funktionen/migration/summary.md
 ad06acd276ec9b9e425c4ab0cbf9a2f3  doc/ger-de/beispiele/fetch-funktionen/notification/README.md
 d226814169e45da2a5d44261b2032892  doc/ger-de/beispiele/fetch-funktionen/notification/digest_handlers.md
@@ -14490,6 +14511,7 @@ f397370ecf60ddacdaa9262f236f9cd4  doc/ger-de/beispiele/ini-einstellungen/migrati
 704e16fe6b7862d3ec3f048d86c9a469  doc/ger-de/beispiele/ini-einstellungen/migration/CaptionSettings.md
 6563fc872dba102360a22aed4bf83eb7  doc/ger-de/beispiele/ini-einstellungen/migration/MigrationSettings.md
 87654d7b8448ef4a2c7587e212a668ce  doc/ger-de/beispiele/ini-einstellungen/migration/README.md
+da198fc2db7f44228528e0d13d35d77f  doc/ger-de/beispiele/ini-einstellungen/migration/RecordingSettings.md
 be0ce85e507e5f9f239e46615b470d30  doc/ger-de/beispiele/ini-einstellungen/migration/RepositorySettings.md
 142c4151cb8623a883d65bf4c30fafb5  doc/ger-de/beispiele/ini-einstellungen/migration/RunSettings.md
 4e671abec2c360e0f84ffd0920d5b318  doc/ger-de/beispiele/ini-einstellungen/migration/StepSettings.md
@@ -15207,6 +15229,7 @@ ee8507e2a0d49291573007b6c21de3a6  doc/ger-de/beispiele/kochbuch/cronjob.md
 6495d50f6f904be016060dbd4f1f3e0d  doc/ger-de/beispiele/kochbuch/eigenes-modul-mit-ansicht.md
 75e1c20376c75d4e6b1e94fd30ba9139  doc/ger-de/beispiele/kochbuch/erweiterungsgeruest.md
 afc324674c8ee2de80932072f33c1ef8  doc/ger-de/beispiele/kochbuch/inhaltsklasse.md
+9a3fcf2f75d29cfb798d690e41cce0b0  doc/ger-de/beispiele/kochbuch/migrationen-sitzung-aufzeichnen.md
 41f7f6f03b0e2a7a9f183a6a147e082f  doc/ger-de/beispiele/kochbuch/multisite-siteaccess.md
 4c9249fe7ce4df6d9f8b4aeaeb7f0195  doc/ger-de/beispiele/kochbuch/rest-json-abruf.md
 be5e2d8fc4279277446834eaf953ef61  doc/ger-de/beispiele/kochbuch/template-override.md
@@ -15371,6 +15394,7 @@ a7d28a644cba3dfa94782a8ef3f964eb  doc/ger-de/beispiele/modulansichten/migration/
 d52a7f68dbcc83cb00407a82fcdae9a8  doc/ger-de/beispiele/modulansichten/migration/dryrun.md
 ba7b80ecd1e563e3862132788d61f021  doc/ger-de/beispiele/modulansichten/migration/history.md
 8e3cd6a27cd91fb79ce4201a5b253b5f  doc/ger-de/beispiele/modulansichten/migration/log.md
+e3275018136fc0cb27b3f393148a3d4f  doc/ger-de/beispiele/modulansichten/migration/recording.md
 8d3dfac882921343ed689f3c79bd2837  doc/ger-de/beispiele/modulansichten/migration/rollback.md
 4385c11a980ccd6fefe3e2c9590d5119  doc/ger-de/beispiele/modulansichten/migration/run.md
 9234be3b6a7ed18aa00ef4d3980944bd  doc/ger-de/beispiele/modulansichten/migration/status.md
@@ -18857,6 +18881,7 @@ e472d4b2d51dc9914132192819a82084  doc/ger-de/hilfe/lokale-unternehmen/marketing/
 5fa14cf5955ef9256c37bfadfd39042b  doc/ger-de/hilfe/lokale-unternehmen/vorlagen/website-briefing-fuer-ein-lokales-unternehmen.md
 32e882a58acdc61b0c606e2dfbd7a145  doc/ger-de/hilfe/medien-und-uploads.md
 4dd676cb9b8ca9b5437030a3709c8cc5  doc/ger-de/hilfe/migrationen/README.md
+af08fc9aa5c25619b005373e7e76f87b  doc/ger-de/hilfe/migrationen/aufzeichnung.md
 40fb1f790ddcf4ecb89b746322e02e53  doc/ger-de/hilfe/migrationen/ausfuehren-probelauf-und-rueckgaengig.md
 3e3444b3b8ec8dc5f39a78884338a73a  doc/ger-de/hilfe/migrationen/expwt-panel.md
 570b5d3256aaf445c3dcdb10d57d6ae6  doc/ger-de/hilfe/migrationen/status-und-verlauf.md

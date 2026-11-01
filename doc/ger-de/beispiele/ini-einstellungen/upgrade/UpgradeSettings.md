@@ -28,7 +28,7 @@ Bearbeiten Sie `settings/upgrade.ini` nie selbst: Ein Update ersetzt die Datei. 
 > Stufe scripts: die PHP-Upgrade-Schritte, über die Klassen der Skripte und Setup-Befehle  
 > Stufe finish: die Änderungen wirksam machen und die Site prüfen (nur wenn der Lauf etwas geändert hat)  
 
-Standard: eine Liste mit 40: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationTables`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables`, `expUpgradeStepBookmarkFolders` ....
+Standard: eine Liste mit 41: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationTables`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -41,6 +41,7 @@ StepList[]=expUpgradeStepLibrariesUpdate
 StepList[]=expUpgradeStepLibrariesInstall
 StepList[]=expUpgradeStepRecordTable
 StepList[]=expUpgradeStepMigrationTables
+StepList[]=expUpgradeStepMigrationRecordingTables
 StepList[]=expUpgradeStepPasswordHashWidth
 StepList[]=expUpgradeStepTrashColumns
 StepList[]=expUpgradeStepPdfExportFooter
@@ -55,8 +56,7 @@ StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
 StepList[]=expUpgradeStepUserSessionTable
-StepList[]=expUpgradeStepOAuthPkceColumns
-# ... 20 weitere in der ausgelieferten Datei
+# ... 21 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

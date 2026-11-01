@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # migration.ini
 
-The shipped settings of `settings/migration.ini`: 7 blocks, 28 settings.
+The shipped settings of `settings/migration.ini`: 8 blocks, 32 settings.
 
 > Migrations: changes to an installation (content, classes, roles, settings, schema) written once in  
 > files under version control and applied to every installation of the site in the same order.  
@@ -26,6 +26,7 @@ The shipped settings of `settings/migration.ini`: 7 blocks, 28 settings.
 | [CaptionSettings](CaptionSettings.md) | 8 |
 | [RepositorySettings](RepositorySettings.md) | 8 |
 | [AdminSettings](AdminSettings.md) | 3 |
+| [RecordingSettings](RecordingSettings.md) | 4 |
 
 - [All examples](../../README.md)
 

@@ -35,6 +35,7 @@ Quick start:
 | Setup > Migrations | the module `migration` with the views `status`, `history`, `log/<run-id>`, `stream/<run-id>` (the live progress), `dryrun`, `run` and `rollback/<target>`; the policies `migration/read`, `run`, `rollback` and `edit` (Administrator only in a new installation); "Verify it's you" before a run, a resume, a simulation and a rollback |
 | Background runs | a run, resume or rollback started in the administration runs as a console process of its own as the signed-in user (`expMigrationJob`), goes on when the page is closed, and is followed live through its progress file; its files are in `var/<site>/migration/jobs/` |
 | Dashboard block | `migrations`: pending, failed, orphans, the run going on and the last run (fetch function `migration/summary`) |
+| Recording changes | a user's own changes (session) or every change (site-wide window) recorded at the kernel's operation level as the steps of a YAML migration, without personal data; tables `exp_migration_recording` and `exp_migration_recording_event` (upgrade step `6.0.15-migration-recording-tables`); the commands `exp:migration:record:start`, `:stop`, `:status`, `:list`, `:show`, `:discard`; Setup > Migrations > Recording and the Recording bar ([the guide](../../guides/migrations-generators-and-recording.md)) |
 | Settings | `settings/migration.ini`: `[MigrationSettings]`, `[RunSettings]`, `[CaptionSettings]`, `[RepositorySettings]`, `[AdminSettings]` (`PhpCliPath`, `JobHistory`, `LogBytes`) |
 
 ## The building blocks
@@ -55,6 +56,7 @@ Quick start:
 | `expMigrationStatus`, `expMigrationCheck`, `expMigrationSimulation`, `expMigrationGenerator` | the status, the lint, the simulation, the skeleton |
 | `expMigrationUpgradeSource`, `expMigrationUpgradeStep` | the kernel's upgrade steps (`exp:upgrade`) as migrations of the source `kernel` |
 | `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | the forms and the dashboard summary of Setup > Migrations, the runs started there in the background, their progress file |
+| `expMigrationRecording`, `expMigrationRecorder`, `expMigrationRecordingEvent`, `expMigrationRecordingResolver`, `expMigrationRecordingGenerator` | the recordings and their events, the tap in the audit hook points, an audit event as a migration step, the stable names read from the installation, the plan of a recording |
 
 The commands are `bin/php/expmigration<name>.php` (alias `exp:migration:<name>`), their code in
 `kernel/private/classes/commands/`. Their machine output is `exp-migration/1` (`--format=json`); the exit codes are
@@ -76,8 +78,11 @@ those of `exp:upgrade` (0, 1 failed, 2 usage, 3 database unreachable, 4 internal
   checked, and refused by the runner until their steps arrive.
 - A migration run applies the kernel's upgrade steps of the stages `database` and `scripts` only; the stages `code`,
   `libraries` and `finish` stay with `exp:upgrade` (they are listed as `deferred`).
-- Setup > Migrations shows, runs and rolls back migrations; writing and generating them (the policy `migration/edit`
-  is reserved for that) and the settings of the migrations repository are done in files and on the console.
+- Setup > Migrations shows, runs and rolls back migrations, and records changes (the policy `migration/edit`);
+  writing and generating migrations and the settings of the migrations repository are done in files and on the
+  console.
+- A recording is kept, but a migration is generated from it only once the YAML step types it uses exist:
+  `exp:migration:generate --from-recording` lists them until then and writes nothing.
 - A run started in the administration needs `proc_open` and a PHP command line binary
   (`migration.ini [AdminSettings] PhpCliPath`); without them the page says so and the console runs it.
 - Commits, tags and pushes need git_manager; without it a run says so and commits nothing.
@@ -86,7 +91,7 @@ those of `exp:upgrade` (0, 1 failed, 2 usage, 3 database unreachable, 4 internal
 
 Every setting with its default: [migration.ini](../../examples/ini-settings/migration/README.md). The cronjob part:
 [migrationpush](../../examples/cronjobs/migrationpush.md). Audit events: `system.migration.run`, `.apply`, `.fail`,
-`.rollback`, `.caption`, `.push` in `settings/audit.ini`.
+`.rollback`, `.caption`, `.push`, `.record` in `settings/audit.ini`.
 
 ## Read on
 

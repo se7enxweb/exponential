@@ -35,8 +35,9 @@ Enabled=true
 
 > Migrationen: ein Lauf, eine Fortsetzung oder eine Simulation, eine Rücknahme und (später) der Editor und die Generatoren; das Ansehen  
 > (Stand, Verlauf, Protokoll, der Probelauf) wird nie abgefragt  
+> ein websiteweites Aufzeichnungsfenster (die Änderungen aller Benutzer); die eigene Aufzeichnung eines Benutzers wird nicht abgefragt  
 
-Standard: eine Liste mit 22: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
+Standard: eine Liste mit 23: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -64,7 +65,7 @@ Rules[]=migration/run
 Rules[]=migration/rollback
 Rules[]=migration/edit
 Rules[]=migration/dryrun SimulateButton
-# ... 2 weitere in der ausgelieferten Datei
+# ... 3 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
