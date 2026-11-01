@@ -269,7 +269,7 @@ class expStaticRepository
         if ( strpos( $text, $line ) !== false )
             return;
         if ( !is_dir( dirname( $file ) ) )
-            @mkdir( dirname( $file ), 0775, true );
+            @mkdir( dirname( $file ), eZDir::dirMode( 0775 ), true );
         file_put_contents( $file, rtrim( $text ) . ( $text !== '' ? "\n" : '' ) . "# static publishing: the manifest of the build before, kept locally\n.static-publish/$line\n" );
     }
 

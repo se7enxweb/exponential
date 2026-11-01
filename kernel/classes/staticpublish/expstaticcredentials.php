@@ -220,13 +220,13 @@ class expStaticCredentials
     {
         $dir = $this->workDir . '/.keys';
         if ( !is_dir( $dir ) )
-            @mkdir( $dir, 0700, true );
-        @chmod( $dir, 0700 );
+            @mkdir( $dir, eZDir::dirMode( 0700 ), true );
+        @chmod( $dir, eZDir::dirMode( 0700 ) );
         $file = $dir . '/key-' . bin2hex( random_bytes( 8 ) );
-        $old = umask( 0077 );
+        // made empty in a folder only this process can enter, narrowed, then filled: the key is never readable by others
+        touch( $file );
+        @chmod( $file, eZFile::fileMode( 0600 ) );
         file_put_contents( $file, rtrim( $key ) . "\n" );
-        umask( $old );
-        @chmod( $file, 0600 );
         $this->files[] = $file;
         return $file;
     }
@@ -300,9 +300,9 @@ class expStaticCredentials
     public static function generateKey( $workDir, $comment, $keygen = 'ssh-keygen' )
     {
         $dir = rtrim( str_replace( '\\', '/', (string)$workDir ), '/' ) . '/.keys';
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0700, true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0700 ), true ) && !is_dir( $dir ) )
             return array( 'error' => "the folder $dir cannot be created" );
-        @chmod( $dir, 0700 );
+        @chmod( $dir, eZDir::dirMode( 0700 ) );
         $file = $dir . '/new-' . bin2hex( random_bytes( 8 ) );
         $result = self::process( array( $keygen, '-q', '-t', 'ed25519', '-N', '', '-C', (string)$comment, '-f', $file ) );
         $out = array( 'error' => '' );

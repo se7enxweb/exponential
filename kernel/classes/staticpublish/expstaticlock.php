@@ -43,7 +43,7 @@ class expStaticLock
     {
         $problem = '';
         $dir = rtrim( str_replace( '\\', '/', (string)$workDir ), '/' ) . '/.locks';
-        if ( !is_dir( $dir ) && !@mkdir( $dir, 0775, true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !@mkdir( $dir, eZDir::dirMode( 0775 ), true ) && !is_dir( $dir ) )
         {
             $problem = "the lock folder $dir cannot be created";
             return null;
