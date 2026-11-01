@@ -31,7 +31,9 @@
  * index and manifest tell), the size and time of every listed file (files changed), the commit of each repository
  * (the history) and the settings, so a stale index is never used; a rewrite of the git index that changes none of
  * them (git status) keeps the index. One process builds a new index at a time, the others use the newest one in
- * the cache meanwhile (buildOnce()). The look
+ * the cache meanwhile (buildOnce()). A web request never waits for a build while an older index is there: it answers
+ * from that one and starts "exp:help index" in the background (startBackgroundBuild()); only the very first build
+ * (no index at all, a new FORMAT) is made in the request. The look
  * at every file is reused for [IndexSettings] StatFilesInterval seconds by every process (signature.php in the cache
  * directory), so an edited page shows within that time. With [IndexSettings] StatFiles=disabled the files are not looked at on each request: a changed page is then picked up
  * by "./console exp:help index" or the next change of the git index (a deploy). When git can be run, the build also
@@ -112,7 +114,9 @@ class expHelpDocumentIndex
      *                       audience (expHelpAudience, default from exphelp.ini), stat_files (bool, default true),
      *                       stat_interval (int seconds, default 0: look at the files on every call), git_history
      *                       (bool, default true), languages (expHelpLanguage, default from exphelp.ini [DocLanguages]
-     *                       for the allowlist's root), language (the reader's directory, default the default language)
+     *                       for the allowlist's root), language (the reader's directory, default the default language),
+     *                       background (bool, or a callable called instead of the background command; default: in a
+     *                       web request, see servesStale())
      */
     public function __construct( ?expHelpAllowlist $allowlist = null, array $options = array() )
     {
@@ -131,6 +135,8 @@ class expHelpDocumentIndex
         $this->statFiles = array_key_exists( 'stat_files', $options ) ? (bool)$options['stat_files'] : true;
         $this->statInterval = isset( $options['stat_interval'] ) ? max( 0, (int)$options['stat_interval'] ) : 0;
         $this->gitHistory = array_key_exists( 'git_history', $options ) ? (bool)$options['git_history'] : true;
+        if ( isset( $options['background'] ) )
+            $this->background = is_callable( $options['background'] ) ? $options['background'] : (bool)$options['background'];
     }
 
     /**
@@ -423,7 +429,14 @@ class expHelpDocumentIndex
                          class_exists( 'expHelpMarkdownRenderer' ) ? ( new ReflectionClass( 'expHelpMarkdownRenderer' ) )->getFileName() : '',
                          class_exists( 'expHelpRecordRenderer' ) ? ( new ReflectionClass( 'expHelpRecordRenderer' ) )->getFileName() : '' ) as $code )
             if ( is_string( $code ) && $code !== '' )
+            {
+                // Velocity runs the kernel from its engine archive (phar://.../engine.phar/kernel/...): the file on
+                // disk is the same code, and its time is what PHP-FPM and the console see
+                if ( strpos( $code, 'phar://' ) === 0 && preg_match( '#\.phar/(.+)$#', $code, $inside )
+                     && is_file( $this->allowlist->rootDir() . '/' . $inside[1] ) )
+                    $code = $this->allowlist->rootDir() . '/' . $inside[1];
                 $parts[] = basename( $code ) . ':' . (int)@filemtime( $code ) . ':' . (int)@filesize( $code );
+            }
         // The git index and manifest (stamp()) tell that files were added or removed. Without a look at the files they
         // are all the signature has; with one, the listed paths with their sizes and times say the same, and the
         // stamp only decides whether the last look can be reused. Kept out of the signature, a rewrite of the git
@@ -956,21 +969,79 @@ class expHelpDocumentIndex
      */
     public function neighbours( $id )
     {
+        $order = $this->pageOrder();
+        $position = isset( $order[(string)$id] ) ? $order[(string)$id] : false;
+        if ( $position === false )
+            return array( 'prev' => null, 'next' => null );
+        $ids = array_keys( $order );
+        return array( 'prev' => $position > 0 ? $this->document( $ids[$position - 1] ) : null,
+                      'next' => isset( $ids[$position + 1] ) ? $this->document( $ids[$position + 1] ) : null );
+    }
+
+    /** @var array|null pageOrder() of this instance */
+    protected $pageOrder = null;
+
+    /**
+     * The visible pages in the navigation order (id => position), from the cache directory (order/<signature>.php)
+     * when it is there: the whole tree is otherwise walked for each page's previous and next link (~80 ms on alpha).
+     *
+     * @return array
+     */
+    public function pageOrder()
+    {
+        if ( $this->pageOrder !== null )
+            return $this->pageOrder;
+        $this->load();
+        $dir = $this->cacheDir();
+        $file = $dir !== null ? $dir . '/order/' . $this->signature() . '.php' : null;
+        if ( $file !== null && is_file( $file ) )
+        {
+            $cached = @include $file;
+            if ( is_array( $cached ) )
+                return $this->pageOrder = $cached;
+        }
         $order = array();
         $walk = function ( array $node ) use ( &$walk, &$order ) {
-            if ( $node['index_id'] !== null )
-                $order[] = $node['index_id'];
+            if ( $node['index_id'] !== null && !isset( $order[$node['index_id']] ) )
+                $order[$node['index_id']] = count( $order );
             foreach ( $node['documents'] as $document )
-                $order[] = $document['id'];
+                if ( !isset( $order[$document['id']] ) )
+                    $order[$document['id']] = count( $order );
             foreach ( $node['children'] as $child )
                 $walk( $child );
         };
         $walk( $this->tree() );
-        $position = array_search( (string)$id, $order, true );
-        if ( $position === false )
-            return array( 'prev' => null, 'next' => null );
-        return array( 'prev' => $position > 0 ? $this->document( $order[$position - 1] ) : null,
-                      'next' => isset( $order[$position + 1] ) ? $this->document( $order[$position + 1] ) : null );
+        if ( $file !== null )
+            self::writePhp( $file, $order );
+        return $this->pageOrder = $order;
+    }
+
+    /**
+     * Writes a var_export file atomically, with the storage file mode (the directory is created when missing).
+     *
+     * @param string $file
+     * @param array $data
+     * @return bool
+     */
+    protected static function writePhp( $file, array $data )
+    {
+        if ( !is_dir( dirname( $file ) ) )
+            self::mkdir( dirname( $file ) );
+        if ( !is_dir( dirname( $file ) ) || !is_writable( dirname( $file ) ) )
+            return false;
+        $temporary = dirname( $file ) . '/.' . basename( $file ) . '.' . getmypid() . '.' . mt_rand() . '.tmp';
+        if ( @file_put_contents( $temporary, "<?php\n// The help index cache (expHelpDocumentIndex). Generated, safe to remove.\nreturn "
+                                 . var_export( $data, true ) . ";\n", LOCK_EX ) === false )
+            return false;
+        @chmod( $temporary, eZFile::fileMode( self::filePermissions() ) );
+        if ( !@rename( $temporary, $file ) )
+        {
+            @unlink( $temporary );
+            return false;
+        }
+        if ( function_exists( 'opcache_invalidate' ) )
+            @opcache_invalidate( $file, true );
+        return true;
     }
 
     /**
@@ -1009,13 +1080,17 @@ class expHelpDocumentIndex
         $this->data = $this->build();
         $cached = $this->store( 'index-' . $this->data['signature'] . '.php', $this->data, 'index-' );
         $pruned = $cached ? $this->pruneStale( (int)floor( $start ) ) : 0;
+        // a background build (startBackgroundBuild()) is done
+        if ( $cached )
+            @unlink( $this->cacheDir() . '/' . self::BUILD_MARKER_FILE );
+        $this->pageOrder = null;
         return array( 'signature' => $this->data['signature'], 'documents' => count( $this->data['documents'] ),
                       'assets' => count( $this->data['assets'] ), 'seconds' => round( microtime( true ) - $start, 3 ),
                       'sources' => $this->data['sources'], 'cached' => $cached, 'pruned' => $pruned );
     }
 
     /** The cache files that belong to one index signature and are named by a hash of it: subdirectory => suffix */
-    const DERIVED_CACHES = array( 'nav' => 'html', 'render' => 'json' );
+    const DERIVED_CACHES = array( 'nav' => 'html', 'render' => 'json', 'order' => 'php' );
 
     /**
      * Removes what an older index left in the cache directory: the other index-<signature>.php files and the cached
@@ -1063,6 +1138,15 @@ class expHelpDocumentIndex
         $cached = $this->readIndex( 'index-' . $signature . '.php', $signature );
         if ( $cached !== null )
             $this->data = $cached;
+        elseif ( $this->servesStale() && ( $older = $this->newestIndex() ) !== null )
+        {
+            // a web request never waits for a build (15 to 30 s) while an older index is there: it answers from that
+            // one and starts the build in the background; the next request after it uses the new index
+            $this->data = $older;
+            $this->signature = $older['signature'];
+            $this->startBackgroundBuild();
+            return $this->data;
+        }
         elseif ( $this->buildOnce( $signature ) )
             return $this->data;
         $this->storePageTitles();
@@ -1071,6 +1155,125 @@ class expHelpDocumentIndex
 
     /** The lock file in the cache directory that one building process holds */
     const BUILD_LOCK_FILE = 'index.lock';
+
+    /** The file in the cache directory that says a background build was started (and when) */
+    const BUILD_MARKER_FILE = 'index.building';
+
+    /** Seconds after which a background build that never finished (its marker is still there) is started again */
+    const BUILD_MARKER_SECONDS = 300;
+
+    /** @var bool|callable|null the background option: see servesStale() */
+    protected $background = null;
+
+    /**
+     * Whether a load that finds no index of its signature answers from an older one and builds in the background:
+     * option background true or a callable (called with the index instead of starting the command; tests), false
+     * never; by default in a web request (eZExecution::isWebRequest()) that can start the command. The console
+     * (./console exp:help index, the deploy) always builds and waits.
+     *
+     * @return bool
+     */
+    public function servesStale()
+    {
+        if ( $this->background === null )
+        {
+            $web = class_exists( 'eZExecution' ) && method_exists( 'eZExecution', 'isWebRequest' ) ? eZExecution::isWebRequest() : PHP_SAPI !== 'cli';
+            $this->background = $web && $this->backgroundCommand() !== null;
+        }
+        return $this->background !== false;
+    }
+
+    /**
+     * Starts the build of the current index in the background, once: not while a build runs (the lock is held) or
+     * one was started less than BUILD_MARKER_SECONDS ago (the marker file, removed by rebuild()).
+     *
+     * @return bool whether a build runs now (started here or before)
+     */
+    public function startBackgroundBuild()
+    {
+        $dir = $this->cacheDir();
+        if ( $dir === null || !is_dir( $dir ) )
+            return false;
+        $marker = $dir . '/' . self::BUILD_MARKER_FILE;
+        clearstatcache( true, $marker );
+        if ( is_file( $marker ) && filemtime( $marker ) > time() - self::BUILD_MARKER_SECONDS )
+            return true;
+        $lock = $this->openLock();
+        if ( $lock )
+        {
+            $free = @flock( $lock, LOCK_EX | LOCK_NB );
+            if ( $free )
+                @flock( $lock, LOCK_UN );
+            fclose( $lock );
+            if ( !$free )
+                return true;
+        }
+        @unlink( $marker );
+        $handle = @fopen( $marker, 'x' );
+        if ( $handle === false )
+            return true; // another request was faster
+        fwrite( $handle, (string)time() );
+        fclose( $handle );
+        @chmod( $marker, eZFile::fileMode( self::filePermissions() ) );
+        if ( is_callable( $this->background ) )
+        {
+            call_user_func( $this->background, $this );
+            return true;
+        }
+        $command = $this->backgroundCommand();
+        $process = $command === null ? false : @proc_open( $command, array( 0 => array( 'file', '/dev/null', 'r' ),
+            1 => array( 'file', '/dev/null', 'w' ), 2 => array( 'file', '/dev/null', 'w' ) ), $pipes, $this->allowlist->rootDir() );
+        $code = is_resource( $process ) ? proc_close( $process ) : 127;
+        if ( $code !== 0 )
+        {
+            @unlink( $marker );
+            if ( class_exists( 'eZDebug' ) )
+                eZDebug::writeWarning( 'Help index: the build could not be started in the background (exit ' . $code . ')', __METHOD__ );
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * The background build: setsid -f <php> bin/php/exphelp.php index --language=<this language> --no-images
+     * [-s <siteaccess>] --allow-root-user, run in the installation root; null when there is no setsid, no command
+     * line PHP or no proc_open.
+     *
+     * @return string[]|null
+     */
+    public function backgroundCommand()
+    {
+        $setsid = is_executable( '/usr/bin/setsid' ) ? '/usr/bin/setsid' : ( is_executable( '/bin/setsid' ) ? '/bin/setsid' : '' );
+        $php = class_exists( 'expHelpContentRepository' ) ? expHelpContentRepository::commandLinePhp()
+            : ( is_executable( PHP_BINDIR . '/php' ) ? PHP_BINDIR . '/php' : '' );
+        if ( $setsid === '' || $php === '' || !function_exists( 'proc_open' ) || !is_file( $this->allowlist->rootDir() . '/bin/php/exphelp.php' ) )
+            return null;
+        $command = array( $setsid, '-f', $php, 'bin/php/exphelp.php', 'index', '--language=' . $this->language, '--no-images' );
+        $access = class_exists( 'eZSiteAccess' ) ? eZSiteAccess::current() : null;
+        if ( is_array( $access ) && isset( $access['name'] ) && preg_match( '/^[A-Za-z0-9_-]{1,100}$/', (string)$access['name'] ) )
+            array_push( $command, '-s', (string)$access['name'] );
+        array_push( $command, '--allow-root-user', '--no-colors' );
+        return $command;
+    }
+
+    /**
+     * Opens (and creates, with the storage file mode, so the web server and a console run as root share it) the
+     * build lock file.
+     *
+     * @return resource|false
+     */
+    protected function openLock()
+    {
+        $dir = $this->cacheDir();
+        if ( $dir === null || !is_dir( $dir ) )
+            return false;
+        $file = $dir . '/' . self::BUILD_LOCK_FILE;
+        $new = !is_file( $file );
+        $lock = @fopen( $file, 'c' );
+        if ( $lock && $new )
+            @chmod( $file, eZFile::fileMode( self::filePermissions() ) );
+        return $lock;
+    }
 
     /**
      * Builds the index of a signature that is not cached, in one process at a time. Building takes seconds (15 on
@@ -1085,8 +1288,7 @@ class expHelpDocumentIndex
      */
     protected function buildOnce( $signature )
     {
-        $dir = $this->cacheDir();
-        $lock = $dir !== null && is_dir( $dir ) ? @fopen( $dir . '/' . self::BUILD_LOCK_FILE, 'c' ) : false;
+        $lock = $this->openLock();
         if ( !$lock )
         {
             $this->rebuild();
