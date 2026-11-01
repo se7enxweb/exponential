@@ -16,6 +16,22 @@ Every step type of YAML migrations the kernel registers in `settings/migration.i
 |---|---|---|
 | [reference](reference.md) |  | Sets references (${ref.<name>}) for the steps and migrations after it in the run |
 | [assert](assert.md) |  | Fails the migration when a condition is false |
+| [content](content.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a content object, with its fields in one or more languages |
+| [location](location.md) | create, update, delete, move, copy, hide, unhide | Adds, changes, removes, moves, copies, hides or shows a location (node) of a content object |
+| [content_version](content_version.md) | restore, cleanup | Restores an earlier version of a content object or removes its old versions |
+| [content_class](content_class.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a content class with its attributes, their datatype settings and the translations of their names |
+| [content_class_group](content_class_group.md) | create, update, ensure, delete | Creates, renames, ensures or deletes a group of content classes |
+| [user](user.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a user account with its groups, password and fields |
+| [user_group](user_group.md) | create, update, ensure, delete | Creates, updates, ensures or deletes a user group, with its name and description in one or more languages |
+| [role](role.md) | create, update, ensure, delete, assign, unassign | Creates, updates, ensures or deletes a role with its policies and limitations, or assigns it to users and user groups or takes it from them |
+| [section](section.md) | create, update, ensure, delete, assign | Creates, updates, ensures or deletes a section, or assigns a section to a part of the content tree |
+| [language](language.md) | create, update, ensure, delete | Adds, renames, ensures or removes a language of content |
+| [object_state_group](object_state_group.md) | create, update, ensure, delete | Creates, updates, ensures or deletes an object state group with its states and the translations of their names |
+| [tag](tag.md) | create, update, ensure, delete, move, merge | Creates, updates, ensures, deletes, moves or merges a tag of eztags, with its translations and synonyms |
+| [url_alias](url_alias.md) | create, ensure, delete | Creates, ensures or deletes a custom URL alias of a node, a global URL alias or a URL wildcard |
+| [trash](trash.md) | move, restore, purge | Moves content to the trash, restores it from the trash, or purges it for good |
+| [file](file.md) |  | Attaches a file of the migrations folder to a file attribute (ezbinaryfile, ezmedia) of an object |
+| [image](image.md) |  | Puts an image of the migrations folder into an image attribute of an object, with its alternative text, focal point and crop rectangle |
 
 - [All examples](../README.md)
 

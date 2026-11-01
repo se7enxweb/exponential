@@ -154,15 +154,18 @@ panel.
 
 ## YAML migrations
 
-> **Coming with the YAML engine.** Migrations written as YAML steps (content, classes, roles, settings) are planned.
-> In 6.0.15 a `.yml` migration file is found, ordered and checked, and the runner refuses it until its steps arrive.
-> This section will link the YAML pages when they land; until then every recipe here is written in PHP.
+A migration can be a list of YAML steps instead of a PHP class: content, locations and versions, classes and class
+groups, users, user groups and roles, sections, languages and object states. The engine, its placeholders,
+conditions and loops: [the file format](../../specifications/6.0/migration-file-format.md#the-yaml-migration); the
+step types: [YAML migration steps](../../guides/migrations-yaml-steps.md) and
+[every step type](../../examples/migration-steps/README.md). The recipes here are written in PHP; each of them can be
+written as YAML steps too where a step type covers it.
 
 ## What 6.0.15 has, and what comes later
 
 | In 6.0.15 | Not yet |
 |---|---|
-| PHP migrations in the site, in active extensions and in installed packages | YAML, SQL and INI migrations (found and checked, refused by the runner) |
+| PHP and YAML migrations in the site, in active extensions and in installed packages | SQL and INI migrations (found and checked, refused by the runner); the YAML steps of caches, the search index and layouts |
 | the dry run, and the simulation with a diff on PostgreSQL and SQLite | a simulation on MySQL/MariaDB, Oracle and MongoDB (the plan is listed) |
 | captions, the automatic restore, rollback of a run, of a migration and of any caption | generators other than the skeleton, an editor in the administration |
 | commit, tag and push of every run's record; the cronjob part `migrationpush` | `exp:velocity deploy --migrate` |

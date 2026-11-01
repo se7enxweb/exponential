@@ -1,0 +1,238 @@
+{
+    "step:file": {
+        "en": "Attaches a file of the migrations folder to a file attribute (ezbinaryfile, ezmedia) of an object",
+        "de": "Hängt eine Datei aus dem Migrationsordner an ein Dateiattribut (ezbinaryfile, ezmedia) eines Objekts"
+    },
+    "step:file field": {
+        "en": "the identifier of the attribute (ezbinaryfile, ezmedia)",
+        "de": "der Bezeichner des Attributs (ezbinaryfile, ezmedia)"
+    },
+    "step:file file": {
+        "en": "the file: a path below the folder of the migration file (files/report.pdf)",
+        "de": "die Datei: ein Pfad unterhalb des Ordners der Migrationsdatei (files/report.pdf)"
+    },
+    "step:file language": {
+        "en": "the translation that gets the file (default: the default language of content)",
+        "de": "die Übersetzung, die die Datei bekommt (Standard: die Standardsprache der Inhalte)"
+    },
+    "step:file name": {
+        "en": "the file name visitors get (default: the name of the file)",
+        "de": "der Dateiname, den Besucher bekommen (Standard: der Name der Datei)"
+    },
+    "step:file value changed": {
+        "en": "true when the step changed the object",
+        "de": "true, wenn der Schritt das Objekt geändert hat"
+    },
+    "step:file value path": {
+        "en": "the url path of its main node",
+        "de": "der URL-Pfad seines Hauptknotens"
+    },
+    "step:image": {
+        "en": "Puts an image of the migrations folder into an image attribute of an object, with its alternative text, focal point and crop rectangle",
+        "de": "Legt ein Bild aus dem Migrationsordner in ein Bildattribut eines Objekts, mit Alternativtext, Fokuspunkt und Zuschnitt"
+    },
+    "step:image alt": {
+        "en": "the alternative text of the image",
+        "de": "der Alternativtext des Bildes"
+    },
+    "step:image crop": {
+        "en": "the crop rectangle: { x, y, width, height } as fractions of the original; null removes it",
+        "de": "der Zuschnitt: { x, y, width, height } als Anteile des Originals; null entfernt ihn"
+    },
+    "step:image field": {
+        "en": "the identifier of the attribute (ezimage)",
+        "de": "der Bezeichner des Attributs (ezimage)"
+    },
+    "step:image file": {
+        "en": "the image: a path below the folder of the migration file (left out: the image the attribute has stays)",
+        "de": "das Bild: ein Pfad unterhalb des Ordners der Migrationsdatei (weggelassen: das Bild des Attributs bleibt)"
+    },
+    "step:image focal": {
+        "en": "the focal point: { x, y } as fractions (0 to 1) of the width and height; null removes it",
+        "de": "der Fokuspunkt: { x, y } als Anteile (0 bis 1) von Breite und Höhe; null entfernt ihn"
+    },
+    "step:image language": {
+        "en": "the translation that gets the file (default: the default language of content)",
+        "de": "die Übersetzung, die das Bild bekommt (Standard: die Standardsprache der Inhalte)"
+    },
+    "step:image value changed": {
+        "en": "true when the step changed the object",
+        "de": "true, wenn der Schritt das Objekt geändert hat"
+    },
+    "step:image value path": {
+        "en": "the url path of its main node",
+        "de": "der URL-Pfad seines Hauptknotens"
+    },
+    "step:tag": {
+        "en": "Creates, updates, ensures, deletes, moves or merges a tag of eztags, with its translations and synonyms",
+        "de": "Legt einen Tag von eztags mit seinen Übersetzungen und Synonymen an, ändert, sichert, löscht, verschiebt oder führt ihn zusammen"
+    },
+    "step:tag always_available": {
+        "en": "whether the tag is shown in languages it has no translation in (a new tag: false)",
+        "de": "ob der Tag in Sprachen gezeigt wird, in die er nicht übersetzt ist (ein neuer Tag: false)"
+    },
+    "step:tag into": {
+        "en": "the tag that keeps the objects, children and synonyms of tag:",
+        "de": "der Tag, der die Objekte, Kinder und Synonyme von tag: übernimmt"
+    },
+    "step:tag keyword": {
+        "en": "the keyword in the language of language:",
+        "de": "das Schlagwort in der Sprache von language:"
+    },
+    "step:tag keywords": {
+        "en": "language => the keyword in it: the translations",
+        "de": "Sprache => das Schlagwort in ihr: die Übersetzungen"
+    },
+    "step:tag language": {
+        "en": "the language of keyword: and synonyms: (default: the default language of content); a new tag's main language",
+        "de": "die Sprache von keyword: und synonyms: (Standard: die Standardsprache der Inhalte); die Hauptsprache eines neuen Tags"
+    },
+    "step:tag main_language": {
+        "en": "the language of the tag's main translation (it must have one in it)",
+        "de": "die Sprache der Hauptübersetzung des Tags (er muss eine Übersetzung in ihr haben)"
+    },
+    "step:tag missing": {
+        "en": "what happens when the tag, or the extension eztags, is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn der Tag oder die Erweiterung eztags fehlt: fail (Standard) oder skip"
+    },
+    "step:tag parent": {
+        "en": "the parent tag (id, remote:, path:); none or 0: at the top. move: the new parent",
+        "de": "der übergeordnete Tag (ID, remote:, path:); keiner oder 0: ganz oben. move: der neue übergeordnete Tag"
+    },
+    "step:tag remote_id": {
+        "en": "the remote id of the tag; ensure finds the tag by it (without it: by keyword: below parent:)",
+        "de": "die Remote-ID des Tags; ensure findet den Tag über sie (ohne sie: über keyword: unterhalb von parent:)"
+    },
+    "step:tag synonyms": {
+        "en": "keywords that are synonyms of the tag, in the language of language:; the missing ones are added",
+        "de": "Schlagwörter, die Synonyme des Tags sind, in der Sprache von language:; die fehlenden werden ergänzt"
+    },
+    "step:tag tag": {
+        "en": "the tag: its id, remote:<remote id> or path:<keyword path>",
+        "de": "der Tag: seine ID, remote:<Remote-ID> oder path:<Schlagwortpfad>"
+    },
+    "step:tag value changed": {
+        "en": "true when the step changed something",
+        "de": "true, wenn der Schritt etwas geändert hat"
+    },
+    "step:tag value created": {
+        "en": "true when the step created the tag",
+        "de": "true, wenn der Schritt den Tag angelegt hat"
+    },
+    "step:tag value keyword": {
+        "en": "its keyword in its main language",
+        "de": "sein Schlagwort in seiner Hauptsprache"
+    },
+    "step:tag value path": {
+        "en": "its keyword path (Topics/Sport)",
+        "de": "sein Schlagwortpfad (Topics/Sport)"
+    },
+    "step:tag value tag_id": {
+        "en": "the id of the tag",
+        "de": "die ID des Tags"
+    },
+    "step:trash": {
+        "en": "Moves content to the trash, restores it from the trash, or purges it for good",
+        "de": "Verschiebt Inhalte in den Papierkorb, stellt sie aus ihm wieder her oder löscht sie endgültig"
+    },
+    "step:trash all": {
+        "en": "true: the whole trash is emptied (instead of object:)",
+        "de": "true: der ganze Papierkorb wird geleert (statt object:)"
+    },
+    "step:trash missing": {
+        "en": "what happens when the object is not there (move) or not in the trash (restore, purge): fail (the default) or skip",
+        "de": "was geschieht, wenn das Objekt fehlt (move) oder nicht im Papierkorb liegt (restore, purge): fail (Standard) oder skip"
+    },
+    "step:trash node": {
+        "en": "a node of the object that goes to the trash (or object:)",
+        "de": "ein Knoten des Objekts, das in den Papierkorb kommt (oder object:)"
+    },
+    "step:trash object": {
+        "en": "the object: move puts it in the trash; restore and purge take it from there (its id or remote:<remote id>)",
+        "de": "das Objekt: move legt es in den Papierkorb; restore und purge nehmen es von dort (seine ID oder remote:<Remote-ID>)"
+    },
+    "step:trash parent": {
+        "en": "the node a restored object is placed below (default: the parent it had, when it is still there)",
+        "de": "der Knoten, unter den ein wiederhergestelltes Objekt kommt (Standard: sein früherer übergeordneter Knoten, wenn es ihn noch gibt)"
+    },
+    "step:trash value changed": {
+        "en": "true when the step changed something",
+        "de": "true, wenn der Schritt etwas geändert hat"
+    },
+    "step:trash value node_id": {
+        "en": "its main node after a restore (null otherwise)",
+        "de": "sein Hauptknoten nach einer Wiederherstellung (sonst null)"
+    },
+    "step:trash value purged": {
+        "en": "how many objects a purge removed",
+        "de": "wie viele Objekte ein purge entfernt hat"
+    },
+    "step:url_alias": {
+        "en": "Creates, ensures or deletes a custom URL alias of a node, a global URL alias or a URL wildcard",
+        "de": "Legt einen eigenen URL-Alias eines Knotens, einen globalen URL-Alias oder einen URL-Platzhalter an, sichert oder löscht ihn"
+    },
+    "step:url_alias always_available": {
+        "en": "true: the address works in every language of a siteaccess",
+        "de": "true: die Adresse gilt in jeder Sprache eines Siteaccess"
+    },
+    "step:url_alias below_parent": {
+        "en": "true: path: is placed below the address of the node's parent, as the administration does by default",
+        "de": "true: path: liegt unterhalb der Adresse des übergeordneten Knotens, wie es die Administration standardmäßig macht"
+    },
+    "step:url_alias destination": {
+        "en": "where a global address leads (a module URL as content/search, or another address); with wildcard: the destination, {1} the text of the first *",
+        "de": "wohin eine globale Adresse führt (eine Modul-URL wie content/search oder eine andere Adresse); mit wildcard: das Ziel, {1} der Text des ersten *"
+    },
+    "step:url_alias language": {
+        "en": "the language of the address (create, ensure: default the default language of content; delete: default every language it has)",
+        "de": "die Sprache der Adresse (create, ensure: Standard die Standardsprache der Inhalte; delete: Standard jede Sprache, die sie hat)"
+    },
+    "step:url_alias missing": {
+        "en": "what happens when the address or wildcard is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn die Adresse oder der Platzhalter fehlt: fail (Standard) oder skip"
+    },
+    "step:url_alias node": {
+        "en": "the node the address leads to (create, ensure); delete: the node whose custom addresses go (which: all)",
+        "de": "der Knoten, zu dem die Adresse führt (create, ensure); delete: der Knoten, dessen eigene Adressen entfernt werden (which: all)"
+    },
+    "step:url_alias path": {
+        "en": "the address, from the root (about-us/team); each part is cleaned as the URL transformation of site.ini makes it",
+        "de": "die Adresse ab der Wurzel (about-us/team); jeder Teil wird bereinigt, wie es die URL-Umwandlung von site.ini vorgibt"
+    },
+    "step:url_alias redirect": {
+        "en": "true (the default): the address redirects (301) to where it leads; false: it shows the page at its own address",
+        "de": "true (Standard): die Adresse leitet (301) dorthin weiter, wohin sie führt; false: sie zeigt die Seite unter der eigenen Adresse"
+    },
+    "step:url_alias value action": {
+        "en": "where it leads, as the kernel writes it (eznode:59, module:content/search), or the destination of the wildcard",
+        "de": "wohin sie führt, wie der Kernel es schreibt (eznode:59, module:content/search), oder das Ziel des Platzhalters"
+    },
+    "step:url_alias value changed": {
+        "en": "true when the step changed something",
+        "de": "true, wenn der Schritt etwas geändert hat"
+    },
+    "step:url_alias value created": {
+        "en": "true when the step made the address or wildcard",
+        "de": "true, wenn der Schritt die Adresse oder den Platzhalter angelegt hat"
+    },
+    "step:url_alias value node_id": {
+        "en": "the node it leads to, or null",
+        "de": "der Knoten, zu dem sie führt, oder null"
+    },
+    "step:url_alias value path": {
+        "en": "the address as stored (cleaned), or the pattern of the wildcard",
+        "de": "die Adresse, wie sie gespeichert ist (bereinigt), oder das Muster des Platzhalters"
+    },
+    "step:url_alias value removed": {
+        "en": "how many addresses a delete removed",
+        "de": "wie viele Adressen ein delete entfernt hat"
+    },
+    "step:url_alias which": {
+        "en": "all: every custom address of node: (without node: every global address); selected: the address of path:",
+        "de": "all: jede eigene Adresse von node: (ohne node: jede globale Adresse); selected: die Adresse von path:"
+    },
+    "step:url_alias wildcard": {
+        "en": "a URL wildcard instead of an alias: the pattern, * any text (old-news/*)",
+        "de": "ein URL-Platzhalter statt eines Alias: das Muster, * steht für beliebigen Text (old-news/*)"
+    }
+}

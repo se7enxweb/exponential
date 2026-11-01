@@ -140,15 +140,12 @@ class eZURLWildcard extends eZPersistentObject
         if ( !is_array( $idList ) )
             return;
 
-        while ( count( $idList ) > 0 )
+        // one wildcard at a time by its id: the IN condition ( 'id' => array( $ids ) ) removed nothing on MongoDB, so the
+        // administration's "Remove selected" left the wildcards in place there (2026-11-01). Sites have few wildcards.
+        foreach ( array_unique( array_map( 'intval', $idList ) ) as $id )
         {
-            // remove by portion of 100 rows.
-            $ids = array_splice( $idList, 0, 100 );
-
-            $conditions = array( 'id' => array( $ids ) );
-
-            eZPersistentObject::removeObject( self::definition(),
-                                              $conditions );
+            if ( $id > 0 )
+                eZPersistentObject::removeObject( self::definition(), array( 'id' => $id ) );
         }
     }
 

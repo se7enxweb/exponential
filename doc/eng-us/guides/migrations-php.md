@@ -59,6 +59,13 @@ Generate the skeleton for a new one:
 | `detect( $context )` | every state lookup | return `DONE`, `PENDING` or `NOT_NEEDED` when the installation can tell, else `null` | `null` (the record decides) |
 | `transactional()` | the runner | `false` for a migration that commits by itself (a long batch) | `true` |
 
+Declare these methods as the table shows them: public, not static, with their one parameter `$context` untyped
+(more parameters only with a default). The other methods of `expMigrationPhp` (`definition()`, `file()`, `id()`,
+`source()`, `checksum()`, `state()`, `requires()`, `engines()` ...) are its own and final, so a helper method must not
+have one of their names. PHP would refuse such a class with a fatal error while loading the file; `exp:migration:check`
+and every run read the class first and report the method by name instead (for example "...::definition() has the
+name of a method of expMigrationPhp that a migration cannot declare: give it another name"), without loading the file.
+
 `plan()` runs on every dry run and on the status page of a run, so it must be cheap and must not write. Build it
 from pure functions where you can, so it can be tested without a database.
 

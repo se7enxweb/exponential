@@ -22,7 +22,7 @@
 {def $js_class_languages = '[]'
      $disable_another_language = ''
      $disabled_sub_menu = '["class-createnodefeed","class-removenodefeed"]'
-     $has_content_class = eq( $node.object.content_class|not, false )
+     $has_content_class = is_object( $node.object.content_class )
      $object = $node.object
      $section = fetch( 'section', 'object', hash( 'section_id', $object.section_id ) )
      $locations = $object.assigned_nodes|count

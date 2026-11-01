@@ -16,7 +16,9 @@
  *   order        every requirement exists (and runs in the environment, when one is given), no cycle, no id twice
  *   extensions   the extensions a migration requires are active (only for the installation's directories)
  *   PHP          the file parses, declares exactly one class that extends expMigrationPhp, no class name is
- *                declared by two files, and the class loads (loading declares it; nothing of it is run)
+ *                declared by two files, no method PHP would refuse with a fatal error (expMigrationPhp::methodClashes(),
+ *                read before the file loads: a helper named definition() or file(), a hook with another signature),
+ *                and the class loads (loading declares it; nothing of it is run)
  *   YAML         the file is YAML (symfony/yaml), its document and every step are valid: a registered step type,
  *                its mode and keys against the type's schema, conditions, loops, references and placeholders
  *                (expMigrationYaml); a migration without steps is a warning

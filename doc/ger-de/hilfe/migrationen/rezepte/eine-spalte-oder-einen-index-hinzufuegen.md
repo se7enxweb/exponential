@@ -49,7 +49,8 @@ PASS
 ### 2. Füllen
 
 Ergänzen Sie die Kopfzeilen `requires:` und `engines:` und die Methoden unten. Nennen Sie keine Hilfsmethode
-`definition()` oder `file()`: `expMigrationPhp` hat Methoden dieser Namen, und PHP lehnt die Klasse ab.
+`definition()` oder `file()`: `expMigrationPhp` hat Methoden dieser Namen. `exp:migration:check` (und jeder Lauf)
+meldet eine solche Methode mit Namen, statt die Klasse zu laden.
 
 ### 3. Prüfen und den Probelauf ansehen
 

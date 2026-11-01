@@ -82,6 +82,7 @@ erzeugten Seiten [exp:setupfiles](befehle/setupfiles.md) und [exp:configphp](bef
 | [Cronjob-Skripte und -Teile](cronjobs/README.md) | Was jedes Skript tut, seine Teile und wie man es ausführt und zeitlich plant |
 | [Konsolenbefehle](befehle/README.md) | Jeder Befehl `./console exp:*` mit Hilfetext, Optionen und Aliasen |
 | [Erweiterungspunkte](erweiterungspunkte/README.md) | INI-Listen von Handlern, Klassen und Verzeichnissen, die eine Erweiterung ergänzen kann |
+| [Schritttypen von Migrationen](migrationsschritte/README.md) | Jeder Schritttyp von YAML-Migrationen mit Modi, Schlüsseln, Referenzwerten und einem Beispiel |
 
 Die Hilfe listet diese Seiten in Ordnern. Ein Ordner klappt in der Navigation auf, sobald Sie auf einer seiner Seiten
 sind; seine Übersichtsseite verlinkt jede Seite darin. In der Suche stehen sie unter den geschriebenen Anleitungen,

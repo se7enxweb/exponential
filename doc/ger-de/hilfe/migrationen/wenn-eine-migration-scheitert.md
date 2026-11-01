@@ -146,16 +146,25 @@ Sie ist einer der Upgrade-Schritte des Kernels der Stufe `code`, `libraries` ode
 `exp:upgrade` überlässt; die Warnung nennt den Befehl (`./console exp:upgrade:code --apply` ...). Eine Migration, die sie
 braucht, wartet ([Upgrade-Schritt oder Migration?](rezepte/upgrade-schritt-oder-migration.md)).
 
-### `migrations of type .yml cannot be run yet`
+### `migrations of type .sql cannot be run yet` (oder `.ini`)
 
-In 6.0.15 werden Migrationen in PHP geschrieben. YAML-, SQL- und INI-Dateien werden gefunden und geprüft und vom Runner
-abgelehnt.
+In 6.0.15 werden Migrationen in PHP oder als YAML-Schritte geschrieben. SQL- und INI-Dateien werden gefunden und geprüft
+und vom Runner abgelehnt.
 
 ### Die PHP-Datei wird abgelehnt: keine Klasse, zwei Klassen, eine doppelt deklarierte Klasse
 
 Jede Datei deklariert genau eine nicht abstrakte Klasse, die `\expMigrationPhp` erweitert, in einem Namensraum, mit
 einem Namen, den keine andere Datei nutzt. `exp:migration:generate --skeleton` schreibt sie so
 ([PHP-Migrationen](../../anleitungen/migrationen-php.md)).
+
+### `...::definition() has the name of a method of expMigrationPhp that a migration cannot declare`
+
+Die Klasse deklariert eine Methode, die PHP beim Laden der Datei ablehnen würde: eine Hilfsmethode mit dem Namen einer
+der eigenen Methoden der Basisklasse (`definition()`, `file()`, `id()`, `source()`, `checksum()`, `state()` ...), oder
+`plan()`, `up()`, `down()`, `detect()` als private, statisch, mit einem Typ für `$context` oder mit mehr Pflichtparametern.
+`exp:migration:check` und jeder Lauf lesen die Klasse, bevor sie sie laden, und nennen die Methode; die anderen
+Migrationen werden wie sonst geprüft und ausgeführt. Benennen Sie die Hilfsmethode um, oder deklarieren Sie die Methode
+so, wie [PHP-Migrationen](../../anleitungen/migrationen-php.md#die-methoden) es zeigt.
 
 ## Eine Migration lief, wo sie nicht sollte
 

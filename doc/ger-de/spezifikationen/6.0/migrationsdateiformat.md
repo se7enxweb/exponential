@@ -235,8 +235,17 @@ fehlende Datei ist eine leere Zuordnung; eine Datei, die keine ist, lässt jede 
 
 ### Schritttypen
 
-Der Kernel registriert `reference` (`set:` eine Zuordnung von Referenzen) und `assert` (`that:` eine Bedingung,
-`message:` der Text des Fehlers). Eine Erweiterung registriert ihre eigenen in ihrer `migration.ini.append.php`:
+Der Kernel registriert `reference` (`set:` eine Zuordnung von Referenzen), `assert` (`that:` eine Bedingung,
+`message:` der Text des Fehlers), `content`, `location`, `content_version`, `content_class`, `content_class_group`,
+`user`, `user_group`, `role`, `section`, `language`, `object_state_group`, `tag`, `url_alias`, `trash`, `file` und
+`image`; jeden Schlüssel jedes Typs nennt seine erzeugte Seite ([die Schritttypen](../../beispiele/migrationsschritte/README.md)).
+Ein Bezeichner-Schlüssel nennt seine Art: `node`, `object`, `class`, `section`, `language`, `user`, `role`, `state`,
+`class_group`, `state_group`, `tag` oder `url_alias`; alle außer `node`, `object` und `tag` nehmen auch einen Namen
+(Bezeichner einer Klasse oder Sektion, eine Locale, ein Login, ein Rollenname, `<gruppe>/<zustand>`, der Name einer
+Klassengruppe, der Bezeichner einer Zustandsgruppe, die Adresse eines URL-Alias ab der Wurzel). Ein Tag wird über seine
+ID, `remote:<Remote-ID>` oder `path:<Schlagwortpfad>` genannt, und nur dort, wo die Erweiterung eztags installiert
+ist. Die Schritte `file` und `image` lesen ihre `file:` unterhalb des Ordners der Migrationsdatei.
+Eine Erweiterung registriert ihre eigenen Schritttypen in ihrer `migration.ini.append.php`:
 
 ```ini
 [StepSettings]
