@@ -226,10 +226,11 @@ FrameRangeParameters[]=application/x-photoshop;[0]
 
 ## Filters
 
-> Eine Liste der Filter, die ImageMagick unterstützt; fügen Sie bei Bedarf weitere hinzu  
-> Dieselben Filternamen werden in Aliasen und Overrides für MIME-Typen mit optionalen Parametern verwendet.  
+> A list of filter ImageMagick supports, add more if needed  
+> The same filter names are used in aliases and MIME type overrides with optional parameters.  
+> +repage: the cut image starts at 0,0, so a filter after it (another crop, a scale) works on what was cut  
 
-Standard: eine Liste mit 19: `geometry/scale=-geometry %1x%2`, `geometry/scalewidth=-geometry %1`, `geometry/scaleheight=-geometry x%1`, `geometry/scaledownonly=-geometry %1x%2>`, `geometry/scalewidthdownonly=-geometry %1>`, `geometry/scaleheightdownonly=-geometry x%1>`, `geometry/scaleexact=-geometry %1x%2!`, `geometry/scalepercent=-geometry %1x%2%`, `geometry/crop=-crop %1x%2+%3+%4`, `filter/noise=-noise %1`, `filter/swirl=-swirl %1`, `colorspace/gray=-colorspace GRAY` ....
+Standard: eine Liste mit 19: `geometry/scale=-geometry %1x%2`, `geometry/scalewidth=-geometry %1`, `geometry/scaleheight=-geometry x%1`, `geometry/scaledownonly=-geometry %1x%2>`, `geometry/scalewidthdownonly=-geometry %1>`, `geometry/scaleheightdownonly=-geometry x%1>`, `geometry/scaleexact=-geometry %1x%2!`, `geometry/scalepercent=-geometry %1x%2%`, `geometry/crop=-crop %1x%2+%3+%4 +repage`, `filter/noise=-noise %1`, `filter/swirl=-swirl %1`, `colorspace/gray=-colorspace GRAY` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -245,7 +246,7 @@ Filters[]=geometry/scalewidthdownonly=-geometry %1>
 Filters[]=geometry/scaleheightdownonly=-geometry x%1>
 Filters[]=geometry/scaleexact=-geometry %1x%2!
 Filters[]=geometry/scalepercent=-geometry %1x%2%
-Filters[]=geometry/crop=-crop %1x%2+%3+%4
+Filters[]=geometry/crop=-crop %1x%2+%3+%4 +repage
 Filters[]=filter/noise=-noise %1
 Filters[]=filter/swirl=-swirl %1
 Filters[]=colorspace/gray=-colorspace GRAY

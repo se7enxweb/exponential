@@ -3888,7 +3888,7 @@ f32951324fdf3a2eee8b55f48f02e56a  doc/eng-us/examples/extension-points/ezoe-ezoe
 22cdb41de16dd69a316fac6d5d3388db  doc/eng-us/examples/extension-points/ezxml.md
 ba85a86c6169a4a85964b09a78b7d952  doc/eng-us/examples/extension-points/file.md
 ec94fec1e7fe0681d1da8a61393efe6a  doc/eng-us/examples/extension-points/graphql.md
-02519e775957d3839356e2d6f83bf93f  doc/eng-us/examples/extension-points/image.md
+7eeb2825610faa728b49c2b7389ae934  doc/eng-us/examples/extension-points/image.md
 e28402d47ce3f344c2a6231cfbab2cf0  doc/eng-us/examples/extension-points/ini.md
 7f876afcaeced4f8a5007efd8c448367  doc/eng-us/examples/extension-points/kernelservices.md
 659010aa08725b1b248b26614870b865  doc/eng-us/examples/extension-points/ldap.md
@@ -3915,7 +3915,7 @@ b6d8c2f2aadc2c4bcd1b4334a65ebc0f  doc/eng-us/examples/extension-points/uiswitch.
 43ef1efbc446af32c0815832790ffe48  doc/eng-us/examples/extension-points/webdav.md
 c697443b2cb0beaf349fdd5c4e59da40  doc/eng-us/examples/extension-points/workflow.md
 ab9aa2703a744da1de0d178a2c75ae39  doc/eng-us/examples/ezpublish.conf
-477b5f2d211e002826ed1635ec5bf52c  doc/eng-us/examples/fetch-functions/README.md
+e7a22a57aae42497ddab94c2f321f025  doc/eng-us/examples/fetch-functions/README.md
 25ce910ea7fcb5532f1594686358fc71  doc/eng-us/examples/fetch-functions/apikey/README.md
 8b5bdf584f6096ee3ec75ebfddb5f5e4  doc/eng-us/examples/fetch-functions/apikey/can_create.md
 a30de4a815ca96e86a085fc1a72ad45f  doc/eng-us/examples/fetch-functions/apikey/counts.md
@@ -4029,6 +4029,8 @@ a57df301a78730d71680d43a71fcac8e  doc/eng-us/examples/fetch-functions/infocollec
 ee8d7f6049f3faa4aaf6882433a594f9  doc/eng-us/examples/fetch-functions/infocollector/collected_info_list.md
 30538ad34803515de0bfd9adbc09e81e  doc/eng-us/examples/fetch-functions/layout/README.md
 151bf30614870dca37eb23b75600b3a5  doc/eng-us/examples/fetch-functions/layout/sitedesign_list.md
+3bb424a729f6171ed24d262b87118787  doc/eng-us/examples/fetch-functions/migration/README.md
+6ee36fff769400cc031eea315a9e8ca6  doc/eng-us/examples/fetch-functions/migration/summary.md
 180fb76261fe2e5a31a38ea3088cad85  doc/eng-us/examples/fetch-functions/notification/README.md
 f692694c6dcc30ea20ad978d76d6630e  doc/eng-us/examples/fetch-functions/notification/digest_handlers.md
 f4608e537ed5f3395d3277fcdac437be  doc/eng-us/examples/fetch-functions/notification/digest_items.md
@@ -4125,7 +4127,7 @@ d8ecf8a36f51610f9879784a8776ab80  doc/eng-us/examples/fetch-functions/user/membe
 e2a0d933b995c654fb8d0b0d61460b08  doc/eng-us/examples/fetch-functions/workflow/workflow_type_statuses.md
 afabb952a48810ef8ebb35f166d11f22  doc/eng-us/examples/hooks/template-check-pre-commit.sh
 5fd72660cc5c80f159ea936f0d72133b  doc/eng-us/examples/htaccess
-e2362c4bfd94d26872e136a3b30b595c  doc/eng-us/examples/ini-settings/README.md
+21762d1b0966d28e37875b5b756d7812  doc/eng-us/examples/ini-settings/README.md
 6522da4a85b1b6fbd3b3c71c41603590  doc/eng-us/examples/ini-settings/admininterface/AdditionalMenuSettings.md
 00dd82562f4f4fcb17497b31e0f32f2f  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_audit.md
 1982ccc2ae500e3049741b22912053c6  doc/eng-us/examples/ini-settings/admininterface/AdditionalTab_datatable.md
@@ -4578,9 +4580,10 @@ bbb0137fa6d35b8c260c29eaf519b619  doc/eng-us/examples/ini-settings/dashboard/Das
 ad40a728a8826592cdad1b3004ff2e1c  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_cronjobs.md
 af85da61a301449780dab92818ba942c  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_drafts.md
 74740f33388ea9c06b98d9dc39a96ff5  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_latest_content.md
+0e50f2f96a3f71d612be813d359c475c  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_migrations.md
 5464807a90cc882c7a1b6137f030b0fb  doc/eng-us/examples/ini-settings/dashboard/DashboardBlock_pending_list.md
-eaf9a1ce3107cfaf89ae42ec21b59179  doc/eng-us/examples/ini-settings/dashboard/DashboardSettings.md
-fb480b5ba3bf64d8f8a40a50130a41fa  doc/eng-us/examples/ini-settings/dashboard/README.md
+96a36c317fa7bcaa7f46bcb4805034cd  doc/eng-us/examples/ini-settings/dashboard/DashboardSettings.md
+a8da00cf7e40d4f64e65e6b42533ec10  doc/eng-us/examples/ini-settings/dashboard/README.md
 d732dc30d9bdf1c49e07af152e788f53  doc/eng-us/examples/ini-settings/datatable/ClassSettings.md
 ebdea219235f4613c8eebefa1180c6ef  doc/eng-us/examples/ini-settings/datatable/ConnectionSettings.md
 5c44aa5694c4b653775531ecdb6c2b93  doc/eng-us/examples/ini-settings/datatable/DataTableSettings.md
@@ -4665,12 +4668,12 @@ caf60908b53ecf82087e9a61ba87f97f  doc/eng-us/examples/ini-settings/error/README.
 17fa8708c29f974ac6c32fdbbd40f544  doc/eng-us/examples/ini-settings/exphelp/CategorySettings.md
 557fe8ed9a4915b7a452bf8c6227414a  doc/eng-us/examples/ini-settings/exphelp/CommitFeedSettings.md
 911d1187ea9ea5ab50301cfb83357cfc  doc/eng-us/examples/ini-settings/exphelp/ContentSettings.md
-215a0afa43cf1fb893556fbd48fad4b7  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
+9b8051a27a6302b421b0e1f391e6148d  doc/eng-us/examples/ini-settings/exphelp/ContextHelp.md
 3d307f778430f1bdd6462b040e20299c  doc/eng-us/examples/ini-settings/exphelp/DashboardSettings.md
 90f841d4dbe892c1f296413d1b4d0557  doc/eng-us/examples/ini-settings/exphelp/DocLanguages.md
 d90c4b76334567ebaf3f6d751de9f417  doc/eng-us/examples/ini-settings/exphelp/FeaturedSettings.md
 0e61eddfd553bb8e7338120de2a880bb  doc/eng-us/examples/ini-settings/exphelp/HelpSettings.md
-f29a02ba2be39ecc9f1e65aeb9d39c58  doc/eng-us/examples/ini-settings/exphelp/IndexSettings.md
+f2347d930856dd94b5c94d2b8518f438  doc/eng-us/examples/ini-settings/exphelp/IndexSettings.md
 4649d57082196b1358ff8b9c309073c3  doc/eng-us/examples/ini-settings/exphelp/IssueTrackers.md
 fd91452dff4020b63c332c79c3dc3cb0  doc/eng-us/examples/ini-settings/exphelp/LandingSettings.md
 0a9b835eae1632f74d7aabf25f9d5d09  doc/eng-us/examples/ini-settings/exphelp/Landing_admin.md
@@ -4803,7 +4806,7 @@ f1a3a9064a3f69a1d7b0f0eaab0f8f3a  doc/eng-us/examples/ini-settings/image/GD.md
 63e9c57039d5a107609bb4d7f89455ac  doc/eng-us/examples/ini-settings/image/GDSettings.md
 df94244b276117fcc6bfc9c687c1b2d4  doc/eng-us/examples/ini-settings/image/GIFAnalyzer.md
 1ded82bfd70c18a1d29eaa8202e1d652  doc/eng-us/examples/ini-settings/image/ImageConverterSettings.md
-25be92f72e36c2786ea8b57c525ff72b  doc/eng-us/examples/ini-settings/image/ImageMagick.md
+ee5cf56f160df19f5247800383ade12e  doc/eng-us/examples/ini-settings/image/ImageMagick.md
 b0a1ceb5076ecf0064ffcc23b49fef3a  doc/eng-us/examples/ini-settings/image/ImageUploadSettings.md
 443146fc69d9cf9bc026ecf5c921a911  doc/eng-us/examples/ini-settings/image/LayeredPhotoshop.md
 42850b486bfeded6028c2414bd82c354  doc/eng-us/examples/ini-settings/image/MIMETypeSettings.md
@@ -4887,7 +4890,7 @@ b8f311c90dbb9b1e2f4a8feb39fe40d9  doc/eng-us/examples/ini-settings/menu/Leftmenu
 04b4f5e6e6d06f7191c49b819aee916c  doc/eng-us/examples/ini-settings/menu/Leftmenu_media.md
 05515d8b55fa81e28c7262bf641250c6  doc/eng-us/examples/ini-settings/menu/Leftmenu_my.md
 717e12510fbedeadd8acfb27ecf200fd  doc/eng-us/examples/ini-settings/menu/Leftmenu_my_mega.md
-3646c4aec80a58c05e47fe3f126b3fd6  doc/eng-us/examples/ini-settings/menu/Leftmenu_setup.md
+109dadc441eb0d4c67c6ae17258b856f  doc/eng-us/examples/ini-settings/menu/Leftmenu_setup.md
 be3201513686289ad19abc02d2f79bcc  doc/eng-us/examples/ini-settings/menu/Leftmenu_shop.md
 00226ae53130ef43d693e0c592608bac  doc/eng-us/examples/ini-settings/menu/Leftmenu_user.md
 948f812204dd28949c8520e32c42f922  doc/eng-us/examples/ini-settings/menu/Leftmenu_user_mega.md
@@ -4895,7 +4898,7 @@ be3201513686289ad19abc02d2f79bcc  doc/eng-us/examples/ini-settings/menu/Leftmenu
 af20f5a9a359ddbbcefbd5c11923a8f3  doc/eng-us/examples/ini-settings/menu/MenuContentSettings.md
 88fbb1e69a6f84e2bbb8b80069f0da32  doc/eng-us/examples/ini-settings/menu/MenuSettings.md
 264a258b2c9c41d391327fd7954b11cc  doc/eng-us/examples/ini-settings/menu/NavigationPart.md
-b094e04ed3bd2a9ffcaa421833ed7281  doc/eng-us/examples/ini-settings/menu/README.md
+277ee993ba01af35d240916afc067531  doc/eng-us/examples/ini-settings/menu/README.md
 79d221630e57232e13f4cd63e345c325  doc/eng-us/examples/ini-settings/menu/SelectedMenu.md
 2a5ddc50ed27e3621011b4b753b32914  doc/eng-us/examples/ini-settings/menu/TopAdminMenu.md
 3801f05fa5941fcbd899696a788e6cca  doc/eng-us/examples/ini-settings/menu/TopOnly.md
@@ -4907,9 +4910,10 @@ f470bf460df7255be59ed02d02d2ed41  doc/eng-us/examples/ini-settings/menu/Topmenu_
 ded46646ef42a01040f621323e3d0a4f  doc/eng-us/examples/ini-settings/menu/Topmenu_setup.md
 1422f012a8b7fc0d7d718e5e286ba266  doc/eng-us/examples/ini-settings/menu/Topmenu_shop.md
 e83dbdc8f6d4d047913ce9b6dabcf063  doc/eng-us/examples/ini-settings/menu/Topmenu_users.md
+c91392713efb2acd856f17def1776367  doc/eng-us/examples/ini-settings/migration/AdminSettings.md
 07cb473738991ec11e1d2cb081e38583  doc/eng-us/examples/ini-settings/migration/CaptionSettings.md
 71c16a665dfff48ef3f04d37a2dc4912  doc/eng-us/examples/ini-settings/migration/MigrationSettings.md
-1186ab874ac75f80def35a7fb6c44ff5  doc/eng-us/examples/ini-settings/migration/README.md
+071128c600367942b673d3a2bd8fc2a0  doc/eng-us/examples/ini-settings/migration/README.md
 94959f62b9cb34961c632d17697e39b5  doc/eng-us/examples/ini-settings/migration/RepositorySettings.md
 65047992428373d86be0b0e5b9a23c06  doc/eng-us/examples/ini-settings/migration/RunSettings.md
 24a4935a5de1d9d2fb967602213c5c5b  doc/eng-us/examples/ini-settings/mime/3gp.md
@@ -5106,7 +5110,7 @@ b111d4e9480ea7b2db770087365e128f  doc/eng-us/examples/ini-settings/mime/xwd.md
 775ef7f2e5dfa5ef2d9473317c1f8b14  doc/eng-us/examples/ini-settings/mime/xyz.md
 2101c7f216449b4810559637d02a7726  doc/eng-us/examples/ini-settings/mime/zip.md
 2bf31cf1893991d23b11522e47ad1afd  doc/eng-us/examples/ini-settings/module/ModuleOverrides.md
-400f9caa99ed5fc12ca189a5de5c94cd  doc/eng-us/examples/ini-settings/module/ModuleSettings.md
+b21432c816d80b68a06b27cdf18cd853  doc/eng-us/examples/ini-settings/module/ModuleSettings.md
 6ae45c72aad78bb427988c1e4e6ad717  doc/eng-us/examples/ini-settings/module/README.md
 7f2fd08fdc5e1e4e22e3b81455d96fe5  doc/eng-us/examples/ini-settings/notification/MailSettings.md
 95a8371f4808740ffaf1634b2499f054  doc/eng-us/examples/ini-settings/notification/NotificationEventHandlerSettings.md
@@ -5308,7 +5312,7 @@ e2ccd37aef66d6bcd1f21b2d317bc303  doc/eng-us/examples/ini-settings/site/README.m
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
 40ec1883354fc82b907ecae9be7d42a1  doc/eng-us/examples/ini-settings/site/ReauthGroup_delete.md
 14465b5c0056e1a428e985fbbe2dd8ff  doc/eng-us/examples/ini-settings/site/ReauthGroup_export.md
-0a3273edc95ac044559f70cfd9571d5a  doc/eng-us/examples/ini-settings/site/ReauthGroup_system.md
+6927e337c52bdd53cc8bcab66e23e433  doc/eng-us/examples/ini-settings/site/ReauthGroup_system.md
 044b808894941e825bd5a465a75f4dd7  doc/eng-us/examples/ini-settings/site/ReauthGroup_users.md
 2386f6d38beeb105bc6ea8269c96bca3  doc/eng-us/examples/ini-settings/site/ReauthSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/eng-us/examples/ini-settings/site/RegionalSettings.md
@@ -5617,7 +5621,7 @@ ab6fce8e52570213dda15e8ff456c032  doc/eng-us/examples/ini-settings/wordmatch/td.
 a87fd3d13133b875bb6551c2746d8239  doc/eng-us/examples/ini-settings/workflow/OperationSettings.md
 3f2e8c97033a93b8aa8a263d7661854d  doc/eng-us/examples/ini-settings/workflow/README.md
 2f1f3dc779ac748ecce62b5f261aad3e  doc/eng-us/examples/ini-settings/workflow/SimpleShippingWorkflow.md
-355c581ccab994ad00fbd3bdea21e46f  doc/eng-us/examples/module-views/README.md
+90fef5e27c9c2c37dacd9b546a2da781  doc/eng-us/examples/module-views/README.md
 d47ea617a5a6ef7957b8ab9f59d987fc  doc/eng-us/examples/module-views/apikey/README.md
 ffa53e72494d43ac42b742210fb45311  doc/eng-us/examples/module-views/apikey/list.md
 2805e18cdf0c9a1e3a48b7131199e9c1  doc/eng-us/examples/module-views/audit/README.md
@@ -5717,7 +5721,7 @@ fd21c5fc5a7c284d7db63ce8259418b6  doc/eng-us/examples/module-views/datatable/syn
 1379f7917d595f2afa4b75b1aee20f35  doc/eng-us/examples/module-views/datatable/table.md
 724f156c26f551cd9e68c5bc86671772  doc/eng-us/examples/module-views/error/README.md
 2c9c41bd7791f1899fe320ae1eaad0ee  doc/eng-us/examples/module-views/error/view.md
-58748eef193da582fcb73154e2daaa9d  doc/eng-us/examples/module-views/exphelp/README.md
+410f4111992c90462467a5a1af08847b  doc/eng-us/examples/module-views/exphelp/README.md
 b4e008e2988fd3d42c909ffe8507c376  doc/eng-us/examples/module-views/exphelp/asset.md
 6c7a084ad6ee8d1b21da992d0c3f7cd4  doc/eng-us/examples/module-views/exphelp/audience.md
 1b2a72340534b1f860f54288b8e6a500  doc/eng-us/examples/module-views/exphelp/contents.md
@@ -5727,6 +5731,7 @@ cbaa312ce0ee5737233179134dc8ac54  doc/eng-us/examples/module-views/exphelp/dashb
 735386e31e231c24e6c7944cecfa512f  doc/eng-us/examples/module-views/exphelp/feedback.md
 523b1946662da921320056f4ececaf69  doc/eng-us/examples/module-views/exphelp/image.md
 619612899c2a2a5844c4634508d36600  doc/eng-us/examples/module-views/exphelp/manual.md
+1559df8336463e9b960698fe22bfa9ac  doc/eng-us/examples/module-views/exphelp/navigation.md
 bb8036054a0b8802398419b33f85c3cf  doc/eng-us/examples/module-views/exphelp/pdf.md
 9af773ca29e6a1bb91bb29ff582f61bd  doc/eng-us/examples/module-views/exphelp/report.md
 b1a71092e3ac0ae7f17988ed19358d6f  doc/eng-us/examples/module-views/exphelp/search.md
@@ -5770,6 +5775,14 @@ f5e31be514b4d9f22f589a3fa8f72109  doc/eng-us/examples/module-views/mailpreferenc
 99a24a08a6dcf6735bad0f12c631e396  doc/eng-us/examples/module-views/mailpreferences/request.md
 da87f7ec62816332537454fdaeb51450  doc/eng-us/examples/module-views/mailpreferences/settings.md
 4f3f17e31e295dabf5696c6201131620  doc/eng-us/examples/module-views/mailpreferences/unsubscribe.md
+ab0a57bc140e352458c3e04afcd9065b  doc/eng-us/examples/module-views/migration/README.md
+a59248c41f4d17a978662855c91a850a  doc/eng-us/examples/module-views/migration/dryrun.md
+380f515ce0d27dfbb848af3cf9254ad4  doc/eng-us/examples/module-views/migration/history.md
+25c16a76c8375e2eb268d18331875352  doc/eng-us/examples/module-views/migration/log.md
+42abe2749c29a7e6b8b1baf705dc6551  doc/eng-us/examples/module-views/migration/rollback.md
+f02e500717a9d13f06b51dc682dbbb1b  doc/eng-us/examples/module-views/migration/run.md
+26725bf6645d89e29a73c1f2dc94beee  doc/eng-us/examples/module-views/migration/status.md
+9061cb50652b6f75ad79e6b9dc6aca8c  doc/eng-us/examples/module-views/migration/stream.md
 84993e47d6d9db7292855a8d34827529  doc/eng-us/examples/module-views/notification/README.md
 13e4b96010734a5154ea8e4c0fe0e814  doc/eng-us/examples/module-views/notification/addtonotification.md
 3b8e7ce435bba3c5ed986ab590b501fc  doc/eng-us/examples/module-views/notification/job.md
@@ -5964,7 +5977,7 @@ d0a2c283fc1bca054ec627fa6d01dd39  doc/eng-us/examples/module-views/workflow/grou
 da3f6b188f8bfe1a5d48526cbdadd4ea  doc/eng-us/examples/module-views/workflow/up.md
 4e143b7538150947bd49ffe07e447116  doc/eng-us/examples/module-views/workflow/view.md
 558cfcb3e3b7699f8c12670e98944a72  doc/eng-us/examples/module-views/workflow/workflowlist.md
-d4cac3aab78ce4eb01979e5cb7ad1bb3  doc/eng-us/examples/policies/README.md
+53692b8d76a4aaf28fc91531c925efcb  doc/eng-us/examples/policies/README.md
 739288371a698f31d314eb654704297e  doc/eng-us/examples/policies/apikey.md
 d6ec3bba02deac72d2831972526df59a  doc/eng-us/examples/policies/audit.md
 ad10095b797f6b5becb28574a063235d  doc/eng-us/examples/policies/class.md
@@ -5975,7 +5988,7 @@ bd86883afe035e3e6031db57af41d74c  doc/eng-us/examples/policies/contentfinder.md
 479c60c474fe0d9573ecf89189c46fb5  doc/eng-us/examples/policies/csp.md
 5be6a22b9fb472f4c43f7477e0455442  doc/eng-us/examples/policies/datatable.md
 cfe02eeaad7061acafdb5345ff965ce4  doc/eng-us/examples/policies/error.md
-dac62d545c22287538ba00181971963d  doc/eng-us/examples/policies/exphelp.md
+1aa6f532b94f33a8e5e0f1f354709c7c  doc/eng-us/examples/policies/exphelp.md
 757cd993ffc80806b40b30b902c8073f  doc/eng-us/examples/policies/expimageeditor.md
 9144d7efd9e1cd3a30ca18dcb618b4be  doc/eng-us/examples/policies/ezinfo.md
 cfc42a445d5cccc488f5f3a55f6dbd9f  doc/eng-us/examples/policies/ezjscore.md
@@ -5984,6 +5997,7 @@ fff59e681fdf98e24c4d0e3502304145  doc/eng-us/examples/policies/graphql.md
 d504a2276d957d6bad5038d2c69f55e8  doc/eng-us/examples/policies/infocollector.md
 bcb111c6e85fd10d990b70f94da5a9c3  doc/eng-us/examples/policies/layout.md
 fff26beede271f039cd25260cad83244  doc/eng-us/examples/policies/mailpreferences.md
+c661f47443c55bf38c3874cf16910ee4  doc/eng-us/examples/policies/migration.md
 dee4792ffc871d02d460bc21a9eda3c3  doc/eng-us/examples/policies/notification.md
 49458b459c0a01feb753187009ccc739  doc/eng-us/examples/policies/oauth.md
 678d47648f1d53f5a1c628ac996f2a0f  doc/eng-us/examples/policies/oauthadmin.md
@@ -6217,7 +6231,7 @@ b567ca060318c28b33ff29da4283d2a5  doc/eng-us/examples/template-operators/pad.md
 03a12072d1e3058a182a62cd93c7b418  doc/eng-us/examples/template-operators/quotemeta.md
 469cce0861acab0256482c97f8aae7f5  doc/eng-us/examples/template-operators/rand.md
 d5a944f8a1f28f41e539308ab29aa3e7  doc/eng-us/examples/template-operators/rawurldecode.md
-bc82a9125a21f4eab1eb50d13d4916ae  doc/eng-us/examples/template-operators/rawurlencode.md
+5656b6d070079bd6e9b039381b05a92c  doc/eng-us/examples/template-operators/rawurlencode.md
 658d25cc41135653103694a319d4b20a  doc/eng-us/examples/template-operators/remove.md
 aa528acab6cee21e1dd3ac562e85c820  doc/eng-us/examples/template-operators/repeat.md
 dbcd9261a7a9574b309544be3eca5e54  doc/eng-us/examples/template-operators/replace.md
@@ -6890,7 +6904,7 @@ ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
 952b7b28226e6eff085df210c88d6b08  doc/eng-us/guides/workflows.md
 ba6c6e3806e95b1fc79ffa6020f4bac3  doc/eng-us/guides/your-devices-and-sessions.md
-082e1ca5bb2bc6bb5efc4f5ad0e678f2  doc/eng-us/help/README.md
+75bc777dc9eecf7f174f9a1a4fcc4a39  doc/eng-us/help/README.md
 f3a6eb643757b14f92dc0cede99d6396  doc/eng-us/help/accounts-and-sign-in.md
 a4159505dbe39bf144ddaacd6d3113aa  doc/eng-us/help/admin-tour.md
 7f1138a79b4899b1a89537b328971761  doc/eng-us/help/adopters/adopters-checklists.md
@@ -10185,6 +10199,10 @@ c1ccae99e2654c50a817f44779eaac61  doc/eng-us/help/images/media/folder-upload-but
 6efba115d1c07e71ba18fc44ab311278  doc/eng-us/help/images/media/upload-options.webp
 8089eef1130ebff990e85a2806b8a34e  doc/eng-us/help/images/media/upload-queue.webp
 9e275269d65e6abc8aa8ddf67485e3f9  doc/eng-us/help/images/media/upload-target-location.webp
+1e94622f3700ca9ad1fd25f5b0c9312d  doc/eng-us/help/images/migrations/rollback-dark.webp
+fd00d66a83a19602a87ccae5a4d491bb  doc/eng-us/help/images/migrations/rollback-light.webp
+da761fba0cb33c994e8f4cabee71548c  doc/eng-us/help/images/migrations/status-dark.webp
+70e6613d3722c9e3ef5ba87bc43510ac  doc/eng-us/help/images/migrations/status-light.webp
 170860089252fcb9adcbf36a00ec78b9  doc/eng-us/help/images/multi-upload.webp
 5dd4885f1eb9f500cdbc5ad4ec56343d  doc/eng-us/help/images/my-account.webp
 7609be2967cf83d921a7d8aced988360  doc/eng-us/help/images/publishing/my-drafts.webp
@@ -10720,6 +10738,10 @@ bb2c62e602eaf652c3de2e1fc55ce6a3  doc/eng-us/help/manual/where-do-i-see-my-pendi
 e6cdbd205e096f3fa39d20f244750a42  doc/eng-us/help/manual/which-cache-do-i-clear.md
 5d3832d7488d0a0d33a369e193b859eb  doc/eng-us/help/manual/why-does-search-not-find-an-item.md
 952892ed18e07a289ad3932936a86799  doc/eng-us/help/media-and-uploads.md
+327f9e67f572d8ae14988ae1362aed59  doc/eng-us/help/migrations/README.md
+2b880cea27328bd0cfaadce148dd0559  doc/eng-us/help/migrations/expwt-panel.md
+822c1d871f949e3e7b5d252c9abf5a5a  doc/eng-us/help/migrations/run-dry-run-and-rollback.md
+ccdad500c7256f8e71374ae264bdc055  doc/eng-us/help/migrations/status-and-history.md
 000adbe890d78c166cf82b3bdf8a9957  doc/eng-us/help/mobile-app-developers/auth/README.md
 736a37eb467caff750ab8ae0dd266169  doc/eng-us/help/mobile-app-developers/auth/a-backend-for-your-app.md
 38d209194f3924ed81a88837641ddd57  doc/eng-us/help/mobile-app-developers/auth/authorization-header-and-proxies.md
@@ -12910,10 +12932,10 @@ fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
 de686b8d700cc7766d927e28537101f7  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
-12320733ddd4b1155b033ddcff05c221  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
+76ffbb3d95a8de061b66146d66de60a8  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 37ce091c6d6540fd6587386c87562cbe  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
-decce9bb06ae705823bfd0e79ffbc52e  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
-165a26352e7de5255bc58002930bc22d  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
+7d58b96e0c2cee753b917c1f41d227df  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
+bd5b0554139589f14c2401226da23c27  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 e1f333e7548632bd3736756fa7fcdf14  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 b09583bc5cb22d2c91a42a2ec393f30a  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
 a68982de41df978c6f8141a03e990954  doc/ger-de/.examples/descriptions/10-ini-settings-site-ini-runnablesettings-listeners.json
@@ -12936,10 +12958,11 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 3e5f3c6f2f15b756e23860af52d46bf0  doc/ger-de/.examples/descriptions/20-graphql-api-realtime-2026-10-30.json
 504a277c197e3ff759155bc64ac685b9  doc/ger-de/.examples/descriptions/21-command-migration-2026-10-31.json
 10a08e679ae26b663b8bf8d01d87cbba  doc/ger-de/.examples/descriptions/22-migration-ini-cronjob-and-template-check-2026-10-31.json
+2dc5c0ecd362c09bbb512b1d30ec02ef  doc/ger-de/.examples/descriptions/23-migration-admin-2026-11-01.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-e6b39cbf519d9c2a8d3b6ce15b927d5f  doc/ger-de/.paths.json
+d43a9c1d40dfe8e5f72fa3fa6112177e  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13425,7 +13448,7 @@ cd26aac58df80b2a4aa755c27d6aa7ca  doc/ger-de/beispiele/erweiterungspunkte/ezoe-e
 c33943995a5bdd1c0153983666c5993a  doc/ger-de/beispiele/erweiterungspunkte/ezxml.md
 c3d4112cc7225672d9727b23d026cbb7  doc/ger-de/beispiele/erweiterungspunkte/file.md
 effef34bd3631beff16c324794605d45  doc/ger-de/beispiele/erweiterungspunkte/graphql.md
-1b51dd45f5bb6eebfeb7e19c0321de15  doc/ger-de/beispiele/erweiterungspunkte/image.md
+7ce577f5690e12e8508183e9edf28835  doc/ger-de/beispiele/erweiterungspunkte/image.md
 63b18b151b8c5536526bbaae37cba9f9  doc/ger-de/beispiele/erweiterungspunkte/ini.md
 42b231752fe03e8c51628cc54aa8b2eb  doc/ger-de/beispiele/erweiterungspunkte/kernelservices.md
 52f56ebdf658bddd2784fa1eabe99b44  doc/ger-de/beispiele/erweiterungspunkte/ldap.md
@@ -13451,7 +13474,7 @@ f5ee4c6f63f6f5fba225a68bf1f0b849  doc/ger-de/beispiele/erweiterungspunkte/twig.m
 5b080880de706a34648608809c3d6f66  doc/ger-de/beispiele/erweiterungspunkte/upload.md
 4d4fba5023d6c64e195821e7a47fbf6e  doc/ger-de/beispiele/erweiterungspunkte/webdav.md
 5979faf1ce1cb46dfcd42855660bbcf4  doc/ger-de/beispiele/erweiterungspunkte/workflow.md
-263a5caac95657784c1a7f346b95b01a  doc/ger-de/beispiele/fetch-funktionen/README.md
+11fd6e02f33cb83ed9fdff3121bc0690  doc/ger-de/beispiele/fetch-funktionen/README.md
 2ef2e33e62dfbc3e12d34d9a68ef998c  doc/ger-de/beispiele/fetch-funktionen/apikey/README.md
 2d27727b915ab21df42318dba17b848c  doc/ger-de/beispiele/fetch-funktionen/apikey/can_create.md
 e92fd81ffc2d2aa969a2b963db1af285  doc/ger-de/beispiele/fetch-funktionen/apikey/counts.md
@@ -13565,6 +13588,8 @@ d38b52826a79ba7e4ce91afeb8ed43d7  doc/ger-de/beispiele/fetch-funktionen/exphelp/
 a9b0e8c18237aeb82839731a2fb49410  doc/ger-de/beispiele/fetch-funktionen/infocollector/collected_info_list.md
 8cdc4ea2c9df64011bde8b43366c77f5  doc/ger-de/beispiele/fetch-funktionen/layout/README.md
 d4860387d2fd344063f39cfce1d6896d  doc/ger-de/beispiele/fetch-funktionen/layout/sitedesign_list.md
+af1398f54c68b72769fe752fc90a6ae1  doc/ger-de/beispiele/fetch-funktionen/migration/README.md
+71a47d44f9eb0de82b929c55396275e1  doc/ger-de/beispiele/fetch-funktionen/migration/summary.md
 ad06acd276ec9b9e425c4ab0cbf9a2f3  doc/ger-de/beispiele/fetch-funktionen/notification/README.md
 d226814169e45da2a5d44261b2032892  doc/ger-de/beispiele/fetch-funktionen/notification/digest_handlers.md
 7648fd67e1d2ed40f6e30323975eba10  doc/ger-de/beispiele/fetch-funktionen/notification/digest_items.md
@@ -13659,7 +13684,7 @@ f6cef0867c4076eae774a91ce3f812cb  doc/ger-de/beispiele/fetch-funktionen/user/use
 8383861c182b6605aac7f6f6d7819b37  doc/ger-de/beispiele/fetch-funktionen/workflow/README.md
 c747569ce52d239c1f42255fd4fd9d7a  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_statuses.md
 410651a2685ea7f1a673cc9a58b14277  doc/ger-de/beispiele/fetch-funktionen/workflow/workflow_type_statuses.md
-428b6658ce2e4bd5cf9a6bd5747fa8cb  doc/ger-de/beispiele/ini-einstellungen/README.md
+455bd8b335d28b80f11ba6b3cce2636e  doc/ger-de/beispiele/ini-einstellungen/README.md
 88a9e6f3da744f06b838a30f640c9750  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalMenuSettings.md
 61b7500c6da46b1684d61841b2c0b331  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_audit.md
 da8522f9eb603cff06146203b11e3431  doc/ger-de/beispiele/ini-einstellungen/admininterface/AdditionalTab_datatable.md
@@ -13691,7 +13716,7 @@ f5eae67f1962f16ab71b0d875e6ca1b0  doc/ger-de/beispiele/ini-einstellungen/audit/A
 3973abef3c90270b350a6c2b85ff09a0  doc/ger-de/beispiele/ini-einstellungen/audit/AuditChannel_system.md
 85cd3487de43e2b6600871b1cd5c2358  doc/ger-de/beispiele/ini-einstellungen/audit/AuditCompatSettings.md
 f1f0feb504284d632f6ff434e6012b22  doc/ger-de/beispiele/ini-einstellungen/audit/AuditConsoleSettings.md
-346c91f346363012572b0c1b1465b4ac  doc/ger-de/beispiele/ini-einstellungen/audit/AuditEventSettings.md
+858f27db2276eddc490455446753478d  doc/ger-de/beispiele/ini-einstellungen/audit/AuditEventSettings.md
 912d00a9294aab7b8d3fd8721eeee987  doc/ger-de/beispiele/ini-einstellungen/audit/AuditIndexSettings.md
 d208d8d59cddfc77b583ed8860dc51b0  doc/ger-de/beispiele/ini-einstellungen/audit/AuditKeySettings.md
 38548c921ca0f0b84aca37a374568644  doc/ger-de/beispiele/ini-einstellungen/audit/AuditPrivacySettings.md
@@ -14112,9 +14137,10 @@ ca55de8d2ad5e781c4fda60a1ec433d7  doc/ger-de/beispiele/ini-einstellungen/cronjob
 6113328d800dbb60fa5d61fb875e0ed5  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_cronjobs.md
 a6b10c176af1916b984c11aa8e9a866c  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_drafts.md
 5e0deaab82dbd5c36ecef898ebb39dd9  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_latest_content.md
+a05721032c23dbaa98512c7e4fa32ebc  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_migrations.md
 626b840595d5e3741577fca6c61837fe  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardBlock_pending_list.md
-5e89e137320644e98fcd8c81e21d991c  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardSettings.md
-95297bb29391c4d7c386b74234868796  doc/ger-de/beispiele/ini-einstellungen/dashboard/README.md
+975e32b495f3916ab5349142e3e6ef82  doc/ger-de/beispiele/ini-einstellungen/dashboard/DashboardSettings.md
+df6d8add43c50283ae6dc5e513d5fa83  doc/ger-de/beispiele/ini-einstellungen/dashboard/README.md
 25ae28f97ebcac1d667814104e090554  doc/ger-de/beispiele/ini-einstellungen/datatable/ClassSettings.md
 1a924cfeded5e556924a703f4bd43059  doc/ger-de/beispiele/ini-einstellungen/datatable/ConnectionSettings.md
 ffbb92dd950eeb1cdb42dfdf2c135ed6  doc/ger-de/beispiele/ini-einstellungen/datatable/DataTableSettings.md
@@ -14199,12 +14225,12 @@ c0826060d31f4f671cf8ba3d77d354c0  doc/ger-de/beispiele/ini-einstellungen/exphelp
 1e5fdf175cc9e007e2a078ae1b9331c4  doc/ger-de/beispiele/ini-einstellungen/exphelp/CategorySettings.md
 3ee4d0df3ab50d81df4f1d1fb7418724  doc/ger-de/beispiele/ini-einstellungen/exphelp/CommitFeedSettings.md
 443764edab956661efdf37f507fed418  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContentSettings.md
-cd6aa2ac9d323d44abeac5944b74c288  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContextHelp.md
+ed877d24ae84e7860ca9b8f5fc6e5958  doc/ger-de/beispiele/ini-einstellungen/exphelp/ContextHelp.md
 042fdd336ba3bb20b30720f8cfed518d  doc/ger-de/beispiele/ini-einstellungen/exphelp/DashboardSettings.md
 f59c63f3cbd331c311a4e0d57b5358ed  doc/ger-de/beispiele/ini-einstellungen/exphelp/DocLanguages.md
 87ae97e81f0f4a5e37b3a14b0a064f4b  doc/ger-de/beispiele/ini-einstellungen/exphelp/FeaturedSettings.md
 ecfb6edc04c5006ccb9f7c2a6d492c1c  doc/ger-de/beispiele/ini-einstellungen/exphelp/HelpSettings.md
-5eac3ca7572c8d2efc719ea2e3fe8c24  doc/ger-de/beispiele/ini-einstellungen/exphelp/IndexSettings.md
+a1d1005428ff46a631b9c9deb1918e37  doc/ger-de/beispiele/ini-einstellungen/exphelp/IndexSettings.md
 fbe3d63534ca82344da97c7ff03a4f03  doc/ger-de/beispiele/ini-einstellungen/exphelp/IssueTrackers.md
 daa80f917ebfab400c225f8509383239  doc/ger-de/beispiele/ini-einstellungen/exphelp/LandingSettings.md
 9171c1330f2d0ea1b9b1e2eb7ee636bb  doc/ger-de/beispiele/ini-einstellungen/exphelp/Landing_admin.md
@@ -14337,7 +14363,7 @@ df71a40986c2b46d08e08cf10486d70b  doc/ger-de/beispiele/ini-einstellungen/image/G
 1b7405da6cab3048367940c99e54a06b  doc/ger-de/beispiele/ini-einstellungen/image/GDSettings.md
 1505e4c5031fb9a9d7674302179387fb  doc/ger-de/beispiele/ini-einstellungen/image/GIFAnalyzer.md
 5c9cfede948fe4d8ff51712c0ce454a4  doc/ger-de/beispiele/ini-einstellungen/image/ImageConverterSettings.md
-3762f5d966a2856c75e355092bf7b516  doc/ger-de/beispiele/ini-einstellungen/image/ImageMagick.md
+ad7ec5ab90eaf182131a12d5cddddc64  doc/ger-de/beispiele/ini-einstellungen/image/ImageMagick.md
 f7af43935cbb1d741b8aa73d7952af8d  doc/ger-de/beispiele/ini-einstellungen/image/ImageUploadSettings.md
 58fe3623efbef9753afe05f28140f2c7  doc/ger-de/beispiele/ini-einstellungen/image/LayeredPhotoshop.md
 fcc644f3800f5886f00b6521c96a2640  doc/ger-de/beispiele/ini-einstellungen/image/MIMETypeSettings.md
@@ -14421,7 +14447,7 @@ d44b11fb407fd47d62797d2202985398  doc/ger-de/beispiele/ini-einstellungen/memberm
 0ff79ca90a913634f19c7400234b4599  doc/ger-de/beispiele/ini-einstellungen/menu/Leftmenu_media.md
 d31532fb91434cb6cc6ef06311970fd9  doc/ger-de/beispiele/ini-einstellungen/menu/Leftmenu_my.md
 f9c1c67359176ee2633b60a3750d394e  doc/ger-de/beispiele/ini-einstellungen/menu/Leftmenu_my_mega.md
-a7f76d13fe9af6047ea9b4e937b7ba32  doc/ger-de/beispiele/ini-einstellungen/menu/Leftmenu_setup.md
+825c3f7e5e5bd131cdbbf1559fdf041c  doc/ger-de/beispiele/ini-einstellungen/menu/Leftmenu_setup.md
 67166af0579fa50c6595f27638607701  doc/ger-de/beispiele/ini-einstellungen/menu/Leftmenu_shop.md
 11900e5a765689c8a658b6d3e7bf21b8  doc/ger-de/beispiele/ini-einstellungen/menu/Leftmenu_user.md
 a841a41ccd2d85b379b81cd26b287b36  doc/ger-de/beispiele/ini-einstellungen/menu/Leftmenu_user_mega.md
@@ -14429,7 +14455,7 @@ cebb8f4df88c22b0f0f7f4e302f4b3e7  doc/ger-de/beispiele/ini-einstellungen/menu/Me
 4b152569469820ef62e45703506acd50  doc/ger-de/beispiele/ini-einstellungen/menu/MenuContentSettings.md
 c8ee492ab6fc341fa8dc1a3c2f371333  doc/ger-de/beispiele/ini-einstellungen/menu/MenuSettings.md
 58e43072377f3ad4e9a2937c9592b04c  doc/ger-de/beispiele/ini-einstellungen/menu/NavigationPart.md
-457ab08a54d5236e7a5173f992878733  doc/ger-de/beispiele/ini-einstellungen/menu/README.md
+253baf6446d505506847a1609e119e5a  doc/ger-de/beispiele/ini-einstellungen/menu/README.md
 479d4db7b96a15f76eeb00d723ea8fc1  doc/ger-de/beispiele/ini-einstellungen/menu/SelectedMenu.md
 59c9f70f52f1adc1665176356c23157a  doc/ger-de/beispiele/ini-einstellungen/menu/TopAdminMenu.md
 1e3888f0973c91073183039614f14c92  doc/ger-de/beispiele/ini-einstellungen/menu/TopOnly.md
@@ -14441,9 +14467,10 @@ cf0ccc5d9efde48ac1401e41d77f8f24  doc/ger-de/beispiele/ini-einstellungen/menu/To
 368055ee1b3e936996a93b2aa0804fb0  doc/ger-de/beispiele/ini-einstellungen/menu/Topmenu_setup.md
 e1ab209d2d9b609987b882000e9ed510  doc/ger-de/beispiele/ini-einstellungen/menu/Topmenu_shop.md
 d1be226988d9d5adc82e0f1514c152db  doc/ger-de/beispiele/ini-einstellungen/menu/Topmenu_users.md
+f397370ecf60ddacdaa9262f236f9cd4  doc/ger-de/beispiele/ini-einstellungen/migration/AdminSettings.md
 704e16fe6b7862d3ec3f048d86c9a469  doc/ger-de/beispiele/ini-einstellungen/migration/CaptionSettings.md
 6563fc872dba102360a22aed4bf83eb7  doc/ger-de/beispiele/ini-einstellungen/migration/MigrationSettings.md
-b659e678dab8772475fdb08edc393ce9  doc/ger-de/beispiele/ini-einstellungen/migration/README.md
+9c58166d6f7cc664a7f12e8159f3f382  doc/ger-de/beispiele/ini-einstellungen/migration/README.md
 be0ce85e507e5f9f239e46615b470d30  doc/ger-de/beispiele/ini-einstellungen/migration/RepositorySettings.md
 142c4151cb8623a883d65bf4c30fafb5  doc/ger-de/beispiele/ini-einstellungen/migration/RunSettings.md
 30fe2f095376055cda0fe90980eebd75  doc/ger-de/beispiele/ini-einstellungen/mime/3gp.md
@@ -14640,7 +14667,7 @@ eceb9d826ec46ad242e97da6348403e0  doc/ger-de/beispiele/ini-einstellungen/mime/xp
 245e6f2dedebdc94c8c80e12fb5d0d86  doc/ger-de/beispiele/ini-einstellungen/mime/xyz.md
 c8ff6810087eac511a2b7f2185dc2769  doc/ger-de/beispiele/ini-einstellungen/mime/zip.md
 1de12506cb191df9e35bbc1c1d6acd09  doc/ger-de/beispiele/ini-einstellungen/module/ModuleOverrides.md
-79a494539dc9b7b24585c89c11824c97  doc/ger-de/beispiele/ini-einstellungen/module/ModuleSettings.md
+342fe9b97b5474b0702dba92d1ae1e52  doc/ger-de/beispiele/ini-einstellungen/module/ModuleSettings.md
 d54580939258ab18c12a30033f52293c  doc/ger-de/beispiele/ini-einstellungen/module/README.md
 9636c76fc53440cb029b469e353b56c5  doc/ger-de/beispiele/ini-einstellungen/notification/MailSettings.md
 0169016d0860de0830f2e29e2c4cf219  doc/ger-de/beispiele/ini-einstellungen/notification/NotificationEventHandlerSettings.md
@@ -14842,7 +14869,7 @@ c375924685d1a0433a06fea38df0efb6  doc/ger-de/beispiele/ini-einstellungen/site/Re
 2fbb7d1eafbe1175201652854abfc88f  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
 59b347b5bfee84db9ec25e88a7859aae  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_delete.md
 74ac18873a2e62e9bcf84d04b37e9061  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_export.md
-d310b9ce7375bc7da20c4aae392ca3d8  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_system.md
+e2985c4a4900f9a1d1f0bccc861fd1bb  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_system.md
 c5ae98f612d95fda961d56f0fe48cfdb  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_users.md
 57500e25ab479a6c07a0991b7a79587c  doc/ger-de/beispiele/ini-einstellungen/site/ReauthSettings.md
 0c379efcf6aa89dde09c2380f4be2550  doc/ger-de/beispiele/ini-einstellungen/site/RegionalSettings.md
@@ -15165,7 +15192,7 @@ be5e2d8fc4279277446834eaf953ef61  doc/ger-de/beispiele/kochbuch/template-overrid
 6230d01ca1dd137fb5819c57a926cc28  doc/ger-de/beispiele/kochbuch/uebersetzungen.md
 3eedf94c42fa493f5f9bd97a7bbf172f  doc/ger-de/beispiele/kochbuch/velocity-deployment.md
 06755c41bd376823daece917056df30c  doc/ger-de/beispiele/kochbuch/workflow-ereignis.md
-86a483aac1a6c8836e7f5081dfadf6de  doc/ger-de/beispiele/modulansichten/README.md
+2827b74f59d15521957190151d71fe4a  doc/ger-de/beispiele/modulansichten/README.md
 62411fdeac4996f3fe0c8b6cc41b1b9b  doc/ger-de/beispiele/modulansichten/apikey/README.md
 604d7ff93ba6773a4cdfd04c487ce9ba  doc/ger-de/beispiele/modulansichten/apikey/list.md
 e398d30a54f7e2d74ea9ed8101c0bca5  doc/ger-de/beispiele/modulansichten/audit/README.md
@@ -15265,7 +15292,7 @@ f932d767068d131f08d0ae61aa8bcc42  doc/ger-de/beispiele/modulansichten/datatable/
 a6c13f30306e5501a8bdac496208d430  doc/ger-de/beispiele/modulansichten/datatable/table.md
 2b83d6f8c23056d620db0f66c8e29a33  doc/ger-de/beispiele/modulansichten/error/README.md
 f5a38804304cfe0b2fd972909ed9ed0d  doc/ger-de/beispiele/modulansichten/error/view.md
-0bcbc709fe291d400b76eea4cd076776  doc/ger-de/beispiele/modulansichten/exphelp/README.md
+71c7bbd6f3ae242714df2dc296ddd106  doc/ger-de/beispiele/modulansichten/exphelp/README.md
 b71f7648b1b11ac5e07c27c9303c1775  doc/ger-de/beispiele/modulansichten/exphelp/asset.md
 002c1617c5b2088650c249e441eda55d  doc/ger-de/beispiele/modulansichten/exphelp/audience.md
 8fa428ea1c0fbd1e2520a1ba602dfe17  doc/ger-de/beispiele/modulansichten/exphelp/contents.md
@@ -15275,6 +15302,7 @@ c7f94f3aa128c0acfabfa4a149b03cb1  doc/ger-de/beispiele/modulansichten/exphelp/co
 b2e0541c5cb1a6f295789a53dac97934  doc/ger-de/beispiele/modulansichten/exphelp/feedback.md
 5ae22b7c818ccfc59e4da724f635cb96  doc/ger-de/beispiele/modulansichten/exphelp/image.md
 8e0898b83a260f2ec622dc44980212c0  doc/ger-de/beispiele/modulansichten/exphelp/manual.md
+ad0436a9f294f9dcd32e4572702224c5  doc/ger-de/beispiele/modulansichten/exphelp/navigation.md
 933076a59f7c77b009594dee67a3ecbb  doc/ger-de/beispiele/modulansichten/exphelp/pdf.md
 837df50b6c018e3c17ed2769f75b9862  doc/ger-de/beispiele/modulansichten/exphelp/report.md
 dbef91cc9d0ee1f6fa0f8c223b5d7812  doc/ger-de/beispiele/modulansichten/exphelp/search.md
@@ -15318,6 +15346,14 @@ bb045954bd27501720040a4f256f6d2e  doc/ger-de/beispiele/modulansichten/mailprefer
 9fc3235ca74939febe11ead236506ac7  doc/ger-de/beispiele/modulansichten/mailpreferences/request.md
 7cc6c55150cb1be5f3f7e8b5a86f9f36  doc/ger-de/beispiele/modulansichten/mailpreferences/settings.md
 6cb44e2ff757528929956a40cd59753b  doc/ger-de/beispiele/modulansichten/mailpreferences/unsubscribe.md
+7083b14387612e06b17302a3d756c1be  doc/ger-de/beispiele/modulansichten/migration/README.md
+d52a7f68dbcc83cb00407a82fcdae9a8  doc/ger-de/beispiele/modulansichten/migration/dryrun.md
+ba7b80ecd1e563e3862132788d61f021  doc/ger-de/beispiele/modulansichten/migration/history.md
+8e3cd6a27cd91fb79ce4201a5b253b5f  doc/ger-de/beispiele/modulansichten/migration/log.md
+8d3dfac882921343ed689f3c79bd2837  doc/ger-de/beispiele/modulansichten/migration/rollback.md
+4385c11a980ccd6fefe3e2c9590d5119  doc/ger-de/beispiele/modulansichten/migration/run.md
+9234be3b6a7ed18aa00ef4d3980944bd  doc/ger-de/beispiele/modulansichten/migration/status.md
+b0626b9f6b44f46e05eb8ce90ad7b17f  doc/ger-de/beispiele/modulansichten/migration/stream.md
 2a8142fa3f196607bb96fece966055fd  doc/ger-de/beispiele/modulansichten/notification/README.md
 e7ec740278202858c659bd5ced6d6ae6  doc/ger-de/beispiele/modulansichten/notification/addtonotification.md
 29d5b8d25b0fad833b599ed6fac9ebb8  doc/ger-de/beispiele/modulansichten/notification/job.md
@@ -15512,7 +15548,7 @@ dfbb5d08aaf825faa97a904a2c359739  doc/ger-de/beispiele/modulansichten/workflow/p
 55ef957a952e63e1c58467b08f45d1a9  doc/ger-de/beispiele/modulansichten/workflow/up.md
 f6af3b6f80fefcc5b7a37789483b310b  doc/ger-de/beispiele/modulansichten/workflow/view.md
 00a9a60724a1c13c31a2a16aaf4f4224  doc/ger-de/beispiele/modulansichten/workflow/workflowlist.md
-14d6e1f771ad051e09d0af7b482e7b49  doc/ger-de/beispiele/richtlinien/README.md
+936cb177e6ecefdb307a8d952ecc3225  doc/ger-de/beispiele/richtlinien/README.md
 f5ff776c182bcd2eda4c5b8781f3ab5c  doc/ger-de/beispiele/richtlinien/apikey.md
 4852b4071c26b46cb6a29a2d519058a6  doc/ger-de/beispiele/richtlinien/audit.md
 aac0b1c0ca8a8a16ea8a21fa3c436046  doc/ger-de/beispiele/richtlinien/class.md
@@ -15523,7 +15559,7 @@ c3de0e7f77782d306ddc5dfdd05cb5f7  doc/ger-de/beispiele/richtlinien/contentfinder
 a596fb672515d47ff126450e4af6714b  doc/ger-de/beispiele/richtlinien/csp.md
 c1975a0ca464eb3f9b443fcb021eafde  doc/ger-de/beispiele/richtlinien/datatable.md
 c4200e915aacb101779dc17485fd7355  doc/ger-de/beispiele/richtlinien/error.md
-362228d75449280b0d2b473c6d017f49  doc/ger-de/beispiele/richtlinien/exphelp.md
+d622f5da6571b663d5185a0a4d4910ea  doc/ger-de/beispiele/richtlinien/exphelp.md
 ac8787b02ed65cc1f0498128af5a6587  doc/ger-de/beispiele/richtlinien/expimageeditor.md
 738dcc50e83ca25dcaf229d502886ed1  doc/ger-de/beispiele/richtlinien/ezinfo.md
 7cd6ea0beef2e1b7dee000fee3dc4268  doc/ger-de/beispiele/richtlinien/ezjscore.md
@@ -15532,6 +15568,7 @@ ea8162d3edd81dfb9ae000481f618045  doc/ger-de/beispiele/richtlinien/ezoe.md
 f69d248d2a9c59b3223495edd476956e  doc/ger-de/beispiele/richtlinien/infocollector.md
 1fccd807e427e5e8beefde195a00b8ed  doc/ger-de/beispiele/richtlinien/layout.md
 cdb2d6b83dc0d569687f7e830e48ff5f  doc/ger-de/beispiele/richtlinien/mailpreferences.md
+2f0ee29b6a60831526b5858b1d691b3c  doc/ger-de/beispiele/richtlinien/migration.md
 84cdcc08b5be66dda5c5243ec454b5d9  doc/ger-de/beispiele/richtlinien/notification.md
 e5147536c82f0e4d3ba1e071a193084d  doc/ger-de/beispiele/richtlinien/oauth.md
 bf97c9d42ece706c85af58628d2a177d  doc/ger-de/beispiele/richtlinien/oauthadmin.md
@@ -15764,7 +15801,7 @@ c967a38447621d814e6cc6b241a0344e  doc/ger-de/beispiele/template-operatoren/prepe
 045497d3d47649f59c8beac90b2373dd  doc/ger-de/beispiele/template-operatoren/quotemeta.md
 4c3ae50134ec58bc0ce63044f6bc8887  doc/ger-de/beispiele/template-operatoren/rand.md
 4594e29b1013fe3f77d99cba371c1623  doc/ger-de/beispiele/template-operatoren/rawurldecode.md
-f0e38fca53e9c2e394be883f8c532110  doc/ger-de/beispiele/template-operatoren/rawurlencode.md
+41b1296eaee9a2ac8bed69d9b009ce78  doc/ger-de/beispiele/template-operatoren/rawurlencode.md
 7192e6b0730be24a5884a826fcc875df  doc/ger-de/beispiele/template-operatoren/remove.md
 607c3fff08329c63140b421e1c880b3d  doc/ger-de/beispiele/template-operatoren/repeat.md
 c5420c5ca56a61689f542e8f71bf4b7d  doc/ger-de/beispiele/template-operatoren/replace.md
@@ -16413,7 +16450,7 @@ b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
 c3ecf8db87a8739e9db4cc410a05f479  doc/ger-de/glossar.md
-8c5b89054feda95138b788585c3e1f72  doc/ger-de/hilfe/README.md
+300b1b1aa9f4b528a8c919fce32231f1  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
 9d80999100f6fc01d6769705d3ac7e48  doc/ger-de/hilfe/anmelden-im-editor.md
 8bd0a5eb4b20867b8eedd184b9b7873b  doc/ger-de/hilfe/anmelden-in-der-administration.md
@@ -16740,6 +16777,10 @@ fe7561087ccee8dfb3339c480ba2193c  doc/ger-de/hilfe/bilder/media/tree-menu-upload
 7884f5b86dc6441ffa5d8b44c774d600  doc/ger-de/hilfe/bilder/media/upload-options.webp
 08f139930d888a5d69501c34d6b4c31b  doc/ger-de/hilfe/bilder/media/upload-queue.webp
 87737acdd4b3ebe400cdeb362762061b  doc/ger-de/hilfe/bilder/media/upload-target-location.webp
+1e94622f3700ca9ad1fd25f5b0c9312d  doc/ger-de/hilfe/bilder/migrationen/rollback-dark.webp
+fd00d66a83a19602a87ccae5a4d491bb  doc/ger-de/hilfe/bilder/migrationen/rollback-light.webp
+da761fba0cb33c994e8f4cabee71548c  doc/ger-de/hilfe/bilder/migrationen/status-dark.webp
+70e6613d3722c9e3ef5ba87bc43510ac  doc/ger-de/hilfe/bilder/migrationen/status-light.webp
 22b1f38c3087be8fe6658a7b643f12b1  doc/ger-de/hilfe/bilder/multi-upload.webp
 8f02828affa2a5abbea594295d0a11ae  doc/ger-de/hilfe/bilder/my-account.webp
 d8df7bf69d5bd10b46eb33ed9a0d5e74  doc/ger-de/hilfe/bilder/publishing/my-drafts.webp
@@ -18793,6 +18834,10 @@ e472d4b2d51dc9914132192819a82084  doc/ger-de/hilfe/lokale-unternehmen/marketing/
 42083437b1d7615272fe99a6fb2d8c40  doc/ger-de/hilfe/lokale-unternehmen/vorlagen/inhaltsvorlage-fuer-oeffnungszeiten.md
 5fa14cf5955ef9256c37bfadfd39042b  doc/ger-de/hilfe/lokale-unternehmen/vorlagen/website-briefing-fuer-ein-lokales-unternehmen.md
 32e882a58acdc61b0c606e2dfbd7a145  doc/ger-de/hilfe/medien-und-uploads.md
+fb56ae45d099835849cce39a66997f00  doc/ger-de/hilfe/migrationen/README.md
+40fb1f790ddcf4ecb89b746322e02e53  doc/ger-de/hilfe/migrationen/ausfuehren-probelauf-und-rueckgaengig.md
+3e3444b3b8ec8dc5f39a78884338a73a  doc/ger-de/hilfe/migrationen/expwt-panel.md
+570b5d3256aaf445c3dcdb10d57d6ae6  doc/ger-de/hilfe/migrationen/status-und-verlauf.md
 5fb7f02546ca1addb410af99a1da5926  doc/ger-de/hilfe/mit-git-aktualisieren.md
 7c4c37e65756339f68a09ab00ebe1057  doc/ger-de/hilfe/mit-git-entwickeln.md
 be7c5512bc75d60889faeb2117ad9874  doc/ger-de/hilfe/mitglieder-verwalten.md
@@ -25580,7 +25625,7 @@ c4c0a602ae69e69429f9341c8c240481  settings/debugbar.ini
 546a2136d4ba2d6bff06dee5f0a8fe6f  settings/design.ini
 b244336d7be89b1697f8232f4f0fe201  settings/editorpolicies.ini
 32345e49a48d1f9bf1251ad9dde479b7  settings/error.ini
-1849ba08c2b7cff208896c5627ade125  settings/exphelp.ini
+2450de4e570404a416e79330222b8f7c  settings/exphelp.ini
 4209ce0fc8d74237bef6f2415d450959  settings/extendedattributefilter.ini
 e87b6557bf97b4e7a43f052afcca7015  settings/ezxml.ini
 fb2495206b5c7b42cdef926446b6f7c0  settings/fetchalias.ini

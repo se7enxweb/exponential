@@ -82,6 +82,7 @@ ausgegraut oder gar nicht angezeigt.
 |---|---|
 | [Mit Git entwickeln](mit-git-entwickeln.md) | Exponential als Git-Klone mit ihrer vollständigen Historie installieren (der empfohlene Weg, Websites zu bauen), sie aktuell halten und Korrekturen als Pull-Requests zurückschicken |
 | [Mit Git aktualisieren](mit-git-aktualisieren.md) | Updates erhalten, sobald sie auf GitHub gepusht werden, und Composer passend aktualisieren: stündlich, täglich, wöchentlich, monatlich oder nur zu jedem Release, von Hand oder automatisch |
+| [Migrationen in der Administration](migrationen/README.md) | Den Stand der Migrationen in Setup > Migrationen sehen, sie ausführen, einen Lauf live verfolgen und einen Lauf zurücknehmen |
 | [Erweiterungen zurückgeben](erweiterungen-zurueckgeben.md) | Ihre Erweiterungen veröffentlichen, damit alle sie nutzen können, und wissen, was die GPL verlangt, wenn Sie eine weitergeben |
 | [Den Code beziehen](../installation/03-den-code-beschaffen.md) | Jeder Weg, den Code zu installieren, mit Erklärungen zu Versionen, Tags und Erweiterungen |
 

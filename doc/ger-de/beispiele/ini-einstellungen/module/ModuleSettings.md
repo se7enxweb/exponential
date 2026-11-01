@@ -60,9 +60,10 @@ ExtensionRepositories[]
 > bestehenden Modulnamen überschreiben  
 > Die Datentabellen und die benannten Datenbankverbindungen (doc/eng-us/features/6.0/data-tables.md)  
 > Die GraphQL-API mit der Sitzung der Weboberfläche (doc/eng-us/features/6.0/graphql.md)  
+> Migrationen: Einrichtung > Migrationen, ihr Stand, Läufe und Rücknahme (doc/eng-us/guides/migrations.md)  
 > Der Secret-Store des Kernels (doc/eng-us/features/6.0/secret-store.md)  
 
-Standard: eine Liste mit 37: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
+Standard: eine Liste mit 38: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -86,11 +87,11 @@ ModuleList[]=ezinfo
 ModuleList[]=infocollector
 ModuleList[]=layout
 ModuleList[]=mailpreferences
+ModuleList[]=migration
 ModuleList[]=notification
 ModuleList[]=oauth
 ModuleList[]=oauthadmin
-ModuleList[]=package
-# ... 17 weitere in der ausgelieferten Datei
+# ... 18 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
