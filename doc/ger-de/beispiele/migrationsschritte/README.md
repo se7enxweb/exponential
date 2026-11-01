@@ -27,6 +27,11 @@ Jeder Schritttyp von YAML-Migrationen, den der Kernel in `settings/migration.ini
 | [section](section.md) | create, update, ensure, delete, assign | Legt eine Sektion an, ändert, sichert oder löscht sie, oder weist einem Teil des Inhaltsbaums eine Sektion zu |
 | [language](language.md) | create, update, ensure, delete | Fügt eine Sprache der Inhalte hinzu, benennt sie um, sichert oder entfernt sie |
 | [object_state_group](object_state_group.md) | create, update, ensure, delete | Legt eine Objektzustandsgruppe mit ihren Zuständen und den Übersetzungen ihrer Namen an, ändert, sichert oder löscht sie |
+| [tag](tag.md) | create, update, ensure, delete, move, merge | Legt einen Tag von eztags mit seinen Übersetzungen und Synonymen an, ändert, sichert, löscht, verschiebt oder führt ihn zusammen |
+| [url_alias](url_alias.md) | create, ensure, delete | Legt einen eigenen URL-Alias eines Knotens, einen globalen URL-Alias oder einen URL-Platzhalter an, sichert oder löscht ihn |
+| [trash](trash.md) | move, restore, purge | Verschiebt Inhalte in den Papierkorb, stellt sie aus ihm wieder her oder löscht sie endgültig |
+| [file](file.md) |  | Hängt eine Datei aus dem Migrationsordner an ein Dateiattribut (ezbinaryfile, ezmedia) eines Objekts |
+| [image](image.md) |  | Legt ein Bild aus dem Migrationsordner in ein Bildattribut eines Objekts, mit Alternativtext, Fokuspunkt und Zuschnitt |
 
 - [Alle Beispiele](../README.md)
 
