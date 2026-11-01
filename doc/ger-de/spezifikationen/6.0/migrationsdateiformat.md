@@ -235,8 +235,12 @@ fehlende Datei ist eine leere Zuordnung; eine Datei, die keine ist, lässt jede 
 
 ### Schritttypen
 
-Der Kernel registriert `reference` (`set:` eine Zuordnung von Referenzen) und `assert` (`that:` eine Bedingung,
-`message:` der Text des Fehlers). Eine Erweiterung registriert ihre eigenen in ihrer `migration.ini.append.php`:
+Der Kernel registriert `reference` (`set:` eine Zuordnung von Referenzen), `assert` (`that:` eine Bedingung,
+`message:` der Text des Fehlers), `content`, `location` und `content_version`; jeden Schlüssel jedes Typs nennt seine
+erzeugte Seite ([die Schritttypen](../../beispiele/migrationsschritte/README.md)). Ein Bezeichner-Schlüssel nennt
+seine Art: `node`, `object`, `class`, `section`, `language`, `user`, `role` oder `state`; die letzten sechs nehmen
+auch einen Namen (Bezeichner einer Klasse oder Sektion, eine Locale, ein Login, ein Rollenname, `<gruppe>/<zustand>`).
+Eine Erweiterung registriert ihre eigenen Schritttypen in ihrer `migration.ini.append.php`:
 
 ```ini
 [StepSettings]
