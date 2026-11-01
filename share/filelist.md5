@@ -3381,7 +3381,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-f5a100bc104778be38640f46c13fe450  doc/changelogs/6.0/6.0.15.md
+1982d5a2cbe5d04745830d1ee1a9df77  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -4912,7 +4912,7 @@ ded46646ef42a01040f621323e3d0a4f  doc/eng-us/examples/ini-settings/menu/Topmenu_
 1422f012a8b7fc0d7d718e5e286ba266  doc/eng-us/examples/ini-settings/menu/Topmenu_shop.md
 e83dbdc8f6d4d047913ce9b6dabcf063  doc/eng-us/examples/ini-settings/menu/Topmenu_users.md
 c91392713efb2acd856f17def1776367  doc/eng-us/examples/ini-settings/migration/AdminSettings.md
-07cb473738991ec11e1d2cb081e38583  doc/eng-us/examples/ini-settings/migration/CaptionSettings.md
+bb3c9b3daed420bf5002f4b6370b5575  doc/eng-us/examples/ini-settings/migration/CaptionSettings.md
 71c16a665dfff48ef3f04d37a2dc4912  doc/eng-us/examples/ini-settings/migration/MigrationSettings.md
 071128c600367942b673d3a2bd8fc2a0  doc/eng-us/examples/ini-settings/migration/README.md
 94959f62b9cb34961c632d17697e39b5  doc/eng-us/examples/ini-settings/migration/RepositorySettings.md
@@ -6840,7 +6840,7 @@ b1ce11a50c0108934aa655898d1ff1f1  doc/eng-us/guides/migrations-repositories.md
 b169d33c12b9f7e55a8e2afd7254058a  doc/eng-us/guides/migrations-rollback-and-captions.md
 ca1f62fc7cab76f6d12393625f273b76  doc/eng-us/guides/migrations-troubleshooting.md
 edbe5e5358cc714439e09489af22dbdb  doc/eng-us/guides/migrations-tutorial.md
-96b85762e1c36284aba479a828da5c9a  doc/eng-us/guides/migrations.md
+9f2e0fb82cbfc3c80b8f1b77af1250d3  doc/eng-us/guides/migrations.md
 e565fb4c364a70e397ad6e26fb0e18c3  doc/eng-us/guides/missing-files.md
 c16f7bb9ba5be0218ef063840c48580c  doc/eng-us/guides/notifications-administrator.md
 c1af1e57aab428c892c4e04cfe7c6cb4  doc/eng-us/guides/notifications-developer.md
@@ -6900,7 +6900,7 @@ d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
 2f30879faf2946e9e4df285ae7705cdf  doc/eng-us/guides/upgrade-steps-for-extensions.md
-492d780e34e2da101b0a1c325f2c3c29  doc/eng-us/guides/upgrading-with-the-console.md
+79bfb11951db194192a4ca566b98468c  doc/eng-us/guides/upgrading-with-the-console.md
 ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
@@ -12971,7 +12971,7 @@ d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
 f83fe0b18f0c6f128ad952b8c94a44f8  doc/ger-de/anleitungen/README.md
-0a2cacf7d5d15deef4e225ad7923103d  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
+1dfb2fc7054fd491e5981b2d526abdc4  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
@@ -13049,7 +13049,7 @@ ebcf18a7d612001f327c9d0135edca23  doc/ger-de/anleitungen/migrationen-php.md
 d2bd1d77a45baa737a330d931f2d5670  doc/ger-de/anleitungen/migrationen-repositories.md
 75ac67092d4c9b86d768d39c158f7ea5  doc/ger-de/anleitungen/migrationen-rueckgaengig-und-captions.md
 883015ea2328663c4f25e734f5501428  doc/ger-de/anleitungen/migrationen-tutorial.md
-2ff97fc691c2517b71e80dab83cf9472  doc/ger-de/anleitungen/migrationen.md
+a18ea455027cc4c63a53c89bd9ac9fc1  doc/ger-de/anleitungen/migrationen.md
 465336715cb5f76e2f9ecd9aaca6024a  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 a0976fe58065ceb997a8d1fac6b00996  doc/ger-de/anleitungen/objektzustaende.md
 c88a68ff0b56f324e4301df5540cfdd1  doc/ger-de/anleitungen/pakete.md
@@ -14472,7 +14472,7 @@ cf0ccc5d9efde48ac1401e41d77f8f24  doc/ger-de/beispiele/ini-einstellungen/menu/To
 e1ab209d2d9b609987b882000e9ed510  doc/ger-de/beispiele/ini-einstellungen/menu/Topmenu_shop.md
 d1be226988d9d5adc82e0f1514c152db  doc/ger-de/beispiele/ini-einstellungen/menu/Topmenu_users.md
 f397370ecf60ddacdaa9262f236f9cd4  doc/ger-de/beispiele/ini-einstellungen/migration/AdminSettings.md
-704e16fe6b7862d3ec3f048d86c9a469  doc/ger-de/beispiele/ini-einstellungen/migration/CaptionSettings.md
+2b43145f04ed608df8e285a49c08883c  doc/ger-de/beispiele/ini-einstellungen/migration/CaptionSettings.md
 6563fc872dba102360a22aed4bf83eb7  doc/ger-de/beispiele/ini-einstellungen/migration/MigrationSettings.md
 9c58166d6f7cc664a7f12e8159f3f382  doc/ger-de/beispiele/ini-einstellungen/migration/README.md
 be0ce85e507e5f9f239e46615b470d30  doc/ger-de/beispiele/ini-einstellungen/migration/RepositorySettings.md
@@ -23877,7 +23877,7 @@ f20938c87615cc6479d8be4712905e80  kernel/classes/mailpreferences/expmailsuppress
 13ef39f08b6957e9366a5e566c9bebb3  kernel/classes/mailpreferences/expmailtoken.php
 68be86c3f7bf3b6d229600cb1e2f2885  kernel/classes/migration/expmigration.php
 4038f92dbe48220b19a8a36e21a19919  kernel/classes/migration/expmigrationadmin.php
-3c528df98b30d782c112d339280548f8  kernel/classes/migration/expmigrationcaption.php
+3e7904555841fc56711de13dc28bf085  kernel/classes/migration/expmigrationcaption.php
 4952e0f257dd13ede42a162821468ddd  kernel/classes/migration/expmigrationcheck.php
 8fa1aaf8f531e8e9e95808f9c397ea5b  kernel/classes/migration/expmigrationcontext.php
 ba6a8f25637a51e3013f4c7a42569714  kernel/classes/migration/expmigrationdefinition.php
@@ -23898,7 +23898,7 @@ bcd3822f23ad514831b46331d1d6ddd9  kernel/classes/migration/expmigrationrunner.ph
 1c9d4d133d2f1a2668c1d648f380f1b0  kernel/classes/migration/expmigrationstatus.php
 5faea9c5591ca084e089a77621e3cedb  kernel/classes/migration/expmigrationstatusmirror.php
 d09cce1cdaa6081038873db8c55b5793  kernel/classes/migration/expmigrationupgradesource.php
-2211035f2082300fbb8a6ce260090ca5  kernel/classes/migration/expmigrationupgradestep.php
+559062290cc104011957bc5ef86f1d03  kernel/classes/migration/expmigrationupgradestep.php
 1dfa7a7301c1084388960048d9235010  kernel/classes/notification/event/ezcollaboration/ezcollaborationtype.php
 028b6f97a649a7dd399acde15e5c0c86  kernel/classes/notification/event/ezcurrenttime/ezcurrenttimetype.php
 3a636806521116fc35b8792131b30479  kernel/classes/notification/event/ezpublish/ezpublishtype.php
@@ -24036,7 +24036,7 @@ a0656f5f4b5d1e6ea5bc1f87cda8b703  kernel/classes/uiswitch/expuiswitchlanguagecat
 36ae0ada26aeab3daeee8387f9446610  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 b175ddfcd284ec585d4e3839b9e02b39  kernel/classes/uiswitch/expuiswitchprovider.php
 97c2143532e0f136ba4e0f7bfef28049  kernel/classes/uiswitch/expuiswitchproviderinterface.php
-13969a076edaaa84b29819ea99744bda  kernel/classes/upgrade/expupgrade.php
+540703f94264ab1188d8f24717e2042a  kernel/classes/upgrade/expupgrade.php
 c828134811fc4170f48d0bd8beec4042  kernel/classes/upgrade/expupgradebackup.php
 285a5f8e3fba34675fed5ae3bf7e0f23  kernel/classes/upgrade/expupgradebasestep.php
 ad0a6ff22355600a5587132e8a5b95dd  kernel/classes/upgrade/expupgradecaption.php
@@ -24046,7 +24046,7 @@ f91fe6aa39ca39fba9157c3bffc757c5  kernel/classes/upgrade/expupgradecatalog.php
 4be83a1c28e0447c307e02215a6cebb8  kernel/classes/upgrade/expupgradefinishstep.php
 821ed0718b15e66599c7fb368cd58ece  kernel/classes/upgrade/expupgradegit.php
 b0b3a1228db9f3321a057b6c6e7b1352  kernel/classes/upgrade/expupgradelock.php
-fd345ed7f13f1e90ddc01c440fc428d4  kernel/classes/upgrade/expupgraderecord.php
+73a657270220d087d8628c1394da806e  kernel/classes/upgrade/expupgraderecord.php
 592334ca70a9d88447f7394d12ce433e  kernel/classes/upgrade/expupgraderegistry.php
 929869a21b65716f34744b8a50e8ec5b  kernel/classes/upgrade/expupgraderollback.php
 72a04b971ccb701ae0feb2e6abf797d8  kernel/classes/upgrade/expupgradeschemastep.php
@@ -24073,7 +24073,7 @@ a28da29c7041847028a9d14aaac21dd4  kernel/classes/upgrade/steps/expupgradesteplib
 b424fa156d1fc01cb2d3a055c13e00f7  kernel/classes/upgrade/steps/expupgradesteplibrariesupdate.php
 bf74569712668419a0045162f08e8799  kernel/classes/upgrade/steps/expupgradestepmailpreferencetables.php
 cfde8b2302b28ddcfe27fd68cc9503dd  kernel/classes/upgrade/steps/expupgradestepmembermanagement.php
-16276348205173de3069df5b5d370163  kernel/classes/upgrade/steps/expupgradestepmigrationtables.php
+8e1a27c8b41e0955c0134adf3b22b6df  kernel/classes/upgrade/steps/expupgradestepmigrationtables.php
 bcfef39202ec606b63271a9bb9bdb803  kernel/classes/upgrade/steps/expupgradestepmissingusersettings.php
 7886137d132a174b1737be8a4cac63d5  kernel/classes/upgrade/steps/expupgradestepoauthauthorizepolicy.php
 d1cad60b9e20814ce9a8943ec64a4f03  kernel/classes/upgrade/steps/expupgradestepoauthpkcecolumns.php
@@ -24083,7 +24083,7 @@ ae2f94471448406e7b5fff9190742db3  kernel/classes/upgrade/steps/expupgradestepord
 8a5b9d672c7283fcdeb469a9e1b4adb0  kernel/classes/upgrade/steps/expupgradesteppasskeytable.php
 3fd96b5c7cf2bec9dc83f104575da8e5  kernel/classes/upgrade/steps/expupgradesteppasswordhashwidth.php
 40e02ddaecbf7606ec27f333d6e4bf37  kernel/classes/upgrade/steps/expupgradesteppdfexportfooter.php
-6b35f358459c8063e712258650d274a6  kernel/classes/upgrade/steps/expupgradesteprecordtable.php
+a162ed22ddb2259e2bf3d7471a0d698c  kernel/classes/upgrade/steps/expupgradesteprecordtable.php
 82a892af7e87ed6ce673c49288f81f4b  kernel/classes/upgrade/steps/expupgradesteprssopmlpodcast.php
 d4882884cb8e11c2db92d3940177cd98  kernel/classes/upgrade/steps/expupgradestepsiteversion.php
 7e17b240f7fbe3bb9779533fecbd006a  kernel/classes/upgrade/steps/expupgradesteptransferruntable.php
@@ -25242,12 +25242,12 @@ d9cc97fafd718a9c80d3ed94695d1fb8  kernel/sql/common/cleandata.sql
 b68f5306ae401ec3a8a2c007a3f2ed35  kernel/sql/mysql/cluster_db_schema.sql
 97ef2253452a05bf3e490680a0d385ce  kernel/sql/mysql/cluster_dfs_schema.sql
 fb2cd39e1b8a37668d9b45b51294da07  kernel/sql/mysql/cluster_schema.sql
-e60b3c7d03f864d09beb2ac52df911a7  kernel/sql/mysql/kernel_schema.sql
-cc2f56e0fa49b429f61f607105aea7ee  kernel/sql/postgresql/kernel_schema.sql
+5a2e76f2fa8c02daf129c8c473782c8e  kernel/sql/mysql/kernel_schema.sql
+ddb1f564fa20c3037da2b878f8c55cf3  kernel/sql/postgresql/kernel_schema.sql
 67721f5188e529651254baaf73115a2d  kernel/sql/postgresql/sequence.sql.template
 24f4bdbc332642858d8c0a98a94541d5  kernel/sql/postgresql/setval.sql
 ad8668179a7c34590ea3182a2e6cb59e  kernel/sql/sqlite/cleandata.sql
-6a1cf72ac11df9e2b5ff0f7d9cc2f12c  kernel/sql/sqlite/schema.sql
+e0403e14a0d21311b1a9e48b5a312bf1  kernel/sql/sqlite/schema.sql
 4ceffdfdd3df6dad001c45ecbfc14f26  kernel/state/assign.php
 1876c01f370cc8092ddb92cb64870718  kernel/state/edit.php
 51d446ac0be7f9efa76a6406a8e2ba76  kernel/state/group.php
@@ -25650,7 +25650,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
 293eb5791de60dd4330f0421d7b63c7d  settings/menu.ini
-2d577c93a7b6643f055b96079179ecfd  settings/migration.ini
+fb3beeb44989c6c84e13cac1ace12af1  settings/migration.ini
 71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
 61e93377ca02f4c0b3ecc5ef21d3707c  settings/module.ini
 3ae9f2ad8f986a9acce088d9bff7b10a  settings/notification.ini
@@ -25688,7 +25688,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-f6dd023d0edc25ee4f256161bd5e5799  settings/upgrade.ini
+288e80dd6ef6e2a55eed00a91a1200f5  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 53f363dfc5d11e88ff40763bed4b0471  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -25745,7 +25745,7 @@ eaa7db664afb110a64363237774df335  share/codepages/windows-1256
 79264476ec01a0e9b25a3db4af230ec0  share/codepages/windows-1257
 e09ea6080b30bd37271947416c3bde63  share/codepages/windows-1258
 a2b80831488ff635f2b4e7b922434d9d  share/db_data.dba
-9a01c1190c9d650948bfb836ffa3322c  share/db_schema.dba
+1287caac0a521b0d376d6525365a16ff  share/db_schema.dba
 a053460928304f8f2beb6a8903551954  share/graphql/starters/astro/README.md
 9c5fe3be955c8a73d36f804d2542a088  share/graphql/starters/astro/_env
 7fc461a54ac538970c597a60c3be8367  share/graphql/starters/astro/astro.config.mjs
@@ -27805,7 +27805,7 @@ fa2880c02db43fdfac79048ad61cba89  tests/tests/kernel/classes/mailpreferences/fix
 160a6d2f5f3662a3a8df88fab8b3f904  tests/tests/kernel/classes/migration/expMigrationCaptionEngineChecks.php
 df2891775fbe7ed2454048f98673e152  tests/tests/kernel/classes/migration/expMigrationCaptionFakes.php
 73d1596bcf3555216d9f028f3da14351  tests/tests/kernel/classes/migration/expMigrationCaptionSqliteTest.php
-a78ea5b9313cf3bf38930ac0b083a6d5  tests/tests/kernel/classes/migration/expMigrationCaptionTest.php
+f617f2f7957aa9bc8dc7d9e73bc47f02  tests/tests/kernel/classes/migration/expMigrationCaptionTest.php
 2e3d9c405d27ffc16aeb3da38e7f670c  tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php
 f317c6c5599454cb669cdb72f76edb25  tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php
 af7cfd6fdaccf80222488af9083577ec  tests/tests/kernel/classes/migration/expMigrationCommandEngineChecks.php
@@ -27813,11 +27813,12 @@ af3623e16b241e1b9bcf3e52b085f013  tests/tests/kernel/classes/migration/expMigrat
 6ad403d53a322eb024ee0e84b967673c  tests/tests/kernel/classes/migration/expMigrationCommandToolsTest.php
 b3e9646cf50ff3e42bfbb63cd0dea145  tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php
 1bdbf891cf83607a14563f95e9a7e004  tests/tests/kernel/classes/migration/expMigrationJobTest.php
+0791c122c7d6e8a0e7868ea65c473783  tests/tests/kernel/classes/migration/expMigrationLegacyRecordFixture.php
 d9328c2422dc9b95f59ec537cc219eb9  tests/tests/kernel/classes/migration/expMigrationLocatorTest.php
 a16b86dcbf656fe3d3a97f49773ca77b  tests/tests/kernel/classes/migration/expMigrationProgressTest.php
-3bb8cf8e28b5fbbc3b00973c4378aade  tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php
-7ed2376bb7a52b4116d24558bb80e3f9  tests/tests/kernel/classes/migration/expMigrationRecordEngineChecks.php
-0f63ed92a79c90e5e9d9b9892612ee54  tests/tests/kernel/classes/migration/expMigrationRecordTest.php
+66f678d82024659561bd7d0683300eff  tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php
+96200222ecd578cb0a0e5908780aef02  tests/tests/kernel/classes/migration/expMigrationRecordEngineChecks.php
+3afd888676ce91d4721368860b910016  tests/tests/kernel/classes/migration/expMigrationRecordTest.php
 99eb4b0f8537353b0d0fa14b458acc28  tests/tests/kernel/classes/migration/expMigrationRepositoryGitTest.php
 a796389e1f17e661b2b5396b08c472f9  tests/tests/kernel/classes/migration/expMigrationRunnerDatabaseTest.php
 a0bf2d52bc8ba785107586db4fdb975d  tests/tests/kernel/classes/migration/expMigrationRunnerEngineChecks.php
@@ -27825,11 +27826,11 @@ a0bf2d52bc8ba785107586db4fdb975d  tests/tests/kernel/classes/migration/expMigrat
 cf675645496bc8be189eee8cd33fa09d  tests/tests/kernel/classes/migration/expMigrationRunnerSqliteTest.php
 e4926487134c14f5393868008f8aaeda  tests/tests/kernel/classes/migration/expMigrationRunnerTest.php
 37049ac2fb7081bfabee45a7742ff2a3  tests/tests/kernel/classes/migration/expMigrationStatusMirrorTest.php
-e3129823c2e642f40ad9eec6601a4e75  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceDatabaseTest.php
-faf793be04671bd05522855d3670afb9  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceEngineChecks.php
+197276b72caba8d1897e068370ea603d  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceDatabaseTest.php
+763531373eacae19fd90983b3cfa0810  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceEngineChecks.php
 e798cc117bdc3a00ddf2dccf55cf9694  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceFakes.php
-5c80d5e2a5b5de7946ef9b032bf044fd  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceSqliteTest.php
-3c2f2aa5cbbad200f7a5e63b992e85d8  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceTest.php
+ae9336188e77bb4d3ed918ef5ed545ca  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceSqliteTest.php
+42abb14eb1ff886a1d75fdb276a169c2  tests/tests/kernel/classes/migration/expMigrationUpgradeSourceTest.php
 3f34a28edc5068b281efac522692a414  tests/tests/kernel/classes/migration/fixtures/broken/20261001100000_engine_php.mysql.php
 60d26565dd23429bf3e787609f7a7c59  tests/tests/kernel/classes/migration/fixtures/broken/20261001100000_unknown_type.yaml
 cc9ff3f93ed421917955cf7c1c955fde  tests/tests/kernel/classes/migration/fixtures/broken/20261002100000_two_types.sql
@@ -28042,7 +28043,7 @@ a46daadcacf40b3c72d11dfc374d7cb9  tests/tests/kernel/classes/updatesql/CheckDbFi
 ded10af0a07be9289ee8c915f595aa97  tests/tests/kernel/classes/updatesql/UpdateSqlStorageEngineTest.php
 350bffed928079590a31ed99f89b3471  tests/tests/kernel/classes/upgrade/expUpgradeCaptionTest.php
 77d79f5ce967639e5f788bf7f720b32c  tests/tests/kernel/classes/upgrade/expUpgradeCommandContractTest.php
-481f634d25a7310c1aa8724c5c753f6d  tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php
+0a5fdb6314bd6ad02f06d0d9069d45ba  tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php
 c5374788e293d90516fafc96e2ddf5fc  tests/tests/kernel/classes/upgrade/expUpgradeStagesTest.php
 f01cce69329b328fd2c30dde31ae9acb  tests/tests/kernel/classes/urlalias/eZURLAliasMLHistoryLiveTest.php
 53754521a05a67c502ea2299a5cde490  tests/tests/kernel/classes/urlalias/eZURLAliasMLMongoStorePathTest.php
@@ -28512,9 +28513,9 @@ c817175aad18a0e8f74e914c5f4c129f  tests/tests/lib/ezdb/ezmysqldb_fk_test.php
 1ba5531da251e3e2fe98aee16a330483  tests/tests/lib/ezdb/ezpostgresqldb_test.php
 b420e648e58a85dd6a5f9b4c864ff4c9  tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php
 a253766ecdacb35f10a837742a5abbb5  tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php
-8672f2038f8d1bb959de20a4fcf58833  tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php
+f2b4b95a59663a1246277b19df163ccd  tests/tests/lib/ezdb/mongodb/expMigrationRecordMongoDBTest.php
 65b617aab5094230a516765b5707d832  tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php
-7fc715c12c863a08a5cc2457a3ea7e2d  tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php
+6da12812d0d3b24c1f157e7df6d9f5b7  tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php
 3ae0f518a930be42555ac09c9a98f48a  tests/tests/lib/ezdb/mongodb/expMongoDBAdapterTest.php
 38be04b9091de550d95ec4f5228a40fc  tests/tests/lib/ezdb/mongodb/expMongoDBDeclaredDefaultTest.php
 bcef478dbd8dfaf8f6670a76305ed158  tests/tests/lib/ezdb/mongodb/expMongoDBIntegrationTest.php
@@ -28882,7 +28883,7 @@ a61043bda3eb3efaf8eaffbf565f08a2  update/database/mysql/5.1/dbupdate-5.0.0-to-5.
 7321a019827e7ce24573ae8826624b81  update/database/mysql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 7680457ef9ecafd8fe9a146626d2d8a5  update/database/mysql/5.4/dbupdate-cluster-5.3.0-to-5.4.0.sql
 43c32f318d8ec6354ab033b790353089  update/database/mysql/6.0/dbupdate-5.4.0-6.0.0.sql
-ace2d14a191e2df86e20a77a13657854  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
+c68d9b5030f9a74ba8c27fed7b0e6fd0  update/database/mysql/6.0/dbupdate-6.0.0-6.0.15.sql
 3806e9ec4c551f214c5e0f86f860b64f  update/database/mysql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 bb0ce89d1c76bb76695febd06a28ca46  update/database/mysql/7.3/dbupdate-7.2.0-to-7.3.0.sql
 30a23dcc574e39f354b36f05f5bf0f94  update/database/postgresql/4.0/dbupdate-3.10.0-to-4.0.0.sql
@@ -28941,9 +28942,9 @@ f196d3eba4d08d12080638cb99775ce9  update/database/postgresql/5.0/unstable/dbupda
 0a900e1a2ac54e8f4846de13cd7d1f30  update/database/postgresql/5.3/dbupdate-5.2.0-to-5.3.0.sql
 ab1512294f4ace4ea923fcf1d330aca5  update/database/postgresql/5.4/dbupdate-5.3.0-to-5.4.0.sql
 4cc9de0f1e3d43a26058cd19bf3108bb  update/database/postgresql/6.0/dbupdate-5.4-to-6.0.sql
-e0c021c9234c0ed75e5b9139c7925767  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
+fdd2af3bed3145a7823d9f8c7fdbc0a8  update/database/postgresql/6.0/dbupdate-6.0.0-6.0.15.sql
 313e455d9c0200725889659590a92293  update/database/postgresql/6.12/dbupdate-5.4.0-to-6.12.0.sql
 35a6d893420f38ab6f24bf95a93484a9  update/database/postgresql/7.2/dbupdate-6.13.0-to-7.2.0.sql
 df0a9f5046cb6496859e5d8a2769d085  update/database/postgresql/7.3/dbupdate-7.2.0-to-7.3.0.sql
-72792198b016c4de804c1741179545e7  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
+228541a1df4cc0e7152860b09af30db1  update/database/sqlite/6.0/dbupdate-6.0.0-6.0.15.sql
 9764546a5fb37d4866284a992991c819  webdav.php

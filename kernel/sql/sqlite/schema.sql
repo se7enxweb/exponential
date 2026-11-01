@@ -903,18 +903,6 @@ CREATE TABLE `expuser_audit` (
 ,  `value_after` longtext
 ,  `value_before` longtext
 );
-CREATE TABLE `expupgrade_step` (
-  `applied_at` integer NOT NULL DEFAULT '0'
-,  `applied_by` varchar(150) NOT NULL DEFAULT ''
-,  `checksum` varchar(64) NOT NULL DEFAULT ''
-,  `duration_ms` integer NOT NULL DEFAULT '0'
-,  `engine` varchar(30) NOT NULL DEFAULT ''
-,  `message` varchar(1000) NOT NULL DEFAULT ''
-,  `stage` varchar(20) NOT NULL DEFAULT ''
-,  `state` varchar(20) NOT NULL DEFAULT ''
-,  `step_id` varchar(150) NOT NULL DEFAULT '' PRIMARY KEY
-,  `version` varchar(30) NOT NULL DEFAULT ''
-);
 CREATE TABLE `exp_migration` (
   `caption_id` varchar(150) NOT NULL DEFAULT ''
 ,  `checksum` varchar(64) NOT NULL DEFAULT ''
