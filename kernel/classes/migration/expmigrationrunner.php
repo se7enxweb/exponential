@@ -62,12 +62,13 @@ class expMigrationRunner
      * @param expMigrationContext $context
      * @param array $options 'force' => bool, 'reason' => string (both for the checksum guard),
      *                       'stop-on-failure' => bool (default true),
-     *                       'flow' => expMigrationRunFlow|null (captions, restore on failure, commit, tag, push)
+     *                       'flow' => expMigrationRunFlow|null (captions, restore on failure, commit, tag, push),
+     *                       'plan' => bool (default true; false: a dry run lists no plan(), as the status does)
      */
     public function __construct( expMigrationContext $context, array $options = array() )
     {
         $this->context = $context;
-        $this->options = $options + array( 'force' => false, 'reason' => '', 'stop-on-failure' => true, 'flow' => null );
+        $this->options = $options + array( 'force' => false, 'reason' => '', 'stop-on-failure' => true, 'flow' => null, 'plan' => true );
     }
 
     /** @return expMigrationRunFlow|null */
@@ -95,7 +96,9 @@ class expMigrationRunner
      * Finds, orders, loads and runs the installation's migrations on its database (the entry point the console
      * commands and the administration build on). A dry run unless $options['apply'].
      *
-     * @param array $options apply, force, reason, login, environment, the options of expMigrationContext and those of
+     * @param array $options apply, force, reason, login, environment, only (migration ids), path (files or folders,
+     *                       select()), migrations (expMigration[] in their order instead of the installation's: a
+     *                       test's), the options of expMigrationContext and those of
      *                       expMigrationRunFlow::fromSettings() (no-caption, no-restore, no-commit, no-push, no-tag,
      *                       include-uncommitted)
      * @return array the report; the problems of finding and loading are its errors
@@ -106,7 +109,28 @@ class expMigrationRunner
             $options['repository'] = expMigrationRepository::fromSettings( $options )->directory();
         $context = new expMigrationContext( isset( $options['db'] ) ? $options['db'] : null, !empty( $options['apply'] ), $options );
         $errors = array();
-        $migrations = self::migrations( $context->environment(), $errors );
+        $migrations = isset( $options['migrations'] ) ? array_values( (array)$options['migrations'] ) : self::migrations( $context->environment(), $errors );
+        $only = isset( $options['only'] ) ? expUpgrade::listOption( $options['only'] ) : array();
+        $paths = isset( $options['path'] ) ? expUpgrade::listOption( $options['path'] ) : array();
+        if ( $only || $paths )
+        {
+            $all = $migrations;
+            $migrations = self::select( $all, $only, $paths, $context->root(), $errors );
+            foreach ( self::unselectedRequirements( $migrations, $all ) as $id => $deps )
+                foreach ( $deps as $dep )
+                {
+                    try
+                    {
+                        $state = (string)$dep->state( $context );
+                    }
+                    catch ( Throwable $e )
+                    {
+                        $state = expMigration::UNKNOWN;
+                    }
+                    if ( !in_array( $state, array( expMigration::DONE, expMigration::NOT_NEEDED ), true ) )
+                        $errors[] = "$id requires " . $dep->id() . ", which is $state and not selected: add it to --only or --path";
+                }
+        }
         $runnerOptions = self::settingsOptions( array_intersect_key( $options, array_flip( array( 'force', 'reason', 'stop-on-failure' ) ) ) );
         $runnerOptions['flow'] = expMigrationRunFlow::fromSettings( $context, $options );
         $runner = new self( $context, $runnerOptions );
@@ -120,6 +144,92 @@ class expMigrationRunner
             return $report;
         }
         return $runner->run( $migrations );
+    }
+
+    /**
+     * The migrations of a selection, in their order: those whose id is in $only, and those whose file is one of $paths
+     * or inside one of them (a path relative to the installation's root or absolute). An id or a path that selects
+     * nothing is an error. Pure apart from resolving the paths.
+     *
+     * @param expMigration[] $migrations in their order
+     * @param string[] $only migration ids
+     * @param string[] $paths files or folders
+     * @param string $root the installation's root
+     * @param string[] $errors problems are added here
+     * @return expMigration[]
+     */
+    public static function select( array $migrations, array $only, array $paths, $root, array &$errors = array() )
+    {
+        $root = rtrim( (string)$root, '/' );
+        $normalize = function ( $path ) use ( $root ) {
+            $path = rtrim( (string)$path, '/' );
+            if ( $path === '' )
+                return '';
+            if ( $path[0] !== '/' )
+                $path = $root . '/' . ( strpos( $path, './' ) === 0 ? substr( $path, 2 ) : $path );
+            $real = realpath( $path );
+            return $real !== false ? $real : $path;
+        };
+        $wanted = array();
+        foreach ( $paths as $path )
+            if ( ( $n = $normalize( $path ) ) !== '' )
+                $wanted[$path] = $n;
+        $usedIds = array();
+        $usedPaths = array();
+        $selected = array();
+        foreach ( $migrations as $migration )
+        {
+            $take = false;
+            $id = (string)$migration->id();
+            if ( in_array( $id, $only, true ) )
+            {
+                $take = true;
+                $usedIds[$id] = true;
+            }
+            $file = method_exists( $migration, 'file' ) ? (string)$migration->file() : '';
+            if ( $file !== '' && $wanted )
+            {
+                $file = $normalize( $file );
+                foreach ( $wanted as $given => $path )
+                    if ( $file === $path || strpos( $file, $path . '/' ) === 0 )
+                    {
+                        $take = true;
+                        $usedPaths[$given] = true;
+                    }
+            }
+            if ( $take )
+                $selected[] = $migration;
+        }
+        foreach ( $only as $id )
+            if ( !isset( $usedIds[$id] ) )
+                $errors[] = "no migration $id (--only)";
+        foreach ( array_keys( $wanted ) as $given )
+            if ( !isset( $usedPaths[$given] ) )
+                $errors[] = "no migration in $given (--path): a path must be a migration file or a folder in a migrations directory";
+        return $selected;
+    }
+
+    /**
+     * The requirements of selected migrations that are not selected themselves. Pure.
+     *
+     * @param expMigration[] $selected
+     * @param expMigration[] $all
+     * @return array id => expMigration[] the requirements left out
+     */
+    public static function unselectedRequirements( array $selected, array $all )
+    {
+        $byId = array();
+        foreach ( $all as $migration )
+            $byId[(string)$migration->id()] = $migration;
+        $in = array();
+        foreach ( $selected as $migration )
+            $in[(string)$migration->id()] = true;
+        $out = array();
+        foreach ( $selected as $migration )
+            foreach ( (array)$migration->requires() as $dep )
+                if ( !isset( $in[$dep] ) && isset( $byId[$dep] ) )
+                    $out[(string)$migration->id()][] = $byId[$dep];
+        return $out;
     }
 
     /** @return expMigrationContext */
@@ -262,6 +372,11 @@ class expMigrationRunner
                 {
                     $entry =& $report['migrations'][$i];
                     $entry['action'] = 'would-apply';
+                    if ( !$this->options['plan'] )
+                    {
+                        unset( $entry );
+                        continue;
+                    }
                     try
                     {
                         $entry['plan'] = array_values( array_map( 'strval', (array)$byId[$entry['id']]->plan( $context ) ) );
@@ -828,7 +943,7 @@ class expMigrationRunner
     {
         // states (done, pending, not-needed, failed, unknown) and actions (applied ...); "failed" is the state
         $states = array( expMigration::DONE, expMigration::PENDING, expMigration::NOT_NEEDED, expMigration::FAILED, expMigration::UNKNOWN );
-        $actions = array( 'applied', 'would-apply', 'not-run', 'blocked', 'refused', 'accepted', 'would-accept', 'undone', 'would-undo', 'restored' );
+        $actions = array( 'applied', 'would-apply', 'not-run', 'blocked', 'refused', 'accepted', 'would-accept', 'undone', 'would-undo', 'restored', 'simulated' );
         $summary = array( 'total' => count( $report['migrations'] ) ) + array_fill_keys( array_merge( $states, $actions ), 0 );
         foreach ( $report['migrations'] as $entry )
         {

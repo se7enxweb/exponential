@@ -265,15 +265,21 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         $code = 'chdir( ' . var_export( $root, true ) . ' ); require "autoload.php";'
               . '$r = eZPackageUploadInspector::inspect( ' . var_export( realpath( $path ), true ) . ', "k1.ezpkg" );'
               . 'echo $r["ok"] ? "ok" : $r["code"];';
-        $process = proc_open( array( PHP_BINARY, '-d', 'max_execution_time=0', '-r', $code ),
+        // display_errors=stderr: on PHP 8.4+ zetacomponents/archive prints deprecations, which belong on stderr and not
+        // in the answer read from stdout (Redmine #16709)
+        $process = proc_open( array( PHP_BINARY, '-d', 'max_execution_time=0', '-d', 'display_errors=stderr', '-r', $code ),
                               array( 1 => array( 'pipe', 'w' ), 2 => array( 'pipe', 'w' ) ), $pipes, $root );
         $this->assertIsResource( $process );
         stream_set_blocking( $pipes[1], false );
+        stream_set_blocking( $pipes[2], false );
         $output = '';
+        $stderr = '';
         $deadline = microtime( true ) + 15;
         do
         {
+            // stderr is read as it comes too, so that a child printing many notices never blocks on a full pipe
             $output .= (string)stream_get_contents( $pipes[1] );
+            $stderr .= (string)stream_get_contents( $pipes[2] );
             $status = proc_get_status( $process );
             if ( !$status['running'] )
                 break;
@@ -283,7 +289,7 @@ class expPackageArchiveTest extends PHPUnit\Framework\TestCase
         if ( $running )
             proc_terminate( $process, 9 );
         $output .= (string)stream_get_contents( $pipes[1] );
-        $stderr = (string)stream_get_contents( $pipes[2] );
+        $stderr .= (string)stream_get_contents( $pipes[2] );
         fclose( $pipes[1] );
         fclose( $pipes[2] );
         proc_close( $process );

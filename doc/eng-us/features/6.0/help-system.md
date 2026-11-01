@@ -490,6 +490,17 @@ file, keeps the index, the search index and the rendered pages. A new index is b
 other requests use the newest index already in the cache until it is ready (the search index likewise), instead
 of each building its own. Removed versions are also dropped from OPcache, so its memory is reclaimed.
 
+A help page never waits for a build (15 to 30 seconds) while an older index is in the cache: it answers from that
+one and starts `exp:help index` for its language in the background (`setsid`; the marker `index.building` keeps it
+to one build, and a marker older than five minutes is retried). The page after the build uses the new index. Only
+when there is no index at all (a fresh installation, a new index format) does a request build it itself.
+`exp:velocity deploy` builds the index right after the caches are cleared (step "help index"), so the first help page
+after a landing already shows the new pages. Every siteaccess and the console build the same index: the
+extensions whose documentation it holds are `ActiveExtensions[]` and the `ActiveAccessExtensions[]` of every
+siteaccess, never only those of the current one, so a console run no longer replaces the administration's index.
+The lock and marker files get the storage file mode, like the index, so a console run as root leaves them usable
+by the web server. The order of the pages for the previous and next links is kept per index in `order/`.
+
 ## Languages and accessibility
 
 The labels of the help pages (dashboard, search, page viewer, error report, the Help button) are in the

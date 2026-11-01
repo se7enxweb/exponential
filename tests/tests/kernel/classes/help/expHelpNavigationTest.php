@@ -158,4 +158,110 @@ class expHelpNavigationTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'page7.md', $all, 'the contents page keeps folded folders folded' );
         $this->assertStringNotContainsString( '<!--', $all );
     }
+
+    /** HN-07 the viewer's tree: the top folders, the way to the page open with its pages, the rest closed and lazy */
+    public function testPathHtmlOpensOnlyTheWayToThePage()
+    {
+        $html = ( new expHelpNavigation( $this->index() ) )->pathHtml( 'features/6.0/extensions/page7.md' );
+        $this->assertStringStartsWith( '<ul class="a4-help-nav-list is-top" role="list">', $html );
+        $this->assertStringContainsString( '<details open class="a4-help-nav-details" data-nav-path="features">', $html );
+        $this->assertStringContainsString( '<details open class="a4-help-nav-details" data-nav-path="features/6.0">', $html );
+        $this->assertStringContainsString( '<details open class="a4-help-nav-details" data-nav-path="features/6.0/extensions">', $html );
+        $this->assertSame( 150, preg_match_all( '#/extensions/page\d+\.md"#', $html ), 'the folder of the page lists all its pages' );
+        $this->assertMatchesRegularExpression( '#/page7\.md" aria-current="page"#', $html );
+        $this->assertSame( 1, substr_count( $html, 'aria-current="page"' ) );
+        // bc is closed, its list loads on demand; without JavaScript it links to its listing
+        $this->assertMatchesRegularExpression( '#<details class="a4-help-nav-details" data-nav-path="bc" data-nav-lazy="[^"]*/exphelp/navigation/bc/\(format\)/fragment">#', $html );
+        $this->assertStringNotContainsString( 'bc/a.md', $html, 'a closed folder does not list its pages' );
+        $this->assertMatchesRegularExpression( '#<a class="a4-help-nav-link is-more" href="[^"]*/exphelp/navigation/bc">#', $html );
+        $this->assertStringNotContainsString( '<!--', $html, 'no mark is left in the page' );
+        $this->assertStringNotContainsString( 'data-nav-path="empty"', $html );
+        $this->assertStringContainsString( 'README.md">About this documentation</a>', $html );
+        $this->assertStringContainsString( 'INSTALL.md"', $html, 'the pages at the top are listed' );
+
+        $top = ( new expHelpNavigation( $this->index() ) )->pathHtml( 'INSTALL.md' );
+        $this->assertStringNotContainsString( 'page7.md', $top );
+        $this->assertStringNotContainsString( '<details open', $top, 'a page at the top opens no folder' );
+        $this->assertMatchesRegularExpression( '#/INSTALL\.md" aria-current="page"#', $top );
+        $this->assertLessThan( strlen( $html ), strlen( $top ) );
+
+        // an overview page opens its own folder and is marked there
+        $readme = ( new expHelpNavigation( $this->index() ) )->pathHtml( 'features/6.0/extensions/README.md' );
+        $this->assertStringContainsString( '<details open class="a4-help-nav-details" data-nav-path="features/6.0/extensions">', $readme );
+        $this->assertMatchesRegularExpression( '#extensions/README\.md" aria-current="page">Overview</a>#', $readme );
+
+        // an id whose folders are not in the tree opens nothing
+        $unknown = ( new expHelpNavigation( $this->index() ) )->pathHtml( 'nowhere/deep/x.md' );
+        $this->assertStringNotContainsString( '<details open', $unknown );
+    }
+
+    /** HN-08 a folder's list items (the fragment the viewer loads), escaped, its subfolders lazy */
+    public function testFolderHtml()
+    {
+        $nav = new expHelpNavigation( $this->index() );
+        $features = $nav->folderHtml( 'features' );
+        $this->assertStringNotContainsString( 'help-system.md', $features, 'the pages of features/6.0 are not listed in features' );
+        $this->assertStringContainsString( 'data-nav-path="features/6.0" data-nav-lazy=', $features );
+        $features = $nav->folderHtml( 'features/6.0' );
+        $this->assertStringContainsString( 'The &lt;help&gt; system', $features );
+        $this->assertStringContainsString( 'data-nav-path="features/6.0/extensions" data-nav-lazy=', $features );
+        $this->assertStringNotContainsString( 'page7.md', $features );
+        $this->assertStringNotContainsString( '<!--', $features );
+        $this->assertStringStartsWith( '<li', $features, 'list items only, for the folder\'s own list' );
+        $deep = $nav->folderHtml( '/features/6.0/extensions/' );
+        $this->assertSame( 150, preg_match_all( '#/extensions/page\d+\.md"#', $deep ) );
+        $this->assertMatchesRegularExpression( '#^<li class="a4-help-nav-page"><a class="a4-help-nav-link is-index" href="[^"]*extensions/README\.md">Overview</a></li>#', $deep );
+        $this->assertNull( $nav->folderHtml( 'nowhere' ) );
+        $this->assertNull( $nav->folderHtml( 'empty' ), 'a folder without pages is not listed' );
+        $this->assertNull( $nav->folderHtml( '../etc' ) );
+        $marked = $nav->folderHtml( 'bc', 'bc/a.md' );
+        $this->assertMatchesRegularExpression( '#/bc/a\.md" aria-current="page"#', $marked );
+        $info = $nav->folderInfo( 'features/6.0/extensions' );
+        $this->assertSame( array( 'path' => 'features/6.0/extensions', 'title' => 'Extensions in 6.0', 'count' => 151,
+                                  'index_id' => 'features/6.0/extensions/README.md' ), $info );
+        $this->assertNull( $nav->folderInfo( 'nowhere' ) );
+    }
+
+    /** HN-09 each level is cached per signature: a second request walks no tree, a new signature builds again */
+    public function testLevelsCachedPerSignature()
+    {
+        $index = $this->index();
+        $first = ( new expHelpNavigation( $index ) )->pathHtml( 'features/6.0/extensions/page7.md' );
+        $calls = $index->calls;
+        $this->assertSame( 1, $calls, 'four levels, one walk of the tree' );
+        $again = ( new expHelpNavigation( $index ) )->pathHtml( 'features/6.0/extensions/page7.md' );
+        ( new expHelpNavigation( $index ) )->folderHtml( 'features' );
+        ( new expHelpNavigation( $index ) )->pathHtml( 'bc/a.md' );
+        $this->assertSame( $first, $again );
+        $this->assertSame( $calls + 1, $index->calls, 'only bc, not seen before, walks the tree' );
+        ( new expHelpNavigation( $index ) )->folderHtml( 'nowhere' );
+        ( new expHelpNavigation( $index ) )->folderHtml( 'nowhere' );
+        $this->assertSame( $calls + 2, $index->calls, 'an unknown folder is remembered too' );
+        $index->signature = 'changed';
+        ( new expHelpNavigation( $index ) )->pathHtml( 'bc/a.md' );
+        $this->assertSame( $calls + 3, $index->calls, 'top and bc again, from one walk of the tree' );
+    }
+
+    /** HN-10 the fragment view (exphelp/navigation/<folder>/(format)/fragment|tree) */
+    public function testFragmentView()
+    {
+        if ( !class_exists( 'Exponential\\View\\Kernel\\Exphelp\\Navigation' ) )
+        {
+            if ( !class_exists( 'Exponential\\Runnable\\ModuleView' ) )
+                $this->markTestSkipped( 'the module view base class is not loadable here' );
+            require_once __DIR__ . '/../../../../../kernel/private/classes/views/exphelp/navigation.php';
+        }
+        $nav = new expHelpNavigation( $this->index() );
+        $view = 'Exponential\\View\\Kernel\\Exphelp\\Navigation';
+        $this->assertSame( $nav->folderHtml( 'bc' ), $view::fragment( $nav, 'bc', 'fragment' ) );
+        $this->assertStringContainsString( 'bc/a.md', $view::fragment( $nav, 'bc/', 'fragment' ) );
+        $this->assertNull( $view::fragment( $nav, 'nowhere', 'fragment' ) );
+        $this->assertNull( $view::fragment( $nav, 'bc', 'json' ) );
+        $tree = $view::fragment( $nav, '', 'tree' );
+        $this->assertSame( 155, preg_match_all( '#href="[^"]*/exphelp/viewer/[^"]+"#', $tree ), 'the filter gets every page' );
+        $this->assertStringNotContainsString( 'data-nav-lazy', $tree );
+        $this->assertStringNotContainsString( '<details open', $tree );
+        $module = file_get_contents( __DIR__ . '/../../../../../kernel/exphelp/module.php' );
+        $this->assertMatchesRegularExpression( "#\\\$ViewList\['navigation'\] = array\(.*?'functions' => array\( 'read' \)#s", $module, 'the policy of the viewer' );
+    }
 }

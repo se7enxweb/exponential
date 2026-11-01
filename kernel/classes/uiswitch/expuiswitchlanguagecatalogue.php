@@ -242,10 +242,70 @@ class expUISwitchLanguageCatalogue
                 return self::$memory[$signature] = $data['entries'];
         }
 
-        $entries = $this->build();
+        // with a time budget (setTimeBudget()) the masks not built within it are left for the next request: the
+        // entries then carry their names, and pending => true where the coverage is not known yet
+        $deadline = $this->timeBudget !== null ? microtime( true ) + $this->timeBudget : null;
+        if ( $deadline !== null && isset( $this->partial[$signature] ) && $this->partial[$signature]['generation'] === self::$generation )
+            return $this->partial[$signature]['entries'];
+        $entries = $this->build( $deadline );
+        if ( $this->buildPending )
+        {
+            $this->partial = array( $signature => array( 'generation' => self::$generation, 'entries' => $entries ) );
+            return $entries;
+        }
+        $this->partial = array();
         if ( $file !== '' )
             $this->store( $file, json_encode( array( 'signature' => $signature, 'entries' => $entries ) ) );
         return self::$memory[$signature] = $entries;
+    }
+
+    /** @var float|null seconds a request may spend building translation masks; null: no limit (setTimeBudget()) */
+    protected $timeBudget = null;
+
+    /** @var bool whether the last build() left coverages pending (its time budget ran out) */
+    protected $buildPending = false;
+
+    /** @var array signature => hash( generation, entries ): the entries of a build that left coverages pending */
+    protected $partial = array();
+
+    /**
+     * Limits the time one request spends building translation masks (Redmine #16709: the first administration
+     * request after the caches were cleared built the masks of every translation, more than 30 seconds for 156 of
+     * them, only for the percentages of the language choice). With a budget, entries() builds masks only until it
+     * runs out; the remaining locales get their names and pending => true instead of a coverage, the masks built so
+     * far are kept (translation-masks.json), and the next request goes on from there. The complete catalogue is
+     * cached as before once every mask is there. null: no limit (Setup > Interface languages, the console, tests).
+     *
+     * @param float|null $seconds
+     */
+    public function setTimeBudget( $seconds )
+    {
+        $this->timeBudget = $seconds === null ? null : max( 0.0, (float)$seconds );
+    }
+
+    /**
+     * The time budget given with setTimeBudget(), or null.
+     *
+     * @return float|null
+     */
+    public function timeBudget()
+    {
+        return $this->timeBudget;
+    }
+
+    /**
+     * Whether the catalogue knows every coverage: false while a budgeted build (setTimeBudget()) left some pending.
+     *
+     * @return bool
+     */
+    public function isComplete()
+    {
+        foreach ( $this->entries() as $entry )
+        {
+            if ( !empty( $entry['pending'] ) )
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -261,12 +321,16 @@ class expUISwitchLanguageCatalogue
     }
 
     /**
-     * Builds the catalogue from the files.
+     * Builds the catalogue from the files. With a deadline (microtime), masks that are not stored yet are only built
+     * until it has passed; the locales that need one of the others get coverage null and pending => true, and
+     * buildPending is set.
      *
+     * @param float|null $deadline
      * @return array
      */
-    public function build()
+    public function build( $deadline = null )
     {
+        $this->buildPending = false;
         // Every translation is read on its own and kept only as a mask of the source messages it translates (a byte
         // each, some 19 KB), never as its messages: with 125 complete translations of 19,000 messages their key
         // arrays took more than a gigabyte together.
@@ -288,6 +352,7 @@ class expUISwitchLanguageCatalogue
         {
             $names = $this->readLocaleNames( $this->path( 'share/locale/' . $code . '.ini' ) );
             $coverage = null;
+            $pending = false;
             $fallback = '';
             $chain = array_values( array_diff( $resolver->chain( $code ), array( expI18nFallbackResolver::SOURCE ) ) );
             if ( strpos( $code, 'eng-' ) === 0 )
@@ -314,7 +379,24 @@ class expUISwitchLanguageCatalogue
                     if ( !$merge )
                         break;
                 }
-                if ( $files )
+                if ( $files && $deadline !== null )
+                {
+                    // past the deadline only the masks already stored are used
+                    foreach ( $files as $ts )
+                    {
+                        if ( !isset( $maskOf[$ts] ) && microtime( true ) >= $deadline )
+                        {
+                            $stored = $this->storedMask( $ts, $sourceStamp );
+                            if ( $stored === null )
+                            {
+                                $pending = true;
+                                break;
+                            }
+                            $maskOf[$ts] = $stored;
+                        }
+                    }
+                }
+                if ( $files && !$pending )
                 {
                     // the translated source messages of the files together: the masks OR-ed, a byte per message
                     $mask = '';
@@ -330,11 +412,14 @@ class expUISwitchLanguageCatalogue
                     }
                     $coverage = self::maskCoveragePercent( $mask, $count, $any );
                 }
+                $this->buildPending = $this->buildPending || $pending;
             }
             $entries[$code] = array( 'native' => $names['LanguageName'], 'english' => $names['InternationalLanguageName'],
                                      'http' => $names['ContentLanguage'], 'coverage' => $coverage, 'fallback' => $fallback, 'chain' => $chain,
                                      'intl_native' => strpos( $code, '@' ) === false ? self::intlDisplayName( $names['ContentLanguage'], $names['ContentLanguage'] ) : '',
                                      'test' => strtolower( $names['TestLanguage'] ) === 'true' );
+            if ( $pending )
+                $entries[$code]['pending'] = true;
         }
         $this->saveMasks();
         return $entries;
@@ -377,19 +462,10 @@ class expUISwitchLanguageCatalogue
      */
     public function cachedMask( $file, $sourceStamp, callable $sourceIndex )
     {
-        $this->loadMasks();
+        $stored = $this->storedMask( $file, $sourceStamp );
+        if ( $stored !== null )
+            return $stored;
         $stamp = self::fileStamp( $file );
-        if ( isset( $this->maskStore[$file] ) )
-        {
-            $kept = $this->maskStore[$file];
-            if ( is_array( $kept ) && isset( $kept['stamp'], $kept['source'], $kept['count'], $kept['mask'] )
-                 && $kept['stamp'] === $stamp && $kept['source'] === (string)$sourceStamp )
-            {
-                $mask = self::decodeMask( (string)$kept['mask'] );
-                if ( $mask !== null && strlen( $mask ) === (int)$kept['count'] )
-                    return array( 'mask' => $mask, 'any' => !empty( $kept['any'] ), 'count' => (int)$kept['count'] );
-            }
-        }
         $index = $sourceIndex();
         $result = $this->translatedMask( $file, $index );
         $result['count'] = count( $index );
@@ -403,6 +479,29 @@ class expUISwitchLanguageCatalogue
                 $this->saveMasks();
         }
         return $result;
+    }
+
+    /**
+     * The mask of a translation file from the mask store when it is still valid (see cachedMask()), else null; never
+     * reads the file itself.
+     *
+     * @param string $file
+     * @param string $sourceStamp
+     * @return array|null hash( mask, any, count )
+     */
+    public function storedMask( $file, $sourceStamp )
+    {
+        $this->loadMasks();
+        if ( !isset( $this->maskStore[$file] ) )
+            return null;
+        $kept = $this->maskStore[$file];
+        if ( !is_array( $kept ) || !isset( $kept['stamp'], $kept['source'], $kept['count'], $kept['mask'] )
+             || $kept['stamp'] !== self::fileStamp( $file ) || $kept['source'] !== (string)$sourceStamp )
+            return null;
+        $mask = self::decodeMask( (string)$kept['mask'] );
+        if ( $mask === null || strlen( $mask ) !== (int)$kept['count'] )
+            return null;
+        return array( 'mask' => $mask, 'any' => !empty( $kept['any'] ), 'count' => (int)$kept['count'] );
     }
 
     /**

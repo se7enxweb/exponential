@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+/**
+ * File containing the expmigrationcaption.php script.
+ *
+ * Take a caption of the installation now (database, storage, settings, the commits of the code), or list the captions; a dry run unless --apply.
+ *
+ * @alias exp:migration:caption
+ *
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
+ */
+
+require_once 'autoload.php';
+
+// The code is in kernel/private/classes/commands/expmigrationcaption.php; this file is the entry point.
+\Exponential\Command\Kernel\Expmigrationcaption::main( __FILE__ );
