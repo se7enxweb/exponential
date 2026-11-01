@@ -107,10 +107,17 @@ class expStaticBuild
         return $dir;
     }
 
-    /** @return string the target's folder */
-    public function targetDirectory()
+    /** @return string the target's folder, its git repository */
+    public function checkoutDirectory()
     {
         return $this->workDirectory() . '/' . $this->target->id();
+    }
+
+    /** @return string the folder the build is written to: the target's folder, or its Folder in it (docs) */
+    public function targetDirectory()
+    {
+        $folder = $this->target->folder();
+        return $this->checkoutDirectory() . ( $folder !== '' ? '/' . $folder : '' );
     }
 
     /** @return int an INI number of [StaticPublishSettings], or the option */

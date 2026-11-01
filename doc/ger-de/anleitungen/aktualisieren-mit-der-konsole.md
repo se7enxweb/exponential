@@ -412,6 +412,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-order-siteaccess-column` | database | `ezorder.siteaccess` |
 | `6.0.15-user-audit-table` | database | `createuseraudittable.php` |
 | `6.0.15-user-login-unique-index` | database | `./console exp:user-login-check --fix-index` |
+| `6.0.15-static-publish-tables` | database | `exp_static_run`, `exp_static_page` (statisches Veröffentlichen) |
 | `6.0.15-site-version` | database | `ezsite_data` `ezpublish-version` auf 6.0.15 gesetzt |
 | `6.0.15-missing-user-settings` | scripts | `createmissingusersettings.php` |
 | `6.0.15-trash-records-to-columns` | scripts | `movetrashrecords.php` (die Datei bleibt erhalten) |

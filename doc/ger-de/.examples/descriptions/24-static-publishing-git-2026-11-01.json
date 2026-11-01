@@ -1,0 +1,94 @@
+{
+    "command:expstatickeys": {
+        "en": "Make or show the SSH deploy key of a static publishing target: ed25519, the private half in the secret store, the public half to add to the repository",
+        "de": "Den SSH-Deploy-Key eines Ziels des statischen Veröffentlichens erzeugen oder anzeigen: ed25519, die private Hälfte im Geheimnisspeicher, die öffentliche zum Hinzufügen beim Repository"
+    },
+    "command:expstatickeys --generate": {
+        "en": "Make a new deploy key (ed25519) and store its private half in the secret store",
+        "de": "Einen neuen Deploy-Key (ed25519) erzeugen und seine private Hälfte im Geheimnisspeicher ablegen"
+    },
+    "command:expstatickeys --replace": {
+        "en": "With --generate: replace the target's deploy key (the old one stops working)",
+        "de": "Mit --generate: den Deploy-Key des Ziels ersetzen (der alte funktioniert nicht mehr)"
+    },
+    "command:expstaticpublish": {
+        "en": "Publish a target's static build (static publishing): commit it in the target's git repository, tag it static/<target>/<n> and push it, never forced",
+        "de": "Den statischen Build eines Ziels veröffentlichen (statisches Veröffentlichen): im Git-Repository des Ziels committen, als static/<ziel>/<n> taggen und pushen, nie erzwungen"
+    },
+    "command:expstaticpublish --build": {
+        "en": "Build the target first (as exp:static:build); nothing is committed when the build does not finish",
+        "de": "Das Ziel zuerst bauen (wie exp:static:build); wird der Build nicht fertig, wird nichts committet"
+    },
+    "command:expstaticpublish --message": {
+        "en": "The commit message (default: what was published, or which publish is restored)",
+        "de": "Die Commit-Nachricht (Standard: was veröffentlicht wurde, oder welche Veröffentlichung wiederhergestellt wird)"
+    },
+    "command:expstaticpublish --no-push": {
+        "en": "Commit and tag, but do not push (exp:static:push pushes later)",
+        "de": "Committen und taggen, aber nicht pushen (exp:static:push pusht später)"
+    },
+    "command:expstaticpush": {
+        "en": "Push the static publishing targets whose push failed again (runs with push state pending), never forced",
+        "de": "Die Ziele des statischen Veröffentlichens erneut pushen, deren Push gescheitert ist (Läufe mit dem Push-Zustand pending), nie erzwungen"
+    },
+    "command:expstaticrollback": {
+        "en": "Roll a static publishing target back to an earlier publish: a new commit with the files of that tag, tagged and pushed; the history stays",
+        "de": "Ein Ziel des statischen Veröffentlichens auf eine frühere Veröffentlichung zurücknehmen: ein neuer Commit mit den Dateien dieses Tags, getaggt und gepusht; der Verlauf bleibt"
+    },
+    "command:expstaticrollback --apply": {
+        "en": "Make the rollback commit; without it the command only lists what would change",
+        "de": "Den Commit des Zurücknehmens machen; ohne zeigt der Befehl nur, was sich ändern würde"
+    },
+    "command:expstaticrollback --message": {
+        "en": "The commit message (default: what was published, or which publish is restored)",
+        "de": "Die Commit-Nachricht (Standard: was veröffentlicht wurde, oder welche Veröffentlichung wiederhergestellt wird)"
+    },
+    "command:expstaticrollback --no-push": {
+        "en": "Commit and tag, but do not push (exp:static:push pushes later)",
+        "de": "Committen und taggen, aber nicht pushen (exp:static:push pusht später)"
+    },
+    "command:expstaticstatus": {
+        "en": "The state of a static publishing target: its git repository, the credential (never its value), the last runs, waiting pushes and stale pages",
+        "de": "Der Zustand eines Ziels des statischen Veröffentlichens: sein Git-Repository, die Zugangsdaten (nie ihr Wert), die letzten Läufe, wartende Pushes und veraltete Seiten"
+    },
+    "command:expstaticstatus --limit": {
+        "en": "How many of the last runs to list (default 10)",
+        "de": "Wie viele der letzten Läufe aufgeführt werden (Standard 10)"
+    },
+    "cronjob:staticpublish.php": {
+        "en": "Static publishing: push the targets whose publish could not be pushed again (runs with push state pending)",
+        "de": "Statisches Veröffentlichen: die Ziele erneut pushen, deren Veröffentlichung nicht gepusht werden konnte (Läufe mit dem Push-Zustand pending)"
+    },
+    "cronjob:staticpublish.php docblock": {
+        "en": "The cronjob part staticpublish (cronjobs/staticpublish.php; [CronjobPart-staticpublish] in cronjob.ini): pushes the\nstatic publishing targets whose runs could not be pushed (exp_static_run.push_state pending) again\n(expStaticPublisher::retry(): the branch with every commit and the target's tags, never forced). Does nothing\nwhile static publishing is switched off or no run waits.",
+        "de": "Der Cronjob-Teil staticpublish (cronjobs/staticpublish.php; [CronjobPart-staticpublish] in cronjob.ini): pusht die\nZiele des statischen Veröffentlichens erneut, deren Läufe nicht gepusht werden konnten (exp_static_run.push_state pending)\n(expStaticPublisher::retry(): der Branch mit jedem Commit und die Tags des Ziels, nie erzwungen). Tut nichts,\nsolange das statische Veröffentlichen abgeschaltet ist oder kein Lauf wartet."
+    },
+    "ini:settings/audit.ini [AuditEventSettings] Enabled": {
+        "en": "Which events are recorded, by taxonomy pattern: a whole domain (content.*), a subject\n(content.node.*), an action with its details (content.node.remove.*) or one name.\nThe most specific pattern wins; on a tie the later line wins. Events marked \"always\"\nin the catalogue (system.audit.*, access.view.sensitive) ignore Disabled[].\nMigrations (migration.ini): a run, a migration applied (also a changed file accepted with\n--force --reason), failed or rolled back, a caption taken, the migrations repository pushed.\nA site that switches system.* off keeps them with these lines.\nStatic publishing: a publish (also a push tried again), a rollback, a deploy key made.",
+        "de": "Welche Ereignisse aufgezeichnet werden, nach Taxonomie-Muster: eine ganze Domäne (content.*), ein Gegenstand\n(content.node.*), eine Aktion mit ihren Details (content.node.remove.*) oder ein einzelner Name.\nDas genaueste Muster gewinnt; bei Gleichstand gewinnt die spätere Zeile. Ereignisse, die im Katalog als \"always\"\nmarkiert sind (system.audit.*, access.view.sensitive), ignorieren Disabled[].\nMigrationen (migration.ini): ein Lauf, eine angewendete Migration (auch eine mit --force --reason angenommene\ngeänderte Datei), eine gescheiterte oder zurückgenommene, ein angelegter Sicherungspunkt, ein Push des\nMigrations-Repositorys. Eine Site, die system.* abschaltet, behält sie mit diesen Zeilen.\nStatisches Veröffentlichen: eine Veröffentlichung (auch ein erneut versuchter Push), ein Zurücknehmen, ein erzeugter Deploy-Key."
+    },
+    "ini:settings/cronjob.ini [CronjobPart-staticpublish]": {
+        "en": "Static publishing (staticcache.ini [StaticPublishSettings]): the targets whose publish could not be pushed,\npushed again, never forced: php runcronjobs.php staticpublish. In no default part: add it to one the site\nruns, e.g. every 15 minutes.",
+        "de": "Statisches Veröffentlichen (staticcache.ini [StaticPublishSettings]): die Ziele, deren Veröffentlichung nicht gepusht\nwerden konnte, erneut gepusht, nie erzwungen: php runcronjobs.php staticpublish. In keinem Standardteil: in einen\nTeil aufnehmen, den die Site ausführt, z. B. alle 15 Minuten."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] CommitEmail": {
+        "en": "Its e-mail address; empty: static-publish@<host name>.",
+        "de": "Seine E-Mail-Adresse; leer: static-publish@<Hostname>."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] CommitName": {
+        "en": "The committer of a publish when the target's repository names none.",
+        "de": "Der Committer einer Veröffentlichung, wenn das Repository des Ziels keinen nennt."
+    },
+    "ini:settings/staticcache.ini [StaticPublishSettings] Push": {
+        "en": "Whether exp:static:publish and exp:static:rollback push to the target's\nRemote: enabled, or disabled to commit and tag in the target's folder only\n(exp:static:push pushes later). A push is never forced.",
+        "de": "Ob exp:static:publish und exp:static:rollback zum Remote des Ziels pushen:\nenabled, oder disabled, um nur im Ordner des Ziels zu committen und zu taggen\n(exp:static:push pusht später). Ein Push wird nie erzwungen."
+    },
+    "ini:settings/staticcache.ini [Target_example] Credential": {
+        "en": "The credential the push uses: token:<secret name> (or token:env:<VARIABLE>)\nfor an https Remote, sshkey:<secret name> for an SSH Remote (exp:static:keys\n<target> --generate makes the key: sshkey:staticpublish.<target>.deploy_key),\napp:<installation> (a GitHub App, with the GitHub integration), or none (the\nhost's own SSH agent or credential helper). Only a name; the value stays in\nSetup > Secrets and reaches git only through its environment.",
+        "de": "Die Zugangsdaten, die der Push nutzt: token:<geheimnisname> (oder token:env:<VARIABLE>)\nfür ein https-Remote, sshkey:<geheimnisname> für ein SSH-Remote (exp:static:keys\n<ziel> --generate erzeugt den Schlüssel: sshkey:staticpublish.<ziel>.deploy_key),\napp:<installation> (eine GitHub-App, mit der GitHub-Anbindung) oder none (der\neigene SSH-Agent oder Credential-Helper des Hosts). Nur ein Name; der Wert bleibt in\nSetup > Geheimnisse und gelangt nur über seine Umgebung zu git."
+    },
+    "shell:expstaticaskpass": {
+        "en": "Static publishing: git's password helper (GIT_ASKPASS) for a target with a token credential",
+        "de": "Statisches Veröffentlichen: das Passwort-Hilfsprogramm von git (GIT_ASKPASS) für ein Ziel mit einem Token als Zugangsdaten"
+    }
+}

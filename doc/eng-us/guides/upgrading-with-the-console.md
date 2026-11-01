@@ -388,6 +388,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-order-siteaccess-column` | database | `ezorder.siteaccess` |
 | `6.0.15-user-audit-table` | database | `createuseraudittable.php` |
 | `6.0.15-user-login-unique-index` | database | `./console exp:user-login-check --fix-index` |
+| `6.0.15-static-publish-tables` | database | `exp_static_run`, `exp_static_page` (static publishing) |
 | `6.0.15-site-version` | database | `ezsite_data` `ezpublish-version` set to 6.0.15 |
 | `6.0.15-missing-user-settings` | scripts | `createmissingusersettings.php` |
 | `6.0.15-trash-records-to-columns` | scripts | `movetrashrecords.php` (the file is kept) |

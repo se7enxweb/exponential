@@ -2733,6 +2733,40 @@ CREATE TABLE exp_migration (
 
 
 
+CREATE TABLE exp_static_page (
+    built_at integer DEFAULT 0 NOT NULL,
+    hash character varying(64) DEFAULT ''::character varying NOT NULL,
+    node_id integer DEFAULT 0 NOT NULL,
+    page_bytes integer DEFAULT 0 NOT NULL,
+    path character varying(255) DEFAULT ''::character varying NOT NULL,
+    stale integer DEFAULT 0 NOT NULL,
+    target character varying(50) DEFAULT ''::character varying NOT NULL
+);
+
+
+
+CREATE TABLE exp_static_run (
+    added integer DEFAULT 0 NOT NULL,
+    bytes integer DEFAULT 0 NOT NULL,
+    changed integer DEFAULT 0 NOT NULL,
+    commit_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    files integer DEFAULT 0 NOT NULL,
+    finished_at integer DEFAULT 0 NOT NULL,
+    kind character varying(20) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    pages integer DEFAULT 0 NOT NULL,
+    push_state character varying(20) DEFAULT ''::character varying NOT NULL,
+    removed integer DEFAULT 0 NOT NULL,
+    run_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    run_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    tag_name character varying(150) DEFAULT ''::character varying NOT NULL,
+    target character varying(50) DEFAULT ''::character varying NOT NULL
+);
+
+
+
 CREATE TABLE exp_migration_run (
     caption_post character varying(150) DEFAULT ''::character varying NOT NULL,
     caption_pre character varying(150) DEFAULT ''::character varying NOT NULL,
@@ -4317,6 +4351,14 @@ CREATE INDEX exp_migration_run_id ON exp_migration USING btree (run_id);
 
 
 
+CREATE INDEX exp_static_page_node ON exp_static_page USING btree (node_id);
+
+
+
+CREATE INDEX exp_static_run_target ON exp_static_run USING btree (target, started_at);
+
+
+
 CREATE INDEX exp_migration_run_started ON exp_migration_run USING btree (started_at);
 
 
@@ -5427,6 +5469,16 @@ ALTER TABLE ONLY expuser_audit
 
 ALTER TABLE ONLY exp_migration
     ADD CONSTRAINT exp_migration_pkey PRIMARY KEY (source, migration_id);
+
+
+
+ALTER TABLE ONLY exp_static_page
+    ADD CONSTRAINT exp_static_page_pkey PRIMARY KEY (target, path);
+
+
+
+ALTER TABLE ONLY exp_static_run
+    ADD CONSTRAINT exp_static_run_pkey PRIMARY KEY (run_id);
 
 
 

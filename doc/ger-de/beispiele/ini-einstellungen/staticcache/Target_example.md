@@ -187,8 +187,12 @@ CustomDomain=
 
 ## Credential
 
-> Die Zugangsdaten, die der Push nutzt: token:<geheimnisname>, sshkey:<schlüssel-id>,  
-> app:<installation> oder none. Nur ein Name; der Wert bleibt in Setup > Geheimnisse.  
+> The credential the push uses: token:<secret name> (or token:env:<VARIABLE>)  
+> for an https Remote, sshkey:<secret name> for an SSH Remote (exp:static:keys  
+> <target> --generate makes the key: sshkey:staticpublish.<target>.deploy\_key),  
+> app:<installation> (a GitHub App, with the GitHub integration), or none (the  
+> host's own SSH agent or credential helper). Only a name; the value stays in  
+> Setup > Secrets and reaches git only through its environment.  
 
 Standard: `none`.
 
