@@ -77,6 +77,15 @@ XMLReader as before. The cache files get the installation's file mode (`site.ini
 StorageFilePermissions`), so Velocity (root) and PHP-FPM (the site user) can both replace them.
 `exp:velocity deploy` builds them in its "interface language caches" step.
 
+Building every mask from nothing is the expensive part: with 156 translations it takes about 30 seconds. The language
+choice in the administration's toolbar is on every page, so it never waits for all of them: its catalogue has a time
+budget of 2 seconds per request (`expUISwitchLanguageProvider::COVERAGE_TIME_BUDGET`,
+`expUISwitchLanguageCatalogue::setTimeBudget()`). The masks not built within it are left for the next requests; until
+then those languages are listed without a percentage (their entries carry `pending`), and the complete catalogue is
+cached as soon as every mask is there, usually after about ten pages. Setup > Interface languages and the console
+build everything at once, as before. Before this, the first administration page after the masks were gone built them
+all and could run into `max_execution_time` (Redmine #16709).
+
 A regional variant without a translation of its own takes the one `i18n.ini [TranslationSettings]
 FallbackLanguages[]` names: `ger-AT` and `ger-CH` show the `ger-DE` texts, the French-speaking countries `fre-FR`,
 the Spanish-speaking ones `esl-ES`, the Arabic ones `ara-SA` once it exists. The translator looks this up for the

@@ -67,7 +67,9 @@ class eZImageAliasHandler
         $aliasList = $imageManager->aliasList();
         return array_merge( array( 'alternative_text',
                                    'original_filename',
-                                   'is_valid' ),
+                                   'is_valid',
+                                   'focal_point',
+                                   'crop_rectangle' ),
                             array_keys( $aliasList ) );
     }
 
@@ -80,7 +82,9 @@ class eZImageAliasHandler
         if ( in_array( $attributeName,
                        array( 'alternative_text',
                               'original_filename',
-                              'is_valid' ) ) )
+                              'is_valid',
+                              'focal_point',
+                              'crop_rectangle' ) ) )
             return true;
 
         $imageManager = eZImageManager::factory();
@@ -101,6 +105,15 @@ class eZImageAliasHandler
                               'is_valid' ) ) )
         {
             return $this->attributeFromOriginal( $attributeName );
+        }
+        if ( $attributeName === 'focal_point' )
+        {
+            $focal = $this->focalPoint();
+            return $focal === null ? null : $focal + array( 'position' => expImageFocalPoint::cssPosition( $focal ) );
+        }
+        if ( $attributeName === 'crop_rectangle' )
+        {
+            return $this->cropRectangle();
         }
         $aliasName = $attributeName;
         return $this->imageAlias( $aliasName );
@@ -453,10 +466,17 @@ class eZImageAliasHandler
         {
             $original = $aliasList['original'];
             $basename = $original['basename'];
-            if ( $imageManager->createImageAlias( $aliasName, $aliasList,
-                                                  array( 'basename' => $basename,
-                                                         'contentobject_id' => $this->ContentObjectAttributeData['contentobject_id'],
-                                                         'attribute_id' => $this->ContentObjectAttributeData['id'] ) ) )
+            $parameters = array( 'basename' => $basename,
+                                 'contentobject_id' => $this->ContentObjectAttributeData['contentobject_id'],
+                                 'attribute_id' => $this->ContentObjectAttributeData['id'] );
+            // Only an image with a focal point or crop rectangle passes them: every other image is
+            // converted exactly as before
+            $focalData = $this->focalData();
+            if ( $focalData['focal'] !== null || $focalData['crop'] !== null )
+            {
+                $parameters['focal'] = $focalData + array( 'width' => (int)$original['width'], 'height' => (int)$original['height'] );
+            }
+            if ( $imageManager->createImageAlias( $aliasName, $aliasList, $parameters ) )
             {
                 $text = $this->displayText( $original['alternative_text'] );
                 $originalFilename = $original['original_filename'];
@@ -1071,6 +1091,8 @@ class eZImageAliasHandler
     function recreateDOMTree()
     {
         $aliasList = $this->aliasList();
+        // The focal point and crop rectangle are kept
+        $focalData = $this->focalData();
         $doc = new DOMDocument( '1.0', 'utf-8' );
         $imageNode = $doc->createElement( "ezimage" );
         $doc->appendChild( $imageNode );
@@ -1127,7 +1149,143 @@ class eZImageAliasHandler
             $this->addImageAliasToXML( $doc, $alias );
         }
 
+        if ( isset( $aliasList['original'] ) )
+            expImageFocalPoint::writeToXML( $imageNode, $focalData['focal'], $focalData['crop'] );
+
         $this->setDOMTree( $doc );
+    }
+
+    /**
+     * The focal point and crop rectangle of this attribute version, from its XML.
+     *
+     * @return array focal => array( x, y )|null, crop => array( x, y, width, height )|null (fractions of the original)
+     */
+    protected function focalData()
+    {
+        $custom = isset( $this->ContentObjectAttributeData['DataTypeCustom'] ) ? $this->ContentObjectAttributeData['DataTypeCustom'] : array();
+        if ( isset( $custom['dom_tree'] ) && $custom['dom_tree'] instanceof DOMDocument )
+        {
+            return expImageFocalPoint::readFromXML( $custom['dom_tree']->documentElement );
+        }
+        return expImageFocalPoint::readFromXMLString( isset( $this->ContentObjectAttributeData['data_text'] ) ? $this->ContentObjectAttributeData['data_text'] : '' );
+    }
+
+    /**
+     * The focal point of the image: array( 'x' => float, 'y' => float ), fractions of the original's
+     * width and height, or null when none is set (the alias filters then work as configured).
+     *
+     * @return array|null
+     */
+    public function focalPoint()
+    {
+        $data = $this->focalData();
+        return $data['focal'];
+    }
+
+    /**
+     * The crop rectangle of the image: array( 'x', 'y', 'width', 'height' ), fractions of the original,
+     * or null when the aliases are made from the whole original.
+     *
+     * @return array|null
+     */
+    public function cropRectangle()
+    {
+        $data = $this->focalData();
+        return $data['crop'];
+    }
+
+    /**
+     * Whether a focal point and crop rectangle can be set: an image that is stored and is not an SVG.
+     *
+     * @return bool
+     */
+    public function supportsFocalPoint()
+    {
+        $aliasList = $this->aliasList();
+        return isset( $aliasList['original'] ) && (string)( $aliasList['original']['url'] ?? '' ) !== '' &&
+               !self::isSVGAlias( $aliasList['original'] );
+    }
+
+    /**
+     * Sets the focal point and the crop rectangle of this attribute version (null removes one), see
+     * expImageFocalPoint. The aliases made so far are dropped and made again when they are next shown.
+     *
+     * When something changes, the original is stored again for this version (as an upload in this
+     * version is), under a new serial number: the alias files of other versions (the published one,
+     * when this is a draft) are never touched, and the new aliases have new file names, so no cache
+     * shows the old ones. The handler then has to be stored: store( $contentObjectAttribute ).
+     *
+     * @param array|null $focal array( 'x' => fraction, 'y' => fraction ) or null
+     * @param array|null $crop array( 'x', 'y', 'width', 'height' ) as fractions, or null
+     * @return bool false when the values are not valid or the image does not support it (nothing changed)
+     */
+    public function setFocalPoint( $focal, $crop = null )
+    {
+        $newFocal = null;
+        if ( $focal !== null )
+        {
+            $newFocal = is_array( $focal ) ? expImageFocalPoint::normalizePoint( $focal['x'] ?? null, $focal['y'] ?? null ) : null;
+            if ( $newFocal === null )
+                return false;
+        }
+        $newCrop = null;
+        if ( $crop !== null )
+        {
+            $newCrop = expImageFocalPoint::normalizeCrop( $crop );
+            // The whole image is no crop rectangle; anything else that does not normalize is refused
+            if ( $newCrop === null && !self::isWholeImage( $crop ) )
+                return false;
+        }
+        if ( !$this->supportsFocalPoint() )
+            return false;
+
+        $current = $this->focalData();
+        if ( $current['focal'] == $newFocal && $current['crop'] == $newCrop )
+            return true;
+
+        $aliasList = $this->aliasList();
+        $original = $aliasList['original'];
+        $originalFile = eZClusterFileHandler::instance( $original['url'] );
+        // A copy of its own: storing again removes this version's previous file, which on the plain file
+        // system is the very path fetchUnique() returns
+        $localPath = $originalFile->fetchUnique();
+        $copyDir = eZImageManager::factory()->temporaryImageDirPath();
+        $copyPath = $copyDir . '/' . md5( uniqid( 'focal', true ) ) . '.' . ( $original['suffix'] ?: 'img' );
+        $copied = $localPath && is_file( $localPath ) && ( is_dir( $copyDir ) || eZDir::mkdir( $copyDir, false, true ) ) && copy( $localPath, $copyPath );
+        $originalFile->fileDeleteLocal( $localPath );
+        if ( !$copied )
+        {
+            eZDebug::writeError( "The original image {$original['url']} could not be read, the focal point is not set", __METHOD__ );
+            return false;
+        }
+        $alternativeText = $original['alternative_text'];
+        $originalFilename = $original['original_filename'];
+        $stored = $this->initializeFromFile( $copyPath, $alternativeText, $originalFilename );
+        @unlink( $copyPath );
+        if ( !$stored )
+            return false;
+
+        $domTree = $this->domTree();
+        expImageFocalPoint::writeToXML( $domTree->documentElement, $newFocal, $newCrop );
+        $this->setDOMTree( $domTree );
+        $this->setStorageRequired();
+        return true;
+    }
+
+    /**
+     * @param mixed $crop
+     * @return bool whether $crop is the whole image (x = y = 0, width = height = 1)
+     */
+    protected static function isWholeImage( $crop )
+    {
+        if ( !is_array( $crop ) )
+            return false;
+        foreach ( array( 'x' => 0, 'y' => 0, 'width' => 1, 'height' => 1 ) as $key => $value )
+        {
+            if ( !isset( $crop[$key] ) || !is_numeric( $crop[$key] ) || abs( (float)$crop[$key] - $value ) > 0.0000005 )
+                return false;
+        }
+        return true;
     }
 
     /*!

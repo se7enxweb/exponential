@@ -83,6 +83,15 @@ UTF-8), wird wie bisher mit XMLReader gestreamt. Die Cache-Dateien erhalten den 
 (`site.ini [FileSettings] StorageFilePermissions`), sodass Velocity (root) und PHP-FPM (der Site-Benutzer) sie beide
 ersetzen können. `exp:velocity deploy` baut sie im Schritt „interface language caches“ auf.
 
+Teuer ist der Aufbau aller Masken von Grund auf: bei 156 Übersetzungen etwa 30 Sekunden. Die Sprachauswahl in der
+Werkzeugleiste der Administration steht auf jeder Seite und wartet deshalb nie auf alle: Ihr Katalog hat ein
+Zeitbudget von 2 Sekunden pro Anfrage (`expUISwitchLanguageProvider::COVERAGE_TIME_BUDGET`,
+`expUISwitchLanguageCatalogue::setTimeBudget()`). Die Masken, die darin nicht fertig werden, folgen in den nächsten
+Anfragen; bis dahin stehen diese Sprachen ohne Prozentangabe in der Liste (ihre Einträge tragen `pending`), und der
+vollständige Katalog wird gespeichert, sobald alle Masken da sind, meist nach etwa zehn Seiten. Setup >
+Oberflächensprachen und die Konsole bauen wie bisher alles auf einmal. Vorher baute die erste Seite der
+Administration, nachdem die Masken fehlten, alle auf und konnte an `max_execution_time` scheitern (Redmine #16709).
+
 Eine regionale Variante ohne eigene Übersetzung übernimmt die, die `i18n.ini [TranslationSettings]
 FallbackLanguages[]` nennt: `ger-AT` und `ger-CH` zeigen die Texte von `ger-DE`, die französischsprachigen Länder
 `fre-FR`, die spanischsprachigen `esl-ES`, die arabischen `ara-SA`, sobald es existiert. Der Übersetzer schlägt das

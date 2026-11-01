@@ -213,6 +213,55 @@ class expUISwitchLanguageProviderTest extends PHPUnit\Framework\TestCase
         $this->assertNull( $this->catalogue( $cache )->entry( '../x' ) );
     }
 
+    /**
+     * Redmine #16709: the first administration request after the caches were cleared built every translation's mask
+     * for the toolbar's percentages and ran into max_execution_time. With a time budget a request builds masks only
+     * until it runs out; the rest is pending (no percentage, names complete), the next request goes on from the
+     * masks kept, and the complete catalogue is cached as before.
+     */
+    public function testATimeBudgetLeavesCoveragesPendingAndTheNextRequestGoesOn()
+    {
+        $cache = $this->fixture . '/cache';
+        $catalogue = $this->catalogue( $cache );
+        $catalogue->setTimeBudget( 0 );
+        expUISwitchLanguageCatalogue::beginRequest();
+        $entries = $catalogue->entries();
+        $this->assertTrue( $entries['ger-DE']['pending'], 'no time: no mask built' );
+        $this->assertNull( $entries['ger-DE']['coverage'] );
+        $this->assertSame( 'Deutsch (Deutschland)', $entries['ger-DE']['native'], 'the names are there' );
+        $this->assertSame( 100, $entries['eng-GB']['coverage'], 'English needs no mask' );
+        $this->assertArrayNotHasKey( 'pending', $entries['swa-KE'], 'no translation: nothing pending' );
+        $this->assertFalse( $catalogue->isComplete() );
+        $this->assertFileDoesNotExist( $cache . '/uiswitch/language-catalogue.json', 'an incomplete catalogue is not cached' );
+        $this->assertSame( $entries, $catalogue->entries(), 'the same request does not build again' );
+
+        $provider = new expUISwitchLanguageProvider( 'language', $this->grouped(), 'eng-GB', $this->fixture, $catalogue );
+        $label = $provider->displayLabel( 'ger-DE', 'en-GB' );
+        $this->assertStringStartsWith( 'Deutsch (Deutschland) — German', $label );
+        $this->assertDoesNotMatchRegularExpression( '/\((\d+%|no translation yet)\)$/', $label, 'no percentage while pending' );
+        $this->assertStringEndsWith( '(no translation yet)', $provider->displayLabel( 'swa-KE', 'en-GB' ) );
+
+        // a mask kept by an earlier request is used even past the deadline
+        $full = $this->catalogue( $cache );
+        $this->assertSame( 25, $full->entry( 'fre-FR' )['coverage'], 'without a budget everything is built' );
+        $this->assertTrue( $full->isComplete() );
+        $this->assertFileExists( $cache . '/uiswitch/translation-masks.json' );
+        expUISwitchLanguageCatalogue::resetMemory();
+        unlink( $cache . '/uiswitch/language-catalogue.json' );
+        $next = $this->catalogue( $cache );
+        $next->setTimeBudget( 0 );
+        expUISwitchLanguageCatalogue::beginRequest();
+        $this->assertSame( 100, $next->entry( 'ger-DE' )['coverage'], 'from the kept mask' );
+        $this->assertSame( 25, $next->entry( 'fre-FR' )['coverage'] );
+        $this->assertTrue( $next->isComplete() );
+        $this->assertFileExists( $cache . '/uiswitch/language-catalogue.json', 'complete again: cached' );
+
+        // the provider's own catalogue has the budget
+        $own = new expUISwitchLanguageProvider( 'language', $this->grouped(), 'eng-GB', $this->fixture );
+        $this->assertSame( expUISwitchLanguageProvider::COVERAGE_TIME_BUDGET, $own->catalogue()->timeBudget() );
+        $this->assertNull( $this->catalogue()->timeBudget(), 'a catalogue has no limit unless given one' );
+    }
+
     public function testALocaleAddedBetweenTwoRequestsIsSeenWithoutARestart()
     {
         // One persistent worker (Velocity): the catalogue and the provider live on from one request to the next.

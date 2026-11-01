@@ -48,6 +48,8 @@
  *      caches, one id per call; the packer only ever right before
  *      template-block
  *   9  Velocity's response cache
+ *  9a  the help index: bin/php/exphelp.php index --no-images (what changed in
+ *      the documentation; a failure does not stop the deploy)
  *  10  the help content cache, one step per siteaccess that shows the help:
  *      bin/php/exphelpcontent.php cache -s <siteaccess> (SKIP where help
  *      content is not installed)
@@ -150,6 +152,8 @@ class expVelocityDeploy
                 return array( $r['ok'], $r['message'] );
             },
         ), $plan['rendered'] );
+
+        $steps[] = $this->helpIndexStep();
 
         foreach ( $this->helpCacheSteps() as $step )
             $steps[] = $step;
@@ -381,17 +385,51 @@ class expVelocityDeploy
      */
     protected function languageCacheStep()
     {
-        $args = array( 'bin/php/console', 'exp:i18n', 'fallbacks', '--only=own', '--allow-root-user', '--no-colors' );
+        return self::nonFatalCommandStep( 'language-cache', 'interface language caches',
+            array( 'bin/php/console', 'exp:i18n', 'fallbacks', '--only=own', '--allow-root-user', '--no-colors' ),
+            'built', 'the page builds them itself' );
+    }
+
+    /**
+     * The help index (expHelpDocumentIndex) of every documentation language, and its search index: ./console
+     * exp:help index builds what a landing changed (doc/ and the extensions' doc/), so the first help page after the
+     * deploy shows the new pages at once. A help page never waits for it (it answers from the older index and builds
+     * in the background), so a failure is reported and does not stop the deploy.
+     *
+     * @return array
+     */
+    protected function helpIndexStep()
+    {
+        $step = $this->nonFatalCommandStep( 'help-index', 'help index',
+            array( 'bin/php/exphelp.php', 'index', '--no-images', '--allow-root-user', '--no-colors' ),
+            'built', 'a help page builds it in the background' );
+        if ( !is_file( $this->root . '/bin/php/exphelp.php' ) )
+            $step['skip'] = 'no help system in this version';
+        return $step;
+    }
+
+    /**
+     * A step that runs a console command whose failure does not stop the deploy (the page does the work itself).
+     *
+     * @param string $id
+     * @param string $label
+     * @param string[] $args
+     * @param string $done the message of a success
+     * @param string $fallback what happens without it
+     * @return array
+     */
+    protected function nonFatalCommandStep( $id, $label, array $args, $done, $fallback )
+    {
         $self = $this;
         return array(
-            'id' => 'language-cache', 'label' => 'interface language caches', 'skip' => '',
+            'id' => $id, 'label' => $label, 'skip' => '',
             'command' => 'php ' . implode( ' ', $args ),
             'dry' => function () use ( $args ) { return 'php ' . implode( ' ', $args ); },
-            'run' => function () use ( $self, $args ) {
+            'run' => function () use ( $self, $args, $done, $fallback ) {
                 list( $code, $output ) = $self->runCommand( array_merge( array( PHP_BINARY ), $args ) );
                 if ( $code !== 0 || preg_match( '/(Fatal error|Exception|Parse error)/', implode( "\n", $output ) ) )
-                    return array( null, 'not built (exit ' . $code . '); the page builds them itself' );
-                return array( true, 'built' );
+                    return array( null, 'not built (exit ' . $code . '); ' . $fallback );
+                return array( true, $done );
             },
         );
     }
