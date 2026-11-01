@@ -76137,6 +76137,14 @@ Peate sõlme klassi vahetamisfunktsiooniga muutma.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>See teema pole avaldatud; lugejad seda ei näe.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratsioonid</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Paigalduse muudatused failidena: nende olek, käivitused, käivitamine ja tagasivõtmine.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

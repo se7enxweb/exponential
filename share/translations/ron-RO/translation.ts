@@ -76137,6 +76137,14 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Acest subiect nu este Publicat; cititorii nu îl văd.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrări</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Modificări ale instalării păstrate ca fișiere: starea lor, rulările, rulare și anulare.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76137,6 +76137,14 @@ Hauràs de canviar la classe del node amb la funció d&apos;intercanvi.</transla
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Aquest tema no està publicat; els lectors no el veuen.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracions</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Canvis a la instal·lació desats com a fitxers: el seu estat, les execucions, executar i desfer.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

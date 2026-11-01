@@ -76198,6 +76198,14 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Topik ini tidak Dikeluarkan; pembaca tidak dapat melihatnya.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Perubahan pada pemasangan yang disimpan sebagai fail: keadaannya, larian, jalankan dan gulung balik.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

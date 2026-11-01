@@ -94,15 +94,22 @@ Jede Einstellung mit ihrer Voreinstellung: [migration.ini](../../beispiele/ini-e
 Cronjob-Teil: [migrationpush](../../beispiele/cronjobs/migrationpush.md). Audit-Ereignisse: `system.migration.run`,
 `.apply`, `.fail`, `.rollback`, `.caption`, `.push`, `.record` in `settings/audit.ini`.
 
-## Weiterlesen
+## Verwandte Seiten
 
-- [Migrationen](../../anleitungen/migrationen.md), [das Tutorial](../../anleitungen/migrationen-tutorial.md),
-  [PHP-Migrationen](../../anleitungen/migrationen-php.md)
-- [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md),
-  [Das Migrations-Repository](../../anleitungen/migrationen-repositories.md),
-  [Fehlerbehebung](../../anleitungen/migrationen-fehlerbehebung.md)
-- [Das Migrationsdateiformat](../../spezifikationen/6.0/migrationsdateiformat.md)
-- [Migrationen in der Administration](../../hilfe/migrationen/README.md),
+- [Migrationen: der Einstieg](../../hilfe/migrationen/README.md),
+  [Alle Rezepte](../../hilfe/migrationen/rezepte/README.md), [Häufige Fragen](../../hilfe/migrationen/faq.md)
+- [Die Anleitung](../../anleitungen/migrationen.md), [das Tutorial](../../anleitungen/migrationen-tutorial.md),
+  [PHP-Migrationen](../../anleitungen/migrationen-php.md),
+  [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](../../anleitungen/migrationen-repositories.md)
+- [In der Administration](../../hilfe/migrationen/in-der-administration.md),
+  [Befehle](../../hilfe/migrationen/befehle.md), [Einstellungen](../../hilfe/migrationen/einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](../../hilfe/migrationen/richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../../spezifikationen/6.0/migrationsdateiformat.md)
+- [Wenn eine Migration scheitert](../../hilfe/migrationen/wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](../../anleitungen/migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](../../hilfe/migrationen/migrationen-oder-umzug-einer-site.md)
+- [Migrationen in der Administration](../../hilfe/migrationen/in-der-administration.md),
   [die Ansichten des Moduls migration](../../beispiele/modulansichten/migration/README.md),
   [seine Richtlinien](../../beispiele/richtlinien/migration.md)
 - [Upgrade mit der Konsole](../../anleitungen/aktualisieren-mit-der-konsole.md)

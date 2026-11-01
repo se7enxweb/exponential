@@ -261,7 +261,7 @@ class expMigrationUpgradeStep implements expMigration
 
     /**
      * The record of the step in exp:upgrade's shape (expUpgradeRecord::all()): the row of exp_migration the run's
-     * context has, else the row of expupgrade_step not copied yet.
+     * context has, else the row of exp_migration read once per run.
      *
      * @param expUpgradeContext $context
      * @return array|null

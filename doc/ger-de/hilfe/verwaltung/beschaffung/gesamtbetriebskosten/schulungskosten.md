@@ -31,7 +31,7 @@ Teilnehmenden und das Schulungs-Lab kosten weiterhin. Die Kurslängen unten sind
 | Administration der Website | [Administration der Website](../../../trainer/website-administratoren/README.md) | 48 Lektionen, etwa 30 Stunden (etwa 5 Tage) |
 | Systemadministration | [Hosting und Betrieb](../../../trainer/hosting-betrieb/README.md) | 28 Lektionen, etwa 20 Stunden (3 bis 4 Tage) |
 | Newsletter-Versand | [Newsletter](../../../trainer/newsletter/README.md) | 20 Lektionen, etwa 16 Stunden |
-| Entwicklung | [Entwickler](../../../trainer/entwickler/README.md) | 52 Lektionen, etwa 44 Stunden (etwa 7 Tage) |
+| Entwicklung | [Entwickler](../../../trainer/entwickler/README.md) | 53 Lektionen, etwa 45 Stunden (etwa 7 Tage) |
 | Interne Trainerinnen und Trainer | [Train the Trainer](../../../trainer/train-the-trainer/README.md) | 34 Lektionen, etwa 21 Stunden (3 bis 4 Tage) |
 | Kompakte Programme | [Workshops und Bootcamps](../../../trainer/workshops/README.md) | Programme von einem halben, 1, 3 und 5 Tagen |
 

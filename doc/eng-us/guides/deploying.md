@@ -302,6 +302,7 @@ All are in `settings/velocity.ini` (shipped defaults). `exp:velocity config set`
 - Measuring the result: [Benchmarking Exponential](benchmarking.md) (Apache against Velocity, a deploy checked for regressions).
 - Upgrade notes: [Velocity engines](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md), [Velocity engine upgrade notes](../bc/6.0/velocity-engine-upgrade-notes.md), [cache console](../bc/6.0/cache-console.md).
 - History: [Velocity chronicle](../history/velocity/2026-09a.md), [October 2026](../history/2026/2026-10.md).
+- [Deploying with migrations](../help/migrations/recipes/deploying-with-migrations.md), [Migrations](../help/migrations/README.md)
 
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and

@@ -702,9 +702,10 @@ CREATE INDEX IF NOT EXISTS expuser_audit_actor ON expuser_audit ( actor_id, crea
 CREATE INDEX IF NOT EXISTS expuser_audit_name ON expuser_audit ( event_name, created );
 CREATE INDEX IF NOT EXISTS expuser_audit_created ON expuser_audit ( created );
 
--- expupgrade_step: the record of exp:upgrade (doc/eng-us/guides/upgrading-with-the-console.md). One
--- row per upgrade step it applied or tried. Written with IF NOT EXISTS, so running this statement
--- again changes nothing.
+-- expupgrade_step: the older record of exp:upgrade, which only a pre-release of 6.0.15 had (no released
+-- version has it). exp_migration below replaces it: its rows are copied over and the table is dropped at the
+-- end of this section. Created empty here when it is missing, so the copy below can read it on every
+-- installation; the upgrade step 6.0.15-upgrade-record-table does the same from the console.
 CREATE TABLE IF NOT EXISTS expupgrade_step (
   applied_at integer NOT NULL DEFAULT '0',
   applied_by varchar(150) NOT NULL DEFAULT '',
@@ -719,9 +720,9 @@ CREATE TABLE IF NOT EXISTS expupgrade_step (
 );
 
 -- exp_migration and exp_migration_run: the migration record (one row per migration, the key is its source and
--- id) and its runs. exp_migration replaces expupgrade_step: the rows it has are copied over as migrations of the
--- source "kernel" (the upgrade step 6.0.15-migration-tables does the same). Written with IF NOT EXISTS, and the
--- copy leaves out a row that exp_migration has already, so running these statements again changes nothing.
+-- id) and its runs; exp:upgrade writes its steps there as migrations of the source "kernel" (the upgrade step
+-- 6.0.15-migration-tables makes them). Written with IF NOT EXISTS, the copy leaves out a row that exp_migration
+-- has already and the table expupgrade_step is gone afterwards, so running these statements again changes nothing.
 CREATE TABLE IF NOT EXISTS exp_migration (
   caption_id varchar(150) NOT NULL DEFAULT '',
   checksum varchar(64) NOT NULL DEFAULT '',
@@ -766,6 +767,8 @@ INSERT INTO exp_migration ( source, migration_id, stage, version, state, started
          CASE WHEN s.stage = 'caption' AND s.step_id LIKE 'caption:%' THEN substr( s.step_id, 9 ) ELSE '' END
     FROM expupgrade_step s
    WHERE NOT EXISTS ( SELECT 1 FROM exp_migration m WHERE m.source = 'kernel' AND m.migration_id = s.step_id );
+DROP TABLE IF EXISTS expupgrade_step;
+
 -- exp_migration_recording and exp_migration_recording_event: the recordings of changes for migrations (one row per
 -- recording, one row per recorded change with the migration step it stands for as JSON in payload). The upgrade
 -- step 6.0.15-migration-recording-tables does the same. New tables only, written with IF NOT EXISTS, so running

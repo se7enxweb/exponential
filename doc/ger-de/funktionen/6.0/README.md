@@ -69,13 +69,14 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Die Systemkarte: exp:expfetch, exp:info und exp:about](systemkarte.md)
 - [Benchmark: `exp:benchmark`](benchmark.md)
 - [Wartungsmodus](wartungsmodus.md)
-- [Migrationen im Kernel](migrationen.md)
+- [Migrationen im Kernel](migrationen.md) (Rezepte, Zielgruppenseiten und FAQ: [Migrationen](../../hilfe/migrationen/README.md))
 - [Eine defekte Installation im Browser reparieren](reparatur-im-browser.md)
 - [Prüfung der Dateikonsistenz und die Dateiliste des Release](dateikonsistenzpruefung.md)
 - [Qualitätsprüfungen: Git-Hooks, Dateimanifest, Codestil und PHPStan](qualitaetspruefungen.md)
 - [Cache leeren, indem Verzeichnisse beiseitegeschoben werden](cache-leeren-durch-umbenennen.md)
 - [Inhalts- und INI-Cache in Redis oder Valkey halten](valkey-cache-hooks.md)
 - [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md)
+- [Statisches Veröffentlichen: eine statische Kopie einer Website für GitHub Pages und jeden statischen Host](statisches-veroeffentlichen.md)
 - [Cronjob-Konsole](cronjobs-in-der-konsole.md), [Cronjob-Teile pausieren](cronjobs-pausieren.md),
   [Einen Cronjob-Teil auslassen](filter-fuer-cronjob-teile.md)
 - [Rotation und Bereinigung der Logs](log-rotation.md), [Der Log-Viewer](log-betrachter.md),

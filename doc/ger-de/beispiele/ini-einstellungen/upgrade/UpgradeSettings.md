@@ -19,16 +19,17 @@ Bearbeiten Sie `settings/upgrade.ini` nie selbst: Ein Update ersetzt die Datei. 
 
 ## StepList
 
-> Die Upgrade-Schritte des Kernels, Klassennamen (expUpgradeStep). Jeder Schritt gehört zu einer Stufe  
-> (code, libraries, database, scripts, finish); sie laufen nach Stufe, dann nach Version, dann in  
-> der hier genannten Reihenfolge, nach den Schritten, die sie in after() nennen.  
-> Stufe code: die Git-Checkouts, nur Fast-Forward, über git\_manager  
-> Stufe libraries: Composer (ein Update nur auf Wunsch mit --update, dann install aus composer.lock)  
-> Stufe database: Schema und Daten, jede Engine (Schritt 0 zuerst: die Aufzeichnungstabelle)  
-> Stufe scripts: die PHP-Upgrade-Schritte, über die Klassen der Skripte und Setup-Befehle  
-> Stufe finish: die Änderungen wirksam machen und die Site prüfen (nur wenn der Lauf etwas geändert hat)  
+> The kernel's upgrade steps, class names (expUpgradeStep). Each step belongs to a stage  
+> (code, libraries, database, scripts, finish); they run by stage, then by version, then in  
+> the order listed here, after the steps they name in after().  
+> stage code: the git checkouts, fast-forward only, through git\_manager  
+> stage libraries: Composer (an update only when asked with --update, then install from composer.lock)  
+> stage database: schema and data, every engine (step 0 first: the record table exp\_migration)  
+> the older record expupgrade\_step of a pre-release of 6.0.15: its rows copied into exp\_migration, then dropped  
+> stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
+> stage finish: make the changes live and check the site (only when the run changed something)  
 
-Standard: eine Liste mit 41: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationTables`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables` ....
+Standard: eine Liste mit 41: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -39,8 +40,8 @@ StepList[]
 StepList[]=expUpgradeStepCodeUpdate
 StepList[]=expUpgradeStepLibrariesUpdate
 StepList[]=expUpgradeStepLibrariesInstall
-StepList[]=expUpgradeStepRecordTable
 StepList[]=expUpgradeStepMigrationTables
+StepList[]=expUpgradeStepRecordTable
 StepList[]=expUpgradeStepMigrationRecordingTables
 StepList[]=expUpgradeStepPasswordHashWidth
 StepList[]=expUpgradeStepTrashColumns

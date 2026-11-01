@@ -76198,6 +76198,14 @@ Ele be nàtrɔ kadodoƒe la ƒe hatsotso to trɔtrɔ dɔwɔnu zãzã me.</transl
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Woɖe nya sia ɖe go haɖe o; xlẽlawo mekpɔe o.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Ʋuʋuwo</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Tɔtrɔ siwo wowɔ le ɖoɖoa ŋu eye wodzra wo ɖo abe faɛlwo ene: woƒe nɔnɔme, wɔwɔwo, wɔe kple gbugbɔe ɖe megbe.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

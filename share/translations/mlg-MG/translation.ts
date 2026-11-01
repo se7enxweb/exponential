@@ -76198,6 +76198,14 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Tsy navoaka ity lohahevitra ity; tsy hitan'ny mpamaky.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Fifindrana</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Fanovana ny fametrahana voatahiry ho rakitra: ny satany, ny fanatanterahana, fanatanterahana sy famerenana.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

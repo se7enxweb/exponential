@@ -3,9 +3,9 @@
  * The migration record on a real database server: MySQL/MariaDB and PostgreSQL in the database job
  * (tests/runtests.php --dsn ... --db-per-test), or a throwaway MySQL database of ezpThrowawayDatabase. Skipped without
  * one. The tables exp_migration and exp_migration_run of the test database are dropped first and made again by the
- * upgrade step, from the rows of expupgrade_step the test writes.
+ * upgrade step; the next step copies the rows of a pre-release expupgrade_step the test writes, then drops it.
  *
- *  MR-D1 create and copy, re-run idempotent, write and read, exp:upgrade's record (expMigrationRecordEngineChecks)
+ *  MR-D1 create, copy and drop, re-run idempotent, write and read, exp:upgrade's record (expMigrationRecordEngineChecks)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)

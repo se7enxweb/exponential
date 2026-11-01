@@ -76196,6 +76196,14 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Ba a Saki wannan batu ba; masu karatu ba sa ganinsa.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Ƙaurace-ƙaurace</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Canje-canje ga shigarwa da aka ajiye a matsayin fayiloli: matsayinsu, ayyukan, gudanarwa da mayarwa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

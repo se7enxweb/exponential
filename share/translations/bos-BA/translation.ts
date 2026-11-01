@@ -76137,6 +76137,14 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Ova tema nije izdana; čitaoci je ne vide.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Promjene instalacije čuvane kao datoteke: njihovo stanje, pokretanja, pokretanje i vraćanje.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

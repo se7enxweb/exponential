@@ -76198,6 +76198,14 @@ Khipup t'aqanta t'ikrachiy rurayta llamk'achispa hukchanayki.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Kay yachayqa mana lluqsichisqachu; ñawinchaqkunaqa manan rikunkuchu.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Astaykuna</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Churasqapi tikraykuna willañiqi hina waqaychasqa: kayninkuna, purichiykuna, purichiy hinaspa kutichiy.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

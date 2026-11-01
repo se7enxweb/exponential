@@ -58,7 +58,7 @@ trait expMigrationCaptionEngineChecks
                                                           'environment' => 'testing', 'root' => self::runnerRoot(), 'run-id' => $runId,
                                                           // the test's connection dumped, never the installation's
                                                           // database through git_manager
-                                                          'backup-dir' => $this->runnerDir() . '/captions', 'storage-dir' => '', 'own-dump' => true,
+                                                          'backup-dir' => $this->runnerDir() . '/captions', 'storage-dir' => '', 'settings-dir' => '', 'own-dump' => true,
                                                           'user' => eZUser::fetchByName( 'admin' ) ) );
     }
 

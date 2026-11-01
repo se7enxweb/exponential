@@ -55,7 +55,9 @@ Die linke Spalte ändert sich mit dem Reiter:
 - Unter **Setup** listet sie die Seiten der Einrichtung in Gruppen auf, jede nur für Rollen, die sie öffnen dürfen.
   Eine davon ist **Migrationen** in der Gruppe **System**: die Migrationen der Installation, ihre Läufe, ein Lauf oder
   eine Rücknahme im Hintergrund und das Protokoll jedes Laufs
-  ([Migrationen in der Administration](migrationen/README.md)).
+  ([Migrationen in der Administration](migrationen/in-der-administration.md); was Migrationen sind, für Administratoren:
+  [Migrationen für Administratoren](migrationen/migrationen-fuer-administratoren.md); alles Weitere:
+  [Migrationen](migrationen/README.md)).
 
 ![Das Menü eines Objekts im Baum](bilder/context-menu.webp)
 

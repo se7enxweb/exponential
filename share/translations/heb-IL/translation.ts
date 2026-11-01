@@ -74470,6 +74470,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>נושא זה לא שוחרר; הקוראים אינם רואים אותו.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>הגירות</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>שינויים בהתקנה שנשמרים כקבצים: מצבם, הריצות, הרצה והחזרה לאחור.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

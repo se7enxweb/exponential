@@ -74471,6 +74471,14 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Hoc argumentum non editum est; lectores id non vident.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrationes</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mutationes installationis ut fasciculi servatae: earum status, cursus, exsecutio et revocatio.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

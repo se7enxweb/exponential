@@ -83144,6 +83144,14 @@ Sie müssen die Klasse des Knotens mit der Tauschfunktion ändern.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dieses Thema ist nicht freigegeben; Leser sehen es nicht.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrationen</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Änderungen an der Installation als Dateien: ihr Stand, die Läufe, ausführen und zurücknehmen.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

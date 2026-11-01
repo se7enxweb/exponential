@@ -76137,6 +76137,14 @@ Ikollok tibdel il-klassi tan-nodu bil-funzjonalità tal-iskambju.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dan is-suġġett mhuwiex Rilaxxat; il-qarrejja ma jarawhx.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazzjonijiet</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Bidliet fl-installazzjoni miżmuma bħala fajls: l-istat tagħhom, it-tħaddimiet, tħaddim u treġġigħ lura.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

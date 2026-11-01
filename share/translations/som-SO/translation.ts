@@ -76196,6 +76196,14 @@ Waxaad u baahan doontaa inaad beddesho fasalka Node-ka adigoo isticmaalaya shaqa
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Mawduucan lama sii dayn; akhristayaashu ma arkaan.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Guuritaannada</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Isbeddellada rakibaadda oo loo hayo sida faylal: xaaladdooda, orodyada, orodsii oo dib u celi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

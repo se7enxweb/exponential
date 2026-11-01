@@ -76198,6 +76198,14 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Esti tema nun ta espublizáu; los llectores nun lu ven.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraciones</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Cambeos na instalación guardaos como ficheros: el so estáu, les execuciones, executar y desfacer.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76006,6 +76006,14 @@ Du må endre klassen til noden ved hjelp av byttefunksjonen.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dette emnet er ikke frigitt; leserne ser det ikke.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringer</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Endringer i installasjonen lagret som filer: tilstanden deres, kjøringene, kjør og rull tilbake.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

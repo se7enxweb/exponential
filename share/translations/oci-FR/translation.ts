@@ -76198,6 +76198,14 @@ Vos caldrà cambiar la classa del nos amb la foncion d'escambi.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Aqueste subjècte es pas publicat; los lectors lo veson pas.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracions de l’installacion</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Modificacions de l’installacion gardadas coma fichièrs : lor estat, las execucions, executar e anullar.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

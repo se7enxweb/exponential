@@ -10,11 +10,13 @@ generated: exp:help:examples
 ---
 # staticcache.ini
 
-The shipped settings of `settings/staticcache.ini`: 1 blocks, 9 settings.
+The shipped settings of `settings/staticcache.ini`: 3 blocks, 41 settings.
 
 | Block | Settings |
 |---|---|
 | [CacheSettings](CacheSettings.md) | 9 |
+| [StaticPublishSettings](StaticPublishSettings.md) | 5 |
+| [Target_example](Target_example.md) | 27 |
 
 - [All examples](../../README.md)
 

@@ -76155,6 +76155,14 @@ Devi cambiare la classe del nodo usando la funzione di scambio.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Questo argomento non è rilasciato; i lettori non lo vedono.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazioni</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Modifiche all&apos;installazione conservate come file: il loro stato, le esecuzioni, eseguire e annullare.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

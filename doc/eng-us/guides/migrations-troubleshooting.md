@@ -4,7 +4,10 @@ This page lists the messages the migration commands print, what each means and w
 `FAIL:` are errors (the exit code is not 0); `WARN` lines are warnings, the command still passed. Every command can
 also print its report as JSON (`--format=json`) with the same texts in `errors` and `warnings`.
 
-[Guides](README.md) · [Migrations](migrations.md) · Related: [Rollback and captions](migrations-rollback-and-captions.md),
+Looking by what you see rather than by message (a run that failed, a migration that does not run, a push that waits,
+a run in the administration that does not start)? [When a migration fails: troubleshooting by symptom](../help/migrations/when-a-migration-fails.md).
+
+[Guides](README.md) · [Migrations: the hub](../help/migrations/README.md) · [Migrations](migrations.md) · Related: [Rollback and captions](migrations-rollback-and-captions.md),
 [The migrations repository](migrations-repositories.md), [PHP migrations](migrations-php.md)
 
 ## Exit codes
@@ -166,3 +169,17 @@ renamed. The row stays in the record and harms nothing.
 **A run whose row still says `running`**
 The process was killed. `./console exp:migration:resume` finds it (no process holds the lock any more) and, with
 `--apply`, closes it as failed and runs what is still pending in a new run.
+
+## Related pages
+
+- [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
+  [Frequently asked questions](../help/migrations/faq.md)
+- [The guide](migrations.md), [the tutorial](migrations-tutorial.md), [PHP migrations](migrations-php.md),
+  [Rollback and captions](migrations-rollback-and-captions.md),
+  [The migrations repository](migrations-repositories.md)
+- [In the administration](../help/migrations/in-the-administration.md), [Commands](../help/migrations/commands.md),
+  [Settings](../help/migrations/settings.md),
+  [Policies, views and events](../help/migrations/policies-views-and-events.md)
+- [The file format](../specifications/6.0/migration-file-format.md), [The feature](../features/6.0/migrations.md)
+- [When a migration fails](../help/migrations/when-a-migration-fails.md)
+- [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md)

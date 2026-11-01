@@ -10,11 +10,13 @@ generated: exp:help:examples
 ---
 # staticcache.ini
 
-Die ausgelieferten Einstellungen von `settings/staticcache.ini`: 1 Blöcke, 9 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/staticcache.ini`: 3 Blöcke, 41 Einstellungen.
 
 | Block | Einstellungen |
 |---|---|
 | [CacheSettings](CacheSettings.md) | 9 |
+| [StaticPublishSettings](StaticPublishSettings.md) | 5 |
+| [Target_example](Target_example.md) | 27 |
 
 - [Alle Beispiele](../../README.md)
 

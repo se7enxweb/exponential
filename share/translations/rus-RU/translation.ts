@@ -76137,6 +76137,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Эта тема не выпущена; читатели ее не видят.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграции</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Изменения установки, хранимые в виде файлов: их состояние, запуски, выполнение и откат.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

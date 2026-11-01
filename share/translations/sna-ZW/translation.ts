@@ -76198,6 +76198,14 @@ Munofanira kuchinja kirasi yenodhi muchishandisa kushandurana.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Musoro uyu haujaburitswa; vaverengi havauone.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Kutama kwedata</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Shanduko dzekuiswa dzakachengetwa semafaira: mamiriro adzo, kumhanyisa, kumhanyisa nekudzosera shure.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

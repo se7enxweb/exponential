@@ -76206,6 +76206,14 @@ You go need change di class of di node wit di swap functionality.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dem never release dis topic; readers no fit see am.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migration dem</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Change dem for di installation wey dey inside file: how dem dey, di run dem, run dem and turn dem back.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

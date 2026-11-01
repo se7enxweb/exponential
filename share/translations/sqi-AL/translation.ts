@@ -76137,6 +76137,14 @@ Duhet ta ndryshoni klasën e nyjes duke përdorur funksionin e shkëmbimit.</tra
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Kjo temë nuk është Publikuar; lexuesit nuk e shohin.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrimet</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ndryshime të instalimit të ruajtura si skedarë: gjendja e tyre, ekzekutimet, ekzekuto dhe kthe mbrapsht.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

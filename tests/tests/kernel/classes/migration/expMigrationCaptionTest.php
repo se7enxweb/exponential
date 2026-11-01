@@ -591,7 +591,7 @@ class expMigrationCaptionTest extends PHPUnit\Framework\TestCase
         $settings = expMigrationCaption::settingsFrom( array(), $ini );
         $this->assertSame( array( 'database', 'storage', 'settings' ), $settings['restore-parts'] );
         $this->assertSame( array( 'settings', 'extension', 'design' ), $settings['trees'] );
-        $this->assertSame( array( 'exp_migration', 'exp_migration_run', 'expupgrade_step', 'ezsession', 'expaudit_*' ), $settings['ignore-tables'] );
+        $this->assertSame( array( 'exp_migration', 'exp_migration_run', 'ezsession', 'expaudit_*' ), $settings['ignore-tables'] );
         $this->assertTrue( expMigrationCaption::ignoredTable( 'expaudit_event_ip', $settings['ignore-tables'] ) );
         $this->assertTrue( expMigrationCaption::ignoredTable( 'EZSESSION', $settings['ignore-tables'] ) );
         $this->assertFalse( expMigrationCaption::ignoredTable( 'ezsession_x', $settings['ignore-tables'] ) );

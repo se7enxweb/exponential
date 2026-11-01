@@ -75973,6 +75973,14 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dit onderwerp is niet vrijgegeven; lezers zien het niet.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraties</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Wijzigingen aan de installatie bewaard als bestanden: hun stand, de uitvoeringen, uitvoeren en terugdraaien.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

@@ -120,6 +120,7 @@ files in `ezoracle`; MongoDB has no SQL update files). Note the new engine in th
 - [Databases in the official order](../basics/databases-in-the-official-order.md)
 - [Moving a site between hosts](moving-a-site-between-hosts.md)
 - [Chapter 9: Databases](../../../install/09-databases.md)
+- [Migrations versus migrating a site](../../migrations/migrations-versus-migrating-a-site.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

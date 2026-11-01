@@ -76198,6 +76198,14 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Sooynde ndee yaltinaaka; jaŋŋooɓe ndaaraa ɗum.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Egge</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Bayle aafgol ngol ɗe mooftaa no fiilde: no ɗe ngonri, doggi ɗii, dogin e artirgol.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

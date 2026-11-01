@@ -76198,6 +76198,14 @@ Kinahanglan nimong usbon ang klase sa node gamit ang swap functionality.</transl
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Kini nga hilisgutan dili Na-release; dili kini makita sa mga magbabasa.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mga migrasyon</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mga kausaban sa instalasyon nga gitipigan isip mga file: ang ilang kahimtang, ang mga padagan, padagana ug ibalik.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

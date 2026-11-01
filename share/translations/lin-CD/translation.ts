@@ -76198,6 +76198,14 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Likambo oyo ezali Released te; batángi bamonaka yango te.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasyo</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mbongwana ya bobongisi oyo ebombami lokola bafisye: ezalela na yango, mitambwisi, kotambwisa mpe kozongisa.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

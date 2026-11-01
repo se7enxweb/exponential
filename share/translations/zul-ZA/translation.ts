@@ -76196,6 +76196,14 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Lesi sihloko asiKhishiwe; abafundi abasiboni.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Ukufuduka</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Izinguquko zokufakwa ezigcinwe njengamafayela: isimo sazo, ukuqhuba, qhuba futhi ubuyisele emuva.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -181,6 +181,7 @@ class expHelpAudience
         'features'        => array( 'name' => 'Features', 'icon' => 'stars' ),
         'development'     => array( 'name' => 'Development', 'icon' => 'code-square' ),
         'install-upgrade' => array( 'name' => 'Installation and upgrades', 'icon' => 'box-seam' ),
+        'migrations'      => array( 'name' => 'Migrations', 'icon' => 'arrow-down-up' ),
         'project-files'   => array( 'name' => 'Project files', 'icon' => 'git' ),
         'release-notes'   => array( 'name' => 'Release notes', 'icon' => 'journal-text' ),
         'history'         => array( 'name' => 'History', 'icon' => 'clock-history' ),
@@ -274,6 +275,10 @@ class expHelpAudience
     /** [CategorySettings] PathRules[] by default */
     const CATEGORY_RULES = array(
         'doc/eng-us/help/manual/*;manual',
+        'doc/eng-us/help/migrations/*;migrations',
+        'doc/eng-us/guides/migrations*.md;migrations',
+        'doc/eng-us/features/6.0/migrations.md;migrations',
+        'doc/eng-us/specifications/6.0/migration-file-format.md;migrations',
         'doc/eng-us/help/leadership/*;leadership',
         'doc/eng-us/help/business/*;business',
         'doc/eng-us/help/partners/*;partnership',

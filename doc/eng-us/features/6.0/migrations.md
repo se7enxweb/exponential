@@ -93,15 +93,22 @@ Every setting with its default: [migration.ini](../../examples/ini-settings/migr
 [migrationpush](../../examples/cronjobs/migrationpush.md). Audit events: `system.migration.run`, `.apply`, `.fail`,
 `.rollback`, `.caption`, `.push`, `.record` in `settings/audit.ini`.
 
-## Read on
+## Related pages
 
-- [Migrations](../../guides/migrations.md), [the tutorial](../../guides/migrations-tutorial.md),
-  [PHP migrations](../../guides/migrations-php.md)
-- [Rollback and captions](../../guides/migrations-rollback-and-captions.md),
-  [The migrations repository](../../guides/migrations-repositories.md),
-  [Troubleshooting](../../guides/migrations-troubleshooting.md)
-- [The migration file format](../../specifications/6.0/migration-file-format.md)
-- [Migrations in the administration](../../help/migrations/README.md),
+- [Migrations: the hub](../../help/migrations/README.md), [All recipes](../../help/migrations/recipes/README.md),
+  [Frequently asked questions](../../help/migrations/faq.md)
+- [The guide](../../guides/migrations.md), [the tutorial](../../guides/migrations-tutorial.md),
+  [PHP migrations](../../guides/migrations-php.md),
+  [Rollback and captions](../../guides/migrations-rollback-and-captions.md),
+  [The migrations repository](../../guides/migrations-repositories.md)
+- [In the administration](../../help/migrations/in-the-administration.md),
+  [Commands](../../help/migrations/commands.md), [Settings](../../help/migrations/settings.md),
+  [Policies, views and events](../../help/migrations/policies-views-and-events.md)
+- [The file format](../../specifications/6.0/migration-file-format.md)
+- [When a migration fails](../../help/migrations/when-a-migration-fails.md),
+  [Troubleshooting messages](../../guides/migrations-troubleshooting.md)
+- [Migrations versus migrating a site](../../help/migrations/migrations-versus-migrating-a-site.md)
+- [Migrations in the administration](../../help/migrations/in-the-administration.md),
   [the views of the module migration](../../examples/module-views/migration/README.md),
   [its policies](../../examples/policies/migration.md)
 - [Upgrading with the console](../../guides/upgrading-with-the-console.md)

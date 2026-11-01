@@ -1,8 +1,8 @@
 ---
 title: "Migrationen: Änderungen aufzeichnen"
 audience: admin, developer
-category: administration
-order: 5
+category: migrations
+order: 14
 summary: Setup > Migrationen > Aufzeichnung in der Administration. Die eigenen Änderungen oder in einem websiteweiten Fenster jede Änderung der Website als Schritte einer Migration aufzeichnen; sehen, was eine Aufzeichnung erfasst hat und welche Migration sie ergäbe; Aufzeichnungen beenden und verwerfen; der Aufzeichnungsbalken.
 keywords: Migrationen, Aufzeichnung, Änderungen aufzeichnen, Sitzungsaufzeichnung, websiteweite Aufzeichnung, Aufzeichnungsbalken, Migration erzeugen, migrations, recording, record changes, site-wide recording, exp:migration:record, migration/recording, migration/edit, Identität bestätigen, personenbezogene Daten
 context: migration/recording

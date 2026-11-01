@@ -74746,6 +74746,14 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Ev mijar nehatiye belavkirin; xwendevan wê nabînin.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Koçberkirin</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Guhertinên sazkirinê yên wek pel hatine parastin: rewşa wan, xebitandin, xebitandin û paşvekişandin.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

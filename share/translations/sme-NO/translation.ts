@@ -76198,6 +76198,14 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dát fáddá ii leat Almmuhuvvon; lohkkit eai oainne dan.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrašuvnnat</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Installašuvnna rievdadusat fiilan seailluhuvvon: sin dilli, vuodjimat, vuodjin ja ruovttoluotta máhcaheapmi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

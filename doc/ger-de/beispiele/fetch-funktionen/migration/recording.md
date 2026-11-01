@@ -29,6 +29,14 @@ In PHP dieselbe Funktion über den Function-Handler (`lib/ezutils/classes/ezfunc
 $result = eZFunctionHandler::execute( 'migration', 'recording', array() );
 ```
 
+## In einem ausgelieferten Template
+
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/parts/exp_migration_recording_bar.tpl` Zeile 8:
+
+```tpl
+{def $exp_recording = fetch( 'migration', 'recording' )}
+```
+
 ## Siehe auch
 
 - [Alle Fetch-Funktionen von migration](README.md)

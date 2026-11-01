@@ -391,7 +391,18 @@ it never widens it. Events and keys may be added within `exp-migration-recording
 
 ## Related pages
 
-- [Migrations](../../guides/migrations.md), [PHP migrations](../../guides/migrations-php.md)
-- [Migrations in the kernel](../../features/6.0/migrations.md)
+- [Migrations: the hub](../../help/migrations/README.md), [All recipes](../../help/migrations/recipes/README.md),
+  [Frequently asked questions](../../help/migrations/faq.md)
+- [The guide](../../guides/migrations.md), [the tutorial](../../guides/migrations-tutorial.md),
+  [PHP migrations](../../guides/migrations-php.md),
+  [Rollback and captions](../../guides/migrations-rollback-and-captions.md),
+  [The migrations repository](../../guides/migrations-repositories.md)
+- [In the administration](../../help/migrations/in-the-administration.md),
+  [Commands](../../help/migrations/commands.md), [Settings](../../help/migrations/settings.md),
+  [Policies, views and events](../../help/migrations/policies-views-and-events.md)
+- [The feature](../../features/6.0/migrations.md)
+- [When a migration fails](../../help/migrations/when-a-migration-fails.md),
+  [Troubleshooting messages](../../guides/migrations-troubleshooting.md)
+- [Migrations versus migrating a site](../../help/migrations/migrations-versus-migrating-a-site.md)
 - [migration.ini](../../examples/ini-settings/migration/README.md)
 - [Audit event model](audit-event-model.md)

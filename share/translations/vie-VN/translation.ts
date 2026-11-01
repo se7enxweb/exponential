@@ -76198,6 +76198,14 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Chủ đề này chưa được Phát hành; người đọc không thấy nó.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Di chuyển dữ liệu</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Các thay đổi của bản cài đặt được lưu thành tệp: tình trạng, các lượt chạy, chạy và hoàn tác.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

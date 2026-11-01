@@ -178,6 +178,7 @@ Den gesamten Abschnitt in Reihenfolge finden Sie unter [Der Lesepfad für PHP-En
 - [Exponential für PHP-Entwickler](exponential-fuer-php-entwickler.md)
 - [Der Lesepfad für PHP-Entwickler](lesepfad-fuer-php-entwickler.md)
 - [Anwendungsentwickler: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
+- [Migrationen in PHP schreiben](migrationen-in-php-schreiben.md), [Migrationen](../migrationen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

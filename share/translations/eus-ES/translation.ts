@@ -76198,6 +76198,14 @@ Nodoaren klasea aldatu beharko duzu trukatze-funtzioa erabiliz.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Gai hau ez dago argitaratuta; irakurleek ez dute ikusten.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrazioak</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Instalazioaren aldaketak fitxategi gisa gordeta: haien egoera, exekuzioak, exekutatu eta desegin.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

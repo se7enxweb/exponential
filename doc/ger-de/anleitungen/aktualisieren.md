@@ -363,6 +363,13 @@ sehen, was eine Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](
 
 **USt-Regeln (6.0.15).** An der Berechnung der Umsatzsteuer ändert sich nichts. USt-Regeln werden nur angewendet, wenn `shop.ini [VATSettings] Handler` einen Handler nennt (`ezdefault`), und die ausgelieferte `settings/shop.ini` nennt weiterhin keinen. Ein Shop, dessen Regeln nie angewendet wurden, sieht jetzt einen Hinweis unter **Store > VAT rules**; um sie anzuwenden, setzen Sie `Handler=ezdefault` in `settings/override/shop.ini.append.php`, stellen sicher, dass das Land des Kunden beim Checkout bekannt ist, und testen eine Bestellung, bevor Sie live gehen.
 
+**Migrationen (6.0.15).** Ab 6.0.15 schreiben Sie die eigenen Änderungen einer Site nach dem Upgrade (eine Tabelle,
+eine Inhaltsklasse, Rollen, eine Korrektur von Inhalten) am besten als Migrationen: Dateien unter Versionskontrolle,
+die jede Installation der Site mit `./console exp:migration:migrate --apply` in derselben Reihenfolge anwendet, mit
+einem Sicherungspunkt vor jedem Lauf. Die Upgrade-Schritte des Kernels sind darunter gelistet. Beginnen Sie mit
+[Migrationen](../hilfe/migrationen/README.md); das Wort meint etwas anderes als das Upgrade einer Site:
+[Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md).
+
 **Demo-Modus (6.0.15).** Die Umgebungsvariable `EXP_DEMO_MODE=1` kennzeichnet eine öffentliche Demo; ohne sie ändert sich nichts. Upgrade einer Demo: Behalten Sie die Variable für den Webserver, Cron und die Konsole bei, und prüfen Sie danach das Banner. Upgrade einer echten Site: Stellen Sie sicher, dass die Variable für keinen ihrer Prozesse gesetzt ist. [Demo-Modus](../bc/6.0/demomodus.md).
 
 ## Siehe auch
@@ -371,6 +378,8 @@ sehen, was eine Version enthält, öffnen Sie ihr Changelog: [6.0.0 bis 6.0.15](
 - [Betrieb einer Site](betrieb-einer-website.md): Datensicherungen, Caches und Reparaturen nach dem Upgrade.
 - [Bereitstellung](bereitstellung.md) und [Velocity-Engines](../bc/6.0/velocity-engines.md): das richtige PHP-FPM neu laden oder auf einen schnelleren Server wechseln.
 - [Extensions](extensions.md): Versionen, Ladereihenfolge und Releases Ihrer eigenen Extensions.
+- [Upgrade mit der Konsole](aktualisieren-mit-der-konsole.md) und [Migrationen](../hilfe/migrationen/README.md): das
+  Upgrade als ein Befehl, und die eigenen Änderungen der Site danach.
 - [.htaccess und config.php von der Konsole aus einrichten](setup-dateien-von-der-konsole.md): beide Dateien mit den neuen Vorlagen vergleichen.
 - Release-Hinweise: [Changelogs von Exponential 6.0](../../changelogs/6.0/6.0.15.md) und [die Release-Hinweise der Extensions](../../changelogs/extensions/README.md).
 

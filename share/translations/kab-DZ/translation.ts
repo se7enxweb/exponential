@@ -76198,6 +76198,14 @@ Yessefk ad tbeddleḍ asmil n tkerrist s useqdec n tawuri n ubeddel.</translatio
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Asentel-a ur yettwasiẓreg ara; imɣuraen ur t-ttwalin ara.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Inuzuten</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ibeddilen n usebded yettwaḥerzen d ifuyla: addad-nsen, isedduyen, aseddu d tuɣalin ɣer deffir.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

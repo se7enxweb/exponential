@@ -76198,6 +76198,14 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Quest tema n'è betg publitgà; ils lecturs na al vesan betg.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraziuns</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Midadas da l&apos;installaziun tegnidas sco datotecas: lur stadi, las execuziuns, exequir e revocar.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -76198,6 +76198,14 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Hetta evnið er ikki Útgivið; lesarar síggja tað ikki.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Flytingar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Broytingar í innleggingini goymdar sum fílur: støða teirra, koyringarnar, koyr og tak aftur.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

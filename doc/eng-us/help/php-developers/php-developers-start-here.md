@@ -178,6 +178,7 @@ The whole section in order is [The PHP developer's reading path](php-developer-r
 - [Exponential for PHP developers](exponential-for-php-developers.md)
 - [The PHP developer's reading path](php-developer-reading-path.md)
 - [Application creators: start here](../creators/app-creators/app-creators-start-here.md)
+- [Writing migrations in PHP](writing-migrations-in-php.md), [Migrations](../migrations/README.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

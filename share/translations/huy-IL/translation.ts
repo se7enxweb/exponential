@@ -76207,6 +76207,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>הנא סוגא לא פריסא הו; קרויא לא חזין לה.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>שניאתא</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>שנויי תקנתא דנטירין כפנקיתא: מקמהון, ריהטיא, ארהט ואהדר לבסתר.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

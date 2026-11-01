@@ -398,7 +398,18 @@ hinzukommen; keiner wird umbenannt oder entfernt.
 
 ## Verwandte Seiten
 
-- [Migrationen](../../anleitungen/migrationen.md), [PHP-Migrationen](../../anleitungen/migrationen-php.md)
-- [Migrationen im Kernel](../../funktionen/6.0/migrationen.md)
+- [Migrationen: der Einstieg](../../hilfe/migrationen/README.md),
+  [Alle Rezepte](../../hilfe/migrationen/rezepte/README.md), [Häufige Fragen](../../hilfe/migrationen/faq.md)
+- [Die Anleitung](../../anleitungen/migrationen.md), [das Tutorial](../../anleitungen/migrationen-tutorial.md),
+  [PHP-Migrationen](../../anleitungen/migrationen-php.md),
+  [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](../../anleitungen/migrationen-repositories.md)
+- [In der Administration](../../hilfe/migrationen/in-der-administration.md),
+  [Befehle](../../hilfe/migrationen/befehle.md), [Einstellungen](../../hilfe/migrationen/einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](../../hilfe/migrationen/richtlinien-ansichten-und-ereignisse.md)
+- [Die Funktion](../../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](../../hilfe/migrationen/wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](../../anleitungen/migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](../../hilfe/migrationen/migrationen-oder-umzug-einer-site.md)
 - [migration.ini](../../beispiele/ini-einstellungen/migration/README.md)
 - [Audit-Ereignismodell](audit-ereignismodell.md)

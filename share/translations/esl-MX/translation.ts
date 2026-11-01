@@ -78697,6 +78697,14 @@ Gracias por la retroalimentación</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Este tema no está publicado; los lectores no lo ven.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraciones</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Cambios en la instalación guardados como archivos: su estado, las ejecuciones, ejecutar y revertir.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

@@ -1,8 +1,8 @@
 ---
 title: "Migrations: recording changes"
 audience: admin, developer
-category: administration
-order: 5
+category: migrations
+order: 14
 summary: Setup > Migrations > Recording in the administration. Record your own changes, or every change of the site in a site-wide window, as the steps of a migration; see what a recording captured and the migration it would make; stop and discard recordings; the Recording bar.
 keywords: migrations, recording, record changes, session recording, site-wide recording, Recording bar, generate a migration, exp:migration:record, migration/recording, migration/edit, Verify it's you, personal data
 context: migration/recording

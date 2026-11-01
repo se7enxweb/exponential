@@ -76198,6 +76198,14 @@ Nĩũgũkĩrĩrwo nĩ gũcenjia kĩrathi kĩa nodi ũhũthĩrĩte wĩra wa gũti
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Mũhoro ũyũ ndũrekerũo; athomi ndmaũonaga.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mĩthamio</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mũgarũrũko wa ũhandi ũigĩtwo ta faĩlo: ũrĩa ũrĩ, mĩtengerio, gũtengeria na gũcookia.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

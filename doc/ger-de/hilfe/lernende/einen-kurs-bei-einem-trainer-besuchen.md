@@ -33,7 +33,7 @@ Eine Auswahl aus dem [Kurskatalog](../trainer/kurskatalog.md#die-kurse):
 | [Redakteure 201](../trainer/redakteure-201/README.md) | Redakteure, die jede Woche veröffentlichen | 23 Lektionen, etwa 16 Stunden | Redakteure 101 |
 | [Exponential Layouts](../trainer/layouts/README.md) | Redakteure und Website-Bauer | 23 Lektionen, etwa 17,5 Stunden | Redakteure 101 |
 | [Website-Administration](../trainer/website-administratoren/README.md) | Menschen, die eine Website betreiben | 48 Lektionen, etwa 30 Stunden | Redakteure 101, Grundlagen der Kommandozeile |
-| [Entwickler](../trainer/entwickler/README.md) | PHP-Entwickler | 52 Lektionen, etwa 44 Stunden | PHP, Git |
+| [Entwickler](../trainer/entwickler/README.md) | PHP-Entwickler | 53 Lektionen, etwa 45 Stunden | PHP, Git |
 | [Theme-Design](../trainer/theme-designer/README.md) | Designer und Frontend-Entwickler | 30 Lektionen, etwa 24 Stunden | HTML, CSS |
 | [Workshops und Bootcamps](../trainer/workshops/README.md) | Gruppen, die ein kompaktes Programm brauchen | Programme von einem halben Tag bis zu 5 Tagen | Hängt von der Agenda ab |
 

@@ -76196,6 +76196,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>இந்தத் தலைப்பு வெளியிடப்படவில்லை; வாசகர்கள் இதைப் பார்க்க மாட்டார்கள்.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>நிறுவல் இடம்பெயர்வுகள்</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>கோப்புகளாக வைக்கப்பட்ட நிறுவல் மாற்றங்கள்: அவற்றின் நிலை, இயக்கங்கள், இயக்குதல் மற்றும் திரும்பப்பெறுதல்.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

@@ -69,12 +69,51 @@ class expStaticCacheRunner
     private $skipped = 0;
 
     /**
+     * Export mode (static publishing): a callable handed every page instead of
+     * the static cache handler, as ( $url, $path, $relative, $body, $info ),
+     * $relative being the page's path in the site and $info the crawl's
+     * (status, type, cookies). Nothing is purged and MaxCacheDepth does not
+     * apply; null is the static cache.
+     *
+     * @var callable|null
+     */
+    private $export = null;
+
+    /**
+     * Options handed to the crawler as they are: base_url (fetch from this
+     * address instead of SiteURL), base_path, timeout, fetcher.
+     *
+     * @var array
+     */
+    private $crawlOptions = array();
+
+    /**
+     * The crawler of the last site generated: its counts and problems (the
+     * broken links) for a caller that reports them.
+     *
+     * @var expPreloadRunner|null
+     */
+    private $lastCrawler = null;
+
+    /** @return expPreloadRunner|null the crawler of the last site generated */
+    public function lastCrawler()
+    {
+        return $this->lastCrawler;
+    }
+
+    /**
      * @param callable $emit Progress sink.
-     * @param array $options siteaccess (string or array), max_pages, max_depth, purge.
+     * @param array $options siteaccess (string or array), max_pages, max_depth, purge, paths; for export mode
+     *                       export (the callable), base_url, base_path, timeout, fetcher.
      */
     public function __construct( $emit, array $options = array() )
     {
         $this->emit = $emit;
+        if ( isset( $options['export'] ) && is_callable( $options['export'] ) )
+            $this->export = $options['export'];
+        foreach ( array( 'base_url', 'base_path', 'timeout', 'fetcher' ) as $name )
+            if ( isset( $options[$name] ) )
+                $this->crawlOptions[$name] = $options[$name];
 
         $siteAccesses = isset( $options['siteaccess'] ) ? $options['siteaccess'] : array();
         if ( !is_array( $siteAccesses ) )
@@ -174,7 +213,7 @@ class expStaticCacheRunner
             return;
         }
 
-        $storageDir = self::storageDirectory();
+        $storageDir = $this->export !== null ? 'the static publishing build' : self::storageDirectory();
         $started = microtime( true );
 
         $this->say( 'phase', 'Configuration' );
@@ -188,10 +227,10 @@ class expStaticCacheRunner
         // Generating pages is only half of a static cache. Without this the
         // pages are never refreshed when an editor publishes, so the site would
         // keep serving whatever was true when the button was pressed.
-        if ( $siteINI->variable( 'ContentSettings', 'StaticCache' ) !== 'enabled' )
+        if ( $this->export === null && $siteINI->variable( 'ContentSettings', 'StaticCache' ) !== 'enabled' )
             $this->say( 'warn', 'site.ini [ContentSettings] StaticCache is not enabled, so publishing will not refresh these pages.' );
 
-        if ( $staticCacheINI->variable( 'CacheSettings', 'HostName' ) )
+        if ( $this->export === null && $staticCacheINI->variable( 'CacheSettings', 'HostName' ) )
             $this->say( 'warn', 'staticcache.ini [CacheSettings] HostName is set to "'
                         . $staticCacheINI->variable( 'CacheSettings', 'HostName' )
                         . '"; it is deprecated and should be empty so each site is fetched from its own SiteURL.' );
@@ -218,8 +257,8 @@ class expStaticCacheRunner
         $siteINI = eZSiteAccess::getIni( $siteAccess, 'site.ini' );
         $siteURL = $siteINI->hasVariable( 'SiteSettings', 'SiteURL' ) ? $siteINI->variable( 'SiteSettings', 'SiteURL' ) : '';
 
-        $handler = $this->handler();
-        if ( !method_exists( $handler, 'cacheFilePathsForURL' ) )
+        $handler = $this->export === null ? $this->handler() : null;
+        if ( $handler !== null && !method_exists( $handler, 'cacheFilePathsForURL' ) )
         {
             $this->say( 'error', get_class( $handler ) . ' cannot be driven from a crawl; nothing generated for ' . $siteAccess . '.' );
             return;
@@ -238,7 +277,7 @@ class expStaticCacheRunner
             array( 'siteaccess'  => $siteAccess,
                    'max_pages'   => $this->maxPages,
                    'max_depth'   => $this->maxDepth,
-                   'start_paths' => $this->paths ) );
+                   'start_paths' => $this->paths ) + $this->crawlOptions );
 
         $base = $crawler->baseUrl();
         if ( $base === false )
@@ -250,49 +289,73 @@ class expStaticCacheRunner
         $basePath = $crawler->basePath();
         $this->say( 'phase', 'Generating ' . $siteAccess . '  ' . $base . ( $basePath === '' ? '/' : $basePath . '/' ) );
 
-        if ( $this->purge )
-            $this->purgeSiteAccess( $handler, $siteAccess );
-
-        $maxCacheDepth = (int)eZINI::instance( 'staticcache.ini' )->variable( 'CacheSettings', 'MaxCacheDepth' );
-
         $stored = 0;
         $files = 0;
         $skipped = 0;
 
-        $crawler->setStoreCallback(
-            function ( $url, $path, $body ) use ( $runner, $handler, $siteAccess, $basePath, $maxCacheDepth, &$stored, &$files, &$skipped )
-            {
-                // The url as the siteaccess sees it: the prefix that selected
-                // the siteaccess is not part of its own urls, and is added back
-                // by the storage layout.
-                $relative = $path;
-                if ( $basePath !== '' && strpos( $relative, $basePath ) === 0 )
-                    $relative = (string)substr( $relative, strlen( $basePath ) );
-                $relative = '/' . ltrim( $relative, '/' );
-                $relative = rtrim( $relative, '/' );
-
-                // The same bound the publish time invalidation uses, so a page
-                // is never stored that a publish would not refresh.
-                if ( $maxCacheDepth > 0 && substr_count( $relative . '/', '/' ) > $maxCacheDepth )
+        if ( $handler === null )
+        {
+            // Export mode: the page goes to the caller with its path in the site (the path below sitePath(), which
+            // is the siteaccess prefix and the folder of the installation); the caller says what it did.
+            $export = $this->export;
+            $sitePath = $crawler->sitePath();
+            $crawler->setStoreCallback(
+                function ( $url, $path, $body, $info = array() ) use ( $export, $sitePath, &$stored, &$files )
                 {
-                    $skipped++;
-                    $runner->report( 'info', 'too deep for MaxCacheDepth, not stored: ' . $path );
-                    return;
-                }
+                    $relative = $path;
+                    if ( $sitePath !== '' && ( $relative === $sitePath || strpos( $relative, $sitePath . '/' ) === 0 ) )
+                        $relative = (string)substr( $relative, strlen( $sitePath ) );
+                    $relative = '/' . trim( $relative, '/' );
+                    if ( call_user_func( $export, $url, $path, $relative, $body, (array)$info ) )
+                    {
+                        $stored++;
+                        $files++;
+                    }
+                } );
+        }
+        else
+        {
+            if ( $this->purge )
+                $this->purgeSiteAccess( $handler, $siteAccess );
 
-                $written = 0;
-                foreach ( $handler->cacheFilePathsForURL( $siteAccess, $relative ) as $file )
+            $maxCacheDepth = (int)eZINI::instance( 'staticcache.ini' )->variable( 'CacheSettings', 'MaxCacheDepth' );
+
+            $crawler->setStoreCallback(
+                function ( $url, $path, $body ) use ( $runner, $handler, $siteAccess, $basePath, $maxCacheDepth, &$stored, &$files, &$skipped )
                 {
-                    eZStaticCache::storeCachedFile( $file, $body );
-                    $written++;
-                }
+                    // The url as the siteaccess sees it: the prefix that selected
+                    // the siteaccess is not part of its own urls, and is added back
+                    // by the storage layout.
+                    $relative = $path;
+                    if ( $basePath !== '' && strpos( $relative, $basePath ) === 0 )
+                        $relative = (string)substr( $relative, strlen( $basePath ) );
+                    $relative = '/' . ltrim( $relative, '/' );
+                    $relative = rtrim( $relative, '/' );
 
-                $stored++;
-                $files += $written;
-                $runner->report( 'ok', sprintf( '%-52s %s', $path, $runner->shortenBytes( strlen( $body ) ) ) );
-            } );
+                    // The same bound the publish time invalidation uses, so a page
+                    // is never stored that a publish would not refresh.
+                    if ( $maxCacheDepth > 0 && substr_count( $relative . '/', '/' ) > $maxCacheDepth )
+                    {
+                        $skipped++;
+                        $runner->report( 'info', 'too deep for MaxCacheDepth, not stored: ' . $path );
+                        return;
+                    }
+
+                    $written = 0;
+                    foreach ( $handler->cacheFilePathsForURL( $siteAccess, $relative ) as $file )
+                    {
+                        eZStaticCache::storeCachedFile( $file, $body );
+                        $written++;
+                    }
+
+                    $stored++;
+                    $files += $written;
+                    $runner->report( 'ok', sprintf( '%-52s %s', $path, $runner->shortenBytes( strlen( $body ) ) ) );
+                } );
+        }
 
         $crawler->run();
+        $this->lastCrawler = $crawler;
 
         $counts = $crawler->counts();
         $this->stored += $stored;

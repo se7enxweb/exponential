@@ -76137,6 +76137,14 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Táto téma nie je vydaná; čitatelia ju nevidia.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrácie</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Zmeny inštalácie uložené ako súbory: ich stav, behy, spustenie a vrátenie.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

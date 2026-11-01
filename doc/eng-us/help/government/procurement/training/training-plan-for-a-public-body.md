@@ -60,7 +60,7 @@ The matrix that maps each group to courses is on the page "Roles to courses" in 
 | [Search](../../../trainers/search/README.md) | administrators and developers | 20 lessons, about 10 hours |
 | [Multisite and site packages](../../../trainers/multisite-and-packages/README.md) | administrators of several sites | 26 lessons, about 22 hours |
 | [Newsletters](../../../trainers/newsletter/README.md) | editors and administrators who send newsletters | 20 lessons, about 16 hours |
-| [Developers](../../../trainers/developers/README.md) | PHP developers | 52 lessons, about 44 hours |
+| [Developers](../../../trainers/developers/README.md) | PHP developers | 53 lessons, about 45 hours |
 | [Theme design](../../../trainers/theme-designers/README.md) | designers and front-end developers | 30 lessons, about 24 hours |
 | [Migrating to Exponential](../../../trainers/migration/README.md) | migration project teams | 25 lessons, about 22.5 hours |
 | [Train the trainer](../../../trainers/train-the-trainer/README.md) | people who will teach | 34 lessons, about 21 hours |

@@ -76051,6 +76051,14 @@ Du måste ändra nodens klass med hjälp av bytesfunktionen.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Det här ämnet är inte frisläppt; läsarna ser det inte.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ändringar av installationen sparade som filer: deras läge, körningarna, kör och återställ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

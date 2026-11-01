@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # content.ini
 
-The shipped settings of `settings/content.ini`: 53 blocks, 143 settings.
+The shipped settings of `settings/content.ini`: 54 blocks, 147 settings.
 
 > Exponential configuration file for content module  
 >
@@ -24,6 +24,7 @@ The shipped settings of `settings/content.ini`: 53 blocks, 143 settings.
 
 | Block | Settings |
 |---|---|
+| [PreviewLinkSettings](PreviewLinkSettings.md) | 4 |
 | [VersionView](VersionView.md) | 2 |
 | [VersionManagement](VersionManagement.md) | 7 |
 | [EditSettings](EditSettings.md) | 3 |

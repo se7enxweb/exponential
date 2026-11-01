@@ -304,6 +304,10 @@ php ezpm.php help --allow-root-user                            # every command
   `eZPackageUploadInspectorTest.php`, `eZPackageRequestGuardTest.php`, `eZPackageDownloadTest.php`.
 - [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md#6-october-2026-the-package-pages)
 
+## Related pages
+
+- [Migrations in an extension or a package](../help/migrations/recipes/migrations-in-an-extension-or-package.md)
+
 <!-- exp-partner-block:start -->
 **Become an Exponential Partner.** Partners share their information, provide funding, contribute back and
 develop the products with us, and that is how Exponential grows. A partner website and dashboard are planned for

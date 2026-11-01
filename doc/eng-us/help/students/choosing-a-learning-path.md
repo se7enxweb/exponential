@@ -73,7 +73,7 @@ courses.
 |---|---|---|---|
 | Editor | A browser | 2 to 3 weeks, a few hours a week | Editors 101: about 19.5 hours |
 | Administrator | Editor path; a terminal | 4 to 6 weeks | Site administration: about 30 hours |
-| Developer | Editor path; PHP and Git basics | 6 to 10 weeks | Developers: about 44 hours |
+| Developer | Editor path; PHP and Git basics | 6 to 10 weeks | Developers: about 45 hours |
 | Designer | Editor path; HTML and CSS | 4 to 6 weeks | Theme design: about 24 hours |
 
 The self-study lengths are suggestions for a learner with a few hours a week; the course lengths are those of the

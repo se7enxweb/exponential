@@ -76137,6 +76137,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Þetta efnisatriði er ekki Gefið út; lesendur sjá það ekki.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Flutningar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Breytingar á uppsetningunni geymdar sem skrár: staða þeirra, keyrslurnar, keyra og afturkalla.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

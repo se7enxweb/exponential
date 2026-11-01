@@ -76198,6 +76198,14 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Bu mavzu nashr qilinmagan; oʻquvchilar uni koʻrmaydi.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratsiyalar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>O‘rnatmadagi fayl sifatida saqlangan o‘zgarishlar: ularning holati, ishga tushirishlar, bajarish va orqaga qaytarish.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

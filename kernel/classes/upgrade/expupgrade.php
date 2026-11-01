@@ -391,8 +391,8 @@ class expUpgrade
                             }
                             $entry['duration_ms'] = (int)round( ( microtime( true ) - $start ) * 1000 );
                             $written = expUpgradeRecord::write( $db, $step, $entry['state'], $entry['duration_ms'], implode( "\n", $entry['messages'] ) );
-                            if ( !$written && $entry['state'] === 'done' && $id !== '6.0.15-upgrade-record-table' )
-                                $report['warnings'][] = "$id: not recorded (no table " . expUpgradeRecord::TABLE . ' or ' . expUpgradeRecord::LEGACY_TABLE . ')';
+                            if ( !$written && $entry['state'] === 'done' )
+                                $report['warnings'][] = "$id: not recorded (no table " . expUpgradeRecord::TABLE . ')';
                             self::log( $id, $entry, $engine );
                             self::audit( 'system.upgrade.step', array( 'object' => array( 'type' => 'upgrade_step', 'id' => $id ),
                                                                        'result' => $entry['state'] === 'done' ? 'success' : 'failure',

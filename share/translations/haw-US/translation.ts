@@ -76198,6 +76198,14 @@ Pono ʻoe e hoʻololi i ka papa o ka hīpuʻu ma o ka hana hoʻololi.</translati
         <source>This topic is not Released; readers do not see it.</source>
         <translation>ʻAʻole i hoʻokuʻu ʻia kēia kumuhana; ʻaʻole ʻike nā mea heluhelu iā ia.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Nā hoʻoneʻe</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Nā loli i ka hoʻokomo i mālama ʻia ma ke ʻano he mau faila: ko lākou kūlana, nā holo, ka holo ʻana a me ka hoʻihoʻi ʻana.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

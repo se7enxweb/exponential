@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_integrator]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_integrator] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_integrator, INI, setting, StartPage, Related
+summary: "The settings of [Landing_integrator] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_integrator, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_integrator]
 
-The block `[Landing_integrator]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_integrator]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,25 @@ Default: `help/integrators/integrators-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_integrator]
 StartPage=help/integrators/integrators-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 6: `help/integrators/migrations-in-client-projects.md`, `help/migrations/README.md`, `help/migrations/recipes/migrations-in-an-extension-or-package.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/coming-from-kaliop-ezmigrationbundle.md`, `help/migrations/faq.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_integrator]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/integrators/migrations-in-client-projects.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=help/migrations/recipes/migrations-in-an-extension-or-package.md
+InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
+InfoPages[]=help/migrations/recipes/coming-from-kaliop-ezmigrationbundle.md
+InfoPages[]=help/migrations/faq.md
 */ ?>
 ```
 

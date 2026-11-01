@@ -74746,6 +74746,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>دا موضوع نه ده خپره شوې؛ لوستونکي یې نه ویني.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مهاجرتونه</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>په نصب کې بدلونونه چې د فایلونو په توګه ساتل کېږي: د هغوی حالت، اجراوې، اجرا کول او بېرته ګرځول.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

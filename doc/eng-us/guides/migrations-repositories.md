@@ -5,7 +5,7 @@ the run. After every run, the failed ones too, both are committed, the commit is
 explains where that repository is, how it is set up, what a commit and a tag look like, and what happens when a push
 fails.
 
-[Guides](README.md) · [Migrations](migrations.md) · Related: [Rollback and captions](migrations-rollback-and-captions.md),
+[Guides](README.md) · [Migrations: the hub](../help/migrations/README.md) · [Migrations](migrations.md) · Related: [Rollback and captions](migrations-rollback-and-captions.md),
 [Troubleshooting](migrations-troubleshooting.md), [migration.ini \[RepositorySettings\]](../examples/ini-settings/migration/RepositorySettings.md)
 
 ## In short
@@ -170,8 +170,17 @@ git tag -l 'migrations/production/*' --sort=version:refname | tail -5
 git show origin/main:migrations/status/production.json | head -20
 ```
 
-## Read on
+## Related pages
 
-- [Rollback and captions](migrations-rollback-and-captions.md)
-- [Troubleshooting migrations](migrations-troubleshooting.md)
+- [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
+  [Frequently asked questions](../help/migrations/faq.md)
+- [The guide](migrations.md), [the tutorial](migrations-tutorial.md), [PHP migrations](migrations-php.md),
+  [Rollback and captions](migrations-rollback-and-captions.md)
+- [In the administration](../help/migrations/in-the-administration.md), [Commands](../help/migrations/commands.md),
+  [Settings](../help/migrations/settings.md),
+  [Policies, views and events](../help/migrations/policies-views-and-events.md)
+- [The file format](../specifications/6.0/migration-file-format.md), [The feature](../features/6.0/migrations.md)
+- [When a migration fails](../help/migrations/when-a-migration-fails.md),
+  [Troubleshooting messages](migrations-troubleshooting.md)
+- [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md)
 - [`exp:migration:push`](../examples/commands/expmigrationpush.md), [migration.ini \[RepositorySettings\]](../examples/ini-settings/migration/RepositorySettings.md)

@@ -404,6 +404,7 @@ class Search extends \Exponential\Runnable\ModuleView
             case 'features': return \ezpI18n::tr( $ctx, 'What each feature does and how to set it up.' );
             case 'development': return \ezpI18n::tr( $ctx, 'Templates, extensions, the API and the code behind it.' );
             case 'install-upgrade': return \ezpI18n::tr( $ctx, 'Installing Exponential and upgrading it to a new release.' );
+            case 'migrations': return \ezpI18n::tr( $ctx, 'Changes to the installation kept as files: their state, the runs, run and roll back.' );
             case 'release-notes': return \ezpI18n::tr( $ctx, 'What changed in each release.' );
             case 'history': return \ezpI18n::tr( $ctx, 'Older documents kept for reference.' );
             case 'reference': return \ezpI18n::tr( $ctx, 'Reference material: settings, commands and formats.' );

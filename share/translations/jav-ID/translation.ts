@@ -76206,6 +76206,14 @@ Panjenengan kudu ngowahi kelas simpul kasebut nganggo fungsi tukar.</translation
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Topik iki durung Dirilis; pamaca ora bisa ndeleng.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Owah-owahan instalasi sing disimpen dadi berkas: kahanane, eksekusine, nglakokake lan mbatalake.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

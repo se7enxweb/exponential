@@ -76198,6 +76198,14 @@ Düwüniň klasyny çalyşmak funksiýasy bilen üýtgetmeli bolarsyňyz.</trans
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Bu tema goýberilmedi; okyjylar ony görmeýärler.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasiýalar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Gurnamadaky faýl görnüşinde saklanýan üýtgeşmeler: olaryň ýagdaýy, işledilmeler, işletmek we yzyna almak.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

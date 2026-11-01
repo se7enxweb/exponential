@@ -13,7 +13,7 @@ Registriert in `lib/eztemplate/classes/eztemplateautoload.php` von der Klasse `e
 
 ## In einem ausgelieferten Template
 
-Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/pagelayout.tpl` Zeile 139:
+Die erste Verwendung in den Templates dieser Installation, `design/admin/templates/pagelayout.tpl` Zeile 137:
 
 ```tpl
 {tool_bar name='admin_right' view='full'}

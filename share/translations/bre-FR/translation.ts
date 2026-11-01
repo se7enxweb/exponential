@@ -76198,6 +76198,14 @@ Ret e vo deoc'h kemmañ klasad ar skoulm gant an arc'hwel eskemm.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>N'eo ket embannet ar rubrik-mañ; al lennerien ne welont ket anezhi.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Divroadennoù</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Kemmoù d&apos;ar staliadur miret evel restroù: o statud, al lañsadennoù, lañsañ ha distreiñ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

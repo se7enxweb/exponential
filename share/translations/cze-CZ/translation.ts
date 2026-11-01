@@ -76034,6 +76034,14 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Toto téma není vydáno; čtenáři ho nevidí.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrace</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Změny instalace uložené jako soubory: jejich stav, běhy, spuštění a vrácení.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

@@ -76198,6 +76198,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>ߣߌ߲ ߞߏ ߡߊ ߓߌߟߊ ߞߍߣߍ ߞߊ߲; ߞߊߟߊ߲ߘߍ߲ߟߎ ߕߍ ߊ ߦߋ.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ߕߊߡߌ߲ߠߌ ߟߎ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ߟߊߘߏ߲ߠߌ ߡߊߝߊߟߋ߲ߠߌ ߡߟߊߞߊ߬ߣߍ߲߫ ߞߐߕߐ߮ ߟߎ߬ ߘߐ߫: ߏ߬ ߟߎ߬ ߤߊߟߌ߸ ߓߏߟߌ ߟߎ߸ ߓߏߟߌ ߣߌ߫ ߞߐ߫ ߟߊߛߋߟߌ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

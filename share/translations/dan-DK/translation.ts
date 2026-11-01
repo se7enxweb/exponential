@@ -75428,6 +75428,14 @@ Du skal ændre knudens klasse med ombytningsfunktionen.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Dette emne er ikke frigivet; læserne ser det ikke.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migreringer</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ændringer af installationen gemt som filer: deres tilstand, kørslerne, kør og rul tilbage.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/secrets</name>

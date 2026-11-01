@@ -76206,6 +76206,14 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Topik ieu acan Dirilis; pamaca teu ningali éta.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrasi</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Parobahan pamasangan anu disimpen salaku file: kaayaanana, jalananana, ngajalankeun sareng mulangkeun.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

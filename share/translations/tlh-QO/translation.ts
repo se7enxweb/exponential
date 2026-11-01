@@ -74471,6 +74471,14 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>ngangmoHbe'lu' mIwvam; legh laDwI'pu'be'.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>vIHghachmey</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>jomghach choHmey teywaymey bomlu&apos;: Dotlhchaj, QapmoHghachmey, QapmoH cheghmoH je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

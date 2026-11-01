@@ -165,6 +165,7 @@ Folgen Sie dann dem [Lesepfad](lesepfad-fuer-datenbankadministratoren.md).
 - [Die Datenbankschicht auf einer Seite](die-datenbankschicht-auf-einer-seite.md)
 - [Ein Lesepfad für Datenbankadministratoren](lesepfad-fuer-datenbankadministratoren.md)
 - [Häufige Fragen zur Datenbank](haeufige-fragen-zur-datenbank.md)
+- [Migrationen auf gehosteten Sites](../hosting/betrieb/migrationen-auf-gehosteten-sites.md), [Migrationen](../migrationen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

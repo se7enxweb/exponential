@@ -76198,6 +76198,14 @@ Terá que cambiar a clase do nodo coa función de intercambio.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Este tema non está publicado; os lectores non o ven.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracións</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Cambios na instalación gardados como ficheiros: o seu estado, as execucións, executar e reverter.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

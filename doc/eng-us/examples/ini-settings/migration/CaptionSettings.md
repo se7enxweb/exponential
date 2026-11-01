@@ -72,7 +72,7 @@ ReuseUnchanged=enabled
 > The tables the reuse check leaves out: the record of the runs and captions, sessions and the audit index (each  
 > caption writes an audit event). A name ending in \* stands for every table that starts with it.  
 
-Default: a list of 5: `exp_migration`, `exp_migration_run`, `expupgrade_step`, `ezsession`, `expaudit_*`.
+Default: a list of 4: `exp_migration`, `exp_migration_run`, `ezsession`, `expaudit_*`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -82,7 +82,6 @@ Default: a list of 5: `exp_migration`, `exp_migration_run`, `expupgrade_step`, `
 ReuseIgnoreTableList[]
 ReuseIgnoreTableList[]=exp_migration
 ReuseIgnoreTableList[]=exp_migration_run
-ReuseIgnoreTableList[]=expupgrade_step
 ReuseIgnoreTableList[]=ezsession
 ReuseIgnoreTableList[]=expaudit_*
 */ ?>

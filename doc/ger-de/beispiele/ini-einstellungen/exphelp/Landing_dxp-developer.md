@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_dxp-developer]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [Landing_dxp-developer] in exphelp.ini: StartPage, Related"
-keywords: Einstellung, exphelp.ini, Landing_dxp-developer, INI, setting, StartPage, Related
+summary: "Die Einstellungen von [Landing_dxp-developer] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: Einstellung, exphelp.ini, Landing_dxp-developer, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_dxp-developer]
 
-Der Block `[Landing_dxp-developer]` von `settings/exphelp.ini`, mit 2 Einstellung(en).
+Der Block `[Landing_dxp-developer]` von `settings/exphelp.ini`, mit 3 Einstellung(en).
 
 Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -26,6 +26,25 @@ Standard: `help/dxp-developers/dxp-developers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_dxp-developer]
 StartPage=help/dxp-developers/dxp-developers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Standard: eine Liste mit 6: `help/dxp-developers/exponential-migrations-for-doctrine-users.md`, `help/migrations/README.md`, `help/migrations/recipes/coming-from-doctrine-migrations.md`, `guides/migrations-tutorial.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/faq.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_dxp-developer]
+# ein leeres "InfoPages[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+InfoPages[]
+InfoPages[]=help/dxp-developers/exponential-migrations-for-doctrine-users.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=help/migrations/recipes/coming-from-doctrine-migrations.md
+InfoPages[]=guides/migrations-tutorial.md
+InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
+InfoPages[]=help/migrations/faq.md
 */ ?>
 ```
 

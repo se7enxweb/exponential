@@ -5,16 +5,20 @@
  * in the live MongoDB suite (expMigrationRecordMongoDBTest). Each is given a connection without exp_migration and
  * exp_migration_run, which it may write to.
  *
- *  MR-E1 create: the upgrade step 6.0.15-migration-tables is missing, makes both tables and copies the rows of
- *        expupgrade_step (mapping of expMigrationRecord); then it is present
- *  MR-E2 re-run idempotent: a second apply copies nothing and changes no row; a row exp_migration has is kept
+ *  MR-E1 create: the upgrade step 6.0.15-migration-tables is missing and makes both tables (it copies nothing); a
+ *        database of a pre-release of 6.0.15 with both tables: the step 6.0.15-upgrade-record-table is missing, its
+ *        dry run lists each row it copies and the drop, it copies the rows exp_migration does not have (mapping of
+ *        expMigrationRecord; a newer row of exp_migration is kept), drops expupgrade_step and is present afterwards
+ *  MR-E2 re-run idempotent: a second apply of both steps does nothing and changes no row
  *  MR-E3 write and read: a migration row and a run row, replaced by a second write, listed, removed
- *  MR-E4 exp:upgrade's record: written to exp_migration as source "kernel", read back merged with expupgrade_step
+ *  MR-E4 exp:upgrade's record: written to exp_migration as source "kernel" and read from it only
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
  * @package tests
  */
+
+require_once __DIR__ . '/expMigrationLegacyRecordFixture.php';
 
 trait expMigrationRecordEngineChecks
 {
@@ -44,22 +48,19 @@ trait expMigrationRecordEngineChecks
                 $this->dropTable( $db, $table );
         expKernelTableSchema::reset();
         $this->assertFalse( expMigrationRecord::exists( $db ), 'exp_migration is gone before the test' );
-        $messages = array();
-        $this->assertTrue( expKernelTableSchema::install( array( expMigrationRecord::LEGACY_TABLE ), $db, self::migrationSchema(), $messages ), implode( '; ', $messages ) );
-        $db->query( 'DELETE FROM ' . expMigrationRecord::LEGACY_TABLE );
-        $rows = array(
+        $this->assertArrayNotHasKey( expMigrationRecord::LEGACY_TABLE, self::migrationSchema(), 'a new installation has no expupgrade_step' );
+        $messages = expMigrationLegacyRecordFixture::install( $db, array(
             array( '6.0.15-upgrade-record-table', 'database', '6.0.15', 'done', 1761900000, 1500, 'cli root', 'sqlite', str_repeat( 'a', 64 ), '' ),
             array( '6.0.15-trash-columns', 'database', '6.0.15', 'failed', 1761900100, 250, 'cli alpha', 'sqlite', str_repeat( 'b', 64 ), 'column exists' ),
             array( 'caption:20261031-120000-pre', 'caption', '', 'pre', 1761899990, 0, 'cli root', 'sqlite', '', 'before the upgrade (git_manager)' ),
-        );
-        foreach ( $rows as $row )
-        {
-            $values = array();
-            foreach ( $row as $value )
-                $values[] = is_int( $value ) ? (string)$value : "'" . $db->escapeString( $value ) . "'";
-            $db->query( 'INSERT INTO ' . expMigrationRecord::LEGACY_TABLE . ' ( ' . implode( ', ', expMigrationRecord::LEGACY_COLUMNS ) . ' ) VALUES ( ' . implode( ', ', $values ) . ' )' );
-        }
-        $this->assertCount( 3, expUpgradeRecord::all( $db ), 'the record is read from expupgrade_step while exp_migration is missing' );
+        ) );
+        $this->assertSame( array(), $messages, implode( '; ', $messages ) );
+        $this->assertTrue( expKernelTableSchema::exists( expMigrationRecord::LEGACY_TABLE, $db, true ) );
+        // exp:upgrade never reads expupgrade_step: without exp_migration there is no record, and nothing is written
+        $this->assertNull( expUpgradeRecord::table( $db ) );
+        $this->assertFalse( expUpgradeRecord::exists( $db ) );
+        $this->assertSame( array(), expUpgradeRecord::all( $db ), 'expupgrade_step is not read' );
+        $this->assertFalse( expUpgradeRecord::writeCaption( $db, 'none', 'pre', 'before', 'kernel' ), 'nothing is written without exp_migration' );
     }
 
     /** Drops a table of the test connection (MongoDB: the collection). */
@@ -73,20 +74,59 @@ trait expMigrationRecordEngineChecks
     {
         $this->prepareLegacy( $db );
         $context = new expUpgradeContext( $db, true, array(), self::migrationRoot() . '/share/db_schema.dba' );
-        $step = new expUpgradeStepMigrationTables();
-        $this->assertSame( array( '6.0.15-upgrade-record-table' ), $step->after() );
+        $tables = new expUpgradeStepMigrationTables();
+        $drop = new expUpgradeStepRecordTable();
+        $this->assertSame( array(), $tables->after(), 'step 0' );
+        $this->assertSame( array( '6.0.15-migration-tables' ), $drop->after() );
 
-        $effect = $step->detect( $context );
+        // the drop step refuses to drop while exp_migration is missing: nothing is lost
+        $effect = $drop->detect( $context );
         $this->assertSame( expUpgradeStep::MISSING, $effect['effect'], $effect['detail'] );
-        $this->assertSame( 3, expMigrationRecord::legacyPending( $db ) );
-        $plan = implode( "\n", $step->plan( $context ) );
-        $this->assertStringContainsString( 'copy 3 row(s) of expupgrade_step into exp_migration', $plan );
+        try
+        {
+            $drop->apply( $context );
+            $this->fail( 'the drop step ran without exp_migration' );
+        }
+        catch ( RuntimeException $e )
+        {
+            $this->assertStringContainsString( 'expupgrade_step is kept', $e->getMessage() );
+        }
+        expKernelTableSchema::reset();
+        $this->assertTrue( expKernelTableSchema::exists( expMigrationRecord::LEGACY_TABLE, $db, true ) );
 
-        $done = $step->apply( $context );
-        $this->assertContains( 'created table exp_migration', $done );
-        $this->assertContains( 'created table exp_migration_run', $done );
-        $this->assertContains( 'copied 3 row(s) of expupgrade_step into exp_migration', $done );
-        $effect = $step->detect( $context );
+        // step 0 makes the tables and copies nothing
+        $effect = $tables->detect( $context );
+        $this->assertSame( expUpgradeStep::MISSING, $effect['effect'], $effect['detail'] );
+        $done = $tables->apply( $context );
+        $this->assertSame( array( 'created table exp_migration', 'created table exp_migration_run' ), $done );
+        $effect = $tables->detect( $context );
+        $this->assertSame( expUpgradeStep::PRESENT, $effect['effect'], $effect['detail'] );
+        $this->assertSame( array(), expMigrationRecord::all( $db ) );
+
+        // a newer result of one step is in exp_migration already (the live state: both tables)
+        expMigrationRecord::write( $db, array( 'source' => 'kernel', 'migration_id' => '6.0.15-trash-columns', 'stage' => 'database',
+                                               'version' => '6.0.15', 'state' => 'done', 'finished_at' => 1761990000 ) );
+
+        $effect = $drop->detect( $context );
+        $this->assertSame( expUpgradeStep::MISSING, $effect['effect'], $effect['detail'] );
+        $this->assertStringContainsString( '2 row(s) not in exp_migration yet', $effect['detail'] );
+        $this->assertSame( array( '6.0.15-upgrade-record-table', 'caption:20261031-120000-pre' ), expUpgradeStepRecordTable::pendingIds( $db ) );
+        $plan = $drop->plan( $context );
+        $this->assertSame( array( 'copy the row 6.0.15-upgrade-record-table of expupgrade_step into exp_migration',
+                                  'copy the row caption:20261031-120000-pre of expupgrade_step into exp_migration',
+                                  'check that every row of expupgrade_step is in exp_migration' ), array_slice( $plan, 0, 3 ) );
+        $this->assertMatchesRegularExpression( '/^drop table expupgrade_step: DROP TABLE expupgrade_step( PURGE)?;$/', $plan[3] );
+        $this->assertCount( 4, $plan );
+        expKernelTableSchema::reset();
+        $this->assertTrue( expKernelTableSchema::exists( expMigrationRecord::LEGACY_TABLE, $db, true ), 'the dry run dropped nothing' );
+        $this->assertSame( 2, expMigrationRecord::legacyPending( $db ), 'the dry run copied nothing' );
+
+        $done = $drop->apply( $context );
+        $this->assertSame( array( 'copied 2 row(s) of expupgrade_step into exp_migration', 'every row of expupgrade_step is in exp_migration',
+                                  'dropped table expupgrade_step' ), $done );
+        expKernelTableSchema::reset();
+        $this->assertFalse( expKernelTableSchema::exists( expMigrationRecord::LEGACY_TABLE, $db, true ), 'expupgrade_step is gone' );
+        $effect = $drop->detect( $context );
         $this->assertSame( expUpgradeStep::PRESENT, $effect['effect'], $effect['detail'] );
 
         $rows = array();
@@ -103,20 +143,18 @@ trait expMigrationRecordEngineChecks
         $this->assertSame( 1500, $first['duration_ms'] );
         $this->assertSame( 'cli root', $first['run_by'] );
         $this->assertSame( str_repeat( 'a', 64 ), $first['checksum'] );
-        $this->assertSame( 'column exists', $rows['6.0.15-trash-columns']['message'] );
+        $this->assertSame( 'done', $rows['6.0.15-trash-columns']['state'], 'the newer row of exp_migration is kept' );
+        $this->assertSame( 1761990000, $rows['6.0.15-trash-columns']['finished_at'] );
         $this->assertSame( 'caption', $rows['caption:20261031-120000-pre']['stage'] );
         $this->assertSame( '20261031-120000-pre', $rows['caption:20261031-120000-pre']['caption_id'] );
 
-        // MR-E2: again, after a newer result of one step was written to exp_migration
-        expMigrationRecord::write( $db, array( 'source' => 'kernel', 'migration_id' => '6.0.15-trash-columns', 'stage' => 'database',
-                                               'version' => '6.0.15', 'state' => 'done', 'finished_at' => 1761990000 ) );
-        $done = $step->apply( $context );
-        $this->assertSame( array(), $done, 'nothing to create or copy the second time' );
-        $this->assertSame( 0, expMigrationRecord::copyLegacy( $db ) );
-        $this->assertCount( 3, expMigrationRecord::all( $db ) );
-        $kept = expMigrationRecord::get( $db, 'kernel', '6.0.15-trash-columns' );
-        $this->assertSame( 'done', $kept['state'], 'the newer row of exp_migration is kept' );
-        $this->assertSame( 1761990000, $kept['finished_at'] );
+        // MR-E2: both steps again: nothing to do, nothing changed
+        $before = expMigrationRecord::all( $db );
+        $this->assertSame( array(), $tables->apply( $context ) );
+        $this->assertSame( array(), $drop->plan( $context ) );
+        $this->assertSame( array(), $drop->apply( $context ), 'nothing to copy or drop the second time' );
+        $this->assertSame( 0, expMigrationRecord::legacyPending( $db ) );
+        $this->assertSame( $before, expMigrationRecord::all( $db ) );
     }
 
     /** MR-E3 */
@@ -160,6 +198,7 @@ trait expMigrationRecordEngineChecks
     protected function checkUpgradeRecord( $db )
     {
         $this->assertSame( expMigrationRecord::TABLE, expUpgradeRecord::table( $db ) );
+        $this->assertTrue( expUpgradeRecord::exists( $db ) );
         $step = new class() extends expUpgradeBaseStep {
             public function id() { return '6.0.15-wp2-record-check'; }
             public function stage() { return 'database'; }
@@ -177,16 +216,14 @@ trait expMigrationRecordEngineChecks
         $this->assertMatchesRegularExpression( '/^[0-9a-f]{64}$/', $row['checksum'] );
         $this->assertStringEndsWith( 'expMigrationRecordEngineChecks.php', $row['file_path'] );
         $this->assertSame( 'cap-wp2', expMigrationRecord::get( $db, 'kernel', 'caption:cap-wp2' )['caption_id'] );
-        $legacy = expKernelTableSchema::tryArrayQuery( $db, 'SELECT * FROM ' . expMigrationRecord::LEGACY_TABLE . " WHERE step_id = '6.0.15-wp2-record-check'" );
-        $this->assertSame( array(), (array)$legacy, 'expupgrade_step is no longer written' );
+        expKernelTableSchema::reset();
+        $this->assertFalse( expKernelTableSchema::exists( expMigrationRecord::LEGACY_TABLE, $db, true ), 'writing never makes expupgrade_step' );
 
-        // a row expupgrade_step has and exp_migration does not still counts; exp_migration wins over it
-        $db->query( 'INSERT INTO ' . expMigrationRecord::LEGACY_TABLE . " ( step_id, stage, version, state, applied_at, duration_ms, applied_by, engine, checksum, message ) VALUES ( '6.0.15-only-legacy', 'database', '6.0.15', 'done', 5, 0, 'cli x', 'x', '', '' )" );
         $all = expUpgradeRecord::all( $db );
-        $this->assertSame( 'done', $all['6.0.15-only-legacy']['state'] );
         $this->assertSame( 'done', $all['6.0.15-wp2-record-check']['state'] );
         $this->assertSame( 2100, $all['6.0.15-wp2-record-check']['duration_ms'] );
-        $this->assertSame( 'done', $all['6.0.15-trash-columns']['state'], 'exp_migration wins over the failed row of expupgrade_step' );
+        $this->assertSame( 'done', $all['6.0.15-trash-columns']['state'] );
+        $this->assertSame( 'done', $all['6.0.15-upgrade-record-table']['state'], 'the copied rows are read from exp_migration' );
         $this->assertSame( array( 'step_id', 'stage', 'version', 'state', 'applied_at', 'duration_ms', 'applied_by', 'engine', 'checksum', 'message' ),
                            array_keys( $all['6.0.15-wp2-record-check'] ) );
     }
