@@ -1753,9 +1753,11 @@
       "tests/tests/kernel/classes/help/expHelpCachePruneTest.php",
       "tests/tests/kernel/classes/help/expHelpAudienceBoostTest.php",
       "tests/tests/kernel/classes/help/expHelpSearchBudgetTest.php",
-      "tests/tests/kernel/classes/help/expHelpIndexStabilityTest.php"
+      "tests/tests/kernel/classes/help/expHelpIndexStabilityTest.php",
+      "tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php"
     ],
     "kernel/classes/help/exphelpallowlist.php": [
+      "tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php",
       "tests/tests/kernel/classes/help/expHelpDocumentIndexTest.php",
       "tests/tests/kernel/classes/help/expHelpSearchContractTest.php",
       "tests/tests/kernel/classes/help/expHelpCachePruneTest.php",
@@ -2125,7 +2127,8 @@
     ],
     "kernel/classes/expvelocitydeploy.php": [
       "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php",
-      "tests/tests/kernel/classes/expVelocityDeployCachePlanTest.php"
+      "tests/tests/kernel/classes/expVelocityDeployCachePlanTest.php",
+      "tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php"
     ],
     "lib/smarty/classes/*": [
       "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php",

@@ -148,11 +148,82 @@ class expHelpAllowlist
         // changes the list, and with it the stamp)
         $active = $ini->hasVariable( 'IndexSettings', 'ActiveExtensionDocs' ) ? $ini->variable( 'IndexSettings', 'ActiveExtensionDocs' ) : 'enabled';
         if ( in_array( strtolower( (string)$active ), array( 'enabled', 'true' ), true ) && class_exists( 'eZExtension' ) )
-            $config['activeExtensions'] = array_values( array_unique( array_map( 'strval', (array)eZExtension::activeExtensions() ) ) );
+            $config['activeExtensions'] = self::installationExtensions();
         // the project files ([ProjectFiles]); a server process started before the class existed has none
         if ( class_exists( 'expHelpProjectFiles' ) )
             $config['projectFiles'] = expHelpProjectFiles::iniConfig();
         return $config;
+    }
+
+    /** @var array|null installationExtensions(): array( key, names ), kept for the life of the process while the files stay */
+    protected static $installationExtensions = null;
+
+    /**
+     * The extensions whose documentation the help shows: the installation's ActiveExtensions[] and the
+     * ActiveAccessExtensions[] of every siteaccess of AvailableSiteAccessList[], the same list whichever siteaccess
+     * asks. The extensions of the current siteaccess alone made the index depend on it: the admin (with its access
+     * extensions) and the console (the default siteaccess, without them) each built an index of its own, and each
+     * build pruned the other's, so every console run made the next help page build the 23 MB index again.
+     *
+     * @param array|null $siteAccesses siteaccess => ActiveAccessExtensions[] (tests); default read from the files
+     * @param array|null $active ActiveExtensions[] (tests); default eZExtension::activeExtensions( 'default' )
+     * @return string[]
+     */
+    public static function installationExtensions( ?array $siteAccesses = null, ?array $active = null )
+    {
+        if ( $active === null )
+            $active = class_exists( 'eZExtension' ) ? (array)eZExtension::activeExtensions( 'default' ) : array();
+        if ( $siteAccesses === null )
+            $siteAccesses = self::siteAccessExtensions( $active );
+        ksort( $siteAccesses, SORT_STRING );
+        $names = array_map( 'strval', $active );
+        foreach ( $siteAccesses as $list )
+            foreach ( (array)$list as $name )
+                $names[] = class_exists( 'eZExtension' ) ? eZExtension::extensionName( (string)$name ) : (string)$name;
+        return array_values( array_unique( array_filter( $names, 'strlen' ) ) );
+    }
+
+    /**
+     * ActiveAccessExtensions[] of each siteaccess of AvailableSiteAccessList[] (settings/siteaccess/<name>/site.ini.append.php),
+     * read again only when one of those files changed.
+     *
+     * @param array $active the default extensions (part of the key)
+     * @return array siteaccess => list of names
+     */
+    protected static function siteAccessExtensions( array $active )
+    {
+        if ( !class_exists( 'eZINI' ) )
+            return array();
+        $root = class_exists( 'expHelp' ) && class_exists( 'eZSys' ) ? expHelp::installRoot() : getcwd();
+        $files = array();
+        foreach ( (array)eZINI::instance()->variable( 'SiteAccessSettings', 'AvailableSiteAccessList' ) as $siteAccess )
+        {
+            $siteAccess = (string)$siteAccess;
+            if ( !preg_match( '/^[A-Za-z0-9_-]{1,100}$/', $siteAccess ) )
+                continue;
+            foreach ( array( 'site.ini.append.php', 'site.ini.append' ) as $name )
+                if ( is_file( $file = $root . '/settings/siteaccess/' . $siteAccess . '/' . $name ) )
+                {
+                    $files[$siteAccess] = array( $name, $file );
+                    break;
+                }
+        }
+        ksort( $files, SORT_STRING );
+        $key = json_encode( $active );
+        foreach ( $files as $siteAccess => $file )
+            $key .= "\n" . $siteAccess . ':' . (int)@filemtime( $file[1] ) . ':' . (int)@filesize( $file[1] );
+        if ( self::$installationExtensions !== null && self::$installationExtensions[0] === $key )
+            return self::$installationExtensions[1];
+        $lists = array();
+        foreach ( $files as $siteAccess => $file )
+        {
+            $ini = new eZINI( $file[0], dirname( $file[1] ), null, false, null, true );
+            $lists[$siteAccess] = $ini->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
+                ? array_values( array_filter( array_map( 'strval', (array)$ini->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ) ), 'strlen' ) )
+                : array();
+        }
+        self::$installationExtensions = array( $key, $lists );
+        return $lists;
     }
 
     /**
