@@ -80590,6 +80590,222 @@ Feumaidh sibh clas an nòd atharrachadh leis a' ghnìomh iomlaid.</translation>
         <source>The run could not be started.</source>
         <translation>Cha b&apos; urrainn dhuinn an ruith a thòiseachadh.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Atharraichean a chlàradh</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Fhad 's a tha clàradh a' dol, thèid na dh'atharraicheas tu san rianachd no ann am bàr-taoibh na làraich a ghleidheadh mar cheuman imrich: susbaint, clasaichean, dreuchdan is poileasaidhean, earrannan, cleachdaichean is buidhnean, ailias URL, roghainnean. Cuir stad air nuair a bhios tu deiseil, thoir sùil air na ghlac e agus gin imrich às.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Cha b' urrainn dhuinn na clàraidhean a leughadh: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Chan eil clàran nan clàraidhean ann fhathast: ruith an t-àrdachadh an toiseach (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Tha an clàradh dheth ann am migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Na h-atharraichean agam</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Cha chlàraich e ach na dh'atharraicheas tusa, ge b' e càite, gus an cuir thu stad air.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Clàradh</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>bho %time, %count atharrachadh gu ruige seo.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Leubail (roghainneil)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Seall na ghlac e</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Cuir stad air a' chlàradh</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tòisich air na h-atharraichean agam a chlàradh</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Uinneag airson na làraich gu lèir</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Clàraidh e gach atharrachadh aig gach cleachdaiche is aig a' chonsoil gus an tèid a dùnadh. Nuair a dh'fhosglas tu i, thèid iarraidh ort dearbhadh gur tusa a th' ann.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Fosgailte</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Dùin an uinneag</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Fosgail an uinneag airson na làraich gu lèir</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Clàraidhean</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Cha tèid cunntas cleachdaiche (ainm clàraidh a-steach, post-d, facal-faire) no raointean nan cunntasan cleachdaiche a chlàradh gu bràth.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Atharraichean</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>An làrach gu lèir</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Atharraichean %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Air stad</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Chan eil clàradh ann fhathast.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Clàradh %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Na clàraidhean uile</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>An imrich a thigeadh às</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Na h-atharraichean air an cruinneachadh gu aon cheum airson gach rud a dh'atharraich: na dhèanadh imrich a ghineadh bhon chlàradh seo.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Gabhaidh imrich a ghintinn às nuair a bhios seòrsaichean cheuman YAML %types aig an stàladh seo.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Air fhàgail a-mach a dh'aon ghnothach: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Cha deach dad a chlàradh.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Na ghlac e</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count atharrachadh, san òrdugh san deach an dèanamh.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Atharrachadh</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Ceum</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Mu dhèidhinn</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count eile: liostaichidh ./console exp:migration:record:show iad uile.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tilg air falbh</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Thoir air falbh an clàradh agus na ghlac e. Fanaidh na chaidh atharrachadh air atharrachadh.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Tha, tilg an clàradh seo air falbh</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>A' clàradh…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Tha na h-atharraichean agad gan clàradh airson imrich.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Tha gach atharrachadh air an làrach seo ga chlàradh airson imrich (uinneag airson na làraich gu lèir).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Thòisich clàradh na làraich gu lèir: thèid gach atharrachadh aig gach cleachdaiche a chlàradh gus an cuir thu stad air.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Thòisich an clàradh: thèid na h-atharraichean agad a chlàradh gus an cuir thu stad air.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Chaidh stad a chur air a' chlàradh. Fanaidh na ghlac e gus an tilg thu air falbh e.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Chaidh an clàradh 's na tachartasan aige a thoirt air falbh.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Chan eil clàradh %id ann.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Cuir cromag ri "Tha, tilg an clàradh seo air falbh" an toiseach.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Chan fhaod ach an cleachdaiche a rinn an clàradh stad a chur air clàradh seisein.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tagh an clàradh air an tèid stad a chur.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Tha clàradh dhen t-seòrsa seo a' dol mu thràth.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Cha b' urrainn dhuinn an clàradh atharrachadh: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

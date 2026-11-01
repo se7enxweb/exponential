@@ -80590,6 +80590,222 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
         <source>The run could not be started.</source>
         <translation>De útfiering koe net begjinne.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Feroaringen opnimme</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Wylst in opname rint, wurdt wat jo yn it behear of yn de sydbalke fan de webside feroarje bewarre as stappen fan in migraasje: ynhâld, klassen, rollen en belied, seksjes, brûkers en groepen, URL-aliassen, ynstellingen. Stopje it as jo klear binne, sjoch wat it fêstlein hat en meitsje der in migraasje fan.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>De opnamen koenen net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>De tabellen fan de opnamen besteane noch net: fier earst de fernijing út (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Opnimme is útskeakele yn migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Myn feroaringen</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nimt allinnich op wat jo feroarje, wêr't jo it ek feroarje, oant jo it stopje.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Opname</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>sûnt %time, oant no ta %count feroaring(en).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (opsjoneel)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Sjen litte wat it fêstlein hat</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Opname stopje</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Begjinne mei it opnimmen fan myn feroaringen</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Finster foar de hiele webside</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Nimt elke feroaring fan elke brûker en fan de konsole op oant it sluten wurdt. By it iepenjen wurdt jo frege te befêstigjen dat jo it binne.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Iepen</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Finster slute</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Finster foar de hiele webside iepenje</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Opnamen</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>It account fan in brûker (oanmeldnamme, e-mail, wachtwurd) en de fjilden fan brûkersaccounts wurde nea opnommen.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Feroaringen</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Hiele webside</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Feroaringen fan %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Stoppe</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Noch gjin opname.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Opname %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Alle opnamen</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>De migraasje dy't it opleverje soe</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>De feroaringen gearfoege ta ien stap per feroare ding: wat in migraasje makke út dizze opname dwaan soe.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Der kin in migraasje fan makke wurde sa gau as dizze ynstallaasje de YAML-staptypen %types hat.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Mei opset weilitten: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Der is neat opnommen.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Wat it fêstlein hat</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count feroaring(en), yn de folchoarder wêryn't se makke binne.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Feroaring</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Stap</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Giet oer</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Noch %count: ./console exp:migration:record:show toant se allegear.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Fuortsmite</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Smyt de opname en wat it fêstlein hat fuort. Wat feroare is, bliuwt feroare.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, dizze opname fuortsmite</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nimt op…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Jo feroaringen wurde opnommen foar in migraasje.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Elke feroaring op dizze webside wurdt opnommen foar in migraasje (finster foar de hiele webside).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>De opname foar de hiele webside is begûn: elke feroaring fan elke brûker wurdt opnommen oant jo it stopje.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>De opname is begûn: jo feroaringen wurde opnommen oant jo it stopje.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Opname stoppe. Wat it fêstlein hat, bliuwt oant jo it fuortsmite.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>De opname en har barrens binne fuorthelle.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Der is gjin opname %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Finkje earst ‘Ja, dizze opname fuortsmite’ oan.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Allinnich de brûker dy't opnommen hat, mei in sesje-opname stopje.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Kies de opname dy't stoppe wurde moat.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Der rint al in opname fan dit soarte.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>De opname koe net feroare wurde: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -194,6 +194,9 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
 {* Main area START *}
 {if $hide_left_menu}
     <div id="mainarea" role="main" tabindex="-1">
+    {* A recording of changes for a migration that records this user (Setup > Migrations > Recording); in the main
+       column, outside the cache-blocks *}
+    {include uri='design:parts/exp_migration_recording_bar.tpl'}
     {include uri='design:page_mainarea.tpl'}
     </div>
 {else}
@@ -209,6 +212,7 @@ document.getElementById('header-usermenu-logout').innerHTML += '<span class="hea
     </div>
 
     <!-- Maincontent START -->
+    {include uri='design:parts/exp_migration_recording_bar.tpl'}
     {include uri='design:page_mainarea.tpl'}
     <!-- Maincontent END -->
     </div>

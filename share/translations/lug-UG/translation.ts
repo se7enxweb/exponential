@@ -80590,6 +80590,222 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
         <source>The run could not be started.</source>
         <translation>Okuddukanya tekusobodde kutandikibwa.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Okukwata enkyukakyuka</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Ng'okukwata kugenda mu maaso, by'okyusa mu bukulembeze oba ku bbaala ey'ebbali ey'omukutu bikuumibwa ng'emitendera gy'okusenguka: ebirimu, ebibinja, emirimu n'enkola, ebitundu, abakozesa n'ebibinja byabwe, amannya amalala aga URL, entegeka. Kuyimirize ng'omaze, laba kye kwakutte, olyoke okolemu okusenguka.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ebyakwatibwa tebyasobola kusomebwa: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Emmeeza z'ebyakwatibwa tezinnabaawo: sooka okole okulongoosa (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Okukwata kuggaddwa mu migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Enkyukakyuka zange</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Kukwata kyokka ky'okyusa, wonna w'okikyusa, okutuusa lw'okuyimiriza.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Okukwata</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>okuva %time, enkyukakyuka %count okutuusa kati.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Akabonero (si kya buwaze)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Laga kye kwakutte</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Yimiriza okukwata</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tandika okukwata enkyukakyuka zange</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Eddirisa ly'omukutu gwonna</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Kukwata buli nkyukakyuka ya buli mukozesa ne ya konsolo okutuusa lw'liggalwa. Bw'oliggulawo, osabibwa okukakasa nti ggwe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Liggule</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Ggalawo eddirisa</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ggulawo eddirisa ly'omukutu gwonna</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ebyakwatibwa</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akawunti y'omukozesa (erinnya ery'okuyingira, email, ekigambo ekikusike) n'ebifo by'akawunti z'abakozesa tebikwatibwa n'akatono.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Enkyukakyuka</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Omukutu gwonna</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Enkyukakyuka za %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Kuyimiriziddwa</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Tewannabaawo kukwata.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Okukwata %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ebyakwatibwa byonna</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Okusenguka kwe kwandivuddemu</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Enkyukakyuka ezigattiddwa mu mutendera gumu ku buli kintu ekyakyusibwa: okusenguka okukoleddwa mu kukwata kuno kwe kwandikoze.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Okusenguka kuyinza okukolebwa mu kwo ng'enteekateeka eno erina ebika by'emitendera gya YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Kirekeddwa bugenderevu: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Tewali kyakwatibwa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Kye kwakutte</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Enkyukakyuka %count, mu nsengeka gye zaakolebwamu.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Enkyukakyuka (emu)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Omutendera</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Ekikwatako</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Endala %count: ./console exp:migration:record:show ziraga zonna.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Suula</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Kuggyawo okukwata n'ebyo bye kwakutte. Ekyakyusibwa kisigala nga kikyusiddwa.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Yee, suula okukwata kuno</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Kukwata…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Enkyukakyuka zo zikwatibwa olw'okusenguka.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Buli nkyukakyuka ku mukutu guno ekwatibwa olw'okusenguka (eddirisa ly'omukutu gwonna).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Okukwata kw'omukutu gwonna kutandise: buli nkyukakyuka ya buli mukozesa ekwatibwa okutuusa lw'okuyimiriza.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Okukwata kutandise: enkyukakyuka zo zikwatibwa okutuusa lw'okuyimiriza.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Okukwata kuyimiriziddwa. Bye kwakutte bisigalawo okutuusa lw'okusuula.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Okukwata n'ebibaddewo byakwo biggiddwawo.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Tewali kukwata %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Sooka olonde "Yee, suula okukwata kuno".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Omukozesa eyakwata yekka y'ayinza okuyimiriza okukwata kw'olutuula.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Londa okukwata okw'okuyimiriza.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Okukwata okw'ekika kino kugenda mu maaso dda.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Okukwata tekwasobola kukyusibwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

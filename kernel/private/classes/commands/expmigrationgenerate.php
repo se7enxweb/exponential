@@ -1,6 +1,6 @@
 <?php
 /**
- * @description Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; a dry run unless --apply
+ * @description Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(), or with --type=yml an empty YAML migration; --from-recording turns a recording of changes into a YAML migration; a dry run unless --apply
  * @alias exp:migration:generate
  *
  * File containing the exp:migration:generate command.
@@ -31,13 +31,18 @@ class Expmigrationgenerate extends ExpmigrationBase
                              "Extension\\<Name>\\Migrations. With --type=yml it writes YYYYMMDDHHMMSS_<name>.yml instead: the header\n" .
                              "and an empty list of steps. Without --apply it shows the file and writes nothing; an existing file is\n" .
                              "never replaced.\n" .
+                             "--from-recording=<id> turns a recording of changes (exp:migration:record:start) into a YAML\n" .
+                             "migration: its events folded into one step per thing changed. It needs the YAML step types the\n" .
+                             "recording uses (content, location, class, role, user ...); until the installation has them it lists\n" .
+                             "the steps and the step types missing, and writes nothing.\n" .
                              "\n" .
                              "./console exp:migration:generate --skeleton add_news_class\n" .
                              "./console exp:migration:generate --skeleton news_folder --type=yml --apply\n" .
                              "./console exp:migration:generate --skeleton add_news_class --description=\"The news class\" --apply\n" .
-                             "./console exp:migration:generate --skeleton news_folder --source=extension:expnews --apply",
+                             "./console exp:migration:generate --skeleton news_folder --source=extension:expnews --apply\n" .
+                             "./console exp:migration:generate --from-recording=20261101-120000-a1b2c3 news_section",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[skeleton][source:][description:][author:][type:][apply][dry-run][format:]', '[name]', array(
+        return (array)$this->startup( '[skeleton][source:][description:][author:][type:][apply][dry-run][format:][from-recording:]', '[name]', array(
             'skeleton' => 'An empty migration with its header: PHP with plan(), up() and down(), or YAML without steps',
             'source' => 'The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id)',
             'description' => 'The description in the header of the new migration',
@@ -46,6 +51,7 @@ class Expmigrationgenerate extends ExpmigrationBase
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
             'format' => 'text (default) or json (the machine output exp-migration/1)',
+            'from-recording' => 'Generate a YAML migration from a recording of changes (its id); it needs the YAML step types the recording uses',
         ) );
     }
 
@@ -54,8 +60,20 @@ class Expmigrationgenerate extends ExpmigrationBase
         $options = $this->begin();
         $format = $this->format( $options );
         $apply = $this->apply( $options );
+        $fromRecording = isset( $options['from-recording'] ) && $options['from-recording'] !== false ? trim( (string)$options['from-recording'] ) : '';
+        if ( $fromRecording !== '' )
+        {
+            if ( !empty( $options['skeleton'] ) )
+                $this->usage( '--skeleton and --from-recording exclude each other' );
+            if ( !\expMigrationRecording::validId( $fromRecording ) )
+                $this->usage( "--from-recording takes a recording id (<date>-<time>-<6 hex digits>), not $fromRecording" );
+            $db = $this->database( $format );
+            $report = \expMigrationRecordingGenerator::fromRecording( $db, $fromRecording, array( 'name' => $this->argument( $options ) ) );
+            $report['mode'] = $apply ? 'generate-from-recording' : 'generate-from-recording-dry-run';
+            $this->finish( $report, $format );
+        }
         if ( empty( $options['skeleton'] ) )
-            $this->usage( 'say what to generate: --skeleton writes an empty PHP migration (--type=yml: a YAML migration)' );
+            $this->usage( 'say what to generate: --skeleton writes an empty PHP migration (--type=yml: a YAML migration), --from-recording=<id> a migration of a recording' );
         $name = $this->argument( $options );
         if ( $name === '' )
             $this->usage( 'name the migration, e.g. ./console exp:migration:generate --skeleton add_news_class' );
@@ -81,6 +99,19 @@ class Expmigrationgenerate extends ExpmigrationBase
 
     protected function lines( array $report )
     {
+        if ( strpos( $report['mode'], 'generate-from-recording' ) === 0 )
+        {
+            $lines = array( 'Exponential migrations: generate from a recording' );
+            if ( !empty( $report['recording'] ) )
+                $lines[] = ExpmigrationrecordBase::recordingLine( $report['recording'] );
+            foreach ( $report['plan'] as $i => $line )
+                $lines[] = sprintf( '  %3d  %s', $i + 1, $line );
+            if ( !empty( $report['omitted'] ) )
+                $lines[] = 'Left out on purpose: ' . implode( ', ', $report['omitted'] );
+            if ( !empty( $report['missing_step_types'] ) )
+                $lines[] = 'Step types missing: ' . implode( ', ', $report['missing_step_types'] );
+            return $lines;
+        }
         $g = $report['generated'];
         if ( $g['id'] === '' )
             return array( 'Exponential migrations: generate' );

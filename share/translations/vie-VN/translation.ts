@@ -80590,6 +80590,222 @@ Bạn sẽ cần thay đổi lớp của nút bằng chức năng hoán đổi.<
         <source>The run could not be started.</source>
         <translation>Không thể bắt đầu lượt chạy.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ghi lại thay đổi</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Trong khi đang ghi, những gì bạn thay đổi trong trang quản trị hoặc thanh bên của trang web được giữ lại thành các bước của một lần chuyển đổi: nội dung, lớp, vai trò và chính sách, phân vùng, người dùng và nhóm, bí danh URL, cài đặt. Hãy dừng khi xong, xem những gì đã ghi được và tạo một lần chuyển đổi từ đó.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Không đọc được các bản ghi: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Các bảng của bản ghi chưa tồn tại: hãy chạy nâng cấp trước (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Việc ghi đã bị tắt trong migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Thay đổi của tôi</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Chỉ ghi những gì bạn thay đổi, ở bất cứ đâu, cho đến khi bạn dừng.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Bản ghi</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>từ %time, đến nay %count thay đổi.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Nhãn (không bắt buộc)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Xem những gì đã ghi được</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Dừng ghi</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Bắt đầu ghi thay đổi của tôi</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Cửa sổ cho toàn trang</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ghi mọi thay đổi của mọi người dùng và của dòng lệnh cho đến khi đóng. Khi mở, bạn được yêu cầu xác minh đó là bạn.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Đang mở</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Đóng cửa sổ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Mở cửa sổ cho toàn trang</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Các bản ghi</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Tài khoản của người dùng (tên đăng nhập, e-mail, mật khẩu) và các trường của tài khoản người dùng không bao giờ được ghi.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Thay đổi</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Toàn trang</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Thay đổi của %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Đã dừng</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Chưa có bản ghi nào.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Bản ghi %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tất cả bản ghi</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Lần chuyển đổi sẽ tạo ra</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Các thay đổi gộp thành một bước cho mỗi thứ được thay đổi: những gì một lần chuyển đổi tạo từ bản ghi này sẽ làm.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Có thể tạo một lần chuyển đổi từ đây khi bản cài đặt này có các loại bước YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Cố ý bỏ qua: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Không có gì được ghi.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Những gì đã ghi được</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count thay đổi, theo thứ tự đã thực hiện.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Thay đổi (mục)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Bước</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Đối tượng</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Còn %count: ./console exp:migration:record:show liệt kê tất cả.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Hủy bỏ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Xóa bản ghi và những gì đã ghi được. Những gì đã thay đổi vẫn giữ nguyên thay đổi.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Có, hủy bỏ bản ghi này</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Đang ghi…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Các thay đổi của bạn đang được ghi cho một lần chuyển đổi.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Mọi thay đổi trên trang này đang được ghi cho một lần chuyển đổi (cửa sổ cho toàn trang).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Việc ghi toàn trang đã bắt đầu: mọi thay đổi của mọi người dùng được ghi cho đến khi bạn dừng.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Việc ghi đã bắt đầu: các thay đổi của bạn được ghi cho đến khi bạn dừng.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Đã dừng ghi. Những gì đã ghi được sẽ còn cho đến khi bạn hủy bỏ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Đã xóa bản ghi và các sự kiện của nó.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Không có bản ghi %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Hãy đánh dấu "Có, hủy bỏ bản ghi này" trước.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Chỉ người dùng đã ghi mới được dừng bản ghi phiên.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Chọn bản ghi cần dừng.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Một bản ghi loại này đang chạy.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Không thể thay đổi bản ghi: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

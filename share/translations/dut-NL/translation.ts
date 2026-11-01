@@ -81815,6 +81815,222 @@ Je moet de klasse van de node wijzigen met de wisselfunctie.</translation>
         <source>The run could not be started.</source>
         <translation>De uitvoering kon niet worden gestart.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Wijzigingen opnemen</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Zolang een opname loopt, wordt wat u in de beheeromgeving of in de zijbalk van de website wijzigt bewaard als stappen van een migratie: inhoud, klassen, rollen en beleidsregels, secties, gebruikers en groepen, URL-aliassen, instellingen. Stop de opname als u klaar bent, bekijk wat ze heeft vastgelegd en genereer er een migratie van.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>De opnamen konden niet worden gelezen: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>De tabellen van de opnamen bestaan nog niet: voer eerst de upgrade uit (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Opnemen is uitgeschakeld in migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mijn wijzigingen</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Neemt alleen op wat u wijzigt, waar u het ook wijzigt, tot u de opname stopt.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Opname</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>sinds %time, tot nu toe %count wijziging(en).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (optioneel)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Tonen wat ze heeft vastgelegd</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Opname stoppen</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Opname van mijn wijzigingen starten</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Venster voor de hele site</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Neemt elke wijziging van elke gebruiker en van de console op tot het wordt gesloten. Bij het openen wordt gevraagd te bevestigen dat u het bent.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Geopend</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Venster sluiten</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Venster voor de hele site openen</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Opnamen</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Het account van een gebruiker (login, e-mail, wachtwoord) en de velden van gebruikersaccounts worden nooit opgenomen.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Wijzigingen</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Hele site</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Wijzigingen van %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Gestopt</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Nog geen opname.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Opname %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Alle opnamen</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>De migratie die het zou opleveren</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>De wijzigingen samengevoegd tot één stap per gewijzigd onderdeel: wat een migratie die uit deze opname wordt gegenereerd zou doen.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Er kan een migratie van worden gegenereerd zodra deze installatie de YAML-staptypen %types heeft.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bewust weggelaten: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Er is niets opgenomen.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Wat ze heeft vastgelegd</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count wijziging(en), in de volgorde waarin ze zijn gemaakt.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Wijziging</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Stap</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Betreft</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Nog %count: ./console exp:migration:record:show toont ze allemaal.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Verwerpen</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Verwijdert de opname en wat ze heeft vastgelegd. Wat gewijzigd is, blijft gewijzigd.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ja, deze opname verwerpen</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Opname loopt…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Uw wijzigingen worden opgenomen voor een migratie.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Elke wijziging op deze site wordt opgenomen voor een migratie (venster voor de hele site).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>De opname voor de hele site is gestart: elke wijziging van elke gebruiker wordt opgenomen tot u de opname stopt.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>De opname is gestart: uw wijzigingen worden opgenomen tot u de opname stopt.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Opname gestopt. Wat ze heeft vastgelegd blijft bewaard tot u haar verwerpt.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>De opname en haar gebeurtenissen zijn verwijderd.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Er is geen opname %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Vink eerst ‘Ja, deze opname verwerpen’ aan.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Alleen de gebruiker die heeft opgenomen mag een sessieopname stoppen.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Kies de opname die u wilt stoppen.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Er loopt al een opname van deze soort.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>De opname kon niet worden gewijzigd: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

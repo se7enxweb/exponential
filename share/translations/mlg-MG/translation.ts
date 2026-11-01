@@ -80590,6 +80590,222 @@ Tsy maintsy ovainao ny kilasin'ny fihaonana amin'ny alalan'ny asa fifanakalozana
         <source>The run could not be started.</source>
         <translation>Tsy natomboka ny fanatanterahana.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Fandraketana ny fanovana</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Raha mandeha ny fandraketana, izay ovainao ao amin'ny fitantanana na ao amin'ny bara ilan'ny tranonkala dia tehirizina ho dingana amin'ny famindrana: votoaty, kilasy, andraikitra sy politika, fizarana, mpampiasa sy vondrona, anarana solon'ny URL, fikirana. Ajanony rehefa vita, jereo izay noraisiny, ary mamorona famindrana avy aminy.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Tsy voavaky ireo fandraketana: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tsy mbola misy ny tabilaon'ny fandraketana: ampandehano aloha ny fanavaozana (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Maty ny fandraketana ao amin'ny migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ny fanovako</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Izay ovainao ihany no raketiny, na aiza na aiza no anovanao azy, mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Fandraketana</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>nanomboka %time, fanovana %count hatramin'izao.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Marika (tsy voatery)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Asehoy izay noraisiny</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Ajanony ny fandraketana</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Atombohy ny fandraketana ny fanovako</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Varavarankely ho an'ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Raketiny ny fanovana rehetra ataon'ny mpampiasa tsirairay sy ny console mandra-panidiana azy. Rehefa sokafanao, angatahina ianao hanamarina fa ianao tokoa.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Misokatra</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Hidio ny varavarankely</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Sokafy ny varavarankely ho an'ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ireo fandraketana</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Tsy raketina mihitsy ny kaontin'ny mpampiasa (anarana fidirana, mailaka, tenimiafina) sy ny saha amin'ny kaontin'ny mpampiasa.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Fanovana</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Ny tranonkala manontolo</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ny fanovan'i %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Najanona</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Tsy mbola misy fandraketana.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Fandraketana %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ny fandraketana rehetra</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ny famindrana hivoaka aminy</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ny fanovana natambatra ho dingana iray isaky ny zavatra novaina: izay hataon'ny famindrana noforonina avy amin'ity fandraketana ity.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Afaka mamorona famindrana avy aminy rehefa manana ireo karazana dingana YAML %types ity fametrahana ity.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Nesorina fanahy iniana: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Tsy nisy voaraketa.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Izay noraisiny</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Fanovana %count, araka ny filaharana nanaovana azy.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Fanovana (iray)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Dingana</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Momba</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count hafa: ./console exp:migration:record:show no mitanisa azy rehetra.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ariany</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Esoriny ny fandraketana sy izay noraisiny. Izay novaina dia mijanona ho voaova.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Eny, ario ity fandraketana ity</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Mandraketa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Raketina ho an'ny famindrana ny fanovanao.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Raketina ho an'ny famindrana ny fanovana rehetra amin'ity tranonkala ity (varavarankely ho an'ny tranonkala manontolo).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nanomboka ny fandraketana ny tranonkala manontolo: raketina ny fanovana rehetra ataon'ny mpampiasa tsirairay mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nanomboka ny fandraketana: raketina ny fanovanao mandra-pijanonanao azy.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Najanona ny fandraketana. Mijanona izay noraisiny mandra-panariana azy.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Voaesotra ny fandraketana sy ireo zava-nitranga taminy.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Tsy misy fandraketana %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Mariho aloha ny "Eny, ario ity fandraketana ity".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ny mpampiasa nandraketa ihany no afaka mampijanona fandraketana fivoriana.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Fidio ny fandraketana hajanona.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Efa mandeha ny fandraketana toy izao karazany izao.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Tsy azo novaina ny fandraketana: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

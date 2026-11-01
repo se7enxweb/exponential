@@ -80590,6 +80590,222 @@ Tendrás de camudar la clas del nodu cola función d'intercambiu.</translation>
         <source>The run could not be started.</source>
         <translation>Nun se pudo aniciar la execución.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Grabar cambeos</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mentanto una grabación ta en marcha, lo que cambies na alministración o na barra llateral del sitiu guárdase como pasos d'una migración: conteníu, clases, roles y polítiques, seiciones, usuarios y grupos, alies d'URL, axustes. Detienla cuando acabes, mira lo que captó y xenera una migración a partir d'ella.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nun se pudieron lleer les grabaciones: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Les tables de les grabaciones entá nun esisten: executa primero l'anovamientu (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>La grabación ta desactivada en migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Los mios cambeos</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Graba namás lo que cambies tu, onde quiera que lo cambies, hasta que la detengas.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Grabación</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>dende %time, %count cambéu(os) hasta agora.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etiqueta (opcional)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ver lo que captó</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Detener la grabación</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Entamar a grabar los mios cambeos</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Ventana pa tol sitiu</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Graba cada cambéu de cada usuariu y de la consola hasta que se zarre. Al abrila pídesete que verifiques que yes tu.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Abierta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Zarrar la ventana</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Abrir la ventana pa tol sitiu</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Grabaciones</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>La cuenta d'un usuariu (nome d'usuariu, corréu electrónicu, contraseña) y los campos de les cuentes d'usuariu enxamás se graben.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Cambeos</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tol sitiu</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Cambeos de %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Detenida</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Entá nun hai nenguna grabación.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Grabación %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Toles grabaciones</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migración que xeneraría</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Los cambeos axuntaos nun pasu per cada elementu camudáu: lo que fadría una migración xenerada a partir d'esta grabación.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Va poder xenerase una migración a partir d'ella cuando esta instalación tenga los tipos de pasu YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Dexao fuera adrede: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nun se grabó nada.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Lo que captó</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count cambéu(os), nel orde en que se ficieron.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Cambéu</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pasu</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Afecta a</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count más: ./console exp:migration:record:show amuésalos toos.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Descartar</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Desanicia la grabación y lo que captó. Lo que se camudó sigue camudáu.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Sí, descartar esta grabación</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Grabando…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Los tos cambeos grábense pa una migración.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Cada cambéu nesti sitiu grábase pa una migración (ventana pa tol sitiu).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>La grabación de tol sitiu entamó: cada cambéu de cada usuariu grábase hasta que la detengas.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>La grabación entamó: los tos cambeos grábense hasta que la detengas.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Grabación detenida. Lo que captó caltiénse hasta que la descartes.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Desaniciáronse la grabación y los sos eventos.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nun esiste la grabación %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Marca primero «Sí, descartar esta grabación».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Namás l'usuariu que grabó pue detener una grabación de sesión.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Escueyi la grabación que quies detener.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Yá hai una grabación d'esti tipu en marcha.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nun se pudo camudar la grabación: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

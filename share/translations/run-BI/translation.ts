@@ -80590,6 +80590,222 @@ Mukeneye guhindura ubwoko bw'ihuriro mukoresheje igikorwa co guhinduranya.</tran
         <source>The run could not be started.</source>
         <translation>Ikorwa ntiryashoboye gutangura.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Gufata ivyahindutse</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Igihe ifata ririko riraba, ivyo uhindura mu buyobozi canke ku mwanya wo ku ruhande rw'urubuga bibikwa nk'intambwe z'iyimurwa: ibirimwo, amasomo, ibikorwa n'amabwiriza, ibice, abakoresha n'imigwi, amazina asubirira ya URL, ingene vyateguwe. Urihagarike urangije, urabe ivyo ryafashe, maze uryakuremwo iyimurwa.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ivyafashwe ntivyashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Imbonerahamwe z'ivyafashwe ntiziraboneka: banza ukoreshe ivugurura (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Gufata kwahagaritswe muri migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Ivyo nahinduye</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Rifata gusa ivyo uhindura, aho woba ubihindura hose, gushika urihagaritse.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ifata</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>kuva %time, ivyahindutse %count gushika ubu.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Ikimenyetso (si ngombwa)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Erekana ivyo ryafashe</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Hagarika gufata</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tangura gufata ivyo nahinduye</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Idirisha ry'urubuga rwose</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Rifata ihinduka ryose ry'umukoresha wese n'irya konsole gushika rifunzwe. Uriguruye, usabwa kwemeza ko ari wewe.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ryuguruye</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Ugara idirisha</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Ugurura idirisha ry'urubuga rwose</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ivyafashwe</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Konti y'umukoresha (izina ryo kwinjira, imeyili, ijambo ry'ibanga) n'ibibanza vya konti z'abakoresha ntibifatwa na rimwe.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Ivyahindutse</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Urubuga rwose</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Ivyo %name yahinduye</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Vyahagaritswe</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Nta fata rirabaho.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ifata %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ivyafashwe vyose</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Iyimurwa ryovamwo</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Ivyahindutse bihurijwe mu ntambwe imwe kuri kimwe cose cahinduwe: ivyo iyimurwa rikuwe muri iri fata ryokora.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Iyimurwa rishobora gukurwa muri ryo iki gishirwamwo nikimara kugira ubwoko bw'intambwe za YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Vyasizwe nkana: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nta na kimwe cafashwe.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ivyo ryafashe</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Ivyahindutse %count, uko vyagiye birakorwa.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ihinduka</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Intambwe</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Vyerekeye</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ibindi %count: ./console exp:migration:record:show birerekana vyose.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Ta</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ikuraho ifata n'ivyo ryafashe. Ivyahinduwe bigumana guhinduka.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ego, ta iri fata</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Birafatwa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ivyo uhindura birafatwa ku bw'iyimurwa.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Ihinduka ryose kuri uru rubuga rirafatwa ku bw'iyimurwa (idirisha ry'urubuga rwose).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ifata ry'urubuga rwose ryatanguye: ihinduka ryose ry'umukoresha wese rirafatwa gushika urihagaritse.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ifata ryatanguye: ivyo uhindura birafatwa gushika urihagaritse.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Ifata ryahagaritswe. Ivyo ryafashe bigumaho gushika urita.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ifata n'ivyabaye vyaryo vyakuweho.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nta fata %id rihari.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Banza uhitemwo "Ego, ta iri fata".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Umukoresha yafashe wenyene ni we ashobora guhagarika ifata ry'ikiringo.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Hitamwo ifata rikwiye guhagarikwa.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ifata ry'ubu bwoko risanzwe ririko riraba.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ifata ntiryashoboye guhindurwa: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

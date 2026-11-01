@@ -49,7 +49,13 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'exp:migration:caption' => '[apply][dry-run][format:][list][label:][backup-dir:]',
             'exp:migration:push' => '[apply][dry-run][format:][limit:]',
             'exp:migration:check' => '[path:*][environment:][format:]',
-            'exp:migration:generate' => '[skeleton][source:][description:][author:][type:][apply][dry-run][format:]',
+            'exp:migration:generate' => '[skeleton][source:][description:][author:][type:][apply][dry-run][format:][from-recording:]',
+            'exp:migration:record:start' => '[apply][dry-run][format:][site-wide][label:][user:]',
+            'exp:migration:record:stop' => '[apply][dry-run][format:][site-wide][user:]',
+            'exp:migration:record:status' => '[format:][user:]',
+            'exp:migration:record:list' => '[format:][count:]',
+            'exp:migration:record:show' => '[format:][plan]',
+            'exp:migration:record:discard' => '[apply][dry-run][format:]',
         );
     }
 
@@ -64,6 +70,9 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'exp:migration:rollback' => '[target]',
             'exp:migration:resume' => '[run]',
             'exp:migration:generate' => '[name]',
+            'exp:migration:record:stop' => '[recording]',
+            'exp:migration:record:show' => '[recording]',
+            'exp:migration:record:discard' => '[recording]',
         );
     }
 
@@ -99,12 +108,17 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'force-no-caption' => 'With --no-safety-caption on a production installation: restore without a caption all the same',
             'no-verify' => 'Skip the verification after the restore',
             'list' => 'List the captions instead of taking one',
-            'label' => 'The label of the caption (default: "manual caption" with the time)',
+            'label' => 'The label of the caption or of the recording (a caption without one: "manual caption" with the time)',
             'limit' => 'Push at most this many runs (default 20)',
             'skeleton' => 'An empty migration with its header: PHP with plan(), up() and down(), or YAML without steps',
             'description' => 'The description in the header of the new migration',
             'author' => 'The author in the header of the new migration',
             'type' => 'The type of the new migration: php (the default) or yml',
+            'from-recording' => 'Generate a YAML migration from a recording of changes (its id); it needs the YAML step types the recording uses',
+            'site-wide' => 'The site-wide recording: every change of every user and of the console (without it: one user\'s own changes)',
+            'user' => 'The user, by login, whose own changes a session recording keeps (default: [RunSettings] RunAsUser of migration.ini)',
+            'count' => 'How many recordings to list, the newest first (default 50)',
+            'plan' => 'The steps a migration of the recording would have (its events folded per thing changed) instead of every event',
             'run-id' => 'The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run',
             'progress' => 'Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)',
         );

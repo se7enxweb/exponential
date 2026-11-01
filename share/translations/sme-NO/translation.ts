@@ -80590,6 +80590,222 @@ Don fertet rievdadit čuolmma luohká molsunfunkšuvnna bokte.</translation>
         <source>The run could not be started.</source>
         <translation>Vuodjima ii sáhttán álggahit.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Báddet rievdadusaid</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Go báddehus lea jođus, dat maid don rievdadat hálddahusas dahje neahttabáikki siidoholggas vurkejuvvo sirdima lávkin: sisdoallu, klássat, rollat ja njuolggadusat, oasit, geavaheaddjit ja joavkkut, URL-alias, heivehusat. Bisset dan go leat gárvvis, geahča maid dat lea dohppen ja ráhkat das sirdima.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Báddemiid ii sáhttán lohkat: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Báddemiid tabeallat eai leat vel: vuos vuoje ođasmahttima (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Báddén lea jáddaduvvon migration.ini:s ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mu rievdadusat</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Bádde dušše dan maid don rievdadat, gos ihkinassii, dassážii go bisset dan.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Báddehus</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time rájes, dán rádjái %count rievdadusa.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lihpu (eaktodáhtolaš)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Čájet maid dat lea dohppen</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Bisset báddema</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Álggat mu rievdadusaid báddema</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Láse olles neahttabáikái</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Bádde juohke geavaheaddji ja konsolla juohke rievdadusa dassážii go dat giddejuvvo. Rahpama oktavuođas dus jearrat duođaštit ahte leat don.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Rabas</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Gidde láse</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Raba láse olles neahttabáikái</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Báddehusat</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Geavaheaddji konto (sisačálihannamma, e-poasta, beassansátni) ja geavaheaddjikontuid gieddit eai goassege báddejuvvo.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Rievdadusat</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Olles neahttabáiki</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name rievdadusat</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Bissejuvvon</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ii vel báddehus.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Báddehus %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Buot báddehusat</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Sirdin mii das šattašii</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Rievdadusat čohkkejuvvon ovtta lávkái juohke rievdaduvvon ášši ovddas: maid dán báddehusas ráhkaduvvon sirdin dagašii.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Das sáhttá ráhkadit sirdima go dán sajáiduhttimis leat YAML-lávkešlájat %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Dáhtolaččat guđđojuvvon olggobeallái: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Mihkkege ii báddejuvvon.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Maid dat lea dohppen</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count rievdadusa, dan ortnegis go dat dahkkojuvvojedje.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Rievdadus</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Lávki</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Guoská</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Vel %count: ./console exp:migration:record:show listu buot.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Bálkes</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Sihku báddehusa ja dan maid dat lea dohppen. Mii lea rievdaduvvon, bissu rievdaduvvon.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Juo, bálkes dán báddehusa</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Báddemin…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Du rievdadusat báddejuvvojit sirdima várás.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Juohke rievdadus dán neahttabáikkis báddejuvvo sirdima várás (láse olles neahttabáikái).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Olles neahttabáikki báddehus lea álgán: juohke geavaheaddji juohke rievdadus báddejuvvo dassážii go bisset dan.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Báddehus lea álgán: du rievdadusat báddejuvvojit dassážii go bisset dan.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Báddehus bissejuvvon. Maid dat lea dohppen bissu dassážii go bálkestat dan.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Báddehus ja dan dáhpáhusat leat sihkkojuvvon.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Ii gávdno báddehus %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Merke vuos «Juo, bálkes dán báddehusa».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Dušše geavaheaddji gii báddii sáhttá bissehit čoahkkima báddehusa.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Vállje báddehusa mii galgá bissehuvvot.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Dán šlája báddehus lea juo jođus.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Báddehusa ii sáhttán rievdadit: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

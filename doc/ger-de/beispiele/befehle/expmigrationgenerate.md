@@ -2,14 +2,14 @@
 title: exp:expmigrationgenerate
 audience: developer, admin
 category: examples
-summary: "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; ein Probelauf ohne --apply."
+summary: "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; ein Probelauf ohne --apply."
 keywords: Konsole, Befehl, exp:expmigrationgenerate, expmigrationgenerate, console, command, CLI, expmigrationgenerate.php, exp:migration:generate
 type: generated
 generated: exp:help:examples
 ---
 # exp:expmigrationgenerate
 
-Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; ein Probelauf ohne --apply.
+Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(), mit --type=yml eine leere YAML-Migration; --from-recording macht aus einer Aufzeichnung von Änderungen eine YAML-Migration; ein Probelauf ohne --apply.
 
 Skript `bin/php/expmigrationgenerate.php`, Code in `kernel/private/classes/commands/expmigrationgenerate.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -32,11 +32,16 @@ extension's. The class is named after the name and the time, in the namespace Si
 Extension\<Name>\Migrations. With --type=yml it writes YYYYMMDDHHMMSS_<name>.yml instead: the header
 and an empty list of steps. Without --apply it shows the file and writes nothing; an existing file is
 never replaced.
+--from-recording=<id> turns a recording of changes (exp:migration:record:start) into a YAML
+migration: its events folded into one step per thing changed. It needs the YAML step types the
+recording uses (content, location, class, role, user ...); until the installation has them it lists
+the steps and the step types missing, and writes nothing.
 
 ./console exp:migration:generate --skeleton add_news_class
 ./console exp:migration:generate --skeleton news_folder --type=yml --apply
 ./console exp:migration:generate --skeleton add_news_class --description="The news class" --apply
 ./console exp:migration:generate --skeleton news_folder --source=extension:expnews --apply
+./console exp:migration:generate --from-recording=20261101-120000-a1b2c3 news_section
 ```
 
 ## Optionen
@@ -51,6 +56,7 @@ never replaced.
 | `--apply` |  | Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert) |
 | `--dry-run` |  | Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-migration/1) |
+| `--from-recording` | erforderlich | Erzeugt eine YAML-Migration aus einer Aufzeichnung von Änderungen (ihre ID); dafür braucht es die YAML-Schritttypen, die die Aufzeichnung verwendet |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

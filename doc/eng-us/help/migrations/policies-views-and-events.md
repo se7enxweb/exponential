@@ -28,7 +28,7 @@ the module `migration`, its views, the dashboard block, the events a run sends a
 | `migration/read` | the status, the history, the page of a run, the dry run, the dashboard block, the sidebar panel | the views `status`, `history`, `log`, `stream`, `dryrun` |
 | `migration/run` | run, resume, and **Simulate** in the dry run | the view `run`, and `dryrun` for the simulation |
 | `migration/rollback` | take back a run, one migration or an earlier caption | the view `rollback` |
-| `migration/edit` | reserved for writing and generating migrations in the administration; no page uses it in 6.0.15 | code only |
+| `migration/edit` | record changes (Setup > Migrations > Recording, see [Recording changes](recording.md)); later also writing and generating migrations in the administration | the view `recording` |
 
 None of them has limitations: each is all or nothing. Only the Administrator role has them in a new installation.
 Run, resume, simulate and rollback ask "Verify it's you" first (`site.ini [ReauthGroup_system]`,

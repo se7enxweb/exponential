@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>מע האָט ניט געקענט אָנהייבן דעם לויף.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>רעקאָרדירן ענדערונגען</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>בשעת אַ רעקאָרדירונג לויפֿט, ווערט דאָס וואָס איר ענדערט אין דער אַדמיניסטראַציע אָדער אין דער זײַט־פּאַס פֿון דעם וועבזײַטל געהאַלטן ווי טריט פֿון אַ מיגראַציע: אינהאַלט, קלאַסן, ראָלעס און פּאָליסעס, אָפּטיילן, באַניצערס און גרופּעס, URL־צונעמען, באַשטימונגען. שטעלט זי אָפּ ווען איר זײַט פֿאַרטיק, קוקט וואָס זי האָט געכאַפּט, און שאַפֿט פֿון איר אַ מיגראַציע.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>מע האָט נישט געקענט לייענען די רעקאָרדירונגען: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>די טאַבעלעס פֿון די רעקאָרדירונגען עקזיסטירן נאָך נישט: לאָזט פֿריִער די אַפּגרייד (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>רעקאָרדירן איז אויסגעלאָשן אין migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>מײַנע ענדערונגען</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>רעקאָרדירט נאָר דאָס וואָס איר ענדערט, וווּ נאָר איר ענדערט עס, ביז איר שטעלט זי אָפּ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>רעקאָרדירונג</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>זינט %time, ביז איצט %count ענדערונג(ען).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>עטיקעט (אויף ברירה)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ווײַזן וואָס זי האָט געכאַפּט</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>אָפּשטעלן די רעקאָרדירונג</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>אָנהייבן רעקאָרדירן מײַנע ענדערונגען</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>פֿענצטער פֿאַרן גאַנצן וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>רעקאָרדירט יעדע ענדערונג פֿון יעדן באַניצער און פֿון דער קאָנסאָל ביז מע מאַכט עס צו. בײַם עפֿענען ווערט איר געבעטן באַשטעטיקן אַז דאָס זײַט איר.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>אָפֿן</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>צומאַכן דעם פֿענצטער</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>עפֿענען דעם פֿענצטער פֿאַרן גאַנצן וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>רעקאָרדירונגען</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>דער קאָנטע פֿון אַ באַניצער (לאָגין, בליצפּאָסט, פּאַראָל) און די פֿעלדער פֿון באַניצער־קאָנטעס ווערן קיינמאָל נישט רעקאָרדירט.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ענדערונגען</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>גאַנצער וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>ענדערונגען פֿון %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>אָפּגעשטעלט</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>נאָך קיין רעקאָרדירונג.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>רעקאָרדירונג %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>אַלע רעקאָרדירונגען</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>די מיגראַציע וואָס וואָלט דערפֿון געוואָרן</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>די ענדערונגען צונויפֿגעשטעלט אין איין טריט פֿאַר יעדער געענדערטער זאַך: וואָס אַ מיגראַציע געשאַפֿן פֿון דער רעקאָרדירונג וואָלט געטאָן.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>מע וועט קענען שאַפֿן דערפֿון אַ מיגראַציע ווען די דאָזיקע אינסטאַלאַציע וועט האָבן די YAML־טריט־טיפּן %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>בכּיוון אויסגעלאָזט: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>גאָרנישט איז נישט רעקאָרדירט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>וואָס זי האָט געכאַפּט</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ענדערונג(ען), אין דער סדר ווי זיי זענען געמאַכט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ענדערונג</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>טריט</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>שייך צו</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>נאָך %count: ‎./console exp:migration:record:show ווײַזט זיי אַלע.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>אַוועקוואַרפֿן</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>נעמט אַוועק די רעקאָרדירונג און דאָס וואָס זי האָט געכאַפּט. וואָס איז געענדערט געוואָרן, בלײַבט געענדערט.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>יאָ, אַוועקוואַרפֿן די דאָזיקע רעקאָרדירונג</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>רעקאָרדירט…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>אײַערע ענדערונגען ווערן רעקאָרדירט פֿאַר אַ מיגראַציע.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>יעדע ענדערונג אויף דעם וועבזײַטל ווערט רעקאָרדירט פֿאַר אַ מיגראַציע (פֿענצטער פֿאַרן גאַנצן וועבזײַטל).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>די רעקאָרדירונג פֿאַרן גאַנצן וועבזײַטל האָט זיך אָנגעהויבן: יעדע ענדערונג פֿון יעדן באַניצער ווערט רעקאָרדירט ביז איר שטעלט זי אָפּ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>די רעקאָרדירונג האָט זיך אָנגעהויבן: אײַערע ענדערונגען ווערן רעקאָרדירט ביז איר שטעלט זי אָפּ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>רעקאָרדירונג אָפּגעשטעלט. וואָס זי האָט געכאַפּט בלײַבט ביז איר וואַרפֿט זי אַוועק.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>די רעקאָרדירונג און אירע געשעענישן זענען אַוועקגענומען.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>עס איז נישטאָ קיין רעקאָרדירונג %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>צייכנט פֿריִער אָן „יאָ, אַוועקוואַרפֿן די דאָזיקע רעקאָרדירונג“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>נאָר דער באַניצער וואָס האָט רעקאָרדירט מעג אָפּשטעלן אַ סעסיע־רעקאָרדירונג.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>קלײַבט אויס די רעקאָרדירונג צו אָפּשטעלן.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>אַ רעקאָרדירונג פֿון דעם מין לויפֿט שוין.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>מע האָט נישט געקענט ענדערן די רעקאָרדירונג: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

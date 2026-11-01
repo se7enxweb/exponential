@@ -36,6 +36,7 @@ Schnellstart:
 | Setup > Migrationen | das Modul `migration` mit den Ansichten `status`, `history`, `log/<run-id>`, `stream/<run-id>` (der Live-Fortschritt), `dryrun`, `run` und `rollback/<target>`; die Richtlinien `migration/read`, `run`, `rollback` und `edit` (in einer neuen Installation nur Administrator); „Identität bestätigen“ vor einem Lauf, einer Fortsetzung, einer Simulation und einer Rücknahme |
 | Läufe im Hintergrund | ein in der Administration gestarteter Lauf, eine Fortsetzung oder Rücknahme läuft als eigener Konsolenprozess unter dem angemeldeten Benutzer (`expMigrationJob`), geht weiter, wenn die Seite geschlossen wird, und wird über seine Fortschrittsdatei live verfolgt; seine Dateien liegen in `var/<site>/migration/jobs/` |
 | Dashboard-Block | `migrations`: ausstehend, fehlgeschlagen, verwaist, der laufende und der letzte Lauf (Fetch-Funktion `migration/summary`) |
+| Änderungen aufzeichnen | die eigenen Änderungen eines Benutzers (Sitzung) oder jede Änderung (websiteweites Fenster), auf der Ebene der Operationen des Kernels als Schritte einer YAML-Migration aufgezeichnet, ohne personenbezogene Daten; Tabellen `exp_migration_recording` und `exp_migration_recording_event` (Upgrade-Schritt `6.0.15-migration-recording-tables`); die Befehle `exp:migration:record:start`, `:stop`, `:status`, `:list`, `:show`, `:discard`; Setup > Migrationen > Aufzeichnung und der Aufzeichnungsbalken ([die Anleitung](../../anleitungen/migrationen-erzeugen-und-aufzeichnen.md)) |
 | Einstellungen | `settings/migration.ini`: `[MigrationSettings]`, `[RunSettings]`, `[CaptionSettings]`, `[RepositorySettings]`, `[AdminSettings]` (`PhpCliPath`, `JobHistory`, `LogBytes`) |
 
 ## Die Bausteine
@@ -56,6 +57,7 @@ Schnellstart:
 | `expMigrationStatus`, `expMigrationCheck`, `expMigrationSimulation`, `expMigrationGenerator` | der Status, die Prüfung, die Simulation, das Gerüst |
 | `expMigrationUpgradeSource`, `expMigrationUpgradeStep` | die Upgrade-Schritte des Kernels (`exp:upgrade`) als Migrationen der Quelle `kernel` |
 | `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | die Formulare und die Dashboard-Zusammenfassung von Setup > Migrationen, die dort im Hintergrund gestarteten Läufe, ihre Fortschrittsdatei |
+| `expMigrationRecording`, `expMigrationRecorder`, `expMigrationRecordingEvent`, `expMigrationRecordingResolver`, `expMigrationRecordingGenerator` | die Aufzeichnungen und ihre Ereignisse, der Abgriff an den Audit-Stellen, ein Audit-Ereignis als Migrationsschritt, die stabilen Namen aus der Installation, der Plan einer Aufzeichnung |
 
 Die Befehle sind `bin/php/expmigration<name>.php` (Alias `exp:migration:<name>`), ihr Code liegt in
 `kernel/private/classes/commands/`. Ihre Maschinenausgabe ist `exp-migration/1` (`--format=json`); die Exit-Codes sind
@@ -77,9 +79,11 @@ die von `exp:upgrade` (0, 1 gescheitert, 2 Bedienung, 3 Datenbank nicht erreichb
   geordnet und geprüft und vom Runner abgelehnt, bis ihre Schritte kommen.
 - Ein Migrationslauf führt von den Upgrade-Schritten des Kernels nur die der Stufen `database` und `scripts` aus; die
   Stufen `code`, `libraries` und `finish` bleiben bei `exp:upgrade` (sie werden als `deferred` gelistet).
-- Setup > Migrationen zeigt Migrationen an, führt sie aus und nimmt sie zurück; das Schreiben und Erzeugen (dafür ist
-  die Richtlinie `migration/edit` vorgesehen) und die Einstellungen des Migrations-Repositorys geschehen in Dateien
-  und auf der Konsole.
+- Setup > Migrationen zeigt Migrationen an, führt sie aus, nimmt sie zurück und zeichnet Änderungen auf (die
+  Richtlinie `migration/edit`); das Schreiben und Erzeugen von Migrationen und die Einstellungen des
+  Migrations-Repositorys geschehen in Dateien und auf der Konsole.
+- Eine Aufzeichnung wird festgehalten, aber eine Migration wird daraus erst erzeugt, wenn es die YAML-Schritttypen
+  gibt, die sie verwendet: `exp:migration:generate --from-recording` listet sie bis dahin und schreibt nichts.
 - Ein in der Administration gestarteter Lauf braucht `proc_open` und ein PHP-Kommandozeilenprogramm
   (`migration.ini [AdminSettings] PhpCliPath`); fehlen sie, sagt die Seite das, und die Konsole führt ihn aus.
 - Commits, Tags und Pushes brauchen git_manager; ohne ihn sagt ein Lauf das und committet nichts.
@@ -88,7 +92,7 @@ die von `exp:upgrade` (0, 1 gescheitert, 2 Bedienung, 3 Datenbank nicht erreichb
 
 Jede Einstellung mit ihrer Voreinstellung: [migration.ini](../../beispiele/ini-einstellungen/migration/README.md). Der
 Cronjob-Teil: [migrationpush](../../beispiele/cronjobs/migrationpush.md). Audit-Ereignisse: `system.migration.run`,
-`.apply`, `.fail`, `.rollback`, `.caption`, `.push` in `settings/audit.ini`.
+`.apply`, `.fail`, `.rollback`, `.caption`, `.push`, `.record` in `settings/audit.ini`.
 
 ## Verwandte Seiten
 

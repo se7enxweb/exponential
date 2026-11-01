@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>চলন আৰম্ভ কৰিব পৰা নগ&apos;ল।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>সালসলনি ৰেকৰ্ড কৰা</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ৰেকৰ্ডিং চলি থকাৰ সময়ত আপুনি প্ৰশাসনত বা ছাইটৰ কাষৰ বাৰত যি সলনি কৰে সেয়া এটা প্ৰব্ৰজনৰ পদক্ষেপ হিচাপে ৰখা হয়: সমল, শ্ৰেণী, ভূমিকা আৰু নীতি, শাখা, ব্যৱহাৰকাৰী আৰু গোট, URL উপনাম, ছেটিংছ। কাম শেষ হ'লে ইয়াক বন্ধ কৰক, ই কি ধৰিছে চাওক আৰু ইয়াৰ পৰা এটা প্ৰব্ৰজন সৃষ্টি কৰক।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ৰেকৰ্ডিংবোৰ পঢ়িব পৰা নগ'ল: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ৰেকৰ্ডিঙৰ তালিকাবোৰ এতিয়াও নাই: প্ৰথমে আপগ্ৰেড চলাওক (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ত ৰেকৰ্ডিং বন্ধ আছে ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>মোৰ সালসলনি</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>আপুনি বন্ধ নকৰালৈকে কেৱল আপুনি যি সলনি কৰে, য'তেই নকৰক, সেয়াহে ৰেকৰ্ড কৰে।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ৰেকৰ্ডিং</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time ৰ পৰা, এতিয়ালৈকে %count সালসলনি।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>লেবেল (বৈকল্পিক)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ই কি ধৰিছে দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ৰেকৰ্ডিং বন্ধ কৰক</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>মোৰ সালসলনিৰ ৰেকৰ্ডিং আৰম্ভ কৰক</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>গোটেই ছাইটৰ উইণ্ড'</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>বন্ধ নোহোৱালৈকে প্ৰতিজন ব্যৱহাৰকাৰী আৰু কনচ'লৰ প্ৰতিটো সালসলনি ৰেকৰ্ড কৰে। খোলোঁতে আপুনিয়েই বুলি নিশ্চিত কৰিবলৈ কোৱা হয়।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>খোলা</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>উইণ্ড' বন্ধ কৰক</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>গোটেই ছাইটৰ উইণ্ড' খোলক</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ৰেকৰ্ডিংসমূহ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ব্যৱহাৰকাৰীৰ একাউণ্ট (লগইন, ই-মেইল, পাছৱৰ্ড) আৰু ব্যৱহাৰকাৰী একাউণ্টৰ ক্ষেত্ৰবোৰ কেতিয়াও ৰেকৰ্ড কৰা নহয়।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>সালসলনিসমূহ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>গোটেই ছাইট</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ৰ সালসলনি</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>বন্ধ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>এতিয়ালৈকে কোনো ৰেকৰ্ডিং নাই।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ৰেকৰ্ডিং %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>সকলো ৰেকৰ্ডিং</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ইয়াৰ পৰা হ'বলগীয়া প্ৰব্ৰজন</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>প্ৰতিটো সলনি হোৱা বস্তুৰ বাবে এটা পদক্ষেপত একত্ৰিত সালসলনি: এই ৰেকৰ্ডিঙৰ পৰা সৃষ্টি কৰা প্ৰব্ৰজনে কি কৰিব।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>এই সংস্থাপনত YAML পদক্ষেপৰ প্ৰকাৰ %types থাকিলে ইয়াৰ পৰা প্ৰব্ৰজন সৃষ্টি কৰিব পৰা যাব।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ইচ্ছাকৃতভাৱে বাদ দিয়া: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>একো ৰেকৰ্ড হোৱা নাই।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ই কি ধৰিছে</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count সালসলনি, কৰা ক্ৰমত।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>সালসলনি</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>পদক্ষেপ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>সম্পৰ্কিত</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>আৰু %count: ./console exp:migration:record:show এ সকলোৰে তালিকা দিয়ে।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>বাতিল কৰক</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ৰেকৰ্ডিং আৰু ই যি ধৰিছে সেয়া আঁতৰায়। যি সলনি হৈছে সেয়া সলনি হৈয়ে থাকে।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>হয়, এই ৰেকৰ্ডিং বাতিল কৰক</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ৰেকৰ্ড হৈ আছে…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>আপোনাৰ সালসলনি এটা প্ৰব্ৰজনৰ বাবে ৰেকৰ্ড হৈ আছে।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>এই ছাইটৰ প্ৰতিটো সালসলনি এটা প্ৰব্ৰজনৰ বাবে ৰেকৰ্ড হৈ আছে (গোটেই ছাইটৰ উইণ্ড')।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>গোটেই ছাইটৰ ৰেকৰ্ডিং আৰম্ভ হ'ল: আপুনি বন্ধ নকৰালৈকে প্ৰতিজন ব্যৱহাৰকাৰীৰ প্ৰতিটো সালসলনি ৰেকৰ্ড হ'ব।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ৰেকৰ্ডিং আৰম্ভ হ'ল: আপুনি বন্ধ নকৰালৈকে আপোনাৰ সালসলনি ৰেকৰ্ড হ'ব।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ৰেকৰ্ডিং বন্ধ হ'ল। ই যি ধৰিছে আপুনি বাতিল নকৰালৈকে থাকিব।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ৰেকৰ্ডিং আৰু ইয়াৰ ঘটনাবোৰ আঁতৰোৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>কোনো ৰেকৰ্ডিং %id নাই।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>প্ৰথমে "হয়, এই ৰেকৰ্ডিং বাতিল কৰক" চিহ্নিত কৰক।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ছেছন ৰেকৰ্ডিং কেৱল ৰেকৰ্ড কৰা ব্যৱহাৰকাৰীয়েহে বন্ধ কৰিব পাৰে।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>বন্ধ কৰিবলগীয়া ৰেকৰ্ডিং বাছক।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>এই প্ৰকাৰৰ ৰেকৰ্ডিং ইতিমধ্যে চলি আছে।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ৰেকৰ্ডিং সলনি কৰিব পৰা নগ'ল: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

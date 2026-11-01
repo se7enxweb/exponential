@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>রন হৌদোকপা ঙমদ্রে.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ꯑꯍꯣꯡꯕꯁꯤꯡ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯕ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯆꯠꯂꯤꯉꯩꯗ ꯑꯗꯣꯝꯅ ꯑꯦꯗꯃꯤꯟꯗ ꯅꯠꯇ꯭ꯔꯒ ꯁꯥꯏꯠꯀꯤ ꯁꯥꯏꯗꯕꯥꯔꯗ ꯍꯣꯡꯗꯣꯛꯂꯤꯕꯗꯨ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ ꯑꯃꯒꯤ ꯈꯣꯡꯊꯥꯡꯁꯤꯡ ꯑꯣꯏꯅ ꯊꯝꯃꯤ: ꯀꯟꯇꯦꯟꯠ, ꯀ꯭ꯂꯥꯁꯁꯤꯡ, ꯊꯧꯗꯥꯡ ꯑꯃꯁꯨꯡ ꯄꯣꯂꯤꯁꯤꯁꯤꯡ, ꯁꯦꯛꯁꯟꯁꯤꯡ, ꯁꯤꯖꯤꯟꯅꯔꯤꯕꯁꯤꯡ ꯑꯃꯁꯨꯡ ꯀꯥꯡꯂꯨꯄꯁꯤꯡ, URL ꯃꯤꯡꯁꯤꯡ, ꯁꯦꯇꯤꯡꯁꯤꯡ꯫ ꯂꯣꯏꯔꯕꯥ ꯃꯇꯨꯡꯗ ꯂꯦꯞꯍꯜꯂꯨ, ꯃꯁꯤꯅ ꯀꯔꯤ ꯐꯥꯔꯤꯕꯒꯦ ꯌꯦꯡꯂꯨ, ꯃꯗꯨꯗꯒꯤ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ ꯑꯃ ꯁꯦꯝꯃꯨ꯫</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡꯁꯤꯡ ꯄꯥꯕ ꯉꯃꯈꯤꯗꯦ: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡꯒꯤ ꯇꯦꯕꯜꯁꯤꯡ ꯍꯧꯖꯤꯛ ꯐꯥꯑꯣꯕ ꯂꯩꯗ꯭ꯔꯤ: ꯑꯍꯥꯅꯕ ꯑꯞꯒ꯭ꯔꯦꯗ ꯆꯂꯨ (exp:upgrade --apply)꯫</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ꯗ ꯔꯦꯀꯣꯔꯗꯤꯡ ꯊꯤꯡꯂꯦ ([RecordingSettings] Recording=disabled)꯫</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ꯑꯩꯒꯤ ꯑꯍꯣꯡꯕꯁꯤꯡ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ꯅꯍꯥꯛꯅ ꯂꯦꯞꯍꯟꯗ꯭ꯔꯤꯐꯥꯑꯣꯕ ꯅꯍꯥꯛꯅ ꯍꯣꯡꯗꯣꯛꯂꯤꯕꯗꯨ ꯈꯛꯇꯃꯛ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯏ꯫</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time ꯗꯒꯤ, ꯍꯧꯖꯤꯛ ꯐꯥꯑꯣꯕ ꯑꯍꯣꯡꯕ %count꯫</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ꯂꯦꯕꯦꯜ (ꯄꯥꯝꯂꯕꯗꯤ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ꯃꯁꯤꯅ ꯀꯔꯤ ꯐꯥꯔꯤꯕꯒꯦ ꯎꯠꯂꯨ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯂꯦꯞꯍꯜꯂꯨ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ꯑꯩꯒꯤ ꯑꯍꯣꯡꯕꯁꯤꯡ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯕ ꯍꯧꯔꯣ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ꯁꯥꯏꯠ ꯄꯨꯝꯕꯒꯤ ꯊꯣꯡꯅꯥꯑꯣ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ꯊꯤꯡꯗ꯭ꯔꯤꯐꯥꯑꯣꯕ ꯁꯤꯖꯤꯟꯅꯔꯤꯕ ꯈꯨꯗꯤꯡꯃꯛ ꯑꯃꯁꯨꯡ ꯀꯟꯁꯣꯂꯒꯤ ꯑꯍꯣꯡꯕ ꯈꯨꯗꯤꯡꯃꯛ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯏ꯫ ꯍꯥꯡꯗꯣꯛꯄꯗ ꯅꯍꯥꯛ ꯑꯣꯏꯕꯒꯦ ꯁꯣꯏꯗꯅ ꯇꯧꯅꯕ ꯍꯥꯌꯒꯅꯤ꯫</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ꯍꯥꯡꯗꯣꯛꯂꯦ</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ꯊꯣꯡꯅꯥꯑꯣ ꯊꯤꯡꯕ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ꯁꯥꯏꯠ ꯄꯨꯝꯕꯒꯤ ꯊꯣꯡꯅꯥꯑꯣ ꯍꯥꯡꯗꯣꯛꯄ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯄꯨꯝꯅꯃꯛ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ꯁꯤꯖꯤꯟꯅꯔꯤꯕꯒꯤ ꯑꯦꯀꯥꯎꯟꯇ (ꯂꯣꯒꯏꯟ, ꯏ-ꯃꯦꯜ, ꯄꯥꯁꯋꯥꯔꯗ) ꯑꯃꯁꯨꯡ ꯁꯤꯖꯤꯟꯅꯔꯤꯕꯒꯤ ꯑꯦꯀꯥꯎꯟꯇꯁꯤꯡꯒꯤ ꯐꯤꯜꯗꯁꯤꯡ ꯀꯩꯗꯧꯉꯩꯗꯁꯨ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯗꯦ꯫</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ꯑꯍꯣꯡꯕ ꯃꯁꯤꯡ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ꯁꯥꯏꯠ ꯄꯨꯝꯕ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ꯒꯤ ꯑꯍꯣꯡꯕꯁꯤꯡ</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ꯂꯦꯞꯂꯦ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ꯍꯧꯖꯤꯛ ꯐꯥꯑꯣꯕ ꯔꯦꯀꯣꯔꯗꯤꯡ ꯑꯃꯠꯇ ꯂꯩꯇꯦ꯫</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯈꯨꯗꯤꯡꯃꯛ</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ꯃꯁꯤꯗꯒꯤ ꯊꯣꯛꯀꯗꯕ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ꯍꯣꯡꯂꯕ ꯄꯣꯠ ꯈꯨꯗꯤꯡꯃꯛꯀꯤꯗꯃꯛ ꯈꯣꯡꯊꯥꯡ ꯑꯃꯗ ꯄꯨꯟꯁꯤꯟꯈꯤꯕ ꯑꯍꯣꯡꯕꯁꯤꯡ: ꯔꯦꯀꯣꯔꯗꯤꯡ ꯑꯁꯤꯗꯒꯤ ꯁꯦꯝꯕ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ ꯑꯃꯅ ꯇꯧꯒꯗꯕ꯫</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ꯏꯟꯁ꯭ꯇꯣꯂꯦꯁꯟ ꯑꯁꯤꯗ YAML ꯈꯣꯡꯊꯥꯡꯒꯤ ꯃꯈꯜ %types ꯂꯩꯔꯀꯄꯗ ꯃꯁꯤꯗꯒꯤ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ ꯁꯦꯝꯕ ꯌꯥꯒꯅꯤ꯫</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ꯈꯟꯗꯨꯅ ꯊꯥꯗꯣꯛꯈꯤ: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ꯀꯔꯤꯁꯨ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯈꯤꯗꯦ꯫</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ꯃꯁꯤꯅ ꯀꯔꯤ ꯐꯥꯈꯤꯕꯒꯦ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>ꯑꯍꯣꯡꯕ %count, ꯇꯧꯈꯤꯕ ꯃꯊꯧ ꯃꯇꯧꯗ꯫</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ꯑꯍꯣꯡꯕ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ꯈꯣꯡꯊꯥꯡ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ꯃꯔꯤ ꯂꯩꯅꯕ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ꯑꯃꯨꯛ %count: ./console exp:migration:record:show ꯅ ꯄꯨꯝꯅꯃꯛ ꯂꯤꯁ꯭ꯠ ꯇꯧꯏ꯫</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ꯊꯥꯗꯣꯛꯂꯨ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯑꯃꯁꯨꯡ ꯃꯁꯤꯅ ꯐꯥꯈꯤꯕꯗꯨ ꯂꯧꯊꯣꯛꯏ꯫ ꯍꯣꯡꯂꯕꯗꯨ ꯍꯣꯡꯂꯕ ꯑꯣꯏꯅꯃꯛ ꯂꯩꯒꯅꯤ꯫</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ꯍꯣꯌ, ꯔꯦꯀꯣꯔꯗꯤꯡ ꯑꯁꯤ ꯊꯥꯗꯣꯛꯂꯨ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ꯔꯦꯀꯣꯔꯗ ꯇꯧꯔꯤ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ꯅꯍꯥꯛꯀꯤ ꯑꯍꯣꯡꯕꯁꯤꯡ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ ꯑꯃꯒꯤꯗꯃꯛ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯔꯤ꯫</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ꯁꯥꯏꯠ ꯑꯁꯤꯒꯤ ꯑꯍꯣꯡꯕ ꯈꯨꯗꯤꯡꯃꯛ ꯃꯥꯏꯒ꯭ꯔꯦꯁꯟ ꯑꯃꯒꯤꯗꯃꯛ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯔꯤ (ꯁꯥꯏꯠ ꯄꯨꯝꯕꯒꯤ ꯊꯣꯡꯅꯥꯑꯣ)꯫</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ꯁꯥꯏꯠ ꯄꯨꯝꯕꯒꯤ ꯔꯦꯀꯣꯔꯗꯤꯡ ꯍꯧꯔꯦ: ꯅꯍꯥꯛꯅ ꯂꯦꯞꯍꯟꯗ꯭ꯔꯤꯐꯥꯑꯣꯕ ꯁꯤꯖꯤꯟꯅꯔꯤꯕ ꯈꯨꯗꯤꯡꯃꯛꯀꯤ ꯑꯍꯣꯡꯕ ꯈꯨꯗꯤꯡꯃꯛ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯒꯅꯤ꯫</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯍꯧꯔꯦ: ꯅꯍꯥꯛꯅ ꯂꯦꯞꯍꯟꯗ꯭ꯔꯤꯐꯥꯑꯣꯕ ꯅꯍꯥꯛꯀꯤ ꯑꯍꯣꯡꯕꯁꯤꯡ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯒꯅꯤ꯫</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯂꯦꯞꯂꯦ꯫ ꯃꯁꯤꯅ ꯐꯥꯈꯤꯕꯗꯨ ꯅꯍꯥꯛꯅ ꯊꯥꯗꯣꯛꯇ꯭ꯔꯤꯐꯥꯑꯣꯕ ꯂꯩꯒꯅꯤ꯫</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯑꯃꯁꯨꯡ ꯃꯁꯤꯒꯤ ꯊꯧꯗꯣꯛꯁꯤꯡ ꯂꯧꯊꯣꯛꯂꯦ꯫</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ %id ꯂꯩꯇꯦ꯫</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ꯑꯍꯥꯅꯕ "ꯍꯣꯌ, ꯔꯦꯀꯣꯔꯗꯤꯡ ꯑꯁꯤ ꯊꯥꯗꯣꯛꯂꯨ" ꯈꯟꯂꯨ꯫</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ꯁꯦꯁꯟ ꯔꯦꯀꯣꯔꯗꯤꯡ ꯑꯁꯤ ꯔꯦꯀꯣꯔꯗ ꯇꯧꯈꯤꯕ ꯁꯤꯖꯤꯟꯅꯔꯤꯕꯅ ꯈꯛꯇꯃꯛ ꯂꯦꯞꯍꯟꯕ ꯌꯥꯏ꯫</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ꯂꯦꯞꯍꯟꯒꯗꯕ ꯔꯦꯀꯣꯔꯗꯤꯡ ꯈꯟꯂꯨ꯫</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ꯃꯈꯜ ꯑꯁꯤꯒꯤ ꯔꯦꯀꯣꯔꯗꯤꯡ ꯑꯃ ꯍꯥꯟꯅꯗꯒꯤ ꯆꯠꯂꯤ꯫</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ꯔꯦꯀꯣꯔꯗꯤꯡ ꯍꯣꯡꯗꯣꯛꯄ ꯉꯃꯈꯤꯗꯦ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

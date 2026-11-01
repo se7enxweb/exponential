@@ -80588,6 +80588,222 @@ Divê hûn çîna girêkê bi fonksiyona guhertina çînê (swap) biguherînin.<
         <source>The run could not be started.</source>
         <translation>Xebitandin nikarîbû dest pê bike.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Tomarkirina guhertinan</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Dema ku tomarkirinek dixebite, tiştê ku tu di rêveberiyê de an jî di darika kêlekê ya malperê de diguherînî wekî gavên koçberiyekê tê parastin: naverok, çîn, rol û polîtîka, beş, bikarhêner û kom, navên URL ên alternatîf, mîheng. Dema qediya rawestîne, binêre ka çi girtiye û jê koçberiyekê çêke.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Tomar nehatin xwendin: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabloyên tomaran hîn tune ne: pêşî nûjenkirinê bimeşîne (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Tomarkirin di migration.ini de girtî ye ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Guhertinên min</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Tenê tiştê ku tu diguherînî tomar dike, li ku derê be jî, heta ku tu wê rawestînî.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Tomar</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ji %time ve, heta niha %count guhertin.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etîket (vebijarkî)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Nîşan bide ka çi girtiye</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Tomarkirinê rawestîne</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Tomarkirina guhertinên min dest pê bike</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Pencereya ji bo tevahiya malperê</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Her guhertina her bikarhênerî û konsolê tomar dike heta ku were girtin. Dema vekirinê ji te tê xwestin ku tu piştrast bikî ku tu yî.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Vekirî</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Pencereyê bigire</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Pencereya ji bo tevahiya malperê veke</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Tomarên hemû</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Hesabê bikarhênerekî (navê têketinê, e-name, şîfre) û qadên hesabên bikarhêneran qet nayên tomarkirin.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Guhertin</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Tevahiya malperê</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Guhertinên %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Rawestandî</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Hîn tu tomar tune.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Tomar %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Hemû tomar</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Koçberiya ku jê derkeve</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Guhertin ji bo her tiştê guherî di gavekê de hatine kombûn: tiştê ku koçberiyeke ji vê tomarê hatî çêkirin dê bike.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Dema ku vê sazkirinê cureyên gavên YAML %types hebin, dikare jê koçberiyek were çêkirin.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Bi mebest hatiye derxistin: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Tiştek nehat tomarkirin.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Çi girtiye</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count guhertin, li gorî rêza ku hatine kirin.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Guhertin (yek)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Gav</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Têkildar</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count zêdetir: ./console exp:migration:record:show hemûyan rêz dike.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Avêtin</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Tomarê û tiştê ku girtiye radike. Tiştê guherî guherî dimîne.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Erê, vê tomarê bavêje</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Tê tomarkirin…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Guhertinên te ji bo koçberiyekê tên tomarkirin.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Her guhertina li vê malperê ji bo koçberiyekê tê tomarkirin (pencereya ji bo tevahiya malperê).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Tomarkirina tevahiya malperê dest pê kir: her guhertina her bikarhênerî tê tomarkirin heta ku tu wê rawestînî.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Tomarkirin dest pê kir: guhertinên te tên tomarkirin heta ku tu wê rawestînî.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Tomarkirin hat rawestandin. Tiştê ku girtiye dimîne heta ku tu wê bavêjî.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Tomar û bûyerên wê hatin rakirin.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Tomara %id tune.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Pêşî "Erê, vê tomarê bavêje" nîşan bike.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Tenê bikarhênerê ku tomar kiriye dikare tomarkirina danişînê rawestîne.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tomara ku were rawestandin hilbijêre.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Tomarkirineke bi vî rengî jixwe dixebite.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Tomar nehat guhertin: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

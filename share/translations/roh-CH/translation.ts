@@ -80590,6 +80590,222 @@ Vus stuais midar la classa dal nod cun la funcziun da barat.</translation>
         <source>The run could not be started.</source>
         <translation>L&apos;execuziun n&apos;ha betg pudì vegnir aviada.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Registrar midadas</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Durant che ina registraziun è en funcziun, vegn quai che Vus midais en l'administraziun u en la trav laterala da la website conservà sco pass d'ina migraziun: cuntegn, classas, rollas e directivas, secziuns, utilisaders e gruppas, alias URL, parameters. Fermai la registraziun cura che Vus essas a fin, guardai tge ch'ella ha tschiffà e generai ina migraziun ord ella.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Las registraziuns n'han betg pudì vegnir legidas: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Las tabellas da las registraziuns n'existan anc betg: exequi l'emprim l'actualisaziun (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>La registraziun è deactivada en migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mias midadas</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Registrescha mo quai che Vus midais, nua che Vus midais, fin che Vus la fermais.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Registraziun</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>dapi %time, fin uss %count midada(s).</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Etichetta (facultativa)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Mussar tge ch'ella ha tschiffà</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Fermar la registraziun</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Cumenzar a registrar mias midadas</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fanestra per l'entira website</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Registrescha mintga midada da mintga utilisader e da la consola fin ch'ella vegn serrada. Cun l'avrir stuais Vus confermar che Vus essas Vus.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Averta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Serrar la fanestra</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Avrir la fanestra per l'entira website</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Registraziuns</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Il conto d'in utilisader (num d'annunzia, e-mail, pled-clav) ed ils champs dals contos d'utilisaders na vegnan mai registrads.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Midadas</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Entira website</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Midadas da %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Fermada</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Anc nagina registraziun.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Registraziun %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Tut las registraziuns</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>La migraziun che resultass</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Las midadas resumadas en in pass per mintga chaussa midada: quai che fiss ina migraziun generada ord questa registraziun.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Ina migraziun po vegnir generada ord ella uschespert che questa installaziun ha ils tips da pass YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Laschà davent apposta: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nagut n'è vegnì registrà.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Tge ch'ella ha tschiffà</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count midada(s), en l'urden ch'ellas èn vegnidas fatgas.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Midada</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Pass</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Pertutga</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Anc %count: ./console exp:migration:record:show las enumerescha tuttas.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Bittar davent</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Allontanescha la registraziun e quai ch'ella ha tschiffà. Quai ch'è vegnì midà resta midà.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Gea, bittar davent questa registraziun</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Registrescha…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Vossas midadas vegnan registradas per ina migraziun.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Mintga midada sin questa website vegn registrada per ina migraziun (fanestra per l'entira website).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>La registraziun per l'entira website ha cumenzà: mintga midada da mintga utilisader vegn registrada fin che Vus la fermais.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>La registraziun ha cumenzà: Vossas midadas vegnan registradas fin che Vus la fermais.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Registraziun fermada. Quai ch'ella ha tschiffà resta fin che Vus la bittais davent.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>La registraziun e ses eveniments èn vegnids allontanads.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>I na dat nagina registraziun %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Marcai l'emprim «Gea, bittar davent questa registraziun».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Mo l'utilisader che ha registrà dastga fermar ina registraziun da sessiun.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Tschernì la registraziun che duai vegnir fermada.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ina registraziun da quest tip è gia en funcziun.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>La registraziun n'ha betg pudì vegnir midada: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

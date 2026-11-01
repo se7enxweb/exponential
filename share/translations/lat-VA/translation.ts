@@ -80623,6 +80623,222 @@ Classem nodi functione permutandi mutare debebis.</translation>
         <source>The run could not be started.</source>
         <translation>Cursus incohari non potuit.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Mutationes inscribere</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Dum inscriptio currit, quod in administratione vel in tabella laterali situs mutas ut gradus migrationis servatur: argumentum, classes, munera et praecepta, sectiones, usores et greges, nomina alterna URL, optiones. Siste eam cum finieris, vide quid ceperit, et ex ea migrationem genera.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Inscriptiones legi non potuerunt: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabulae inscriptionum nondum exstant: primum renovationem exsequere (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Inscriptio in migration.ini exstincta est ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mutationes meae</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Solum inscribit quod tu mutas, ubicumque mutas, donec eam sistas.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Inscriptio</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ab %time, adhuc mutationes: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Titulus (ad libitum)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Ostende quid ceperit</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Siste inscriptionem</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Incipe mutationes meas inscribere</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Fenestra toti situi</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Omnem mutationem omnis usoris et consolae inscribit donec claudatur. Aperiens rogaberis ut te esse confirmes.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Aperta</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Claude fenestram</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Aperi fenestram toti situi</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Inscriptiones</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ratio usoris (nomen ingressus, inscriptio electronica, tessera) et campi rationum usorum numquam inscribuntur.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mutationes</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Totus situs</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Mutationes usoris %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Sistita</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Nulla adhuc inscriptio.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Inscriptio %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Omnes inscriptiones</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migratio quae inde fieret</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Mutationes in unum gradum pro singula re mutata collectae: quod migratio ex hac inscriptione generata faceret.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migratio ex ea generari poterit cum haec institutio genera graduum YAML %types habebit.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Consulto omissum: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nihil inscriptum est.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Quid ceperit</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Mutationes: %count, eo ordine quo factae sunt.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mutatio</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Gradus</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Pertinet ad</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Plures %count: ./console exp:migration:record:show omnes enumerat.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Abice</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Inscriptionem et quod cepit removet. Quod mutatum est mutatum manet.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ita, hanc inscriptionem abice</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Inscribitur…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Mutationes tuae pro migratione inscribuntur.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Omnis mutatio in hoc situ pro migratione inscribitur (fenestra toti situi).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Inscriptio totius situs coepit: omnis mutatio omnis usoris inscribitur donec eam sistas.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Inscriptio coepit: mutationes tuae inscribuntur donec eam sistas.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Inscriptio sistita. Quod cepit manet donec eam abicias.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Inscriptio et eventus eius remoti sunt.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nulla est inscriptio %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Primum nota «Ita, hanc inscriptionem abice».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Solus usor qui inscripsit inscriptionem sessionis sistere potest.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Elige inscriptionem sistendam.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Inscriptio huius generis iam currit.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Inscriptio mutari non potuit: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

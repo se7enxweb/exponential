@@ -80590,6 +80590,222 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>The run could not be started.</source>
         <translation>Raawwiin jalqabamuu hin dandeenye.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Jijjiirama waraabuu</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Yeroo waraabbiin itti fufaa jiru, wanti ati bulchiinsa keessatti ykn baara cinaa marsariitii irratti jijjiirtu akka tarkaanfii godaansaatti kuufama: qabiyyee, kutaalee, gaheewwanii fi imaammata, kutaalee marsariitii, fayyadamtootaa fi gareewwan, maqaa biroo URL, qindaa'ina. Yeroo xumurtu dhaabi, maal akka qabate ilaali, isa irraas godaansa uumi.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Waraabbiiwwan dubbifamuu hin dandeenye: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Gabateewwan waraabbii ammallee hin jiran: dura fooyyessuu hojjechiisi (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Waraabuun migration.ini keessatti dhaamsameera ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Jijjiirama koo</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Hanga ati dhaabdutti, waan ati jijjiirtu qofa, bakka kamittuu, waraaba.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Waraabbii</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time irraa, hanga ammaatti jijjiirama %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Mallattoo (filannoo)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Waan qabate agarsiisi</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Waraabuu dhaabi</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Jijjiirama koo waraabuu jalqabi</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Foddaa marsariitii guutuu</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Hanga cufamutti jijjiirama hundumaa fayyadamaa hundumaa fi koonsolii waraaba. Yeroo bantu ati ta'uu kee akka mirkaneessitu gaafatamta.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Banaa</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Foddaa cufi</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Foddaa marsariitii guutuu bani</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Waraabbiiwwan</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Herregni fayyadamaa (maqaa seensaa, imeelii, jecha icciitii) fi dirreewwan herregoota fayyadamtootaa gonkumaa hin waraabaman.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Jijjiiramoota</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Marsariitii guutuu</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Jijjiirama %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Dhaabbateera</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Ammallee waraabbiin hin jiru.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Waraabbii %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Waraabbiiwwan hunda</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Godaansa inni uumu</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Jijjiiramoota waan jijjiirame tokko tokkoof tarkaanfii tokkotti walitti qabaman: waan godaansi waraabbii kana irraa uumame godhu.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Yeroo dhaabbiin kun gosoota tarkaanfii YAML %types qabaatu godaansi isa irraa uumamuu danda'a.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Beekamee dhiifame: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Wanti waraabame hin jiru.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Waan qabate</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Jijjiirama %count, akkaataa itti godhametti.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Jijjiirama</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Tarkaanfii</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Waa'ee</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Dabalataan %count: ./console exp:migration:record:show hunda tarreessa.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Gatii</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Waraabbii fi waan inni qabate haqa. Wanti jijjiirame jijjiiramee hafa.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Eeyyee, waraabbii kana gatii</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Waraabamaa jira…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Jijjiiramni kee godaansaaf waraabamaa jira.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Jijjiiramni marsariitii kana irratti hundi godaansaaf waraabamaa jira (foddaa marsariitii guutuu).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Waraabbiin marsariitii guutuu jalqabeera: hanga ati dhaabdutti jijjiiramni fayyadamaa hundumaa waraabama.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Waraabbiin jalqabeera: hanga ati dhaabdutti jijjiiramni kee waraabama.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Waraabbiin dhaabbateera. Waan qabate hanga ati gatutti hafa.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Waraabbii fi taateewwan isaa haqamaniiru.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Waraabbiin %id hin jiru.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Dura "Eeyyee, waraabbii kana gatii" mallattoo godhi.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Waraabbii yeroo seenaa kan dhaabuu danda'u fayyadamaa waraabe qofa.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Waraabbii dhaabamu filadhu.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Waraabbiin gosa kanaa duraanuu itti fufaa jira.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Waraabbiin jijjiiramuu hin dandeenye: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

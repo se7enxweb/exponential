@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>無法啟動執行。</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>記錄變更</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>記錄進行期間，您在管理介面或網站側邊欄中的變更會作為遷移的步驟保存：內容、類別、角色和政策、區段、使用者和群組、URL 別名、設定。完成後停止記錄，檢視它擷取了什麼，再由它產生遷移。</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>無法讀取記錄：%problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>記錄資料表尚不存在：請先執行升級 (exp:upgrade --apply)。</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini 中已關閉記錄 ([RecordingSettings] Recording=disabled)。</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>我的變更</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>只記錄您所做的變更，無論在哪裡變更，直到您停止。</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>記錄</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>自 %time 起，目前共 %count 項變更。</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>標籤（選填）</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>檢視擷取的內容</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>停止記錄</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>開始記錄我的變更</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>全站視窗</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>記錄每位使用者和主控台的每項變更，直到視窗關閉。開啟時需要驗證是您本人。</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>已開啟</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>關閉視窗</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>開啟全站視窗</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>記錄清單</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>使用者的帳號（登入名稱、電子郵件、密碼）和使用者帳號的欄位一律不記錄。</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>變更數</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>全站</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name 的變更</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>已停止</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>尚無記錄。</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>記錄 %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>所有記錄</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>將產生的遷移</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>依每個被變更的項目合併為一個步驟的變更：由此記錄產生的遷移會做的事。</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>一旦此安裝具備 YAML 步驟類型 %types，即可由它產生遷移。</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>刻意省略：%list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>未記錄任何內容。</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>擷取的內容</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count 項變更，依發生順序排列。</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>變更</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>步驟</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>對象</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>另有 %count 項：./console exp:migration:record:show 會全部列出。</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>捨棄</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>刪除記錄及其擷取的內容。已變更的內容維持變更。</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>是的，捨棄此記錄</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>正在記錄…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>您的變更正在為遷移而記錄。</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>本站的每項變更都在為遷移而記錄（全站視窗）。</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>全站記錄已開始：每位使用者的每項變更都會被記錄，直到您停止。</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>記錄已開始：您的變更會被記錄，直到您停止。</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>記錄已停止。擷取的內容會保留，直到您捨棄它。</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>記錄及其事件已刪除。</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>沒有記錄 %id。</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>請先勾選「是的，捨棄此記錄」。</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>只有進行記錄的使用者才能停止工作階段記錄。</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>請選擇要停止的記錄。</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>此類記錄已在進行中。</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>無法變更記錄：%reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

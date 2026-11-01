@@ -80588,6 +80588,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>రన్‌ను ప్రారంభించడం సాధ్యం కాలేదు.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>మార్పుల రికార్డింగ్</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>రికార్డింగ్ నడుస్తున్నంత వరకు మీరు నిర్వహణలో లేదా సైట్ సైడ్‌బార్‌లో మార్చేది ఒక మైగ్రేషన్ దశలుగా ఉంచబడుతుంది: కంటెంట్, తరగతులు, పాత్రలు మరియు విధానాలు, విభాగాలు, వినియోగదారులు మరియు సమూహాలు, URL మారుపేర్లు, సెట్టింగ్‌లు. పూర్తయ్యాక దాన్ని ఆపండి, అది ఏమి పట్టుకుందో చూడండి, దాని నుండి మైగ్రేషన్‌ను సృష్టించండి.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>రికార్డింగ్‌లను చదవలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>రికార్డింగ్ పట్టికలు ఇంకా లేవు: ముందుగా అప్‌గ్రేడ్‌ను అమలు చేయండి (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini లో రికార్డింగ్ ఆఫ్ చేయబడింది ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>నా మార్పులు</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>మీరు ఆపే వరకు మీరు మార్చేదాన్ని మాత్రమే, ఎక్కడ మార్చినా, రికార్డ్ చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>రికార్డింగ్</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time నుండి, ఇప్పటివరకు %count మార్పులు.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>లేబుల్ (ఐచ్ఛికం)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>అది ఏమి పట్టుకుందో చూపించు</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>రికార్డింగ్ ఆపు</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>నా మార్పుల రికార్డింగ్ ప్రారంభించు</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>మొత్తం సైట్ కిటికీ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>మూసే వరకు ప్రతి వినియోగదారు మరియు కన్సోల్ యొక్క ప్రతి మార్పును రికార్డ్ చేస్తుంది. తెరిచేటప్పుడు మీరేనని ధృవీకరించమని అడుగుతుంది.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>తెరిచి ఉంది</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>కిటికీ మూసివేయి</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>మొత్తం సైట్ కిటికీ తెరువు</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>రికార్డింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>వినియోగదారు ఖాతా (లాగిన్, ఇ-మెయిల్, పాస్‌వర్డ్) మరియు వినియోగదారు ఖాతాల ఫీల్డ్‌లు ఎప్పుడూ రికార్డ్ చేయబడవు.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>మార్పులు</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>మొత్తం సైట్</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name యొక్క మార్పులు</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ఆపబడింది</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ఇంకా రికార్డింగ్ లేదు.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>రికార్డింగ్ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>అన్ని రికార్డింగ్‌లు</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>దీని నుండి వచ్చే మైగ్రేషన్</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>మార్చిన ప్రతి దానికి ఒక దశగా కలిపిన మార్పులు: ఈ రికార్డింగ్ నుండి సృష్టించిన మైగ్రేషన్ ఏమి చేస్తుందో.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ఈ ఇన్‌స్టాలేషన్‌లో YAML దశ రకాలు %types ఉన్నప్పుడు దీని నుండి మైగ్రేషన్ సృష్టించవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ఉద్దేశపూర్వకంగా వదిలేశాం: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ఏమీ రికార్డ్ కాలేదు.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>అది ఏమి పట్టుకుంది</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count మార్పులు, చేసిన క్రమంలో.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>మార్పు</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>దశ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>సంబంధించినది</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>మరో %count: ./console exp:migration:record:show అన్నింటినీ జాబితా చేస్తుంది.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>విస్మరించు</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>రికార్డింగ్‌ను మరియు అది పట్టుకున్నదాన్ని తొలగిస్తుంది. మారినది మారినట్లే ఉంటుంది.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>అవును, ఈ రికార్డింగ్‌ను విస్మరించు</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>రికార్డ్ అవుతోంది…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>మీ మార్పులు ఒక మైగ్రేషన్ కోసం రికార్డ్ అవుతున్నాయి.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ఈ సైట్‌లోని ప్రతి మార్పు ఒక మైగ్రేషన్ కోసం రికార్డ్ అవుతోంది (మొత్తం సైట్ కిటికీ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>మొత్తం సైట్ రికార్డింగ్ ప్రారంభమైంది: మీరు ఆపే వరకు ప్రతి వినియోగదారు యొక్క ప్రతి మార్పు రికార్డ్ అవుతుంది.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>రికార్డింగ్ ప్రారంభమైంది: మీరు ఆపే వరకు మీ మార్పులు రికార్డ్ అవుతాయి.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>రికార్డింగ్ ఆగింది. అది పట్టుకున్నది మీరు విస్మరించే వరకు ఉంటుంది.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>రికార్డింగ్ మరియు దాని సంఘటనలు తొలగించబడ్డాయి.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>రికార్డింగ్ %id లేదు.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ముందుగా "అవును, ఈ రికార్డింగ్‌ను విస్మరించు" ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>సెషన్ రికార్డింగ్‌ను రికార్డ్ చేసిన వినియోగదారు మాత్రమే ఆపగలరు.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ఆపాల్సిన రికార్డింగ్‌ను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ఈ రకమైన రికార్డింగ్ ఇప్పటికే నడుస్తోంది.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>రికార్డింగ్‌ను మార్చలేకపోయాము: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

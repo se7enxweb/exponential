@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>གཡོག་བཀོལ་ འགོ་བཙུགས་མ་ཚུགས།</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>འགྱུར་བ་ཚུ་ཐོ་བཀོད་འབད་ནི།</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ཐོ་བཀོད་འགྱོ་བའི་སྐབས་ བདག་སྐྱོང་ནང་ ཡང་ན་ ཡོངས་འབྲེལ་ས་ཁོངས་ཀྱི་ཟུར་ཕྱོགས་ནང་ ཁྱོད་ཀྱིས་སོར་མི་དེ་ གནས་སྤོའི་གོ་རིམ་ཚུ་བཟུམ་སྦེ་བཞག་འོང་། ནང་དོན་ དབྱེ་རིགས་ འགན་ཁུར་དང་སྲིད་བྱུས་ དབྱེ་ཚན་ ལག་ལེན་པ་དང་སྡེ་ཚན་ URL མིང་གཞན་ སྒྲིག་སྟངས། ཚར་བའི་སྐབས་ བཀག་ནི་ དེ་གིས་ག་ཅི་བཟུང་ཡོད་ག་བལྟ་སྟེ་ དེ་ལས་གནས་སྤོ་གཅིག་བཟོ།</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ཐོ་བཀོད་ཚུ་ལྷག་མ་ཚུགས། %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ཐོ་བཀོད་ཀྱི་ཐིག་ཁྲམ་ཚུ་ད་ལྟོ་ཡང་མེད། དང་པ་ཡར་དྲག་གཏང་། (exp:upgrade --apply)</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini ནང་ཐོ་བཀོད་ཁ་བསྡམས་ཡོད། ([RecordingSettings] Recording=disabled)</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ངའི་འགྱུར་བ།</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ཁྱོད་ཀྱིས་མ་བཀག་ཚུན་ ཁྱོད་ཀྱིས་སོར་མི་རྐྱངམ་ཅིག་ ག་ཏེ་སོར་རུང་ ཐོ་བཀོད་འབདཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ཐོ་བཀོད།</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time ལས་ད་ལྟོ་ཚུན་ འགྱུར་བ་ %count</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ཁ་ཡིག (གདམ་ཁ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>དེ་གིས་ག་ཅི་བཟུང་ཡོད་ག་སྟོན།</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ཐོ་བཀོད་བཀག</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ངའི་འགྱུར་བ་ཐོ་བཀོད་འགོ་བཙུགས།</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ཡོངས་འབྲེལ་ས་ཁོངས་ཧྲིལ་པོའི་སྒོ་སྒྲིག</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ཁ་མ་བསྡམས་ཚུན་ ལག་ལེན་པ་རེ་རེ་དང་ ཚད་འཛིན་སྒྲོམ་གྱི་འགྱུར་བ་རེ་རེ་ཐོ་བཀོད་འབདཝ་ཨིན། ཁ་ཕྱེ་བའི་སྐབས་ ཁྱོད་རང་ཨིན་ཟེར་ བདེན་དཔྱད་འབད་དགོ།</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ཁ་ཕྱེ་ཡོད།</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>སྒོ་སྒྲིག་ཁ་བསྡམས།</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ཡོངས་འབྲེལ་ས་ཁོངས་ཧྲིལ་པོའི་སྒོ་སྒྲིག་ཁ་ཕྱེ།</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ཐོ་བཀོད་ཚུ།</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ལག་ལེན་པའི་རྩིས་ཐོ། (ནང་བསྐྱོད་མིང་ གློག་འཕྲིན་ ཆོག་ཡིག) དང་ ལག་ལེན་པའི་རྩིས་ཐོའི་ས་སྒོ་ཚུ་ ནམ་ཡང་ཐོ་བཀོད་མི་འབད།</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>འགྱུར་བ་ཚུ།</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ཡོངས་འབྲེལ་ས་ཁོངས་ཧྲིལ་པོ།</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name གི་འགྱུར་བ།</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>བཀག་ཡོད།</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ད་ལྟོ་ཐོ་བཀོད་མེད།</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ཐོ་བཀོད་ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ཐོ་བཀོད་ཆ་མཉམ།</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>དེ་ལས་ཐོན་འོང་མི་གནས་སྤོ།</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>སོར་ཡོད་པའི་དངོས་པོ་རེ་རེ་ལུ་ གོ་རིམ་གཅིག་ནང་བསྡོམས་ཡོད་པའི་འགྱུར་བ། ཐོ་བཀོད་འདི་ལས་བཟོ་མི་གནས་སྤོ་གིས་ག་ཅི་འབད་ནི་ཨིན་ན།</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>གཞི་བཙུགས་འདི་ལུ་ YAML གོ་རིམ་གྱི་དབྱེ་བ་ %types ཡོད་པའི་སྐབས་ དེ་ལས་གནས་སྤོ་བཟོ་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ཆེད་དུ་བཞག་ཡོད། %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ག་ནི་ཡང་ཐོ་བཀོད་མ་འབད།</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>དེ་གིས་ག་ཅི་བཟུང་ཡོདཔ།</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>འགྱུར་བ་ %count འབད་མི་གོ་རིམ་བཞིན།</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>འགྱུར་བ།</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>གོ་རིམ།</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>སྐོར།</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ད་རུང་ %count ./console exp:migration:record:show གིས་ཆ་མཉམ་ཐོ་བཀོད་འབདཝ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>བཀོག</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ཐོ་བཀོད་དང་ དེ་གིས་བཟུང་མི་ཚུ་བཏོན་གཏང་། སོར་ཡོད་མི་ཚུ་ སོར་ཡོད་ཅིག་སྦེ་ལུསཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ཨིན། ཐོ་བཀོད་འདི་བཀོག</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ཐོ་བཀོད་འབད་དོ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ཁྱོད་ཀྱི་འགྱུར་བ་ཚུ་ གནས་སྤོའི་དོན་ལུ་ཐོ་བཀོད་འབད་དོ།</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ཡོངས་འབྲེལ་ས་ཁོངས་འདི་གུ་འགྱུར་བ་རེ་རེ་ གནས་སྤོའི་དོན་ལུ་ཐོ་བཀོད་འབད་དོ། (ཡོངས་འབྲེལ་ས་ཁོངས་ཧྲིལ་པོའི་སྒོ་སྒྲིག)</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ཡོངས་འབྲེལ་ས་ཁོངས་ཧྲིལ་པོའི་ཐོ་བཀོད་འགོ་བཙུགས་ཡོད། ཁྱོད་ཀྱིས་མ་བཀག་ཚུན་ ལག་ལེན་པ་རེ་རེའི་འགྱུར་བ་རེ་རེ་ཐོ་བཀོད་འབད་འོང་།</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ཐོ་བཀོད་འགོ་བཙུགས་ཡོད། ཁྱོད་ཀྱིས་མ་བཀག་ཚུན་ ཁྱོད་ཀྱི་འགྱུར་བ་ཚུ་ཐོ་བཀོད་འབད་འོང་།</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ཐོ་བཀོད་བཀག་ཡོད། དེ་གིས་བཟུང་མི་ཚུ་ ཁྱོད་ཀྱིས་མ་བཀོག་ཚུན་ལུསཔ་ཨིན།</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ཐོ་བཀོད་དང་ དེའི་བྱུང་ལས་ཚུ་བཏོན་ཡོད།</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ཐོ་བཀོད་ %id མེད།</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>དང་པ་ "ཨིན། ཐོ་བཀོད་འདི་བཀོག" ལུ་རྟགས་བཀལ།</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ཐོ་བཀོད་འབད་མི་ལག་ལེན་པ་རྐྱངམ་ཅིག་གིས་ ལཱ་ཡུན་གྱི་ཐོ་བཀོད་བཀག་ཚུགས།</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>བཀག་དགོ་པའི་ཐོ་བཀོད་གདམ།</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>དབྱེ་བ་འདི་གི་ཐོ་བཀོད་ཧེ་མ་ལས་འགྱོ་དོ།</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ཐོ་བཀོད་སོར་མ་ཚུགས། %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

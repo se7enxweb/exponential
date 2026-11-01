@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>रानखौ जागायनो हायाखै।</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>सोलायनायफोरनि रेकर्डिं</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>रेकर्डिं जाबाय थानाय समाव नोंथाङा प्रशासनाव एबा साइटनि साइडबारआव जेसे सोलायो बेखौ मोनसे माइग्रेसननि खान्थि महरै दोनना दोनो: बिथोन, क्लास, बिहुं आरो नेम, सेक्सन, बाहायग्रा आरो दल, URL मुंजोख्रा, सेटिं। खामानि जोबलाब्ला बेखौ थाद्लां, बेयो मा हमदोंमोन नाय, आरो बेनिफ्राय मोनसे माइग्रेसन सोरजि।</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>रेकर्डिंफोरखौ फरायनो हायाखिसै: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>रेकर्डिंनि टेबुलफोर दासिमबो गैया: गिबियावनो आपग्रेड जाबाय (exp:upgrade --apply)।</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini आव रेकर्डिं बन्द ([RecordingSettings] Recording=disabled)।</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>आंनि सोलायनायफोर</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>नोंथाङा थाद्लांनाय समाव सिम नोंथाङा जेसे सोलायो, जेरावनो सोलायो, बेखौल' रेकर्ड खालामो।</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>रेकर्डिं</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time निफ्राय, दासिम %count सोलायनाय।</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>लेबेल (गोनांथि नङा)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>बेयो मा हमदोंमोन दिन्थि</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>रेकर्डिं थाद्लां</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>आंनि सोलायनायफोरनि रेकर्डिं जागायहो</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>गासै साइटनि खिरकि</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>बन्द जानाय सिम गासै बाहायग्रा आरो कन्सलनि गासै सोलायनायखौ रेकर्ड खालामो। खेवनाय समाव नोंनो जाखौ थारैथि खालामनो बुङो।</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>खेवनाय</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>खिरकि बन्द खालाम</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>गासै साइटनि खिरकि खेव</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>रेकर्डिंफोर</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>बाहायग्रानि एकाउन्ट (लगइन, इ-मेल, पासवार्ड) आरो बाहायग्रा एकाउन्टनि फिल्डफोरखौ जेबि समावबो रेकर्ड खालामा।</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>सोलायनायफोर</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>गासै साइट</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name नि सोलायनायफोर</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>थाद्लांबाय</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>दासिमबो रेकर्डिं गैया।</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>रेकर्डिं %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>गासै रेकर्डिंफोर</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>बेनिफ्राय जानो थाखाय माइग्रेसन</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>सोलायनाय मोनसे मोनसे जिनिसनि थाखाय मोनसे खान्थियाव फोलोमनाय सोलायनायफोर: बे रेकर्डिंनिफ्राय सोरजिनाय माइग्रेसनआ मा खालामगोन।</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>बे इनस्टलेसनाव YAML खान्थि रोखोमफोर %types थायोब्ला बेनिफ्राय माइग्रेसन सोरजिनो हागोन।</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>मिथिनानै बोखावनाय: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>जेसेबो रेकर्ड जायाखै।</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>बेयो मा हमदोंमोन</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count सोलायनाय, खालामनाय बिथाङाव।</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>सोलायनाय</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>खान्थि</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>सोमोन्दो</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>आरो %count: ./console exp:migration:record:show गासैखौ लिस्ट खालामो।</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>नागार</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>रेकर्डिं आरो बेयो जेसे हमदोंमोन बेखौ बोखावो। जेसे सोलायबाय बेयो सोलायनायलानो थायो।</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>नंगौ, बे रेकर्डिंखौ नागार</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>रेकर्ड जागासिनो दं…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>नोंनि सोलायनायफोरा मोनसे माइग्रेसननि थाखाय रेकर्ड जागासिनो दं।</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>बे साइटनि गासै सोलायनायखौ मोनसे माइग्रेसननि थाखाय रेकर्ड खालामगासिनो दं (गासै साइटनि खिरकि)।</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>गासै साइटनि रेकर्डिं जागायबाय: नोंथाङा थाद्लांनाय सिम गासै बाहायग्रानि गासै सोलायनाय रेकर्ड जागोन।</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>रेकर्डिं जागायबाय: नोंथाङा थाद्लांनाय सिम नोंनि सोलायनायफोर रेकर्ड जागोन।</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>रेकर्डिं थाद्लांबाय। बेयो जेसे हमदोंमोन बेयो नागारनाय सिम थागोन।</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>रेकर्डिं आरो बेनि जाथायफोरखौ बोखावबाय।</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>रेकर्डिं %id गैया।</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>गिबियावनो "नंगौ, बे रेकर्डिंखौ नागार" आव सिन हो।</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>सेसन रेकर्डिंखौ रेकर्ड खालामग्रा बाहायग्रानोल' थाद्लांनो हायो।</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>थाद्लांनो थाखाय रेकर्डिं सायख।</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>बे रोखोमनि रेकर्डिं सिगांनिफ्रायनो जाबाय थादों।</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>रेकर्डिं सोलायनो हायाखिसै: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

@@ -229,6 +229,8 @@ class expAuditTaxonomy
         'system.migration.http' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration HTTP request sent' ),
         'system.migration.mail' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration mail sent' ),
         'system.migration.command' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration console command run' ),
+        // a recording of changes (expMigrationRecording) started, stopped or discarded: the verb says which
+        'system.migration.record' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration recording started, stopped or discarded' ),
         // static publishing (doc/eng-us/guides/static-publishing-targets-and-credentials.md): a publish or a push
         // retried, a rollback, a deploy key made or replaced (never a credential's value), a target saved in the
         // administration or the feature switched on or off

@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>လုပ်ဆောင်မှုကို စတင်၍မရပါ။</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ပြောင်းလဲမှုများ မှတ်တမ်းတင်ခြင်း</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>မှတ်တမ်းတင်ခြင်း လုပ်ဆောင်နေစဉ် စီမံခန့်ခွဲမှုတွင် သို့မဟုတ် ဆိုက်၏ ဘေးဘားတွင် သင်ပြောင်းလဲသည်များကို ပြောင်းရွှေ့မှုတစ်ခု၏ အဆင့်များအဖြစ် သိမ်းဆည်းသည်- အကြောင်းအရာ၊ အတန်းများ၊ အခန်းကဏ္ဍနှင့် မူဝါဒများ၊ အပိုင်းများ၊ အသုံးပြုသူများနှင့် အုပ်စုများ၊ URL အမည်ကွဲများ၊ ဆက်တင်များ။ ပြီးလျှင် ရပ်ပါ၊ ၎င်းဖမ်းယူထားသည်ကို ကြည့်ပါ၊ ၎င်းမှ ပြောင်းရွှေ့မှုတစ်ခု ဖန်တီးပါ။</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>မှတ်တမ်းများကို ဖတ်၍မရပါ- %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>မှတ်တမ်းများ၏ ဇယားများ မရှိသေးပါ- အဆင့်မြှင့်ခြင်းကို ဦးစွာ လုပ်ဆောင်ပါ (exp:upgrade --apply)။</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>migration.ini တွင် မှတ်တမ်းတင်ခြင်းကို ပိတ်ထားသည် ([RecordingSettings] Recording=disabled)။</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ကျွန်ုပ်၏ ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>သင်ရပ်သည်အထိ သင်ပြောင်းလဲသည်ကိုသာ မည်သည့်နေရာတွင် ပြောင်းလဲသည်ဖြစ်စေ မှတ်တမ်းတင်သည်။</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time မှစ၍ ယခုအထိ ပြောင်းလဲမှု %count ခု။</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>တံဆိပ် (ရွေးချယ်နိုင်)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ဖမ်းယူထားသည်ကို ပြပါ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>မှတ်တမ်းတင်ခြင်း ရပ်ပါ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ကျွန်ုပ်၏ ပြောင်းလဲမှုများကို မှတ်တမ်းတင်ခြင်း စတင်ပါ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ဆိုက်တစ်ခုလုံးအတွက် ဝင်းဒိုး</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ပိတ်သည်အထိ အသုံးပြုသူတိုင်းနှင့် ကွန်ဆိုး၏ ပြောင်းလဲမှုတိုင်းကို မှတ်တမ်းတင်သည်။ ဖွင့်သည့်အခါ သင်ဖြစ်ကြောင်း အတည်ပြုရန် တောင်းဆိုမည်။</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ဖွင့်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ဝင်းဒိုးပိတ်ပါ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ဆိုက်တစ်ခုလုံးအတွက် ဝင်းဒိုးဖွင့်ပါ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>မှတ်တမ်းများ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>အသုံးပြုသူ၏ အကောင့် (ဝင်ရောက်အမည်၊ အီးမေးလ်၊ စကားဝှက်) နှင့် အသုံးပြုသူအကောင့်များ၏ အကွက်များကို ဘယ်တော့မှ မှတ်တမ်းမတင်ပါ။</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ဆိုက်တစ်ခုလုံး</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name ၏ ပြောင်းလဲမှုများ</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ရပ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>မှတ်တမ်း မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>မှတ်တမ်း %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>မှတ်တမ်းအားလုံး</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>၎င်းမှ ဖြစ်လာမည့် ပြောင်းရွှေ့မှု</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ပြောင်းလဲခဲ့သည့်အရာတစ်ခုစီအတွက် အဆင့်တစ်ဆင့်အဖြစ် စုစည်းထားသော ပြောင်းလဲမှုများ- ဤမှတ်တမ်းမှ ဖန်တီးသည့် ပြောင်းရွှေ့မှု လုပ်မည့်အရာ။</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ဤထည့်သွင်းမှုတွင် YAML အဆင့်အမျိုးအစား %types ရှိလာသည့်အခါ ၎င်းမှ ပြောင်းရွှေ့မှု ဖန်တီးနိုင်မည်။</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>တမင်ချန်ထားသည်- %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ဘာမှ မှတ်တမ်းမတင်ရပါ။</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ဖမ်းယူထားသည်</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>ပြောင်းလဲမှု %count ခု၊ ပြုလုပ်ခဲ့သည့် အစီအစဉ်အတိုင်း။</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ပြောင်းလဲမှု</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>အဆင့်</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ဆိုင်သည်</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>နောက်ထပ် %count- ./console exp:migration:record:show က အားလုံးကို စာရင်းပြုသည်။</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>စွန့်ပစ်ပါ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>မှတ်တမ်းနှင့် ၎င်းဖမ်းယူထားသည်ကို ဖယ်ရှားသည်။ ပြောင်းလဲခဲ့သည်များ ပြောင်းလဲထားသည့်အတိုင်း ကျန်ရှိသည်။</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ဟုတ်ကဲ့၊ ဤမှတ်တမ်းကို စွန့်ပစ်ပါ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>မှတ်တမ်းတင်နေသည်…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>သင့်ပြောင်းလဲမှုများကို ပြောင်းရွှေ့မှုအတွက် မှတ်တမ်းတင်နေသည်။</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ဤဆိုက်ပေါ်ရှိ ပြောင်းလဲမှုတိုင်းကို ပြောင်းရွှေ့မှုအတွက် မှတ်တမ်းတင်နေသည် (ဆိုက်တစ်ခုလုံးအတွက် ဝင်းဒိုး)။</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ဆိုက်တစ်ခုလုံး မှတ်တမ်းတင်ခြင်း စတင်ပြီ- သင်ရပ်သည်အထိ အသုံးပြုသူတိုင်း၏ ပြောင်းလဲမှုတိုင်းကို မှတ်တမ်းတင်မည်။</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>မှတ်တမ်းတင်ခြင်း စတင်ပြီ- သင်ရပ်သည်အထိ သင့်ပြောင်းလဲမှုများကို မှတ်တမ်းတင်မည်။</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>မှတ်တမ်းတင်ခြင်း ရပ်ပြီ။ ဖမ်းယူထားသည်များ သင်စွန့်ပစ်သည်အထိ ကျန်ရှိမည်။</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>မှတ်တမ်းနှင့် ၎င်း၏ ဖြစ်ရပ်များကို ဖယ်ရှားပြီ။</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>မှတ်တမ်း %id မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>"ဟုတ်ကဲ့၊ ဤမှတ်တမ်းကို စွန့်ပစ်ပါ" ကို ဦးစွာ အမှတ်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>မှတ်တမ်းတင်ခဲ့သော အသုံးပြုသူသာ ဆက်ရှင်မှတ်တမ်းကို ရပ်နိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ရပ်မည့် မှတ်တမ်းကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ဤအမျိုးအစား မှတ်တမ်းတင်ခြင်း လုပ်ဆောင်နေပြီ။</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>မှတ်တမ်းကို ပြောင်း၍မရပါ- %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

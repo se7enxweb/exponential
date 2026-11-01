@@ -3,6 +3,8 @@
    this file outside its cached parts, so the banner follows the environment of each request. The banner is the
    partial of design/admin (admin3 falls back to it); when admin4 comes first, its own main area draws the banner. *}
 {include uri='design:parts/exp_demo_mode_banner.tpl'}
+{* A recording of changes for a migration that records this user (Setup > Migrations > Recording) *}
+{include uri='design:parts/exp_migration_recording_bar.tpl'}
 {include uri="design:page_warning.tpl"}
 
 {$module_result.content}

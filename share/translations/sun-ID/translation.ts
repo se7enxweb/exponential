@@ -80598,6 +80598,222 @@ Anjeun kedah ngarobih kelas simpul éta nganggo fungsi tukeur.</translation>
         <source>The run could not be started.</source>
         <translation>Jalanan teu tiasa dimimitian.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ngarékam parobahan</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Salila rékaman jalan, naon anu anjeun robih dina administrasi atanapi dina bar sisi situs disimpen salaku léngkah-léngkah migrasi: eusi, kelas, peran sareng kawijakan, bagian, pamaké sareng grup, alias URL, setélan. Eureunkeun upami parantos réngsé, tingali naon anu dicandak, teras damel migrasi tina éta.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Rékaman teu tiasa dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabel rékaman teu acan aya: jalankeun heula pamutahiran (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Ngarékam dipareuman dina migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Parobahan abdi</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Ngan ukur ngarékam naon anu anjeun robih, dimana waé, dugi ka anjeun ngeureunkeunana.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Rékaman</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ti saprak %time, dugi ka ayeuna %count parobahan.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Labél (pilihan)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Témbongkeun naon anu dicandak</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Eureunkeun rékaman</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Mimitian ngarékam parobahan abdi</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Jandéla pikeun sakumna situs</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Ngarékam unggal parobahan ti unggal pamaké sareng konsol dugi ka ditutup. Nalika muka, anjeun dipénta pikeun ngonfirmasi yén éta anjeun.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Muka</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tutup jandéla</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Buka jandéla pikeun sakumna situs</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Daptar rékaman</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akun pamaké (ngaran asup, surélék, kecap akses) sareng widang akun pamaké henteu kantos dirékam.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Parobahan</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Sakumna situs</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Parobahan ku %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Dieureunkeun</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Teu acan aya rékaman.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Rékaman %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Sadaya rékaman</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrasi anu bakal dihasilkeun</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Parobahan anu dihijikeun jadi hiji léngkah pikeun unggal hal anu dirobih: naon anu bakal dilakukeun ku migrasi anu didamel tina rékaman ieu.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migrasi tiasa didamel tina éta saatos pamasangan ieu gaduh jinis léngkah YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Ngahaja dikaluarkeun: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Teu aya anu dirékam.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Naon anu dicandak</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count parobahan, numutkeun urutan dilakukeunana.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Parobahan (hiji)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Léngkah</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Perkawis</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count deui: ./console exp:migration:record:show ngadaptarkeun sadayana.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Piceun</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Ngahapus rékaman sareng naon anu dicandakna. Anu parantos dirobih tetep robih.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Leres, piceun rékaman ieu</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nuju ngarékam…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Parobahan anjeun nuju dirékam pikeun migrasi.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Unggal parobahan dina situs ieu nuju dirékam pikeun migrasi (jandéla pikeun sakumna situs).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Rékaman sakumna situs parantos dimimitian: unggal parobahan ti unggal pamaké dirékam dugi ka anjeun ngeureunkeunana.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Rékaman parantos dimimitian: parobahan anjeun dirékam dugi ka anjeun ngeureunkeunana.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Rékaman dieureunkeun. Naon anu dicandakna tetep aya dugi ka anjeun miceunana.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Rékaman sareng kajadianana parantos dihapus.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Teu aya rékaman %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Centang heula "Leres, piceun rékaman ieu".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Ngan ukur pamaké anu ngarékam anu tiasa ngeureunkeun rékaman sési.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Pilih rékaman anu badé dieureunkeun.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Rékaman jinis ieu parantos jalan.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Rékaman teu tiasa dirobih: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

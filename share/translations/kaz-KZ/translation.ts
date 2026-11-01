@@ -80590,6 +80590,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Орындауды бастау мүмкін болмады.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Өзгерістерді жазу</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Жазу жүріп тұрғанда әкімшілікте немесе сайттың бүйір тақтасында өзгерткендеріңіз көшірудің қадамдары ретінде сақталады: мазмұн, кластар, рөлдер мен саясаттар, бөлімдер, пайдаланушылар мен топтар, URL бүркеншік аттары, баптаулар. Аяқтаған соң оны тоқтатыңыз, не ұстағанын қараңыз және одан көшіру жасаңыз.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Жазбаларды оқу мүмкін болмады: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Жазбалардың кестелері әлі жоқ: алдымен жаңартуды іске қосыңыз (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Жазу migration.ini ішінде өшірілген ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Менің өзгерістерім</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Сіз тоқтатқанша тек сіз өзгерткенді, қай жерде өзгертсеңіз де, жазады.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Жазба</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>%time бастап, осы уақытқа дейін %count өзгеріс.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Белгі (міндетті емес)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Не ұстағанын көрсету</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Жазуды тоқтату</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Менің өзгерістерімді жазуды бастау</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Бүкіл сайттың терезесі</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Жабылғанша әр пайдаланушының және консольдің әр өзгерісін жазады. Ашқанда өзіңіз екеніңізді растау сұралады.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ашық</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Терезені жабу</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Бүкіл сайттың терезесін ашу</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Жазбалар</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Пайдаланушының тіркелгісі (логин, эл. пошта, құпиясөз) және пайдаланушы тіркелгілерінің өрістері ешқашан жазылмайды.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Өзгерістер</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Бүкіл сайт</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>%name өзгерістері</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Тоқтатылған</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Әзірге жазба жоқ.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Жазба %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Барлық жазбалар</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Одан шығатын көшіру</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Әр өзгерген нәрсе үшін бір қадамға біріктірілген өзгерістер: осы жазбадан жасалған көшіру не істейтіні.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Бұл орнатуда YAML қадам түрлері %types болғанда одан көшіру жасауға болады.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Әдейі алынып тасталды: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ештеңе жазылмады.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Не ұстағаны</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count өзгеріс, жасалған ретімен.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Өзгеріс</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Қадам</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Қатысты</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Тағы %count: ./console exp:migration:record:show барлығын тізімдейді.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Бас тарту</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Жазбаны және ол ұстағанды жояды. Өзгергені өзгерген күйінде қалады.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Иә, бұл жазбадан бас тарту</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Жазылуда…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Өзгерістеріңіз көшіру үшін жазылуда.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Бұл сайттағы әр өзгеріс көшіру үшін жазылуда (бүкіл сайттың терезесі).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Бүкіл сайтты жазу басталды: сіз тоқтатқанша әр пайдаланушының әр өзгерісі жазылады.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Жазу басталды: сіз тоқтатқанша өзгерістеріңіз жазылады.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Жазу тоқтатылды. Ұстағаны сіз бас тартқанша сақталады.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Жазба және оның оқиғалары жойылды.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>%id жазбасы жоқ.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Алдымен «Иә, бұл жазбадан бас тарту» белгілеңіз.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Сеанс жазбасын тек жазған пайдаланушы ғана тоқтата алады.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Тоқтатылатын жазбаны таңдаңыз.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Бұл түрдегі жазу қазірдің өзінде жүріп жатыр.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Жазбаны өзгерту мүмкін болмады: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

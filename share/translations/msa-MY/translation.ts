@@ -80590,6 +80590,222 @@ Anda perlu menukar kelas nod tersebut dengan menggunakan fungsi tukar ganti.</tr
         <source>The run could not be started.</source>
         <translation>Larian tidak dapat dimulakan.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Merakam perubahan</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Semasa rakaman berjalan, apa yang anda ubah dalam pentadbiran atau dalam bar sisi laman disimpan sebagai langkah migrasi: kandungan, kelas, peranan dan dasar, seksyen, pengguna dan kumpulan, alias URL, tetapan. Hentikannya apabila anda selesai, lihat apa yang ditangkapnya dan jana migrasi daripadanya.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Rakaman tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Jadual rakaman belum wujud: jalankan naik taraf dahulu (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Rakaman dimatikan dalam migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Perubahan saya</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Merakam hanya apa yang anda ubah, di mana sahaja anda mengubahnya, sehingga anda menghentikannya.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Rakaman</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>sejak %time, setakat ini %count perubahan.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Label (pilihan)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Tunjukkan apa yang ditangkap</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Hentikan rakaman</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Mula merakam perubahan saya</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Tetingkap untuk seluruh laman</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Merakam setiap perubahan oleh setiap pengguna dan konsol sehingga ditutup. Apabila membukanya, anda diminta mengesahkan bahawa itu anda.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Terbuka</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Tutup tetingkap</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Buka tetingkap untuk seluruh laman</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Senarai rakaman</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Akaun pengguna (nama log masuk, e-mel, kata laluan) dan medan akaun pengguna tidak pernah dirakam.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Perubahan</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Seluruh laman</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Perubahan oleh %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Dihentikan</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Belum ada rakaman.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Rakaman %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Semua rakaman</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrasi yang akan terhasil</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Perubahan yang digabungkan menjadi satu langkah bagi setiap perkara yang diubah: apa yang akan dilakukan oleh migrasi yang dijana daripada rakaman ini.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migrasi boleh dijana daripadanya sebaik sahaja pemasangan ini mempunyai jenis langkah YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Sengaja ditinggalkan: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Tiada apa-apa dirakam.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Apa yang ditangkap</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count perubahan, mengikut susunan ia dibuat.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Perubahan (satu)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Langkah</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Berkenaan</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count lagi: ./console exp:migration:record:show menyenaraikan semuanya.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Buang</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Mengalih keluar rakaman dan apa yang ditangkapnya. Apa yang diubah kekal berubah.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ya, buang rakaman ini</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Sedang merakam…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Perubahan anda sedang dirakam untuk migrasi.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Setiap perubahan di laman ini sedang dirakam untuk migrasi (tetingkap untuk seluruh laman).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Rakaman seluruh laman telah bermula: setiap perubahan oleh setiap pengguna dirakam sehingga anda menghentikannya.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Rakaman telah bermula: perubahan anda dirakam sehingga anda menghentikannya.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Rakaman dihentikan. Apa yang ditangkapnya kekal sehingga anda membuangnya.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Rakaman dan peristiwanya telah dialih keluar.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Tiada rakaman %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Tandakan dahulu "Ya, buang rakaman ini".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Hanya pengguna yang merakam boleh menghentikan rakaman sesi.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Pilih rakaman yang hendak dihentikan.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Rakaman jenis ini sudah berjalan.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Rakaman tidak dapat diubah: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

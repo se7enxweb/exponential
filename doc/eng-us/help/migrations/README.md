@@ -131,6 +131,7 @@ panel.
 - [The status and the history](status-and-history.md)
 - [Run, dry run and rollback](run-dry-run-and-rollback.md)
 - [Migrations in the website sidebar](expwt-panel.md)
+- [Recording changes](recording.md): record your own changes, or every change in a site-wide window, as the steps of a migration
 
 ## Reference
 
@@ -169,7 +170,7 @@ written as YAML steps too where a step type covers it.
 | the dry run, and the simulation with a diff on PostgreSQL and SQLite | a simulation on MySQL/MariaDB, Oracle and MongoDB (the plan is listed) |
 | captions, the automatic restore, rollback of a run, of a migration and of any caption | generators other than the skeleton, an editor in the administration |
 | commit, tag and push of every run's record; the cronjob part `migrationpush` | `exp:velocity deploy --migrate` |
-| Setup > Migrations, background runs, the dashboard block and the sidebar panel | the policy `migration/edit` is reserved; no page uses it yet |
+| Setup > Migrations, background runs, the dashboard block and the sidebar panel | writing and generating migrations in the administration (`migration/edit` is used only by Recording) |
 | the kernel's upgrade steps listed and run among the migrations (stages `database` and `scripts`) | the stages `code`, `libraries` and `finish` stay with `exp:upgrade` |
 
 ## Related pages

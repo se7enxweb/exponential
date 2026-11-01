@@ -80588,6 +80588,222 @@ Za a buƙaci a canza rukunin kumburin ta amfani da aikin musanya.</translation>
         <source>The run could not be started.</source>
         <translation>Ba a iya fara aikin ba.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Naɗar canje-canje</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Yayin da naɗa ke gudana, abin da kuka canza a gudanarwa ko a sandar gefe ta shafin ana adana shi a matsayin matakan ƙaura: abun ciki, aji, ayyuka da manufofi, sassa, masu amfani da ƙungiyoyi, sunayen laƙabi na URL, saituna. Ku dakatar da shi idan kun gama, ku duba abin da ya kama, sannan ku ƙirƙiri ƙaura daga gare shi.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Ba a iya karanta naɗaɗɗun ba: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Teburan naɗaɗɗu ba su wanzu ba tukuna: ku fara gudanar da haɓakawa (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>An kashe naɗa a migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Canje-canjena</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Yana naɗar abin da kuka canza kawai, duk inda kuka canza shi, har sai kun dakatar da shi.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Naɗa</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>tun %time, canje-canje %count har yanzu.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Lakabi (na zaɓi)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Nuna abin da ya kama</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Dakatar da naɗa</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Fara naɗar canje-canjena</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Taga ga dukan shafin</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Yana naɗar kowane canji na kowane mai amfani da na na'urar umarni har sai an rufe shi. Lokacin buɗe shi, za a nemi ku tabbatar cewa ku ne.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>A buɗe</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Rufe taga</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Buɗe taga ga dukan shafin</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Naɗaɗɗu</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ba a taɓa naɗar asusun mai amfani (sunan shiga, imel, kalmar sirri) da filayen asusun masu amfani ba.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Canje-canje</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Dukan shafin</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Canje-canjen %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>An dakatar</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Babu naɗa tukuna.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Naɗa %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Dukan naɗaɗɗu</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Ƙaurar da zai samar</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Canje-canjen da aka haɗa zuwa mataki ɗaya ga kowane abin da aka canza: abin da ƙaurar da aka ƙirƙira daga wannan naɗa za ta yi.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Ana iya ƙirƙirar ƙaura daga gare shi da zarar wannan shigarwar ta sami nau'ikan matakan YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>An bar shi da gangan: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ba a naɗi komai ba.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Abin da ya kama</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Canje-canje %count, bisa tsarin da aka yi su.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Canji</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Mataki</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Game da</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ƙarin %count: ./console exp:migration:record:show yana jera dukansu.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Yar da</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Yana cire naɗa da abin da ya kama. Abin da aka canza yana nan a canje.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ee, yar da wannan naɗa</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Ana naɗa…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Ana naɗar canje-canjenku don ƙaura.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Ana naɗar kowane canji a wannan shafin don ƙaura (taga ga dukan shafin).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Naɗar dukan shafin ya fara: ana naɗar kowane canji na kowane mai amfani har sai kun dakatar da shi.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Naɗa ya fara: ana naɗar canje-canjenku har sai kun dakatar da shi.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>An dakatar da naɗa. Abin da ya kama zai ci gaba da kasancewa har sai kun yar da shi.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>An cire naɗa da abubuwan da suka faru nasa.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Babu naɗa %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Ku fara yi wa "Ee, yar da wannan naɗa" alama.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Mai amfani da ya naɗa ne kaɗai zai iya dakatar da naɗar zama.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Zaɓi naɗar da za a dakatar.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Naɗa irin wannan yana gudana tuni.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Ba a iya canza naɗa ba: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

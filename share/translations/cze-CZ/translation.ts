@@ -81876,6 +81876,222 @@ Třídu uzlu musíte změnit pomocí funkce záměny.</translation>
         <source>The run could not be started.</source>
         <translation>Běh nelze spustit.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Nahrávání změn</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Během nahrávání se to, co měníte v administraci nebo v postranním panelu webu, ukládá jako kroky migrace: obsah, třídy, role a zásady, sekce, uživatelé a skupiny, aliasy URL, nastavení. Až budete hotovi, nahrávání zastavte, podívejte se, co zachytilo, a vygenerujte z něj migraci.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Nahrávky nelze přečíst: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tabulky nahrávek zatím neexistují: nejprve spusťte aktualizaci (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Nahrávání je v migration.ini vypnuté ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Moje změny</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Nahrává jen to, co měníte vy, ať to měníte kdekoli, dokud ho nezastavíte.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Nahrávání</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>od %time, zatím změn: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Popisek (volitelný)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Zobrazit, co zachytilo</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Zastavit nahrávání</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Začít nahrávat moje změny</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Okno pro celý web</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Nahrává každou změnu každého uživatele i konzole, dokud není zavřeno. Při otevření budete požádáni o ověření, že jste to vy.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otevřeno</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Zavřít okno</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Otevřít okno pro celý web</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Nahrávky</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Účet uživatele (přihlašovací jméno, e-mail, heslo) a pole uživatelských účtů se nikdy nenahrávají.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Změny</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Celý web</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Změny uživatele %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Zastaveno</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Zatím žádná nahrávka.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Nahrávka %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Všechny nahrávky</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migrace, která by z ní vznikla</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Změny sloučené do jednoho kroku na každou změněnou věc: co by udělala migrace vygenerovaná z této nahrávky.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Migraci z ní půjde vygenerovat, až tato instalace bude mít typy kroků YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Záměrně vynecháno: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Nic se nenahrálo.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Co zachytilo</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Změn: %count, v pořadí, v jakém byly provedeny.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Změna</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Krok</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Týká se</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Dalších %count: ./console exp:migration:record:show vypíše všechny.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Zahodit</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Odstraní nahrávku a to, co zachytila. Co bylo změněno, zůstane změněno.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ano, zahodit tuto nahrávku</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Nahrává se…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Vaše změny se nahrávají pro migraci.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Každá změna na tomto webu se nahrává pro migraci (okno pro celý web).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Nahrávání celého webu začalo: každá změna každého uživatele se nahrává, dokud ho nezastavíte.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Nahrávání začalo: vaše změny se nahrávají, dokud ho nezastavíte.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Nahrávání zastaveno. Co zachytilo, zůstane, dokud ho nezahodíte.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Nahrávka a její události byly odstraněny.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nahrávka %id neexistuje.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Nejprve zaškrtněte „Ano, zahodit tuto nahrávku“.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Nahrávání relace smí zastavit jen uživatel, který nahrával.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Vyberte nahrávku, kterou chcete zastavit.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Nahrávání tohoto druhu už probíhá.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Nahrávku nelze změnit: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

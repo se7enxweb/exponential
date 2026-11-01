@@ -80588,6 +80588,222 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>The run could not be started.</source>
         <translation>Enweghị ike ịmalite ọgbụgba ahụ.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Ndekọ mgbanwe</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Mgbe ndekọ na-aga n'ihu, ihe ị gbanwere na nchịkwa ma ọ bụ na ogwe akụkụ nke saịtị ka a na-echekwa dị ka nzọụkwụ nke mbugharị: ọdịnaya, klas, ọrụ na iwu, ngalaba, ndị ọrụ na otu, aha ọzọ URL, ntọala. Kwụsị ya mgbe ị gwụchara, lee ihe o jidere, ma mepụta mbugharị site na ya.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ndekọ ndị ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tebụl ndekọ adịbeghị: buru ụzọ mee nkwalite (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Agbanyụrụ ndekọ na migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Mgbanwe m</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Na-edekọ naanị ihe ị gbanwere, ebe ọ bụla ị gbanwere ya, ruo mgbe ị kwụsịrị ya.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Ndekọ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>kemgbe %time, mgbanwe %count ruo ugbu a.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Akara (nhọrọ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Gosi ihe o jidere</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Kwụsị ndekọ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Malite idekọ mgbanwe m</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Windo maka saịtị niile</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Na-edekọ mgbanwe ọ bụla nke onye ọrụ ọ bụla na nke njikwa ruo mgbe emechiri ya. Mgbe ị meghere ya, a ga-arịọ gị ka ị gosi na ọ bụ gị.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Emepere</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Mechie windo</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Mepee windo maka saịtị niile</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Ndekọ niile</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>A naghị edekọ akaụntụ onye ọrụ (aha nbanye, ozi-e, okwuntughe) na mpaghara akaụntụ ndị ọrụ ma ọlị.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mgbanwe</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Saịtị niile</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Mgbanwe nke %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Akwụsịla</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Enwebeghị ndekọ ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Ndekọ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Ndekọ niile dị</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Mbugharị ọ ga-emepụta</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Mgbanwe ejikọtara n'otu nzọụkwụ maka ihe ọ bụla gbanwere: ihe mbugharị emepụtara site na ndekọ a ga-eme.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Enwere ike imepụta mbugharị site na ya ozugbo nrụnye a nwere ụdị nzọụkwụ YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Ahapụrụ ya n'ụma: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ọ dịghị ihe edekọrọ.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Ihe o jidere</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Mgbanwe %count, n'usoro e mere ha.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mgbanwe (otu)</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Nzọụkwụ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Gbasara</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>%count ọzọ: ./console exp:migration:record:show na-edepụta ha niile.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tụfuo</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Na-ewepụ ndekọ ahụ na ihe o jidere. Ihe gbanwere na-anọgide na-agbanwe.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ee, tụfuo ndekọ a</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Na-edekọ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>A na-edekọ mgbanwe gị maka mbugharị.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>A na-edekọ mgbanwe ọ bụla na saịtị a maka mbugharị (windo maka saịtị niile).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Ndekọ saịtị niile amalitela: a na-edekọ mgbanwe ọ bụla nke onye ọrụ ọ bụla ruo mgbe ị kwụsịrị ya.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Ndekọ amalitela: a na-edekọ mgbanwe gị ruo mgbe ị kwụsịrị ya.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Akwụsịla ndekọ. Ihe o jidere ga-anọ ruo mgbe ị tụfuru ya.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Ewepụla ndekọ ahụ na ihe omume ya.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Enweghị ndekọ %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Buru ụzọ kaa "Ee, tụfuo ndekọ a".</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Naanị onye ọrụ dekọrọ nwere ike ịkwụsị ndekọ nnọkọ.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Họrọ ndekọ a ga-akwụsị.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Ndekọ ụdị a na-aga n'ihu ugbu a.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Enweghị ike ịgbanwe ndekọ ahụ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

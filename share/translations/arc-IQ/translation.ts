@@ -80599,6 +80599,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>רהטא לא אפשר למשרי.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>ܟܬܝܒܘܬ ܫܘܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>ܟܕ ܟܬܝܒܘܬܐ ܡܬܥܒܕܐ، ܡܕܡ ܕܡܫܚܠܦ ܐܢܬ ܒܡܕܒܪܢܘܬܐ ܐܘ ܒܣܪܓܐ ܕܓܢܒܐ ܕܐܬܪܐ ܡܬܢܛܪ ܐܝܟ ܦܣܥܬܐ ܕܡܥܒܪܢܘܬܐ: ܐܝܬܘܬܐ، ܛܘܟܣܐ، ܬܫܡܫܬܐ ܘܢܡܘܣܐ، ܦܘܠܓܐ، ܡܦܠܚܢܐ ܘܟܢܘܫܝܐ، ܫܡܗܐ ܐܚܪܢܐ ܕ URL، ܛܘܝܒܐ. ܫܒܘܩ ܠܗ ܟܕ ܫܠܡܬ، ܚܙܝ ܡܢܐ ܐܚܕܬ، ܘܥܒܕ ܡܢܗ ܡܥܒܪܢܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>ܠܐ ܫܟܚܢ ܠܡܩܪܐ ܟܬܝܒܬܐ: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>ܦܬܘܪܐ ܕܟܬܝܒܬܐ ܠܐ ܐܝܬܝܗܘܢ ܥܕܟܝܠ: ܩܕܡܐ ܣܥܘܪ ܚܘܕܬܐ (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>ܟܬܝܒܘܬܐ ܕܥܝܟܐ ܒ migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>ܫܘܚܠܦܝ ܕܝܠܝ</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>ܟܬܒܐ ܒܠܚܘܕ ܡܕܡ ܕܐܢܬ ܡܫܚܠܦ، ܒܟܠ ܕܘܟ ܕܡܫܚܠܦ ܐܢܬ، ܥܕܡܐ ܕܬܫܒܘܩ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>ܟܬܝܒܬܐ</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>ܡܢ %time، ܥܕܡܐ ܠܗܫܐ %count ܫܘܚܠܦܐ.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>ܪܘܫܡܐ (ܨܒܝܢܝܐ)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>ܚܘܝ ܡܢܐ ܐܚܕܬ</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>ܫܒܘܩ ܟܬܝܒܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>ܫܪܝ ܟܬܝܒܘܬ ܫܘܚܠܦܝ</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>ܟܘܬܐ ܕܟܘܠܗ ܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>ܟܬܒܐ ܟܠ ܫܘܚܠܦܐ ܕܟܠ ܡܦܠܚܢܐ ܘܕܡܕܒܪܢܐ ܥܕܡܐ ܕܡܬܬܚܕܐ. ܟܕ ܦܬܚ ܐܢܬ ܠܗ ܡܬܒܥܐ ܡܢܟ ܕܬܫܪܪ ܕܐܢܬ ܗܘ.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>ܦܬܝܚܬܐ</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>ܐܚܘܕ ܠܟܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>ܦܬܘܚ ܟܘܬܐ ܕܟܘܠܗ ܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>ܟܬܝܒܬܐ</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>ܚܘܫܒܢܐ ܕܡܦܠܚܢܐ (ܫܡܐ ܕܡܥܠܬܐ، ܐܓܪܬܐ ܐܠܩܛܪܘܢܝܬܐ، ܡܠܬ ܥܒܘܪܐ) ܘܚܩܠܐ ܕܚܘܫܒܢܐ ܕܡܦܠܚܢܐ ܡܢ ܡܬܘܡ ܠܐ ܡܬܟܬܒܝܢ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ܫܘܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>ܟܘܠܗ ܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>ܫܘܚܠܦܐ ܕ %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>ܫܒܝܩܬܐ</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>ܠܝܬ ܟܬܝܒܬܐ ܥܕܟܝܠ.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>ܟܬܝܒܬܐ %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>ܟܠܗܝܢ ܟܬܝܒܬܐ</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>ܡܥܒܪܢܘܬܐ ܕܬܗܘܐ ܡܢܗ</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>ܫܘܚܠܦܐ ܕܡܟܢܫܝܢ ܠܦܣܥܬܐ ܚܕܐ ܥܠ ܟܠ ܡܕܡ ܕܐܫܬܚܠܦ: ܡܢܐ ܕܬܥܒܕ ܡܥܒܪܢܘܬܐ ܕܡܬܥܒܕܐ ܡܢ ܗܕܐ ܟܬܝܒܬܐ.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>ܡܫܟܚܐ ܠܡܬܥܒܕܘ ܡܥܒܪܢܘܬܐ ܡܢܗ ܟܕ ܗܢܐ ܬܘܩܢܐ ܢܗܘܐ ܠܗ ܓܢܣܐ ܕܦܣܥܬܐ YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>ܫܒܝܩ ܒܨܒܝܢܐ: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>ܡܕܡ ܠܐ ܐܬܟܬܒ.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>ܡܢܐ ܐܚܕܬ</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>%count ܫܘܚܠܦܐ، ܒܛܟܣܐ ܕܐܬܥܒܕܘ.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ܫܘܚܠܦܐ ܚܕ</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>ܦܣܥܬܐ</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>ܥܠ ܐܦܝ</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>ܐܚܪܢܐ %count: ./console exp:migration:record:show ܡܚܘܐ ܠܟܠܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ܫܕܐ</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>ܡܫܩܠ ܠܟܬܝܒܬܐ ܘܠܡܕܡ ܕܐܚܕܬ. ܡܕܡ ܕܐܫܬܚܠܦ ܦܐܫ ܡܫܚܠܦ.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>ܐܝܢ، ܫܕܐ ܗܕܐ ܟܬܝܒܬܐ</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>ܡܬܟܬܒܐ…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>ܫܘܚܠܦܝܟ ܡܬܟܬܒܝܢ ܡܛܠ ܡܥܒܪܢܘܬܐ.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>ܟܠ ܫܘܚܠܦܐ ܒܗܢܐ ܐܬܪܐ ܡܬܟܬܒ ܡܛܠ ܡܥܒܪܢܘܬܐ (ܟܘܬܐ ܕܟܘܠܗ ܐܬܪܐ).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>ܟܬܝܒܘܬܐ ܕܟܘܠܗ ܐܬܪܐ ܫܪܝܬ: ܟܠ ܫܘܚܠܦܐ ܕܟܠ ܡܦܠܚܢܐ ܡܬܟܬܒ ܥܕܡܐ ܕܬܫܒܘܩ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>ܟܬܝܒܘܬܐ ܫܪܝܬ: ܫܘܚܠܦܝܟ ܡܬܟܬܒܝܢ ܥܕܡܐ ܕܬܫܒܘܩ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>ܟܬܝܒܘܬܐ ܐܫܬܒܩܬ. ܡܕܡ ܕܐܚܕܬ ܦܐܫ ܥܕܡܐ ܕܬܫܕܐ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>ܟܬܝܒܬܐ ܘܓܕܫܝܗ ܐܫܬܩܠܘ.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>ܠܝܬ ܟܬܝܒܬܐ %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>ܩܕܡܐ ܪܘܫܘܡ «ܐܝܢ، ܫܕܐ ܗܕܐ ܟܬܝܒܬܐ».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>ܒܠܚܘܕ ܡܦܠܚܢܐ ܕܟܬܒ ܡܫܟܚ ܠܡܫܒܩ ܟܬܝܒܬܐ ܕܥܕܢܐ.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>ܓܒܝ ܟܬܝܒܬܐ ܕܬܫܬܒܩ.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>ܟܬܝܒܘܬܐ ܡܢ ܗܢܐ ܓܢܣܐ ܡܬܥܒܕܐ ܡܢ ܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>ܠܐ ܫܟܚܢ ܠܡܫܚܠܦܘ ܟܬܝܒܬܐ: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

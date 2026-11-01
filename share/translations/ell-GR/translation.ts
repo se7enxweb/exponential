@@ -80620,6 +80620,222 @@ You will need to change the class of the node by using the swap functionality.</
         <source>The run could not be started.</source>
         <translation>Δεν ήταν δυνατή η έναρξη της εκτέλεσης.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Καταγραφή αλλαγών</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Όσο τρέχει μια καταγραφή, ό,τι αλλάζετε στη διαχείριση ή στην πλαϊνή μπάρα του ιστοτόπου κρατιέται ως βήματα μιας μετάπτωσης: περιεχόμενο, κλάσεις, ρόλοι και πολιτικές, ενότητες, χρήστες και ομάδες, ψευδώνυμα URL, ρυθμίσεις. Σταματήστε την όταν τελειώσετε, δείτε τι κατέγραψε και δημιουργήστε από αυτήν μια μετάπτωση.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Δεν ήταν δυνατή η ανάγνωση των καταγραφών: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Οι πίνακες των καταγραφών δεν υπάρχουν ακόμη: εκτελέστε πρώτα την αναβάθμιση (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Η καταγραφή είναι απενεργοποιημένη στο migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Οι αλλαγές μου</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Καταγράφει μόνο ό,τι αλλάζετε εσείς, όπου κι αν το αλλάζετε, μέχρι να τη σταματήσετε.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Καταγραφή</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>από %time, μέχρι τώρα αλλαγές: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Ετικέτα (προαιρετική)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Εμφάνιση του τι κατέγραψε</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Διακοπή καταγραφής</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Έναρξη καταγραφής των αλλαγών μου</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Παράθυρο για όλο τον ιστότοπο</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Καταγράφει κάθε αλλαγή κάθε χρήστη και της κονσόλας μέχρι να κλείσει. Το άνοιγμά του σας ζητά να επιβεβαιώσετε ότι είστε εσείς.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Ανοιχτό</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Κλείσιμο του παραθύρου</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Άνοιγμα του παραθύρου για όλο τον ιστότοπο</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Καταγραφές</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Ο λογαριασμός ενός χρήστη (όνομα σύνδεσης, e-mail, κωδικός) και τα πεδία των λογαριασμών χρηστών δεν καταγράφονται ποτέ.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Αλλαγές</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Όλος ο ιστότοπος</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Αλλαγές του χρήστη %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Σταματημένη</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Δεν υπάρχει ακόμη καταγραφή.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Καταγραφή %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Όλες οι καταγραφές</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Η μετάπτωση που θα προέκυπτε</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Οι αλλαγές συγχωνευμένες σε ένα βήμα ανά αλλαγμένο στοιχείο: τι θα έκανε μια μετάπτωση που δημιουργείται από αυτή την καταγραφή.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Μια μετάπτωση θα μπορεί να δημιουργηθεί από αυτήν μόλις αυτή η εγκατάσταση έχει τους τύπους βημάτων YAML %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Παραλείφθηκε σκόπιμα: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Δεν καταγράφηκε τίποτα.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Τι κατέγραψε</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Αλλαγές: %count, με τη σειρά που έγιναν.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Αλλαγή</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Βήμα</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Αφορά</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Ακόμη %count: το ./console exp:migration:record:show τις παραθέτει όλες.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Απόρριψη</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Αφαιρεί την καταγραφή και ό,τι κατέγραψε. Ό,τι άλλαξε μένει αλλαγμένο.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Ναι, απόρριψη αυτής της καταγραφής</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Καταγραφή σε εξέλιξη…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Οι αλλαγές σας καταγράφονται για μια μετάπτωση.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Κάθε αλλαγή σε αυτόν τον ιστότοπο καταγράφεται για μια μετάπτωση (παράθυρο για όλο τον ιστότοπο).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Η καταγραφή για όλο τον ιστότοπο ξεκίνησε: κάθε αλλαγή κάθε χρήστη καταγράφεται μέχρι να τη σταματήσετε.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Η καταγραφή ξεκίνησε: οι αλλαγές σας καταγράφονται μέχρι να τη σταματήσετε.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Η καταγραφή σταμάτησε. Ό,τι κατέγραψε μένει μέχρι να την απορρίψετε.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Η καταγραφή και τα συμβάντα της αφαιρέθηκαν.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Δεν υπάρχει καταγραφή %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Επιλέξτε πρώτα «Ναι, απόρριψη αυτής της καταγραφής».</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Μόνο ο χρήστης που κατέγραφε μπορεί να σταματήσει μια καταγραφή συνεδρίας.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Επιλέξτε την καταγραφή που θα σταματήσει.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Μια καταγραφή αυτού του είδους τρέχει ήδη.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Δεν ήταν δυνατή η αλλαγή της καταγραφής: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

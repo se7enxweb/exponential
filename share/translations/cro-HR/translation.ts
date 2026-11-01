@@ -81643,6 +81643,222 @@ Klasu čvora morat ćete promijeniti pomoću funkcije zamjene.</translation>
         <source>The run could not be started.</source>
         <translation>Pokretanje nije bilo moguće započeti.</translation>
     </message>
+    <message>
+        <source>Recording changes</source>
+        <translation>Snimanje promjena</translation>
+    </message>
+    <message>
+        <source>While a recording runs, what you change in the administration or the website sidebar is kept as the steps of a migration: content, classes, roles and policies, sections, users and groups, URL aliases, settings. Stop it when you are done, look at what it captured, and generate a migration from it.</source>
+        <translation>Dok snimanje traje, ono što mijenjate u administraciji ili na bočnoj traci web-mjesta sprema se kao koraci migracije: sadržaj, klase, uloge i pravila, sekcije, korisnici i grupe, URL aliasi, postavke. Zaustavite ga kad završite, pogledajte što je zabilježilo i iz njega generirajte migraciju.</translation>
+    </message>
+    <message>
+        <source>The recordings could not be read: %problem</source>
+        <translation>Snimke nije bilo moguće pročitati: %problem</translation>
+    </message>
+    <message>
+        <source>The recording tables do not exist yet: run the upgrade (exp:upgrade --apply) first.</source>
+        <translation>Tablice snimki još ne postoje: najprije pokrenite nadogradnju (exp:upgrade --apply).</translation>
+    </message>
+    <message>
+        <source>Recording is switched off in migration.ini ([RecordingSettings] Recording=disabled).</source>
+        <translation>Snimanje je isključeno u migration.ini ([RecordingSettings] Recording=disabled).</translation>
+    </message>
+    <message>
+        <source>My changes</source>
+        <translation>Moje promjene</translation>
+    </message>
+    <message>
+        <source>Records only what you change, wherever you change it, until you stop it.</source>
+        <translation>Snima samo ono što vi mijenjate, gdje god to mijenjali, dok ga ne zaustavite.</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Snimanje</translation>
+    </message>
+    <message>
+        <source>since %time, %count change(s) so far.</source>
+        <translation>od %time, dosad promjena: %count.</translation>
+    </message>
+    <message>
+        <source>Label (optional)</source>
+        <translation>Oznaka (neobavezno)</translation>
+    </message>
+    <message>
+        <source>Show what it captured</source>
+        <translation>Prikaži što je zabilježilo</translation>
+    </message>
+    <message>
+        <source>Stop recording</source>
+        <translation>Zaustavi snimanje</translation>
+    </message>
+    <message>
+        <source>Start recording my changes</source>
+        <translation>Počni snimati moje promjene</translation>
+    </message>
+    <message>
+        <source>Site-wide window</source>
+        <translation>Prozor za cijelo web-mjesto</translation>
+    </message>
+    <message>
+        <source>Records every change of every user and of the console until it is closed. Opening it asks you to verify it is you.</source>
+        <translation>Snima svaku promjenu svakog korisnika i konzole dok se ne zatvori. Pri otvaranju trebate potvrditi da ste to vi.</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Otvoreno</translation>
+    </message>
+    <message>
+        <source>Close the window</source>
+        <translation>Zatvori prozor</translation>
+    </message>
+    <message>
+        <source>Open the site-wide window</source>
+        <translation>Otvori prozor za cijelo web-mjesto</translation>
+    </message>
+    <message>
+        <source>Recordings</source>
+        <translation>Snimke</translation>
+    </message>
+    <message>
+        <source>The account of a user (login, e-mail, password) and the fields of user accounts are never recorded.</source>
+        <translation>Račun korisnika (korisničko ime, e-pošta, lozinka) i polja korisničkih računa nikad se ne snimaju.</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Promjene</translation>
+    </message>
+    <message>
+        <source>Site-wide</source>
+        <translation>Cijelo web-mjesto</translation>
+    </message>
+    <message>
+        <source>Changes of %name</source>
+        <translation>Promjene korisnika %name</translation>
+    </message>
+    <message>
+        <source>Stopped</source>
+        <translation>Zaustavljeno</translation>
+    </message>
+    <message>
+        <source>No recording yet.</source>
+        <translation>Još nema snimki.</translation>
+    </message>
+    <message>
+        <source>Recording %id</source>
+        <translation>Snimka %id</translation>
+    </message>
+    <message>
+        <source>All recordings</source>
+        <translation>Sve snimke</translation>
+    </message>
+    <message>
+        <source>The migration it would make</source>
+        <translation>Migracija koja bi iz nje nastala</translation>
+    </message>
+    <message>
+        <source>The changes folded into one step per thing changed: what a migration generated from this recording would do.</source>
+        <translation>Promjene objedinjene u jedan korak po promijenjenoj stavci: što bi napravila migracija generirana iz ove snimke.</translation>
+    </message>
+    <message>
+        <source>A migration can be generated from it once this installation has the YAML step types %types.</source>
+        <translation>Iz nje će se moći generirati migracija kad ova instalacija bude imala YAML vrste koraka %types.</translation>
+    </message>
+    <message>
+        <source>Left out on purpose: %list</source>
+        <translation>Namjerno izostavljeno: %list</translation>
+    </message>
+    <message>
+        <source>Nothing was recorded.</source>
+        <translation>Ništa nije snimljeno.</translation>
+    </message>
+    <message>
+        <source>What it captured</source>
+        <translation>Što je zabilježilo</translation>
+    </message>
+    <message>
+        <source>%count change(s), in the order they were made.</source>
+        <translation>Promjena: %count, redoslijedom kojim su napravljene.</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Promjena</translation>
+    </message>
+    <message>
+        <source>Step</source>
+        <translation>Korak</translation>
+    </message>
+    <message>
+        <source>About</source>
+        <translation>Odnosi se na</translation>
+    </message>
+    <message>
+        <source>%count more: ./console exp:migration:record:show lists every one.</source>
+        <translation>Još %count: ./console exp:migration:record:show ispisuje sve.</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Odbaci</translation>
+    </message>
+    <message>
+        <source>Removes the recording and what it captured. What was changed stays changed.</source>
+        <translation>Uklanja snimku i ono što je zabilježila. Što je promijenjeno, ostaje promijenjeno.</translation>
+    </message>
+    <message>
+        <source>Yes, discard this recording</source>
+        <translation>Da, odbaci ovu snimku</translation>
+    </message>
+    <message>
+        <source>Recording…</source>
+        <translation>Snimanje u tijeku…</translation>
+    </message>
+    <message>
+        <source>Your changes are recorded for a migration.</source>
+        <translation>Vaše se promjene snimaju za migraciju.</translation>
+    </message>
+    <message>
+        <source>Every change on this site is recorded for a migration (site-wide window).</source>
+        <translation>Svaka promjena na ovom web-mjestu snima se za migraciju (prozor za cijelo web-mjesto).</translation>
+    </message>
+    <message>
+        <source>The site-wide recording has started: every change of every user is recorded until you stop it.</source>
+        <translation>Snimanje cijelog web-mjesta je počelo: svaka promjena svakog korisnika snima se dok ga ne zaustavite.</translation>
+    </message>
+    <message>
+        <source>Recording has started: your changes are recorded until you stop it.</source>
+        <translation>Snimanje je počelo: vaše se promjene snimaju dok ga ne zaustavite.</translation>
+    </message>
+    <message>
+        <source>Recording stopped. What it captured stays until you discard it.</source>
+        <translation>Snimanje zaustavljeno. Ono što je zabilježilo ostaje dok ga ne odbacite.</translation>
+    </message>
+    <message>
+        <source>The recording and its events are removed.</source>
+        <translation>Snimka i njezini događaji su uklonjeni.</translation>
+    </message>
+    <message>
+        <source>There is no recording %id.</source>
+        <translation>Nema snimke %id.</translation>
+    </message>
+    <message>
+        <source>Tick "Yes, discard this recording" first.</source>
+        <translation>Najprije označite „Da, odbaci ovu snimku”.</translation>
+    </message>
+    <message>
+        <source>Only the user who recorded may stop a session recording.</source>
+        <translation>Samo korisnik koji je snimao smije zaustaviti snimanje sesije.</translation>
+    </message>
+    <message>
+        <source>Choose the recording to stop.</source>
+        <translation>Odaberite snimanje koje želite zaustaviti.</translation>
+    </message>
+    <message>
+        <source>A recording of this kind is running already.</source>
+        <translation>Snimanje ove vrste već je u tijeku.</translation>
+    </message>
+    <message>
+        <source>The recording could not be changed: %reason</source>
+        <translation>Snimku nije bilo moguće promijeniti: %reason</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/moderation</name>

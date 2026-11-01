@@ -43,7 +43,7 @@ back to. --list lists the captions, newest first, with the command that restores
 | `--dry-run` |  | Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-migration/1) |
 | `--list` |  | Die Sicherungspunkte auflisten, statt einen anzulegen |
-| `--label` | erforderlich | Die Bezeichnung des Sicherungspunkts (Standard: "manual caption" mit der Uhrzeit) |
+| `--label` | erforderlich | Die Bezeichnung des Sicherungspunkts oder der Aufzeichnung (ein Sicherungspunkt ohne eine: "manual caption" mit der Uhrzeit) |
 | `--backup-dir` | erforderlich | Wo die ohne git_manager angelegten Sicherungspunkte liegen (Standard var/backup/upgrade) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
