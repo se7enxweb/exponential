@@ -57,7 +57,7 @@ die Kinder werden beim Holen weiterhin nach dem Lesezugriff des Redakteurs gefil
 | Name und Tooltip des Reiters nur auf Englisch | übersetzt | Blöcke `[TopAdminMenu]` |
 
 Ein Reiter, der in `[TopAdminMenu] Tabs[]` zweimal aufgeführt ist, wird einmal gezeigt, an seiner ersten Stelle.
-Extensions hängen ihren Reiter an diese Liste an, und ihre Einstellungen werden nach denen eines Siteaccess gelesen. Ein
+Extensions hängen ihren Reiter an diese Liste an, und ihre Einstellungen (einer Extension in `ActiveExtensions[]`) werden nach denen eines Siteaccess gelesen. Ein
 Siteaccess, der die ganze Liste neu festlegte, um die Reiter in eigener Reihenfolge zu haben, erhielt daher früher jeden
 Reiter einer Extension am Ende ein zweites Mal.
 

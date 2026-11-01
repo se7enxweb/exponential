@@ -31,8 +31,12 @@ After the default file, the kernel reads the override directories in this order,
 
 1. `extension/<ext>/settings/` of the extensions in `ActiveAccessExtensions[]` (`sa-extension`),
 2. the extension siteaccess directories, then `settings/siteaccess/<sa>/` (both `siteaccess`),
-3. `extension/<ext>/settings/` of each active extension (`extension`),
+3. `extension/<ext>/settings/` of the extensions in `ActiveExtensions[]` (`extension`),
 4. `settings/override/` (`override`).
+
+So an extension's `settings/` lands on one side of `settings/siteaccess/<sa>/` or the other depending on how it is
+switched on: listed in `ActiveExtensions[]` it is read after the siteaccess and wins over it; listed in a
+siteaccess's `ActiveAccessExtensions[]` it is read before the siteaccess and loses to it.
 
 The code is one line:
 
@@ -42,11 +46,12 @@ return array_merge( $dirs['sa-extension'], $dirs['siteaccess'], $dirs['extension
 
 Inside one scope, a directory registered later with `eZINI::prependOverrideDir()` stands earlier in the list and so
 has lower priority. For extensions this means: **an extension earlier in `ActiveExtensions[]` wins** over a later
-one, which is why an installation's own settings extension is usually listed first.
+one, which is why an installation's own settings extension is usually listed first. The same holds among the
+extensions of `ActiveAccessExtensions[]`, inside the `sa-extension` scope.
 
 > **Note**
-> Notice that the `extension` scope is read **after** the `siteaccess` scope. A value an extension ships in
-> `extension/<ext>/settings/` beats the same value in `settings/siteaccess/<sa>/`. When a site needs a different value
+> Notice that the `extension` scope is read **after** the `siteaccess` scope. A value an extension in
+> `ActiveExtensions[]` ships in `extension/<ext>/settings/` beats the same value in `settings/siteaccess/<sa>/`. When a site needs a different value
 > than an extension's default, put it in `settings/override/` (which applies to every siteaccess), or remove the key
 > from the extension's `settings/` file. The extension's own per-siteaccess folders do not help: they are in the
 > `siteaccess` scope too, and the extension's `settings/` beats them as well.

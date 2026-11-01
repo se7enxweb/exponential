@@ -11,8 +11,8 @@ generated: exp:help:examples
 
 Der Block `[DashboardBlock_migrations]` von `settings/dashboard.ini`, mit 3 Einstellung(en).
 
-> The migrations: how many are pending or failed, the orphans, the run going on and the latest run, with links to  
-> Setup > Migrations (migration/status) and the run's page (migration/log/<run id>).  
+> Die Migrationen: wie viele ausstehen oder fehlgeschlagen sind, die verwaisten, der laufende Lauf und der letzte Lauf, mit Links zu  
+> Einrichtung > Migrationen (migration/status) und zur Seite des Laufs (migration/log/<run id>).  
 
 Bearbeiten Sie `settings/dashboard.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 

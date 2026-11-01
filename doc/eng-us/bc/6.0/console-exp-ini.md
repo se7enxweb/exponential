@@ -308,15 +308,40 @@ exp:ini move <file>/<Block> <from> <to> --only=SiteURL,SiteName   # some variabl
   write. If any value differs, both files are put back as they were. A target file that the move created is
   moved aside to `var/backup/ini/<stamp>-rollback/`. The move is then refused with exit 3, and the message
   names the file that now wins. `--force` keeps such a move.
-- **Load order.** An extension's settings load before `settings/siteaccess/<sa>`, and that loads before
-  `settings/override`. So a value moved out of the override into an extension can lose to a siteaccess
-  file. The check catches this:
+- **Load order.** eZINI reads a file of a siteaccess in this order, and a later file wins
+  (`eZINI::overrideDirsByScope()`, filled by `eZSiteAccess::load()`):
+  1. `settings/<file>.ini`, the defaults;
+  2. `extension/<ext>/settings/` of the extensions in the siteaccess's `ActiveAccessExtensions[]`
+     (scope `sa-extension`; the first one listed is read last);
+  3. the siteaccess directories of the extensions (`extension/<ext>/settings/siteaccess/<sa>/`, then
+     `settings/override__<group>/` and `settings/override/` of an extension that has that directory), then
+     `settings/siteaccess/<sa>/` (scope `siteaccess`);
+  4. `extension/<ext>/settings/` of the extensions in `ActiveExtensions[]` (scope `extension`; the first one
+     listed is read last and wins);
+  5. `settings/override/`.
+
+  So the settings of an extension in `ActiveExtensions[]` win over `settings/siteaccess/<sa>`, and those of an
+  extension in `ActiveAccessExtensions[]` lose to it. Under `--root` the editor's chain follows the same order
+  (`expIniEditor::loadOrder()`; the lists are taken as written, without `ExtensionOrdering`). Two moves the
+  check refuses on the fixture of the tests, where `fixtureext` is in `ActiveExtensions[]`: a value of one
+  siteaccess moved into an extension that every siteaccess reads, and a value of the override moved into an
+  extension that a siteaccess reads before its own file (`accessext`, in `ActiveAccessExtensions[]` of both
+  siteaccesses):
 
 ```
-$ exp:ini move site.ini/SiteSettings global extension:fixtureext
+$ exp:ini move site.ini/TemplateSettings siteaccess:admin extension:fixtureext
+Refused and rolled back: site.ini [TemplateSettings] Debug in effect for siteaccess site would change from
+"false" to "true" (extension/fixtureext/settings/site.ini.append.php wins: it is read for siteaccess site after
+every file that sets it). Both files are as they were; --force keeps such a move   (exit 3)
+
+$ exp:ini move site.ini/SiteSettings global extension:accessext
 Refused and rolled back: site.ini [SiteSettings] SiteName in effect for siteaccess site would change from
-"Json" to "Site siteaccess" (settings/siteaccess/site/site.ini.append.php wins: it loads after
-extension/fixtureext/settings/site.ini.append.php). Both files are as they were; --force keeps such a move   (exit 3)
+"Override site" to "Site siteaccess" (settings/siteaccess/site/site.ini.append.php wins: it loads after
+extension/accessext/settings/site.ini.append.php). Both files are as they were; --force keeps such a move   (exit 3)
+
+$ exp:ini move site.ini/SiteSettings global extension:fixtureext
+Moved 1 block, 2 variables: settings/override/site.ini.append.php -> extension/fixtureext/settings/site.ini.append.php
+Moved 1 block, 2 variables, 1 file
 
 $ exp:ini move site.ini/DebugSettings global extension:fixtureext --dry-run
 --- a/extension/fixtureext/settings/site.ini.append.php
@@ -506,7 +531,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/ini/command/
 | `RadSurveyIniCommandTest` | the survey's group and counts, the total, the catalogue, the view and the templates |
 
 The engine's own tests (line preservation on every real INI file, ownership, atomic writes, the load order)
-are in `tests/tests/kernel/classes/ini/` (`expIniEditorTest`, `expIniRoundTripTest`, `expIniLocatorTest`).
+are in `tests/tests/kernel/classes/ini/` (`expIniEditorTest`, `expIniRoundTripTest`, `expIniLocatorTest`, and `expIniLoadOrderTest`, which compares the editor's chain under `--root` with eZINI's on a fixture).
 
 ## Related pages
 

@@ -19,13 +19,13 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Enabled
 
-> Which events are recorded, by taxonomy pattern: a whole domain (content.\*), a subject  
-> (content.node.\*), an action with its details (content.node.remove.\*) or one name.  
-> The most specific pattern wins; on a tie the later line wins. Events marked "always"  
-> in the catalogue (system.audit.\*, access.view.sensitive) ignore Disabled\[\].  
-> Migrations (migration.ini): a run, a migration applied (also a changed file accepted with  
-> --force --reason), failed or rolled back, a caption taken, the migrations repository pushed.  
-> A site that switches system.\* off keeps them with these lines.  
+> Welche Ereignisse aufgezeichnet werden, nach Taxonomie-Muster: eine ganze Domäne (content.\*), ein Gegenstand  
+> (content.node.\*), eine Aktion mit ihren Details (content.node.remove.\*) oder ein einzelner Name.  
+> Das genaueste Muster gewinnt; bei Gleichstand gewinnt die spätere Zeile. Ereignisse, die im Katalog als "always"  
+> markiert sind (system.audit.\*, access.view.sensitive), ignorieren Disabled\[\].  
+> Migrationen (migration.ini): ein Lauf, eine angewendete Migration (auch eine mit --force --reason angenommene  
+> geänderte Datei), eine gescheiterte oder zurückgenommene, ein angelegter Sicherungspunkt, ein Push des  
+> Migrations-Repositorys. Eine Site, die system.\* abschaltet, behält sie mit diesen Zeilen.  
 
 Standard: eine Liste mit 39: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `content.node.move`, `content.node.remove.*`, `content.node.hide`, `content.node.reveal` ....
 

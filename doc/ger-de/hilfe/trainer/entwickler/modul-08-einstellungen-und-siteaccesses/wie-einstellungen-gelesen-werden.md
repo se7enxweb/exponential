@@ -49,7 +49,8 @@ Quellen: [Spezifikation: INI-Override-Verzeichnisse und Ablageorte](../../../../
 2. **Die Reihenfolge** (5 Minuten). Zuerst `settings/<file>.ini`, dann die Override-Verzeichnisse. `eZINI` führt sie
    in der Reihenfolge der Geltungsbereiche `sa-extension`, `siteaccess`, `extension`, `override` zusammen: Eine
    später gelesene Datei gewinnt. Also gewinnt `settings/override/` (der globale Geltungsbereich) gegen alles; eine
-   Einstellung im Wurzelordner `settings/` einer Erweiterung gewinnt gegen `settings/siteaccess/<sa>/`.
+   Einstellung im Wurzelordner `settings/` einer Erweiterung in `ActiveExtensions[]` gewinnt gegen
+   `settings/siteaccess/<sa>/`, eine in `ActiveAccessExtensions[]` nicht.
 3. **Arrays** (4 Minuten). `List[]=a` in einer Datei und `List[]=b` in einer späteren ergeben `a, b`. Die Zeile
    `List[]` allein setzt das Array zurück: Die Werte früherer Dateien fallen weg. Ein Hash-Eintrag lautet
    `List[key]=value`.

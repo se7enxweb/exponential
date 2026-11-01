@@ -187,11 +187,43 @@ Alle nehmen `--format=json` (die Maschinenausgabe `exp-migration/1`) und enden m
 0 in Ordnung, 1 gescheitert (oder ausstehend mit `exp:migration:status --fail-on-pending`), 2 Bedienfehler, 3 die
 Datenbank ist nicht erreichbar, 4 interner Fehler.
 
+## In der Administration
+
+**Setup > Migrationen** (das Modul `migration`) zeigt und führt dieselben Migrationen aus:
+
+| Seite | Was sie tut | Richtlinie |
+|---|---|---|
+| Stand (`/migration/status`) | jede Migration mit ihrem Stand, die Sperre, die letzten Läufe, wie `exp:migration:status` | `migration/read` |
+| Verlauf (`/migration/history`) | jeder Lauf mit Sicherungspunkten, Commit, Tag und Push; fortsetzen und zurücknehmen | `migration/read` |
+| Die Seite eines Laufs (`/migration/log/<run-id>`) | sein Eintrag, seine Migrationen, das Ende seines Protokolls und sein Fortschritt, solange er läuft | `migration/read` |
+| Probelauf (`/migration/dryrun`) | der Plan, wie `exp:migration:dry-run`; **Simulieren** wie `--simulate --diff` | `migration/read`, `migration/run` zum Simulieren |
+| Ausführen (`/migration/run`) | die ausstehenden Migrationen, einzeln wählbar, mit den Schaltern der Tabelle oben und `--force --reason` | `migration/run` |
+| Rücknahme (`/migration/rollback`) | ein Lauf, eine Migration oder (für Fachleute) ein beliebiger Sicherungspunkt | `migration/rollback` |
+
+In einer neuen Installation hat nur die Rolle Administrator diese Richtlinien. Ein Lauf, eine Fortsetzung, eine
+Simulation und eine Rücknahme fragen zuerst nach „Identität bestätigen“ (`site.ini [ReauthGroup_system]`). Das
+Dashboard hat für Benutzer mit `migration/read` einen Block **Migrationen**, die Website-Seitenleiste (expwt) ein
+schreibgeschütztes Panel Migrationen.
+
+Ein dort gestarteter Lauf, eine Fortsetzung oder eine Rücknahme läuft im Hintergrund: Die Seite startet den
+Konsolenbefehl (`exp:migration:migrate --apply`, `exp:migration:resume --apply` oder `exp:migration:rollback --apply`)
+als eigenen Prozess unter dem angemeldeten Benutzer und öffnet die Seite des Laufs, die ihn verfolgt. Der Lauf geht
+weiter, wenn die Seite geschlossen wird. Die Seite benennt den Lauf mit `--run-id=<run-id>`, sodass Lauf, Eintrag und
+Protokoll diese Kennung haben, und verfolgt ihn über die Datei aus `--progress=<datei>`, an die der Lauf je Ereignis
+eine JSON-Zeile anhängt. Beide Optionen lassen sich auch auf der Konsole nutzen. Die Dateien dieser Läufe liegen in
+`var/<site>/migration/jobs/`; `migration.ini [AdminSettings]` nennt das PHP-Kommandozeilenprogramm (`PhpCliPath`), wie
+viele Läufe ihre Dateien behalten (`JobHistory`, 50) und wie viel eines Laufprotokolls eine Seite zeigt (`LogBytes`,
+256 KB). Immer nur ein Lauf: Solange einer im Gang ist oder ein anderer Lauf oder ein Upgrade die Sperre hält, lehnt
+die Seite einen neuen ab.
+
+Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/README.md),
+[Stand und Verlauf](../hilfe/migrationen/status-und-verlauf.md),
+[Ausführen, Probelauf und Rücknahme](../hilfe/migrationen/ausfuehren-probelauf-und-rueckgaengig.md).
+
 ## Noch nicht in 6.0.15
 
-Setup > Migrationen in der Administration, YAML-, SQL- und INI-Migrationen, Generatoren außer dem Gerüst, das
-Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil dieses Releases. Alles, was diese
-Anleitung zeigt, funktioniert heute auf der Konsole.
+YAML-, SQL- und INI-Migrationen, der Editor und die Generatoren in der Administration (Generatoren außer dem
+Gerüst), das Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil dieses Releases.
 
 ## Weiterlesen
 
@@ -200,5 +232,6 @@ Anleitung zeigt, funktioniert heute auf der Konsole.
 - [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)
 - [Das Migrations-Repository: Commit, Tag und Push](migrationen-repositories.md)
 - [Fehlerbehebung bei Migrationen](migrationen-fehlerbehebung.md)
+- [Migrationen in der Administration](../hilfe/migrationen/README.md)
 - [Das Migrationsdateiformat](../spezifikationen/6.0/migrationsdateiformat.md)
 - [migration.ini](../beispiele/ini-einstellungen/migration/README.md), [der Cronjob-Teil migrationpush](../beispiele/cronjobs/migrationpush.md)
