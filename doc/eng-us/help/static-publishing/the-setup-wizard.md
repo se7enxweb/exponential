@@ -4,7 +4,7 @@ audience: admin, website-creator, developer, hosting
 category: administration
 order: 5
 summary: Every step of Setup > Static publishing > New target - the site, the host, signing in, the repository, links and base path with a live example, your own domain, what the build holds, when it is published - then Review and Save.
-keywords: static publishing, setup wizard, new target, target settings, staticcache.ini, Target_, siteaccess, GitHub Pages, git host, token, deploy key, Remote, branch, gh-pages, docs folder, base path, relative links, custom domain, CNAME, extras, nojekyll, 404.html, sitemap, exclusions, triggers, Review, Save, verify it's you
+keywords: static publishing, setup wizard, new target, target settings, staticcache.ini, Target_, siteaccess, GitHub Pages, git host, token, deploy key, GitHub App, Set up on GitHub, create repository, DNS check, Remote, branch, gh-pages, docs folder, base path, relative links, custom domain, CNAME, extras, nojekyll, 404.html, sitemap, exclusions, triggers, Review, Save, verify it's you
 type: help
 ---
 # The setup wizard
@@ -40,7 +40,13 @@ from the list. Without JavaScript all steps show on one page.
 ## 2. The host
 
 **GitHub Pages** or **another git host** (GitLab, Gitea, your own server). The box lists GitHub's limits: a site of
-up to 1 GB, a file of up to 100 MB, about 100 GB of traffic a month, a public repository on a free plan, and no shops.
+up to 1 GB, a file of up to 100 MB, about 100 GB of traffic a month, a public repository on a free plan, and no shops
+([GitHub Pages limits and terms](github-pages-limits-and-terms.md)). Every push is checked against them first.
+
+Below it the wizard says whether the **GitHub integration** can be used on this server. With it, and with a token or
+a GitHub App, step 4 can create the repository and switch GitHub Pages on for you. Without it (no curl or openssl in
+PHP, or `GitHubAPI=disabled`) publishing to the branch works all the same; you switch GitHub Pages on in the
+repository's settings yourself.
 
 ## 3. Signing in to the repository
 
@@ -48,19 +54,31 @@ up to 1 GB, a file of up to 100 MB, about 100 GB of traffic a month, a public re
 |---|---|---|
 | A token from Setup > Secrets | an `https://` address | `Credential=token:<name>` |
 | A deploy key made for this target | an SSH address (`git@github.com:owner/repo.git`) | `Credential=sshkey:staticpublish.<id>.deploy_key` |
+| A GitHub App | an `https://` address on GitHub | `Credential=app:<installation id>` |
 | None | the server signs in by itself, or the repository is on this server | `Credential=none` |
 
 Only the name is stored with the target; the token or key stays in Setup > Secrets and never appears in a log or a
 report. With a deploy key, **Save** opens the target's **Deploy key** page, where **Make the key** creates it and shows
-the public half to add to the repository ([Deploy keys](../../guides/static-publishing-deploy-keys.md)). Signing in
-with a GitHub App comes with the GitHub integration.
+the public half to add to the repository ([Deploy keys](../../guides/static-publishing-deploy-keys.md)). A GitHub App
+needs its **installation id**; the App itself is set up once for the installation. Which one to choose:
+[Connect to GitHub: token, deploy key or GitHub App](connect-to-github-token-key-or-app.md).
+
+Only a token or a GitHub App can use GitHub's API, so only they unlock the GitHub steps below. A deploy key pushes.
 
 ## 4. The repository
 
 - **Git address**: the repository's address, never with a password or token in it.
 - **Branch**: `gh-pages`, or `main` with the folder `docs`.
 - **Folder**: the root of the branch or `/docs` (GitHub Pages serves one of the two).
-- **How GitHub Pages receives the build**: from the branch (the default) or by a GitHub Actions workflow.
+- **How GitHub Pages receives the build**: from the branch (the default) or by a GitHub Actions workflow, which the
+  build writes for you ([Branch or GitHub Actions](choose-branch-or-github-actions.md)).
+
+**On GitHub**: once the target is saved with a GitHub address and a token or GitHub App, this step has
+**Set up on GitHub**. It creates the repository when it is missing and you ticked **Create the repository if it does
+not exist** (public, or private, which GitHub Pages serves only on a paid plan), switches GitHub Pages on from the
+branch and folder or from GitHub Actions, and sets your own domain and HTTPS. It asks **Verify it's you** and lists each
+step with its result. It works with the saved settings: save changes first. A new repository has no branch yet, so
+GitHub Pages is switched on after the first publish: press **Set up on GitHub** again then.
 
 ## 5. Links and base path
 
@@ -73,6 +91,10 @@ base path. The box shows, as you type, how a link from the page `/news/` to `/ab
 
 Optional: `www.example.com`. It is written to the file `CNAME`, and the site is then served at the root of the
 domain, so leave the base path empty. Point the domain's DNS at the host as it explains; HTTPS can take a while.
+
+**Check the DNS** looks the domain up and says whether it points at GitHub Pages: a subdomain needs a `CNAME` record to
+`<owner>.github.io`, an apex domain the four `A` records of GitHub Pages. When something is missing or wrong it lists
+the records to set at the provider of the domain. Details: [Use your own domain](use-your-own-domain.md).
 
 ## 7. What the build holds
 

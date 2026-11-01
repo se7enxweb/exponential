@@ -77,6 +77,10 @@ Jede Seite hat eine Schaltfläche **Hilfe**, die die Seite dieses Handbuchs dazu
 - Die Kommandozeile und CI:
   [Statische Websites auf GitHub Pages hosten](../../anleitungen/statische-websites-auf-github-pages-hosten.md) und die
   Befehle `exp:static:build`, `exp:static:publish`, `exp:static:rollback`.
+- GitHub: [Mit GitHub verbinden: Token, Deploy-Key oder GitHub App](mit-github-verbinden-token-key-oder-app.md),
+  [Branch oder GitHub Actions wählen](branch-oder-github-actions-waehlen.md),
+  [Eigene Domain verwenden](eigene-domain-verwenden.md) und
+  [Grenzen und Bedingungen von GitHub Pages](grenzen-und-bedingungen-von-github-pages.md).
 - Repositorys, Token und Pushes:
   [Repositorys und Zugangsdaten](../../anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md)
 - Das Format eines Builds: [Das Build-Format](../../spezifikationen/6.0/statisches-veroeffentlichen-build-format.md)

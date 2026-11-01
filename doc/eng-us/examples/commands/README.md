@@ -73,6 +73,8 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:exprepair](exprepair.md) |  | Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run |
 | [exp:expstaticbuild](expstaticbuild.md) | exp:static:build | Build a static copy of a target's siteaccess into its folder (static publishing): crawled as the anonymous user, links rewritten, files collected, extras and manifest written |
 | [exp:expstaticdiff](expstaticdiff.md) | exp:static:diff | What the last static build of a target changed, whether its folder still matches the manifest, and whether every link of it works when served below a path |
+| [exp:expstaticdns](expstaticdns.md) | exp:static:dns | Check the DNS records of a custom domain for GitHub Pages: the A, AAAA and CNAME records compared with GitHub's addresses, and what to change |
+| [exp:expstaticgithub](expstaticgithub.md) | exp:static:github | Set a static publishing target up on GitHub (the repository, GitHub Pages from the branch or Actions, the custom domain, HTTPS), show its state there, or sign in with GitHub |
 | [exp:expstatickeys](expstatickeys.md) | exp:static:keys | Make or show the SSH deploy key of a static publishing target: ed25519, the private half in the secret store, the public half to add to the repository |
 | [exp:expstaticpublish](expstaticpublish.md) | exp:static:publish | Publish a target's static build (static publishing): commit it in the target's git repository, tag it static/<target>/<n> and push it, never forced |
 | [exp:expstaticpush](expstaticpush.md) | exp:static:push | Push the static publishing targets whose push failed again (runs with push state pending), never forced |

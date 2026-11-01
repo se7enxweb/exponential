@@ -38,7 +38,7 @@ Enabled=true
 > Static publishing: a publish, a rollback, saving a target, the deploy key and the switch; seeing, building and the  
 > preview are never asked  
 
-Standard: eine Liste mit 27: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
+Standard: eine Liste mit 28: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -66,7 +66,7 @@ Rules[]=migration/run
 Rules[]=migration/rollback
 Rules[]=migration/edit
 Rules[]=migration/dryrun SimulateButton
-# ... 7 weitere in der ausgelieferten Datei
+# ... 8 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

@@ -3,13 +3,13 @@ title: staticcache.ini [StaticPublishSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [StaticPublishSettings] in staticcache.ini: Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail ..."
-keywords: Einstellung, staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail, JobHistory
+keywords: Einstellung, staticcache.ini, StaticPublishSettings, INI, setting, Enabled, TargetList, WorkDir, MaxSiteBytes, MaxFileBytes, Push, CommitName, CommitEmail, JobHistory, GitHubAPI, GitHubAPIURL, GitHubAppId, GitHubAppKey, GitHubOAuthClientId
 type: generated
 generated: exp:help:examples
 ---
 # staticcache.ini [StaticPublishSettings]
 
-Der Block `[StaticPublishSettings]` von `settings/staticcache.ini`, mit 9 Einstellung(en).
+Der Block `[StaticPublishSettings]` von `settings/staticcache.ini`, mit 14 Einstellung(en).
 
 Bearbeiten Sie `settings/staticcache.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -155,6 +155,84 @@ Standard: `50`.
 # settings/override/staticcache.ini.append.php
 [StaticPublishSettings]
 JobHistory=50
+*/ ?>
+```
+
+## GitHubAPI
+
+> Die GitHub-Anbindung: die API von GitHub für Ziele mit Kind=github-pages  
+> (das Repository anlegen, GitHub Pages aus dem Branch oder mit GitHub Actions  
+> einschalten, die eigene Domain und HTTPS, der Build-Zustand von Pages). Sie  
+> meldet sich mit dem Credential des Ziels an (token: oder app:). enabled oder  
+> disabled; das Veröffentlichen in den Branch geht auch ohne sie.  
+
+Standard: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubAPI=enabled
+*/ ?>
+```
+
+## GitHubAPIURL
+
+> Die Adresse der REST-API von GitHub (GitHub Enterprise Server:  
+> https://<host>/api/v3).  
+
+Standard: `https://api.github.com`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubAPIURL=https://api.github.com
+*/ ?>
+```
+
+## GitHubAppId
+
+> Eine GitHub App für Credential=app:<installation id>: die ID der App und der  
+> Name des Geheimnisses (Setup > Secrets) mit dem privaten Schlüssel (PEM), den  
+> GitHub für sie erzeugt hat. Die App braucht die Repository-Berechtigungen  
+> Contents, Pages und Administration (zum Anlegen von Repositorys), Lesen und Schreiben.  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubAppId=
+*/ ?>
+```
+
+## GitHubAppKey
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubAppKey=
+*/ ?>
+```
+
+## GitHubOAuthClientId
+
+> Die Client-ID einer OAuth App mit eingeschaltetem Device Flow, für  
+> ./console exp:static:github signin: ein Benutzer meldet sich auf github.com an,  
+> und das Token wird für Credential=token:<secret> im Geheimnisspeicher abgelegt.  
+
+Standard: leer.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/staticcache.ini.append.php
+[StaticPublishSettings]
+GitHubOAuthClientId=
 */ ?>
 ```
 

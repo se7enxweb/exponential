@@ -4,7 +4,7 @@ audience: admin, website-creator, developer, hosting
 category: administration
 order: 5
 summary: Jeder Schritt von Setup > Statisches Veröffentlichen > Neues Ziel - die Site, der Host, die Anmeldung, das Repository, Links und Basispfad mit einem Live-Beispiel, Ihre eigene Domain, was der Build enthält, wann veröffentlicht wird - dann Prüfung und Speichern.
-keywords: Statisches Veröffentlichen, Einrichtungsassistent, Assistent, neues Ziel, Einstellungen eines Ziels, Basispfad, relative Links, eigene Domain, Zusatzdateien, Ausschlüsse, Auslöser, Prüfen, Speichern, Bestätigen Sie, dass Sie es sind, static publishing, setup wizard, new target, target settings, staticcache.ini, Target_, siteaccess, GitHub Pages, git host, token, deploy key, Remote, branch, gh-pages, docs folder, base path, relative links, custom domain, CNAME, extras, nojekyll, 404.html, sitemap, exclusions, triggers, Review, Save, verify it's you
+keywords: Statisches Veröffentlichen, Einrichtungsassistent, Assistent, neues Ziel, Einstellungen eines Ziels, GitHub App, Auf GitHub einrichten, Repository anlegen, DNS prüfen, Basispfad, relative Links, eigene Domain, Zusatzdateien, Ausschlüsse, Auslöser, Prüfen, Speichern, Bestätigen Sie, dass Sie es sind, static publishing, setup wizard, new target, target settings, staticcache.ini, Target_, siteaccess, GitHub Pages, git host, token, deploy key, GitHub App, Set up on GitHub, create repository, DNS check, Remote, branch, gh-pages, docs folder, base path, relative links, custom domain, CNAME, extras, nojekyll, 404.html, sitemap, exclusions, triggers, Review, Save, verify it's you
 type: help
 ---
 # Der Einrichtungsassistent
@@ -44,7 +44,14 @@ lässt sich aus der Liste öffnen. Ohne JavaScript stehen alle Schritte auf eine
 
 **GitHub Pages** oder **ein anderer Git-Host** (GitLab, Gitea, Ihr eigener Server). Der Kasten nennt die Grenzen von
 GitHub: eine Site bis 1 GB, eine Datei bis 100 MB, etwa 100 GB Datenverkehr im Monat, ein öffentliches Repository bei
-einem kostenlosen Tarif und keine Shops.
+einem kostenlosen Tarif und keine Shops
+([Grenzen und Bedingungen von GitHub Pages](grenzen-und-bedingungen-von-github-pages.md)). Jeder Push wird zuerst
+daran geprüft.
+
+Darunter sagt der Assistent, ob die **GitHub-Anbindung** auf diesem Server genutzt werden kann. Mit ihr und mit einem
+Token oder einer GitHub App kann Schritt 4 das Repository für Sie anlegen und GitHub Pages einschalten. Ohne sie (kein
+curl oder openssl in PHP, oder `GitHubAPI=disabled`) funktioniert das Veröffentlichen in den Branch genauso; GitHub
+Pages schalten Sie dann selbst in den Einstellungen des Repositorys ein.
 
 ## 3. Anmeldung am Repository
 
@@ -52,20 +59,35 @@ einem kostenlosen Tarif und keine Shops.
 |---|---|---|
 | Ein Token aus Setup > Geheimnisse | eine `https://`-Adresse | `Credential=token:<name>` |
 | Ein für dieses Ziel erstellter Deploy-Key | eine SSH-Adresse (`git@github.com:owner/repo.git`) | `Credential=sshkey:staticpublish.<id>.deploy_key` |
+| Eine GitHub App | eine `https://`-Adresse auf GitHub | `Credential=app:<installations-id>` |
 | Keine | der Server meldet sich selbst an, oder das Repository liegt auf diesem Server | `Credential=none` |
 
 Nur der Name wird beim Ziel gespeichert; das Token oder der Schlüssel bleibt in Setup > Geheimnisse und erscheint nie in
 einem Log oder einem Bericht. Mit einem Deploy-Key öffnet **Speichern** die Seite **Deploy-Key** des Ziels, wo
 **Schlüssel erstellen** ihn anlegt und die öffentliche Hälfte zeigt, die Sie dem Repository hinzufügen
-([SSH-Deploy-Keys](../../anleitungen/statisches-veroeffentlichen-deploy-keys.md)). Die Anmeldung mit einer GitHub App
-kommt mit der GitHub-Anbindung.
+([SSH-Deploy-Keys](../../anleitungen/statisches-veroeffentlichen-deploy-keys.md)). Eine GitHub App braucht die
+**Installations-ID der GitHub App**; die App selbst wird einmal für die Installation eingerichtet. Welchen Weg Sie
+wählen: [Mit GitHub verbinden: Token, Deploy-Key oder GitHub App](mit-github-verbinden-token-key-oder-app.md).
+
+Nur ein Token oder eine GitHub App kann die API von GitHub nutzen, deshalb schalten nur sie die GitHub-Schritte unten
+frei. Ein Deploy-Key pusht.
 
 ## 4. Das Repository
 
 - **Git-Adresse**: die Adresse des Repositorys, nie mit einem Passwort oder Token darin.
 - **Branch**: `gh-pages` oder `main` mit dem Ordner `docs`.
 - **Ordner**: die Wurzel des Branches oder `/docs` (GitHub Pages liefert eines von beiden aus).
-- **Wie GitHub Pages den Build erhält**: aus dem Branch (der Standard) oder durch einen GitHub-Actions-Workflow.
+- **Wie GitHub Pages den Build erhält**: aus dem Branch (der Standard) oder durch einen GitHub-Actions-Workflow, den
+  der Build für Sie schreibt ([Branch oder GitHub Actions](branch-oder-github-actions-waehlen.md)).
+
+**Auf GitHub**: Sobald das Ziel mit einer GitHub-Adresse und einem Token oder einer GitHub App gespeichert ist, hat
+dieser Schritt **Auf GitHub einrichten**. Es legt das Repository an, wenn es fehlt und Sie **Repository anlegen, wenn
+es fehlt** angekreuzt haben (öffentlich, oder privat, was GitHub Pages nur bei einem kostenpflichtigen Tarif
+ausliefert), schaltet GitHub Pages aus dem Branch und Ordner oder aus GitHub Actions ein und setzt Ihre eigene Domain
+und HTTPS. Es fragt **Bestätigen Sie, dass Sie es sind** und listet jeden Schritt mit seinem Ergebnis auf. Es arbeitet
+mit den gespeicherten Einstellungen: Speichern Sie Änderungen zuerst. Ein neues Repository hat noch keinen Branch,
+deshalb wird GitHub Pages erst nach der ersten Veröffentlichung eingeschaltet: Drücken Sie dann erneut auf **Auf
+GitHub einrichten**.
 
 ## 5. Links und Basispfad
 
@@ -80,6 +102,11 @@ Site; die Sitemap und die kanonischen Links brauchen sie.
 Optional: `www.example.com`. Sie wird in die Datei `CNAME` geschrieben, und die Site wird dann an der Wurzel der Domain
 ausgeliefert, lassen Sie den Basispfad also leer. Richten Sie das DNS der Domain auf den Host aus, wie dieser es
 erklärt; HTTPS kann eine Weile dauern.
+
+**DNS prüfen** schlägt die Domain nach und sagt, ob sie auf GitHub Pages zeigt: Eine Subdomain braucht einen
+`CNAME`-Eintrag auf `<owner>.github.io`, eine Apex-Domain die vier `A`-Einträge von GitHub Pages. Fehlt etwas oder ist
+etwas falsch, listet es die Einträge auf, die beim Anbieter der Domain zu setzen sind. Einzelheiten:
+[Eigene Domain verwenden](eigene-domain-verwenden.md).
 
 ## 7. Was der Build enthält
 

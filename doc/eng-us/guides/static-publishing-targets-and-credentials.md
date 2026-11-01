@@ -61,7 +61,7 @@ commit your code, settings or `var/`.
 | `token:env:<VARIABLE>` | The same token from an environment variable, e.g. in CI | `https://...` |
 | `sshkey:<secret name>` | A deploy key for this one repository ([SSH deploy keys](static-publishing-deploy-keys.md)) | `git@host:owner/repo.git` |
 | `none` | The host's own credentials: an SSH agent, a credential helper, or a remote on this server | any |
-| `app:<installation>` | A GitHub App installation; comes with the GitHub integration of static publishing | `https://github.com/...` |
+| `app:<installation>` | A GitHub App installation: a token made for each push from the App set in `GitHubAppId` and `GitHubAppKey` ([Connect to GitHub](../help/static-publishing/connect-to-github-token-key-or-app.md)) | `https://github.com/...` |
 
 ### A token
 
@@ -210,7 +210,9 @@ the rights of the current user.
 | `is on the branch main, not gh-pages` | Someone switched the branch in the folder; `git -C <folder> checkout gh-pages`, or set `Branch` |
 | `has staged changes that are not the build's` | Something was staged by hand in the folder; commit or unstage it there |
 | `the secret github_pages_token is not set` | Add it in Setup > Secrets, or use `token:env:VARIABLE` |
-| `Credential=app:... needs the GitHub integration` | Use a token or a deploy key until the GitHub integration of static publishing is installed |
+| `Credential=app:... needs the GitHub integration` | PHP lacks curl or openssl, or `[StaticPublishSettings] GitHubAPI=disabled`; use a token or a deploy key |
+| `the GitHub App installation ... gave no token` | `GitHubAppId` or `GitHubAppKey` is not set, the key is not the App's, or the App is not installed on the repository |
+| `not pushed: the build is ..., more than the ... GitHub Pages allows a site` | Every push of a GitHub Pages target is checked against GitHub's limits; make the build smaller (`Assets=referenced`, `ExcludePaths[]`) ([limits](../help/static-publishing/github-pages-limits-and-terms.md)) |
 | Push `pending`, `rejected (fetch first)` | The branch has commits that were not published from here; do not commit to the publishing branch by hand |
 | `another process works on the target` | Wait for the other build or publish to finish |
 

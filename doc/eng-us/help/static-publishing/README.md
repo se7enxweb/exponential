@@ -71,6 +71,9 @@ Every page has a **Help** button that opens the page of this manual about it.
 
 - The command line and CI: [Host static sites on GitHub Pages](../../guides/host-static-sites-on-github-pages.md)
   and the commands `exp:static:build`, `exp:static:publish`, `exp:static:rollback`.
+- GitHub: [Connect to GitHub: token, deploy key or GitHub App](connect-to-github-token-key-or-app.md),
+  [Choose branch or GitHub Actions](choose-branch-or-github-actions.md), [Use your own domain](use-your-own-domain.md)
+  and [GitHub Pages limits and terms](github-pages-limits-and-terms.md).
 - Repositories, tokens and pushes: [Targets and credentials](../../guides/static-publishing-targets-and-credentials.md)
 - The format of a build: [The build format](../../specifications/6.0/static-publishing-build-format.md)
 

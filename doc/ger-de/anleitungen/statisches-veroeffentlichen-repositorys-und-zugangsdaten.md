@@ -65,7 +65,7 @@ Veröffentlichung nie Ihren Code, Ihre Einstellungen oder `var/` committen.
 | `token:env:<VARIABLE>` | Dasselbe Token aus einer Umgebungsvariablen, etwa in CI | `https://...` |
 | `sshkey:<Name des Geheimnisses>` | Ein Deploy-Key für genau dieses Repository ([SSH-Deploy-Keys](statisches-veroeffentlichen-deploy-keys.md)) | `git@host:owner/repo.git` |
 | `none` | Die Zugangsdaten des Hosts: ein SSH-Agent, ein Credential-Helper oder ein Remote auf diesem Server | jede |
-| `app:<Installation>` | Eine GitHub-App-Installation; kommt mit der GitHub-Anbindung des statischen Veröffentlichens | `https://github.com/...` |
+| `app:<Installation>` | Eine GitHub-App-Installation: ein für jeden Push erstelltes Token der App, die in `GitHubAppId` und `GitHubAppKey` gesetzt ist ([Mit GitHub verbinden](../hilfe/statisches-veroeffentlichen/mit-github-verbinden-token-key-oder-app.md)) | `https://github.com/...` |
 
 ### Ein Token
 
@@ -220,7 +220,9 @@ geschrieben.
 | `is on the branch main, not gh-pages` | Jemand hat im Ordner den Branch gewechselt; `git -C <ordner> checkout gh-pages`, oder `Branch` setzen |
 | `has staged changes that are not the build's` | Im Ordner wurde etwas von Hand vorgemerkt; dort committen oder zurücknehmen |
 | `the secret github_pages_token is not set` | Unter Setup > Geheimnisse anlegen, oder `token:env:VARIABLE` verwenden |
-| `Credential=app:... needs the GitHub integration` | Ein Token oder einen Deploy-Key verwenden, bis die GitHub-Anbindung installiert ist |
+| `Credential=app:... needs the GitHub integration` | PHP fehlt curl oder openssl, oder `[StaticPublishSettings] GitHubAPI=disabled`; ein Token oder einen Deploy-Key verwenden |
+| `the GitHub App installation ... gave no token` | `GitHubAppId` oder `GitHubAppKey` ist nicht gesetzt, der Schlüssel gehört nicht zur App, oder die App ist nicht auf dem Repository installiert |
+| `not pushed: the build is ..., more than the ... GitHub Pages allows a site` | Jeder Push eines GitHub-Pages-Ziels wird gegen die Grenzen von GitHub geprüft; den Build verkleinern (`Assets=referenced`, `ExcludePaths[]`) ([Grenzen](../hilfe/statisches-veroeffentlichen/grenzen-und-bedingungen-von-github-pages.md)) |
 | Push `pending`, `rejected (fetch first)` | Der Branch hat Commits, die nicht von hier veröffentlicht wurden; nicht von Hand auf den Veröffentlichungs-Branch committen |
 | `another process works on the target` | Warten, bis der andere Build oder die andere Veröffentlichung fertig ist |
 

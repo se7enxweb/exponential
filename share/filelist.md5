@@ -3666,7 +3666,7 @@ d3cd9752d1bc4351a0ab0729a558843f  doc/eng-us/branch-overview.md
 9aad8564171ca8a3ebbdf24d0ac878f1  doc/eng-us/doxygen/Doxyfile
 96a0cec80eb773687ca28840ecc67ca1  doc/eng-us/doxygen/empty.html
 ca85100835c4c7bfd63a2a423d377af2  doc/eng-us/examples/README.md
-861a54e1dae12126d19d9bf3dd1734dd  doc/eng-us/examples/commands/README.md
+e6ea9faf27f032599fa14de58f5d8596  doc/eng-us/examples/commands/README.md
 0416e2e6ffd13c1ea43a337855961707  doc/eng-us/examples/commands/accesscheck.md
 47d52e658c8d83c44d5cb6fae172824e  doc/eng-us/examples/commands/addanonymouspublicpolicies.md
 6d35731551f1ea3e02af6513220b0122  doc/eng-us/examples/commands/adddefaultstates.md
@@ -3726,6 +3726,8 @@ fe8029a581c530b848866f3caf04ac77  doc/eng-us/examples/commands/expmigrationpush.
 9e435392f7116c7d5176b7a8bb93901b  doc/eng-us/examples/commands/exprepair.md
 87142964b47a585560d4f7381553a98a  doc/eng-us/examples/commands/expstaticbuild.md
 d16d8a2f908a6c14f85ec2b2679bc842  doc/eng-us/examples/commands/expstaticdiff.md
+433015da4258b3e8ab0310efb6270f92  doc/eng-us/examples/commands/expstaticdns.md
+e6fe1fb5a564c7afe4dee94b2e24c0b5  doc/eng-us/examples/commands/expstaticgithub.md
 c6b4292726f1abf11a30c88b5b72cbcc  doc/eng-us/examples/commands/expstatickeys.md
 a41dc1828c73ac62d9153d3826701e03  doc/eng-us/examples/commands/expstaticpublish.md
 7d89909d53fe920434afe7e8fa665006  doc/eng-us/examples/commands/expstaticpush.md
@@ -5374,7 +5376,7 @@ db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAcce
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
 40ec1883354fc82b907ecae9be7d42a1  doc/eng-us/examples/ini-settings/site/ReauthGroup_delete.md
 14465b5c0056e1a428e985fbbe2dd8ff  doc/eng-us/examples/ini-settings/site/ReauthGroup_export.md
-3bdd02a3ac517f2688ec7dc65849c44f  doc/eng-us/examples/ini-settings/site/ReauthGroup_system.md
+6a74b15dd913cbdccacace3bd1abc5e6  doc/eng-us/examples/ini-settings/site/ReauthGroup_system.md
 044b808894941e825bd5a465a75f4dd7  doc/eng-us/examples/ini-settings/site/ReauthGroup_users.md
 2386f6d38beeb105bc6ea8269c96bca3  doc/eng-us/examples/ini-settings/site/ReauthSettings.md
 2b2b4808ddb2c376e2a4a165f1475bbf  doc/eng-us/examples/ini-settings/site/RegionalSettings.md
@@ -5409,8 +5411,8 @@ e94a792189737daf9faba5d983f30005  doc/eng-us/examples/ini-settings/soap/GeneralS
 1215b8a22acf431ee66a14e1fd3077e5  doc/eng-us/examples/ini-settings/solr/README.md
 bf02cda33caea946f6ca68a305e6dbdd  doc/eng-us/examples/ini-settings/solr/SolrSettings.md
 73d85b9ae40a5d141847ad3e1143a768  doc/eng-us/examples/ini-settings/staticcache/CacheSettings.md
-06fde7a17466366add93088781a2fac1  doc/eng-us/examples/ini-settings/staticcache/README.md
-de86094abe7b1b633bad7e9f497e3928  doc/eng-us/examples/ini-settings/staticcache/StaticPublishSettings.md
+fc0701c4e526da8d8fd931ecd652323c  doc/eng-us/examples/ini-settings/staticcache/README.md
+e52b76cce5e475f0289688df049bf34f  doc/eng-us/examples/ini-settings/staticcache/StaticPublishSettings.md
 ceee2efde7d2da1bf8ef81cf5b22bf32  doc/eng-us/examples/ini-settings/staticcache/Target_example.md
 b7966a1493a890a2069df8cbf21fb616  doc/eng-us/examples/ini-settings/subitems/Defaults_media.md
 69e73f81beb54abd96703666a1a0712d  doc/eng-us/examples/ini-settings/subitems/Defaults_users.md
@@ -6808,7 +6810,7 @@ fe1c6abb641c7c1556cdce16bb86142c  doc/eng-us/features/6.0/smarty-templates.md
 784cbc15d1de89c345943913993e388c  doc/eng-us/features/6.0/soap-client-tls.md
 a46d405f5296bc36483dd00721014cbc  doc/eng-us/features/6.0/sqlite-database.md
 935ec6788e61b1717356146c44579111  doc/eng-us/features/6.0/static-cache-generator.md
-61f00bfdc5a0bed139e0e421753ca970  doc/eng-us/features/6.0/static-publishing.md
+84c7fc64f4bd403123c5cae9c9ce648d  doc/eng-us/features/6.0/static-publishing.md
 afd23090dc06207591ccdb4eb6b91806  doc/eng-us/features/6.0/store-dashboard.md
 9f9bea9c87ecaffffafb0e1ac4361b00  doc/eng-us/features/6.0/string-template-operators.md
 e0fe70a6b6d52d4ec6f29e9cee750368  doc/eng-us/features/6.0/subitems-copy-selected.md
@@ -6955,7 +6957,7 @@ cacbe6383326b6771b72d2dbf36ba63a  doc/eng-us/guides/smarty-templates-troubleshoo
 92f6df3058686a857a9d44516611ea05  doc/eng-us/guides/smarty-templates.md
 569d6daa6eee147300e288b42a976f3a  doc/eng-us/guides/static-publishing-deploy-keys.md
 8a5e11b6f4abd5001f29ba202f81274b  doc/eng-us/guides/static-publishing-history-and-rollback.md
-9c3843e25337eb75bc8413266fcc4c22  doc/eng-us/guides/static-publishing-targets-and-credentials.md
+c167cc8b2d067419d413667a8076d06d  doc/eng-us/guides/static-publishing-targets-and-credentials.md
 0e616e641c81de1e6783d78293e100f6  doc/eng-us/guides/system-information.md
 d035e16cb63dcde8ecc14a1d2866bd78  doc/eng-us/guides/template-conversion.md
 d1b8c66ba0a9cc758c55c45be1bb8bc6  doc/eng-us/guides/template-engines-speed.md
@@ -11578,10 +11580,14 @@ fc23d60d728e81d272031605c23d84a3  doc/eng-us/help/sqli-import/README.md
 7f4dc9243ab6deb0ed1d81bf1851b8b0  doc/eng-us/help/sqli-import/schedules-and-cron.md
 d573b991b0d68701551d0a1541af5eec  doc/eng-us/help/sqli-import/the-import-editor.md
 31561f92b58b4db7a20db82581154906  doc/eng-us/help/sqli-import/upgrading-from-1x.md
-87258c9b4e9d4da1628db3c03abd4bce  doc/eng-us/help/static-publishing/README.md
+798fdb445de01efb11cc8bc1afa8b822  doc/eng-us/help/static-publishing/README.md
 be48efb890664a903b7df285511f74dc  doc/eng-us/help/static-publishing/build-preview-and-publish.md
+d6140291b4a9625b7cf3698c84e04918  doc/eng-us/help/static-publishing/choose-branch-or-github-actions.md
+1c8de571d4fbcd8d10377e3ffed2a49d  doc/eng-us/help/static-publishing/connect-to-github-token-key-or-app.md
+a4395423d74a1b56df6c06a6952160dc  doc/eng-us/help/static-publishing/github-pages-limits-and-terms.md
 a4cd5c7f877ed210e68fd3a93e1337b9  doc/eng-us/help/static-publishing/history-and-rollback.md
-9f60239904d9aada2dc589ded9b952d5  doc/eng-us/help/static-publishing/the-setup-wizard.md
+57442f5a7e70269424248494ff567c11  doc/eng-us/help/static-publishing/the-setup-wizard.md
+2ba0336a8c63084cd8e990f03e80579c  doc/eng-us/help/static-publishing/use-your-own-domain.md
 0e3787840fe0e35f6540a85ea68d8a0d  doc/eng-us/help/static-publishing/who-may-publish-roles-and-policies.md
 0a15a3cdf80e301b1531867ca2882cb8  doc/eng-us/help/students/asking-for-help-and-study-groups.md
 acdb522552b0a53695952072877c4e3e  doc/eng-us/help/students/bugs-you-find-while-learning.md
@@ -13103,10 +13109,11 @@ f26edba2f4dce1ecdfe95d75e31d053e  doc/ger-de/.examples/descriptions/21-legacy-fo
 f070af430a26abc5390d222deec82c54  doc/ger-de/.examples/descriptions/23-migration-yaml-engine-2026-11-01.json
 190d2ccb82fee0178e4a9fce164305df  doc/ger-de/.examples/descriptions/23-static-publishing-2026-11-01.json
 215f79ef66b9b4700276e49a537e9f62  doc/ger-de/.examples/descriptions/24-static-publishing-git-2026-11-01.json
+086b0b0ba9d683190c53d9b95f9af7bf  doc/ger-de/.examples/descriptions/25-static-publishing-github-2026-11-01.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-7b5737d7702074506978cf640e6309b0  doc/ger-de/.paths.json
+8dd273c7eb332205b35271224b6d67ad  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13206,7 +13213,7 @@ e198e604191172c7dfb6193e2b6ba90b  doc/ger-de/anleitungen/rss-feeds.md
 9e388232668d81a22e1a5ec8da626be5  doc/ger-de/anleitungen/sitzungen.md
 5774193668ad84c53845960447ee58ef  doc/ger-de/anleitungen/statische-websites-auf-github-pages-hosten.md
 22181fd2efb68afb99149172011da890  doc/ger-de/anleitungen/statisches-veroeffentlichen-deploy-keys.md
-8e203a6a4d9a9d457d7550ab6a18fe04  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
+7b8d55c5722b685255306d12a5c1ddad  doc/ger-de/anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md
 e0ae991ca3d22de9371e2f23ca4e32c1  doc/ger-de/anleitungen/statisches-veroeffentlichen-verlauf-und-zuruecknehmen.md
 5cde673181ca9270862809be220cfb98  doc/ger-de/anleitungen/systeminformationen.md
 e2353a9acc40010bfb026b399ea3a82d  doc/ger-de/anleitungen/template-engines-geschwindigkeit.md
@@ -13353,7 +13360,7 @@ a0a8364c2f555c71637fa962fe98910d  doc/ger-de/bc/6.0/vertrauenswuerdige-proxys.md
 1f6ee4c60a711526c9cd31416441a991  doc/ger-de/bc/6.0/zugriff-auf-entwuerfe.md
 87bcef5fa01d68c26dfd2cb9e2021c07  doc/ger-de/bc/6.0/zusaetzliche-erweiterungsverzeichnisse.md
 a3dcf55e730c5618d14fc3750baee71e  doc/ger-de/beispiele/README.md
-11d6300ef120bb5849839bc5dbaf2492  doc/ger-de/beispiele/befehle/README.md
+cd0c1bfd0b92e835de3336c41523e5eb  doc/ger-de/beispiele/befehle/README.md
 fb78cc24f28e4e7e208a831fc04c7de3  doc/ger-de/beispiele/befehle/accesscheck.md
 e5b188fae769a1201a72f50d98683190  doc/ger-de/beispiele/befehle/addanonymouspublicpolicies.md
 1b32eaf6f85858eaa99ca055cddccb7a  doc/ger-de/beispiele/befehle/adddefaultstates.md
@@ -13413,6 +13420,8 @@ c6ae12322470cf8abd025f2595c8666d  doc/ger-de/beispiele/befehle/expmigrationrollb
 26d0f974b931b2d2925b580ec98f1fce  doc/ger-de/beispiele/befehle/exprepair.md
 89f09547108c40c471ebaeb30bdf0da3  doc/ger-de/beispiele/befehle/expstaticbuild.md
 d3610361e8f5f816ca6d51ca0d3d08c8  doc/ger-de/beispiele/befehle/expstaticdiff.md
+1de63fecf7d3ddb43106761a4719df48  doc/ger-de/beispiele/befehle/expstaticdns.md
+f69595f8597568a3dbd3c9f9f46d7b4f  doc/ger-de/beispiele/befehle/expstaticgithub.md
 03859ffcf71fc91c9debdcbcd0ad91c3  doc/ger-de/beispiele/befehle/expstatickeys.md
 00a0359f63aa442511b98ae9ec024fc4  doc/ger-de/beispiele/befehle/expstaticpublish.md
 77113325b63f48b609b920f071a3247e  doc/ger-de/beispiele/befehle/expstaticpush.md
@@ -15035,7 +15044,7 @@ c375924685d1a0433a06fea38df0efb6  doc/ger-de/beispiele/ini-einstellungen/site/Re
 2fbb7d1eafbe1175201652854abfc88f  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
 59b347b5bfee84db9ec25e88a7859aae  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_delete.md
 74ac18873a2e62e9bcf84d04b37e9061  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_export.md
-529ef42206fde08f52cc8b181b847c51  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_system.md
+0e8c2fef58f11ed04ce171d18bee8dd8  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_system.md
 c5ae98f612d95fda961d56f0fe48cfdb  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_users.md
 57500e25ab479a6c07a0991b7a79587c  doc/ger-de/beispiele/ini-einstellungen/site/ReauthSettings.md
 0c379efcf6aa89dde09c2380f4be2550  doc/ger-de/beispiele/ini-einstellungen/site/RegionalSettings.md
@@ -15070,8 +15079,8 @@ eabb9e584ae2dc964d7c94eb5c49117e  doc/ger-de/beispiele/ini-einstellungen/soap/Ge
 272d2872646e9284a607ada05ee5d104  doc/ger-de/beispiele/ini-einstellungen/solr/README.md
 b0dc36b499f6bb53381464cc91bb464a  doc/ger-de/beispiele/ini-einstellungen/solr/SolrSettings.md
 e1b3e3f084109414fed2281625e0b949  doc/ger-de/beispiele/ini-einstellungen/staticcache/CacheSettings.md
-2d919258d55a8aa732c9c308cdcaa2cb  doc/ger-de/beispiele/ini-einstellungen/staticcache/README.md
-fe54db07c32b5a53157313bd27787cff  doc/ger-de/beispiele/ini-einstellungen/staticcache/StaticPublishSettings.md
+37a369b7d6094dbb31002303081117a1  doc/ger-de/beispiele/ini-einstellungen/staticcache/README.md
+286acf992afe21eca95f4e153e6e57e5  doc/ger-de/beispiele/ini-einstellungen/staticcache/StaticPublishSettings.md
 74cd4c5339da3edce3cc66375f12dab6  doc/ger-de/beispiele/ini-einstellungen/staticcache/Target_example.md
 19f8469ff6b1b9290ce0160dfbf35547  doc/ger-de/beispiele/ini-einstellungen/subitems/Defaults_media.md
 31681049d4d11f5823b75dc5fcb1b3d2  doc/ger-de/beispiele/ini-einstellungen/subitems/Defaults_users.md
@@ -16261,7 +16270,7 @@ c622d935f4e14bd1f509b16f2c08c311  doc/ger-de/funktionen/6.0/sortierung-der-beste
 0b01e6dac291a44099f8820396143b1e  doc/ger-de/funktionen/6.0/sqlite-datenbank.md
 1c981d8a54aac59d03d7a8849d066c38  doc/ger-de/funktionen/6.0/standard-extension-auslieferung.md
 a4b2787b5f4888427cd0d4441ac16470  doc/ger-de/funktionen/6.0/standardwerte-einer-sauberen-installation.md
-f33963a2f884a487707ff227b20d61a7  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
+0806aee93db8c709807cb18dde7bb407  doc/ger-de/funktionen/6.0/statisches-veroeffentlichen.md
 e3f9f4f40efea9ae4d8d4382d03600b1  doc/ger-de/funktionen/6.0/systemkarte.md
 fec92c66d4f001c693d6267a7591471f  doc/ger-de/funktionen/6.0/template-editor-ueberschreibungen.md
 1e6bfbed65344611a4fb28e0213bf0e1  doc/ger-de/funktionen/6.0/template-operatoren-fuer-rollen-und-richtlinien.md
@@ -19820,9 +19829,13 @@ d5b3cedb5adc84c82b4ea67b02ec1cfd  doc/ger-de/hilfe/sqli-import/aktualisierung-vo
 d229868061c504d4a7675593302ac931  doc/ger-de/hilfe/sqli-import/importe-und-laeufe.md
 038a380a22e33db9548b4cb0d168eae3  doc/ger-de/hilfe/sqli-import/zeitplaene-und-cron.md
 6b37ffe4b4ca1e11f721159fad23bd48  doc/ger-de/hilfe/standard-administratorpasswort.md
-c4dcfbb5b501013b65b284cc02836510  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
+5c0243ebdf59d80fe44814c63b1f26aa  doc/ger-de/hilfe/statisches-veroeffentlichen/README.md
+714eac9c580a616fd3947096075ed1c4  doc/ger-de/hilfe/statisches-veroeffentlichen/branch-oder-github-actions-waehlen.md
 1dcd36f08b79444d7a5a774223eb680f  doc/ger-de/hilfe/statisches-veroeffentlichen/build-vorschau-und-veroeffentlichen.md
-c99ab50041aa199d593370737e68fe59  doc/ger-de/hilfe/statisches-veroeffentlichen/der-einrichtungsassistent.md
+0d86814ec41eab27dfb203bd72773598  doc/ger-de/hilfe/statisches-veroeffentlichen/der-einrichtungsassistent.md
+a9238bb6ea6ccfb9a7e2c7e3e3f9a0a3  doc/ger-de/hilfe/statisches-veroeffentlichen/eigene-domain-verwenden.md
+0fa2ffcc04a9840b414776dc8134c7a0  doc/ger-de/hilfe/statisches-veroeffentlichen/grenzen-und-bedingungen-von-github-pages.md
+33b1dc47123a2cc441a99bec7a3ebb41  doc/ger-de/hilfe/statisches-veroeffentlichen/mit-github-verbinden-token-key-oder-app.md
 6b158c938c9fdad4291c482b53b4d0b4  doc/ger-de/hilfe/statisches-veroeffentlichen/verlauf-und-ruecknahme.md
 d33aee31a89c450d6cf2048147ea92af  doc/ger-de/hilfe/statisches-veroeffentlichen/wer-veroeffentlichen-darf-rollen-und-richtlinien.md
 e5481f5aca9fbf3f22b247f3572cb15b  doc/ger-de/hilfe/suchen.md

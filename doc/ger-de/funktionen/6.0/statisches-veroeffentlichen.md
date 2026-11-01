@@ -102,6 +102,10 @@ Alle Einstellungen stehen in `staticcache.ini`, neben `[CacheSettings]` des stat
 | `WorkDir` | `static-publish` | Wo Builds liegen, unterhalb von `var/<site>/`, sofern nicht absolut |
 | `MaxSiteBytes` | `1000000000` | Der Build warnt oberhalb von 90 % davon (GitHub Pages erlaubt 1 GB pro Website) |
 | `MaxFileBytes` | `100000000` | Der Build warnt bei größeren Dateien (GitHub erlaubt 100 MB pro Datei) |
+| `GitHubAPI` | `enabled` | Die GitHub-Anbindung (Repository, Pages, Domain, Build-Zustand); das Veröffentlichen in den Branch funktioniert auch ohne sie |
+| `GitHubAPIURL` | `https://api.github.com` | Die REST-API von GitHub (`https://<host>/api/v3` für GitHub Enterprise Server) |
+| `GitHubAppId`, `GitHubAppKey` | leer | Die GitHub App von `Credential=app:<installation>`: ihre ID und das Geheimnis mit ihrem privaten Schlüssel |
+| `GitHubOAuthClientId` | leer | Die OAuth App von `exp:static:github signin` (Device Flow) |
 
 `[Target_<id>]` (der mitgelieferte Block `[Target_example]` ist eine Vorlage mit jeder Einstellung; er wird nicht
 gebaut):
@@ -124,7 +128,7 @@ gebaut):
 | `ExcludePaths[]` | leer | Seiten, die nach Pfad ausgelassen werden (`/members/*`); Links darauf gehen zur Live-Website |
 | `ExcludeSections[]` | leer | Seiten, die nach der Sektion ihres Inhalts ausgelassen werden |
 | `Remote`, `Branch`, `Folder` | leer, `gh-pages`, leer | Die Git-Adresse, zu der der Build gepusht wird, ihr Branch, und `docs`, wenn die Website in `/docs` des Branches liegt (der Build wird dann nach `<ordner>/docs` geschrieben) |
-| `Credential` | `none` | Wie sich der Push anmeldet: `token:<geheimnis>`, `token:env:<VARIABLE>`, `sshkey:<geheimnis>`, `app:<installation>` (mit der GitHub-Anbindung) oder `none` |
+| `Credential` | `none` | Wie sich der Push anmeldet: `token:<geheimnis>`, `token:env:<VARIABLE>`, `sshkey:<geheimnis>`, `app:<installation>` (eine GitHub App) oder `none` |
 | `Kind`, `Delivery` | `github-pages`, `branch` | Jetzt gelesen und geprüft, genutzt von der Einrichtung bei GitHub |
 | `Search`, `Forms`, `Triggers[]`, `Schedule`, `Notify[]`, `Webhook` | `disabled`, `hide`, `manual` und `cli`, leer, `failure`, leer | Jetzt gelesen und geprüft, genutzt von späteren Teilen des statischen Veröffentlichens |
 
@@ -168,6 +172,10 @@ viele aufbewahrt werden.
 | `exp:static:push [<ziel>]` | Pusht die Ziele erneut, deren Push gescheitert ist (auch der Cronjob-Teil `staticpublish`) |
 | `exp:static:keys <ziel>` | `--generate` erzeugt den SSH-Deploy-Key des Ziels und zeigt seine öffentliche Hälfte; ohne zeigt es öffentliche Hälfte und Fingerabdruck |
 | `exp:static:status <ziel>` | Repository des Ziels, Zugangsdaten (lesbar oder nicht, nie der Wert), die letzten Läufe und die Seiten; `--limit` |
+| `exp:static:github setup <ziel>` | Richtet das Ziel auf GitHub ein: `--create-repo` (`--public`, der Standard, oder `--private`), GitHub Pages aus dem Branch oder `--pages=actions`, `--domain`, HTTPS außer mit `--no-https`; `--plan` sagt nur, was es tun würde |
+| `exp:static:github status <ziel>` | Das Repository, GitHub Pages (Auslieferung, Domain, HTTPS, Zertifikat) und der letzte Pages-Build, mit dem, was vom Ziel abweicht |
+| `exp:static:github signin --secret=<name>` | Meldet sich bei GitHub an (Device Flow einer OAuth App) und bewahrt das Token als Geheimnis für `Credential=token:<name>` auf |
+| `exp:static:dns <domain>` | Prüft die A-, AAAA- und CNAME-Einträge einer eigenen Domain gegen GitHub Pages und listet die zu setzenden Einträge auf; `--owner` |
 
 Jeder Befehl nimmt `--format=json` und gibt dann ein JSON-Dokument aus, Schema `exp-static/1`. Die Exit-Codes sind die
 von `exp:upgrade`: 0 erledigt, 1 fehlgeschlagen, 2 Aufruffehler, 3 Datenbank nicht erreichbar, 4 interner Fehler. Die
@@ -176,7 +184,8 @@ erzeugten Seiten: [exp:static:build](../../beispiele/befehle/expstaticbuild.md),
 [exp:static:targets](../../beispiele/befehle/expstatictargets.md),
 [exp:static:publish](../../beispiele/befehle/expstaticpublish.md), [exp:static:rollback](../../beispiele/befehle/expstaticrollback.md),
 [exp:static:push](../../beispiele/befehle/expstaticpush.md), [exp:static:keys](../../beispiele/befehle/expstatickeys.md),
-[exp:static:status](../../beispiele/befehle/expstaticstatus.md).
+[exp:static:status](../../beispiele/befehle/expstaticstatus.md), [exp:static:github](../../beispiele/befehle/expstaticgithub.md),
+[exp:static:dns](../../beispiele/befehle/expstaticdns.md).
 
 ## Veröffentlichen nach Git
 
@@ -201,6 +210,40 @@ Push-Zustand, wer, wann), und die Seiten der letzten Veröffentlichung stehen in
 Anleitungen: [Repositorys und Zugangsdaten](../../anleitungen/statisches-veroeffentlichen-repositorys-und-zugangsdaten.md),
 [Verlauf und Zurücknehmen](../../anleitungen/statisches-veroeffentlichen-verlauf-und-zuruecknehmen.md),
 [SSH-Deploy-Keys](../../anleitungen/statisches-veroeffentlichen-deploy-keys.md).
+
+## GitHub
+
+Für ein Ziel mit `Kind=github-pages` und einer GitHub-Adresse nutzt das statische Veröffentlichen die REST-API von
+GitHub, hinter einer Funktionsprüfung (`expStaticGitHub::available()`: curl und openssl von PHP sowie
+`GitHubAPI=enabled`). Es meldet sich mit den eigenen Zugangsdaten des Ziels an, einem Token (`token:`) oder einer
+Installation einer GitHub App (`app:`), die nur im Header `Authorization` gesendet werden. Ein Deploy-Key oder `none`
+pusht nur.
+
+- **Einrichtung** (`exp:static:github setup` und **Auf GitHub einrichten** in Schritt 4 des Assistenten): legt das
+  Repository an, öffentlich, sofern nicht anders gewünscht, und leer, für das Konto oder eine Organisation; schaltet
+  GitHub Pages aus dem Branch und Ordner oder aus GitHub Actions ein; setzt die eigene Domain und erzwingt HTTPS,
+  sobald GitHub sein Zertifikat hat. Im Audit als `system.staticpublish.target` mit dem Verb `github-setup`.
+- **Zustand** (`exp:static:github status` und der Kasten **Auf GitHub** in Verlauf und Vorschau): das Repository,
+  GitHub Pages und der letzte Pages-Build (built, building, queued, failed), mit dem, was von den Einstellungen des
+  Ziels abweicht.
+- **GitHub Actions**: Mit `Delivery=actions` (oder `Extras[]=workflow`) schreibt der Build
+  `.github/workflows/static-publish-pages.yml`, der die gepushten Dateien unverändert bereitstellt. Dafür muss der
+  Build an der Wurzel des Branches liegen, und ein Token braucht die Berechtigung Workflows, um ihn zu pushen.
+- **Grenzen**: Jeder Push eines GitHub-Pages-Ziels wird zuerst geprüft. Ein Build über `MaxSiteBytes` oder mit einer
+  Datei über `MaxFileBytes` wird nicht gepusht (der Push bleibt pending); über 90 % der Grenze für die Website, eine
+  Datei über 50 MB und ein privates Repository sind Warnungen.
+- **GitHub App**: `Credential=app:<installation>` meldet sich mit einem Installations-Token der App an, die in
+  `GitHubAppId` und `GitHubAppKey` gesetzt ist, erstellt mit einem JWT, das mit dem privaten Schlüssel der App
+  signiert ist, und für den Prozess aufbewahrt, bis es abläuft; es gelangt wie ein Token über `GIT_ASKPASS` zu git.
+- **OAuth**: `exp:static:github signin` meldet einen Benutzer mit dem Device Flow einer OAuth App an und bewahrt das
+  Token im Geheimnisspeicher auf.
+- **DNS**: `exp:static:dns` und **DNS prüfen** in Schritt 6 vergleichen die Einträge einer eigenen Domain mit den
+  Adressen von GitHub Pages (`expStaticDnsCheck`).
+
+Hilfe: [Mit GitHub verbinden](../../hilfe/statisches-veroeffentlichen/mit-github-verbinden-token-key-oder-app.md),
+[Branch oder GitHub Actions](../../hilfe/statisches-veroeffentlichen/branch-oder-github-actions-waehlen.md),
+[Eigene Domain verwenden](../../hilfe/statisches-veroeffentlichen/eigene-domain-verwenden.md),
+[Grenzen und Bedingungen von GitHub Pages](../../hilfe/statisches-veroeffentlichen/grenzen-und-bedingungen-von-github-pages.md).
 
 ## Datenschutz
 
