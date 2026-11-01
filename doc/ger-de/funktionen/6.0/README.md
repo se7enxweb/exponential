@@ -185,6 +185,8 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Der Geheimnisspeicher: Passwörter und Schlüssel der Werkzeuge, verschlüsselt, nach Namen](geheimnisspeicher.md)
 - [Content Security Policy](content-security-policy.md)
 - [Sichere Weiterleitungen und „zurück, woher Sie gekommen sind“](sichere-weiterleitungen.md)
+- [Korrekturen aus den Forks von Opencontent und Mugo Web: Grenzen, einzeilige Logs und sicherere Standards](korrekturen-aus-den-legacy-forks.md):
+  `MaxPathDepth`, einzeilige `eZLog`-Einträge, REST-Listener, die Upload-Sperrliste, das `HardLimit` für Teilbäume
 - [„Dieses Formular ist abgelaufen“: Ablehnungen durch das Formular-Token](seite-abgelaufenes-formular.md)
 - [SOAP-Aufrufe über HTTPS: Zertifikate einer internen Zertifizierungsstelle](soap-client-tls.md)
 - [Ihr Passwort ändern](moderne-passwortaenderung.md)

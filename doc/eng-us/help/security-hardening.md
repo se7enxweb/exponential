@@ -159,6 +159,10 @@ script in the browser (SVG, HTML), or a huge or malformed file that exhausts the
 - SVG files are never stored as uploaded: `expSvgSanitizer` keeps only what is known to be safe, and the stored file
   is served with headers that stop it from running anything ([SVG images](../bc/6.0/svg-images.md)).
 - Package uploads need the `package` policies, and `ManagedByDeployment` blocks them.
+- The binary file, media and image datatypes refuse every extension a web server may run as code
+  (`file.ini [FileSettings] FileExtensionBlackList[]`: `php` to `php8`, `phtml`, `pht`, `phps`, `phar`, `phpt`,
+  `pgif`, `shtml`, `cgi`, `pl`, `asp`, `aspx`, `jsp`, `htaccess`), compared in lower case
+  ([Fixes from the Opencontent and Mugo Web forks](../features/6.0/legacy-fork-fixes.md#uploads-a-longer-list-of-refused-file-extensions)).
 
 **Harden.** Keep the rewrite rules current after every upgrade (`.htaccess_root`, or the derived nginx block;
 `./console exp:setup:htaccess` shows the diff between your `.htaccess` and the shipped rules and exits 1 while they

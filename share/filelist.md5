@@ -3342,7 +3342,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-7eb9e8c28a5ca4f683cdd8122c1e5a60  doc/changelogs/6.0/6.0.15.md
+9418e0c5c746299a6a0442ff1083ed7b  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -3510,6 +3510,7 @@ ca5c128dd8208e512e824d14b875859f  doc/eng-us/bc/6.0/ini-save-file-permissions.md
 24d7e5caa496255e38881fcd63bbee64  doc/eng-us/bc/6.0/installer-crontab.md
 3660f38720e7641629091aba0a56e2b5  doc/eng-us/bc/6.0/kernel-services.md
 68f4f3e4160b983bbac0e3414f0baeec  doc/eng-us/bc/6.0/kickstartercli.md
+5ca820d5c8967133b8ad17d9f5876d7c  doc/eng-us/bc/6.0/legacy-fork-fixes.md
 e507882afaa6ee338610d13740239af1  doc/eng-us/bc/6.0/locations-tab-paging-and-sorting.md
 55e1c907228e8d0b48be0e9f4da11b39  doc/eng-us/bc/6.0/love/API.md
 85a6069ca7ea137e100f7e74cd960b0e  doc/eng-us/bc/6.0/love/CHANGELOG.md
@@ -4695,7 +4696,7 @@ a3feeb41067b4f7c778c11ddf26f5597  doc/eng-us/examples/ini-settings/ezjscore-ezjs
 3a141d7897f326ceed2bc54119e7931c  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_expsubitems.md
 f60c2fb6dc4c457eff39b48bd99188b1  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezajaxuploader.md
 37c89b0d49ef65557ebd1890b1268155  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjsc.md
-8a2e83dd52e66b27018d5361e8aa8648  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjscnode.md
+2c099c1cb0c829177687068a5e26bf08  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjscnode.md
 09d1b9b28cd962b4fafc4d7ebf8e6d34  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezjsctemplate.md
 f93e118939721fe60aa9ee4c55c4c0e3  doc/eng-us/examples/ini-settings/ezjscore-ezjscore/ezjscServer_ezpublishingqueue.md
 304b20a014dd79ce2095eaa3120a3684  doc/eng-us/examples/ini-settings/ezoe-ezoe/EditorLayout.md
@@ -4723,7 +4724,7 @@ de4e6a1e90d57005a552a667d9c3a0bd  doc/eng-us/examples/ini-settings/fetchalias/ne
 63f3ff979945562b65e0b97b1b026855  doc/eng-us/examples/ini-settings/file/BinaryFileSettings.md
 3922dca96b568576c37e05087ad92b3e  doc/eng-us/examples/ini-settings/file/ClusterEventsSettings.md
 888b30231a3094e437e290ed4ddbb3eb  doc/eng-us/examples/ini-settings/file/ClusteringSettings.md
-d34e3776a762647357e25ff1b13fe88c  doc/eng-us/examples/ini-settings/file/FileSettings.md
+a0907ff3dc390295c137f9843e5f8c51  doc/eng-us/examples/ini-settings/file/FileSettings.md
 bf32564c7a1a92b4de72ca42c5a07e96  doc/eng-us/examples/ini-settings/file/PassThroughSettings.md
 3baf29e40ee836d3a84f5bffff6100bc  doc/eng-us/examples/ini-settings/file/README.md
 3eab3b076ded343b9c9f94f0bbfa040b  doc/eng-us/examples/ini-settings/file/eZDFSClusteringSettings.md
@@ -5242,7 +5243,7 @@ d98157d9fa323471a1d85edbd71dadbb  doc/eng-us/examples/ini-settings/site/PasskeyS
 026229cc329f932cef3703538e24c34b  doc/eng-us/examples/ini-settings/site/PasswordSettings.md
 db568a7c6a790ae47b375a22aff291ab  doc/eng-us/examples/ini-settings/site/PortAccessSettings.md
 3714ba86f9deca30858e35271af055af  doc/eng-us/examples/ini-settings/site/ProxySettings.md
-e2ccd37aef66d6bcd1f21b2d317bc303  doc/eng-us/examples/ini-settings/site/README.md
+abaa9cb32965512e1e1ead857063a3e5  doc/eng-us/examples/ini-settings/site/README.md
 08b294507b813f03bbb995305d430031  doc/eng-us/examples/ini-settings/site/RSSSettings.md
 4d12fc781fc7be917617fa4f3d165142  doc/eng-us/examples/ini-settings/site/ReauthGroup_account.md
 abc8f5ba626146a4e03e45d2cd0a21c8  doc/eng-us/examples/ini-settings/site/ReauthGroup_content.md
@@ -5270,7 +5271,7 @@ d27566e784eeb0553e0f193084e84431  doc/eng-us/examples/ini-settings/site/SiteData
 654d9b385f91213ac62e3bd340c88539  doc/eng-us/examples/ini-settings/site/TemplateSettings.md
 6923dbcc08a6b096908508291722e55b  doc/eng-us/examples/ini-settings/site/TimeZoneSettings.md
 f71ee5c2e368a56f3de8ca5747acc89e  doc/eng-us/examples/ini-settings/site/TipAFriend.md
-79013d607c265d5f841acddc0eaf32ca  doc/eng-us/examples/ini-settings/site/URLTranslator.md
+fe998451ec3b99d9c71b6a5fcf636c01  doc/eng-us/examples/ini-settings/site/URLTranslator.md
 daa5454492380b74d1f3f81dc57185f5  doc/eng-us/examples/ini-settings/site/UnitSettings.md
 74dfa7874556808e069f7144e2f09302  doc/eng-us/examples/ini-settings/site/UserSessionSettings.md
 7d2f92817b6ce3b446c6ea1113894aee  doc/eng-us/examples/ini-settings/site/UserSettings.md
@@ -6481,7 +6482,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-c2cfcb5ff8331cde915fdd3850a59e5f  doc/eng-us/features/6.0/README.md
+963c82c8558b073f125d6946ae624fbb  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6590,6 +6591,7 @@ c8c732f08abfb2593fd5f7599f60905f  doc/eng-us/features/6.0/install-in-one-command
 ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-removal.md
 4c96dc340d9978f9df05c778f26cd192  doc/eng-us/features/6.0/kickstarter-cli.md
 04a373a7481b984288eb74d3f580269d  doc/eng-us/features/6.0/legacy-bridge.md
+dc5174c6c6658955b28fe63f7b7a8047  doc/eng-us/features/6.0/legacy-fork-fixes.md
 4363ad61fc0af57c4a88abd40393b9f6  doc/eng-us/features/6.0/log-rotation.md
 2f7a4a1e5919f2dabe7304e0e9855d68  doc/eng-us/features/6.0/log-viewer.md
 3bbfd911c86b7d7853c0838a963d01f4  doc/eng-us/features/6.0/mail-layout.md
@@ -11208,7 +11210,7 @@ a5222d6181149b9dc971b6b0e7f50ec8  doc/eng-us/help/resellers/sales/naming-and-bra
 b00714130b76fb0c884c9dc788b5f665  doc/eng-us/help/resellers/sales/pre-sales-questions-and-answers.md
 a420b17ab5dabd8778223cc4aae2b073  doc/eng-us/help/resellers/sales/sales-process.md
 394d650a8081ea6aa3f781a2fec01087  doc/eng-us/help/searching.md
-6f04fc8024c664abcb52a7ee78895fa1  doc/eng-us/help/security-hardening.md
+a5c7ce5b15c58ce20085b4f8951ef35b  doc/eng-us/help/security-hardening.md
 667c277cee294d069affee6d78b8ad88  doc/eng-us/help/setting-up-editor-and-admin-accounts.md
 633930576e562b5c2200cd0a1ae93a7c  doc/eng-us/help/site-packages/README.md
 91942493ef5ce934473bb7e67e280b77  doc/eng-us/help/site-packages/admin-gui/README.md
@@ -11326,7 +11328,7 @@ ca5825b0a98f97cea64427e30481cdea  doc/eng-us/help/software-engineers/persistence
 46e7b9ae43c242f2e89002bc78d2818b  doc/eng-us/help/software-engineers/request-lifecycle.md
 c127569cdfbcfa6b2aa03f997c2ea00b  doc/eng-us/help/software-engineers/scaling-and-clustering.md
 af3f16605732aeb2a3d7209bf86c79c6  doc/eng-us/help/software-engineers/schema-changes-and-migrations.md
-61aa763224845fe39255b84f1381e4c4  doc/eng-us/help/software-engineers/security-engineering-overview.md
+1ac6acc88060ee9661993de50f2fdd32  doc/eng-us/help/software-engineers/security-engineering-overview.md
 646b822e9125dbcb27437f141b008929  doc/eng-us/help/software-engineers/security-review-checklist.md
 a13eb33997c7242bca855531bfa337af  doc/eng-us/help/software-engineers/siteaccesses-and-configuration.md
 980423ea43e74f5d276e13e85a0eb89e  doc/eng-us/help/software-engineers/software-engineer-faq.md
@@ -12841,10 +12843,10 @@ c236d7bae15abdc10e2882296b38e818  doc/eng-us/translation-waves.md
 fe7287e9e15faec9246eaa532ab45c7e  doc/ger-de/.dirnames.json
 25867792cc1baa4f05cba3bbd13a860f  doc/ger-de/.examples/descriptions/01-command-accesscheck.json
 0e81113b726d51b19af7e2cfe986c37e  doc/ger-de/.examples/descriptions/02-command-explogs-file.json
-de686b8d700cc7766d927e28537101f7  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
+aa5ab6296e9da39ebdc0cd0e51c8a6c2  doc/ger-de/.examples/descriptions/03-command-mailconsent-email.json
 12320733ddd4b1155b033ddcff05c221  doc/ger-de/.examples/descriptions/04-ini-settings-admininterface-ini-additionalmenusettings-.json
 37ce091c6d6540fd6587386c87562cbe  doc/ger-de/.examples/descriptions/05-ini-settings-content-ini.json
-decce9bb06ae705823bfd0e79ffbc52e  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
+15e277a9117ef5100823e7974ba96698  doc/ger-de/.examples/descriptions/06-ini-settings-debugbar-ini.json
 165a26352e7de5255bc58002930bc22d  doc/ger-de/.examples/descriptions/07-ini-settings-image-ini.json
 e1f333e7548632bd3736756fa7fcdf14  doc/ger-de/.examples/descriptions/08-ini-settings-package-ini.json
 b09583bc5cb22d2c91a42a2ec393f30a  doc/ger-de/.examples/descriptions/09-ini-settings-site-ini.json
@@ -12866,10 +12868,11 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 94bc98a826c7352b502724c0c179fb24  doc/ger-de/.examples/descriptions/19-graphql-api-starter-2026-10-30.json
 4b3123282c26437cef7e45cb65269a22  doc/ger-de/.examples/descriptions/20-editor-role-class-sets-2026-10-30.json
 3e5f3c6f2f15b756e23860af52d46bf0  doc/ger-de/.examples/descriptions/20-graphql-api-realtime-2026-10-30.json
+f26edba2f4dce1ecdfe95d75e31d053e  doc/ger-de/.examples/descriptions/21-legacy-fork-fixes-2026-10-31.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-043d007ba0f56c782007269bad4d5a34  doc/ger-de/.paths.json
+510dfb0444e706a9f9ba46ae7eb19a01  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
@@ -13029,6 +13032,7 @@ f7afe9eda5b02d1cb4e810857a818dd0  doc/ger-de/bc/6.0/inhaltsjobs.md
 4e809d5414ab035953f3b8ebe675aee7  doc/ger-de/bc/6.0/kernel-dienste.md
 197db39abf7f4ea2eeb9a260a803daee  doc/ger-de/bc/6.0/kickstartercli.md
 6eb74a075ecaeb09a213b3adc9e697e8  doc/ger-de/bc/6.0/konsole.md
+ff3ac9f50c3e4b1237a93c4431b08964  doc/ger-de/bc/6.0/korrekturen-aus-den-legacy-forks.md
 979fddf6ff7f1e318735008a12c2afbd  doc/ger-de/bc/6.0/layouts.md
 e701feff32d7e37a85a19231c4799fe1  doc/ger-de/bc/6.0/lesezeichen-fuer-systemseiten.md
 a004e13c4ed73564f977fa433d7563da  doc/ger-de/bc/6.0/lesezeichenordner.md
@@ -14192,7 +14196,7 @@ f07d483b99e4cf2d715ef278e75b3f8d  doc/ger-de/beispiele/ini-einstellungen/ezjscor
 938cbc138399371d82ac3acc89d57a74  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_expsubitems.md
 163e7faea7cee4df60d5f819a7815c63  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezajaxuploader.md
 6c2dc67dde520d5c5f95b8c58f12eff4  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjsc.md
-9604b0b89c478ec39175dea28ad49c95  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjscnode.md
+3896b2281e9e1223cf1d95cdf3a0ce3b  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjscnode.md
 76a6e67471204560cb60a1e2f0517e62  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezjsctemplate.md
 1512f1ef835eedaf69f918813fc72a4c  doc/ger-de/beispiele/ini-einstellungen/ezjscore-ezjscore/ezjscServer_ezpublishingqueue.md
 fef61a724441c543a428758f8582b550  doc/ger-de/beispiele/ini-einstellungen/ezoe-ezoe/EditorLayout.md
@@ -14220,7 +14224,7 @@ aade68517d55cb92cdd456240d80bbf0  doc/ger-de/beispiele/ini-einstellungen/fetchal
 7a6d15afb89a071779b7f20885d44657  doc/ger-de/beispiele/ini-einstellungen/file/BinaryFileSettings.md
 208d854d1e1feae55f4c61926399341f  doc/ger-de/beispiele/ini-einstellungen/file/ClusterEventsSettings.md
 185780f16b3884339e8d4a76d02fa862  doc/ger-de/beispiele/ini-einstellungen/file/ClusteringSettings.md
-661ae32d3dc0732b356256d3aab02184  doc/ger-de/beispiele/ini-einstellungen/file/FileSettings.md
+4cfa02b7321d3d1e456c8d0910f2f198  doc/ger-de/beispiele/ini-einstellungen/file/FileSettings.md
 c7e0a65f64bad5e826e902417cefbc7d  doc/ger-de/beispiele/ini-einstellungen/file/PassThroughSettings.md
 c417cc736ef99d340cf8f6d178c5584c  doc/ger-de/beispiele/ini-einstellungen/file/README.md
 a00ea5dfccec576bed611262d7b8b0ca  doc/ger-de/beispiele/ini-einstellungen/file/eZDFSClusteringSettings.md
@@ -14739,7 +14743,7 @@ e3514edc7a2f05db725c62732e108c22  doc/ger-de/beispiele/ini-einstellungen/site/Li
 3643636c3de654ce6a33825846ba893d  doc/ger-de/beispiele/ini-einstellungen/site/PasswordSettings.md
 9f62066afe0d2e372c41d004b3e5c85f  doc/ger-de/beispiele/ini-einstellungen/site/PortAccessSettings.md
 b55d3fdf378e1bcdc3be626fc28ece22  doc/ger-de/beispiele/ini-einstellungen/site/ProxySettings.md
-801f9eb9f7505eb869fe49478c49c46c  doc/ger-de/beispiele/ini-einstellungen/site/README.md
+2176de531043ea0c88ede4ecdd50dd4d  doc/ger-de/beispiele/ini-einstellungen/site/README.md
 7da3655a4fc717865edb47570dea16fd  doc/ger-de/beispiele/ini-einstellungen/site/RSSSettings.md
 c375924685d1a0433a06fea38df0efb6  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_account.md
 2fbb7d1eafbe1175201652854abfc88f  doc/ger-de/beispiele/ini-einstellungen/site/ReauthGroup_content.md
@@ -14767,7 +14771,7 @@ b138b048f1e956c000627dc11e780a23  doc/ger-de/beispiele/ini-einstellungen/site/Te
 bcb6713d24d49dd03ac873409de1948f  doc/ger-de/beispiele/ini-einstellungen/site/TemplateSettings.md
 bd2cdec549f737c40f2e666e9bb56eb8  doc/ger-de/beispiele/ini-einstellungen/site/TimeZoneSettings.md
 20b486bb370d31a7d01543c720859c7d  doc/ger-de/beispiele/ini-einstellungen/site/TipAFriend.md
-fa3c91c1d428a3a3de6c3d51dad9cb4a  doc/ger-de/beispiele/ini-einstellungen/site/URLTranslator.md
+908abb0010fa65d25e1b832461545a48  doc/ger-de/beispiele/ini-einstellungen/site/URLTranslator.md
 46e156bc589500349c2054c9ac53788d  doc/ger-de/beispiele/ini-einstellungen/site/UnitSettings.md
 74b63220a9edeaeb7bebb0d6539c90e5  doc/ger-de/beispiele/ini-einstellungen/site/UserSessionSettings.md
 5e3fb4200faf756deabd4c67be23bf1f  doc/ger-de/beispiele/ini-einstellungen/site/UserSettings.md
@@ -15775,7 +15779,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-051dc91792fcfdd19ccebde5ed19dc0d  doc/ger-de/funktionen/6.0/README.md
+7b34052c8c0ff763e4e8186e8014aa2f  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -15890,6 +15894,7 @@ bc213bb8f5033a0ce486c9bfbe9fa047  doc/ger-de/funktionen/6.0/installationsname-in
 e92e4911d0e5f8a9b081e9373ea8d5d4  doc/ger-de/funktionen/6.0/jquery4-und-entfernung-von-yui.md
 3065fbb8dc6cd3235d8740c0b74bd4e9  doc/ger-de/funktionen/6.0/kickstarter-cli.md
 a23c82e7bfd15faed6bd3072d4203e4e  doc/ger-de/funktionen/6.0/klassenattribute-an-den-rand-verschieben.md
+943d439434d58de8e76d73c0a7f0be00  doc/ger-de/funktionen/6.0/korrekturen-aus-den-legacy-forks.md
 c9de4471d5c29a61f80d16650e22b29a  doc/ger-de/funktionen/6.0/ladereihenfolge-der-extensions.md
 2c4d56fdc633b7a35390ebf1c5c06270  doc/ger-de/funktionen/6.0/laendergruppen.md
 68af730977a4562fde48dd55a371e5ad  doc/ger-de/funktionen/6.0/legacy-bridge.md
@@ -19375,7 +19380,7 @@ c3b56811a2dda0b6752fd5a0de6b887a  doc/ger-de/hilfe/seitenpakete/sevenx-multisite
 b0200212398d100a07f395dcecc75e21  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/siteaccesses-und-sprachen-von-sevenx-multisite.md
 3c150880ec051e7faefd02da69bd082b  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/was-sie-nach-der-installation-von-sevenx-multisite-haben.md
 27f30d5a9f89ed9593b599f2582c1bdc  doc/ger-de/hilfe/seitenpakete/sevenx-multisite/woraus-sevenx-multisite-besteht.md
-e70ffd1c527dbdf60659a973cea6c637  doc/ger-de/hilfe/sicherheitshaertung.md
+9863e064d2772cdb82b6ea0cf82c4e8f  doc/ger-de/hilfe/sicherheitshaertung.md
 c702aca91ab21f76627d538e4011e007  doc/ger-de/hilfe/softwareingenieure/abhaengigkeitsverwaltung-mit-composer.md
 476e52a10fdca789926b377d7d701538  doc/ger-de/hilfe/softwareingenieure/anwendungsserver.md
 f6d7722fd05bb14f5012d2a44023f56f  doc/ger-de/hilfe/softwareingenieure/api-design-rest-ezjscore-headless.md
@@ -19415,7 +19420,7 @@ ad4fd9db0ff546d028af0f9daef48b50  doc/ger-de/hilfe/softwareingenieure/portables-
 3eab4fd6c1427d2a174c9e166efe7baf  doc/ger-de/hilfe/softwareingenieure/release-engineering.md
 8a5f8d39c43904ed91523e9b760bfa5f  doc/ger-de/hilfe/softwareingenieure/richtlinie-zur-rueckwaertskompatibilitaet.md
 b3dc678b5f729cc4db30d145683780d4  doc/ger-de/hilfe/softwareingenieure/schemaaenderungen-und-migrationen.md
-d691687e273e9332058473aeffa18186  doc/ger-de/hilfe/softwareingenieure/sicherheitstechnik-im-ueberblick.md
+f37312fa037795c29fe53fd2c10d925a  doc/ger-de/hilfe/softwareingenieure/sicherheitstechnik-im-ueberblick.md
 45828582a8d337ebaa4df01b28896d23  doc/ger-de/hilfe/softwareingenieure/siteaccesses-und-konfiguration.md
 1c08e17f67c2f7772e277a1c9fe6db84  doc/ger-de/hilfe/softwareingenieure/skalierung-und-clustering.md
 4a2b91f59e9e59d52bb18bea714b5ab8  doc/ger-de/hilfe/softwareingenieure/softwareingenieure-hier-beginnen.md

@@ -2,14 +2,14 @@
 title: site.ini [URLTranslator]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, ScriptFallbackTransformationGroup, DecodeOnce ..."
-keywords: Einstellung, site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, ScriptFallbackTransformationGroup, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
+summary: "Die Einstellungen von [URLTranslator] in site.ini: Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth, ScriptFallbackTransformationGroup ..."
+keywords: Einstellung, site.ini, URLTranslator, INI, setting, Translation, TranslatableSystemUrls, LoadOnPartialAliasPath, WordSeparator, TransformationGroup, UrlAliasNameLimit, MaxPathDepth, ScriptFallbackTransformationGroup, DecodeOnce, TrailingCleanup, WildcardTranslation, MaximumWildcardIterations, NodeTranslation, FilterClasses
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [URLTranslator]
 
-Der Block `[URLTranslator]` von `settings/site.ini`, mit 13 Einstellung(en).
+Der Block `[URLTranslator]` von `settings/site.ini`, mit 14 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -112,6 +112,21 @@ Standard: `255`.
 # settings/override/site.ini.append.php
 [URLTranslator]
 UrlAliasNameLimit=255
+*/ ?>
+```
+
+## MaxPathDepth
+
+> Die tiefste URL (Anzahl der Pfadelemente), die als URL-Alias nachgeschlagen wird. Jedes Element ist ein Join von  
+> ezurlalias\_ml; eine tiefere URL ist kein Alias und ergibt "nicht gefunden" ohne Abfrage.  
+
+Standard: `30`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[URLTranslator]
+MaxPathDepth=30
 */ ?>
 ```
 

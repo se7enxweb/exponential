@@ -215,6 +215,8 @@ nginx with PHP-FPM keep working as before.
 - [The secret store: passwords and keys of the tools, encrypted, by name](secret-store.md)
 - [Content Security Policy](content-security-policy.md)
 - [Safe redirects and "back to where you came from"](safe-redirects.md)
+- [Fixes from the Opencontent and Mugo Web forks: limits, one-line logs and safer defaults](legacy-fork-fixes.md):
+  `MaxPathDepth`, one-line `eZLog` entries, REST listeners, the upload blacklist, the subtree `HardLimit`
 - ["This form has expired": form token refusals](form-expired-page.md)
 - [SOAP calls over HTTPS: certificates of an internal CA](soap-client-tls.md)
 - [Changing your password](modern-password-change.md)
