@@ -44,7 +44,9 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **cache**: stored results that make pages faster; Exponential has many (content view, template, INI, HTTP, static, SQL query, response). [Cache control](bc/6.0/cache-console.md), [Operating a site](guides/operating-a-site.md).
 - **cache block**: a template tag that caches the markup inside it; the Valkey variant is `{valkey-block}`. [Redis and Valkey caches](features/6.0/extensions/sevenx_valkey_cache.md).
 - **cache variant key (UI switch)**: the short key (`language-ger-DE`) that keeps caches built with a user's **UI switch** choice apart: `{cache-block}`, the content view cache and compiled templates; empty when nothing is chosen, so no cache name changes. [UI switch provider API](bc/6.0/ui-switch.md#the-cache-variant-key).
+- **caption**: a safe point of an installation (the database dump, the `var/` storage, `settings/override`, the commits of the code) that `exp:upgrade` and every **migration** run take, and that a rollback restores. [Rollback and captions](guides/migrations-rollback-and-captions.md), [Upgrading with the console](guides/upgrading-with-the-console.md#captions).
 - **changelog**: the release notes of a version, in Added, Updated, Removed and Renamed lines. [6.0.15](../changelogs/6.0/6.0.15.md), [extensions](../changelogs/extensions/README.md).
+- **checksum guard**: the refusal of a **migration** recorded as done whose file has changed since; `--force --reason=<text>` accepts the change. [Migrations](guides/migrations.md#the-record).
 - **chronicle**: the month by month story of the history. [History](history/README.md).
 - **CI (continuous integration)**: the GitHub Actions workflows: `phpunit.yml` runs the PHPUnit suites on PHP 8.1 to 8.5, `quality.yml` checks syntax (also on PHP 8.0), the file manifest, commit messages, code style and PHPStan for every change. [Quality checks](features/6.0/quality-checks.md), [Continuous integration](specifications/6.0/continuous-integration.md).
 - **cjw_newsletter**: a complete newsletter system. [cjw_newsletter](features/6.0/extensions/cjw_newsletter.md).
@@ -174,6 +176,8 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **mail category**: the kind a mail belongs to (`content`, `newsletter`, `security`, ...), declared with `eZMail::setCategory()`; essential categories are always sent, optional ones only to people who turned them on. [Developer's guide](guides/mail-preferences-developer.md).
 - **mail gate**: the check in `eZMailTransport::send()` that every mail passes: it blocks optional mail people did not ask for and adds the footer and the unsubscribe headers. [Specification](specifications/6.0/mail-preferences.md).
 - **maintenance mode**: takes the site offline with a notice (`exp:maintenance on|off|status`). [Maintenance mode](features/6.0/maintenance-mode.md).
+- **migration**: a change to an installation (a table, content, a role, a setting) in a file `YYYYMMDDHHMMSS_name.php` under version control, applied once to every installation of a site in the same order (`exp:migration:migrate`). [Migrations](guides/migrations.md), [the tutorial](guides/migrations-tutorial.md).
+- **migrations repository**: the git repository (the site's own, or a separate one) a **migration run** commits its status file and run log to, tags and pushes. [The migrations repository](guides/migrations-repositories.md).
 - **module**: a set of **views** behind a URL such as `content/view`; extensions can add or override modules. [Extension module override](features/6.0/extension-module-override.md).
 - **MongoDB**: a supported database. [MongoDB](features/6.0/mongodb-database-support.md).
 - **multi-node edit**: editing several items in one form. [Editing several items at once](bc/6.0/multi-node-edit.md).
@@ -226,7 +230,10 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **request rule**: a rule in `requestrules.ini` that allows or refuses a request by module, view and URL. [Request rules](features/6.0/request-rules.md), [securing content/view/full](bc/6.0/view_full_security.md).
 - **response cache (Velocity)**: the server's cache of rendered pages. [Response cache](features/6.0/velocity-response-cache.md).
 - **role**: a named set of **policies** assigned to users and groups. [Roles and policies in order](features/6.0/role-policy-order.md); its users and groups: [role assignment paging](features/6.0/role-assignment-paging.md).
+- **rollback (migration)**: taking migrations back: a run by restoring its pre **caption**, one migration with its `down()`, or any caption for experts (`exp:migration:rollback`). [Rollback and captions](guides/migrations-rollback-and-captions.md).
 - **RSS**: feeds exported and imported by the RSS module; see also **syndication**. [RSS, podcast and feed list](features/6.0/rss-podcast-and-feed-list.md).
+- **run (migration run)**: one call of `exp:migration:migrate --apply`, with its own run id (`YYYYMMDD-HHMMSS-<6 hex>`), captions, log, commit and tag; recorded in `exp_migration_run`. [Migrations](guides/migrations.md#the-record).
+- **run lock**: the installation lock `var/<site>/upgrade.lock` that `exp:upgrade` and every **migration run** hold while they write, so only one writes at a time. [Migrations](guides/migrations.md#the-run-lock-and-the-user).
 - **runnable**: the class behind a command, cronjob part or module view (`Exponential\Runnable\*`); can be replaced or listened to through `[RunnableSettings]`. [Commands, cronjob parts and views as classes](specifications/6.0/runnable-commands-cronjobs-views.md).
 
 ## S

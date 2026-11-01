@@ -1,0 +1,204 @@
+# Migrationen: Änderungen an einer Installation, einmal geschrieben und überall angewendet
+
+Diese Anleitung erklärt die Migrationen des Kernels von Exponential 6.0.15: eine Änderung an einer Installation (eine
+Tabelle, Inhalte, eine Rolle, eine Einstellung), einmal in einer Datei unter Versionskontrolle geschrieben und auf
+jede Installation der Site angewendet, in derselben Reihenfolge, mit einer Aufzeichnung, was wo gelaufen ist. Sie ist
+der Überblick; die am Ende verlinkten Seiten erklären jeden Teil.
+
+Sie richtet sich an Entwickler, die die Datenbank oder die Inhalte einer Site im Code ändern, und an Administratoren,
+die diese Änderungen auf Staging und Produktion anwenden. Die Befehle unten wurden am 31. Oktober 2026 auf SQLite
+ausgeführt.
+
+[Anleitungen](README.md) · Siehe auch: [Migrationen: eine erste PHP-Migration, Schritt für Schritt](migrationen-tutorial.md),
+[PHP-Migrationen](migrationen-php.md), [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
+[Das Migrations-Repository](migrationen-repositories.md), [Fehlerbehebung](migrationen-fehlerbehebung.md),
+[Die Funktion](../funktionen/6.0/migrationen.md), [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md)
+
+## Kurz
+
+```bash
+./console exp:migration:generate --skeleton add_news_class --apply   # eine neue PHP-Migration in migrations/
+./console exp:migration:check                                         # die Prüfung: Namen, Kopf, Reihenfolge, PHP
+./console exp:migration:status                                        # was erledigt ist, was aussteht
+./console exp:migration:migrate                                       # Probelauf: was sich ändern würde
+./console exp:migration:migrate --apply                               # Sicherungspunkt, Lauf, neuer Sicherungspunkt, Commit, Tag, Push
+./console exp:migration:rollback <run-id> --apply                     # zurück zum Sicherungspunkt vor dem Lauf
+```
+
+Führen Sie die Befehle im Wurzelverzeichnis der Installation als der Benutzer aus, unter dem der Webserver läuft (als
+root mit `--allow-root-user`). Jeder Befehl, der schreibt, ist ein Probelauf, bis er `--apply` bekommt.
+
+## Was eine Migration ist und wann man sie nimmt
+
+Eine Migration ist eine Datei namens `YYYYMMDDHHMMSS_name.<typ>`, zum Beispiel `20261031120000_add_news_class.php`.
+Ihre ID ist der Dateiname ohne den Typ. Sie enthält eine Änderung und, wo es geht, den Weg zurück. Ist sie auf einer
+Installation gelaufen, hält die Aufzeichnung das fest, und sie läuft dort nie wieder.
+
+| Sie wollen ... | Nehmen Sie |
+|---|---|
+| Datenbank und Einstellungen einer Installation auf ein neues **Kernel-Release** bringen | [`exp:upgrade`](aktualisieren-mit-der-konsole.md) (die Upgrade-Schritte des Kernels) |
+| eine Tabelle, Spalte oder Standardzeile mit einer **Erweiterung** ausliefern, bei jedem Upgrade angewendet | [einen Upgrade-Schritt der Erweiterung](upgrade-schritte-fuer-erweiterungen.md) oder eine Migration in `extension/<name>/migrations/` |
+| **eine Site** ändern: eine Klasse, Inhalte, eine Rolle, eine Einstellung, eine Tabelle der Site, nacheinander auf Entwicklung, Staging und Produktion | eine Migration in `migrations/` der Site |
+| eine ganze Site mit ihren Inhalten auf eine andere Installation kopieren | ein [Site-Paket](pakete.md) |
+
+Migrationen und `exp:upgrade` teilen sich die Aufzeichnungstabelle `exp_migration`, die Sperre der Installation und die
+Sicherungspunkte, sodass ein Upgrade und ein Migrationslauf nie gleichzeitig schreiben und `exp:upgrade:captions` die
+Sicherungspunkte beider zeigt.
+
+## Der Lebenszyklus
+
+1. **Schreiben**: `exp:migration:generate --skeleton <name> --apply` schreibt eine leere PHP-Migration mit Kopf,
+   `plan()`, `up()` und `down()`; füllen Sie sie aus ([PHP-Migrationen](migrationen-php.md)).
+2. **Prüfen**: `exp:migration:check` prüft die Dateien ohne Datenbank: die Namen, den Kopf, die Reihenfolge, die
+   PHP-Syntax und die Klasse. Es ist die Prüfung für CI.
+3. **Probelauf**: `exp:migration:migrate` (oder `exp:migration:dry-run`) zeigt jede ausstehende Migration mit dem, was
+   ihr `plan()` ändern würde. `exp:migration:dry-run --simulate --diff` führt sie in einer Transaktion aus, die
+   zurückgerollt wird, und zeigt, was sich in der Datenbank geändert hat, auf PostgreSQL und SQLite.
+4. **Ausführen**: `exp:migration:migrate --apply`. Unter der Sperre der Installation, als der Benutzer des Laufs:
+   - die Code-Bäume (`settings/`, `extension/`, `design/`) werden auf nicht committete Änderungen geprüft;
+   - ein **Sicherungspunkt** der Art `migration-pre` wird angelegt (oder der neueste wiederverwendet, solange sich
+     seitdem nichts geändert hat);
+   - die ausstehenden Migrationen laufen der Reihe nach, jede in einer Transaktion, wo die Datenbank eine hat;
+   - der Lauf hält beim ersten Fehler an, und der Sicherungspunkt von vorher wird wiederhergestellt;
+   - nach einem erfolgreichen Lauf wird ein Sicherungspunkt der Art `migration-post` angelegt;
+   - die Statusdatei und das Laufprotokoll werden im Migrations-Repository **committet**, der Commit wird
+     **getaggt** und **gepusht**.
+5. **Ansehen**: `exp:migration:status` zeigt jede Migration mit ihrem Zustand, die letzten Läufe und was wartet.
+6. **Zurück**, wenn nötig: `exp:migration:rollback <run-id>` stellt den Sicherungspunkt vor einem Lauf wieder her,
+   `exp:migration:rollback <migration-id>` führt das `down()` einer Migration aus.
+
+## Wo Migrationsdateien liegen
+
+| Quelle | Ordner | Einstellung |
+|---|---|---|
+| `site` | `migrations/` der Installation | `migration.ini [MigrationSettings] DirectoryList[]` |
+| `extension:<name>` | `extension/<name>/migrations/` jeder **aktiven** Erweiterung | `ExtensionDirectory` |
+| `package:<name>` | `migrations/` jedes installierten Pakets unter `var/<storage>/packages/` | `ExtensionDirectory` |
+
+Nur die Dateien direkt in einem Ordner sind Migrationen; Unterordner (die Statusdateien und Laufprotokolle) werden
+nicht durchsucht. Eine Datei, deren Name nicht mit `YYYYMMDDHHMMSS_` beginnt (eine README, eine `.gitkeep`), wird
+übersprungen. `[MigrationSettings] Enabled=disabled` findet gar keine. Jede Einstellung steht in
+[der Referenz zu migration.ini](../beispiele/ini-einstellungen/migration/README.md).
+
+## Typen
+
+Der Typ ist die Endung der Datei: `php`, `yml`, `sql`, `<engine>.sql` (`mysql`, `postgresql`, `sqlite`, `oracle`,
+`mongodb`) und `ini`. In 6.0.15 wird eine Migration in **PHP** geschrieben: Die Engine findet, ordnet und prüft die
+anderen Typen, und der Runner lehnt sie mit einem Fehler ab, bis ihre Schritte kommen. `exp:migration:check` meldet
+eine `.yml`-, `.sql`- oder `.ini`-Migration aus demselben Grund als Fehler.
+
+## Reihenfolge
+
+Migrationen laufen in der Reihenfolge ihrer IDs, also zuerst nach dem Zeitstempel, dann nach dem Namen. Eine
+Migration, die in ihrer Kopfzeile `requires:` andere nennt, läuft nach ihnen, wohin deren Zeitstempel sie auch stellen.
+Eine Anforderung `extension:<name>` verlangt, dass diese Erweiterung aktiv ist. Eine zweimal gefundene ID (die zuerst
+gefundene zählt: Site vor Erweiterungen vor Paketen), eine Anforderung, die keine Migration nennt, und ein Zyklus sind
+Fehler, die `exp:migration:check` und jeder Lauf melden; solange einer da ist, läuft nichts.
+
+## Der Kopf
+
+Die Kommentarzeilen am Anfang der Datei sind ihr Kopf, eine Zeile `schlüssel: wert` je Angabe:
+
+```php
+<?php
+// description: The folder News below the content root
+// requires: 20261031120000_news_note_table
+// environments: staging, production
+// maintenance: no
+// author: Site team
+```
+
+Schlüssel: `id`, `description`, `requires`, `environments`, `engines`, `maintenance`, `author`. Ein unbekannter
+Schlüssel ist ein Fehler, damit ein vertippter nicht still durchgeht.
+[Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md) nennt jede Regel.
+
+## Umgebungen
+
+Die Umgebung einer Installation ist `site.ini [AdminEnvironment] Level` (mit `Level=auto` die Umgebungsvariable
+`EXP_ENV`). Eine Migration, deren Kopf `environments: staging, production` nennt, läuft nur dort;
+`environments: !development` läuft überall außer auf Entwicklung. `--environment=<name>` nimmt für einen Befehl eine
+andere. Eine Migration, die nicht für die Umgebung oder nicht für die Datenbank-Engine (`engines:`) ist, hat den
+Zustand `not-needed`.
+
+## Die Aufzeichnung
+
+| Wo | Was |
+|---|---|
+| Tabelle `exp_migration` | eine Zeile je Migration (Quelle + ID): Zustand, Lauf, Prüfsumme der Datei, Dauer, der Sicherungspunkt davor, der Commit danach; auch die Aufzeichnung von `exp:upgrade` (Quelle `kernel`) |
+| Tabelle `exp_migration_run` | eine Zeile je Lauf: Zustand, Benutzer, Umgebung, die Sicherungspunkte davor und danach, Commit, Tag, Push-Zustand |
+| `migrations/status/<umgebung>.json` | die Aufzeichnung, gespiegelt ins Migrations-Repository (keine Benutzer, keine Meldungen) |
+| `migrations/runs/<run-id>.log` | eine Zeile je Ereignis eines Laufs, bereinigt von Geheimnissen und E-Mail-Adressen |
+
+Der Upgrade-Schritt `6.0.15-migration-tables` legt beide Tabellen an und kopiert die Zeilen der älteren Tabelle
+`expupgrade_step`; `./console exp:upgrade --apply` führt ihn aus. Bis dahin wird nichts gelesen oder geschrieben, und
+der Status sagt das.
+
+Zustände: `done`, `pending`, `not-needed`, `failed`, `unknown`. Eine als erledigt aufgezeichnete Migration, deren
+Datei sich seitdem geändert hat, wird abgelehnt, und der Lauf mit ihr, es sei denn, der Lauf bekommt
+`--force --reason=<text>`: Dann wird die neue Prüfsumme aufgezeichnet, die Änderung im Audit festgehalten, und die
+Migration läuft nicht noch einmal.
+
+## Transaktionen und Engines
+
+| Datenbank | Eine gescheiterte Migration wird zurückgenommen | Simulation (`--simulate`) |
+|---|---|---|
+| PostgreSQL, SQLite | vollständig (`transactions: full`) | ja |
+| MySQL/MariaDB, Oracle | nur ihre Daten; eine Schemaänderung wird sofort committet (`transactions: data`) | nein: der Plan wird mit einer Warnung gezeigt |
+| MongoDB | gar nicht (`transactions: none`) | nein |
+
+Was eine Transaktion nicht zurücknehmen kann, deckt der nach einem Fehler wiederhergestellte Sicherungspunkt ab.
+
+## Die Laufsperre und der Benutzer
+
+Ein Lauf, der schreibt, hält die Sperre der Installation `var/<site>/upgrade.lock` (gemeinsam mit `exp:upgrade`), mit
+einer Halter-Datei daneben, die sagt, wer sie hält. Ein zweiter Lauf endet sofort; `exp:migration:status` nennt den
+Halter. Ein Probelauf nimmt keine Sperre. Ein Lauf läuft als der angemeldete Benutzer, auf der Konsole als
+`[RunSettings] RunAsUser` (`admin`), nach Login; `--login=<login>` nimmt einen anderen.
+
+## Voreinstellungen und jeder Schalter
+
+| Voreinstellung | Für einen Lauf aus | In `migration.ini` aus |
+|---|---|---|
+| Sicherungspunkt vor dem Lauf | `--no-caption` | `[CaptionSettings] Before=disabled` |
+| Sicherungspunkt nach einem erfolgreichen Lauf | `--no-caption` | `After=disabled` |
+| einen unveränderten Sicherungspunkt wiederverwenden | | `ReuseUnchanged=disabled` |
+| nach einem Fehler den Sicherungspunkt von vorher wiederherstellen | `--no-restore` | `RestoreOnFailure=disabled` |
+| nicht committete Änderungen in den Code-Bäumen ablehnen | `--include-uncommitted` (im Sicherungspunkt aufbewahrt) | `CodeTreeList[]` |
+| Statusdatei und Laufprotokoll committen | `--no-commit` (dann auch kein Tag und kein Push) | `[RepositorySettings] Commit=disabled` |
+| den Commit taggen | `--no-tag` | `Tag=disabled` |
+| Commit und Tag pushen | `--no-push` | `Push=disabled` |
+| beim ersten Fehler anhalten | | `[RunSettings] StopOnFailure=disabled` |
+
+## Jeder Befehl
+
+| Befehl | Was er tut |
+|---|---|
+| [`exp:migration:status`](../beispiele/befehle/expmigrationstatus.md) | jede Migration mit ihrem Zustand, die Verwaisten, die letzten Läufe, die wartenden Pushes, die Sperre |
+| [`exp:migration:migrate`](../beispiele/befehle/expmigrationmigrate.md) | der Probelauf, und mit `--apply` der Lauf |
+| [`exp:migration:dry-run`](../beispiele/befehle/expmigrationdryrun.md) | der Plan; `--simulate --diff` läuft in einer Transaktion, die zurückgerollt wird |
+| [`exp:migration:rollback`](../beispiele/befehle/expmigrationrollback.md) | ein Lauf, eine Migration oder (für Fachleute) ein beliebiger Sicherungspunkt |
+| [`exp:migration:resume`](../beispiele/befehle/expmigrationresume.md) | ein neuer Lauf dessen, was ein gescheiterter oder unterbrochener Lauf offen ließ |
+| [`exp:migration:caption`](../beispiele/befehle/expmigrationcaption.md) | jetzt einen Sicherungspunkt, oder die Liste |
+| [`exp:migration:push`](../beispiele/befehle/expmigrationpush.md) | die Läufe, deren Push scheiterte, noch einmal gepusht |
+| [`exp:migration:check`](../beispiele/befehle/expmigrationcheck.md) | die Prüfung für CI |
+| [`exp:migration:generate`](../beispiele/befehle/expmigrationgenerate.md) | eine neue PHP-Migration aus dem Gerüst |
+
+Alle nehmen `--format=json` (die Maschinenausgabe `exp-migration/1`) und enden mit den Exit-Codes von `exp:upgrade`:
+0 in Ordnung, 1 gescheitert (oder ausstehend mit `exp:migration:status --fail-on-pending`), 2 Bedienfehler, 3 die
+Datenbank ist nicht erreichbar, 4 interner Fehler.
+
+## Noch nicht in 6.0.15
+
+Setup > Migrationen in der Administration, YAML-, SQL- und INI-Migrationen, Generatoren außer dem Gerüst, das
+Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil dieses Releases. Alles, was diese
+Anleitung zeigt, funktioniert heute auf der Konsole.
+
+## Weiterlesen
+
+- [Migrationen: eine erste PHP-Migration, Schritt für Schritt](migrationen-tutorial.md)
+- [PHP-Migrationen](migrationen-php.md)
+- [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)
+- [Das Migrations-Repository: Commit, Tag und Push](migrationen-repositories.md)
+- [Fehlerbehebung bei Migrationen](migrationen-fehlerbehebung.md)
+- [Das Migrationsdateiformat](../spezifikationen/6.0/migrationsdateiformat.md)
+- [migration.ini](../beispiele/ini-einstellungen/migration/README.md), [der Cronjob-Teil migrationpush](../beispiele/cronjobs/migrationpush.md)

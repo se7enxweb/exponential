@@ -6510,7 +6510,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-c2cfcb5ff8331cde915fdd3850a59e5f  doc/eng-us/features/6.0/README.md
+b52cdd44c9c4f4af204c920b67491f53  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6625,6 +6625,7 @@ ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-remova
 fb41e999d70ad1fbeef83693d1ee6c77  doc/eng-us/features/6.0/mail-preferences.md
 70689845801571a8ad48a92751b21397  doc/eng-us/features/6.0/maintenance-mode.md
 a2b887cb3bf61b535d6fca58c72d1ae0  doc/eng-us/features/6.0/managed-by-deployment.md
+c360591e05ef5ff1c306682b3c80445c  doc/eng-us/features/6.0/migrations.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 df9251aeb6fb79ab9f17590b0bbbb3fb  doc/eng-us/features/6.0/mongodb-database-support.md
 ee73985215cffde6a73d4c2b4f7b0dff  doc/eng-us/features/6.0/multi-site-ini-overrides.md
@@ -6716,9 +6717,9 @@ a6804237b42b490f18b7266b7f276e2a  doc/eng-us/features/6.0/velocity-uwebserver.md
 732b0806269c31cc1c081b166d7a7662  doc/eng-us/features/6.0/version-preview-view-modes.md
 e8e271a078b41c7c877fad14d5156f2e  doc/eng-us/features/6.0/web-server-and-solr-commands.md
 9a239d46246c4ca0e1d8f6ddd3bf6a24  doc/eng-us/features/6.0/website-sidebar.md
-69cf415d178489c7ca9f2cf4bf7df884  doc/eng-us/glossary.md
+f5369a8e40538e4fa46a98c65aa2320d  doc/eng-us/glossary.md
 e3e117bf283a09a375595e52cb21f59d  doc/eng-us/goals.md
-5a472729017993e883a506d5dfbd346e  doc/eng-us/guides/README.md
+5c5090c3273ae731741c616ff17a91cd  doc/eng-us/guides/README.md
 9ad99407df5b2fe54c265f5cb65a9870  doc/eng-us/guides/api-keys.md
 a68843766fba12d6bf9d1878a045e9eb  doc/eng-us/guides/approving-new-editor-accounts.md
 158d25c3e5f52e97b5cfaad49c8e6a00  doc/eng-us/guides/benchmarking.md
@@ -6787,6 +6788,12 @@ a101a3bb9c015da9204c6718c2598563  doc/eng-us/guides/images/maintenance/installat
 5aabf1ae3d90cc32431398e0289c5d12  doc/eng-us/guides/mail-preferences-administrator.md
 d11111815c1efec3a438ecccd836072e  doc/eng-us/guides/mail-preferences-developer.md
 9090ac1bfc0b083e83885f6eb1f344b0  doc/eng-us/guides/maintenance-mode.md
+4ccf5993e2ea0552706a553160df253b  doc/eng-us/guides/migrations-php.md
+b1ce11a50c0108934aa655898d1ff1f1  doc/eng-us/guides/migrations-repositories.md
+f759ee8194266665bb23e16328357365  doc/eng-us/guides/migrations-rollback-and-captions.md
+ca1f62fc7cab76f6d12393625f273b76  doc/eng-us/guides/migrations-troubleshooting.md
+edbe5e5358cc714439e09489af22dbdb  doc/eng-us/guides/migrations-tutorial.md
+5efd262b2e536aa2bab490331bf91334  doc/eng-us/guides/migrations.md
 e565fb4c364a70e397ad6e26fb0e18c3  doc/eng-us/guides/missing-files.md
 c16f7bb9ba5be0218ef063840c48580c  doc/eng-us/guides/notifications-administrator.md
 c1af1e57aab428c892c4e04cfe7c6cb4  doc/eng-us/guides/notifications-developer.md
@@ -12622,7 +12629,7 @@ f9f738c497f745bb5e02d68375b9f630  doc/eng-us/specifications/4.3/admin_refresh/fu
 e14335da02fc54b98c731ab8152fbda6  doc/eng-us/specifications/4.3/comment_system/functional_requirements.txt
 13e5ff5275d9513182c2d9f8b64059e0  doc/eng-us/specifications/4.4/extension_ordering/extensionordering_design.rst
 37bdde9f4ce498fd035d13e1631bbbfb  doc/eng-us/specifications/4.5/asynchronous_publishing.txt
-63a2fba88e0514b092fa2d412dd61e29  doc/eng-us/specifications/6.0/README.md
+73c17f90ce64ccdceab6a3f80a15e582  doc/eng-us/specifications/6.0/README.md
 eda0b07008cb76a441bdf3174151403c  doc/eng-us/specifications/6.0/audit-event-model.md
 abe08b4c1433579efbb54605157734a1  doc/eng-us/specifications/6.0/bccie.md
 3b236abbadda99711e6f6484b0ba2d48  doc/eng-us/specifications/6.0/cjw_newsletter.md
@@ -12643,6 +12650,7 @@ d3406ef83d12af1a3e315faa2f6c2831  doc/eng-us/specifications/6.0/ini-override-pla
 093d8a76631cc41d2e8da83f6bebae80  doc/eng-us/specifications/6.0/mail-preferences-cli.md
 2c49a13bc8dfd4956116e1842e25471b  doc/eng-us/specifications/6.0/mail-preferences-compliance.md
 9e1e0cf10840e84e1dcd50f98243de91  doc/eng-us/specifications/6.0/mail-preferences.md
+b6e889a980f2cdec4d7b61c7b1335732  doc/eng-us/specifications/6.0/migration-file-format.md
 e7a1404e85e6c543bfec4582f5839893  doc/eng-us/specifications/6.0/notifications-cli.md
 e7befd5e293bc2d00f3136d0e99c245b  doc/eng-us/specifications/6.0/notifications-ini.md
 9402c8e658bd026b0a6af832bd3ac1a2  doc/eng-us/specifications/6.0/notifications.md
@@ -12900,12 +12908,12 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
-e7764617fe4b5820f55995a5054e20ec  doc/ger-de/.paths.json
+ffdcf688714694f5d7488dd15defab21  doc/ger-de/.paths.json
 67005421d98c3fbcfd623d4fb8063ece  doc/ger-de/INSTALL.md
 d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
-dc18f178aea8247024e4ead219b9891c  doc/ger-de/anleitungen/README.md
+f83fe0b18f0c6f128ad952b8c94a44f8  doc/ger-de/anleitungen/README.md
 34c617771d2bb012d91bbafb14634347  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
@@ -12979,6 +12987,12 @@ cdb807c8a883bb76e36aac6edc139c2e  doc/ger-de/anleitungen/klassische-menueeinstel
 9dc66e69779c4e6a073c88dfc0948efa  doc/ger-de/anleitungen/lesezeichen.md
 19ad3fdd043c1d4d4d203bb6dd95c158  doc/ger-de/anleitungen/mail-einstellungen-administrator.md
 60703bdde17fe14d72e5fab3560aaf0c  doc/ger-de/anleitungen/mail-einstellungen-entwickler.md
+6ae23882e297de7698974b9590ff224a  doc/ger-de/anleitungen/migrationen-fehlerbehebung.md
+ebcf18a7d612001f327c9d0135edca23  doc/ger-de/anleitungen/migrationen-php.md
+d2bd1d77a45baa737a330d931f2d5670  doc/ger-de/anleitungen/migrationen-repositories.md
+87990e586d142f2084b075951821990d  doc/ger-de/anleitungen/migrationen-rueckgaengig-und-captions.md
+883015ea2328663c4f25e734f5501428  doc/ger-de/anleitungen/migrationen-tutorial.md
+7cf0f4faca427af00ce856cdd0ea414f  doc/ger-de/anleitungen/migrationen.md
 465336715cb5f76e2f9ecd9aaca6024a  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 a0976fe58065ceb997a8d1fac6b00996  doc/ger-de/anleitungen/objektzustaende.md
 c88a68ff0b56f324e4301df5540cfdd1  doc/ger-de/anleitungen/pakete.md
@@ -15826,7 +15840,7 @@ e047509c0aac6b93a84a01e2e559d4b3  doc/ger-de/funktionen/4.7/cluster-index.md
 81a06529aa5a114c917bea48b5ff371a  doc/ger-de/funktionen/5.4/konfigurierbares-dfs-cluster-backend.md
 9b3af7c6cb2607f23f4c8b1838cc9833  doc/ger-de/funktionen/5.90/README.md
 7ca840569dd5972d84638922dc92a457  doc/ger-de/funktionen/5.90/ereignis.md
-051dc91792fcfdd19ccebde5ed19dc0d  doc/ger-de/funktionen/6.0/README.md
+056cb3bb5dc66ec6d9e947f25ea41a07  doc/ger-de/funktionen/6.0/README.md
 2d9cc7c3abc590659a8e6237312d408e  doc/ger-de/funktionen/6.0/admin-links-der-registrierung.md
 c42f6063193b16db2d02b1241393196b  doc/ger-de/funktionen/6.0/admin-links-folgen-den-berechtigungen.md
 bb1cb6cf268ab524e4a3ea1fd0eef9f6  doc/ger-de/funktionen/6.0/admin3-responsives-admin.md
@@ -15949,6 +15963,7 @@ da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
 814a75b8780507956190e0c206bbfa6a  doc/ger-de/funktionen/6.0/log-betrachter.md
 d1adeb16d48df541b3a2c073b9495150  doc/ger-de/funktionen/6.0/log-rotation.md
 2d9e73a5bdc1de02051bb8e74ea9d2b7  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
+e4a86123b198e0b947b462972c7aa7c0  doc/ger-de/funktionen/6.0/migrationen.md
 ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaenderung.md
 298bb86f3a6c50d18a8fd5252f6d84ec  doc/ger-de/funktionen/6.0/modulueberschreibung-durch-extensions.md
 b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunterstuetzung.md
@@ -16365,7 +16380,7 @@ dfce835ea41187dc08f7603fdbc6630e  doc/ger-de/geschichte/velocity/2026-09d.md
 b24fea4973006b0896c1709f46c42007  doc/ger-de/geschichte/velocity/2026-10.md
 1549837b01e8d4331951a6ab40a67e4c  doc/ger-de/geschichte/velocity/README.md
 e462cda8d5b6e1e0d0d0185eecad9e94  doc/ger-de/geschichte/velocity/installer-und-pakete.md
-c3ecf8db87a8739e9db4cc410a05f479  doc/ger-de/glossar.md
+849793ae9ebad48b2b1c1d2997e7aaa3  doc/ger-de/glossar.md
 8c5b89054feda95138b788585c3e1f72  doc/ger-de/hilfe/README.md
 184a29662c44eee5ace950f8eff0cd18  doc/ger-de/hilfe/administratorpasswort-aendern.md
 9d80999100f6fc01d6769705d3ac7e48  doc/ger-de/hilfe/anmelden-im-editor.md
@@ -21730,7 +21745,7 @@ c74c61782aae1da372a0885d9225ed72  doc/ger-de/installation/migration/shopify.md
 370891338e6b7eecbc0ccf974791157b  doc/ger-de/installation/migration/symfony-anwendungen.md
 7afe7da9a50da9a5b91d6b6f220248fb  doc/ger-de/installation/migration/website-baukaesten.md
 f4364e8ca67a26c8ba3463b279f83d39  doc/ger-de/installation/migration/wordpress.md
-444abcbfe1e332a679f4e5950ccb31d1  doc/ger-de/spezifikationen/6.0/README.md
+81057bf3e6b332cd56837f79cefea0b4  doc/ger-de/spezifikationen/6.0/README.md
 cb14f86e781d2b9b69cfc504606c22ea  doc/ger-de/spezifikationen/6.0/audit-ereignismodell.md
 46a672ef5e561501db056a629bf555ff  doc/ger-de/spezifikationen/6.0/ausfuehrbare-befehle-cronjobs-ansichten.md
 c48e255150e2911443c00aa09df401b3  doc/ger-de/spezifikationen/6.0/bccie.md
@@ -21755,6 +21770,7 @@ cc4f4cfcb807decb333edd4f8f0396a6  doc/ger-de/spezifikationen/6.0/hilfesystem.md
 0409cc35dd3129da348f9d6b08a6c5d2  doc/ger-de/spezifikationen/6.0/mail-einstellungen-cli.md
 da71ae2edb8e08a7c2003f78957321a1  doc/ger-de/spezifikationen/6.0/mail-einstellungen-compliance.md
 7f5e2479c3ac6ace6b1fe48698af7bb9  doc/ger-de/spezifikationen/6.0/mail-einstellungen.md
+997d2dfea18e52580614d8eaada3feb6  doc/ger-de/spezifikationen/6.0/migrationsdateiformat.md
 48bdb3cbf182b10c664586e25c053831  doc/ger-de/spezifikationen/6.0/platform-konsolenbefehle.md
 263d51a58c1dd3f587cd4308e7c3a75b  doc/ger-de/spezifikationen/6.0/platform-paketzuordnung.md
 094d02d390f2d960c5c9af9214a29dd7  doc/ger-de/spezifikationen/6.0/platform-sqlite-installer.md
