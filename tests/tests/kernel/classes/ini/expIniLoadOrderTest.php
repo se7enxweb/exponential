@@ -41,14 +41,34 @@ class expIniLoadOrderTest extends PHPUnit\Framework\TestCase
     public function tearDown(): void
     {
         expIniEditor::setRoot( null );
-        if ( is_dir( $this->root ) )
-        {
-            foreach ( new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $this->root, FilesystemIterator::SKIP_DOTS ),
-                                                     RecursiveIteratorIterator::CHILD_FIRST ) as $f )
-                $f->isDir() ? rmdir( $f->getPathname() ) : unlink( $f->getPathname() );
-            rmdir( $this->root );
-        }
+        self::remove( rtrim( $this->root, '/' ) );
         parent::tearDown();
+    }
+
+    /**
+     * Removes a fixture tree. The kernel run in the child process creates var/ folders with the installation's file
+     * modes, which on a CI runner left var/log unreadable: an iterator then threw, the tree stayed under var/tmp, and
+     * later tests that walk var/ (the caption tests) failed on it (2026-11-01). Each folder is made readable first and
+     * nothing here throws.
+     *
+     * @param string $path
+     */
+    private static function remove( $path )
+    {
+        if ( is_link( $path ) || is_file( $path ) )
+        {
+            @unlink( $path );
+            return;
+        }
+        if ( !is_dir( $path ) )
+            return;
+        @chmod( $path, 0700 );
+        foreach ( (array)@scandir( $path ) as $entry )
+        {
+            if ( $entry !== '.' && $entry !== '..' && $entry !== '' )
+                self::remove( $path . '/' . $entry );
+        }
+        @rmdir( $path );
     }
 
     /**
