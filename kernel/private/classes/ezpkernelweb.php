@@ -1840,6 +1840,11 @@ class ezpKernelWeb implements ezpWebBasedKernelHandler
          * @uses eZUser::instance() So needs to be executed after eZSession::start()|lazyStart()
          */
         eZDebug::checkDebugByUser();
+
+        // without debug output: the statistics of this request for a user of site.ini [DebugSettings]
+        // CollectStatsPolicyList[] (a worker that loaded an older expRenderStats has no such method)
+        if ( class_exists( 'expRenderStats' ) && method_exists( 'expRenderStats', 'checkCollectByPolicy' ) )
+            expRenderStats::checkCollectByPolicy();
     }
 
     /**

@@ -23451,7 +23451,7 @@ e65e5cf2758771560e63ed95a0b41c9b  kernel/classes/debugbar/expdebugbarregistry.ph
 8e7a15af054fef39e3bea4da52122c7d  kernel/classes/debugbar/expdebugbarserverfunctions.php
 da343c61d8fc793d750c8ef727afe8ba  kernel/classes/debugbar/expdebugbarsettings.php
 bd109a993ddd142e8f2017620dbdb4df  kernel/classes/debugbar/expdebugbarsummary.php
-bad297561536cd08dcbb7adb14af6271  kernel/classes/debugbar/exprenderstats.php
+717cd5319155a524b29de28659444487  kernel/classes/debugbar/exprenderstats.php
 a59e7722d7d542f3fd37517175faf889  kernel/classes/expadminpagination.php
 b98d6d508d9e1ad1f595ec2d5a4622cb  kernel/classes/expanonymouspublicpolicies.php
 e37b92a509e502956a6317750d478f0c  kernel/classes/expbenchmark.php
@@ -23606,7 +23606,7 @@ f99b1e345653f0caba1809e9b737d42f  kernel/classes/ezinformationcollectionattribut
 c6844e36117aebf288f0145b6bf94708  kernel/classes/eznamepatternresolver.php
 fd091f39485c1e29edd471a79cca0e1e  kernel/classes/eznavigationpart.php
 e8eb44928d46bd9be28961b1ab6d7912  kernel/classes/eznodeassignment.php
-b092578d99ea4c194277bc55b434ba69  kernel/classes/eznodeviewfunctions.php
+d62087f67521c0d213ee3a22f2e84063  kernel/classes/eznodeviewfunctions.php
 673e8dead2afd05ca5acaed25955c5f0  kernel/classes/ezorder.php
 d389d2d52fb106402e2e3cfce0ae74ac  kernel/classes/ezorderitem.php
 64789c25eb9529192564b481dcca75ad  kernel/classes/ezorderstatus.php
@@ -24568,7 +24568,7 @@ bf34065e5f75151f013ae21ece24fae9  kernel/private/classes/ezpkernel.php
 ab090cf255ce57bb21cc03ce89494ff3  kernel/private/classes/ezpkernelredirect.php
 a9ad609aedf5b203a871d18ff1d63ceb  kernel/private/classes/ezpkernelresult.php
 0ffc521218c97a36fd624c1aaff8d598  kernel/private/classes/ezpkerneltreemenu.php
-4e275ac30fc6997e93b06ba0037424b1  kernel/private/classes/ezpkernelweb.php
+3596dfbb9a3ce562892e9d15dbbd17c9  kernel/private/classes/ezpkernelweb.php
 1145d66875a01e743f97b49990fd3a8b  kernel/private/classes/ezplanguageswitcher.php
 c99ddccb64a9bb469e69b80c2078eb6c  kernel/private/classes/ezpmail.php
 cd076c0418540f66f88ff705df128ec8  kernel/private/classes/ezpmobiledevicedetect.php
@@ -25422,16 +25422,16 @@ cec7bd47afdf599a4e1a46499a830cee  lib/ezsoap/classes/ezsoapheader.php
 5c6381668678a055f8fb1f2e1f0699de  lib/ezsoap/classes/ezsoapresponse.php
 0711963a1d02a1066e57b0071064bfdd  lib/ezsoap/classes/ezsoapserver.php
 868ed11563d19176ff5db37d78db2eeb  lib/eztemplate/classes/exceptions/failedexecutingcompiledtemplate.php
-ffbd4908677c9384e12000afd034e535  lib/eztemplate/classes/eztemplate.php
+94835994ff9ac5bf1eb9ef97ced67175  lib/eztemplate/classes/eztemplate.php
 09a404f4fb328a1c3a9c33c87aba91f1  lib/eztemplate/classes/eztemplatearithmeticoperator.php
 413f77e2ae8369475fac231b76800244  lib/eztemplate/classes/eztemplatearrayoperator.php
 37d4b554618795eecaaec4eb429b68bc  lib/eztemplate/classes/eztemplateattributeoperator.php
 58eed4aa55822d2eb20786ad49d3899e  lib/eztemplate/classes/eztemplateautoload.php
 52f507feeacafb8476198dd20e499c41  lib/eztemplate/classes/eztemplateblockfunction.php
-0183fc442aea97deb50096724bc1d17d  lib/eztemplate/classes/eztemplatecacheblock.php
-8eea81682674fb0606227d9629cca6fe  lib/eztemplate/classes/eztemplatecachefunction.php
+6561bf2374f22f5c98cc54755fb10bbd  lib/eztemplate/classes/eztemplatecacheblock.php
+b3382dbf66090dbda339c04cc96492c4  lib/eztemplate/classes/eztemplatecachefunction.php
 dfefe96252b36f50979d0da6f7dad5f5  lib/eztemplate/classes/eztemplatecompiledloop.php
-012819c4b274b1e55f243965990b2c23  lib/eztemplate/classes/eztemplatecompiler.php
+03f8c39006c33d4af2bb605c5527f4fe  lib/eztemplate/classes/eztemplatecompiler.php
 aeeac874e149fe1afe1c8e79b205d856  lib/eztemplate/classes/eztemplatecontroloperator.php
 c26dbec4684104037b6b62edc581dde1  lib/eztemplate/classes/eztemplatedebugfunction.php
 06acc5b180ea347235f69be822c47365  lib/eztemplate/classes/eztemplatedeffunction.php
@@ -25482,7 +25482,7 @@ dbb08bb0e7dd7f3871eccab2fe96c691  lib/eztemplate/classes/eztemplatewhilefunction
 6b10748123dbb1ee64e43d89ca7962a4  lib/ezutils/classes/ezcachehelper.php
 ec0113527fb59183b48344a81e9e5e62  lib/ezutils/classes/ezcli.php
 37bb332dad96b082a2857407c22c0ce8  lib/ezutils/classes/ezdatetimevalidator.php
-210fbfb7a19ab9d2eb9934513dcfab82  lib/ezutils/classes/ezdebug.php
+67987bdf8c5c978853f1ff8b8cf51ce0  lib/ezutils/classes/ezdebug.php
 4102c66cc557c5b033f211e35664553c  lib/ezutils/classes/ezdebugsetting.php
 56ea5fdddcf36ddbd0d2944a67499748  lib/ezutils/classes/ezexecution.php
 b671b6c2a143cd801f3ce3ce4a01248c  lib/ezutils/classes/ezexpiryhandler.php
@@ -25534,7 +25534,7 @@ b12f25dbac689b3a7e394c256680eaa4  lib/smarty/classes/expsmartyextension.php
 d94a766adb78b2d5d5f0a226d7cfbbb3  lib/smarty/classes/expsmartyincludefunction.php
 e44105f75fc63a7905320f70b187e3e1  lib/smarty/classes/expsmartyobjectproxy.php
 3c20d83eeed5cc6612bd9b5d0dc0ec17  lib/smarty/classes/expsmartyoperator.php
-dcc0ce9b44a7e17fe104aa19a320c62d  lib/smarty/classes/expsmartyrenderer.php
+0de7b2e384a13354d6d60bdd3f2a327d  lib/smarty/classes/expsmartyrenderer.php
 283dd464f512d21825af9e9ab5f3caed  lib/smarty/classes/expsmartyreverseconverter.php
 9dec324777b1123e320c98a6cc066714  lib/smarty/classes/expsmartyrunonceblock.php
 5dc397b06aad5ac2c3f9b4ca78cd82e6  lib/smarty/classes/expsmartysecurity.php
@@ -25571,7 +25571,7 @@ bd53147fc2838f03c10393415f0a486d  lib/twig/classes/exptwigfilesystemcache.php
 65b88b93a3610eb8a25404910a52ad7d  lib/twig/classes/exptwignativeoperators.php
 aad9b1fde3221e89aba46033f26825ba  lib/twig/classes/exptwigobjectproxy.php
 0c1cdea2ba137e7c61208fc91b4751fc  lib/twig/classes/exptwigoperator.php
-6ee1e8a5a2e82f0cf9807f5188cc9579  lib/twig/classes/exptwigrenderer.php
+742682faa0d297db72f3460c75610f03  lib/twig/classes/exptwigrenderer.php
 5d894f6592c899384420c0a3f77ab1cf  lib/twig/classes/exptwigreverseconverter.php
 c0e5f940ec6756d1d07b5aee8c447757  lib/twig/classes/exptwigsecurity.php
 a0b2fe24d799c7ba1fe61953524c1a78  lib/twig/classes/exptwigtagnode.php
@@ -25648,7 +25648,7 @@ f7103c5bfddb7fcd5cbd36dc6cab1df1  settings/requestrules.ini
 3d58b3c9abd483644a07965e143cb05f  settings/setup.ini
 840aa8013a0f6f564ae8d2c3a22627b6  settings/shop.ini
 536ebb4ea06f8573c443632e889207d9  settings/shopaccount.ini
-365345d2c8c07fd33308fbb408eab3de  settings/site.ini
+3b5fa21c8b6687404a588358a7266915  settings/site.ini
 6ab42322e9bd79fffa4d3ff3e7876b61  settings/siteaccess/mysite/override.ini.append
 2f9737c378b44049bb74006cdbae6bb9  settings/siteaccess/mysite/site.ini.append
 459570c4f6e440a4f8fdc53cc37675b2  settings/siteaccess/plain/override.ini.append
@@ -27447,6 +27447,7 @@ c2015e9a7c16465a385e07c0b2d5f198  tests/tests/kernel/classes/debugbar/expDebugBa
 3a346f5a7b9d4a168c7e1aa1b488f325  tests/tests/kernel/classes/debugbar/expDebugBarSummaryPhpVersionTest.php
 0b2683814861305e830fb4cd770b688d  tests/tests/kernel/classes/debugbar/expDebugBarWaveTogetherTest.php
 767723d71b9b739f92932f0ef3356b24  tests/tests/kernel/classes/debugbar/expRenderStatsCacheBlockTest.php
+696032021d3ae3808d114e55e104f470  tests/tests/kernel/classes/debugbar/expRenderStatsCollectTest.php
 d073e7f145dbb8a5745891b3b222c505  tests/tests/kernel/classes/debugbar/expRenderStatsTest.php
 4df91edad78ea27f64a08c4c2a287ed8  tests/tests/kernel/classes/debugbar/expRenderStatsTreeTest.php
 aec7baf697e0fa6daa6e303ac487e779  tests/tests/kernel/classes/eZCollaborationItemTest.php

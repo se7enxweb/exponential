@@ -453,7 +453,7 @@ class eZNodeviewfunctions
         $cachePath = eZDir::path( array( $cacheDir, $cacheFile ) );
         // The keys as hashed, and those a listener added or changed, for the debug bar's Rendering tab
         $fromListeners = array();
-        foreach ( empty( $GLOBALS['eZDebugEnabled'] ) ? array() : $cacheHashArray as $key => $value )
+        foreach ( empty( $GLOBALS['eZDebugEnabled'] ) && empty( $GLOBALS['eZDebugCollect'] ) ? array() : $cacheHashArray as $key => $value )
         {
             if ( !array_key_exists( $key, $kernelKeys ) || (string)$kernelKeys[$key] !== (string)$value )
                 $fromListeners[] = $key;

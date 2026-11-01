@@ -59,7 +59,7 @@ class eZTemplateCacheBlock
         // siteaccess ) without keys, with the placement stpl:<file>:<id> or twig:<file>:<id>. Custom code (content/treemenu) passes keys of its own.
         $placement = false;
         $blockKeys = $keys;
-        if ( !empty( $GLOBALS['eZDebugEnabled'] ) )
+        if ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) )
         {
             if ( count( $keys ) === 3 && isset( $keys[1] ) && is_string( $keys[1] ) &&
                  ( preg_match( '/^\d+_\d+_\d+_\d+_./', $keys[1] ) || self::isSmartyPlacement( $keys[1] ) ) )
@@ -120,7 +120,7 @@ class eZTemplateCacheBlock
      */
     static function handle( $cachePath, $nodeID, $ttl, $useGlobalExpiry = true, $placement = false, $keys = null )
     {
-        $noted = !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' );
+        $noted = ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' );
         if ( $noted )
             $start = microtime( true );
 
@@ -166,7 +166,7 @@ class eZTemplateCacheBlock
     {
         $cacheHandler->storeCache( array( 'scope' => 'template-block', 'binarydata' => $cachedText ) );
         // by the handler handle() returned: a nested block has its own, while the compiled code's $cachePath is shared
-        if ( !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' ) )
+        if ( ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' ) )
             expRenderStats::noteCacheBlockStored( spl_object_id( $cacheHandler ), strlen( (string)$cachedText ) );
     }
 

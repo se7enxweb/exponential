@@ -1313,6 +1313,20 @@ class eZDebug
         return false;
     }
 
+    /**
+     * Whether this request's statistics are collected: the accumulators (page time, SQL statements and their time)
+     * and the render statistics (expRenderStats: view cache, cache-blocks, the template tree). True with debug output
+     * on, and also without it for a user one of site.ini [DebugSettings] CollectStatsPolicyList[] matches
+     * (expRenderStats::checkCollectByPolicy()), for a tool of theirs to show; nothing is printed then and no message
+     * is kept.
+     *
+     * @return bool
+     */
+    static function isCollecting()
+    {
+        return !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] );
+    }
+
     /*!
      \static
      \return true if there should only be logging of debug strings to file.
@@ -1454,6 +1468,8 @@ class eZDebug
 
         $GLOBALS['eZDebugAllowed'] = $GLOBALS['eZDebugAllowedByIP'];
         $GLOBALS['eZDebugEnabled'] = $settings['debug-enabled'] && $GLOBALS['eZDebugAllowedByIP'];
+        // collecting without output is decided per request, after the user is known (expRenderStats::checkCollectByPolicy())
+        $GLOBALS['eZDebugCollect'] = false;
 
         eZDebug::setHandleType( $oldHandleType );
     }
@@ -1602,7 +1618,7 @@ class eZDebug
     */
     static function createAccumulatorGroup( $key, $name = false )
     {
-        if ( !eZDebug::isDebugEnabled() )
+        if ( !eZDebug::isCollecting() )
             return;
         if ( $name == '' or
              $name === false )
@@ -1621,7 +1637,7 @@ class eZDebug
     */
     static function createAccumulator( $key, $inGroup = false, $name = false )
     {
-        if ( !eZDebug::isDebugEnabled() )
+        if ( !eZDebug::isCollecting() )
             return;
         if ( $name == '' or
              $name === false )
@@ -1649,7 +1665,7 @@ class eZDebug
     */
     static function accumulatorStart( $key, $inGroup = false, $name = false, $recursive = false )
     {
-        if ( !eZDebug::isDebugEnabled() )
+        if ( !eZDebug::isCollecting() )
             return;
         $startTime = microtime( true );
         $debug = eZDebug::instance();
@@ -1677,7 +1693,7 @@ class eZDebug
     */
     static function accumulatorStop( $key, $recursive = false )
     {
-        if ( !eZDebug::isDebugEnabled() )
+        if ( !eZDebug::isCollecting() )
             return;
         $stopTime = microtime( true );
         $debug = eZDebug::instance();

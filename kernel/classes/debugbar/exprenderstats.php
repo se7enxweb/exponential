@@ -63,6 +63,8 @@ class expRenderStats
     /** A new request: nothing noted yet. */
     public static function resetRequest()
     {
+        // whether to collect without output is decided again for this request (checkCollectByPolicy())
+        $GLOBALS['eZDebugCollect'] = false;
         self::$views = array();
         self::$viewCache = null;
         self::$templates = array( 'compiled' => array(), 'executed' => 0 );
@@ -78,8 +80,79 @@ class expRenderStats
 
     protected static function enabled()
     {
-        // what eZDebug::isDebugEnabled() reads, without loading eZDebug
-        return !empty( $GLOBALS['eZDebugEnabled'] );
+        // what eZDebug::isCollecting() reads, without loading eZDebug
+        return !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] );
+    }
+
+    /**
+     * Whether this request's statistics are collected: with debug output on, or for a user one of site.ini
+     * [DebugSettings] CollectStatsPolicyList[] matches (checkCollectByPolicy()), without output.
+     *
+     * @return bool
+     */
+    public static function collecting()
+    {
+        return self::enabled();
+    }
+
+    /**
+     * After the user is known (ezpKernelWeb, right after eZDebug::checkDebugByUser()): a signed-in user who holds one
+     * of the policies of site.ini [DebugSettings] CollectStatsPolicyList[] (module/function, e.g. expwt/performance)
+     * gets this request's statistics collected without debug output, for a tool of theirs to show (the website
+     * sidebar's Performance panel). Nothing is printed and no debug message is kept; anonymous visitors and an empty
+     * list cost one setting read.
+     *
+     * @return bool whether the statistics are collected now
+     */
+    public static function checkCollectByPolicy()
+    {
+        if ( !empty( $GLOBALS['eZDebugEnabled'] ) )
+            return true;
+        $GLOBALS['eZDebugCollect'] = false;
+        if ( !class_exists( 'eZINI' ) || !class_exists( 'eZUser' ) )
+            return false;
+        $ini = eZINI::instance();
+        $list = $ini->hasVariable( 'DebugSettings', 'CollectStatsPolicyList' ) ? (array)$ini->variable( 'DebugSettings', 'CollectStatsPolicyList' ) : array();
+        if ( !$list )
+            return false;
+        $user = eZUser::currentUser();
+        if ( !$user instanceof eZUser || !$user->isRegistered() )
+            return false;
+        $collect = self::policyMatches( $list, function ( $module, $function ) use ( $user ) {
+            $access = $user->hasAccessTo( $module, $function );
+            return isset( $access['accessWord'] ) && $access['accessWord'] !== 'no';
+        } );
+        if ( !$collect )
+            return false;
+        // nothing collected before this point belongs to this request: debug was off (a persistent worker's instance
+        // may hold what an earlier request with debug output on measured)
+        if ( class_exists( 'eZDebug', false ) && isset( $GLOBALS['eZDebugGlobalInstance'] ) && $GLOBALS['eZDebugGlobalInstance'] instanceof eZDebug )
+        {
+            $GLOBALS['eZDebugGlobalInstance']->TimeAccumulatorList = array();
+            $GLOBALS['eZDebugGlobalInstance']->TimeAccumulatorGroupList = array();
+        }
+        $GLOBALS['eZDebugCollect'] = true;
+        return true;
+    }
+
+    /**
+     * Pure: whether one of the entries (module/function; module/* and * cover more) is held.
+     *
+     * @param array $list entries of CollectStatsPolicyList[]
+     * @param callable $holds function ( $module, $function ): bool
+     * @return bool
+     */
+    public static function policyMatches( array $list, $holds )
+    {
+        foreach ( $list as $entry )
+        {
+            $entry = trim( (string)$entry );
+            if ( !preg_match( '#^([A-Za-z0-9_]+)/([A-Za-z0-9_]+|\*)$#', $entry, $m ) )
+                continue;
+            if ( $holds( $m[1], $m[2] ) )
+                return true;
+        }
+        return false;
     }
 
     /**
