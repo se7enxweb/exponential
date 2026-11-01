@@ -214,6 +214,7 @@ nginx with PHP-FPM keep working as before.
 
 - [The audit trail: who did what, and proof that nobody changed the record](audit-trail.md)
 - [The secret store: passwords and keys of the tools, encrypted, by name](secret-store.md)
+- [Preview links: a draft for a reviewer without an account, signed, expiring and revocable](preview-links.md)
 - [Content Security Policy](content-security-policy.md)
 - [Safe redirects and "back to where you came from"](safe-redirects.md)
 - [Fixes from the Opencontent and Mugo Web forks: limits, one-line logs and safer defaults](legacy-fork-fixes.md):

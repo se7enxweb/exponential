@@ -155,6 +155,15 @@ $ViewList['versionview'] = array(
                                  'site_access' => 'SiteAccess',
                                  'view_mode' => 'ViewMode' ) );
 
+// The preview of a draft through a signed, expiring share link (expContentPreviewLink), for a reviewer without an
+// account: no policy (site.ini [RoleSettings] PolicyOmitList[]), the token is the permission
+$ViewList['sharedpreview'] = array(
+    'functions' => array( 'read' ),
+    'default_navigation_part' => 'ezcontentnavigationpart',
+    'ui_context' => 'view',
+    'script' => 'sharedpreview.php',
+    'params' => array( 'Token' ) );
+
 $ViewList['restore'] = array(
     'functions' => array( 'restore' ),
     'default_navigation_part' => 'ezcontentnavigationpart',
