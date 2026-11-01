@@ -486,7 +486,7 @@ class eZINI
             $fileName = 'site.ini';
 
         if( $rootDir == null )
-            $fileName = 'settings';
+            $rootDir = 'settings';
 
         if ( !eZINI::exists( $fileName, $rootDir ) )
             return false;

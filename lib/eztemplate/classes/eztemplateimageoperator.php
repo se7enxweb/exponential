@@ -113,6 +113,8 @@ class eZTemplateImageOperator
 
         if ( $operatorName == 'texttoimage' )
         {
+            // null or a number from the template: htmlspecialchars() and the text layer want a string
+            $inputValue = (string)$inputValue;
             $class = $namedParameters['class'];
 
             $family = $this->Family;

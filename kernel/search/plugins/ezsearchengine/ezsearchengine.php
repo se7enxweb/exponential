@@ -2309,7 +2309,7 @@ class eZSearchEngine implements ezpSearchEngine
 
         //extend search words for urls, by extracting parts without www. and add to the end of search text
         $matches = array();
-        if ( preg_match_all("/www\.([^\.]+\.[^\s]+)\s?/i", $searchText, $matches ) );
+        if ( preg_match_all("/www\.([^\.]+\.[^\s]+)\s?/i", $searchText, $matches ) )
         {
             if (isset($matches[1]) )
             {

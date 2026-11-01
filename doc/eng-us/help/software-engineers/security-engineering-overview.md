@@ -58,6 +58,7 @@ in `Mode=auto` (report-only on the administration, off on sites).
 | 6.0.13 | four SQL injections, two OS command injections, one reflected cross-site scripting ([Security hardening of 6.0.13](../../bc/6.0/hardening.md)) |
 | August 2026 | [Security hardening, August 2026](../../specifications/6.0/security-hardening-2026-08.md) |
 | September 2026 | [Security defaults](../../specifications/6.0/security-defaults-2026-09.md) |
+| October 2026 | the fixes of the Opencontent and Mugo Web forks (pull request #345): a URL alias depth limit, one-line `eZLog` entries, REST listeners, a longer upload blacklist, a subtree `HardLimit` ([Fixes from the Opencontent and Mugo Web forks](../../features/6.0/legacy-fork-fixes.md)) |
 
 The 6.0.13 page also lists the patterns extension developers must audit in their own code: a kernel update does not fix
 them in extensions.

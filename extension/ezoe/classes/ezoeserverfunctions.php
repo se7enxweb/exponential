@@ -554,7 +554,8 @@ class ezoeServerFunctions extends ezjscServerFunctions
         }
         else
         {
-            $nodeArray = false;
+            // count() below: false is a TypeError in PHP 8
+            $nodeArray = array();
         }
 
         // generate json response from node list

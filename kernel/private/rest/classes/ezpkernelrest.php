@@ -175,6 +175,9 @@ class ezpKernelRest implements ezpKernelHandler
         if ( class_exists( 'expKernelServices', false ) )
             expKernelServices::enterSiteAccess();
 
+        // The listeners of site.ini [Event] Listeners[], as in the web kernel: without this none of them ran for REST
+        ezpEvent::getInstance()->registerEventListeners();
+
         if( ezpRestDebug::isDebugEnabled() )
         {
             $debug = ezpRestDebug::getInstance();

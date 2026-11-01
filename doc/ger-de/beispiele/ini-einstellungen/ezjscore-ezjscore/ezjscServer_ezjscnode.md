@@ -70,19 +70,19 @@ RequirePolicy=disabled
 
 ## HardLimit
 
-> Erlaubt eine harte Grenze für die Methode subtree, um das Laden sehr großer Teilbäume zu verhindern,  
->  was die Serverlast und das Risiko von DoS-Angriffen senkt.  
->  false deaktiviert die Funktion, jede Ganzzahl setzt die harte Grenze.  
->  Zum Beispiel: Eine harte Grenze von 100 erlaubt eine Begrenzung auf 30 oder 40, ersetzt aber eine  
->               Begrenzung von 150.  
+> Die meisten Einträge, die eine Anfrage an subtree (und an die Zeilen von expsubitems) liefert, welches Limit  
+> sie auch verlangt: eine Anfrage nach einer Million Kindern eines großen Ordners lüde sie alle. Ein größeres  
+> Limit wird durch dieses ersetzt, ein kleineres bleibt: mit 500 bleibt ein Limit von 30 bei 30, und  
+> 1000 wird zu 500. 500 ist die größte Seitengröße, die die Unterelemente-Liste der Administration anbietet.  
+> false (oder 0) schaltet die Grenze ab, wie vor 6.0.15.  
 
-Standard: `false`.
+Standard: `500`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
 # settings/override/ezjscore.ini.append.php
 [ezjscServer_ezjscnode]
-HardLimit=false
+HardLimit=500
 */ ?>
 ```
 
