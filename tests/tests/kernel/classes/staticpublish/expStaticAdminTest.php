@@ -201,8 +201,10 @@ class expStaticAdminTest extends PHPUnit\Framework\TestCase
         $this->assertArrayNotHasKey( 'Notify', $s, 'what the form does not send keeps its value' );
         $this->assertSame( 'app:12', expStaticAdmin::settingsFromPost( array( 'Target' => array( 'Credential' => 'app:12' ), 'CredentialKind' => '' ), 'x' )['Credential'] );
         $this->assertSame( 'token:gh_pages', expStaticAdmin::settingsFromPost( array( 'CredentialKind' => 'token', 'CredentialToken' => ' gh_pages ' ), 'x' )['Credential'] );
-        $this->assertSame( array( 'kind' => 'token', 'token' => 'env:GH_TOKEN' ), expStaticAdmin::credentialChoice( 'token:env:GH_TOKEN' ) );
-        $this->assertSame( array( 'kind' => 'none', 'token' => '' ), expStaticAdmin::credentialChoice( 'magic:x' ) );
+        $this->assertSame( array( 'kind' => 'token', 'token' => 'env:GH_TOKEN', 'app' => '' ), expStaticAdmin::credentialChoice( 'token:env:GH_TOKEN' ) );
+        $this->assertSame( array( 'kind' => 'none', 'token' => '', 'app' => '' ), expStaticAdmin::credentialChoice( 'magic:x' ) );
+        $this->assertSame( array( 'kind' => 'app', 'token' => '', 'app' => '4711' ), expStaticAdmin::credentialChoice( 'app:4711' ) );
+        $this->assertSame( 'app:4711', expStaticAdmin::settingsFromPost( array( 'CredentialKind' => 'app', 'CredentialApp' => ' 47-11 ' ), 'gh' )['Credential'] );
 
         $ok = expStaticAdmin::check( 'github-public', $s + expStaticTarget::DEFAULTS, self::CONTEXT, array(), true );
         $this->assertSame( array(), $ok['errors'] );

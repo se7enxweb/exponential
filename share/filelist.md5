@@ -24299,7 +24299,7 @@ d85f4056b0c90fe6e359850c9a36a231  kernel/classes/staticpublish/expstaticbuild.ph
 b0efb84f30b72643059fb90b0ee57f1b  kernel/classes/staticpublish/expstaticcredentials.php
 2d4317b2d941b0221ee344c4000a7e64  kernel/classes/staticpublish/expstaticdnscheck.php
 807b2f0f3987120c6f4ff11c4985de40  kernel/classes/staticpublish/expstaticextras.php
-898b18fd12744995a6747ccf4a67c067  kernel/classes/staticpublish/expstaticgithub.php
+100b8474a9beabac6c6b12a889ad481e  kernel/classes/staticpublish/expstaticgithub.php
 31fb0a784e250e5c1ec396b53df5a21f  kernel/classes/staticpublish/expstaticjob.php
 7f2d293dedb7a328f2321f3a7535d4fe  kernel/classes/staticpublish/expstaticlinkchecker.php
 989efd874fa7a50dcbead52880194f60  kernel/classes/staticpublish/expstaticlinkrewriter.php
@@ -28410,12 +28410,12 @@ bd5f77156bbd94e89ce00b7912f80a0a  tests/tests/kernel/classes/shopprices/eZPaymen
 c243bf1708e51415584c6fd64a5a11d0  tests/tests/kernel/classes/shopprices/eZShopReceiptTokenTest.php
 6ff327ab616500ef1a0e2f54fb092cca  tests/tests/kernel/classes/siteaccessmatch/eZSiteAccessMatchTest.php
 8c0728b2f967cd40690522b1d6c5fdb0  tests/tests/kernel/classes/sslzones/eZSSLZoneTest.php
-9bd515e4525df5df1abc4d4c92e888ff  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
+15c744868068a0690fb1d16fce4da1c1  tests/tests/kernel/classes/staticpublish/expStaticAdminTest.php
 e0b7859341e579da0362feb7fceb9860  tests/tests/kernel/classes/staticpublish/expStaticBuildSqliteTest.php
 d9171c9b1dab35d58a210223eead7bdf  tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php
 4e13e1ff07af6f32c6f45064b5640365  tests/tests/kernel/classes/staticpublish/expStaticCredentialsTest.php
 2c3fc5c8adacfc04a0802560a185f7ff  tests/tests/kernel/classes/staticpublish/expStaticExtrasTest.php
-1b88fc1a59ab1e7d843b875442ba7cf2  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
+e9fdf50d060e9a71db847406af7e0237  tests/tests/kernel/classes/staticpublish/expStaticGitHubTest.php
 f9f6e7d3550d867ef242158560604dfb  tests/tests/kernel/classes/staticpublish/expStaticLinkCheckerTest.php
 c84634e3e809c1f62ebf9d36a557f0a2  tests/tests/kernel/classes/staticpublish/expStaticLinkRewriterTest.php
 ee068eb421875f971f1aae84fec35885  tests/tests/kernel/classes/staticpublish/expStaticManifestTest.php

@@ -262,7 +262,8 @@ class expStaticGitHubTest extends PHPUnit\Framework\TestCase
                          '${{ steps.deployment.outputs.page_url }}' ) as $line )
             $this->assertStringContainsString( $line, $yaml );
         $this->assertStringContainsString( 'path: docs', expStaticGitHub::workflow( 'main', '/docs/' ) );
-        $this->assertStringContainsString( 'branches: ["evil"]', expStaticGitHub::workflow( "evil\"]\n  x" ) );
+        $injected = expStaticGitHub::workflow( "evil\"]\n  x" );
+        $this->assertStringContainsString( 'branches: ["evilx"]', $injected, 'quotes and line breaks never reach the YAML' );
         $this->assertSame( '.github/workflows/static-publish-pages.yml', expStaticGitHub::WORKFLOW_FILE );
     }
 
@@ -291,6 +292,7 @@ class expStaticGitHubTest extends PHPUnit\Framework\TestCase
         $this->assertStringNotContainsString( 'ey', str_replace( 'key', '', $problem ), 'the JWT is never in a problem' );
         $this->assertNull( expStaticGitHub::appToken( 'abc', array(), $problem ) );
         $this->assertStringContainsString( 'not an installation id', $problem );
+        expStaticGitHub::resetAppTokens();
         $this->assertNull( expStaticGitHub::appToken( '77', array( 'app_id' => '', 'private_key' => '' ), $problem ) );
         $this->assertStringContainsString( 'GitHubAppId', $problem );
 
