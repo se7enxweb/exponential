@@ -311,15 +311,40 @@ exp:ini move <file>/<Block> <from> <to> --only=SiteURL,SiteName   # some variabl
   beide Dateien wiederhergestellt, wie sie waren. Eine Zieldatei, die das Verschieben angelegt hat, wird nach
   `var/backup/ini/<stamp>-rollback/` beiseitegelegt. Das Verschieben wird dann mit Exit 3 abgelehnt, und die Meldung
   nennt die Datei, die jetzt gewinnt. `--force` behält ein solches Verschieben.
-- **Ladereihenfolge.** Die Einstellungen einer Erweiterung werden vor `settings/siteaccess/<sa>` geladen, und das vor
-  `settings/override`. Ein Wert, der aus dem Override in eine Erweiterung verschoben wird, kann daher gegen eine
-  Siteaccess-Datei verlieren. Die Prüfung fängt das ab:
+- **Ladereihenfolge.** eZINI liest eine Datei eines Siteaccess in dieser Reihenfolge, und eine spätere Datei gewinnt
+  (`eZINI::overrideDirsByScope()`, gefüllt von `eZSiteAccess::load()`):
+  1. `settings/<file>.ini`, die Standardwerte;
+  2. `extension/<ext>/settings/` der Erweiterungen in `ActiveAccessExtensions[]` des Siteaccess (Scope
+     `sa-extension`; die zuerst genannte wird zuletzt gelesen);
+  3. die Siteaccess-Verzeichnisse der Erweiterungen (`extension/<ext>/settings/siteaccess/<sa>/`, dann
+     `settings/override__<group>/` und `settings/override/` einer Erweiterung, die dieses Verzeichnis hat), danach
+     `settings/siteaccess/<sa>/` (Scope `siteaccess`);
+  4. `extension/<ext>/settings/` der Erweiterungen in `ActiveExtensions[]` (Scope `extension`; die zuerst genannte
+     wird zuletzt gelesen und gewinnt);
+  5. `settings/override/`.
+
+  Die Einstellungen einer Erweiterung in `ActiveExtensions[]` gewinnen also gegen `settings/siteaccess/<sa>`, die
+  einer Erweiterung in `ActiveAccessExtensions[]` verlieren dagegen. Unter `--root` folgt die Kette des Editors
+  derselben Reihenfolge (`expIniEditor::loadOrder()`; die Listen gelten wie geschrieben, ohne `ExtensionOrdering`).
+  Zwei Verschiebungen, die die Prüfung auf der Fixture der Tests ablehnt, in der `fixtureext` in `ActiveExtensions[]`
+  steht: ein Wert eines Siteaccess, verschoben in eine Erweiterung, die jeder Siteaccess liest, und ein Wert des
+  Overrides, verschoben in eine Erweiterung, die ein Siteaccess vor seiner eigenen Datei liest (`accessext`, in
+  `ActiveAccessExtensions[]` beider Siteaccesses):
 
 ```
-$ exp:ini move site.ini/SiteSettings global extension:fixtureext
+$ exp:ini move site.ini/TemplateSettings siteaccess:admin extension:fixtureext
+Refused and rolled back: site.ini [TemplateSettings] Debug in effect for siteaccess site would change from
+"false" to "true" (extension/fixtureext/settings/site.ini.append.php wins: it is read for siteaccess site after
+every file that sets it). Both files are as they were; --force keeps such a move   (exit 3)
+
+$ exp:ini move site.ini/SiteSettings global extension:accessext
 Refused and rolled back: site.ini [SiteSettings] SiteName in effect for siteaccess site would change from
-"Json" to "Site siteaccess" (settings/siteaccess/site/site.ini.append.php wins: it loads after
-extension/fixtureext/settings/site.ini.append.php). Both files are as they were; --force keeps such a move   (exit 3)
+"Override site" to "Site siteaccess" (settings/siteaccess/site/site.ini.append.php wins: it loads after
+extension/accessext/settings/site.ini.append.php). Both files are as they were; --force keeps such a move   (exit 3)
+
+$ exp:ini move site.ini/SiteSettings global extension:fixtureext
+Moved 1 block, 2 variables: settings/override/site.ini.append.php -> extension/fixtureext/settings/site.ini.append.php
+Moved 1 block, 2 variables, 1 file
 
 $ exp:ini move site.ini/DebugSettings global extension:fixtureext --dry-run
 --- a/extension/fixtureext/settings/site.ini.append.php
@@ -510,7 +535,7 @@ php vendor/bin/phpunit tests/tests/kernel/classes/ini/command/
 
 Die eigenen Tests der Engine (Zeilenerhalt bei jeder echten INI-Datei, Besitz, atomares Schreiben, die
 Ladereihenfolge) stehen in `tests/tests/kernel/classes/ini/` (`expIniEditorTest`, `expIniRoundTripTest`,
-`expIniLocatorTest`).
+`expIniLocatorTest` und `expIniLoadOrderTest`, der die Kette des Editors unter `--root` mit der von eZINI auf einer Fixture vergleicht).
 
 ## Verwandte Seiten
 

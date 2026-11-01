@@ -13,8 +13,8 @@
  *
  * The order is not derived here: fromIni() asks an eZINI instance (eZINI::findInputFiles()) for its input files, so
  * the chain is exactly the load order of that instance - settings/<file>.ini first, then the override directories in
- * eZINI's scope order (extension siteaccess directories, settings/siteaccess/<sa>, the active extensions, then
- * settings/override). Each file is read once, line by line, by expIniWriter (the same reading rules as
+ * eZINI's scope order (the extensions of the siteaccess's ActiveAccessExtensions[], the extension siteaccess
+ * directories, settings/siteaccess/<sa>, the extensions of ActiveExtensions[], then settings/override). Each file is read once, line by line, by expIniWriter (the same reading rules as
  * eZINI::parseFile()), and the lines are then replayed in order the way eZINI merges them:
  *
  *   Var=value      sets a plain value; whatever earlier files gave the variable is replaced

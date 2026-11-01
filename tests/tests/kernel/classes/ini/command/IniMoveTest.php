@@ -16,6 +16,8 @@
  *          settings/ and activates it (ActiveExtensions[] in global, ActiveAccessExtensions[] for a siteaccess
  *          target); ActiveExtensions never moves into an extension
  *  IM-08 — --dry-run shows both diffs and the summary and writes nothing; --json carries the totals
+ *  IM-09 — eZINI's load order decides: an extension of ActiveAccessExtensions[] loses to settings/siteaccess/<sa>
+ *          (refused), one of ActiveExtensions[] wins over it (moved)
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -182,12 +184,20 @@ class IniMoveTest extends PHPUnit\Framework\TestCase
     {
         $override = $this->file( self::OVERRIDE );
         $ext = $this->file( self::EXT );
-        // SiteName: the override wins over settings/siteaccess/site today; in the extension it would lose
-        $r = $this->assertExit( 3, $this->ini( array( 'move', 'site.ini/SiteSettings', 'global', 'extension:fixtureext' ) ) );
+        $admin = $this->file( 'settings/siteaccess/admin/site.ini.append.php' );
+        // Debug=true of the siteaccess admin, moved into an extension of ActiveExtensions[]: that extension is read
+        // for every siteaccess, after settings/siteaccess/<sa>, so the siteaccess site would get it as well
+        $r = $this->assertExit( 3, $this->ini( array( 'move', 'site.ini/TemplateSettings', 'siteaccess:admin', 'extension:fixtureext' ) ) );
         $this->assertStringContainsString( 'Refused and rolled back', $r[1] . $r[2] );
-        $this->assertStringContainsString( 'settings/siteaccess/site/site.ini.append.php wins', $r[1] . $r[2] );
-        $this->assertSame( $override, $this->file( self::OVERRIDE ), 'the source is as it was' );
+        $this->assertStringContainsString( 'Debug in effect for siteaccess site would change from "false" to "true"', $r[1] . $r[2] );
+        $this->assertStringContainsString( 'extension/fixtureext/settings/site.ini.append.php wins: it is read for siteaccess site after every file', $r[1] . $r[2] );
+        $this->assertSame( $admin, $this->file( 'settings/siteaccess/admin/site.ini.append.php' ), 'the source is as it was' );
         $this->assertSame( $ext, $this->file( self::EXT ), 'the target is as it was' );
+
+        // SiteName out of the override into the same extension changes nothing: the extension's settings win over
+        // settings/siteaccess/site as the override did
+        $r = $this->assertExit( 0, $this->ini( array( 'move', 'site.ini/SiteSettings', 'global', 'extension:fixtureext', '--dry-run' ) ) );
+        $this->assertSame( $override, $this->file( self::OVERRIDE ), 'a dry run writes nothing' );
 
         // a target file the move created is moved aside, not left behind
         $r = $this->assertExit( 3, $this->ini( array( 'move', 'site.ini/SiteSettings', 'global', 'extension:fixtureext:siteaccess:admin' ) ) );
@@ -195,8 +205,30 @@ class IniMoveTest extends PHPUnit\Framework\TestCase
         $this->assertNotEmpty( glob( $this->root . '/var/backup/ini/*-rollback/extension/fixtureext/settings/siteaccess/admin/site.ini.append.php' ) );
         $this->assertSame( $override, $this->file( self::OVERRIDE ) );
 
-        $r = $this->assertExit( 0, $this->ini( array( 'move', 'site.ini/SiteSettings', 'global', 'extension:fixtureext', '--force' ) ) );
+        $r = $this->assertExit( 0, $this->ini( array( 'move', 'site.ini/TemplateSettings', 'siteaccess:admin', 'extension:fixtureext', '--force' ) ) );
         $this->assertStringContainsString( 'kept with --force', $r[1] );
+        $this->assertStringContainsString( "[TemplateSettings]\nDebug=true", $this->file( self::EXT ) );
+    }
+
+    /** IM-09 */
+    public function testAccessExtensionLosesToTheSiteAccess()
+    {
+        // accessext is in ActiveAccessExtensions[] of both siteaccesses: read before settings/siteaccess/<sa>
+        $this->put( 'extension/accessext/settings/.keep', '' );
+        foreach ( array( 'site', 'admin' ) as $sa )
+        {
+            $path = "settings/siteaccess/$sa/site.ini.append.php";
+            $this->put( $path, str_replace( "*/ ?>\n", "\n[ExtensionSettings]\nActiveAccessExtensions[]=accessext\n*/ ?>\n", $this->file( $path ) ) );
+        }
+        $override = $this->file( self::OVERRIDE );
+        $r = $this->assertExit( 3, $this->ini( array( 'move', 'site.ini/SiteSettings', 'global', 'extension:accessext' ) ) );
+        $this->assertStringContainsString( 'SiteName in effect for siteaccess site would change from "Override site" to "Site siteaccess"', $r[1] . $r[2] );
+        $this->assertStringContainsString( 'settings/siteaccess/site/site.ini.append.php wins: it loads after extension/accessext/settings/site.ini.append.php', $r[1] . $r[2] );
+        $this->assertSame( $override, $this->file( self::OVERRIDE ) );
+        $this->assertFileDoesNotExist( $this->root . '/extension/accessext/settings/site.ini.append.php' );
+
+        // the same move into an extension of ActiveExtensions[] keeps every value
+        $this->assertExit( 0, $this->ini( array( 'move', 'site.ini/SiteSettings', 'global', 'extension:fixtureext' ) ) );
         $this->assertStringContainsString( 'SiteName=Override site', $this->file( self::EXT ) );
     }
 

@@ -5,7 +5,7 @@ Beispiel auf einem Editor-Siteaccess. Zwei Einstellungen nehmen einen Reiter aus
 Administrationsoberfläche oder aus der Knotenansicht, gleich, was ihn hinzugefügt hat. Hinzugefügt am 01.10.2026.
 
 Vorher konnte ein Siteaccess die Liste der Reiter neu festlegen, aber nie den Reiter einer Extension entfernen:
-Extensions hängen ihre Reiter an, und Extension-Einstellungen werden nach denen eines Siteaccess gelesen.
+Extensions hängen ihre Reiter an, und die Einstellungen einer Extension in `ActiveExtensions[]` werden nach denen eines Siteaccess gelesen.
 
 ## Einstellungen
 

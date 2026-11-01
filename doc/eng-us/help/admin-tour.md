@@ -50,6 +50,10 @@ The left column changes with the tab:
   type it and press **Find**.
 - On the dashboard it lists your own pages: **My pending items**, **My drafts**, **My bookmarks**,
   **My e-mail preferences**, **My notification settings**, **Change password**, **Edit profile** and more.
+- In **Setup** it lists the pages of the setup in groups, each shown only to roles that may open it. One of them is
+  **Migrations** in the group **System**: the migrations of the installation, their runs, a run or a rollback
+  started in the background, and the log of each run
+  ([Migrations in the administration](migrations/README.md)).
 
 ![The menu of an item in the tree](images/context-menu.webp)
 
@@ -86,7 +90,10 @@ The dashboard is the first page after signing in. From the top:
 4. **My pending items**, **My drafts**, **All latest content** and **My latest content**: short lists that lead to
    the items.
 
-Administrators also see blocks about the system, updates and security events.
+Administrators also see blocks about the system, updates and security events, and the **Migrations** block: how
+many migrations are pending or failed, the orphans (recorded, their file gone), the last run with its state, a note
+while a run is going on, and **All migrations**, a link to Setup > Migrations. The block shows only to users who may
+see the migrations ([The dashboard block](migrations/status-and-history.md#the-dashboard-block)).
 
 ![My bookmarks: the items you bookmarked with Add to bookmarks, to open them again in one click](images/accounts/my-bookmarks.webp)
 

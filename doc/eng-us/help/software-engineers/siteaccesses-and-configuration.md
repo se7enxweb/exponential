@@ -47,14 +47,15 @@ Later wins:
 | Order | Scope | Directories |
 |---|---|---|
 | 0 | defaults | `settings/<file>.ini` |
-| 1 | `sa-extension` | per-siteaccess directories inside extensions (`extension/<ext>/settings/siteaccess/<sa>/` and related) |
-| 2 | `siteaccess` | `settings/siteaccess/<sa>/` |
-| 3 | `extension` | `extension/<ext>/settings/` of each active extension |
+| 1 | `sa-extension` | `extension/<ext>/settings/` of the extensions in the siteaccess's `ActiveAccessExtensions[]` |
+| 2 | `siteaccess` | per-siteaccess directories inside extensions (`extension/<ext>/settings/siteaccess/<sa>/`, `settings/override__<group>/`, `settings/override/`), then `settings/siteaccess/<sa>/` |
+| 3 | `extension` | `extension/<ext>/settings/` of the extensions in `ActiveExtensions[]` (the first listed wins) |
 | 4 | `override` | `settings/override/` |
 
 Two consequences engineers trip over:
 
-- An extension's `settings/` wins over `settings/siteaccess/<sa>/`.
+- The `settings/` of an extension in `ActiveExtensions[]` wins over `settings/siteaccess/<sa>/`; that of an
+  extension in `ActiveAccessExtensions[]` does not.
 - `settings/override/` wins over everything.
 
 Extensions are switched on in `site.ini [ExtensionSettings] ActiveExtensions[]` (global) and

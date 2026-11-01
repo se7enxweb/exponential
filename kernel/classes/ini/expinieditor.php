@@ -35,6 +35,10 @@ class expIniEditor
     protected static $activeOverride = null;
     /** @var array|null Known siteaccesses override (tests) */
     protected static $siteAccessOverride = null;
+    /** @var array|null ActiveExtensions[] override (tests, --root); null: $activeOverride */
+    protected static $defaultOverride = null;
+    /** @var array ActiveAccessExtensions[] by siteaccess under another root */
+    protected static $accessCache = array();
     /** @var expIniScope[]|null */
     protected static $scopeCache = null;
 
@@ -59,19 +63,24 @@ class expIniEditor
      * @param string|null $root
      * @param string[]|null $activeExtensions Active extensions to report (null: ask eZExtension, or none)
      * @param string[]|null $siteAccesses Siteaccesses known besides the directories (null: AvailableSiteAccessList)
+     * @param string[]|null $defaultExtensions ActiveExtensions[] alone, the extensions read for every siteaccess
+     *                                         (null: $activeExtensions); see defaultExtensions()
      */
-    public static function setRoot( $root = null, $activeExtensions = null, $siteAccesses = null )
+    public static function setRoot( $root = null, $activeExtensions = null, $siteAccesses = null, $defaultExtensions = null )
     {
         self::$rootOverride = $root === null ? null : rtrim( $root, '/' ) . '/';
         self::$activeOverride = $activeExtensions;
         self::$siteAccessOverride = $siteAccesses;
+        self::$defaultOverride = $defaultExtensions;
         self::$scopeCache = null;
+        self::$accessCache = array();
     }
 
     /** Forget the cached scope list. */
     public static function resetScopes()
     {
         self::$scopeCache = null;
+        self::$accessCache = array();
     }
 
     /** @return string The installation root, with a trailing slash */
@@ -112,6 +121,64 @@ class expIniEditor
         {
             return array();
         }
+    }
+
+    /**
+     * The extensions whose settings are read for every siteaccess, in the 'extension' scope: RequiredExtensions[]
+     * and ActiveExtensions[] (eZExtension::activeExtensions( 'default' )).
+     *
+     * @return string[]
+     */
+    public static function defaultExtensions()
+    {
+        if ( self::$defaultOverride !== null )
+            return array_values( self::$defaultOverride );
+        if ( self::$activeOverride !== null )
+            return array_values( self::$activeOverride );
+        if ( !self::isRealRoot() || !class_exists( 'eZExtension' ) )
+            return array();
+        try
+        {
+            return array_values( (array)eZExtension::activeExtensions( 'default' ) );
+        }
+        catch ( Throwable $e )
+        {
+            return array();
+        }
+    }
+
+    /**
+     * The extensions a siteaccess activates for itself, in the 'sa-extension' scope: its site.ini
+     * [ExtensionSettings] ActiveAccessExtensions[]. Under another root it is read through the editor's chain of
+     * that siteaccess as eZINI has it when it reads the list: everything but the sa-extension scope.
+     *
+     * @param string $siteAccess
+     * @return string[]
+     */
+    public static function accessExtensions( $siteAccess )
+    {
+        if ( $siteAccess === null || $siteAccess === '' )
+            return array();
+        if ( self::isRealRoot() && self::$rootOverride === null && class_exists( 'eZSiteAccess' ) )
+        {
+            try
+            {
+                $ini = eZSiteAccess::getIni( $siteAccess, 'site.ini' );
+                return $ini->hasVariable( 'ExtensionSettings', 'ActiveAccessExtensions' )
+                    ? array_values( array_unique( array_filter( (array)$ini->variable( 'ExtensionSettings', 'ActiveAccessExtensions' ), 'strlen' ) ) )
+                    : array();
+            }
+            catch ( Throwable $e )
+            {
+                return array();
+            }
+        }
+        if ( !isset( self::$accessCache[$siteAccess] ) )
+        {
+            $list = self::valueInChain( self::buildLoadOrder( $siteAccess, false ), 'site', 'ExtensionSettings', 'ActiveAccessExtensions' );
+            self::$accessCache[$siteAccess] = array_values( array_unique( array_filter( array_map( 'strval', (array)$list ), 'strlen' ) ) );
+        }
+        return self::$accessCache[$siteAccess];
     }
 
     /** @return string[] Siteaccesses named in site.ini [SiteAccessSettings] AvailableSiteAccessList[] */
@@ -779,10 +846,8 @@ class expIniEditor
      * The effective value of a variable for a siteaccess (null: the current context).
      *
      * On the real installation this is eZINI's own value (expIniLocator::where()). Under another root (setRoot(),
-     * tests, `--root`) eZINI cannot be pointed there, so the files are read in the kernel's order for the scopes
-     * that exist there: settings/<file>.ini, the active extensions (the last one in ActiveExtensions first, as
-     * eZExtension prepends them), settings/siteaccess/<sa>, the extensions' siteaccess directories, then
-     * settings/override.
+     * tests, `--root`) eZINI cannot be pointed there, so the files are read in eZINI's order, as loadOrder() lists
+     * it for the directories that exist there.
      *
      * @param string $file
      * @param string $block
@@ -804,29 +869,164 @@ class expIniEditor
                 return null;
             }
         }
-        $order = array( 'default' );
-        foreach ( array_reverse( self::activeExtensions() ) as $ext )
-            $order[] = "extension:$ext";
-        if ( $siteAccess !== null )
-        {
-            $order[] = "siteaccess:$siteAccess";
-            foreach ( self::activeExtensions() as $ext )
-                $order[] = "extension:$ext:siteaccess:$siteAccess";
-        }
-        $order[] = 'global';
+        return self::valueInChain( self::loadOrder( $siteAccess ), $file, $block, $variable );
+    }
+
+    /**
+     * The settings directories eZINI reads an INI file from for a siteaccess, as scopes, in load order: a file in
+     * a later directory wins. The order is eZINI's (eZINI::overrideDirsByScope(): settings/<file>.ini, then the
+     * scopes sa-extension, siteaccess, extension, override), filled the way eZSiteAccess::load() fills them:
+     *
+     *   default       settings/<file>.ini
+     *   sa-extension  extension/<ext>/settings of the siteaccess's ActiveAccessExtensions[]; each one is prepended
+     *                 (eZExtension::activateExtensions( 'access' )), so the first listed is read last
+     *   siteaccess    for every active extension that has extension/<ext>/settings/siteaccess/<sa>: that directory,
+     *                 extension/<ext>/settings/override__<group> (a siteaccess named <group>__<name>) and
+     *                 extension/<ext>/settings/override (eZExtension::prependSiteAccess(): the access extensions
+     *                 first, then ActiveExtensions[] from the last listed to the first); then settings/siteaccess/<sa>
+     *   extension     extension/<ext>/settings of ActiveExtensions[], the last listed first, so the first listed is
+     *                 read last
+     *   override      settings/override
+     *
+     * So the settings of an extension in ActiveExtensions[] override settings/siteaccess/<sa>, and those of an
+     * extension in a siteaccess's ActiveAccessExtensions[] do not. Without a siteaccess only default, extension
+     * and override are read. ExtensionOrdering (extension.xml dependencies) is not applied: the lists are taken in
+     * the order they are written.
+     *
+     * @param string|null $siteAccess
+     * @return expIniScope[]
+     */
+    public static function loadOrder( $siteAccess = null )
+    {
+        return self::buildLoadOrder( $siteAccess === '' ? null : $siteAccess, true );
+    }
+
+    /**
+     * loadOrder(), with or without the sa-extension scope: ActiveAccessExtensions[] itself is read from a site.ini
+     * that does not have that scope yet.
+     */
+    protected static function buildLoadOrder( $siteAccess, $withAccessExtensions )
+    {
         $byName = array();
         foreach ( self::scopes() as $s )
             $byName[$s->name()] = $s;
-        $values = array();
-        foreach ( $order as $name )
+        $root = self::root();
+        $default = self::defaultExtensions();
+        $access = $siteAccess !== null && $withAccessExtensions ? self::accessExtensions( $siteAccess ) : array();
+
+        $order = array();
+        if ( isset( $byName['default'] ) )
+            $order[] = $byName['default'];
+        foreach ( array_reverse( $access ) as $ext )
         {
-            if ( !isset( $byName[$name] ) || !is_file( $byName[$name]->path( $file ) ) )
+            if ( is_dir( $root . "extension/$ext" ) )
+                $order[] = self::extensionScope( $ext, $byName );
+        }
+        if ( $siteAccess !== null )
+        {
+            // eZINI::prependOverrideDir() with identifiers: a known identifier is replaced in place, a new one goes first
+            $dirs = array( 'siteaccess' => isset( $byName["siteaccess:$siteAccess"] ) ? $byName["siteaccess:$siteAccess"]
+                : new expIniScope( "siteaccess:$siteAccess", expIniScope::KIND_SITEACCESS, "settings/siteaccess/$siteAccess",
+                                   $root, '', array( 'siteaccess' => $siteAccess ) ) );
+            $base = self::extensionSettingsSiteAccess( $siteAccess );
+            foreach ( array_merge( $default, $access ) as $ext )
+            {
+                self::prependExtensionSiteAccessDirs( $dirs, $ext, $siteAccess, "ext-siteaccess:$ext" );
+                if ( $base !== null )
+                    self::prependExtensionSiteAccessDirs( $dirs, $ext, $base, "ext-siteaccess:$ext:from:$base" );
+            }
+            $order = array_merge( $order, array_values( $dirs ) );
+        }
+        foreach ( array_reverse( $default ) as $ext )
+        {
+            if ( is_dir( $root . "extension/$ext" ) )
+                $order[] = self::extensionScope( $ext, $byName );
+        }
+        if ( isset( $byName['global'] ) )
+            $order[] = $byName['global'];
+        return $order;
+    }
+
+    /** The scope extension:<ext>, from the scope list or new. */
+    protected static function extensionScope( $ext, array $byName )
+    {
+        if ( isset( $byName["extension:$ext"] ) )
+            return $byName["extension:$ext"];
+        return new expIniScope( "extension:$ext", expIniScope::KIND_EXTENSION, "extension/$ext/settings", self::root(), '',
+                                array( 'extension' => $ext, 'active' => true ) );
+    }
+
+    /**
+     * The directories eZExtension::prependSiteAccessDirs() prepends for one extension and siteaccess, only when the
+     * extension has settings/siteaccess/<sa>: settings/override, settings/override__<group>, then settings/siteaccess/<sa>.
+     */
+    protected static function prependExtensionSiteAccessDirs( array &$dirs, $ext, $siteAccess, $identifier )
+    {
+        $root = self::root();
+        if ( !is_dir( $root . "extension/$ext/settings/siteaccess/$siteAccess" ) )
+            return;
+        $own = array( 'extension' => $ext, 'active' => true );
+        self::prependDir( $dirs, "ext-siteaccess-override:$ext",
+                          new expIniScope( "extension:$ext:override", 'extension-override', "extension/$ext/settings/override",
+                                           $root, '', $own ) );
+        $parts = explode( '__', $siteAccess );
+        if ( count( $parts ) > 1 )
+            self::prependDir( $dirs, "ext-siteaccess-override:$ext:__group:{$parts[0]}",
+                              new expIniScope( "extension:$ext:override__{$parts[0]}", 'extension-override',
+                                               "extension/$ext/settings/override__{$parts[0]}", $root, '', $own ) );
+        self::prependDir( $dirs, $identifier, expIniExtensionScopeProvider::siteAccessScope( $root, $ext, $siteAccess, true ) );
+    }
+
+    /** eZINI::prependOverrideDir() for one identifier: replaced in place when known, else put first. */
+    protected static function prependDir( array &$dirs, $identifier, expIniScope $scope )
+    {
+        if ( isset( $dirs[$identifier] ) )
+            $dirs[$identifier] = $scope;
+        else
+            $dirs = array( $identifier => $scope ) + $dirs;
+    }
+
+    /**
+     * site.ini [SiteAccessSettings] ExtensionSettingsSiteAccess in a siteaccess's own file, as
+     * eZExtension::extensionSettingsSiteAccess() reads it; null when it names none.
+     */
+    protected static function extensionSettingsSiteAccess( $siteAccess )
+    {
+        foreach ( array( 'site.ini.append.php', 'site.ini.append' ) as $name )
+        {
+            $path = self::root() . "settings/siteaccess/$siteAccess/$name";
+            if ( !is_file( $path ) )
                 continue;
-            $fileValues = expIniWriter::fromFile( $byName[$name]->path( $file ) )->values();
-            foreach ( $fileValues as $b => $vars )
+            $values = expIniWriter::fromFile( $path )->values();
+            if ( !isset( $values['SiteAccessSettings']['ExtensionSettingsSiteAccess'] ) )
+                return null;
+            $base = trim( (string)$values['SiteAccessSettings']['ExtensionSettingsSiteAccess'] );
+            return $base !== '' && $base !== $siteAccess && preg_match( '/^[A-Za-z0-9_-]+$/', $base ) ? $base : null;
+        }
+        return null;
+    }
+
+    /**
+     * The value of a variable after reading the file of each scope in order, merged the way eZINI merges them.
+     *
+     * @param expIniScope[] $order
+     * @param string $file
+     * @param string $block
+     * @param string $variable
+     * @return string|array|null
+     */
+    protected static function valueInChain( array $order, $file, $block, $variable )
+    {
+        $values = array();
+        foreach ( $order as $scope )
+        {
+            $path = $scope->path( $file );
+            if ( !is_file( $path ) )
+                continue;
+            foreach ( expIniWriter::fromFile( $path )->values() as $b => $vars )
                 foreach ( $vars as $v => $value )
                 {
-                    if ( is_array( $value ) && isset( $values[$b][$v] ) && is_array( $values[$b][$v] ) && !self::resetsArray( $byName[$name]->path( $file ), $b, $v ) )
+                    if ( is_array( $value ) && isset( $values[$b][$v] ) && is_array( $values[$b][$v] ) && !self::resetsArray( $path, $b, $v ) )
                         $values[$b][$v] = array_merge( $values[$b][$v], $value );
                     else
                         $values[$b][$v] = $value;

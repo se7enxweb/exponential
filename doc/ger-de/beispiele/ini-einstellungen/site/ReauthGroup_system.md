@@ -33,8 +33,8 @@ Enabled=true
 
 ## Rules
 
-> Migrations: a run, a resume or a simulation, a rollback, and (later) the editor and the generators; seeing them  
-> (status, history, log, the dry run) is never asked  
+> Migrationen: ein Lauf, eine Fortsetzung oder eine Simulation, eine Rücknahme und (später) der Editor und die Generatoren; das Ansehen  
+> (Stand, Verlauf, Protokoll, der Probelauf) wird nie abgefragt  
 
 Standard: eine Liste mit 22: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
 
