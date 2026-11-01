@@ -27,6 +27,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | `logs` | [explogrotate.php](explogrotate.md) | `php runcronjobs.php logs` |
 | `notification` | [notification.php](notification.md) | `php runcronjobs.php notification` |
 | `mailpreferences` | [mailpreferences.php](mailpreferences.md) | `php runcronjobs.php mailpreferences` |
+| `migrationpush` | [migrationpush.php](migrationpush.md) | `php runcronjobs.php migrationpush` |
 | `mailbounces` | [mailbounces.php](mailbounces.md) | `php runcronjobs.php mailbounces` |
 | `usersessions` | [usersessions.php](usersessions.md) | `php runcronjobs.php usersessions` |
 | `useraudit` | [useraudit.php](useraudit.md) | `php runcronjobs.php useraudit` |
@@ -58,6 +59,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | [linkcheck.php](linkcheck.md) | Prüft alle internen und externen Links in veröffentlichten Inhalten auf defekte URLs | infrequent |
 | [mailbounces.php](mailbounces.md) | Das Postfach für Rückläufer: Hard Bounces und Spam-Beschwerden kommen auf die Sperrliste (mailpreferences.ini [BounceSettings]) | frequent, mailbounces |
 | [mailpreferences.php](mailpreferences.md) | Aufbewahrung der E-Mail-Einstellungen: Zeilen des Einwilligungsprotokolls von Personen, die nicht mehr da sind, abgelaufene Bestätigungen, alte Einträge der Sperrliste | infrequent, mailpreferences |
+| [migrationpush.php](migrationpush.md) | Migrationen: die Aufzeichnung der Läufe, deren Push gescheitert ist, erneut zum Remote des Migrations-Repositorys pushen | migrationpush |
 | [notification.php](notification.md) | Verarbeitet anstehende Benachrichtigungsereignisse und verschickt sie an die Abonnenten | frequent, notification |
 | [old_drafts_cleanup.php](old_drafts_cleanup.md) | Entfernt Entwürfe von Benutzern, die die konfigurierte Altersgrenze überschreiten |  |
 | [querycache_cleanup.php](querycache_cleanup.md) | Entfernt die Ergebnisdateien des SQL-Abfrage-Caches, die älter als MaxAge sind oder von vor dem letzten Leeren stammen | cache_cleanup |

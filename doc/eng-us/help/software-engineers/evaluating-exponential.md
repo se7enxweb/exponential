@@ -67,8 +67,9 @@ evaluation, because they name what is missing:
 
 - **Inherited code.** The kernel is old and large; PHPStan runs at level 1 with a baseline of findings that existed
   when the check was introduced ([Handling technical debt](technical-debt.md)).
-- **Manual database updates.** There is no migration runner that records which statements ran
-  ([Schema changes and migrations](schema-changes-and-migrations.md)).
+- **Database updates by hand on old installations.** Since 6.0.15 `exp:upgrade` and the migrations
+  (`exp:migration:migrate`) apply and record every change; an installation upgraded by hand with the SQL update files
+  has no record of which statements ran ([Schema changes and migrations](schema-changes-and-migrations.md)).
 - **Policy, not enforcement.** Some repository rules (no force push, merge style) are policy without branch
   protection ([Source control and releases](../../standards/source-control-and-releases.md)).
 - **A smaller ecosystem** than the largest PHP frameworks. Check the extension catalog for what you need before you

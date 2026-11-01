@@ -1,0 +1,91 @@
+# Migrationen im Kernel
+
+Exponential 6.0.15 bringt Migrationen in den Kernel: Änderungen an einer Installation (eine Tabelle, Inhalte, eine
+Klasse, eine Rolle, eine Einstellung), einmal in Dateien unter Versionskontrolle geschrieben und auf jede Installation
+einer Site in derselben Reihenfolge angewendet, mit einer Aufzeichnung, was wo gelaufen ist, einem Sicherungspunkt vor
+jedem Lauf, einer automatischen Wiederherstellung nach einem Fehler und einem Commit, Tag und Push der Aufzeichnung
+jedes Laufs. Vor 6.0.15 wurden solche Änderungen von Hand oder mit Update-Skripten angewendet, und nichts hielt fest,
+welche gelaufen waren.
+
+Die Anleitung dazu ist [Migrationen](../../anleitungen/migrationen.md); beginnen Sie mit
+[dem Tutorial](../../anleitungen/migrationen-tutorial.md).
+
+Schnellstart:
+
+```bash
+./console exp:migration:generate --skeleton add_news_class --apply
+./console exp:migration:check
+./console exp:migration:migrate              # Probelauf
+./console exp:migration:migrate --apply
+./console exp:migration:status
+```
+
+## Was 6.0.15 hinzufügt
+
+| Teil | Was es ist |
+|---|---|
+| Migrationsdateien | `YYYYMMDDHHMMSS_name.php` in `migrations/` der Site, in `extension/<name>/migrations/` aktiver Erweiterungen und in installierten Paketen; ein Kopf aus Kommentarzeilen `schlüssel: wert` (description, requires, environments, engines, maintenance, author); geordnet nach ID und `requires` |
+| PHP-Migrationen | eine Klasse in einem Namensraum, die `expMigrationPhp` erweitert, mit `plan()`, `up()`, wahlweise `down()` und `detect()` |
+| Die Aufzeichnung | Tabellen `exp_migration` (eine Zeile je Migration; seit 6.0.15 auch die Aufzeichnung von `exp:upgrade`) und `exp_migration_run` (eine Zeile je Lauf), angelegt vom Upgrade-Schritt `6.0.15-migration-tables` |
+| Der Runner | die mit `exp:upgrade` geteilte Sperre der Installation, eine Transaktion je Migration, wo die Engine eine hat, der Benutzer des Laufs, Wartungsmodus je Migration, eine Prüfsummen-Sperre gegen geänderte Dateien, `ezpEvent`-Ereignisse und Audit-Ereignisse |
+| Sicherungspunkte | ein Sicherungspunkt vor jedem Lauf (wiederverwendet, solange sich nichts geändert hat), einer nach einem erfolgreichen Lauf, einer des gescheiterten Zustands und die Wiederherstellung des Sicherungspunkts von vorher nach einem Fehler; die Sicherungspunkte sind die von `exp:upgrade` |
+| Zurücknehmen | ein Lauf (sein Sicherungspunkt von vorher), eine Migration (ihr `down()`) oder, für Fachleute, ein beliebiger Sicherungspunkt |
+| Das Migrations-Repository | die Statusdatei `status/<umgebung>.json` und das Laufprotokoll `runs/<run-id>.log`, nach jedem Lauf committet, getaggt und gepusht; gescheiterte Pushes wiederholt der Cronjob-Teil `migrationpush` |
+| Befehle | `exp:migration:status`, `:migrate`, `:dry-run` (mit `--simulate --diff`), `:rollback`, `:resume`, `:caption`, `:push`, `:check`, `:generate` |
+| Einstellungen | `settings/migration.ini`: `[MigrationSettings]`, `[RunSettings]`, `[CaptionSettings]`, `[RepositorySettings]` |
+
+## Die Bausteine
+
+| Klasse (`kernel/classes/migration/`) | Aufgabe |
+|---|---|
+| `expMigration` | die Schnittstelle einer Migration (ID, Quelle, Zustand, plan, up, down) |
+| `expMigrationDefinition` | eine Datei auf der Platte: Name, Kopf, Prüfsumme |
+| `expMigrationLocator` | findet die Dateien der Site, der Erweiterungen und der Pakete |
+| `expMigrationGraph` | die Reihenfolge und ihre Fehler (Doppelte, fehlende Anforderungen, Zyklen) |
+| `expMigrationPhp` | die Basisklasse einer PHP-Migration |
+| `expMigrationContext` | woran ein Lauf arbeitet: Datenbank, Benutzer, Umgebung, Referenzen, Aufzeichnung, Sperre, Protokoll |
+| `expMigrationRunner` | führt Migrationen aus und nimmt eine mit `down()` zurück |
+| `expMigrationRunFlow` | Sicherungspunkte, Wiederherstellung, Commit, Tag und Push um einen Lauf |
+| `expMigrationCaption`, `expMigrationRollback`, `expMigrationResume` | Sicherungspunkte, die drei Arten des Zurücknehmens, einen Lauf fortsetzen |
+| `expMigrationRecord`, `expMigrationStatusMirror`, `expMigrationRepository` | die Tabellen, die Dateien in Git, Git |
+| `expMigrationLock` | die Sperre der Installation mit Halter-Datei (auch die Sperre von `exp:upgrade`) |
+| `expMigrationStatus`, `expMigrationCheck`, `expMigrationSimulation`, `expMigrationGenerator` | der Status, die Prüfung, die Simulation, das Gerüst |
+
+Die Befehle sind `bin/php/expmigration<name>.php` (Alias `exp:migration:<name>`), ihr Code liegt in
+`kernel/private/classes/commands/`. Ihre Maschinenausgabe ist `exp-migration/1` (`--format=json`); die Exit-Codes sind
+die von `exp:upgrade` (0, 1 gescheitert, 2 Bedienung, 3 Datenbank nicht erreichbar, 4 intern).
+
+## Engines
+
+| Datenbank | Transaktionen | Simulation | Sicherungspunkt und Wiederherstellung |
+|---|---|---|---|
+| SQLite | vollständig | ja | ja |
+| PostgreSQL | vollständig | ja | ja |
+| MySQL/MariaDB | nur Daten (Schemaänderungen werden sofort committet) | nein | ja |
+| MongoDB | keine | nein | ja |
+| Oracle (ezoracle) | nur Daten | nein | ein Sicherungspunkt braucht einen eigenen Export; die Wiederherstellung geschieht von Hand (die Schritte werden ausgegeben) |
+
+## Grenzen in 6.0.15
+
+- Migrationen werden in PHP geschrieben. Dateien der Typen `yml`, `sql`, `<engine>.sql` und `ini` werden gefunden,
+  geordnet und geprüft und vom Runner abgelehnt, bis ihre Schritte kommen.
+- Die Administration hat noch keine Ansicht für Migrationen; alles läuft auf der Konsole.
+- `exp:upgrade` behält seine eigenen Befehle; seine Kernel-Schritte werden in `exp_migration` aufgezeichnet (Quelle
+  `kernel`), aber von `exp:migration:status` noch nicht gezeigt.
+- Commits, Tags und Pushes brauchen git_manager; ohne ihn sagt ein Lauf das und committet nichts.
+
+## Einstellungen
+
+Jede Einstellung mit ihrer Voreinstellung: [migration.ini](../../beispiele/ini-einstellungen/migration/README.md). Der
+Cronjob-Teil: [migrationpush](../../beispiele/cronjobs/migrationpush.md). Audit-Ereignisse: `system.migration.run`,
+`.apply`, `.fail`, `.rollback`, `.caption`, `.push` in `settings/audit.ini`.
+
+## Weiterlesen
+
+- [Migrationen](../../anleitungen/migrationen.md), [das Tutorial](../../anleitungen/migrationen-tutorial.md),
+  [PHP-Migrationen](../../anleitungen/migrationen-php.md)
+- [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](../../anleitungen/migrationen-repositories.md),
+  [Fehlerbehebung](../../anleitungen/migrationen-fehlerbehebung.md)
+- [Das Migrationsdateiformat](../../spezifikationen/6.0/migrationsdateiformat.md)
+- [Upgrade mit der Konsole](../../anleitungen/aktualisieren-mit-der-konsole.md)

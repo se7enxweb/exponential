@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-Die ausgelieferten Einstellungen von `settings/site.ini`: 63 Blöcke, 501 Einstellungen.
+Die ausgelieferten Einstellungen von `settings/site.ini`: 65 Blöcke, 503 Einstellungen.
 
 > Exponential-Konfigurationsdatei.  
 >
@@ -52,6 +52,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 63 Blöcke, 501 Einste
 | [PasswordChangeRequiredSettings](PasswordChangeRequiredSettings.md) | 1 |
 | [SignInSecondFactorSettings](SignInSecondFactorSettings.md) | 2 |
 | [PasskeySettings](PasskeySettings.md) | 21 |
+| [ContentFieldMarkerSettings](ContentFieldMarkerSettings.md) | 1 |
 | [ReauthSettings](ReauthSettings.md) | 8 |
 | [ReauthGroup_account](ReauthGroup_account.md) | 2 |
 | [ReauthGroup_users](ReauthGroup_users.md) | 2 |
@@ -69,6 +70,7 @@ Die ausgelieferten Einstellungen von `settings/site.ini`: 63 Blöcke, 501 Einste
 | [RegionalSettings](RegionalSettings.md) | 17 |
 | [UnitSettings](UnitSettings.md) | 2 |
 | [FileSettings](FileSettings.md) | 22 |
+| [PageLayoutHooks](PageLayoutHooks.md) | 1 |
 | [TemplateSettings](TemplateSettings.md) | 26 |
 | [TemplateBridgeSettings](TemplateBridgeSettings.md) | 4 |
 | [ContentSettings](ContentSettings.md) | 20 |

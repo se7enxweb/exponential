@@ -199,8 +199,8 @@ keinen Neustart.
 
 ### Bekannte Lücken
 
-- Die Datenbank-Updatedateien werden von Hand angewendet; es gibt keinen Migrations-Runner, der festhält, welche
-  Anweisungen gelaufen sind.
+- Von Hand angewendete Datenbank-Updatedateien hinterlassen keine Aufzeichnung, welche Anweisungen gelaufen sind;
+  `exp:upgrade` und die Migrationen (`exp:migration:migrate`, 6.0.15) wenden jeden Schritt an und halten ihn fest.
 - `exp:velocity deploy` deckt PHP-FPM und Velocity auf einer Maschine ab; mehrere Webserver werden einer nach dem
   anderen ausgerollt.
 

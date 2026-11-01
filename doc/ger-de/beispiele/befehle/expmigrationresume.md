@@ -45,9 +45,9 @@ failed first. The options of the run are those of exp:migration:migrate.
 | `--environment` | erforderlich | Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-migration/1) |
 | `--login` | erforderlich | Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini) |
-| `--no-caption` |  | Keine Aufnahme vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden |
-| `--no-restore` |  | Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt die vor dem Lauf genommene Aufnahme wiederherzustellen |
-| `--include-uncommitted` |  | Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese in der Aufnahme aufbewahren |
+| `--no-caption` |  | Kein Sicherungspunkt vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden |
+| `--no-restore` |  | Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt den vor dem Lauf angelegten Sicherungspunkt wiederherzustellen |
+| `--include-uncommitted` |  | Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese im Sicherungspunkt aufbewahren |
 | `--no-commit` |  | Die Statusdatei und das Laufprotokoll nicht in das Migrations-Repository committen (auch kein Tag und kein Push) |
 | `--no-push` |  | Committen und taggen, aber nicht pushen |
 | `--no-tag` |  | Committen und pushen, aber den Lauf nicht taggen |

@@ -2,14 +2,14 @@
 title: exp:expmigrationcaption
 audience: developer, admin
 category: examples
-summary: Nimmt jetzt eine Aufnahme (Caption) der Installation auf (Datenbank, Speicher, Einstellungen, die Commits des Codes) oder listet die Aufnahmen; ein Probelauf ohne --apply.
+summary: Legt jetzt einen Sicherungspunkt (Caption) der Installation an (Datenbank, Speicher, Einstellungen, die Commits des Codes) oder listet die Sicherungspunkte; ein Probelauf ohne --apply.
 keywords: Konsole, Befehl, exp:expmigrationcaption, expmigrationcaption, console, command, CLI, expmigrationcaption.php, exp:migration:caption
 type: generated
 generated: exp:help:examples
 ---
 # exp:expmigrationcaption
 
-Nimmt jetzt eine Aufnahme (Caption) der Installation auf (Datenbank, Speicher, Einstellungen, die Commits des Codes) oder listet die Aufnahmen; ein Probelauf ohne --apply.
+Legt jetzt einen Sicherungspunkt (Caption) der Installation an (Datenbank, Speicher, Einstellungen, die Commits des Codes) oder listet die Sicherungspunkte; ein Probelauf ohne --apply.
 
 Skript `bin/php/expmigrationcaption.php`, Code in `kernel/private/classes/commands/expmigrationcaption.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -42,9 +42,9 @@ back to. --list lists the captions, newest first, with the command that restores
 | `--apply` |  | Die Änderungen vornehmen (ohne die Option ein Probelauf, der sie auflistet und nichts ändert) |
 | `--dry-run` |  | Der Standard, angenommen für Skripte, die ihn übergeben: auflisten, was sich ändern würde, nichts ändern |
 | `--format` | erforderlich | text (Standard) oder json (die Maschinenausgabe exp-migration/1) |
-| `--list` |  | Die Aufnahmen auflisten, statt eine zu nehmen |
-| `--label` | erforderlich | Die Bezeichnung der Aufnahme (Standard: "manual caption" mit der Uhrzeit) |
-| `--backup-dir` | erforderlich | Wo die ohne git_manager gemachten Aufnahmen liegen (Standard var/backup/upgrade) |
+| `--list` |  | Die Sicherungspunkte auflisten, statt einen anzulegen |
+| `--label` | erforderlich | Die Bezeichnung des Sicherungspunkts (Standard: "manual caption" mit der Uhrzeit) |
+| `--backup-dir` | erforderlich | Wo die ohne git_manager angelegten Sicherungspunkte liegen (Standard var/backup/upgrade) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

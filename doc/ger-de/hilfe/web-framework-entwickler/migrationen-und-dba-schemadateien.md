@@ -10,10 +10,12 @@ type: help
 # Migrationen und Startdaten: .dba-Schemadateien und Pakete
 
 Diese Seite richtet sich an Entwickler, die `doctrine:migrations:migrate`, `php artisan migrate`, `manage.py migrate`
-oder `rails db:migrate` ausführen. Exponential hat **keinen Migrations-Runner und keine Migrationstabelle**. Tabellen
-werden in datenbankneutralen `.dba`-Dateien beschrieben, durch Befehle angelegt und durch Upgrade-Schritte geändert,
-die Sie selbst schreiben und mitliefern. Inhaltsklassen und Inhalte werden mit **Paketen** übertragen. Sagen Sie das
-früh im Projekt; es verändert, wie ein Release geplant wird.
+oder `rails db:migrate` ausführen. Tabellen werden in datenbankneutralen `.dba`-Dateien beschrieben, durch Befehle
+angelegt und durch Upgrade-Schritte geändert, die Sie selbst schreiben und mitliefern. Inhaltsklassen und Inhalte
+werden mit **Paketen** übertragen. Seit 6.0.15 hat eine Site außerdem **Migrationen**, nahe an dem, was Sie kennen:
+Dateien `YYYYMMDDHHMMSS_name.php` in `migrations/`, der Reihe nach ausgeführt von `./console exp:migration:migrate`,
+festgehalten in der Tabelle `exp_migration`, mit `down()` zum Zurücknehmen ([Migrationen](../../anleitungen/migrationen.md)).
+Sagen Sie das früh im Projekt; es verändert, wie ein Release geplant wird.
 
 ## Inhalt
 

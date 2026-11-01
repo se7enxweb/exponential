@@ -19,12 +19,15 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Enabled
 
-> Welche Ereignisse festgehalten werden, nach Taxonomie-Muster: eine ganze Domäne (content.\*), ein Gegenstand  
-> (content.node.\*), eine Aktion mit ihren Details (content.node.remove.\*) oder ein Name.  
-> Das spezifischste Muster gewinnt; bei Gleichstand gewinnt die spätere Zeile. Im Katalog als "always" markierte Ereignisse  
-> (system.audit.\*, access.view.sensitive) ignorieren Disabled\[\].  
+> Which events are recorded, by taxonomy pattern: a whole domain (content.\*), a subject  
+> (content.node.\*), an action with its details (content.node.remove.\*) or one name.  
+> The most specific pattern wins; on a tie the later line wins. Events marked "always"  
+> in the catalogue (system.audit.\*, access.view.sensitive) ignore Disabled\[\].  
+> Migrations (migration.ini): a run, a migration applied (also a changed file accepted with  
+> --force --reason), failed or rolled back, a caption taken, the migrations repository pushed.  
+> A site that switches system.\* off keeps them with these lines.  
 
-Standard: eine Liste mit 33: `access.*`, `system.*`, `content.node.move`, `content.node.remove.*`, `content.node.hide`, `content.node.reveal`, `content.node.swap`, `content.node.section`, `content.object.remove`, `content.object.purge`, `content.object.restore`, `content.object.state` ....
+Standard: eine Liste mit 39: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `content.node.move`, `content.node.remove.*`, `content.node.hide`, `content.node.reveal` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -34,6 +37,12 @@ Standard: eine Liste mit 33: `access.*`, `system.*`, `content.node.move`, `conte
 Enabled[]
 Enabled[]=access.*
 Enabled[]=system.*
+Enabled[]=system.migration.run
+Enabled[]=system.migration.apply
+Enabled[]=system.migration.fail
+Enabled[]=system.migration.rollback
+Enabled[]=system.migration.caption
+Enabled[]=system.migration.push
 Enabled[]=content.node.move
 Enabled[]=content.node.remove.*
 Enabled[]=content.node.hide
@@ -46,13 +55,7 @@ Enabled[]=content.object.restore
 Enabled[]=content.object.state
 Enabled[]=content.object.translation.remove
 Enabled[]=content.version.remove
-Enabled[]=content.trash.empty
-Enabled[]=content.class.create
-Enabled[]=content.class.change
-Enabled[]=content.class.remove
-Enabled[]=content.section.*
-Enabled[]=content.state.*
-# ... 13 weitere in der ausgelieferten Datei
+# ... 19 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

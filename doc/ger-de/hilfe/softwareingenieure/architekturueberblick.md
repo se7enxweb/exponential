@@ -103,8 +103,11 @@ index.php          the front controller
 - **Keinen eigenen Dependency-Injection-Container.** Klassen werden über die Klassenzuordnung und Einstellungen
   gefunden; Singletons wie `eZINI::instance()` und `eZDB::instance()` sind die Regel. Läuft der Kernel innerhalb von
   Symfony, geben `ezpKernel::hasServiceContainer()` und `getServiceContainer()` Zugriff auf den Container von Symfony.
-- **Keinen Migrations-Runner.** Datenbankaktualisierungen sind SQL-Dateien je Treiber, von Hand angewendet
-  ([Schemaänderungen und Migrationen](schemaaenderungen-und-migrationen.md)).
+- **Upgrade-Schritte und Migrationen, von der Konsole.** Datenbankaktualisierungen des Kernels und der Erweiterungen
+  sind Upgrade-Schritte, die `exp:upgrade` anwendet und festhält; die eigenen Änderungen einer Site sind Migrationen,
+  die `exp:migration:migrate` der Reihe nach ausführt und in `exp_migration` festhält
+  ([Schemaänderungen und Migrationen](schemaaenderungen-und-migrationen.md),
+  [Migrationen](../../anleitungen/migrationen.md)).
 - **Keinen Message-Broker im Kernel.** Hintergrundarbeit läuft als Cronjob-Teile, Inhaltsjobs und über die Erweiterung
   `expqueue` ([Konsole, Cronjobs und Hintergrundarbeit](konsole-cron-und-hintergrundarbeit.md)).
 - **Kein Symfony im Kernel.** Die Produkte der Symfony-Plattform betten den Kernel über die Legacy Bridge ein

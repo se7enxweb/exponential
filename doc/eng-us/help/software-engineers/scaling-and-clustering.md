@@ -92,7 +92,8 @@ stores pages must be told what to store and for how long.
 ## Limits
 
 - No built-in purge for external proxies.
-- No migration runner; a schema change is applied once, from one node.
+- A schema change (`exp:upgrade`, `exp:migration:migrate`) is applied once, from one node; the installation lock
+  keeps a second run from writing at the same time on that node only.
 - Per-node caches can briefly disagree after a change; plan the order of a deploy.
 
 ## Related pages

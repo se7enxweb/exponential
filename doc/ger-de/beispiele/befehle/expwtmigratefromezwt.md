@@ -2,14 +2,14 @@
 title: exp:expwtmigratefromezwt
 audience: developer, admin
 category: examples
-summary: "Replace ezwt (the website toolbar) by expwt (the website sidebar): settings, policies, activation, schedule (dry run unless --apply)."
+summary: "Ersetzt ezwt (die Website-Werkzeugleiste) durch expwt (die Website-Seitenleiste): Einstellungen, Richtlinien, Aktivierung, Zeitplan (Probelauf ohne --apply)."
 keywords: Konsole, Befehl, exp:expwtmigratefromezwt, expwtmigratefromezwt, console, command, CLI, expwtmigratefromezwt.php, exp:wt:migrate-from-ezwt
 type: generated
 generated: exp:help:examples
 ---
 # exp:expwtmigratefromezwt
 
-Replace ezwt (the website toolbar) by expwt (the website sidebar): settings, policies, activation, schedule (dry run unless --apply).
+Ersetzt ezwt (die Website-Werkzeugleiste) durch expwt (die Website-Seitenleiste): Einstellungen, Richtlinien, Aktivierung, Zeitplan (Probelauf ohne --apply).
 
 Skript `bin/php/expwtmigratefromezwt.php`, Code in `kernel/private/classes/commands/expwtmigratefromezwt.php`. Führen Sie es im Wurzelverzeichnis der Installation aus, als der Benutzer, unter dem der Webserver läuft:
 
@@ -44,7 +44,7 @@ Example: php bin/php/expwtmigratefromezwt.php
 | Option | Wert | Hilfe |
 |---|---|---|
 | `--apply` |  | Die Änderungen schreiben (Standard ist ein Probelauf, der sie auflistet und nichts ändert) |
-| `--dry-run` |  | The default: list what would change, change nothing |
+| `--dry-run` |  | Die Voreinstellung: auflisten, was sich ändern würde, nichts ändern |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

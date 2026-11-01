@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # site.ini
 
-The shipped settings of `settings/site.ini`: 63 blocks, 501 settings.
+The shipped settings of `settings/site.ini`: 65 blocks, 503 settings.
 
 > Exponential configuration file.  
 >
@@ -52,6 +52,7 @@ The shipped settings of `settings/site.ini`: 63 blocks, 501 settings.
 | [PasswordChangeRequiredSettings](PasswordChangeRequiredSettings.md) | 1 |
 | [SignInSecondFactorSettings](SignInSecondFactorSettings.md) | 2 |
 | [PasskeySettings](PasskeySettings.md) | 21 |
+| [ContentFieldMarkerSettings](ContentFieldMarkerSettings.md) | 1 |
 | [ReauthSettings](ReauthSettings.md) | 8 |
 | [ReauthGroup_account](ReauthGroup_account.md) | 2 |
 | [ReauthGroup_users](ReauthGroup_users.md) | 2 |
@@ -69,6 +70,7 @@ The shipped settings of `settings/site.ini`: 63 blocks, 501 settings.
 | [RegionalSettings](RegionalSettings.md) | 17 |
 | [UnitSettings](UnitSettings.md) | 2 |
 | [FileSettings](FileSettings.md) | 22 |
+| [PageLayoutHooks](PageLayoutHooks.md) | 1 |
 | [TemplateSettings](TemplateSettings.md) | 26 |
 | [TemplateBridgeSettings](TemplateBridgeSettings.md) | 4 |
 | [ContentSettings](ContentSettings.md) | 20 |
