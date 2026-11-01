@@ -136,6 +136,12 @@ class expPreloadRunner
             // fetch() answers (status, ms, bytes, type, body, error, cookies). Static publishing passes one in its
             // tests; null is curl.
             'fetcher'    => null,
+            // Other addresses of the same site (scheme://host[:port], or a bare host as SiteURL holds it). A page
+            // fetched from another address than its own (a CrawlURL such as http://127.0.0.1:8080, a sandbox) may
+            // still link to its own SiteURL in full (https://example.com/about-us); such a link is the site's page
+            // and is fetched from the base url, not dropped as another host's. Static publishing passes the
+            // siteaccess's SiteURL and the target's LiveURL.
+            'site_origins' => array(),
         );
     }
 
@@ -480,6 +486,55 @@ class expPreloadRunner
         return $values;
     }
 
+    /** @var array|null scheme-less host[:port] keys of the site_origins */
+    private $siteOriginKeys = null;
+
+    /** @return string scheme-less host[:port] of an address (a bare host taken as one), lower case; '' for none */
+    public static function originKey( $url )
+    {
+        $url = trim( (string)$url );
+        if ( $url === '' )
+            return '';
+        if ( strpos( $url, '//' ) === 0 )
+            $url = 'http:' . $url;
+        elseif ( strpos( $url, '://' ) === false )
+            $url = 'http://' . $url;
+        $host = parse_url( $url, PHP_URL_HOST );
+        if ( !is_string( $host ) || $host === '' )
+            return '';
+        $port = parse_url( $url, PHP_URL_PORT );
+        return strtolower( $host ) . ( $port ? ':' . $port : '' );
+    }
+
+    /**
+     * An absolute address on the crawl's host as it is; one on another address of the same site (site_origins)
+     * moved to the crawl's host, path, query and all; false for any other host.
+     *
+     * @param string $url absolute
+     * @param string $base the base url
+     * @return string|false
+     */
+    public function onCrawlHost( $url, $base )
+    {
+        $key = self::originKey( $url );
+        if ( $key === '' )
+            return false;
+        if ( $key === self::originKey( $base ) || parse_url( $url, PHP_URL_HOST ) === parse_url( $base, PHP_URL_HOST ) )
+            return $url;
+        if ( $this->siteOriginKeys === null )
+        {
+            $this->siteOriginKeys = array();
+            foreach ( (array)$this->options['site_origins'] as $origin )
+                if ( ( $originKey = self::originKey( (string)$origin ) ) !== '' )
+                    $this->siteOriginKeys[$originKey] = true;
+        }
+        if ( !isset( $this->siteOriginKeys[$key] ) )
+            return false;
+        $origin = parse_url( $base, PHP_URL_SCHEME ) . '://' . parse_url( $base, PHP_URL_HOST )
+                . ( parse_url( $base, PHP_URL_PORT ) ? ':' . parse_url( $base, PHP_URL_PORT ) : '' );
+        return (string)preg_replace( '#^(?:[a-z][a-z0-9+.-]*:)?//[^/?\#]*#i', $origin, $url );
+    }
+
     /** Same-host page links worth queueing, absolute and de-fragmented. */
     private function linksFrom( $html, $pageUrl, $base )
     {
@@ -525,7 +580,9 @@ class expPreloadRunner
             else
                 $url = rtrim( dirname( $pageUrl . 'x' ), '/' ) . '/' . $href;
 
-            if ( parse_url( $url, PHP_URL_HOST ) !== $host )
+            // the crawl's host, or another address of the same site (its SiteURL in full) moved onto it
+            $url = $this->onCrawlHost( $url, $base );
+            if ( $url === false )
                 continue;
 
             $url = $this->normalise( $url );
@@ -651,7 +708,8 @@ class expPreloadRunner
                 $url = $origin . $src;
             else
                 $url = rtrim( dirname( $pageUrl . 'x' ), '/' ) . '/' . $src;
-            if ( parse_url( $url, PHP_URL_HOST ) !== $host )
+            $url = $this->onCrawlHost( $url, $base );
+            if ( $url === false )
                 continue;
             // nothing of Velocity's own panel, not even its pictures
             if ( preg_match( '#^(/[^/]+)?/Q(/|$)#', (string)parse_url( $url, PHP_URL_PATH ), $q )

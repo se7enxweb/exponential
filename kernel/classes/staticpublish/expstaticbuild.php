@@ -303,7 +303,9 @@ class expStaticBuild
                 call_user_func( $emit, $type === 'phase' ? 'phase-item' : $type, $message, $data );
         }, array( 'siteaccess' => $target->siteAccess(),
                   'max_pages' => $this->options['max_pages'] ? (int)$this->options['max_pages'] : (int)$target->setting( 'MaxPages' ),
-                  'max_depth' => (int)$maxDepth, 'paths' => $paths, 'export' => $export ) + $crawlOptions );
+                  'max_depth' => (int)$maxDepth, 'paths' => $paths, 'export' => $export,
+                  // a page fetched from the CrawlURL may link to its SiteURL (or the LiveURL) in full: the same site
+                  'site_origins' => array_slice( $origins, 1 ) ) + $crawlOptions );
         $runner->run();
         $crawler = $runner->lastCrawler();
         if ( $crawler !== null )
