@@ -69,7 +69,9 @@ einzelne Quelle für eine Bewertung, weil sie benennen, was fehlt:
 
 - **Geerbter Code.** Der Kernel ist alt und groß; PHPStan läuft auf Stufe 1 mit einer Baseline der Befunde, die bei der
   Einführung der Prüfung bestanden ([Mit technischen Schulden umgehen](technische-schulden.md)).
-- **Manuelle Datenbank-Updates.** Es gibt keinen Migrationsläufer, der festhält, welche Anweisungen ausgeführt wurden
+- **Datenbank-Updates von Hand bei alten Installationen.** Seit 6.0.15 wenden `exp:upgrade` und die Migrationen
+  (`exp:migration:migrate`) jede Änderung an und halten sie fest; eine Installation, die von Hand mit den
+  SQL-Updatedateien aktualisiert wurde, hat keine Aufzeichnung, welche Anweisungen ausgeführt wurden
   ([Schemaänderungen und Migrationen](schemaaenderungen-und-migrationen.md)).
 - **Richtlinie, nicht Durchsetzung.** Einige Repository-Regeln (kein Force-Push, Merge-Stil) sind Richtlinien ohne
   Branch-Schutz ([Quellcodeverwaltung und Releases](../../standards/versionsverwaltung-und-releases.md)).

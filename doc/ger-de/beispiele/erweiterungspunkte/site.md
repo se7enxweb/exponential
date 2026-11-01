@@ -2,7 +2,7 @@
 title: Erweiterungspunkte in site.ini
 audience: developer, admin
 category: examples
-summary: Einstellungen von site.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (30, am Namen erkannt).
+summary: Einstellungen von site.ini, die Handler, Klassen oder Verzeichnisse auflisten, die eine Erweiterung ergänzen kann (31, am Namen erkannt).
 keywords: Erweiterungspunkt, Erweiterung, site.ini, extension point, handler, extension, hook
 type: generated
 generated: exp:help:examples
@@ -262,6 +262,18 @@ Ausgeliefert: eine leere Liste. [Die Einstellung](../ini-einstellungen/site/Pass
 # extension/expexample/settings/site.ini.append.php
 [PasskeySettings]
 PolicyHandlers[]=expExamplePolicyHandler    # Ihre Klasse oder Ihr Wert, zur Liste hinzugefügt
+*/ ?>
+```
+
+## ContentFieldMarkerSettings Handlers
+
+Ausgeliefert: eine leere Liste. [Die Einstellung](../ini-einstellungen/site/ContentFieldMarkerSettings.md#handlers).
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# extension/expexample/settings/site.ini.append.php
+[ContentFieldMarkerSettings]
+Handlers[]=expExampleHandler    # Ihre Klasse oder Ihr Wert, zur Liste hinzugefügt
 */ ?>
 ```
 

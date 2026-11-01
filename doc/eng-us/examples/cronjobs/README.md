@@ -27,6 +27,7 @@ Every cronjob script of the kernel and the bundled extensions and the parts of t
 | `logs` | [explogrotate.php](explogrotate.md) | `php runcronjobs.php logs` |
 | `notification` | [notification.php](notification.md) | `php runcronjobs.php notification` |
 | `mailpreferences` | [mailpreferences.php](mailpreferences.md) | `php runcronjobs.php mailpreferences` |
+| `migrationpush` | [migrationpush.php](migrationpush.md) | `php runcronjobs.php migrationpush` |
 | `mailbounces` | [mailbounces.php](mailbounces.md) | `php runcronjobs.php mailbounces` |
 | `usersessions` | [usersessions.php](usersessions.md) | `php runcronjobs.php usersessions` |
 | `useraudit` | [useraudit.php](useraudit.md) | `php runcronjobs.php useraudit` |
@@ -58,6 +59,7 @@ Every cronjob script of the kernel and the bundled extensions and the parts of t
 | [linkcheck.php](linkcheck.md) | Check all internal and external links in published content for broken URLs | infrequent |
 | [mailbounces.php](mailbounces.md) | The bounce mailbox: hard bounces and spam complaints go on the suppression list (mailpreferences.ini [BounceSettings]) | frequent, mailbounces |
 | [mailpreferences.php](mailpreferences.md) | E-mail preferences retention: consent log rows of people who are gone, expired confirmations, old suppression entries | infrequent, mailpreferences |
+| [migrationpush.php](migrationpush.md) | Migrations: push the record of the runs whose push failed to the migrations repository's remote again | migrationpush |
 | [notification.php](notification.md) | Process and dispatch pending notification events to subscribers | frequent, notification |
 | [old_drafts_cleanup.php](old_drafts_cleanup.md) | Remove user drafts that exceed the configured age limit |  |
 | [querycache_cleanup.php](querycache_cleanup.md) | Remove the result files of the SQL query cache that are older than MaxAge or from before the last clear | cache_cleanup |

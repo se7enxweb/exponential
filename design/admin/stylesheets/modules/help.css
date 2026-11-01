@@ -1725,6 +1725,10 @@
 .a4-help-nav-summary:hover,
 .a4-help-nav-link:hover { background-color: var(--a4-soft); color: var(--a4-ink); }
 .a4-help-nav-link.is-index { color: var(--a4-muted); font-style: italic; }
+/* a closed folder of the viewer's tree before its list is loaded (expHelpNavigation::pathHtml()): the link to its
+   listing, for a browser without JavaScript; while it loads, the folder says so to the pointer */
+.a4-help-nav-link.is-more { color: var(--a4-muted); }
+.a4-help-nav-details[aria-busy="true"] > .a4-help-nav-summary { cursor: progress; }
 .a4-help-nav-link[aria-current="page"] {
   background-color: var(--a4-accent-soft);
   box-shadow: inset 3px 0 0 var(--a4-accent);

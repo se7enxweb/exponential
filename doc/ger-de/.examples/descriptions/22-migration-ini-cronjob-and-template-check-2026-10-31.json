@@ -1,0 +1,286 @@
+{
+    "command:exptemplatecheck --all-extensions": {
+        "en": "with --design/--extensions: the inactive extensions on disk too",
+        "de": "mit --design/--extensions: auch die inaktiven Erweiterungen auf der Platte"
+    },
+    "command:exptemplatecheck --all-siteaccesses": {
+        "en": "every siteaccess of AvailableSiteAccessList",
+        "de": "jeder Siteaccess aus AvailableSiteAccessList"
+    },
+    "command:exptemplatecheck --allow-missing-engine": {
+        "en": "an unavailable engine does not make the exit code 3",
+        "de": "eine nicht verfügbare Engine macht den Exit-Code nicht zu 3"
+    },
+    "command:exptemplatecheck --baseline": {
+        "en": "report only findings that are not in this baseline file",
+        "de": "nur Befunde melden, die nicht in dieser Baseline-Datei stehen"
+    },
+    "command:exptemplatecheck --changed-since": {
+        "en": "only the templates changed since this git reference (and untracked ones)",
+        "de": "nur die Templates, die sich seit dieser Git-Referenz geändert haben (und nicht verfolgte)"
+    },
+    "command:exptemplatecheck --color": {
+        "en": "auto, always or never",
+        "de": "auto, always oder never"
+    },
+    "command:exptemplatecheck --deprecations": {
+        "en": "report deprecated constructs (Twig deprecations while compiling)",
+        "de": "veraltete Konstrukte melden (Twig-Deprecations beim Kompilieren)"
+    },
+    "command:exptemplatecheck --design": {
+        "en": "a design by name, in the kernel and in the (active) extensions; repeatable",
+        "de": "ein Design nach Namen, im Kernel und in den (aktiven) Erweiterungen; wiederholbar"
+    },
+    "command:exptemplatecheck --design-dir": {
+        "en": "a design directory by path; repeatable",
+        "de": "ein Design-Verzeichnis nach Pfad; wiederholbar"
+    },
+    "command:exptemplatecheck --encoding": {
+        "en": "UTF-8 validity, byte order mark, mixed line endings",
+        "de": "UTF-8-Gültigkeit, Byte Order Mark, gemischte Zeilenenden"
+    },
+    "command:exptemplatecheck --engine": {
+        "en": "all (the default) or a list: tpl,stpl,twig",
+        "de": "all (die Voreinstellung) oder eine Liste: tpl,stpl,twig"
+    },
+    "command:exptemplatecheck --explain": {
+        "en": "explain one rule id and exit",
+        "de": "eine Regel-ID erklären und beenden"
+    },
+    "command:exptemplatecheck --extension": {
+        "en": "every design of the extension; repeatable",
+        "de": "jedes Design der Erweiterung; wiederholbar"
+    },
+    "command:exptemplatecheck --extensions": {
+        "en": "every design of every active extension",
+        "de": "jedes Design jeder aktiven Erweiterung"
+    },
+    "command:exptemplatecheck --fail-on": {
+        "en": "the severity that fails: error (the default), warn or note",
+        "de": "der Schweregrad, der scheitert: error (die Voreinstellung), warn oder note"
+    },
+    "command:exptemplatecheck --files-from": {
+        "en": "check the files listed in this file, one per line (- for stdin)",
+        "de": "die in dieser Datei genannten Dateien prüfen, eine je Zeile (- für die Standardeingabe)"
+    },
+    "command:exptemplatecheck --format": {
+        "en": "text (the default), json, jsonl, junit, checkstyle, github or sarif",
+        "de": "text (die Voreinstellung), json, jsonl, junit, checkstyle, github oder sarif"
+    },
+    "command:exptemplatecheck --generate-baseline": {
+        "en": "write today's findings to this baseline file",
+        "de": "die heutigen Befunde in diese Baseline-Datei schreiben"
+    },
+    "command:exptemplatecheck --ignore": {
+        "en": "a glob of files to leave out; repeatable (site.ini [TemplateCheckSettings] IgnoreList[] too)",
+        "de": "ein Glob von Dateien, die ausgelassen werden; wiederholbar (auch site.ini [TemplateCheckSettings] IgnoreList[])"
+    },
+    "command:exptemplatecheck --includes": {
+        "en": "every design: include must resolve (on at strict)",
+        "de": "jedes Design: include muss aufgelöst werden (bei strict eingeschaltet)"
+    },
+    "command:exptemplatecheck --jobs": {
+        "en": "check in this many worker processes",
+        "de": "in so vielen Worker-Prozessen prüfen"
+    },
+    "command:exptemplatecheck --keep-compiled": {
+        "en": "keep the private directory of compiled output for inspection",
+        "de": "das private Verzeichnis der kompilierten Ausgabe zur Ansicht behalten"
+    },
+    "command:exptemplatecheck --level": {
+        "en": "syntax, compile (the default) or strict",
+        "de": "syntax, compile (die Voreinstellung) oder strict"
+    },
+    "command:exptemplatecheck --max-depth": {
+        "en": "include depth for --includes (default 32)",
+        "de": "Include-Tiefe für --includes (Voreinstellung 32)"
+    },
+    "command:exptemplatecheck --no-progress": {
+        "en": "no progress counter",
+        "de": "kein Fortschrittszähler"
+    },
+    "command:exptemplatecheck --output": {
+        "en": "write the machine format to this file; the console keeps the text",
+        "de": "das Maschinenformat in diese Datei schreiben; die Konsole behält den Text"
+    },
+    "command:exptemplatecheck --overrides": {
+        "en": "every override rule must point to an existing template (on with --siteaccess)",
+        "de": "jede Override-Regel muss auf ein vorhandenes Template zeigen (mit --siteaccess eingeschaltet)"
+    },
+    "command:exptemplatecheck --parity": {
+        "en": "report templates present in two engines; =render is experimental",
+        "de": "Templates melden, die in zwei Engines vorhanden sind; =render ist experimentell"
+    },
+    "command:exptemplatecheck --progress": {
+        "en": "a progress counter on a terminal",
+        "de": "ein Fortschrittszähler in einem Terminal"
+    },
+    "command:exptemplatecheck --rules": {
+        "en": "list every rule id and exit",
+        "de": "jede Regel-ID auflisten und beenden"
+    },
+    "command:exptemplatecheck --schema": {
+        "en": "the machine output schema version (1)",
+        "de": "die Schemaversion der Maschinenausgabe (1)"
+    },
+    "command:exptemplatecheck --security": {
+        "en": "check against the engine's security policy (on at strict)",
+        "de": "gegen die Sicherheitsrichtlinie der Engine prüfen (bei strict eingeschaltet)"
+    },
+    "command:exptemplatecheck --siteaccess": {
+        "en": "the design chain and override rules of the siteaccess; repeatable",
+        "de": "die Design-Kette und die Override-Regeln des Siteaccess; wiederholbar"
+    },
+    "command:exptemplatecheck --stdin-engine": {
+        "en": "the engine of the template read from stdin (-): tpl, stpl or twig",
+        "de": "die Engine des Templates, das von der Standardeingabe (-) gelesen wird: tpl, stpl oder twig"
+    },
+    "command:exptemplatecheck --stdin-name": {
+        "en": "the name of the template read from stdin, for the messages",
+        "de": "der Name des von der Standardeingabe gelesenen Templates, für die Meldungen"
+    },
+    "command:exptemplatecheck --suffix-map": {
+        "en": "<ending>:<engine>, an extra file ending (.tpl.html:tpl); repeatable",
+        "de": "<endung>:<engine>, eine zusätzliche Dateiendung (.tpl.html:tpl); wiederholbar"
+    },
+    "command:exptemplatecheck --summary-by": {
+        "en": "group the summary by engine, design, extension, siteaccess or directory",
+        "de": "die Zusammenfassung nach Engine, Design, Erweiterung, Siteaccess oder Verzeichnis gruppieren"
+    },
+    "command:expwtmigratefromezwt": {
+        "en": "Replace ezwt (the website toolbar) by expwt (the website sidebar): settings, policies, activation, schedule (dry run unless --apply)",
+        "de": "Ersetzt ezwt (die Website-Werkzeugleiste) durch expwt (die Website-Seitenleiste): Einstellungen, Richtlinien, Aktivierung, Zeitplan (Probelauf ohne --apply)"
+    },
+    "command:expwtmigratefromezwt --dry-run": {
+        "en": "The default: list what would change, change nothing",
+        "de": "Die Voreinstellung: auflisten, was sich ändern würde, nichts ändern"
+    },
+    "cronjob:migrationpush.php": {
+        "en": "Migrations: push the record of the runs whose push failed to the migrations repository's remote again",
+        "de": "Migrationen: die Aufzeichnung der Läufe, deren Push gescheitert ist, erneut zum Remote des Migrations-Repositorys pushen"
+    },
+    "cronjob:migrationpush.php docblock": {
+        "en": "The cronjob part migrationpush (cronjobs/migrationpush.php; [CronjobPart-migrationpush] in cronjob.ini): pushes the\ncommits and tags of the migration runs whose push failed (exp_migration_run.push_state pending) to the remote of\nthe migrations repository again (expMigrationRepository::retryPushes()). Does nothing while no run waits.",
+        "de": "Der Cronjob-Teil migrationpush (cronjobs/migrationpush.php; [CronjobPart-migrationpush] in cronjob.ini): pusht die\nCommits und Tags der Migrationsläufe, deren Push gescheitert ist (exp_migration_run.push_state pending), erneut zum\nRemote des Migrations-Repositorys (expMigrationRepository::retryPushes()). Tut nichts, solange kein Lauf wartet."
+    },
+    "ini:settings/audit.ini [AuditEventSettings] Enabled": {
+        "en": "Which events are recorded, by taxonomy pattern: a whole domain (content.*), a subject\n(content.node.*), an action with its details (content.node.remove.*) or one name.\nThe most specific pattern wins; on a tie the later line wins. Events marked \"always\"\nin the catalogue (system.audit.*, access.view.sensitive) ignore Disabled[].\nMigrations (migration.ini): a run, a migration applied (also a changed file accepted with\n--force --reason), failed or rolled back, a caption taken, the migrations repository pushed.\nA site that switches system.* off keeps them with these lines.",
+        "de": "Welche Ereignisse aufgezeichnet werden, nach Taxonomie-Muster: eine ganze Domäne (content.*), ein Gegenstand\n(content.node.*), eine Aktion mit ihren Details (content.node.remove.*) oder ein einzelner Name.\nDas genaueste Muster gewinnt; bei Gleichstand gewinnt die spätere Zeile. Ereignisse, die im Katalog als \"always\"\nmarkiert sind (system.audit.*, access.view.sensitive), ignorieren Disabled[].\nMigrationen (migration.ini): ein Lauf, eine angewendete Migration (auch eine mit --force --reason angenommene\ngeänderte Datei), eine gescheiterte oder zurückgenommene, ein angelegter Sicherungspunkt, ein Push des\nMigrations-Repositorys. Eine Site, die system.* abschaltet, behält sie mit diesen Zeilen."
+    },
+    "ini:settings/cronjob.ini [CronjobPart-migrationpush]": {
+        "en": "The migration runs whose push failed, pushed again to the migrations repository's remote (migration.ini\n[RepositorySettings]): php runcronjobs.php migrationpush. In no default part: add it to one the site runs.",
+        "de": "Die Migrationsläufe, deren Push gescheitert ist, erneut zum Remote des Migrations-Repositorys gepusht (migration.ini\n[RepositorySettings]): php runcronjobs.php migrationpush. In keinem Standardteil: fügen Sie ihn einem Teil hinzu, den die Site ausführt."
+    },
+    "ini:settings/migration.ini": {
+        "en": "Migrations: changes to an installation (content, classes, roles, settings, schema) written once in\nfiles under version control and applied to every installation of the site in the same order.\n\nA site changes these settings in settings/override/migration.ini.append.php.",
+        "de": "Migrationen: Änderungen an einer Installation (Inhalte, Klassen, Rollen, Einstellungen, Schema), einmal in\nDateien unter Versionskontrolle geschrieben und auf jede Installation der Site in derselben Reihenfolge angewendet.\n\nEine Site ändert diese Einstellungen in settings/override/migration.ini.append.php."
+    },
+    "ini:settings/migration.ini [CaptionSettings] After": {
+        "en": "enabled: a caption (kind migration-post, labelled with the migrations that ran) is taken after a run that\nsucceeded: the next run reuses it while nothing has changed since.",
+        "de": "enabled: nach einem erfolgreichen Lauf wird ein Sicherungspunkt angelegt (Art migration-post, bezeichnet mit den\ngelaufenen Migrationen): Der nächste Lauf verwendet ihn wieder, solange sich seitdem nichts geändert hat."
+    },
+    "ini:settings/migration.ini [CaptionSettings] BackupDirectory": {
+        "en": "The folder of the captions made without git_manager. Empty: var/backup/upgrade, as exp:upgrade.",
+        "de": "Der Ordner der ohne git_manager angelegten Sicherungspunkte. Leer: var/backup/upgrade, wie bei exp:upgrade."
+    },
+    "ini:settings/migration.ini [CaptionSettings] Before": {
+        "en": "Captions are exp:upgrade's (./console exp:upgrade:captions lists them all): git_manager's full caption, or the\ndatabase dump of exp:upgrade without git_manager, with settings/override and the commits of the code.\n\nenabled: a caption (kind migration-pre) is taken before a run that applies migrations. When none can be taken\n(an engine without a dump, a full disk) the run goes on with a warning: there is then no automatic restore.",
+        "de": "Die Sicherungspunkte sind die von exp:upgrade (./console exp:upgrade:captions listet sie alle): die vollständige\nCaption von git_manager oder ohne git_manager der Datenbankabzug von exp:upgrade, mit settings/override und den\nCommits des Codes.\n\nenabled: vor einem Lauf, der Migrationen anwendet, wird ein Sicherungspunkt angelegt (Art migration-pre). Lässt\nsich keiner anlegen (eine Engine ohne Abzug, eine volle Platte), geht der Lauf mit einer Warnung weiter: Dann gibt\nes keine automatische Wiederherstellung."
+    },
+    "ini:settings/migration.ini [CaptionSettings] CodeTreeList": {
+        "en": "The code trees of the installation a run checks for changes that are not committed: a run with --apply is refused\nwhile one has some, unless it is given --include-uncommitted (the changes then go into the caption as a patch and\na copy of the new files).",
+        "de": "Die Code-Bäume der Installation, die ein Lauf auf nicht committete Änderungen prüft: Ein Lauf mit --apply wird\nabgelehnt, solange einer welche hat, es sei denn, er bekommt --include-uncommitted (die Änderungen kommen dann als\nPatch und als Kopie der neuen Dateien in den Sicherungspunkt)."
+    },
+    "ini:settings/migration.ini [CaptionSettings] RestoreOnFailure": {
+        "en": "enabled: a run that fails is put back to its pre caption at once (after a caption of the failed state, kind\nmigration-failure). Oracle has no built-in restore: the run stops and prints the steps to restore by hand.",
+        "de": "enabled: ein gescheiterter Lauf wird sofort auf seinen Sicherungspunkt von vorher zurückgesetzt (nach einem\nSicherungspunkt des gescheiterten Zustands, Art migration-failure). Oracle hat keine eingebaute Wiederherstellung:\nDer Lauf hält an und gibt die Schritte zur Wiederherstellung von Hand aus."
+    },
+    "ini:settings/migration.ini [CaptionSettings] RestoreParts": {
+        "en": "The parts of a caption a failed run is put back to (exp:upgrade:rollback --parts): database, storage, settings.",
+        "de": "Die Teile eines Sicherungspunkts, auf die ein gescheiterter Lauf zurückgesetzt wird (exp:upgrade:rollback --parts): database, storage, settings."
+    },
+    "ini:settings/migration.ini [CaptionSettings] ReuseIgnoreTableList": {
+        "en": "The tables the reuse check leaves out: the record of the runs and captions, sessions and the audit index (each\ncaption writes an audit event). A name ending in * stands for every table that starts with it.",
+        "de": "Die Tabellen, die die Prüfung zur Wiederverwendung auslässt: die Aufzeichnung der Läufe und Sicherungspunkte,\nSitzungen und der Audit-Index (jeder Sicherungspunkt schreibt ein Audit-Ereignis). Ein Name, der auf * endet, steht\nfür jede Tabelle, die damit beginnt."
+    },
+    "ini:settings/migration.ini [CaptionSettings] ReuseUnchanged": {
+        "en": "enabled: the newest migration caption is reused instead of a new one while the database, var/ storage,\nsettings/override and the commit of the installation are as they were when it was taken. The check is exact on\nPostgreSQL (the change counters of every table), MySQL/MariaDB (CHECKSUM TABLE of every table) and SQLite (the\nrows of every table); MongoDB and Oracle always take a new caption.",
+        "de": "enabled: der neueste Sicherungspunkt einer Migration wird statt eines neuen wiederverwendet, solange Datenbank,\nSpeicher unter var/, settings/override und der Commit der Installation so sind wie beim Anlegen. Die Prüfung ist\ngenau auf PostgreSQL (die Änderungszähler jeder Tabelle), MySQL/MariaDB (CHECKSUM TABLE jeder Tabelle) und SQLite\n(die Zeilen jeder Tabelle); MongoDB und Oracle legen immer einen neuen an."
+    },
+    "ini:settings/migration.ini [MigrationSettings] DirectoryList": {
+        "en": "The site's migration directories, relative to the installation's root or absolute. Each holds\nfiles named YYYYMMDDHHMMSS_name.<type> (php, yml, sql, <engine>.sql, ini); subdirectories are not\nsearched.",
+        "de": "Die Migrationsverzeichnisse der Site, relativ zur Wurzel der Installation oder absolut. Jedes enthält\nDateien namens YYYYMMDDHHMMSS_name.<type> (php, yml, sql, <engine>.sql, ini); Unterverzeichnisse werden nicht\ndurchsucht."
+    },
+    "ini:settings/migration.ini [MigrationSettings] Enabled": {
+        "en": "enabled: migrations are looked for in the directories below. disabled: none are found.",
+        "de": "enabled: in den Verzeichnissen unten wird nach Migrationen gesucht. disabled: es werden keine gefunden."
+    },
+    "ini:settings/migration.ini [MigrationSettings] ExtensionDirectory": {
+        "en": "The directory inside every active extension (extension/<name>/migrations) and every installed\npackage that holds its migrations.",
+        "de": "Das Verzeichnis in jeder aktiven Erweiterung (extension/<name>/migrations) und jedem installierten\nPaket, das seine Migrationen enthält."
+    },
+    "ini:settings/migration.ini [RepositorySettings] Branch": {
+        "en": "The branch a run commits on. Empty: the branch the repository is on. A repository on another branch is not\ncommitted to (a warning says so).",
+        "de": "Der Branch, auf dem ein Lauf committet. Leer: der Branch, auf dem das Repository steht. In ein Repository auf\neinem anderen Branch wird nicht committet (eine Warnung sagt das)."
+    },
+    "ini:settings/migration.ini [RepositorySettings] Commit": {
+        "en": "enabled: the status file and the run log are committed after every run, the failed ones too.",
+        "de": "enabled: Statusdatei und Laufprotokoll werden nach jedem Lauf committet, auch nach gescheiterten."
+    },
+    "ini:settings/migration.ini [RepositorySettings] Mode": {
+        "en": "Where the record of the runs is kept under version control: the status files (status/<environment>.json) and the\nrun logs (runs/<run-id>.log).\n  site      Path is a folder of the installation's own git repository\n  separate  Path is a git repository of its own",
+        "de": "Wo die Aufzeichnung der Läufe unter Versionskontrolle liegt: die Statusdateien (status/<environment>.json) und die\nLaufprotokolle (runs/<run-id>.log).\n  site      Path ist ein Ordner des eigenen Git-Repositorys der Installation\n  separate  Path ist ein eigenes Git-Repository"
+    },
+    "ini:settings/migration.ini [RepositorySettings] Path": {
+        "en": "The folder, relative to the installation's root or absolute.",
+        "de": "Der Ordner, relativ zur Wurzel der Installation oder absolut."
+    },
+    "ini:settings/migration.ini [RepositorySettings] Push": {
+        "en": "enabled: the commit and its tag are pushed to Remote. A push that fails stays local and is tried again by the\ncronjob part migrationpush (php runcronjobs.php migrationpush).",
+        "de": "enabled: der Commit und sein Tag werden zu Remote gepusht. Ein gescheiterter Push bleibt lokal und wird vom\nCronjob-Teil migrationpush erneut versucht (php runcronjobs.php migrationpush)."
+    },
+    "ini:settings/migration.ini [RepositorySettings] Remote": {
+        "en": "The remote a run pushes to (any git remote: GitHub, GitLab, a server of your own). Empty: no push.",
+        "de": "Das Remote, zu dem ein Lauf pusht (ein beliebiges Git-Remote: GitHub, GitLab, ein eigener Server). Leer: kein Push."
+    },
+    "ini:settings/migration.ini [RepositorySettings] Tag": {
+        "en": "enabled: the commit is tagged (one run, one revision: commit and tag). A tag is never moved or replaced.",
+        "de": "enabled: der Commit wird getaggt (ein Lauf, eine Revision: Commit und Tag). Ein Tag wird nie verschoben oder ersetzt."
+    },
+    "ini:settings/migration.ini [RepositorySettings] TagPattern": {
+        "en": "The name of the tag: <environment> (default when the installation names none), <run-id>, <date> (YYYYMMDD).",
+        "de": "Der Name des Tags: <environment> (default, wenn die Installation keine nennt), <run-id>, <date> (YYYYMMDD)."
+    },
+    "ini:settings/migration.ini [RunSettings] RunAsUser": {
+        "en": "The user a migration runs as when nobody is signed in: console and unattended runs. A run in the\nadministration runs as the signed-in user. The login, never an id: ids differ between installations.",
+        "de": "Der Benutzer, als der eine Migration läuft, wenn niemand angemeldet ist: Konsole und unbeaufsichtigte Läufe. Ein\nLauf in der Administration läuft als der angemeldete Benutzer. Das Login, nie eine ID: IDs unterscheiden sich\nzwischen Installationen."
+    },
+    "ini:settings/migration.ini [RunSettings] StopOnFailure": {
+        "en": "enabled: a run stops at the first migration that fails; the ones after it are not run.\ndisabled: the run goes on with the migrations that do not require the failed one.",
+        "de": "enabled: ein Lauf hält bei der ersten scheiternden Migration an; die danach laufen nicht.\ndisabled: der Lauf geht mit den Migrationen weiter, die die gescheiterte nicht verlangen."
+    },
+    "ini:settings/migration.ini [RunSettings] Throttle": {
+        "en": "A pause between migrations, to keep a long run from loading the server. Empty: none.",
+        "de": "Eine Pause zwischen Migrationen, damit ein langer Lauf den Server nicht belastet. Leer: keine."
+    },
+    "ini:settings/upgrade.ini": {
+        "en": "Upgrades from the console: ./console exp:upgrade (dry run), ./console exp:upgrade --apply.\nGuide: doc/eng-us/guides/upgrading-with-the-console.md\n\nDo not edit this file: an extension adds its steps in its own settings/upgrade.ini.append.php\n(ExtensionStepList[]); a site does not change the kernel's list.",
+        "de": "Upgrades von der Konsole: ./console exp:upgrade (Probelauf), ./console exp:upgrade --apply.\nAnleitung: doc/eng-us/guides/upgrading-with-the-console.md\n\nBearbeiten Sie diese Datei nicht: Eine Erweiterung fügt ihre Schritte in ihrer eigenen settings/upgrade.ini.append.php\nhinzu (ExtensionStepList[]); eine Site ändert die Liste des Kernels nicht."
+    },
+    "ini:settings/upgrade.ini [UpgradeSettings] CaptionKeep": {
+        "en": "Captions (exp:upgrade:captions --prune): keep the newest CaptionKeep captions, those younger than\nCaptionKeepDays, and the pre and post captions of the last CaptionKeepUpgrades upgrades. Only the\ncaptions of exp:upgrade are pruned; git_manager's own keep to its MaxBackups.",
+        "de": "Sicherungspunkte (exp:upgrade:captions --prune): die neuesten CaptionKeep Sicherungspunkte behalten, die jünger\nals CaptionKeepDays sind, und die Sicherungspunkte pre und post der letzten CaptionKeepUpgrades Upgrades. Nur die\nSicherungspunkte von exp:upgrade werden ausgedünnt; die eigenen von git_manager richten sich nach dessen MaxBackups."
+    },
+    "ini:settings/upgrade.ini [UpgradeSettings] ExtensionStepList": {
+        "en": "The steps of extensions: each extension appends its classes in its own\nsettings/upgrade.ini.append.php, e.g. ExtensionStepList[]=myextUpgradeStepWidgetTable",
+        "de": "Die Schritte von Erweiterungen: Jede Erweiterung hängt ihre Klassen in ihrer eigenen\nsettings/upgrade.ini.append.php an, z. B. ExtensionStepList[]=myextUpgradeStepWidgetTable"
+    },
+    "ini:settings/upgrade.ini [UpgradeSettings] SmokeURL": {
+        "en": "The addresses exp:upgrade:verify --after requests (200 to 399 passes). Empty: velocity.ini\n[DeploySettings] WarmUpURL[] (the addresses of Apache and of Velocity), else the front page\nand the sign-in page of [SiteSettings] SiteURL.\nSmokeURL[]=https://www.example.com/\nSmokeURL[]=https://www.example.com/admin/user/login\nSmokeURL[]=https://www.example.com:8080/",
+        "de": "Die Adressen, die exp:upgrade:verify --after abruft (200 bis 399 besteht). Leer: velocity.ini\n[DeploySettings] WarmUpURL[] (die Adressen von Apache und von Velocity), sonst die Startseite\nund die Anmeldeseite von [SiteSettings] SiteURL.\nSmokeURL[]=https://www.example.com/\nSmokeURL[]=https://www.example.com/admin/user/login\nSmokeURL[]=https://www.example.com:8080/"
+    },
+    "ini:settings/upgrade.ini [UpgradeSettings] StepList": {
+        "en": "The kernel's upgrade steps, class names (expUpgradeStep). Each step belongs to a stage\n(code, libraries, database, scripts, finish); they run by stage, then by version, then in\nthe order listed here, after the steps they name in after().\nstage code: the git checkouts, fast-forward only, through git_manager\nstage libraries: Composer (an update only when asked with --update, then install from composer.lock)\nstage database: schema and data, every engine (step 0 first: the record table)\nstage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands\nstage finish: make the changes live and check the site (only when the run changed something)",
+        "de": "Die Upgrade-Schritte des Kernels, Klassennamen (expUpgradeStep). Jeder Schritt gehört zu einer Stufe\n(code, libraries, database, scripts, finish); sie laufen nach Stufe, dann nach Version, dann in\nder hier genannten Reihenfolge, nach den Schritten, die sie in after() nennen.\nStufe code: die Git-Checkouts, nur Fast-Forward, über git_manager\nStufe libraries: Composer (ein Update nur auf Wunsch mit --update, dann install aus composer.lock)\nStufe database: Schema und Daten, jede Engine (Schritt 0 zuerst: die Aufzeichnungstabelle)\nStufe scripts: die PHP-Upgrade-Schritte, über die Klassen der Skripte und Setup-Befehle\nStufe finish: die Änderungen wirksam machen und die Site prüfen (nur wenn der Lauf etwas geändert hat)"
+    }
+}

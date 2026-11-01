@@ -1,0 +1,286 @@
+{
+    "command:expmigrationcaption": {
+        "en": "Take a caption of the installation now (database, storage, settings, the commits of the code), or list the captions; a dry run unless --apply",
+        "de": "Nimmt jetzt eine Aufnahme (Caption) der Installation auf (Datenbank, Speicher, Einstellungen, die Commits des Codes) oder listet die Aufnahmen; ein Probelauf ohne --apply"
+    },
+    "command:expmigrationcaption --backup-dir": {
+        "en": "Where the captions made without git_manager are (default var/backup/upgrade)",
+        "de": "Wo die ohne git_manager gemachten Aufnahmen liegen (Standard var/backup/upgrade)"
+    },
+    "command:expmigrationcaption --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationcaption --label": {
+        "en": "The label of the caption (default: \"manual caption\" with the time)",
+        "de": "Die Bezeichnung der Aufnahme (Standard: \"manual caption\" mit der Uhrzeit)"
+    },
+    "command:expmigrationcaption --list": {
+        "en": "List the captions instead of taking one",
+        "de": "Die Aufnahmen auflisten, statt eine zu nehmen"
+    },
+    "command:expmigrationcheck": {
+        "en": "Check migration files without running them: names, headers, order, PHP syntax and classes (the lint for CI)",
+        "de": "Prüft Migrationsdateien, ohne sie auszuführen: Namen, Kopfzeilen, Reihenfolge, PHP-Syntax und Klassen (die Prüfung für CI)"
+    },
+    "command:expmigrationcheck --environment": {
+        "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",
+        "de": "Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen"
+    },
+    "command:expmigrationcheck --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationcheck --path": {
+        "en": "Migration files or folders, relative to the root or absolute (a comma list or repeated): migrate and dry-run take only the migrations in them, check checks them instead of the migration directories",
+        "de": "Migrationsdateien oder -ordner, relativ zur Wurzel oder absolut (als Komma-Liste oder wiederholt): migrate und dry-run nehmen nur die Migrationen darin, check prüft sie statt der Migrationsverzeichnisse"
+    },
+    "command:expmigrationdryrun": {
+        "en": "Dry run of the pending migrations: the plan, and with --simulate a run in a transaction that is rolled back (--diff shows what changed)",
+        "de": "Probelauf der offenen Migrationen: der Plan, und mit --simulate ein Lauf in einer Transaktion, die zurückgerollt wird (--diff zeigt, was sich geändert hat)"
+    },
+    "command:expmigrationdryrun --diff": {
+        "en": "With --simulate: what each migration changed in the database (tables, columns, rows)",
+        "de": "Mit --simulate: was jede Migration in der Datenbank geändert hat (Tabellen, Spalten, Zeilen)"
+    },
+    "command:expmigrationdryrun --environment": {
+        "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",
+        "de": "Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen"
+    },
+    "command:expmigrationdryrun --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationdryrun --login": {
+        "en": "Run as this user (default: [RunSettings] RunAsUser of migration.ini)",
+        "de": "Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini)"
+    },
+    "command:expmigrationdryrun --only": {
+        "en": "Only these migrations (migration ids, a comma list or repeated)",
+        "de": "Nur diese Migrationen (Migrations-IDs, als Komma-Liste oder wiederholt)"
+    },
+    "command:expmigrationdryrun --path": {
+        "en": "Migration files or folders, relative to the root or absolute (a comma list or repeated): migrate and dry-run take only the migrations in them, check checks them instead of the migration directories",
+        "de": "Migrationsdateien oder -ordner, relativ zur Wurzel oder absolut (als Komma-Liste oder wiederholt): migrate und dry-run nehmen nur die Migrationen darin, check prüft sie statt der Migrationsverzeichnisse"
+    },
+    "command:expmigrationdryrun --simulate": {
+        "en": "Run the migrations in a transaction that is rolled back (PostgreSQL and SQLite; elsewhere the plan is listed)",
+        "de": "Die Migrationen in einer Transaktion ausführen, die zurückgerollt wird (PostgreSQL und SQLite; anderswo wird der Plan aufgelistet)"
+    },
+    "command:expmigrationgenerate": {
+        "en": "Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(); a dry run unless --apply",
+        "de": "Schreibt eine neue Migrationsdatei: --skeleton schreibt eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down(); ein Probelauf ohne --apply"
+    },
+    "command:expmigrationgenerate --author": {
+        "en": "The author in the header of the new migration",
+        "de": "Der Autor in den Kopfzeilen der neuen Migration"
+    },
+    "command:expmigrationgenerate --description": {
+        "en": "The description in the header of the new migration",
+        "de": "Die Beschreibung in den Kopfzeilen der neuen Migration"
+    },
+    "command:expmigrationgenerate --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationgenerate --skeleton": {
+        "en": "An empty PHP migration with its header, plan(), up() and down()",
+        "de": "Eine leere PHP-Migration mit Kopfzeilen, plan(), up() und down()"
+    },
+    "command:expmigrationgenerate --source": {
+        "en": "The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id)",
+        "de": "Die Quelle: site oder extension:<Name> (generate: wohin die Datei kommt; rollback: welche Migration, wenn zwei Quellen ihre ID haben)"
+    },
+    "command:expmigrationgenerate --type": {
+        "en": "The type of the new migration: php (the default and, for now, the only one)",
+        "de": "Der Typ der neuen Migration: php (der Standard und vorerst der einzige)"
+    },
+    "command:expmigrationmigrate": {
+        "en": "Run the pending migrations: a dry run unless --apply; captions before and after, restore on failure, commit, tag and push",
+        "de": "Führt die offenen Migrationen aus: ein Probelauf ohne --apply; Aufnahmen davor und danach, Wiederherstellung bei einem Fehler, Commit, Tag und Push"
+    },
+    "command:expmigrationmigrate --environment": {
+        "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",
+        "de": "Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen"
+    },
+    "command:expmigrationmigrate --force": {
+        "en": "With --reason: accept migrations whose file changed after they were applied (they are not run again)",
+        "de": "Mit --reason: Migrationen annehmen, deren Datei sich nach dem Anwenden geändert hat (sie laufen nicht erneut)"
+    },
+    "command:expmigrationmigrate --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationmigrate --include-uncommitted": {
+        "en": "Run although settings/, extension/ or design/ have changes that are not committed, and keep them in the caption",
+        "de": "Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese in der Aufnahme aufbewahren"
+    },
+    "command:expmigrationmigrate --login": {
+        "en": "Run as this user (default: [RunSettings] RunAsUser of migration.ini)",
+        "de": "Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini)"
+    },
+    "command:expmigrationmigrate --no-caption": {
+        "en": "No caption before and after the run: a failure cannot be restored automatically",
+        "de": "Keine Aufnahme vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden"
+    },
+    "command:expmigrationmigrate --no-commit": {
+        "en": "Do not commit the status file and run log to the migrations repository (no tag and no push either)",
+        "de": "Die Statusdatei und das Laufprotokoll nicht in das Migrations-Repository committen (auch kein Tag und kein Push)"
+    },
+    "command:expmigrationmigrate --no-push": {
+        "en": "Commit and tag, but do not push",
+        "de": "Committen und taggen, aber nicht pushen"
+    },
+    "command:expmigrationmigrate --no-restore": {
+        "en": "After a failure, leave the installation as the failure left it instead of restoring the caption taken before the run",
+        "de": "Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt die vor dem Lauf genommene Aufnahme wiederherzustellen"
+    },
+    "command:expmigrationmigrate --no-tag": {
+        "en": "Commit and push, but do not tag the run",
+        "de": "Committen und pushen, aber den Lauf nicht taggen"
+    },
+    "command:expmigrationmigrate --only": {
+        "en": "Only these migrations (migration ids, a comma list or repeated)",
+        "de": "Nur diese Migrationen (Migrations-IDs, als Komma-Liste oder wiederholt)"
+    },
+    "command:expmigrationmigrate --path": {
+        "en": "Migration files or folders, relative to the root or absolute (a comma list or repeated): migrate and dry-run take only the migrations in them, check checks them instead of the migration directories",
+        "de": "Migrationsdateien oder -ordner, relativ zur Wurzel oder absolut (als Komma-Liste oder wiederholt): migrate und dry-run nehmen nur die Migrationen darin, check prüft sie statt der Migrationsverzeichnisse"
+    },
+    "command:expmigrationmigrate --reason": {
+        "en": "Why a changed migration is accepted (needed with --force; kept in the record and the audit log)",
+        "de": "Warum eine geänderte Migration angenommen wird (nötig mit --force; im Protokoll der Migrationen und im Audit-Log festgehalten)"
+    },
+    "command:expmigrationpush": {
+        "en": "Push the migration runs whose push failed (push state pending) to the remote of the migrations repository; a dry run unless --apply",
+        "de": "Überträgt die Migrationsläufe, deren Push fehlschlug (Push-Zustand pending), an das Remote des Migrations-Repositorys; ein Probelauf ohne --apply"
+    },
+    "command:expmigrationpush --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationpush --limit": {
+        "en": "Push at most this many runs (default 20)",
+        "de": "Höchstens so viele Läufe pushen (Standard 20)"
+    },
+    "command:expmigrationresume": {
+        "en": "Resume a migration run that failed or was interrupted: the migrations still pending run again; a dry run unless --apply",
+        "de": "Setzt einen fehlgeschlagenen oder abgebrochenen Migrationslauf fort: die noch offenen Migrationen laufen erneut; ein Probelauf ohne --apply"
+    },
+    "command:expmigrationresume --environment": {
+        "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",
+        "de": "Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen"
+    },
+    "command:expmigrationresume --force": {
+        "en": "With --reason: accept migrations whose file changed after they were applied (they are not run again)",
+        "de": "Mit --reason: Migrationen annehmen, deren Datei sich nach dem Anwenden geändert hat (sie laufen nicht erneut)"
+    },
+    "command:expmigrationresume --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationresume --include-uncommitted": {
+        "en": "Run although settings/, extension/ or design/ have changes that are not committed, and keep them in the caption",
+        "de": "Ausführen, obwohl settings/, extension/ oder design/ nicht committete Änderungen haben, und diese in der Aufnahme aufbewahren"
+    },
+    "command:expmigrationresume --login": {
+        "en": "Run as this user (default: [RunSettings] RunAsUser of migration.ini)",
+        "de": "Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini)"
+    },
+    "command:expmigrationresume --no-caption": {
+        "en": "No caption before and after the run: a failure cannot be restored automatically",
+        "de": "Keine Aufnahme vor und nach dem Lauf: ein Fehler kann nicht automatisch wiederhergestellt werden"
+    },
+    "command:expmigrationresume --no-commit": {
+        "en": "Do not commit the status file and run log to the migrations repository (no tag and no push either)",
+        "de": "Die Statusdatei und das Laufprotokoll nicht in das Migrations-Repository committen (auch kein Tag und kein Push)"
+    },
+    "command:expmigrationresume --no-push": {
+        "en": "Commit and tag, but do not push",
+        "de": "Committen und taggen, aber nicht pushen"
+    },
+    "command:expmigrationresume --no-restore": {
+        "en": "After a failure, leave the installation as the failure left it instead of restoring the caption taken before the run",
+        "de": "Nach einem Fehler die Installation so lassen, wie der Fehler sie hinterließ, statt die vor dem Lauf genommene Aufnahme wiederherzustellen"
+    },
+    "command:expmigrationresume --no-tag": {
+        "en": "Commit and push, but do not tag the run",
+        "de": "Committen und pushen, aber den Lauf nicht taggen"
+    },
+    "command:expmigrationresume --reason": {
+        "en": "Why a changed migration is accepted (needed with --force; kept in the record and the audit log)",
+        "de": "Warum eine geänderte Migration angenommen wird (nötig mit --force; im Protokoll der Migrationen und im Audit-Log festgehalten)"
+    },
+    "command:expmigrationrollback": {
+        "en": "Take migrations back: a run (its caption restored), one migration (its down()) or, for experts, any caption; a dry run unless --apply",
+        "de": "Nimmt Migrationen zurück: einen Lauf (seine Aufnahme wird wiederhergestellt), eine Migration (ihr down()) oder, für Fachleute, jede Aufnahme; ein Probelauf ohne --apply"
+    },
+    "command:expmigrationrollback --backup-dir": {
+        "en": "Where the captions made without git_manager are (default var/backup/upgrade)",
+        "de": "Wo die ohne git_manager gemachten Aufnahmen liegen (Standard var/backup/upgrade)"
+    },
+    "command:expmigrationrollback --confirm": {
+        "en": "The id of the caption typed again, to restore it with --expert",
+        "de": "Die ID der Aufnahme, noch einmal eingegeben, um sie mit --expert wiederherzustellen"
+    },
+    "command:expmigrationrollback --environment": {
+        "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",
+        "de": "Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen"
+    },
+    "command:expmigrationrollback --expert": {
+        "en": "Restore a caption that is not the one taken before a run (with --confirm)",
+        "de": "Eine Aufnahme wiederherstellen, die nicht die vor einem Lauf genommene ist (mit --confirm)"
+    },
+    "command:expmigrationrollback --force-no-caption": {
+        "en": "With --no-safety-caption on a production installation: restore without a caption all the same",
+        "de": "Mit --no-safety-caption auf einer Produktivinstallation: trotzdem ohne Aufnahme wiederherstellen"
+    },
+    "command:expmigrationrollback --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationrollback --login": {
+        "en": "Run as this user (default: [RunSettings] RunAsUser of migration.ini)",
+        "de": "Als dieser Benutzer ausführen (Standard: [RunSettings] RunAsUser in migration.ini)"
+    },
+    "command:expmigrationrollback --no-safety-caption": {
+        "en": "Restore without taking a caption of the current state first; refused on production without --force-no-caption",
+        "de": "Wiederherstellen, ohne zuerst eine Aufnahme des aktuellen Zustands zu nehmen; auf einer Produktivinstallation ohne --force-no-caption verweigert"
+    },
+    "command:expmigrationrollback --no-verify": {
+        "en": "Skip the verification after the restore",
+        "de": "Die Prüfung nach der Wiederherstellung auslassen"
+    },
+    "command:expmigrationrollback --parts": {
+        "en": "Only these parts of the caption, a comma list of database, storage, settings, libraries, code (default [CaptionSettings] RestoreParts)",
+        "de": "Nur diese Teile der Aufnahme, eine Komma-Liste aus database, storage, settings, libraries, code (Standard [CaptionSettings] RestoreParts)"
+    },
+    "command:expmigrationrollback --source": {
+        "en": "The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id)",
+        "de": "Die Quelle: site oder extension:<Name> (generate: wohin die Datei kommt; rollback: welche Migration, wenn zwei Quellen ihre ID haben)"
+    },
+    "command:expmigrationstatus": {
+        "en": "Migration status: every migration with its state (done, pending, not-needed, failed, unknown), the latest runs and what waits",
+        "de": "Migrationsstatus: jede Migration mit ihrem Zustand (done, pending, not-needed, failed, unknown), die letzten Läufe und was wartet"
+    },
+    "command:expmigrationstatus --environment": {
+        "en": "The environment (default the installation's: [AdminEnvironment] Level, or EXP_ENV with Level=auto; check: every environment); only the migrations for it count",
+        "de": "Die Umgebung (Standard die der Installation: [AdminEnvironment] Level, oder EXP_ENV bei Level=auto; check: jede Umgebung); nur die Migrationen für sie zählen"
+    },
+    "command:expmigrationstatus --fail-on-pending": {
+        "en": "Exit 1 when migrations are pending or failed (for CI)",
+        "de": "Exit-Code 1, wenn Migrationen offen oder fehlgeschlagen sind (für CI)"
+    },
+    "command:expmigrationstatus --format": {
+        "en": "text (default) or json (the machine output exp-migration/1)",
+        "de": "text (Standard) oder json (die Maschinenausgabe exp-migration/1)"
+    },
+    "command:expmigrationstatus --only": {
+        "en": "Only these migrations (migration ids, a comma list or repeated)",
+        "de": "Nur diese Migrationen (Migrations-IDs, als Komma-Liste oder wiederholt)"
+    },
+    "command:expmigrationstatus --runs": {
+        "en": "How many of the latest runs to list (default 10, 0 for none)",
+        "de": "Wie viele der letzten Läufe aufgelistet werden (Standard 10, 0 für keine)"
+    }
+}

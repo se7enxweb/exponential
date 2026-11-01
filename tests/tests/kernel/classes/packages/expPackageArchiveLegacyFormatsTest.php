@@ -148,8 +148,26 @@ class expPackageArchiveLegacyFormatsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
+     * Whether a directory's file system tells names apart by case: a probe file with upper case letters is created and
+     * looked for under its lower-case name.
+     *
+     * @param string $dir an existing, writable directory
+     * @return bool
+     */
+    protected static function isCaseSensitiveDirectory( $dir )
+    {
+        $probe = $dir . '/CaseProbe-' . getmypid() . '-' . mt_rand();
+        if ( @file_put_contents( $probe, 'x' ) === false )
+            return true;
+        clearstatcache();
+        $sensitive = !file_exists( $dir . '/' . strtolower( basename( $probe ) ) );
+        @unlink( $probe );
+        return $sensitive;
+    }
+
+    /**
      * A package named with upper case letters (as 4.x exported "RSSFeed_content_class" or "infoProf") is imported into
-     * a directory of exactly that name, found by that name only (the file system is case-sensitive), listed by the
+     * a directory of exactly that name, found by that name only on a case-sensitive file system, listed by the
      * package list, offered for removal and removed.
      */
     public function testPackageWithUpperCaseNameIsImportedListedAndRemoved()
@@ -164,7 +182,12 @@ class expPackageArchiveLegacyFormatsTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $repositoryPath . '/' . $name, $package->path() );
 
         $this->assertInstanceOf( 'eZPackage', eZPackage::fetch( $name, false, self::REPOSITORY, false ) );
-        $this->assertFalse( eZPackage::fetch( strtolower( $name ), false, self::REPOSITORY, false ) );
+        // Only a case-sensitive file system (Linux) tells the names apart; on a case-insensitive one (macOS APFS and
+        // HFS+ by default, Windows) the other spelling opens the same directory (Redmine #16709)
+        if ( self::isCaseSensitiveDirectory( $repositoryPath ) )
+            $this->assertFalse( eZPackage::fetch( strtolower( $name ), false, self::REPOSITORY, false ) );
+        else
+            $this->assertFileExists( $repositoryPath . '/' . strtolower( $name ) . '/package.xml', 'a case-insensitive file system' );
         // a second import of the same name is refused as existing
         $again = '';
         $this->assertSame( eZPackage::STATUS_ALREADY_EXISTS, @eZPackage::importUnaudited( self::fixturePath( 'ez4x-uppercase-name' ), $again, false, self::REPOSITORY ) );

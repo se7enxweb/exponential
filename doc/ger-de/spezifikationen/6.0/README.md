@@ -15,6 +15,7 @@ Block, Schlüssel, Standard, Geltungsbereich) und endet mit „Verwandte Seiten�
 | [Befehle, Cronjob-Teile und Modul-Views als Klassen](ausfuehrbare-befehle-cronjobs-ansichten.md) | Die ausführbaren Klassen, Einstiegspunkte, Ereignisse, Neuimplementierung und Listener |
 | [INI-Override-Verzeichnisse und Platzierungen](ini-override-platzierungen.md) | Wie `eZINI` Einstellungsdateien ordnet; Einstellungen je Siteaccess innerhalb von Extensions |
 | [Audit-Ereignismodell](audit-ereignismodell.md) | Ereignisnamen, Datensätze, Kanäle, Hash-Ketten, `audit.ini`, Erweiterungspunkte |
+| [Das Migrationsdateiformat](migrationsdateiformat.md) | Dateinamen, der Kopf, die PHP-Klasse, die Prüfsumme, Reihenfolge, Zustände, die Aufzeichnungstabellen, die Statusdatei, das Laufprotokoll, `exp-migration/1` |
 | [Metadaten von Extensions](extension-metadaten.md) | `ezinfo.php`, `extension.xml`, `expInfo`, die Release-Regel |
 | [Installer-Protokolle und Startdaten](installer-protokolle-und-startdaten.md) | Startdatendateien, der Inhaltsbaum einer neuen Installation, Installer-Protokolle |
 | [Benachrichtigungen](benachrichtigungen.md) | Ereignisse, Handler, Regeln, Sammelbenachrichtigung, der Service, Sperre und Laufprotokoll, Views, Templates |

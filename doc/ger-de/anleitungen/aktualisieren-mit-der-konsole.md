@@ -12,8 +12,8 @@ Deployment-Pipeline ausführen. Alles Folgende wurde am 29. Oktober 2026 auf SQL
 PostgreSQL-Datenbanken ausgeführt.
 
 [Anleitungen](README.md) · Siehe auch: [Upgrade](aktualisieren.md), [Die Upgrade-Prüfung](upgrade-pruefung.md),
-[Upgrade-Schritte für Erweiterungen](upgrade-schritte-fuer-erweiterungen.md), [Bereitstellung](bereitstellung.md),
-[Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
+[Upgrade-Schritte für Erweiterungen](upgrade-schritte-fuer-erweiterungen.md), [Migrationen](migrationen.md),
+[Bereitstellung](bereitstellung.md), [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 
 ## Kurz
 
@@ -99,7 +99,9 @@ Stage database     pending (1 pending)
 ./console exp:upgrade --apply
 ```
 
-1. Die Sperre `var/<site>/upgrade.lock` wird genommen: Ein zweiter Lauf zur selben Zeit endet mit Exit-Code 1.
+1. Die Sperre `var/<site>/upgrade.lock` wird genommen: Ein zweiter Lauf zur selben Zeit endet mit Exit-Code 1. Es ist
+   dieselbe Sperre, die ein Lauf von [Migrationen](migrationen.md) nimmt, sodass ein Upgrade und ein Migrationslauf
+   nie gleichzeitig schreiben.
 2. Vor dem ersten Schreiben wird ein Sicherungspunkt angelegt (siehe unten), der Punkt zum Zurückrollen; scheitert
    er, wird nichts geändert.
 3. Die offenen Schritte laufen der Reihe nach. Nach jedem sieht der Schritt erneut in der Installation nach; nur wenn
@@ -187,7 +189,8 @@ dem, was `exp:upgrade` in seinem Ordner `upgrade/` hinzufügt:
 | `upgrade/checksums.json` | die SHA-256-Prüfsumme jeder Datei des Sicherungspunkts |
 
 `exp:upgrade --apply` legt einen Sicherungspunkt `pre` mit der Bezeichnung `upgrade <von>→<nach> <Zeit> pre` an,
-bevor es irgendetwas schreibt, und zeichnet ihn im Bericht und in `expupgrade_step` auf. Ohne git_manager, oder mit
+bevor es irgendetwas schreibt, und zeichnet ihn im Bericht und in der Aufzeichnung auf (`exp_migration`, vor dem
+Schritt `6.0.15-migration-tables` in `expupgrade_step`). Ohne git_manager, oder mit
 einem git_manager, der die Engine nicht sichern kann (ein älterer sichert nur MySQL), legt `exp:upgrade` den
 Sicherungspunkt selbst in `var/backup/upgrade/<Zeit>/` an (die Datenbank, kein Speicher) und sagt warum.
 `--no-caption` (dasselbe wie `--no-backup`) schreibt ohne einen; auf einer Installation, deren Einstellungen sie als
@@ -278,10 +281,18 @@ Duplikate gibt, ist der Schritt `unknown`, und der Lauf macht weiter; lösen Sie
 
 ## Prüfen und die Aufzeichnung
 
-`exp:upgrade` zeichnet jeden ausgeführten Schritt in der Tabelle `expupgrade_step` auf: den Schritt, seine Stufe und
-Version, erledigt oder gescheitert, wann, wie lange, den Systembenutzer, der ihn ausgeführt hat, die Engine, die
-Prüfsumme des Schritt-Codes und die letzte Meldung. Die Tabelle legt der erste Schritt an,
-`6.0.15-upgrade-record-table`.
+`exp:upgrade` zeichnet jeden ausgeführten Schritt auf: den Schritt, seine Stufe und Version, erledigt oder
+gescheitert, wann, wie lange, den Systembenutzer, der ihn ausgeführt hat, die Engine, die Prüfsumme des Schritt-Codes
+und die letzte Meldung. Der erste Schritt, `6.0.15-upgrade-record-table`, legt dafür die Tabelle `expupgrade_step`
+an. Der Schritt `6.0.15-migration-tables` legt danach die Aufzeichnung der [Migrationen](migrationen.md) an,
+`exp_migration` und `exp_migration_run`, und kopiert die Zeilen von `expupgrade_step` als Migrationen der Quelle
+`kernel` nach `exp_migration`; von da an wird die Aufzeichnung von `exp:upgrade` dort geschrieben. Bis dieser Schritt
+gelaufen ist, wird `expupgrade_step` wie bisher gelesen und geschrieben, und eine noch nicht kopierte Zeile zählt
+weiter.
+
+Die Sicherungspunkte von `exp:upgrade` und die der Migrationsläufe (Arten `migration-pre`, `migration-post`,
+`migration-failure`) sind eine Liste: `exp:upgrade:captions` zeigt beide, und jedes der beiden Zurückrollen kann jeden
+wiederherstellen ([Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)).
 
 `./console exp:upgrade:verify` sieht für jeden Schritt erneut nach und meldet Abweichungen: einen Schritt, den die
 Aufzeichnung als erledigt führt, dessen Wirkung aber jetzt fehlt (eine Tabelle gelöscht, eine Richtlinie von Hand
@@ -321,6 +332,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-libraries-update` | libraries | `composer update <Paket>` von Hand (nur mit `--update`) |
 | `6.0.15-libraries-install` | libraries | `composer install` von Hand, mit `composer audit` |
 | `6.0.15-upgrade-record-table` | database | (neu) die Aufzeichnungstabelle `expupgrade_step` |
+| `6.0.15-migration-tables` | database | (neu) die Aufzeichnung der Migrationen und Upgrades, `exp_migration` und `exp_migration_run`, mit den kopierten Zeilen von `expupgrade_step` |
 | `6.0.15-user-password-hash-width` | database | `ezuser.password_hash` in der SQL-Update-Datei auf 255 verbreitert |
 | `6.0.15-trash-columns` | database | `ezcontentobject_trash.trashed`, `trashed_by`, `trashed_via` und ihr Index |
 | `6.0.15-pdf-export-footer` | database | `ezpdf_export.show_footer`, `footer_text` |

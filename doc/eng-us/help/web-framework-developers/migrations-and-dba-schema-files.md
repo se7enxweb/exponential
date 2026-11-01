@@ -10,9 +10,11 @@ type: help
 # Migrations and seed data: .dba schema files and packages
 
 This page is for developers who run `doctrine:migrations:migrate`, `php artisan migrate`, `manage.py migrate` or
-`rails db:migrate`. Exponential has **no migration runner and no migrations table**. Tables are described in
-database-neutral `.dba` files, created by commands, and changed by upgrade steps that you write and ship. Content
-classes and content are moved with **packages**. Say this early in a project; it changes how a release is planned.
+`rails db:migrate`. Tables are described in database-neutral `.dba` files, created by commands, and changed by
+upgrade steps that you write and ship. Content classes and content are moved with **packages**. Since 6.0.15 a site
+also has **migrations** close to what you know: files `YYYYMMDDHHMMSS_name.php` in `migrations/`, run in order by
+`./console exp:migration:migrate`, recorded in the table `exp_migration`, with `down()` for a rollback
+([Migrations](../../guides/migrations.md)). Say this early in a project; it changes how a release is planned.
 
 ## Contents
 

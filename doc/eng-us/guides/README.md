@@ -155,6 +155,12 @@ Read them in this order the first time. Each one also stands on its own.
 | [Upgrading with the console](upgrading-with-the-console.md) | The state of every upgrade step read, a dry run, the upgrade applied with a backup in one call, a failure resumed, drift found, the same from a pipeline | 15 minutes |
 | [Upgrade steps for extensions](upgrade-steps-for-extensions.md) | A table, a column and a default row of an extension made upgrade steps, registered, tested fresh, old, twice and half applied | 30 minutes |
 | [The upgrade check](upgrade-check.md) | The files and the database compared with the release on Setup > Upgrade check, every kind of finding read and dealt with, the report downloaded, the same check run from a shell | 15 minutes |
+| [Migrations](migrations.md) | What a migration is and when to use one, the life cycle from writing to pushing, where files live, order, environments, the record, transactions, the lock, every default and switch | 15 minutes |
+| [Migrations: a first PHP migration, step by step](migrations-tutorial.md) | Two PHP migrations generated, filled in, checked, simulated, run, recorded, one taken back with its down(), a failure restored from its caption | 20 minutes |
+| [PHP migrations](migrations-php.md) | The class, plan(), up(), down() and detect(), the context, references, transactions, failure, maintenance mode, events, extensions, tests | reference |
+| [Migrations: rollback and captions](migrations-rollback-and-captions.md) | The captions of a run, their reuse, the automatic restore after a failure, a run, one migration or any caption taken back by hand | 15 minutes |
+| [Migrations: the migrations repository](migrations-repositories.md) | The status file and run log, the site or a separate repository, one run one commit and tag, failed pushes and the cronjob part migrationpush | 10 minutes |
+| [Migrations: troubleshooting](migrations-troubleshooting.md) | Every message of the migration commands, what it means and what to do | reference |
 | [Missing files and image aliases](missing-files.md) | Files missing from the storage and stale image aliases found below a node with the target "Missing files" of the broken relations, each row read and resolved after a preview (regenerated, restored, uploaded again, its reference removed or marked for review), the same from a shell with a dry run first | 15 minutes |
 | [Finding an error by its reference](finding-an-error-by-its-reference.md) | The log lines of a failed request found from the ERR- reference its error page showed, the rest of the request and the audit of that minute read, the same from a shell, without exposing personal data | 10 minutes |
 
@@ -211,6 +217,7 @@ You write extensions, templates with logic, commands and integrations.
 5. Notifications: [architecture, extending and testing](notifications-developer.md), [the specification](../specifications/6.0/notifications.md), [the INI reference](../specifications/6.0/notifications-ini.md), [the commands](../specifications/6.0/notifications-cli.md).
    E-mail preferences: [categories, the mail gate and testing](mail-preferences-developer.md), [the specification](../specifications/6.0/mail-preferences.md), [the commands](../specifications/6.0/mail-preferences-cli.md), [the law checklist](../specifications/6.0/mail-preferences-compliance.md).
 6. Tests and compatibility: [Continuous integration](../specifications/6.0/continuous-integration.md), [PHP 8 support](../bc/6.0/php8.md).
+   Changes to a site's database and content in code: [Migrations](migrations.md), starting with [the tutorial](migrations-tutorial.md), then [PHP migrations](migrations-php.md) and [the file format](../specifications/6.0/migration-file-format.md).
 7. Bridges to the Symfony platform: [Legacy bridge](../features/6.0/legacy-bridge.md), [the platform repositories](../history/ecosystem.md).
 
 ## Road 4: operators
@@ -224,6 +231,7 @@ You run the installation: servers, caches, backups, upgrades, security.
 5. Keep it healthy: [notifications](notifications-administrator.md) (the cronjob, the status page, troubleshooting), [e-mail preferences](mail-preferences-administrator.md) (the footer, consent, suppression, retention), [maintenance mode](../features/6.0/maintenance-mode.md), [repair from the browser](../features/6.0/repair-from-the-browser.md), [file consistency check](../features/6.0/file-consistency-check.md), [missing files and image aliases](missing-files.md), [cronjobs](../features/6.0/cronjobs-console.md), [the log viewer](../features/6.0/log-viewer.md) and [finding an error by its reference](finding-an-error-by-its-reference.md), [workflows and their waiting processes](workflows.md), [audit trail](../features/6.0/audit-trail.md).
 6. Security: [Security and audit](security-and-audit.md) (the guide), [Two-step sign-in](two-factor-login.md), [Passkeys](passkeys.md), [Verify it's you](verify-its-you.md), [Security defaults of September 2026](../specifications/6.0/security-defaults-2026-09.md), [the August 2026 patches](../specifications/6.0/security-hardening-2026-08.md), [the 6.0.13 hardening](../specifications/6.0/security-hardening-6.0.13.md).
 7. Upgrading: follow [Upgrading](upgrading.md); read the [6.0.15 changelog](../../changelogs/6.0/6.0.15.md), then the behaviour changes of [July and August](../bc/6.0/behaviour-changes-2026-07-08.md), [16 to 30 September](../bc/6.0/behaviour-changes-2026-09b.md) and [October](../bc/6.0/behaviour-changes-2026-10.md), in that order.
+   A site's own changes arrive as migrations: [Migrations](migrations.md), [rollback and captions](migrations-rollback-and-captions.md), [the migrations repository](migrations-repositories.md).
 
 ## Related pages
 

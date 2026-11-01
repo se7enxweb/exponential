@@ -11,8 +11,6 @@ generated: exp:help:examples
 
 The block `[TemplateSettings]` of `settings/site.ini`, with 26 setting(s).
 
-> AllowedDeletionDirs\[\]=/var/share/somedir  
-
 Never edit `settings/site.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
 - `settings/override/site.ini.append.php` for every siteaccess,

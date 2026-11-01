@@ -10,7 +10,7 @@ It is for administrators who upgrade an installation, and for anyone who runs up
 Everything below was run on SQLite, MariaDB and PostgreSQL databases on 29 October 2026.
 
 [Guides](README.md) · Related: [Upgrading](upgrading.md), [The upgrade check](upgrade-check.md),
-[Upgrade steps for extensions](upgrade-steps-for-extensions.md), [Deploying](deploying.md),
+[Upgrade steps for extensions](upgrade-steps-for-extensions.md), [Migrations](migrations.md), [Deploying](deploying.md),
 [Changelog 6.0.15](../../changelogs/6.0/6.0.15.md)
 
 ## In short
@@ -96,7 +96,8 @@ Stage database     pending (1 pending)
 ./console exp:upgrade --apply
 ```
 
-1. The lock `var/<site>/upgrade.lock` is taken: a second run at the same time stops with exit 1.
+1. The lock `var/<site>/upgrade.lock` is taken: a second run at the same time stops with exit 1. It is the same lock
+   a [migration](migrations.md) run takes, so an upgrade and a migration run never write at the same time.
 2. Before the first write a caption is taken (below), the point to roll back to; if it fails, nothing is changed.
 3. The pending steps run in order. After each one the step looks at the installation again; only when its effect
    is there now is it recorded as `done`.
@@ -178,7 +179,8 @@ A caption is a safe point in time: git_manager's full backup (`extension/git_man
 | `upgrade/checksums.json` | the SHA-256 of every file of the caption |
 
 `exp:upgrade --apply` takes a `pre` caption, labelled `upgrade <from>→<to> <time> pre`, before it writes anything, and
-records it in the report and in `expupgrade_step`. Without git_manager, or with a git_manager that cannot dump the
+records it in the report and in the record (`exp_migration`, or `expupgrade_step` before the step
+`6.0.15-migration-tables`). Without git_manager, or with a git_manager that cannot dump the
 engine (an older one dumps MySQL only), `exp:upgrade` makes the caption itself in `var/backup/upgrade/<time>/` (the
 database, no storage) and says why. `--no-caption` (the same as `--no-backup`) writes without one; on an installation
 whose settings call it production (`site.ini [AdminEnvironment] Level=production`, or `Level=auto` with `EXP_ENV` set
@@ -264,9 +266,17 @@ the step is `unknown` and the run goes on; resolve them with `./console exp:user
 
 ## Verify and the record
 
-`exp:upgrade` records every step it applies in the table `expupgrade_step`: the step, its stage and version, done or
-failed, when, how long, the system user that ran it, the engine, the checksum of the step's code and the last
-message. The table is created by the first step, `6.0.15-upgrade-record-table`.
+`exp:upgrade` records every step it applies: the step, its stage and version, done or failed, when, how long, the
+system user that ran it, the engine, the checksum of the step's code and the last message. The first step,
+`6.0.15-upgrade-record-table`, creates the table `expupgrade_step` for it. The step `6.0.15-migration-tables` then
+creates the record of the [migrations](migrations.md), `exp_migration` and `exp_migration_run`, and copies the rows of
+`expupgrade_step` into `exp_migration` as migrations of the source `kernel`; from then on the record of `exp:upgrade`
+is written there. Until that step has run, `expupgrade_step` is read and written as before, and a row not copied yet
+still counts.
+
+The captions of `exp:upgrade` and those of migration runs (kinds `migration-pre`, `migration-post`,
+`migration-failure`) are one list: `exp:upgrade:captions` shows both, and either rollback can restore either
+([Rollback and captions](migrations-rollback-and-captions.md)).
 
 `./console exp:upgrade:verify` looks at every step again and reports drift: a step the record calls done whose
 effect is missing now (a table dropped, a policy removed by hand). It exits 1 when it finds any. Run it after a
@@ -303,6 +313,7 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-libraries-update` | libraries | `composer update <package>` by hand (only with `--update`) |
 | `6.0.15-libraries-install` | libraries | `composer install` by hand, with `composer audit` |
 | `6.0.15-upgrade-record-table` | database | (new) the record table `expupgrade_step` |
+| `6.0.15-migration-tables` | database | (new) the record of migrations and upgrades, `exp_migration` and `exp_migration_run`, with the rows of `expupgrade_step` copied over |
 | `6.0.15-user-password-hash-width` | database | `ezuser.password_hash` widened to 255 in the SQL update file |
 | `6.0.15-trash-columns` | database | `ezcontentobject_trash.trashed`, `trashed_by`, `trashed_via` and their index |
 | `6.0.15-pdf-export-footer` | database | `ezpdf_export.show_footer`, `footer_text` |

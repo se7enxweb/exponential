@@ -49,43 +49,43 @@ unavailable (unless --allow-missing-engine); 4 internal error.
 
 | Option | Wert | Hilfe |
 |---|---|---|
-| `--design` | erforderlich | a design by name, in the kernel and in the (active) extensions; repeatable |
-| `--design-dir` | erforderlich | a design directory by path; repeatable |
-| `--extension` | erforderlich | every design of the extension; repeatable |
-| `--extensions` |  | every design of every active extension |
-| `--all-extensions` |  | with --design/--extensions: the inactive extensions on disk too |
-| `--siteaccess` | erforderlich | the design chain and override rules of the siteaccess; repeatable |
-| `--all-siteaccesses` |  | every siteaccess of AvailableSiteAccessList |
-| `--engine` | erforderlich | all (the default) or a list: tpl,stpl,twig |
-| `--suffix-map` | erforderlich | <ending>:<engine>, an extra file ending (.tpl.html:tpl); repeatable |
-| `--level` | erforderlich | syntax, compile (the default) or strict |
-| `--security` |  | check against the engine's security policy (on at strict) |
-| `--includes` |  | every design: include must resolve (on at strict) |
-| `--overrides` |  | every override rule must point to an existing template (on with --siteaccess) |
-| `--parity` | optional | report templates present in two engines; =render is experimental |
-| `--deprecations` |  | report deprecated constructs (Twig deprecations while compiling) |
-| `--encoding` |  | UTF-8 validity, byte order mark, mixed line endings |
-| `--max-depth` | erforderlich | include depth for --includes (default 32) |
-| `--format` | erforderlich | text (the default), json, jsonl, junit, checkstyle, github or sarif |
-| `--output` | erforderlich | write the machine format to this file; the console keeps the text |
-| `--color` | erforderlich | auto, always or never |
-| `--no-progress` |  | no progress counter |
-| `--progress` |  | a progress counter on a terminal |
-| `--summary-by` | erforderlich | group the summary by engine, design, extension, siteaccess or directory |
-| `--fail-on` | erforderlich | the severity that fails: error (the default), warn or note |
-| `--baseline` | erforderlich | report only findings that are not in this baseline file |
-| `--generate-baseline` | erforderlich | write today's findings to this baseline file |
-| `--ignore` | erforderlich | a glob of files to leave out; repeatable (site.ini [TemplateCheckSettings] IgnoreList[] too) |
-| `--rules` |  | list every rule id and exit |
-| `--explain` | erforderlich | explain one rule id and exit |
-| `--schema` | erforderlich | the machine output schema version (1) |
-| `--stdin-engine` | erforderlich | the engine of the template read from stdin (-): tpl, stpl or twig |
-| `--stdin-name` | erforderlich | the name of the template read from stdin, for the messages |
-| `--allow-missing-engine` |  | an unavailable engine does not make the exit code 3 |
-| `--keep-compiled` |  | keep the private directory of compiled output for inspection |
-| `--jobs` | erforderlich | check in this many worker processes |
-| `--changed-since` | erforderlich | only the templates changed since this git reference (and untracked ones) |
-| `--files-from` | erforderlich | check the files listed in this file, one per line (- for stdin) |
+| `--design` | erforderlich | ein Design nach Namen, im Kernel und in den (aktiven) Erweiterungen; wiederholbar |
+| `--design-dir` | erforderlich | ein Design-Verzeichnis nach Pfad; wiederholbar |
+| `--extension` | erforderlich | jedes Design der Erweiterung; wiederholbar |
+| `--extensions` |  | jedes Design jeder aktiven Erweiterung |
+| `--all-extensions` |  | mit --design/--extensions: auch die inaktiven Erweiterungen auf der Platte |
+| `--siteaccess` | erforderlich | die Design-Kette und die Override-Regeln des Siteaccess; wiederholbar |
+| `--all-siteaccesses` |  | jeder Siteaccess aus AvailableSiteAccessList |
+| `--engine` | erforderlich | all (die Voreinstellung) oder eine Liste: tpl,stpl,twig |
+| `--suffix-map` | erforderlich | <endung>:<engine>, eine zusätzliche Dateiendung (.tpl.html:tpl); wiederholbar |
+| `--level` | erforderlich | syntax, compile (die Voreinstellung) oder strict |
+| `--security` |  | gegen die Sicherheitsrichtlinie der Engine prüfen (bei strict eingeschaltet) |
+| `--includes` |  | jedes Design: include muss aufgelöst werden (bei strict eingeschaltet) |
+| `--overrides` |  | jede Override-Regel muss auf ein vorhandenes Template zeigen (mit --siteaccess eingeschaltet) |
+| `--parity` | optional | Templates melden, die in zwei Engines vorhanden sind; =render ist experimentell |
+| `--deprecations` |  | veraltete Konstrukte melden (Twig-Deprecations beim Kompilieren) |
+| `--encoding` |  | UTF-8-Gültigkeit, Byte Order Mark, gemischte Zeilenenden |
+| `--max-depth` | erforderlich | Include-Tiefe für --includes (Voreinstellung 32) |
+| `--format` | erforderlich | text (die Voreinstellung), json, jsonl, junit, checkstyle, github oder sarif |
+| `--output` | erforderlich | das Maschinenformat in diese Datei schreiben; die Konsole behält den Text |
+| `--color` | erforderlich | auto, always oder never |
+| `--no-progress` |  | kein Fortschrittszähler |
+| `--progress` |  | ein Fortschrittszähler in einem Terminal |
+| `--summary-by` | erforderlich | die Zusammenfassung nach Engine, Design, Erweiterung, Siteaccess oder Verzeichnis gruppieren |
+| `--fail-on` | erforderlich | der Schweregrad, der scheitert: error (die Voreinstellung), warn oder note |
+| `--baseline` | erforderlich | nur Befunde melden, die nicht in dieser Baseline-Datei stehen |
+| `--generate-baseline` | erforderlich | die heutigen Befunde in diese Baseline-Datei schreiben |
+| `--ignore` | erforderlich | ein Glob von Dateien, die ausgelassen werden; wiederholbar (auch site.ini [TemplateCheckSettings] IgnoreList[]) |
+| `--rules` |  | jede Regel-ID auflisten und beenden |
+| `--explain` | erforderlich | eine Regel-ID erklären und beenden |
+| `--schema` | erforderlich | die Schemaversion der Maschinenausgabe (1) |
+| `--stdin-engine` | erforderlich | die Engine des Templates, das von der Standardeingabe (-) gelesen wird: tpl, stpl oder twig |
+| `--stdin-name` | erforderlich | der Name des von der Standardeingabe gelesenen Templates, für die Meldungen |
+| `--allow-missing-engine` |  | eine nicht verfügbare Engine macht den Exit-Code nicht zu 3 |
+| `--keep-compiled` |  | das private Verzeichnis der kompilierten Ausgabe zur Ansicht behalten |
+| `--jobs` | erforderlich | in so vielen Worker-Prozessen prüfen |
+| `--changed-since` | erforderlich | nur die Templates, die sich seit dieser Git-Referenz geändert haben (und nicht verfolgte) |
+| `--files-from` | erforderlich | die in dieser Datei genannten Dateien prüfen, eine je Zeile (- für die Standardeingabe) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
