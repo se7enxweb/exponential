@@ -4,7 +4,7 @@ This page is the reference for writing a migration in PHP: the file, the class, 
 the context gives a migration, transactions, failures, references between migrations, and how to test one. Read
 [the tutorial](migrations-tutorial.md) first if you have not written a migration yet.
 
-[Guides](README.md) · [Migrations](migrations.md) · Related: [The file format](../specifications/6.0/migration-file-format.md),
+[Guides](README.md) · [Migrations: the hub](../help/migrations/README.md) · [Migrations](migrations.md) · Related: [The file format](../specifications/6.0/migration-file-format.md),
 [Rollback and captions](migrations-rollback-and-captions.md), [Troubleshooting](migrations-troubleshooting.md)
 
 ## The file and the class
@@ -204,3 +204,18 @@ $this->assertSame( 0, $report['exit'], implode( '; ', $report['errors'] ) );
 
 Test `plan()` without a database by building it from pure functions, and run `up()` and `down()` twice in a test to
 prove a migration can be taken back and applied again.
+
+## Related pages
+
+- [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
+  [Frequently asked questions](../help/migrations/faq.md)
+- [The guide](migrations.md), [the tutorial](migrations-tutorial.md),
+  [Rollback and captions](migrations-rollback-and-captions.md),
+  [The migrations repository](migrations-repositories.md)
+- [In the administration](../help/migrations/in-the-administration.md), [Commands](../help/migrations/commands.md),
+  [Settings](../help/migrations/settings.md),
+  [Policies, views and events](../help/migrations/policies-views-and-events.md)
+- [The file format](../specifications/6.0/migration-file-format.md), [The feature](../features/6.0/migrations.md)
+- [When a migration fails](../help/migrations/when-a-migration-fails.md),
+  [Troubleshooting messages](migrations-troubleshooting.md)
+- [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md)

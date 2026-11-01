@@ -76196,6 +76196,14 @@ Utahitaji kubadilisha darasa la nodi kwa kutumia utendaji wa kubadilisha nafasi.
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Mada hii haijatolewa; wasomaji hawaioni.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Uhamishaji</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mabadiliko ya usakinishaji yaliyohifadhiwa kama faili: hali yake, utekelezaji, tekeleza na rudisha nyuma.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

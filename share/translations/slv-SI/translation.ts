@@ -76137,6 +76137,14 @@ Razred vozlišča boste morali spremeniti s funkcijo zamenjave.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Ta tema ni izdana; bralci je ne vidijo.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracije</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Spremembe namestitve, shranjene kot datoteke: njihovo stanje, zagoni, zagon in razveljavitev.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

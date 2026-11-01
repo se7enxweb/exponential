@@ -338,6 +338,12 @@ rendered by old code is not served again.
 A published release can not be changed; the way to get a fix is the next version. To see what a version holds, open
 its changelog: [6.0.0 to 6.0.15](../../changelogs/6.0/6.0.15.md).
 
+**Migrations (6.0.15).** From 6.0.15 on, a site's own changes after the upgrade (a table, a content class, roles,
+a fix of content) are best written as migrations: files under version control that every installation of the site
+applies in the same order with `./console exp:migration:migrate --apply`, with a caption before each run. The
+kernel's upgrade steps are listed among them. Start with [Migrations](../help/migrations/README.md); the word means
+something else than upgrading a site: [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md).
+
 **Demo mode (6.0.15).** The environment variable `EXP_DEMO_MODE=1` marks a public demo; without it nothing changes. Upgrading a demo: keep the variable for the web server, cron and console, and check the banner afterwards. Upgrading a real site: make sure the variable is set for none of its processes. [Demo mode](../bc/6.0/demo-mode.md).
 
 **VAT rules (6.0.15).** Nothing changes in how VAT is charged. VAT rules are applied only when
@@ -352,6 +358,8 @@ and test an order before going live. [Changelog 6.0.15](../../changelogs/6.0/6.0
 - [Operating a site](operating-a-site.md): backups, caches and repairs after the upgrade.
 - [Deploying](deploying.md) and [Velocity engines](../bc/6.0/velocity-engines.md): reload the right PHP-FPM, or move to a faster server.
 - [Extensions](extensions.md): versions, loading order and releases of your own extensions.
+- [Upgrading with the console](upgrading-with-the-console.md) and [Migrations](../help/migrations/README.md): the
+  upgrade as one command, and the site's own changes after it.
 - [Setting up .htaccess and config.php from the console](setup-files-from-the-console.md): compare both files with the new templates.
 - Release notes: [Exponential 6.0 changelogs](../../changelogs/6.0/6.0.15.md) and [the extensions' release notes](../../changelogs/extensions/README.md).
 

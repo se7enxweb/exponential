@@ -61,7 +61,7 @@ Die Matrix, die jeder Gruppe Kurse zuordnet, steht auf der Seite „Rollen und K
 | [Suche](../../../trainer/suche/README.md) | Administration und Entwicklung | 20 Lektionen, etwa 10 Stunden |
 | [Multisite und Website-Pakete](../../../trainer/multisite-und-pakete/README.md) | Administration mehrerer Websites | 26 Lektionen, etwa 22 Stunden |
 | [Newsletter](../../../trainer/newsletter/README.md) | Redaktion und Administration, die Newsletter versenden | 20 Lektionen, etwa 16 Stunden |
-| [Entwickler](../../../trainer/entwickler/README.md) | PHP-Entwicklung | 52 Lektionen, etwa 44 Stunden |
+| [Entwickler](../../../trainer/entwickler/README.md) | PHP-Entwicklung | 53 Lektionen, etwa 45 Stunden |
 | [Theme-Design](../../../trainer/theme-designer/README.md) | Design und Frontend-Entwicklung | 30 Lektionen, etwa 24 Stunden |
 | [Migration zu Exponential](../../../trainer/migration/README.md) | Teams von Migrationsprojekten | 25 Lektionen, etwa 22,5 Stunden |
 | [Train the Trainer](../../../trainer/train-the-trainer/README.md) | Personen, die unterrichten werden | 34 Lektionen, etwa 21 Stunden |

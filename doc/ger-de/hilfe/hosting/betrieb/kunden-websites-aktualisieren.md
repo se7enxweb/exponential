@@ -175,6 +175,7 @@ Quelle: [Wenn etwas schiefgeht](../../../anleitungen/aktualisieren.md#wenn-etwas
 - [Automatische Updates mit ezupdate](automatische-updates-mit-ezupdate.md)
 - [Wartungsmodus](wartungsmodus.md), [Änderungen ausrollen](aenderungen-ausrollen.md)
 - [Kapitel 11: Upgrade](../../../installation/11-aktualisieren.md)
+- [Migrationen auf gehosteten Sites](migrationen-auf-gehosteten-sites.md), [Migrationen](../../migrationen/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

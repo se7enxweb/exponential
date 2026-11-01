@@ -1,45 +1,187 @@
 ---
-title: "Migrations in the administration"
-audience: admin, developer
-category: administration
+title: "Migrations"
+audience: developer, admin, software-engineer, php-developer, hosting, dba, integrator, dxp-developer, trainer
+category: migrations
 order: 1
-summary: Where the migrations of an installation show in the administration - Setup > Migrations, the dashboard block and the website sidebar - and which page explains what.
-keywords: migrations, Setup > Migrations, migration module, dashboard block, website sidebar, policies, migration/read, migration/run, migration/rollback, migration/edit
+summary: The start of everything about migrations in Exponential 6.0.15 - schema and content changes written once as files under version control and applied to every installation of a site in the same order, with a caption before each run, an automatic restore after a failure and a record in git. Paths for beginners, administrators and teams, 25 recipes, the reference and help when something fails.
+keywords: migration, migrations, schema change, database change, content change, data migration, database migration, deploy, deployment, exp:migration, exp:migration:migrate, exp:migration:status, exp:migration:generate, migrate, rollback, caption, upgrade step, Doctrine, Doctrine Migrations, Kaliop, kaliop, ezmigrationbundle, SQL update file, dbupdate, Setup > Migrations, migration.ini, recipes, cookbook, how to
+featured: true
 type: help
 ---
-# Migrations in the administration
+# Migrations
 
-Migrations are changes to an installation written once as files and applied to every installation of the site in
-the same order ([the guide](../../guides/migrations.md)). The administration shows them and runs them in
-**Setup > Migrations** (the module `migration`), and shows their state in a dashboard block and in the website
-sidebar.
+A **migration** is a change to an installation (a table, a column, a content class, content, a role, a setting)
+written once in a PHP file under version control and applied to every installation of the site (development, staging,
+production) in the same order. Exponential 6.0.15 runs migrations in the kernel: it records what ran where, takes a
+**caption** (a safe point) before every run, restores it automatically when a migration fails, and commits, tags and
+pushes the record of every run.
 
-| Page | What it helps you do |
+Looking for something else? Moving a site to another server, upgrading it to a new release or bringing content in
+from another system is **migrating a site**, a different job with its own pages:
+[Migrations versus migrating a site](migrations-versus-migrating-a-site.md).
+
+## Contents
+
+1. [Start here](#start-here)
+2. [Who it is for](#who-it-is-for)
+3. [Recipes](#recipes)
+4. [In the administration](#in-the-administration)
+5. [Reference](#reference)
+6. [When something goes wrong](#when-something-goes-wrong)
+7. [YAML migrations](#yaml-migrations)
+8. [What 6.0.15 has, and what comes later](#what-6015-has-and-what-comes-later)
+9. [Related pages](#related-pages)
+
+## Start here
+
+| You want to ... | Start with | Then |
+|---|---|---|
+| write your first migration (about 20 minutes) | [the tutorial](../../guides/migrations-tutorial.md) | [PHP migrations](../../guides/migrations-php.md), [the recipes](recipes/README.md) |
+| understand what migrations are and how a run works | [the guide](../../guides/migrations.md) | [Rollback and captions](../../guides/migrations-rollback-and-captions.md), [the migrations repository](../../guides/migrations-repositories.md) |
+| apply migrations other people wrote | [Migrations for administrators](migrations-for-administrators.md) | [In the administration](in-the-administration.md), [Run, dry run and rollback](run-dry-run-and-rollback.md) |
+| ship changes as a team, through CI to production | [Team workflow with git](recipes/team-workflow-with-git.md) | [Testing migrations](recipes/testing-migrations.md), [Deploying with migrations](recipes/deploying-with-migrations.md) |
+| move from Doctrine Migrations, the Kaliop bundle or SQL update files | [Coming from Doctrine Migrations](recipes/coming-from-doctrine-migrations.md) | [Kaliop](recipes/coming-from-kaliop-ezmigrationbundle.md), [SQL update files](recipes/coming-from-sql-update-files.md) |
+
+The five commands of every day:
+
+```bash
+./console exp:migration:generate --skeleton add_news_table --apply   # a new PHP migration in migrations/
+./console exp:migration:check                                         # the lint: names, headers, order, PHP (no database)
+./console exp:migration:migrate                                       # dry run: what would change
+./console exp:migration:migrate --apply                               # caption, run, re-caption, commit, tag, push
+./console exp:migration:status                                        # what is done and what is pending
+```
+
+Run them from the installation root as the user the web server runs as (as root, add `--allow-root-user`). Every
+command that writes is a dry run until it is given `--apply`.
+
+## Who it is for
+
+| You are ... | Your page |
 |---|---|
-| [The status and the history](status-and-history.md) | See every migration and its state, the runs with their captions and commits, follow a run as it goes, read the dashboard block |
-| [Run, dry run and rollback](run-dry-run-and-rollback.md) | See what a run would do, simulate it, run the pending migrations, resume a failed run, take a run, a migration or an earlier caption back |
-| [Migrations in the website sidebar](expwt-panel.md) | Read the state of the migrations on the site's own pages |
+| a software engineer who designs how changes reach production | [Migrations for software engineers](../software-engineers/migrations-for-software-engineers.md) |
+| a PHP developer who writes the migration classes | [Writing migrations in PHP](../php-developers/writing-migrations-in-php.md) |
+| an administrator who runs them on staging and production | [Migrations for administrators](migrations-for-administrators.md) |
+| a hosting company or a database administrator | [Migrations on hosted sites](../hosting/operations/migrations-on-hosted-sites.md) |
+| an agency or integrator with many client sites | [Migrations in client projects](../integrators/migrations-in-client-projects.md) |
+| a trainer | [Lesson 9.5: Migrations](../trainers/developers/module-09-the-console-and-persistent-objects/migrations.md), with an exercise |
+| a DXP developer who knows Doctrine Migrations | [Exponential migrations for Doctrine users](../dxp-developers/exponential-migrations-for-doctrine-users.md) |
 
-## Who may do what
+## Recipes
 
-| Policy | Allows |
+Each recipe is one task: what you will have at the end, the steps with their output, the complete migration, how to
+check it, how to take it back, and the next step. [All recipes](recipes/README.md).
+
+**The database schema**
+
+- [Add a database table](recipes/add-a-database-table.md)
+- [Add a column or an index](recipes/add-a-column-or-an-index.md)
+- [Engine notes: MySQL, PostgreSQL, SQLite, Oracle and MongoDB](recipes/engine-notes.md)
+
+**Content classes and content**
+
+- [Create or change a content class](recipes/create-or-change-a-content-class.md)
+- [Add a class attribute](recipes/add-a-class-attribute.md)
+- [Change content in bulk](recipes/change-content-in-bulk.md)
+- [Fix data](recipes/fix-data.md)
+- [Seed content for a new site](recipes/seed-content-for-a-new-site.md)
+- [Large data migrations](recipes/large-data-migrations.md)
+
+**Settings, roles and policies**
+
+- [Move or rename INI settings](recipes/move-or-rename-ini-settings.md)
+- [Add roles and policies](recipes/add-roles-and-policies.md)
+
+**Where migrations live and run**
+
+- [Per-environment migrations](recipes/per-environment-migrations.md)
+- [Migrations in an extension or a package](recipes/migrations-in-an-extension-or-package.md)
+- [Upgrade step or migration?](recipes/upgrade-step-or-migration.md)
+
+**Quality**
+
+- [Writing a reversible down()](recipes/writing-a-reversible-down.md)
+- [Testing migrations](recipes/testing-migrations.md)
+- [Reviewing a migration](recipes/reviewing-a-migration.md)
+
+**Teams and delivery**
+
+- [Team workflow with git](recipes/team-workflow-with-git.md)
+- [Deploying with migrations](recipes/deploying-with-migrations.md)
+- [Pushing tags](recipes/pushing-tags.md)
+
+**Safety and the record**
+
+- [Captions and rollback in practice](recipes/captions-and-rollback-in-practice.md)
+- [The audit trail of runs](recipes/the-audit-trail-of-runs.md)
+
+**Coming from another tool**
+
+- [Coming from Doctrine Migrations](recipes/coming-from-doctrine-migrations.md)
+- [Coming from the Kaliop migration bundle](recipes/coming-from-kaliop-ezmigrationbundle.md)
+- [Coming from SQL update files](recipes/coming-from-sql-update-files.md)
+
+## In the administration
+
+**Setup > Migrations** shows every migration with its state, runs the pending ones in the background, simulates a
+run and takes a run or a migration back. The dashboard has a **Migrations** block, and the website sidebar a read-only
+panel.
+
+- [Migrations in the administration](in-the-administration.md): the pages and who may use them
+- [The status and the history](status-and-history.md)
+- [Run, dry run and rollback](run-dry-run-and-rollback.md)
+- [Migrations in the website sidebar](expwt-panel.md)
+
+## Reference
+
+| Page | What it lists |
 |---|---|
-| `migration/read` | the status, the history, the page of a run, the dry run, the dashboard block |
-| `migration/run` | run, resume, and simulate in the dry run |
-| `migration/rollback` | take a run, one migration or an earlier caption back |
-| `migration/edit` | reserved for writing and generating migrations in the administration; no page uses it in 6.0.15 |
+| [The guide](../../guides/migrations.md) | the whole model: life cycle, files, order, header, environments, record, transactions, lock, every switch |
+| [PHP migrations](../../guides/migrations-php.md) | the class, its methods, the context, transactions, failure, events, testing |
+| [The migration file format](../../specifications/6.0/migration-file-format.md) | file names, the header, the order, the checksum, the record tables, the status file, the run log, the machine output |
+| [Commands](commands.md) | every `exp:migration:*` command, with a link to its generated page |
+| [Settings](settings.md) | every block of `migration.ini`, with a link to its generated page |
+| [Policies, views and events](policies-views-and-events.md) | the policies, the views of the module `migration`, the events and the audit events |
+| [The feature](../../features/6.0/migrations.md) | what 6.0.15 adds, the classes, the engines, the limits |
+| [Upgrading with the console](../../guides/upgrading-with-the-console.md) | `exp:upgrade`, whose steps are listed and run among the migrations |
 
-Only the Administrator role has them in a new installation. Run, resume, simulate and rollback ask
-["Verify it's you"](../../guides/verify-its-you.md) first. The policies in detail:
-[Policies of the migration module](../../examples/policies/migration.md).
+## When something goes wrong
 
-Writing migrations, their editor and generators in the administration, and the settings of the migrations
-repository are not part of Setup > Migrations in 6.0.15: migrations are written as files and generated with
-`./console exp:migration:generate`, and their settings are in `settings/migration.ini`.
+- [When a migration fails](when-a-migration-fails.md): troubleshooting by symptom
+- [Troubleshooting messages](../../guides/migrations-troubleshooting.md): every message the commands print
+- [Frequently asked questions](faq.md)
+- [Rollback and captions](../../guides/migrations-rollback-and-captions.md)
+
+## YAML migrations
+
+A migration can be a list of YAML steps instead of a PHP class: content, locations and versions, classes and class
+groups, users, user groups and roles, sections, languages and object states. The engine, its placeholders,
+conditions and loops: [the file format](../../specifications/6.0/migration-file-format.md#the-yaml-migration); the
+step types: [YAML migration steps](../../guides/migrations-yaml-steps.md) and
+[every step type](../../examples/migration-steps/README.md). The recipes here are written in PHP; each of them can be
+written as YAML steps too where a step type covers it.
+
+## What 6.0.15 has, and what comes later
+
+| In 6.0.15 | Not yet |
+|---|---|
+| PHP and YAML migrations in the site, in active extensions and in installed packages | SQL and INI migrations (found and checked, refused by the runner); the YAML steps of tags, URL aliases, the trash, files, caches and layouts |
+| the dry run, and the simulation with a diff on PostgreSQL and SQLite | a simulation on MySQL/MariaDB, Oracle and MongoDB (the plan is listed) |
+| captions, the automatic restore, rollback of a run, of a migration and of any caption | generators other than the skeleton, an editor in the administration |
+| commit, tag and push of every run's record; the cronjob part `migrationpush` | `exp:velocity deploy --migrate` |
+| Setup > Migrations, background runs, the dashboard block and the sidebar panel | the policy `migration/edit` is reserved; no page uses it yet |
+| the kernel's upgrade steps listed and run among the migrations (stages `database` and `scripts`) | the stages `code`, `libraries` and `finish` stay with `exp:upgrade` |
 
 ## Related pages
 
-- [Migrations: the guide](../../guides/migrations.md) and [the tutorial](../../guides/migrations-tutorial.md)
-- [Rollback and captions](../../guides/migrations-rollback-and-captions.md)
-- [The migrations feature](../../features/6.0/migrations.md)
+- [Migrations: the guide](../../guides/migrations.md), [the tutorial](../../guides/migrations-tutorial.md),
+  [PHP migrations](../../guides/migrations-php.md)
+- [All recipes](recipes/README.md), [Frequently asked questions](faq.md)
+- [Migrations versus migrating a site](migrations-versus-migrating-a-site.md)
+- [Migrating to and from Exponential](../../install/migration/README.md) (moving a site from another system or release)
+- [Upgrading with the console](../../guides/upgrading-with-the-console.md),
+  [Upgrade steps for extensions](../../guides/upgrade-steps-for-extensions.md)
+- [Schema changes and migrations](../software-engineers/schema-changes-and-migrations.md)
 - [A tour of the administration](../admin-tour.md)
+- [Glossary](../../glossary.md)
+- [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.

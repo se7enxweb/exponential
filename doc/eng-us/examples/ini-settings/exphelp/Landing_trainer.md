@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_trainer]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_trainer] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_trainer, INI, setting, StartPage, Related
+summary: "The settings of [Landing_trainer] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_trainer, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_trainer]
 
-The block `[Landing_trainer]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_trainer]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,25 @@ Default: `help/trainers/trainers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_trainer]
 StartPage=help/trainers/trainers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 6: `help/trainers/developers/module-09-the-console-and-persistent-objects/migrations.md`, `help/migrations/README.md`, `guides/migrations-tutorial.md`, `help/migrations/migrations-versus-migrating-a-site.md`, `help/migrations/recipes/README.md`, `help/migrations/faq.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_trainer]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/trainers/developers/module-09-the-console-and-persistent-objects/migrations.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=guides/migrations-tutorial.md
+InfoPages[]=help/migrations/migrations-versus-migrating-a-site.md
+InfoPages[]=help/migrations/recipes/README.md
+InfoPages[]=help/migrations/faq.md
 */ ?>
 ```
 

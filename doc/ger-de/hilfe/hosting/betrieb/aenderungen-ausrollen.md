@@ -174,6 +174,7 @@ Maßnahme.
 - [Abstimmung von PHP-FPM](../leistung/abstimmung-von-php-fpm.md)
 - [Velocity für Hoster](../server/velocity-fuer-hoster.md)
 - [Composer und Git auf Servern](../grundlagen/composer-und-git-auf-servern.md)
+- [Migrationen auf gehosteten Sites](migrationen-auf-gehosteten-sites.md), [Migrationen](../../migrationen/README.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

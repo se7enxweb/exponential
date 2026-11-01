@@ -76198,6 +76198,14 @@ Bydd angen i chi newid dosbarth y nod gan ddefnyddio'r swyddogaeth cyfnewid.</tr
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Nid yw'r pwnc hwn wedi'i ryddhau; nid yw darllenwyr yn ei weld.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mudiadau</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Newidiadau i&apos;r gosodiad wedi&apos;u cadw fel ffeiliau: eu cyflwr, y rhediadau, rhedeg a dychwelyd.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

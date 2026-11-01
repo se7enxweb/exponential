@@ -163,6 +163,7 @@ Then follow the [reading path](dba-reading-path.md).
 - [The database layer in one page](the-database-layer-in-one-page.md)
 - [A reading path for database administrators](dba-reading-path.md)
 - [Database FAQ](database-faq.md)
+- [Migrations on hosted sites](../hosting/operations/migrations-on-hosted-sites.md), [Migrations](../migrations/README.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

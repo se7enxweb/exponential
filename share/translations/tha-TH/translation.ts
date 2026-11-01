@@ -76198,6 +76198,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>This topic is not Released; readers do not see it.</source>
         <translation>หัวข้อนี้ยังไม่ออกรุ่น ผู้อ่านจึงมองไม่เห็น.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ไมเกรชันของการติดตั้ง</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>การเปลี่ยนแปลงของการติดตั้งที่เก็บไว้เป็นไฟล์: สถานะ การเรียกใช้ เรียกใช้และย้อนกลับ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

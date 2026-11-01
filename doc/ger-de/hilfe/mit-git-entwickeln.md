@@ -417,6 +417,10 @@ Drei weitere wissenswerte Dinge:
 <!-- exp-see-also-645 -->
 **Siehe auch:** [Ökosystem](oekosystem/oekosystem-hier-beginnen.md), [PHP-Entwickler](php-entwickler/php-entwickler-hier-beginnen.md), [KI, Agenten und agentisch](ki-agenten/ki-und-agenten-hier-beginnen.md), [Software-Ingenieure](softwareingenieure/softwareingenieure-hier-beginnen.md), [Web-Framework-Entwickler](web-framework-entwickler/web-framework-entwickler-hier-beginnen.md), [CMS-Entwickler](cms-entwickler/cms-entwickler-hier-beginnen.md), [DXP-Entwickler](dxp-entwickler/dxp-entwickler-hier-beginnen.md), [Integratoren](integratoren/integratoren-hier-beginnen.md).
 
+## Verwandte Seiten
+
+- [Migrationen: Teamarbeit mit Git](migrationen/rezepte/teamarbeit-mit-git.md), [Migrationen](migrationen/README.md)
+
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück
 und entwickeln die Produkte mit uns, und so wächst Exponential. Eine Partner-Website und ein Dashboard sind für Mitte

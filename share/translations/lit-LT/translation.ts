@@ -76137,6 +76137,14 @@ Turesite pakeisti mazgo klasę naudodami sukeitimo funkciją.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Ši tema neišleista; skaitytojai jos nemato.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migracijos</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Įdiegimo pakeitimai, saugomi kaip failai: jų būklė, vykdymai, vykdymas ir atšaukimas.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

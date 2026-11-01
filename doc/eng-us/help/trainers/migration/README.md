@@ -14,6 +14,11 @@ to plan such a project so that no content, address or user is lost. It teaches m
 relies on live in the migration chapters of the installation book and in the migration hub, which every lesson links
 rather than copies.
 
+> **Teaching migrations of one site instead?** Schema and content changes written as files and applied with
+> `./console exp:migration:migrate` are a different subject:
+> [Migrations versus migrating a site](../../migrations/migrations-versus-migrating-a-site.md), and the lesson
+> [Lesson 9.5: Migrations](../developers/module-09-the-console-and-persistent-objects/migrations.md).
+
 Exponential 6 is the continuation of the eZ Publish legacy kernel, a product its creator discontinued after almost 18
 years. The old name appears in this course only to identify the releases learners migrate from.
 

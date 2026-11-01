@@ -76198,6 +76198,14 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Wɔantintim asɛm yi; akenkanfoɔ nhu no.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Atutukɔ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Nsakraeɛ a wɔde ayɛ nhyehyɛeɛ no a wɔakora sɛ fael: wɔn gyinabea, dwumadie ahodoɔ, yɛ ne san fa kɔ akyi.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

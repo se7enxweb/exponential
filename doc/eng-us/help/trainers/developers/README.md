@@ -3,7 +3,7 @@ title: "Developers: course overview"
 audience: trainer, developer
 category: training
 order: 1
-summary: The course for PHP developers who build on Exponential, from a development installation of Git clones through the template language, designs and overrides, the content model, fetch functions, modules and views, extensions, settings, the console, workflows, REST, tests, the RAD tools, Velocity and a pull request. Thirteen modules, 52 lessons, about 44 hours of lessons.
+summary: The course for PHP developers who build on Exponential, from a development installation of Git clones through the template language, designs and overrides, the content model, fetch functions, modules and views, extensions, settings, the console, workflows, REST, tests, the RAD tools, Velocity and a pull request. Thirteen modules, 53 lessons, about 45 hours of lessons.
 keywords: developers, course overview, reading path, PHP, templates, overrides, content classes, datatypes, fetch, modules, views, extensions, INI, console, persistent objects, workflows, cronjobs, REST, tests, RAD tools, Velocity, pull request
 type: help
 ---
@@ -28,7 +28,7 @@ their own, test them, deploy them under Velocity and contribute changes upstream
 
 | | |
 |---|---|
-| Duration | 52 lessons, about 44 hours of lessons (about seven days with breaks) |
+| Duration | 53 lessons, about 45 hours of lessons (about seven days with breaks) |
 | Format | Hands-on; classroom or online; one development installation per learner |
 | Level | Intermediate to advanced |
 | Prerequisites | PHP and object-oriented programming, Git, Composer, a terminal; a GitHub account for Module 13 |
@@ -46,7 +46,7 @@ their own, test them, deploy them under Velocity and contribute changes upstream
 | [6. Modules and views](module-06-modules-and-views/README.md) | 4 | 3 h 35 min |
 | [7. Extensions](module-07-extensions/README.md) | 5 | 3 h 55 min |
 | [8. Settings and siteaccesses](module-08-settings-and-siteaccesses/README.md) | 4 | 3 h 15 min |
-| [9. The console and persistent objects](module-09-the-console-and-persistent-objects/README.md) | 4 | 3 h 20 min |
+| [9. The console and persistent objects](module-09-the-console-and-persistent-objects/README.md) | 5 | 4 h 20 min |
 | [10. Workflows, events and cronjobs](module-10-workflows-events-and-cronjobs/README.md) | 3 | 2 h 40 min |
 | [11. The REST API](module-11-the-rest-api/README.md) | 3 | 2 h 45 min |
 | [12. Tests and quality](module-12-tests-and-quality/README.md) | 3 | 2 h 25 min |

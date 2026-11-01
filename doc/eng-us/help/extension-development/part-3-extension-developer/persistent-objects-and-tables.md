@@ -154,6 +154,7 @@ The table must exist before any of this works; shipping and upgrading it is the 
 - Next: [Database schema, .dba files and upgrades](database-schema-and-dba-files.md)
 - [eZPersistentObject](../part-8-reference/ezpersistentobject.md), [eZDB: the database layer](../part-8-reference/ezdb.md)
 - [By hand: your own table with eZPersistentObject](tutorials/by-hand-own-table-with-persistent-object.md)
+- [Migrations](../../migrations/README.md), [Migrations in an extension or a package](../../migrations/recipes/migrations-in-an-extension-or-package.md), [Upgrade step or migration?](../../migrations/recipes/upgrade-step-or-migration.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

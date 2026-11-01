@@ -9,6 +9,10 @@ type: help
 ---
 # Migrating to Exponential
 
+> **Looking for migrations of one site?** Once your site runs on Exponential, its schema and content changes are
+> written as files and applied with `./console exp:migration:migrate`, a different job from moving the site:
+> [Migrations versus migrating a site](../../migrations/migrations-versus-migrating-a-site.md).
+
 ## Contents
 
 1. [Which path is yours](#which-path-is-yours)

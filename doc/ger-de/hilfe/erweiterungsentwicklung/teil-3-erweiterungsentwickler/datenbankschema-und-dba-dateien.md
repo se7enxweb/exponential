@@ -106,6 +106,7 @@ Sie auch dort; die CI des Kernels lässt aus diesem Grund MySQL und PostgreSQL l
 - Weiter: [Ereignisse, Listener und Filter](ereignisse-und-filter.md)
 - [Datenbanken](../../../installation/09-datenbanken.md)
 - [Pakete (.ezpkg) und der Paket-Ersteller](../teil-7-veroeffentlichen/pakete-ezpkg.md)
+- [Migrationen](../../migrationen/README.md), [Migrationen in einer Erweiterung oder einem Paket](../../migrationen/rezepte/migrationen-in-einer-erweiterung-oder-einem-paket.md), [Upgrade-Schritt oder Migration?](../../migrationen/rezepte/upgrade-schritt-oder-migration.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

@@ -128,6 +128,7 @@ how to find out who your learners are.
 - [Course catalogue](course-catalogue.md)
 - [Train the trainer: course overview](train-the-trainer/README.md)
 - [Who is 7x?](../who-is-7x.md) and [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md)
+- [Lesson 9.5: Migrations](developers/module-09-the-console-and-persistent-objects/migrations.md), [Migrations](../migrations/README.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-see-also-645 -->

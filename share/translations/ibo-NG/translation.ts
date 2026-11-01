@@ -76196,6 +76196,14 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Atọhapụbeghị isiokwu a; ndị na-agụ ya anaghị ahụ ya.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Mbugharị</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Mgbanwe na nrụnye echekwara dị ka faịlụ: ọnọdụ ha, ọgbụgba ha, ịgba na ịtụgharị azụ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

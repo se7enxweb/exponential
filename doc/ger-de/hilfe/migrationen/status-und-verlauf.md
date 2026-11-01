@@ -1,8 +1,8 @@
 ---
 title: "Migrationen: Stand und Verlauf"
 audience: admin, developer
-category: administration
-order: 2
+category: migrations
+order: 11
 summary: Setup > Migrationen in der Administration. Die Seite mit jeder Migration und ihrem Stand, der Verlauf der Läufe mit ihren Sicherungspunkten, Commits und Pushes, die Seite eines Laufs, die ihn live verfolgt, und der Dashboard-Block.
 keywords: Migrationen, Stand der Migrationen, Verlauf, Protokoll des Laufs, Lauf, Sicherungspunkt, ausstehend, fehlgeschlagen, verwaist, Sperre der Installation, Dashboard-Block, migrations, migration status, migration history, run log, caption, migration/status, migration/history, migration/log, migration/read
 context: migration/status, migration/history, migration/log
@@ -127,9 +127,19 @@ Benutzer ohne die Richtlinie sehen den Block nicht. Sein Platz und seine Richtli
 
 ## Verwandte Seiten
 
-- [Migrationen in der Administration](README.md)
+- [Migrationen: der Einstieg](README.md), [Alle Rezepte](rezepte/README.md), [Häufige Fragen](faq.md)
+- [Die Anleitung](../../anleitungen/migrationen.md), [das Tutorial](../../anleitungen/migrationen-tutorial.md),
+  [PHP-Migrationen](../../anleitungen/migrationen-php.md),
+  [Zurücknehmen und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](../../anleitungen/migrationen-repositories.md)
+- [In der Administration](in-der-administration.md), [Befehle](befehle.md), [Einstellungen](einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../../spezifikationen/6.0/migrationsdateiformat.md),
+  [Die Funktion](../../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](../../anleitungen/migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](migrationen-oder-umzug-einer-site.md)
 - [Ausführen, Probelauf und Rücknahme](ausfuehren-probelauf-und-rueckgaengig.md)
 - [Migrationen in der Website-Seitenleiste](expwt-panel.md)
-- [Migrationen: die Anleitung](../../anleitungen/migrationen.md) und [Rücknahme und Sicherungspunkte](../../anleitungen/migrationen-rueckgaengig-und-captions.md)
 - [Die Ansichten des Moduls migration](../../beispiele/modulansichten/migration/README.md) und
   [seine Richtlinien](../../beispiele/richtlinien/migration.md)

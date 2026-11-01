@@ -112,6 +112,7 @@ Platform v5 installation. Where a fact comes from an upstream package, the page 
 - [DXP skeleton: create-project and a documented install](../../features/6.0/platform-dxp-skeleton.md)
 - [Platform package map](../../specifications/6.0/platform-package-map.md)
 - [Who is 7x?](../who-is-7x.md) and [Who is the Exponential Foundation?](../who-is-the-exponential-foundation.md)
+- [Exponential migrations for Doctrine users](exponential-migrations-for-doctrine-users.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

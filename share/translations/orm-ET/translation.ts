@@ -76198,6 +76198,14 @@ Gita noodii hojii jijjiiruu fayyadamuun jijjiiruu qabdu.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Mata dureen kun hin Maxxanfamne; dubbistoonni hin ilaalan.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Godaansota</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Jijjiiramoota inistaaleeshinii faayilaan kuufaman: haala isaanii, raawwiiwwan, raawwachiisuu fi duubatti deebisuu.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

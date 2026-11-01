@@ -5,7 +5,7 @@ aufruft, was der Kontext einer Migration gibt, Transaktionen, Fehler, Referenzen
 Migration testet. Lesen Sie zuerst [das Tutorial](migrationen-tutorial.md), wenn Sie noch keine Migration geschrieben
 haben.
 
-[Anleitungen](README.md) · [Migrationen](migrationen.md) · Siehe auch: [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md),
+[Anleitungen](README.md) · [Migrationen: der Einstieg](../hilfe/migrationen/README.md) · [Migrationen](migrationen.md) · Siehe auch: [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md),
 [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md), [Fehlerbehebung](migrationen-fehlerbehebung.md)
 
 ## Die Datei und die Klasse
@@ -215,3 +215,18 @@ $this->assertSame( 0, $report['exit'], implode( '; ', $report['errors'] ) );
 
 Testen Sie `plan()` ohne Datenbank, indem Sie es aus reinen Funktionen bauen, und führen Sie `up()` und `down()` in
 einem Test zweimal aus, um zu zeigen, dass sich eine Migration zurücknehmen und erneut anwenden lässt.
+
+## Verwandte Seiten
+
+- [Migrationen: der Einstieg](../hilfe/migrationen/README.md), [Alle Rezepte](../hilfe/migrationen/rezepte/README.md),
+  [Häufige Fragen](../hilfe/migrationen/faq.md)
+- [Die Anleitung](migrationen.md), [das Tutorial](migrationen-tutorial.md),
+  [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
+  [Das Migrations-Repository](migrationen-repositories.md)
+- [In der Administration](../hilfe/migrationen/in-der-administration.md), [Befehle](../hilfe/migrationen/befehle.md),
+  [Einstellungen](../hilfe/migrationen/einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](../hilfe/migrationen/richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md), [Die Funktion](../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](../hilfe/migrationen/wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md)

@@ -135,6 +135,7 @@ The whole section in one order is on [Integrators' reading path](integrators-rea
 - [Partners: start here](../partners/partners-start-here.md) and [Implementation partners](../partners/implementation-partners.md)
 - [Resellers: start here](../resellers/resellers-start-here.md), [Bundlers: start here](../bundlers/bundlers-start-here.md)
 - [App creators: start here](../creators/app-creators/app-creators-start-here.md)
+- [Migrations in client projects](migrations-in-client-projects.md), [Migrations](../migrations/README.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

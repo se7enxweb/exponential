@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_software-engineer]
 audience: developer, admin
 category: examples
-summary: "Die Einstellungen von [Landing_software-engineer] in exphelp.ini: StartPage, Related"
-keywords: Einstellung, exphelp.ini, Landing_software-engineer, INI, setting, StartPage, Related
+summary: "Die Einstellungen von [Landing_software-engineer] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: Einstellung, exphelp.ini, Landing_software-engineer, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_software-engineer]
 
-Der Block `[Landing_software-engineer]` von `settings/exphelp.ini`, mit 2 Einstellung(en).
+Der Block `[Landing_software-engineer]` von `settings/exphelp.ini`, mit 3 Einstellung(en).
 
 Bearbeiten Sie `settings/exphelp.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -26,6 +26,25 @@ Standard: `help/software-engineers/software-engineers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_software-engineer]
 StartPage=help/software-engineers/software-engineers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Standard: eine Liste mit 6: `help/software-engineers/migrations-for-software-engineers.md`, `help/migrations/README.md`, `help/software-engineers/schema-changes-and-migrations.md`, `help/migrations/recipes/testing-migrations.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/recipes/reviewing-a-migration.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_software-engineer]
+# ein leeres "InfoPages[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+InfoPages[]
+InfoPages[]=help/software-engineers/migrations-for-software-engineers.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=help/software-engineers/schema-changes-and-migrations.md
+InfoPages[]=help/migrations/recipes/testing-migrations.md
+InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
+InfoPages[]=help/migrations/recipes/reviewing-a-migration.md
 */ ?>
 ```
 

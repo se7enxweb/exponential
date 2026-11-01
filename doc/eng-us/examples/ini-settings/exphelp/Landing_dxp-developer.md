@@ -2,14 +2,14 @@
 title: exphelp.ini [Landing_dxp-developer]
 audience: developer, admin
 category: examples
-summary: "The settings of [Landing_dxp-developer] in exphelp.ini: StartPage, Related"
-keywords: exphelp.ini, Landing_dxp-developer, INI, setting, StartPage, Related
+summary: "The settings of [Landing_dxp-developer] in exphelp.ini: StartPage, InfoPages, Related"
+keywords: exphelp.ini, Landing_dxp-developer, INI, setting, StartPage, InfoPages, Related
 type: generated
 generated: exp:help:examples
 ---
 # exphelp.ini [Landing_dxp-developer]
 
-The block `[Landing_dxp-developer]` of `settings/exphelp.ini`, with 2 setting(s).
+The block `[Landing_dxp-developer]` of `settings/exphelp.ini`, with 3 setting(s).
 
 Never edit `settings/exphelp.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -26,6 +26,25 @@ Default: `help/dxp-developers/dxp-developers-start-here.md`.
 # settings/override/exphelp.ini.append.php
 [Landing_dxp-developer]
 StartPage=help/dxp-developers/dxp-developers-start-here.md
+*/ ?>
+```
+
+## InfoPages
+
+Default: a list of 6: `help/dxp-developers/exponential-migrations-for-doctrine-users.md`, `help/migrations/README.md`, `help/migrations/recipes/coming-from-doctrine-migrations.md`, `guides/migrations-tutorial.md`, `help/migrations/recipes/deploying-with-migrations.md`, `help/migrations/faq.md`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/exphelp.ini.append.php
+[Landing_dxp-developer]
+# an empty "InfoPages[]" first replaces the shipped list; without it the items are added
+InfoPages[]
+InfoPages[]=help/dxp-developers/exponential-migrations-for-doctrine-users.md
+InfoPages[]=help/migrations/README.md
+InfoPages[]=help/migrations/recipes/coming-from-doctrine-migrations.md
+InfoPages[]=guides/migrations-tutorial.md
+InfoPages[]=help/migrations/recipes/deploying-with-migrations.md
+InfoPages[]=help/migrations/faq.md
 */ ?>
 ```
 

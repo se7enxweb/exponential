@@ -114,6 +114,7 @@ Paketen einer Installation von Platform v5 geprüft. Stammt eine Angabe aus eine
 - [DXP-Skeleton: create-project und eine dokumentierte Installation](../../funktionen/6.0/plattform-dxp-skeleton.md)
 - [Übersicht der Plattformpakete](../../spezifikationen/6.0/platform-paketzuordnung.md)
 - [Wer ist 7x?](../wer-ist-7x.md) und [Wer ist die Exponential Foundation?](../wer-ist-die-exponential-foundation.md)
+- [Exponential-Migrationen für Doctrine-Nutzer](exponential-migrationen-fuer-doctrine-nutzer.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

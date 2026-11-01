@@ -75878,6 +75878,14 @@ Vous devrez changer la classe du nœud à l&apos;aide de la fonction d&apos;éch
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Cette rubrique n'est pas publiée ; les lecteurs ne la voient pas.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrations de l’installation</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Modifications de l’installation conservées sous forme de fichiers : leur état, les exécutions, exécuter et annuler.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>

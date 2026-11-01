@@ -5,7 +5,7 @@ und das Protokoll des Laufs. Nach jedem Lauf, auch nach einem gescheiterten, wer
 getaggt und gepusht. Diese Seite erklärt, wo dieses Repository ist, wie es eingerichtet wird, wie ein Commit und ein Tag
 aussehen und was passiert, wenn ein Push scheitert.
 
-[Anleitungen](README.md) · [Migrationen](migrationen.md) · Siehe auch: [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
+[Anleitungen](README.md) · [Migrationen: der Einstieg](../hilfe/migrationen/README.md) · [Migrationen](migrationen.md) · Siehe auch: [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md),
 [Fehlerbehebung](migrationen-fehlerbehebung.md), [migration.ini \[RepositorySettings\]](../beispiele/ini-einstellungen/migration/RepositorySettings.md)
 
 ## Kurz
@@ -174,8 +174,17 @@ git tag -l 'migrations/production/*' --sort=version:refname | tail -5
 git show origin/main:migrations/status/production.json | head -20
 ```
 
-## Weiterlesen
+## Verwandte Seiten
 
-- [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)
-- [Fehlerbehebung bei Migrationen](migrationen-fehlerbehebung.md)
+- [Migrationen: der Einstieg](../hilfe/migrationen/README.md), [Alle Rezepte](../hilfe/migrationen/rezepte/README.md),
+  [Häufige Fragen](../hilfe/migrationen/faq.md)
+- [Die Anleitung](migrationen.md), [das Tutorial](migrationen-tutorial.md), [PHP-Migrationen](migrationen-php.md),
+  [Zurücknehmen und Sicherungspunkte](migrationen-rueckgaengig-und-captions.md)
+- [In der Administration](../hilfe/migrationen/in-der-administration.md), [Befehle](../hilfe/migrationen/befehle.md),
+  [Einstellungen](../hilfe/migrationen/einstellungen.md),
+  [Richtlinien, Ansichten und Ereignisse](../hilfe/migrationen/richtlinien-ansichten-und-ereignisse.md)
+- [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md), [Die Funktion](../funktionen/6.0/migrationen.md)
+- [Wenn eine Migration scheitert](../hilfe/migrationen/wenn-eine-migration-scheitert.md),
+  [Fehlermeldungen](migrationen-fehlerbehebung.md)
+- [Migrationen oder Umzug einer Site](../hilfe/migrationen/migrationen-oder-umzug-einer-site.md)
 - [`exp:migration:push`](../beispiele/befehle/expmigrationpush.md), [migration.ini \[RepositorySettings\]](../beispiele/ini-einstellungen/migration/RepositorySettings.md)

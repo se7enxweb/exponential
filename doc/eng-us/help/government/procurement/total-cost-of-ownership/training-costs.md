@@ -31,7 +31,7 @@ those the [Course catalogue](../../../trainers/course-catalogue.md) states.
 | Site administrators | [Site administration](../../../trainers/site-administrators/README.md) | 48 lessons, about 30 hours (about 5 days) |
 | System administrators | [Hosting and operations](../../../trainers/hosting-operations/README.md) | 28 lessons, about 20 hours (3 to 4 days) |
 | Newsletter senders | [Newsletters](../../../trainers/newsletter/README.md) | 20 lessons, about 16 hours |
-| Developers | [Developers](../../../trainers/developers/README.md) | 52 lessons, about 44 hours (about 7 days) |
+| Developers | [Developers](../../../trainers/developers/README.md) | 53 lessons, about 45 hours (about 7 days) |
 | In-house trainers | [Train the trainer](../../../trainers/train-the-trainer/README.md) | 34 lessons, about 21 hours (3 to 4 days) |
 | Compact programs | [Workshops and bootcamps](../../../trainers/workshops/README.md) | half-day, 1-, 3- and 5-day programs |
 

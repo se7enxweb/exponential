@@ -76198,6 +76198,14 @@ I ka kan ka nɔdi kilasi yɛlɛma ni falen baarakɛcogo ye.</translation>
         <source>This topic is not Released; readers do not see it.</source>
         <translation>Nin ko ma bila kɛnɛ kan; kalandenw tɛ a ye.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Yɔrɔyɛlɛmaw</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Sigili yɛlɛmali minnu marara ka kɛ dosiyew ye: u hali, waleyaw, ka waleya ani ka segin kɔ.</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>

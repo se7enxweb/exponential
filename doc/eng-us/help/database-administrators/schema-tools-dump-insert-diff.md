@@ -122,6 +122,7 @@ your server as for the SQLite file ([Securing the database](securing-the-databas
 - [Moving a site to another engine](moving-between-engines.md)
 - [Checking the schema after an upgrade](checking-the-schema-after-an-upgrade.md)
 - [A portable dump between SQL engines](../hosting/operations/database-backups-per-engine.md#a-portable-dump-between-sql-engines)
+- [Migrations](../migrations/README.md), [Coming from SQL update files](../migrations/recipes/coming-from-sql-update-files.md), [Engine notes for migrations](../migrations/recipes/engine-notes.md)
 - [Free documentation](../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->
