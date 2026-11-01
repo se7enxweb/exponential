@@ -4916,6 +4916,8 @@ c91392713efb2acd856f17def1776367  doc/eng-us/examples/ini-settings/migration/Adm
 aab736c4dff138c02c9ed56d3cc802d1  doc/eng-us/examples/ini-settings/migration/README.md
 94959f62b9cb34961c632d17697e39b5  doc/eng-us/examples/ini-settings/migration/RepositorySettings.md
 65047992428373d86be0b0e5b9a23c06  doc/eng-us/examples/ini-settings/migration/RunSettings.md
+51d0ea7d5def3d860ee8fd5a617bbc77  doc/eng-us/examples/ini-settings/migration/StepSettings.md
+7cf8352bfd4737f1a944cee7eaef3bce  doc/eng-us/examples/ini-settings/migration/YamlSettings.md
 24a4935a5de1d9d2fb967602213c5c5b  doc/eng-us/examples/ini-settings/mime/3gp.md
 3fef90ee97702e67cf845c520aec316e  doc/eng-us/examples/ini-settings/mime/README.md
 f5d05725765915f73b148f0783a2c92a  doc/eng-us/examples/ini-settings/mime/af.md
@@ -12950,6 +12952,7 @@ f45a78a78b0190153b1ea14d27b8799c  doc/ger-de/.examples/descriptions/14-twig-ini-
 3e5f3c6f2f15b756e23860af52d46bf0  doc/ger-de/.examples/descriptions/20-graphql-api-realtime-2026-10-30.json
 878126ee285cda885e39320bf54ad133  doc/ger-de/.examples/descriptions/21-command-migration-2026-10-31.json
 10a08e679ae26b663b8bf8d01d87cbba  doc/ger-de/.examples/descriptions/22-migration-ini-cronjob-and-template-check-2026-10-31.json
+f070af430a26abc5390d222deec82c54  doc/ger-de/.examples/descriptions/23-migration-yaml-engine-2026-11-01.json
 91228801a735cee76a501524af253f71  doc/ger-de/.examples/descriptions/datatypes.json
 d3954e5ea37de996d35592e5aed03999  doc/ger-de/.examples/descriptions/workflow-events.json
 920aef6f15de927f0e36f46a3ded9b14  doc/ger-de/.examples/strings.json
@@ -14464,6 +14467,8 @@ d1be226988d9d5adc82e0f1514c152db  doc/ger-de/beispiele/ini-einstellungen/menu/To
 27175ee5cc17c42cb38af747c8f73a36  doc/ger-de/beispiele/ini-einstellungen/migration/README.md
 be0ce85e507e5f9f239e46615b470d30  doc/ger-de/beispiele/ini-einstellungen/migration/RepositorySettings.md
 142c4151cb8623a883d65bf4c30fafb5  doc/ger-de/beispiele/ini-einstellungen/migration/RunSettings.md
+4e671abec2c360e0f84ffd0920d5b318  doc/ger-de/beispiele/ini-einstellungen/migration/StepSettings.md
+1de800b79215dfcb7d46b17df5b95a06  doc/ger-de/beispiele/ini-einstellungen/migration/YamlSettings.md
 30fe2f095376055cda0fe90980eebd75  doc/ger-de/beispiele/ini-einstellungen/mime/3gp.md
 2c95b1c25bf0721b16dc9af0d086a7f9  doc/ger-de/beispiele/ini-einstellungen/mime/README.md
 41842fbefdbe6af1c697bcc4e10539e8  doc/ger-de/beispiele/ini-einstellungen/mime/af.md
