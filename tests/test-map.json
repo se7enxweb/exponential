@@ -260,7 +260,8 @@
     ],
     "lib/ezfile/classes/ezlog.php": [
       "tests/tests/lib/ezfile/expLogRotatorTest.php",
-      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php"
+      "tests/tests/lib/ezfile/eZLogMaxSizeTest.php",
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ],
     "lib/ezutils/classes/ezdebug.php": [
       "tests/tests/lib/ezutils/expDebugReportNoInlineCssTest.php",

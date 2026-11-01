@@ -96,6 +96,31 @@ class expLegacyForkFixesTest extends PHPUnit\Framework\TestCase
         }
     }
 
+    public function testStorageLogEntryStaysOnOneLine()
+    {
+        $dir = sys_get_temp_dir() . '/exp-storagelog-' . getmypid() . '-' . mt_rand();
+        mkdir( $dir );
+        $ini = eZINI::instance();
+        $saved = $ini->hasVariable( 'FileSettings', 'LogDir' ) ? $ini->variable( 'FileSettings', 'LogDir' ) : false;
+        $ini->setVariable( 'FileSettings', 'LogDir', $dir );
+        try
+        {
+            eZLog::writeStorageLog( "upload\n[ Jan 01 2026 00:00:00 ] [forged].txt", "var/storage\r\n" );
+            $lines = file( $dir . '/storage.log', FILE_IGNORE_NEW_LINES );
+            $this->assertCount( 1, $lines );
+            $this->assertStringContainsString( '[var/storage /upload [ Jan 01 2026 00:00:00 ] [forged].txt]', $lines[0] );
+        }
+        finally
+        {
+            if ( $saved === false )
+                $ini->removeSetting( 'FileSettings', 'LogDir' );
+            else
+                $ini->setVariable( 'FileSettings', 'LogDir', $saved );
+            @unlink( $dir . '/storage.log' );
+            @rmdir( $dir );
+        }
+    }
+
     public function testRestKernelRegistersTheEventListeners()
     {
         $kernel = file_get_contents( self::root() . '/kernel/private/rest/classes/ezpkernelrest.php' );

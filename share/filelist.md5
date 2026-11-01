@@ -25167,7 +25167,7 @@ bb756bbc09b7354be6f0299dbf33266c  lib/ezfile/classes/ezfile.php
 b0732e9bb42c3064b9c25d98f0932f79  lib/ezfile/classes/ezgzipcompressionhandler.php
 3542e48f46d118e6940583e79d325ac0  lib/ezfile/classes/ezgzipshellcompressionhandler.php
 c6192465f37951341d60924e9fa53cc9  lib/ezfile/classes/ezgzipzlibcompressionhandler.php
-8da546d71c4bc8f132777b39a55ce658  lib/ezfile/classes/ezlog.php
+506497ebea3765031da66bcd2e08f492  lib/ezfile/classes/ezlog.php
 0978fbe3c96040ede4eaf4c7cae95522  lib/ezfile/classes/ezmd5.php
 2a95bc96a39e413683322abe5d0c0fab  lib/ezfile/classes/eznocompressionhandler.php
 4c75edf8304530c54bc3cbd6c6ef6f93  lib/ezi18n/classes/expi18nfallbackconfiguredrule.php
@@ -26822,7 +26822,7 @@ ad3ef84f9d21cd4076b60e33034063b0  tests/bootstrap.php
 f6aad95f969453408005cbbf976919be  tests/settings/test_ezmail_plain.ini
 ebbc3ce510ff4a7c98c5587991dac113  tests/settings/test_ezmail_ssl.ini
 1b7dcb4dde933b1ebf8f8f93f3df7d55  tests/suite.php
-2002db3bd343338b6c5d0626d645bbd7  tests/test-map.json
+f238f565ede1dbf6ac65719da33c7674  tests/test-map.json
 4f2af04e2bf61d9e7bfbba8181fc08c0  tests/tests/bin/CiWorkflowPullRequestTest.php
 b152194c06e5b05fb18f088d0afd219c  tests/tests/bin/ConsoleExtensionAliasTest.php
 cf640022325724fc8a061137bbc5045e  tests/tests/bin/CopyrightNoticeTest.php
@@ -27395,7 +27395,7 @@ bd8d5281bb788338a12315d0bc4eeea3  tests/tests/kernel/classes/expInstallDefaultEx
 63560f7fcb44741dad70668afb867c2a  tests/tests/kernel/classes/expKernelServiceScopeMemoTest.php
 d32b95c53aa6c4d7db1e92129156c0fa  tests/tests/kernel/classes/expKernelServicesTest.php
 cdc3a84370d7973c391aa502601fc541  tests/tests/kernel/classes/expKernelTransferRegistryTest.php
-5736167ff87c28306602a0d6347e609c  tests/tests/kernel/classes/expLegacyForkFixesTest.php
+b9b87aeb9f23a5a0f7ddd63ac2cc7b35  tests/tests/kernel/classes/expLegacyForkFixesTest.php
 448f58b85fd061fe10776ed7828bb7f0  tests/tests/kernel/classes/expLinkCheckTest.php
 3e50c9be12a35dbb019b3378de3d7236  tests/tests/kernel/classes/expLoveStackCheckTest.php
 be0d9664a26c04457647f96100bb1fa9  tests/tests/kernel/classes/expLoveStackFixture.php
