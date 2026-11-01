@@ -349,7 +349,10 @@ class expMigrationCaption
         if ( $dir === '' || !is_dir( $dir ) )
             return 'none';
         $lines = array();
-        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
+        // a folder that cannot be read is left out instead of ending the whole marker (an unreadable var/log of a test
+        // fixture below var/tmp made every caption of the run fail, 2026-11-01)
+        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ),
+                                             RecursiveIteratorIterator::LEAVES_ONLY, RecursiveIteratorIterator::CATCH_GET_CHILD );
         foreach ( $it as $file )
         {
             if ( $file->isLink() || !$file->isFile() )
