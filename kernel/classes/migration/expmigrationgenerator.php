@@ -133,7 +133,7 @@ class expMigrationGenerator
         if ( empty( $skeleton['ok'] ) )
             return $skeleton['errors'] ?: array( 'nothing to write' );
         $dir = dirname( $skeleton['file'] );
-        if ( !is_dir( $dir ) && !mkdir( $dir, 0775, true ) && !is_dir( $dir ) )
+        if ( !is_dir( $dir ) && !eZDir::mkdir( $dir, false, true ) && !is_dir( $dir ) )
             return array( "cannot make the folder $dir" );
         $handle = @fopen( $skeleton['file'], 'x' );
         if ( !$handle )

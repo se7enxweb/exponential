@@ -110,7 +110,7 @@ class expMigrationRunner
         $context = new expMigrationContext( isset( $options['db'] ) ? $options['db'] : null, !empty( $options['apply'] ), $options );
         $errors = array();
         $migrations = isset( $options['migrations'] ) ? array_values( (array)$options['migrations'] ) : self::migrations( $context->environment(), $errors );
-        $only =isset( $options['only'] ) ? expUpgrade::listOption( $options['only'] ) : array();
+        $only = isset( $options['only'] ) ? expUpgrade::listOption( $options['only'] ) : array();
         $paths = isset( $options['path'] ) ? expUpgrade::listOption( $options['path'] ) : array();
         if ( $only || $paths )
         {
