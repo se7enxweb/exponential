@@ -35,8 +35,10 @@ Enabled=true
 
 > Migrations: a run, a resume or a simulation, a rollback, and (later) the editor and the generators; seeing them  
 > (status, history, log, the dry run) is never asked  
+> Static publishing: a publish, a rollback, saving a target, the deploy key and the switch; seeing, building and the  
+> preview are never asked  
 
-Default: a list of 22: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
+Default: a list of 27: `setup/*`, `!setup/info`, `!setup/logs`, `!setup/logshealth`, `!setup/logsdigest`, `!setup/logsfeed`, `!setup/templatelist`, `!setup/templateview`, `!setup/menu`, `!setup/preloadstream`, `!setup/cronjobsstream`, `!setup/staticcachestream` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -64,7 +66,7 @@ Rules[]=migration/run
 Rules[]=migration/rollback
 Rules[]=migration/edit
 Rules[]=migration/dryrun SimulateButton
-# ... 2 more in the shipped file
+# ... 7 more in the shipped file
 */ ?>
 ```
 

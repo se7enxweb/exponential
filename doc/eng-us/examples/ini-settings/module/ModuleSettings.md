@@ -62,8 +62,9 @@ ExtensionRepositories[]
 > The GraphQL API with the session of the web interface (doc/eng-us/features/6.0/graphql.md)  
 > Migrations: Setup > Migrations, their state, runs and rollback (doc/eng-us/guides/migrations.md)  
 > The kernel's secret store (doc/eng-us/features/6.0/secret-store.md)  
+> Static publishing: Setup > Static publishing, targets, builds, preview, publish, history (doc/eng-us/help/static-publishing/README.md)  
 
-Default: a list of 38: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
+Default: a list of 39: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -91,7 +92,7 @@ ModuleList[]=migration
 ModuleList[]=notification
 ModuleList[]=oauth
 ModuleList[]=oauthadmin
-# ... 18 more in the shipped file
+# ... 19 more in the shipped file
 */ ?>
 ```
 

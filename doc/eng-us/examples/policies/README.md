@@ -48,6 +48,7 @@ Every module's policy functions and the limitations each can carry, from `$Funct
 | [setup](setup.md) | `administrate`, `install`, `logs`, `managecache`, `managecronjobs`, `managelogs`, `preload`, `setup`, `system_info`, `unmasklogs` |
 | [shop](shop.md) | `administrate`, `buy`, `edit_status`, `setstatus`, `setup` |
 | [state](state.md) | `administrate`, `assign` |
+| [staticpublish](staticpublish.md) | `build`, `publish`, `read`, `setup` |
 | [switchlanguage](switchlanguage.md) | (none: `switchlanguage/*`) |
 | [trigger](trigger.md) | (none: `trigger/*`) |
 | [uiswitch](uiswitch.md) | `design`, `language` |

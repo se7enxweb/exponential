@@ -18,7 +18,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [audit](audit/README.md) | 9 | `kernel/audit/module.php` |
 | [class](class/README.md) | 11 | `kernel/class/module.php` |
 | [collaboration](collaboration/README.md) | 4 | `kernel/collaboration/module.php` |
-| [content](content/README.md) | 44 | `kernel/content/module.php` |
+| [content](content/README.md) | 45 | `kernel/content/module.php` |
 | [contentcheck](contentcheck/README.md) | 7 | `kernel/contentcheck/module.php` |
 | [contentfinder](contentfinder/README.md) | 2 | `kernel/contentfinder/module.php` |
 | [csp](csp/README.md) | 1 | `kernel/csp/module.php` |
@@ -48,6 +48,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [setup](setup/README.md) | 45 | `kernel/setup/module.php` |
 | [shop](shop/README.md) | 36 | `kernel/shop/module.php` |
 | [state](state/README.md) | 6 | `kernel/state/module.php` |
+| [staticpublish](staticpublish/README.md) | 9 | `kernel/staticpublish/module.php` |
 | [switchlanguage](switchlanguage/README.md) | 1 | `kernel/private/modules/switchlanguage/module.php` |
 | [trigger](trigger/README.md) | 1 | `kernel/trigger/module.php` |
 | [uiswitch](uiswitch/README.md) | 2 | `kernel/uiswitch/module.php` |

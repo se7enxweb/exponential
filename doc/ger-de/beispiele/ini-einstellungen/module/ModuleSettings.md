@@ -54,16 +54,17 @@ ExtensionRepositories[]
 
 ## ModuleList
 
-> Ein Array der im System bekannten Module, Erweiterungen sollten an dieses Array  
-> anhängen.  
-> Das wird derzeit verwendet, damit URL-Aliase keine  
-> bestehenden Modulnamen überschreiben  
-> Die Datentabellen und die benannten Datenbankverbindungen (doc/eng-us/features/6.0/data-tables.md)  
-> Die GraphQL-API mit der Sitzung der Weboberfläche (doc/eng-us/features/6.0/graphql.md)  
-> Migrationen: Einrichtung > Migrationen, ihr Stand, Läufe und Rücknahme (doc/eng-us/guides/migrations.md)  
-> Der Secret-Store des Kernels (doc/eng-us/features/6.0/secret-store.md)  
+> An array of known modules in the system, extensions should  
+> append to this array.  
+> This is currently used to avoid URL aliases overriding  
+> existing module names  
+> The data tables and the named database connections (doc/eng-us/features/6.0/data-tables.md)  
+> The GraphQL API with the session of the web interface (doc/eng-us/features/6.0/graphql.md)  
+> Migrations: Setup > Migrations, their state, runs and rollback (doc/eng-us/guides/migrations.md)  
+> The kernel's secret store (doc/eng-us/features/6.0/secret-store.md)  
+> Static publishing: Setup > Static publishing, targets, builds, preview, publish, history (doc/eng-us/help/static-publishing/README.md)  
 
-Standard: eine Liste mit 38: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
+Standard: eine Liste mit 39: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -91,7 +92,7 @@ ModuleList[]=migration
 ModuleList[]=notification
 ModuleList[]=oauth
 ModuleList[]=oauthadmin
-# ... 18 weitere in der ausgelieferten Datei
+# ... 19 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

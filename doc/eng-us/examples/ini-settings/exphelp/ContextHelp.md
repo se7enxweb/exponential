@@ -100,13 +100,14 @@ MenuLinks[git]=install/03-getting-the-code.md#b-git-clone-and-composer-install
 > Users and access  
 > Setup  
 > Setup > Migrations (module migration)  
+> Setup > Static publishing (module staticpublish)  
 > admin4l: the administration drawn by admin layouts  
 > The editor siteaccess (SiteDesign=editor): the pages written for editors, before the administrators' guides  
 > Modules of extensions that ship without help entries of their own (an extension's exphelp.ini.append.php wins over  
 > these: it is read after this file)  
 > The database manager of sevenx\_dse (module dse)  
 
-Default: a hash of 141: `content=guides/content-model-and-editing.md`, `content/dashboard=help/admin-tour.md`, `content/view=help/editing-content.md`, `content/edit=help/editing-content.md`, `content/multiedit=guides/content-model-and-editing.md#6-edit-many-items-in-one-form-multi-node-edit`, `content/versionview=guides/content-history.md`, `content/history=guides/content-history.md`, `content/draft=guides/drafts-and-pending.md#1-my-drafts`, `content/pendinglist=guides/drafts-and-pending.md#2-my-pending-items`, `content/trash=guides/content-model-and-editing.md#7-the-trash`, `content/restore=guides/content-model-and-editing.md#7-the-trash`, `content/bookmark=guides/bookmarks.md` ....
+Default: a hash of 151: `content=guides/content-model-and-editing.md`, `content/dashboard=help/admin-tour.md`, `content/view=help/editing-content.md`, `content/edit=help/editing-content.md`, `content/multiedit=guides/content-model-and-editing.md#6-edit-many-items-in-one-form-multi-node-edit`, `content/versionview=guides/content-history.md`, `content/history=guides/content-history.md`, `content/draft=guides/drafts-and-pending.md#1-my-drafts`, `content/pendinglist=guides/drafts-and-pending.md#2-my-pending-items`, `content/trash=guides/content-model-and-editing.md#7-the-trash`, `content/restore=guides/content-model-and-editing.md#7-the-trash`, `content/bookmark=guides/bookmarks.md` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -134,7 +135,7 @@ Map[content/translation]=guides/content-languages.md
 Map[content/urlalias]=guides/urls-and-aliases.md
 Map[content/urltranslator]=guides/urls-and-aliases.md#3-global-url-aliases
 Map[content/urlwildcards]=guides/urls-and-aliases.md#4-url-wildcards
-# ... 121 more in the shipped file
+# ... 131 more in the shipped file
 */ ?>
 ```
 

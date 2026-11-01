@@ -29,7 +29,7 @@ Never edit `settings/upgrade.ini` itself: an update replaces it. Put the setting
 > stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
 > stage finish: make the changes live and check the site (only when the run changed something)  
 
-Default: a list of 41: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables`, `expUpgradeStepBookmarkFolders` ....
+Default: a list of 42: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables`, `expUpgradeStepBookmarkFolders` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -57,7 +57,7 @@ StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
 StepList[]=expUpgradeStepUserSessionTable
 StepList[]=expUpgradeStepOAuthPkceColumns
-# ... 21 more in the shipped file
+# ... 22 more in the shipped file
 */ ?>
 ```
 
