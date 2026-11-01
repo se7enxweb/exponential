@@ -551,6 +551,9 @@ class eZURLAliasML extends eZPersistentObject
             $languageMask |= 1;
         // Set before the MongoDB branch, which stores new entries with it too
         $alwaysMask = $alwaysAvailable ? 1 : 0;
+        // The action type (eznode of eznode:59) of the entries the MongoDB branch stores; that branch runs before the
+        // action is checked below, and stored null as action_type when an existing entry was made the original
+        $actionName = preg_match( "#^(.+):(.+)$#", (string)$action, $actionMatches ) ? $actionMatches[1] : '';
 
         $path = eZURLAliasML::cleanURL( $path );
         $elements = explode( '/', $path );
