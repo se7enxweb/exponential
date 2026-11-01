@@ -254,7 +254,7 @@ class expMigrationJobTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/^ModuleList\[\]=migration$/m', file_get_contents( self::$root . '/settings/module.ini' ) );
         $menu = self::section( 'settings/menu.ini', 'Leftmenu_setup' );
         foreach ( array( 'Links[migrations]=migration/status', 'PolicyList_migrations[]=migration/read', 'GroupLinks_system[]=migrations',
-                         'LinkNames[migrations]=Migrations', 'LinkIcons[migrations]=journal-check' ) as $line )
+                         'LinkNames[migrations]=Migrations', 'LinkIcons[migrations]=clock-history' ) as $line )
             $this->assertContains( $line, $menu );
         $rules = array();
         foreach ( self::section( 'settings/site.ini', 'ReauthGroup_system' ) as $line )

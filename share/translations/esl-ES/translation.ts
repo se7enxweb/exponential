@@ -81710,7 +81710,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Type the id of the caption again</source>
-        <translation>Escriba de nuevo el identificador de la captura</translation>
+        <translation>Escribe de nuevo el identificador de la captura</translation>
     </message>
     <message>
         <source>Yes, take it back</source>
@@ -81950,11 +81950,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Type the id of the caption again: %target</source>
-        <translation>Escriba de nuevo el identificador de la captura: %target</translation>
+        <translation>Escribe de nuevo el identificador de la captura: %target</translation>
     </message>
     <message>
         <source>Choose at least one part to restore.</source>
-        <translation>Elija al menos una parte que restaurar.</translation>
+        <translation>Elige al menos una parte que restaurar.</translation>
     </message>
     <message>
         <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
@@ -81970,7 +81970,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Choose the run to resume.</source>
-        <translation>Elija la ejecución que reanudar.</translation>
+        <translation>Elige la ejecución que reanudar.</translation>
     </message>
     <message>
         <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
@@ -81978,7 +81978,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Choose at least one migration.</source>
-        <translation>Elija al menos una migración.</translation>
+        <translation>Elige al menos una migración.</translation>
     </message>
     <message>
         <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
@@ -81986,7 +81986,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>Give the reason why the changed migrations are accepted.</source>
-        <translation>Indique el motivo por el que se aceptan las migraciones cambiadas.</translation>
+        <translation>Indica el motivo por el que se aceptan las migraciones cambiadas.</translation>
     </message>
     <message>
         <source>The reason is at most 500 characters.</source>
@@ -81994,7 +81994,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>A run started here is still going on (%detail). Wait for it to end.</source>
-        <translation>Una ejecución iniciada aquí sigue en curso (%detail). Espere a que termine.</translation>
+        <translation>Una ejecución iniciada aquí sigue en curso (%detail). Espera a que termine.</translation>
     </message>
     <message>
         <source>Another run holds the lock of the installation: %detail</source>
@@ -82006,7 +82006,7 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
-        <translation>No se ha encontrado ningún ejecutable de línea de comandos de php. Indique su ruta completa en migration.ini [AdminSettings] PhpCliPath.</translation>
+        <translation>No se ha encontrado ningún ejecutable de línea de comandos de php. Indica su ruta completa en migration.ini [AdminSettings] PhpCliPath.</translation>
     </message>
     <message>
         <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
@@ -82018,11 +82018,11 @@ Gracias por tu feedback</translation>
     </message>
     <message>
         <source>The run was started but did not report its process id. Check %detail.</source>
-        <translation>La ejecución se ha iniciado, pero no ha comunicado su identificador de proceso. Compruebe %detail.</translation>
+        <translation>La ejecución se ha iniciado, pero no ha comunicado su identificador de proceso. Comprueba %detail.</translation>
     </message>
     <message>
         <source>Name what to take back.</source>
-        <translation>Indique qué hay que deshacer.</translation>
+        <translation>Indica qué hay que deshacer.</translation>
     </message>
     <message>
         <source>The run could not be started.</source>

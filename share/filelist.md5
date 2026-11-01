@@ -25558,7 +25558,7 @@ ba0c39f06c1735dda504b831ab1f89ef  settings/ldap.ini
 473463c7f61e8acbcf8e30e022d70c59  settings/logviewer.ini
 f38064dccc9974bbc272bd49a25b4a96  settings/mailpreferences.ini
 c1f0320332dab25bd13faf6ea46c6a74  settings/membermanagement.ini
-4af196af578566dfb30cbd635f37d412  settings/menu.ini
+293eb5791de60dd4330f0421d7b63c7d  settings/menu.ini
 2d577c93a7b6643f055b96079179ecfd  settings/migration.ini
 71a7ac0296299fca0a6f1ae1b62ae817  settings/mime.ini
 61e93377ca02f4c0b3ecc5ef21d3707c  settings/module.ini
@@ -26617,9 +26617,9 @@ c02e68bd3bb5d68b91199d57eeef829e  share/translations/ell-GR/translation.ts
 c4aefd9911e5b7b7646f05df605f6902  share/translations/epo-EO/GUIDE.md
 e00327e9f3e3d2af403017a9e61ff70b  share/translations/epo-EO/translation.ts
 efca7798a9e1f1f216aa838154d35110  share/translations/esl-ES/GUIDE.md
-b358a64eba24748f518842187a349eac  share/translations/esl-ES/translation.ts
+4268218acb5a921f9f496bb4130525fc  share/translations/esl-ES/translation.ts
 99a8b049c3de4158b7de5fc2838ae5f7  share/translations/esl-MX/GUIDE.md
-6356b3ffae3c3e59981114f49f992a15  share/translations/esl-MX/translation.ts
+03703ac5f54d42483fef6898345d3765  share/translations/esl-MX/translation.ts
 18689d247b26091ff6d7b6f4b0b57bb5  share/translations/est-EE/GUIDE.md
 c3c140d3729aa01ff9f568759e3d95dc  share/translations/est-EE/translation.ts
 65fc645302a48ed19f68a38ad63e0d57  share/translations/eus-ES/GUIDE.md
@@ -27717,7 +27717,7 @@ af7cfd6fdaccf80222488af9083577ec  tests/tests/kernel/classes/migration/expMigrat
 af3623e16b241e1b9bcf3e52b085f013  tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php
 6ad403d53a322eb024ee0e84b967673c  tests/tests/kernel/classes/migration/expMigrationCommandToolsTest.php
 b3e9646cf50ff3e42bfbb63cd0dea145  tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php
-bb799628828c5bdcdf51deb742665ff3  tests/tests/kernel/classes/migration/expMigrationJobTest.php
+1bdbf891cf83607a14563f95e9a7e004  tests/tests/kernel/classes/migration/expMigrationJobTest.php
 d9328c2422dc9b95f59ec537cc219eb9  tests/tests/kernel/classes/migration/expMigrationLocatorTest.php
 a16b86dcbf656fe3d3a97f49773ca77b  tests/tests/kernel/classes/migration/expMigrationProgressTest.php
 3bb8cf8e28b5fbbc3b00973c4378aade  tests/tests/kernel/classes/migration/expMigrationRecordDatabaseTest.php
