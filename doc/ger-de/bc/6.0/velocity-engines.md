@@ -131,6 +131,10 @@ die INI-Caches geleert (der Kernel-Service-Container wird neu kompiliert). Ohne 
 Deployments (das erste, oder die Datei entfernt) wird jeder Cache geleert, wie bisher; ein Upgrade (`exp:upgrade`)
 stellt mit `--all-caches` bereit. Eine Datei gilt nach ihrer Änderungszeit als geändert: eine Kopie, die die alte
 Zeit behält (`cp -p`, `rsync -t`), wird nicht erkannt; stellen Sie eine solche Kopie mit `--all-caches` bereit.
+`--caches=<Liste>` leert die genannten Caches (IDs oder Tags von ezcache, `tag:<Name>` für einen Tag), was immer sich
+geändert hat: Ein Migrationslauf meldet die Caches, die seine Schritte berührt haben, mit genau diesem Deployment
+(`./console exp:velocity deploy --caches=content,template-block --apply`), denn ein Lauf, der nur die Datenbank
+ändert, ändert keine Datei, die das Deployment sehen würde.
 
 **Der erste fehlgeschlagene Schritt beendet den Lauf.** Eine Kernel-Datei, die sich nicht parsen lässt, lässt
 Schritt 5 fehlschlagen, bevor PHP-FPM oder Velocity berührt wurden; ein Neustart, der nicht hochkommt, lässt jeden

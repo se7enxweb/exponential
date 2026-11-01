@@ -32,6 +32,9 @@ jeden Schlüssel jedes Schritttyps nennt seine erzeugte Referenzseite
 | [`trash`](../beispiele/migrationsschritte/trash.md) | verschiebt Inhalte in den Papierkorb, stellt sie wieder her, löscht sie endgültig | move, restore, purge |
 | [`file`](../beispiele/migrationsschritte/file.md) | hängt eine Datei aus dem Migrationsordner an ein Dateiattribut | |
 | [`image`](../beispiele/migrationsschritte/image.md) | ein Bild aus dem Migrationsordner, sein Alternativtext, Fokuspunkt und Zuschnitt | |
+| [`cache`](../beispiele/migrationsschritte/cache.md) | leert Caches von ezcache nach ID oder Tag und die Ansichtscaches von Objekten | |
+| [`search`](../beispiele/migrationsschritte/search.md) | indiziert Objekte oder alle Objekte in der Suchmaschine neu | reindex, full |
+| [`autoload`](../beispiele/migrationsschritte/autoload.md) | erzeugt das Autoload-Array der Erweiterungen oder der Kernel-Überschreibungen neu | |
 
 Jeder Schritt geht über die eigene API des Kernels, so wie die Administration: Ein neues Objekt entsteht über seine
 Klasse (`eZContentClass::instantiate()`), eine neue Version über `createNewVersionIn()`, und beide veröffentlicht die
@@ -263,6 +266,50 @@ Inhaltsänderung ist das eine neue Version, die über die Veröffentlichungsoper
 `in_place: true`. `focal:` und `crop:` setzen Fokuspunkt und Zuschnitt des Bildes wie der Bildeditor (Anteile von
 Breite und Höhe des Originals); `null` entfernt einen davon, und ein Schritt nur mit `focal:` oder `crop:` behält das
 Bild.
+
+## Caches, der Suchindex und Autoloads
+
+Ein Lauf leert die Caches, die seine Migrationen berührt haben, und nur diese: Jeder Schritttyp nennt die Caches, die
+seine Schritte berühren (ein Inhaltsschritt `content`, ein Klassenschritt `classid`, `content` und `sortkey`, ein
+URL-Alias `content` und `urlalias` ...; jede Referenzseite listet sie), und nach einem Lauf, der Migrationen angewendet
+hat, oder einem Zurücknehmen, das welche rückgängig gemacht hat, leert der Kernel diese Liste einmal über ezcache
+(`migration.ini [RunSettings] ClearCaches`). Der Bericht des Laufs listet die Caches (`caches`) mit dem Deploy, das
+genau sie auch auf einem Server mit PHP-FPM und Velocity leert (`deploy`):
+
+```text
+./console exp:velocity deploy --caches=classid,content,template-block,urlalias --apply
+```
+
+Auch die Objekte, die die Schritte angelegt oder geändert haben, werden nach dem Lauf neu indiziert: standardmäßig für
+den Cronjob `indexcontent` vorgemerkt (`[RunSettings] Reindex=queue`), sofort indiziert (`now`) oder nicht angefasst
+(`disabled`). Der Bericht sagt, wie viele (`reindex`).
+
+Drei Schritttypen sind für das, was die genannten Caches und das Neuindizieren nicht abdecken:
+
+```yaml
+- type: cache
+  caches: [ template-block ]        # IDs von ezcache
+  tags: [ ini ]                     # Tags von ezcache (jeder Cache mit dem Tag)
+  objects: [ "remote:home" ]        # die Inhaltsansichtscaches dieser Objekte, sofort
+  when: now                         # end (Standard): mit der Liste des Laufs nach dem Lauf
+- type: search
+  objects: [ "remote:home" ]        # ohne: die Objekte, die der Lauf bis hierher geändert hat
+  queue: false                      # sofort indizieren statt vormerken
+- type: search
+  mode: full                        # jedes veröffentlichte Objekt ...
+  classes: [ article ]              # ... dieser Klassen
+- type: autoload
+  scope: extension                  # var/autoload/ezp_extension.php; kernel-override: ezp_override.php
+```
+
+Die Caches eines `cache`-Schritts kommen in die Liste des Laufs (ein Tag als `tag:<Name>`, denn `content`, `template`
+und `ini` sind ID und Tag zugleich); mit `when: now` werden sie sofort geleert, für einen späteren Schritt, der das
+braucht. `search` indiziert Objekte neu, die ein Schritt geändert hat, ohne es zu sagen (eine PHP-Migration, eine
+SQL-Änderung), oder alles nach einem Wechsel der Suchmaschine. `autoload` startet den Autoload-Generator in einem
+eigenen Prozess und prüft die Datei, die er schreibt; PHP-FPM und Velocity laden die neuen Klassen nach
+`./console exp:velocity deploy --apply`. Das eigene Autoload-Array des Kernels gehört zum Code eines Releases und wird
+nie von einer Migration geschrieben. Alle drei nehmen sich selbst zurück: Ein Zurücknehmen leert die Caches erneut,
+braucht keine eigene Indexänderung und erzeugt das Array aus den Klassen, die da sind, neu.
 
 ## Workflows und Benachrichtigungen
 

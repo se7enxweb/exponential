@@ -165,7 +165,7 @@ written as YAML steps too where a step type covers it.
 
 | In 6.0.15 | Not yet |
 |---|---|
-| PHP and YAML migrations in the site, in active extensions and in installed packages | SQL and INI migrations (found and checked, refused by the runner); the YAML steps of caches, the search index and layouts |
+| PHP and YAML migrations in the site, in active extensions and in installed packages | SQL and INI migrations (found and checked, refused by the runner); the YAML steps of layouts |
 | the dry run, and the simulation with a diff on PostgreSQL and SQLite | a simulation on MySQL/MariaDB, Oracle and MongoDB (the plan is listed) |
 | captions, the automatic restore, rollback of a run, of a migration and of any caption | generators other than the skeleton, an editor in the administration |
 | commit, tag and push of every run's record; the cronjob part `migrationpush` | `exp:velocity deploy --migrate` |

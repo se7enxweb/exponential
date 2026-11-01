@@ -32,6 +32,9 @@ Jeder Schritttyp von YAML-Migrationen, den der Kernel in `settings/migration.ini
 | [trash](trash.md) | move, restore, purge | Verschiebt Inhalte in den Papierkorb, stellt sie aus ihm wieder her oder löscht sie endgültig |
 | [file](file.md) |  | Hängt eine Datei aus dem Migrationsordner an ein Dateiattribut (ezbinaryfile, ezmedia) eines Objekts |
 | [image](image.md) |  | Legt ein Bild aus dem Migrationsordner in ein Bildattribut eines Objekts, mit Alternativtext, Fokuspunkt und Zuschnitt |
+| [cache](cache.md) |  | Leert Caches von ezcache nach ID oder Tag und die Ansichtscaches einzelner Objekte, sofort oder nach dem Lauf |
+| [search](search.md) | reindex, full | Indiziert Objekte in der Suchmaschine neu (die genannten oder die, die der Lauf geändert hat) oder alle Objekte |
+| [autoload](autoload.md) |  | Erzeugt das Autoload-Array der Erweiterungen oder der Kernel-Klassen, die Erweiterungen ersetzen, neu |
 
 - [Alle Beispiele](../README.md)
 

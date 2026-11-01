@@ -138,7 +138,10 @@ compiled again). Without a record of an earlier deploy (the first one, or the
 file removed) every cache is cleared, as before; an upgrade
 (`exp:upgrade`) deploys with `--all-caches`. A file is "changed" by its
 modification time: a copy that keeps the old time (`cp -p`, `rsync -t`) is not
-seen, so deploy such a copy with `--all-caches`.
+seen, so deploy such a copy with `--all-caches`. `--caches=<list>` clears the caches it names (ids or
+tags of ezcache, `tag:<name>` for a tag) whatever changed: a migration run reports the caches its steps touched
+with exactly that deploy (`./console exp:velocity deploy --caches=content,template-block --apply`), since a run that
+changes only the database changes no file the deploy would see.
 
 **The first step that fails stops the run.** A kernel file that does not parse
 fails step 5, before PHP-FPM or Velocity has been touched; a restart that does

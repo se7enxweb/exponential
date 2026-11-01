@@ -1,0 +1,74 @@
+{
+    "command:velocity --caches": {
+        "en": "deploy: clear these caches too, whatever changed (ids or tags of ezcache, comma-separated: the list a migration run reports)",
+        "de": "deploy: diese Caches auch leeren, was immer sich geändert hat (IDs oder Tags von ezcache, durch Kommas getrennt: die Liste, die ein Migrationslauf meldet)"
+    },
+    "ini:settings/migration.ini [RunSettings] ClearCaches": {
+        "en": "enabled: after a run that applied (or a rollback that undid) migrations, the caches their steps touched are cleared,\nby their names in ezcache, and only those (every step type declares its caches; the step type cache adds more).\nThe report lists them, with the deploy that clears exactly them on the server too\n(./console exp:velocity deploy --caches=<list> --apply). disabled: the caches are left as they are.",
+        "de": "enabled: nach einem Lauf, der Migrationen angewendet (oder einem Zurücknehmen, das Migrationen rückgängig gemacht) hat, werden die\nCaches geleert, die ihre Schritte berührt haben, mit ihren Namen in ezcache, und nur diese (jeder Schritttyp nennt seine Caches;\nder Schritttyp cache fügt weitere hinzu). Der Bericht listet sie, mit dem Deploy, das genau sie auch auf dem Server leert\n(./console exp:velocity deploy --caches=<Liste> --apply). disabled: die Caches bleiben, wie sie sind."
+    },
+    "ini:settings/migration.ini [RunSettings] Reindex": {
+        "en": "What happens to the search index of the objects the steps of a run created or changed, after the run:\nqueue: queued for the cronjob indexcontent (the pending actions of delayed indexing); now: indexed at once, before\nthe run ends; disabled: left alone. The step type search reindexes on its own, a full reindex too.",
+        "de": "Was nach dem Lauf mit dem Suchindex der Objekte geschieht, die die Schritte eines Laufs angelegt oder geändert haben:\nqueue: für den Cronjob indexcontent vorgemerkt (die ausstehenden Aktionen der verzögerten Indizierung); now: sofort\nindiziert, bevor der Lauf endet; disabled: nichts. Der Schritttyp search indiziert für sich, auch alles neu."
+    },
+    "step:autoload": {
+        "en": "Regenerates the autoload array of the extensions or of the kernel classes extensions replace",
+        "de": "Erzeugt das Autoload-Array der Erweiterungen oder der Kernel-Klassen, die Erweiterungen ersetzen, neu"
+    },
+    "step:autoload scope": {
+        "en": "extension: the classes of the extensions; kernel-override: the kernel classes extensions replace",
+        "de": "extension: die Klassen der Erweiterungen; kernel-override: die Kernel-Klassen, die Erweiterungen ersetzen"
+    },
+    "step:autoload value file": {
+        "en": "the autoload array written, below the root",
+        "de": "das geschriebene Autoload-Array, unterhalb des Wurzelverzeichnisses"
+    },
+    "step:cache": {
+        "en": "Clears caches of ezcache by id or tag and the view caches of single objects, at once or after the run",
+        "de": "Leert Caches von ezcache nach ID oder Tag und die Ansichtscaches einzelner Objekte, sofort oder nach dem Lauf"
+    },
+    "step:cache caches": {
+        "en": "ids of ezcache: content, template-block, exphttpcache, template-override ...",
+        "de": "IDs von ezcache: content, template-block, exphttpcache, template-override ..."
+    },
+    "step:cache objects": {
+        "en": "objects (id, remote:, path:) whose content view caches are cleared",
+        "de": "Objekte (ID, remote:, path:), deren Inhaltsansichtscaches geleert werden"
+    },
+    "step:cache tags": {
+        "en": "tags of ezcache: ini, template, content, image ... (every cache with the tag)",
+        "de": "Tags von ezcache: ini, template, content, image ... (jeder Cache mit dem Tag)"
+    },
+    "step:cache value caches": {
+        "en": "the ids and tags the step clears (or leaves for the end), comma-separated",
+        "de": "die IDs und Tags, die der Schritt leert (oder für das Ende vormerkt), durch Kommas getrennt"
+    },
+    "step:cache value objects": {
+        "en": "how many objects had their view caches cleared",
+        "de": "wie viele Objekte ihre Ansichtscaches geleert bekamen"
+    },
+    "step:cache when": {
+        "en": "end: cleared once after the run with the caches of the other steps; now: cleared at once",
+        "de": "end: einmal nach dem Lauf geleert, mit den Caches der anderen Schritte; now: sofort geleert"
+    },
+    "step:search": {
+        "en": "Reindexes objects in the search engine (the ones named or the ones the run changed), or every object",
+        "de": "Indiziert Objekte in der Suchmaschine neu (die genannten oder die, die der Lauf geändert hat) oder alle Objekte"
+    },
+    "step:search classes": {
+        "en": "only the objects of these classes (identifiers)",
+        "de": "nur die Objekte dieser Klassen (Bezeichner)"
+    },
+    "step:search objects": {
+        "en": "the objects (id, remote:, path:); without: the objects the run created or changed so far",
+        "de": "die Objekte (ID, remote:, path:); ohne: die Objekte, die der Lauf bis hierher angelegt oder geändert hat"
+    },
+    "step:search queue": {
+        "en": "true: queued for the cronjob indexcontent; false: indexed at once",
+        "de": "true: für den Cronjob indexcontent vorgemerkt; false: sofort indiziert"
+    },
+    "step:search value count": {
+        "en": "how many objects were queued or indexed",
+        "de": "wie viele Objekte vorgemerkt oder indiziert wurden"
+    }
+}

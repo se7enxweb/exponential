@@ -43,6 +43,7 @@ php bin/php/velocity.php --help
 | `--packer` |  | deploy: auch die gepackten Skripte und Styles leeren (ezjscore-packer, direkt vor template-block) |
 | `--clear-content` |  | deploy: die Caches content, exphttpcache, template-block und den Antwort-Cache auch leeren, wenn sich kein Template, keine Design-Datei, keine Einstellung und keine Übersetzung geändert hat |
 | `--all-caches` |  | deploy: jeden Cache leeren, gleich was sich seit dem letzten Deployment geändert hat |
+| `--caches` | erforderlich | deploy: diese Caches auch leeren, was immer sich geändert hat (IDs oder Tags von ezcache, durch Kommas getrennt: die Liste, die ein Migrationslauf meldet) |
 
 Aus den Optionsdefinitionen im Code gelesen (`startup()`, `getOptions()`, `options()` oder `ezcConsoleOption`). Jedes Skript nimmt außerdem die Standardoptionen des Skript-Frameworks (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

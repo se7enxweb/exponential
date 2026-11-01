@@ -43,6 +43,7 @@ php bin/php/velocity.php --help
 | `--packer` |  | deploy: clear the packed scripts and styles too (ezjscore-packer, right before template-block) |
 | `--clear-content` |  | deploy: clear the content, exphttpcache, template-block and response caches even when no template, design file, setting or translation changed |
 | `--all-caches` |  | deploy: clear every cache, whatever changed since the last deploy |
+| `--caches` | required | deploy: clear these caches too, whatever changed (ids or tags of ezcache, comma-separated: the list a migration run reports) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 

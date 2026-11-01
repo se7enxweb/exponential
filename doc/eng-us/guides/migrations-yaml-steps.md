@@ -31,6 +31,9 @@ listed on its generated reference page ([all step types](../examples/migration-s
 | [`trash`](../examples/migration-steps/trash.md) | moves content to the trash, restores it, purges it | move, restore, purge |
 | [`file`](../examples/migration-steps/file.md) | attaches a file of the migrations folder to a file attribute | |
 | [`image`](../examples/migration-steps/image.md) | an image of the migrations folder, its alternative text, focal point and crop rectangle | |
+| [`cache`](../examples/migration-steps/cache.md) | clears caches of ezcache by id or tag, and the view caches of objects | |
+| [`search`](../examples/migration-steps/search.md) | reindexes objects, or every object, in the search engine | reindex, full |
+| [`autoload`](../examples/migration-steps/autoload.md) | regenerates the autoload array of the extensions or of the kernel overrides | |
 
 Every step goes through the kernel's own API, the way the administration does it: a new object is made by its class
 (`eZContentClass::instantiate()`), a new version by `createNewVersionIn()`, and both are published by the publish
@@ -254,6 +257,48 @@ migration that uses them:
 change is a new version published through the publish operation, or `in_place: true`. `focal:` and `crop:` set the
 focal point and crop rectangle of the image as the image editor does (fractions of the original's width and height);
 `null` removes one, and a step with only `focal:` or `crop:` keeps the image.
+
+## Caches, the search index and autoloads
+
+A run clears the caches its migrations touched, and only those: every step type declares the caches its steps touch
+(a content step `content`, a class step `classid`, `content` and `sortkey`, a URL alias `content` and `urlalias` ...;
+each reference page lists them), and after a run that applied migrations, or a rollback that undid some, the kernel clears
+that list once through ezcache (`migration.ini [RunSettings] ClearCaches`). The report of the run lists the caches
+(`caches`) with the deploy that clears exactly them on a server with PHP-FPM and Velocity too (`deploy`):
+
+```text
+./console exp:velocity deploy --caches=classid,content,template-block,urlalias --apply
+```
+
+The objects the steps created or changed are reindexed after the run as well: queued for the cronjob `indexcontent`
+by default (`[RunSettings] Reindex=queue`), indexed at once (`now`) or left alone (`disabled`). The report says how
+many (`reindex`).
+
+Three step types are for what the declared caches and the reindex do not cover:
+
+```yaml
+- type: cache
+  caches: [ template-block ]        # ids of ezcache
+  tags: [ ini ]                     # tags of ezcache (every cache with the tag)
+  objects: [ "remote:home" ]        # the content view caches of these objects, at once
+  when: now                         # end (the default): with the run's list after the run
+- type: search
+  objects: [ "remote:home" ]        # without: the objects the run changed so far
+  queue: false                      # index at once instead of queueing
+- type: search
+  mode: full                        # every published object ...
+  classes: [ article ]              # ... of these classes
+- type: autoload
+  scope: extension                  # var/autoload/ezp_extension.php; kernel-override: ezp_override.php
+```
+
+A `cache` step's caches join the run's list (a tag as `tag:<name>`, since `content`, `template` and `ini` are an id
+and a tag at once); with `when: now` they are cleared at once, for a later step that needs it. `search` reindexes
+objects a step changed without saying so (a PHP migration, an SQL change) or everything after a change of the search
+engine. `autoload` runs the autoload generator in a process of its own and checks the file it writes; PHP-FPM and
+Velocity load the new classes after `./console exp:velocity deploy --apply`. The kernel's own autoload array belongs
+to the code of a release and is never written by a migration. All three undo themselves: a rollback clears the
+caches again, needs no index change of its own and regenerates the array from the classes that are there.
 
 ## Workflows and notifications
 

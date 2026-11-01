@@ -341,6 +341,7 @@
         "A step of this type does not undo itself: a migration with it needs `down:` or a rollback to its caption.": "Ein Schritt dieses Typs nimmt sich nicht selbst zurück: Eine Migration mit ihm braucht `down:` oder eine Rücknahme auf ihren Sicherungspunkt.",
         "Caches it touches (cleared after the run): {list}.": "Caches, die er berührt (nach dem Lauf geleert): {list}.",
         "It touches no cache.": "Er berührt keinen Cache.",
+        "The caches it touches are the ones a step names (cleared after the run); those of the example: {list}.": "Die Caches, die er berührt, sind die, die ein Schritt nennt (nach dem Lauf geleert); die des Beispiels: {list}.",
         "- [All step types](README.md)": "- [Alle Schritttypen](README.md)",
         "- [YAML migration steps](../../guides/migrations-yaml-steps.md)": "- [Schritte von YAML-Migrationen](../../guides/migrations-yaml-steps.md)",
         "migration step": "Migrationsschritt",

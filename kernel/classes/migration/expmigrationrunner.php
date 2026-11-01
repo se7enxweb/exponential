@@ -585,6 +585,8 @@ class expMigrationRunner
                     $report['warnings'][] = 'kernel upgrade steps were applied: ./console exp:upgrade:finish --apply makes them live (deploy, caches, smoke check)';
                     break;
                 }
+            // the caches the applied migrations touched, and the search index of the objects they changed
+            expMigrationAfterRun::finish( $report, $byId, $this->context );
             $this->finishRun( $report );
             // the caption after the run, then the commit, tag and push of the migrations repository
             $flow = $this->flow();
@@ -730,7 +732,14 @@ class expMigrationRunner
         }
         $this->summarize( $report );
         if ( $apply && $lock )
+        {
+            // the caches the undone migrations touched, and the objects their down steps changed
+            $byId = array();
+            foreach ( $migrations as $migration )
+                $byId[(string)$migration->id()] = $migration;
+            expMigrationAfterRun::finish( $report, $byId, $context );
             $this->progress( 'end', array( 'exit' => $report['exit'], 'summary' => $report['summary'] ) );
+        }
         if ( $apply )
             $context->writeStatus();
         if ( $lock && !$heldBefore )

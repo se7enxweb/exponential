@@ -131,8 +131,8 @@ steps:
   und `content_version` (Objekte, ihre Übersetzungen, Orte und Versionen), `content_class` und `content_class_group`
   (Klassen mit ihren Attributen), `user`, `user_group` und `role` (Konten, Gruppen, Rollen mit Richtlinien,
   Einschränkungen und Zuweisungen), `section`, `language`, `object_state_group`, `tag` (eztags), `url_alias`
-  (Aliase und Platzhalter), `trash`, `file` und `image` (Dateien des Migrationsordners)
-  ([Schritte von YAML-Migrationen](migrationen-yaml-schritte.md)); die Schritttypen für Caches, den Suchindex und
+  (Aliase und Platzhalter), `trash`, `file` und `image` (Dateien des Migrationsordners), `cache`, `search` und `autoload`
+  ([Schritte von YAML-Migrationen](migrationen-yaml-schritte.md)); die Schritttypen für
   Layouts kommen später, und eine Erweiterung fügt ihre eigenen genauso hinzu. Die übrigen Schlüssel eines Schritts werden gegen das
   Schema seines Typs geprüft, bevor irgendetwas läuft.
 - `${ref.<Name>}` ist eine Referenz (gesetzt von `references:` eines früheren Schritts, von einem `reference`-Schritt
@@ -284,7 +284,7 @@ Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/in-der-admi
 
 ## Noch nicht in 6.0.15
 
-Die YAML-Schritttypen für Caches und den Suchindex, Layouts, `http`, `mail` und `command`, SQL- und INI-Migrationen, der Editor und die Generatoren in der Administration
+Die YAML-Schritttypen für Layouts, `http`, `mail` und `command`, SQL- und INI-Migrationen, der Editor und die Generatoren in der Administration
 (Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil
 dieses Releases.
 

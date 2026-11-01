@@ -922,6 +922,9 @@ class expMigrationYaml implements expMigration
             $result = self::result( $result );
             foreach ( $result['lines'] as $line )
                 $lines[] = $line;
+            // the object a step created or changed is reindexed after the run (expMigrationAfterRun)
+            if ( $context instanceof expMigrationContext && isset( $result['values']['object_id'] ) && empty( $result['values']['purged'] ) )
+                $context->touchObject( $result['values']['object_id'] );
             if ( isset( $step['references'] ) && is_array( $step['references'] ) )
             {
                 foreach ( $step['references'] as $name => $key )

@@ -2150,7 +2150,8 @@
     "kernel/classes/expvelocitydeploy.php": [
       "tests/tests/kernel/private/classes/commands/expApplyFlagDeployCommandsTest.php",
       "tests/tests/kernel/classes/expVelocityDeployCachePlanTest.php",
-      "tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php"
+      "tests/tests/kernel/classes/help/expHelpIndexBackgroundBuildTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php"
     ],
     "lib/smarty/classes/*": [
       "tests/tests/lib/smarty/expSmartyTemplateRenderTest.php",
@@ -2516,7 +2517,11 @@
       "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationCacheSearchAutoloadStepsMongoDBTest.php"
     ],
     "tests/tests/kernel/classes/migration/expMigrationStructureStepsEngineChecks.php": [
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php",
@@ -2592,7 +2597,8 @@
       "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceTest.php",
       "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php"
     ],
     "kernel/classes/upgrade/*": [
       "tests/tests/kernel/classes/migration/expMigrationUpgradeSourceTest.php",
@@ -2744,7 +2750,20 @@
       "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php"
     ],
     "kernel/classes/migration/expmigrationcontext.php": [
-      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsEngineChecks.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationCacheSearchAutoloadStepsMongoDBTest.php"
+    ],
+    "kernel/classes/migration/expmigrationafterrun.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsSqliteTest.php"
+    ],
+    "kernel/classes/migration/expmigrationrunner.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsSqliteTest.php"
     ]
   },
   "generated": {

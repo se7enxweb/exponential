@@ -32,6 +32,9 @@ Every step type of YAML migrations the kernel registers in `settings/migration.i
 | [trash](trash.md) | move, restore, purge | Moves content to the trash, restores it from the trash, or purges it for good |
 | [file](file.md) |  | Attaches a file of the migrations folder to a file attribute (ezbinaryfile, ezmedia) of an object |
 | [image](image.md) |  | Puts an image of the migrations folder into an image attribute of an object, with its alternative text, focal point and crop rectangle |
+| [cache](cache.md) |  | Clears caches of ezcache by id or tag and the view caches of single objects, at once or after the run |
+| [search](search.md) | reindex, full | Reindexes objects in the search engine (the ones named or the ones the run changed), or every object |
+| [autoload](autoload.md) |  | Regenerates the autoload array of the extensions or of the kernel classes extensions replace |
 
 - [All examples](../README.md)
 

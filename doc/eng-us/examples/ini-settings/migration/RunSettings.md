@@ -2,14 +2,14 @@
 title: migration.ini [RunSettings]
 audience: developer, admin
 category: examples
-summary: "The settings of [RunSettings] in migration.ini: RunAsUser, StopOnFailure, Throttle"
-keywords: migration.ini, RunSettings, INI, setting, RunAsUser, StopOnFailure, Throttle
+summary: "The settings of [RunSettings] in migration.ini: RunAsUser, StopOnFailure, Throttle, ClearCaches, Reindex"
+keywords: migration.ini, RunSettings, INI, setting, RunAsUser, StopOnFailure, Throttle, ClearCaches, Reindex
 type: generated
 generated: exp:help:examples
 ---
 # migration.ini [RunSettings]
 
-The block `[RunSettings]` of `settings/migration.ini`, with 3 setting(s).
+The block `[RunSettings]` of `settings/migration.ini`, with 5 setting(s).
 
 Never edit `settings/migration.ini` itself: an update replaces it. Put the settings you change in an override, which wins over the shipped file:
 
@@ -58,6 +58,39 @@ Default: empty.
 # settings/override/migration.ini.append.php
 [RunSettings]
 Throttle=
+*/ ?>
+```
+
+## ClearCaches
+
+> enabled: after a run that applied (or a rollback that undid) migrations, the caches their steps touched are cleared,  
+> by their names in ezcache, and only those (every step type declares its caches; the step type cache adds more).  
+> The report lists them, with the deploy that clears exactly them on the server too  
+> (./console exp:velocity deploy --caches=<list> --apply). disabled: the caches are left as they are.  
+
+Default: `enabled`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RunSettings]
+ClearCaches=enabled
+*/ ?>
+```
+
+## Reindex
+
+> What happens to the search index of the objects the steps of a run created or changed, after the run:  
+> queue: queued for the cronjob indexcontent (the pending actions of delayed indexing); now: indexed at once, before  
+> the run ends; disabled: left alone. The step type search reindexes on its own, a full reindex too.  
+
+Default: `queue`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/migration.ini.append.php
+[RunSettings]
+Reindex=queue
 */ ?>
 ```
 
