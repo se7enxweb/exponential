@@ -132,12 +132,18 @@ class expPreloadRunner
             // rendered; this finds the ones that are still missing and the pages that show them.
             'images'     => false,
             'max_images' => 2000,
+            // A callable that does the requests instead of curl, as ( $url, $headOnly ) and answering what
+            // fetch() answers (status, ms, bytes, type, body, error, cookies). Static publishing passes one in its
+            // tests; null is curl.
+            'fetcher'    => null,
         );
     }
 
     /**
      * Registers a callable handed every page that was fetched successfully, as
-     * ( $url, $path, $body ).
+     * ( $url, $path, $body, $info ), $info holding status, type and cookies
+     * (the names of the cookies the response set; static publishing refuses a
+     * page that started a session).
      *
      * The crawl already holds the rendered html of every page a visitor can
      * reach. The static cache generator stores exactly that, so it needs no
@@ -253,19 +259,45 @@ class expPreloadRunner
     /** One request. Returns status, timing, size and body. */
     private function fetch( $url, $headOnly = false )
     {
+        if ( $this->options['fetcher'] !== null )
+            return (array)call_user_func( $this->options['fetcher'], $url, $headOnly )
+                 + array( 'status' => 0, 'ms' => 0, 'bytes' => 0, 'type' => '', 'body' => '', 'error' => '', 'cookies' => array() );
+        return self::request( $url, $headOnly, (int)$this->options['timeout'] );
+    }
+
+    /**
+     * One request with curl, as the crawl makes it: no cookie sent (so as the anonymous user), redirects followed,
+     * compressed bodies decoded.
+     *
+     * @param string $url
+     * @param bool $headOnly a HEAD request
+     * @param int $timeout seconds
+     * @param string $userAgent
+     * @return array status, ms, bytes, type, body, error, cookies (the names of the cookies the response set)
+     */
+    public static function request( $url, $headOnly = false, $timeout = 20, $userAgent = 'Exponential preloader' )
+    {
         $started = microtime( true );
+        $cookies = array();
         $ch = curl_init();
         curl_setopt_array( $ch, array(
             CURLOPT_URL            => $url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_MAXREDIRS      => 3,
-            CURLOPT_TIMEOUT        => (int)$this->options['timeout'],
+            CURLOPT_TIMEOUT        => (int)$timeout,
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_SSL_VERIFYHOST => 0,
-            CURLOPT_USERAGENT      => 'Exponential preloader',
+            CURLOPT_USERAGENT      => (string)$userAgent,
             CURLOPT_ENCODING       => '',
             CURLOPT_NOBODY         => (bool)$headOnly,
+            // the cookies a response sets: a page that starts a session for an anonymous visitor is that visitor's
+            CURLOPT_HEADERFUNCTION => function ( $handle, $line ) use ( &$cookies )
+            {
+                if ( preg_match( '#^set-cookie:\s*([^=;\s]+)=#i', $line, $m ) )
+                    $cookies[] = $m[1];
+                return strlen( $line );
+            },
         ) );
         $body = curl_exec( $ch );
         $status = (int)curl_getinfo( $ch, CURLINFO_HTTP_CODE );
@@ -276,10 +308,11 @@ class expPreloadRunner
         return array(
             'status'  => $status,
             'ms'      => (int)round( ( microtime( true ) - $started ) * 1000 ),
-            'bytes'   => $body === false ? 0 : strlen( $body ),
+            'bytes'   => is_string( $body ) ? strlen( $body ) : 0,
             'type'    => $type,
-            'body'    => $body === false ? '' : $body,
+            'body'    => is_string( $body ) ? $body : '',
             'error'   => $error,
+            'cookies' => array_values( array_unique( $cookies ) ),
         );
     }
 
@@ -727,7 +760,9 @@ class expPreloadRunner
             array( 'url' => $url, 'status' => $result['status'], 'ms' => $result['ms'] ) );
 
         if ( $this->storeCallback )
-            call_user_func( $this->storeCallback, $url, $path, $result['body'] );
+            call_user_func( $this->storeCallback, $url, $path, $result['body'],
+                            array( 'status' => $result['status'], 'type' => $result['type'],
+                                   'cookies' => isset( $result['cookies'] ) ? (array)$result['cookies'] : array() ) );
 
         if ( $this->options['images'] )
         {
