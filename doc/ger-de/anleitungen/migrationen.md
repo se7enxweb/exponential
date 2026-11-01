@@ -179,9 +179,10 @@ Zustand `not-needed`.
 | `migrations/status/<umgebung>.json` | die Aufzeichnung, gespiegelt ins Migrations-Repository (keine Benutzer, keine Meldungen) |
 | `migrations/runs/<run-id>.log` | eine Zeile je Ereignis eines Laufs, bereinigt von Geheimnissen und E-Mail-Adressen |
 
-Der Upgrade-Schritt `6.0.15-migration-tables` legt beide Tabellen an und kopiert die Zeilen der älteren Tabelle
-`expupgrade_step`; `./console exp:upgrade --apply` führt ihn aus. Bis dahin wird nichts gelesen oder geschrieben, und
-der Status sagt das.
+Der Upgrade-Schritt `6.0.15-migration-tables` legt beide Tabellen an; auf einer Installation einer Vorabversion von
+6.0.15 kopiert der Schritt `6.0.15-upgrade-record-table` danach die Zeilen ihrer älteren Tabelle
+`expupgrade_step` und löscht diese Tabelle; `./console exp:upgrade --apply` führt beide aus. Bis dahin wird nichts
+gelesen oder geschrieben, und der Status sagt das.
 
 Zustände: `done`, `pending`, `not-needed`, `failed`, `unknown`. Eine als erledigt aufgezeichnete Migration, deren
 Datei sich seitdem geändert hat, wird abgelehnt, und der Lauf mit ihr, es sei denn, der Lauf bekommt

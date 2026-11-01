@@ -11,7 +11,8 @@
  *  UP-05 the SQL splitter of the schema steps
  *  UP-06 upgrade.ini lists every step class of kernel/classes/upgrade/steps, ids are unique and versioned, each
  *        table, column and index a schema step names is in share/db_schema.dba
- *  UP-07 the record table expupgrade_step in share/db_schema.dba, the kernel schemas and the 6.0.15 update files
+ *  UP-07 the record table exp_migration in share/db_schema.dba and the kernel schemas, never the pre-release table
+ *        expupgrade_step; the 6.0.15 update files copy expupgrade_step and drop it
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license GNU General Public License v2.0 (or any later version)
@@ -198,7 +199,7 @@ class expUpgradeRegistryTest extends PHPUnit\Framework\TestCase
         $this->assertSame( $classes, $sorted, 'upgrade.ini StepList[] and kernel/classes/upgrade/steps' );
         $ini = file_get_contents( self::$root . '/settings/upgrade.ini' );
         $this->assertSame( 1, preg_match( '/^# stage database[^\n]*\nStepList\[\]=(\w+)$/m', $ini, $m ) );
-        $this->assertSame( 'expUpgradeStepRecordTable', $m[1], 'step 0, the record table, is the first of the database stage' );
+        $this->assertSame( 'expUpgradeStepMigrationTables', $m[1], 'step 0, the record table exp_migration, is the first of the database stage' );
         $autoload = file_get_contents( self::$root . '/autoload/ezp_kernel.php' );
         foreach ( $classes as $class )
             $this->assertStringContainsString( "'$class'", $autoload, "$class in the kernel autoload array" );
@@ -248,13 +249,20 @@ class expUpgradeRegistryTest extends PHPUnit\Framework\TestCase
     public function testRecordTableEverywhere()
     {
         $schema = self::dba();
-        $this->assertArrayHasKey( 'expupgrade_step', $schema );
-        $this->assertSame( array( 'step_id' ), $schema['expupgrade_step']['indexes']['PRIMARY']['fields'] );
+        $this->assertArrayHasKey( 'exp_migration', $schema );
+        $this->assertArrayNotHasKey( 'expupgrade_step', $schema, 'the pre-release record table is not part of a new installation' );
         foreach ( array( 'kernel/sql/mysql/kernel_schema.sql', 'kernel/sql/postgresql/kernel_schema.sql', 'kernel/sql/sqlite/schema.sql' ) as $file )
-            $this->assertMatchesRegularExpression( '/CREATE TABLE `?expupgrade_step`? \(/', file_get_contents( self::$root . '/' . $file ), $file );
+        {
+            $sql = file_get_contents( self::$root . '/' . $file );
+            $this->assertMatchesRegularExpression( '/CREATE TABLE `?exp_migration`? \(/', $sql, $file );
+            $this->assertStringNotContainsString( 'expupgrade_step', $sql, $file );
+        }
         foreach ( array( 'mysql', 'postgresql', 'sqlite' ) as $engine )
-            $this->assertStringContainsString( 'CREATE TABLE IF NOT EXISTS expupgrade_step (',
-                                               file_get_contents( self::$root . "/update/database/$engine/6.0/dbupdate-6.0.0-6.0.15.sql" ), $engine );
+        {
+            $sql = file_get_contents( self::$root . "/update/database/$engine/6.0/dbupdate-6.0.0-6.0.15.sql" );
+            $this->assertStringContainsString( 'CREATE TABLE IF NOT EXISTS expupgrade_step (', $sql, "$engine: made empty when missing, for the copy" );
+            $this->assertGreaterThan( strpos( $sql, 'FROM expupgrade_step s' ), strpos( $sql, 'DROP TABLE IF EXISTS expupgrade_step;' ), "$engine: dropped after the copy" );
+        }
     }
 
     /** UP-07: the SQLite update file runs twice on an empty database without an error for the record table */

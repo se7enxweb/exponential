@@ -6,7 +6,7 @@
  * removes what it made. No database of an installation is opened.
  *
  *  UG-1 UE-1 the status lists kernel steps and site migrations together (expMigrationUpgradeSourceEngineChecks)
- *  UG-2 UE-2 migrate runs the pending kernel steps first, copies expupgrade_step once, and is idempotent
+ *  UG-2 UE-2 migrate runs the pending kernel steps first, copies expupgrade_step once and drops it, and is idempotent
  *
  * One database for the class, not one per test: MongoDB 8.0.34 crashed (signal 11 in createIndexes) when a database
  * was dropped and the next one built at once in the same process.

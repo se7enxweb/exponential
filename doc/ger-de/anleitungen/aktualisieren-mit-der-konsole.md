@@ -66,19 +66,20 @@ Exponential upgrade: status
 Code 6.0.15stable, database sqlite, version 6.0.15stable
 
 Stage database     pending (1 pending)
-  pending     6.0.15-upgrade-record-table          missing: table expupgrade_step
+  pending     6.0.15-migration-tables              missing: table exp_migration, table exp_migration_run
+  not-needed  6.0.15-upgrade-record-table          in place: no table expupgrade_step
   not-needed  6.0.15-user-password-hash-width      not for sqlite
   not-needed  6.0.15-trash-columns                 in place: ezcontentobject_trash.trashed, ...
   ...
 Stage scripts      not-needed
   not-needed  6.0.15-editor-policies               in place
   ...
-Summary: 1 pending, 0 done, 28 not needed, 0 failed, 0 unknown
+Summary: 1 pending, 0 done, 29 not needed, 0 failed, 0 unknown
 PASS
 ```
 
-So sieht eine Installation aus, die von Hand aktualisiert wurde: alles ist `not-needed` außer der
-Aufzeichnungstabelle, die mit `exp:upgrade` selbst neu ist.
+So sieht eine Installation aus, die von Hand aktualisiert wurde: alles ist `not-needed` außer den
+Aufzeichnungstabellen, die mit `exp:upgrade` selbst neu sind.
 
 ## Der Probelauf
 
@@ -89,8 +90,8 @@ Zeilen, die er anlegen würde. Er schreibt nichts und nimmt keine Sperre. `--dry
 
 ```text
 Stage database     pending (1 pending)
-  pending     6.0.15-upgrade-record-table          missing: table expupgrade_step
-              would create table expupgrade_step: CREATE TABLE expupgrade_step ( ... PRIMARY KEY ( step_id ) );
+  pending     6.0.15-migration-tables              missing: table exp_migration, table exp_migration_run
+              would create table exp_migration, exp_migration_run: CREATE TABLE exp_migration ( ... PRIMARY KEY ( source, migration_id ) ); ...
 ```
 
 ## Ausführen
@@ -283,12 +284,40 @@ Duplikate gibt, ist der Schritt `unknown`, und der Lauf macht weiter; lösen Sie
 
 `exp:upgrade` zeichnet jeden ausgeführten Schritt auf: den Schritt, seine Stufe und Version, erledigt oder
 gescheitert, wann, wie lange, den Systembenutzer, der ihn ausgeführt hat, die Engine, die Prüfsumme des Schritt-Codes
-und die letzte Meldung. Der erste Schritt, `6.0.15-upgrade-record-table`, legt dafür die Tabelle `expupgrade_step`
-an. Der Schritt `6.0.15-migration-tables` legt danach die Aufzeichnung der [Migrationen](migrationen.md) an,
-`exp_migration` und `exp_migration_run`, und kopiert die Zeilen von `expupgrade_step` als Migrationen der Quelle
-`kernel` nach `exp_migration`; von da an wird die Aufzeichnung von `exp:upgrade` dort geschrieben. Bis dieser Schritt
-gelaufen ist, wird `expupgrade_step` wie bisher gelesen und geschrieben, und eine noch nicht kopierte Zeile zählt
-weiter.
+und die letzte Meldung. Die Aufzeichnung ist die der [Migrationen](migrationen.md), `exp_migration` (eine Zeile je
+Schritt, als Migration der Quelle `kernel`) und `exp_migration_run`; der erste Schritt der Stufe database,
+`6.0.15-migration-tables`, legt beide Tabellen an. Schritte, die davor laufen (die Stufen code und libraries eines
+ersten Laufs), werden nicht aufgezeichnet; ihr Zustand kommt weiter aus der Installation selbst, und der Lauf meldet
+für sie `not recorded`.
+
+**Die ältere Tabelle `expupgrade_step`.** Eine Vorabversion von 6.0.15 führte diese Aufzeichnung in einer eigenen
+Tabelle, `expupgrade_step`. Keine veröffentlichte Version hatte sie, und eine neue Installation bekommt sie nie. Auf
+einer Installation, die sie noch hat, löst der Schritt `6.0.15-upgrade-record-table` (direkt nach
+`6.0.15-migration-tables`) sie ab:
+
+1. er kopiert jede Zeile, die `exp_migration` noch nicht hat (eine Zeile, die `exp_migration` schon hat, ist neuer und
+   bleibt);
+2. er prüft, dass jede Zeile von `expupgrade_step` jetzt in `exp_migration` steht, und bricht mit erhaltener Tabelle
+   ab, wenn eine fehlt;
+3. er löscht die Tabelle (auf MongoDB die Collection; auf Oracle `DROP TABLE ... PURGE`).
+
+Der Schritt ist nur offen, solange die Tabelle besteht. Der Probelauf listet jede Zeile, die er kopieren würde, die
+Prüfung und die Anweisung `DROP TABLE` auf und ändert nichts; ein zweiter Lauf findet nichts zu tun. `exp:upgrade`
+liest `expupgrade_step` nie: bis der Schritt gelaufen ist, zählen ihre noch nicht kopierten Zeilen einfach nicht als
+aufgezeichnet.
+
+```text
+$ ./console exp:upgrade:database
+  pending     6.0.15-upgrade-record-table          missing: the table expupgrade_step is still there (2 row(s) not in exp_migration yet)
+              copy the row 6.0.15-trash-columns of expupgrade_step into exp_migration
+              copy the row caption:20261031-120000-pre of expupgrade_step into exp_migration
+              check that every row of expupgrade_step is in exp_migration
+              drop table expupgrade_step: DROP TABLE expupgrade_step;
+```
+
+Die SQL-Update-Dateien `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` tun dasselbe in reinem SQL: Sie legen
+`expupgrade_step` leer an, wenn sie fehlt, kopieren ihre Zeilen, die `exp_migration` nicht hat, und löschen sie, sodass
+sie auf jeder Installation und mehrmals laufen können.
 
 Die Sicherungspunkte von `exp:upgrade` und die der Migrationsläufe (Arten `migration-pre`, `migration-post`,
 `migration-failure`) sind eine Liste: `exp:upgrade:captions` zeigt beide, und jedes der beiden Zurückrollen kann jeden
@@ -356,8 +385,8 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-code-update` | code | `git pull` von Hand, über git_manager, nur Fast-Forward |
 | `6.0.15-libraries-update` | libraries | `composer update <Paket>` von Hand (nur mit `--update`) |
 | `6.0.15-libraries-install` | libraries | `composer install` von Hand, mit `composer audit` |
-| `6.0.15-upgrade-record-table` | database | (neu) die Aufzeichnungstabelle `expupgrade_step` |
-| `6.0.15-migration-tables` | database | (neu) die Aufzeichnung der Migrationen und Upgrades, `exp_migration` und `exp_migration_run`, mit den kopierten Zeilen von `expupgrade_step` |
+| `6.0.15-migration-tables` | database | (neu) die Aufzeichnung der Migrationen und Upgrades, `exp_migration` und `exp_migration_run` |
+| `6.0.15-upgrade-record-table` | database | (neu) nur auf einer Installation einer Vorabversion von 6.0.15: die Zeilen ihrer Tabelle `expupgrade_step` nach `exp_migration` kopiert, dann die Tabelle gelöscht |
 | `6.0.15-user-password-hash-width` | database | `ezuser.password_hash` in der SQL-Update-Datei auf 255 verbreitert |
 | `6.0.15-trash-columns` | database | `ezcontentobject_trash.trashed`, `trashed_by`, `trashed_via` und ihr Index |
 | `6.0.15-pdf-export-footer` | database | `ezpdf_export.show_footer`, `footer_text` |

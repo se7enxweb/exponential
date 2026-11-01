@@ -80,7 +80,7 @@ class expMigrationCaption
     {
         return array( 'before' => true, 'after' => true, 'reuse' => true, 'restore' => true,
                       'restore-parts' => array( 'database', 'storage', 'settings' ), 'trees' => array( 'settings', 'extension', 'design' ),
-                      'ignore-tables' => array( 'exp_migration', 'exp_migration_run', 'expupgrade_step', 'ezsession', 'expaudit_*' ),
+                      'ignore-tables' => array( 'exp_migration', 'exp_migration_run', 'ezsession', 'expaudit_*' ),
                       'backup-dir' => '', 'include-uncommitted' => false );
     }
 

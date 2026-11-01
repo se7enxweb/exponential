@@ -1,0 +1,277 @@
+<?php
+/**
+ * File containing the shared code of the exp:static commands.
+ *
+ * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
+ * @license GNU General Public License v2.0 (or any later version)
+ * @package kernel
+ */
+
+namespace Exponential\Command\Kernel
+{
+
+/**
+ * What every exp:static command (static publishing) shares: the options, the text and JSON output, the exit codes.
+ * The work is in the expStatic* classes (kernel/classes/staticpublish/); these commands only parse, call and print.
+ *
+ * The names, options, arguments, exit codes and the exp-static/1 output are a permanent contract (contract() and
+ * arguments() are the snapshot tests/tests/kernel/classes/staticpublish/expStaticCommandContractTest.php compares
+ * against): options and keys may be added, never renamed or removed. The exit codes are exp:upgrade's: 0 done,
+ * 1 failed, 2 usage, 3 the database unreachable, 4 internal error.
+ */
+abstract class ExpstaticBase extends \Exponential\Runnable\Command
+{
+    /**
+     * Every command with its option configuration (permanent: only additions).
+     *
+     * @return array command => option config
+     */
+    public static function contract()
+    {
+        return array(
+            'exp:static:targets' => '[format:]',
+            'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging]',
+            'exp:static:diff' => '[format:][verify][check-links][mount:*]',
+            'exp:static:serve' => '[port:][host:][base-path:][format:]',
+        );
+    }
+
+    /**
+     * The arguments of the commands that take one (permanent).
+     *
+     * @return array command => argument config
+     */
+    public static function arguments()
+    {
+        return array(
+            'exp:static:build' => '[target]',
+            'exp:static:diff' => '[target]',
+            'exp:static:serve' => '[target]',
+        );
+    }
+
+    /** @return array option => help text for every option of the family */
+    public static function optionHelp()
+    {
+        return array(
+            'format' => 'text (default) or json (the machine output exp-static/1)',
+            'full' => 'Crawl the whole site (the default without --paths or --nodes); not with --paths or --nodes',
+            'paths' => 'Build only these pages, by their path in the site (/about-us; a comma list or repeated); the rest of the last build stays',
+            'nodes' => 'Build only the pages of these nodes (node ids; a comma list or repeated); the rest of the last build stays',
+            'dry-run' => 'Build into the staging folder, report what would change and leave the target folder as it is',
+            'report' => 'Also write the report (exp-static/1, JSON) to this file',
+            'crawl-url' => 'Fetch the pages from this address instead of the target\'s CrawlURL or the siteaccess\'s SiteURL (http://127.0.0.1:8080)',
+            'max-pages' => 'Stop the crawl after this many pages (default the target\'s MaxPages)',
+            'keep-staging' => 'Keep the staging folder of the build (its path is in the report) instead of removing it',
+            'verify' => 'Compare the folder with its manifest: files missing, changed since the build, or not listed',
+            'check-links' => 'Check every link and file of the folder as a browser would, served below each --mount',
+            'mount' => 'The path the folder is served at for --check-links (default the target\'s BasePath; a comma list or repeated: /,/repo/)',
+            'port' => 'The port of the preview server (default 8090)',
+            'host' => 'The address the preview server listens on (default 127.0.0.1, this computer only)',
+            'base-path' => 'Serve the folder below this path (default the target\'s BasePath; / for the root)',
+        );
+    }
+
+    /** @return string the command's name, e.g. exp:static:build */
+    abstract protected function name();
+
+    /**
+     * The command's work: parse with begin(), call the expStatic* class, print with finish(). Every command
+     * overrides it; this one only starts the script and ends with a usage error.
+     */
+    public function run()
+    {
+        $this->begin();
+        $this->usage( $this->name() . ' has no work of its own' );
+    }
+
+    /**
+     * Starts the script: $this->script( array( 'description' => "...", ... ) ) and $this->startup( '<config>',
+     * '<arguments>', <help> ), written out literally in each command, so ./console exp:help:examples reads the help
+     * text and the options from the code. The option configuration must equal contract() and every help text
+     * optionHelp() (expStaticCommandContractTest checks both).
+     *
+     * @return array the options
+     */
+    abstract protected function begin();
+
+    /** The script settings every command shares besides its description. */
+    const SCRIPT = array( 'use-session' => false, 'use-modules' => true, 'use-extensions' => true );
+
+    /**
+     * The output format; after an error (not text or json) the command ends with exit 2.
+     *
+     * @param array $options
+     * @return string
+     */
+    protected function format( array $options )
+    {
+        $format = isset( $options['format'] ) && $options['format'] ? (string)$options['format'] : 'text';
+        if ( !in_array( $format, array( 'text', 'json' ), true ) )
+            $this->usage( "--format must be text or json, not $format" );
+        return $format;
+    }
+
+    /**
+     * A usage error: the message and exit 2.
+     *
+     * @param string $message
+     */
+    protected function usage( $message )
+    {
+        $this->error( 'FAIL: ' . $message );
+        $this->shutdown( \expUpgrade::EXIT_USAGE );
+    }
+
+    /**
+     * The target named by the first argument; a usage error without one, exit 1 when TargetList[] does not name it.
+     *
+     * @param array $options
+     * @param string $format
+     * @return \expStaticTarget
+     */
+    protected function target( array $options, $format )
+    {
+        $id = isset( $options['arguments'][0] ) ? trim( (string)$options['arguments'][0] ) : '';
+        if ( $id === '' )
+            $this->usage( 'name the target: ' . $this->name() . ' <target> (exp:static:targets lists them)' );
+        $target = \expStaticTarget::get( $id );
+        if ( $target === null )
+            $this->finish( array( 'mode' => 'target', 'target' => $id, 'warnings' => array(),
+                                  'errors' => array( "staticcache.ini [StaticPublishSettings] TargetList[] names no target $id" ) ), $format );
+        return $target;
+    }
+
+    /**
+     * A list option (a comma list or repeated) as its values.
+     *
+     * @param mixed $value
+     * @return string[]
+     */
+    protected static function listOption( $value )
+    {
+        $out = array();
+        foreach ( (array)$value as $item )
+            foreach ( explode( ',', (string)$item ) as $part )
+                if ( trim( $part ) !== '' )
+                    $out[] = trim( $part );
+        return array_values( array_unique( $out ) );
+    }
+
+    /**
+     * Ends with exit 3 when the database is not reachable.
+     *
+     * @param string $format
+     * @return \eZDBInterface
+     */
+    protected function database( $format )
+    {
+        $problem = '';
+        try
+        {
+            $db = \eZDB::instance();
+        }
+        catch ( \Throwable $e )
+        {
+            $db = null;
+            $problem = ': ' . $e->getMessage();
+        }
+        if ( !$db || !$db->isConnected() )
+            $this->finish( array( 'mode' => 'unreachable', 'errors' => array( 'the database is not reachable' . $problem ), 'warnings' => array(),
+                                  'exit' => \expUpgrade::EXIT_UNREACHABLE ), $format );
+        return $db;
+    }
+
+    /**
+     * Prints a report and ends with its exit code.
+     *
+     * @param array $report
+     * @param string $format
+     */
+    protected function finish( array $report, $format )
+    {
+        $report = array( 'schema' => \expStaticBuild::REPORT, 'command' => $this->name() ) + $report;
+        if ( !isset( $report['exit'] ) )
+            $report['exit'] = !empty( $report['errors'] ) ? \expUpgrade::EXIT_FAILED : \expUpgrade::EXIT_OK;
+        if ( $format === 'json' )
+            $this->cli()->output( json_encode( $report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE ) );
+        else
+            $this->printText( $report );
+        $this->shutdown( (int)$report['exit'] );
+    }
+
+    /**
+     * A report as text: the command's own lines (lines()), then warnings, errors and PASS or FAIL.
+     *
+     * @param array $report
+     */
+    protected function printText( array $report )
+    {
+        foreach ( $this->lines( $report ) as $line )
+            $this->output( $line );
+        foreach ( isset( $report['warnings'] ) ? $report['warnings'] : array() as $w )
+            $this->output( 'WARN ' . $w );
+        foreach ( isset( $report['errors'] ) ? $report['errors'] : array() as $e )
+            $this->error( 'FAIL: ' . $e );
+        $this->output( (int)$report['exit'] === \expUpgrade::EXIT_OK ? 'PASS' : 'FAIL (exit ' . (int)$report['exit'] . ')' );
+    }
+
+    /**
+     * The command's lines of a report.
+     *
+     * @param array $report
+     * @return string[]
+     */
+    protected function lines( array $report )
+    {
+        return array();
+    }
+
+    /**
+     * The lines of a build report. Pure.
+     *
+     * @param array $report
+     * @return string[]
+     */
+    public static function buildLines( array $report )
+    {
+        $lines = array();
+        if ( !isset( $report['counts'] ) )
+            return $lines;
+        $c = $report['counts'];
+        $lines[] = '';
+        $lines[] = sprintf( 'Static publishing: %s of %s (%s, %s), run %s in %.1fs', $report['mode'] === 'dry-run' ? 'dry run' : 'build',
+                            $report['target'], $report['siteaccess'], $report['scope'], $report['run_id'], $report['duration_ms'] / 1000 );
+        $lines[] = sprintf( '  Pages:  %d exported, %d refused, %d skipped, %d excluded', $c['pages'], $c['pages_refused'], $c['pages_skipped'], $c['pages_excluded'] );
+        $lines[] = sprintf( '  Files:  %d named by the pages, %d of the storage, %d extras, %d could not be collected', $c['files'], $c['storage'], $c['extras'], $c['files_failed'] )
+                 . ( !empty( $c['storage_missing'] ) ? sprintf( ' (%d image file(s) the image table lists are missing from the storage)', $c['storage_missing'] ) : '' );
+        $lines[] = sprintf( '  Links:  %d rewritten, %d to the live site, %d left as they are', $c['links_rewritten'], $c['links_live'], $c['links_external'] );
+        $lines[] = sprintf( '  Size:   %s in %d files', \expStaticBuild::bytes( $c['bytes'] ), $c['pages'] + $c['files'] + $c['storage'] + $c['extras'] );
+        if ( !empty( $c['stripped'] ) )
+        {
+            $parts = array();
+            foreach ( $c['stripped'] as $what => $n )
+                $parts[] = "$n $what";
+            $lines[] = '  Taken out: ' . implode( ', ', $parts );
+        }
+        if ( !empty( $report['diff'] ) )
+            $lines[] = sprintf( '  Diff:   %d added, %d changed, %d removed, %d unchanged', $report['diff']['added'], $report['diff']['changed'],
+                                $report['diff']['removed'], $report['diff']['unchanged'] );
+        foreach ( isset( $report['refused'] ) ? $report['refused'] : array() as $r )
+            $lines[] = '  refused ' . $r['path'] . ': ' . implode( ', ', $r['reasons'] );
+        foreach ( array_slice( isset( $report['files_failed'] ) ? $report['files_failed'] : array(), 0, 20 ) as $f )
+            $lines[] = '  missing ' . $f['url'] . ': ' . $f['error'];
+        if ( !empty( $report['link_check'] ) )
+        {
+            $l = $report['link_check'];
+            $lines[] = sprintf( '  Link check under %s: %d links in %d files, %d broken', $l['mount'], $l['links'], $l['files'], $l['broken_count'] );
+            foreach ( array_slice( $l['broken'], 0, 20 ) as $b )
+                $lines[] = '    broken ' . $b['link'] . ' in ' . $b['file'];
+        }
+        $lines[] = !empty( $report['applied'] ) ? '  Written to ' . $report['directory']
+                 : '  The target folder ' . $report['directory'] . ' was not changed';
+        return $lines;
+    }
+}
+
+}
