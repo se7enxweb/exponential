@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Verschiebt Inhalte in den Papierkorb, stellt sie aus ihm wieder her oder löscht sie endgültig.
 
-Ein Schritt einer YAML-Migration mit `type: trash`. Die Klasse `expMigrationStepTrash` ist in `settings/migration.ini` `[StepSettings] StepTypeList[trash]` registriert.
+Ein Schritt einer YAML-Migration mit `type: trash`. Die Klasse `expMigrationStepTrash` (`kernel/classes/migration/steps/expmigrationsteptrash.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[trash]` registriert.
 
 ## Modi
 
@@ -68,4 +68,4 @@ Caches, die er berührt (nach dem Lauf geleert): `content`.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationsteptrash.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

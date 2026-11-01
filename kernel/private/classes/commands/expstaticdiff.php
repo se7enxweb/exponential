@@ -54,7 +54,7 @@ class Expstaticdiff extends ExpstaticBase
         $target = $this->target( $options, $format );
         $ini = \eZINI::instance( 'staticcache.ini' );
         $workDir = $ini->hasVariable( 'StaticPublishSettings', 'WorkDir' ) ? (string)$ini->variable( 'StaticPublishSettings', 'WorkDir' ) : 'static-publish';
-        $directory = $target->directory( \eZSys::varDirectory(), $workDir );
+        $directory = $target->outputDirectory( \eZSys::varDirectory(), $workDir );
         $report = array( 'mode' => 'diff', 'target' => $target->id(), 'directory' => $directory, 'diff' => null, 'verify' => null, 'link_checks' => array(),
                          'errors' => array(), 'warnings' => array() );
         $manifest = \expStaticManifest::load( $directory );

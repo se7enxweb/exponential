@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Hängt eine Datei aus dem Migrationsordner an ein Dateiattribut (ezbinaryfile, ezmedia) eines Objekts.
 
-Ein Schritt einer YAML-Migration mit `type: file`. Die Klasse `expMigrationStepFile` ist in `settings/migration.ini` `[StepSettings] StepTypeList[file]` registriert.
+Ein Schritt einer YAML-Migration mit `type: file`. Die Klasse `expMigrationStepFile` (`kernel/classes/migration/steps/expmigrationstepfile.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[file]` registriert.
 
 ## Schlüssel
 
@@ -67,4 +67,4 @@ Caches, die er berührt (nach dem Lauf geleert): `content`.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepfile.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

@@ -33,6 +33,11 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'exp:static:build' => '[full][paths:*][nodes:*][dry-run][report:][format:][crawl-url:][max-pages:][keep-staging]',
             'exp:static:diff' => '[format:][verify][check-links][mount:*]',
             'exp:static:serve' => '[port:][host:][base-path:][format:]',
+            'exp:static:publish' => '[build][message:][no-push][format:]',
+            'exp:static:rollback' => '[apply][message:][no-push][format:]',
+            'exp:static:push' => '[format:]',
+            'exp:static:keys' => '[generate][replace][format:]',
+            'exp:static:status' => '[limit:][format:]',
         );
     }
 
@@ -47,6 +52,11 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'exp:static:build' => '[target]',
             'exp:static:diff' => '[target]',
             'exp:static:serve' => '[target]',
+            'exp:static:publish' => '[target]',
+            'exp:static:rollback' => '[target][to]',
+            'exp:static:push' => '[target]',
+            'exp:static:keys' => '[target]',
+            'exp:static:status' => '[target]',
         );
     }
 
@@ -69,7 +79,63 @@ abstract class ExpstaticBase extends \Exponential\Runnable\Command
             'port' => 'The port of the preview server (default 8090)',
             'host' => 'The address the preview server listens on (default 127.0.0.1, this computer only)',
             'base-path' => 'Serve the folder below this path (default the target\'s BasePath; / for the root)',
+            'build' => 'Build the target first (as exp:static:build); nothing is committed when the build does not finish',
+            'message' => 'The commit message (default: what was published, or which publish is restored)',
+            'no-push' => 'Commit and tag, but do not push (exp:static:push pushes later)',
+            'apply' => 'Make the rollback commit; without it the command only lists what would change',
+            'generate' => 'Make a new deploy key (ed25519) and store its private half in the secret store',
+            'replace' => 'With --generate: replace the target\'s deploy key (the old one stops working)',
+            'limit' => 'How many of the last runs to list (default 10)',
         );
+    }
+
+    /**
+     * The publisher of a target with the installation's root and database.
+     *
+     * @param \expStaticTarget $target
+     * @param \eZDBInterface|null $db
+     * @param array $options more options of expStaticPublisher
+     * @return \expStaticPublisher
+     */
+    protected function publisher( \expStaticTarget $target, $db, array $options = array() )
+    {
+        return new \expStaticPublisher( $target, $options + array( 'root' => defined( 'EXP_ROOT_DIR' ) ? EXP_ROOT_DIR : (string)getcwd(), 'db' => $db ) );
+    }
+
+    /** Ends with exit 1 when static publishing is switched off. */
+    protected function requireEnabled( \expStaticTarget $target, $mode, $format )
+    {
+        if ( !\expStaticTarget::enabled() )
+            $this->finish( array( 'mode' => $mode, 'target' => $target->id(), 'warnings' => array(),
+                                  'errors' => array( 'Static publishing is switched off: staticcache.ini [StaticPublishSettings] Enabled=disabled' ) ), $format );
+    }
+
+    /**
+     * The lines of a publish, rollback or push report. Pure.
+     *
+     * @param array $report
+     * @return string[]
+     */
+    public static function gitLines( array $report )
+    {
+        if ( !isset( $report['push_state'], $report['directory'], $report['messages'] ) )
+            return array();
+        $lines = array();
+        if ( !empty( $report['build'] ) )
+            $lines = self::buildLines( $report['build'] );
+        $lines[] = '';
+        $lines[] = sprintf( 'Static publishing: %s of %s, branch %s in %s', $report['mode'], $report['target'], $report['branch'] !== '' ? $report['branch'] : 'gh-pages',
+                            $report['directory'] );
+        foreach ( $report['messages'] as $message )
+            $lines[] = '  ' . $message;
+        if ( isset( $report['files'] ) )
+            foreach ( array_slice( $report['files'], 0, 50 ) as $file )
+                $lines[] = '    ' . $file;
+        if ( $report['commit_id'] !== '' )
+            $lines[] = sprintf( '  Commit: %s, tag %s', substr( $report['commit_id'], 0, 12 ), $report['tag_name'] !== '' ? $report['tag_name'] : '(none)' );
+        if ( $report['mode'] !== 'rollback' || !empty( $report['apply'] ) )
+            $lines[] = sprintf( '  Push:   %s (%s, credential %s)', $report['push_state'], $report['remote'] !== '' ? $report['remote'] : 'no remote', $report['credential'] );
+        return $lines;
     }
 
     /** @return string the command's name, e.g. exp:static:build */

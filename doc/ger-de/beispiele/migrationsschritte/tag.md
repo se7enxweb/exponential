@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Legt einen Tag von eztags mit seinen Übersetzungen und Synonymen an, ändert, sichert, löscht, verschiebt oder führt ihn zusammen.
 
-Ein Schritt einer YAML-Migration mit `type: tag`. Die Klasse `expMigrationStepTag` ist in `settings/migration.ini` `[StepSettings] StepTypeList[tag]` registriert.
+Ein Schritt einer YAML-Migration mit `type: tag`. Die Klasse `expMigrationStepTag` (`kernel/classes/migration/steps/expmigrationsteptag.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[tag]` registriert.
 
 ## Modi
 
@@ -74,4 +74,4 @@ Caches, die er berührt (nach dem Lauf geleert): `content`.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationsteptag.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
