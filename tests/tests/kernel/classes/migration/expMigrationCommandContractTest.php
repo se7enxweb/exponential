@@ -23,10 +23,10 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
     /** The snapshot. Add, never change or remove. */
     const COMMANDS = array(
         'exp:migration:status' => '[only:*][environment:][format:][fail-on-pending][runs:]',
-        'exp:migration:migrate' => '[apply][dry-run][only:*][path:*][environment:][format:][login:][no-caption][no-restore][include-uncommitted][no-commit][no-push][no-tag][force][reason:]',
+        'exp:migration:migrate' => '[apply][dry-run][only:*][path:*][environment:][format:][login:][no-caption][no-restore][include-uncommitted][no-commit][no-push][no-tag][force][reason:][run-id:][progress:]',
         'exp:migration:dry-run' => '[only:*][path:*][environment:][format:][login:][diff][simulate]',
-        'exp:migration:rollback' => '[apply][dry-run][format:][source:][environment:][login:][expert][confirm:][parts:][backup-dir:][no-safety-caption][force-no-caption][no-verify]',
-        'exp:migration:resume' => '[apply][dry-run][environment:][format:][login:][no-caption][no-restore][include-uncommitted][no-commit][no-push][no-tag][force][reason:]',
+        'exp:migration:rollback' => '[apply][dry-run][format:][source:][environment:][login:][expert][confirm:][parts:][backup-dir:][no-safety-caption][force-no-caption][no-verify][progress:]',
+        'exp:migration:resume' => '[apply][dry-run][environment:][format:][login:][no-caption][no-restore][include-uncommitted][no-commit][no-push][no-tag][force][reason:][run-id:][progress:]',
         'exp:migration:caption' => '[apply][dry-run][format:][list][label:][backup-dir:]',
         'exp:migration:push' => '[apply][dry-run][format:][limit:]',
         'exp:migration:check' => '[path:*][environment:][format:]',

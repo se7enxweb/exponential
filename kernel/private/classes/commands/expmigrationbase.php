@@ -30,6 +30,9 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
     /** The checksum guard. */
     const FORCE_OPTIONS = '[force][reason:]';
 
+    /** A run started by the administration in the background: its id given, its progress written to a file. */
+    const PROGRESS_OPTIONS = '[run-id:][progress:]';
+
     /**
      * Every command with its option configuration (permanent: only additions).
      *
@@ -39,10 +42,10 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
     {
         return array(
             'exp:migration:status' => '[only:*][environment:][format:][fail-on-pending][runs:]',
-            'exp:migration:migrate' => '[apply][dry-run]' . self::SELECT_OPTIONS . self::FLOW_OPTIONS . self::FORCE_OPTIONS,
+            'exp:migration:migrate' => '[apply][dry-run]' . self::SELECT_OPTIONS . self::FLOW_OPTIONS . self::FORCE_OPTIONS . self::PROGRESS_OPTIONS,
             'exp:migration:dry-run' => self::SELECT_OPTIONS . '[diff][simulate]',
-            'exp:migration:rollback' => '[apply][dry-run][format:][source:][environment:][login:][expert][confirm:][parts:][backup-dir:][no-safety-caption][force-no-caption][no-verify]',
-            'exp:migration:resume' => '[apply][dry-run][environment:][format:][login:]' . self::FLOW_OPTIONS . self::FORCE_OPTIONS,
+            'exp:migration:rollback' => '[apply][dry-run][format:][source:][environment:][login:][expert][confirm:][parts:][backup-dir:][no-safety-caption][force-no-caption][no-verify][progress:]',
+            'exp:migration:resume' => '[apply][dry-run][environment:][format:][login:]' . self::FLOW_OPTIONS . self::FORCE_OPTIONS . self::PROGRESS_OPTIONS,
             'exp:migration:caption' => '[apply][dry-run][format:][list][label:][backup-dir:]',
             'exp:migration:push' => '[apply][dry-run][format:][limit:]',
             'exp:migration:check' => '[path:*][environment:][format:]',
@@ -102,6 +105,8 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
             'description' => 'The description in the header of the new migration',
             'author' => 'The author in the header of the new migration',
             'type' => 'The type of the new migration: php (the default and, for now, the only one)',
+            'run-id' => 'The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run',
+            'progress' => 'Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)',
         );
     }
 
@@ -250,6 +255,33 @@ abstract class ExpmigrationBase extends \Exponential\Runnable\Command
         if ( $out['force'] && $reason === '' )
             $this->usage( '--force needs a --reason=<text>: why the changed migrations are accepted' );
         $out['reason'] = $reason;
+        return $out;
+    }
+
+    /**
+     * The options --run-id and --progress, checked: the run's id (expMigrationContext option run-id) and the runner's
+     * progress callback writing to the file (expMigrationProgress::writer()). A usage error ends with exit 2.
+     *
+     * @param array $options
+     * @return array run-id, progress (absent when not given)
+     */
+    protected function progress( array $options )
+    {
+        $out = array();
+        if ( isset( $options['run-id'] ) && $options['run-id'] !== false && $options['run-id'] !== '' )
+        {
+            $runId = (string)$options['run-id'];
+            if ( !\expMigrationRecord::validRunId( $runId ) )
+                $this->usage( "--run-id must be a run id (<date>-<time>-<6 hex digits>), not $runId" );
+            $out['run-id'] = $runId;
+        }
+        if ( isset( $options['progress'] ) && $options['progress'] !== false && $options['progress'] !== '' )
+        {
+            $file = (string)$options['progress'];
+            if ( !is_dir( dirname( $file ) ) || ( file_exists( $file ) && !is_file( $file ) ) )
+                $this->usage( "--progress must name a file in a directory that exists, not $file" );
+            $out['progress'] = \expMigrationProgress::writer( $file );
+        }
         return $out;
     }
 

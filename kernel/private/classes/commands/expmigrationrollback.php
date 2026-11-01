@@ -37,7 +37,7 @@ class Expmigrationrollback extends ExpmigrationBase
                              "./console exp:migration:rollback 20261031120000_add_news_class --apply\n" .
                              "./console exp:migration:rollback 2026-10-29_10-15-00 --expert --confirm=2026-10-29_10-15-00 --apply",
         ) + self::SCRIPT );
-        return (array)$this->startup( '[apply][dry-run][format:][source:][environment:][login:][expert][confirm:][parts:][backup-dir:][no-safety-caption][force-no-caption][no-verify]', '[target]', array(
+        return (array)$this->startup( '[apply][dry-run][format:][source:][environment:][login:][expert][confirm:][parts:][backup-dir:][no-safety-caption][force-no-caption][no-verify][progress:]', '[target]', array(
             'apply' => 'Make the changes (the default is a dry run that lists them and changes nothing)',
             'dry-run' => 'The default, accepted for scripts that pass it: list what would change, change nothing',
             'format' => 'text (default) or json (the machine output exp-migration/1)',
@@ -51,6 +51,7 @@ class Expmigrationrollback extends ExpmigrationBase
             'no-safety-caption' => 'Restore without taking a caption of the current state first; refused on production without --force-no-caption',
             'force-no-caption' => 'With --no-safety-caption on a production installation: restore without a caption all the same',
             'no-verify' => 'Skip the verification after the restore',
+            'progress' => 'Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)',
         ) );
     }
 
@@ -66,6 +67,7 @@ class Expmigrationrollback extends ExpmigrationBase
         if ( $target === '' )
             $this->usage( 'name what to take back: a run id, a migration id or a caption id (./console exp:migration:status lists runs and migrations)' );
         $selection = $this->selection( $options );
+        $progress = $this->progress( $options );
         $db = $this->database( $format );
         $restore = array( 'apply' => $apply, 'db' => $db, 'command' => $this->name(),
                           'no-caption' => !empty( $options['no-safety-caption'] ), 'force-no-caption' => !empty( $options['force-no-caption'] ),
@@ -77,7 +79,8 @@ class Expmigrationrollback extends ExpmigrationBase
         if ( \expMigrationRecord::validRunId( $target ) && \expMigrationRecord::run( $db, $target ) )
         {
             $this->kind = 'run';
-            $this->finish( \expMigrationRollback::run( $target, $restore ) + array( 'target' => array( 'kind' => 'run', 'id' => $target ) ), $format );
+            $this->restoreStarts( $progress );
+            $this->finish( $this->restoreEnds( $progress, \expMigrationRollback::run( $target, $restore ) + array( 'target' => array( 'kind' => 'run', 'id' => $target ) ) ), $format );
             return;
         }
         $errors = array();
@@ -86,7 +89,7 @@ class Expmigrationrollback extends ExpmigrationBase
             if ( $migration->id() === $target )
             {
                 $this->kind = 'migration';
-                $one = $selection + array( 'apply' => $apply, 'db' => $db );
+                $one = $selection + array( 'apply' => $apply, 'db' => $db ) + array_intersect_key( $progress, array( 'progress' => true ) );
                 if ( isset( $options['source'] ) && $options['source'] !== false && $options['source'] !== '' )
                     $one['source'] = (string)$options['source'];
                 $this->finish( \expMigrationRollback::migration( $target, $one ) + array( 'target' => array( 'kind' => 'migration', 'id' => $target ) ), $format );
@@ -98,12 +101,41 @@ class Expmigrationrollback extends ExpmigrationBase
             $restore['expert'] = !empty( $options['expert'] );
             if ( isset( $options['confirm'] ) && $options['confirm'] !== false )
                 $restore['confirm'] = (string)$options['confirm'];
-            $this->finish( \expMigrationRollback::caption( $target, $restore ) + array( 'target' => array( 'kind' => 'caption', 'id' => $target ) ), $format );
+            $this->restoreStarts( $progress );
+            $this->finish( $this->restoreEnds( $progress, \expMigrationRollback::caption( $target, $restore ) + array( 'target' => array( 'kind' => 'caption', 'id' => $target ) ) ), $format );
             return;
         }
         $this->finish( array( 'mode' => 'rollback', 'target' => array( 'kind' => '', 'id' => $target ),
                               'errors' => array_merge( array( "$target is no run, no migration and no caption of this installation" ), $errors ),
                               'warnings' => array(), 'exit' => \expUpgrade::EXIT_USAGE ), $format );
+    }
+
+    /**
+     * The progress of a restore, which has no steps: the events run and phase restore.
+     *
+     * @param array $progress the result of progress()
+     */
+    protected function restoreStarts( array $progress )
+    {
+        if ( isset( $progress['progress'] ) )
+        {
+            call_user_func( $progress['progress'], 'run', array( 'mode' => 'restore', 'total' => 0, 'ids' => array() ) );
+            call_user_func( $progress['progress'], 'phase', array( 'name' => 'restore' ) );
+        }
+    }
+
+    /**
+     * The event end of a restore.
+     *
+     * @param array $progress the result of progress()
+     * @param array $report
+     * @return array the report
+     */
+    protected function restoreEnds( array $progress, array $report )
+    {
+        if ( isset( $progress['progress'] ) )
+            call_user_func( $progress['progress'], 'end', array( 'exit' => isset( $report['exit'] ) ? (int)$report['exit'] : 0, 'summary' => array() ) );
+        return $report;
     }
 
     protected function lines( array $report )

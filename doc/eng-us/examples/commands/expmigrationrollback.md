@@ -54,6 +54,7 @@ command prints the steps to restore by hand.
 | `--no-safety-caption` |  | Restore without taking a caption of the current state first; refused on production without --force-no-caption |
 | `--force-no-caption` |  | With --no-safety-caption on a production installation: restore without a caption all the same |
 | `--no-verify` |  | Skip the verification after the restore |
+| `--progress` | required | Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on) |
 
 Read from the option definitions in the code (`startup()`, `getOptions()`, `options()` or `ezcConsoleOption`). Every script also takes the standard options of the script framework (`--help`, `--siteaccess`, `--debug`, `--quiet`, `--allow-root-user` ...).
 
