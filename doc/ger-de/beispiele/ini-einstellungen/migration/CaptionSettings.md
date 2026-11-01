@@ -75,7 +75,7 @@ ReuseUnchanged=enabled
 > Sitzungen und der Audit-Index (jeder Sicherungspunkt schreibt ein Audit-Ereignis). Ein Name, der auf \* endet, steht  
 > für jede Tabelle, die damit beginnt.  
 
-Standard: eine Liste mit 5: `exp_migration`, `exp_migration_run`, `expupgrade_step`, `ezsession`, `expaudit_*`.
+Standard: eine Liste mit 4: `exp_migration`, `exp_migration_run`, `ezsession`, `expaudit_*`.
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -85,7 +85,6 @@ Standard: eine Liste mit 5: `exp_migration`, `exp_migration_run`, `expupgrade_st
 ReuseIgnoreTableList[]
 ReuseIgnoreTableList[]=exp_migration
 ReuseIgnoreTableList[]=exp_migration_run
-ReuseIgnoreTableList[]=expupgrade_step
 ReuseIgnoreTableList[]=ezsession
 ReuseIgnoreTableList[]=expaudit_*
 */ ?>

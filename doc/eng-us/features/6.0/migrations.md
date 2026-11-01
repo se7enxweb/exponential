@@ -23,6 +23,7 @@ Quick start:
 
 | Part | What it is |
 |---|---|
+| The kernel's upgrade steps | every step of `exp:upgrade` (the kernel's and the extensions') is a migration of the source `kernel`: listed first by the status and the administration, applied first by a run (stages `database` and `scripts`), and nameable in `requires` |
 | Migration files | `YYYYMMDDHHMMSS_name.php` in the site's `migrations/`, in `extension/<name>/migrations/` of active extensions and in installed packages; a header of `key: value` comment lines (description, requires, environments, engines, maintenance, author); ordered by id and by `requires` |
 | PHP migrations | a namespaced class that extends `expMigrationPhp` with `plan()`, `up()`, optionally `down()` and `detect()` |
 | The record | tables `exp_migration` (one row per migration; also the record of `exp:upgrade` since 6.0.15) and `exp_migration_run` (one row per run), made by the upgrade step `6.0.15-migration-tables` |
@@ -30,8 +31,11 @@ Quick start:
 | Captions | a caption before every run (reused while nothing changed), one after a run that passed, one of the failed state, and the restore of the pre caption after a failure; the captions are those of `exp:upgrade` |
 | Rollback | a run (its pre caption), one migration (its `down()`), or, for experts, any caption |
 | The migrations repository | the status file `status/<environment>.json` and the run log `runs/<run-id>.log`, committed, tagged and pushed after every run; failed pushes retried by the cronjob part `migrationpush` |
-| Commands | `exp:migration:status`, `:migrate`, `:dry-run` (with `--simulate --diff`), `:rollback`, `:resume`, `:caption`, `:push`, `:check`, `:generate` |
-| Settings | `settings/migration.ini`: `[MigrationSettings]`, `[RunSettings]`, `[CaptionSettings]`, `[RepositorySettings]` |
+| Commands | `exp:migration:status`, `:migrate`, `:dry-run` (with `--simulate --diff`), `:rollback`, `:resume`, `:caption`, `:push`, `:check`, `:generate`; `:migrate` and `:resume` take `--run-id` (the id of the run to start) and `--progress` (a file the run appends its progress to, one JSON line per event), `:rollback` takes `--progress` |
+| Setup > Migrations | the module `migration` with the views `status`, `history`, `log/<run-id>`, `stream/<run-id>` (the live progress), `dryrun`, `run` and `rollback/<target>`; the policies `migration/read`, `run`, `rollback` and `edit` (Administrator only in a new installation); "Verify it's you" before a run, a resume, a simulation and a rollback |
+| Background runs | a run, resume or rollback started in the administration runs as a console process of its own as the signed-in user (`expMigrationJob`), goes on when the page is closed, and is followed live through its progress file; its files are in `var/<site>/migration/jobs/` |
+| Dashboard block | `migrations`: pending, failed, orphans, the run going on and the last run (fetch function `migration/summary`) |
+| Settings | `settings/migration.ini`: `[MigrationSettings]`, `[RunSettings]`, `[CaptionSettings]`, `[RepositorySettings]`, `[AdminSettings]` (`PhpCliPath`, `JobHistory`, `LogBytes`) |
 
 ## The building blocks
 
@@ -49,6 +53,8 @@ Quick start:
 | `expMigrationRecord`, `expMigrationStatusMirror`, `expMigrationRepository` | the tables, the files in git, git |
 | `expMigrationLock` | the installation lock with a holder file (also the lock of `exp:upgrade`) |
 | `expMigrationStatus`, `expMigrationCheck`, `expMigrationSimulation`, `expMigrationGenerator` | the status, the lint, the simulation, the skeleton |
+| `expMigrationUpgradeSource`, `expMigrationUpgradeStep` | the kernel's upgrade steps (`exp:upgrade`) as migrations of the source `kernel` |
+| `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | the forms and the dashboard summary of Setup > Migrations, the runs started there in the background, their progress file |
 
 The commands are `bin/php/expmigration<name>.php` (alias `exp:migration:<name>`), their code in
 `kernel/private/classes/commands/`. Their machine output is `exp-migration/1` (`--format=json`); the exit codes are
@@ -68,9 +74,12 @@ those of `exp:upgrade` (0, 1 failed, 2 usage, 3 database unreachable, 4 internal
 
 - Migrations are written in PHP. Files of the types `yml`, `sql`, `<engine>.sql` and `ini` are found, ordered and
   checked, and refused by the runner until their steps arrive.
-- The administration has no migrations view yet; everything runs from the console.
-- `exp:upgrade` keeps its own commands; its kernel steps are recorded in `exp_migration` (source `kernel`) but are
-  not listed by `exp:migration:status` yet.
+- A migration run applies the kernel's upgrade steps of the stages `database` and `scripts` only; the stages `code`,
+  `libraries` and `finish` stay with `exp:upgrade` (they are listed as `deferred`).
+- Setup > Migrations shows, runs and rolls back migrations; writing and generating them (the policy `migration/edit`
+  is reserved for that) and the settings of the migrations repository are done in files and on the console.
+- A run started in the administration needs `proc_open` and a PHP command line binary
+  (`migration.ini [AdminSettings] PhpCliPath`); without them the page says so and the console runs it.
 - Commits, tags and pushes need git_manager; without it a run says so and commits nothing.
 
 ## Settings
@@ -87,4 +96,7 @@ Every setting with its default: [migration.ini](../../examples/ini-settings/migr
   [The migrations repository](../../guides/migrations-repositories.md),
   [Troubleshooting](../../guides/migrations-troubleshooting.md)
 - [The migration file format](../../specifications/6.0/migration-file-format.md)
+- [Migrations in the administration](../../help/migrations/README.md),
+  [the views of the module migration](../../examples/module-views/migration/README.md),
+  [its policies](../../examples/policies/migration.md)
 - [Upgrading with the console](../../guides/upgrading-with-the-console.md)

@@ -1,0 +1,22 @@
+{
+    "ini:settings/dashboard.ini [DashboardBlock_migrations]": {
+        "en": "The migrations: how many are pending or failed, the orphans, the run going on and the latest run, with links to\nSetup > Migrations (migration/status) and the run's page (migration/log/<run id>).",
+        "de": "Die Migrationen: wie viele ausstehen oder fehlgeschlagen sind, die verwaisten, der laufende Lauf und der letzte Lauf, mit Links zu\nEinrichtung > Migrationen (migration/status) und zur Seite des Laufs (migration/log/<run id>)."
+    },
+    "ini:settings/migration.ini [AdminSettings] JobHistory": {
+        "en": "How many runs started there keep their files (the newest ones; a run going on is always kept).",
+        "de": "Wie viele dort gestartete Läufe ihre Dateien behalten (die neuesten; ein laufender Lauf wird immer behalten)."
+    },
+    "ini:settings/migration.ini [AdminSettings] LogBytes": {
+        "en": "How much of the end of a run log a page shows, in bytes.",
+        "de": "Wie viel vom Ende eines Laufprotokolls eine Seite zeigt, in Byte."
+    },
+    "ini:settings/migration.ini [AdminSettings] PhpCliPath": {
+        "en": "Setup > Migrations (module migration) starts a run or a rollback as a console process of its own, which goes on when\nthe page is closed; its files are in var/<site>/migration/jobs/.\n\nThe php command line binary those processes run with. Empty: cronjob.ini [AdminSettings] PhpCliPath, else the\nusual places (the bin directory of this php, /usr/bin/php, /usr/local/bin/php). Never the php-fpm binary.",
+        "de": "Einrichtung > Migrationen (Modul migration) startet einen Lauf oder eine Rücknahme als eigenen Konsolenprozess, der weiterläuft, wenn\ndie Seite geschlossen wird; seine Dateien liegen in var/<site>/migration/jobs/.\n\nDas PHP-Kommandozeilenprogramm, mit dem diese Prozesse laufen. Leer: cronjob.ini [AdminSettings] PhpCliPath, sonst die\nüblichen Orte (das bin-Verzeichnis dieses PHP, /usr/bin/php, /usr/local/bin/php). Nie das php-fpm-Programm."
+    },
+    "ini:settings/site.ini [ReauthGroup_system] Rules": {
+        "en": "Migrations: a run, a resume or a simulation, a rollback, and (later) the editor and the generators; seeing them\n(status, history, log, the dry run) is never asked",
+        "de": "Migrationen: ein Lauf, eine Fortsetzung oder eine Simulation, eine Rücknahme und (später) der Editor und die Generatoren; das Ansehen\n(Stand, Verlauf, Protokoll, der Probelauf) wird nie abgefragt"
+    }
+}

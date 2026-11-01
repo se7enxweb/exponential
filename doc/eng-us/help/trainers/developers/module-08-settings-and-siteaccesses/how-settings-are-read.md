@@ -47,7 +47,8 @@ Sources: [Specification: INI override directories and placements](../../../../sp
 2. **The order** (5 minutes). `settings/<file>.ini` first, then the override directories. `eZINI` merges them in
    the scope order `sa-extension`, `siteaccess`, `extension`, `override`: a later file wins. So
    `settings/override/` (the global scope) wins over everything; a setting in an extension's root `settings/`
-   wins over `settings/siteaccess/<sa>/`.
+   wins over `settings/siteaccess/<sa>/` when the extension is in `ActiveExtensions[]`, not when it is in
+   `ActiveAccessExtensions[]`.
 3. **Arrays** (4 minutes). `List[]=a` in one file and `List[]=b` in a later one give `a, b`. The line `List[]` alone
    resets the array: values of earlier files are dropped. A hash entry is `List[key]=value`.
 4. **The tools** (4 minutes). `exp:ini where <file>/<Block>/<Variable> [<sa>]` lists every file in load order and

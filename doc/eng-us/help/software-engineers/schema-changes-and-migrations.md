@@ -58,6 +58,9 @@ upgrade step of its own ([Upgrade steps for extensions](../../guides/upgrade-ste
 one site (its own table, classes, content, roles) is a migration: `./console exp:migration:migrate --apply` runs the
 pending ones in order, in a transaction where the engine has one, restores the caption after a failure, and commits
 the record of the run ([Migrations](../../guides/migrations.md), [PHP migrations](../../guides/migrations-php.md)).
+The upgrade steps are listed there too, as migrations of the source `kernel`, and a migration run applies the pending
+steps of the stages `database` and `scripts` before the site's migrations, so a site migration can require a step
+(`requires: 6.0.15-migration-tables`).
 
 ## The tools
 

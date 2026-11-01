@@ -41,6 +41,11 @@ installation, the record says so and it never runs there again.
 
 Migrations and `exp:upgrade` share the record table `exp_migration`, the installation lock and the captions, so an
 upgrade and a migration run never write at the same time and `exp:upgrade:captions` lists the captions of both.
+The upgrade steps are migrations too, of the source `kernel`: `exp:migration:status` lists them first, and
+`exp:migration:migrate --apply` applies the pending ones of the stages `database` and `scripts` before the site's
+migrations; the stages `code`, `libraries` and `finish` stay with `exp:upgrade`
+([The steps among the migrations](upgrading-with-the-console.md#the-steps-among-the-migrations)). A migration that
+needs a step's change names the step in `requires`.
 
 ## The life cycle
 
@@ -125,8 +130,9 @@ command. A migration that is not for the environment, or not for the database en
 | `migrations/status/<environment>.json` | the record mirrored into the migrations repository (no users, no messages) |
 | `migrations/runs/<run-id>.log` | one line per event of a run, cleaned of secrets and e-mail addresses |
 
-The upgrade step `6.0.15-migration-tables` creates both tables and copies the rows of the older `expupgrade_step`;
-`./console exp:upgrade --apply` runs it. Until then nothing is read or written and the status says so.
+The upgrade step `6.0.15-migration-tables` creates both tables; on an installation of a pre-release of 6.0.15, the step
+`6.0.15-upgrade-record-table` then copies the rows of its older table `expupgrade_step` and drops that table;
+`./console exp:upgrade --apply` runs both. Until then nothing is read or written and the status says so.
 
 States: `done`, `pending`, `not-needed`, `failed`, `unknown`. A migration recorded as done whose file has changed
 since is refused, and the run with it, unless the run is given `--force --reason=<text>`: the new checksum is then
@@ -181,11 +187,41 @@ All of them take `--format=json` (the machine output `exp-migration/1`) and end 
 `exp:upgrade`: 0 fine, 1 failed (or pending with `exp:migration:status --fail-on-pending`), 2 usage error, 3 the
 database is not reachable, 4 internal error.
 
+## In the administration
+
+**Setup > Migrations** (the module `migration`) shows and runs the same migrations:
+
+| Page | What it does | Policy |
+|---|---|---|
+| Status (`/migration/status`) | every migration with its state, the lock, the latest runs, as `exp:migration:status` | `migration/read` |
+| History (`/migration/history`) | every run with its captions, commit, tag and push; resume and roll back | `migration/read` |
+| A run's page (`/migration/log/<run-id>`) | its record, its migrations, the end of its run log, and its progress while it goes on | `migration/read` |
+| Dry run (`/migration/dryrun`) | the plan, as `exp:migration:dry-run`; **Simulate** as `--simulate --diff` | `migration/read`, `migration/run` to simulate |
+| Run (`/migration/run`) | the pending migrations, chosen one by one, with the switches of the table above and `--force --reason` | `migration/run` |
+| Rollback (`/migration/rollback`) | a run, one migration, or (expert) any caption | `migration/rollback` |
+
+Only the Administrator role has these policies in a new installation. A run, a resume, a simulation and a rollback
+ask "Verify it's you" first (`site.ini [ReauthGroup_system]`). The dashboard has a **Migrations** block for users
+with `migration/read`, and the website sidebar (expwt) a read-only Migrations panel.
+
+A run, a resume or a rollback started there runs in the background: the page starts the console command
+(`exp:migration:migrate --apply`, `exp:migration:resume --apply` or `exp:migration:rollback --apply`) as a process of
+its own, as the signed-in user, and opens the run's page, which follows it. The run goes on when the page is closed.
+The page names the run with `--run-id=<run-id>`, so the run, its record and its log have that id, and follows it
+through the file of `--progress=<file>`, to which the run appends one JSON line per event. Both options can be used
+on the console too. The files of these runs are in `var/<site>/migration/jobs/`; `migration.ini [AdminSettings]`
+names the PHP command line binary (`PhpCliPath`), how many runs keep their files (`JobHistory`, 50) and how much of
+a run log a page shows (`LogBytes`, 256 KB). One run at a time: while one is going on, or another run or an upgrade
+holds the lock, the page refuses a new one.
+
+The pages: [Migrations in the administration](../help/migrations/README.md),
+[The status and the history](../help/migrations/status-and-history.md),
+[Run, dry run and rollback](../help/migrations/run-dry-run-and-rollback.md).
+
 ## Not in 6.0.15 yet
 
-The administration's Setup > Migrations, YAML, SQL and INI migrations, generators other than the skeleton,
-recording, and `exp:velocity deploy --migrate` are planned and not part of this release. Everything this guide shows
-works from the console today.
+YAML, SQL and INI migrations, the editor and the generators in the administration (generators other than the
+skeleton), recording, and `exp:velocity deploy --migrate` are planned and not part of this release.
 
 ## Read on
 
@@ -194,5 +230,6 @@ works from the console today.
 - [Rollback and captions](migrations-rollback-and-captions.md)
 - [The migrations repository: commit, tag and push](migrations-repositories.md)
 - [Troubleshooting migrations](migrations-troubleshooting.md)
+- [Migrations in the administration](../help/migrations/README.md)
 - [The migration file format](../specifications/6.0/migration-file-format.md)
 - [migration.ini](../examples/ini-settings/migration/README.md), [the cronjob part migrationpush](../examples/cronjobs/migrationpush.md)

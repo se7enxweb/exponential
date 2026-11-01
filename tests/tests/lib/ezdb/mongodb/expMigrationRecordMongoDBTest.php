@@ -1,14 +1,14 @@
 <?php
 /**
  * The migration record on MongoDB through the kernel's driver (expMongoDB): the upgrade step makes the collections
- * exp_migration and exp_migration_run with expKernelTableSchema::install() and copies expupgrade_step, and the record
+ * exp_migration and exp_migration_run with expKernelTableSchema::install(), the next step copies a pre-release expupgrade_step and drops it, and the record
  * is written and read with the same SQL as on the other engines.
  *
  * Needs a MongoDB server: EXP_TEST_MONGO_URI (a mongodb:// connection string); skipped without it. Everything is
  * written to a database of its own, exp_test_migration_<pid>, which is dropped afterwards; no database of an
  * installation is opened.
  *
- *  MR-G1 create and copy, re-run idempotent, write and read, exp:upgrade's record (expMigrationRecordEngineChecks)
+ *  MR-G1 create, copy and drop, re-run idempotent, write and read, exp:upgrade's record (expMigrationRecordEngineChecks)
  *
  * Run: php vendor/bin/phpunit --testsuite mongodb-live
  *

@@ -57,7 +57,7 @@ treated as articles for Open Graph from `cjw_jumper.ini [OpenGraph] ArticleClass
 
 5. Tell users in the README how to override it: in `settings/override/mytheme.ini.append.php`, never in the theme's
    own file (an update would overwrite it). A siteaccess folder does not work for a key the theme's file sets, because
-   the extensions' `settings/` are read after the siteaccess settings and win.
+   the `settings/` of the extensions in `ActiveExtensions[]` are read after the siteaccess settings and win.
 
 ## Good practice
 

@@ -31,7 +31,7 @@ Never edit `settings/exphelp.ini` itself: an update replaces it. Put the setting
 >           "Adopters"), else the folder's name  
 > Changing the scope is an edit of this list. A line taken out removes its manual, chapters and topics at the next run.  
 
-Default: a list of 53: `getting-started;help/*.md;Getting started`, `manual;help/manual`, `book-learning;help/book-learning`, `book-building-a-site;help/book-building-a-site`, `extension-development;help/extension-development`, `adopters;help/adopters`, `advocates;help/advocates`, `ai-agents;help/ai-agents`, `build-two-ways;help/build-two-ways`, `bundlers;help/bundlers`, `business;help/business`, `businesses;help/businesses` ....
+Default: a list of 54: `getting-started;help/*.md;Getting started`, `manual;help/manual`, `book-learning;help/book-learning`, `book-building-a-site;help/book-building-a-site`, `extension-development;help/extension-development`, `adopters;help/adopters`, `advocates;help/advocates`, `ai-agents;help/ai-agents`, `build-two-ways;help/build-two-ways`, `bundlers;help/bundlers`, `business;help/business`, `businesses;help/businesses` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -59,7 +59,7 @@ Manuals[]=database-administrators;help/database-administrators
 Manuals[]=designers;help/designers
 Manuals[]=dxp-developers;help/dxp-developers
 Manuals[]=e-commerce;help/e-commerce
-# ... 33 more in the shipped file
+# ... 34 more in the shipped file
 */ ?>
 ```
 

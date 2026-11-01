@@ -134,6 +134,14 @@ and left out; two steps with the same id, an `after()` that names no step and a 
 Ship the steps in the extension's repository and in its `-ezpackage` repository alike: both are installed, and both
 are upgraded.
 
+The steps of an extension are migrations of the source `kernel` as well, like the kernel's own
+([The steps among the migrations](upgrading-with-the-console.md#the-steps-among-the-migrations)):
+`./console exp:migration:status` and Setup > Migrations list them, and `./console exp:migration:migrate --apply`
+applies the pending ones of the stages `database` and `scripts` before the migrations. A migration in
+`extension/<name>/migrations/` that needs the step's table names it in its header (`requires: myext-1.2-widget-table`).
+Choose an upgrade step for what every installation of the extension needs on upgrade, and a migration for a change
+that one site makes once.
+
 ## Testing a step
 
 Test each step four ways on a throwaway database (SQLite always; MySQL and PostgreSQL where you can):
