@@ -7,9 +7,8 @@ in dem jeder Link umgeschrieben ist, sodass der Ordner für sich allein funktion
 unterhalb eines Pfads wie `/meine-site/`. Redakteure arbeiten weiter in Exponential; die öffentliche Website ist eine
 Kopie.
 
-Es ist neu in Exponential 6.0.15. Diese Seite beschreibt die Build-Engine, das Veröffentlichen nach Git und ihre
-Befehle. Die Seiten unter Setup > Statisches Veröffentlichen und die Einrichtung bei GitHub kommen hinzu, sobald sie
-erscheinen.
+Es ist neu in Exponential 6.0.15. Diese Seite beschreibt die Build-Engine, das Veröffentlichen nach Git, ihre Befehle
+und die Seiten unter Setup > Statisches Veröffentlichen. Die Einrichtung bei GitHub kommt hinzu, sobald sie erscheint.
 
 [Funktionen von 6.0](README.md) · Verwandt: [Generator für den statischen Cache](generator-fuer-den-statischen-cache.md),
 [Statische Websites auf GitHub Pages hosten mit Exponential 6.0.15+](../../anleitungen/statische-websites-auf-github-pages-hosten.md),
@@ -137,6 +136,24 @@ Die erzeugte Referenz führt jede Einstellung mit ihrem Kommentar auf:
 `/name/`, Adressen sind http oder https, `Remote` enthält kein Passwort und kein Token, `Credential` nennt ein
 Geheimnis, statt eines zu enthalten, die Listen enthalten bekannte Werte. Fehler sind Fehler; zweifelhafte
 Kombinationen (eine `PublicURL`, deren Pfad nicht `BasePath` ist, eine Sitemap ohne `PublicURL`) sind Warnungen.
+
+## In der Administration
+
+**Setup > Statisches Veröffentlichen** (das Modul `staticpublish`) tut, was die Befehle tun, mit Seiten: ein
+Assistent, der Ziele anlegt und ändert (über den INI-Editor in `settings/override/staticcache.ini.append.php`
+geschrieben), ein im Hintergrund gestarteter Build, dessen Fortschritt live verfolgt wird, eine Vorschau des Builds
+(was sich ändert, mit Größen, der Bericht des Builds, die Größe gegenüber den Grenzen des Hosts, die Kopie hinter einem
+signierten Link ausgeliefert) mit **Veröffentlichen** und **Verwerfen**, der Verlauf mit der Rücknahme, die Seite jedes
+Auftrags und der Deploy-Key. Ein Dashboard-Block listet die Ziele mit ihren veralteten Seiten und ihrer letzten
+Veröffentlichung auf, und Setup > Cache verlinkt darauf. Die Richtlinien `staticpublish/read`, `build`, `publish` und
+`setup` nehmen eine Einschränkung nach Ziel (Target); Veröffentlichen, Zurücknehmen, das Speichern eines Ziels und der
+Deploy-Key fragen „Bestätigen Sie, dass Sie es sind“. Das Hilfehandbuch:
+[Statisches Veröffentlichen](../../hilfe/statisches-veroeffentlichen/README.md).
+
+Die Administration startet ihre Aufträge als Konsolenprozesse (`exp:static:build`, `exp:static:publish` und
+`exp:static:rollback` mit `--login`, `--run-id` und `--progress`), sodass ein langer Build nie eine Webanfrage
+blockiert; die Auftragsdateien liegen in `<WorkDir>/.jobs`, und `[StaticPublishSettings] JobHistory` legt fest, wie
+viele aufbewahrt werden.
 
 ## Befehle
 

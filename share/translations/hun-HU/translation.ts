@@ -15089,6 +15089,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>A telepítés fájlokban tárolt módosításai: állapotuk, a futtatások, futtatás és visszavonás.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Egy webhely statikus másolatának közzététele a GitHub Pages szolgáltatáson vagy bármely git-tárhelyen.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statikus közzététel</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22096,18 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>A GraphQL API tárolt lekérdezéseinek válaszai és sémájának tartalomosztályai.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Statikus másolat közzététele a GitHub Pages szolgáltatáson vagy bármely git-tárhelyen</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statikus közzététel</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>A statikus gyorsítótár erről a szerverről szolgálja ki az oldalakat. Ha egy webhely statikus másolatát máshol szeretné közzétenni, a GitHub Pages szolgáltatáson vagy bármely git-tárhelyen, használja a statikus közzétételt.</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76165,14 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>A telepítés fájlokban tárolt módosításai: állapotuk, a futtatások, futtatás és visszavonás.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Egy webhely statikus másolatának közzététele a GitHub Pages szolgáltatáson vagy bármely git-tárhelyen.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statikus közzététel</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80583,6 +80611,1364 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>A futtatás nem indítható el.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Minden cél</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Utolsó közzététel</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Tegye közzé webhelye ingyenes statikus másolatát a GitHub Pages szolgáltatáson:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Elavult oldalak</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statikus közzététel</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>A statikus közzététel ki van kapcsolva.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Cél</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>A célok nem olvashatók be: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>egy feladat folyamatban van</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ellenőrzendő összeállítás</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>elrejtés</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>cél létrehozása</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>soha</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>az útmutató elolvasása</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added hozzáadva, %changed módosítva, %removed eltávolítva</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>További %count nincs felsorolva.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages oldal kiírva</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path mérete %size, ez több, mint amennyit a tárhely egy fájlnak megenged.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>a korlát %percent %-a</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds mp</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag a webhely jelenlegi közzététele.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: feladat %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/tároló/ egy GitHub-projektwebhelyhez; egyéni domainhez vagy felhasználói webhelyhez üres.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. A webhely</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. A tárhely</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Bejelentkezés a tárolóba</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. A tároló</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Hivatkozások és alapútvonal</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Saját domain</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Mit tartalmaz az összeállítás</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Mikor történik a közzététel</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Áttekintés és mentés</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Egy GitHub-projektwebhely a /&lt;repository&gt;/ alatt található; a relatív hivatkozások ott és bárhol máshol is működnek.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Az összeállítás a(z) %site minden oldalát úgy tölti le, ahogy egy be nem jelentkezett látogató látja, átírja a hivatkozásokat, átmásolja a fájlokat, és az eredményt a cél mappájába írja. Semmi sem kerül közzétételre, amíg Ön nem ellenőrzi az összeállítást, és meg nem nyomja a Közzététel gombot.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron-kifejezés, például 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>A telepítési kulcs %secret titkos értékként van tárolva.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>A telepítési kulcs lehetővé teszi, hogy ez a telepítés SSH-n keresztül egyetlen tárolóba töltsön fel, és sehová máshová. Privát fele a Rendszer &gt; Titkos értékek alatt marad; csak a nyilvános fele látható.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ehhez a célhoz készült telepítési kulcs</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>A telepítési kulcs SSH-n keresztül jelentkezik be: módosítsa a git-címet SSH-címre (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Egy feladat folyamatban van, indította: %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Ennek a célnak egy feladata még folyamatban van (%detail). Várja meg, amíg befejeződik.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Ennek a célnak egy feladata még folyamatban van. Várja meg, amíg befejeződik.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>A /news/ oldalról az /about-us/team oldalra mutató hivatkozás így lesz kiírva:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Új telepítési kulcs készült. Adja hozzá most a nyilvános felét a tárolóhoz.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Az az oldal, amely a tisztítás után is hibakeresési kimenetet, űrlaptokent vagy munkamenet-azonosítót tartalmaz, soha nem kerül közzétételre.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>A visszavonás szakértőknek való: jelölje be a „Tudom, mit változtat ez” lehetőséget, és írja be újra a címke nevét.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Egy webhely legfeljebb %site, egy fájl legfeljebb %file méretű lehet, havonta nagyjából 100 GB forgalommal. Ingyenes csomagban a tárolónak nyilvánosnak kell lennie. A GitHub Pages nem webáruházaknak vagy más kereskedelmi tranzakcióknak készült.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Egy cél egy webhely, amely egy git-tárolóba kerül közzétételre. Itt semmi sem készül el és semmi sem kerül közzétételre: a Mentés a beállításokat a settings/override/staticcache.ini.append.php fájlba írja.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Egy cél egy webhely, amely egy helyre kerül közzétételre, például a nyilvános webhelye a GitHub Pages szolgáltatáson.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token a Rendszer &gt; Titkos értékek közül</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>A tároló egy munkafolyamata teszi közzé.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Adja hozzá ezt a nyilvános kulcsot írási joggal a tárolóhoz. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, jelölje be az Allow write access lehetőséget.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Hozzáadva</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Más git-tárhely</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Egy másik folyamat dolgozik ezen a célon: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Vissza</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Alapútvonal</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Előtte</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Egy alapútvonal alatt</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Ág</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Hibás hivatkozások</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Hibás hivatkozások az összeállításban</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Összeállítás</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Összeállítás %id, készítette: %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name összeállítása</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Összeállítás most</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Ellenőrzendő összeállítás</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Indította</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Kézzel, itt</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Mégse</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Módosítás</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Módosítva</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Változások</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Előbb ellenőrizze</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Ellenőrizze ezeket a beállításokat</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Ellenőrizze, mit változtat az összeállítás, nézze meg, majd tegye közzé vagy vesse el.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Válassza ki a közzétételt, amelyre vissza szeretne térni.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Egy későbbi kiadásban érkezik.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Véglegesítés</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Véglegesítések</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Véglegesíti az összeállítást, címkével látja el és feltölti ide: %remote. A feltöltés soha nem kényszerített; később bármely közzétételre visszatérhet.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>A mappa korábbi állapotához képest: %added hozzáadva, %changed módosítva, %removed eltávolítva, %unchanged változatlan.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Az utolsó közzétételhez képest.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Hitelesítés</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Egyéni domain</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>A hibakeresési kimenet, az űrlaptokenek, a munkamenet-azonosítók és a nonce-ok mindig eltávolításra kerülnek.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Telepítési kulcs</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name telepítési kulcsa</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Elvetés</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Az összeállítás elvetése</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domainnév</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Üres: a webhely címe. Egyébként ugyanannak a webhelynek egy belső címe.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Befejezve</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Minden hivatkozás az alapútvonallal kezdődik.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Minden közzététel egy véglegesítés static/%id/&lt;n&gt; címkével. A visszatérés új véglegesítést készít egy korábbi közzététel fájljaival: az előzmények megmaradnak, egyetlen címke sem mozdul el, és semmi sem kényszerített.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Kiegészítők</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Az oldalak letöltése innen</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fájl</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fájlok</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Hiányzó fájlok</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fájlok innen:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fájlok, amelyeket nem sikerült összegyűjteni</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Ujjlenyomat</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Mappa</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH-címhez. A kulcs a mentés után készül el; a nyilvános felét Ön adja hozzá a tárolóhoz.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// címhez. GitHub: finomhangolt (fine-grained) token Contents olvasási és írási joggal a tárolón.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Szakértőknek. A nyilvános webhely azonnal megváltozik, amint a feltöltés lezajlott.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Űrlapok</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Ingyenes tárhely egy GitHub-tárolóból.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Az ágból</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-cím</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>A GitHub Pages legfeljebb %site méretű webhelyet és %file méretű fájlt enged meg.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>A GitHub Pages korlátai</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>A GitHub Pages a fájlokat változatlanul teszi közzé (a _ karakterrel kezdődő fájlokhoz szükséges).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>A GitHub az ágat úgy szolgálja ki, ahogy fel lett töltve. Ez az alapértelmezés.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, saját szerver: bármely git-tároló.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Visszatérés egy korábbi közzétételre</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Súgó</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Súgó a varázslóhoz</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Elrejtés</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Előzmények</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name előzményei</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Tárhely</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Hogyan kapja meg a GitHub Pages az összeállítást</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Ellenőriztem a változásokat</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Tudom, mit változtat ez</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Azonosító</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Ki van kapcsolva: amíg nincs bekapcsolva, semmi sem állítható össze.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>A háttérben fut %user nevében; ezt az oldalt bezárhatja.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Feladat: %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret titkos értékként tárolva.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Típus</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Utolsó közzététel</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Ezek az oldalak kimaradnak</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Ezek a szekciók kimaradnak</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Hivatkozások</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Átírt hivatkozások</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Élő webhely</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Az összeállítás megtekintése</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Kisbetűk, számjegyek, _ és -, például github-public. Ez adja a mappa és a címkék nevét (static/&lt;id&gt;/&lt;n&gt;), és később nem módosítható.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Új kulcs készítése</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Cél létrehozása</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>A kulcs elkészítése</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Előbb hozza létre a tárolót a tárhelyen; egy üres is megfelel.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Jegyzék</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Üzenet</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>A legtöbb oldal</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>A token neve a Rendszer &gt; Titkos értékek alatt</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Új cél</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Tovább</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nem</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Még nincs véglegesítés.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Nem készült kulcs: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nem található php parancssori program. Állítsa be a migration.ini [AdminSettings] PhpCliPath értékét a teljes elérési útjára.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Még nincs címke.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Még nincs cél.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nincs</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nincs az összeállításban.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Még semmi sem került közzétételre.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Még semmi sem került közzétételre: minden fájl új.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Értesítés</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Ütemezetten</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>A konzolon</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>A szerveren: a ./console exp:static:serve %id ugyanígy szolgálja ki.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Soronként egy útvonal, a * bármely részre illeszkedik: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>A céllal csak egy név van tárolva; maga a token vagy kulcs a Rendszer &gt; Titkos értékek alatt marad, és soha nem jelenik meg naplóban.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Csak amit az oldalak megneveznek</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Csak tokennel. Az env:NAME helyette a szerver egy környezeti változóját olvassa.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Az előnézet megnyitása</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Megnyitja az összeállítást úgy, ahogy a tárhely ki fogja szolgálni, a cél mappájából. A hivatkozás egy óráig működik az Ön számára.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Nem kötelező. Üres: ami közzé lett téve.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Nem kötelező. Domainnel a webhely annak gyökerében érhető el.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Kimenet</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Oldalak</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>A cél oldalai</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Elutasított oldalak</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Utófeldolgozás</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Előnézet</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Előnézet és közzététel</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name előnézete és közzététele</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Az összeállítás előnézete</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Haladás</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Nyilvános cím</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Nyilvános kulcs</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Közzététel</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Egy webhely statikus másolatának közzététele a GitHub Pages szolgáltatáson vagy bármely git-tárhelyen: állítsa össze, ellenőrizze a változásokat, tegye közzé, és szükség esetén térjen vissza egy korábbi közzétételre.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Közzététel, amelyre visszatér</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Közzétételek</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Feltöltés</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Az útmutató elolvasása</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Bejegyzés</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Elutasítva</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatív</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Újratöltés</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Eltávolítva</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>A kulcs cseréje: a régi nem működik tovább</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Jelentés</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Az összeállítás jelentése</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Tároló</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Áttekintés</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Az áttekintés minden beállítást ellenőriz, és megmutatja a kiírandó sorokat. Még semmi sincs mentve.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Visszavonás</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Visszavonás</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Mentés</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Ütemezés</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Keresőoldal</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Szekcióazonosítók, vesszővel elválasztva.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Átirányítás az élő webhelyre</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Beállítás</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name beállításai</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Rendszer &gt; Titkos értékek</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Listákban jelenik meg, például „Nyilvános webhely a GitHub Pages szolgáltatáson”.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>A GitHub App segítségével történő bejelentkezés a GitHub-integrációval érkezik.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Webhely</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Közzéteendő webhely</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Méret</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Méret és korlátok</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Az összeállítás mérete</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Elavult oldalak</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Indítva</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Indította: %user, időpont: %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statikus közzététel</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>A statikus közzététel ki van kapcsolva</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>A statikus közzététel ki van kapcsolva.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>A statikus közzététel ki van kapcsolva. Előbb kapcsolja be itt: Rendszer &gt; Statikus közzététel.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>A statikus közzététel be van kapcsolva.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%step. lépés (összesen %total)</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Lépések</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Tisztítás</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Kikapcsolás</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Bekapcsolás</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>A statikus közzététel bekapcsolása</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Címke</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Címkék</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Cél</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Célok létrehozhatók és módosíthatók, de amíg nincs bekapcsolva, semmi sem kerül összeállításra vagy közzétételre.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Megmondja a keresőmotoroknak, mit olvassanak.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Az összeállítást nem sikerült elvetni: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Az összeállítás megegyezik az utolsó közzététellel: nincs mit közzétenni.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Az összeállítás elvetve: a mappa ismét az utolsó közzétételt tartalmazza.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Az alapértelmezések a legtöbb webhelynek megfelelnek.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>A mappa egy még közzé nem tett összeállítást tartalmaz; egy új összeállítás felváltja.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>A feladatok mappája nem írható: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>A feladatot nem sikerült előkészíteni: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>A feladatot nem sikerült elindítani.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>A feladat befejeződött. A jelentés betöltése folyamatban.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>A feladathoz bejelentkezett felhasználó szükséges.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>A feladat elindult, de nem jelentette a folyamatazonosítóját. Ellenőrizze: %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>A kulcs</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>A legnagyobb fájl: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>A kiírandó sorok</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Az oldalak listája a keresőmotorok számára; a nyilvános cím szükséges hozzá.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Az oldalak letöltése úgy történik, ahogy egy be nem jelentkezett látogató látja őket. Adminisztrációs és szerkesztői siteaccessek soha nem kerülnek felajánlásra.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>A haladás nem követhető. Töltse újra az oldalt, hogy lássa, hol tart a feladat.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>A kulcs nyilvános fele:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Az ág gyökere</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>A titkos értékek tárolója még nincs beállítva (a ./console exp:upgrade --apply létrehozza a tábláját), így kulcs nem tárolható.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>A szerver magától jelentkezik be (saját SSH-kulcsával vagy hitelesítési segédprogrammal), vagy a tároló ezen a szerveren van.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>A beállítást nem sikerült kiírni: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>A beállítások érvényesek. A következő sorok lesznek kiírva:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>A beállításfájl nem olvasható: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>A webhely visszatér annak a közzétételnek a fájljaihoz; egy még közzé nem tett összeállítást előbb közzé kell tenni vagy el kell vetni.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>A webhely saját oldala a nem létező címekhez.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>A célt nem sikerült menteni: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>A cél még nem ezzel a kulccsal jelentkezik be: válassza az „Ehhez a célhoz készült telepítési kulcs” lehetőséget a beállításaiban.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>A célok nem olvashatók be: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Még nincs ellenőrzendő összeállítás.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ennek a telepítésnek nincs nyilvános siteaccesse. Adminisztrációs és szerkesztői siteaccessek soha nem kerülnek közzétételre.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Ez az oldal követi a feladat haladását; az oldal bezárásakor a feladat a háttérben folytatódik.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ennek a célnak még nincs telepítési kulcsa.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Ez a cél itt még nem lett összeállítva.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ennek a célnak van ilyen.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Elveti ezt az összeállítást: a mappa ismét az utolsó közzétételt tartalmazza. Az élő webhely nem változik.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Előbb jelölje be az „Ellenőriztem a változásokat” lehetőséget.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Időtartam</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Eseményindítók</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Írja be újra a címke nevét</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Változatlan</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Mi</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Mi változik</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Mi az egyes fájlok szerepe; mindig kiírásra kerül.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Mit végzett a feladat, és annak bejegyzése. Az itt indított feladat az oldal bezárásakor a háttérben folytatódik.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Amit a feladat hibaként kiírt</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Amit az oldalak megneveznek, valamint a közzétett tartalom minden képe</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Mikor</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Ha egy közzététel sikertelen</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Ha egy közzététel sikeres</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Amikor tartalom kerül közzétételre</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Hová mutassanak a hivatkozások arra, ami nincs a másolatban (keresés, bejelentkezés).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Honnan szolgálják ki a statikus másolatot.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Melyik webhely kerül közzétételre, és mi a cél neve.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Bármely útvonal alatt működik. Ez az alapértelmezés.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Mindig kiírásra kerül, ha egyéni domain van beállítva.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Igen</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Itt és a konzolon mindig kézzel is összeállíthat és közzétehet.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>csak egy név; az érték a Rendszer &gt; Titkos értékek alatt marad</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path alatt</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>jelentés nélkül ért véget</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>kiegészítő</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>sikertelen</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fájl</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, vagy main a docs mappával.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-tárhely</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (tokennel) vagy git@github.com:owner/repo.git (telepítési kulccsal); soha ne legyen benne jelszó vagy token.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, az oldaltérképhez és a kanonikus hivatkozásokhoz.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>kép</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>soha</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nem</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>nincs távoli tároló</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>nincs: a véglegesítések a mappában maradnak</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>nincs: semmi sem változott</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>nincs feltöltve</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>semmi sem változott</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>oldal</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>sikeres</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>A proc_open le van tiltva, így itt nem indítható feladat. Használja a szerveren a ./console exp:static:build parancsot.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>közzététel</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>közzétéve</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>feltöltésre vár</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>feltöltve</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>elutasítva</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatív</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>visszavonás</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>visszagörgetve</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>fut</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>csak a mappa</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: a CNAME fájlba kerül. Irányítsa a domain DNS-ét a tárhelyre a tárhely leírása szerint; a HTTPS elindulása eltarthat egy ideig.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>igen, még nincs közzétéve</translation>
     </message>
 </context>
 </TS>

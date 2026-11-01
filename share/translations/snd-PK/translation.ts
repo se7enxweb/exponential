@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>انسٽاليشن ۾ تبديليون فائلن طور محفوظ: انهن جي حالت، رنز، هلائڻ ۽ واپس ڪرڻ.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>سائيٽ جي اسٽيٽڪ ڪاپي GitHub Pages يا ڪنهن به git هوسٽ تي شايع ڪريو.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>اسٽيٽڪ اشاعت</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22157,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API جي محفوظ ٿيل ڪوئرين جا جواب، ۽ ان جي اسڪيما جا مواد ڪلاس.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>اسٽيٽڪ ڪاپي GitHub Pages يا ڪنهن به git هوسٽ تي شايع ڪريو</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>اسٽيٽڪ اشاعت</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>اسٽيٽڪ ڪيش هن سرور تان صفحا پيش ڪري ٿو. سائيٽ جي اسٽيٽڪ ڪاپي ڪنهن ٻئي هنڌ، GitHub Pages يا ڪنهن به git هوسٽ تي شايع ڪرڻ لاءِ، اسٽيٽڪ اشاعت استعمال ڪريو.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76226,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>انسٽاليشن ۾ تبديليون فائلن طور محفوظ: انهن جي حالت، رنز، هلائڻ ۽ واپس ڪرڻ.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>سائيٽ جي اسٽيٽڪ ڪاپي GitHub Pages يا ڪنهن به git هوسٽ تي شايع ڪريو.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>اسٽيٽڪ اشاعت</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80581,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>رن شروع نه ٿي سگهي.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>سڀ ٽارگيٽ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>آخري اشاعت</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>پنهنجي سائيٽ جي مفت اسٽيٽڪ ڪاپي GitHub Pages تي شايع ڪريو:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>پراڻا صفحا</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>اسٽيٽڪ اشاعت</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>اسٽيٽڪ اشاعت بند آهي.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ٽارگيٽ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ٽارگيٽ پڙهي نه سگهيا: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>هڪ ڪم هلي رهيو آهي</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>جانچ لاءِ بلڊ</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>هي لڪايو</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ٽارگيٽ ٺاهيو</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ڪڏهن به نه</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>سبق پڙهو</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added شامل ٿيا، %changed تبديل ٿيا، %removed هٽايا ويا</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit مان %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>وڌيڪ %count فهرست ۾ ناهن.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages صفحا لکيا ويا</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path جي سائيز %size آهي، جيڪا هوسٽ پاران هڪ فائل لاءِ ڏنل اجازت کان وڌيڪ آهي.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>حد جو %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds سيڪنڊ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag اها اشاعت آهي جيڪا هن وقت سائيٽ تي آهي.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ڪم %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub پروجيڪٽ سائيٽ لاءِ /ريپوزيٽري/؛ ڪسٽم ڊومين يا يوزر سائيٽ لاءِ خالي.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. سائيٽ</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. هوسٽ</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ريپوزيٽري ۾ سائن ان</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. ريپوزيٽري</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. لنڪس ۽ بنيادي رستو</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. توهان جو پنهنجو ڊومين</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. بلڊ ۾ ڇا آهي</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. اهو ڪڏهن شايع ٿئي ٿو</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. جائزو وٺو ۽ محفوظ ڪريو</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub پروجيڪٽ سائيٽ /&lt;repository&gt;/ هيٺ هوندي آهي؛ لاڳاپيل لنڪس اتي ۽ ٻين سڀني هنڌن تي ڪم ڪن ٿيون.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>هڪ بلڊ %site جو هر صفحو ائين آڻي ٿو جيئن سائن ان نه ٿيل گهمندڙ ان کي ڏسي ٿو، لنڪس ٻيهر لکي ٿو، فائلون ڪاپي ڪري ٿو ۽ نتيجو ٽارگيٽ جي فولڊر ۾ لکي ٿو. جيستائين توهان بلڊ جانچي شايع ڪريو نه دٻايو، ڪجهه به شايع نٿو ٿئي.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>هڪ cron اظهار، مثال طور 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>ڊيپلاءِ ڪنجي ڳجهي معلومات %secret طور رکيل آهي.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>ڊيپلاءِ ڪنجي هن انسٽاليشن کي SSH ذريعي صرف هڪ ريپوزيٽري ۾ پش ڪرڻ ڏئي ٿي ۽ ٻئي ڪٿي به نه. ان جو نجي اڌ سيٽ اپ &gt; ڳجهيون معلومات ۾ رهي ٿو؛ صرف عوامي اڌ ڏيکاريو وڃي ٿو.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>هن ٽارگيٽ لاءِ ٺاهيل ڊيپلاءِ ڪنجي</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>ڊيپلاءِ ڪنجي SSH ذريعي سائن ان ٿئي ٿي: git پتو SSH پتي ۾ بدلايو (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>هڪ ڪم هلي رهيو آهي، جيڪو %user شروع ڪيو</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>هن ٽارگيٽ جو هڪ ڪم اڃا هلي رهيو آهي (%detail). ان جي ختم ٿيڻ جو انتظار ڪريو.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>هن ٽارگيٽ جو هڪ ڪم اڃا هلي رهيو آهي. ان جي ختم ٿيڻ جو انتظار ڪريو.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>صفحي /news/ کان صفحي /about-us/team ڏانهن لنڪ هيئن لکي ويندي</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>نئين ڊيپلاءِ ڪنجي ٺاهي وئي. ان جو عوامي اڌ هاڻي ريپوزيٽري ۾ شامل ڪريو.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>جنهن صفحي ۾ صفائي کان پوءِ به ڊيبگ آئوٽ پٽ، فارم ٽوڪن يا سيشن آءِ ڊي هجي، اهو ڪڏهن به شايع نٿو ٿئي.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>واپسي ماهرن لاءِ آهي: &quot;مان ڄاڻان ٿو ته هي ڇا بدلائي ٿو&quot; تي نشان لڳايو ۽ ٽيگ جو نالو ٻيهر لکو.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>سائيٽ %site تائين، هڪ فائل %file تائين ٿي سگهي ٿي، مهيني ۾ لڳ ڀڳ 100 GB ٽريفڪ سان. مفت پلان تي ريپوزيٽري عوامي هجڻ گهرجي. GitHub Pages دڪانن يا ٻين ڪمرشل ٽرانزيڪشنن لاءِ نه آهي.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ٽارگيٽ هڪ سائيٽ آهي جيڪا هڪ git ريپوزيٽري ۾ شايع ٿئي ٿي. هتي ڪجهه به بلڊ يا شايع نٿو ٿئي: محفوظ ڪريو سيٽنگون settings/override/staticcache.ini.append.php ۾ لکي ٿو.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ٽارگيٽ هڪ سائيٽ آهي جيڪا هڪ هنڌ شايع ٿئي ٿي، مثال طور GitHub Pages تي توهان جي عوامي سائيٽ.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>سيٽ اپ &gt; ڳجهيون معلومات مان هڪ ٽوڪن</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ريپوزيٽري جو هڪ ورڪ فلو ان کي شايع ڪري ٿو.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>هي عوامي ڪنجي لکڻ جي اجازت سان ريپوزيٽري ۾ شامل ڪريو. GitHub: Settings &gt; Deploy keys &gt; Add deploy key، Allow write access تي نشان لڳايو.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>شامل ٿيل</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>ٻيو git هوسٽ</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>ٻيو پروسيس هن ٽارگيٽ تي ڪم ڪري رهيو آهي: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>واپس</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>بنيادي رستو</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>اڳ</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>بنيادي رستي هيٺ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>برانچ</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>ٽٽل لنڪس</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>بلڊ ۾ ٽٽل لنڪس</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>بلڊ</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>بلڊ %id، %user طرفان</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>بلڊ %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>هاڻي بلڊ ڪريو</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>جانچ لاءِ بلڊ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>طرفان</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>هٿ سان، هتي</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>منسوخ ڪريو</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>تبديل ڪريو</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>تبديل ٿيل</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>تبديليون</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>پهريان جانچيو</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>اهي سيٽنگون جانچيو</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>جانچيو ته بلڊ ڇا بدلائي ٿو، ان کي ڏسو، پوءِ ان کي شايع ڪريو يا ڦٽو ڪريو.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>اها اشاعت چونڊيو جنهن ڏانهن واپس وڃڻو آهي.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>ايندڙ رليز ۾ ايندو.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ڪمٽ</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>ڪمٽس</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>بلڊ کي ڪمٽ ڪري ٿو، ٽيگ ڪري ٿو ۽ %remote ڏانهن پش ڪري ٿو. پش ڪڏهن به زوري نٿو ڪيو وڃي؛ توهان بعد ۾ ڪنهن به اشاعت ڏانهن واپس وڃي سگهو ٿا.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>اڳوڻي فولڊر سان ڀيٽ: %added شامل ٿيا، %changed تبديل ٿيا، %removed هٽايا ويا، %unchanged اڻ بدليل.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>آخري اشاعت سان ڀيٽ.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>سند</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>ڪسٽم ڊومين</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>ڊيبگ آئوٽ پٽ، فارم ٽوڪن، سيشن آءِ ڊيز ۽ nonce هميشه ڪڍيا وڃن ٿا.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>ڊيپلاءِ ڪنجي</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name جي ڊيپلاءِ ڪنجي</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ڦٽو ڪريو</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>بلڊ ڦٽو ڪريو</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ڊومين</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>خالي: سائيٽ جو پتو. ٻي صورت ۾ ساڳي سائيٽ جو اندروني پتو.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ختم ٿيو</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>هر لنڪ بنيادي رستي سان شروع ٿئي ٿي.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>هر اشاعت static/%id/&lt;n&gt; ٽيگ سان هڪ ڪمٽ آهي. واپس وڃڻ اڳوڻي اشاعت جي فائلن سان نئون ڪمٽ ٺاهي ٿو: تاريخ رهي ٿي، ڪو ٽيگ نٿو هلي ۽ ڪجهه به زوري نٿو ڪيو وڃي.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>اضافي فائلون</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>صفحا هتان آڻيو</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>فائل</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>فائلون</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>گم ٿيل فائلون</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>فائلون، سائيٽ</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>فائلون جيڪي گڏ نه ٿي سگهيون</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>فنگرپرنٽ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>فولڊر</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH پتي لاءِ. ڪنجي محفوظ ڪرڻ کان پوءِ ٺهي ٿي؛ توهان ان جو عوامي اڌ ريپوزيٽري ۾ شامل ڪريو ٿا.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// پتي لاءِ. GitHub: هڪ fine-grained ٽوڪن جنهن کي ريپوزيٽري تي Contents پڙهڻ ۽ لکڻ جي اجازت هجي.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ماهرن لاءِ. عوامي سائيٽ پش مڪمل ٿيندي ئي بدلجي ٿي.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>فارم</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub ريپوزيٽري مان مفت هوسٽنگ.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>برانچ مان</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>git پتو</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub ايپ</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site جي سائيٽ ۽ %file جي فائل جي اجازت ڏئي ٿو.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages جون حدون</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages فائلون جيئن آهن تيئن شايع ڪري ٿو (_ سان شروع ٿيندڙ فائلن لاءِ ضروري).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub برانچ کي ائين پيش ڪري ٿو جيئن اها پش ڪئي وئي. ڊفالٽ.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab، Gitea، توهان جو پنهنجو سرور: ڪا به git ريپوزيٽري.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>اڳوڻي اشاعت ڏانهن واپس وڃو</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>مدد</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>وزرڊ سان مدد</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>انهن کي لڪايو</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تاريخ</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name جي تاريخ</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>هوسٽ</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages بلڊ ڪيئن وصول ڪري ٿو</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>مون تبديليون جانچي ورتيون آهن</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>مان ڄاڻان ٿو ته هي ڇا بدلائي ٿو</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>آءِ ڊي</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>اهو بند آهي: جيستائين اهو آن نه ٿئي، ڪجهه به بلڊ نٿو ٿي سگهي.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>اهو پس منظر ۾ %user طور هلي ٿو؛ توهان هي صفحو بند ڪري سگهو ٿا.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ڪم %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>ڳجهي معلومات %secret طور رکيل.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>قسم</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>آخري اشاعت</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>اهي صفحا ڇڏي ڏيو</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>اهي سيڪشن ڇڏي ڏيو</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>لنڪس</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>ٻيهر لکيل لنڪس</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>لائيو سائيٽ</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>بلڊ ڏسو</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>ننڍا اکر، انگ، _ ۽ -، مثال طور github-public. اهو فولڊر ۽ ٽيگن (static/&lt;id&gt;/&lt;n&gt;) جو نالو رکي ٿو ۽ بعد ۾ بدلائي نٿو سگهجي.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>نئين ڪنجي ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ٽارگيٽ ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ڪنجي ٺاهيو</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>پهريان هوسٽ تي ريپوزيٽري ٺاهيو؛ خالي به ٺيڪ آهي.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>مينيفيسٽ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>پيغام</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>اڪثر صفحا</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نالو</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>سيٽ اپ &gt; ڳجهيون معلومات ۾ ٽوڪن جو نالو</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>نئون ٽارگيٽ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>اڳيون</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>اڃا ڪو ڪمٽ ناهي.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>ڪا ڪنجي نه ٺهي: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ڪمانڊ لائن لاءِ php بائنري نه ملي. migration.ini [AdminSettings] PhpCliPath ۾ ان جو مڪمل رستو سيٽ ڪريو.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>اڃا ڪو ٽيگ ناهي.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>اڃا ڪو ٽارگيٽ ناهي.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>ڪجهه به نه</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>بلڊ ۾ ناهي.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>اڃا ڪجهه به شايع نه ٿيو آهي.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>اڃا ڪجهه به شايع نه ٿيو آهي: هر فائل نئين آهي.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>اطلاع ڏيو</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>شيڊول تي</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>ڪنسول تي</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>سرور تي: ./console exp:static:serve %id ان کي ساڳئي طريقي سان پيش ڪري ٿو.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>هر لائن ۾ هڪ رستو، * ڪنهن به حصي سان ملي ٿو: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ٽارگيٽ سان صرف نالو محفوظ ٿئي ٿو؛ ٽوڪن يا ڪنجي پاڻ سيٽ اپ &gt; ڳجهيون معلومات ۾ رهي ٿي ۽ ڪڏهن به لاگ ۾ ظاهر نٿي ٿئي.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>صرف اهو جنهن جو صفحا نالو وٺن ٿا</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>صرف ٽوڪن سان. env:NAME ان جي بدران سرور جو هڪ ماحولياتي متغير پڙهي ٿو.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>پريويو کوليو</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>بلڊ کي ائين کولي ٿو جيئن هوسٽ ان کي پيش ڪندو، ٽارگيٽ جي فولڊر مان. لنڪ توهان لاءِ هڪ ڪلاڪ ڪم ڪري ٿي.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>اختياري. خالي: جيڪو شايع ٿيو هو.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>اختياري. ڊومين سان سائيٽ ان جي روٽ تي پيش ٿئي ٿي.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>آئوٽ پٽ</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>صفحا</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ٽارگيٽ جا صفحا</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>رد ٿيل صفحا</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>پوسٽ پروسيسنگ</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>پريويو</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>پريويو ۽ اشاعت</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name جو پريويو ۽ اشاعت</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>بلڊ جو پريويو</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پيش رفت</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>عوامي پتو</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>عوامي ڪنجي</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>شايع ڪريو</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>سائيٽ جي اسٽيٽڪ ڪاپي GitHub Pages يا ڪنهن به git هوسٽ تي شايع ڪريو: ان کي بلڊ ڪريو، تبديليون جانچيو، شايع ڪريو، ۽ ضرورت پوڻ تي اڳوڻي اشاعت ڏانهن واپس وڃو.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>واپس وڃڻ لاءِ اشاعت</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>اشاعتون</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>پش</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>سبق پڙهو</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>رڪارڊ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رد ٿيل</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>لاڳاپيل</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ٻيهر لوڊ ڪريو</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>هٽايل</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>ڪنجي بدلايو: پراڻي ڪم ڪرڻ بند ڪري ڇڏيندي</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>رپورٽ</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>بلڊ جي رپورٽ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ريپوزيٽري</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>جائزو</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>جائزو هر سيٽنگ جانچي ٿو ۽ اهي لائينون ڏيکاري ٿو جيڪي لکيون وينديون. اڃا ڪجهه به محفوظ ناهي ٿيو.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>واپس ڪريو</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>واپسي</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>محفوظ ڪريو</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>شيڊول</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ڳولا جو صفحو</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>سيڪشن آءِ ڊيز، ڪاما سان الڳ ٿيل.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>انهن کي لائيو سائيٽ ڏانهن موڪليو</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>سيٽنگ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>سيٽنگون</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name جون سيٽنگون</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>سيٽ اپ</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>سيٽ اپ &gt; ڳجهيون معلومات</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>فهرستن ۾ ڏيکاريو ويندو آهي، مثال طور &quot;GitHub Pages تي عوامي سائيٽ&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub ايپ سان سائن ان GitHub انٽيگريشن سان ايندو.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>سائيٽ</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>شايع ڪرڻ لاءِ سائيٽ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>سائيز</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>سائيز ۽ حدون</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>بلڊ جي سائيز</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>پراڻا صفحا</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>شروع ٿيو</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user %time تي شروع ڪيو.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>اسٽيٽڪ اشاعت</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>اسٽيٽڪ اشاعت بند آهي</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>اسٽيٽڪ اشاعت بند آهي.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>اسٽيٽڪ اشاعت بند آهي. پهريان ان کي سيٽ اپ &gt; اسٽيٽڪ اشاعت ۾ آن ڪريو.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>اسٽيٽڪ اشاعت آن آهي.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%total مان قدم %step</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>قدم</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>صفائي</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>بند ڪريو</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>آن ڪريو</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>اسٽيٽڪ اشاعت آن ڪريو</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ٽيگ</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ٽيگز</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ٽارگيٽ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ٽارگيٽ ٺاهي ۽ بدلائي سگهجن ٿا، پر جيستائين اهو آن نه ٿئي، ڪجهه به بلڊ يا شايع نٿو ٿئي.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>سرچ انجڻن کي ٻڌائي ٿو ته ڇا پڙهڻ گهرجي.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>بلڊ ڦٽو نه ٿي سگهيو: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>بلڊ آخري اشاعت جهڙو آهي: شايع ڪرڻ لاءِ ڪجهه به ناهي.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>بلڊ ڦٽو ڪيو ويو: فولڊر ۾ ٻيهر آخري اشاعت آهي.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>ڊفالٽ اڪثر سائيٽن لاءِ مناسب آهن.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>فولڊر ۾ هڪ بلڊ آهي جيڪو اڃا شايع ناهي ٿيو؛ نئون بلڊ ان جي جاءِ وٺي ٿو.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>ڪمن جي فولڊر ۾ لکي نٿو سگهجي: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ڪم تيار نه ٿي سگهيو: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ڪم شروع نه ٿي سگهيو.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ڪم ختم ٿي ويو. ان جي رپورٽ لوڊ ٿي رهي آهي.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ڪم کي سائن ان ٿيل يوزر گهرجي.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ڪم شروع ٿيو پر ان پنهنجي پروسيس آءِ ڊي نه ٻڌائي. %detail جانچيو.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ڪنجي</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>سڀ کان وڏي فائل: %path، %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>اهي لائينون جيڪي لکيون وينديون</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>سرچ انجڻن لاءِ صفحن جي فهرست؛ عوامي پتو گهرجي.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>صفحا ائين آندا وڃن ٿا جيئن سائن ان نه ٿيل گهمندڙ انهن کي ڏسي ٿو. انتظامي ۽ ايڊيٽنگ siteaccess ڪڏهن به پيش نه ڪيا ويندا.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>پيش رفت جي پيروي نه ٿي سگهي. ڪم ڪيئن هلي رهيو آهي ڏسڻ لاءِ صفحو ٻيهر لوڊ ڪريو.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>ڪنجي جو عوامي اڌ:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>برانچ جو روٽ</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>ڳجهي معلومات جو اسٽور اڃا سيٽ ناهي (./console exp:upgrade --apply ان جو ٽيبل ٺاهي ٿو)، تنهن ڪري ڪا ڪنجي رکي نٿي سگهجي.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>سرور پاڻ سائن ان ٿئي ٿو (پنهنجي SSH ڪنجي يا ڪريڊينشل هيلپر سان)، يا ريپوزيٽري هن سرور تي آهي.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>سيٽنگ لکي نه سگهي: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>سيٽنگون صحيح آهن. اهي لائينون لکيون وينديون:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>سيٽنگن جي فائل پڙهي نٿي سگهجي: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>سائيٽ ان اشاعت جي فائلن ڏانهن واپس وڃي ٿي؛ اڃا شايع نه ٿيل بلڊ کي پهريان شايع يا ڦٽو ڪرڻو پوندو.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>اڻ موجود پتن لاءِ سائيٽ جو پنهنجو صفحو.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ٽارگيٽ محفوظ نه ٿي سگهيو: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ٽارگيٽ اڃا هن ڪنجي سان سائن ان نٿو ٿئي: ان جي سيٽنگن ۾ &quot;هن ٽارگيٽ لاءِ ٺاهيل ڊيپلاءِ ڪنجي&quot; چونڊيو.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ٽارگيٽ پڙهي نه سگهيا: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>اڃا جانچ لاءِ ڪو بلڊ ناهي.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>هن انسٽاليشن ۾ ڪو فرنٽ siteaccess ناهي. انتظامي ۽ ايڊيٽنگ siteaccess ڪڏهن به شايع نه ٿيندا.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>هي صفحو ڪم جي پيروي ڪري ٿو جيئن اهو هلي ٿو؛ صفحو بند ٿيڻ تي اهو پس منظر ۾ جاري رهي ٿو.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>هن ٽارگيٽ وٽ اڃا ڪا ڊيپلاءِ ڪنجي ناهي.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>هي ٽارگيٽ اڃا هتي بلڊ ناهي ٿيو.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>هن ٽارگيٽ وٽ هڪ آهي.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>هن بلڊ کي ڦٽو ڪري ٿو: فولڊر ۾ ٻيهر آخري اشاعت هوندي. لائيو سائيٽ نٿي بدلجي.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>پهريان &quot;مون تبديليون جانچي ورتيون آهن&quot; تي نشان لڳايو.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>وقت</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ٽرگرز</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ٽيگ جو نالو ٻيهر لکو</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>اڻ بدليل</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ويب هڪ</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ڇا</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ڇا بدلجي ٿو</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>هر فائل ڇا آهي؛ هميشه لکيو وڃي ٿو.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ڪم ڇا ڪيو ۽ ان جو رڪارڊ. هتي شروع ٿيل ڪم هي صفحو بند ٿيڻ تي پس منظر ۾ جاري رهي ٿو.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ڪم غلطين طور ڇا ڇپيو</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>جنهن جو صفحا نالو وٺن ٿا، ۽ شايع ٿيل مواد جي هر تصوير</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ڪڏهن</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>جڏهن اشاعت ناڪام ٿئي</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>جڏهن اشاعت ڪامياب ٿئي</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>جڏهن مواد شايع ٿئي</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>انهن شين جون لنڪس ڪيڏانهن وڃن جيڪي ڪاپي ۾ ناهن (ڳولا، لاگ ان).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>اسٽيٽڪ ڪاپي ڪٿان پيش ٿئي ٿي.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>ڪهڙي سائيٽ شايع ٿئي ٿي، ۽ ٽارگيٽ جو نالو ڇا آهي.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ڪنهن به رستي هيٺ ڪم ڪري ٿو. ڊفالٽ.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>جڏهن به ڪسٽم ڊومين سيٽ ٿئي، لکيو وڃي ٿو.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ها</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>توهان هميشه هتي ۽ ڪنسول تي هٿ سان بلڊ ۽ شايع ڪري سگهو ٿا.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>صرف نالو؛ قدر سيٽ اپ &gt; ڳجهيون معلومات ۾ رهي ٿو</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path هيٺ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>رپورٽ کان سواءِ ختم ٿيو</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>اضافي</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناڪام</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>فائل</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages، يا main فولڊر docs سان.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git هوسٽ</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ٽوڪن سان) يا git@github.com:owner/repo.git (ڊيپلاءِ ڪنجي سان)؛ ان ۾ ڪڏهن به پاسورڊ يا ٽوڪن نه.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/، سائيٽ ميپ ۽ ڪينونيڪل لنڪس لاءِ.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>تصوير</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ڪڏهن به نه</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>ڪو ريموٽ ناهي</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ڪجهه به نه: ڪمٽس فولڊر ۾ رهن ٿا</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ڪجهه به نه: ڪجهه به نه بدليو</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>پش نه ٿيو</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ڪجهه به نه بدليو</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>صفحو</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ڪامياب</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open بند آهي، تنهن ڪري هتي ڪم شروع نٿو ٿي سگهي. سرور تي ./console exp:static:build استعمال ڪريو.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>اشاعت</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>شايع ٿيل</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>پش باقي</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>پش ٿيل</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>رد ٿيل</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>لاڳاپيل</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>واپسي</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>واپس ٿيل</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>هلي رهيو</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>صرف فولڊر</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: فائل CNAME ۾ لکيو ويندو. ڊومين جو DNS هوسٽ ڏانهن ائين اشارو ڪريو جيئن اهو وضاحت ڪري ٿو؛ HTTPS شروع ٿيڻ ۾ ڪجهه وقت لڳي سگهي ٿو.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ها، اڃا شايع ناهي ٿيو</translation>
     </message>
 </context>
 </TS>

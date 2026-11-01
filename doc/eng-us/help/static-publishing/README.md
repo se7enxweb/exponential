@@ -24,7 +24,7 @@ publish. Every publish is kept, so you can always go back to an earlier one.
 
 1. [Start here](#start-here)
 2. [The steps](#the-steps)
-3. [The pages of Setup > Static publishing](#the-pages-of-setup-static-publishing)
+3. [The pages of Setup > Static publishing](#the-pages-of-setup--static-publishing)
 4. [More](#more)
 
 ## Start here

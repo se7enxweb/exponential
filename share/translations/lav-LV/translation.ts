@@ -15089,6 +15089,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Instalācijas izmaiņas, kas glabātas kā faili: to stāvoklis, izpildes, izpilde un atsaukšana.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publicējiet statisku vietnes kopiju vietnē GitHub Pages vai jebkurā git resursdatorā.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiskā publicēšana</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22096,18 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API saglabāto vaicājumu atbildes un tā shēmas satura klases.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publicējiet statisku kopiju vietnē GitHub Pages vai jebkurā git resursdatorā</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiskā publicēšana</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Statiskā kešatmiņa pasniedz lapas no šī servera. Lai publicētu statisku vietnes kopiju citur, vietnē GitHub Pages vai jebkurā git resursdatorā, izmantojiet statisko publicēšanu.</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76165,14 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Instalācijas izmaiņas, kas glabātas kā faili: to stāvoklis, izpildes, izpilde un atsaukšana.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publicējiet statisku vietnes kopiju vietnē GitHub Pages vai jebkurā git resursdatorā.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiskā publicēšana</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80583,6 +80611,1364 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Izpildi neizdevās sākt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Visi mērķi</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Pēdējā publikācija</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publicējiet bezmaksas statisku vietnes kopiju vietnē GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Novecojušās lapas</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiskā publicēšana</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statiskā publicēšana ir izslēgta.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Mērķis</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Mērķus neizdevās nolasīt: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>notiek uzdevums</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>būvējums jāpārbauda</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>slēpt šo</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>izveidot mērķi</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nekad</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>lasīt pamācību</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added pievienoti, %changed mainīti, %removed noņemti</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes no %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Vēl %count nav uzskaitīti.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Uzrakstītas lapas: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ir %size – vairāk, nekā resursdators atļauj vienam failam.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % no ierobežojuma</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ir publikācija, kas vietnei ir pašlaik.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: uzdevums %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repozitorijs/ GitHub projekta vietnei; tukšs pielāgotam domēnam vai lietotāja vietnei.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Vietne</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Resursdators</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Pieteikšanās repozitorijā</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Repozitorijs</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Saites un bāzes ceļš</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Jūsu domēns</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Ko satur būvējums</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Kad tiek publicēts</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Pārskatīšana un saglabāšana</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub projekta vietne atrodas zem /&lt;repository&gt;/; relatīvās saites darbojas tur un jebkur citur.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Būvējums ielādē katru %site lapu tā, kā to redz nepieteicies apmeklētājs, pārraksta saites, kopē failus un raksta rezultātu mērķa mapē. Nekas netiek publicēts, kamēr nepārbaudāt būvējumu un nenospiežat “Publicēt”.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron izteiksme, piemēram, 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Izvietošanas atslēga tiek glabāta kā noslēpums %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Izvietošanas atslēga ļauj šai instalācijai nosūtīt (push) uz vienu repozitoriju pa SSH un nekur citur. Tās privātā daļa paliek sadaļā Iestatīšana &gt; Noslēpumi; tiek rādīta tikai publiskā daļa.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Šim mērķim izveidota izvietošanas atslēga</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Izvietošanas atslēga piesakās pa SSH: nomainiet git adresi uz SSH adresi (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Notiek uzdevums, ko sāka %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Šī mērķa uzdevums joprojām notiek (%detail). Uzgaidiet, līdz tas beidzas.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Šī mērķa uzdevums joprojām notiek. Uzgaidiet, līdz tas beidzas.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Saite no lapas /news/ uz lapu /about-us/team tiks uzrakstīta šādi:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Tika izveidota jauna izvietošanas atslēga. Tagad pievienojiet tās publisko daļu repozitorijam.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Lapa, kurā pēc attīrīšanas joprojām ir atkļūdošanas izvade, veidlapas marķieris vai sesijas ID, nekad netiek publicēta.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Atsaukšana ir paredzēta ekspertiem: atzīmējiet “Es zinu, ko tas maina” un vēlreiz ierakstiet birkas nosaukumu.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Vietne var būt līdz %site, viens fails līdz %file, ar aptuveni 100 GB datplūsmas mēnesī. Bezmaksas plānā repozitorijam jābūt publiskam. GitHub Pages nav paredzēts veikaliem vai citiem komercdarījumiem.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Mērķis ir viena vietne, kas tiek publicēta vienā git repozitorijā. Šeit nekas netiek būvēts vai publicēts: “Saglabāt” ieraksta iestatījumus failā settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Mērķis ir viena vietne, kas tiek publicēta vienā vietā, piemēram, jūsu publiskā vietne GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Marķieris no sadaļas Iestatīšana &gt; Noslēpumi</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>To publicē repozitorija darbplūsma.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Pievienojiet šo publisko atslēgu repozitorijam ar rakstīšanas tiesībām. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, atzīmējiet Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Pievienots</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Cits git resursdators</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Ar šo mērķi strādā cits process: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Atpakaļ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Bāzes ceļš</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Pirms</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Zem bāzes ceļa</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Zars</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Bojātas saites</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Bojātas saites būvējumā</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Būvējums</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Būvējums %id, autors %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Būvēt %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Būvēt tagad</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Būvējums pārbaudei</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kas</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Manuāli, šeit</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atcelt</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Mainīt</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Mainīts</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Izmaiņas</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Vispirms pārbaudiet</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Pārbaudiet šos iestatījumus</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Pārbaudiet, ko būvējums maina, apskatiet to un tad publicējiet vai izmetiet.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Izvēlieties publikāciju, uz kuru atgriezties.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Būs pieejams kādā nākamajā laidienā.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Iesūtījums</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Iesūtījumi</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Iesūta (commit) būvējumu, atzīmē to ar birku un nosūta (push) uz %remote. Nosūtīšana nekad netiek veikta piespiedu kārtā; vēlāk varat atgriezties pie jebkuras publikācijas.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Salīdzinot ar iepriekšējo mapi: %added pievienoti, %changed mainīti, %removed noņemti, %unchanged nemainīti.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Salīdzinot ar pēdējo publikāciju.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Akreditācijas dati</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Pielāgots domēns</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Atkļūdošanas izvade, veidlapu marķieri, sesiju ID un vienreizējie kodi (nonce) vienmēr tiek izņemti.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Izvietošanas atslēga</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name izvietošanas atslēga</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Izmest</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Izmest būvējumu</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domēns</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Tukšs: vietnes adrese. Citādi – tās pašas vietnes iekšējā adrese.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Beidzās</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Katra saite sākas ar bāzes ceļu.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Katra publikācija ir iesūtījums (commit) ar birku static/%id/&lt;n&gt;. Atgriešanās izveido jaunu iesūtījumu ar kādas agrākas publikācijas failiem: vēsture saglabājas, neviena birka netiek pārvietota un nekas netiek veikts piespiedu kārtā.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Papildfaili</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Ielādēt lapas no</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fails</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Faili</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Trūkst failu</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Faili no</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Faili, kurus neizdevās savākt</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Nospiedums</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Mape</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH adresei. Atslēga tiek izveidota pēc saglabāšanas; tās publisko daļu jūs pievienojat repozitorijam.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// adresei. GitHub: detalizēts (fine-grained) marķieris ar Contents lasīšanas un rakstīšanas tiesībām repozitorijā.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Ekspertiem. Publiskā vietne mainās, tiklīdz nosūtīšana ir pabeigta.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Veidlapas</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Bezmaksas mitināšana no GitHub repozitorija.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>No zara</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git adrese</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages atļauj vietni līdz %site un failu līdz %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ierobežojumi</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publicē failus tādus, kādi tie ir (nepieciešams failiem, kas sākas ar _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub pasniedz zaru tādu, kāds tas ir nosūtīts. Noklusējums.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, jūsu pašu serveris: jebkurš git repozitorijs.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Atgriezties pie agrākas publikācijas</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Palīdzība</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Palīdzība par vedni</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Slēpt tās</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Vēsture</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name vēsture</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Resursdators</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Kā GitHub Pages saņem būvējumu</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Izmaiņas ir pārbaudītas</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Es zinu, ko tas maina</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Tā ir izslēgta: neko nevar būvēt, kamēr tā nav ieslēgta.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Tas darbojas fonā kā %user; šo lapu varat aizvērt.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Uzdevums %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Glabāts kā noslēpums %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Veids</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Pēdējā publikācija</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Izlaist šīs lapas</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Izlaist šīs sadaļas</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Saites</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Pārrakstītās saites</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Tiešsaistes vietne</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Apskatīt būvējumu</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Mazie burti, cipari, _ un -, piemēram, github-public. Tas nosauc mapi un birkas (static/&lt;id&gt;/&lt;n&gt;) un vēlāk to nevar mainīt.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Izveidot jaunu atslēgu</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Izveidot mērķi</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Izveidot atslēgu</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Vispirms izveidojiet repozitoriju resursdatorā; derēs arī tukšs.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifests</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ziņojums</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Lielākā daļa lapu</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Marķiera nosaukums sadaļā Iestatīšana &gt; Noslēpumi</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Jauns mērķis</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Tālāk</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nē</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Vēl nav neviena iesūtījuma.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Atslēga netika izveidota: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Netika atrasta php komandrindas izpildāmā programma. Iestatiet migration.ini [AdminSettings] PhpCliPath uz tās pilno ceļu.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Vēl nav nevienas birkas.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Vēl nav neviena mērķa.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nav</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nav būvējumā.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Vēl nekas nav publicēts.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Vēl nekas nav publicēts: katrs fails ir jauns.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Paziņot</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Pēc grafika</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsolē</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Serverī: ./console exp:static:serve %id to pasniedz tādā pašā veidā.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Viens ceļš katrā rindā, * atbilst jebkurai daļai: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Ar mērķi tiek glabāts tikai nosaukums; pats marķieris vai atslēga paliek sadaļā Iestatīšana &gt; Noslēpumi un nekad neparādās žurnālā.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Tikai to, ko lapas nosauc</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Tikai ar marķieri. env:NAME tā vietā nolasa servera vides mainīgo.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Atvērt priekšskatījumu</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Atver būvējumu tā, kā to pasniegs resursdators, no mērķa mapes. Saite jums darbojas vienu stundu.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Neobligāts. Tukšs: tas, kas tika publicēts.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Neobligāts. Ar domēnu vietne tiek pasniegta tā saknē.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Izvade</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Lapas</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Mērķa lapas</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Noraidītās lapas</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Pēcapstrāde</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Priekšskatījums</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Priekšskatīt un publicēt</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Priekšskatīt un publicēt %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Priekšskatīt būvējumu</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Gaita</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Publiskā adrese</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Publiskā atslēga</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publicēt</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publicējiet statisku vietnes kopiju vietnē GitHub Pages vai jebkurā git resursdatorā: būvējiet to, pārbaudiet izmaiņas, publicējiet un, ja nepieciešams, atgriezieties pie agrākas publikācijas.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publikācija, uz kuru atgriezties</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publikācijas</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Nosūtīšana</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Lasīt pamācību</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Žurnāls</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Noraidīts</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatīvas</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Pārlādēt</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Noņemts</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Aizstāt atslēgu: vecā vairs nedarbosies</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Atskaite</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Būvējuma atskaite</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitorijs</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Pārskatīšana</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Pārskatīšana pārbauda katru iestatījumu un parāda rindas, kas tiks ierakstītas. Pagaidām nekas netiek saglabāts.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Atsaukt</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Atsaukšana</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Saglabāt</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Grafiks</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Meklēšanas lapa</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Sadaļu ID, atdalīti ar komatiem.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Novirzīt uz tiešsaistes vietni</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Iestatījums</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Iestatījumi</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name iestatījumi</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Iestatīšana</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Iestatīšana &gt; Noslēpumi</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Tiek rādīts sarakstos, piemēram, “Publiskā vietne GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Pieteikšanās ar GitHub App būs pieejama kopā ar GitHub integrāciju.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Vietne</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Publicējamā vietne</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Lielums</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Lielums un ierobežojumi</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Būvējuma lielums</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Novecojušās lapas</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Sākts</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Sāka %user, %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stāvoklis</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statiskā publicēšana</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statiskā publicēšana ir izslēgta</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statiskā publicēšana ir izslēgta.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statiskā publicēšana ir izslēgta. Vispirms ieslēdziet to sadaļā Iestatīšana &gt; Statiskā publicēšana.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statiskā publicēšana ir ieslēgta.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>%step. solis no %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Soļi</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Attīrīšana</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Izslēgt</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Ieslēgt</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Ieslēgt statisko publicēšanu</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Birka</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Birkas</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Mērķis</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Mērķus var izveidot un mainīt, taču nekas netiek būvēts vai publicēts, kamēr tā nav ieslēgta.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Norāda meklētājprogrammām, ko lasīt.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Būvējumu neizdevās izmest: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Būvējums ir tāds pats kā pēdējā publikācija: nav ko publicēt.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Būvējums tika izmests: mapē atkal ir pēdējā publikācija.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Noklusējuma vērtības der lielākajai daļai vietņu.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Mapē ir vēl nepublicēts būvējums; jauns būvējums to aizstās.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Uzdevumu mapē nevar rakstīt: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Uzdevumu neizdevās sagatavot: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Uzdevumu neizdevās sākt.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Uzdevums ir beidzies. Notiek tā atskaites ielāde.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Uzdevumam nepieciešams pieteicies lietotājs.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Uzdevums tika sākts, bet neziņoja sava procesa ID. Pārbaudiet %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Atslēga</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Lielākais fails: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Rindas, kas tiks ierakstītas</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Lapu saraksts meklētājprogrammām; nepieciešama publiskā adrese.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Lapas tiek ielādētas tā, kā tās redz nepieteicies apmeklētājs. Administrēšanas un rediģēšanas vietnes piekļuves nekad netiek piedāvātas.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Gaitai neizdevās sekot. Pārlādējiet lapu, lai redzētu, kā sokas uzdevumam.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Atslēgas publiskā daļa:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Zara sakne</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Noslēpumu krātuve vēl nav iestatīta (./console exp:upgrade --apply izveido tās tabulu), tāpēc atslēgu nevar saglabāt.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Serveris piesakās pats (ar savu SSH atslēgu vai akreditācijas datu palīgu), vai arī repozitorijs atrodas šajā serverī.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Iestatījumu neizdevās ierakstīt: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Iestatījumi ir derīgi. Tiks ierakstītas šīs rindas:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Iestatījumu failu nevar nolasīt: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Vietne atgriežas pie šīs publikācijas failiem; vēl nepublicēts būvējums vispirms ir jāpublicē vai jāizmet.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Vietnes lapa adresēm, kas neeksistē.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Mērķi neizdevās saglabāt: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Mērķis vēl nepiesakās ar šo atslēgu: tā iestatījumos izvēlieties “Šim mērķim izveidota izvietošanas atslēga”.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Mērķus neizdevās nolasīt: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Vēl nav būvējuma, ko pārbaudīt.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Šai instalācijai nav publiskās vietnes piekļuves. Administrēšanas un rediģēšanas vietnes piekļuves nekad netiek publicētas.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Šī lapa seko uzdevuma gaitai; ja lapu aizver, tas turpinās fonā.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Šim mērķim vēl nav izvietošanas atslēgas.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Šis mērķis šeit vēl nav būvēts.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Šim mērķim tāda ir.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Izmet šo būvējumu: mapē atkal ir pēdējā publikācija. Tiešsaistes vietne nemainās.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Vispirms atzīmējiet “Izmaiņas ir pārbaudītas”.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Laiks</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Palaidēji</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Vēlreiz ierakstiet birkas nosaukumu</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Nemainīts</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Tīmekļa āķis</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Kas</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Kas mainās</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Kas ir katrs fails; tiek rakstīts vienmēr.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Ko uzdevums paveica, un tā žurnāls. Šeit sākts uzdevums turpinās fonā, kad šī lapa tiek aizvērta.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Ko uzdevums izvadīja kā kļūdas</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>To, ko lapas nosauc, un katru publicētā satura attēlu</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kad</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Kad publicēšana neizdodas</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Kad publicēšana izdodas</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Kad tiek publicēts saturs</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Kurp ved saites uz to, kā kopijā nav (meklēšana, pieteikšanās).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>No kurienes tiek pasniegta statiskā kopija.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Kura vietne tiek publicēta un kā sauc mērķi.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Darbojas zem jebkura ceļa. Noklusējums.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Tiek rakstīts, ja ir iestatīts pielāgots domēns.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Jā</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Šeit un konsolē vienmēr varat būvēt un publicēt manuāli.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>tikai nosaukums; vērtība paliek sadaļā Iestatīšana &gt; Noslēpumi</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>zem %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>beidzās bez atskaites</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>papildu</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>neizdevās</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fails</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages vai main ar mapi docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git resursdators</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ar marķieri) vai git@github.com:owner/repo.git (ar izvietošanas atslēgu); nekad ar paroli vai marķieri tajā.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, vietnes kartei un kanoniskajām saitēm.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>attēls</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>nekad</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nē</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>nav attālā repozitorija</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>nav: iesūtījumi paliek mapē</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>nav: nekas nemainījās</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>nav nosūtīts</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>nekas nemainījās</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>lapa</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>izdevās</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ir atspējots, tāpēc šeit nevar sākt uzdevumu. Serverī izmantojiet ./console exp:static:build.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publikācija</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publicēts</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>gaida nosūtīšanu</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>nosūtīts</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>noraidīts</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatīvas</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>atsaukšana</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>atsaukts</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>notiek</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>tikai mape</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: tiek ierakstīts failā CNAME. Novirziet domēna DNS uz resursdatoru, kā tas norāda; HTTPS ieslēgšanās var aizņemt kādu laiku.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>jā, vēl nav publicēts</translation>
     </message>
 </context>
 </TS>

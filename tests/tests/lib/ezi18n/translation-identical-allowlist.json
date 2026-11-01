@@ -25,7 +25,10 @@
         "%link_start": "replaced although the link text follows without a space"
     },
     "*": {
-        "down()": "the method a migration takes itself back with, kept as code",
+        "GitHub Pages": "product name (GitHub's hosting service)",
+        "GitHub Actions": "product name (GitHub's workflow service)",
+        "GitHub App": "product name (a kind of GitHub integration)",
+        "down()":"the method a migration takes itself back with, kept as code",
         "datatable.ini": "file name, kept as code",
         "secrets.ini": "file name, kept as code",
         "site.ini": "file name, kept as code",
@@ -158,6 +161,8 @@
         "Siteaccess": "the word the catalogue uses for this term, spelled as in English"
     },
     "cro-HR": {
+        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
+        "Webhook": "Croatian IT usage keeps the English term Webhook",
         "#level1 - #level2": "product, standard or protocol name or abbreviation",
         "#levelIndex1:#levelIndex2": "product, standard or protocol name or abbreviation",
         "%count d": "units or placeholders without words to translate",
@@ -273,6 +278,7 @@
         "Font": "spelled the same in Croatian (font, the standard word for a typeface)"
     },
     "cze-CZ": {
+        "Webhook": "Czech uses the English term Webhook",
         "#level1 - #level2": "code, unit, key name or product name",
         "#levelIndex1:#levelIndex2": "code, unit, key name or product name",
         "%count h": "code, unit, key name or product name",
@@ -416,6 +422,10 @@
         "WebDAV": "protocol name"
     },
     "dan-DK": {
+        "%target: job %id": "Danish uses the English loanword job (catalogue: Baggrundsjob)",
+        "Job %id": "Danish uses the English loanword job (catalogue: Baggrundsjob)",
+        "Build": "Danish developers use the English term build",
+        "Webhook": "Danish uses the English term Webhook",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
         "#levelIndex1:#levelIndex2": "only PDF placeholder tokens and a separator; no words to translate",
         "%count SQL": "placeholder and the acronym SQL",
@@ -660,6 +670,9 @@
         "Webhooks": "the same word in Danish"
     },
     "dut-NL": {
+        "Build": "Dutch uses the English term Build",
+        "Webhook": "Dutch uses the English term Webhook",
+        "extra": "extra is the Dutch word",
         "#level1 - #level2": "code, file or setting name",
         "#levelIndex1:#levelIndex2": "code, file or setting name",
         "%child_count item": "placeholders plus words Dutch spells the same",
@@ -1026,6 +1039,9 @@
         "Webhooks": "the same word in Dutch"
     },
     "esl-ES": {
+        "no": "no is the Spanish word for no",
+        "Extras": "Extras is the Spanish plural of extra",
+        "Webhook": "Spanish uses the English term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count AUDIT": "AUDIT is the literal log level keyword written in the log lines",
@@ -1206,6 +1222,10 @@
         "Webhooks": "the same word in Spanish (established loanword)"
     },
     "esl-MX": {
+        "Extras": "Spanish uses the same word 'Extras'",
+        "extra": "Spanish uses the same word 'extra'",
+        "Webhook": "Spanish uses the English term Webhook",
+        "Id": "Spanish uses the abbreviation Id",
         "#level1 - #level2": "PDF numbering placeholders only",
         "#levelIndex1:#levelIndex2": "PDF numbering placeholders only",
         "%count bytes": "placeholder and unit name, the same in Spanish",
@@ -1456,6 +1476,8 @@
         "WebDAV": "protocol name"
     },
     "fre-FR": {
+        "Webhook": "French uses the English term Webhook",
+        "page": "page is the French word too",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
         "#levelIndex1:#levelIndex2": "only PDF placeholder tokens and a separator; no words to translate",
         "%count SQL": "code, setting, unit or placeholder text without words to translate",
@@ -1751,6 +1773,11 @@
         "Webhooks": "the same word in French (established loanword)"
     },
     "ger-DE": {
+        "Branch": "German developers use the English git term Branch",
+        "Build": "German uses the English term Build (prescribed terminology)",
+        "Commits": "German uses the English git term Commits",
+        "Webhook": "German uses the English term Webhook",
+        "Domain": "Domain is the German word as well",
         "Migration": "German word spelled the same",
         "Commit": "the same word in German (a git commit)",
         "Push": "the same word in German (a git push)",
@@ -2020,6 +2047,8 @@
         "Webhooks": "the same word in German"
     },
     "heb-IL": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "Webhook": "Hebrew interfaces use the English term Webhook",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
         "#levelIndex1:#levelIndex2": "only PDF placeholder tokens and a separator; no words to translate",
         "%name - Exponential Layouts": "placeholder plus the product name Exponential Layouts; no words to translate",
@@ -2053,6 +2082,8 @@
         "Windows Media Player": "product name (Microsoft media player)"
     },
     "ita-IT": {
+        "Build": "Italian software UIs use the English term build",
+        "Webhook": "Italian uses the English term webhook",
         "#level1 - #level2": "placeholders only",
         "%count SQL": "code name with placeholder",
         "%count h": "unit abbreviation",
@@ -2252,6 +2283,7 @@
         "%count in %seconds s": "placeholders, the unit symbol and the word in, spelled the same"
     },
     "kur-TR": {
+        "Webhook": "Kurdish technical usage keeps the English term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%device, %width × %height px": "units or placeholders without words to translate",
@@ -2482,6 +2514,7 @@
         "Remove": "the word the catalogue uses for this term, spelled as in English"
     },
     "nor-NO": {
+        "Webhook": "Norwegian uses the English term Webhook",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -2639,6 +2672,7 @@
         "Zoom: %1 %": "zoom is the Norwegian word, spelled the same"
     },
     "pol-PL": {
+        "Webhook": "Polish uses the English technical term webhook",
         "#level1 - #level2": "code, setting, file name, unit or placeholder text without words to translate",
         "#levelIndex1:#levelIndex2": "code, setting, file name, unit or placeholder text without words to translate",
         "%count min": "code, setting, file name, unit or placeholder text without words to translate",
@@ -2772,6 +2806,8 @@
         "Sepia": "spelled the same in Polish (sepia, the brown photo tone)"
     },
     "por-BR": {
+        "Build": "Brazilian Portuguese developers use the English term build",
+        "Webhook": "Portuguese uses the English technical term webhook",
         "#level1 - #level2": "code, setting, unit or placeholder text without words to translate",
         "#levelIndex1:#levelIndex2": "code, setting, unit or placeholder text without words to translate",
         "%count SQL": "code, setting, unit or placeholder text without words to translate",
@@ -3142,6 +3178,7 @@
         "JSON: %url": "format name JSON plus placeholder"
     },
     "swe-SE": {
+        "Webhook": "Swedish uses the English term webhook",
         "#level1 - #level2": "only PDF placeholder tokens and a separator; no words to translate",
         "#levelIndex1:#levelIndex2": "only PDF placeholder tokens and a separator; no words to translate",
         "%count SQL": "code, setting, unit or placeholder text without words to translate",
@@ -3417,6 +3454,7 @@
         "Z-A": "reverse alphabetical sort order shown with the Latin letters of the transcription"
     },
     "tur-TR": {
+        "Webhook": "Turkish uses the English term Webhook (catalogue: Webhook'lar)",
         "#level1 - #level2": "product name, code, file name, setting or format without translatable words",
         "#levelIndex1:#levelIndex2": "product name, code, file name, setting or format without translatable words",
         "%device, %width × %height px": "product name, code, file name, setting or format without translatable words",
@@ -3752,6 +3790,9 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "bos-BA": {
+        "Commit": "Bosnian uses the English git term commit (the catalogue writes commitovano)",
+        "Webhook": "Bosnian uses the English loanword webhook",
+        "git host": "Bosnian uses git and the loanword host, as the catalogue's allowlist does for Host",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count d": "units or placeholders without words to translate",
@@ -3887,6 +3928,7 @@
         "Font": "spelled the same in Bosnian (font, the standard word for a typeface)"
     },
     "dsb-DE": {
+        "Webhook": "Lower Sorbian technical texts use the English term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count d": "units or placeholders without words to translate",
@@ -4293,6 +4335,10 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "kal-GL": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "Commit": "Greenlandic technical usage keeps the English git term Commit",
+        "Push": "Greenlandic technical usage keeps the English git term Push",
+        "Webhook": "Greenlandic technical usage keeps the English term Webhook",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count min": "units or placeholders without words to translate",
         "%count s": "units or placeholders without words to translate",
@@ -4512,6 +4558,7 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "hun-HU": {
+        "Webhook": "Hungarian uses the English term Webhook",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count SQL": "placeholder and the acronym SQL",
         "%count tpl": "abbreviation or code, same in Hungarian",
@@ -4590,6 +4637,8 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "mlt-MT": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
+        "Webhook": "Maltese uses the English technical term webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count h": "units or placeholders without words to translate",
@@ -4741,6 +4790,8 @@
         "Webhooks": "the same loanword in Maltese"
     },
     "ron-RO": {
+        "Build": "Romanian software usage keeps the English term build",
+        "Webhook": "Romanian uses the English technical term webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count SQL": "placeholder and the acronym SQL",
@@ -4920,6 +4971,7 @@
         "Font": "the Romanian word for a typeface, spelled the same"
     },
     "sqi-AL": {
+        "Webhook": "Albanian uses the English technical term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count min": "units or placeholders without words to translate",
@@ -5014,6 +5066,7 @@
         "Tablet": "same word in Albanian (a tablet computer)"
     },
     "slk-SK": {
+        "Webhook": "Slovak uses the English term Webhook",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count d": "units or placeholders without words to translate",
         "%count h": "units or placeholders without words to translate",
@@ -5233,6 +5286,8 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "jpn-JP": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "Webhook": "Japanese interfaces, GitHub's among them, use the English term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%speed MHz": "units or placeholders without words to translate",
@@ -5311,6 +5366,7 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "fin-FI": {
+        "Webhook": "Finnish uses the English term Webhook",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%count h": "units or placeholders without words to translate",
         "%count min": "units or placeholders without words to translate",
@@ -5396,6 +5452,7 @@
         "xmlUrl": "OPML attribute name (code identifier)"
     },
     "ell-GR": {
+        "Webhook": "Greek technical usage keeps the English term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%device, %width × %height px": "units or placeholders without words to translate",
@@ -5580,6 +5637,9 @@
         "xmlUrl": "code identifier"
     },
     "cat-ES": {
+        "Webhook": "Catalan uses the English term webhook",
+        "Id": "Catalan uses the abbreviation Id for identifier",
+        "extra": "Same word in Catalan",
         "Zoom: %1 %": "zoom is the usual Catalan term",
         "Rectangle": "Catalan word spelled the same",
         "Contrast": "Catalan word spelled the same",
@@ -5896,6 +5956,7 @@
         "xmlUrl": "code identifier"
     },
     "ser-SR": {
+        "Host": "Serbian IT usage takes the loanword host for a hosting server",
         "Font": "font is the usual Serbian term",
         "Original": "Serbian (Latin) word spelled the same",
         "#level1 - #level2": "placeholders only",
@@ -6253,6 +6314,7 @@
         "xmlUrl": "identifier"
     },
     "por-PT": {
+        "Webhook": "Portuguese uses the English technical term webhook",
         "Zoom: %1 %": "zoom is the usual Portuguese term",
         "Original": "Portuguese word spelled the same",
         "#level1 - #level2": "placeholders and separator only",
@@ -6429,6 +6491,7 @@
         "Webhooks": "the English loanword is the standard term in European Portuguese"
     },
     "afr-ZA": {
+        "Webhook": "Afrikaans software uses the English term Webhook",
         "Sepia": "Afrikaans word spelled the same",
         "#level1 - #level2": "placeholders only",
         "#levelIndex1:#levelIndex2": "placeholders only",
@@ -7164,6 +7227,8 @@
         "JSON: %url": "format name and placeholder only"
     },
     "hau-NG": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "Webhook": "Hausa technical usage keeps the English term Webhook",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
@@ -7344,6 +7409,7 @@
         "WebDAV": "protocol name"
     },
     "guj-IN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -7465,6 +7531,7 @@
         "JSON: %url": "format name plus placeholder"
     },
     "kan-IN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -7688,6 +7755,7 @@
         "JSON: %url": "format name plus placeholder only"
     },
     "yor-NG": {
+        "Webhook": "Yoruba technical writing uses the English term Webhook; there is no established Yoruba word.",
         "%1 × %2 pixels": "loanword, no reliable native term yet; kept until a native speaker review",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
@@ -7958,6 +8026,7 @@
         "JSON: %url": "format name followed by placeholder only"
     },
     "pan-IN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -8072,6 +8141,7 @@
         "JSON: %url": "format name plus placeholder"
     },
     "ori-IN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "#level1 - #level2": "template code",
         "#levelIndex1:#levelIndex2": "template code",
         "%count SQL": "code term",
@@ -8194,6 +8264,7 @@
         "WebDAV": "protocol name"
     },
     "ibo-NG": {
+        "Webhook": "Igbo technical text uses the English term webhook",
         "Opacity (%)": "loanword, no reliable native term yet; kept until a native speaker review",
         "Ellipse": "loanword, no reliable native term yet; kept until a native speaker review",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
@@ -8544,6 +8615,7 @@
         "WebDAV": "protocol name"
     },
     "som-SO": {
+        "Webhook": "Somali uses the English technical term Webhook",
         "%1 × %2 pixels": "loanword, no reliable native term yet; kept until a native speaker review",
         "Sepia": "loanword, no reliable native term yet; kept until a native speaker review",
         "#level1 - #level2": "template code",
@@ -8893,6 +8965,8 @@
         "WebDAV": "protocol name"
     },
     "chi-CN": {
+        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
+        "Webhook": "Chinese developer usage keeps the English term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%speed MHz": "units or placeholders without words to translate",
@@ -8971,6 +9045,8 @@
         "WebDAV": "protocol name"
     },
     "chi-TW": {
+        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
+        "Webhook": "Chinese developer usage keeps the English term Webhook",
         "#level1 - #level2": "format placeholders only",
         "#levelIndex1:#levelIndex2": "format placeholders only",
         "%speed MHz": "units or placeholders without words to translate",
@@ -9135,6 +9211,7 @@
         "Div": "HTML element name"
     },
     "vie-VN": {
+        "Webhook": "Vietnamese uses the English term webhook",
         "OK": "OK kept",
         "iPhone": "product name",
         "iPad": "product name",
@@ -9236,6 +9313,9 @@
         "Div": "HTML element name"
     },
     "ind-ID": {
+        "Build": "Indonesian software UIs use the English term build",
+        "Domain": "Indonesian uses the word domain",
+        "Webhook": "Indonesian uses the English term webhook",
         "OK": "kept as in Indonesian software",
         "ID %id": "acronym and placeholder",
         "Folder": "same word in Indonesian (glossary)",
@@ -9677,6 +9757,7 @@
         "Div": "HTML element name"
     },
     "sna-ZW": {
+        "Webhook": "Shona uses the English technical term Webhook",
         "ID %id": "acronym ID plus placeholder",
         "Link": "glossary: link is kept as the loanword link",
         "iPhone": "product name",
@@ -9914,6 +9995,8 @@
         "Div": "HTML element name"
     },
     "msa-MY": {
+        "Webhook": "Malay uses the English term Webhook",
+        "Domain": "Domain is the standard Malay word",
         "Edit": "glossary: edit = edit in Malay",
         "edit": "glossary: edit = edit in Malay",
         "OK": "OK is the standard button label in Malay",
@@ -10073,6 +10156,9 @@
         "Sepia": "spelled the same in Malay (DBP: sepia)"
     },
     "jav-ID": {
+        "Build": "Javanese software text uses the English term build",
+        "Domain": "Javanese uses the word domain",
+        "Webhook": "Javanese uses the English term webhook",
         "OK": "kept as in the guide (allowlisted)",
         "ID %id": "acronym and placeholder",
         "Folder": "word spelled the same in Javanese",
@@ -10212,6 +10298,7 @@
         "Sepia": "spelled the same in Javanese (sepia, the photographic tone, as in Indonesian)"
     },
     "sun-ID": {
+        "Webhook": "Sundanese uses the English technical term Webhook, as Indonesian does",
         "OK": "OK is kept in Sundanese (allowlisted)",
         "ID %id": "acronym ID with a placeholder",
         "Item": "item is the glossary term for a list entry, spelled the same in Sundanese",
@@ -10634,6 +10721,16 @@
         "Div": "HTML element name"
     },
     "pcm-NG": {
+        "Webhook": "Nigerian Pidgin uses the English technical term webhook",
+        "Another git host": "Nigerian Pidgin uses these English words unchanged, as the catalogue does",
+        "New target": "Nigerian Pidgin uses these English words unchanged; the catalogue keeps Target",
+        "Preview and publish": "The catalogue keeps Preview and Publish in Nigerian Pidgin",
+        "Preview and publish %name": "The catalogue keeps Preview and Publish in Nigerian Pidgin",
+        "Settings of %name": "The catalogue keeps Settings in Nigerian Pidgin",
+        "Setup > Secrets": "The catalogue's menu names Setup and Secrets are the same in Nigerian Pidgin",
+        "git host": "Technical term used as is in Nigerian Pidgin",
+        "Job %id": "Nigerian Pidgin uses the word job",
+        "%target: job %id": "Nigerian Pidgin uses the word job",
         "Node ID: %node_id Visibility: %visibility": "labels and placeholders",
         "%group_name [Content object state group]": "placeholder with terms kept in English",
         "Edit": "the word Nigerian Pidgin uses",
@@ -15320,6 +15417,7 @@
         "Webhooks": "technical term kept in Latin script, as the catalogue keeps API and GraphQL"
     },
     "huy-IL": {
+        "Webhook": "Technical term kept in Latin script, as the catalogue keeps other protocol names",
         "ID %id": "abbreviation and placeholder only",
         "iPhone": "product name",
         "iPad": "product name",
@@ -15406,6 +15504,7 @@
         "%device, %width × %height px": "placeholders, the multiplication sign and the unit px only (the Syriac comma becomes a Latin comma in Hebrew script)"
     },
     "gla-GB": {
+        "Webhook": "Scottish Gaelic uses the English technical term Webhook",
         "ID %id": "acronym ID and placeholder only",
         "iPhone": "product name",
         "iPad": "product name",
@@ -15640,6 +15739,11 @@
         "Div": "HTML element name"
     },
     "fil-PH": {
+        "Build": "Filipino IT usage keeps the English term build",
+        "Deploy key": "Filipino IT usage keeps the English term deploy key",
+        "Post-processing": "Filipino IT usage keeps the English term",
+        "Webhook": "Filipino uses the English term Webhook",
+        "git host": "Filipino IT usage keeps the English term host; git is a product name",
         "Node ID: %node_id Visibility: %visibility": "placeholders and technical labels only",
         "File": "glossary loanword",
         "Identifier": "glossary loanword",
@@ -16149,6 +16253,7 @@
         "expired": "the word the catalogue uses for this term, spelled as in English"
     },
     "che-RU": {
+        "Id": "Abbreviation Id is used as is in the Chechen interface",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -16386,6 +16491,7 @@
         "Div": "HTML element name"
     },
     "pnb-PK": {
+        "+%added ~%changed -%removed": "Stays exactly as is per the brief",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -16592,6 +16698,7 @@
         "%seconds s": "placeholder and the unit symbol s, the language has no other"
     },
     "mya-MM": {
+        "Webhook": "Burmese technical UI keeps the English term Webhook",
         "ID %id": "acronym ID with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -16755,6 +16862,8 @@
         "Div": "HTML element name"
     },
     "haw-US": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "Webhook": "Hawaiian has no established term; the English technical term Webhook is used",
         "ID %id": "acronym and placeholder",
         "Siteaccess": "setting name",
         "%locale [Locale]": "placeholder with the locale setting name",
@@ -16988,6 +17097,7 @@
         "Div": "HTML element name"
     },
     "lin-CD": {
+        "Webhook": "Lingala IT usage keeps the English term Webhook",
         "ID %id": "term, acronym or name spelled the same in Lingala",
         "Siteaccess": "term, acronym or name spelled the same in Lingala",
         "Locale": "term, acronym or name spelled the same in Lingala",
@@ -17227,6 +17337,8 @@
         "Tel": "abbreviation spelled the same"
     },
     "ful-SN": {
+        "Domain": "Pulaar uses the French/English loanword Domain",
+        "Webhook": "Pulaar uses the English technical term Webhook",
         "ID %id": "acronym with placeholder",
         "Siteaccess": "setting name, allowlisted",
         "Locale": "technical term kept as in the guide",
@@ -17438,6 +17550,8 @@
         "Tel": "abbreviation, same in Pulaar"
     },
     "orm-ET": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "Webhook": "Oromo uses the English technical term Webhook",
         "ID %id": "acronym with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -17565,6 +17679,8 @@
         "%seconds s": "placeholder and the unit symbol s, the language has no other"
     },
     "aze-AZ": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
+        "Manifest": "Azerbaijani uses the same word manifest",
         "OK": "OK button label, same in Azerbaijani",
         "ID %id": "acronym ID plus placeholder",
         "Media": "Azerbaijani uses the same word",
@@ -17778,6 +17894,8 @@
         "Mutations": "the word the catalogue uses for this term, spelled as in English"
     },
     "aka-GH": {
+        "Webhook": "Twi has no native term; the English technical term Webhook is used",
+        "git host": "The Twi catalogue uses the English term host; git is a product name",
         "ID %id": "acronym and placeholder",
         "Link": "glossary: link",
         "Draft": "glossary loan word draft",
@@ -17940,6 +18058,7 @@
         "Subscriptions": "GraphQL term kept in English, as the catalogue keeps Mutations"
     },
     "asm-IN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -18038,6 +18157,8 @@
         "Div": "HTML element name"
     },
     "kik-KE": {
+        "Domain": "Kikuyu technical writing uses the English loanword domain",
+        "Webhook": "Kikuyu technical writing uses the English term Webhook",
         "ID %id": "acronym ID plus placeholder",
         "%locale [Locale]": "placeholder plus the technical term Locale",
         "iPhone": "product name",
@@ -18148,6 +18269,7 @@
         "%seconds s": "placeholder and the unit symbol s, the language has no other"
     },
     "khm-KH": {
+        "Webhook": "Khmer technical writing uses the English term Webhook",
         "ID %id": "acronym ID and placeholder",
         "iPhone": "device product name",
         "iPad": "device product name",
@@ -18327,6 +18449,7 @@
         "Div": "HTML element name"
     },
     "kin-RW": {
+        "Webhook": "Kinyarwanda technical writing uses the English term Webhook",
         "ID %id": "acronym and placeholder",
         "Metadata": "technical loan word kept in Kinyarwanda IT writing",
         "iPhone": "device product name",
@@ -18435,6 +18558,9 @@
         "%seconds s": "placeholder and the unit symbol s, the language has no other"
     },
     "ceb-PH": {
+        "Webhook": "Cebuano uses the English term webhook",
+        "Deploy key": "Cebuano IT usage keeps the English term deploy key, as GitHub shows it",
+        "Site": "Cebuano uses the English loanword site",
         "File": "loan word, product name or placeholder text spelled the same in Cebuano",
         "container": "loan word written the same in Cebuano",
         "Container": "loan word written the same in Cebuano",
@@ -18703,6 +18829,7 @@
         "Key": "the word the catalogue uses for this term, spelled as in English"
     },
     "ckb-IQ": {
+        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
         "ID %id": "acronym ID with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -18898,6 +19025,9 @@
         "Div": "HTML element name"
     },
     "mlg-MG": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
+        "Id": "Malagasy software text uses the abbreviation Id unchanged",
+        "Webhook": "Malagasy has no own word for webhook and uses the English technical term",
         "ID %id": "acronym with placeholder",
         "iPhone": "device product name",
         "iPad": "device product name",
@@ -19004,6 +19134,7 @@
         "Plugin": "loanword, same spelling"
     },
     "mon-MN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
         "OK": "OK button label is the same in Mongolian software",
         "ID %id": "ID with a placeholder",
         "iPhone": "device product name",
@@ -19261,6 +19392,7 @@
         "Div": "HTML element name"
     },
     "tuk-TM": {
+        "Webhook": "Turkmen uses the English term Webhook (catalogue: Webhooklar)",
         "OK": "glossary: OK stays OK",
         "ID %id": "abbreviation ID plus placeholder",
         "Media": "Turkmen uses the loanword media spelled the same",
@@ -19359,6 +19491,8 @@
         "Div": "HTML element name"
     },
     "lug-UG": {
+        "Commit": "Luganda uses the git term commit as a loanword (the system upgrade strings say okutekebwa mu commit)",
+        "Webhook": "Webhook has no Luganda equivalent; the technical term is used as is",
         "OK": "button label OK is kept as OK",
         "ID %id": "abbreviation ID plus placeholder",
         "iPhone": "product name",
@@ -19458,6 +19592,7 @@
         "Div": "HTML element name"
     },
     "wol-SN": {
+        "Webhook": "Wolof uses the English term Webhook, as for other web technology terms",
         "OK": "glossary: OK stays OK",
         "ID %id": "abbreviation ID plus placeholder",
         "iPhone": "product name",
@@ -19588,6 +19723,7 @@
         "Plugin": "technical term kept as in the editor"
     },
     "bel-BY": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
         "OK": "OK button label",
         "ID %id": "ID acronym with placeholder",
         "iPhone": "device product name",
@@ -19696,6 +19832,8 @@
         "Div": "HTML element name"
     },
     "glg-ES": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "Webhook": "Galician uses the English term webhook",
         "ID %id": "ID acronym plus placeholder",
         "Desc.": "abbreviation of descending, same in Galician",
         "Asc.": "abbreviation of ascending, same in Galician",
@@ -19932,6 +20070,7 @@
         "Sepia": "spelled the same in Basque"
     },
     "cym-GB": {
+        "+%added ~%changed -%removed": "Fixed counter notation, kept exactly as the brief requires",
         "ID %id": "acronym and placeholder",
         "Locale": "glossary term locale stays as a setting name",
         "iPhone": "device name",
@@ -20044,6 +20183,7 @@
         "Webhooks": "the same loanword in Welsh"
     },
     "mkd-MK": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
         "ID %id": "acronym ID with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -20146,6 +20286,11 @@
         "Div": "HTML element name"
     },
     "ltz-LU": {
+        "Build": "Luxembourgish IT usage takes the English term Build, as German does",
+        "Commit": "Luxembourgish uses the git term Commit (the migration strings say committed)",
+        "Commits": "Plural of the git term Commit, used as is in Luxembourgish",
+        "Push": "Luxembourgish uses the git term Push (the migration strings say Push: %state)",
+        "Webhook": "Webhook is the established technical term in Luxembourgish",
         "Container": "loanword spelled the same",
         "OK": "acronym",
         "ID %id": "acronym with placeholder",
@@ -20334,6 +20479,7 @@
         "Webhooks": "the same loanword in Luxembourgish"
     },
     "run-BI": {
+        "Webhook": "technical term with no Kirundi equivalent, kept as the loanword",
         "ID %id": "acronym ID with placeholder",
         "%locale [Locale]": "placeholder and the term Locale",
         "iPhone": "product name",
@@ -20956,6 +21102,8 @@
         "Div": "HTML element name"
     },
     "mni-IN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief requires it unchanged",
+        "Id": "Identifier abbreviation kept in Latin script, as Manipuri software text does for ids",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -21171,6 +21319,7 @@
         "Div": "HTML element name"
     },
     "kas-IN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "ID %id": "ID label with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -21586,6 +21735,9 @@
         "Div": "HTML element name"
     },
     "ast-ES": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
+        "Id": "Asturian uses the abbreviation Id for identifier",
+        "Webhook": "Asturian uses the English technical term webhook",
         "ID %id": "acronym and placeholder",
         "Locale": "glossary: locale stays as a setting term",
         "Desc.": "abbreviation of descending, same in Asturian",
@@ -21720,6 +21872,7 @@
         "Webhooks": "the same loanword in Asturian"
     },
     "bre-FR": {
+        "Webhook": "Breton uses the English technical term Webhook; there is no established Breton word",
         "ID %id": "acronym and placeholder",
         "Media": "word used as is in Breton",
         "%locale [Locale]": "placeholder plus the setting name Locale",
@@ -21833,6 +21986,7 @@
         "Webhooks": "the same loanword in Breton"
     },
     "oci-FR": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "Rectangle": "Occitan word spelled the same",
         "Contrast": "Occitan word spelled the same",
         "ID %id": "acronym and placeholder",
@@ -22029,6 +22183,8 @@
         "Webhooks": "the English loanword is used unchanged in Occitan technical UI"
     },
     "bam-ML": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only, kept exactly as the brief requires",
+        "Webhook": "Bambara has no own term; the technical loanword webhook is used",
         "OK": "OK button label",
         "ID %id": "abbreviation ID plus placeholder",
         "iPhone": "product name",
@@ -22148,6 +22304,8 @@
         "Plugin": "software term used as is"
     },
     "ewe-GH": {
+        "Webhook": "Ewe has no native term; the English technical term Webhook is used",
+        "Id": "the abbreviation Id is used as is in the Ewe catalogue",
         "OK": "button OK, same in Ewe",
         "ID %id": "ID label with placeholder",
         "iPhone": "product name",
@@ -22436,6 +22594,7 @@
         "Div": "HTML element name (div), code"
     },
     "roh-CH": {
+        "Webhook": "Romansh uses the English technical term webhook",
         "%1 × %2 pixels": "Romansh plural spelled the same",
         "%1 objects": "Romansh plural spelled the same",
         "Objects": "same word in Romansh plural",
@@ -22662,6 +22821,7 @@
         "Webhooks": "the English loanword is used unchanged in Romansh technical UI"
     },
     "hsb-DE": {
+        "Webhook": "Upper Sorbian uses the English term Webhook",
         "ID %id": "acronym ID plus placeholder",
         "Status": "word is spelled the same in Upper Sorbian",
         "iPhone": "device product name",
@@ -22787,6 +22947,7 @@
         "Div": "HTML element name"
     },
     "fry-NL": {
+        "Webhook": "Frisian uses the English technical term Webhook",
         "Type": "Frisian spells type the same",
         "OK": "OK button label",
         "ID %id": "acronym and placeholder",
@@ -22952,6 +23113,8 @@
         "Webhooks": "the same word in Frisian/Dutch (established loanword)"
     },
     "fao-FO": {
+        "Webhook": "Faroese uses the English technical term Webhook",
+        "Id": "the abbreviation Id is used as is in Faroese",
         "ID %id": "acronym and placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -23054,6 +23217,7 @@
         "Div": "HTML element name"
     },
     "sme-NO": {
+        "Webhook": "Northern Sami uses the English technical term Webhook",
         "OK": "OK button, same in Sami",
         "ID %id": "acronym plus placeholder",
         "iPhone": "product name",
@@ -23263,6 +23427,11 @@
         "Div": "HTML element name"
     },
     "kab-DZ": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
+        "Commit": "Kabyle technical usage keeps the English git term Commit",
+        "Commits": "Kabyle technical usage keeps the English git term Commit",
+        "Push": "Kabyle technical usage keeps the English git term Push",
+        "Webhook": "Kabyle technical usage keeps the English term Webhook",
         "ID %id": "acronym ID with placeholder",
         "iPhone": "product name",
         "iPad": "product name",
@@ -23483,6 +23652,7 @@
         "%seconds s": "placeholder and the unit symbol s, the language has no other"
     },
     "nqo-GN": {
+        "+%added ~%changed -%removed": "Symbols and placeholders only; the brief keeps it unchanged",
         "OK": "button label OK",
         "ID %id": "abbreviation and placeholder",
         "iPhone": "product name of a device",
@@ -23600,6 +23770,7 @@
         "Plugin": "software term, same in Bambara glossary"
     },
     "que-PE": {
+        "Webhook": "technical term with no Quechua equivalent, kept as the loanword",
         "OK": "button label OK",
         "ID %id": "abbreviation with placeholder",
         "Media": "loan word used as in the glossary",

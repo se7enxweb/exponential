@@ -15089,6 +15089,14 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Ikkussinermi allannguutit fiilitut toqqorsimasut: killiffiat, ingerlatsinerit, ingerlatsineq utertitsinerlu.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Nittartakkap assilinera aalaakkaasoq GitHub Pages-imut imaluunniit git-ip angerlarsimaffianut sumulluunniit saqqummiuguk.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Saqqummiussineq aalaakkaasoq</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22096,18 @@ Malugiuk: Poortukkat ikkussinerat piiarneqassanngilaq.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API-p apeqqutaasa toqqorsimasut akissutaat, aamma skema-p imarisanut immikkoortui.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Assilineq aalaakkaasoq GitHub Pages-imut imaluunniit git-ip angerlarsimaffianut sumulluunniit saqqummiuguk</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Saqqummiussineq aalaakkaasoq</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Cache aalaakkaasoq quppernernik qarasaasiamit matumannga tunniussisarpoq. Nittartakkap assilinera aalaakkaasoq allami, GitHub Pages-imi imaluunniit git-ip angerlarsimaffiani sumiluunniit, saqqummiuniarukku saqqummiussineq aalaakkaasoq atoruk.</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76165,14 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Ikkussinermi allannguutit fiilitut toqqorsimasut: killiffiat, ingerlatsinerit, ingerlatsineq utertitsinerlu.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Nittartakkap assilinera aalaakkaasoq GitHub Pages-imut imaluunniit git-ip angerlarsimaffianut sumulluunniit saqqummiuguk.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Saqqummiussineq aalaakkaasoq</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80583,6 +80611,1364 @@ Inissisimaffiup klassia taarseraanermik atortussaq atorlugu allanngortittariaqas
     <message>
         <source>The run could not be started.</source>
         <translation>Ingerlatsineq aallartinneqarsinnaanngilaq.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Saqqummiuffiit tamarmik</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Saqqummiussineq kingulleq</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Nittartakkavit assilinera aalaakkaasoq akeqanngitsumik GitHub Pages-imi saqqummiuguk:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Quppernerit pisoqaalisut</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Saqqummiussineq aalaakkaasoq</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Saqqummiussineq aalaakkaasoq matuvoq.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Saqqummiuffik</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Saqqummiuffiit atuarneqarsinnaanngillat: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>suliassaq ingerlavoq</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>sanaaq misissugassaq</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>una isertoruk</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>saqqummiuffik pilersiguk</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>suli naamik</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ilitsersuut atuaruk</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>Ilanngunneqartut %added, allanngortinneqartut %changed, peerneqartut %removed</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Allat %count allattorneqanngillat.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Quppernerit %pages allanneqarput</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path angissusaa %size, fiilimut ataatsimut angerlarsimaffiup akuerisaanit annerulluni.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % killiliussamit</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds sek.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag tassaavoq saqqummiussineq nittartakkap massakkut atugaa.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: suliassaq %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/toqqorsivik/ GitHub-imi suliniummut nittartakkamut; imaqanngitsoq namminersortumut domænimut imaluunniit atuisup nittartagaanut.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Nittartagaq</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Angerlarsimaffik</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Toqqorsivimmut iserneq</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Toqqorsivik</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Innersuussutit tunngaviusumillu aqqut</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Domænet nammineq pigisat</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Sanaami suut ilaanersut</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Qaqugu saqqummiunneqassanersoq</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Misissoruk toqqorlugulu</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub-imi suliniummut nittartagaq /&lt;repository&gt;/ ataaniittarpoq; innersuussutit ataqatigiissut tassani allanilu sumiluunniit atuupput.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Sanaaq %site-ip quppernerinik tamanik pulartup iserfigisimanngitsup takusartagaattut aallersisarpoq, innersuussutinik allanngortitsilluni, fiilinik assiliilluni inernerlu saqqummiuffiup mappianut allattarlugu. Sanaaq misissorlugu Saqqummiuguk tooreqqaanngikkukku saqqummiussisoqassanngilaq.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron-imik oqaaseqatigiit, assersuutigalugu 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ikkussinermut matuersaat isertugatut %secret-itut toqqorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ikkussinermut matuersaat ikkussineq una SSH aqqutigalugu toqqorsivimmut ataatsimut kisiat nassiussisinnaalersippaa. Affaa isertorneqartoq Aaqqissuussineq &gt; Isertugat-ip iluaniittuarpoq; affaa tamanut ammasoq kisiat takutinneqarpoq.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ikkussinermut matuersaat saqqummiuffimmut matumunnga pilersitaq</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ikkussinermut matuersaat SSH aqqutigalugu iserpoq: git-ip najugaa SSH-ip najugaanut allanngortiguk (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Suliassaq ingerlavoq, %user-ip aallartippaa</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Saqqummiuffiup matuma suliassaa suli ingerlavoq (%detail). Naammassinissaa utaqqiuk.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Saqqummiuffiup matuma suliassaa suli ingerlavoq. Naammassinissaa utaqqiuk.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Quppernermit /news/ quppernermut /about-us/team innersuussut ima allanneqassaaq</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Ikkussinermut matuersaat nutaaq pilersinneqarpoq. Affaa tamanut ammasoq massakkut toqqorsivimmut ilannguguk.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Quppernerup suli piiaanerup kingorna debug-imik anitsinermik, formularip token-ianik imaluunniit session-ip kinaassutsimik imaqartup saqqummiunneqartanngilaq.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Utertitsineq ilisimasalinnut kisiannut: »Ilisimavara una suna allanngortinneraa« nalunaaqutsiguk taaguullu aqqa ilaqqiguk.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Nittartagaq %site-mik angissusilik, fiili %file-imik angissusilik, qaammammullu 100 GB missaa ingerlaarfigineqartarsinnaavoq. Akeqanngitsumik atuinermi toqqorsivik tamanut ammasuussaaq. GitHub Pages pisiniarfinnut niuernernulluunniit allanut sananeqarsimanngilaq.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Saqqummiuffik tassaavoq nittartagaq ataaseq git-ip toqqorsivianut ataatsimut saqqummiunneqartoq. Maani sanasoqanngilaq saqqummiussisoqanngilarlu: Toqqoruk aaqqissuussinerit settings/override/staticcache.ini.append.php-imut allappai.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Saqqummiuffik tassaavoq nittartagaq ataaseq sumut ataatsimut saqqummiunneqartoq, assersuutigalugu nittartakkat tamanut ammasoq GitHub Pages-imi.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token Aaqqissuussineq &gt; Isertugat-imeersoq</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Toqqorsivimmi workflow-ip saqqummiussavaa.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Matuersaat una tamanut ammasoq toqqorsivimmut allannissamut akuersissummik ilannguguk. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access nalunaaqutsiguk.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ilanngunneqartoq</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Git-ip angerlarsimaffia alla</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Suliaq alla saqqummiuffimmi matumani suliaqarpoq: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Uterit</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Tunngaviusumik aqqut</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Siornatigut</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Tunngaviusumik aqqutip ataani</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Avalequt</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Innersuussutit aserorsimasut</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Sanaami innersuussutit aserorsimasut</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Sanaaq</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Sanaaq %id, %user-imit</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name sanaaruk</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Massakkut sanaaruk</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Sanaaq misissugassaq</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kimit</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Assammik, maani</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Taamaatiguk</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Allanngortiguk</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Allanngortinneqartoq</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Allannguutit</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Siullermik misissoruk</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Aaqqissuussinerit uku misissukkit</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Sanaap suut allanngortissanerai misissoruk, takuuk, taava saqqummiuguk igiguluunniit.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Saqqummiussineq utertiffissaq toqqaruk.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Saqqummiussinermi kingusinnerusumi pilerssaaq.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Commit-it</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Sanaaq commit-itut toqqorpaa, taaguusersorlugu %remote-imullu nassiullugu. Nassiussineq pinngitsaaliisoqarneq ajorpoq; kingusinnerusukkut saqqummiussinermut sumulluunniit uterfigisinnaavat.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Mappimut siornatigutsamut naleqqiullugu: ilanngunneqartut %added, allanngortinneqartut %changed, peerneqartut %removed, allanngorsimanngitsut %unchanged.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Saqqummiussinermut kingullermut naleqqiullugu.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Iserfissaq</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domænet nammineq pigisat</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Debug-imik anitsineq, formularip token-ii, session-ip kinaassutsii nonce-illu peerneqartuartarput.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ikkussinermut matuersaat</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name-ip ikkussinermut matuersaataa</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Igiguk</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Sanaaq igiguk</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domæne</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Imaqanngitsoq: nittartakkap najugaa. Taava nittartakkap taassuma najugaa iluarsiunneqartoq.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Naammassivoq</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Innersuussut tamarmi tunngaviusumik aqqummik aallartittarpoq.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Saqqummiussineq tamarmi commit-iuvoq taaguummik static/%id/&lt;n&gt; peqarluni. Uterneq commit-imik nutaamik pilersitsivoq saqqummiussinerup siusinnerusup fiiliinik: oqaluttuassartaa pigiinnarneqarpoq, taaguut nuunneqarneq ajorpoq pinngitsaaliisoqarnanilu.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Fiilit ilassutit</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Quppernerit makkunannga aallerneqassapput</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fiili</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fiilit</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Fiilit amigaatigineqartut</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fiiliat:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fiilit katersorneqarsinnaanngitsut</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Kinaassutsimut nalunaaqutaq</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Mappi</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH-ip najugaanut. Matuersaat toqqorneqareerneratigut pilersinneqassaaq; affaa tamanut ammasoq toqqorsivimmut ilanngutissavat.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https://-ip najugaanut. GitHub: token fine-grained Contents-imik atuarsinnaatitsisoq allassinnaatitsisorlu toqqorsivimmi.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Ilisimasalinnut. Nittartagaq tamanut ammasoq nassiussinerup naammassineratigut allanngussaaq.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formularit</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub-ip toqqorsivianit akeqanngitsumik angerlarsimaffik.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Avalequtimit</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-ip najugaa</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages nittartakkamik %site-mik fiilimillu %file-imik akuersivoq.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages-ip killilersuutai</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages fiilinik ittuunerisut saqqummiussivoq (fiilinut _-imik aallartittunut pisariaqarpoq).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub avalequt nassiunneqarneratut tunniuttarpaa. Nalinginnaasoq.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, qarasaasiaq nammineq pigisat: git-ip toqqorsivia sunaluunniit.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Saqqummiussinermut siusinnerusumut uterit</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ikiuutit</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Ilitsersuummut ikiuutit</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Isertukkit</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Oqaluttuassartaa</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name-ip oqaluttuassartaa</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Angerlarsimaffik</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages-ip sanaaq qanoq tigusarneraa</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Allannguutit misissorpakka</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Ilisimavara una suna allanngortinneraa</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Kinaassutsit</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Matuvoq: atuutilersinneqanngikkaangat sanasoqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Tunuani %user-itut ingerlavoq; quppernera una matusinnaavat.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Suliassaq %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Isertugatut %secret-itut toqqorneqarpoq.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Suussusaa</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Saqqummiussineq kingulleq</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Quppernerit uku ilanngunnagit</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Immikkoortut uku ilanngunnagit</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Innersuussutit</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Innersuussutit allanngortinneqartut</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Nittartagaq atuuttoq</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Sanaaq takuuk</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Naqinnerit mikisut, kisitsisit, _ aamma -, assersuutigalugu github-public. Mappip taaguutillu (static/&lt;id&gt;/&lt;n&gt;) aqqissaraat kingusinnerusukkullu allanngortinneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Matuersaat nutaaq pilersiguk</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Saqqummiuffik pilersiguk</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Matuersaat pilersiguk</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Toqqorsivik angerlarsimaffimmi siullermik pilersiguk; imaqanngitsoq naammaginartuuvoq.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Fiilit allattorsimaffiat</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nalunaarut</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Quppernerit amerlanersaat</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ateq</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Token-ip aqqa Aaqqissuussineq &gt; Isertugat-imi</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Saqqummiuffik nutaaq</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Tullia</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Naamik</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Suli commit-eqanngilaq.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Matuersaat pilersinneqanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php-ip command line-imi programmia nassaarineqanngilaq. migration.ini [AdminSettings] PhpCliPath aqqutaanut tamakkiisumut aaqqissoruk.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Suli taaguuteqanngilaq.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Suli saqqummiuffeqanngilaq.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Soqanngilaq</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Sanaami ilaanngilaq.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Suli saqqummiussisoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Suli saqqummiussisoqanngilaq: fiili tamarmi nutaajuvoq.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Nalunaarfigit</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Pilersaarummi</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Console-imi</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Qarasaasiami: ./console exp:static:serve %id aamma taamatut tunniussivoq.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Titarnermut ataatsimut aqqut ataaseq, * ilaanut sumulluunniit naapertuuppoq: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Saqqummiuffimmi ateq kisiat toqqorneqarpoq; token imaluunniit matuersaat nammineq Aaqqissuussineq &gt; Isertugat-imiittuarpoq log-imilu takuneqarneq ajorluni.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Quppernerit taagugaat kisiisa</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Token-imik kisiat. env:NAME qarasaasiap avatangiisiminik allanngorartumik taarsiullugu atuarpoq.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Siumut takuneq ammaruk</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Sanaaq angerlarsimaffiup tunniussinissaatut saqqummiuffiup mappianit ammarpaa. Innersuussut nalunaaquttap akunnera ataaseq illit atorsinnaavat.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Pisariaqanngilaq. Imaqanngitsoq: saqqummiunneqartoq.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Pisariaqanngilaq. Domæneqarluni nittartagaq aallaaviani tunniunneqassaaq.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Anitsineq</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Quppernerit</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Saqqummiuffiup quppernerai</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Quppernerit itigartitat</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Kingorna suliarineq</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Siumut takuneq</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Siumut takuneq saqqummiussinerlu</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name siumut takuneq saqqummiussinerlu</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Sanaaq siumut takuuk</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Ingerlaneq</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Najugaq tamanut ammasoq</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Matuersaat tamanut ammasoq</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Saqqummiuguk</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Nittartakkap assilinera aalaakkaasoq GitHub Pages-imut imaluunniit git-ip angerlarsimaffianut sumulluunniit saqqummiuguk: sanaaruk, allannguutit misissukkit, saqqummiuguk, pisariaqartikkaangatlu saqqummiussinermut siusinnerusumut uterit.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Saqqummiussineq utertiffissaq</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Saqqummiussinerit</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Push</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Ilitsersuut atuaruk</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Nalunaarsuineq</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Itigartitaq</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Ataqatigiissoq</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Nutarteruk</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Peerneqartoq</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Matuersaat taarseruk: pisoqaaq atorunnaassaaq</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Nalunaarusiaq</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Sanaap nalunaarusiaa</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Toqqorsivik</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Misissuineq</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Misissuinermi aaqqissuussineq tamarmi misissorneqassaaq titarnerillu allanneqartussat takutinneqassallutik. Suli toqqorsisoqanngilaq.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Utertiguk</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Utertitsineq</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Toqqoruk</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Pilersaarut</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Ujarlerfik</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Immikkoortut kinaassutsii, kommaminik avinneqartut.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Nittartakkamut atuuttumut nassiukkit</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Aaqqissuussineq</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Aaqqissuussinerit</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name-ip aaqqissuussinerai</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Aaqqissuussineq</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Aaqqissuussineq &gt; Isertugat</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Allattorsimaffinni takutinneqartarpoq, assersuutigalugu »Nittartagaq tamanut ammasoq GitHub Pages-imi«.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App atorlugu iserneq GitHub-imik attaveqarnermut ilanngullugu pilerssaaq.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Nittartagaq</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Nittartagaq saqqummiugassaq</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Angissusaa</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Angissusaa killilersuutillu</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Sanaap angissusaa</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Quppernerit pisoqaalisut</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Aallartippoq</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user-ip %time-imi aallartippaa.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Qanoq ittuunera</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Saqqummiussineq aalaakkaasoq</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Saqqummiussineq aalaakkaasoq matuvoq</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Saqqummiussineq aalaakkaasoq matuvoq.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Saqqummiussineq aalaakkaasoq matuvoq. Aaqqissuussineq &gt; Saqqummiussineq aalaakkaasoq-imi siullermik atuutilersiguk.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Saqqummiussineq aalaakkaasoq atuutilerpoq.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Alloriarneq %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Alloriarnerit</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Piiaaneq</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Atorunnaarsiguk</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Atuutilersiguk</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Saqqummiussineq aalaakkaasoq atuutilersiguk</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Taaguut</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Taaguutit</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Saqqummiuffik</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Saqqummiuffiit pilersinneqarsinnaapput allanngortinneqarsinnaallutillu, kisiannili atuutilersinneqanngikkaangat sanasoqanngilaq saqqummiussisoqanngilarlu.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Ujarlerfinnut suut atuassanerai nalunaarutigaa.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Sanaaq igineqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Sanaaq saqqummiussinermut kingullermut assigiippoq: saqqummiugassaqanngilaq.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Sanaaq igineqarpoq: mappimi saqqummiussineq kingulleq aterpoq.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Nalinginnaasut nittartakkanut amerlanerpaanut naleqquttuupput.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Mappimi sanaaq suli saqqummiunneqanngitsoq ilivoq; sanaap nutaap taarsissavaa.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Suliassat mappiannut allattoqarsinnaanngilaq: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Suliassaq piareersarneqarsinnaanngilaq: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Suliassaq aallartinneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Suliassaq naammassivoq. Nalunaarusiaa aallerneqarpoq.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Suliassami atuisoq isersimasoq pisariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Suliassaq aallartinneqarpoq kisiannili suliap kinaassutsini nalunaarutiginngilaa. %detail misissoruk.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Matuersaat</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Fiili annerpaaq: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Titarnerit allanneqartussat</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Ujarlerfinnut quppernerit allattorsimaffiat; najugaq tamanut ammasoq pisariaqarpoq.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Quppernerit pulartup iserfigisimanngitsup takusartagaattut aallerneqartarput. Aqutsinermut aaqqissuinermullu isaariat neqeroorutigineqarneq ajorput.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Ingerlaneq malinnaaffigineqarsinnaanngilaq. Suliassap qanoq ingerlanera takuniarukku quppernera nutarteruk.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Matuersaatip affaa tamanut ammasoq:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Avalequtip aallaavia</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Isertugat toqqorsiviat suli aaqqissuunneqanngilaq (./console exp:upgrade --apply-p tabeli pilersissavaa), taamaattumik matuersaat toqqorneqarsinnaanngilaq.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Qarasaasiaq nammineq iserpoq (SSH-imi matuersaammi namminermini imaluunniit iserfissanut ikiuutimi), imaluunniit toqqorsivik qarasaasiami matumaniippoq.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Aaqqissuussineq allanneqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Aaqqissuussinerit atuupput. Titarnerit uku allanneqassapput:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Aaqqissuussinerit fiiliat atuarneqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Nittartagaq saqqummiussinerup taassuma fiiliinut uterpoq; sanaaq suli saqqummiunneqanngitsoq siullermik saqqummiunneqassaaq igineqassalluunniit.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Nittartakkap quppernera nammineq najukkanut atuanngitsunut.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Saqqummiuffik toqqorneqarsinnaanngilaq: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Saqqummiuffik suli matuersaammik matuminnga iserneq ajorpoq: aaqqissuussinerini »Ikkussinermut matuersaat saqqummiuffimmut matumunnga pilersitaq« toqqaruk.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Saqqummiuffiit atuarneqarsinnaanngillat: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Suli sanaamik misissugassamik peqanngilaq.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ikkussineq una nittartakkamut isaariamik saqqummiussinermut peqanngilaq. Aqutsinermut aaqqissuinermullu isaariat saqqummiunneqarneq ajorput.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Quppernerup matuma suliassaq ingerlanerani malinnaaffigaa; quppernera matuguniuk tunuani ingerlaqqissaaq.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Saqqummiuffik una suli ikkussinermut matuersaateqanngilaq.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Saqqummiuffik una suli maani sanaarineqanngilaq.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Saqqummiuffik una ataatsimik peqarpoq.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Sanaaq una igissavaa: mappimi saqqummiussineq kingulleq aterpoq. Nittartagaq atuuttoq allanngunngilaq.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Siullermik »Allannguutit misissorpakka« nalunaaqutsiguk.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Piffissaq</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Aallartitsissutit</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Taaguutip aqqa ilaqqiguk</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Allanngorsimanngitsoq</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Suna</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Suut allanngornersut</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Fiili kinaanersoq; allanneqartuartarpoq.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Suliassap suut suliarineraa nalunaarsuinera. Suliassaq maani aallartinneqartoq quppernera matuguniuk tunuani ingerlaqqissaaq.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Suliassap kukkunertut naqitai</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Quppernerit taagugaat, saqqummiunneqarsimasullu assiliaat tamarmik</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Qaqugu</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Saqqummiussineq iluatsinngikkaangat</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Saqqummiussineq iluatsikkaangat</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Imarisat saqqummiunneqaraangata</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Assilinermi ilaanngitsunut innersuussutit sumut ingerlanersut (ujarlerneq, iserneq).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Assilineq aalaakkaasoq sumit tunniunneqarnersoq.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Nittartagaq suna saqqummiunneqarnersoq, saqqummiuffillu qanoq taaguuteqarnersoq.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Aqqutip sumiluunniit ataani atuuppoq. Nalinginnaasoq.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Domænet nammineq pigisat aalajangersarneqaraangata allanneqartarpoq.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Aap</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Maani console-imilu assammik sanasinnaavutit saqqummiussisinnaavutillu.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ateq kisiat; naleq Aaqqissuussineq &gt; Isertugat-imiittuarpoq</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path-ip ataani</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>nalunaarusiaqanngitsumik naammassivoq</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ilassut</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>iluatsinngilaq</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fiili</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, imaluunniit main mappimik docs-imik.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-ip angerlarsimaffia</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (token-imik) imaluunniit git@github.com:owner/repo.git (ikkussinermut matuersaammik); isissutissaq token-iluunniit ilanngunneq ajoruk.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, nittartakkap nunap assinganut innersuussutinullu pingaarnernut.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>assiliaq</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>suli naamik</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>naamik</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>remote-eqanngilaq</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>soqanngilaq: commit-it mappimiittuarput</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>soqanngilaq: allanngortoqanngilaq</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>nassiunneqanngilaq</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>allanngortoqanngilaq</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>quppernera</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>iluatsippoq</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open atorunnaarsimavoq, taamaattumik suliassaq maani aallartinneqarsinnaanngilaq. Qarasaasiami ./console exp:static:build atoruk.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>saqqummiussineq</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>saqqummiunneqarpoq</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>nassiunneqarnissaa utaqqivoq</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>nassiunneqarpoq</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>itigartinneqarpoq</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ataqatigiissoq</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>utertitsineq</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>utertinneqarpoq</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ingerlavoq</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>mappi kisiat</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: fiilimut CNAME-mut allanneqassaaq. Domænip DNS-ia angerlarsimaffiup nassuiaataatut angerlarsimaffimmut tikkuussiguk; HTTPS aallartinnissaanut sivisuujusinnaavoq.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>aap, suli saqqummiunneqanngilaq</translation>
     </message>
 </context>
 </TS>

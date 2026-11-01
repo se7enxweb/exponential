@@ -15150,6 +15150,14 @@ Catatan: Paket tidak akan dicopot.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Perubahan pada instalasi yang disimpan sebagai berkas: statusnya, eksekusinya, menjalankan dan membatalkan.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Terbitkan salinan statis sebuah situs ke GitHub Pages atau host git mana pun.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Penerbitan statis</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22157,18 @@ Catatan: Paket tidak akan dicopot.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Jawaban dari kueri tersimpan API GraphQL, dan kelas konten dari skemanya.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Terbitkan salinan statis ke GitHub Pages atau host git mana pun</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Penerbitan statis</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Cache statis menyajikan halaman dari server ini. Untuk menerbitkan salinan statis sebuah situs di tempat lain, di GitHub Pages atau host git mana pun, gunakan penerbitan statis.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76226,14 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Perubahan pada instalasi yang disimpan sebagai berkas: statusnya, eksekusinya, menjalankan dan membatalkan.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Terbitkan salinan statis sebuah situs ke GitHub Pages atau host git mana pun.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Penerbitan statis</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80581,1364 @@ Anda perlu mengubah kelas simpul tersebut menggunakan fungsi tukar.</translation
     <message>
         <source>The run could not be started.</source>
         <translation>Eksekusi tidak dapat dimulai.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Semua tujuan</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Terbitan terakhir</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Terbitkan salinan statis situs Anda secara gratis di GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Halaman usang</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Penerbitan statis</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Penerbitan statis dinonaktifkan.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Tujuan</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Tujuan tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>sebuah tugas sedang berjalan</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>build untuk diperiksa</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>sembunyikan ini</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>buat tujuan</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>tidak pernah</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>baca tutorial</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ditambahkan, %changed diubah, %removed dihapus</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes dari %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count lainnya tidak dicantumkan.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages halaman ditulis</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path berukuran %size, lebih besar dari yang diizinkan host untuk satu berkas.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % dari batas</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds dtk</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag adalah terbitan yang ada di situs saat ini.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: tugas %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repositori/ untuk situs proyek GitHub; kosong untuk domain khusus atau situs pengguna.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Situs</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Penyedia hosting</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Masuk ke repositori</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Repositori</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Tautan dan jalur dasar</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Domain Anda sendiri</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Isi build</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Kapan diterbitkan</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Tinjau dan simpan</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Situs proyek GitHub berada di bawah /&lt;repository&gt;/; tautan relatif berfungsi di sana dan di mana pun.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Sebuah build mengambil setiap halaman %site sebagaimana dilihat oleh pengunjung yang belum masuk, menulis ulang tautan, menyalin berkas, dan menulis hasilnya ke folder tujuan. Tidak ada yang diterbitkan sampai Anda memeriksa build dan menekan Terbitkan.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Ekspresi cron, misalnya 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Kunci deploy disimpan sebagai rahasia %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Kunci deploy memungkinkan instalasi ini melakukan push ke satu repositori melalui SSH dan tidak ke tempat lain. Bagian privatnya tetap di Penyiapan &gt; Rahasia; hanya bagian publiknya yang ditampilkan.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Kunci deploy yang dibuat untuk tujuan ini</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Kunci deploy masuk melalui SSH: ubah alamat git menjadi alamat SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Sebuah tugas sedang berjalan, dimulai oleh %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Sebuah tugas untuk tujuan ini masih berjalan (%detail). Tunggu hingga selesai.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Sebuah tugas untuk tujuan ini masih berjalan. Tunggu hingga selesai.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Tautan dari halaman /news/ ke halaman /about-us/team akan ditulis sebagai</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Kunci deploy baru telah dibuat. Tambahkan bagian publiknya ke repositori sekarang.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Halaman yang masih memuat keluaran debug, token formulir, atau id sesi setelah pembersihan tidak pernah diterbitkan.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Pengembalian ditujukan untuk ahli: centang &quot;Saya tahu apa yang diubahnya&quot; dan ketik nama tag lagi.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Sebuah situs boleh berukuran hingga %site, satu berkas hingga %file, dengan lalu lintas sekitar 100 GB per bulan. Pada paket gratis, repositori harus publik. GitHub Pages tidak ditujukan untuk toko atau transaksi komersial lainnya.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Sebuah tujuan adalah satu situs yang diterbitkan ke satu repositori git. Tidak ada yang di-build atau diterbitkan di sini: Simpan menulis pengaturan ke settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Sebuah tujuan adalah satu situs yang diterbitkan ke satu tempat, misalnya situs publik Anda di GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Token dari Penyiapan &gt; Rahasia</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Alur kerja repositori yang menerbitkannya.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Tambahkan kunci publik ini ke repositori dengan akses tulis. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, centang Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ditambahkan</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Host git lain</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Proses lain sedang mengerjakan tujuan ini: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Kembali</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Jalur dasar</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Sebelum</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Di bawah jalur dasar</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Cabang</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Tautan rusak</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Tautan rusak dalam build</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Build</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Build %id oleh %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Build untuk %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Build sekarang</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Build untuk diperiksa</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Oleh</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Secara manual, di sini</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Batal</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Ubah</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Diubah</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Perubahan</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Periksa dulu</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Periksa pengaturan ini</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Periksa apa yang diubah oleh build, lihat hasilnya, lalu terbitkan atau buang.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Pilih terbitan yang ingin dikembalikan.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Hadir di rilis berikutnya.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Komit</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Komit</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Meng-commit build, memberinya tag, dan melakukan push ke %remote. Push tidak pernah dipaksakan; Anda dapat kembali ke terbitan mana pun nanti.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Dibandingkan dengan folder sebelumnya: %added ditambahkan, %changed diubah, %removed dihapus, %unchanged tidak berubah.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Dibandingkan dengan terbitan terakhir.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kredensial</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domain khusus</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Keluaran debug, token formulir, id sesi, dan nonce selalu dihapus.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Kunci deploy</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Kunci deploy %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Buang</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Buang build</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domain</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Kosong: alamat situs. Jika tidak, alamat internal dari situs yang sama.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Berakhir</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Setiap tautan diawali dengan jalur dasar.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Setiap terbitan adalah sebuah komit dengan tag static/%id/&lt;n&gt;. Kembali ke terbitan sebelumnya membuat komit baru dengan berkas dari terbitan tersebut: riwayat tetap ada, tidak ada tag yang berpindah, dan tidak ada yang dipaksakan.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Tambahan</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Ambil halaman dari</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Berkas</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Berkas</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Berkas hilang</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Berkas dari</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Berkas yang tidak dapat dikumpulkan</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Sidik jari</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Folder</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Untuk alamat SSH. Kunci dibuat setelah disimpan; Anda menambahkan bagian publiknya ke repositori.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Untuk alamat https://. GitHub: token fine-grained dengan izin Contents baca dan tulis pada repositori.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Untuk ahli. Situs publik berubah segera setelah push selesai.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formulir</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Hosting gratis dari repositori GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Dari cabang</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Alamat git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages mengizinkan situs hingga %site dan berkas hingga %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Batas GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages menerbitkan berkas apa adanya (diperlukan untuk berkas yang diawali _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub menyajikan cabang sebagaimana di-push. Bawaan.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, server Anda sendiri: repositori git apa pun.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Kembali ke terbitan sebelumnya</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Bantuan</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Bantuan untuk panduan</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Sembunyikan</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Riwayat</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Riwayat %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Penyedia hosting</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Cara GitHub Pages menerima build</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Saya sudah memeriksa perubahannya</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Saya tahu apa yang diubahnya</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Fitur ini dinonaktifkan: tidak ada yang dapat di-build sampai diaktifkan.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Berjalan di latar belakang sebagai %user; Anda dapat menutup halaman ini.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Tugas %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Disimpan sebagai rahasia %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Jenis</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Terbitan terakhir</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Kecualikan halaman ini</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Kecualikan bagian ini</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Tautan</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Tautan ditulis ulang</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Situs langsung</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Lihat build</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Huruf kecil, angka, _ dan -, misalnya github-public. Ini menamai folder dan tag (static/&lt;id&gt;/&lt;n&gt;) dan tidak dapat diubah nanti.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Buat kunci baru</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Buat tujuan</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Buat kunci</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Buat repositori di host terlebih dahulu; repositori kosong tidak masalah.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifes</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Pesan</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Sebagian besar halaman</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Nama token di Penyiapan &gt; Rahasia</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Tujuan baru</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Berikutnya</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tidak</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Belum ada komit.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Tidak ada kunci yang dibuat: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Tidak ditemukan biner baris perintah php. Atur migration.ini [AdminSettings] PhpCliPath ke jalur lengkapnya.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Belum ada tag.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Belum ada tujuan.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Tidak ada</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Tidak ada dalam build.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Belum ada yang diterbitkan.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Belum ada yang diterbitkan: setiap berkas baru.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Beri tahu</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Sesuai jadwal</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Di konsol</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Di server: ./console exp:static:serve %id menyajikannya dengan cara yang sama.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Satu jalur per baris, * cocok dengan bagian mana pun: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Hanya nama yang disimpan bersama tujuan; token atau kunci itu sendiri tetap di Penyiapan &gt; Rahasia dan tidak pernah muncul di log.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Hanya yang disebut oleh halaman</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Hanya dengan token. Sebagai gantinya, env:NAME membaca variabel lingkungan server.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Buka pratinjau</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Membuka build sebagaimana host akan menyajikannya, dari folder tujuan. Tautan berfungsi untuk Anda selama satu jam.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Opsional. Kosong: apa yang telah diterbitkan.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Opsional. Dengan domain, situs disajikan di akarnya.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Keluaran</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Halaman</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Halaman tujuan</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Halaman ditolak</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Pascapemrosesan</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Pratinjau</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Pratinjau dan terbitkan</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Pratinjau dan terbitkan %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Pratinjau build</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Kemajuan</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Alamat publik</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Kunci publik</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Terbitkan</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Terbitkan salinan statis sebuah situs ke GitHub Pages atau host git mana pun: build, periksa perubahannya, terbitkan, dan kembali ke terbitan sebelumnya bila perlu.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Terbitan yang dikembalikan</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Terbitan</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Dorong</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Baca tutorial</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Catatan</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Ditolak</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatif</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Muat ulang</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Dihapus</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Ganti kunci: kunci lama berhenti berfungsi</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Laporan</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Laporan build</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repositori</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Tinjau</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Tinjauan memeriksa setiap pengaturan dan menampilkan baris yang akan ditulis. Belum ada yang disimpan.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Kembalikan</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Pengembalian</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Simpan</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Jadwal</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Halaman pencarian</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Id bagian, dipisahkan dengan koma.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Arahkan ke situs langsung</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Pengaturan</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Pengaturan</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Pengaturan %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Penyiapan</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Penyiapan &gt; Rahasia</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ditampilkan dalam daftar, misalnya &quot;Situs publik di GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Masuk dengan GitHub App akan hadir bersama integrasi GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Situs</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Situs yang akan diterbitkan</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Ukuran</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Ukuran dan batas</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Ukuran build</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Halaman usang</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Dimulai</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Dimulai oleh %user pada %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Keadaan</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Penerbitan statis</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Penerbitan statis dinonaktifkan</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Penerbitan statis dinonaktifkan.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Penerbitan statis dinonaktifkan. Aktifkan terlebih dahulu di Penyiapan &gt; Penerbitan statis.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Penerbitan statis diaktifkan.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Langkah %step dari %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Langkah</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Pembersihan</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Nonaktifkan</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Aktifkan</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Aktifkan penerbitan statis</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Label tag</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Label tag</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Tujuan</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Tujuan dapat dibuat dan diubah, tetapi tidak ada yang di-build atau diterbitkan sampai fitur ini diaktifkan.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Memberi tahu mesin pencari apa yang harus dibaca.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Build tidak dapat dibuang: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Build sama dengan terbitan terakhir: tidak ada yang perlu diterbitkan.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Build telah dibuang: folder kembali berisi terbitan terakhir.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Pengaturan bawaan cocok untuk sebagian besar situs.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Folder berisi build yang belum diterbitkan; build baru akan menggantikannya.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Folder tugas tidak dapat ditulisi: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Tugas tidak dapat disiapkan: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Tugas tidak dapat dimulai.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Tugas telah berakhir. Memuat laporannya.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Tugas memerlukan pengguna yang sudah masuk.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Tugas sudah dimulai tetapi tidak melaporkan id prosesnya. Periksa %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Kunci</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Berkas terbesar: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Baris yang akan ditulis</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Daftar halaman untuk mesin pencari; memerlukan alamat publik.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Halaman diambil sebagaimana dilihat oleh pengunjung yang belum masuk. Siteaccess administrasi dan penyuntingan tidak pernah ditawarkan.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Kemajuan tidak dapat diikuti. Muat ulang halaman untuk melihat bagaimana tugas berjalan.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Bagian publik kunci:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Akar cabang</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Penyimpanan rahasia belum disiapkan (./console exp:upgrade --apply membuat tabelnya), sehingga tidak ada kunci yang dapat disimpan.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Server masuk sendiri (dengan kunci SSH atau credential helper miliknya), atau repositori berada di server ini.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Pengaturan tidak dapat ditulis: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Pengaturan valid. Baris berikut akan ditulis:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Berkas pengaturan tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Situs kembali ke berkas dari terbitan tersebut; build yang belum diterbitkan harus diterbitkan atau dibuang terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Halaman situs sendiri untuk alamat yang tidak ada.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Tujuan tidak dapat disimpan: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Tujuan belum masuk dengan kunci ini: pilih &quot;Kunci deploy yang dibuat untuk tujuan ini&quot; di pengaturannya.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Tujuan tidak dapat dibaca: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Belum ada build untuk diperiksa.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Instalasi ini tidak memiliki siteaccess depan. Siteaccess administrasi dan penyuntingan tidak pernah diterbitkan.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Halaman ini mengikuti tugas selama berjalan; tugas tetap berjalan di latar belakang saat halaman ditutup.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Tujuan ini belum memiliki kunci deploy.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Tujuan ini belum pernah di-build di sini.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Tujuan ini sudah memilikinya.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Membuang build ini: folder kembali berisi terbitan terakhir. Situs langsung tidak berubah.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Centang &quot;Saya sudah memeriksa perubahannya&quot; terlebih dahulu.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Waktu</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Pemicu</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Ketik nama tag lagi</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Tidak berubah</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Apa</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Apa yang berubah</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Jenis setiap berkas; selalu ditulis.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Apa yang dilakukan tugas dan catatannya. Tugas yang dimulai di sini tetap berjalan di latar belakang saat halaman ini ditutup.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Apa yang dicetak tugas sebagai galat</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Yang disebut oleh halaman, dan setiap gambar dari konten yang diterbitkan</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Kapan</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Saat penerbitan gagal</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Saat penerbitan berhasil</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Saat konten diterbitkan</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Ke mana tautan menuju untuk hal yang tidak dimuat salinan (pencarian, login).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Tempat salinan statis disajikan.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Situs mana yang diterbitkan, dan apa nama tujuannya.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Berfungsi di bawah jalur mana pun. Bawaan.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Ditulis setiap kali domain khusus diatur.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Anda selalu dapat mem-build dan menerbitkan secara manual di sini dan di konsol.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>hanya nama; nilainya tetap di Penyiapan &gt; Rahasia</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>di bawah %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>berakhir tanpa laporan</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>tambahan</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>gagal</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>berkas</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, atau main dengan folder docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>host git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (dengan token) atau git@github.com:owner/repo.git (dengan kunci deploy); jangan pernah ada kata sandi atau token di dalamnya.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, untuk sitemap dan tautan kanonis.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>gambar</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>tidak pernah</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>tidak</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>tanpa remote</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>tidak ada: komit tetap di folder</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>tidak ada: tidak ada yang berubah</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>belum di-push</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>tidak ada yang berubah</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>halaman</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>berhasil</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open dinonaktifkan, sehingga tugas tidak dapat dimulai di sini. Gunakan ./console exp:static:build di server.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>terbitan</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>diterbitkan</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>push tertunda</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>sudah di-push</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ditolak</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatif</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>pengembalian</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>dikembalikan</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>berjalan</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>hanya folder</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: ditulis ke berkas CNAME. Arahkan DNS domain ke host sesuai petunjuknya; HTTPS dapat memerlukan waktu untuk aktif.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ya, belum diterbitkan</translation>
     </message>
 </context>
 </TS>

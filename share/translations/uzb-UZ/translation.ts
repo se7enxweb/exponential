@@ -15150,6 +15150,14 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>O‘rnatmadagi fayl sifatida saqlangan o‘zgarishlar: ularning holati, ishga tushirishlar, bajarish va orqaga qaytarish.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Sayt statik nusxasini GitHub Pages yoki istalgan git xostiga nashr qilish.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik nashr qilish</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22157,18 @@ Eslatma: paketlar oʻchirib tashlanmaydi.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API saqlangan soʻrovlarining javoblari va uning sxemasidagi kontent sinflari.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Statik nusxani GitHub Pages yoki istalgan git xostiga nashr qilish</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik nashr qilish</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Statik kesh sahifalarni shu serverdan beradi. Sayt statik nusxasini boshqa joyda, GitHub Pages yoki istalgan git xostida nashr qilish uchun statik nashr qilishdan foydalaning.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76226,14 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>O‘rnatmadagi fayl sifatida saqlangan o‘zgarishlar: ularning holati, ishga tushirishlar, bajarish va orqaga qaytarish.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Sayt statik nusxasini GitHub Pages yoki istalgan git xostiga nashr qilish.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik nashr qilish</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80581,1364 @@ Tugunning sinfini almashtirish funksiyasi yordamida oʻzgartirishingiz kerak bo�
     <message>
         <source>The run could not be started.</source>
         <translation>Ishga tushirishni boshlab bo‘lmadi.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Barcha maqsadlar</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Oxirgi nashr</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Saytingizning bepul statik nusxasini GitHub Pages’da nashr qiling:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Eskirgan sahifalar</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik nashr qilish</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statik nashr qilish o‘chirilgan.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Maqsad</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Maqsadlarni o‘qib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>vazifa bajarilmoqda</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>tekshiriladigan yig‘ma</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>buni yashirish</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>maqsad yaratish</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hech qachon</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>qo‘llanmani o‘qish</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ta qo‘shildi, %changed ta o‘zgardi, %removed ta o‘chirildi</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes / %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Yana %count ta ro‘yxatda ko‘rsatilmagan.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages ta sahifa yozildi</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path hajmi %size, bu xost bitta fayl uchun ruxsat beradigan hajmdan ko‘p.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>Chegaraning %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds soniya</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag — saytdagi hozirgi nashr.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: vazifa %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repozitoriy/ GitHub loyiha sayti uchun; maxsus domen yoki foydalanuvchi sayti uchun bo‘sh.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Sayt</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Xost</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Repozitoriyga kirish</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Repozitoriy</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Havolalar va asosiy yo‘l</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. O‘z domeningiz</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Yig‘ma nimalarni o‘z ichiga oladi</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Qachon nashr qilinadi</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Ko‘rib chiqish va saqlash</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub loyiha sayti /&lt;repository&gt;/ ostida joylashadi; nisbiy havolalar u yerda ham, boshqa har qanday joyda ham ishlaydi.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Yig‘ma %site saytining har bir sahifasini tizimga kirmagan tashrifchi ko‘rganidek yuklab oladi, havolalarni qayta yozadi, fayllarni nusxalaydi va natijani maqsad papkasiga yozadi. Siz yig‘mani tekshirib, Nashr qilish tugmasini bosmaguningizcha hech narsa nashr qilinmaydi.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Cron ifodasi, masalan 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Joylashtirish kaliti %secret maxfiy qiymati sifatida saqlanadi.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Joylashtirish kaliti bu o‘rnatmaga SSH orqali faqat bitta repozitoriyga yuborish (push) imkonini beradi, boshqa hech qayerga emas. Uning yopiq qismi Sozlash &gt; Maxfiy qiymatlar bo‘limida qoladi; faqat ochiq qismi ko‘rsatiladi.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Shu maqsad uchun yaratilgan joylashtirish kaliti</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Joylashtirish kaliti SSH orqali kiradi: git manzilini SSH manziliga o‘zgartiring (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Vazifa bajarilmoqda, uni %user boshlagan</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Bu maqsadning vazifasi hali bajarilmoqda (%detail). U tugashini kuting.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Bu maqsadning vazifasi hali bajarilmoqda. U tugashini kuting.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ sahifasidan /about-us/team sahifasiga havola quyidagicha yoziladi:</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Yangi joylashtirish kaliti yaratildi. Uning ochiq qismini hoziroq repozitoriyga qo‘shing.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Tozalashdan keyin ham nosozliklarni tuzatish chiqishi, forma tokeni yoki seans identifikatori qolgan sahifa hech qachon nashr qilinmaydi.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Orqaga qaytarish mutaxassislar uchun: &quot;Bu nimani o‘zgartirishini bilaman&quot; belgisini qo‘ying va teg nomini qayta kiriting.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Sayt %site gacha, bitta fayl %file gacha bo‘lishi mumkin, oyiga taxminan 100 GB trafik bilan. Bepul tarifda repozitoriy ochiq bo‘lishi kerak. GitHub Pages do‘konlar yoki boshqa tijoriy operatsiyalar uchun mo‘ljallanmagan.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Maqsad — bitta git repozitoriyga nashr qilinadigan bitta sayt. Bu yerda hech narsa yig‘ilmaydi yoki nashr qilinmaydi: Saqlash sozlamalarni settings/override/staticcache.ini.append.php fayliga yozadi.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Maqsad — bitta joyga nashr qilinadigan bitta sayt, masalan GitHub Pages’dagi ochiq saytingiz.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Sozlash &gt; Maxfiy qiymatlar bo‘limidagi token</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Repozitoriydagi ish oqimi (workflow) uni nashr qiladi.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Ushbu ochiq kalitni repozitoriyga yozish huquqi bilan qo‘shing. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access belgisini qo‘ying.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Qo‘shilgan</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Boshqa git xosti</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Bu maqsad ustida boshqa jarayon ishlamoqda: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Orqaga</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Asosiy yo‘l</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Oldin</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Asosiy yo‘l ostida</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Tarmoq</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Buzilgan havolalar</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Yig‘madagi buzilgan havolalar</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Yig‘ma</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Yig‘ma %id, %user tomonidan</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name ni yig‘ish</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Hozir yig‘ish</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Tekshiriladigan yig‘ma</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Kim tomonidan</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Qo‘lda, shu yerda</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Bekor qilish</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>O‘zgartirish</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>O‘zgargan</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>O‘zgarishlar</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Avval tekshiring</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Ushbu sozlamalarni tekshiring</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Yig‘ma nimani o‘zgartirishini tekshiring, uni ko‘rib chiqing, so‘ng nashr qiling yoki tashlab yuboring.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Qaytiladigan nashrni tanlang.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Keyingi relizda paydo bo‘ladi.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kommit</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Kommitlar</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Yig‘mani kommit qiladi, unga teg qo‘yadi va %remote ga yuboradi. Yuborish hech qachon majburiy qilinmaydi; keyinroq istalgan nashrga qaytishingiz mumkin.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Oldingi papka bilan solishtirganda: %added ta qo‘shildi, %changed ta o‘zgardi, %removed ta o‘chirildi, %unchanged ta o‘zgarmadi.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Oxirgi nashr bilan solishtirilgan.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Kirish ma’lumotlari</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Maxsus domen</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Nosozliklarni tuzatish chiqishi, forma tokenlari, seans identifikatorlari va nonce qiymatlari doim olib tashlanadi.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Joylashtirish kaliti</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name joylashtirish kaliti</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Tashlab yuborish</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Yig‘mani tashlab yuborish</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domen</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Bo‘sh: saytning manzili. Aks holda o‘sha saytning ichki manzili.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Tugagan</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Har bir havola asosiy yo‘l bilan boshlanadi.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Har bir nashr static/%id/&lt;n&gt; tegli kommitdir. Orqaga qaytish oldingi nashr fayllari bilan yangi kommit yaratadi: tarix saqlanadi, hech bir teg ko‘chmaydi va hech narsa majburlanmaydi.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Qo‘shimchalar</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Sahifalarni qayerdan yuklash</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fayl</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fayllar</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Yetishmayotgan fayllar</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Sayt fayllari:</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Yig‘ib bo‘lmagan fayllar</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Barmoq izi</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Papka</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH manzili uchun. Kalit saqlangandan keyin yaratiladi; uning ochiq qismini repozitoriyga qo‘shasiz.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// manzili uchun. GitHub: repozitoriyda Contents uchun o‘qish va yozish huquqiga ega fine-grained token.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Mutaxassislar uchun. Yuborish tugashi bilan ochiq sayt o‘zgaradi.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formalar</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub repozitoriyidan bepul xosting.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Tarmoqdan</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git manzili</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site hajmdagi sayt va %file hajmdagi faylga ruxsat beradi.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages cheklovlari</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages fayllarni o‘zgartirmasdan nashr qiladi (_ bilan boshlanadigan fayllar uchun kerak).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub tarmoqni qanday yuborilgan bo‘lsa, shunday beradi. Standart.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, o‘z serveringiz: istalgan git repozitoriy.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Oldingi nashrga qaytish</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Yordam</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Sozlash ustasi bo‘yicha yordam</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Ularni yashirish</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Tarix</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name tarixi</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Xost</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages yig‘mani qanday qabul qiladi</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>O‘zgarishlarni tekshirdim</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Bu nimani o‘zgartirishini bilaman</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>U o‘chirilgan: yoqilmaguncha hech narsa yig‘ilmaydi.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>U fonda %user sifatida ishlaydi; bu sahifani yopishingiz mumkin.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Vazifa %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>%secret maxfiy qiymati sifatida saqlanadi.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Turi</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Oxirgi nashr</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Bu sahifalarni chiqarib tashlash</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Bu bo‘limlarni chiqarib tashlash</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Havolalar</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Qayta yozilgan havolalar</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Jonli sayt</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Yig‘mani ko‘rish</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Kichik harflar, raqamlar, _ va -, masalan github-public. U papka va teglarni (static/&lt;id&gt;/&lt;n&gt;) nomlaydi va keyin o‘zgartirib bo‘lmaydi.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Yangi kalit yaratish</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Maqsad yaratish</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Kalitni yaratish</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Avval xostda repozitoriy yarating; bo‘sh repozitoriy ham bo‘ladi.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Fayllar ro‘yxati (manifest)</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Xabar</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Ko‘pchilik sahifalar</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nomi</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Sozlash &gt; Maxfiy qiymatlar bo‘limidagi token nomi</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Yangi maqsad</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Keyingi</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Yo‘q</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Hali kommit yo‘q.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Kalit yaratilmadi: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php buyruq qatori dasturi topilmadi. migration.ini [AdminSettings] PhpCliPath ni uning to‘liq yo‘liga sozlang.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Hali teg yo‘q.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Hali maqsad yo‘q.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Hech biri</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Yig‘mada yo‘q.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Hali hech narsa nashr qilinmagan.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Hali hech narsa nashr qilinmagan: har bir fayl yangi.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Xabar berish</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Jadval bo‘yicha</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Konsolda</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Serverda: ./console exp:static:serve %id uni xuddi shunday beradi.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Har bir qatorda bitta yo‘l, * istalgan qismga mos keladi: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Maqsad bilan faqat nom saqlanadi; tokenning yoki kalitning o‘zi Sozlash &gt; Maxfiy qiymatlar bo‘limida qoladi va hech qachon jurnalda ko‘rinmaydi.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Faqat sahifalar nomlagan narsalar</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Faqat token bilan. env:NAME buning o‘rniga serverning muhit o‘zgaruvchisini o‘qiydi.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Oldindan ko‘rishni ochish</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Yig‘mani maqsad papkasidan, xost uni qanday bersa, shunday ochadi. Havola siz uchun bir soat ishlaydi.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Ixtiyoriy. Bo‘sh: nashr qilingan narsa.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Ixtiyoriy. Domen bilan sayt uning ildizida beriladi.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Chiqish</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Sahifalar</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Maqsad sahifalari</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Rad etilgan sahifalar</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Keyingi ishlov</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Oldindan ko‘rish</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Oldindan ko‘rish va nashr qilish</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ni oldindan ko‘rish va nashr qilish</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Yig‘mani oldindan ko‘rish</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Jarayon</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Ochiq manzil</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Ochiq kalit</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Nashr qilish</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Sayt statik nusxasini GitHub Pages yoki istalgan git xostiga nashr qiling: uni yig‘ing, o‘zgarishlarni tekshiring, nashr qiling va kerak bo‘lganda oldingi nashrga qayting.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Qaytiladigan nashr</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Nashrlar</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Yuborish (push)</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Qo‘llanmani o‘qing</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Jurnal</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Rad etilgan</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Nisbiy</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Qayta yuklash</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>O‘chirilgan</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Kalitni almashtirish: eskisi ishlashdan to‘xtaydi</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Hisobot</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Yig‘ma hisoboti</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repozitoriy</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Ko‘rib chiqish</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Ko‘rib chiqish har bir sozlamani tekshiradi va yoziladigan qatorlarni ko‘rsatadi. Hali hech narsa saqlanmagan.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Orqaga qaytarish</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Orqaga qaytarish</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Saqlash</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Jadval</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Qidiruv sahifasi</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Bo‘lim identifikatorlari, vergul bilan ajratilgan.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Ularni jonli saytga yuborish</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Sozlama</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Sozlamalar</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name sozlamalari</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Sozlash</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Sozlash &gt; Maxfiy qiymatlar</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Ro‘yxatlarda ko‘rsatiladi, masalan &quot;GitHub Pages’dagi ochiq sayt&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App orqali kirish GitHub integratsiyasi bilan birga keladi.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Sayt</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Nashr qilinadigan sayt</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Hajm</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Hajm va cheklovlar</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Yig‘ma hajmi</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Eskirgan sahifalar</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Boshlangan</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user tomonidan %time da boshlangan.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Holat</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Statik nashr qilish</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Statik nashr qilish o‘chirilgan</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Statik nashr qilish o‘chirilgan.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Statik nashr qilish o‘chirilgan. Avval uni Sozlash &gt; Statik nashr qilish bo‘limida yoqing.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Statik nashr qilish yoqilgan.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Qadam %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Qadamlar</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Tozalash</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>O‘chirish</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Yoqish</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Statik nashr qilishni yoqish</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Teg</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Teglar</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Maqsad</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Maqsadlarni yaratish va o‘zgartirish mumkin, lekin u yoqilmaguncha hech narsa yig‘ilmaydi yoki nashr qilinmaydi.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Qidiruv tizimlariga nimani o‘qish kerakligini aytadi.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Yig‘mani tashlab yuborib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Yig‘ma oxirgi nashr bilan bir xil: nashr qiladigan narsa yo‘q.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Yig‘ma tashlab yuborildi: papkada yana oxirgi nashr turibdi.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Standart qiymatlar ko‘pchilik saytlarga mos keladi.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Papkada hali nashr qilinmagan yig‘ma bor; yangi yig‘ma uni almashtiradi.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Vazifalar papkasiga yozib bo‘lmaydi: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Vazifani tayyorlab bo‘lmadi: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Vazifani boshlab bo‘lmadi.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Vazifa tugadi. Uning hisoboti yuklanmoqda.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Vazifa uchun tizimga kirgan foydalanuvchi kerak.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Vazifa boshlandi, lekin jarayon identifikatorini xabar qilmadi. %detail ni tekshiring.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Kalit</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Eng katta fayl: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Yoziladigan qatorlar</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Qidiruv tizimlari uchun sahifalar ro‘yxati; ochiq manzil kerak.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Sahifalar tizimga kirmagan tashrifchi ko‘rganidek yuklanadi. Boshqaruv va tahrirlash siteaccesslari hech qachon taklif qilinmaydi.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Jarayonni kuzatib bo‘lmadi. Vazifa qanday ketayotganini ko‘rish uchun sahifani qayta yuklang.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Kalitning ochiq qismi:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Tarmoq ildizi</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Maxfiy qiymatlar ombori hali sozlanmagan (./console exp:upgrade --apply uning jadvalini yaratadi), shuning uchun hech qanday kalitni saqlab bo‘lmaydi.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Server o‘zi kiradi (o‘z SSH kaliti yoki kirish ma’lumotlari yordamchisi bilan), yoki repozitoriy shu serverda.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Sozlamani yozib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Sozlamalar to‘g‘ri. Quyidagi qatorlar yoziladi:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Sozlamalar faylini o‘qib bo‘lmaydi: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Sayt o‘sha nashr fayllariga qaytadi; hali nashr qilinmagan yig‘ma avval nashr qilinishi yoki tashlab yuborilishi kerak.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Mavjud bo‘lmagan manzillar uchun saytning o‘z sahifasi.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Maqsadni saqlab bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Maqsad hali bu kalit bilan kirmaydi: uning sozlamalarida &quot;Shu maqsad uchun yaratilgan joylashtirish kaliti&quot; ni tanlang.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Maqsadlarni o‘qib bo‘lmadi: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Hali tekshiriladigan yig‘ma yo‘q.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Bu o‘rnatmada ochiq siteaccess yo‘q. Boshqaruv va tahrirlash siteaccesslari hech qachon nashr qilinmaydi.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Bu sahifa vazifani bajarilish davomida kuzatadi; sahifa yopilganda u fonda davom etadi.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Bu maqsadda hali joylashtirish kaliti yo‘q.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Bu maqsad hali bu yerda yig‘ilmagan.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Bu maqsadda kalit bor.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Bu yig‘mani tashlab yuboradi: papkada yana oxirgi nashr turadi. Jonli sayt o‘zgarmaydi.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Avval &quot;O‘zgarishlarni tekshirdim&quot; belgisini qo‘ying.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Vaqt</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Ishga tushiruvchilar</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Teg nomini qayta kiriting</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>O‘zgarmagan</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Vebxuk</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Nima</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Nima o‘zgaradi</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Har bir fayl nima ekanligi; doim yoziladi.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Vazifa nima qilgani va uning jurnali. Shu yerda boshlangan vazifa bu sahifa yopilganda fonda davom etadi.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Vazifa xato sifatida chiqargan narsalar</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Sahifalar nomlagan narsalar va nashr qilingan kontentning har bir rasmi</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Qachon</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Nashr muvaffaqiyatsiz bo‘lganda</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Nashr muvaffaqiyatli bo‘lganda</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Kontent nashr qilinganda</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Nusxada bo‘lmagan narsalarga (qidiruv, kirish) havolalar qayerga olib borishi.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Statik nusxa qayerdan beriladi.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Qaysi sayt nashr qilinadi va maqsad qanday nomlanadi.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Istalgan yo‘l ostida ishlaydi. Standart.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Maxsus domen o‘rnatilganda yoziladi.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ha</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Bu yerda va konsolda har doim qo‘lda yig‘ish va nashr qilish mumkin.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>faqat nom; qiymat Sozlash &gt; Maxfiy qiymatlar bo‘limida qoladi</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path ostida</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>hisobotsiz tugadi</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>qo‘shimcha</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>muvaffaqiyatsiz</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fayl</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, yoki docs papkasi bilan main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git xosti</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (token bilan) yoki git@github.com:owner/repo.git (joylashtirish kaliti bilan); unda hech qachon parol yoki token bo‘lmasin.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, sayt xaritasi va kanonik havolalar uchun.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>rasm</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>hech qachon</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>yo‘q</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>masofaviy repozitoriy yo‘q</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>yo‘q: kommitlar papkada qoladi</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>yo‘q: hech narsa o‘zgarmadi</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>yuborilmagan</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>hech narsa o‘zgarmadi</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>sahifa</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>o‘tdi</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open o‘chirilgan, shuning uchun bu yerda vazifani boshlab bo‘lmaydi. Serverda ./console exp:static:build dan foydalaning.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>nashr</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>nashr qilingan</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>yuborish kutilmoqda</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>yuborilgan</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>rad etilgan</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>nisbiy</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>orqaga qaytarish</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>orqaga qaytarilgan</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>bajarilmoqda</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>faqat papka</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME fayliga yoziladi. Domen DNS yozuvlarini xost tushuntirganidek unga yo‘naltiring; HTTPS ishga tushishi biroz vaqt olishi mumkin.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ha, hali nashr qilinmagan</translation>
     </message>
 </context>
 </TS>

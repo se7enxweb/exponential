@@ -15089,6 +15089,14 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Modificări ale instalării păstrate ca fișiere: starea lor, rulările, rulare și anulare.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publicați o copie statică a unui site pe GitHub Pages sau pe orice gazdă git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicare statică</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22096,18 @@ Notă: pachetele nu vor fi dezinstalate.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Răspunsurile interogărilor persistente ale API-ului GraphQL și clasele de conținut ale schemei sale.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Publicați o copie statică pe GitHub Pages sau pe orice gazdă git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicare statică</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Cache-ul static servește pagini de pe acest server. Pentru a publica o copie statică a unui site în altă parte, pe GitHub Pages sau pe orice gazdă git, folosiți publicarea statică.</translation>
     </message>
 </context>
 <context>
@@ -76145,6 +76165,14 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Modificări ale instalării păstrate ca fișiere: starea lor, rulările, rulare și anulare.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Publicați o copie statică a unui site pe GitHub Pages sau pe orice gazdă git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicare statică</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80583,6 +80611,1364 @@ Va trebui să schimbați clasa nodului folosind funcția de interschimbare.</tra
     <message>
         <source>The run could not be started.</source>
         <translation>Rularea nu a putut fi pornită.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Toate țintele</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Ultima publicare</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Publicați gratuit o copie statică a site-ului pe GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Pagini învechite</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicare statică</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Publicarea statică este dezactivată.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Țintă</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Țintele nu au putut fi citite: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>o sarcină este în curs</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>build de verificat</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ascunde</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>creează o țintă</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>niciodată</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>citiți tutorialul</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added adăugate, %changed modificate, %removed eliminate</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes din %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Încă %count nu sunt listate.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages pagini scrise</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path are %size, mai mult decât permite gazda pentru un fișier.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % din limită</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag este publicarea pe care o are site-ul acum.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: sarcina %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/depozit/ pentru un site de proiect GitHub; gol pentru un domeniu propriu sau un site de utilizator.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Site-ul</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Gazda</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Autentificarea în depozit</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Depozitul</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Linkuri și cale de bază</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Domeniul dumneavoastră</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Ce conține build-ul</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Când este publicat</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Verificare și salvare</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Un site de proiect GitHub se află sub /&lt;repository&gt;/; linkurile relative funcționează acolo și oriunde altundeva.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Un build preia fiecare pagină a %site așa cum o vede un vizitator neautentificat, rescrie linkurile, copiază fișierele și scrie rezultatul în folderul țintei. Nimic nu este publicat până nu verificați build-ul și apăsați Publică.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>O expresie cron, de exemplu 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>O cheie de implementare este păstrată ca secretul %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>O cheie de implementare permite acestei instalări să trimită prin SSH într-un singur depozit și nicăieri altundeva. Jumătatea sa privată rămâne în Configurare &gt; Secrete; doar jumătatea publică este afișată.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>O cheie de implementare creată pentru această țintă</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>O cheie de implementare se autentifică prin SSH: schimbați adresa git cu cea SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>O sarcină este în curs, pornită de %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>O sarcină a acestei ținte este încă în curs (%detail). Așteptați să se termine.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>O sarcină a acestei ținte este încă în curs. Așteptați să se termine.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Un link de la pagina /news/ la pagina /about-us/team va fi scris ca</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>A fost creată o nouă cheie de implementare. Adăugați acum jumătatea sa publică în depozit.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>O pagină care după curățare încă mai conține ieșire de depanare, un token de formular sau un id de sesiune nu este publicată niciodată.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>O anulare este pentru experți: bifați „Știu ce schimbă aceasta” și tastați din nou numele etichetei.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Un site poate avea până la %site, un fișier până la %file, cu aproximativ 100 GB de trafic pe lună. Într-un plan gratuit, depozitul trebuie să fie public. GitHub Pages nu este destinat magazinelor sau altor tranzacții comerciale.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>O țintă este un site publicat într-un depozit git. Aici nu se generează și nu se publică nimic: „Salvează” scrie setările în settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>O țintă este un site publicat într-un singur loc, de exemplu site-ul dumneavoastră public pe GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Un token din Configurare &gt; Secrete</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Un flux de lucru al depozitului îl publică.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Adăugați această cheie publică în depozit cu drept de scriere. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, bifați Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Adăugate</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Altă gazdă git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Alt proces lucrează la această țintă: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Înapoi</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Cale de bază</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Înainte</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Sub o cale de bază</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Ramură</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Linkuri rupte</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Linkuri rupte în build</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Build</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Build-ul %id de %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Build pentru %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Generează acum</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Build de verificat</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>De către</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Manual, aici</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Anulare</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Modifică</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Modificate</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Modificări</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Verificați-l mai întâi</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Verificați aceste setări</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Verificați ce schimbă build-ul, examinați-l, apoi publicați-l sau aruncați-l.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Alegeți publicarea la care reveniți.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Vine într-o versiune ulterioară.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Comitere</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Comiteri</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Comite build-ul, îl etichetează și îl trimite la %remote. O trimitere nu este niciodată forțată; puteți reveni mai târziu la orice publicare.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Comparat cu folderul de dinainte: %added adăugate, %changed modificate, %removed eliminate, %unchanged neschimbate.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Comparat cu ultima publicare.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Credențiale</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domeniu propriu</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Ieșirea de depanare, tokenurile de formular, id-urile de sesiune și nonce-urile sunt întotdeauna eliminate.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Cheie de implementare</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Cheia de implementare a %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Renunță</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Renunță la build</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domeniu</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Gol: adresa site-ului. Altfel, o adresă internă a aceluiași site.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Încheiată</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Fiecare link începe cu calea de bază.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Fiecare publicare este o comitere cu o etichetă static/%id/&lt;n&gt;. Revenirea creează o nouă comitere cu fișierele unei publicări anterioare: istoricul rămâne, nicio etichetă nu se mută și nimic nu este forțat.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Suplimentare</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Preia paginile de la</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fișier</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Fișiere</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Fișiere lipsă</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Fișierele din</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Fișiere care nu au putut fi colectate</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Amprentă</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Folder</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Pentru o adresă SSH. Cheia este creată după salvare; adăugați jumătatea ei publică în depozit.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Pentru o adresă https://. GitHub: un token cu granulație fină, cu Contents de citire și scriere pe depozit.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Pentru experți. Site-ul public se schimbă imediat ce trimiterea s-a încheiat.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Formulare</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Găzduire gratuită dintr-un depozit GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Din ramură</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Adresă git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages permite un site de %site și un fișier de %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Limitele GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages publică fișierele așa cum sunt (necesar pentru fișierele care încep cu _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub servește ramura așa cum este trimisă. Opțiunea implicită.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, propriul server: orice depozit git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Reveniți la o publicare anterioară</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Ajutor</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Ajutor pentru asistent</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Ascunde-le</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Istoric</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Istoricul %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Gazdă</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Cum primește GitHub Pages build-ul</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Am verificat modificările</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Știu ce schimbă aceasta</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Este dezactivată: nimic nu poate fi generat până nu este activată.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Rulează în fundal ca %user; puteți închide această pagină.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Sarcina %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Păstrat ca secretul %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Ultima publicare</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Excludeți aceste pagini</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Excludeți aceste secțiuni</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Linkuri</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Linkuri rescrise</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Site-ul live</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Examinați build-ul</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Litere mici, cifre, _ și -, de exemplu github-public. Denumește folderul și etichetele (static/&lt;id&gt;/&lt;n&gt;) și nu poate fi schimbat ulterior.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Creează o cheie nouă</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Creează o țintă</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Creează cheia</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Creați mai întâi depozitul pe gazdă; unul gol este în regulă.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifest</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Mesaj</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Majoritatea paginilor</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Numele tokenului în Configurare &gt; Secrete</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Țintă nouă</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Următorul</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Nicio comitere încă.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Nu a fost creată nicio cheie: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nu a fost găsit niciun binar php de linie de comandă. Setați migration.ini [AdminSettings] PhpCliPath la calea sa completă.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Nicio etichetă încă.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Nicio țintă încă.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Niciuna</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Nu este în build.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Nu a fost publicat nimic încă.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Nu a fost publicat nimic încă: fiecare fișier este nou.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Notificare</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>După un program</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>În consolă</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Pe server: ./console exp:static:serve %id îl servește la fel.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>O cale pe linie, * corespunde oricărei părți: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Doar un nume este stocat cu ținta; tokenul sau cheia în sine rămâne în Configurare &gt; Secrete și nu apare niciodată într-un jurnal.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Doar ce numesc paginile</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Doar cu un token. env:NAME citește în schimb o variabilă de mediu a serverului.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Deschide previzualizarea</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Deschide build-ul așa cum îl va servi gazda, din folderul țintei. Linkul funcționează pentru dumneavoastră timp de o oră.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Opțional. Gol: ce a fost publicat.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Opțional. Cu un domeniu, site-ul este servit la rădăcina sa.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Ieșire</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Pagini</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Paginile țintei</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Pagini refuzate</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Post-procesare</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Previzualizare</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Previzualizare și publicare</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Previzualizare și publicare %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Previzualizați build-ul</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Progres</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Adresă publică</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Cheie publică</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Publică</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Publicați o copie statică a unui site pe GitHub Pages sau pe orice gazdă git: generați-o, verificați modificările, publicați și reveniți la o publicare anterioară când este nevoie.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Publicarea la care se revine</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Publicări</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Trimitere</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Citiți tutorialul</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Jurnal</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Refuzate</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relativ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Reîncarcă</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Eliminate</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Înlocuiți cheia: cea veche nu mai funcționează</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Raport</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Raportul build-ului</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depozit</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Verificare</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Verificarea controlează fiecare setare și arată liniile care vor fi scrise. Nimic nu este salvat încă.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Anulează</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Anulare</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Salvează</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Program</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Pagina de căutare</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ID-uri de secțiuni, separate prin virgule.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Trimiteți-le la site-ul live</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Setare</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Setări</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Setările %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Configurare</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Configurare &gt; Secrete</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Afișat în liste, de exemplu „Site public pe GitHub Pages”.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Autentificarea cu o GitHub App vine odată cu integrarea GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Site de publicat</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Dimensiune</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Dimensiune și limite</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Dimensiunea build-ului</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Pagini învechite</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Pornită</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Pornită de %user la %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stare</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Publicare statică</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Publicarea statică este dezactivată</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Publicarea statică este dezactivată.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Publicarea statică este dezactivată. Activați-o mai întâi în Configurare &gt; Publicare statică.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Publicarea statică este activată.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Pasul %step din %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Pași</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Curățare</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Dezactivează</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Activează</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Activați publicarea statică</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etichetă</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Etichete</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Țintă</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Țintele pot fi create și modificate, dar nimic nu este generat sau publicat până nu este activată.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Le spune motoarelor de căutare ce să citească.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Build-ul nu a putut fi aruncat: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Build-ul este identic cu ultima publicare: nu este nimic de publicat.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Build-ul a fost aruncat: folderul conține din nou ultima publicare.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Valorile implicite se potrivesc majorității site-urilor.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Folderul conține un build care nu este încă publicat; un build nou îl înlocuiește.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Folderul sarcinilor nu poate fi scris: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Sarcina nu a putut fi pregătită: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Sarcina nu a putut fi pornită.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Sarcina s-a încheiat. Se încarcă raportul ei.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Sarcina necesită un utilizator autentificat.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Sarcina a fost pornită, dar nu și-a raportat id-ul de proces. Verificați %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Cheia</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Cel mai mare fișier: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Liniile care vor fi scrise</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Lista de pagini pentru motoarele de căutare; necesită adresa publică.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Paginile sunt preluate așa cum le vede un vizitator neautentificat. Siteaccess-urile de administrare și editare nu sunt oferite niciodată.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Progresul nu a putut fi urmărit. Reîncărcați pagina pentru a vedea cum merge sarcina.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Jumătatea publică a cheii:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Rădăcina ramurii</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Depozitul de secrete nu este încă configurat (./console exp:upgrade --apply îi creează tabelul), așa că nicio cheie nu poate fi păstrată.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Serverul se autentifică singur (cu propria cheie SSH sau cu un credential helper), sau depozitul se află pe acest server.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Setarea nu a putut fi scrisă: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Setările sunt valide. Aceste linii vor fi scrise:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Fișierul de setări nu poate fi citit: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Site-ul revine la fișierele acelei publicări; un build încă nepublicat trebuie mai întâi publicat sau aruncat.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Pagina proprie a site-ului pentru adresele care nu există.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Ținta nu a putut fi salvată: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ținta nu se autentifică încă cu această cheie: alegeți „O cheie de implementare creată pentru această țintă” în setările ei.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Țintele nu au putut fi citite: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Nu există încă niciun build de verificat.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Această instalare nu are niciun siteaccess public. Siteaccess-urile de administrare și editare nu sunt publicate niciodată.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Această pagină urmărește sarcina pe măsură ce avansează; sarcina continuă în fundal când pagina este închisă.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Această țintă nu are încă o cheie de implementare.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Această țintă nu a fost încă generată aici.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Această țintă are una.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Aruncă acest build: folderul conține din nou ultima publicare. Site-ul live nu se schimbă.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Bifați mai întâi „Am verificat modificările”.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Timp</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Declanșatoare</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Tastați din nou numele etichetei</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Neschimbate</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ce</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Ce se schimbă</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Ce este fiecare fișier; scris întotdeauna.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Ce a făcut sarcina și jurnalul ei. O sarcină pornită aici continuă în fundal când această pagină este închisă.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Ce a afișat sarcina ca erori</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Ce numesc paginile și fiecare imagine a conținutului publicat</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Când</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Când o publicare eșuează</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Când o publicare reușește</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Când conținutul este publicat</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Unde duc linkurile către ce nu conține copia (căutarea, autentificarea).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>De unde este servită copia statică.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Ce site este publicat și cum se numește ținta.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Funcționează sub orice cale. Opțiunea implicită.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Scris ori de câte ori este setat un domeniu propriu.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Puteți oricând genera și publica manual aici și în consolă.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>doar un nume; valoarea rămâne în Configurare &gt; Secrete</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>sub %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>încheiată fără raport</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>suplimentar</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>eșuată</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fișier</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, sau main cu folderul docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>gazdă git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (cu un token) sau git@github.com:owner/repo.git (cu o cheie de implementare); niciodată o parolă sau un token în ea.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, pentru harta site-ului și linkurile canonice.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>imagine</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>niciodată</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nu</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>fără depozit la distanță</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>niciuna: comiterile rămân în folder</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>niciuna: nimic nu s-a schimbat</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>netrimis</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>nimic nu s-a schimbat</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>pagină</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>reușită</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open este dezactivat, așa că o sarcină nu poate fi pornită aici. Folosiți ./console exp:static:build pe server.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>publicare</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>publicat</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>trimitere în așteptare</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>trimis</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>refuzată</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relativ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>anulare</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>anulat</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>în curs</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>doar folderul</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: scris în fișierul CNAME. Direcționați DNS-ul domeniului către gazdă așa cum explică aceasta; HTTPS poate dura un timp până pornește.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>da, încă nepublicat</translation>
     </message>
 </context>
 </TS>

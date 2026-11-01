@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ܫܘ̈ܚܠܦܐ ܕܐܩܡܬܐ ܕܡܬܢܛܪܝܢ ܐܝܟ ܦܢܩ̈ܝܬܐ: ܡܩܡܗܘܢ، ܡܪ̈ܗܛܐ، ܡܪܗܛܐ ܘܡܗܦܟܐ ܠܒܣܬܪ.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ܦܪܣܐ ܕܨܘܪܬܐ ܩܒܝܥܬܐ ܕܐܬܪܐ ܥܠ GitHub Pages ܐܘ ܥܠ ܟܠ ܡܐܪܚܢܐ ܕ git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22157,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>ܦܘ̈ܢܝܐ ܕܫܘ̈ܐܠܐ ܢܛܝܪ̈ܐ ܕ API ܕ GraphQL، ܘܙ̈ܢܝܐ ܕܡܠܝܘܬܐ ܕܣܟܡܐ ܕܝܠܗ.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>ܦܪܣܐ ܕܨܘܪܬܐ ܩܒܝܥܬܐ ܥܠ GitHub Pages ܐܘ ܥܠ ܟܠ ܡܐܪܚܢܐ ܕ git</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>ܣܝܡܬܐ ܡܬܢܛܪܬܐ ܡܫܡܫܐ ܦܐܬ̈ܐ ܡܢ ܗܢܐ ܡܫܡܫܢܐ. ܠܦܪܣܐ ܕܨܘܪܬܐ ܩܒܝܥܬܐ ܕܐܬܪܐ ܒܕܘܟܬܐ ܐܚܪܬܐ، ܥܠ GitHub Pages ܐܘ ܥܠ ܟܠ ܡܐܪܚܢܐ ܕ git، ܐܦܠܚܘ ܦܪܣܐ ܩܒܝܥܐ.</translation>
     </message>
 </context>
 <context>
@@ -76214,6 +76234,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ܫܘ̈ܚܠܦܐ ܕܐܩܡܬܐ ܕܡܬܢܛܪܝܢ ܐܝܟ ܦܢܩ̈ܝܬܐ: ܡܩܡܗܘܢ، ܡܪ̈ܗܛܐ، ܡܪܗܛܐ ܘܡܗܦܟܐ ܠܒܣܬܪ.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ܦܪܣܐ ܕܨܘܪܬܐ ܩܒܝܥܬܐ ܕܐܬܪܐ ܥܠ GitHub Pages ܐܘ ܥܠ ܟܠ ܡܐܪܚܢܐ ܕ git.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80561,6 +80589,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>ܡܪܗܛܐ ܠܐ ܐܫܬܟܚ ܠܡܫܬܪܝܘ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>ܟܠܗܘܢ ܢܝ̈ܫܐ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ܦܪܣܐ ܐܚܪܝܐ</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>ܦܪܘܣܘ ܨܘܪܬܐ ܩܒܝܥܬܐ ܡܓܢ ܕܐܬܪܐ ܕܝܠܟܘܢ ܥܠ GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ܦܐܬ̈ܐ ܥܬܝܩ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܒܛܝܠ.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ܢܝܫܐ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ܢܝ̈ܫܐ ܠܐ ܐܫܬܟܚܘ ܠܡܬܩܪܝܘ: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ܥܒܕܐ ܪܗܛ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ܒܢܝܢܐ ܠܒܨܝܐ</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ܛܫܝ ܗܕܐ</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ܒܪܝ ܢܝܫܐ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ܡܡܬܘܡ ܠܐ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ܩܪܝ ܡܠܦܢܘܬܐ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ܐܬܬܘܣܦܘ، %changed ܐܫܬܚܠܦܘ، %removed ܐܫܬܩܠܘ</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes ܡܢ %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count ܐܚܪ̈ܢܐ ܠܐ ܡܬܚܘܝܢ.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages ܦܐܬ̈ܐ ܐܬܟܬܒ</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ܐܝܬܘܗܝ %size، ܝܬܝܪ ܡܢ ܡܐ ܕܡܐܪܚܢܐ ܡܦܣ ܠܦܢܩܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ܡܢ ܬܚܘܡܐ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ܪ̈ܦܦܐ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ܗܘ ܦܪܣܐ ܕܐܝܬ ܠܐܬܪܐ ܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ܥܒܕܐ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/ܓܙܐ/ ܠܐܬܪܐ ܕܦܪܘܝܩܛ ܕ GitHub؛ ܣܦܝܩܐ ܠܚܘܕܪܐ ܕܝܠܟܘܢ ܐܘ ܠܐܬܪܐ ܕܡܦܠܚܢܐ.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. ܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. ܡܐܪܚܢܐ</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ܡܥܠܢܐ ܠܓܙܐ</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. ܓܙܐ</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. ܐܣܘܪ̈ܐ ܘܫܒܝܠܐ ܫܪܫܝܐ</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. ܚܘܕܪܐ ܕܝܠܟܘܢ</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. ܡܐ ܕܐܝܬ ܒܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. ܐܡܬܝ ܡܬܦܪܣ</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. ܒܘܚܢܐ ܘܢܛܪܐ</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>ܐܬܪܐ ܕܦܪܘܝܩܛ ܕ GitHub ܥܡܪ ܠܬܚܬ /&lt;repository&gt;/؛ ܐܣܘܪ̈ܐ ܡܬܢܣܒܢܝ̈ܐ ܦܠܚܝܢ ܬܡܢ ܘܒܟܠ ܕܘܟܐ ܐܚܪܬܐ.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ܒܢܝܢܐ ܡܝܬܐ ܟܠ ܦܐܬܐ ܕ %site ܐܝܟ ܕܚܙܐ ܠܗ ܣܥܘܪܐ ܕܠܐ ܥܠ، ܟܬܒ ܬܘܒ ܐܣܘܪ̈ܐ، ܢܣܚ ܦܢܩܝ̈ܬܐ ܘܟܬܒ ܦܐܪܐ ܒܬܝܩܐ ܕܢܝܫܐ. ܡܕܡ ܠܐ ܡܬܦܪܣ ܥܕܡܐ ܕܒܨܝܬܘܢ ܒܢܝܢܐ ܘܕܚܨܬܘܢ ܥܠ ܦܪܣܐ.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>ܡܠܬܐ ܕ cron، ܠܡܬܠ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>ܩܠܝܕܐ ܕܫܘܕܪܐ ܡܬܢܛܪ ܐܝܟ ܐܪܙܐ %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>ܩܠܝܕܐ ܕܫܘܕܪܐ ܡܦܣ ܠܗܕܐ ܐܩܡܬܐ ܕܬܥܒܕ ܦܘܫ ܠܚܕ ܓܙܐ ܒܠܚܘܕ ܒܝܕ SSH ܘܠܐ ܠܕܘܟܐ ܐܚܪܬܐ. ܦܠܓܗ ܦܪܨܘܦܝܐ ܦܐܫ ܒ ܛܘܝܒܐ &gt; ܐܪ̈ܙܐ؛ ܦܠܓܗ ܓܠܝܐ ܒܠܚܘܕ ܡܬܚܘܐ.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ܩܠܝܕܐ ܕܫܘܕܪܐ ܕܐܬܥܒܕ ܠܗܢܐ ܢܝܫܐ</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>ܩܠܝܕܐ ܕܫܘܕܪܐ ܥܐܠ ܒܝܕ SSH: ܫܚܠܦܘ ܡܘܢܥܐ ܕ git ܠܡܘܢܥܐ ܕ SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>ܥܒܕܐ ܪܗܛ، ܕܫܪܝ ܡܢ %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ܥܒܕܐ ܕܗܢܐ ܢܝܫܐ ܥܕܟܝܠ ܪܗܛ (%detail). ܡܣܟܘ ܥܕܡܐ ܕܢܫܠܡ.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ܥܒܕܐ ܕܗܢܐ ܢܝܫܐ ܥܕܟܝܠ ܪܗܛ. ܡܣܟܘ ܥܕܡܐ ܕܢܫܠܡ.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>ܐܣܘܪܐ ܡܢ ܦܐܬܐ /news/ ܠܦܐܬܐ /about-us/team ܢܬܟܬܒ ܗܟܢܐ</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>ܩܠܝܕܐ ܚܕܬܐ ܕܫܘܕܪܐ ܐܬܥܒܕ. ܐܘܣܦܘ ܦܠܓܗ ܓܠܝܐ ܠܓܙܐ ܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>ܦܐܬܐ ܕܥܕܟܝܠ ܛܥܝܢܐ ܦܘܪܥܢܐ ܕܬܘܪܨ ܡܘܡܐ، ܬܘܟܢܐ ܕܛܘܦܣܐ ܐܘ ܫܘܕܥܐ ܕܡܘܬܒܐ ܒܬܪ ܡܥܛܠܢܐ ܡܡܬܘܡ ܠܐ ܡܬܦܪܣܐ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ܗܘܦܟܐ ܠܒܣܬܪ ܠܡܗܝܪ̈ܐ ܗܘ: ܐܬܘ ܥܠ &quot;ܝܕܥ ܐܢܐ ܡܐ ܕܗܕܐ ܡܫܚܠܦܐ&quot; ܘܟܬܘܒܘ ܫܡܐ ܕܛܐܓ ܬܘܒ.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ܐܬܪܐ ܡܨܐ ܕܢܗܘܐ ܥܕܡܐ ܠ %site، ܦܢܩܝܬܐ ܚܕܐ ܥܕܡܐ ܠ %file، ܥܡ ܩܪܝܒ ܠ 100 GB ܕܬܢܘܥܬܐ ܒܝܪܚܐ. ܒܬܘܟܣܐ ܡܓܢܝܐ ܓܙܐ ܠܐܡ ܕܢܗܘܐ ܓܠܝܐ. GitHub Pages ܠܐ ܡܛܟܣ ܠܚܢܘ̈ܬܐ ܐܘ ܠܬܓܘܪ̈ܬܐ ܐܚܪ̈ܢܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ܢܝܫܐ ܗܘ ܚܕ ܐܬܪܐ ܕܡܬܦܪܣ ܠܚܕ ܓܙܐ ܕ git. ܗܪܟܐ ܡܕܡ ܠܐ ܡܬܒܢܐ ܘܠܐ ܡܬܦܪܣ: ܢܛܪܐ ܟܬܒ ܛܘܝ̈ܒܐ ܒ settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ܢܝܫܐ ܗܘ ܚܕ ܐܬܪܐ ܕܡܬܦܪܣ ܠܚܕܐ ܕܘܟܬܐ، ܠܡܬܠ ܐܬܪܐ ܓܠܝܐ ܕܝܠܟܘܢ ܥܠ GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>ܬܘܟܢܐ ܡܢ ܛܘܝܒܐ &gt; ܐܪ̈ܙܐ</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ܫܪܓܐ ܕܥܒܕܐ ܕܓܙܐ ܦܪܣ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ܐܘܣܦܘ ܗܢܐ ܩܠܝܕܐ ܓܠܝܐ ܠܓܙܐ ܥܡ ܦܣܐ ܕܟܬܒܐ. GitHub: Settings &gt; Deploy keys &gt; Add deploy key، ܐܬܘ ܥܠ Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ܐܬܬܘܣܦ</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>ܡܐܪܚܢܐ ܐܚܪܢܐ ܕ git</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>ܥܒܕܐ ܐܚܪܢܐ ܦܠܚ ܥܠ ܗܢܐ ܢܝܫܐ: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>ܠܒܣܬܪ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>ܫܒܝܠܐ ܫܪܫܝܐ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ܩܕܡ</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ܠܬܚܬ ܫܒܝܠܐ ܫܪܫܝܐ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ܣܘܟܐ</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>ܐܣܘܪ̈ܐ ܬܒܝܪ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>ܐܣܘܪ̈ܐ ܬܒܝܪ̈ܐ ܒܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>ܒܢܝܢܐ %id ܡܢ %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>ܒܢܝܐ %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ܒܢܝܐ ܗܫܐ</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>ܒܢܝܢܐ ܠܒܨܝܐ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ܡܢ</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>ܒܐܝܕܐ، ܗܪܟܐ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ܒܘܛܠܐ</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ܫܘܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ܫܘ̈ܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ܒܨܘ ܠܗ ܠܘܩܕܡ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ܒܨܘ ܗܠܝܢ ܛܘܝ̈ܒܐ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>ܒܨܘ ܡܐ ܕܒܢܝܢܐ ܡܫܚܠܦ، ܚܙܘ ܠܗ، ܘܗܝܕܝܢ ܦܪܘܣܘ ܠܗ ܐܘ ܫܕܘ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ܓܒܘ ܦܪܣܐ ܕܠܗ ܬܗܦܟܘܢ.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>ܐܬܐ ܒܡܦܩܬܐ ܐܚܪܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ܩܘܡܝܛ</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>ܩܘܡܝܛ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ܥܒܕ ܩܘܡܝܛ ܠܒܢܝܢܐ، ܣܐܡ ܠܗ ܛܐܓ ܘܥܒܕ ܠܗ ܦܘܫ ܠ %remote. ܦܘܫ ܡܡܬܘܡ ܠܐ ܡܬܐܠܨ؛ ܡܨܝܬܘܢ ܕܬܗܦܟܘܢ ܠܟܠ ܦܪܣܐ ܡܢ ܒܬܪܟܢ.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ܒܦܘܚܡܐ ܥܡ ܬܝܩܐ ܕܡܢ ܩܕܡ: %added ܐܬܬܘܣܦܘ، %changed ܐܫܬܚܠܦܘ، %removed ܐܫܬܩܠܘ، %unchanged ܠܐ ܐܫܬܚܠܦܘ.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>ܒܦܘܚܡܐ ܥܡ ܦܪܣܐ ܐܚܪܝܐ.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ܫܘܕܥܐ ܕܡܥܠܢܐ</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>ܚܘܕܪܐ ܕܝܠܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>ܦܘܪܥܢܐ ܕܬܘܪܨ ܡܘܡܐ، ܬܘܟܢ̈ܐ ܕܛܘܦܣܐ، ܫܘܕܥ̈ܐ ܕܡܘܬܒܐ ܘ nonces ܐܡܝܢܐܝܬ ܡܫܬܩܠܝܢ.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>ܩܠܝܕܐ ܕܫܘܕܪܐ</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>ܩܠܝܕܐ ܕܫܘܕܪܐ ܕ %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ܫܕܝܐ</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ܫܕܝܐ ܕܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ܚܘܕܪܐ</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ܣܦܝܩܐ: ܡܘܢܥܐ ܕܐܬܪܐ. ܐܢ ܠܐ، ܡܘܢܥܐ ܓܘܝܐ ܕܗܘ ܐܬܪܐ.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ܫܠܡ</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ܟܠ ܐܣܘܪܐ ܫܪܐ ܒܫܒܝܠܐ ܫܪܫܝܐ.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ܟܠ ܦܪܣܐ ܗܘ ܩܘܡܝܛ ܥܡ ܛܐܓ static/%id/&lt;n&gt;. ܗܘܦܟܐ ܠܒܣܬܪ ܥܒܕ ܩܘܡܝܛ ܚܕܬܐ ܥܡ ܦܢܩܝ̈ܬܐ ܕܦܪܣܐ ܕܡܢ ܩܕܡ: ܬܫܥܝܬܐ ܦܐܫܐ، ܠܐ ܛܐܓ ܡܫܬܢܐ ܘܡܕܡ ܠܐ ܡܬܐܠܨ.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>ܦܢܩܝ̈ܬܐ ܝܬܝܪ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>ܐܝܬܘ ܦܐܬ̈ܐ ܡܢ</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ܦܢܩܝܬܐ</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ܦܢܩܝ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ܦܢܩܝ̈ܬܐ ܚܣܝܪ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ܦܢܩܝ̈ܬܐ ܕ</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ܦܢܩܝ̈ܬܐ ܕܠܐ ܐܫܬܟܚܘ ܠܡܬܟܢܫܘ</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>ܪܘܫܡܐ ܕܨܒܥܐ</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ܬܝܩܐ</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>ܠܡܘܢܥܐ ܕ SSH. ܩܠܝܕܐ ܡܬܥܒܕ ܒܬܪ ܢܛܪܐ؛ ܐܢܬܘܢ ܡܘܣܦܝܬܘܢ ܦܠܓܗ ܓܠܝܐ ܠܓܙܐ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>ܠܡܘܢܥܐ ܕ https://. GitHub: ܬܘܟܢܐ fine-grained ܥܡ Contents ܠܡܩܪܐ ܘܠܡܟܬܒ ܥܠ ܓܙܐ.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ܠܡܗܝܪ̈ܐ. ܐܬܪܐ ܓܠܝܐ ܡܫܬܚܠܦ ܡܚܕܐ ܕܦܘܫ ܫܠܡ.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ܛܘ̈ܦܣܐ</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>ܐܪܚܘܬܐ ܡܓܢܝܬܐ ܡܢ ܓܙܐ ܕ GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ܡܢ ܣܘܟܐ</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>ܡܘܢܥܐ ܕ git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages ܡܦܣ ܠܐܬܪܐ ܕ %site ܘܠܦܢܩܝܬܐ ܕ %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>ܬܚܘ̈ܡܐ ܕ GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ܦܪܣ ܠܦܢܩܝ̈ܬܐ ܐܝܟ ܕܐܝܬܝܗܝܢ (ܣܢܝܩ ܠܦܢܩܝ̈ܬܐ ܕܫܪܝܢ ܒ _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ܡܫܡܫ ܣܘܟܐ ܐܝܟ ܕܐܬܥܒܕ ܠܗ ܦܘܫ. ܡܛܟܣܐ ܡܢ ܪܫ.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab، Gitea، ܡܫܡܫܢܐ ܕܝܠܟܘܢ: ܟܠ ܓܙܐ ܕ git.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ܗܦܘܟܘ ܠܦܪܣܐ ܕܡܢ ܩܕܡ</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>ܥܘܕܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>ܥܘܕܪܢܐ ܥܡ ܡܕܒܪܢܐ</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>ܛܫܝ ܠܗܝܢ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ܬܫܥܝܬܐ</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>ܬܫܥܝܬܐ ܕ %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ܡܐܪܚܢܐ</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>ܐܝܟܢܐ GitHub Pages ܡܩܒܠ ܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ܒܨܝܬ ܫܘ̈ܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ܝܕܥ ܐܢܐ ܡܐ ܕܗܕܐ ܡܫܚܠܦܐ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ܫܘܕܥܐ</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ܒܛܝܠ ܗܘ: ܡܕܡ ܠܐ ܡܨܐ ܕܢܬܒܢܐ ܥܕܡܐ ܕܢܬܦܥܠ.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ܪܗܛ ܒܚܣܪܐ ܐܝܟ %user؛ ܡܨܝܬܘܢ ܕܬܚܪܡܘܢ ܗܕܐ ܦܐܬܐ.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ܥܒܕܐ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>ܡܬܢܛܪ ܐܝܟ ܐܪܙܐ %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ܓܢܣܐ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ܦܪܣܐ ܐܚܪܝܐ</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ܫܒܘܩܘ ܗܠܝܢ ܦܐܬ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ܫܒܘܩܘ ܗܠܝܢ ܡ̈ܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>ܐܣܘܪ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>ܐܣܘܪ̈ܐ ܕܐܬܟܬܒܘ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ܐܬܪܐ ܚܝܐ</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ܚܙܘ ܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>ܐܬܘ̈ܬܐ ܙܥܘܪ̈ܬܐ، ܡܢܝ̈ܢܐ، _ ܘ -، ܠܡܬܠ github-public. ܗܘ ܝܗܒ ܫܡܐ ܠܬܝܩܐ ܘܠܛܐܓ̈ܐ (static/&lt;id&gt;/&lt;n&gt;) ܘܠܐ ܡܨܐ ܕܢܫܬܚܠܦ ܡܢ ܒܬܪܟܢ.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ܒܪܝ ܩܠܝܕܐ ܚܕܬܐ</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ܒܪܝ ܢܝܫܐ</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ܒܪܝ ܩܠܝܕܐ</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ܒܪܘ ܓܙܐ ܥܠ ܡܐܪܚܢܐ ܠܘܩܕܡ؛ ܓܙܐ ܣܦܝܩܐ ܫܦܝܪ ܗܘ.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ܡܢܝܢܐ ܕܦܢܩܝ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ܫܠܝܚܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>ܣܘܓܐܐ ܕܦܐܬ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ܫܡܐ</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>ܫܡܐ ܕܬܘܟܢܐ ܒ ܛܘܝܒܐ &gt; ܐܪ̈ܙܐ</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>ܢܝܫܐ ܚܕܬܐ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ܕܒܬܪ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ܠܐ</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>ܠܝܬ ܩܘܡܝܛ ܥܕܡܐ ܠܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>ܠܐ ܐܬܥܒܕ ܩܠܝܕܐ: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>ܠܐ ܐܫܬܟܚ ܡܦܠܚܢܐ ܕܣܪܛܐ ܕܦܘܩܕܢ̈ܐ ܕ php. ܣܝܡܘ ܫܒܝܠܗ ܓܡܝܪܐ ܒ migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>ܠܝܬ ܛܐܓ ܥܕܡܐ ܠܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ܠܝܬ ܢܝܫܐ ܥܕܡܐ ܠܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>ܠܐ ܚܕ</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ܠܐ ܐܝܬܘܗܝ ܒܒܢܝܢܐ.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ܡܕܡ ܠܐ ܐܬܦܪܣ ܥܕܡܐ ܠܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ܡܕܡ ܠܐ ܐܬܦܪܣ ܥܕܡܐ ܠܗܫܐ: ܟܠ ܦܢܩܝܬܐ ܚܕܬܐ ܗܝ.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>ܡܘܕܥܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>ܒܣܕܪܐ ܕܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>ܒܟܘܢܣܘܠ</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>ܥܠ ܡܫܡܫܢܐ: ./console exp:static:serve %id ܡܫܡܫ ܠܗ ܒܗ ܒܐܘܪܚܐ.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ܫܒܝܠܐ ܚܕ ܒܟܠ ܣܪܛܐ، * ܫܘܐ ܠܟܠ ܡܢܬܐ: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ܫܡܐ ܒܠܚܘܕ ܡܬܢܛܪ ܥܡ ܢܝܫܐ؛ ܬܘܟܢܐ ܐܘ ܩܠܝܕܐ ܦܐܫ ܒ ܛܘܝܒܐ &gt; ܐܪ̈ܙܐ ܘܡܡܬܘܡ ܠܐ ܡܬܚܙܐ ܒܪܘܫܡܐ.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>ܒܠܚܘܕ ܡܐ ܕܦܐܬ̈ܐ ܡܫܡܗܢ</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>ܒܠܚܘܕ ܥܡ ܬܘܟܢܐ. env:NAME ܩܪܐ ܚܠܦܘܗܝ ܫܚܠܘܦܐ ܕܣܒܝܒܘܬܐ ܕܡܫܡܫܢܐ.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>ܦܬܚ ܚܙܝܐ ܩܕܡܝܐ</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ܦܬܚ ܒܢܝܢܐ ܐܝܟ ܕܡܐܪܚܢܐ ܢܫܡܫܝܘܗܝ، ܡܢ ܬܝܩܐ ܕܢܝܫܐ. ܐܣܘܪܐ ܦܠܚ ܠܟܘܢ ܫܥܬܐ ܚܕܐ.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ܓܒܝܝܐ. ܣܦܝܩܐ: ܡܐ ܕܐܬܦܪܣ.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ܓܒܝܝܐ. ܥܡ ܚܘܕܪܐ ܐܬܪܐ ܡܫܬܡܫ ܒܥܩܪܗ.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ܦܘܪܥܢܐ</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>ܦܐܬ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ܦܐܬ̈ܐ ܕܢܝܫܐ</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ܦܐܬ̈ܐ ܕܐܬܟܠܝ</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>ܥܒܕܐ ܕܒܬܪ</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ܚܙܝܐ ܩܕܡܝܐ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>ܚܙܝܐ ܩܕܡܝܐ ܘܦܪܣܐ</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>ܚܙܝܐ ܩܕܡܝܐ ܘܦܪܣܐ ܕ %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>ܚܙܝܐ ܩܕܡܝܐ ܕܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ܡܩܕܡܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>ܡܘܢܥܐ ܓܠܝܐ</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>ܩܠܝܕܐ ܓܠܝܐ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ܦܪܣܐ</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ܦܪܣܐ ܕܨܘܪܬܐ ܩܒܝܥܬܐ ܕܐܬܪܐ ܥܠ GitHub Pages ܐܘ ܥܠ ܟܠ ܡܐܪܚܢܐ ܕ git: ܒܢܝܐ ܠܗ، ܒܨܝܐ ܕܫܘ̈ܚܠܦܐ، ܦܪܣܐ، ܘܗܘܦܟܐ ܠܦܪܣܐ ܕܡܢ ܩܕܡ ܟܕ ܣܢܝܩܝܬܘܢ.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>ܦܪܣܐ ܕܠܗ ܬܗܦܟܘܢ</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ܦܪ̈ܣܐ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ܦܘܫ</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>ܩܪܝ ܡܠܦܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ܪܘܫܡܐ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ܐܬܟܠܝ</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ܡܬܢܣܒܢܝܐ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ܛܥܢܐ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ܐܫܬܩܠ</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>ܫܚܠܦ ܩܠܝܕܐ: ܥܬܝܩܐ ܫܠܐ ܡܢ ܦܘܠܚܢܐ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ܡܘܕܥܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ܡܘܕܥܢܘܬܐ ܕܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ܓܙܐ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ܒܘܚܢܐ</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>ܒܘܚܢܐ ܒܨܐ ܟܠ ܛܘܝܒܐ ܘܡܚܘܐ ܣܪ̈ܛܐ ܕܢܬܟܬܒܘܢ. ܡܕܡ ܠܐ ܐܬܢܛܪ ܥܕܡܐ ܠܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ܡܗܦܟܐ ܠܒܣܬܪ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ܗܘܦܟܐ ܠܒܣܬܪ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ܢܛܪܐ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ܣܕܪܐ ܕܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ܦܐܬܐ ܕܒܨܝܐ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ܫܘܕܥ̈ܐ ܕܡ̈ܢܘܬܐ، ܦܪܝܫܝ̈ܢ ܒܦܣܘ̈ܩܝܬܐ.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ܫܕܪܘ ܠܗܝܢ ܠܐܬܪܐ ܚܝܐ</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ܛܘܝܒܐ</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ܛܘܝ̈ܒܐ</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>ܛܘܝ̈ܒܐ ܕ %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ܛܘܝܒܐ</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>ܛܘܝܒܐ &gt; ܐܪ̈ܙܐ</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ܡܬܚܘܐ ܒܡܢܝ̈ܢܐ، ܠܡܬܠ &quot;ܐܬܪܐ ܓܠܝܐ ܥܠ GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>ܡܥܠܢܐ ܒ GitHub App ܐܬܐ ܥܡ ܚܘܝܕܐ ܕ GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>ܐܬܪܐ</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ܐܬܪܐ ܠܦܪܣܐ</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ܪܒܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>ܪܒܘܬܐ ܘܬܚܘ̈ܡܐ</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>ܪܒܘܬܐ ܕܒܢܝܢܐ</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ܦܐܬ̈ܐ ܥܬܝܩ̈ܬܐ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ܫܪܝ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>ܫܪܝ ܡܢ %user ܒ %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ܡܩܡܐ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܒܛܝܠ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܒܛܝܠ.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܒܛܝܠ. ܐܦܥܠܘ ܠܗ ܠܘܩܕܡ ܒ ܛܘܝܒܐ &gt; ܦܪܣܐ ܩܒܝܥܐ.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>ܦܪܣܐ ܩܒܝܥܐ ܦܥܝܠ.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>ܕܪܓܐ %step ܡܢ %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ܕܪ̈ܓܐ</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>ܡܥܛܠܢܐ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ܡܒܛܠܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ܡܦܥܠܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>ܐܦܥܠ ܦܪܣܐ ܩܒܝܥܐ</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ܛܐܓ</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ܛܐܓ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ܢܝܫܐ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ܢܝ̈ܫܐ ܡܨܝܢ ܕܢܬܒܪܘܢ ܘܢܫܬܚܠܦܘܢ، ܐܠܐ ܡܕܡ ܠܐ ܡܬܒܢܐ ܘܠܐ ܡܬܦܪܣ ܥܕܡܐ ܕܢܬܦܥܠ.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>ܐܡܪ ܠܡܢܘ̈ܥܐ ܕܒܨܝܐ ܡܐ ܕܢܩܪܘܢ.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ܒܢܝܢܐ ܠܐ ܐܫܬܟܚ ܠܡܫܬܕܝܘ: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ܒܢܝܢܐ ܐܝܟ ܦܪܣܐ ܐܚܪܝܐ ܗܘ: ܠܝܬ ܡܕܡ ܠܦܪܣܐ.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ܒܢܝܢܐ ܐܫܬܕܝ: ܬܝܩܐ ܛܥܝܢ ܬܘܒ ܦܪܣܐ ܐܚܪܝܐ.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>ܡܛܟܣ̈ܐ ܡܢ ܪܫ ܫܠܡܝܢ ܠܣܘܓܐܐ ܕܐܬܪ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ܬܝܩܐ ܛܥܝܢ ܒܢܝܢܐ ܕܠܐ ܐܬܦܪܣ ܥܕܡܐ ܠܗܫܐ؛ ܒܢܝܢܐ ܚܕܬܐ ܡܫܚܠܦ ܠܗ.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>ܬܝܩܐ ܕܥܒ̈ܕܐ ܠܐ ܡܨܐ ܕܢܬܟܬܒ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ܥܒܕܐ ܠܐ ܐܫܬܟܚ ܠܡܬܛܝܒܘ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ܥܒܕܐ ܠܐ ܐܫܬܟܚ ܠܡܫܪܐ.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ܥܒܕܐ ܫܠܡ. ܡܘܕܥܢܘܬܗ ܡܬܛܥܢܐ.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ܥܒܕܐ ܣܢܝܩ ܠܡܦܠܚܢܐ ܕܥܐܠ.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ܥܒܕܐ ܫܪܝ ܐܠܐ ܠܐ ܐܘܕܥ ܫܘܕܥܐ ܕܥܒܕܗ. ܒܨܘ %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ܩܠܝܕܐ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>ܦܢܩܝܬܐ ܪܒܬܐ ܝܬܝܪ: %path، %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ܣܪ̈ܛܐ ܕܢܬܟܬܒܘܢ</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>ܡܢܝܢܐ ܕܦܐܬ̈ܐ ܠܡܢܘ̈ܥܐ ܕܒܨܝܐ؛ ܣܢܝܩ ܠܡܘܢܥܐ ܓܠܝܐ.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>ܦܐܬ̈ܐ ܡܬܝܬܝܢ ܐܝܟ ܕܚܙܐ ܠܗܝܢ ܣܥܘܪܐ ܕܠܐ ܥܠ. siteaccesses ܕܡܕܒܪܢܘܬܐ ܘܕܬܘܪܨܐ ܡܡܬܘܡ ܠܐ ܡܬܩܪܒܝܢ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>ܡܩܕܡܢܘܬܐ ܠܐ ܐܫܬܟܚܬ ܠܡܬܢܩܦܘ. ܛܥܢܘ ܦܐܬܐ ܬܘܒ ܠܡܚܙܐ ܐܝܟܢܐ ܥܒܕܐ ܐܙܠ.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>ܦܠܓܗ ܓܠܝܐ ܕܩܠܝܕܐ:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ܥܩܪܐ ܕܣܘܟܐ</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>ܓܙܐ ܕܐܪ̈ܙܐ ܠܐ ܐܬܛܝܒ ܥܕܡܐ ܠܗܫܐ (./console exp:upgrade --apply ܒܪܐ ܛܒܠܗ)، ܡܛܠ ܗܢܐ ܠܐ ܡܨܐ ܩܠܝܕܐ ܕܢܬܢܛܪ.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>ܡܫܡܫܢܐ ܥܐܠ ܒܢܦܫܗ (ܒܩܠܝܕܐ ܕ SSH ܕܝܠܗ ܐܘ ܒܡܥܕܪܢܐ ܕܫܘܕܥܐ ܕܡܥܠܢܐ)، ܐܘ ܓܙܐ ܐܝܬܘܗܝ ܥܠ ܗܢܐ ܡܫܡܫܢܐ.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>ܛܘܝܒܐ ܠܐ ܐܫܬܟܚ ܠܡܬܟܬܒܘ: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ܛܘܝ̈ܒܐ ܫܪܝܪ̈ܐ ܐܢܘܢ. ܗܠܝܢ ܣܪ̈ܛܐ ܢܬܟܬܒܘܢ:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>ܦܢܩܝܬܐ ܕܛܘܝ̈ܒܐ ܠܐ ܡܨܝܐ ܕܬܬܩܪܐ: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>ܐܬܪܐ ܗܦܟ ܠܦܢܩܝ̈ܬܐ ܕܗܘ ܦܪܣܐ؛ ܒܢܝܢܐ ܕܠܐ ܐܬܦܪܣ ܥܕܡܐ ܠܗܫܐ ܠܐܡ ܕܢܬܦܪܣ ܐܘ ܢܫܬܕܐ ܠܘܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>ܦܐܬܐ ܕܐܬܪܐ ܒܢܦܫܗ ܠܡܘܢ̈ܥܐ ܕܠܐ ܐܝܬܝܗܘܢ.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ܢܝܫܐ ܠܐ ܐܫܬܟܚ ܠܡܬܢܛܪܘ: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ܢܝܫܐ ܥܕܡܐ ܠܗܫܐ ܠܐ ܥܐܠ ܒܗܢܐ ܩܠܝܕܐ: ܓܒܘ &quot;ܩܠܝܕܐ ܕܫܘܕܪܐ ܕܐܬܥܒܕ ܠܗܢܐ ܢܝܫܐ&quot; ܒܛܘܝ̈ܒܐ ܕܝܠܗ.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ܢܝ̈ܫܐ ܠܐ ܐܫܬܟܚܘ ܠܡܬܩܪܝܘ: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>ܠܝܬ ܒܢܝܢܐ ܠܒܨܝܐ ܥܕܡܐ ܠܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ܠܝܬ ܠܗܕܐ ܐܩܡܬܐ siteaccess ܩܕܡܝܐ. siteaccesses ܕܡܕܒܪܢܘܬܐ ܘܕܬܘܪܨܐ ܡܡܬܘܡ ܠܐ ܡܬܦܪܣܝܢ.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ܗܕܐ ܦܐܬܐ ܢܩܦܐ ܠܥܒܕܐ ܟܕ ܐܙܠ؛ ܗܘ ܡܫܬܪܓ ܒܚܣܪܐ ܟܕ ܦܐܬܐ ܡܬܚܪܡܐ.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ܠܝܬ ܠܗܢܐ ܢܝܫܐ ܩܠܝܕܐ ܕܫܘܕܪܐ ܥܕܡܐ ܠܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ܗܢܐ ܢܝܫܐ ܠܐ ܐܬܒܢܝ ܗܪܟܐ ܥܕܡܐ ܠܗܫܐ.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ܐܝܬ ܠܗܢܐ ܢܝܫܐ ܚܕ.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ܫܕܐ ܠܗܢܐ ܒܢܝܢܐ: ܬܝܩܐ ܛܥܝܢ ܬܘܒ ܦܪܣܐ ܐܚܪܝܐ. ܐܬܪܐ ܚܝܐ ܠܐ ܡܫܬܚܠܦ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ܐܬܘ ܥܠ &quot;ܒܨܝܬ ܫܘ̈ܚܠܦܐ&quot; ܠܘܩܕܡ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ܙܒܢܐ</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ܡܙܝܥܢ̈ܐ</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ܟܬܘܒܘ ܫܡܐ ܕܛܐܓ ܬܘܒ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ܠܐ ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ܘܝܒܗܘܟ</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ܡܐ</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ܡܐ ܕܡܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ܡܢܘ ܟܠ ܦܢܩܝܬܐ؛ ܐܡܝܢܐܝܬ ܡܬܟܬܒ.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ܡܐ ܕܥܒܕܐ ܥܒܕ ܘܪܘܫܡܗ. ܥܒܕܐ ܕܫܪܝ ܗܪܟܐ ܡܫܬܪܓ ܒܚܣܪܐ ܟܕ ܗܕܐ ܦܐܬܐ ܡܬܚܪܡܐ.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ܡܐ ܕܥܒܕܐ ܛܒܥ ܐܝܟ ܦܘܕ̈ܐ</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>ܡܐ ܕܦܐܬ̈ܐ ܡܫܡܗܢ، ܘܟܠ ܨܘܪܬܐ ܕܬܚܘܝܬܐ ܕܐܬܦܪܣܬ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ܐܡܬܝ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ܟܕ ܦܪܣܐ ܠܐ ܡܨܠܚ</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ܟܕ ܦܪܣܐ ܡܨܠܚ</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ܟܕ ܬܚܘܝܬܐ ܡܬܦܪܣܐ</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>ܠܐܝܟܐ ܐܙܠܝܢ ܐܣܘܪ̈ܐ ܠܡܐ ܕܨܘܪܬܐ ܠܐ ܛܥܢܐ (ܒܨܝܐ، ܡܥܠܢܐ).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>ܡܢ ܐܝܟܐ ܨܘܪܬܐ ܩܒܝܥܬܐ ܡܫܬܡܫܐ.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>ܐܝܢܐ ܐܬܪܐ ܡܬܦܪܣ، ܘܡܢܘ ܫܡܐ ܕܢܝܫܐ.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ܦܠܚ ܠܬܚܬ ܟܠ ܫܒܝܠܐ. ܡܛܟܣܐ ܡܢ ܪܫ.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>ܡܬܟܬܒ ܟܠ ܐܡܬܝ ܕܚܘܕܪܐ ܕܝܠܟܘܢ ܡܬܬܣܝܡ.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ܐܝܢ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ܡܨܝܬܘܢ ܐܡܝܢܐܝܬ ܕܬܒܢܘܢ ܘܬܦܪܣܘܢ ܒܐܝܕܐ ܗܪܟܐ ܘܥܠ ܟܘܢܣܘܠ.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ܫܡܐ ܒܠܚܘܕ؛ ܛܝܡܐ ܦܐܫ ܒ ܛܘܝܒܐ &gt; ܐܪ̈ܙܐ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>ܠܬܚܬ %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ܫܠܡ ܕܠܐ ܡܘܕܥܢܘܬܐ</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ܝܬܝܪܐ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ܠܐ ܐܨܠܚ</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ܦܢܩܝܬܐ</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages، ܐܘ main ܥܡ ܬܝܩܐ docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>ܡܐܪܚܢܐ ܕ git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ܥܡ ܬܘܟܢܐ) ܐܘ git@github.com:owner/repo.git (ܥܡ ܩܠܝܕܐ ܕܫܘܕܪܐ)؛ ܡܡܬܘܡ ܠܐ ܡܠܬܐ ܕܥܘܠܐ ܐܘ ܬܘܟܢܐ ܒܓܘܗ.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/، ܠܨܘܪܬ ܐܬܪܐ ܘܠܐܣܘܪ̈ܐ ܩܢܘܢܝ̈ܐ.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ܨܘܪܬܐ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ܡܡܬܘܡ ܠܐ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ܠܐ</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>ܠܝܬ ܓܙܐ ܪܚܝܩܐ</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ܠܐ ܚܕ: ܩܘܡܝܛ̈ܐ ܦܝܫܝܢ ܒܬܝܩܐ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ܠܐ ܚܕ: ܡܕܡ ܠܐ ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ܠܐ ܐܬܥܒܕ ܠܗ ܦܘܫ</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ܡܕܡ ܠܐ ܐܫܬܚܠܦ</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ܦܐܬܐ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ܥܒܪ</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ܒܛܝܠ ܗܘ، ܡܛܠ ܗܢܐ ܥܒܕܐ ܠܐ ܡܨܐ ܕܢܫܪܐ ܗܪܟܐ. ܐܦܠܚܘ ./console exp:static:build ܥܠ ܡܫܡܫܢܐ.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ܦܪܣܐ</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ܐܬܦܪܣ</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ܦܘܫ ܡܣܟܐ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ܐܬܥܒܕ ܠܗ ܦܘܫ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ܐܬܟܠܝ</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ܡܬܢܣܒܢܝܐ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ܗܘܦܟܐ ܠܒܣܬܪ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ܐܬܗܦܟ ܠܒܣܬܪ</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ܪܗܛ</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ܬܝܩܐ ܒܠܚܘܕ</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: ܡܬܟܬܒ ܒܦܢܩܝܬܐ CNAME. ܚܘܘ DNS ܕܚܘܕܪܐ ܠܡܐܪܚܢܐ ܐܝܟ ܕܗܘ ܡܦܫܩ؛ HTTPS ܡܨܐ ܕܢܣܒ ܩܨܬ ܙܒܢܐ ܠܡܫܪܐ.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ܐܝܢ، ܠܐ ܐܬܦܪܣ ܥܕܡܐ ܠܗܫܐ</translation>
     </message>
 </context>
 </TS>

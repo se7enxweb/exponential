@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ענדערונגען אין דער אינסטאַלאַציע געהאַלטן ווי טעקעס: זייער סטאַטוס, די לויפֿן, אויספֿירן און צוריקדרייען.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>פֿאַרעפֿנטלעכן אַ סטאַטישע קאָפּיע פֿון אַ וועבזײַטל אויף GitHub Pages אָדער סײַ וועלכן git־האָסט.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22157,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>ענטפֿערס פֿון די אָפּגעהיטע אָנפֿרעגן פֿון דער GraphQL API, און די אינהאַלט־קלאַסן פֿון איר סכעמע.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>פֿאַרעפֿנטלעכן אַ סטאַטישע קאָפּיע אויף GitHub Pages אָדער סײַ וועלכן git־האָסט</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>דער סטאַטישער קאַש באַדינט זײַטן פֿון דעם סערווער. כּדי צו פֿאַרעפֿנטלעכן אַ סטאַטישע קאָפּיע פֿון אַ וועבזײַטל ערגעץ אַנדערש, אויף GitHub Pages אָדער סײַ וועלכן git־האָסט, ניצט סטאַטיש פֿאַרעפֿנטלעכן.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76226,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ענדערונגען אין דער אינסטאַלאַציע געהאַלטן ווי טעקעס: זייער סטאַטוס, די לויפֿן, אויספֿירן און צוריקדרייען.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>פֿאַרעפֿנטלעכן אַ סטאַטישע קאָפּיע פֿון אַ וועבזײַטל אויף GitHub Pages אָדער סײַ וועלכן git־האָסט.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80581,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>מע האָט ניט געקענט אָנהייבן דעם לויף.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>אַלע צילן</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>לעצטע פֿאַרעפֿנטלעכונג</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>פֿאַרעפֿנטלעכט אומזיסט אַ סטאַטישע קאָפּיע פֿון אײַער וועבזײַטל אויף GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>פֿאַרעלטערטע זײַטן</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן איז אויסגעשאַלטן.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ציל</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>מע האָט ניט געקענט לייענען די צילן: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>אַן אויפֿגאַבע לויפֿט</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>אויפֿבוי צו קאָנטראָלירן</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>באַהאַלטן דאָס</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>שאַפֿן אַ ציל</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>קיינמאָל</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>לייענען די אָנלערנונג</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added צוגעגעבן, %changed געביטן, %removed אַוועקגענומען</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes פֿון %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>נאָך %count ווערן ניט אויסגערעכנט.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages זײַטן געשריבן</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path איז %size, מער ווי דער האָסט דערלויבט פֿאַר איין טעקע.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % פֿון דער גרענעץ</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds סעק.</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag איז די פֿאַרעפֿנטלעכונג וואָס דאָס וועבזײַטל האָט איצט.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: אויפֿגאַבע %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/repository/ פֿאַר אַ GitHub־פּראָיעקט־וועבזײַטל; ליידיק פֿאַר אַן אייגענעם דאָמען אָדער אַ באַניצער־וועבזײַטל.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. דאָס וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. דער האָסט</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. אַרײַנלאָגירן אין דער רעפּאָזיטאָריע</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. די רעפּאָזיטאָריע</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. לינקען און באַזע־וועג</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. אײַער אייגענער דאָמען</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. וואָס דער אויפֿבוי אַנטהאַלט</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. ווען עס ווערט פֿאַרעפֿנטלעכט</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. איבערקוקן און אויפֿהיטן</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>אַ GitHub־פּראָיעקט־וועבזײַטל געפֿינט זיך אונטער /&lt;repository&gt;/; רעלאַטיווע לינקען אַרבעטן דאָרט און אומעטום אַנדערש.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>אַן אויפֿבוי ברענגט יעדע זײַט פֿון %site אַזוי ווי אַ באַזוכער וואָס איז ניט אַרײַנגעלאָגירט זעט זי, שרײַבט איבער די לינקען, קאָפּירט די טעקעס און שרײַבט דעם רעזולטאַט אין דער מאַפּע פֿונעם ציל. גאָרנישט ווערט פֿאַרעפֿנטלעכט ביז איר קאָנטראָלירט דעם אויפֿבוי און דריקט פֿאַרעפֿנטלעכן.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>אַ cron־אויסדרוק, למשל 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>אַ דיפּלוי־שליסל ווערט אָפּגעהיט ווי דער סוד %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>אַ דיפּלוי־שליסל לאָזט די דאָזיקע אינסטאַלאַציע אַרויפֿשטופּן צו איין רעפּאָזיטאָריע איבער SSH און ערגעץ ניט אַנדערש. זײַן פּריוואַטע העלפֿט בלײַבט אין אייַנריכטונג &gt; סודות; נאָר די עפֿנטלעכע העלפֿט ווערט געוויזן.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>אַ דיפּלוי־שליסל געמאַכט פֿאַר דעם ציל</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>אַ דיפּלוי־שליסל לאָגירט זיך אַרײַן איבער SSH: בײַט די git־אַדרעס אויף דער SSH־אַדרעס (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>אַן אויפֿגאַבע לויפֿט, אָנגעהויבן פֿון %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>אַן אויפֿגאַבע פֿון דעם ציל לויפֿט נאָך (%detail). וואַרט ביז זי ענדיקט זיך.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>אַן אויפֿגאַבע פֿון דעם ציל לויפֿט נאָך. וואַרט ביז זי ענדיקט זיך.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>אַ לינק פֿון דער זײַט /news/ צו דער זײַט /about-us/team וועט געשריבן ווערן ווי</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>מע האָט געמאַכט אַ נײַעם דיפּלוי־שליסל. לייגט צו זײַן עפֿנטלעכע העלפֿט צו דער רעפּאָזיטאָריע איצט.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>אַ זײַט וואָס טראָגט נאָך דעם אָפּשיילן נאָך אַלץ דיבאַג־אויסגאַבע, אַ פֿאָרמע־טאָקען אָדער אַ סעסיע־ID ווערט קיינמאָל ניט פֿאַרעפֿנטלעכט.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>אַ צוריקדרייונג איז פֿאַר מומחים: צייכנט אָן &quot;איך ווייס וואָס דאָס ענדערט&quot; און שרײַבט נאָך אַ מאָל דעם נאָמען פֿונעם צייכן.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>אַ וועבזײַטל מעג זײַן ביז %site, איין טעקע ביז %file, מיט אַרום 100 GB טראַפֿיק אַ חודש. אויף אַן אומזיסטן פּלאַן מוז די רעפּאָזיטאָריע זײַן עפֿנטלעך. GitHub Pages איז ניט באַשטימט פֿאַר קראָמען אָדער אַנדערע קאָמערציעלע טראַנזאַקציעס.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>אַ ציל איז איין וועבזײַטל פֿאַרעפֿנטלעכט אין איין git־רעפּאָזיטאָריע. דאָ ווערט גאָרנישט אויפֿגעבויט אָדער פֿאַרעפֿנטלעכט: אויפֿהיטן שרײַבט די באַשטימונגען אין settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>אַ ציל איז איין וועבזײַטל פֿאַרעפֿנטלעכט אויף איין אָרט, למשל אײַער עפֿנטלעך וועבזײַטל אויף GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>אַ טאָקען פֿון אייַנריכטונג &gt; סודות</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>אַן אַרבעטס־גאַנג (workflow) פֿון דער רעפּאָזיטאָריע פֿאַרעפֿנטלעכט עס.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>לייגט צו דעם עפֿנטלעכן שליסל צו דער רעפּאָזיטאָריע מיט שרײַב־רעכט. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, צייכנט אָן Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>צוגעגעבן</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>אַן אַנדער git־האָסט</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>אַן אַנדער פּראָצעס אַרבעט אויף דעם ציל: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>צוריק</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>באַזע־וועג</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>פֿריִער</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>אונטער אַ באַזע־וועג</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>צווײַג</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>צעבראָכענע לינקען</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>צעבראָכענע לינקען אינעם אויפֿבוי</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>אויפֿבוי</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>אויפֿבוי %id פֿון %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>אויפֿבויען %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>אויפֿבויען איצט</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>אויפֿבוי צו קאָנטראָלירן</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>פֿון</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>מיט דער האַנט, דאָ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>אַנולירן</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ענדערן</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>געביטן</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ענדערונגען</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>קאָנטראָלירט עס פֿריִער</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>קאָנטראָלירט די באַשטימונגען</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>קאָנטראָלירט וואָס דער אויפֿבוי ענדערט, קוקט אים אָן, דערנאָך פֿאַרעפֿנטלעכט אים אָדער וואַרפֿט אים אַוועק.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>קלײַבט אויס די פֿאַרעפֿנטלעכונג צו וועלכער צוריקצוגיין.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>קומט מיט אַ שפּעטערדיקער אויסגאַבע.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>קאָמיט</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>קאָמיטן</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>מאַכט אַ קאָמיט פֿונעם אויפֿבוי, באַצייכנט אים און שטופּט אים אַרויף צו %remote. אַ שטופּ ווערט קיינמאָל ניט געצוווּנגען; איר קענט שפּעטער צוריקגיין צו סײַ וועלכער פֿאַרעפֿנטלעכונג.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>פֿאַרגליכן מיט דער מאַפּע פֿריִער: %added צוגעגעבן, %changed געביטן, %removed אַוועקגענומען, %unchanged ניט געביטן.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>פֿאַרגליכן מיט דער לעצטער פֿאַרעפֿנטלעכונג.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>צוטריט־באַווײַז</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>אייגענער דאָמען</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>דיבאַג־אויסגאַבע, פֿאָרמע־טאָקענס, סעסיע־IDs און nonces ווערן שטענדיק אַרויסגענומען.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>דיפּלוי־שליסל</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>דיפּלוי־שליסל פֿון %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>אַוועקוואַרפֿן</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>אַוועקוואַרפֿן דעם אויפֿבוי</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>דאָמען</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ליידיק: די אַדרעס פֿונעם וועבזײַטל. אַנדערש, אַן אינערלעכע אַדרעס פֿון דעם זעלביקן וועבזײַטל.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>געענדיקט</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>יעדער לינק הייבט זיך אָן מיטן באַזע־וועג.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>יעדע פֿאַרעפֿנטלעכונג איז אַ קאָמיט מיט אַ צייכן static/%id/&lt;n&gt;. צוריקגיין מאַכט אַ נײַעם קאָמיט מיט די טעקעס פֿון אַ פֿריִערדיקער פֿאַרעפֿנטלעכונג: די געשיכטע בלײַבט, קיין צייכן רירט זיך ניט און גאָרנישט ווערט געצוווּנגען.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>עקסטראַס</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>ברענגען די זײַטן פֿון</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>טעקע</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>טעקעס</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>פֿעלנדיקע טעקעס</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>טעקעס פֿון</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>טעקעס וואָס מע האָט ניט געקענט זאַמלען</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>פֿינגערדרוק</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>מאַפּע</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>פֿאַר אַן SSH־אַדרעס. דער שליסל ווערט געמאַכט נאָכן אויפֿהיטן; איר לייגט צו זײַן עפֿנטלעכע העלפֿט צו דער רעפּאָזיטאָריע.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>פֿאַר אַן https://־אַדרעס. GitHub: אַ fine-grained טאָקען מיט Contents לייענען און שרײַבן אויף דער רעפּאָזיטאָריע.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>פֿאַר מומחים. דאָס עפֿנטלעכע וועבזײַטל ענדערט זיך ווי נאָר דער שטופּ איז דורך.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>פֿאָרמעס</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>אומזיסטע האָסטינג פֿון אַ GitHub־רעפּאָזיטאָריע.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>פֿון דער צווײַג</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>git־אַדרעס</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages דערלויבט אַ וועבזײַטל פֿון %site און אַ טעקע פֿון %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>גרענעצן פֿון GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages פֿאַרעפֿנטלעכט די טעקעס ווי זיי זײַנען (נייטיק פֿאַר טעקעס וואָס הייבן זיך אָן מיט _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub באַדינט די צווײַג ווי זי איז אַרויפֿגעשטופּט. דער סטאַנדאַרט.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, אײַער אייגענער סערווער: סײַ וועלכע git־רעפּאָזיטאָריע.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>צוריקגיין צו אַ פֿריִערדיקער פֿאַרעפֿנטלעכונג</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>הילף</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>הילף מיטן וויזאַרד</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>באַהאַלטן זיי</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>געשיכטע</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>געשיכטע פֿון %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>האָסט</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>ווי GitHub Pages באַקומט דעם אויפֿבוי</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>איך האָב קאָנטראָלירט די ענדערונגען</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>איך ווייס וואָס דאָס ענדערט</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>עס איז אויסגעשאַלטן: גאָרנישט קען ווערן אויפֿגעבויט ביז עס איז אײַנגעשאַלטן.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>עס לויפֿט אין הינטערגרונט ווי %user; איר קענט פֿאַרמאַכן די זײַט.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>אויפֿגאַבע %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>אָפּגעהיט ווי דער סוד %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>סאָרט</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>לעצטע פֿאַרעפֿנטלעכונג</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>אויסלאָזן די זײַטן</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>אויסלאָזן די אָפּטיילן</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>לינקען</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>איבערגעשריבענע לינקען</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>לעבעדיק וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>אָנקוקן דעם אויפֿבוי</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>קליינע אותיות, ציפֿערן, _ און -, למשל github-public. עס גיט אַ נאָמען דער מאַפּע און די צייכנס (static/&lt;id&gt;/&lt;n&gt;) און קען שפּעטער ניט געביטן ווערן.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>מאַכן אַ נײַעם שליסל</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>שאַפֿן אַ ציל</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>מאַכן דעם שליסל</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>שאַפֿט פֿריִער די רעפּאָזיטאָריע אויפֿן האָסט; אַ ליידיקע איז גוט.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>מאַניפֿעסט</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>מעלדונג</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>רובֿ זײַטן</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>נאָמען</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>נאָמען פֿונעם טאָקען אין אייַנריכטונג &gt; סודות</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>נײַער ציל</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ווייַטער</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ניין</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>נאָך קיין קאָמיט ניטאָ.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>קיין שליסל איז ניט געמאַכט געוואָרן: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>מע האָט ניט געפֿונען קיין php באַפֿעל־שורה פּראָגראַם. שטעלט migration.ini [AdminSettings] PhpCliPath אויף זײַן פֿולן וועג.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>נאָך קיין צייכן ניטאָ.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>נאָך קיין ציל ניטאָ.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>קיינער</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ניט אינעם אויפֿבוי.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>גאָרנישט איז נאָך ניט פֿאַרעפֿנטלעכט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>גאָרנישט איז נאָך ניט פֿאַרעפֿנטלעכט געוואָרן: יעדע טעקע איז נײַ.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>אָנזאָגן</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>לויט אַ פּלאַן</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>אויף דער קאָנסאָל</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>אויפֿן סערווער: ./console exp:static:serve %id באַדינט עס אויף דעם זעלביקן אופֿן.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>איין וועג אויף אַ שורה, * פּאַסט צו סײַ וועלכן טייל: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>נאָר אַ נאָמען ווערט אָפּגעהיט מיטן ציל; דער טאָקען אָדער שליסל אַליין בלײַבט אין אייַנריכטונג &gt; סודות און באַווײַזט זיך קיינמאָל ניט אין אַ לאָג.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>נאָר וואָס די זײַטן דערמאָנען</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>נאָר מיט אַ טאָקען. env:NAME לייענט אַנשטאָט דעם אַ סבֿיבֿה־בײַטעוודיקע פֿונעם סערווער.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>עפֿענען דעם פֿאָרויסבליק</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>עפֿנט דעם אויפֿבוי ווי דער האָסט וועט אים באַדינען, פֿון דער מאַפּע פֿונעם ציל. דער לינק אַרבעט פֿאַר אײַך אַ שעה.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>אָפּציאָנעל. ליידיק: וואָס איז פֿאַרעפֿנטלעכט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>אָפּציאָנעל. מיט אַ דאָמען ווערט דאָס וועבזײַטל באַדינט בײַ זײַן וואָרצל.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>אויסגאַבע</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>זײַטן</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>זײַטן פֿונעם ציל</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>אָפּגעוואָרפֿענע זײַטן</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>נאָכבאַאַרבעטונג</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>פֿאָרויסבליק</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>פֿאָרויסבליק און פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>פֿאָרויסבליק און פֿאַרעפֿנטלעכן %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>פֿאָרויסבליק פֿונעם אויפֿבוי</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>פֿאָרשריט</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>עפֿנטלעכע אַדרעס</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>עפֿנטלעכער שליסל</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>פֿאַרעפֿנטלעכט אַ סטאַטישע קאָפּיע פֿון אַ וועבזײַטל אויף GitHub Pages אָדער סײַ וועלכן git־האָסט: בויט עס אויף, קאָנטראָלירט די ענדערונגען, פֿאַרעפֿנטלעכט, און גייט צוריק צו אַ פֿריִערדיקער פֿאַרעפֿנטלעכונג ווען איר דאַרפֿט.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>פֿאַרעפֿנטלעכונג צו וועלכער צוריקצוגיין</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>פֿאַרעפֿנטלעכונגען</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>אַרויפֿשטופּן</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>לייענט די אָנלערנונג</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>פּראָטאָקאָל</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>אָפּגעוואָרפֿן</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>רעלאַטיוו</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>איבערלאָדן</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>אַוועקגענומען</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>פֿאַרבײַטן דעם שליסל: דער אַלטער הערט אויף צו אַרבעטן</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>באַריכט</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>באַריכט פֿונעם אויפֿבוי</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>רעפּאָזיטאָריע</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>איבערקוקן</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>איבערקוקן קאָנטראָלירט יעדע באַשטימונג און ווײַזט די שורות וואָס וועלן געשריבן ווערן. גאָרנישט איז נאָך ניט אָפּגעהיט.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>צוריקדרייען</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>צוריקדרייונג</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>אויפֿהיטן</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>פּלאַן</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>זוך־זײַט</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>אָפּטייל־IDs, אָפּגעטיילט מיט קאָמעס.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>שיקן זיי צום לעבעדיקן וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>באַשטימונג</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>באַשטימונגען</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>באַשטימונגען פֿון %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>אייַנריכטונג</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>אייַנריכטונג &gt; סודות</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>געוויזן אין רשימות, למשל &quot;עפֿנטלעך וועבזײַטל אויף GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>אַרײַנלאָגירן מיט אַ GitHub App קומט מיט דער GitHub־אינטעגראַציע.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>וועבזײַטל</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>וועבזײַטל צו פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>גרייס</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>גרייס און גרענעצן</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>גרייס פֿונעם אויפֿבוי</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>פֿאַרעלטערטע זײַטן</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>אָנגעהויבן</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>אָנגעהויבן פֿון %user אום %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>מצב</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן איז אויסגעשאַלטן</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן איז אויסגעשאַלטן.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן איז אויסגעשאַלטן. שאַלט עס פֿריִער אײַן אין אייַנריכטונג &gt; סטאַטיש פֿאַרעפֿנטלעכן.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>סטאַטיש פֿאַרעפֿנטלעכן איז אײַנגעשאַלטן.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>טריט %step פֿון %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>טריט</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>אָפּשיילן</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>אויסשאַלטן</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>אײַנשאַלטן</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>אײַנשאַלטן סטאַטיש פֿאַרעפֿנטלעכן</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>צייכן</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>צייכנס</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ציל</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>מע קען שאַפֿן און ענדערן צילן, אָבער גאָרנישט ווערט אויפֿגעבויט אָדער פֿאַרעפֿנטלעכט ביז עס איז אײַנגעשאַלטן.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>זאָגט זוכמאַשינען וואָס צו לייענען.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>מע האָט ניט געקענט אַוועקוואַרפֿן דעם אויפֿבוי: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>דער אויפֿבוי איז דער זעלביקער ווי די לעצטע פֿאַרעפֿנטלעכונג: ס&apos;איז ניטאָ וואָס צו פֿאַרעפֿנטלעכן.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>דער אויפֿבוי איז אַוועקגעוואָרפֿן געוואָרן: די מאַפּע האַלט ווידער די לעצטע פֿאַרעפֿנטלעכונג.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>די פֿאָרשטעלונגען פּאַסן פֿאַר רובֿ וועבזײַטלעך.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>די מאַפּע האַלט אַן אויפֿבוי וואָס איז נאָך ניט פֿאַרעפֿנטלעכט; אַ נײַער אויפֿבוי פֿאַרבײַט אים.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>מע קען ניט שרײַבן אין דער מאַפּע פֿון די אויפֿגאַבעס: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>מע האָט ניט געקענט צוגרייטן די אויפֿגאַבע: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>מע האָט ניט געקענט אָנהייבן די אויפֿגאַבע.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>די אויפֿגאַבע האָט זיך געענדיקט. מע לאָדט איר באַריכט.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>די אויפֿגאַבע דאַרף אַן אַרײַנגעלאָגירטן באַניצער.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>די אויפֿגאַבע איז אָנגעהויבן געוואָרן אָבער האָט ניט געמאָלדן איר פּראָצעס־ID. קאָנטראָלירט %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>דער שליסל</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>די גרעסטע טעקע: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>די שורות וואָס וועלן געשריבן ווערן</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>די רשימה פֿון זײַטן פֿאַר זוכמאַשינען; דאַרף די עפֿנטלעכע אַדרעס.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>די זײַטן ווערן געבראַכט אַזוי ווי אַ באַזוכער וואָס איז ניט אַרײַנגעלאָגירט זעט זיי. אַדמיניסטראַציע־ און רעדאַקטירונג־siteaccesses ווערן קיינמאָל ניט אָנגעבאָטן.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>מע האָט ניט געקענט נאָכגיין דעם פֿאָרשריט. לאָדט איבער די זײַט צו זען ווי די אויפֿגאַבע גייט.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>די עפֿנטלעכע העלפֿט פֿונעם שליסל:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>דער וואָרצל פֿון דער צווײַג</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>דער סודות־שפּײַכלער איז נאָך ניט אײַנגעריכט (./console exp:upgrade --apply שאַפֿט זײַן טאַבעלע), דערפֿאַר קען מען ניט אָפּהיטן קיין שליסל.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>דער סערווער לאָגירט זיך אַרײַן אַליין (מיט זײַן אייגענעם SSH־שליסל אָדער צוטריט־העלפֿער), אָדער די רעפּאָזיטאָריע איז אויף דעם סערווער.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>מע האָט ניט געקענט שרײַבן די באַשטימונג: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>די באַשטימונגען זײַנען גילטיק. די דאָזיקע שורות וועלן געשריבן ווערן:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>מע קען ניט לייענען די באַשטימונגען־טעקע: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>דאָס וועבזײַטל גייט צוריק צו די טעקעס פֿון יענער פֿאַרעפֿנטלעכונג; אַן אויפֿבוי וואָס איז נאָך ניט פֿאַרעפֿנטלעכט מוז פֿריִער פֿאַרעפֿנטלעכט אָדער אַוועקגעוואָרפֿן ווערן.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>דעם וועבזײַטלס אייגענע זײַט פֿאַר אַדרעסן וואָס עקזיסטירן ניט.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>מע האָט ניט געקענט אויפֿהיטן דעם ציל: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>דער ציל לאָגירט זיך נאָך ניט אַרײַן מיט דעם שליסל: קלײַבט אויס &quot;אַ דיפּלוי־שליסל געמאַכט פֿאַר דעם ציל&quot; אין זײַנע באַשטימונגען.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>מע האָט ניט געקענט לייענען די צילן: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>ס&apos;איז נאָך ניטאָ קיין אויפֿבוי צו קאָנטראָלירן.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>די דאָזיקע אינסטאַלאַציע האָט ניט קיין פֿראָנט־siteaccess. אַדמיניסטראַציע־ און רעדאַקטירונג־siteaccesses ווערן קיינמאָל ניט פֿאַרעפֿנטלעכט.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>די זײַט גייט נאָך דער אויפֿגאַבע בשעת זי לויפֿט; זי לויפֿט ווײַטער אין הינטערגרונט ווען די זײַט ווערט פֿאַרמאַכט.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>דער ציל האָט נאָך ניט קיין דיפּלוי־שליסל.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>דער ציל איז דאָ נאָך ניט אויפֿגעבויט געוואָרן.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>דער ציל האָט איינעם.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>וואַרפֿט אַוועק דעם אויפֿבוי: די מאַפּע האַלט ווידער די לעצטע פֿאַרעפֿנטלעכונג. דאָס לעבעדיקע וועבזײַטל ענדערט זיך ניט.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>צייכנט פֿריִער אָן &quot;איך האָב קאָנטראָלירט די ענדערונגען&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>צײַט</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>אויסלייזער</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>שרײַבט נאָך אַ מאָל דעם נאָמען פֿונעם צייכן</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ניט געביטן</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>וועבהוק</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>וואָס</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>וואָס ענדערט זיך</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>וואָס יעדע טעקע איז; שטענדיק געשריבן.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>וואָס די אויפֿגאַבע האָט געטאָן און איר פּראָטאָקאָל. אַן אויפֿגאַבע וואָס איז דאָ אָנגעהויבן געוואָרן לויפֿט ווײַטער אין הינטערגרונט ווען די זײַט ווערט פֿאַרמאַכט.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>וואָס די אויפֿגאַבע האָט אויסגעדרוקט ווי גרײַזן</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>וואָס די זײַטן דערמאָנען, און יעדעס בילד פֿון פֿאַרעפֿנטלעכטן אינהאַלט</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ווען</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ווען אַ פֿאַרעפֿנטלעכונג פֿאַלט דורך</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ווען אַ פֿאַרעפֿנטלעכונג געלינגט</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ווען אינהאַלט ווערט פֿאַרעפֿנטלעכט</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>וווּהין לינקען צו וואָס די קאָפּיע האַלט ניט פֿירן (דאָס זוכן, דאָס אַרײַנלאָגירן).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>פֿון וואַנען די סטאַטישע קאָפּיע ווערט באַדינט.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>וועלכעס וועבזײַטל ווערט פֿאַרעפֿנטלעכט, און ווי דער ציל הייסט.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>אַרבעט אונטער סײַ וועלכן וועג. דער סטאַנדאַרט.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>געשריבן ווען אַן אייגענער דאָמען איז באַשטימט.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>יאָ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>איר קענט שטענדיק אויפֿבויען און פֿאַרעפֿנטלעכן מיט דער האַנט דאָ און אויף דער קאָנסאָל.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>נאָר אַ נאָמען; דער ווערט בלײַבט אין אייַנריכטונג &gt; סודות</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>אונטער %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>געענדיקט אָן אַ באַריכט</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>עקסטרע</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>דורכגעפֿאַלן</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>טעקע</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, אָדער main מיט דער מאַפּע docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git־האָסט</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (מיט אַ טאָקען) אָדער git@github.com:owner/repo.git (מיט אַ דיפּלוי־שליסל); קיינמאָל ניט קיין פּאַראָל אָדער טאָקען דערין.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, פֿאַר דער זײַטן־מאַפּע און די קאַנאָנישע לינקען.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>בילד</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>קיינמאָל</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ניין</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>קיין דרויסנדיקע רעפּאָזיטאָריע</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>גאָרנישט: די קאָמיטן בלײַבן אין דער מאַפּע</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>גאָרנישט: גאָרנישט האָט זיך געביטן</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ניט אַרויפֿגעשטופּט</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>גאָרנישט האָט זיך געביטן</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>זײַט</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>דורכגעגאַנגען</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open איז אויסגעשאַלטן, דערפֿאַר קען מען דאָ ניט אָנהייבן קיין אויפֿגאַבע. ניצט ./console exp:static:build אויפֿן סערווער.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>פֿאַרעפֿנטלעכונג</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>פֿאַרעפֿנטלעכט</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>אַרויפֿשטופּן וואַרט</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>אַרויפֿגעשטופּט</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>אָפּגעוואָרפֿן</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>רעלאַטיוו</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>צוריקדרייונג</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>צוריקגעדרייט</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>לויפֿט</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>נאָר די מאַפּע</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: געשריבן אין דער טעקע CNAME. ווײַזט די DNS פֿונעם דאָמען אויפֿן האָסט ווי ער דערקלערט; HTTPS קען נעמען אַ ווײַלע ביז עס הייבט זיך אָן.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>יאָ, נאָך ניט פֿאַרעפֿנטלעכט</translation>
     </message>
 </context>
 </TS>

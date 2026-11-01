@@ -8,9 +8,10 @@ zu patchen oder anzugreifen. Sie bauen und veröffentlichen sie neu, wenn sich d
 Sie ist für Website-Betreiber und Administratoren, die eine kostenlose öffentliche Website möchten, und für
 Entwickler, die Websites von der Kommandozeile oder aus CI bauen und veröffentlichen. Diese erste Fassung behandelt
 die Kommandozeile: ein Ziel in den Einstellungen, ein Build, eine lokale Vorschau, eine Prüfung und das
-Veröffentlichen mit `exp:static:publish`.
-Die Seiten in der Administration und das automatische Veröffentlichen bei GitHub kommen mit späteren Teilen des
-statischen Veröffentlichens; die Funktionsseite führt auf, was jeder Teil hinzufügt.
+Veröffentlichen mit `exp:static:publish`. Dieselben Schritte haben Seiten in der Administration, unter
+Setup > Statisches Veröffentlichen ([Statisches Veröffentlichen](../hilfe/statisches-veroeffentlichen/README.md)). Das
+automatische Veröffentlichen bei GitHub kommt mit einem späteren Teil des statischen Veröffentlichens; die
+Funktionsseite führt auf, was jeder Teil hinzufügt.
 
 [Anleitungen](README.md) · Verwandt: [Statisches Veröffentlichen](../funktionen/6.0/statisches-veroeffentlichen.md),
 [Das Build-Format](../spezifikationen/6.0/statisches-veroeffentlichen-build-format.md),

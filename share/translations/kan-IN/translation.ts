@@ -15148,6 +15148,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ಫೈಲ್‌ಗಳಾಗಿ ಇರಿಸಲಾದ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಬದಲಾವಣೆಗಳು: ಅವುಗಳ ಸ್ಥಿತಿ, ರನ್‌ಗಳು, ರನ್ ಮತ್ತು ರೋಲ್‌ಬ್ಯಾಕ್.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ಸೈಟ್‌ನ ಸ್ಥಿರ ಪ್ರತಿಯನ್ನು GitHub Pages ಅಥವಾ ಯಾವುದೇ git ಹೋಸ್ಟ್‌ಗೆ ಪ್ರಕಟಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22147,6 +22155,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>GraphQL API ಯ ಸಂಗ್ರಹಿಸಿದ ಕ್ವೆರಿಗಳ ಉತ್ತರಗಳು ಮತ್ತು ಅದರ ಸ್ಕೀಮಾದ ವಿಷಯ ವರ್ಗಗಳು.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>ಸ್ಥಿರ ಪ್ರತಿಯನ್ನು GitHub Pages ಅಥವಾ ಯಾವುದೇ git ಹೋಸ್ಟ್‌ಗೆ ಪ್ರಕಟಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>ಸ್ಥಿರ ಕ್ಯಾಷ್ ಈ ಸರ್ವರ್‌ನಿಂದ ಪುಟಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ. ಸೈಟ್‌ನ ಸ್ಥಿರ ಪ್ರತಿಯನ್ನು ಬೇರೆಡೆ, GitHub Pages ನಲ್ಲಿ ಅಥವಾ ಯಾವುದೇ git ಹೋಸ್ಟ್‌ನಲ್ಲಿ ಪ್ರಕಟಿಸಲು ಸ್ಥಿರ ಪ್ರಕಟಣೆಯನ್ನು ಬಳಸಿ.</translation>
     </message>
 </context>
 <context>
@@ -76204,6 +76224,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ಫೈಲ್‌ಗಳಾಗಿ ಇರಿಸಲಾದ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಬದಲಾವಣೆಗಳು: ಅವುಗಳ ಸ್ಥಿತಿ, ರನ್‌ಗಳು, ರನ್ ಮತ್ತು ರೋಲ್‌ಬ್ಯಾಕ್.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>ಸೈಟ್‌ನ ಸ್ಥಿರ ಪ್ರತಿಯನ್ನು GitHub Pages ಅಥವಾ ಯಾವುದೇ git ಹೋಸ್ಟ್‌ಗೆ ಪ್ರಕಟಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80551,6 +80579,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>ರನ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>ಎಲ್ಲಾ ಗುರಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ಕೊನೆಯ ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>ನಿಮ್ಮ ಸೈಟ್‌ನ ಸ್ಥಿರ ಪ್ರತಿಯನ್ನು GitHub Pages ನಲ್ಲಿ ಉಚಿತವಾಗಿ ಪ್ರಕಟಿಸಿ:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ಹಳೆಯದಾದ ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ ಆಫ್ ಆಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ಗುರಿ</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ಗುರಿಗಳನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>ಒಂದು ಕಾರ್ಯ ನಡೆಯುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>ಪರಿಶೀಲಿಸಬೇಕಾದ ಬಿಲ್ಡ್</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>ಇದನ್ನು ಮರೆಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>ಗುರಿಯನ್ನು ರಚಿಸಿ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ಎಂದಿಗೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>ಟ್ಯುಟೋರಿಯಲ್ ಓದಿ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ಸೇರಿಸಲಾಗಿದೆ, %changed ಬದಲಾಗಿದೆ, %removed ತೆಗೆದುಹಾಕಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%limit ರಲ್ಲಿ %bytes (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>ಇನ್ನೂ %count ಪಟ್ಟಿ ಮಾಡಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>%pages ಪುಟಗಳನ್ನು ಬರೆಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ಗಾತ್ರ %size, ಹೋಸ್ಟ್ ಒಂದು ಫೈಲ್‌ಗೆ ಅನುಮತಿಸುವುದಕ್ಕಿಂತ ಹೆಚ್ಚು.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>ಮಿತಿಯ %percent %</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds ಸೆ</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ಸೈಟ್‌ನ ಈಗಿನ ಪ್ರಕಟಣೆ.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: ಕಾರ್ಯ %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>GitHub ಪ್ರಾಜೆಕ್ಟ್ ಸೈಟ್‌ಗೆ /repository/; ಕಸ್ಟಮ್ ಡೊಮೇನ್ ಅಥವಾ ಬಳಕೆದಾರ ಸೈಟ್‌ಗೆ ಖಾಲಿ.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. ಸೈಟ್</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. ಹೋಸ್ಟ್</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. ರೆಪೊಸಿಟರಿಗೆ ಸೈನ್ ಇನ್</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. ರೆಪೊಸಿಟರಿ</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. ಲಿಂಕ್‌ಗಳು ಮತ್ತು ಮೂಲ ಪಥ</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. ನಿಮ್ಮ ಸ್ವಂತ ಡೊಮೇನ್</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಏನಿದೆ</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. ಯಾವಾಗ ಪ್ರಕಟಿಸಲಾಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಉಳಿಸಿ</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>GitHub ಪ್ರಾಜೆಕ್ಟ್ ಸೈಟ್ /&lt;repository&gt;/ ಅಡಿಯಲ್ಲಿ ಇರುತ್ತದೆ; ಸಾಪೇಕ್ಷ ಲಿಂಕ್‌ಗಳು ಅಲ್ಲಿ ಮತ್ತು ಬೇರೆಲ್ಲೆಡೆ ಕೆಲಸ ಮಾಡುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>ಬಿಲ್ಡ್ %site ನ ಪ್ರತಿ ಪುಟವನ್ನು ಸೈನ್ ಇನ್ ಮಾಡದ ಸಂದರ್ಶಕ ನೋಡುವಂತೆ ತರುತ್ತದೆ, ಲಿಂಕ್‌ಗಳನ್ನು ಪುನಃ ಬರೆಯುತ್ತದೆ, ಫೈಲ್‌ಗಳನ್ನು ನಕಲಿಸುತ್ತದೆ ಮತ್ತು ಫಲಿತಾಂಶವನ್ನು ಗುರಿಯ ಫೋಲ್ಡರ್‌ಗೆ ಬರೆಯುತ್ತದೆ. ನೀವು ಬಿಲ್ಡ್ ಪರಿಶೀಲಿಸಿ ಪ್ರಕಟಿಸು ಒತ್ತುವವರೆಗೆ ಏನನ್ನೂ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>cron ಅಭಿವ್ಯಕ್ತಿ, ಉದಾಹರಣೆಗೆ 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>ಡಿಪ್ಲಾಯ್ ಕೀಯನ್ನು ರಹಸ್ಯ %secret ಆಗಿ ಇರಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>ಡಿಪ್ಲಾಯ್ ಕೀ ಈ ಸ್ಥಾಪನೆಗೆ SSH ಮೂಲಕ ಒಂದೇ ರೆಪೊಸಿಟರಿಗೆ ಪುಷ್ ಮಾಡಲು ಅವಕಾಶ ನೀಡುತ್ತದೆ, ಬೇರೆಲ್ಲಿಗೂ ಅಲ್ಲ. ಅದರ ಖಾಸಗಿ ಭಾಗ ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿ ಉಳಿಯುತ್ತದೆ; ಸಾರ್ವಜನಿಕ ಭಾಗ ಮಾತ್ರ ತೋರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>ಈ ಗುರಿಗಾಗಿ ರಚಿಸಿದ ಡಿಪ್ಲಾಯ್ ಕೀ</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>ಡಿಪ್ಲಾಯ್ ಕೀ SSH ಮೂಲಕ ಸೈನ್ ಇನ್ ಮಾಡುತ್ತದೆ: git ವಿಳಾಸವನ್ನು SSH ವಿಳಾಸಕ್ಕೆ ಬದಲಾಯಿಸಿ (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>%user ಪ್ರಾರಂಭಿಸಿದ ಒಂದು ಕಾರ್ಯ ನಡೆಯುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>ಈ ಗುರಿಯ ಒಂದು ಕಾರ್ಯ ಇನ್ನೂ ನಡೆಯುತ್ತಿದೆ (%detail). ಅದು ಮುಗಿಯುವವರೆಗೆ ಕಾಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>ಈ ಗುರಿಯ ಒಂದು ಕಾರ್ಯ ಇನ್ನೂ ನಡೆಯುತ್ತಿದೆ. ಅದು ಮುಗಿಯುವವರೆಗೆ ಕಾಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>/news/ ಪುಟದಿಂದ /about-us/team ಪುಟಕ್ಕೆ ಇರುವ ಲಿಂಕ್ ಹೀಗೆ ಬರೆಯಲ್ಪಡುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>ಹೊಸ ಡಿಪ್ಲಾಯ್ ಕೀ ರಚಿಸಲಾಗಿದೆ. ಅದರ ಸಾರ್ವಜನಿಕ ಭಾಗವನ್ನು ಈಗಲೇ ರೆಪೊಸಿಟರಿಗೆ ಸೇರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>ಸ್ವಚ್ಛಗೊಳಿಸಿದ ನಂತರವೂ ಡೀಬಗ್ ಔಟ್‌ಪುಟ್, ಫಾರ್ಮ್ ಟೋಕನ್ ಅಥವಾ ಸೆಷನ್ ಐಡಿ ಹೊಂದಿರುವ ಪುಟವನ್ನು ಎಂದಿಗೂ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಪರಿಣತರಿಗೆ ಮಾತ್ರ: &quot;ಇದು ಏನನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ ಎಂದು ನನಗೆ ತಿಳಿದಿದೆ&quot; ಗುರುತು ಮಾಡಿ ಮತ್ತು ಟ್ಯಾಗ್‌ನ ಹೆಸರನ್ನು ಮತ್ತೆ ಟೈಪ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>ಸೈಟ್ %site ವರೆಗೆ, ಒಂದು ಫೈಲ್ %file ವರೆಗೆ ಇರಬಹುದು, ತಿಂಗಳಿಗೆ ಸುಮಾರು 100 GB ಟ್ರಾಫಿಕ್‌ನೊಂದಿಗೆ. ಉಚಿತ ಯೋಜನೆಯಲ್ಲಿ ರೆಪೊಸಿಟರಿ ಸಾರ್ವಜನಿಕವಾಗಿರಬೇಕು. GitHub Pages ಅಂಗಡಿಗಳಿಗೆ ಅಥವಾ ಇತರ ವಾಣಿಜ್ಯ ವಹಿವಾಟುಗಳಿಗೆ ಉದ್ದೇಶಿಸಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>ಗುರಿ ಎಂದರೆ ಒಂದು git ರೆಪೊಸಿಟರಿಗೆ ಪ್ರಕಟಿಸಲಾದ ಒಂದು ಸೈಟ್. ಇಲ್ಲಿ ಏನನ್ನೂ ಬಿಲ್ಡ್ ಅಥವಾ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ: ಉಳಿಸು ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು settings/override/staticcache.ini.append.php ಗೆ ಬರೆಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>ಗುರಿ ಎಂದರೆ ಒಂದು ಸ್ಥಳಕ್ಕೆ ಪ್ರಕಟಿಸಲಾದ ಒಂದು ಸೈಟ್, ಉದಾಹರಣೆಗೆ GitHub Pages ನಲ್ಲಿರುವ ನಿಮ್ಮ ಸಾರ್ವಜನಿಕ ಸೈಟ್.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಿಂದ ಒಂದು ಟೋಕನ್</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>ರೆಪೊಸಿಟರಿಯ ಒಂದು ವರ್ಕ್‌ಫ್ಲೋ ಅದನ್ನು ಪ್ರಕಟಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>ಈ ಸಾರ್ವಜನಿಕ ಕೀಯನ್ನು ಬರೆಯುವ ಅನುಮತಿಯೊಂದಿಗೆ ರೆಪೊಸಿಟರಿಗೆ ಸೇರಿಸಿ. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, Allow write access ಗುರುತು ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>ಸೇರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>ಇನ್ನೊಂದು git ಹೋಸ್ಟ್</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>ಇನ್ನೊಂದು ಪ್ರಕ್ರಿಯೆ ಈ ಗುರಿಯ ಮೇಲೆ ಕೆಲಸ ಮಾಡುತ್ತಿದೆ: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>ಹಿಂದೆ</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>ಮೂಲ ಪಥ</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>ಮೊದಲು</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>ಮೂಲ ಪಥದ ಅಡಿಯಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>ಬ್ರಾಂಚ್</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>ಮುರಿದ ಲಿಂಕ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>ಬಿಲ್ಡ್‌ನಲ್ಲಿರುವ ಮುರಿದ ಲಿಂಕ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>ಬಿಲ್ಡ್</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>%user ಅವರಿಂದ ಬಿಲ್ಡ್ %id</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>%name ಬಿಲ್ಡ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>ಈಗ ಬಿಲ್ಡ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>ಪರಿಶೀಲಿಸಬೇಕಾದ ಬಿಲ್ಡ್</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ಯಾರಿಂದ</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>ಕೈಯಾರೆ, ಇಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ರದ್ದುಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>ಬದಲಾಯಿಸು</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>ಬದಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>ಬದಲಾವಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>ಮೊದಲು ಪರಿಶೀಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>ಈ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪರಿಶೀಲಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>ಬಿಲ್ಡ್ ಏನನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ ಎಂದು ಪರಿಶೀಲಿಸಿ, ಅದನ್ನು ನೋಡಿ, ನಂತರ ಪ್ರಕಟಿಸಿ ಅಥವಾ ತ್ಯಜಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>ಹಿಂದಿರುಗಬೇಕಾದ ಪ್ರಕಟಣೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>ಮುಂದಿನ ಬಿಡುಗಡೆಯಲ್ಲಿ ಬರುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ಕಮಿಟ್</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>ಕಮಿಟ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>ಬಿಲ್ಡ್ ಅನ್ನು ಕಮಿಟ್ ಮಾಡಿ, ಟ್ಯಾಗ್ ಮಾಡಿ, %remote ಗೆ ಪುಷ್ ಮಾಡುತ್ತದೆ. ಪುಷ್ ಎಂದಿಗೂ ಬಲವಂತವಾಗಿರುವುದಿಲ್ಲ; ನಂತರ ಯಾವುದೇ ಪ್ರಕಟಣೆಗೆ ಹಿಂದಿರುಗಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>ಹಿಂದಿನ ಫೋಲ್ಡರ್‌ಗೆ ಹೋಲಿಸಿದರೆ: %added ಸೇರಿಸಲಾಗಿದೆ, %changed ಬದಲಾಗಿದೆ, %removed ತೆಗೆದುಹಾಕಲಾಗಿದೆ, %unchanged ಬದಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>ಕೊನೆಯ ಪ್ರಕಟಣೆಗೆ ಹೋಲಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>ರುಜುವಾತು</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>ಕಸ್ಟಮ್ ಡೊಮೇನ್</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>ಡೀಬಗ್ ಔಟ್‌ಪುಟ್, ಫಾರ್ಮ್ ಟೋಕನ್‌ಗಳು, ಸೆಷನ್ ಐಡಿಗಳು ಮತ್ತು nonce ಗಳನ್ನು ಯಾವಾಗಲೂ ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>ಡಿಪ್ಲಾಯ್ ಕೀ</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>%name ನ ಡಿಪ್ಲಾಯ್ ಕೀ</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>ತ್ಯಜಿಸು</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>ಬಿಲ್ಡ್ ತ್ಯಜಿಸು</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>ಡೊಮೇನ್</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>ಖಾಲಿ: ಸೈಟ್‌ನ ವಿಳಾಸ. ಇಲ್ಲದಿದ್ದರೆ ಅದೇ ಸೈಟ್‌ನ ಆಂತರಿಕ ವಿಳಾಸ.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>ಪ್ರತಿ ಲಿಂಕ್ ಮೂಲ ಪಥದಿಂದ ಆರಂಭವಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>ಪ್ರತಿ ಪ್ರಕಟಣೆಯೂ static/%id/&lt;n&gt; ಟ್ಯಾಗ್ ಇರುವ ಒಂದು ಕಮಿಟ್. ಹಿಂದಿರುಗುವುದು ಹಿಂದಿನ ಪ್ರಕಟಣೆಯ ಫೈಲ್‌ಗಳೊಂದಿಗೆ ಹೊಸ ಕಮಿಟ್ ರಚಿಸುತ್ತದೆ: ಇತಿಹಾಸ ಉಳಿಯುತ್ತದೆ, ಯಾವ ಟ್ಯಾಗ್ ಕೂಡ ಸರಿಯುವುದಿಲ್ಲ ಮತ್ತು ಏನನ್ನೂ ಬಲವಂತಪಡಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>ಹೆಚ್ಚುವರಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>ಪುಟಗಳನ್ನು ಇಲ್ಲಿಂದ ತರು</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>ಫೈಲ್</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>ಫೈಲ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>ಕಾಣೆಯಾದ ಫೈಲ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>ಇದರ ಫೈಲ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>ಸಂಗ್ರಹಿಸಲಾಗದ ಫೈಲ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>ಫಿಂಗರ್‌ಪ್ರಿಂಟ್</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>ಫೋಲ್ಡರ್</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>SSH ವಿಳಾಸಕ್ಕಾಗಿ. ಉಳಿಸಿದ ನಂತರ ಕೀ ರಚಿಸಲಾಗುತ್ತದೆ; ಅದರ ಸಾರ್ವಜನಿಕ ಭಾಗವನ್ನು ನೀವು ರೆಪೊಸಿಟರಿಗೆ ಸೇರಿಸುತ್ತೀರಿ.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>https:// ವಿಳಾಸಕ್ಕಾಗಿ. GitHub: ರೆಪೊಸಿಟರಿಯ ಮೇಲೆ Contents ಓದುವ ಮತ್ತು ಬರೆಯುವ ಅನುಮತಿ ಇರುವ fine-grained ಟೋಕನ್.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>ಪರಿಣತರಿಗೆ. ಪುಷ್ ಮುಗಿದ ತಕ್ಷಣ ಸಾರ್ವಜನಿಕ ಸೈಟ್ ಬದಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>ಫಾರ್ಮ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>GitHub ರೆಪೊಸಿಟರಿಯಿಂದ ಉಚಿತ ಹೋಸ್ಟಿಂಗ್.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>ಬ್ರಾಂಚ್‌ನಿಂದ</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages %site ಸೈಟ್ ಮತ್ತು %file ಫೈಲ್ ಅನ್ನು ಅನುಮತಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>GitHub Pages ಮಿತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ಫೈಲ್‌ಗಳನ್ನು ಇದ್ದಂತೆಯೇ ಪ್ರಕಟಿಸುತ್ತದೆ (_ ನಿಂದ ಆರಂಭವಾಗುವ ಫೈಲ್‌ಗಳಿಗೆ ಅಗತ್ಯ).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub ಬ್ರಾಂಚ್ ಅನ್ನು ಪುಷ್ ಮಾಡಿದಂತೆಯೇ ಒದಗಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ನಿಮ್ಮ ಸ್ವಂತ ಸರ್ವರ್: ಯಾವುದೇ git ರೆಪೊಸಿಟರಿ.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>ಹಿಂದಿನ ಪ್ರಕಟಣೆಗೆ ಹಿಂದಿರುಗು</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>ಸಹಾಯ</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>ವಿಝಾರ್ಡ್‌ಗೆ ಸಹಾಯ</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>ಅವುಗಳನ್ನು ಮರೆಮಾಡು</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ಇತಿಹಾಸ</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>%name ನ ಇತಿಹಾಸ</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>ಹೋಸ್ಟ್</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>GitHub Pages ಬಿಲ್ಡ್ ಅನ್ನು ಹೇಗೆ ಪಡೆಯುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>ನಾನು ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿದ್ದೇನೆ</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>ಇದು ಏನನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ ಎಂದು ನನಗೆ ತಿಳಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ಐಡಿ</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>ಇದು ಆಫ್ ಆಗಿದೆ: ಆನ್ ಆಗುವವರೆಗೆ ಏನನ್ನೂ ಬಿಲ್ಡ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>ಇದು %user ಆಗಿ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ನಡೆಯುತ್ತದೆ; ನೀವು ಈ ಪುಟವನ್ನು ಮುಚ್ಚಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>ಕಾರ್ಯ %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>ರಹಸ್ಯ %secret ಆಗಿ ಇರಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ಪ್ರಕಾರ</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>ಕೊನೆಯ ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>ಈ ಪುಟಗಳನ್ನು ಹೊರಗಿಡಿ</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>ಈ ವಿಭಾಗಗಳನ್ನು ಹೊರಗಿಡಿ</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>ಲಿಂಕ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>ಪುನಃ ಬರೆದ ಲಿಂಕ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>ಲೈವ್ ಸೈಟ್</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>ಬಿಲ್ಡ್ ನೋಡಿ</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>ಸಣ್ಣಕ್ಷರಗಳು, ಅಂಕಿಗಳು, _ ಮತ್ತು -, ಉದಾಹರಣೆಗೆ github-public. ಇದು ಫೋಲ್ಡರ್ ಮತ್ತು ಟ್ಯಾಗ್‌ಗಳಿಗೆ (static/&lt;id&gt;/&lt;n&gt;) ಹೆಸರು ನೀಡುತ್ತದೆ ಮತ್ತು ನಂತರ ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>ಹೊಸ ಕೀ ರಚಿಸು</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>ಗುರಿ ರಚಿಸು</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>ಕೀ ರಚಿಸು</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>ಮೊದಲು ಹೋಸ್ಟ್‌ನಲ್ಲಿ ರೆಪೊಸಿಟರಿ ರಚಿಸಿ; ಖಾಲಿಯಾದದ್ದು ಸಾಕು.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>ಮ್ಯಾನಿಫೆಸ್ಟ್</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ಸಂದೇಶ</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>ಹೆಚ್ಚಿನ ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿರುವ ಟೋಕನ್‌ನ ಹೆಸರು</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>ಹೊಸ ಗುರಿ</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>ಮುಂದೆ</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಕಮಿಟ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>ಯಾವುದೇ ಕೀ ರಚಿಸಲಾಗಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php ಕಮಾಂಡ್ ಲೈನ್ ಬೈನರಿ ಕಂಡುಬಂದಿಲ್ಲ. migration.ini [AdminSettings] PhpCliPath ಅನ್ನು ಅದರ ಪೂರ್ಣ ಪಥಕ್ಕೆ ಹೊಂದಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಟ್ಯಾಗ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಗುರಿ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>ಬಿಲ್ಡ್‌ನಲ್ಲಿ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>ಇನ್ನೂ ಏನನ್ನೂ ಪ್ರಕಟಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>ಇನ್ನೂ ಏನನ್ನೂ ಪ್ರಕಟಿಸಲಾಗಿಲ್ಲ: ಪ್ರತಿ ಫೈಲ್ ಹೊಸದು.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>ಸೂಚಿಸು</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>ವೇಳಾಪಟ್ಟಿಯಂತೆ</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>ಕನ್ಸೋಲ್‌ನಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>ಸರ್ವರ್‌ನಲ್ಲಿ: ./console exp:static:serve %id ಇದನ್ನು ಅದೇ ರೀತಿಯಲ್ಲಿ ಒದಗಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>ಪ್ರತಿ ಸಾಲಿಗೆ ಒಂದು ಪಥ, * ಯಾವುದೇ ಭಾಗಕ್ಕೆ ಹೊಂದುತ್ತದೆ: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>ಗುರಿಯೊಂದಿಗೆ ಹೆಸರನ್ನು ಮಾತ್ರ ಸಂಗ್ರಹಿಸಲಾಗುತ್ತದೆ; ಟೋಕನ್ ಅಥವಾ ಕೀ ಸ್ವತಃ ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿ ಉಳಿಯುತ್ತದೆ ಮತ್ತು ಲಾಗ್‌ನಲ್ಲಿ ಎಂದಿಗೂ ಕಾಣಿಸುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>ಪುಟಗಳು ಹೆಸರಿಸುವುದು ಮಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>ಟೋಕನ್‌ನೊಂದಿಗೆ ಮಾತ್ರ. env:NAME ಬದಲಿಗೆ ಸರ್ವರ್‌ನ ಪರಿಸರ ವೇರಿಯಬಲ್ ಅನ್ನು ಓದುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>ಮುನ್ನೋಟ ತೆರೆಯಿರಿ</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>ಹೋಸ್ಟ್ ಒದಗಿಸುವಂತೆಯೇ ಬಿಲ್ಡ್ ಅನ್ನು ಗುರಿಯ ಫೋಲ್ಡರ್‌ನಿಂದ ತೆರೆಯುತ್ತದೆ. ಲಿಂಕ್ ನಿಮಗೆ ಒಂದು ಗಂಟೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>ಐಚ್ಛಿಕ. ಖಾಲಿ: ಪ್ರಕಟಿಸಿದ್ದು.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>ಐಚ್ಛಿಕ. ಡೊಮೇನ್ ಇದ್ದರೆ ಸೈಟ್ ಅದರ ಮೂಲದಲ್ಲಿ ಒದಗಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>ಔಟ್‌ಪುಟ್</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>ಗುರಿಯ ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>ನಿರಾಕರಿಸಿದ ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>ನಂತರದ ಸಂಸ್ಕರಣೆ</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>ಮುನ್ನೋಟ</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>ಮುನ್ನೋಟ ಮತ್ತು ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>%name ಮುನ್ನೋಟ ಮತ್ತು ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>ಬಿಲ್ಡ್‌ನ ಮುನ್ನೋಟ</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ಪ್ರಗತಿ</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>ಸಾರ್ವಜನಿಕ ವಿಳಾಸ</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>ಸಾರ್ವಜನಿಕ ಕೀ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>ಪ್ರಕಟಿಸು</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>ಸೈಟ್‌ನ ಸ್ಥಿರ ಪ್ರತಿಯನ್ನು GitHub Pages ಅಥವಾ ಯಾವುದೇ git ಹೋಸ್ಟ್‌ಗೆ ಪ್ರಕಟಿಸಿ: ಬಿಲ್ಡ್ ಮಾಡಿ, ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ, ಪ್ರಕಟಿಸಿ, ಮತ್ತು ಬೇಕಾದಾಗ ಹಿಂದಿನ ಪ್ರಕಟಣೆಗೆ ಹಿಂದಿರುಗಿ.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>ಹಿಂದಿರುಗಬೇಕಾದ ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>ಪ್ರಕಟಣೆಗಳು</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ಪುಷ್</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>ಟ್ಯುಟೋರಿಯಲ್ ಓದಿ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ದಾಖಲೆ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ನಿರಾಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>ಸಾಪೇಕ್ಷ</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ಮರುಲೋಡ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>ತೆಗೆದುಹಾಕಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>ಕೀ ಬದಲಾಯಿಸು: ಹಳೆಯದು ಕೆಲಸ ಮಾಡುವುದನ್ನು ನಿಲ್ಲಿಸುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ವರದಿ</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>ಬಿಲ್ಡ್‌ನ ವರದಿ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ರೆಪೊಸಿಟರಿ</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>ಪರಿಶೀಲನೆ</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>ಪರಿಶೀಲನೆ ಪ್ರತಿ ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ಪರೀಕ್ಷಿಸಿ ಬರೆಯಲಾಗುವ ಸಾಲುಗಳನ್ನು ತೋರಿಸುತ್ತದೆ. ಇನ್ನೂ ಏನನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>ವೇಳಾಪಟ್ಟಿ</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>ಹುಡುಕಾಟ ಪುಟ</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>ವಿಭಾಗ ಐಡಿಗಳು, ಅಲ್ಪವಿರಾಮದಿಂದ ಬೇರ್ಪಡಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>ಅವುಗಳನ್ನು ಲೈವ್ ಸೈಟ್‌ಗೆ ಕಳುಹಿಸು</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>%name ನ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ಸೆಟಪ್</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>ಪಟ್ಟಿಗಳಲ್ಲಿ ತೋರಿಸಲಾಗುತ್ತದೆ, ಉದಾಹರಣೆಗೆ &quot;GitHub Pages ನಲ್ಲಿ ಸಾರ್ವಜನಿಕ ಸೈಟ್&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>GitHub App ಮೂಲಕ ಸೈನ್ ಇನ್ GitHub ಏಕೀಕರಣದೊಂದಿಗೆ ಬರುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>ಸೈಟ್</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>ಪ್ರಕಟಿಸಬೇಕಾದ ಸೈಟ್</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>ಗಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>ಗಾತ್ರ ಮತ್ತು ಮಿತಿಗಳು</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>ಬಿಲ್ಡ್‌ನ ಗಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>ಹಳೆಯದಾದ ಪುಟಗಳು</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ಪ್ರಾರಂಭವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ಅವರು %time ಕ್ಕೆ ಪ್ರಾರಂಭಿಸಿದರು.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ ಆಫ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ ಆಫ್ ಆಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ ಆಫ್ ಆಗಿದೆ. ಮೊದಲು ಸೆಟಪ್ &gt; ಸ್ಥಿರ ಪ್ರಕಟಣೆ ನಲ್ಲಿ ಅದನ್ನು ಆನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆ ಆನ್ ಆಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>ಹಂತ %step / %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>ಹಂತಗಳು</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>ಸ್ವಚ್ಛಗೊಳಿಸುವಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>ಆಫ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>ಆನ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>ಸ್ಥಿರ ಪ್ರಕಟಣೆಯನ್ನು ಆನ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ಟ್ಯಾಗ್</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>ಟ್ಯಾಗ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>ಗುರಿ</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>ಗುರಿಗಳನ್ನು ರಚಿಸಬಹುದು ಮತ್ತು ಬದಲಾಯಿಸಬಹುದು, ಆದರೆ ಅದು ಆನ್ ಆಗುವವರೆಗೆ ಏನನ್ನೂ ಬಿಲ್ಡ್ ಅಥವಾ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>ಸರ್ಚ್ ಎಂಜಿನ್‌ಗಳಿಗೆ ಏನನ್ನು ಓದಬೇಕು ಎಂದು ತಿಳಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>ಬಿಲ್ಡ್ ಅನ್ನು ತ್ಯಜಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>ಬಿಲ್ಡ್ ಕೊನೆಯ ಪ್ರಕಟಣೆಯಂತೆಯೇ ಇದೆ: ಪ್ರಕಟಿಸಲು ಏನೂ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>ಬಿಲ್ಡ್ ತ್ಯಜಿಸಲಾಗಿದೆ: ಫೋಲ್ಡರ್ ಮತ್ತೆ ಕೊನೆಯ ಪ್ರಕಟಣೆಯನ್ನು ಹೊಂದಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>ಡೀಫಾಲ್ಟ್‌ಗಳು ಹೆಚ್ಚಿನ ಸೈಟ್‌ಗಳಿಗೆ ಸೂಕ್ತ.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಇನ್ನೂ ಪ್ರಕಟಿಸದ ಬಿಲ್ಡ್ ಇದೆ; ಹೊಸ ಬಿಲ್ಡ್ ಅದನ್ನು ಬದಲಾಯಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>ಕಾರ್ಯಗಳ ಫೋಲ್ಡರ್‌ಗೆ ಬರೆಯಲು ಸಾಧ್ಯವಿಲ್ಲ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>ಕಾರ್ಯವನ್ನು ಸಿದ್ಧಪಡಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>ಕಾರ್ಯವನ್ನು ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>ಕಾರ್ಯ ಮುಗಿದಿದೆ. ಅದರ ವರದಿಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>ಕಾರ್ಯಕ್ಕೆ ಸೈನ್ ಇನ್ ಮಾಡಿದ ಬಳಕೆದಾರರು ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>ಕಾರ್ಯ ಪ್ರಾರಂಭವಾಯಿತು ಆದರೆ ಅದರ ಪ್ರಕ್ರಿಯೆ ಐಡಿಯನ್ನು ವರದಿ ಮಾಡಲಿಲ್ಲ. %detail ಪರಿಶೀಲಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>ಕೀ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>ಅತಿ ದೊಡ್ಡ ಫೈಲ್: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>ಬರೆಯಲಾಗುವ ಸಾಲುಗಳು</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>ಸರ್ಚ್ ಎಂಜಿನ್‌ಗಳಿಗಾಗಿ ಪುಟಗಳ ಪಟ್ಟಿ; ಸಾರ್ವಜನಿಕ ವಿಳಾಸ ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>ಸೈನ್ ಇನ್ ಮಾಡದ ಸಂದರ್ಶಕ ನೋಡುವಂತೆ ಪುಟಗಳನ್ನು ತರಲಾಗುತ್ತದೆ. ಆಡಳಿತ ಮತ್ತು ಸಂಪಾದನೆ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ಗಳನ್ನು ಎಂದಿಗೂ ನೀಡಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>ಪ್ರಗತಿಯನ್ನು ಅನುಸರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಕಾರ್ಯ ಹೇಗೆ ನಡೆಯುತ್ತಿದೆ ಎಂದು ನೋಡಲು ಪುಟವನ್ನು ಮರುಲೋಡ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>ಕೀಯ ಸಾರ್ವಜನಿಕ ಭಾಗ:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>ಬ್ರಾಂಚ್‌ನ ಮೂಲ</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>ರಹಸ್ಯ ಸಂಗ್ರಹವನ್ನು ಇನ್ನೂ ಹೊಂದಿಸಲಾಗಿಲ್ಲ (./console exp:upgrade --apply ಅದರ ಟೇಬಲ್ ರಚಿಸುತ್ತದೆ), ಆದ್ದರಿಂದ ಯಾವುದೇ ಕೀಯನ್ನು ಇರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>ಸರ್ವರ್ ಸ್ವತಃ ಸೈನ್ ಇನ್ ಮಾಡುತ್ತದೆ (ಅದರ ಸ್ವಂತ SSH ಕೀ ಅಥವಾ ರುಜುವಾತು ಸಹಾಯಕ), ಅಥವಾ ರೆಪೊಸಿಟರಿ ಈ ಸರ್ವರ್‌ನಲ್ಲಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್ ಅನ್ನು ಬರೆಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಮಾನ್ಯವಾಗಿವೆ. ಈ ಸಾಲುಗಳನ್ನು ಬರೆಯಲಾಗುತ್ತದೆ:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಓದಲು ಸಾಧ್ಯವಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>ಸೈಟ್ ಆ ಪ್ರಕಟಣೆಯ ಫೈಲ್‌ಗಳಿಗೆ ಹಿಂದಿರುಗುತ್ತದೆ; ಇನ್ನೂ ಪ್ರಕಟಿಸದ ಬಿಲ್ಡ್ ಅನ್ನು ಮೊದಲು ಪ್ರಕಟಿಸಬೇಕು ಅಥವಾ ತ್ಯಜಿಸಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲದ ವಿಳಾಸಗಳಿಗಾಗಿ ಸೈಟ್‌ನ ಸ್ವಂತ ಪುಟ.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>ಗುರಿಯನ್ನು ಉಳಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>ಗುರಿ ಇನ್ನೂ ಈ ಕೀಯೊಂದಿಗೆ ಸೈನ್ ಇನ್ ಮಾಡುವುದಿಲ್ಲ: ಅದರ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ &quot;ಈ ಗುರಿಗಾಗಿ ರಚಿಸಿದ ಡಿಪ್ಲಾಯ್ ಕೀ&quot; ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>ಗುರಿಗಳನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>ಪರಿಶೀಲಿಸಲು ಇನ್ನೂ ಯಾವುದೇ ಬಿಲ್ಡ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>ಈ ಸ್ಥಾಪನೆಯಲ್ಲಿ ಯಾವುದೇ ಫ್ರಂಟ್ ಸೈಟ್‌ಆಕ್ಸೆಸ್ ಇಲ್ಲ. ಆಡಳಿತ ಮತ್ತು ಸಂಪಾದನೆ ಸೈಟ್‌ಆಕ್ಸೆಸ್‌ಗಳನ್ನು ಎಂದಿಗೂ ಪ್ರಕಟಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>ಈ ಪುಟ ಕಾರ್ಯವನ್ನು ಅದು ನಡೆಯುತ್ತಿದ್ದಂತೆ ಅನುಸರಿಸುತ್ತದೆ; ಪುಟ ಮುಚ್ಚಿದಾಗ ಅದು ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಮುಂದುವರಿಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>ಈ ಗುರಿಗೆ ಇನ್ನೂ ಡಿಪ್ಲಾಯ್ ಕೀ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>ಈ ಗುರಿಯನ್ನು ಇನ್ನೂ ಇಲ್ಲಿ ಬಿಲ್ಡ್ ಮಾಡಲಾಗಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>ಈ ಗುರಿಗೆ ಒಂದು ಇದೆ.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>ಈ ಬಿಲ್ಡ್ ಅನ್ನು ತ್ಯಜಿಸುತ್ತದೆ: ಫೋಲ್ಡರ್ ಮತ್ತೆ ಕೊನೆಯ ಪ್ರಕಟಣೆಯನ್ನು ಹೊಂದುತ್ತದೆ. ಲೈವ್ ಸೈಟ್ ಬದಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>ಮೊದಲು &quot;ನಾನು ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿದ್ದೇನೆ&quot; ಗುರುತು ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ಸಮಯ</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>ಪ್ರಚೋದಕಗಳು</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>ಟ್ಯಾಗ್‌ನ ಹೆಸರನ್ನು ಮತ್ತೆ ಟೈಪ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>ಬದಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>ವೆಬ್‌ಹುಕ್</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ಏನು</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>ಏನು ಬದಲಾಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>ಪ್ರತಿ ಫೈಲ್ ಏನು; ಯಾವಾಗಲೂ ಬರೆಯಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>ಕಾರ್ಯ ಏನು ಮಾಡಿತು ಮತ್ತು ಅದರ ದಾಖಲೆ. ಇಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿದ ಕಾರ್ಯ ಈ ಪುಟ ಮುಚ್ಚಿದಾಗ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಮುಂದುವರಿಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>ಕಾರ್ಯ ದೋಷಗಳಾಗಿ ಮುದ್ರಿಸಿದ್ದು</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>ಪುಟಗಳು ಹೆಸರಿಸುವುದು, ಮತ್ತು ಪ್ರಕಟಿತ ವಿಷಯದ ಪ್ರತಿ ಚಿತ್ರ</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>ಯಾವಾಗ</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>ಪ್ರಕಟಣೆ ವಿಫಲವಾದಾಗ</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>ಪ್ರಕಟಣೆ ಯಶಸ್ವಿಯಾದಾಗ</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>ವಿಷಯ ಪ್ರಕಟವಾದಾಗ</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>ಪ್ರತಿಯಲ್ಲಿ ಇಲ್ಲದವುಗಳಿಗೆ (ಹುಡುಕಾಟ, ಲಾಗಿನ್) ಇರುವ ಲಿಂಕ್‌ಗಳು ಎಲ್ಲಿಗೆ ಹೋಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>ಸ್ಥಿರ ಪ್ರತಿಯನ್ನು ಎಲ್ಲಿಂದ ಒದಗಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>ಯಾವ ಸೈಟ್ ಪ್ರಕಟವಾಗುತ್ತದೆ, ಮತ್ತು ಗುರಿಯ ಹೆಸರೇನು.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>ಯಾವುದೇ ಪಥದ ಅಡಿಯಲ್ಲಿ ಕೆಲಸ ಮಾಡುತ್ತದೆ. ಡೀಫಾಲ್ಟ್.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>ಕಸ್ಟಮ್ ಡೊಮೇನ್ ಹೊಂದಿಸಿದಾಗಲೆಲ್ಲಾ ಬರೆಯಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>ನೀವು ಇಲ್ಲಿ ಮತ್ತು ಕನ್ಸೋಲ್‌ನಲ್ಲಿ ಯಾವಾಗಲೂ ಕೈಯಾರೆ ಬಿಲ್ಡ್ ಮಾಡಬಹುದು ಮತ್ತು ಪ್ರಕಟಿಸಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>ಹೆಸರು ಮಾತ್ರ; ಮೌಲ್ಯ ಸೆಟಪ್ &gt; ರಹಸ್ಯಗಳು ನಲ್ಲಿ ಉಳಿಯುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>%path ಅಡಿಯಲ್ಲಿ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ವರದಿಯಿಲ್ಲದೆ ಮುಗಿಯಿತು</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ಹೆಚ್ಚುವರಿ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>ಫೈಲ್</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, ಅಥವಾ docs ಫೋಲ್ಡರ್‌ನೊಂದಿಗೆ main.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git ಹೋಸ್ಟ್</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (ಟೋಕನ್‌ನೊಂದಿಗೆ) ಅಥವಾ git@github.com:owner/repo.git (ಡಿಪ್ಲಾಯ್ ಕೀಯೊಂದಿಗೆ); ಇದರಲ್ಲಿ ಎಂದಿಗೂ ಪಾಸ್‌ವರ್ಡ್ ಅಥವಾ ಟೋಕನ್ ಬೇಡ.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, ಸೈಟ್‌ಮ್ಯಾಪ್ ಮತ್ತು ಕ್ಯಾನೊನಿಕಲ್ ಲಿಂಕ್‌ಗಳಿಗಾಗಿ.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>ಚಿತ್ರ</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ಎಂದಿಗೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>ರಿಮೋಟ್ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ: ಕಮಿಟ್‌ಗಳು ಫೋಲ್ಡರ್‌ನಲ್ಲೇ ಉಳಿಯುತ್ತವೆ</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ: ಏನೂ ಬದಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>ಪುಷ್ ಮಾಡಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>ಏನೂ ಬದಲಾಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>ಪುಟ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ಯಶಸ್ವಿ</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ನಿಷ್ಕ್ರಿಯವಾಗಿದೆ, ಆದ್ದರಿಂದ ಇಲ್ಲಿ ಕಾರ್ಯವನ್ನು ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಸರ್ವರ್‌ನಲ್ಲಿ ./console exp:static:build ಬಳಸಿ.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>ಪ್ರಕಟಣೆ</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ಪ್ರಕಟಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>ಪುಷ್ ಬಾಕಿ ಇದೆ</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>ಪುಷ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ನಿರಾಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>ಸಾಪೇಕ್ಷ</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ನಡೆಯುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>ಫೋಲ್ಡರ್ ಮಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: CNAME ಫೈಲ್‌ಗೆ ಬರೆಯಲಾಗುತ್ತದೆ. ಹೋಸ್ಟ್ ವಿವರಿಸಿದಂತೆ ಡೊಮೇನ್‌ನ DNS ಅನ್ನು ಹೋಸ್ಟ್‌ನತ್ತ ತೋರಿಸಿ; HTTPS ಪ್ರಾರಂಭವಾಗಲು ಸ್ವಲ್ಪ ಸಮಯ ಹಿಡಿಯಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ಹೌದು, ಇನ್ನೂ ಪ್ರಕಟಿಸಿಲ್ಲ</translation>
     </message>
 </context>
 </TS>

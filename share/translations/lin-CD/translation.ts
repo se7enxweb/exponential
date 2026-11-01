@@ -15150,6 +15150,14 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Mbongwana ya bobongisi oyo ebombami lokola bafisye: ezalela na yango, mitambwisi, kotambwisa mpe kozongisa.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Bimisá copie static ya site na GitHub Pages to na hôte git nyonso.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bobimisi ya static</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22149,6 +22157,18 @@ Nkomba: Ba-paquet ekolongolama na système te.</translation>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Biyano ya mituna oyo ebombami ya GraphQL API, mpe mitindo ya makambo ya schéma na yango.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Bimisá copie static na GitHub Pages to na hôte git nyonso</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bobimisi ya static</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Cache ya static epesaka nkasa uta na serveur oyo. Mpo na kobimisa copie static ya site esika mosusu, na GitHub Pages to na hôte git nyonso, salelá bobimisi ya static.</translation>
     </message>
 </context>
 <context>
@@ -76206,6 +76226,14 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Mbongwana ya bobongisi oyo ebombami lokola bafisye: ezalela na yango, mitambwisi, kotambwisa mpe kozongisa.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Bimisá copie static ya site na GitHub Pages to na hôte git nyonso.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bobimisi ya static</translation>
+    </message>
 </context>
 <context>
     <name>kernel/user/demo</name>
@@ -80553,6 +80581,1364 @@ Osengeli kobongola kalasi ya nœud na kosalela mosala ya swap.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Botambwisi ekokaki kobanda te.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Bisika nyonso ya kotinda</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Bobimisi ya nsuka</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Bimisá copie static ya ofele ya site na yo na GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Nkasa ya kala</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bobimisi ya static</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Bobimisi ya static ekufi.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Esika ya kotinda</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Bisika ya kotinda ekokaki kotángama te: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>mosala ezali kosalema</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>botongi ya kotala</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>bomba oyo</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>salá esika ya kotinda</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ata mokolo moko te</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>tángá liteya</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>%added ebakisami, %changed ebongwani, %removed elongolami</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes na %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>%count mosusu etángami te.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Nkasa ekomami: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path ezali %size, koleka oyo hôte endimaka mpo na fichier moko.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % ya ndelo</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds s</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag ezali bobimisi oyo site ezali na yango sikoyo.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: mosala %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/ebombelo/ mpo na site ya projet GitHub; pamba mpo na domaine na yo moko to site ya mosaleli.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Site</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Hôte</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Kokɔta na ebombelo</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Ebombelo</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Ba-lien mpe nzela ya moboko</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Domaine na yo moko</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Oyo botongi ezali na yango</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Ntango nini ebimisami</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Talá mpe bómbá</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Site ya projet GitHub efandi na nse ya /&lt;repository&gt;/; ba-lien ya relatif esalaka kuna mpe esika nyonso mosusu.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Botongi ezwaka lokasa nyonso ya %site ndenge mopaya oyo akɔti te amonaka yango, ekomaka lisusu ba-lien, ekopiaka ba-fichier mpe ekomaka mbano na dossier ya esika ya kotinda. Eloko moko te ebimisamaka liboso ete otala botongi mpe ofinola &quot;Bimisá&quot;.</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Elobeli ya cron, ndakisa 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Fungola ya botindi ebombami lokola sekele %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Fungola ya botindi epesaka installation oyo nzela ya kotinda (push) na ebombelo moko na nzela ya SSH, mpe esika mosusu te. Ndambo na yango ya sekele etikalaka na Bobongisi &gt; Bisekele; kaka ndambo ya polele nde emonisamaka.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Fungola ya botindi oyo esalemi mpo na esika ya kotinda oyo</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Fungola ya botindi ekɔtaka na nzela ya SSH: bongolá adresse ya git na adresse ya SSH (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Mosala ezali kosalema, ebandisami na %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Mosala ya esika ya kotinda oyo ezali naino kosalema (%detail). Zelá tii esila.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Mosala ya esika ya kotinda oyo ezali naino kosalema. Zelá tii esila.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Lien uta na lokasa /news/ kino na lokasa /about-us/team ekokomama boye</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Fungola ya sika ya botindi esalemi. Bakisá ndambo na yango ya polele na ebombelo sikoyo.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Lokasa oyo ezali naino na makambo ya débogage, jeton ya formulaire to ID ya session sima ya bopetoli ebimisamaka ata mokolo moko te.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Bozongisi ezali mpo na bato ya mayele: pona &quot;Nayebi oyo yango ebongoli&quot; mpe komá lisusu nkómbó ya elembo.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Site ekoki kozala tii %site, fichier moko tii %file, na pene na 100 GB ya mobembo na sanza. Na plan ya ofele, ebombelo esengeli kozala ya polele. GitHub Pages esalemaki te mpo na bandako ya mombongo to mimbongo mosusu.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Esika ya kotinda ezali site moko oyo ebimisami na ebombelo git moko. Awa eloko moko te etongami to ebimisami: &quot;Bómbá&quot; ekomaka bibongiseli na settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Esika ya kotinda ezali site moko oyo ebimisami na esika moko, ndakisa site na yo ya polele na GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Jeton uta na Bobongisi &gt; Bisekele</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Workflow ya ebombelo nde ebimisaka yango.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Bakisá fungola oyo ya polele na ebombelo na ndingisa ya kokoma. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, pona Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Ebakisami</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Hôte git mosusu</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>Processus mosusu ezali kosala na esika ya kotinda oyo: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Zongá</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Nzela ya moboko</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>Liboso</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Na nse ya nzela ya moboko</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Litabi</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Ba-lien ebebi</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Ba-lien ebebi na botongi</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Botongi</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Botongi %id na %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Tongá %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Tongá sikoyo</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Botongi ya kotala</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Na mabɔkɔ, awa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Tiká</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Bongolá</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Ebongwani</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Mbongwana</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Talá yango liboso</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Talá bibongiseli oyo</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Talá oyo botongi ebongoli, talá yango, sima bimisá yango to bwáká yango.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Pona bobimisi oyo okozonga na yango.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>Ekoya na version oyo ekolanda.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Bobombi</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Mabombi</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Ebombaka botongi (commit), epesaka yango elembo mpe etindaka yango (push) na %remote. Botindi esalemaka na makasi te; okoki kozonga na bobimisi nyonso sima.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Na bokokani na dossier ya liboso: %added ebakisami, %changed ebongwani, %removed elongolami, %unchanged ebongwani te.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Na bokokani na bobimisi ya nsuka.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Ndenge ya kokɔta</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Domaine na yo moko</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Makambo ya débogage, ba-jeton ya formulaire, ba-ID ya session mpe ba-nonce elongolamaka ntango nyonso.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Fungola ya botindi</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Fungola ya botindi ya %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Bwáká</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Bwáká botongi</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Domaine</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Pamba: adresse ya site. Soki te, adresse ya kati ya site yango moko.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Esilaki</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Lien nyonso ebandaka na nzela ya moboko.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Bobimisi nyonso ezali bobombi moko na elembo static/%id/&lt;n&gt;. Kozonga esalaka bobombi ya sika na ba-fichier ya bobimisi ya kala: lisolo etikalaka, elembo moko te ekotambola mpe eloko moko te esalemaka na makasi.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Biloko ya kobakisa</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Zwá nkasa uta na</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Fichier</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Ba-fichier</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Ba-fichier ezangi</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Ba-fichier ya</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Ba-fichier oyo ekokaki kosangisama te</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Empreinte</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Dossier</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Mpo na adresse ya SSH. Fungola esalemaka sima ya kobomba; yo nde okobakisa ndambo na yango ya polele na ebombelo.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Mpo na adresse ya https://. GitHub: jeton ya sikisiki (fine-grained) na Contents ya kotánga mpe kokoma na ebombelo.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Mpo na bato ya mayele. Site ya polele ebongwanaka kaka ntango botindi esili.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Ba-formulaire</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Hébergement ya ofele uta na ebombelo ya GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>Uta na litabi</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Adresse ya git</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages endimaka site ya %site mpe fichier ya %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Ndelo ya GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages ebimisaka ba-fichier ndenge ezali (esengeli mpo na ba-fichier oyo ebandi na _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub epesaka litabi ndenge etindamaki. Oyo ya liboso.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, serveur na yo moko: ebombelo git nyonso.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Zongá na bobimisi ya kala</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Lisalisi</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Lisalisi na assistant</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Bomba yango</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Lisolo</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Lisolo ya %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Hôte</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Ndenge GitHub Pages ezwaka botongi</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Natali mbongwana</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Nayebi oyo yango ebongoli</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Ekufi: eloko moko te ekoki kotongama tii ekopelisama.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Ezali kosala na nsima lokola %user; okoki kokanga lokasa oyo.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Mosala %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Ebombami lokola sekele %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Lolenge</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Bobimisi ya nsuka</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Tiká nkasa oyo</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Tiká biteni oyo</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Ba-lien</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Ba-lien ekomami lisusu</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Site ya bomoi</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Talá botongi</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Mikoko ya mike, mituya, _ mpe -, ndakisa github-public. Epesaka dossier mpe bilembo (static/&lt;id&gt;/&lt;n&gt;) nkómbó mpe ekoki kobongolama sima te.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Salá fungola ya sika</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Salá esika ya kotinda</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Salá fungola</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Salá liboso ebombelo na hôte; ata ya pamba ezali malamu.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Manifeste</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nsango</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Nkasa mingi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nkómbó</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Nkómbó ya jeton na Bobongisi &gt; Bisekele</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Esika ya sika ya kotinda</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Oyo elandi</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Te</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Naino bobombi moko te.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Fungola esalemi te: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Programme ya molongo ya mitindo ya php emonani te. Tyá migration.ini [AdminSettings] PhpCliPath na nzela na yango mobimba.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Naino elembo moko te.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Naino esika ya kotinda moko te.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Eloko te</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Ezali na botongi te.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Naino eloko moko te ebimisami.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Naino eloko moko te ebimisami: fichier nyonso ezali ya sika.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Koyebisa</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>Na manaka</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>Na console</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>Na serveur: ./console exp:static:serve %id epesaka yango na ndenge moko.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Nzela moko na molongo moko, * ekokani na eteni nyonso: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>Kaka nkómbó nde ebombamaka elongo na esika ya kotinda; jeton to fungola yango moko etikalaka na Bobongisi &gt; Bisekele mpe emonanaka ata mokolo moko te na journal.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Kaka oyo nkasa etángi</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Kaka na jeton. env:NAME etángaka na esika na yango variable ya environnement ya serveur.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Fungolá kotala liboso</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Efungolaka botongi ndenge hôte ekopesa yango, uta na dossier ya esika ya kotinda. Lien esalaka mpo na yo ngonga moko.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Ya kopona. Pamba: oyo ebimisamaki.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Ya kopona. Na domaine, site epesamaka na moboko na yango.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Oyo ebimi</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Nkasa</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Nkasa ya esika ya kotinda</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Nkasa eboyami</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Mosala sima ya botongi</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Kotala liboso</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Kotala liboso mpe kobimisa</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Kotala liboso mpe kobimisa %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Talá botongi liboso</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Bokoli</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Adresse ya polele</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Fungola ya polele</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Bimisá</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Bimisá copie static ya site na GitHub Pages to na hôte git nyonso: tongá yango, talá mbongwana, bimisá, mpe zongá na bobimisi ya kala soki esengeli.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Bobimisi ya kozonga na yango</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Mabimisi</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Botindi</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Tángá liteya</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Journal</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Eboyami</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Relatif</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Zongisá lokasa</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Elongolami</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Bongolá fungola: oyo ya kala ekosala lisusu te</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Lapolo</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Lapolo ya botongi</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ebombelo</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Botali</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Botali etalaka bobongisi nyonso mpe emonisaka milongo oyo ekokomama. Naino eloko moko te ebombami.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Zongisá</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Bozongisi</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Bómbá</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Manaka</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Lokasa ya boluki</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Ba-ID ya biteni, ekabolami na ba-virgule.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Tindá bango na site ya bomoi</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Bobongisi</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Bibongiseli</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Bibongiseli ya %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Bobongisi</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Bobongisi &gt; Bisekele</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Emonisami na ba-liste, ndakisa &quot;Site ya polele na GitHub Pages&quot;.</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Kokɔta na GitHub App ekoya elongo na boyokani na GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Site</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Site ya kobimisa</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Monene</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Monene mpe ndelo</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Monene ya botongi</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Nkasa ya kala</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ebandaki</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Ebandisami na %user na %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ezalela</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Bobimisi ya static</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Bobimisi ya static ekufi</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Bobimisi ya static ekufi.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Bobimisi ya static ekufi. Pelisá yango liboso na Bobongisi &gt; Bobimisi ya static.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Bobimisi ya static epeli.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Etape %step na %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Ba-etape</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Bopetoli</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Kufisá</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Pelisá</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Pelisá bobimisi ya static</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Elembo</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Bilembo</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Esika ya kotinda</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Bisika ya kotinda ekoki kosalema mpe kobongolama, kasi eloko moko te etongamaka to ebimisamaka tii ekopelisama.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Eyebisaka ba-moteur ya boluki oyo bakotánga.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Botongi ekokaki kobwakama te: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Botongi ekokani na bobimisi ya nsuka: eloko moko te ya kobimisa.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Botongi ebwakami: dossier ezali lisusu na bobimisi ya nsuka.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Ba-valeur ya liboso ebongi na ba-site mingi.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Dossier ezali na botongi oyo ebimisami naino te; botongi ya sika ekozwa esika na yango.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Dossier ya misala ekoki kokomama te: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Mosala ekokaki kobongisama te: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Mosala ekokaki kobanda te.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Mosala esili. Lapolo na yango ezali koya.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Mosala esengi mosaleli oyo akɔti.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Mosala ebandaki kasi eyebisaki ID ya processus na yango te. Talá %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Fungola</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Fichier ya monene koleka: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Milongo oyo ekokomama</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Liste ya nkasa mpo na ba-moteur ya boluki; esengi adresse ya polele.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Nkasa ezwamaka ndenge mopaya oyo akɔti te amonaka yango. Bokɔti ya boyangeli mpe ya bobongisi ya makambo epesamaka ata mokolo moko te.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Bokoli ekokaki kolandama te. Zongisá lokasa mpo na komona ndenge mosala ezali kokende.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Ndambo ya polele ya fungola:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Moboko ya litabi</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Ebombelo ya bisekele ebongisami naino te (./console exp:upgrade --apply esalaka tableau na yango), yango wana fungola moko te ekoki kobombama.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Serveur ekɔtaka yango moko (na fungola na yango ya SSH to na lisalisi ya ndenge ya kokɔta), to ebombelo ezali na serveur oyo.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Bobongisi ekokaki kokomama te: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Bibongiseli ezali malamu. Milongo oyo ekokomama:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Fichier ya bibongiseli ekoki kotángama te: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Site ezongaka na ba-fichier ya bobimisi wana; botongi oyo ebimisami naino te esengeli liboso kobimisama to kobwakama.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Lokasa ya site mpo na ba-adresse oyo ezali te.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Esika ya kotinda ekokaki kobombama te: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Esika ya kotinda ekɔtaka naino na fungola oyo te: pona &quot;Fungola ya botindi oyo esalemi mpo na esika ya kotinda oyo&quot; na bibongiseli na yango.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Bisika ya kotinda ekokaki kotángama te: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Naino botongi moko te ya kotala.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Installation oyo ezali na bokɔti ya site ya polele te. Bokɔti ya boyangeli mpe ya bobongisi ya makambo ebimisamaka ata mokolo moko te.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Lokasa oyo elandaka mosala ndenge ezali kokende; ekobi na nsima soki lokasa ekangami.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Esika ya kotinda oyo ezali naino na fungola ya botindi te.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Esika ya kotinda oyo etongamaki naino awa te.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Esika ya kotinda oyo ezali na yango.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Ebwakaka botongi oyo: dossier ezali lisusu na bobimisi ya nsuka. Site ya bomoi ebongwanaka te.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Pona liboso &quot;Natali mbongwana&quot;.</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Ntango</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Bibandisi</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Komá lisusu nkómbó ya elembo</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Ebongwani te</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Webhook</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Nini</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Oyo ebongwani</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Fichier moko na moko ezali nini; ekomamaka ntango nyonso.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Oyo mosala esalaki mpe journal na yango. Mosala oyo ebandisami awa ekobi na nsima soki lokasa oyo ekangami.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Oyo mosala ekomaki lokola mabunga</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Oyo nkasa etángi, mpe elilingi nyonso ya makambo oyo ebimisami</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Ntango nini</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Soki bobimisi ekweyi</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Soki bobimisi elongi</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Soki makambo ebimisami</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Esika ba-lien ya biloko oyo copie ezali na yango te ekokende (boluki, bokɔti).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Esika copie static epesamaka.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Site nini ebimisami, mpe nkómbó ya esika ya kotinda.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Esalaka na nse ya nzela nyonso. Oyo ya liboso.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Ekomamaka ntango nyonso domaine na yo moko etyami.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>ɛɛ</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Okoki ntango nyonso kotonga mpe kobimisa na mabɔkɔ awa mpe na console.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>kaka nkómbó; valeur etikalaka na Bobongisi &gt; Bisekele</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>na nse ya %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>esilaki kozanga lapolo</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>ya kobakisa</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ekweyi</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>fichier</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages, to main na dossier docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>hôte git</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (na jeton) to git@github.com:owner/repo.git (na fungola ya botindi); mot de passe to jeton ata mokolo moko te na kati.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, mpo na carte ya site mpe ba-lien canonique.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>elilingi</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ata mokolo moko te</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>te</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>remote ezali te</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>eloko te: mabombi etikalaka na dossier</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>eloko te: eloko moko te ebongwani</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>etindami te</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>eloko moko te ebongwani</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>lokasa</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>elongi</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open ekufi, yango wana mosala ekoki kobanda awa te. Salelá ./console exp:static:build na serveur.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>bobimisi</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>ebimisami</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>botindi ezali kozela</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>etindami</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>eboyami</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>relatif</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>bozongisi</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ezongisami</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ezali kosala</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>kaka dossier</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: ekomami na fichier CNAME. Tindá DNS ya domaine epai ya hôte ndenge elimboli; HTTPS ekoki kozwa mwa ntango mpo na kobanda.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>ɛɛ, ebimisami naino te</translation>
     </message>
 </context>
 </TS>

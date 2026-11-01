@@ -15089,6 +15089,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Зміни інсталяції, збережені як файли: їхній стан, запуски, виконання та відкат.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Публікуйте статичну копію сайту на GitHub Pages або будь-якому git-хостингу.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статична публікація</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -22088,6 +22096,18 @@ Note: The packages will not be uninstalled.</source>
     <message>
         <source>Answers of the GraphQL API&apos;s persisted queries, and the content classes of its schema.</source>
         <translation>Відповіді збережених запитів GraphQL API та класи вмісту його схеми.</translation>
+    </message>
+    <message>
+        <source>Publish a static copy to GitHub Pages or any git host</source>
+        <translation>Опублікувати статичну копію на GitHub Pages або будь-якому git-хостингу</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статична публікація</translation>
+    </message>
+    <message>
+        <source>The static cache serves pages from this server. To publish a static copy of a site somewhere else, on GitHub Pages or any git host, use static publishing.</source>
+        <translation>Статичний кеш віддає сторінки з цього сервера. Щоб опублікувати статичну копію сайту деінде, на GitHub Pages або будь-якому git-хостингу, скористайтеся статичною публікацією.</translation>
     </message>
 </context>
 <context>
@@ -74476,6 +74496,14 @@ You will need to change the class of the node by using the swap functionality.</
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Зміни інсталяції, збережені як файли: їхній стан, запуски, виконання та відкат.</translation>
     </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host.</source>
+        <translation>Публікуйте статичну копію сайту на GitHub Pages або будь-якому git-хостингу.</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статична публікація</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/setup/languages</name>
@@ -80583,6 +80611,1364 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Не вдалося розпочати запуск.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/staticpublish</name>
+    <message>
+        <source>All targets</source>
+        <translation>Усі цілі</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Остання публікація</translation>
+    </message>
+    <message>
+        <source>Publish a free static copy of your site on GitHub Pages:</source>
+        <translation>Опублікуйте безкоштовну статичну копію свого сайту на GitHub Pages:</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Застарілі сторінки</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статична публікація</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Статичну публікацію вимкнено.</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ціль</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Не вдалося прочитати цілі: %problem</translation>
+    </message>
+    <message>
+        <source>a job is going on</source>
+        <translation>виконується завдання</translation>
+    </message>
+    <message>
+        <source>build to check</source>
+        <translation>збірка на перевірку</translation>
+    </message>
+    <message>
+        <source>hide this</source>
+        <translation>приховати це</translation>
+    </message>
+    <message>
+        <source>make a target</source>
+        <translation>створити ціль</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ніколи</translation>
+    </message>
+    <message>
+        <source>read the tutorial</source>
+        <translation>прочитати посібник</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/staticpublish</name>
+    <message>
+        <source>%added added, %changed changed, %removed removed</source>
+        <translation>Додано: %added, змінено: %changed, вилучено: %removed</translation>
+    </message>
+    <message>
+        <source>%bytes of %limit (%percent %)</source>
+        <translation>%bytes з %limit (%percent %)</translation>
+    </message>
+    <message>
+        <source>%count more are not listed.</source>
+        <translation>Ще %count не показано.</translation>
+    </message>
+    <message>
+        <source>%pages pages written</source>
+        <translation>Записано сторінок: %pages</translation>
+    </message>
+    <message>
+        <source>%path is %size, more than the host allows a file.</source>
+        <translation>%path має розмір %size, більше, ніж хостинг дозволяє для одного файлу.</translation>
+    </message>
+    <message>
+        <source>%percent % of the limit</source>
+        <translation>%percent % від ліміту</translation>
+    </message>
+    <message>
+        <source>%seconds s</source>
+        <translation>%seconds с</translation>
+    </message>
+    <message>
+        <source>%tag is the publish the site has now.</source>
+        <translation>%tag — публікація, яка зараз на сайті.</translation>
+    </message>
+    <message>
+        <source>%target: job %id</source>
+        <translation>%target: завдання %id</translation>
+    </message>
+    <message>
+        <source>+%added ~%changed -%removed</source>
+        <translation>+%added ~%changed -%removed</translation>
+    </message>
+    <message>
+        <source>/repository/ for a GitHub project site; empty for a custom domain or a user site.</source>
+        <translation>/репозиторій/ для сайту проєкту GitHub; порожньо для власного домену або сайту користувача.</translation>
+    </message>
+    <message>
+        <source>1. The site</source>
+        <translation>1. Сайт</translation>
+    </message>
+    <message>
+        <source>2. The host</source>
+        <translation>2. Хостинг</translation>
+    </message>
+    <message>
+        <source>3. Signing in to the repository</source>
+        <translation>3. Вхід до репозиторію</translation>
+    </message>
+    <message>
+        <source>4. The repository</source>
+        <translation>4. Репозиторій</translation>
+    </message>
+    <message>
+        <source>5. Links and base path</source>
+        <translation>5. Посилання та базовий шлях</translation>
+    </message>
+    <message>
+        <source>6. Your own domain</source>
+        <translation>6. Власний домен</translation>
+    </message>
+    <message>
+        <source>7. What the build holds</source>
+        <translation>7. Що містить збірка</translation>
+    </message>
+    <message>
+        <source>8. When it is published</source>
+        <translation>8. Коли публікувати</translation>
+    </message>
+    <message>
+        <source>9. Review and save</source>
+        <translation>9. Перевірка та збереження</translation>
+    </message>
+    <message>
+        <source>A GitHub project site lives below /&lt;repository&gt;/; relative links work there and anywhere else.</source>
+        <translation>Сайт проєкту GitHub розміщується під /&lt;repository&gt;/; відносні посилання працюють там і будь-де ще.</translation>
+    </message>
+    <message>
+        <source>A build fetches every page of %site as a visitor who is not signed in sees it, rewrites the links, copies the files and writes the result to the target&apos;s folder. Nothing is published until you check the build and press Publish.</source>
+        <translation>Збірка отримує кожну сторінку %site так, як її бачить відвідувач без входу, переписує посилання, копіює файли й записує результат до папки цілі. Нічого не публікується, доки ви не перевірите збірку й не натиснете «Опублікувати».</translation>
+    </message>
+    <message>
+        <source>A cron expression, for example 0 3 * * *</source>
+        <translation>Вираз cron, наприклад 0 3 * * *</translation>
+    </message>
+    <message>
+        <source>A deploy key is kept as the secret %secret.</source>
+        <translation>Ключ розгортання зберігається як секрет %secret.</translation>
+    </message>
+    <message>
+        <source>A deploy key lets this installation push to one repository over SSH and nowhere else. Its private half stays in Setup &gt; Secrets; only the public half is shown.</source>
+        <translation>Ключ розгортання дозволяє цій інсталяції надсилати (push) через SSH до одного репозиторію і більше нікуди. Його приватна половина залишається в Налаштування &gt; Секрети; показується лише публічна половина.</translation>
+    </message>
+    <message>
+        <source>A deploy key made for this target</source>
+        <translation>Ключ розгортання, створений для цієї цілі</translation>
+    </message>
+    <message>
+        <source>A deploy key signs in over SSH: change the git address to the SSH one (git@github.com:owner/repo.git).</source>
+        <translation>Ключ розгортання входить через SSH: змініть git-адресу на SSH-адресу (git@github.com:owner/repo.git).</translation>
+    </message>
+    <message>
+        <source>A job is going on, started by %user</source>
+        <translation>Виконується завдання, запущене користувачем %user</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on (%detail). Wait for it to end.</source>
+        <translation>Завдання цієї цілі ще виконується (%detail). Дочекайтеся його завершення.</translation>
+    </message>
+    <message>
+        <source>A job of this target is still going on. Wait for it to end.</source>
+        <translation>Завдання цієї цілі ще виконується. Дочекайтеся його завершення.</translation>
+    </message>
+    <message>
+        <source>A link from the page /news/ to the page /about-us/team will be written as</source>
+        <translation>Посилання зі сторінки /news/ на сторінку /about-us/team буде записано як</translation>
+    </message>
+    <message>
+        <source>A new deploy key was made. Add its public half to the repository now.</source>
+        <translation>Створено новий ключ розгортання. Додайте його публічну половину до репозиторію зараз.</translation>
+    </message>
+    <message>
+        <source>A page that still carries debug output, a form token or a session id after stripping is never published.</source>
+        <translation>Сторінка, яка після очищення все ще містить налагоджувальний вивід, токен форми або ідентифікатор сесії, ніколи не публікується.</translation>
+    </message>
+    <message>
+        <source>A rollback is for experts: tick &quot;I know what this changes&quot; and type the name of the tag again.</source>
+        <translation>Відкат — для досвідчених: позначте «Я знаю, що це змінює» і ще раз введіть назву тегу.</translation>
+    </message>
+    <message>
+        <source>A site may be up to %site, one file up to %file, with about 100 GB of traffic a month. On a free plan the repository must be public. GitHub Pages is not meant for shops or other commercial transactions.</source>
+        <translation>Сайт може мати до %site, один файл — до %file, з трафіком близько 100 ГБ на місяць. На безкоштовному тарифі репозиторій має бути публічним. GitHub Pages не призначено для магазинів чи інших комерційних операцій.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one git repository. Nothing is built or published here: Save writes the settings to settings/override/staticcache.ini.append.php.</source>
+        <translation>Ціль — це один сайт, що публікується в один git-репозиторій. Тут нічого не збирається і не публікується: «Зберегти» записує налаштування до settings/override/staticcache.ini.append.php.</translation>
+    </message>
+    <message>
+        <source>A target is one site published to one place, for example your public site on GitHub Pages.</source>
+        <translation>Ціль — це один сайт, що публікується в одне місце, наприклад ваш публічний сайт на GitHub Pages.</translation>
+    </message>
+    <message>
+        <source>A token from Setup &gt; Secrets</source>
+        <translation>Токен з Налаштування &gt; Секрети</translation>
+    </message>
+    <message>
+        <source>A workflow of the repository publishes it.</source>
+        <translation>Його публікує робочий процес репозиторію.</translation>
+    </message>
+    <message>
+        <source>Add this public key to the repository with write access. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, tick Allow write access.</source>
+        <translation>Додайте цей публічний ключ до репозиторію з правом запису. GitHub: Settings &gt; Deploy keys &gt; Add deploy key, позначте Allow write access.</translation>
+    </message>
+    <message>
+        <source>Added</source>
+        <translation>Додано</translation>
+    </message>
+    <message>
+        <source>Another git host</source>
+        <translation>Інший git-хостинг</translation>
+    </message>
+    <message>
+        <source>Another process works on this target: %detail</source>
+        <translation>З цією ціллю працює інший процес: %detail</translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <source>Base path</source>
+        <translation>Базовий шлях</translation>
+    </message>
+    <message>
+        <source>Before</source>
+        <translation>До</translation>
+    </message>
+    <message>
+        <source>Below a base path</source>
+        <translation>Під базовим шляхом</translation>
+    </message>
+    <message>
+        <source>Branch</source>
+        <translation>Гілка</translation>
+    </message>
+    <message>
+        <source>Broken links</source>
+        <translation>Пошкоджені посилання</translation>
+    </message>
+    <message>
+        <source>Broken links in the build</source>
+        <translation>Пошкоджені посилання у збірці</translation>
+    </message>
+    <message>
+        <source>Build</source>
+        <translation>Збірка</translation>
+    </message>
+    <message>
+        <source>Build %id by %user</source>
+        <translation>Збірка %id, автор: %user</translation>
+    </message>
+    <message>
+        <source>Build %name</source>
+        <translation>Збірка %name</translation>
+    </message>
+    <message>
+        <source>Build now</source>
+        <translation>Зібрати зараз</translation>
+    </message>
+    <message>
+        <source>Build to check</source>
+        <translation>Збірка на перевірку</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ким</translation>
+    </message>
+    <message>
+        <source>By hand, here</source>
+        <translation>Вручну, тут</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Change</source>
+        <translation>Змінити</translation>
+    </message>
+    <message>
+        <source>Changed</source>
+        <translation>Змінено</translation>
+    </message>
+    <message>
+        <source>Changes</source>
+        <translation>Зміни</translation>
+    </message>
+    <message>
+        <source>Check it first</source>
+        <translation>Спочатку перевірте</translation>
+    </message>
+    <message>
+        <source>Check these settings</source>
+        <translation>Перевірте ці налаштування</translation>
+    </message>
+    <message>
+        <source>Check what the build changes, look at it, then publish it or throw it away.</source>
+        <translation>Перевірте, що змінює збірка, перегляньте її, а потім опублікуйте або відхиліть.</translation>
+    </message>
+    <message>
+        <source>Choose the publish to go back to.</source>
+        <translation>Виберіть публікацію, до якої повернутися.</translation>
+    </message>
+    <message>
+        <source>Comes with a later release.</source>
+        <translation>З&apos;явиться в одному з наступних випусків.</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коміт</translation>
+    </message>
+    <message>
+        <source>Commits</source>
+        <translation>Коміти</translation>
+    </message>
+    <message>
+        <source>Commits the build, tags it and pushes it to %remote. A push is never forced; you can go back to any publish later.</source>
+        <translation>Комітить збірку, позначає її тегом і надсилає (push) до %remote. Надсилання ніколи не виконується примусово; пізніше можна повернутися до будь-якої публікації.</translation>
+    </message>
+    <message>
+        <source>Compared with the folder before: %added added, %changed changed, %removed removed, %unchanged unchanged.</source>
+        <translation>Порівняно з попереднім станом папки: додано %added, змінено %changed, вилучено %removed, без змін %unchanged.</translation>
+    </message>
+    <message>
+        <source>Compared with the last publish.</source>
+        <translation>Порівняно з останньою публікацією.</translation>
+    </message>
+    <message>
+        <source>Credential</source>
+        <translation>Облікові дані</translation>
+    </message>
+    <message>
+        <source>Custom domain</source>
+        <translation>Власний домен</translation>
+    </message>
+    <message>
+        <source>Debug output, form tokens, session ids and nonces are always taken out.</source>
+        <translation>Налагоджувальний вивід, токени форм, ідентифікатори сесій і nonce завжди вилучаються.</translation>
+    </message>
+    <message>
+        <source>Deploy key</source>
+        <translation>Ключ розгортання</translation>
+    </message>
+    <message>
+        <source>Deploy key of %name</source>
+        <translation>Ключ розгортання %name</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Відхилити</translation>
+    </message>
+    <message>
+        <source>Discard the build</source>
+        <translation>Відхилити збірку</translation>
+    </message>
+    <message>
+        <source>Domain</source>
+        <translation>Домен</translation>
+    </message>
+    <message>
+        <source>Empty: the address of the site. An internal address of the same site otherwise.</source>
+        <translation>Порожньо: адреса сайту. Інакше — внутрішня адреса того самого сайту.</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Завершено</translation>
+    </message>
+    <message>
+        <source>Every link starts with the base path.</source>
+        <translation>Кожне посилання починається з базового шляху.</translation>
+    </message>
+    <message>
+        <source>Every publish is a commit with a tag static/%id/&lt;n&gt;. Going back makes a new commit with the files of an earlier publish: the history stays, no tag moves and nothing is forced.</source>
+        <translation>Кожна публікація — це коміт із тегом static/%id/&lt;n&gt;. Повернення створює новий коміт із файлами попередньої публікації: історія зберігається, жоден тег не переміщується і нічого не виконується примусово.</translation>
+    </message>
+    <message>
+        <source>Extras</source>
+        <translation>Додаткові файли</translation>
+    </message>
+    <message>
+        <source>Fetch the pages from</source>
+        <translation>Отримувати сторінки з</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation>Файл</translation>
+    </message>
+    <message>
+        <source>Files</source>
+        <translation>Файли</translation>
+    </message>
+    <message>
+        <source>Files missing</source>
+        <translation>Бракує файлів</translation>
+    </message>
+    <message>
+        <source>Files of</source>
+        <translation>Файли сайту</translation>
+    </message>
+    <message>
+        <source>Files that could not be collected</source>
+        <translation>Файли, які не вдалося зібрати</translation>
+    </message>
+    <message>
+        <source>Fingerprint</source>
+        <translation>Відбиток</translation>
+    </message>
+    <message>
+        <source>Folder</source>
+        <translation>Папка</translation>
+    </message>
+    <message>
+        <source>For an SSH address. The key is made after saving; you add its public half to the repository.</source>
+        <translation>Для SSH-адреси. Ключ створюється після збереження; його публічну половину ви додаєте до репозиторію.</translation>
+    </message>
+    <message>
+        <source>For an https:// address. GitHub: a fine-grained token with Contents read and write on the repository.</source>
+        <translation>Для адреси https://. GitHub: детальний (fine-grained) токен із правом Contents на читання й запис у репозиторії.</translation>
+    </message>
+    <message>
+        <source>For experts. The public site changes as soon as the push is through.</source>
+        <translation>Для досвідчених. Публічний сайт змінюється, щойно надсилання (push) завершиться.</translation>
+    </message>
+    <message>
+        <source>Forms</source>
+        <translation>Форми</translation>
+    </message>
+    <message>
+        <source>Free hosting from a GitHub repository.</source>
+        <translation>Безкоштовний хостинг із репозиторію GitHub.</translation>
+    </message>
+    <message>
+        <source>From the branch</source>
+        <translation>З гілки</translation>
+    </message>
+    <message>
+        <source>Git address</source>
+        <translation>Git-адреса</translation>
+    </message>
+    <message>
+        <source>GitHub Actions</source>
+        <translation>GitHub Actions</translation>
+    </message>
+    <message>
+        <source>GitHub App</source>
+        <translation>GitHub App</translation>
+    </message>
+    <message>
+        <source>GitHub Pages</source>
+        <translation>GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages allows a site of %site and a file of %file.</source>
+        <translation>GitHub Pages дозволяє сайт розміром %site і файл розміром %file.</translation>
+    </message>
+    <message>
+        <source>GitHub Pages limits</source>
+        <translation>Обмеження GitHub Pages</translation>
+    </message>
+    <message>
+        <source>GitHub Pages publishes the files as they are (needed for files starting with _).</source>
+        <translation>GitHub Pages публікує файли як є (потрібно для файлів, що починаються з _).</translation>
+    </message>
+    <message>
+        <source>GitHub serves the branch as it is pushed. The default.</source>
+        <translation>GitHub віддає гілку такою, як її надіслано. Типово.</translation>
+    </message>
+    <message>
+        <source>GitLab, Gitea, your own server: any git repository.</source>
+        <translation>GitLab, Gitea, ваш власний сервер: будь-який git-репозиторій.</translation>
+    </message>
+    <message>
+        <source>Go back to an earlier publish</source>
+        <translation>Повернутися до попередньої публікації</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Довідка</translation>
+    </message>
+    <message>
+        <source>Help with the wizard</source>
+        <translation>Довідка щодо майстра</translation>
+    </message>
+    <message>
+        <source>Hide them</source>
+        <translation>Приховати їх</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Історія</translation>
+    </message>
+    <message>
+        <source>History of %name</source>
+        <translation>Історія %name</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Хостинг</translation>
+    </message>
+    <message>
+        <source>How GitHub Pages receives the build</source>
+        <translation>Як GitHub Pages отримує збірку</translation>
+    </message>
+    <message>
+        <source>I have checked the changes</source>
+        <translation>Зміни перевірено</translation>
+    </message>
+    <message>
+        <source>I know what this changes</source>
+        <translation>Я знаю, що це змінює</translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation>Ідентифікатор</translation>
+    </message>
+    <message>
+        <source>It is switched off: nothing can be built until it is on.</source>
+        <translation>Її вимкнено: нічого не можна зібрати, доки її не ввімкнено.</translation>
+    </message>
+    <message>
+        <source>It runs in the background as %user; you can close this page.</source>
+        <translation>Виконується у фоні від імені %user; цю сторінку можна закрити.</translation>
+    </message>
+    <message>
+        <source>Job %id</source>
+        <translation>Завдання %id</translation>
+    </message>
+    <message>
+        <source>Kept as the secret %secret.</source>
+        <translation>Зберігається як секрет %secret.</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Last publish</source>
+        <translation>Остання публікація</translation>
+    </message>
+    <message>
+        <source>Leave out these pages</source>
+        <translation>Не включати ці сторінки</translation>
+    </message>
+    <message>
+        <source>Leave out these sections</source>
+        <translation>Не включати ці розділи</translation>
+    </message>
+    <message>
+        <source>Links</source>
+        <translation>Посилання</translation>
+    </message>
+    <message>
+        <source>Links rewritten</source>
+        <translation>Переписано посилань</translation>
+    </message>
+    <message>
+        <source>Live site</source>
+        <translation>Робочий сайт</translation>
+    </message>
+    <message>
+        <source>Look at the build</source>
+        <translation>Переглянути збірку</translation>
+    </message>
+    <message>
+        <source>Lower case letters, digits, _ and -, for example github-public. It names the folder and the tags (static/&lt;id&gt;/&lt;n&gt;) and cannot be changed later.</source>
+        <translation>Малі літери, цифри, _ і -, наприклад github-public. Задає назву папки й тегів (static/&lt;id&gt;/&lt;n&gt;) і не може бути змінене пізніше.</translation>
+    </message>
+    <message>
+        <source>Make a new key</source>
+        <translation>Створити новий ключ</translation>
+    </message>
+    <message>
+        <source>Make a target</source>
+        <translation>Створити ціль</translation>
+    </message>
+    <message>
+        <source>Make the key</source>
+        <translation>Створити ключ</translation>
+    </message>
+    <message>
+        <source>Make the repository on the host first; an empty one is fine.</source>
+        <translation>Спершу створіть репозиторій на хостингу; порожній підійде.</translation>
+    </message>
+    <message>
+        <source>Manifest</source>
+        <translation>Маніфест</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Повідомлення</translation>
+    </message>
+    <message>
+        <source>Most pages</source>
+        <translation>Більшість сторінок</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Name of the token in Setup &gt; Secrets</source>
+        <translation>Назва токена в Налаштування &gt; Секрети</translation>
+    </message>
+    <message>
+        <source>New target</source>
+        <translation>Нова ціль</translation>
+    </message>
+    <message>
+        <source>Next</source>
+        <translation>Далі</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>No commit yet.</source>
+        <translation>Комітів ще немає.</translation>
+    </message>
+    <message>
+        <source>No key was made: %problem</source>
+        <translation>Ключ не створено: %problem</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Не знайдено виконуваного файлу php для командного рядка. Вкажіть повний шлях до нього в migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>No tag yet.</source>
+        <translation>Тегів ще немає.</translation>
+    </message>
+    <message>
+        <source>No target yet.</source>
+        <translation>Цілей ще немає.</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Немає</translation>
+    </message>
+    <message>
+        <source>Not in the build.</source>
+        <translation>Немає у збірці.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet.</source>
+        <translation>Ще нічого не опубліковано.</translation>
+    </message>
+    <message>
+        <source>Nothing was published yet: every file is new.</source>
+        <translation>Ще нічого не опубліковано: усі файли нові.</translation>
+    </message>
+    <message>
+        <source>Notify</source>
+        <translation>Сповіщення</translation>
+    </message>
+    <message>
+        <source>On a schedule</source>
+        <translation>За розкладом</translation>
+    </message>
+    <message>
+        <source>On the console</source>
+        <translation>У консолі</translation>
+    </message>
+    <message>
+        <source>On the server: ./console exp:static:serve %id serves it the same way.</source>
+        <translation>На сервері: ./console exp:static:serve %id віддає її так само.</translation>
+    </message>
+    <message>
+        <source>One path per line, * matches any part: /members/*</source>
+        <translation>Один шлях на рядок, * відповідає будь-якій частині: /members/*</translation>
+    </message>
+    <message>
+        <source>Only a name is stored with the target; the token or key itself stays in Setup &gt; Secrets and never appears in a log.</source>
+        <translation>З ціллю зберігається лише назва; сам токен або ключ залишається в Налаштування &gt; Секрети і ніколи не з&apos;являється в журналі.</translation>
+    </message>
+    <message>
+        <source>Only what the pages name</source>
+        <translation>Лише те, що називають сторінки</translation>
+    </message>
+    <message>
+        <source>Only with a token. env:NAME reads an environment variable of the server instead.</source>
+        <translation>Лише з токеном. env:NAME натомість читає змінну середовища сервера.</translation>
+    </message>
+    <message>
+        <source>Open the preview</source>
+        <translation>Відкрити попередній перегляд</translation>
+    </message>
+    <message>
+        <source>Opens the build as the host will serve it, from the target&apos;s folder. The link works for you for an hour.</source>
+        <translation>Відкриває збірку з папки цілі так, як її віддаватиме хостинг. Посилання працює для вас протягом години.</translation>
+    </message>
+    <message>
+        <source>Optional. Empty: what was published.</source>
+        <translation>Необов&apos;язково. Порожньо: те, що було опубліковано.</translation>
+    </message>
+    <message>
+        <source>Optional. With a domain the site is served at its root.</source>
+        <translation>Необов&apos;язково. З доменом сайт віддається з його кореня.</translation>
+    </message>
+    <message>
+        <source>Output</source>
+        <translation>Вивід</translation>
+    </message>
+    <message>
+        <source>Pages</source>
+        <translation>Сторінки</translation>
+    </message>
+    <message>
+        <source>Pages of the target</source>
+        <translation>Сторінки цілі</translation>
+    </message>
+    <message>
+        <source>Pages refused</source>
+        <translation>Відхилені сторінки</translation>
+    </message>
+    <message>
+        <source>Post-processing</source>
+        <translation>Остаточна обробка</translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation>Попередній перегляд</translation>
+    </message>
+    <message>
+        <source>Preview and publish</source>
+        <translation>Перегляд і публікація</translation>
+    </message>
+    <message>
+        <source>Preview and publish %name</source>
+        <translation>Перегляд і публікація %name</translation>
+    </message>
+    <message>
+        <source>Preview the build</source>
+        <translation>Попередньо переглянути збірку</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Перебіг</translation>
+    </message>
+    <message>
+        <source>Public address</source>
+        <translation>Публічна адреса</translation>
+    </message>
+    <message>
+        <source>Public key</source>
+        <translation>Публічний ключ</translation>
+    </message>
+    <message>
+        <source>Publish</source>
+        <translation>Опублікувати</translation>
+    </message>
+    <message>
+        <source>Publish a static copy of a site to GitHub Pages or any git host: build it, check the changes, publish, and go back to an earlier publish when you need to.</source>
+        <translation>Публікуйте статичну копію сайту на GitHub Pages або будь-якому git-хостингу: зберіть її, перевірте зміни, опублікуйте та за потреби поверніться до попередньої публікації.</translation>
+    </message>
+    <message>
+        <source>Publish to go back to</source>
+        <translation>Публікація, до якої повернутися</translation>
+    </message>
+    <message>
+        <source>Publishes</source>
+        <translation>Публікації</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Надсилання (push)</translation>
+    </message>
+    <message>
+        <source>Read the tutorial</source>
+        <translation>Прочитати посібник</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Журнал</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Відхилено</translation>
+    </message>
+    <message>
+        <source>Relative</source>
+        <translation>Відносні</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Перезавантажити</translation>
+    </message>
+    <message>
+        <source>Removed</source>
+        <translation>Вилучено</translation>
+    </message>
+    <message>
+        <source>Replace the key: the old one stops working</source>
+        <translation>Замінити ключ: старий перестане працювати</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Звіт</translation>
+    </message>
+    <message>
+        <source>Report of the build</source>
+        <translation>Звіт про збірку</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Репозиторій</translation>
+    </message>
+    <message>
+        <source>Review</source>
+        <translation>Перевірка</translation>
+    </message>
+    <message>
+        <source>Review checks every setting and shows the lines that will be written. Nothing is saved yet.</source>
+        <translation>Перевірка проходить кожне налаштування й показує рядки, які буде записано. Нічого ще не збережено.</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Відкотити</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Відкат</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Зберегти</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Розклад</translation>
+    </message>
+    <message>
+        <source>Search page</source>
+        <translation>Сторінка пошуку</translation>
+    </message>
+    <message>
+        <source>Section ids, separated by commas.</source>
+        <translation>Ідентифікатори розділів через кому.</translation>
+    </message>
+    <message>
+        <source>Send them to the live site</source>
+        <translation>Спрямовувати їх на робочий сайт</translation>
+    </message>
+    <message>
+        <source>Setting</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>Settings of %name</source>
+        <translation>Налаштування %name</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>Setup &gt; Secrets</source>
+        <translation>Налаштування &gt; Секрети</translation>
+    </message>
+    <message>
+        <source>Shown in lists, for example &quot;Public site on GitHub Pages&quot;.</source>
+        <translation>Показується у списках, наприклад «Публічний сайт на GitHub Pages».</translation>
+    </message>
+    <message>
+        <source>Signing in with a GitHub App comes with the GitHub integration.</source>
+        <translation>Вхід через GitHub App з&apos;явиться разом з інтеграцією GitHub.</translation>
+    </message>
+    <message>
+        <source>Site</source>
+        <translation>Сайт</translation>
+    </message>
+    <message>
+        <source>Site to publish</source>
+        <translation>Сайт для публікації</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Розмір</translation>
+    </message>
+    <message>
+        <source>Size and limits</source>
+        <translation>Розмір і обмеження</translation>
+    </message>
+    <message>
+        <source>Size of the build</source>
+        <translation>Розмір збірки</translation>
+    </message>
+    <message>
+        <source>Stale pages</source>
+        <translation>Застарілі сторінки</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Розпочато</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Розпочато користувачем %user о %time.</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>Static publishing</source>
+        <translation>Статична публікація</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off</source>
+        <translation>Статичну публікацію вимкнено</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off.</source>
+        <translation>Статичну публікацію вимкнено.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched off. Switch it on in Setup &gt; Static publishing first.</source>
+        <translation>Статичну публікацію вимкнено. Спершу ввімкніть її в Налаштування &gt; Статична публікація.</translation>
+    </message>
+    <message>
+        <source>Static publishing is switched on.</source>
+        <translation>Статичну публікацію ввімкнено.</translation>
+    </message>
+    <message>
+        <source>Step %step of %total</source>
+        <translation>Крок %step з %total</translation>
+    </message>
+    <message>
+        <source>Steps</source>
+        <translation>Кроки</translation>
+    </message>
+    <message>
+        <source>Strip</source>
+        <translation>Очищення</translation>
+    </message>
+    <message>
+        <source>Switch off</source>
+        <translation>Вимкнути</translation>
+    </message>
+    <message>
+        <source>Switch on</source>
+        <translation>Увімкнути</translation>
+    </message>
+    <message>
+        <source>Switch static publishing on</source>
+        <translation>Увімкнути статичну публікацію</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Тег</translation>
+    </message>
+    <message>
+        <source>Tags</source>
+        <translation>Теги</translation>
+    </message>
+    <message>
+        <source>Target</source>
+        <translation>Ціль</translation>
+    </message>
+    <message>
+        <source>Targets can be made and changed, but nothing is built or published until it is switched on.</source>
+        <translation>Цілі можна створювати й змінювати, але нічого не збирається і не публікується, доки її не ввімкнено.</translation>
+    </message>
+    <message>
+        <source>Tells search engines what to read.</source>
+        <translation>Підказує пошуковим системам, що читати.</translation>
+    </message>
+    <message>
+        <source>The build could not be thrown away: %problem</source>
+        <translation>Не вдалося відхилити збірку: %problem</translation>
+    </message>
+    <message>
+        <source>The build is the same as the last publish: there is nothing to publish.</source>
+        <translation>Збірка така сама, як остання публікація: публікувати нічого.</translation>
+    </message>
+    <message>
+        <source>The build was thrown away: the folder holds the last publish again.</source>
+        <translation>Збірку відхилено: папка знову містить останню публікацію.</translation>
+    </message>
+    <message>
+        <source>The defaults suit most sites.</source>
+        <translation>Типові значення підходять більшості сайтів.</translation>
+    </message>
+    <message>
+        <source>The folder holds a build that is not published yet; a new build replaces it.</source>
+        <translation>Папка містить ще не опубліковану збірку; нова збірка її замінить.</translation>
+    </message>
+    <message>
+        <source>The folder of the jobs cannot be written: %detail</source>
+        <translation>Не вдається записати до папки завдань: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be prepared: %detail</source>
+        <translation>Не вдалося підготувати завдання: %detail</translation>
+    </message>
+    <message>
+        <source>The job could not be started.</source>
+        <translation>Не вдалося запустити завдання.</translation>
+    </message>
+    <message>
+        <source>The job has ended. Loading its report.</source>
+        <translation>Завдання завершено. Завантаження його звіту.</translation>
+    </message>
+    <message>
+        <source>The job needs a signed-in user.</source>
+        <translation>Завданню потрібен користувач, який увійшов.</translation>
+    </message>
+    <message>
+        <source>The job was started but did not report its process id. Check %detail.</source>
+        <translation>Завдання запущено, але воно не повідомило ідентифікатор свого процесу. Перевірте %detail.</translation>
+    </message>
+    <message>
+        <source>The key</source>
+        <translation>Ключ</translation>
+    </message>
+    <message>
+        <source>The largest file: %path, %size.</source>
+        <translation>Найбільший файл: %path, %size.</translation>
+    </message>
+    <message>
+        <source>The lines that will be written</source>
+        <translation>Рядки, які буде записано</translation>
+    </message>
+    <message>
+        <source>The list of pages for search engines; needs the public address.</source>
+        <translation>Список сторінок для пошукових систем; потребує публічної адреси.</translation>
+    </message>
+    <message>
+        <source>The pages are fetched as a visitor who is not signed in sees them. Administration and editing siteaccesses are never offered.</source>
+        <translation>Сторінки отримуються так, як їх бачить відвідувач без входу. Доступи до сайту для адміністрування й редагування ніколи не пропонуються.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the job is doing.</source>
+        <translation>Не вдалося відстежити перебіг. Перезавантажте сторінку, щоб побачити, як іде завдання.</translation>
+    </message>
+    <message>
+        <source>The public half of the key:</source>
+        <translation>Публічна половина ключа:</translation>
+    </message>
+    <message>
+        <source>The root of the branch</source>
+        <translation>Корінь гілки</translation>
+    </message>
+    <message>
+        <source>The secret store is not set up yet (./console exp:upgrade --apply makes its table), so no key can be kept.</source>
+        <translation>Сховище секретів ще не налаштовано (./console exp:upgrade --apply створює його таблицю), тож ключ не можна зберегти.</translation>
+    </message>
+    <message>
+        <source>The server signs in by itself (its own SSH key or credential helper), or the repository is on this server.</source>
+        <translation>Сервер входить самостійно (власним SSH-ключем або помічником облікових даних), або репозиторій розміщено на цьому сервері.</translation>
+    </message>
+    <message>
+        <source>The setting could not be written: %problem</source>
+        <translation>Не вдалося записати налаштування: %problem</translation>
+    </message>
+    <message>
+        <source>The settings are valid. These lines will be written:</source>
+        <translation>Налаштування коректні. Буде записано такі рядки:</translation>
+    </message>
+    <message>
+        <source>The settings file cannot be read: %problem</source>
+        <translation>Не вдається прочитати файл налаштувань: %problem</translation>
+    </message>
+    <message>
+        <source>The site goes back to the files of that publish; a build not published yet must be published or thrown away first.</source>
+        <translation>Сайт повертається до файлів тієї публікації; ще не опубліковану збірку спершу треба опублікувати або відхилити.</translation>
+    </message>
+    <message>
+        <source>The site&apos;s own page for addresses that do not exist.</source>
+        <translation>Власна сторінка сайту для адрес, яких не існує.</translation>
+    </message>
+    <message>
+        <source>The target could not be saved: %problem</source>
+        <translation>Не вдалося зберегти ціль: %problem</translation>
+    </message>
+    <message>
+        <source>The target does not sign in with this key yet: choose &quot;A deploy key made for this target&quot; in its settings.</source>
+        <translation>Ціль ще не входить цим ключем: виберіть «Ключ розгортання, створений для цієї цілі» в її налаштуваннях.</translation>
+    </message>
+    <message>
+        <source>The targets could not be read: %problem</source>
+        <translation>Не вдалося прочитати цілі: %problem</translation>
+    </message>
+    <message>
+        <source>There is no build to check yet.</source>
+        <translation>Збірки на перевірку ще немає.</translation>
+    </message>
+    <message>
+        <source>This installation has no front siteaccess. Administration and editing siteaccesses are never published.</source>
+        <translation>Ця інсталяція не має публічного доступу до сайту. Доступи для адміністрування й редагування ніколи не публікуються.</translation>
+    </message>
+    <message>
+        <source>This page follows the job as it goes; it goes on in the background when the page is closed.</source>
+        <translation>Ця сторінка стежить за завданням у міру його виконання; після закриття сторінки воно продовжується у фоні.</translation>
+    </message>
+    <message>
+        <source>This target has no deploy key yet.</source>
+        <translation>Ця ціль ще не має ключа розгортання.</translation>
+    </message>
+    <message>
+        <source>This target has not been built here yet.</source>
+        <translation>Цю ціль тут ще не збирали.</translation>
+    </message>
+    <message>
+        <source>This target has one.</source>
+        <translation>Ця ціль його має.</translation>
+    </message>
+    <message>
+        <source>Throws this build away: the folder holds the last publish again. The live site does not change.</source>
+        <translation>Відхиляє цю збірку: папка знову містить останню публікацію. Робочий сайт не змінюється.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;I have checked the changes&quot; first.</source>
+        <translation>Спершу позначте «Зміни перевірено».</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Час</translation>
+    </message>
+    <message>
+        <source>Triggers</source>
+        <translation>Тригери</translation>
+    </message>
+    <message>
+        <source>Type the name of the tag again</source>
+        <translation>Ще раз введіть назву тегу</translation>
+    </message>
+    <message>
+        <source>Unchanged</source>
+        <translation>Без змін</translation>
+    </message>
+    <message>
+        <source>Webhook</source>
+        <translation>Вебхук</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Що</translation>
+    </message>
+    <message>
+        <source>What changes</source>
+        <translation>Що змінюється</translation>
+    </message>
+    <message>
+        <source>What each file is; always written.</source>
+        <translation>Що являє собою кожен файл; записується завжди.</translation>
+    </message>
+    <message>
+        <source>What the job did and its record. A job started here goes on in the background when this page is closed.</source>
+        <translation>Що зробило завдання і його журнал. Завдання, запущене тут, продовжується у фоні після закриття цієї сторінки.</translation>
+    </message>
+    <message>
+        <source>What the job printed as errors</source>
+        <translation>Що завдання вивело як помилки</translation>
+    </message>
+    <message>
+        <source>What the pages name, and every image of published content</source>
+        <translation>Те, що називають сторінки, і кожне зображення опублікованого вмісту</translation>
+    </message>
+    <message>
+        <source>When</source>
+        <translation>Коли</translation>
+    </message>
+    <message>
+        <source>When a publish fails</source>
+        <translation>Коли публікація не вдається</translation>
+    </message>
+    <message>
+        <source>When a publish succeeds</source>
+        <translation>Коли публікація вдається</translation>
+    </message>
+    <message>
+        <source>When content is published</source>
+        <translation>Коли публікується вміст</translation>
+    </message>
+    <message>
+        <source>Where links to what the copy does not hold go (the search, the login).</source>
+        <translation>Куди ведуть посилання на те, чого немає в копії (пошук, вхід).</translation>
+    </message>
+    <message>
+        <source>Where the static copy is served from.</source>
+        <translation>Звідки віддається статична копія.</translation>
+    </message>
+    <message>
+        <source>Which site is published, and what the target is called.</source>
+        <translation>Який сайт публікується і як називається ціль.</translation>
+    </message>
+    <message>
+        <source>Work below any path. The default.</source>
+        <translation>Працює під будь-яким шляхом. Типово.</translation>
+    </message>
+    <message>
+        <source>Written whenever a custom domain is set.</source>
+        <translation>Записується щоразу, коли задано власний домен.</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>You can always build and publish by hand here and on the console.</source>
+        <translation>Тут і в консолі завжди можна зібрати й опублікувати вручну.</translation>
+    </message>
+    <message>
+        <source>a name only; the value stays in Setup &gt; Secrets</source>
+        <translation>лише назва; значення залишається в Налаштування &gt; Секрети</translation>
+    </message>
+    <message>
+        <source>below %path</source>
+        <translation>під %path</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>завершено без звіту</translation>
+    </message>
+    <message>
+        <source>extra</source>
+        <translation>додатковий</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>не вдалося</translation>
+    </message>
+    <message>
+        <source>file</source>
+        <translation>файл</translation>
+    </message>
+    <message>
+        <source>gh-pages, or main with the folder docs.</source>
+        <translation>gh-pages або main з папкою docs.</translation>
+    </message>
+    <message>
+        <source>git host</source>
+        <translation>git-хостинг</translation>
+    </message>
+    <message>
+        <source>https://github.com/owner/repo.git (with a token) or git@github.com:owner/repo.git (with a deploy key); never a password or token in it.</source>
+        <translation>https://github.com/owner/repo.git (з токеном) або git@github.com:owner/repo.git (з ключем розгортання); ніколи не вказуйте в ній пароль чи токен.</translation>
+    </message>
+    <message>
+        <source>https://owner.github.io/repository/, for the sitemap and the canonical links.</source>
+        <translation>https://owner.github.io/repository/, для карти сайту та канонічних посилань.</translation>
+    </message>
+    <message>
+        <source>image</source>
+        <translation>зображення</translation>
+    </message>
+    <message>
+        <source>never</source>
+        <translation>ніколи</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ні</translation>
+    </message>
+    <message>
+        <source>no remote</source>
+        <translation>немає віддаленого репозиторію</translation>
+    </message>
+    <message>
+        <source>none: commits stay in the folder</source>
+        <translation>немає: коміти залишаються в папці</translation>
+    </message>
+    <message>
+        <source>none: nothing changed</source>
+        <translation>немає: нічого не змінилося</translation>
+    </message>
+    <message>
+        <source>not pushed</source>
+        <translation>не надіслано</translation>
+    </message>
+    <message>
+        <source>nothing changed</source>
+        <translation>нічого не змінилося</translation>
+    </message>
+    <message>
+        <source>page</source>
+        <translation>сторінка</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>успішно</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a job cannot be started here. Use ./console exp:static:build on the server.</source>
+        <translation>proc_open вимкнено, тож завдання тут запустити не можна. Скористайтеся ./console exp:static:build на сервері.</translation>
+    </message>
+    <message>
+        <source>publish</source>
+        <translation>публікація</translation>
+    </message>
+    <message>
+        <source>published</source>
+        <translation>опубліковано</translation>
+    </message>
+    <message>
+        <source>push pending</source>
+        <translation>очікує надсилання</translation>
+    </message>
+    <message>
+        <source>pushed</source>
+        <translation>надіслано</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>відхилено</translation>
+    </message>
+    <message>
+        <source>relative</source>
+        <translation>відносні</translation>
+    </message>
+    <message>
+        <source>rollback</source>
+        <translation>відкат</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>відкочено</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>виконується</translation>
+    </message>
+    <message>
+        <source>the folder only</source>
+        <translation>лише папка</translation>
+    </message>
+    <message>
+        <source>www.example.com: written to the file CNAME. Point the DNS of the domain at the host as it explains; HTTPS can take a while to start.</source>
+        <translation>www.example.com: записується до файлу CNAME. Спрямуйте DNS домену на хостинг так, як він пояснює; HTTPS може запрацювати не одразу.</translation>
+    </message>
+    <message>
+        <source>yes, not published yet</source>
+        <translation>так, ще не опубліковано</translation>
     </message>
 </context>
 </TS>
