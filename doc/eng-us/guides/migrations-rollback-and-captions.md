@@ -5,7 +5,7 @@ point of the database, the storage and the settings; when a migration fails, the
 it on its own. This page explains the captions of migration runs, the automatic restore, and the three ways to take
 migrations back by hand.
 
-[Guides](README.md) · [Migrations](migrations.md) · Related: [Upgrading with the console: captions](upgrading-with-the-console.md#captions),
+[Guides](README.md) · [Migrations: the hub](../help/migrations/README.md) · [Migrations](migrations.md) · Related: [Upgrading with the console: captions](upgrading-with-the-console.md#captions),
 [The migrations repository](migrations-repositories.md), [Troubleshooting](migrations-troubleshooting.md)
 
 ## In short
@@ -184,9 +184,18 @@ Every rollback is audited: `system.migration.rollback` with the verb `rollback-r
 | MongoDB | `mongodump` | through the rollback of `exp:upgrade` |
 | Oracle | none built in (export with `expdp`) | by hand: the run prints the steps |
 
-## Read on
+## Related pages
 
-- [The migrations repository: commit, tag and push](migrations-repositories.md)
-- [Troubleshooting migrations](migrations-troubleshooting.md)
+- [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
+  [Frequently asked questions](../help/migrations/faq.md)
+- [The guide](migrations.md), [the tutorial](migrations-tutorial.md), [PHP migrations](migrations-php.md),
+  [The migrations repository](migrations-repositories.md)
+- [In the administration](../help/migrations/in-the-administration.md), [Commands](../help/migrations/commands.md),
+  [Settings](../help/migrations/settings.md),
+  [Policies, views and events](../help/migrations/policies-views-and-events.md)
+- [The file format](../specifications/6.0/migration-file-format.md), [The feature](../features/6.0/migrations.md)
+- [When a migration fails](../help/migrations/when-a-migration-fails.md),
+  [Troubleshooting messages](migrations-troubleshooting.md)
+- [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md)
 - [`exp:migration:rollback`](../examples/commands/expmigrationrollback.md), [`exp:migration:caption`](../examples/commands/expmigrationcaption.md)
 - [migration.ini \[CaptionSettings\]](../examples/ini-settings/migration/CaptionSettings.md)

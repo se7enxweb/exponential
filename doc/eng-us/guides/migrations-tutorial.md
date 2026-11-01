@@ -9,7 +9,7 @@ The output below is from a run on SQLite on 31 October 2026, on an installation 
 and object ids differ on yours. Run every command from the installation root as the user the web server runs as
 (as root, add `--allow-root-user`).
 
-[Guides](README.md) · [Migrations](migrations.md) · Next: [PHP migrations](migrations-php.md)
+[Guides](README.md) · [Migrations: the hub](../help/migrations/README.md) · [Migrations](migrations.md) · Next: [PHP migrations](migrations-php.md)
 
 ## Before you start
 
@@ -443,3 +443,18 @@ again. [Rollback and captions](migrations-rollback-and-captions.md) explains eac
 - took one back with `down()` and saw a failure restored from its caption.
 
 Next: [PHP migrations](migrations-php.md) for everything a migration class can do.
+
+## Related pages
+
+- [Migrations: the hub](../help/migrations/README.md), [All recipes](../help/migrations/recipes/README.md),
+  [Frequently asked questions](../help/migrations/faq.md)
+- [The guide](migrations.md), [PHP migrations](migrations-php.md),
+  [Rollback and captions](migrations-rollback-and-captions.md),
+  [The migrations repository](migrations-repositories.md)
+- [In the administration](../help/migrations/in-the-administration.md), [Commands](../help/migrations/commands.md),
+  [Settings](../help/migrations/settings.md),
+  [Policies, views and events](../help/migrations/policies-views-and-events.md)
+- [The file format](../specifications/6.0/migration-file-format.md), [The feature](../features/6.0/migrations.md)
+- [When a migration fails](../help/migrations/when-a-migration-fails.md),
+  [Troubleshooting messages](migrations-troubleshooting.md)
+- [Migrations versus migrating a site](../help/migrations/migrations-versus-migrating-a-site.md)

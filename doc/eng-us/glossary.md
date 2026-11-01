@@ -32,6 +32,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 ## B
 
+- **background run (migration)**: a migration run, resume or rollback started in Setup > Migrations, which runs as a console process of its own as the signed-in user and goes on when the page is closed; its files are in `var/<site>/migration/jobs/`. [In the administration](help/migrations/in-the-administration.md#runs-started-here).
 - **bc note** (behaviour change note): a page that says what changed in behaviour and what to check when you upgrade. [Behaviour changes, July and August 2026](bc/6.0/behaviour-changes-2026-07-08.md).
 - **bcgooglesitemaps**: an extension that generates search engine **sitemaps** as a **cronjob**. [bcgooglesitemaps](features/6.0/extensions/bcgooglesitemaps.md).
 - **bcwebsitestatistics**: an extension that sends page views and shop purchases to an analytics service. [bcwebsitestatistics](features/6.0/extensions/bcwebsitestatistics.md).
@@ -72,11 +73,15 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 
 - **database drivers**: MySQL and MariaDB, PostgreSQL, SQLite, MongoDB and Oracle. [SQLite](features/6.0/sqlite-database.md), [MongoDB](features/6.0/mongodb-database-support.md), [Oracle and SQLite](specifications/6.0/database-drivers-sqlite-oracle.md).
 - **datatype**: the code that stores, validates, edits and shows one kind of **attribute** (text, image, relation, tags). [Datatype and input hardening](specifications/6.0/datatype-input-hardening.md).
+- **deferred (upgrade step)**: the action a migration run reports for a kernel upgrade step of the stage `code`, `libraries` or `finish`, which it leaves to `exp:upgrade`. [Upgrade step or migration?](help/migrations/recipes/upgrade-step-or-migration.md).
 - **design**: a set of templates, styles and images; the **siteaccess** chooses which designs are used. [Getting started](guides/getting-started.md).
 - **design.ini**: the settings file that lists designs, stylesheets and scripts. [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
+- **detect() (migration)**: the method of a PHP **migration** that asks the installation itself whether the change is in place (`done`, `pending`, `not-needed`), instead of the record. [PHP migrations](guides/migrations-php.md).
 - **DFS**: the database file system flavour of the **cluster** handler. [Operating a site](guides/operating-a-site.md).
 - **digest (notification)**: one e-mail that collects the notification messages of a day, a week or a month instead of one mail per change. [Notifications](features/6.0/notifications.md), [specification](specifications/6.0/notifications.md).
 - **double opt-in**: switching a kind of e-mail on (newsletters, offers) or using a new address only after the link sent to the address is confirmed. [E-mail preferences](features/6.0/mail-preferences.md).
+- **down() (migration)**: the method of a PHP **migration** that undoes its `up()`, run by `exp:migration:rollback <migration-id>`; a migration without one is taken back by its run's **caption**. [Writing a reversible down()](help/migrations/recipes/writing-a-reversible-down.md).
+- **dry run (migration)**: `exp:migration:migrate` without `--apply`: every pending **migration** with what its `plan()` says it would change, nothing written. [Migrations](help/migrations/README.md).
 - **DSE** (`sevenx_dse`): the Database Source Editor, which embeds **adminneo** in the admin. [sevenx_dse](features/6.0/extensions/sevenx_dse.md).
 - **DXP skeleton**: a starter project for the Symfony based platform. [Platform DXP skeleton](features/6.0/platform-dxp-skeleton.md).
 
@@ -85,6 +90,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **e-mail preferences**: the page where each person turns each optional kind of e-mail on or off, sees the history and downloads the data (`/mailpreferences/settings`). [User's guide](features/6.0/mail-preferences.md), [administrator's guide](guides/mail-preferences-administrator.md), [law checklist](specifications/6.0/mail-preferences-compliance.md).
 - **engine (web server engine)**: the program that serves the site: `php` (built-in server), `qbix` (**Velocity**) or `frankenphp`. [Velocity engines](bc/6.0/velocity-engines.md).
 - **engine.phar**: the archive of `kernel/`, `lib/` and `autoload/` that Velocity can load. [Engine archive](bc/6.0/phar.md).
+- **environment (migration)**: the name of an installation's stage (`development`, `test`, `staging`, `production`) from `site.ini [AdminEnvironment] Level` or `EXP_ENV`; a **migration**'s header line `environments:` limits it to some. [Per-environment migrations](help/migrations/recipes/per-environment-migrations.md).
 - **Exp Debug bar**: a bar on pages that shows queries, time and template information to administrators. [Exp Debug bar](features/6.0/exp-debug-bar.md).
 - **exp (prefix)**: a code prefix 7x uses strategically, with intent, to build the Exponential brand and to assign ownership of an extension or solution to the Exponential project and the Exponential Foundation (`explayouts`, `expai`, `expHelpAudience`); new kernel code uses it. [Naming prefixes: sevenx and exp](standards/naming-prefixes-sevenx-and-exp.md).
 - **exp:** the prefix of the console commands that run `bin/php/*.php` scripts. [Console](bc/6.0/console.md).
@@ -176,7 +182,9 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **mail category**: the kind a mail belongs to (`content`, `newsletter`, `security`, ...), declared with `eZMail::setCategory()`; essential categories are always sent, optional ones only to people who turned them on. [Developer's guide](guides/mail-preferences-developer.md).
 - **mail gate**: the check in `eZMailTransport::send()` that every mail passes: it blocks optional mail people did not ask for and adds the footer and the unsubscribe headers. [Specification](specifications/6.0/mail-preferences.md).
 - **maintenance mode**: takes the site offline with a notice (`exp:maintenance on|off|status`). [Maintenance mode](features/6.0/maintenance-mode.md).
-- **migration**: a change to an installation (a table, content, a role, a setting) in a file `YYYYMMDDHHMMSS_name.php` under version control, applied once to every installation of a site in the same order (`exp:migration:migrate`). [Migrations](guides/migrations.md), [the tutorial](guides/migrations-tutorial.md).
+- **migrating a site**: moving a whole installation to another server, engine or release, or bringing content in from another system; not the same as a **migration**. [Migrations versus migrating a site](help/migrations/migrations-versus-migrating-a-site.md), [Migrating to and from Exponential](install/migration/README.md).
+- **migration**: a change to an installation (a table, content, a role, a setting) in a file `YYYYMMDDHHMMSS_name.php` under version control, applied once to every installation of a site in the same order (`exp:migration:migrate`); not the same as **migrating a site**. [Migrations](help/migrations/README.md), [the guide](guides/migrations.md), [the tutorial](guides/migrations-tutorial.md).
+- **migration source**: where a **migration** comes from: `site` (`migrations/`), `extension:<name>` (an active extension's `migrations/`), `package:<name>` (an installed package) or `kernel` (the upgrade steps of `exp:upgrade`). [Migrations in an extension or a package](help/migrations/recipes/migrations-in-an-extension-or-package.md).
 - **migrations repository**: the git repository (the site's own, or a separate one) a **migration run** commits its status file and run log to, tags and pushes. [The migrations repository](guides/migrations-repositories.md).
 - **module**: a set of **views** behind a URL such as `content/view`; extensions can add or override modules. [Extension module override](features/6.0/extension-module-override.md).
 - **MongoDB**: a supported database. [MongoDB](features/6.0/mongodb-database-support.md).
@@ -199,6 +207,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **operator (template)**: a function applied with a pipe (`$text|wash`). [String template operators](features/6.0/string-template-operators.md), [role and policy operators](features/6.0/role-and-policy-template-operators.md), [owsimpleoperator](features/6.0/extensions/owsimpleoperator.md), [swark](features/6.0/extensions/swark.md).
 - **OPML**: a list of feeds, exportable from the RSS module. [OPML exports](bc/6.0/opml.md).
 - **Oracle**: a supported database, through the `ezoracle` extension; install with `./console exp:install --apply --db=oracle`. [Database drivers and installers](specifications/6.0/database-drivers-2026-09.md#oracle).
+- **orphan (migration)**: a **migration** the record calls done whose file is gone (deleted or renamed); listed by the status, harmless. [When a migration fails](help/migrations/when-a-migration-fails.md).
 - **override**: a rule that says "for this class, node or section use this template instead of the default", kept in `override.ini`. [Template editor](features/6.0/template-editor-overrides.md), [override order](features/6.0/template-override-ordering.md).
 
 ## P
@@ -228,10 +237,12 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **registry (rad.ini)**: a list an extension reads from its own settings or code (event listeners, cronjob parts, audit sources, editor engines), declared in `rad.ini` so Setup > RAD counts and checks its entries. [RAD extension surface](bc/6.0/rad-extension-surface.md).
 - **repair page**: the page that explains missing libraries and lets an administrator repair them. [Repair from the browser](features/6.0/repair-from-the-browser.md), [Repair](bc/6.0/repair.md).
 - **request rule**: a rule in `requestrules.ini` that allows or refuses a request by module, view and URL. [Request rules](features/6.0/request-rules.md), [securing content/view/full](bc/6.0/view_full_security.md).
+- **requires (migration)**: the header line of a **migration** that names the migrations, upgrade steps or `extension:<name>` it must run after. [Team workflow with git](help/migrations/recipes/team-workflow-with-git.md), [the file format](specifications/6.0/migration-file-format.md#the-header).
 - **response cache (Velocity)**: the server's cache of rendered pages. [Response cache](features/6.0/velocity-response-cache.md).
 - **role**: a named set of **policies** assigned to users and groups. [Roles and policies in order](features/6.0/role-policy-order.md); its users and groups: [role assignment paging](features/6.0/role-assignment-paging.md).
 - **rollback (migration)**: taking migrations back: a run by restoring its pre **caption**, one migration with its `down()`, or any caption for experts (`exp:migration:rollback`). [Rollback and captions](guides/migrations-rollback-and-captions.md).
 - **RSS**: feeds exported and imported by the RSS module; see also **syndication**. [RSS, podcast and feed list](features/6.0/rss-podcast-and-feed-list.md).
+- **run log (migration)**: `migrations/runs/<run-id>.log`, one line per event of a **migration run**, cleaned of secrets and e-mail addresses, committed to the **migrations repository**. [The audit trail of runs](help/migrations/recipes/the-audit-trail-of-runs.md).
 - **run (migration run)**: one call of `exp:migration:migrate --apply`, with its own run id (`YYYYMMDD-HHMMSS-<6 hex>`), captions, log, commit and tag; recorded in `exp_migration_run`. [Migrations](guides/migrations.md#the-record).
 - **run lock**: the installation lock `var/<site>/upgrade.lock` that `exp:upgrade` and every **migration run** hold while they write, so only one writes at a time. [Migrations](guides/migrations.md#the-run-lock-and-the-user).
 - **runnable**: the class behind a command, cronjob part or module view (`Exponential\Runnable\*`); can be replaced or listened to through `[RunnableSettings]`. [Commands, cronjob parts and views as classes](specifications/6.0/runnable-commands-cronjobs-views.md).
@@ -244,6 +255,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **setup wizard**: the browser installer. [Setup wizard](features/6.0/setup-wizard-and-editor-siteaccess.md).
 - **sevenx**: 7x's official public PHP code prefix (`sevenx_dse`, `sevenx_valkey_cache`). "7x" itself cannot be a prefix because a class or identifier cannot start with a digit; extensions and classes from 7x use `sevenx` or `exp`, as 7x needs. **7x** is the company that leads Exponential. [Naming prefixes: sevenx and exp](standards/naming-prefixes-sevenx-and-exp.md).
 - **shared layout**: a **layout** that exists to be borrowed: a zone of another layout is linked to one of its zones and renders its blocks, so a header or footer is built once. [Shared layouts and linked zones](bc/6.0/LAYOUTS.md#shared-layouts-and-linked-zones).
+- **simulation (migration)**: `exp:migration:dry-run --simulate`: the pending **migrations** run for real in a transaction that is rolled back, with `--diff` showing what changed; PostgreSQL and SQLite only. [Testing migrations](help/migrations/recipes/testing-migrations.md).
 - **site package**: the content and design set installed at setup. [Clean install defaults](features/6.0/clean-install-defaults.md).
 - **siteaccess**: one way of reaching the site (by URL, host or port) with its own settings and design, such as `site` and `admin`. [Getting started](guides/getting-started.md), [Multi-site INI overrides](features/6.0/multi-site-ini-overrides.md).
 - **Smaller changes**: the section of a chronicle page that lists changes without a story of their own. [History](history/README.md).
@@ -253,6 +265,7 @@ order. A term in **bold** inside a definition has its own entry. For a first wal
 - **SQLite**: the database in one file; the default of `exp:install`. [SQLite](features/6.0/sqlite-database.md), [driver specification](specifications/6.0/sqlite3-database-driver.md).
 - **state (object state)**: a label from an object state group, for example the lock state "Not locked", that policies can test; not the same as the status of a **version** (draft, published). [Installer seed data](specifications/6.0/installer-logs-and-seed-data.md).
 - **static cache**: pages written to files and served without PHP. [Static cache generator](features/6.0/static-cache-generator.md), [defaults](bc/6.0/static-cache-defaults.md).
+- **status file (migrations)**: `migrations/status/<environment>.json`, the record of one environment's **migrations** mirrored into git after every run. [Pushing tags](help/migrations/recipes/pushing-tags.md), [the file format](specifications/6.0/migration-file-format.md#the-status-file).
 - **suppression list**: the addresses that get no optional e-mail (bounces, complaints, requests), stored only as salted hashes (`exp:mail:suppression`). [Administrator's guide](guides/mail-preferences-administrator.md).
 - **swark**: an extension with many template operators and workflow events. [swark](features/6.0/extensions/swark.md).
 - **syndication**: the extension for export and import feeds. [syndication](features/6.0/extensions/syndication.md), [specification](specifications/6.0/syndication.md).

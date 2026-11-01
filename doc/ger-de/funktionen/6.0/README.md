@@ -69,7 +69,7 @@ nginx mit PHP-FPM funktionieren weiter wie bisher.
 - [Die Systemkarte: exp:expfetch, exp:info und exp:about](systemkarte.md)
 - [Benchmark: `exp:benchmark`](benchmark.md)
 - [Wartungsmodus](wartungsmodus.md)
-- [Migrationen im Kernel](migrationen.md)
+- [Migrationen im Kernel](migrationen.md) (Rezepte, Zielgruppenseiten und FAQ: [Migrationen](../../hilfe/migrationen/README.md))
 - [Eine defekte Installation im Browser reparieren](reparatur-im-browser.md)
 - [Prüfung der Dateikonsistenz und die Dateiliste des Release](dateikonsistenzpruefung.md)
 - [Qualitätsprüfungen: Git-Hooks, Dateimanifest, Codestil und PHPStan](qualitaetspruefungen.md)

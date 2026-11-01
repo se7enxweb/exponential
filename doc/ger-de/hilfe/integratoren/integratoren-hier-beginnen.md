@@ -136,6 +136,7 @@ Der ganze Bereich in einer Reihenfolge steht im [Lesepfad für Integratoren](les
 - [Partner: hier beginnen](../partner/partner-hier-beginnen.md) und [Implementierungspartner](../partner/implementierungspartner.md)
 - [Wiederverkäufer: hier beginnen](../wiederverkaeufer/wiederverkaeufer-hier-beginnen.md), [Bündler: hier beginnen](../buendler/buendler-hier-beginnen.md)
 - [App-Ersteller: hier beginnen](../ersteller/anwendungsentwickler/anwendungsentwickler-hier-beginnen.md)
+- [Migrationen in Kundenprojekten](migrationen-in-kundenprojekten.md), [Migrationen](../migrationen/README.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

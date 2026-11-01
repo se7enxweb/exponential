@@ -156,6 +156,7 @@ Klassen für die persistenten Objekte.
 - Weiter: [Datenbankschema, .dba-Dateien und Upgrades](datenbankschema-und-dba-dateien.md)
 - [eZPersistentObject](../teil-8-referenz/ezpersistentobject.md), [eZDB: die Datenbankschicht](../teil-8-referenz/ezdb.md)
 - [Von Hand: Ihre eigene Tabelle mit eZPersistentObject](tutorials/von-hand-eigene-tabelle-mit-persistentem-objekt.md)
+- [Migrationen](../../migrationen/README.md), [Migrationen in einer Erweiterung oder einem Paket](../../migrationen/rezepte/migrationen-in-einer-erweiterung-oder-einem-paket.md), [Upgrade-Schritt oder Migration?](../../migrationen/rezepte/upgrade-schritt-oder-migration.md)
 - [Freie Dokumentation](../../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

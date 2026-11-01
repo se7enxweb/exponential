@@ -13,6 +13,11 @@ This section is for hosting companies that move customer sites onto their platfo
 running Exponential site in, what changes when the site is on an older version or another platform, and how do you
 change the database engine on the way?
 
+> **Looking for migrations of one site?** Schema and content changes a customer's developers ship as files and run
+> with `./console exp:migration:migrate` are a different job:
+> [Migrations versus migrating a site](../../migrations/migrations-versus-migrating-a-site.md),
+> [Migrations on hosted sites](../operations/migrations-on-hosted-sites.md).
+
 The deep technical work is described in the installation book, chapters 14 to 17. These pages arrange it for a host:
 the assessment, the plan, the move, the checks, and the responsibilities between you and the customer.
 
@@ -52,6 +57,7 @@ the assessment, the plan, the move, the checks, and the responsibilities between
 - [Hosting companies: start here](../hosting-companies-start-here.md)
 - [Restore and restore tests](../operations/restore-and-restore-tests.md)
 - [Go-live checklist for a customer site](../checklists/new-customer-site-go-live.md)
+- [Migrations](../../migrations/README.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

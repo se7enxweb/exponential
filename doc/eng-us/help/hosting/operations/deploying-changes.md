@@ -174,6 +174,7 @@ release directory remain the stronger measure."
 - [PHP-FPM tuning](../performance/php-fpm-tuning.md)
 - [Velocity for hosts](../servers/velocity-for-hosts.md)
 - [Composer and git on servers](../basics/composer-and-git-on-servers.md)
+- [Migrations on hosted sites](migrations-on-hosted-sites.md), [Migrations](../../migrations/README.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

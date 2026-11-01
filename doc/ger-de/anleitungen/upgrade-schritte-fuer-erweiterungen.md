@@ -6,7 +6,9 @@ Schritt registriert, sieht ein Administrator ihn beim Upgrade in `exp:upgrade:st
 `exp:upgrade --apply` und hat ihn aufgezeichnet, genauso wie die Schritte des Kernels.
 
 [Anleitungen](README.md) · Siehe auch: [Upgrade mit der Konsole](aktualisieren-mit-der-konsole.md),
-[Erweiterungen](extensions.md), [Migrationen](migrationen.md)
+[Erweiterungen](extensions.md), [Migrationen](migrationen.md), [Migrationen: der Einstieg](../hilfe/migrationen/README.md),
+[Upgrade-Schritt oder Migration?](../hilfe/migrationen/rezepte/upgrade-schritt-oder-migration.md),
+[Migrationen in einer Erweiterung oder einem Paket](../hilfe/migrationen/rezepte/migrationen-in-einer-erweiterung-oder-einem-paket.md)
 
 Ein Upgrade-Schritt oder eine Migration? Ein **Upgrade-Schritt** ist für das, was jede Installation der Erweiterung
 beim Upgrade braucht: Er kann die Installation befragen (`detect()`) und wird von `exp:upgrade` mit den Schritten des

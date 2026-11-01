@@ -172,6 +172,7 @@ Source: [If something goes wrong](../../../guides/upgrading.md#if-something-goes
 - [Automated updates with ezupdate](automated-updates-with-ezupdate.md)
 - [Maintenance mode](maintenance-mode.md), [Deploying changes](deploying-changes.md)
 - [Chapter 11: Upgrading](../../../install/11-upgrading.md)
+- [Migrations on hosted sites](migrations-on-hosted-sites.md), [Migrations](../../migrations/README.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

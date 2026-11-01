@@ -123,6 +123,7 @@ ausliefern, aber prüfen Sie Ihren Server wie bei der SQLite-Datei ([Die Datenba
 - [Eine Website auf eine andere Engine umziehen](zwischen-engines-wechseln.md)
 - [Das Schema nach einem Upgrade prüfen](das-schema-nach-einem-upgrade-pruefen.md)
 - [Ein portabler Dump zwischen SQL-Engines](../hosting/betrieb/datenbank-backups-je-engine.md#ein-portabler-dump-zwischen-sql-engines)
+- [Migrationen](../migrationen/README.md), [Umstieg von SQL-Update-Dateien](../migrationen/rezepte/umstieg-von-sql-update-dateien.md), [Hinweise zu den Datenbanken für Migrationen](../migrationen/rezepte/hinweise-zu-den-datenbanken.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

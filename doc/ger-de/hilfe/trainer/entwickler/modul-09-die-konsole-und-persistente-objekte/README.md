@@ -3,24 +3,24 @@ title: "Modul 9: Die Konsole und persistente Objekte"
 audience: trainer, developer
 category: training
 order: 90
-summary: Das neunte Modul des Kurses Entwickler. Die Teilnehmenden finden und starten Befehle mit der Konsole, schreiben einen eigenen Befehl, speichern die Daten ihrer Erweiterung über eZPersistentObject in einer Tabelle und schreiben das verbleibende SQL sicher mit eZDB. 3 Stunden 20 Minuten.
-keywords: entwickler, modul 9, konsole, bin/php/console, ext:-befehle, eZScript, eZPersistentObject, persistente objekte, definition, fetchObjectList, eZDB, escapeString, transaktionen, developers course, module 9, console, ext: commands, persistent objects, transactions
+summary: Das neunte Modul des Kurses Entwickler. Die Teilnehmenden finden und starten Befehle mit der Konsole, schreiben einen eigenen Befehl, speichern die Daten ihrer Erweiterung über eZPersistentObject in einer Tabelle schreiben das verbleibende SQL sicher mit eZDB und liefern eine Tabelle als Migration aus. 4 Stunden 20 Minuten.
+keywords: entwickler, modul 9, konsole, bin/php/console, ext:-befehle, eZScript, eZPersistentObject, persistente objekte, definition, fetchObjectList, eZDB, escapeString, transaktionen, migrationen, developers course, module 9, console, ext: commands, persistent objects, transactions, migrations, exp:migration:migrate
 type: help
 ---
 # Modul 9: Die Konsole und persistente Objekte
 
 Echte Erweiterungen führen Aufgaben auf der Kommandozeile aus und speichern eigene Daten. Dieses Modul vermittelt die
 Konsole, die jeden Befehl startet, einen eigenen Befehl der Teilnehmenden mit Optionen und Exit-Codes, eine Tabelle,
-die mit `eZPersistentObject` einer Klasse zugeordnet wird, und die Regeln für das SQL, das sich mit persistenten
-Objekten nicht ausdrücken lässt.
+die mit `eZPersistentObject` einer Klasse zugeordnet wird, die Regeln für das SQL, das sich mit persistenten
+Objekten nicht ausdrücken lässt, und eine Migration, die eine Tabelle auf jede Installation einer Site bringt.
 
 ## Auf einen Blick
 
 | | |
 |---|---|
 | Kurs | [Entwickler](../README.md) |
-| Dauer | 3 Stunden 20 Minuten (mit einer Pause von 10 Minuten) |
-| Lektionen | 4 |
+| Dauer | 4 Stunden 20 Minuten (mit zwei Pausen von 10 Minuten) |
+| Lektionen | 5 |
 | Niveau | Einsteiger bis Experten |
 
 ## Lektionen
@@ -31,6 +31,7 @@ Objekten nicht ausdrücken lässt.
 | [Lektion 9.2: Ein eigener Befehl](ein-eigener-befehl.md) | 50 Minuten | `ext:mysite_hello:latest` mit Optionen, Hilfe und Exit-Codes |
 | [Lektion 9.3: Persistente Objekte](persistente-objekte.md) | 60 Minuten | Eine Tabelle und die Klasse `mysiteGreeting`: speichern, holen, zählen, entfernen |
 | [Lektion 9.4: Sicheres SQL mit eZDB](sicheres-sql-mit-ezdb.md) | 45 Minuten | Ein Bericht, Escaping, eine Transaktion mit Rollback, SQL-Dialekte |
+| [Lektion 9.5: Migrationen](migrationen.md) | 50 Minuten | Eine Tabelle als Migration ausliefern: erzeugen, prüfen, Probelauf, simulieren, ausführen, zurücknehmen |
 
 ## Dieses Modul vorbereiten
 
@@ -50,7 +51,9 @@ Objekten nicht ausdrücken lässt.
 | Pause | 10 |
 | Lektion 9.3 | 60 |
 | Lektion 9.4 | 45 |
-| **Gesamt** | **200** |
+| Pause | 10 |
+| Lektion 9.5 | 50 |
+| **Gesamt** | **260** |
 
 ## Verwandte Seiten
 

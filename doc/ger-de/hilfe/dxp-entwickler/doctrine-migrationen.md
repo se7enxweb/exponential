@@ -74,6 +74,7 @@ den Cache ([Bereitstellen](dxp-bereitstellen.md)).
 - [Aktualisieren](dxp-aktualisieren.md)
 - [Bereitstellen](dxp-bereitstellen.md)
 - [Datenbanken](datenbanken-mysql-postgresql-sqlite.md)
+- [Migrationen in Exponential 6 (der Einstieg)](../migrationen/README.md), [Umstieg von Doctrine Migrations](../migrationen/rezepte/umstieg-von-doctrine-migrations.md), [Exponential-Migrationen für Doctrine-Nutzer](exponential-migrationen-fuer-doctrine-nutzer.md)
 - [Freie Dokumentation](../freie-dokumentation.md): Diese Seite darf unter der GNU FDL 1.3 frei kopiert, übersetzt und verbessert werden.
 
 <!-- exp-partner-block:start -->

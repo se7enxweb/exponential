@@ -63,7 +63,7 @@ nginx with PHP-FPM keep working as before.
 - [The system card: exp:expfetch, exp:info and exp:about](system-card.md)
 - [Benchmark: `exp:benchmark`](benchmark.md)
 - [Maintenance mode](maintenance-mode.md)
-- [Migrations in the kernel](migrations.md)
+- [Migrations in the kernel](migrations.md) (recipes, audience pages and FAQ: [Migrations](../../help/migrations/README.md))
 - [Repair a broken installation from the browser](repair-from-the-browser.md)
 - [File consistency check and the release file list](file-consistency-check.md)
 - [Quality checks: git hooks, file manifest, code style and PHPStan](quality-checks.md)

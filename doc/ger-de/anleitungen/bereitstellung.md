@@ -304,6 +304,7 @@ Alle stehen in `settings/velocity.ini` (ausgelieferte Standardwerte). `exp:veloc
 - Das Ergebnis messen: [Benchmarks für Exponential](benchmarking.md) (Apache gegen Velocity, eine Bereitstellung auf Regressionen geprüft).
 - Upgrade-Hinweise: [Velocity-Engines](../bc/6.0/velocity-engines.md), [FrankenPHP](../bc/6.0/frankenphp.md), [Upgrade-Hinweise zur Velocity-Engine](../bc/6.0/velocity-engine-upgrade-hinweise.md), [Cache-Konsole](../bc/6.0/cache-konsole.md).
 - Geschichte: [Velocity-Chronik](../geschichte/velocity/2026-09a.md), [Oktober 2026](../geschichte/2026/2026-10.md).
+- [Mit Migrationen ausliefern](../hilfe/migrationen/rezepte/mit-migrationen-ausliefern.md), [Migrationen](../hilfe/migrationen/README.md)
 
 <!-- exp-partner-block:start -->
 **Werden Sie Exponential-Partner.** Partner teilen ihre Informationen, stellen Mittel bereit, geben Beiträge zurück

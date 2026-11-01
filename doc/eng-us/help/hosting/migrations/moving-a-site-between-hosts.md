@@ -113,6 +113,7 @@ Source of the list: [10.9 Backups and restore](../../../install/10-after-install
 - [Restore from backup (runbook)](../runbooks/restore-from-backup.md)
 - [What to back up](../operations/backups-what-to-back-up.md)
 - [Go-live checklist for a customer site](../checklists/new-customer-site-go-live.md)
+- [Migrations versus migrating a site](../../migrations/migrations-versus-migrating-a-site.md)
 - [Free documentation](../../free-documentation.md): this page is free to copy, translate and improve under the GNU FDL 1.3.
 
 <!-- exp-partner-block:start -->

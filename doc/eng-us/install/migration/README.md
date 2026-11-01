@@ -17,6 +17,11 @@ Every guide has the same parts: what you can export, how it maps to Exponential'
 exist, where you need your own script, URLs and redirects, search engine metadata, testing, cut-over, rollback and a
 checklist.
 
+> **Looking for migrations of one site?** Schema and content changes written as files under version control and
+> applied to every installation with `./console exp:migration:migrate` are a different job:
+> [Migrations versus migrating a site](../../help/migrations/migrations-versus-migrating-a-site.md),
+> [Migrations](../../help/migrations/README.md).
+
 [Installation book contents](../README.md) · Start with: [The common migration checklist](checklist.md)
 
 ## Contents
