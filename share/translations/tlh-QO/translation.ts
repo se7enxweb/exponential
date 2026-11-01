@@ -15092,6 +15092,14 @@ yIqaw: &apos;aplo&apos;mey jomHa&apos;lu&apos;be&apos;.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>jomghach choHmey teywaymey bomlu&apos;: Dotlhchaj, QapmoHghachmey, QapmoH cheghmoH je.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>chu&apos; De&apos;</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>chu&apos;qu&apos; De&apos;, nuDmeH &apos;ollu&apos;ta&apos;bogh, wIvlu&apos;ta&apos;bogh vangmey je.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80586,6 +80594,670 @@ Sor Daq buv DachoHnIS; tammeH vangghach yIlo&apos;.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>QapmoHghach taghlaHbe&apos;lu&apos;.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>choHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>chenmoHlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>pong</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>buv</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>&apos;ay&apos;</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>chenmoHwI&apos;</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>chu&apos; De&apos;</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Hoch Daq chu&apos;qu&apos; De&apos; chenmoHlu&apos;ta&apos;bogh choHlu&apos;ta&apos;bogh je, chu&apos;qu&apos; wa&apos;DIch: vISwI&apos;pu&apos; ngeHta&apos;bogh, nuDmeH &apos;ollu&apos;ta&apos;bogh, nab &apos;anglu&apos;meH loSbogh. Dochmey yIwIv; tlhabmoHmeH, &apos;olmeH, So&apos;meH, &apos;aghmeH, teqmeH, pagh latlh &apos;ay&apos; Dotlh ghap Daq lalmeH.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>tetlh laDlaHlu&apos;be&apos;: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>nuDmeH &apos;ol SeHlu&apos;pa&apos;, vaj pagh &apos;ollu&apos;be&apos; &apos;ej &apos;ol vangmey qellu&apos;be&apos;. 6.0.15-review-hold Dub mIw SeHlaw: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>tetlh yIghIm</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>vo&apos;</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Daq</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>jaj</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>chenmoHlu&apos;ta&apos; (wa&apos;DIch &apos;anglu&apos;)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Hoch</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>&apos;anglu&apos;meH Dotlh</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>&apos;anglu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>nab, not &apos;anglu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>loS (chaw&apos; pagh jaj loS)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>veQDaq</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>nuDmeH &apos;ollu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>&apos;ollu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>&apos;ollu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>So&apos;lu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>leghlaHlu&apos;</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ngeHlu&apos;pu&apos;bogh jaj</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>vay&apos; siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>audit qonta&apos;bogh neH.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>DaH: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>&apos;el pong pagh lo&apos;wI&apos; ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>yIghIm</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ghImmey yIteq</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Dochmey</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count vo&apos; %from vo&apos; %to Daq</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Doch pagh</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms laDlu&apos;ta&apos;)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Dochmey wIvlu&apos;ta&apos;bogh vangmey</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>nav&apos;e&apos; Hoch yIwIv</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count wIvlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>vang</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>vang yIwIv</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>&apos;ol yItlhabmoH</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>nuDmeH yI&apos;ol</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>yISo&apos;</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>yI&apos;agh</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>veQDaq yIlal</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>yIQaw&apos;</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>&apos;ay&apos; yInob</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Dotlh yInob</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>meq</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>&apos;olmeH poQlu&apos;; &apos;ol audit je Daq polta&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>&apos;ay&apos; yIwIv</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Dotlh</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Dotlh yIwIv</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>wIvlu&apos;ta&apos;bogh yIlo&apos;</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Doch Hoch DuHmeylIj DaH nuDlu&apos;. veQDaq lalpa&apos; Qawpa&apos; je yItob. %count Dochmey law&apos; Dochmey &apos;emDaq vanglu&apos;.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>yIwIv</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>&apos;anglu&apos;meH</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>vo&apos; ngeHlu&apos;</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name yIwIv</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>not wej</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(pong pagh)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>nab</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>loS</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>vav So&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>&apos;ollu&apos;ta&apos;: chu&apos; ngeH</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version mI&apos; loS</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version mI&apos; vanglu&apos;taH</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>nab, %version mI&apos;</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version mI&apos; &apos;anglu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date vaD nablu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>Daq pagh</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>qonlu&apos;be&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ghImmeyvetlh rapbe&apos; pagh.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hoch yI&apos;agh</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>wej De&apos; tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>nav Hoch</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>nav Hoch %count Dochmey yI&apos;agh.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>ngeH Daq De&apos;wI&apos; juH je audit tetlh vo&apos; Hut, naDev lo&apos;laHbe&apos;lu&apos;: tlhegh jatlh &quot;qonlu&apos;be&apos;&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Doch vaD audit qonta&apos;bogh Daq De&apos;wI&apos; juH je (nIteb &apos;ol reH qon; &apos;anglu&apos;meH chenmoHmeH je chu&apos;lu&apos;DI&apos; neH), pegh SeHlaw polmeH.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count Dochmey</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Qawlu&apos;DI&apos; reH Dochmey teqlu&apos;, mI&apos;mey mughmey je Hoch. DoHmoHlaHbe&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>veQDaq Dochmey jaH, pa&apos; vo&apos; chenqa&apos;laHlu&apos;.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Doch Hoch DuHmeylIj DaH nuDlu&apos;; Doch mach Dochmey ghajbogh choHlu&apos;be&apos; (De&apos; tlhIn Daq yIteq). SoH SoH&apos;a&apos; tobnIS.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>&apos;emDaq vanglu&apos;: ghoS nav poSmoHlu&apos;, &apos;ej rInDI&apos; Doch Hoch vaD ghotlh &apos;aghlu&apos;.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Dochmey wIvlu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>&apos;ej %count latlh</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>yIqIl</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>pagh vanglu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>meq: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>&apos;emDaq vanglu&apos;taH vang.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ghoSDI&apos;</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>&apos;emDaq vang Qapbe&apos;: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>rIn</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>lajQo&apos;lu&apos;</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Doch Hoch</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Doch</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ghotlh</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>qatlh</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>tetlhDaq yIchegh</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>SeHlaw</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>pagh vanglu&apos;</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>yItob</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>vang yIwIv.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>wa&apos; Doch yIwIv, puS.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>wa&apos;logh 1000 Dochmey yIwIv, law&apos;.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>qatlh Dochmey &apos;ollu&apos; yIja&apos;.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>&apos;ay&apos; yIwIv.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Dotlh yIwIv.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>mu&apos;tlheghmey laDlaHlu&apos;be&apos;.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>chu&apos; De&apos;</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>mI&apos;mey laDlaHlu&apos;be&apos;: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>nuDmeH &apos;ollu&apos;ta&apos;</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>DaHjaj chu&apos;</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>nuDmeH &apos;ol SeHlu&apos;pa&apos; (6.0.15-review-hold Dub mIw).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>chu&apos; De&apos; Hoch</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>nuDmeH vangmey DalI&apos;laHbe&apos; (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>nuDmeH vang naQbe&apos;: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>nuDmeH: %count Doch Daq %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total Doch %done: %ok rIn, %refused lajQo&apos;lu&apos;, %failed Qapbe&apos;</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok rIn, %refused lajQo&apos;lu&apos;, %failed Qapbe&apos;</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>not tu&apos;lu&apos;.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Daq ghajbe&apos; (&apos;anglu&apos;be&apos;).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>DaSo&apos;laHbe&apos; (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Da&apos;aghlaHbe&apos; (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>So&apos;lu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>So&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>So&apos;lu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>&apos;aghlu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>veQDaq ghaH: pa&apos; yIchImmoH pagh yIchenqa&apos;moH.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>nab &apos;anglu&apos;be&apos;bogh veQDaq jaHlaHbe&apos;: yIQaw&apos;.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>DaQaw&apos;laHbe&apos; (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Qaw&apos;lu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>DateqlaHbe&apos; (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>mach Dochmey ghaj: De&apos; tlhIn Daq yIteq, pa&apos; tetlhlu&apos;.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>teqlu&apos;be&apos; (teq &apos;ol ghun mIw).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>veQDaq lallu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>&apos;ay&apos; tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>&apos;ay&apos;vam Daq ghaHtaH.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>&apos;ay&apos;vam DanoblaHbe&apos; (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>&apos;ay&apos; noblu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>&apos;ay&apos; noblu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Dotlh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Dotlhvam Daq ghaHtaH.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Dotlhvam DanoblaHbe&apos; (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Dotlh noblu&apos;be&apos; (choH &apos;ol ghun mIw).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Dotlh noblu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>vangvetlh tu&apos;lu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>nuDmeH &apos;ol SeHlu&apos;be&apos; (6.0.15-review-hold Dub mIw).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>qatlh &apos;ollu&apos; yIja&apos;.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>&apos;ollu&apos;pu&apos;.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Da&apos;ollaHbe&apos; (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>&apos;ol cherlu&apos;be&apos; (choH &apos;ol ghun mIw).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>&apos;ollu&apos;ta&apos;.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>&apos;ollu&apos;be&apos;.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>DatlhabmoHlaHbe&apos; (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>&apos;ol tlhabmoHlu&apos;be&apos; (choH &apos;ol ghun mIw).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>tlhabmoHlu&apos;ta&apos;; So&apos;lu&apos;taH: Da&apos;aghlaHbe&apos; (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>tlhabmoHlu&apos;ta&apos;.</translation>
     </message>
 </context>
 </TS>

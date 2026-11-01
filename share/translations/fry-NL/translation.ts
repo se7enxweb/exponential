@@ -15150,6 +15150,14 @@ Let op: de pakketten wurde net de-ynstallearre.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Wizigingen oan de ynstallaasje bewarre as triemmen: harren steat, de útfieringen, útfiere en weromdraaie.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Resinte ynhâld</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>De nijste ynhâld, wat foar kontrôle tsjinhâlden wurdt, en aksjes op in seleksje.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>De útfiering koe net begjinne.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Wizige</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Makke</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Namme</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasse</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksje</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Makker</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Resinte ynhâld</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>De meast resint makke en wizige ynhâld fan de hiele side, nijste earst: wat besikers ynstjoerd hawwe, wat foar kontrôle tsjinhâlden wurdt, konsepten dy't op harren publikaasje wachtsje. Selektearje ûnderdielen om se frij te jaan, tsjin te hâlden, te ferbergjen, te toanen, fuort te heljen of nei in oare seksje of steat te ferpleatsen.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>De list koe net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>It tsjinhâlden foar kontrôle is noch net ynrjochte, dus wurdt neat tsjinhâlden en wurde de aksjes om tsjin te hâlden net oanbean. De opwurdearringsstap 6.0.15-review-hold rjochtet it yn: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>De list filterje</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Fan</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Oant</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Makke (earst publisearre)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Publikaasjestatus</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publisearre</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Konsept, nea publisearre</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Yn ôfwachting (wachtet op goedkarring of in datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Yn it jiskefet</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Foar kontrôle tsjinhâlden</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Tsjinhâlden</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Net tsjinhâlden</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Ferburgen</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtber</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Ynstjoerd fia</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Elke websidetagong</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Allinnich wat de kontrôle fêstlein hat.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>No: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>In oanmeldnamme of in brûkers-ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filterje</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Filters wiskje</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ûnderdielen</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from oant %to fan %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Gjin ûnderdiel</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(lêzen yn %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Aksjes op de selektearre ûnderdielen</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Alles op dizze side selektearje</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count selektearre</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksje</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Kies in aksje</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Tsjinhâlden opheffe</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Foar kontrôle tsjinhâlde</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Ferbergje</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Toane</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Ferpleatse nei it jiskefet</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Fuortsmite</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Seksje tawize</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Steat tawize</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Reden</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Nedich om tsjin te hâlden; wurdt by it tsjinhâlden en yn de kontrôle bewarre.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Kies in seksje</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Steat</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Kies in steat</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Op de seleksje tapasse</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Elk ûnderdiel wurdt kontrolearre oan de hân fan jo eigen rjochten. Ferpleatsen nei it jiskefet en fuortsmiten freegje om befêstiging. Mear as %count ûnderdielen wurde op de eftergrûn útfierd.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Selektearje</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikaasje</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Ynstjoerd fan</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name selektearje</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>noch net</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(gjin namme)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Konsept</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yn ôfwachting</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ferburgen troch it boppelizzende ûnderdiel</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Tsjinhâlden: nije ynstjoering</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Ferzje %version yn ôfwachting</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Ferzje %version yn bewurking</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Konsept, ferzje %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Ferzje %version publisearre</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Pland foar %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>gjin adres</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>net fêstlein</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Neat foldocht oan dizze filters.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Alles toane</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Der is noch gjin ynhâld.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Per side</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>%count ûnderdielen per side toane.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>It adres en de browser fan in ynstjoering komme út de kontrôleyndeks, dy't hjir net beskikber is: de kolom toant "net fêstlein".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>It adres en de browser binne dy't de kontrôle foar it ûnderdiel fêstlein hat (it automatysk tsjinhâlden leit se altyd fêst; publisearjen en meitsjen allinnich wêr't dat ynskeakele is), sa as de privacyynstellings se bewarje.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count ûnderdielen</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Fuortsmiten hellet de ûnderdielen foargoed fuort, mei al harren ferzjes en oersettingen. Dit kin net ûngedien makke wurde.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>De ûnderdielen geane nei it jiskefet, wêrút't se weromset wurde kinne.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Elk ûnderdiel wurdt kontrolearre oan de hân fan jo eigen rjochten; in ûnderdiel mei ûnderlizzende ûnderdielen bliuwt sa't it is (helje it fuort yn de ynhâldsstruktuer). Jo wurde frege om te befêstigjen dat jo it binne.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Dit rint op de eftergrûn: de fuortgongsside iepenet, en it resultaat per ûnderdiel wurdt toand as it klear is.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>De selektearre ûnderdielen</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>en noch %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annulearje</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Der is neat dien</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Reden: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>De aksje rint noch op de eftergrûn.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>De fuortgong</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>De eftergrûnaksje is mislearre: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Dien</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Wegere</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislearre</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Per ûnderdiel</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ûnderdiel</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Wêrom</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Werom nei de list</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ynstelle</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Neat dien</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Befêstigje</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Kies in aksje.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Selektearje op syn minst ien ûnderdiel.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Selektearje op syn heechst 1000 ûnderdielen tagelyk.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sis wêrom't de ûnderdielen tsjinhâlden wurde.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Kies de seksje.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Kies de steat.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>It formulier koe net lêzen wurde.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Resinte ynhâld</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>De oantallen koene net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Foar kontrôle tsjinhâlden</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Nij hjoed</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>It tsjinhâlden foar kontrôle is noch net ynrjochte (de opwurdearringsstap 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Alle resinte ynhâld</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Jo meie gjin moderaasjeaksjes útfiere (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>De moderaasjeaksje is net folslein: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderaasje: %action op %count objekten</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done fan %total objekten: %ok dien, %refused wegere, %failed mislearre</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok dien, %refused wegere, %failed mislearre</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>It bestiet net mear.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>It hat gjin lokaasje (net publisearre).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Jo meie it net ferbergje (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Jo meie it net toane (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>It is al ferburgen.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>It is net ferburgen.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Ferburgen.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Toand.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>It sit yn it jiskefet: leegje it of set it dêr werom.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>In konsept dat nea publisearre is, kin net nei it jiskefet: smyt it fuort.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Jo meie it net fuortsmite (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Fuortsmiten.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Jo meie it net fuortheljen (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>It hat ûnderlizzende ûnderdielen: helje it fuort yn de ynhâldsstruktuer, wêr't dy opnoege wurde.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>It is net fuorthelle (miskien hâldt in wurkstream it fuortheljen tsjin).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Ferpleatst nei it jiskefet.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>De seksje bestiet net.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>It sit al yn dizze seksje.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Jo meie dizze seksje net tawize (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>De seksje is net tawiisd.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Seksje tawiisd.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>De steat bestiet net.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>It hat dizze steat al.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Jo meie dizze steat net tawize (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>De steat is net tawiisd (miskien hâldt in wurkstream de wiziging tsjin).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Steat tawiisd.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Sa'n aksje bestiet net.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>It tsjinhâlden foar kontrôle is net ynrjochte (de opwurdearringsstap 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sis wêrom't it tsjinhâlden wurdt.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>It wurdt al tsjinhâlden.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Jo meie it net tsjinhâlde (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>It tsjinhâlden is net ynsteld (miskien hâldt in wurkstream de wiziging tsjin).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Tsjinhâlden.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>It wurdt net tsjinhâlden.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Jo meie it net frijjaan (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>It tsjinhâlden is net opheft (miskien hâldt in wurkstream de wiziging tsjin).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Frijjûn; noch altyd ferburgen: jo meie it net toane (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Frijjûn.</translation>
     </message>
 </context>
 </TS>

@@ -15089,6 +15089,14 @@ Napomena: paketi neće biti deinstalirani.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Izmene instalacije čuvane kao datoteke: njihovo stanje, pokretanja, izvršavanje i vraćanje.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnoviji sadržaj, ono što je zadržano radi pregleda, i radnje nad izborom.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80583,6 +80591,670 @@ Moraćete da promenite klasu čvora korišćenjem funkcije zamene.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Pokretanje nije moglo da se započne.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Izmenjeno</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Napravljeno</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naziv</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcija</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Tvorac</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Najnovije napravljeni i izmenjeni sadržaj celog sajta, od najnovijeg: šta su poslali posetioci, šta je zadržano radi pregleda, skice koje čekaju objavljivanje. Izaberite stavke da biste ih oslobodili, zadržali, sakrili, otkrili, uklonili ili premestili u drugu sekciju ili stanje.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Listu nije moguće pročitati: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Zadržavanje radi pregleda još nije podešeno, pa ništa nije zadržano i radnje zadržavanja nisu ponuđene. Podešava ga korak nadogradnje 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtriraj listu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Napravljeno (prvo objavljivanje)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Sve</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status objave</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Objavljeno</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Skica, nikad objavljena</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Na čekanju (čeka odobrenje ili datum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>U korpi za otpatke</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zadržano radi pregleda</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Zadržano</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nije zadržano</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Sakriveno</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidljivo</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Poslato</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Bilo koji pristup sajtu</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Samo ono što je revizija zabeležila.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Sada: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Korisničko ime ili ID korisnika.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtriraj</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Očisti filtere</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Stavke</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from do %to od %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nema stavki</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(pročitano za %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Radnje nad izabranim stavkama</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Izaberi sve na ovoj stranici</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Izabrano: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Radnja</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Izaberite radnju</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Oslobodi zadržavanje</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Zadrži radi pregleda</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Sakrij</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Otkrij</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Premesti u korpu za otpatke</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Obriši</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Dodeli sekciju</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Dodeli stanje</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Razlog</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Potreban za zadržavanje; čuva se uz zadržavanje i u reviziji.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Izaberite sekciju</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stanje</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Izaberite stanje</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Primeni na izabrano</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Svaka stavka se proverava prema vašim sopstvenim dozvolama. Premeštanje u korpu za otpatke i brisanje traže potvrdu. Više od %count stavki izvršava se u pozadini.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Izaberi</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Objavljivanje</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Poslato sa</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Izaberi %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>još ne</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bez naziva)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Skica</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Na čekanju</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Sakriveno od strane nadređenog</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Zadržano: nova prijava</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Verzija %version na čekanju</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Verzija %version u izradi</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Skica, verzija %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Verzija %version objavljena</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Zakazano za %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nema adrese</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nije zabeleženo</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ništa ne odgovara ovim filterima.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Prikaži sve</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Još nema sadržaja.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Po stranici</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Prikaži %count stavki po stranici.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adresa i pregledač prijave potiču iz indeksa revizije, koji ovde nije dostupan: u koloni piše „nije zabeleženo”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adresa i pregledač su oni koje je revizija zabeležila za stavku (automatsko zadržavanje ih uvek beleži; objavljivanje i pravljenje samo tamo gde je uključeno), onako kako ih čuvaju njena podešavanja privatnosti.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count stavki</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Brisanje trajno uklanja stavke, sa svim njihovim verzijama i prevodima. To se ne može poništiti.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Stavke idu u korpu za otpatke, odakle se mogu vratiti.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Svaka stavka se proverava prema vašim sopstvenim dozvolama; stavka sa podstavkama ostaje kakva jeste (uklonite je u strukturi sadržaja). Bićete zamoljeni da potvrdite da ste to vi.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ovo se izvršava u pozadini: otvara se stranica napretka, a rezultat za svaku stavku prikazuje se kada završi.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Izabrane stavke</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>i još %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Odustani</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ništa nije urađeno</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Razlog: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Radnja se još izvršava u pozadini.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Njen napredak</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Radnja u pozadini nije uspela: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Završeno</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odbijeno</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neuspešno</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Po stavci</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Stavka</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultat</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Zašto</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Nazad na listu</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Podešavanje</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ništa urađeno</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Potvrdi</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Izaberite radnju.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Izaberite bar jednu stavku.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Izaberite najviše 1000 stavki odjednom.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Navedite zašto su stavke zadržane.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Izaberite sekciju.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Izaberite stanje.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Obrazac nije moguće pročitati.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Novi sadržaj</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Brojeve nije moguće pročitati: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zadržano radi pregleda</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Novo danas</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadržavanje radi pregleda još nije podešeno (korak nadogradnje 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Sav novi sadržaj</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Ne smete izvršavati radnje moderiranja (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Radnja moderiranja nije završena: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderiranje: %action na %count objekata</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done od %total objekata: %ok uspešno, %refused odbijeno, %failed neuspešno</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok uspešno, %refused odbijeno, %failed neuspešno</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Više ne postoji.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nema lokaciju (nije objavljeno).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Ne smete ga sakriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Ne smete ga otkriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Već je sakriveno.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nije sakriveno.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Sakriveno.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Otkriveno.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>U korpi za otpatke je: tamo ispraznite korpu ili ga vratite.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Skica koja nikad nije objavljena ne može u korpu za otpatke: obrišite je.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Ne smete ga obrisati (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Obrisano.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Ne smete ga ukloniti (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ima podstavke: uklonite ga u strukturi sadržaja, gde su navedene.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nije uklonjeno (radni tok možda zadržava uklanjanje).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Premešteno u korpu za otpatke.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sekcija ne postoji.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Već je u ovoj sekciji.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Ne smete dodeliti ovu sekciju (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sekcija nije dodeljena.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sekcija dodeljena.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Stanje ne postoji.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Već je u ovom stanju.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Ne smete dodeliti ovo stanje (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Stanje nije dodeljeno (radni tok možda zadržava promenu).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stanje dodeljeno.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Takva radnja ne postoji.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadržavanje radi pregleda nije podešeno (korak nadogradnje 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Navedite zašto je zadržano.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Već je zadržano.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Ne smete ga zadržati (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Zadržavanje nije postavljeno (radni tok možda zadržava promenu).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Zadržano.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nije zadržano.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Ne smete ga osloboditi (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Zadržavanje nije oslobođeno (radni tok možda zadržava promenu).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Oslobođeno; i dalje sakriveno: ne smete ga otkriti (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Oslobođeno.</translation>
     </message>
 </context>
 </TS>

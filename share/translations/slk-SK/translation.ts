@@ -15089,6 +15089,14 @@ Poznámka: Balíky sa neodinštalujú.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Zmeny inštalácie uložené ako súbory: ich stav, behy, spustenie a vrátenie.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nový obsah</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Najnovší obsah, čo je zadržané na kontrolu, a akcie s výberom.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80583,6 +80591,670 @@ Triedu uzla budete musieť zmeniť pomocou funkcie výmeny.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Beh sa nepodarilo spustiť.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Zmenené</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Vytvorené</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Názov</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Trieda</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sekcia</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Autor</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Nový obsah</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Naposledy vytvorený a zmenený obsah celej lokality, od najnovšieho: čo odoslali návštevníci, čo je zadržané na kontrolu, koncepty čakajúce na publikovanie. Vyberte položky, ak ich chcete uvoľniť, zadržať, skryť, zobraziť, odstrániť alebo presunúť do inej sekcie či stavu.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Zoznam sa nepodarilo načítať: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Zadržanie na kontrolu ešte nie je nastavené, takže nič nie je zadržané a akcie zadržania sa neponúkajú. Nastaví ho krok aktualizácie 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrovať zoznam</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Od</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Do</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Dátum</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Vytvorené (prvé publikovanie)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Všetko</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Stav publikovania</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publikované</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Koncept, nikdy nepublikovaný</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Čaká na vybavenie (čaká na schválenie alebo na dátum)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>V koši</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zadržané na kontrolu</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Zadržané</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nezadržané</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Skryté</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Viditeľné</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Odoslané dňa</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Akýkoľvek prístup k lokalite</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Iba to, čo zaznamenal audit.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Teraz: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Prihlasovacie meno alebo ID používateľa.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrovať</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Vymazať filtre</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Položky</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from až %to z %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Žiadna položka</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(načítané za %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Akcie s vybranými položkami</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Vybrať všetko na tejto stránke</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Vybrané: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Akcia</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Zvoľte akciu</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Uvoľniť zadržanie</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Zadržať na kontrolu</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Skryť</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Zobraziť</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Premiestniť do koša</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Odstrániť</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Priradiť sekciu</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Priradiť stav</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Dôvod</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Potrebný na zadržanie; uchová sa so zadržaním a v audite.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Zvoľte sekciu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stav</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Zvoľte stav</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Použiť na vybrané</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Každá položka sa overí podľa vašich vlastných oprávnení. Premiestnenie do koša a odstránenie vyžadujú potvrdenie. Viac ako %count položiek sa spracuje na pozadí.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Vybrať</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publikovanie</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Odoslané z</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Vybrať %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>zatiaľ nie</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bez názvu)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Koncept</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Čaká na vybavenie</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Skryté nadradenou položkou</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Zadržané: nové odoslanie</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Verzia %version čaká</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Verzia %version sa upravuje</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Koncept, verzia %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Verzia %version publikovaná</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Naplánované na %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>bez adresy</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nezaznamenané</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Týmto filtrom nič nezodpovedá.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Zobraziť všetko</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Zatiaľ tu nie je žiadny obsah.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Na stránku</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Zobraziť %count položiek na stránku.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adresa a prehliadač odoslania pochádzajú z indexu auditu, ktorý tu nie je k dispozícii: stĺpec uvádza „nezaznamenané“.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adresa a prehliadač sú tie, ktoré audit pri položke zaznamenal (automatické zadržanie ich zaznamenáva vždy; publikovanie a vytváranie iba tam, kde je to zapnuté), v rozsahu, v akom ich uchovávajú jeho nastavenia ochrany súkromia.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count položiek</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Odstránenie vymaže položky natrvalo, so všetkými ich verziami a prekladmi. Nedá sa to vrátiť späť.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Položky sa presunú do koša, odkiaľ ich možno obnoviť.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Každá položka sa overí podľa vašich vlastných oprávnení; položka s podriadenými položkami zostane bez zmeny (odstráňte ju v štruktúre obsahu). Budete požiadaní o overenie, že ste to vy.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Toto beží na pozadí: otvorí sa stránka s priebehom a výsledok pre každú položku sa zobrazí po dokončení.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Vybrané položky</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>a %count ďalších</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Zrušiť</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nič sa nevykonalo</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Dôvod: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Akcia stále beží na pozadí.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Jej priebeh</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Akcia na pozadí zlyhala: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Hotovo</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Odmietnuté</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Zlyhané</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Podľa položiek</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Položka</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Výsledok</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Prečo</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Späť na zoznam</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nastavenie</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nič nevykonané</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Potvrdiť</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Zvoľte akciu.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Vyberte aspoň jednu položku.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Vyberte naraz najviac 1000 položiek.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Uveďte, prečo sú položky zadržané.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Zvoľte sekciu.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Zvoľte stav.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formulár sa nepodarilo načítať.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Nový obsah</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Počty sa nepodarilo načítať: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Zadržané na kontrolu</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Dnes nové</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadržanie na kontrolu ešte nie je nastavené (krok aktualizácie 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Všetok nový obsah</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Nemáte oprávnenie spúšťať akcie moderovania (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Akcia moderovania nie je dokončená: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderovanie: %action pri %count objektoch</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done z %total objektov: %ok vykonané, %refused odmietnuté, %failed zlyhané</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok vykonané, %refused odmietnuté, %failed zlyhané</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Už neexistuje.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Nemá žiadne umiestnenie (nie je publikované).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Nemáte oprávnenie to skryť (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Nemáte oprávnenie to zobraziť (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Už je skryté.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Nie je skryté.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Skryté.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Zobrazené.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Je v koši: vyprázdnite kôš alebo to tam obnovte.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Koncept, ktorý nebol nikdy publikovaný, nemôže ísť do koša: odstráňte ho.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Nemáte oprávnenie to odstrániť (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Odstránené.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Nemáte oprávnenie to premiestniť do koša (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Má podriadené položky: odstráňte to v štruktúre obsahu, kde sú uvedené.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Nebolo odstránené (odstránenie môže zadržiavať pracovný postup).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Premiestnené do koša.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sekcia neexistuje.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Už je v tejto sekcii.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Nemáte oprávnenie priradiť túto sekciu (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sekcia nebola priradená.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sekcia priradená.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Stav neexistuje.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Už je v tomto stave.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Nemáte oprávnenie priradiť tento stav (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Stav nebol priradený (zmenu môže zadržiavať pracovný postup).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stav priradený.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Taká akcia neexistuje.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Zadržanie na kontrolu nie je nastavené (krok aktualizácie 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Uveďte, prečo je zadržané.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Už je zadržané.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Nemáte oprávnenie to zadržať (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Zadržanie nebolo nastavené (zmenu môže zadržiavať pracovný postup).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Zadržané.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Nie je zadržané.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Nemáte oprávnenie to uvoľniť (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Zadržanie nebolo uvoľnené (zmenu môže zadržiavať pracovný postup).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Uvoľnené; stále skryté: nemáte oprávnenie to zobraziť (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Uvoľnené.</translation>
     </message>
 </context>
 </TS>

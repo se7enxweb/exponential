@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Տեղադրման փոփոխություններ՝ պահված որպես ֆայլեր. դրանց վիճակը, գործարկումները, գործարկել և հետ վերադարձնել։</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Նոր բովանդակություն</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Նորագույն բովանդակությունը, այն, ինչ պահվում է ստուգման համար, և գործողություններ ընտրվածի հետ։</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Չհաջողվեց սկսել գործարկումը։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Փոփոխված</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ստեղծված</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Անուն</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Դաս</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Բաժին</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Ստեղծող</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Նոր բովանդակություն</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ամբողջ կայքի ամենավերջին ստեղծված և փոփոխված բովանդակությունը, նորագույնը՝ առաջինը. այն, ինչ ուղարկել են այցելուները, այն, ինչ պահվում է ստուգման համար, սևագրեր, որոնք սպասում են իրենց հրապարակմանը։ Ընտրեք տարրերը՝ դրանք ազատելու, պահելու, թաքցնելու, ցուցադրելու, հեռացնելու կամ այլ բաժին կամ վիճակ տեղափոխելու համար։</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Ցանկը հնարավոր չեղավ կարդալ. %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Ստուգման պահումը դեռ կարգաբերված չէ, ուստի ոչինչ չի պահվում, և պահման գործողություններ չեն առաջարկվում։ Այն կարգաբերում է 6.0.15-review-hold թարմացման քայլը. ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Զտել ցանկը</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Սկսած</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Մինչև</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ամսաթիվ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Ստեղծված (առաջին հրապարակում)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Բոլորը</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Հրապարակման կարգավիճակ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Հրապարակված</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Սևագիր, երբեք չհրապարակված</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Սպասման մեջ (սպասում է հաստատման կամ ամսաթվի)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Աղբարկղում</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Պահված ստուգման համար</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Պահված</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Չպահված</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Թաքնված</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Տեսանելի</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Ուղարկման մուտքի կետ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Կայքի ցանկացած մուտքի կետ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Միայն այն, ինչ գրանցել է աուդիտը։</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Հիմա՝ %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Մուտքանուն կամ օգտատիրոջ նույնացուցիչ։</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Զտել</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Մաքրել զտիչները</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Տարրեր</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to՝ %count-ից</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Տարր չկա</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(կարդացվել է %ms մվ-ում)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Գործողություններ ընտրված տարրերի հետ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Ընտրել այս էջի բոլորը</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Ընտրված է՝ %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Գործողություն</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Ընտրեք գործողություն</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Ազատել պահումից</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Պահել ստուգման համար</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Թաքցնել</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Ցուցադրել</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Տեղափոխել աղբարկղ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Ջնջել</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Նշանակել բաժին</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Նշանակել վիճակ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Պատճառ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Անհրաժեշտ է պահելու համար. պահվում է պահման հետ և աուդիտում։</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Ընտրեք բաժին</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Վիճակ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Ընտրեք վիճակ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Կիրառել ընտրվածներին</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Յուրաքանչյուր տարր ստուգվում է ձեր սեփական թույլտվություններով։ Աղբարկղ տեղափոխելը և ջնջելը պահանջում են հաստատում։ %count-ից ավելի տարրերը կատարվում են ֆոնային ռեժիմում։</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Ընտրել</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Հրապարակում</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Որտեղից է ուղարկվել</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Ընտրել %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>դեռ ոչ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(անանուն)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Նույնացուցիչ %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Սևագիր</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Սպասման մեջ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Թաքցված է ծնողի կողմից</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Պահված. նոր ուղարկում</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>%version տարբերակը սպասման մեջ է</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>%version տարբերակը մշակման մեջ է</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Սևագիր, %version տարբերակ</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>%version տարբերակը հրապարակված է</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Պլանավորված է %date-ի համար</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>հասցե չկա</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>չի գրանցվել</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Այս զտիչներին ոչինչ չի համապատասխանում։</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ցուցադրել բոլորը</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Բովանդակություն դեռ չկա։</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Մեկ էջում</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Ցուցադրել %count տարր մեկ էջում։</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ուղարկման հասցեն և դիտարկիչը գալիս են աուդիտի ինդեքսից, որն այստեղ հասանելի չէ. սյունակում գրված է «չի գրանցվել»։</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Հասցեն և դիտարկիչը այն են, ինչ աուդիտը գրանցել է տարրի համար (ավտոմատ պահումը դրանք միշտ գրանցում է, հրապարակումն ու ստեղծումը՝ միայն որտեղ միացված է), այնպես, ինչպես պահում են գաղտնիության կարգավորումները։</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action. %count տարր</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ջնջումը տարրերը վերջնականապես հեռացնում է՝ իրենց բոլոր տարբերակներով և թարգմանություններով։ Այն հնարավոր չէ հետարկել։</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Տարրերը տեղափոխվում են աղբարկղ, որտեղից կարող են վերականգնվել։</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Յուրաքանչյուր տարր ստուգվում է ձեր սեփական թույլտվություններով. ենթատարրեր ունեցող տարրը մնում է ինչպես կա (հեռացրեք այն բովանդակության կառուցվածքում)։ Ձեզ կխնդրեն հաստատել, որ դա դուք եք։</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Սա կատարվում է ֆոնային ռեժիմում. բացվում է դրա ընթացքի էջը, և ավարտից հետո ցուցադրվում է արդյունքը ըստ տարրի։</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ընտրված տարրերը</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>և ևս %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Չեղարկել</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Ոչինչ չի արվել</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Պատճառ՝ %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Գործողությունը դեռ կատարվում է ֆոնային ռեժիմում։</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Դրա ընթացքը</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Ֆոնային գործողությունը ձախողվեց. %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ավարտված է</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Մերժված</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ձախողված</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Ըստ տարրի</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Տարր</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Արդյունք</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Ինչու</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Վերադառնալ ցանկին</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Կարգաբերում</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ոչինչ չի արվել</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Հաստատել</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Ընտրեք գործողություն։</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Ընտրեք առնվազն մեկ տարր։</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Միանգամից ընտրեք առավելագույնը 1000 տարր։</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Նշեք, թե ինչու են տարրերը պահվում։</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Ընտրեք բաժինը։</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Ընտրեք վիճակը։</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ձևը հնարավոր չեղավ կարդալ։</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Նոր բովանդակություն</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Քանակները հնարավոր չեղավ կարդալ. %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Պահված ստուգման համար</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Նոր այսօր</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ստուգման պահումը դեռ կարգաբերված չէ (6.0.15-review-hold թարմացման քայլը)։</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ամբողջ նոր բովանդակությունը</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Դուք չեք կարող կատարել մոդերացիայի գործողություններ (moderation/act)։</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Մոդերացիայի գործողությունն ավարտված չէ. %errors։</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Մոդերացիա. %action %count օբյեկտի վրա</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done՝ %total օբյեկտից. %ok ավարտված, %refused մերժված, %failed ձախողված</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ավարտված, %refused մերժված, %failed ձախողված</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Այն այլևս գոյություն չունի։</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Այն տեղադրություն չունի (հրապարակված չէ)։</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Դուք չեք կարող այն թաքցնել (content/hide)։</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Դուք չեք կարող այն ցուցադրել (content/hide)։</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Այն արդեն թաքնված է։</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Այն թաքնված չէ։</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Թաքցված է։</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Ցուցադրված է։</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Այն աղբարկղում է. այնտեղ դատարկեք կամ վերականգնեք այն։</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Երբեք չհրապարակված սևագիրը չի կարող տեղափոխվել աղբարկղ. ջնջեք այն։</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Դուք չեք կարող այն ջնջել (content/remove)։</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Ջնջված է։</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Դուք չեք կարող այն հեռացնել (content/remove)։</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Այն ունի ենթատարրեր. հեռացրեք այն բովանդակության կառուցվածքում, որտեղ դրանք նշված են։</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Այն չհեռացվեց (աշխատահոսքը կարող է պահել հեռացումը)։</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Տեղափոխված է աղբարկղ։</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Բաժինը գոյություն չունի։</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Այն արդեն այս բաժնում է։</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Դուք չեք կարող նշանակել այս բաժինը (section/assign)։</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Բաժինը չնշանակվեց։</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Բաժինը նշանակված է։</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Վիճակը գոյություն չունի։</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Այն արդեն այս վիճակում է։</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Դուք չեք կարող նշանակել այս վիճակը (state/assign)։</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Վիճակը չնշանակվեց (աշխատահոսքը կարող է պահել փոփոխությունը)։</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Վիճակը նշանակված է։</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Նման գործողություն չկա։</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Ստուգման պահումը կարգաբերված չէ (6.0.15-review-hold թարմացման քայլը)։</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Նշեք, թե ինչու է այն պահվում։</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Այն արդեն պահված է։</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Դուք չեք կարող այն պահել (state/assign)։</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Պահումը չսահմանվեց (աշխատահոսքը կարող է պահել փոփոխությունը)։</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Պահված է։</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Այն պահված չէ։</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Դուք չեք կարող այն ազատել (state/assign)։</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Պահումը չհանվեց (աշխատահոսքը կարող է պահել փոփոխությունը)։</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Ազատված է, բայց դեռ թաքնված. դուք չեք կարող այն ցուցադրել (content/hide)։</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Ազատված է։</translation>
     </message>
 </context>
 </TS>

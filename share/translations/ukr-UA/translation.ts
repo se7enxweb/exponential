@@ -15089,6 +15089,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Зміни інсталяції, збережені як файли: їхній стан, запуски, виконання та відкат.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Нові матеріали</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Найновіші матеріали, те, що затримано на перевірку, і дії з вибраними елементами.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80583,6 +80591,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>Не вдалося розпочати запуск.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Змінено</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Створено</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Клас</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Розділ</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Автор</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Нові матеріали</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Останні створені та змінені матеріали всього сайту, спочатку найновіші: те, що надіслали відвідувачі, що затримано на перевірку, чернетки, які чекають на публікацію. Виберіть елементи, щоб зняти затримку, затримати, приховати, показати, видалити їх або перенести до іншого розділу чи стану.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Не вдалося прочитати список: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Затримку на перевірку ще не налаштовано, тому нічого не затримується і дії затримки недоступні. Її налаштовує крок оновлення 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Фільтрувати список</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>З</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>По</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Дата</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Створено (перша публікація)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Усі</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Опубліковано</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Чернетка, жодного разу не опублікована</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Очікує (схвалення або дати)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>У кошику</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Затримано на перевірку</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Затримано</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Не затримано</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Приховано</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видимо</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Надіслано через</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Будь-який доступ до сайту</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Лише те, що записав аудит.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Зараз: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Логін або ID користувача.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Фільтр</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Скинути фільтри</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Елементи</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from–%to з %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Немає елементів</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(прочитано за %ms мс)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Дії з вибраними елементами</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Вибрати все на цій сторінці</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Вибрано: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Дія</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Виберіть дію</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Зняти затримку</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Затримати на перевірку</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Приховати</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Показати</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Перемістити до кошика</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Видалити</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Призначити розділ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Призначити стан</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Причина</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Потрібна для затримки; зберігається разом із затримкою та в аудиті.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Виберіть розділ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Виберіть стан</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Застосувати до вибраних</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Кожен елемент перевіряється за вашими власними правами. Переміщення до кошика та видалення потребують підтвердження. Понад %count елементів обробляються у фоновому режимі.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Вибрати</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Публікація</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Надіслано з адреси</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Вибрати %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ще ні</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(без назви)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Чернетка</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Очікує</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Приховано батьківським елементом</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Затримано: нове надсилання</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Версія %version очікує</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Версія %version у роботі</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Чернетка, версія %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Версію %version опубліковано</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Заплановано на %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>немає адреси</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>не записано</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ніщо не відповідає цим фільтрам.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Показати все</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Матеріалів ще немає.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>На сторінці</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Показувати %count елементів на сторінці.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Адреса та браузер надсилання беруться з індексу аудиту, який тут недоступний: у стовпці вказано «не записано».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Адреса та браузер — це ті, що аудит записав для елемента (автозатримка записує їх завжди; публікація та створення — лише там, де це ввімкнено), тією мірою, якою їх зберігають його налаштування конфіденційності.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: елементів: %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Видалення знищує елементи назавжди, з усіма їхніми версіями та перекладами. Це неможливо скасувати.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Елементи потрапляють до кошика, звідки їх можна відновити.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Кожен елемент перевіряється за вашими власними правами; елемент із підлеглими елементами залишається як є (видаліть його у структурі матеріалів). Вас попросять підтвердити, що це ви.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Це виконується у фоновому режимі: відкриється сторінка перебігу, а результат для кожного елемента буде показано після завершення.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Вибрані елементи</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>і ще %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Нічого не зроблено</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Причина: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Дія все ще виконується у фоновому режимі.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Перебіг виконання</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Фонова дія завершилася помилкою: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Виконано</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Відхилено</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>За елементами</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Елемент</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Результат</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Чому</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Назад до списку</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Нічого не зроблено</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Підтвердити</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Виберіть дію.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Виберіть хоча б один елемент.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Виберіть не більше 1000 елементів за раз.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Вкажіть, чому елементи затримано.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Виберіть розділ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Виберіть стан.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Не вдалося прочитати форму.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Нові матеріали</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Не вдалося прочитати лічильники: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Затримано на перевірку</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Нові сьогодні</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Затримку на перевірку ще не налаштовано (крок оновлення 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Усі нові матеріали</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Вам не дозволено виконувати дії модерації (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Дію модерації не завершено: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Модерація: %action для %count об’єктів</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done з %total об’єктів: виконано %ok, відхилено %refused, помилок %failed</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>виконано %ok, відхилено %refused, помилок %failed</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Об’єкта більше не існує.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Об’єкт не має розміщення (не опубліковано).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Вам не дозволено приховувати об’єкт (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Вам не дозволено показувати об’єкт (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Об’єкт уже приховано.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Об’єкт не приховано.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Приховано.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Показано.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Об’єкт у кошику: очистіть кошик або відновіть його звідти.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Чернетку, яку жодного разу не публікували, не можна перемістити до кошика: видаліть її.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Вам не дозволено видаляти об’єкт (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Видалено.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Вам не дозволено вилучати об’єкт (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Об’єкт має підлеглі елементи: видаліть його у структурі матеріалів, де їх перелічено.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Об’єкт не вилучено (вилучення може затримувати робочий процес).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Переміщено до кошика.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Розділ не існує.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Об’єкт уже в цьому розділі.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Вам не дозволено призначати цей розділ (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Розділ не призначено.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Розділ призначено.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Стан не існує.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Об’єкт уже в цьому стані.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Вам не дозволено призначати цей стан (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Стан не призначено (зміну може затримувати робочий процес).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Стан призначено.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Такої дії немає.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Затримку на перевірку не налаштовано (крок оновлення 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Вкажіть, чому об’єкт затримано.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Об’єкт уже затримано.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Вам не дозволено затримувати об’єкт (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Затримку не встановлено (зміну може затримувати робочий процес).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Затримано.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Об’єкт не затримано.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Вам не дозволено знімати затримку з об’єкта (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Затримку не знято (зміну може затримувати робочий процес).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Затримку знято; об’єкт досі приховано: вам не дозволено показувати його (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Затримку знято.</translation>
     </message>
 </context>
 </TS>

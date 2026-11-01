@@ -15148,6 +15148,14 @@ Nzòpụta: Agaghị ewepụ nwụnye mpakị ndị a.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Mgbanwe na nrụnye echekwara dị ka faịlụ: ọnọdụ ha, ọgbụgba ha, ịgba na ịtụgharị azụ.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ọdịnaya ọhụrụ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ọdịnaya kachasị ọhụrụ, ihe e jidere maka nyocha, na omume na ihe ndị a họọrọ.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80551,6 +80559,670 @@ Ichọrọ ịgbanwe klasị nke nọdụ ahụ site n&apos;iji ọrụ mgbanwe.
     <message>
         <source>The run could not be started.</source>
         <translation>Enweghị ike ịmalite ọgbụgba ahụ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Gbanwere</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Emepụtara</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Aha</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klasị</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ngalaba</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Onye kere</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ọdịnaya ọhụrụ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ọdịnaya e mepụtara na nke a gbanwere n&apos;oge na-adịbeghị anya na saịtị niile, nke kachasị ọhụrụ na mbụ: ihe ndị ọbịa zitere, ihe e jidere maka nyocha, ndepụta mbụ na-eche mbipụta ha. Họrọ ihe iji hapụ ha, jide ha, zoo ha, mee ka a hụ ha, wepụ ha ma ọ bụ bufee ha na ngalaba ma ọ bụ ọnọdụ ọzọ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ndepụta ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Edobebeghị njide maka nyocha, ya mere ọ dịghị ihe e jidere, a naghịkwa enye omume njide. Nzọụkwụ nkwalite 6.0.15-review-hold na-edozi ya: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Zachaa ndepụta ahụ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Site na</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Ruo</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ụbọchị</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Emepụtara (mbipụta mbụ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Ha niile</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ebipụtara</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Ndepụta mbụ, ebipụtabeghị ya ọ bụla</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Na-eche (na-eche nkwado ma ọ bụ ụbọchị)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Na Mkpọkọta ahịhịa</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>E jidere maka nyocha</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>E jidere</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>E jideghị</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Zoro ezo</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Hụrụ anya</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>E zitere na</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Nnweta saịtị ọ bụla</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Naanị ihe nyocha akụkọ dekọrọ.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ugbu a: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Aha nbanye ma ọ bụ ID onye ọrụ.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Nzacha</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Kpochapụ nzacha</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ihe ndị a</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ruo %to n&apos;ime %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Enweghị ihe ọ bụla</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(agụrụ n&apos;ime %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Omume na ihe ndị a họọrọ</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Họrọ ha niile na ibe a</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Ahọrọla %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Omume</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Họrọ omume</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Hapụ njide ahụ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Jide maka nyocha</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Zoo</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Mee ka ọ hụrụ anya</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Kpugharịa na Mkpọkọta ahịhịa</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Hichapụ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Kenye ngalaba</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Kenye ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Ihe mere</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Achọrọ ya iji jide; a na-edebe ya na njide ahụ na n&apos;ime nyocha akụkọ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Họrọ ngalaba</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Họrọ ọnọdụ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Tinye na ndị a họọrọ</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>A na-enyocha ihe ọ bụla megide ikike gị. Ibuga na Mkpọkọta ahịhịa na ihichapụ na-arịọ gị ka ị kwenye. Ihe karịrị %count na-arụ ọrụ n&apos;azụ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Họrọ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Mbipụta</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>E zitere site na</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Họrọ %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ọ bụbeghị</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(enweghị aha)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Nọmba ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ndepụta mbụ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Na-eche</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Nne na nna ya zoro ya</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>E jidere: nziga ọhụrụ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Ụdị %version na-eche</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Ụdị %version na-aga n&apos;ihu</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Ndepụta mbụ, ụdị %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Ebipụtara ụdị %version</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ahazịrị maka %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>enweghị adreesị</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>edeghị ya</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Ọ dịghị ihe dabara na nzacha ndị a.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Gosi ha niile</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Enwebeghị ọdịnaya ọ bụla.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>N&apos;otu ibe</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Gosi ihe %count n&apos;otu ibe.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Adreesị na ihe nchọgharị nke nziga si na ndeksi nyocha akụkọ, nke na-adịghị ebe a: kọlụm ahụ na-ekwu &quot;edeghị ya&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adreesị na ihe nchọgharị bụ ndị nyocha akụkọ dekọrọ maka ihe ahụ (njide akpaghị aka na-edekọ ha mgbe niile; mbipụta na mmepụta naanị ebe agbanyere ya), dịka ntọala nzuzo ya si edebe ha.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: ihe %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Ihichapụ na-ewepụ ihe ndị ahụ kpamkpam, ya na ụdị ha niile na ntụgharị ha. Enweghị ike ịlaghachi ya.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Ihe ndị ahụ na-aga na Mkpọkọta ahịhịa, ebe enwere ike iweghachi ha.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>A na-enyocha ihe ọ bụla megide ikike gị; a na-ahapụ ihe nwere ihe ndị dị n&apos;okpuru ya otu ọ dị (wepụ ya na nhazi ọdịnaya). A ga-arịọ gị ka ị gosi na ọ bụ gị.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Nke a na-arụ ọrụ n&apos;azụ: ibe ọganihu ya na-emeghe, a na-egosikwa nsonaazụ nke ihe ọ bụla mgbe ọ gwụchara.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ihe ndị a họọrọ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>na %count ọzọ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kagbuo</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Emeghị ihe ọ bụla</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Ihe mere: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Omume ahụ ka na-arụ ọrụ n&apos;azụ.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ọganihu ya</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Omume n&apos;azụ ahụ adaala: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Emechala</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A jụrụ ya</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Adaala</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Kwa ihe</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ihe</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nsonaazụ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Gịnị kpatara</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Laghachi na ndepụta</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Nrụnye</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Ọ dịghị ihe e mere</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kwenye</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Họrọ omume.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Họrọ opekata mpe otu ihe.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Họrọ ihe na-erughị 1000 n&apos;otu oge.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Kwuo ihe mere e ji jide ihe ndị ahụ.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Họrọ ngalaba ahụ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Họrọ ọnọdụ ahụ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Enweghị ike ịgụ fọm ahụ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ọdịnaya ọhụrụ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Enweghị ike ịgụ ọnụọgụ ndị ahụ: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>E jidere maka nyocha</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ọhụrụ taa</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Edobebeghị njide maka nyocha (nzọụkwụ nkwalite 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ọdịnaya ọhụrụ niile</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>I nweghị ike ịrụ omume nlekọta ọdịnaya (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Omume nlekọta ọdịnaya ahụ ezughị ezu: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Nlekọta ọdịnaya: %action na ihe %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done n&apos;ime ihe %total: %ok emechala, %refused a jụrụ, %failed adaala</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok emechala, %refused a jụrụ, %failed adaala</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ọ dịkwaghị.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>O nweghị ọnọdụ ebe (ebipụtaghị ya).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>I nweghị ike izo ya (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>I nweghị ike ime ka a hụ ya (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>E zoola ya.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>E zoghị ya.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>E zoro ya.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>E mere ka a hụ ya.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ọ nọ na Mkpọkọta ahịhịa: tọgbọọ ya ma ọ bụ weghachi ya n&apos;ebe ahụ.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ndepụta mbụ a na-ebipụtabeghị enweghị ike ịga na Mkpọkọta ahịhịa: hichapụ ya.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>I nweghị ike ihichapụ ya (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Ehichapụla.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>I nweghị ike iwepụ ya (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>O nwere ihe ndị dị n&apos;okpuru ya: wepụ ya na nhazi ọdịnaya, ebe e depụtara ha.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ewepụghị ya (usoro ọrụ nwere ike ijide mwepụ ahụ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>E bugara ya na Mkpọkọta ahịhịa.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Ngalaba ahụ adịghị.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ọ nọlarị na ngalaba a.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>I nweghị ike ikenye ngalaba a (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>E kenyeghị ngalaba ahụ.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>E kenyela ngalaba.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ọnọdụ ahụ adịghị.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ọ nọlarị n&apos;ọnọdụ a.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>I nweghị ike ikenye ọnọdụ a (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>E kenyeghị ọnọdụ ahụ (usoro ọrụ nwere ike ijide mgbanwe ahụ).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>E kenyela ọnọdụ.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Ọ dịghị ụdị omume ahụ.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Edobeghị njide maka nyocha (nzọụkwụ nkwalite 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Kwuo ihe mere e ji jide ya.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>E jidelarị ya.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>I nweghị ike ijide ya (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>E dobeghị njide ahụ (usoro ọrụ nwere ike ijide mgbanwe ahụ).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>E jidere ya.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>E jideghị ya.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>I nweghị ike ịhapụ ya (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>A hapụghị njide ahụ (usoro ọrụ nwere ike ijide mgbanwe ahụ).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>A hapụla ya; ọ ka zoro ezo: i nweghị ike ime ka a hụ ya (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>A hapụla ya.</translation>
     </message>
 </context>
 </TS>

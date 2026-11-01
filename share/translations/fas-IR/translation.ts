@@ -15148,6 +15148,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>تغییرات نصب که به‌صورت فایل نگهداری می‌شوند: وضعیت آن‌ها، اجراها، اجرا و بازگردانی.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>محتوای اخیر</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>جدیدترین محتوا، آنچه برای بازبینی نگه داشته شده و اقدام‌ها روی یک انتخاب.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80551,6 +80559,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>اجرا آغاز نشد.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>تاریخ تغییر</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>تاریخ ایجاد</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>نام</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>بخش</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ایجادکننده</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>محتوای اخیر</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>تازه‌ترین محتوای ایجادشده و تغییریافته در کل سایت، جدیدترین در ابتدا: آنچه بازدیدکنندگان فرستاده‌اند، آنچه برای بازبینی نگه داشته شده و پیش‌نویس‌هایی که در انتظار انتشارند. مواردی را انتخاب کنید تا آن‌ها را آزاد، نگه‌داری، پنهان، آشکار یا حذف کنید یا به بخش یا وضعیت دیگری منتقل کنید.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>فهرست خوانده نشد: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>نگه‌داری برای بازبینی هنوز راه‌اندازی نشده است، پس چیزی نگه داشته نمی‌شود و اقدام‌های نگه‌داری ارائه نمی‌شوند. گام ارتقای 6.0.15-review-hold آن را راه‌اندازی می‌کند: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>فیلتر کردن فهرست</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>از</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تا</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>تاریخ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>تاریخ ایجاد (نخستین انتشار)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>همه</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>منتشرشده</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>پیش‌نویس، هرگز منتشر نشده</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>در انتظار (منتظر تأیید یا یک تاریخ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>در سطل زباله</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>نگه‌داشته برای بازبینی</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>نگه‌داشته</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>نگه‌داشته نشده</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>پنهان</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>قابل مشاهده</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>فرستاده‌شده در</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>هر دسترسی سایت</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>فقط آنچه ممیزی ثبت کرده است.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>اکنون: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>یک نام کاربری یا شناسه کاربر.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فیلتر</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>پاک کردن فیلترها</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>موارد</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from تا %to از %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>هیچ موردی نیست</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(خوانده‌شده در %ms میلی‌ثانیه)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>اقدام‌ها روی موارد انتخاب‌شده</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>انتخاب همه در این صفحه</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count انتخاب‌شده</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>اقدام</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>یک اقدام را انتخاب کنید</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>برداشتن نگه‌داری</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>نگه‌داری برای بازبینی</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>پنهان کردن</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>آشکار کردن</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>انتقال به سطل زباله</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>تخصیص بخش</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>تخصیص وضعیت</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>دلیل</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>برای نگه‌داری لازم است؛ همراه نگه‌داری و در ممیزی نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>یک بخش را انتخاب کنید</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>وضعیت</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>یک وضعیت را انتخاب کنید</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>اعمال روی موارد انتخاب‌شده</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>هر مورد با مجوزهای خود شما بررسی می‌شود. انتقال به سطل زباله و حذف از شما تأیید می‌خواهند. بیش از %count مورد در پس‌زمینه اجرا می‌شود.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>انتخاب</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>انتشار</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>فرستاده‌شده از</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>انتخاب %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>هنوز نه</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(بدون نام)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>شناسه %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>پیش‌نویس</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>در انتظار</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>پنهان‌شده توسط والد</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>نگه‌داشته: ارسال جدید</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>نسخه %version در انتظار</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>نسخه %version در حال ویرایش</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>پیش‌نویس، نسخه %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>نسخه %version منتشر شد</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>زمان‌بندی‌شده برای %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>بدون نشانی</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ثبت نشده</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>هیچ چیز با این فیلترها مطابقت ندارد.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>نمایش همه</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>هنوز هیچ محتوایی وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>در هر صفحه</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>نمایش %count مورد در هر صفحه.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>نشانی و مرورگرِ یک ارسال از نمایه ممیزی می‌آیند که اینجا در دسترس نیست: ستون «ثبت نشده» را نشان می‌دهد.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>نشانی و مرورگر همان‌هایی هستند که ممیزی برای این مورد ثبت کرده است (نگه‌داری خودکار همیشه آن‌ها را ثبت می‌کند؛ انتشار و ایجاد فقط در جایی که فعال شده باشد)، به همان شکلی که تنظیمات حریم خصوصی آن‌ها را نگه می‌دارد.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count مورد</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>حذف، موارد را برای همیشه همراه با همه نسخه‌ها و ترجمه‌هایشان پاک می‌کند. این کار قابل بازگشت نیست.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>موارد به سطل زباله می‌روند و از آنجا می‌توان آن‌ها را بازگرداند.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>هر مورد با مجوزهای خود شما بررسی می‌شود؛ موردی که زیرمورد دارد همان‌طور که هست باقی می‌ماند (آن را در ساختار محتوا حذف کنید). از شما خواسته می‌شود تأیید کنید که خودتان هستید.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>این کار در پس‌زمینه اجرا می‌شود: صفحه پیشرفت آن باز می‌شود و نتیجه هر مورد پس از پایان نمایش داده می‌شود.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>موارد انتخاب‌شده</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>و %count مورد دیگر</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغو</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>هیچ کاری انجام نشد</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>دلیل: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>اقدام هنوز در پس‌زمینه در حال اجراست.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>پیشرفت آن</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>اقدام پس‌زمینه ناموفق بود: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>انجام شد</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رد شد</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناموفق</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>برای هر مورد</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>مورد</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجه</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>چرا</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>بازگشت به فهرست</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>راه‌اندازی</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>کاری انجام نشد</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تأیید</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>یک اقدام را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>دست‌کم یک مورد را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>هر بار حداکثر 1000 مورد را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>بنویسید چرا موارد نگه داشته می‌شوند.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>بخش را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>وضعیت را انتخاب کنید.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فرم خوانده نشد.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>محتوای اخیر</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>شمارش‌ها خوانده نشد: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>نگه‌داشته برای بازبینی</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>جدید امروز</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>نگه‌داری برای بازبینی هنوز راه‌اندازی نشده است (گام ارتقای 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>همه محتوای اخیر</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>شما اجازه اجرای اقدام‌های نظارتی را ندارید (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>اقدام نظارتی کامل نیست: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>نظارت: %action روی %count شیء</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done از %total شیء: %ok انجام شد، %refused رد شد، %failed ناموفق</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok انجام شد، %refused رد شد، %failed ناموفق</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>دیگر وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>مکانی ندارد (منتشر نشده).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>شما اجازه پنهان کردن آن را ندارید (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>شما اجازه آشکار کردن آن را ندارید (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>از قبل پنهان است.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>پنهان نیست.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>پنهان شد.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>آشکار شد.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>در سطل زباله است: آن را همان‌جا خالی یا بازیابی کنید.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>پیش‌نویسی که هرگز منتشر نشده نمی‌تواند به سطل زباله برود: آن را حذف کنید.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>شما اجازه حذف آن را ندارید (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>حذف شد.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>شما اجازه برداشتن آن را ندارید (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>زیرمورد دارد: آن را در ساختار محتوا، جایی که زیرموردها فهرست شده‌اند، بردارید.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>برداشته نشد (ممکن است یک گردش کار برداشتن را نگه داشته باشد).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>به سطل زباله منتقل شد.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>بخش وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>از قبل در این بخش است.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>شما اجازه تخصیص این بخش را ندارید (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>بخش تخصیص داده نشد.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>بخش تخصیص داده شد.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>وضعیت وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>از قبل در این وضعیت است.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>شما اجازه تخصیص این وضعیت را ندارید (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>وضعیت تخصیص داده نشد (ممکن است یک گردش کار تغییر را نگه داشته باشد).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>وضعیت تخصیص داده شد.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>چنین اقدامی وجود ندارد.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>نگه‌داری برای بازبینی راه‌اندازی نشده است (گام ارتقای 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>بنویسید چرا نگه داشته می‌شود.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>از قبل نگه داشته شده است.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>شما اجازه نگه‌داشتن آن را ندارید (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>نگه‌داری اعمال نشد (ممکن است یک گردش کار تغییر را نگه داشته باشد).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>نگه داشته شد.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>نگه داشته نشده است.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>شما اجازه آزاد کردن آن را ندارید (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>نگه‌داری برداشته نشد (ممکن است یک گردش کار تغییر را نگه داشته باشد).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>آزاد شد؛ هنوز پنهان است: شما اجازه آشکار کردن آن را ندارید (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>آزاد شد.</translation>
     </message>
 </context>
 </TS>

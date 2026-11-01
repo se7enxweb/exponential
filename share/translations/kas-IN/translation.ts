@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>انسٹالیشنٕچ تَبدیٖلیہِ یِمہٕ فایلَن ہٕنٛدِس صورتَس منٛز تھٲوِمٕژ چھےٚ: تِہنٛز صورتحال، رَن، چلاوُن تہٕ واپَس پھیرُن.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>نَوِ مَواد</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>سارِوٕے کھوتہٕ نَوِ مَواد، یُس جایزٕ خٲطرٕ رُکاونہٕ آمُت چھُ، تہٕ کُنہِ ژارِ پیٹھ عَمَل.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>رَن ہیوٚک نہٕ شروٗع گژھِتھ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>تَرمیم شُدٕہ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>بناونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ناو</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>سیکشَن</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>بناونہٕ وول</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>نَوِ مَواد</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>پوٗرٕ سایِٹُک نَوِ بناونہٕ آمُت تہٕ تَرمیم شُدٕہ مَواد، نَو گۄڈٕ: یُس وُچھن والیو سوٗزُس، یُس جایزٕ خٲطرٕ رُکاونہٕ آمُت چھُ، تہٕ شایع گژھنُک انتظار کران مَسوٗدٕ. آیِٹَم ژٔنِو تاکہ تِم آزاد کٔرِو، رُکٲوِو، چھُپٲوِو، ظاہِر کٔرِو، ہٹٲوِو یا بیٚیِس سیکشَنَس یا حالتس منز تَرجُم کٔرِو.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>فہرست ہیٚچ نہٕ پٔرِتھ: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>جایزٕ خٲطرٕ روک چھےٚ نہٕ وُنی ترتیب دِنہٕ آمٕژ، امِ موجوب چھُ نہٕ کیٚنہہ رُکاونہٕ یِوان تہٕ رُکاونٕچ عَمَل چھِ نہٕ پیش یِوان کرنہٕ. اَپ گریڈ قدم 6.0.15-review-hold چھُ یہِ ترتیب دِوان: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>فہرست فِلٹَر کٔرِو</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>پیٹھ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تام</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>تٲریٖخ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>بناونہٕ آمُت (گۄڈنیُک اشاعت)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سٲرِنی</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>صورتحال</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>شایع کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>مَسوٗدہٕ، زانٛہہ نہٕ شایع گوٚمُت</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>زیٖر غور (منظوٗری یا کُنہِ تٲریٖخُک انتظار)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ردی منز</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>جایزٕ خٲطرٕ رُکاونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>رُکاونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>نہٕ رُکاونہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>چھُپیمُت</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ظاہِر</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>سوزنٕچ تٲریٖخ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>کانٛہہ تہِ سایِٹ ایکسیس</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>صرف تِہٕ یُس آڈٹن درج کوٚر.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>وۄنی: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>لاگ اِن ناو یا یوزَر آیِ ڈی.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فِلٹَر</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>فِلٹَر صاف کٔرِو</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>آیِٹَم</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count منزٕ %from پیٹھ %to تام</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>کانٛہہ آیِٹَم نہٕ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms مِلی سیکنڈَن منز پٔرِتھ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ژارنہٕ آمتیٚن آیِٹمَن پیٹھ عَمَل</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>یَتھ صفحس پیٹھ سٲرِنی ژُنِو</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ژارنہٕ آمٕتی</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>عَمَل</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>اَکھ عَمَل ژٔنِو</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>روک ہٹٲوِو</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>جایزٕ خٲطرٕ رُکٲوِو</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>چھُپٲوِو</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ظاہِر کٔرِو</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ردی منز تَرجُم کٔرِو</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>مٹٲوِو</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>سیکشَن تَفویض کٔرِو</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>حالَت تَفویض کٔرِو</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>وجہ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>رُکاونہٕ خٲطرٕ ضروٗری؛ روکس سٕتۍ تہٕ آڈٹس منز تھاونہٕ یِوان.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>اَکھ سیکشَن ژٔنِو</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالَت</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>اَکھ حالَت ژٔنِو</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ژارنہٕ آمتیٚن پیٹھ لاگوٗ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>پرٛتھ آیِٹَم چھُ تُہٕنٛدِ پننِ اجازتہٕ مُطٲبِق جانچنہٕ یِوان. ردی منز تَرجُم کرنس تہٕ مٹاونس برونٛہہ چھُ تُہہِ نِشہِ تصدیق مَنگنہٕ یِوان. %count کھوتہٕ زیادٕ آیِٹَم چھِ پَتہٕ کِنہِ چلان.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ژٔنِو</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>اشاعت</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>یَتہِ پیٹھ سوٗزمُت</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ژٔنِو</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>وُنی نہٕ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(بِنا ناو)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>آیِ ڈی %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مَسوٗدہٕ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>زیٖر غور</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>پننِ والدٕ کِنہِ چھُپیمُت</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>رُکاونہٕ آمُت: نٔو سوز</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ؤرژَن %version زیٖر غور</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ؤرژَن %version پیٹھ کٲم جٲری</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>مَسوٗدہٕ، ؤرژَن %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ؤرژَن %version شایع گوٚو</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date خٲطرٕ مُقرَر</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>کانٛہہ پَتہٕ نہٕ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>درج نہٕ</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>یِمَن فِلٹرَن سٕتۍ چھُ نہٕ کیٚنہہ مِلان.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>سٲرِنی ہاوِو</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>وُنی چھُ نہٕ کانٛہہ مَواد.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>فی صفحہ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>فی صفحہ %count آیِٹَم ہاوِو.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>کُنہِ سوزُک پَتہٕ تہٕ براوزَر چھِ آڈٹ اِنڈیکسہٕ پیٹھٕ یِوان، یُس یَتہِ دستیاب چھُ نہٕ: کالمس منز چھُ "درج نہٕ" لیوٚکھمُت.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>پَتہٕ تہٕ براوزَر چھِ تِمے یِم آڈٹن یَتھ آیِٹمس خٲطرٕ درج کٔری (خودکار روک چھےٚ تِم ہمیشہ درج کران؛ اشاعت تہٕ بناوُن صرف یَتہِ فعال آسہِ)، یِتھہٕ پٲٹھۍ امیٚک رازداری ترتیب تِم تھاوان چھِ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count آیِٹَم</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>مٹاونہٕ سٕتۍ چھِ آیِٹَم پننیٚن سٲرِنی ؤرژنَن تہٕ ترجمَن سمیت ہمیشہ خٲطرٕ ہٹاونہٕ یِوان. یہِ ہیٚکہِ نہٕ واپس گٔژھِتھ.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>آیِٹَم چھِ ردی منز گژھان، یَتہِ پیٹھٕ تِم بحال ہیٚکن کرنہٕ یِتھ.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>پرٛتھ آیِٹَم چھُ تُہٕنٛدِ پننِ اجازتہٕ مُطٲبِق جانچنہٕ یِوان؛ یَتھ آیِٹمس ذیلی آیِٹَم آسن سُہ چھُ یِتھے پٲٹھۍ روزان (سُہ ہٹٲوِو مَواد ڈھانچَس منز). تُہہِ ونہٕ یِیہِ تصدیق کرنہٕ خٲطرٕ زِ یہِ چھِو تۄہۍ.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>یہِ چھُ پَتہٕ کِنہِ چلان: امیٚک پیش رفتُک صفحہ چھُ کھُلان، تہٕ مُکَمَل گژھنہٕ پَتہٕ چھُ پرٛتھ آیِٹمُک نتیجہ ہاونہٕ یِوان.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ژارنہٕ آمٕتی آیِٹَم</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>تہٕ %count بیٚیہِ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>منسوٗخ کٔرِو</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>کیٚنہہ نہٕ کرنہٕ آمُت</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>وجہ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>عَمَل چھُ وُنی تہِ پَتہٕ کِنہِ چلان.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>امیٚک پیش رفت</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>پَتہٕ کِنہِ عَمَل گوٚو ناکام: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>مُکَمَل</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رد کوٚرمُت</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>پرٛتھ آیِٹَم</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>آیِٹَم</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>کیازِ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>فہرستس پیٹھ واپس</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>سیٹ اَپ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>کیٚنہہ نہٕ کوٚرمُت</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تصدیق کٔرِو</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>اَکھ عَمَل ژٔنِو.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>کَم از کَم اَکھ آیِٹَم ژٔنِو.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>اَکِ وَقتہٕ زیادٕ کھوتہٕ زیادٕ 1000 آیِٹَم ژٔنِو.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ؤنِو زِ آیِٹَم کیازِ چھِ رُکاونہٕ آمٕتی.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>سیکشَن ژٔنِو.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>حالَت ژٔنِو.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فارَم ہیوٚک نہٕ پٔرِتھ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>نَوِ مَواد</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>گَنتی ہیٚچ نہٕ پٔرِتھ: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>جایزٕ خٲطرٕ رُکاونہٕ آمٕتی</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>اَز نٔوی</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>جایزٕ خٲطرٕ روک چھےٚ نہٕ وُنی ترتیب دِنہٕ آمٕژ (اَپ گریڈ قدم 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>سورُے نَوِ مَواد</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>تُہہِ چھےٚ نہٕ نِگرانی ہٕنٛدۍ عَمَل چلاونٕچ اجازت (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>نِگرانی ہُند عَمَل چھُ نہٕ مُکَمَل: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>نِگرانی: %count آبجیکٹَن پیٹھ %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total منزٕ %done آبجیکٹ: %ok مُکَمَل، %refused رد، %failed ناکام</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok مُکَمَل، %refused رد، %failed ناکام</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>یہِ چھُ نہٕ وۄنی موجوٗد.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>امیٚک چھُ نہٕ کانٛہہ مقام (شایع نہٕ گوٚمُت).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>تُہہِ چھےٚ نہٕ یہِ چھُپاونٕچ اجازت (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>تُہہِ چھےٚ نہٕ یہِ ظاہِر کرنٕچ اجازت (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>یہِ چھُ گۄڈے چھُپیمُت.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>یہِ چھُ نہٕ چھُپیمُت.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>چھُپاونہٕ آو.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ظاہِر کرنہٕ آو.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>یہِ چھُ ردی منز: تَتھے کٔرِو خٲلی یا بحال.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>یُس مَسوٗدہٕ زانٛہہ شایع گوٚو نہٕ، سُہ ہیٚکہِ نہٕ ردی منز گٔژھِتھ: سُہ مٹٲوِو.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>تُہہِ چھےٚ نہٕ یہِ مٹاونٕچ اجازت (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>مٹاونہٕ آو.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>تُہہِ چھےٚ نہٕ یہِ ہٹاونٕچ اجازت (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>امِس چھِ ذیلی آیِٹَم: یہِ ہٹٲوِو مَواد ڈھانچَس منز، یَتہِ تِم درج چھِ.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>یہِ آو نہٕ ہٹاونہٕ (مُمکِن چھُ کانٛہہ ورک فلو آسہِ ہٹاوُن رُکٲوِتھ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ردی منز تَرجُم کرنہٕ آو.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>سیکشَن چھُ نہٕ موجوٗد.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>یہِ چھُ گۄڈے یَتھ سیکشَنَس منز.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>تُہہِ چھےٚ نہٕ یہِ سیکشَن تَفویض کرنٕچ اجازت (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>سیکشَن آو نہٕ تَفویض کرنہٕ.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>سیکشَن آو تَفویض کرنہٕ.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>حالَت چھےٚ نہٕ موجوٗد.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>یہِ چھُ گۄڈے یَتھ حالتس منز.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>تُہہِ چھےٚ نہٕ یہِ حالَت تَفویض کرنٕچ اجازت (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>حالَت آیہِ نہٕ تَفویض کرنہٕ (مُمکِن چھُ کانٛہہ ورک فلو آسہِ تبدیلی رُکٲوِتھ).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>حالَت آیہِ تَفویض کرنہٕ.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>تِتھ کانٛہہ عَمَل چھُ نہٕ.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>جایزٕ خٲطرٕ روک چھےٚ نہٕ ترتیب دِنہٕ آمٕژ (اَپ گریڈ قدم 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ؤنِو زِ یہِ کیازِ چھُ رُکاونہٕ آمُت.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>یہِ چھُ گۄڈے رُکاونہٕ آمُت.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>تُہہِ چھےٚ نہٕ یہِ رُکاونٕچ اجازت (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>روک آیہِ نہٕ لاگنہٕ (مُمکِن چھُ کانٛہہ ورک فلو آسہِ تبدیلی رُکٲوِتھ).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>رُکاونہٕ آو.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>یہِ چھُ نہٕ رُکاونہٕ آمُت.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>تُہہِ چھےٚ نہٕ یہِ آزاد کرنٕچ اجازت (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>روک آیہِ نہٕ ہٹاونہٕ (مُمکِن چھُ کانٛہہ ورک فلو آسہِ تبدیلی رُکٲوِتھ).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>آزاد کرنہٕ آو؛ وُنی تہِ چھُپیمُت: تُہہِ چھےٚ نہٕ یہِ ظاہِر کرنٕچ اجازت (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>آزاد کرنہٕ آو.</translation>
     </message>
 </context>
 </TS>

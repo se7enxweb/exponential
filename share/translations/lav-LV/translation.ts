@@ -15089,6 +15089,14 @@ Piezīme: pakotnes netiks atinstalētas.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Instalācijas izmaiņas, kas glabātas kā faili: to stāvoklis, izpildes, izpilde un atsaukšana.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Jaunākais saturs</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Jaunākais saturs, pārskatīšanai aizturētais un darbības ar atlasi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80583,6 +80591,670 @@ Mezgla klase jāmaina, izmantojot apmaiņas funkciju.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Izpildi neizdevās sākt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Modificēts</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Izveidots</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nosaukums</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Sadaļa</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Autors</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Jaunākais saturs</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Visas vietnes nesen izveidotais un modificētais saturs, jaunākais vispirms: ko apmeklētāji iesūtīja, kas aizturēts pārskatīšanai, kuri melnraksti gaida publicēšanu. Atlasiet vienumus, lai tos atbrīvotu, aizturētu, paslēptu, parādītu, noņemtu vai pārvietotu uz citu sadaļu vai stāvokli.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Sarakstu nevarēja nolasīt: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Aizturēšana pārskatīšanai vēl nav iestatīta, tāpēc nekas netiek aizturēts un aizturēšanas darbības netiek piedāvātas. To iestata jaunināšanas solis 6.0.15-review-hold: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Filtrēt sarakstu</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Līdz</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Datums</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Izveidots (pirmoreiz publicēts)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Visi</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statuss</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Publicēts</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Melnraksts, nekad nav publicēts</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Gaida (apstiprinājumu vai datumu)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Atkritnē</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Aizturēts pārskatīšanai</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Aizturēts</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Nav aizturēts</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Paslēpts</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Redzams</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Iesūtīts vietnes piekļuvē</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Jebkura vietnes piekļuve</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Tikai tas, ko reģistrēja audits.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Tagad: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Lietotājvārds vai lietotāja ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Filtrēt</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Notīrīt filtrus</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Vienumi</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from līdz %to no %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Nav vienumu</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(nolasīts %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Darbības ar atlasītajiem vienumiem</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Atlasīt visu šajā lapā</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>Atlasīti: %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Darbība</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Izvēlieties darbību</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Atcelt aizturēšanu</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Aizturēt pārskatīšanai</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Paslēpt</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Parādīt</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Pārvietot uz atkritni</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Dzēst</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Piešķirt sadaļu</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Piešķirt stāvokli</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Iemesls</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Nepieciešams aizturēšanai; tiek saglabāts kopā ar aizturēšanu un auditā.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Izvēlieties sadaļu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Stāvoklis</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Izvēlieties stāvokli</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Lietot atlasītajiem</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Katrs vienums tiek pārbaudīts pret jūsu tiesībām. Pārvietošanai uz atkritni un dzēšanai nepieciešams apstiprinājums. Vairāk nekā %count vienumi tiek apstrādāti fonā.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Atlasīt</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Publicēšana</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Iesūtīts no</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Atlasīt %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>vēl nav</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(bez nosaukuma)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Identifikators %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Melnraksts</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Gaida</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Paslēpts vecākelementa dēļ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Aizturēts: jauns iesūtījums</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Versija %version gaida</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Versija %version tiek rediģēta</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Melnraksts, versija %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Versija %version publicēta</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Ieplānots: %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>nav adreses</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>nav reģistrēts</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Šiem filtriem nekas neatbilst.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Rādīt visu</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Satura vēl nav.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Lapā</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Rādīt %count vienumus lapā.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Iesūtījuma adrese un pārlūks tiek ņemti no audita indeksa, kas šeit nav pieejams: kolonnā rakstīts &quot;nav reģistrēts&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Adrese un pārlūks ir tie, ko audits reģistrēja par vienumu (automātiskā aizturēšana tos reģistrē vienmēr; publicēšana un izveide tikai tur, kur tas ieslēgts), kā tos saglabā tā privātuma iestatījumi.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count vienumi</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Dzēšana neatgriezeniski noņem vienumus ar visām to versijām un tulkojumiem. To nevar atsaukt.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Vienumi tiek pārvietoti uz atkritni, no kurienes tos var atjaunot.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Katrs vienums tiek pārbaudīts pret jūsu tiesībām; vienums ar apakšvienumiem tiek atstāts kā ir (noņemiet to satura struktūrā). Jums tiks lūgts apstiprināt, ka tas esat jūs.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Tas notiek fonā: atveras tā progresa lapa, un, kad tas ir pabeigts, tiek parādīts rezultāts katram vienumam.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Atlasītie vienumi</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>un vēl %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atcelt</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Nekas netika izdarīts</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Iemesls: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Darbība joprojām notiek fonā.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Tās progress</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Fona darbība neizdevās: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Izpildīts</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Noraidīts</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Neizdevās</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Pa vienumiem</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Vienums</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Rezultāts</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kāpēc</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Atpakaļ uz sarakstu</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Iestatīšana</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Nekas nav izdarīts</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Apstiprināt</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Izvēlieties darbību.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Atlasiet vismaz vienu vienumu.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Atlasiet ne vairāk kā 1000 vienumus vienlaikus.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Norādiet, kāpēc vienumi tiek aizturēti.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Izvēlieties sadaļu.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Izvēlieties stāvokli.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Veidlapu nevarēja nolasīt.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Jaunākais saturs</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Skaitus nevarēja nolasīt: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Aizturēts pārskatīšanai</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Jauni šodien</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Aizturēšana pārskatīšanai vēl nav iestatīta (jaunināšanas solis 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Viss jaunākais saturs</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Jums nav atļauts veikt moderēšanas darbības (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Moderēšanas darbība nav pabeigta: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderēšana: %action %count objektiem</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done no %total objektiem: %ok izpildīti, %refused noraidīti, %failed neizdevās</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok izpildīti, %refused noraidīti, %failed neizdevās</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Tas vairs nepastāv.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Tam nav atrašanās vietas (nav publicēts).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Jums nav atļauts to paslēpt (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Jums nav atļauts to parādīt (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Tas jau ir paslēpts.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Tas nav paslēpts.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Paslēpts.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Parādīts.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Tas ir atkritnē: iztukšojiet vai atjaunojiet to tur.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Melnrakstu, kas nekad nav publicēts, nevar pārvietot uz atkritni: dzēsiet to.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Jums nav atļauts to dzēst (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Dzēsts.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Jums nav atļauts to noņemt (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Tam ir apakšvienumi: noņemiet to satura struktūrā, kur tie ir uzskaitīti.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Tas netika noņemts (darbplūsma var aizturēt noņemšanu).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Pārvietots uz atkritni.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Sadaļa nepastāv.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Tas jau ir šajā sadaļā.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Jums nav atļauts piešķirt šo sadaļu (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Sadaļa netika piešķirta.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Sadaļa piešķirta.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Stāvoklis nepastāv.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Tas jau ir šajā stāvoklī.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Jums nav atļauts piešķirt šo stāvokli (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Stāvoklis netika piešķirts (darbplūsma var aizturēt izmaiņas).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Stāvoklis piešķirts.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Šādas darbības nav.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Aizturēšana pārskatīšanai nav iestatīta (jaunināšanas solis 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Norādiet, kāpēc tas tiek aizturēts.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Tas jau ir aizturēts.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Jums nav atļauts to aizturēt (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Aizturēšana netika piemērota (darbplūsma var aizturēt izmaiņas).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Aizturēts.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Tas nav aizturēts.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Jums nav atļauts to atbrīvot (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Aizturēšana netika atcelta (darbplūsma var aizturēt izmaiņas).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Atbrīvots; joprojām paslēpts: jums nav atļauts to parādīt (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Atbrīvots.</translation>
     </message>
 </context>
 </TS>

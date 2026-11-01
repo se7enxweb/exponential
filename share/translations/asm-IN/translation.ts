@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ফাইল হিচাপে ৰখা ইনষ্টলেশ্বনৰ পৰিৱৰ্তন: সেইবোৰৰ স্থিতি, চলনসমূহ, চলোৱা আৰু উভতাই নিয়া।</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>শেহতীয়া সমল</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>নতুন সমল, পৰ্যালোচনাৰ বাবে যি ধৰি ৰখা হৈছে, আৰু বাছনিৰ ওপৰত কাৰ্য।</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>চলন আৰম্ভ কৰিব পৰা নগ&apos;ল।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>সলনি কৰা</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>সৃষ্টি কৰা</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>নাম</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>শ্ৰেণী</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>শাখা</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>সৃষ্টিকাৰী</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>শেহতীয়া সমল</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>গোটেই ছাইটৰ শেহতীয়াকৈ সৃষ্টি আৰু সলনি কৰা সমল, নতুনবোৰ প্ৰথমে: দৰ্শকে যি জমা দিছে, যি পৰ্যালোচনাৰ বাবে ৰখা হৈছে, প্ৰকাশৰ অপেক্ষাত থকা খচৰা। বস্তু বাছনি কৰি সেইবোৰ মুকলি কৰক, ধৰি ৰাখক, লুকুৱাওক, দেখুৱাওক, আঁতৰাওক বা আন শাখা বা অৱস্থালৈ স্থানান্তৰ কৰক।</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>তালিকাখন পঢ়িব পৰা নগ'ল: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখাৰ ব্যৱস্থা এতিয়াও সাজু কৰা হোৱা নাই, সেয়েহে একো ধৰি ৰখা হোৱা নাই আৰু ধৰি ৰখাৰ কাৰ্যবোৰ দিয়া হোৱা নাই। উন্নীতকৰণৰ পদক্ষেপ 6.0.15-review-hold এ ইয়াক সাজু কৰে: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>তালিকা ফিল্টাৰ কৰক</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>পৰা</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>লৈকে</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>তাৰিখ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>সৃষ্টি কৰা (প্ৰথম প্ৰকাশ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>সকলো</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>স্থিতি</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>প্ৰকাশিত</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>খচৰা, কেতিয়াও প্ৰকাশিত হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>বিবেচনাধীন (অনুমোদন বা কোনো তাৰিখৰ অপেক্ষাত)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>আবৰ্জনাত</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখা</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ধৰি ৰখা</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ধৰি ৰখা নহয়</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>লুকুৱা</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>দৃশ্যমান</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>জমা দিয়াৰ তাৰিখ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>যিকোনো ছাইট প্ৰৱেশ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>কেৱল অডিটে যি লিপিবদ্ধ কৰিছে।</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>এতিয়া: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>এটা লগইন বা এটা ব্যৱহাৰকাৰী আইডি।</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ফিল্টাৰ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ফিল্টাৰ আঁতৰাওক</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>বস্তুবোৰ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count ৰ ভিতৰত %from ৰ পৰা %to লৈকে</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>কোনো বস্তু নাই</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms মি.ছে.ত পঢ়া হৈছে)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>বাছনি কৰা বস্তুবোৰৰ ওপৰত কাৰ্য</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>এই পৃষ্ঠাৰ সকলো বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count টা বাছনি কৰা হৈছে</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>কাৰ্য</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>এটা কাৰ্য বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ধৰি ৰখা মুকলি কৰক</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰাখক</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>লুকুৱাওক</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>আবৰ্জনালৈ পঠিয়াওক</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>মচক</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>শাখা নিৰ্ধাৰণ কৰক</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>অৱস্থা নিৰ্ধাৰণ কৰক</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>কাৰণ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ধৰি ৰাখিবলৈ প্ৰয়োজনীয়; ধৰি ৰখাৰ লগত আৰু অডিটত ৰখা হয়।</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>এটা শাখা বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>অৱস্থা</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>এটা অৱস্থা বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>বাছনি কৰাবোৰত প্ৰয়োগ কৰক</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>প্ৰতিটো বস্তু আপোনাৰ নিজৰ অনুমতিৰ সৈতে পৰীক্ষা কৰা হয়। আবৰ্জনালৈ পঠিওৱা আৰু মচাৰ আগতে আপোনাক নিশ্চিত কৰিবলৈ কোৱা হয়। %count টাতকৈ অধিক বস্তু পটভূমিত চলে।</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>প্ৰকাশন</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>য'ৰ পৰা জমা দিয়া হৈছে</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name বাছনি কৰক</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>এতিয়াও নহয়</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(নাম নাই)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>আইডি %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>খচৰা</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>বিবেচনাধীন</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ইয়াৰ মূল বস্তুৱে লুকুৱাইছে</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ধৰি ৰখা: নতুন জমা</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>সংস্কৰণ %version বিবেচনাধীন</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>সংস্কৰণ %version চলি আছে</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>খচৰা, সংস্কৰণ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>সংস্কৰণ %version প্ৰকাশিত</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date ৰ বাবে নিৰ্ধাৰিত</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ঠিকনা নাই</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>লিপিবদ্ধ কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>এই ফিল্টাৰবোৰৰ সৈতে একো নিমিলে।</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>সকলো দেখুৱাওক</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>এতিয়াও কোনো সমল নাই।</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>প্ৰতি পৃষ্ঠাত</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>প্ৰতি পৃষ্ঠাত %count টা বস্তু দেখুৱাওক।</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>এটা জমাৰ ঠিকনা আৰু ব্ৰাউজাৰ অডিট সূচীৰ পৰা আহে, যি ইয়াত উপলব্ধ নহয়: স্তম্ভটোত "লিপিবদ্ধ কৰা হোৱা নাই" লিখা থাকে।</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ঠিকনা আৰু ব্ৰাউজাৰ হৈছে বস্তুটোৰ বাবে অডিটে লিপিবদ্ধ কৰা তথ্য (স্বয়ংক্ৰিয় ধৰি ৰখাই সদায় সেইবোৰ লিপিবদ্ধ কৰে; প্ৰকাশ আৰু সৃষ্টিয়ে কেৱল য'ত সক্ৰিয় কৰা আছে), ইয়াৰ গোপনীয়তা ছেটিঙে যিদৰে ৰাখে।</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count টা বস্তু</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>মচিলে বস্তুবোৰ সিহঁতৰ সকলো সংস্কৰণ আৰু অনুবাদৰ সৈতে চিৰদিনৰ বাবে আঁতৰোৱা হয়। ইয়াক পূৰ্বৰ অৱস্থালৈ ঘূৰাই অনা নাযায়।</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>বস্তুবোৰ আবৰ্জনালৈ যায়, য'ৰ পৰা সেইবোৰ পুনৰুদ্ধাৰ কৰিব পাৰি।</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>প্ৰতিটো বস্তু আপোনাৰ নিজৰ অনুমতিৰ সৈতে পৰীক্ষা কৰা হয়; উপ-বস্তু থকা বস্তু যেনে আছে তেনেকৈয়ে ৰখা হয় (সমলৰ গঠনত ইয়াক আঁতৰাওক)। এয়া আপুনিয়েই বুলি সত্যাপন কৰিবলৈ আপোনাক কোৱা হ'ব।</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>এইটো পটভূমিত চলে: ইয়াৰ অগ্ৰগতিৰ পৃষ্ঠা খোল খায়, আৰু শেষ হ'লে প্ৰতিটো বস্তুৰ ফলাফল দেখুওৱা হয়।</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>বাছনি কৰা বস্তুবোৰ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>আৰু আৰু %count টা</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>বাতিল কৰক</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>একো কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>কাৰণ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>কাৰ্যটো এতিয়াও পটভূমিত চলি আছে।</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ইয়াৰ অগ্ৰগতি</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>পটভূমিৰ কাৰ্য ব্যৰ্থ হ'ল: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>সম্পূৰ্ণ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>নাকচ কৰা হ'ল</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ব্যৰ্থ হ'ল</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>প্ৰতিটো বস্তু অনুসৰি</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>বস্তু</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ফলাফল</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>কিয়</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>তালিকালৈ উভতি যাওক</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ছেটআপ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>একো কৰা হোৱা নাই</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>নিশ্চিত কৰক</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>এটা কাৰ্য বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>অন্ততঃ এটা বস্তু বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>এবাৰত সৰ্বাধিক 1000 টা বস্তু বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>বস্তুবোৰ কিয় ধৰি ৰখা হৈছে কওক।</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>শাখাটো বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>অৱস্থাটো বাছনি কৰক।</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ফৰ্মখন পঢ়িব পৰা নগ'ল।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>শেহতীয়া সমল</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>গণনাবোৰ পঢ়িব পৰা নগ'ল: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখা</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>আজি নতুন</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখাৰ ব্যৱস্থা এতিয়াও সাজু কৰা হোৱা নাই (উন্নীতকৰণৰ পদক্ষেপ 6.0.15-review-hold)।</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>সকলো শেহতীয়া সমল</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>আপুনি মডাৰেচন কাৰ্য চলাব নোৱাৰে (moderation/act)।</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>মডাৰেচন কাৰ্য সম্পূৰ্ণ হোৱা নাই: %errors।</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>মডাৰেচন: %count টা বস্তুত %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total টাৰ ভিতৰত %done টা বস্তু: %ok টা সম্পূৰ্ণ, %refused টা নাকচ, %failed টা ব্যৰ্থ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok টা সম্পূৰ্ণ, %refused টা নাকচ, %failed টা ব্যৰ্থ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ই আৰু অস্তিত্বত নাই।</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ইয়াৰ কোনো অৱস্থান নাই (প্ৰকাশিত নহয়)।</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>আপুনি ইয়াক লুকুৱাব নোৱাৰে (content/hide)।</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>আপুনি ইয়াক দেখুৱাব নোৱাৰে (content/hide)।</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ই ইতিমধ্যে লুকুৱা আছে।</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ই লুকুৱা নহয়।</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>লুকুওৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>দেখুওৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ই আবৰ্জনাত আছে: তাতেই আবৰ্জনা খালী কৰক বা ইয়াক পুনৰুদ্ধাৰ কৰক।</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>কেতিয়াও প্ৰকাশিত নোহোৱা খচৰা আবৰ্জনালৈ যাব নোৱাৰে: ইয়াক মচক।</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>আপুনি ইয়াক মচিব নোৱাৰে (content/remove)।</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>মচা হ'ল।</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>আপুনি ইয়াক আঁতৰাব নোৱাৰে (content/remove)।</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ইয়াৰ উপ-বস্তু আছে: সমলৰ গঠনত ইয়াক আঁতৰাওক, য'ত সেইবোৰ তালিকাভুক্ত।</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ইয়াক আঁতৰোৱা নহ'ল (কোনো কাৰ্যপ্ৰবাহে আঁতৰোৱাটো ধৰি ৰাখিব পাৰে)।</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>আবৰ্জনালৈ পঠিওৱা হ'ল।</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>শাখাটো অস্তিত্বত নাই।</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ই ইতিমধ্যে এই শাখাত আছে।</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>আপুনি এই শাখা নিৰ্ধাৰণ কৰিব নোৱাৰে (section/assign)।</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>শাখাটো নিৰ্ধাৰণ কৰা নহ'ল।</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>শাখা নিৰ্ধাৰণ কৰা হ'ল।</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>অৱস্থাটো অস্তিত্বত নাই।</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ই ইতিমধ্যে এই অৱস্থাত আছে।</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>আপুনি এই অৱস্থা নিৰ্ধাৰণ কৰিব নোৱাৰে (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>অৱস্থাটো নিৰ্ধাৰণ কৰা নহ'ল (কোনো কাৰ্যপ্ৰবাহে সলনিটো ধৰি ৰাখিব পাৰে)।</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>অৱস্থা নিৰ্ধাৰণ কৰা হ'ল।</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>এনে কোনো কাৰ্য নাই।</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>পৰ্যালোচনাৰ বাবে ধৰি ৰখাৰ ব্যৱস্থা সাজু কৰা হোৱা নাই (উন্নীতকৰণৰ পদক্ষেপ 6.0.15-review-hold)।</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ইয়াক কিয় ধৰি ৰখা হৈছে কওক।</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ইয়াক ইতিমধ্যে ধৰি ৰখা হৈছে।</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>আপুনি ইয়াক ধৰি ৰাখিব নোৱাৰে (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ধৰি ৰখা নহ'ল (কোনো কাৰ্যপ্ৰবাহে সলনিটো ধৰি ৰাখিব পাৰে)।</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ধৰি ৰখা হ'ল।</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ইয়াক ধৰি ৰখা হোৱা নাই।</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>আপুনি ইয়াক মুকলি কৰিব নোৱাৰে (state/assign)।</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ধৰি ৰখা মুকলি কৰা নহ'ল (কোনো কাৰ্যপ্ৰবাহে সলনিটো ধৰি ৰাখিব পাৰে)।</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>মুকলি কৰা হ'ল; এতিয়াও লুকুৱা: আপুনি ইয়াক দেখুৱাব নোৱাৰে (content/hide)।</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>মুকলি কৰা হ'ল।</translation>
     </message>
 </context>
 </TS>

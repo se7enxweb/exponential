@@ -15150,6 +15150,14 @@ Jjukira: Pakeeji tezijja kusimbulwa.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Enkyukakyuka mu nteekateeka ezikuumibwa nga fayiro: embeera yaazo, okuddukanya okwaliwo, okuddukanya n&apos;okuzzaayo.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ebirimu ebipya</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ebirimu ebisinga obupya, ebikwatiddwa okwekenneenyezebwa, n'ebikolwa ku birondeddwa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ Olina okukyusa kiraasi ya nodi ng'okozesa fankisoni y'okuwanyisiganya.</translat
     <message>
         <source>The run could not be started.</source>
         <translation>Okuddukanya tekusobodde kutandikibwa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Ekyakyusibwa</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ekyatondebwa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Erinnya</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kiraasi</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Ekitundu</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Eyatonda</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Ebirimu ebipya</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ebirimu ebyakatondebwa n'ebyakakyusibwa ku mukutu gwonna, ebipya okusooka: abakyalira bye baweereza, ebikwatiddwa okwekenneenyezebwa, ddulaafuti ezirindiridde okufulumizibwa. Londa ebiyingizo obiteere, obikwate, obikweke, obiraga, obiggyeemu oba obikyusize mu kitundu oba embeera endala.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Olukalala terwasobose kusomebwa: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Okukwata olw'okwekenneenya tekunnateekebwateekebwa, n'olwekyo tewali kikwatiddwa era ebikolwa by'okukwata tebiweebwa. Omutendera gw'okulongoosa 6.0.15-review-hold gukuteekateeka: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sengejja olukalala</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Okuva ku</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Okutuuka ku</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ennaku z'omwezi</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Ekyatondebwa (lwe kyasooka okufulumizibwa)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Byonna</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Omutendera</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Ekyafulumizibwa</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Ddulaafuti, tekyafulumizibwa</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ekirindiridde (okukkirizibwa oba ennaku)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Mu kasasiro</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ekikwatiddwa okwekenneenyezebwa</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Ekikwatiddwa</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Ekitakwatiddwa</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Ekikwekeddwa</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ekirabika</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Ekyaweerezebwa ku</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Omulyango gw'omukutu gwonna</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Okwekenneenya bye kwawandiika byokka.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Kati: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Erinnya ly'okuyingira oba ennamba y'omukozesa.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sengejja</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Ggyawo ebisengejja</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Ebiyingizo</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from okutuuka ku %to ku %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Tewali kiyingizo</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(kyasomeddwa mu ms %ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Ebikolwa ku biyingizo ebirondeddwa</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Londa byonna ku lupapula luno</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count birondeddwa</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Ekikolwa</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Londa ekikolwa</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Teera okukwata</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Kwata okwekenneenyezebwa</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Kweka</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Laga</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Teeka mu kasasiro</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Sangula</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Wa ekitundu</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Wa embeera</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Ensonga</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Yeetaagibwa okukwata; ekuumibwa wamu n'okukwata ne mu kwekenneenya.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Londa ekitundu</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Embeera</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Londa embeera</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Kozesa ku birondeddwa</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Buli kiyingizo kyekenneenyezebwa okusinziira ku lukusa lwo. Okuteeka mu kasasiro n'okusangula bikusaba okukakasa. Ebiyingizo ebisukka %count bikolebwa emabega.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Londa</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Okufulumya</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Ekyaweerezebwa okuva</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Londa %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>tekinnabaawo</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(tewali linnya)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Ennamba %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Ddulaafuti</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ekirindiridde</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Ekikwekeddwa omukulu waakyo</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Ekikwatiddwa: ekiweerezeddwa ekipya</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Enkyusa %version erindiridde</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Enkyusa %version ekyakolebwako</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Ddulaafuti, enkyusa %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Enkyusa %version efulumiziddwa</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Kitegekeddwa ku %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>tewali ndagiriro</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>tekyawandiikibwa</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Tewali kikwatagana na bisengejja bino.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Laga byonna</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Tewannabaawo birimu.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Buli lupapula</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Laga ebiyingizo %count ku buli lupapula.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Endagiriro ne bulawuza by'ekiweerezeddwa biva mu lukalala lw'okwekenneenya, olutali wano: ekisenge kigamba "tekyawandiikibwa".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Endagiriro ne bulawuza bye bimu okwekenneenya bye kwawandiika ku kiyingizo (okukwata okw'otoma bulijjo kubiwandiika; okufulumya n'okutonda wokka we kukoleddwa), nga enteekateeka zaakyo ez'ekyama bwe zibikuuma.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: ebiyingizo %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Okusangula kuggyawo ebiyingizo emirembe gyonna, n'enkyusa zaabyo zonna n'enzivuunula zaabyo. Tekuyinza kuddizibwayo.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Ebiyingizo bigenda mu kasasiro, gye biyinza okuzzibwayo.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Buli kiyingizo kyekenneenyezebwa okusinziira ku lukusa lwo; ekiyingizo ekirina ebiyingizo ebitono wansi waakyo kirekebwa nga bwe kiri (kiggyeemu mu nsengeka y'ebirimu). Ojja kusabibwa okukakasa nti ggwe.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Kino kikolebwa emabega: olupapula lw'enkulaakulana yaakyo luggulwawo, era ekivuddemu kya buli kiyingizo kiragibwa nga kiwedde.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ebiyingizo ebirondeddwa</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>n'ebirala %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Sazaamu</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Tewali kyakoleddwa</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Ensonga: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Ekikolwa kikyakolebwa emabega.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Enkulaakulana yaakyo</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Ekikolwa eky'emabega kiremereddwa: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kimalidde</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Kigaaniddwa</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kiremereddwa</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Buli kiyingizo</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ekiyingizo</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ekivuddemu</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Lwaki</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Ddayo ku lukalala</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Okuteekateeka</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Tewali kyakoleddwa</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kakasa</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Londa ekikolwa.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Londa waakiri ekiyingizo kimu.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Londa ebiyingizo ebitasukka 1000 omulundi gumu.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Gamba lwaki ebiyingizo bikwatiddwa.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Londa ekitundu.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Londa embeera.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Foomu teyasobose kusomebwa.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Ebirimu ebipya</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Emiwendo tegyasobose kusomebwa: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Ekikwatiddwa okwekenneenyezebwa</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Ebipya leero</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Okukwata olw'okwekenneenya tekunnateekebwateekebwa (omutendera gw'okulongoosa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Ebirimu ebipya byonna</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Tokkirizibwa kukola bikolwa bya kulondoola (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Ekikolwa ky'okulondoola tekiwedde: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Okulondoola: %action ku bintu %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ku %total eby'ebintu: %ok bimalidde, %refused bigaaniddwa, %failed biremereddwa</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok bimalidde, %refused bigaaniddwa, %failed biremereddwa</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Tekikyaliwo.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Tekirina kifo (tekyafulumizibwa).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Tokkirizibwa kukikweka (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Tokkirizibwa kukiraga (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Kyakwekebwa dda.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Tekikwekeddwa.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Kikwekeddwa.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Kiragiddwa.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Kiri mu kasasiro: kisangulire eyo oba okizzeeyo.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Ddulaafuti etafulumizibwangako teyinza kugenda mu kasasiro: gisangule.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Tokkirizibwa kukisangula (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Kisanguddwa.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Tokkirizibwa kukiggyawo (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Kirina ebiyingizo ebitono wansi waakyo: kiggyeemu mu nsengeka y'ebirimu, gye biwandiikiddwa.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Tekyaggyiddwawo (enkola y'emirimu eyinza okuba ng'ekwata okuggyawo).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Kitereddwa mu kasasiro.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Ekitundu tekiriiwo.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Kiri dda mu kitundu kino.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Tokkirizibwa kuwa kitundu kino (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Ekitundu tekyaweereddwa.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Ekitundu kiweereddwa.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Embeera teriiwo.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Kiri dda mu mbeera eno.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Tokkirizibwa kuwa mbeera eno (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Embeera teyaweereddwa (enkola y'emirimu eyinza okuba ng'ekwata enkyukakyuka).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Embeera eweereddwa.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Tewali kikolwa ng'ekyo.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Okukwata olw'okwekenneenya tekuteekeddwateekeddwa (omutendera gw'okulongoosa 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Gamba lwaki kikwatiddwa.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Kyakwatibwa dda.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Tokkirizibwa kukikwata (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Okukwata tekwateekeddwawo (enkola y'emirimu eyinza okuba ng'ekwata enkyukakyuka).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Kikwatiddwa.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Tekikwatiddwa.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Tokkirizibwa kukiteera (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Okukwata tekwateereddwa (enkola y'emirimu eyinza okuba ng'ekwata enkyukakyuka).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Kiteereddwa; kikyakwekeddwa: tokkirizibwa kukiraga (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Kiteereddwa.</translation>
     </message>
 </context>
 </TS>

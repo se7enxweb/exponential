@@ -15151,6 +15151,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>שנויי תקונא דנטירין בכתבי: מקמהון, רהטי, מרהט ומהדר לאחורא.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>מליותא חדתתא</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>מליותא חדתתא, מדם דכליא לבוחנא, וסוערנא על גביתא.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80562,6 +80570,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>רהטא לא אפשר למשרי.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>משוחלפא</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>בריא</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>שמא</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>זנא</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>פלגותא</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>עבודא</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>מליותא חדתתא</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>מליותא דאתבריו ואשתחלפו לחרתא בכלה אתרא, חדתא קדמיתא: מדם דשדרו מסתכלנא, מדם דכליא לבוחנא, סורטא דמסכין לפורסהון. גבו מנותא למשרא, למכלא, למטשיו, למחויו, למשקלו או למשניו לפלגותא או לאסכמא אחרתא.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>לא אשתכחת למקריה לרשימתא: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>כליתא לבוחנא לא אתתקנת עדכיל, מטל הנא מדם לא כליא וסוערנא דכליתא לא מתקרבין. דרגא דחודתא 6.0.15-review-hold מתקן לה: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>צללו לרשימתא</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>מן</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>עד</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>תאריכא</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>בריא (פורסא קדמיא)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>כל</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>מקמא</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>פריסא</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>סורטא, מן מתום לא פריס</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>מסכיא (מסכא לשוררא או לתאריכא)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>במזבלתא</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>כליא לבוחנא</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>כליא</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>לא כליא</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>טשיא</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>מתחזינא</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>אשתדר ביום</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>כל מעלנא דאתרא</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>בלחוד מדם דכתב בוקיא.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>השא: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>שמא דמפלחנא או מנינא דמפלחנא.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>מצללנא</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>דכיו למצללנא</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>מנותא</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from עד %to מן %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>לית מנתא</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(אתקרי ב%ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>סוערנא על מנותא גביתא</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>גביא דכל בהדא פאתא</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count גביין</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>סוערנא</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>גבו סוערנא</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>שריא דכליתא</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>כליא לבוחנא</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>מטשיא</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>מחויא</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>שניא למזבלתא</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>שיפא</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>משחא דפלגותא</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>משחא דאסכמא</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>עלתא</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>סניקא למכליתא; מתנטרא עם כליתא ובבוקיא.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>גבו פלגותא</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>אסכמא</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>גבו אסכמא</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>מפלחא על גביתא</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>כל מנתא מתבחנא לות שולטניכון. שניא למזבלתא ושיפא שאלין לשוררא. יתיר מן %count מנותא מתעבדן בטשיותא.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>גביא</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>פורסא</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>אשתדר מן</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>גביא %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>לא עדכיל</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(דלא שמא)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>מנינא %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>סורטא</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>מסכיא</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>טשיא מן אבוהי</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>כליא: משדרנותא חדתא</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>מפקתא %version מסכיא</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>מפקתא %version בעבדא</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>סורטא, מפקתא %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>מפקתא %version פריסא</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>מטכסא ל%date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>דלא מונעא</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>לא כתיבא</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>מדם לא שוא להלין מצללנא.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>מחויא דכל</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>לית מליותא עדכיל.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>בכל פאתא</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>חוו %count מנותא בכל פאתא.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>מונעא וחירנא דמשדרנותא אתין מן מחויתא דבוקיא, דלא איתיה הרכא: עמודא אמר „לא כתיבא”.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>מונעא וחירנא אנון הלין דכתב בוקיא למנתא (כליתא דמן נפשה כתבא להון אמיניות; פורסא ובריתא בלחוד איכא דאתעירו), איך דנטרין להון טכסא דנכיותה.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count מנותא</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>שיפא שקל למנותא לעלם, עם כלהין מפקתהין ותורגמיהין. לא משכח דנתהפך.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>מנותא אזלן למזבלתא, מן תמן משכחן דנתדערן.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>כל מנתא מתבחנא לות שולטניכון; מנתא דאית לה מנותא תחתיתא משתבקא איך דאיתיה (שקלוה בבנינא דמליותא). תשתאלון דתשררון דאנתון אנתון.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>הנא מתעבד בטשיותא: פאתא דמקדמנותה מתפתחא, ופלטא דכל מנתא מתחזא כד נשתמלא.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>מנותא גביתא</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ו%count אחרניתא</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>בוטלא</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>מדם לא אתעבד</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>עלתא: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>סוערנא עדכיל מתעבד בטשיותא.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>מקדמנותה</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>סוערנא דבטשיותא לא אצלח: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>גמירא</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>סליא</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>לא אצלח</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>לכל מנתא</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>מנתא</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>פלטא</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>למנא</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>לבסתר לרשימתא</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>טויבא</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>מדם לא אתעבד הרכא</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>שררא</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>גבו סוערנא.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>גבו לכל הלפחות מנתא חדא.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>גבו לכל היותר 1000 מנותא בזבנא חד.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>אמרו למנא כליין מנותא.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>גבו פלגותא.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>גבו אסכמא.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>לא אשתכח למקריה לפנקיתא.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>מליותא חדתתא</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>לא אשתכחו למקריו למניניא: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>כליא לבוחנא</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>חדתא יומנא</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>כליתא לבוחנא לא אתתקנת עדכיל (דרגא דחודתא 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>כלה מליותא חדתתא</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>לא מציתון דתעבדון סוערנא דבוחנא (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>סוערנא דבוחנא לא גמיר: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>בוחנא: %action על %count צבותא</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done מן %total צבותא: %ok גמירן, %refused סליין, %failed לא אצלחו</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok גמירן, %refused סליין, %failed לא אצלחו</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>לא איתוהי תוב.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>לית לה דוכתא (לא פריסא).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>לא מציתון דתטשונה (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>לא מציתון דתחוונה (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>טשיא הי מן קדם.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>לא טשיא.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>אתטשית.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>אתחזית.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>במזבלתא איתיה: סרקוה או דערוה מן תמן.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>סורטא דמן מתום לא אתפרס לא משכח דנאזל למזבלתא: שופוהי.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>לא מציתון דתשופונה (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>אתשיף.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>לא מציתון דתשקלונה (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>אית לה מנותא תחתיתא: שקלוה בבנינא דמליותא, איכא דמתחזין.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>לא אשתקל (רדיא דעבדא משכח דנכלא לשקלא).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>אשתני למזבלתא.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>פלגותא לא איתיה.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>בהדא פלגותא איתיה מן קדם.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>לא מציתון דתמשחון הדא פלגותא (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>פלגותא לא אתמשחת.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>פלגותא אתמשחת.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>אסכמא לא איתוהי.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>בהנא אסכמא איתיה מן קדם.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>לא מציתון דתמשחון הנא אסכמא (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>אסכמא לא אתמשח (רדיא דעבדא משכח דנכלא לשוחלפא).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>אסכמא אתמשח.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>לית סוערנא הכנא.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>כליתא לבוחנא לא אתתקנת (דרגא דחודתא 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>אמרו למנא כליא.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>כליא הי מן קדם.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>לא מציתון דתכלונה (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>כליתא לא אתסימת (רדיא דעבדא משכח דנכלא לשוחלפא).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>אתכליית.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>לא כליא.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>לא מציתון דתשרונה (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>כליתא לא אשתרית (רדיא דעבדא משכח דנכלא לשוחלפא).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>אשתרית; עדכיל טשיא: לא מציתון דתחוונה (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>אשתרית.</translation>
     </message>
 </context>
 </TS>

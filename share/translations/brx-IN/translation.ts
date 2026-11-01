@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>फाइल महरै थिनाय इनस्टलेशननि सोलायनायफोर: बिसोरनि स्थिति, रानफोर, रान खालामनाय आरो फिन लाबोनाय।</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>गुदुनि बिषयबस्तु</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>गोदान बिषयबस्तु, आनजाद खालामनो मा थिसना दोनबाय, आरो सायख्रानायआव खामानिफोर.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>रानखौ जागायनो हायाखै।</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>सोलोंथायनाय</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>सोरजिनाय</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>मुं</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>क्लास</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>सेक्सन</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>सर्जिग्रा</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>गुदुनि बिषयबस्तु</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>गोटै साइटनि गुदुयाव सोरजिनाय आरो सोलोंथायनाय बिषयबस्तु, गोदानखौ गिबियाव: सिनायथिग्राफोरा मा दैथायखो, आनजाद खालामनो मा थिसना दोनबाय, मोनसे खस्राफोरा फोरमायनायनि थाङै नेथाय दङ. आइटेमफोरखौ सायख्रानानै बेफोरखौ थिसनायनिफ्राय उदांहो, थिसना दोन, गुबुन खालाम, गोख्रों, आगाय एवा गुबुन सेक्सन एवा अबस्थाआव लाबो.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>लिस्टखौ फोरानो हायाखै: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>आनजाद थिसनायखौ दासिम सेट खालामाखै, बेनिखाय जेबो थिसना दोनाय जाया आरो थिसनायनि खामानिफोर होनाय जाया. अपग्रेड खामि 6.0.15-review-hold आ बेखौ सेट खालामो: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>लिस्टखौ फिल्टार खालाम</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>निफ्राय</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>सिम</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>तारिख</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>सोरजिनाय (गिबि सोलाव फोरमायनाय)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>जोबोद</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>स्थिति</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>फोरमायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>खस्रा, जेबो फोरमायाखै</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>थाङै (गनायथिनाय एवा तारिखनि थाङै नेथाय)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>जाथाइ गाङआव</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>आनजाद खालामनो थिसना दोनाय</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>थिसना दोनाय</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>थिसना दोनाय नङा</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>गुबुन</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>नायनो हायो</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>दैथायनाय सान</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>जायखिजाया साइट-प्रबेश</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ओडिटआ लिरथिनायखौल.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>दानो: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>मोनसे लगइन एवा बाहायग्रा आइडि.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>फिल्टार खालाम</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>फिल्टारफोरखौ आगाय</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>आइटेमफोर</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count निफ्राय %from निफ्राय %to सिम</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>आइटेम गैया</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms आव फोरायनाय)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>सायख्रानाय आइटेमफोरआव खामानि</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>बे फोथायाव जोबोदखौ सायख्रा</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count सायख्रानाय</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>खामानि</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>मोनसे खामानि सायख्रा</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>थिसनायखौ उदांहो</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>आनजाद खालामनो थिसना दोन</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>गुबुन खालाम</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>गोख्रों</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>जाथाइ गाङआव लाबो</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>मेटा</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>सेक्सन होलांगो</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>अबस्था होलांगो</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>मानो</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>थिसना दोननो गोनां; थिसनायजों आरो ओडिटआव दोनथायो.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>मोनसे सेक्सन सायख्रा</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>अबस्था</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>मोनसे अबस्था सायख्रा</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>सायख्रानायफोरआव लागाव</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>मोनफ्रोम आइटेमखौ नोंनि गावनि गनायथिनायफोरजों नायसंनाय जायो. जाथाइ गाङआव लाबोनाय आरो मेटानायनि सिगाङाव थारथि खालामनो सोंनाय जायो. %count नि सिगाङाव बांसिन आइटेमफोरा उनथिं खामानि मावो.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>सायख्रा</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>फोरमायनाय</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>बेनिफ्राय दैथायनाय</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name सायख्रा</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>दासिम नङा</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(मुं गैया)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>आइडि %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>खस्रा</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>थाङै</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>बिफाआ गुबुन खालानाय</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>थिसना दोनाय: गोदान दैथायनाय</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>भार्सन %version थाङै</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>भार्सन %version खामानि मावनाय सोलाव</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>खस्रा, भार्सन %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>भार्सन %version फोरमायनाय जादों</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date नि थाखाय थिना दोनाय</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ठिकाना गैया</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>लिरथियाखै</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>बे फिल्टारफोरजों जेबो गोरोबाया.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>जोबोदखौ दिन्थि</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>दासिम जेबो बिषयबस्तु गैया.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>फोथा फोथा</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>फोथा फोथायाव %count आइटेम दिन्थि.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>दैथायनायनि ठिकाना आरो ब्राउजारआ ओडिट इन्डेक्सनिफ्राय फैयो, जाय बेयाव मोननो हाया: कलामआव "लिरथियाखै" लिरनाय थायो.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ठिकाना आरो ब्राउजारआ ओडिटआ आइटेमनि थाखाय लिरथिनायसोर (गावआव थिसनायआ बेखौ सबसमनो लिरथियो; फोरमायनाय आरो सोरजिनाया जेराव खेवनाय दङ बेयावल), बेनि गुप्थो सेटिंफोरआ बेखौ दोनथाय बादि.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count आइटेम</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>मेटानायाव आइटेमफोरा बेफोरनि जोबोद भार्सन आरो अनुबादफोरजों गासै समनि थाखाय आगाय जायो. बेखौ फिन्हुं खालानो हायाखै.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>आइटेमफोरा जाथाइ गाङआव थांगौ, जेनिफ्राय बेफोरखौ फिन्हुं लाबोनो हायो.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>मोनफ्रोम आइटेमखौ नोंनि गावनि गनायथिनायफोरजों नायसंनाय जायो; गेजेर-आइटेम दङ आइटेमखौ बायदिनै थाङो (बेखौ बिषयबस्तु बाहागोआव आगाय). बेयो नोंसोर नामा बेखौ थारथि खालामनो सोंगोन.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>बेयो उनथिं खामानि मावो: बेनि गोख्रोनाय फोथाआ खेवो, आरो जोबनायाव मोनफ्रोम आइटेमनि फलाफलखौ दिन्थिनाय जायो.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>सायख्रानाय आइटेमफोर</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>आरो गुबुन %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>बन्द</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>जेबो मावाखै</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>मानो: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>खामानिया दासिमबो उनथिं मावगासिनो दङ.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>बेनि गोख्रोनाय</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>उनथिंनि खामानिया फेल जादों: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>जोबनाय</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>नेवसिनाय</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>फेल जादों</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>मोनफ्रोम आइटेम</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>आइटेम</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>फलाफल</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>मानो</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>लिस्टआव फिन</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>सेटआप</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>जेबो मावाखै</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>निश्चित खालाम</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>मोनसे खामानि सायख्रा.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>खमसेयाव मोनसे आइटेम सायख्रा.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>मोनसे सोलाव बांसिनसिम 1000 आइटेम सायख्रा.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>आइटेमफोरखौ मानो थिसना दोनबाय बेखौ बुङो.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>सेक्सनखौ सायख्रा.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>अबस्थाखौ सायख्रा.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>फरमखौ फोरानो हायाखै.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>गुदुनि बिषयबस्तु</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>अनजिमाफोरखौ फोरानो हायाखै: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>आनजाद खालामनो थिसना दोनाय</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>दिनै गोदान</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>आनजाद थिसनायखौ दासिम सेट खालामाखै (अपग्रेड खामि 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>जोबोद गुदुनि बिषयबस्तु</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>नोंथाङै मडारेसन खामानिफोर मावनो हायाखै (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>मडारेसन खामानिया जोबाखै: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>मडारेसन: %count बस्तुआव %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total निफ्राय %done बस्तु: %ok जोबनाय, %refused नेवसिनाय, %failed फेल जादों</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok जोबनाय, %refused नेवसिनाय, %failed फेल जादों</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>बेयो दानो थायाखिसै.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>बेनि जायगा गैया (फोरमायाखै).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>नोंथाङै बेखौ गुबुन खालामनो हायाखै (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>नोंथाङै बेखौ गोख्रोंनो हायाखै (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>बेयो सिगाङावनो गुबुन खालानाय.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>बेयो गुबुन खालानाय नङा.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>गुबुन खालानाय.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>गोख्रोंनाय.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>बेयो जाथाइ गाङआव दङ: बेयावनो बेखौ लांदां खालाम एवा फिन्हुं लाबो.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>जेबो फोरमायाखै खस्राया जाथाइ गाङआव थांनो हाया: बेखौ मेटा.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>नोंथाङै बेखौ मेटानो हायाखै (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>मेटानाय.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>नोंथाङै बेखौ आगायनो हायाखै (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>बेनि गेजेर-आइटेमफोर दङ: बेखौ बिषयबस्तु बाहागोआव आगाय, जेराव बेफोरखौ लिस्ट खालामनाय दङ.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>बेखौ आगायाखै (मोनसे कामनि रोखोमआ आगायनायखौ थिसना दोननो हायो).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>जाथाइ गाङआव लाबोनाय.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>सेक्सनआ थायाखै.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>बेयो सिगाङावनो बे सेक्सनआव दङ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>नोंथाङै बे सेक्सनखौ होलांगोनो हायाखै (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>सेक्सनखौ होलांगोआखै.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>सेक्सन होलांगोनाय.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>अबस्थाआ थायाखै.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>बेयो सिगाङावनो बे अबस्थाआव दङ.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>नोंथाङै बे अबस्थाखौ होलांगोनो हायाखै (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>अबस्थाखौ होलांगोआखै (मोनसे कामनि रोखोमआ सोलायनायखौ थिसना दोननो हायो).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>अबस्था होलांगोनाय.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>बे बादि खामानि गैया.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>आनजाद थिसनायखौ सेट खालामाखै (अपग्रेड खामि 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>बेखौ मानो थिसना दोनबाय बेखौ बुङो.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>बेयो सिगाङावनो थिसना दोनाय.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>नोंथाङै बेखौ थिसना दोननो हायाखै (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>थिसनायखौ दोनाखै (मोनसे कामनि रोखोमआ सोलायनायखौ थिसना दोननो हायो).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>थिसना दोनाय.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>बेयो थिसना दोनाय नङा.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>नोंथाङै बेखौ उदांहोनो हायाखै (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>थिसनायखौ उदांहोआखै (मोनसे कामनि रोखोमआ सोलायनायखौ थिसना दोननो हायो).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>उदांहोनाय; दासिमबो गुबुन: नोंथाङै बेखौ गोख्रोंनो हायाखै (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>उदांहोनाय.</translation>
     </message>
 </context>
 </TS>

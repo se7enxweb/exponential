@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>การเปลี่ยนแปลงของการติดตั้งที่เก็บไว้เป็นไฟล์: สถานะ การเรียกใช้ เรียกใช้และย้อนกลับ</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>เนื้อหาล่าสุด</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>เนื้อหาใหม่ล่าสุด สิ่งที่ถูกระงับไว้เพื่อตรวจทาน และการดำเนินการกับรายการที่เลือก</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>ไม่สามารถเริ่มการเรียกใช้ได้</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>แก้ไขเมื่อ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>สร้างเมื่อ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ชื่อ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>คลาส</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ส่วน</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ผู้สร้าง</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>เนื้อหาล่าสุด</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>เนื้อหาที่สร้างและแก้ไขล่าสุดของทั้งไซต์ ใหม่สุดก่อน: สิ่งที่ผู้เยี่ยมชมส่งมา สิ่งที่ถูกระงับไว้เพื่อตรวจทาน ฉบับร่างที่รอการเผยแพร่ เลือกรายการเพื่อปลดการระงับ ระงับ ซ่อน แสดง นำออก หรือย้ายไปยังส่วนหรือสถานะอื่น</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ไม่สามารถอ่านรายการได้: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ยังไม่ได้ตั้งค่าการระงับเพื่อตรวจทาน จึงไม่มีสิ่งใดถูกระงับและไม่มีการดำเนินการระงับให้ใช้ ขั้นตอนการอัปเกรด 6.0.15-review-hold จะตั้งค่าให้: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>กรองรายการ</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ตั้งแต่</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ถึง</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>วันที่</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>สร้างเมื่อ (เผยแพร่ครั้งแรก)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ทั้งหมด</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>สถานะการเผยแพร่</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>เผยแพร่แล้ว</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ฉบับร่าง ยังไม่เคยเผยแพร่</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>รอดำเนินการ (รอการอนุมัติหรือรอถึงวันที่)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>อยู่ในถังขยะ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ถูกระงับไว้เพื่อตรวจทาน</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ถูกระงับ</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ไม่ถูกระงับ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ซ่อนอยู่</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>มองเห็นได้</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ส่งเมื่อ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>การเข้าถึงไซต์ใดก็ได้</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>เฉพาะสิ่งที่การตรวจสอบบันทึกไว้</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ขณะนี้: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ชื่อเข้าสู่ระบบหรือ ID ผู้ใช้</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>กรอง</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ล้างตัวกรอง</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>รายการ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ถึง %to จาก %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ไม่มีรายการ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(อ่านใน %ms มิลลิวินาที)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>การดำเนินการกับรายการที่เลือก</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>เลือกทั้งหมดในหน้านี้</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>เลือกแล้ว %count</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>การดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>เลือกการดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ปลดการระงับ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ระงับไว้เพื่อตรวจทาน</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ซ่อน</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>แสดง</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ย้ายไปถังขยะ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ลบ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>กำหนดส่วน</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>กำหนดสถานะ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>เหตุผล</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>จำเป็นสำหรับการระงับ เก็บไว้กับการระงับและในบันทึกการตรวจสอบ</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>เลือกส่วน</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>สถานะ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>เลือกสถานะ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ใช้กับรายการที่เลือก</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>แต่ละรายการจะถูกตรวจสอบกับสิทธิ์ของคุณเอง การย้ายไปถังขยะและการลบจะขอให้คุณยืนยัน มากกว่า %count รายการจะทำงานในเบื้องหลัง</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>เลือก</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>การเผยแพร่</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ส่งจาก</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>เลือก %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ยังไม่มี</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ไม่มีชื่อ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ฉบับร่าง</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>รอดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ถูกซ่อนโดยรายการแม่</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ถูกระงับ: การส่งใหม่</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>เวอร์ชัน %version รอดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>เวอร์ชัน %version กำลังแก้ไข</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ฉบับร่าง เวอร์ชัน %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>เวอร์ชัน %version เผยแพร่แล้ว</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>กำหนดไว้สำหรับ %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ไม่มีที่อยู่</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ไม่ได้บันทึก</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ไม่มีสิ่งใดตรงกับตัวกรองเหล่านี้</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>แสดงทั้งหมด</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ยังไม่มีเนื้อหา</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ต่อหน้า</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>แสดง %count รายการต่อหน้า</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ที่อยู่และเบราว์เซอร์ของการส่งมาจากดัชนีการตรวจสอบ ซึ่งไม่มีให้ใช้ที่นี่: คอลัมน์จะแสดงว่า "ไม่ได้บันทึก"</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ที่อยู่และเบราว์เซอร์คือสิ่งที่การตรวจสอบบันทึกไว้สำหรับรายการนั้น (การระงับอัตโนมัติบันทึกไว้เสมอ ส่วนการเผยแพร่และการสร้างจะบันทึกเฉพาะเมื่อเปิดใช้) ตามที่การตั้งค่าความเป็นส่วนตัวเก็บรักษาไว้</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count รายการ</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>การลบจะนำรายการออกอย่างถาวร พร้อมทุกเวอร์ชันและคำแปล ไม่สามารถยกเลิกได้</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>รายการจะถูกย้ายไปถังขยะ ซึ่งสามารถกู้คืนได้จากที่นั่น</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>แต่ละรายการจะถูกตรวจสอบกับสิทธิ์ของคุณเอง รายการที่มีรายการย่อยจะไม่ถูกเปลี่ยนแปลง (ให้นำออกในโครงสร้างเนื้อหา) คุณจะถูกขอให้ยืนยันว่าเป็นตัวคุณเอง</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>การดำเนินการนี้ทำงานในเบื้องหลัง: หน้าความคืบหน้าจะเปิดขึ้น และผลลัพธ์ของแต่ละรายการจะแสดงเมื่อเสร็จสิ้น</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>รายการที่เลือก</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>และอีก %count รายการ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ยกเลิก</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ไม่มีการดำเนินการใด</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>เหตุผล: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>การดำเนินการยังทำงานอยู่ในเบื้องหลัง</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ความคืบหน้า</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>การดำเนินการเบื้องหลังล้มเหลว: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>เสร็จสิ้น</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ถูกปฏิเสธ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ล้มเหลว</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>แยกตามรายการ</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>รายการ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ผลลัพธ์</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>สาเหตุ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>กลับไปที่รายการ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ตั้งค่าระบบ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ไม่ได้ทำสิ่งใด</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ยืนยัน</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>เลือกการดำเนินการ</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>เลือกอย่างน้อยหนึ่งรายการ</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>เลือกได้ไม่เกิน 1000 รายการต่อครั้ง</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ระบุเหตุผลที่ระงับรายการ</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>เลือกส่วน</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>เลือกสถานะ</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ไม่สามารถอ่านแบบฟอร์มได้</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>เนื้อหาล่าสุด</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ไม่สามารถอ่านจำนวนได้: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ถูกระงับไว้เพื่อตรวจทาน</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ใหม่วันนี้</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ยังไม่ได้ตั้งค่าการระงับเพื่อตรวจทาน (ขั้นตอนการอัปเกรด 6.0.15-review-hold)</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>เนื้อหาล่าสุดทั้งหมด</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้ดำเนินการตรวจกลั่นกรอง (moderation/act)</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>การดำเนินการตรวจกลั่นกรองไม่สมบูรณ์: %errors</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>การตรวจกลั่นกรอง: %action กับ %count ออบเจ็กต์</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done จาก %total ออบเจ็กต์: สำเร็จ %ok ถูกปฏิเสธ %refused ล้มเหลว %failed</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>สำเร็จ %ok ถูกปฏิเสธ %refused ล้มเหลว %failed</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>รายการนี้ไม่มีอยู่แล้ว</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>รายการนี้ไม่มีตำแหน่ง (ยังไม่ได้เผยแพร่)</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้ซ่อนรายการนี้ (content/hide)</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้แสดงรายการนี้ (content/hide)</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>รายการนี้ถูกซ่อนอยู่แล้ว</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>รายการนี้ไม่ได้ถูกซ่อน</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ซ่อนแล้ว</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>แสดงแล้ว</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>รายการนี้อยู่ในถังขยะ: ล้างหรือกู้คืนได้ที่นั่น</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ฉบับร่างที่ไม่เคยเผยแพร่ไม่สามารถย้ายไปถังขยะได้: ให้ลบแทน</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้ลบรายการนี้ (content/remove)</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ลบแล้ว</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้นำรายการนี้ออก (content/remove)</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>รายการนี้มีรายการย่อย: ให้นำออกในโครงสร้างเนื้อหา ซึ่งแสดงรายการย่อยเหล่านั้นไว้</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>รายการนี้ไม่ได้ถูกนำออก (เวิร์กโฟลว์อาจระงับการนำออกไว้)</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ย้ายไปถังขยะแล้ว</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ไม่มีส่วนนี้</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>รายการนี้อยู่ในส่วนนี้อยู่แล้ว</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้กำหนดส่วนนี้ (section/assign)</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>ไม่ได้กำหนดส่วน</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>กำหนดส่วนแล้ว</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ไม่มีสถานะนี้</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>รายการนี้อยู่ในสถานะนี้อยู่แล้ว</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้กำหนดสถานะนี้ (state/assign)</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ไม่ได้กำหนดสถานะ (เวิร์กโฟลว์อาจระงับการเปลี่ยนแปลงไว้)</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>กำหนดสถานะแล้ว</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ไม่มีการดำเนินการดังกล่าว</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ยังไม่ได้ตั้งค่าการระงับเพื่อตรวจทาน (ขั้นตอนการอัปเกรด 6.0.15-review-hold)</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ระบุเหตุผลที่ระงับรายการนี้</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>รายการนี้ถูกระงับอยู่แล้ว</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้ระงับรายการนี้ (state/assign)</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ไม่ได้วางการระงับ (เวิร์กโฟลว์อาจระงับการเปลี่ยนแปลงไว้)</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ระงับแล้ว</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>รายการนี้ไม่ได้ถูกระงับ</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>คุณไม่ได้รับอนุญาตให้ปลดการระงับรายการนี้ (state/assign)</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ไม่ได้ปลดการระงับ (เวิร์กโฟลว์อาจระงับการเปลี่ยนแปลงไว้)</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ปลดการระงับแล้ว แต่ยังซ่อนอยู่: คุณไม่ได้รับอนุญาตให้แสดงรายการนี้ (content/hide)</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ปลดการระงับแล้ว</translation>
     </message>
 </context>
 </TS>

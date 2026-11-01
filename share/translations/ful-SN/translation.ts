@@ -15150,6 +15150,14 @@ Maandu: Paketji ɗin ittaaka aafugo maɓɓe.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Bayle aafgol ngol ɗe mooftaa no fiilde: no ɗe ngonri, doggi ɗii, dogin e artirgol.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Loowdi kesi</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Loowdi kesi ndi, ko daraa ngam ƴeewndaagol, e golle e ko suɓaa.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ A haani waylude sifaa nokkuure ndee bee golle lomtugol.</translation>
     <message>
         <source>The run could not be started.</source>
         <translation>Dogal ngal waawaa fuɗɗeede.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Waylaama</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Tagaama</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Innde</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Sifaa</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Taƴre</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Tagooɗo</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Loowdi kesi</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Loowdi lowre ndee fof tagaandi walla waylaandi sakket, kesi ɗi adii: ko yillotooɓe neldi, ko daraama ngam ƴeewndaagol, daartole sakkiiɗe yaltinegol mum en. Suɓo geɗe ngam accitde, darnude, suuɗde, hollude, ittude walla werlude ɗe e taƴre walla ngonka goɗɗo.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Doggol ngol waawaa janngeede: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Darnugol ngam ƴeewndaagol teeltaaka tawo, ɗum noon hay huunde darnaaka, golle darnugol ndokkataake. Daawal hesɗitingol 6.0.15-review-hold teeltata ɗum: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Sooɓ doggol ngol</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Gila</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Haa</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Ñalnde</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Tagaama (yaltinegol arano)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Fof</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ngonka yaltinegol</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Yaltinaama</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Daartol, yaltinaaka abadaa</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ina fadi (ina fadi jaɓegol walla ñalnde)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>E ɓalli</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Daraama ngam ƴeewndaagol</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Daraama</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Daraaka</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Suuɗaama</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ina yiyee</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Neldaa ñalnde</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Naatirde lowre fof</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ko taskaano winndi tan.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Jooni: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Innde seŋorde walla ID kuutoro.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Sooɓ</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Momtu sooɓe</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Geɗe</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from haa %to e nder %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Alaa huunde</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(janngaa e nder %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Golle e geɗe suɓaaɗe</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Suɓo fof e hello ngoo</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count suɓaama</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Golle</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Suɓo golle</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Accit darnugol</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Darnu ngam ƴeewndaagol</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Suuɗ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Hollu</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Werlu e ɓalli</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Momtu</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Hokku taƴre</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Hokku ngonka</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Sabaabu</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ina waɗɗii ngam darnude; ina mooftee e darnugol ngol e nder taskaano.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Suɓo taƴre</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ngonka</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Suɓo ngonka</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Waɗ e ko suɓaa</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Huunde fof ina ƴeewee e jamirooje maa. Werlude e ɓalli e momtude ina ɗaminira ma. Ko ɓuri geɗe %count ina waɗee e caggal.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Suɓo</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Yaltinegol</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Neldaa gila</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Suɓo %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>tawo</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(alaa innde)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Daartol</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ina fadi</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Suuɗaama e jinnaaɗo mum</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Daraama: neldaa kesum</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Yamre %version ina fadi</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Yamre %version ina waɗee</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Daartol, yamre %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Yamre %version yaltinaama</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Yamiraama ngam %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>alaa ñiiɓirde</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>winndaaka</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Alaa huunde fotndi e sooɓe ɗee.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Hollu fof</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Alaa loowdi tawo.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>E hello</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Hollu geɗe %count e hello kala.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ñiiɓirde e wanngorde neldal ummotoo ko e tippude taskaano, ngal heɓaaka ɗoo: dognol ngol ina wiya "winndaaka".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Ñiiɓirde e wanngorde ko ɗe taskaano winndi ngam huunde ndee (darnugol jaajaagol ina winnda ɗe sahaa kala; yaltinegol e tagugol tan ɗo ɗum huɓɓinaa), no teelte suturo mayre mooftirta ɗe.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: geɗe %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Momtugol ina itta geɗe ɗee haa abadaa, e yamre mum en fof e firooji mum en. Ɗum waawaa artireede.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Geɗe ɗee ina yaha e ɓalli, ɗo ɗe mbaawi artireede.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Huunde fof ina ƴeewee e jamirooje maa; huunde jogiinde geɗe les mayre accitete no woniri (ittu nde e mbaadi loowdi). A ƴamete ƴeewtinde ko an woni.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Ɗum ina waɗee e caggal: hello yaarngo mum ina udditoo, njaɓɓi huunde fof ina hollee so timmii.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Geɗe suɓaaɗe</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>e %count goɗɗe</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Haaytu</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Hay huunde waɗaaka</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Sabaabu: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Golle ɗee ina waɗee e caggal tawo.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Yaarngo mum</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Golle caggal ɗee ronkii: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Timmi</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Salaama</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Waɗaaki</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Huunde kala</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Huunde</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Njaɓɓi</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Ko waɗi</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Rutto e doggol ngol</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Teeltugol</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Waɗaaka hay huunde</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Tabbitin</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Suɓo golle.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Suɓo huunde wootere e ɓuri famɗude.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Suɓo geɗe 1000 e ɓuri heewde e nder sahaa gooto.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Wiy ko waɗi geɗe ɗee daraa.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Suɓo taƴre ndee.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Suɓo ngonka ngal.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Fiise ndee waawaa janngeede.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Loowdi kesi</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Limooje ɗee waawaa janngeede: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Daraama ngam ƴeewndaagol</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Kesi hannde</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Darnugol ngam ƴeewndaagol teeltaaka tawo (daawal hesɗitingol 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Loowdi kesi fof</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>A waawaa waɗde golle moderasiyoŋ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Golle moderasiyoŋ timmaani: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasiyoŋ: %action e geɗe %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done e %total geɗe: %ok timmi, %refused salaama, %failed waɗaaki</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok timmi, %refused salaama, %failed waɗaaki</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Ɗum woodaani kadi.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Alaa nokku (yaltinaaka).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>A waawaa suuɗde ɗum (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>A waawaa hollude ɗum (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Ɗum suuɗaama gila.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Ɗum suuɗaaka.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Suuɗaama.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Hollaama.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ɗum ina e ɓalli: ɓoliɗin walla artir ɗum ɗoon.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Daartol yaltinaaka abadaa waawaa yahde e ɓalli: momtu ɗum.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>A waawaa momtude ɗum (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Momtaama.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>A waawaa ittude ɗum (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ɗum jogii geɗe les mum: ittu ɗum e mbaadi loowdi, ɗo ɗe limtaa.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Ɗum ittaaka (laawol golle ina waawi darnude ittugol ngol).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Werlaama e ɓalli.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Taƴre ndee woodaani.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ɗum ina e taƴre ndee gila.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>A waawaa hokkude taƴre ndee (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Taƴre ndee hokkaaka.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Taƴre hokkaama.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ngonka ngal woodaani.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ɗum ina e ngonka ngal gila.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>A waawaa hokkude ngonka ngal (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Ngonka ngal hokkaaka (laawol golle ina waawi darnude waylo ngo).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Ngonka hokkaama.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Alaa golle ɗe nanndi e ɗum.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Darnugol ngam ƴeewndaagol teeltaaka (daawal hesɗitingol 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Wiy ko waɗi ɗum daraa.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Ɗum daraama gila.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>A waawaa darnude ɗum (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Darnugol ngol waɗaaka (laawol golle ina waawi darnude waylo ngo).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Daraama.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Ɗum daraaka.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>A waawaa accitde ɗum (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Darnugol ngol accitaaka (laawol golle ina waawi darnude waylo ngo).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Accitaama; ina suuɗii tawo: a waawaa hollude ɗum (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Accitaama.</translation>
     </message>
 </context>
 </TS>

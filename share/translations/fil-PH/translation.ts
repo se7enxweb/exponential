@@ -15150,6 +15150,14 @@ Paalala: Hindi ia-uninstall ang mga package.</translation>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Mga pagbabago sa instalasyon na nakatago bilang mga file: ang kanilang katayuan, ang mga pagpapatakbo, patakbuhin at ibalik.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Bagong nilalaman</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Ang pinakabagong nilalaman, ang pinipigil para sa pagsusuri, at mga aksyon sa isang pinili.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ Kailangan mong palitan ang class ng node gamit ang swap functionality.</translat
     <message>
         <source>The run could not be started.</source>
         <translation>Hindi masimulan ang pagpapatakbo.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Binago</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ginawa</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Pangalan</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Klase</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Seksyon</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Gumawa</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Bagong nilalaman</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Ang pinakabagong ginawa at binagong nilalaman ng buong site, pinakabago muna: ang ipinadala ng mga bisita, ang pinipigil para sa pagsusuri, ang mga draft na naghihintay ng paglalathala. Pumili ng mga item upang palayain, pigilin, itago, ipakita, alisin o ilipat sa ibang seksyon o estado.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>Hindi mabasa ang listahan: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>Hindi pa naka-set up ang pagpigil para sa pagsusuri, kaya walang pinipigil at hindi inaalok ang mga aksyon ng pagpigil. Ang hakbang ng upgrade na 6.0.15-review-hold ang nagse-set up nito: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Salain ang listahan</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Mula</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Hanggang</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Petsa</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Ginawa (unang na-publish)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Lahat</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Katayuan</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Na-publish</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Draft, hindi pa kailanman na-publish</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Nakabinbin (naghihintay ng pag-apruba o ng petsa)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Nasa basurahan</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Pinipigil para sa pagsusuri</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Pinipigil</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Hindi pinipigil</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Nakatago</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Nakikita</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Ipinadala noong</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Anumang siteaccess</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ang naitala lamang ng audit.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Ngayon: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Isang login o user id.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Salain</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>I-clear ang mga filter</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Mga item</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from hanggang %to ng %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Walang item</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(nabasa sa loob ng %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Mga aksyon sa mga napiling item</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Piliin lahat sa pahinang ito</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ang napili</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Aksyon</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Pumili ng aksyon</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Palayain ang pagpigil</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Pigilin para sa pagsusuri</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Itago</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Ipakita</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Ilipat sa basurahan</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Burahin</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Magtakda ng seksyon</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Magtakda ng estado</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Dahilan</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Kailangan upang pigilin; itinatago kasama ng pagpigil at sa audit.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Pumili ng seksyon</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Estado</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Pumili ng estado</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Ilapat sa mga napili</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>Sinusuri ang bawat item batay sa sarili mong mga pahintulot. Hihilingin sa iyong kumpirmahin ang paglipat sa basurahan at ang pagbura. Ang higit sa %count item ay tumatakbo sa background.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Piliin</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Paglalathala</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Ipinadala mula sa</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Piliin ang %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>hindi pa</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(walang pangalan)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Borador</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Nakabinbin</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Itinago ng magulang nito</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Pinipigil: bagong pagpapadala</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Nakabinbin ang bersyon %version</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Ginagawa pa ang bersyon %version</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Draft, bersyon %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>Na-publish ang bersyon %version</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>Nakatakda sa %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>walang address</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>hindi naitala</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Walang tumutugma sa mga filter na ito.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Ipakita lahat</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Wala pang nilalaman.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Bawat pahina</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Magpakita ng %count item bawat pahina.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>Ang address at ang browser ng isang pagpapadala ay galing sa index ng audit, na hindi magagamit dito: ang nakasulat sa column ay "hindi naitala".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Ang address at ang browser ay ang mga naitala ng audit para sa item (laging itinatala ito ng awtomatikong pagpigil; ang paglalathala at paggawa ay kung naka-on lamang), ayon sa pagtatago ng mga setting nito sa privacy.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count item</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Permanenteng inaalis ng pagbura ang mga item, kasama ang lahat ng kanilang bersyon at salin. Hindi ito maibabalik.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Mapupunta ang mga item sa basurahan, kung saan maaari silang ibalik.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>Sinusuri ang bawat item batay sa sarili mong mga pahintulot; ang item na may mga sub-item ay iniiwan nang ganoon (alisin ito sa istruktura ng nilalaman). Hihilingin sa iyong patunayan na ikaw nga ito.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Tumatakbo ito sa background: magbubukas ang pahina ng progreso nito, at ipapakita ang resulta ng bawat item kapag tapos na.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Ang mga napiling item</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>at %count pa</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kanselahin</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>Walang ginawa</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Dahilan: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Tumatakbo pa ang aksyon sa background.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ang progreso nito</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Nabigo ang aksyon sa background: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tapos na</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>Tinanggihan</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Nabigo</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Bawat item</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Aytem</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resulta</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Bakit</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Bumalik sa listahan</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Pagsasaayos</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Walang nagawa</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Kumpirmahin</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Pumili ng aksyon.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Pumili ng kahit isang item.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Pumili ng hindi hihigit sa 1000 item sa isang pagkakataon.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sabihin kung bakit pinipigil ang mga item.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Piliin ang seksyon.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Piliin ang estado.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Hindi mabasa ang form.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Bagong nilalaman</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>Hindi mabasa ang mga bilang: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Pinipigil para sa pagsusuri</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Bago ngayong araw</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Hindi pa naka-set up ang pagpigil para sa pagsusuri (ang hakbang ng upgrade na 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Lahat ng bagong nilalaman</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>Hindi ka pinapayagang magpatakbo ng mga aksyon ng moderasyon (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Hindi kumpleto ang aksyon ng moderasyon: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Moderasyon: %action sa %count object</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done sa %total object: %ok tapos, %refused tinanggihan, %failed nabigo</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok tapos, %refused tinanggihan, %failed nabigo</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Wala na ito.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Wala itong lokasyon (hindi na-publish).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>Hindi ka pinapayagang itago ito (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>Hindi ka pinapayagang ipakita ito (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>Nakatago na ito.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>Hindi ito nakatago.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>Itinago.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>Ipinakita.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Nasa basurahan ito: alisan ng laman ang basurahan o ibalik ito mula roon.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Hindi mapupunta sa basurahan ang draft na hindi pa kailanman na-publish: burahin ito.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>Hindi ka pinapayagang burahin ito (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>Binura.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>Hindi ka pinapayagang alisin ito (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>May mga sub-item ito: alisin ito sa istruktura ng nilalaman, kung saan nakalista ang mga ito.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>Hindi ito naalis (maaaring pinipigil ng isang workflow ang pag-alis).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>Inilipat sa basurahan.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Hindi umiiral ang seksyon.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Nasa seksyong ito na ito.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>Hindi ka pinapayagang itakda ang seksyong ito (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>Hindi naitakda ang seksyon.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>Naitakda ang seksyon.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Hindi umiiral ang estado.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Nasa estadong ito na ito.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>Hindi ka pinapayagang itakda ang estadong ito (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>Hindi naitakda ang estado (maaaring pinipigil ng isang workflow ang pagbabago).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>Naitakda ang estado.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Walang ganoong aksyon.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>Hindi naka-set up ang pagpigil para sa pagsusuri (ang hakbang ng upgrade na 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sabihin kung bakit ito pinipigil.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>Pinipigil na ito.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>Hindi ka pinapayagang pigilin ito (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>Hindi nailagay ang pagpigil (maaaring pinipigil ng isang workflow ang pagbabago).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>Pinigil.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>Hindi ito pinipigil.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>Hindi ka pinapayagang palayain ito (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>Hindi napalaya ang pagpigil (maaaring pinipigil ng isang workflow ang pagbabago).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>Pinalaya; nakatago pa rin: hindi ka pinapayagang ipakita ito (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>Pinalaya.</translation>
     </message>
 </context>
 </TS>

@@ -15148,6 +15148,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ఫైళ్లుగా ఉంచిన ఇన్‌స్టాలేషన్ మార్పులు: వాటి స్థితి, రన్‌లు, అమలు చేయడం మరియు వెనక్కి తీసుకోవడం.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ఇటీవలి కంటెంట్</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>అత్యంత కొత్త కంటెంట్, సమీక్ష కోసం నిలిపి ఉంచినది, మరియు ఎంపికపై చర్యలు.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80551,6 +80559,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>రన్‌ను ప్రారంభించడం సాధ్యం కాలేదు.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>సవరించబడింది</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>సృష్టించబడింది</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>పేరు</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>క్లాస్</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>విభాగం</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>సృష్టికర్త</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ఇటీవలి కంటెంట్</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>మొత్తం సైట్‌లో ఇటీవల సృష్టించిన మరియు సవరించిన కంటెంట్, కొత్తది ముందుగా: సందర్శకులు సమర్పించినది, సమీక్ష కోసం నిలిపి ఉంచినది, ప్రచురణ కోసం వేచి ఉన్న డ్రాఫ్ట్‌లు. నిలుపుదలను విడుదల చేయడానికి, నిలిపి ఉంచడానికి, దాచడానికి, చూపించడానికి, తీసివేయడానికి లేదా మరొక విభాగానికి లేదా స్థితికి తరలించడానికి అంశాలను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>జాబితాను చదవలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>సమీక్ష నిలుపుదల ఇంకా సెటప్ చేయబడలేదు, కాబట్టి ఏదీ నిలిపి ఉంచబడలేదు మరియు నిలుపుదల చర్యలు అందించబడవు. అప్‌గ్రేడ్ దశ 6.0.15-review-hold దీన్ని సెటప్ చేస్తుంది: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>జాబితాను ఫిల్టర్ చేయండి</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>నుండి</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>వరకు</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>తేదీ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>సృష్టించబడింది (మొదటిసారి ప్రచురించబడింది)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>అన్నీ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ప్రచురించబడింది</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>డ్రాఫ్ట్, ఎప్పుడూ ప్రచురించబడలేదు</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>పెండింగ్‌లో ఉంది (ఆమోదం లేదా తేదీ కోసం వేచి ఉంది)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ట్రాష్‌లో ఉంది</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>సమీక్ష కోసం నిలిపి ఉంచబడింది</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>నిలిపి ఉంచబడింది</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>నిలిపి ఉంచబడలేదు</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>దాచబడింది</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>కనిపిస్తుంది</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>సమర్పించిన చోటు</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ఏదైనా సైట్‌యాక్సెస్</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ఆడిట్ నమోదు చేసినది మాత్రమే.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ప్రస్తుతం: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>లాగిన్ పేరు లేదా వినియోగదారు ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ఫిల్టర్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ఫిల్టర్‌లను క్లియర్ చేయండి</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>అంశాలు</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count లో %from నుండి %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>అంశం లేదు</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ms లో చదవబడింది)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ఎంచుకున్న అంశాలపై చర్యలు</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ఈ పేజీలో అన్నీ ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ఎంచుకోబడ్డాయి</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>చర్య</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ఒక చర్యను ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>నిలుపుదలను విడుదల చేయండి</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>సమీక్ష కోసం నిలిపి ఉంచండి</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>దాచండి</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>చూపించు</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ట్రాష్‌కు తరలించండి</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>తొలగించండి</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>విభాగాన్ని కేటాయించండి</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>స్థితిని కేటాయించండి</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>కారణం</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>నిలిపి ఉంచడానికి అవసరం; నిలుపుదలతో మరియు ఆడిట్‌లో ఉంచబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ఒక విభాగాన్ని ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>స్థితి</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ఒక స్థితిని ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ఎంచుకున్న వాటికి వర్తింపజేయండి</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ప్రతి అంశం మీ స్వంత అనుమతులతో తనిఖీ చేయబడుతుంది. ట్రాష్‌కు తరలించడం మరియు తొలగించడం మీ నిర్ధారణను అడుగుతాయి. %count కంటే ఎక్కువ అంశాలు నేపథ్యంలో నడుస్తాయి.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ప్రచురణ</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>నుండి సమర్పించబడింది</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ఇంకా లేదు</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(పేరు లేదు)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>డ్రాఫ్ట్</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>పెండింగ్‌లో ఉంది</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>దాని పేరెంట్ ద్వారా దాచబడింది</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>నిలిపి ఉంచబడింది: కొత్త సమర్పణ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>వెర్షన్ %version పెండింగ్‌లో ఉంది</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>వెర్షన్ %version పురోగతిలో ఉంది</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>డ్రాఫ్ట్, వెర్షన్ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>వెర్షన్ %version ప్రచురించబడింది</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date కి షెడ్యూల్ చేయబడింది</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>చిరునామా లేదు</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>నమోదు కాలేదు</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ఈ ఫిల్టర్‌లకు ఏదీ సరిపోలలేదు.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>అన్నీ చూపించు</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ఇంకా కంటెంట్ లేదు.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ప్రతి పేజీకి</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ప్రతి పేజీకి %count అంశాలను చూపించు.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>సమర్పణ యొక్క చిరునామా మరియు బ్రౌజర్ ఆడిట్ సూచిక నుండి వస్తాయి, అది ఇక్కడ అందుబాటులో లేదు: నిలువు వరుస &quot;నమోదు కాలేదు&quot; అని చూపిస్తుంది.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>చిరునామా మరియు బ్రౌజర్ ఆ అంశం కోసం ఆడిట్ నమోదు చేసినవి (ఆటో-నిలుపుదల వాటిని ఎల్లప్పుడూ నమోదు చేస్తుంది; ప్రచురించడం మరియు సృష్టించడం ఆన్ చేసినప్పుడు మాత్రమే), దాని గోప్యతా సెట్టింగ్‌లు ఉంచినట్లుగా.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count అంశాలు</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>తొలగించడం అంశాలను వాటి అన్ని వెర్షన్‌లు మరియు అనువాదాలతో శాశ్వతంగా తీసివేస్తుంది. దీన్ని రద్దు చేయలేము.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>అంశాలు ట్రాష్‌కు వెళ్తాయి, అక్కడి నుండి వాటిని పునరుద్ధరించవచ్చు.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ప్రతి అంశం మీ స్వంత అనుమతులతో తనిఖీ చేయబడుతుంది; ఉప అంశాలు ఉన్న అంశం అలాగే వదిలివేయబడుతుంది (దాన్ని కంటెంట్ నిర్మాణంలో తీసివేయండి). అది మీరే అని ధృవీకరించమని మిమ్మల్ని అడుగుతారు.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ఇది నేపథ్యంలో నడుస్తుంది: దాని పురోగతి పేజీ తెరుచుకుంటుంది, మరియు పూర్తయినప్పుడు ప్రతి అంశం ఫలితం చూపబడుతుంది.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ఎంచుకున్న అంశాలు</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>మరియు మరో %count</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>రద్దు చేయండి</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ఏమీ చేయబడలేదు</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>కారణం: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>చర్య ఇంకా నేపథ్యంలో నడుస్తోంది.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>దాని పురోగతి</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>నేపథ్య చర్య విఫలమైంది: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>పూర్తయింది</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>తిరస్కరించబడింది</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>విఫలమైంది</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ప్రతి అంశానికి</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>అంశం</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ఫలితం</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ఎందుకు</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>జాబితాకు తిరిగి వెళ్ళండి</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>సెటప్</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ఏమీ చేయలేదు</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>నిర్ధారించండి</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ఒక చర్యను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>కనీసం ఒక అంశాన్ని ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ఒకేసారి గరిష్టంగా 1000 అంశాలను ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>అంశాలు ఎందుకు నిలిపి ఉంచబడ్డాయో చెప్పండి.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>విభాగాన్ని ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>స్థితిని ఎంచుకోండి.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ఫారమ్‌ను చదవలేకపోయాము.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ఇటీవలి కంటెంట్</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>లెక్కలను చదవలేకపోయాము: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>సమీక్ష కోసం నిలిపి ఉంచబడింది</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ఈ రోజు కొత్తవి</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>సమీక్ష నిలుపుదల ఇంకా సెటప్ చేయబడలేదు (అప్‌గ్రేడ్ దశ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>అన్ని ఇటీవలి కంటెంట్</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>మీరు మోడరేషన్ చర్యలను నడపలేరు (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>మోడరేషన్ చర్య పూర్తి కాలేదు: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>మోడరేషన్: %count ఆబ్జెక్ట్‌లపై %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total లో %done ఆబ్జెక్ట్‌లు: %ok పూర్తయ్యాయి, %refused తిరస్కరించబడ్డాయి, %failed విఫలమయ్యాయి</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok పూర్తయ్యాయి, %refused తిరస్కరించబడ్డాయి, %failed విఫలమయ్యాయి</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ఇది ఇక ఉనికిలో లేదు.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>దీనికి స్థానం లేదు (ప్రచురించబడలేదు).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>మీరు దీన్ని దాచలేరు (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>మీరు దీన్ని చూపించలేరు (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ఇది ఇప్పటికే దాచబడింది.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ఇది దాచబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>దాచబడింది.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>చూపించబడింది.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ఇది ట్రాష్‌లో ఉంది: అక్కడ ఖాళీ చేయండి లేదా పునరుద్ధరించండి.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ఎప్పుడూ ప్రచురించబడని డ్రాఫ్ట్ ట్రాష్‌కు వెళ్ళదు: దాన్ని తొలగించండి.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>మీరు దీన్ని తొలగించలేరు (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>తొలగించబడింది.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>మీరు దీన్ని తీసివేయలేరు (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>దీనికి ఉప అంశాలు ఉన్నాయి: అవి జాబితా చేయబడిన కంటెంట్ నిర్మాణంలో దీన్ని తీసివేయండి.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ఇది తీసివేయబడలేదు (ఒక వర్క్‌ఫ్లో తీసివేతను నిలిపి ఉంచి ఉండవచ్చు).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ట్రాష్‌కు తరలించబడింది.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>విభాగం ఉనికిలో లేదు.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ఇది ఇప్పటికే ఈ విభాగంలో ఉంది.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>మీరు ఈ విభాగాన్ని కేటాయించలేరు (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>విభాగం కేటాయించబడలేదు.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>విభాగం కేటాయించబడింది.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>స్థితి ఉనికిలో లేదు.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ఇది ఇప్పటికే ఈ స్థితిలో ఉంది.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>మీరు ఈ స్థితిని కేటాయించలేరు (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>స్థితి కేటాయించబడలేదు (ఒక వర్క్‌ఫ్లో మార్పును నిలిపి ఉంచి ఉండవచ్చు).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>స్థితి కేటాయించబడింది.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>అటువంటి చర్య లేదు.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>సమీక్ష నిలుపుదల సెటప్ చేయబడలేదు (అప్‌గ్రేడ్ దశ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ఇది ఎందుకు నిలిపి ఉంచబడిందో చెప్పండి.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ఇది ఇప్పటికే నిలిపి ఉంచబడింది.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>మీరు దీన్ని నిలిపి ఉంచలేరు (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>నిలుపుదల ఉంచబడలేదు (ఒక వర్క్‌ఫ్లో మార్పును నిలిపి ఉంచి ఉండవచ్చు).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>నిలిపి ఉంచబడింది.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ఇది నిలిపి ఉంచబడలేదు.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>మీరు దీన్ని విడుదల చేయలేరు (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>నిలుపుదల విడుదల చేయబడలేదు (ఒక వర్క్‌ఫ్లో మార్పును నిలిపి ఉంచి ఉండవచ్చు).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>విడుదల చేయబడింది; ఇంకా దాచబడి ఉంది: మీరు దీన్ని చూపించలేరు (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>విడుదల చేయబడింది.</translation>
     </message>
 </context>
 </TS>

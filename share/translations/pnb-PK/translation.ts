@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>انسٹالیشن وچ تبدیلیاں جو فائلاں دے طور تے رکھیاں گئیاں: اوہناں دی حالت، رن، چلانا تے واپس لینا۔</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>نواں مواد</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>سبھ توں نواں مواد، جو جانچ لئی روکیا گیا اے، تے کسے چوݨ تے کم۔</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>رن شروع نہیں کیتا جا سکیا۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>بدلیا</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>بݨایا</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ناں</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>کلاس</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>سیکشن</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>بݨاؤݨ والا</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>نواں مواد</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ساری سائٹ دا سبھ توں نواں بݨایا تے بدلیا مواد، نواں پہلاں: جو ویکھݨ والیاں نے گھلیا، جو جانچ لئی روکیا گیا اے، تے اشاعت دی اڈیک کردے مسودے۔ آئٹم چݨو تاں جے اوہناں نوں چھڈو، روکو، لکاؤ، وکھاؤ، ہٹاؤ یاں کسے ہور سیکشن یاں حالت وچ گھلو۔</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>لسٹ پڑھی نئیں جا سکی: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>جانچ لئی روک اجے سیٹ نئیں کیتی گئی، ایس لئی کجھ وی روکیا نئیں جاندا تے روکݨ والے کم پیش نئیں کیتے جاندے۔ اپ گریڈ قدم 6.0.15-review-hold اینوں سیٹ کردا اے: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>لسٹ نوں فلٹر کرو</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>توں</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>تک</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>تریخ</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>بݨایا (پہلی اشاعت)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>سارے</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>سٹیٹس</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>شائع شدہ</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>مسودہ، کدی شائع نئیں ہویا</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>زیر التوا (منظوری یاں کسے تریخ دی اڈیک)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>کوڑےدان وچ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>جانچ لئی روکیا گیا</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>روکیا گیا</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>روکیا نئیں گیا</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>لکیا</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>دسدا</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>گھلݨ دی تریخ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>کوئی وی سائٹ رسائی</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>صرف اوہ جو آڈٹ نے لکھیا۔</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ہݨ: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>لاگ ان ناں یاں ورتݨ والے دی آئی ڈی۔</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>فلٹر</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>فلٹر صاف کرو</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>آئٹم</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%count وچوں %from توں %to</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>کوئی آئٹم نئیں</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(%ms ملی سیکنڈ وچ پڑھیا)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>چݨے ہوئے آئٹماں تے کم</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ایس صفحے تے سارے چݨو</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count چݨے گئے</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>کارروائی</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>کوئی کارروائی چݨو</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>روک ہٹاؤ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>جانچ لئی روکو</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>لکاؤ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>وکھاؤ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>کوڑےدان وچ گھلو</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>مٹاؤ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>سیکشن سونپو</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>حالت سونپو</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>وجہ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>روکݨ لئی لازمی؛ روک دے نال تے آڈٹ وچ رکھی جاندی اے۔</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>کوئی سیکشن چݨو</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>کوئی حالت چݨو</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>چݨے ہوئیاں تے لاگو کرو</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ہر آئٹم تہاڈیاں اپݨیاں اجازتاں نال جانچیا جاندا اے۔ کوڑےدان وچ گھلݨ تے مٹاوݨ توں پہلاں تہاڈی تصدیق منگی جاندی اے۔ %count توں ودھ آئٹم پچھوکڑ وچ چلدے نیں۔</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>چݨو</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>اشاعت</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ایتھوں گھلیا</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name چݨو</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>اجے نئیں</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(بے ناں)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>آئی ڈی %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>مسودہ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>زیر التوا</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>اپݨے مڈھلے دی وجہ توں لکیا</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>روکیا گیا: نویں گھلت</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ورژن %version زیر التوا</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ورژن %version تے کم جاری</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>مسودہ، ورژن %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ورژن %version شائع ہویا</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>%date لئی مقرر</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>کوئی پتہ نئیں</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>لکھیا نئیں گیا</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ایہناں فلٹراں نال کجھ نئیں ملدا۔</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>سارے وکھاؤ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>اجے کوئی مواد نئیں۔</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>فی صفحہ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>فی صفحہ %count آئٹم وکھاؤ۔</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>کسے گھلت دا پتہ تے براؤزر آڈٹ انڈیکس توں آؤندے نیں، جو ایتھے موجود نئیں: کالم وچ "لکھیا نئیں گیا" لکھیا ہوندا اے۔</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>پتہ تے براؤزر اوہی نیں جو آڈٹ نے ایس آئٹم لئی لکھے (خودکار روک اوہناں نوں ہمیشہ لکھدی اے؛ اشاعت تے بݨاوݨ صرف جتھے چالو ہووے)، جیویں اوہدیاں رازداری سیٹنگاں اوہناں نوں رکھدیاں نیں۔</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count آئٹم</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>مٹاوݨ نال آئٹم اپݨے سارے ورژناں تے ترجمیاں سمیت ہمیشہ لئی مٹ جاندے نیں۔ ایہہ واپس نئیں ہو سکدا۔</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>آئٹم کوڑےدان وچ جاندے نیں، جتھوں اوہناں نوں واپس لیایا جا سکدا اے۔</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ہر آئٹم تہاڈیاں اپݨیاں اجازتاں نال جانچیا جاندا اے؛ جس آئٹم دے تھلے آئٹم ہوݨ اوہ جیویں اے اونویں رہندا اے (اینوں مواد دی بݨتر وچ ہٹاؤ)۔ تہانوں تصدیق کرن لئی کہیا جاوے گا کہ ایہہ تسیں ہی او۔</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ایہہ پچھوکڑ وچ چلدا اے: اوہدی پیش رفت دا صفحہ کھلدا اے، تے مکمل ہوݨ تے ہر آئٹم دا نتیجہ وکھایا جاندا اے۔</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>چݨے ہوئے آئٹم</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>تے %count ہور</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>رد کرو</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>کجھ نئیں کیتا گیا</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>وجہ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>کارروائی اجے پچھوکڑ وچ چل رہی اے۔</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>اوہدی پیش رفت</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>پچھوکڑ دی کارروائی ناکام ہو گئی: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ہو گیا</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>رد کیتا</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ہر آئٹم</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>آئٹم</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>نتیجہ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>کیوں</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>لسٹ تے واپس</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>سیٹ اپ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>کجھ نئیں کیتا</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>تصدیق کرو</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>کوئی کارروائی چݨو۔</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>گھٹ توں گھٹ اک آئٹم چݨو۔</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>اک واری وچ ودھ توں ودھ 1000 آئٹم چݨو۔</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>دسو کہ آئٹم کیوں روکے گئے نیں۔</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>سیکشن چݨو۔</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>حالت چݨو۔</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فارم پڑھیا نئیں جا سکیا۔</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>نواں مواد</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>گنتیاں پڑھیاں نئیں جا سکیاں: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>جانچ لئی روکیا گیا</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>اج نواں</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>جانچ لئی روک اجے سیٹ نئیں کیتی گئی (اپ گریڈ قدم 6.0.15-review-hold)۔</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>سارا نواں مواد</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>تہانوں نگرانی دیاں کارروائیاں چلاوݨ دی اجازت نئیں (moderation/act)۔</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>نگرانی دی کارروائی مکمل نئیں: %errors۔</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>نگرانی: %count آبجیکٹاں تے %action</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%total وچوں %done آبجیکٹ: %ok ہو گئے، %refused رد، %failed ناکام</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ہو گئے، %refused رد، %failed ناکام</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ایہہ ہݨ موجود نئیں۔</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ایہدی کوئی تھاں نئیں (شائع نئیں ہویا)۔</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>تہانوں اینوں لکاوݨ دی اجازت نئیں (content/hide)۔</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>تہانوں اینوں وکھاوݨ دی اجازت نئیں (content/hide)۔</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ایہہ پہلاں ای لکیا اے۔</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ایہہ لکیا نئیں۔</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>لکا دتا۔</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>وکھا دتا۔</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ایہہ کوڑےدان وچ اے: اوتھے ای خالی کرو یاں واپس لیاؤ۔</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>جو مسودہ کدی شائع نئیں ہویا اوہ کوڑےدان وچ نئیں جا سکدا: اینوں مٹاؤ۔</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>تہانوں اینوں مٹاوݨ دی اجازت نئیں (content/remove)۔</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>مٹا دتا۔</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>تہانوں اینوں ہٹاوݨ دی اجازت نئیں (content/remove)۔</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ایہدے تھلے آئٹم نیں: اینوں مواد دی بݨتر وچ ہٹاؤ، جتھے اوہ درج نیں۔</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ایہہ ہٹایا نئیں گیا (ہو سکدا اے کوئی ورک فلو ہٹاوݨ نوں روکی بیٹھا ہووے)۔</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>کوڑےدان وچ گھل دتا۔</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>سیکشن موجود نئیں۔</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ایہہ پہلاں ای ایس سیکشن وچ اے۔</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>تہانوں ایہہ سیکشن سونپݨ دی اجازت نئیں (section/assign)۔</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>سیکشن نئیں سونپیا گیا۔</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>سیکشن سونپ دتا۔</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>حالت موجود نئیں۔</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ایہہ پہلاں ای ایس حالت وچ اے۔</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>تہانوں ایہہ حالت سونپݨ دی اجازت نئیں (state/assign)۔</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>حالت نئیں سونپی گئی (ہو سکدا اے کوئی ورک فلو تبدیلی نوں روکی بیٹھا ہووے)۔</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>حالت سونپ دتی۔</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>اجیہی کوئی کارروائی نئیں۔</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>جانچ لئی روک سیٹ نئیں کیتی گئی (اپ گریڈ قدم 6.0.15-review-hold)۔</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>دسو کہ ایہہ کیوں روکیا گیا اے۔</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ایہہ پہلاں ای روکیا ہویا اے۔</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>تہانوں اینوں روکݨ دی اجازت نئیں (state/assign)۔</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>روک نئیں لائی گئی (ہو سکدا اے کوئی ورک فلو تبدیلی نوں روکی بیٹھا ہووے)۔</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>روک دتا۔</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ایہہ روکیا ہویا نئیں۔</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>تہانوں اینوں چھڈݨ دی اجازت نئیں (state/assign)۔</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>روک نئیں ہٹائی گئی (ہو سکدا اے کوئی ورک فلو تبدیلی نوں روکی بیٹھا ہووے)۔</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>چھڈ دتا؛ اجے وی لکیا: تہانوں اینوں وکھاوݨ دی اجازت نئیں (content/hide)۔</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>چھڈ دتا۔</translation>
     </message>
 </context>
 </TS>

@@ -15148,6 +15148,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>Àwọn àyípadà sí ìfisórí tí a pa mọ́ bí fáìlì: ipò wọn, àwọn ìṣiṣẹ́, ṣiṣẹ́ kí o sì yí padà sẹ́yìn.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Àkóónú àìpẹ́</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>Àkóónú tuntun jùlọ, ohun tí a dá dúró fún àyẹ̀wò, àti àwọn iṣẹ́ lórí àwọn ohun tí a yàn.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80551,6 +80559,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>A kò lè bẹ̀rẹ̀ ìṣiṣẹ́ náà.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>Ti yípadà</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>Ti ṣẹ̀dá</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Orúkọ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>Kíláàsì</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>Abala</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>Olùdá</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>Àkóónú àìpẹ́</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>Àkóónú tí a ṣẹ̀dá àti tí a yípadà láìpẹ́ jùlọ ní gbogbo sáìtì, tuntun jùlọ ní àkọ́kọ́: ohun tí àwọn àlejò fi ránṣẹ́, ohun tí a dá dúró fún àyẹ̀wò, àwọn àkọsílẹ̀ àkọ́kọ́ tí ń dúró de ìtẹ̀jáde. Yan àwọn ohun láti tú wọn sílẹ̀, dá wọn dúró, fi wọ́n pamọ́, fi wọ́n hàn, yọ wọ́n kúrò tàbí gbé wọn lọ sí abala tàbí ipò mìíràn.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>A kò lè ka àkójọ náà: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>A kò tíì ṣètò ìdádúró fún àyẹ̀wò, nítorí náà kò sí ohun tí a dá dúró, a kò sì pèsè àwọn iṣẹ́ ìdádúró. Ìgbésẹ̀ ìmúdójúìwọ̀n 6.0.15-review-hold ló ń ṣètò rẹ̀: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>Ṣe àlẹ̀mọ́ àkójọ náà</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>Láti</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>Déètì</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>Ti ṣẹ̀dá (ìtẹ̀jáde àkọ́kọ́)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Gbogbo</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>Tí a tẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>Àkọsílẹ̀ àkọ́kọ́, a kò tẹ̀ ẹ́ jáde rí</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>Ní ìdúró (ń dúró de ìfọwọ́sí tàbí déètì kan)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>Nínú àpótí ìdọ̀tí</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Tí a dá dúró fún àyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>Tí a dá dúró</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>Tí a kò dá dúró</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>Tí a fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Tí ó hàn</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>Tí a fi ránṣẹ́ ní</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>Ìwọlé sáìtì èyíkéyìí</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>Ohun tí àyẹ̀wò ìwé ìṣirò kọ sílẹ̀ nìkan.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>Báyìí: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>Orúkọ ìwọlé tàbí ID olùmúlò.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>Àlẹ̀mọ́</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>Pa àwọn àlẹ̀mọ́ rẹ́</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>Àwọn ohun</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from sí %to nínú %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>Kò sí ohun kan</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(a kà á ní %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>Àwọn iṣẹ́ lórí àwọn ohun tí a yàn</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>Yan gbogbo rẹ̀ ní ojú ìwé yìí</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ni a yàn</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>Iṣẹ́</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>Yan iṣẹ́ kan</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>Tú ìdádúró náà sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>Dá dúró fún àyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>Fihàn</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>Gbé lọ sí àpótí ìdọ̀tí</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>Paarẹ́</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>Yan abala</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>Yan ipò</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Ìdí</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>Ó pọn dandan láti dá dúró; a ń tọ́jú rẹ̀ pẹ̀lú ìdádúró náà àti nínú àyẹ̀wò ìwé ìṣirò.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>Yan abala kan</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Ipò</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>Yan ipò kan</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>Lò ó fún àwọn tí a yàn</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>A ń yẹ ohun kọ̀ọ̀kan wò lòdì sí àwọn ìgbàláàyè tìrẹ. Gbígbé lọ sí àpótí ìdọ̀tí àti pípaarẹ́ ń béèrè pé kí o fìdí rẹ̀ múlẹ̀. Ohun tí ó ju %count lọ ń ṣiṣẹ́ ní abẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Yan</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>Ìtẹ̀jáde</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>Tí a fi ránṣẹ́ láti</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>Yan %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>kò tíì</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(kò sí orúkọ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>Nọ́mbà ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>Àkọsílẹ̀ àkọ́kọ́</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ní ìdúró</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>Òbí rẹ̀ ló fi pamọ́</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>Tí a dá dúró: ìfiránṣẹ́ tuntun</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>Ẹ̀dà %version wà ní ìdúró</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>Ẹ̀dà %version ń lọ lọ́wọ́</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>Àkọsílẹ̀ àkọ́kọ́, ẹ̀dà %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>A ti tẹ ẹ̀dà %version jáde</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>A ṣètò rẹ̀ fún %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>kò sí àdírẹ́sì</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>a kò kọ ọ́ sílẹ̀</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>Kò sí ohun tí ó bá àwọn àlẹ̀mọ́ wọ̀nyí mu.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>Fi gbogbo rẹ̀ hàn</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>Kò sí àkóónú kankan síbẹ̀.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>Fún ojú ìwé kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>Fi ohun %count hàn fún ojú ìwé kọ̀ọ̀kan.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says &quot;not recorded&quot;.</source>
+        <translation>Àdírẹ́sì àti aṣàwákiri ìfiránṣẹ́ kan wá láti inú atọ́ka àyẹ̀wò ìwé ìṣirò, tí kò sí níbí: ọ̀wọ̀n náà sọ pé &quot;a kò kọ ọ́ sílẹ̀&quot;.</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>Àdírẹ́sì àti aṣàwákiri ni àwọn tí àyẹ̀wò ìwé ìṣirò kọ sílẹ̀ fún ohun náà (ìdádúró aládàáṣe máa ń kọ wọ́n sílẹ̀ nígbà gbogbo; ìtẹ̀jáde àti ìṣẹ̀dá nìkan níbi tí a ti tàn án), gẹ́gẹ́ bí ètò ìpamọ́ rẹ̀ ṣe ń tọ́jú wọn.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: ohun %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>Pípaarẹ́ ń yọ àwọn ohun náà kúrò títí láé, pẹ̀lú gbogbo ẹ̀dà àti ìtúmọ̀ wọn. A kò lè dá a padà.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>Àwọn ohun náà ń lọ sí àpótí ìdọ̀tí, níbi tí a ti lè dá wọn padà.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>A ń yẹ ohun kọ̀ọ̀kan wò lòdì sí àwọn ìgbàláàyè tìrẹ; ohun tí ó ní àwọn ohun abẹ́ ni a fi sílẹ̀ bí ó ti wà (yọ ọ́ kúrò nínú ìgbékalẹ̀ àkóónú). A ó béèrè pé kí o jẹ́rìí pé ìwọ ni.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>Èyí ń ṣiṣẹ́ ní abẹ́lẹ̀: ojú ìwé ìlọsíwájú rẹ̀ yóò ṣí, a ó sì fi èsì ohun kọ̀ọ̀kan hàn nígbà tí ó bá parí.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>Àwọn ohun tí a yàn</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>àti %count mìíràn</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Fagilé</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>A kò ṣe nǹkankan</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>Ìdí: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>Iṣẹ́ náà ṣì ń ṣiṣẹ́ ní abẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>Ìlọsíwájú rẹ̀</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>Iṣẹ́ abẹ́lẹ̀ náà kùnà: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Ti parí</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>A kọ̀ ọ́</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ó kùnà</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>Fún ohun kọ̀ọ̀kan</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>Ohun kan</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Èsì</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Ìdí rẹ̀</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>Padà sí àkójọ náà</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ìgbékalẹ̀</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>Kò sí nǹkan tí a ṣe</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>Fìdí rẹ̀ múlẹ̀</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>Yan iṣẹ́ kan.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>Yan ó kéré tán ohun kan.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>Yan ohun tí kò ju 1000 lọ ní ẹ̀ẹ̀kan.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>Sọ ìdí tí a fi dá àwọn ohun náà dúró.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>Yan abala náà.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>Yan ipò náà.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>A kò lè ka fọ́ọ̀mù náà.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>Àkóónú àìpẹ́</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>A kò lè ka àwọn ìkà náà: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>Tí a dá dúró fún àyẹ̀wò</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>Tuntun lónìí</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>A kò tíì ṣètò ìdádúró fún àyẹ̀wò (ìgbésẹ̀ ìmúdójúìwọ̀n 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>Gbogbo àkóónú àìpẹ́</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>O kò ní ààyè láti ṣe àwọn iṣẹ́ ìṣàkóso àkóónú (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>Iṣẹ́ ìṣàkóso àkóónú náà kò pé: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>Ìṣàkóso àkóónú: %action lórí ohun %count</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done nínú ohun %total: %ok ti parí, %refused ni a kọ̀, %failed kùnà</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ti parí, %refused ni a kọ̀, %failed kùnà</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>Kò sí mọ́.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>Kò ní ibùdó (a kò tẹ̀ ẹ́ jáde).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>O kò ní ààyè láti fi pamọ́ (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>O kò ní ààyè láti fi hàn (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>A ti fi pamọ́ tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>A kò fi pamọ́.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>A ti fi pamọ́.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>A ti fi hàn.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>Ó wà nínú àpótí ìdọ̀tí: sọ ọ́ di òfo tàbí dá a padà níbẹ̀.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>Àkọsílẹ̀ àkọ́kọ́ tí a kò tẹ̀ jáde rí kò lè lọ sí àpótí ìdọ̀tí: paarẹ́ rẹ̀.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>O kò ní ààyè láti paarẹ́ rẹ̀ (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>A ti paarẹ́.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>O kò ní ààyè láti yọ ọ́ kúrò (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>Ó ní àwọn ohun abẹ́: yọ ọ́ kúrò nínú ìgbékalẹ̀ àkóónú, níbi tí a ti tò wọ́n sí.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>A kò yọ ọ́ kúrò (ìṣàn iṣẹ́ kan lè dá ìyọkúrò náà dúró).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>A ti gbé e lọ sí àpótí ìdọ̀tí.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>Abala náà kò sí.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>Ó ti wà nínú abala yìí tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>O kò ní ààyè láti yan abala yìí (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>A kò yan abala náà.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>A ti yan abala.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>Ipò náà kò sí.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>Ó ti wà ní ipò yìí tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>O kò ní ààyè láti yan ipò yìí (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>A kò yan ipò náà (ìṣàn iṣẹ́ kan lè dá àyípadà náà dúró).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>A ti yan ipò.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>Kò sí irú iṣẹ́ bẹ́ẹ̀.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>A kò ṣètò ìdádúró fún àyẹ̀wò (ìgbésẹ̀ ìmúdójúìwọ̀n 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>Sọ ìdí tí a fi dá a dúró.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>A ti dá a dúró tẹ́lẹ̀.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>O kò ní ààyè láti dá a dúró (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>A kò gbé ìdádúró náà kalẹ̀ (ìṣàn iṣẹ́ kan lè dá àyípadà náà dúró).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>A ti dá a dúró.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>A kò dá a dúró.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>O kò ní ààyè láti tú u sílẹ̀ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>A kò tú ìdádúró náà sílẹ̀ (ìṣàn iṣẹ́ kan lè dá àyípadà náà dúró).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>A ti tú u sílẹ̀; ó ṣì wà ní ìpamọ́: o kò ní ààyè láti fi hàn (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>A ti tú u sílẹ̀.</translation>
     </message>
 </context>
 </TS>

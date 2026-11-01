@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>گۆڕانکارییەکانی دامەزراندن کە وەک فایل پارێزراون: بارودۆخیان، جێبەجێکردنەکان، جێبەجێکردن و گەڕاندنەوە.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ناوەڕۆکی نوێ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>نوێترین ناوەڕۆک، ئەوەی بۆ پێداچوونەوە ڕاگیراوە، و کردارەکان لەسەر هەڵبژاردنێک.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>جێبەجێکردنەکە دەستی پێنەکرا.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>گۆڕدراو</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>دروستکراو</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ناو</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>پۆل</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>بەش</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>دروستکەر</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ناوەڕۆکی نوێ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>نوێترین ناوەڕۆکی دروستکراو و گۆڕدراوی هەموو ماڵپەڕەکە، نوێترین یەکەم: ئەوەی سەردانکەران ناردوویانە، ئەوەی بۆ پێداچوونەوە ڕاگیراوە، ڕەشنووسەکان کە چاوەڕێی بڵاوکردنەوەیانن. بڕگەکان هەڵبژێرە بۆ ئازادکردن، ڕاگرتن، شاردنەوە، پیشاندان، لابردن یان گواستنەوەیان بۆ بەش یان دۆخێکی تر.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>لیستەکە نەخوێندرایەوە: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ڕاگرتن بۆ پێداچوونەوە هێشتا ڕێکنەخراوە، بۆیە هیچ شتێک ڕانەگیراوە و کردارەکانی ڕاگرتن پێشکەش ناکرێن. هەنگاوی نوێکردنەوەی 6.0.15-review-hold ڕێکی دەخات: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>پاڵاوتنی لیستەکە</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>لە</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>بۆ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>بەروار</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>دروستکراو (یەکەم بڵاوکردنەوە)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>هەموو</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>بارودۆخ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>بڵاوکراوە</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ڕەشنووس، هەرگیز بڵاونەکراوەتەوە</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>چاوەڕوان (چاوەڕێی پەسەندکردن یان بەروارێک)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>لە سەبەتەی خۆڵدا</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ڕاگیراو بۆ پێداچوونەوە</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ڕاگیراو</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ڕانەگیراو</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>شاراوە</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>دیار</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>نێردراو لە</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>هەر دەستگەیشتنێکی ماڵپەڕ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>تەنها ئەوەی تۆماری پشکنین تۆماری کردووە.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ئێستا: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ناوی چوونەژوورەوە یان ناسنامەی بەکارهێنەر.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>پاڵاوتن</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>سڕینەوەی پاڵاوتنەکان</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>بڕگەکان</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from تا %to لە %count</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>هیچ بڕگەیەک نییە</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(خوێندرایەوە لە %ms ms)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>کردارەکان لەسەر بڕگە هەڵبژێردراوەکان</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>هەڵبژاردنی هەموو لەم پەڕەیەدا</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count هەڵبژێردراو</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>کردار</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>کردارێک هەڵبژێرە</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>لابردنی ڕاگرتن</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ڕاگرتن بۆ پێداچوونەوە</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>شاردنەوە</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>پیشاندان</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>گواستنەوە بۆ سەبەتەی خۆڵ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>سڕینەوە</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>دیاریکردنی بەش</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>دیاریکردنی دۆخ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>هۆکار</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>بۆ ڕاگرتن پێویستە؛ لەگەڵ ڕاگرتنەکە و لە تۆماری پشکنیندا هەڵدەگیرێت.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>بەشێک هەڵبژێرە</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>دۆخ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>دۆخێک هەڵبژێرە</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>جێبەجێکردن لەسەر هەڵبژێردراوەکان</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>هەر بڕگەیەک بەپێی مۆڵەتەکانی خۆت پشکنینی بۆ دەکرێت. گواستنەوە بۆ سەبەتەی خۆڵ و سڕینەوە داوای دڵنیابوونەوەت لێ دەکەن. زیاتر لە %count بڕگە لە پاشبنەمادا جێبەجێ دەکرێن.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>هەڵبژاردن</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>بڵاوکردنەوە</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>نێردراو لە لایەن</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>هەڵبژاردنی %name</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>هێشتا نا</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(بێ ناو)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ناسنامە %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ڕەشنووس</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>چاوەڕوان</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>شاراوە بەهۆی دایکەکەیەوە</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ڕاگیراو: ناردنی نوێ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>وەشانی %version چاوەڕوانە</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>وەشانی %version لە کاردایە</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ڕەشنووس، وەشانی %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>وەشانی %version بڵاوکرایەوە</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>خشتەکراو بۆ %date</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>بێ ناونیشان</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>تۆمار نەکراوە</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>هیچ شتێک لەگەڵ ئەم پاڵاوتنانە ناگونجێت.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>پیشاندانی هەمووی</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>هێشتا هیچ ناوەڕۆکێک نییە.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>بۆ هەر پەڕەیەک</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>پیشاندانی %count بڕگە لە هەر پەڕەیەکدا.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ناونیشان و وێبگەڕی ناردنێک لە پێڕستی تۆماری پشکنینەوە دێن، کە لێرە بەردەست نییە: ستوونەکە دەڵێت «تۆمار نەکراوە».</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ناونیشان و وێبگەڕ ئەوانەن کە تۆماری پشکنین بۆ بڕگەکە تۆماری کردوون (ڕاگرتنی خۆکار هەمیشە تۆماریان دەکات؛ بڵاوکردنەوە و دروستکردن تەنها لەو شوێنانەی چالاک کراون)، وەک ڕێکخستنەکانی تایبەتمەندییەکەی هەڵیان دەگرێت.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: %count بڕگە</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>سڕینەوە بڕگەکان بە یەکجاری لادەبات، لەگەڵ هەموو وەشان و وەرگێڕانەکانیان. ناتوانرێت بگەڕێنرێتەوە.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>بڕگەکان دەچنە سەبەتەی خۆڵ، کە لەوێوە دەتوانرێت بگەڕێنرێنەوە.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>هەر بڕگەیەک بەپێی مۆڵەتەکانی خۆت پشکنینی بۆ دەکرێت؛ بڕگەیەک کە بڕگەی لاوەکی هەبێت وەک خۆی دەهێڵرێتەوە (لە پێکهاتەی ناوەڕۆکدا لای ببە). داوات لێ دەکرێت پشتڕاستی بکەیتەوە کە خۆتی.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ئەمە لە پاشبنەمادا جێبەجێ دەکرێت: پەڕەی پێشکەوتنەکەی دەکرێتەوە، و ئەنجامی هەر بڕگەیەک کاتێک تەواو بوو پیشان دەدرێت.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>بڕگە هەڵبژێردراوەکان</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>و %count ی تر</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>هەڵوەشاندنەوە</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>هیچ شتێک نەکرا</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>هۆکار: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>کردارەکە هێشتا لە پاشبنەمادا جێبەجێ دەکرێت.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>پێشکەوتنەکەی</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>کردارەکەی پاشبنەما سەرنەکەوت: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>تەواو بوو</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ڕەتکرایەوە</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>بۆ هەر بڕگەیەک</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>بڕگە</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ئەنجام</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>بۆچی</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>گەڕانەوە بۆ لیستەکە</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>دامەزراندن</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>هیچ نەکرا</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>دڵنیابوونەوە</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>کردارێک هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>لانیکەم یەک بڕگە هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>لە یەک جاردا زۆرترین 1000 بڕگە هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>بڵێ بۆچی بڕگەکان ڕاگیراون.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>بەشەکە هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>دۆخەکە هەڵبژێرە.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فۆڕمەکە نەخوێندرایەوە.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ناوەڕۆکی نوێ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ژمارەکان نەخوێندرانەوە: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ڕاگیراو بۆ پێداچوونەوە</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>نوێی ئەمڕۆ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ڕاگرتن بۆ پێداچوونەوە هێشتا ڕێکنەخراوە (هەنگاوی نوێکردنەوەی 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>هەموو ناوەڕۆکی نوێ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ڕێگەت پێ نەدراوە کردارەکانی چاودێری جێبەجێ بکەیت (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>کرداری چاودێری تەواو نییە: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>چاودێری: %action لەسەر %count ئۆبجێکت</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done لە %total ئۆبجێکت: %ok تەواو بوو، %refused ڕەتکرایەوە، %failed سەرنەکەوت</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok تەواو بوو، %refused ڕەتکرایەوە، %failed سەرنەکەوت</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ئیتر بوونی نییە.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>هیچ شوێنێکی نییە (بڵاونەکراوەتەوە).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ڕێگەت پێ نەدراوە بیشاریتەوە (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ڕێگەت پێ نەدراوە پیشانی بدەیت (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>پێشتر شاراوەیە.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>شاراوە نییە.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>شاردرایەوە.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>پیشان درا.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>لە سەبەتەی خۆڵدایە: لەوێ بەتاڵی بکەرەوە یان بیگەڕێنەرەوە.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ڕەشنووسێک کە هەرگیز بڵاونەکراوەتەوە ناتوانێت بچێتە سەبەتەی خۆڵ: بیسڕەوە.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ڕێگەت پێ نەدراوە بیسڕیتەوە (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>سڕایەوە.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ڕێگەت پێ نەدراوە لای ببەیت (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>بڕگەی لاوەکی هەیە: لە پێکهاتەی ناوەڕۆکدا لای ببە، کە لەوێ لیست کراون.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>لانەبرا (لەوانەیە ڕەوتی کارێک لابردنەکە ڕابگرێت).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>گوازرایەوە بۆ سەبەتەی خۆڵ.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>بەشەکە بوونی نییە.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>پێشتر لەم بەشەدایە.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ڕێگەت پێ نەدراوە ئەم بەشە دیاری بکەیت (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>بەشەکە دیاری نەکرا.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>بەشەکە دیاری کرا.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>دۆخەکە بوونی نییە.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>پێشتر لەم دۆخەدایە.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ڕێگەت پێ نەدراوە ئەم دۆخە دیاری بکەیت (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>دۆخەکە دیاری نەکرا (لەوانەیە ڕەوتی کارێک گۆڕانکارییەکە ڕابگرێت).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>دۆخەکە دیاری کرا.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>کردارێکی وا نییە.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ڕاگرتن بۆ پێداچوونەوە ڕێکنەخراوە (هەنگاوی نوێکردنەوەی 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>بڵێ بۆچی ڕاگیراوە.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>پێشتر ڕاگیراوە.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ڕێگەت پێ نەدراوە ڕایبگریت (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ڕاگرتنەکە دانەنرا (لەوانەیە ڕەوتی کارێک گۆڕانکارییەکە ڕابگرێت).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ڕاگیرا.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ڕانەگیراوە.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ڕێگەت پێ نەدراوە ئازادی بکەیت (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ڕاگرتنەکە لانەبرا (لەوانەیە ڕەوتی کارێک گۆڕانکارییەکە ڕابگرێت).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ئازاد کرا؛ هێشتا شاراوەیە: ڕێگەت پێ نەدراوە پیشانی بدەیت (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ئازاد کرا.</translation>
     </message>
 </context>
 </TS>

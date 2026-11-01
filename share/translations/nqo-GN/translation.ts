@@ -15150,6 +15150,14 @@ Note: The packages will not be uninstalled.</source>
         <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
         <translation>ߟߊߘߏ߲ߠߌ ߡߊߝߊߟߋ߲ߠߌ ߡߟߊߞߊ߬ߣߍ߲߫ ߞߐߕߐ߮ ߟߎ߬ ߘߐ߫: ߏ߬ ߟߎ߬ ߤߊߟߌ߸ ߓߏߟߌ ߟߎ߸ ߓߏߟߌ ߣߌ߫ ߞߐ߫ ߟߊߛߋߟߌ.</translation>
     </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ߞߐߣߐߞߏ ߞߎߙߊߟߎ</translation>
+    </message>
+    <message>
+        <source>The newest content, what is held for review, and actions on a selection.</source>
+        <translation>ߞߐߣߐߞߏ ߞߎߙߊߟߎ, ߝߍ߲ ߡߌ߲ߣߎ ߡߌߣߍߣߊ ߞߊ ߟߊߖߍ, ߊߣߌ ߞߍߥߊߟߍߟߎ ߛߎߜ߳ߊ߲ߘߌߟߌ ߞߊ߲.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -80553,6 +80561,670 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>The run could not be started.</source>
         <translation>ߓߏߟߌ ߡߊ߫ ߛߋ߫ ߘߊߡߌ߬ߣߍ߫ ߟߊ߫.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/moderation</name>
+    <message>
+        <source>Modified</source>
+        <translation>ߦߍߟߍߡߊߣߊ</translation>
+    </message>
+    <message>
+        <source>Created</source>
+        <translation>ߘߌߟߊ߲ߣߊ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>ߕߐߜ߳ߐ</translation>
+    </message>
+    <message>
+        <source>Class</source>
+        <translation>ߞߌߟߊߛߌ</translation>
+    </message>
+    <message>
+        <source>Section</source>
+        <translation>ߛߍߞߌߛߌߦߐ߲</translation>
+    </message>
+    <message>
+        <source>Creator</source>
+        <translation>ߘߌߟߊ߲ߓߊߜ߳ߊ</translation>
+    </message>
+    <message>
+        <source>Recent content</source>
+        <translation>ߞߐߣߐߞߏ ߞߎߙߊߟߎ</translation>
+    </message>
+    <message>
+        <source>The most recently created and modified content of the whole site, newest first: what visitors submitted, what is held for review, drafts waiting for their publication. Select items to release, hold, hide, reveal, remove or move them to another section or state.</source>
+        <translation>ߛߌߕߌ ߓߍߍ ߞߐߣߐߞߏߟߎ ߡߌ߲ߣߎ ߘߌߟߊ߲ߣߊ ߥߊߟߌߡߊ ߦߍߟߍߡߊߣߊ ߞߐߛߊ ߌ߲ ߣߊ, ߞߎߙߊߟߎ ߝߐߟߐ: ߓߌߛߌߜ߳ߌߦߊߟߊߟߎ ߦߍ ߝߍ߲ ߡߌ߲ߣߎ ߗߌ, ߝߍ߲ ߡߌ߲ߣߎ ߡߌߣߍߣߊ ߞߊ ߟߊߖߍ, ߓߙߎߦߐ߲ߟߎ ߡߌ߲ߣߎ ߓߋ ߎ ߓߌߟߊߟߌ ߡߊߞߐߣߐ. ߝߍ߲ߟߎ ߛߎߜ߳ߊ߲ߘߌ ߥߊߟߊߛߊ ߞߎ ߓߌߟߊ, ߞߎ ߡߌߣߍ, ߞߎ ߘߏߜ߳ߏ, ߞߎ ߖߌߙߊ, ߞߎ ߓߐߛߌ ߥߊߟߌߡߊ ߞߎ ߓߌߟߊ ߛߍߞߌߛߌߦߐ߲ ߥߍߙߍ ߥߊߟߌߡߊ ߗߏߜ߳ߏߦߊ ߥߍߙߍ ߟߊ.</translation>
+    </message>
+    <message>
+        <source>The list could not be read: %problem</source>
+        <translation>ߟߌߛߌ ߡߊ ߛߍ ߞߊ ߞߊߟߊ߲: %problem</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet, so nothing is held and the hold actions are not offered. The upgrade step 6.0.15-review-hold sets it up: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</source>
+        <translation>ߟߊߖߍߟߌ ߡߌߣߍߣߌ ߡߊ ߟߊߓߍ߲ ߝߐߟߐ, ߏ ߘߍ ߞߏߛߐ߲ ߝߏߦߌ ߡߊ ߡߌߣߍ ߊߣߌ ߡߌߣߍߣߌ ߞߍߥߊߟߍߟߎ ߕߍ ߘߌ. ߦߍߟߍߡߊߟߌ ߕߊߊߓߏߟߏ 6.0.15-review-hold ߓߊ ߟߊߓߍ߲: ./console exp:upgrade:scripts --only=6.0.15-review-hold --apply</translation>
+    </message>
+    <message>
+        <source>Filter the list</source>
+        <translation>ߟߌߛߌ ߛߍ߲ߛߍ߲</translation>
+    </message>
+    <message>
+        <source>From</source>
+        <translation>ߞߊ ߓߐ</translation>
+    </message>
+    <message>
+        <source>To</source>
+        <translation>ߞߊ ߛߍ</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation>ߘߏ߲</translation>
+    </message>
+    <message>
+        <source>Created (first published)</source>
+        <translation>ߘߌߟߊ߲ߣߊ (ߓߌߟߊߟߌ ߝߐߟߐ)</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ߓߍߍ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ߤߊߟߌ</translation>
+    </message>
+    <message>
+        <source>Published</source>
+        <translation>ߓߌߟߊߟߍ߲</translation>
+    </message>
+    <message>
+        <source>Draft, never published</source>
+        <translation>ߓߙߎߦߐ߲, ߡߊ ߓߌߟߊ ߊߓߊߘߊ</translation>
+    </message>
+    <message>
+        <source>Pending (waiting for approval or a date)</source>
+        <translation>ߊ ߓߋ ߡߊߞߐߣߐߣߌ ߣߊ (ߊ ߓߋ ߛߐ߲ߣߌ ߥߊߟߌߡߊ ߘߏ߲ ߘߐ ߡߊߞߐߣߐ)</translation>
+    </message>
+    <message>
+        <source>In the trash</source>
+        <translation>ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ߡߌߣߍߣߊ ߞߊ ߟߊߖߍ</translation>
+    </message>
+    <message>
+        <source>Held</source>
+        <translation>ߡߌߣߍߣߊ</translation>
+    </message>
+    <message>
+        <source>Not held</source>
+        <translation>ߡߊ ߡߌߣߍ</translation>
+    </message>
+    <message>
+        <source>Hidden</source>
+        <translation>ߘߏߜ߳ߏߟߍ߲</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>ߦߍߟߌ</translation>
+    </message>
+    <message>
+        <source>Submitted on</source>
+        <translation>ߗߌߙߊ ߘߏ߲ ߡߌ߲ ߣߊ</translation>
+    </message>
+    <message>
+        <source>Any siteaccess</source>
+        <translation>ߛߌߕߌ ߘߏ߲ߘߊ ߏ ߘߏ߲ߘߊ</translation>
+    </message>
+    <message>
+        <source>Only what the audit recorded.</source>
+        <translation>ߛߍߜ߳ߍߛߍߜ߳ߍߟߌ ߦߍ ߡߌ߲ ߛߍߓߍ߲ ߏ ߘߐߙߐ߲.</translation>
+    </message>
+    <message>
+        <source>Now: %name</source>
+        <translation>ߛߌߛߊ߲: %name</translation>
+    </message>
+    <message>
+        <source>A login or a user id.</source>
+        <translation>ߘߏ߲ߣߌ ߕߐߜ߳ߐ ߥߊߟߌߡߊ ߓߊߊߙߊߞߍߟߊ ID.</translation>
+    </message>
+    <message>
+        <source>Filter</source>
+        <translation>ߛߍ߲ߛߍ߲</translation>
+    </message>
+    <message>
+        <source>Clear filters</source>
+        <translation>ߛߍ߲ߛߍ߲ߟߎ ߓߐߛߌ</translation>
+    </message>
+    <message>
+        <source>Items</source>
+        <translation>ߝߍ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>%from to %to of %count</source>
+        <translation>%from ߞߊ ߛߍ %to ߡߊ %count ߞߐߣߐ</translation>
+    </message>
+    <message>
+        <source>No item</source>
+        <translation>ߝߍ߲ ߛߌ ߕߍ</translation>
+    </message>
+    <message>
+        <source>(read in %ms ms)</source>
+        <translation>(ߞߊߟߊ߲ߣߊ %ms ߡߛ ߞߐߣߐ)</translation>
+    </message>
+    <message>
+        <source>Actions on the selected items</source>
+        <translation>ߞߍߥߊߟߍߟߎ ߝߍ߲ ߛߎߜ߳ߊ߲ߘߌߟߍ߲ߟߎ ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>Select all on this page</source>
+        <translation>ߢߍ ߌ߲ ߓߍߍ ߛߎߜ߳ߊ߲ߘߌ</translation>
+    </message>
+    <message>
+        <source>%count selected</source>
+        <translation>%count ߛߎߜ߳ߊ߲ߘߌߟߍ߲</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation>ߞߍߥߊߟߍ</translation>
+    </message>
+    <message>
+        <source>Choose an action</source>
+        <translation>ߞߍߥߊߟߍ ߘߐ ߛߎߜ߳ߊ߲ߘߌ</translation>
+    </message>
+    <message>
+        <source>Release the hold</source>
+        <translation>ߡߌߣߍߣߌ ߓߐ</translation>
+    </message>
+    <message>
+        <source>Hold for review</source>
+        <translation>ߡߌߣߍ ߞߊ ߟߊߖߍ</translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>ߘߏߜ߳ߏ</translation>
+    </message>
+    <message>
+        <source>Reveal</source>
+        <translation>ߖߌߙߊ</translation>
+    </message>
+    <message>
+        <source>Move to trash</source>
+        <translation>ߓߌߟߊ ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>ߖߐߛߌ</translation>
+    </message>
+    <message>
+        <source>Assign section</source>
+        <translation>ߛߍߞߌߛߌߦߐ߲ ߘߌ</translation>
+    </message>
+    <message>
+        <source>Assign state</source>
+        <translation>ߗߏߜ߳ߏߦߊ ߘߌ</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>ߛߊߓߊߓߎ</translation>
+    </message>
+    <message>
+        <source>Needed to hold; kept with the hold and in the audit.</source>
+        <translation>ߥߊߖߌߓߌ ߘߏ߲ ߞߊ ߡߌߣߍ; ߊ ߓߋ ߡߊߙߊ ߡߌߣߍߣߌ ߝߍ ߊߣߌ ߛߍߜ߳ߍߛߍߜ߳ߍߟߌ ߞߐߣߐ.</translation>
+    </message>
+    <message>
+        <source>Choose a section</source>
+        <translation>ߛߍߞߌߛߌߦߐ߲ ߘߐ ߛߎߜ߳ߊ߲ߘߌ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ߗߏߜ߳ߏߦߊ</translation>
+    </message>
+    <message>
+        <source>Choose a state</source>
+        <translation>ߗߏߜ߳ߏߦߊ ߘߐ ߛߎߜ߳ߊ߲ߘߌ</translation>
+    </message>
+    <message>
+        <source>Apply to the selected</source>
+        <translation>ߊ ߞߍ ߛߎߜ߳ߊ߲ߘߌߟߍ߲ߟߎ ߣߊ</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions. Moving to the trash and deleting ask you to confirm. More than %count items run in the background.</source>
+        <translation>ߝߍ߲ ߞߍߟߍ߲ ߞߍߟߍ߲ ߓߋ ߟߊߖߍ ߌ ߦߍߙߍ ߞߊ ߦߊߡߊߙߎߦߊߟߎ ߟߊ. ߓߌߟߊߟߌ ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߟߊ ߊߣߌ ߖߐߛߌߟߌ ߓߊ ߢߌߣߌ ߌ ߞߊ ߛߐ߲. ߣߌ ߝߍ߲ߟߎ ߞߊ ߗߊ ߣߌ %count ߦߍ, ߎ ߓߋ ߞߍ ߞߐߝߍ.</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>ߛߎߜ߳ߊ߲ߘߌ</translation>
+    </message>
+    <message>
+        <source>Publication</source>
+        <translation>ߓߌߟߊߟߌ</translation>
+    </message>
+    <message>
+        <source>Submitted from</source>
+        <translation>ߗߌߙߊ ߦߐߙߐ</translation>
+    </message>
+    <message>
+        <source>Select %name</source>
+        <translation>%name ߛߎߜ߳ߊ߲ߘߌ</translation>
+    </message>
+    <message>
+        <source>not yet</source>
+        <translation>ߊ ߡߊ ߞߍ ߝߐߟߐ</translation>
+    </message>
+    <message>
+        <source>(no name)</source>
+        <translation>(ߕߐߜ߳ߐ ߕߍ)</translation>
+    </message>
+    <message>
+        <source>ID %id</source>
+        <translation>ID %id</translation>
+    </message>
+    <message>
+        <source>Draft</source>
+        <translation>ߓߙߎߦߐ߲</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ߊ ߓߋ ߡߊߞߐߣߐߣߌ ߣߊ</translation>
+    </message>
+    <message>
+        <source>Hidden by its parent</source>
+        <translation>ߊ ߝߊߊ ߦߍ ߊ ߘߏߜ߳ߏ</translation>
+    </message>
+    <message>
+        <source>Held: new submission</source>
+        <translation>ߡߌߣߍߣߊ: ߗߌ ߞߎߙߊ</translation>
+    </message>
+    <message>
+        <source>Version %version pending</source>
+        <translation>ߥߍߙߌߛߌߦߐ߲ %version ߓߋ ߡߊߞߐߣߐߣߌ ߣߊ</translation>
+    </message>
+    <message>
+        <source>Version %version in progress</source>
+        <translation>ߥߍߙߌߛߌߦߐ߲ %version ߓߋ ߓߊߊߙߊ ߟߊ</translation>
+    </message>
+    <message>
+        <source>Draft, version %version</source>
+        <translation>ߓߙߎߦߐ߲, ߥߍߙߌߛߌߦߐ߲ %version</translation>
+    </message>
+    <message>
+        <source>Version %version published</source>
+        <translation>ߥߍߙߌߛߌߦߐ߲ %version ߓߌߟߊߟߍ߲</translation>
+    </message>
+    <message>
+        <source>Scheduled for %date</source>
+        <translation>ߟߊߓߍ߲ߣߊ %date ߞߊߡߊ</translation>
+    </message>
+    <message>
+        <source>no address</source>
+        <translation>ߊߘߙߍߛߌ ߕߍ</translation>
+    </message>
+    <message>
+        <source>not recorded</source>
+        <translation>ߡߊ ߛߍߓߍ߲</translation>
+    </message>
+    <message>
+        <source>Nothing matches these filters.</source>
+        <translation>ߝߏߦߌ ߕߍ ߓߍ߲ ߛߍ߲ߛߍ߲ ߣߌ߲ߣߎ ߡߊ.</translation>
+    </message>
+    <message>
+        <source>Show all</source>
+        <translation>ߓߍߍ ߖߌߙߊ</translation>
+    </message>
+    <message>
+        <source>There is no content yet.</source>
+        <translation>ߞߐߣߐߞߏ ߛߌ ߕߍ ߝߐߟߐ.</translation>
+    </message>
+    <message>
+        <source>Per page</source>
+        <translation>ߢߍ ߞߍߟߍ߲ ߣߊ</translation>
+    </message>
+    <message>
+        <source>Show %count items per page.</source>
+        <translation>ߝߍ߲ %count ߖߌߙߊ ߢߍ ߞߍߟߍ߲ ߣߊ.</translation>
+    </message>
+    <message>
+        <source>The address and the browser of a submission come from the audit index, which is not available here: the column says "not recorded".</source>
+        <translation>ߗߌ ߘߐ ߞߊ ߊߘߙߍߛߌ ߣߌ ߊ ߞߊ ߣߊߝ߭ߌߜ߳ߊߕߍߙߌ ߓߋ ߓߐ ߛߍߜ߳ߍߛߍߜ߳ߍߟߌ ߌ߲ߘߍߞߌߛߌ ߟߊ, ߡߌ߲ ߕߍ ߛߐߙߐ ߦߊ߲: ߞߏߟߐߣߌ ߓߊ ߝߐ ߞߏ "ߡߊ ߛߍߓߍ߲".</translation>
+    </message>
+    <message>
+        <source>The address and the browser are those the audit recorded for the item (the auto-hold always records them; publishing and creating only where switched on), as its privacy settings keep them.</source>
+        <translation>ߊߘߙߍߛߌ ߣߌ ߣߊߝ߭ߌߜ߳ߊߕߍߙߌ ߦߍ ߛߍߜ߳ߍߛߍߜ߳ߍߟߌ ߦߍ ߡߌ߲ߣߎ ߛߍߓߍ߲ ߝߍ߲ ߌ߲ ߞߊߡߊ (ߡߌߣߍߣߌ ߦߍߙߍߡߊ ߓߎ ߛߍߓߍ߲ ߕߎߡߊ ߓߍߍ; ߓߌߟߊߟߌ ߣߌ ߘߌߟߊ߲ߣߌ ߓߎ ߛߍߓߍ߲ ߦߐߙߐ ߡߌ߲ߣߎ ߣߊ ߊ ߓߐߙߊ ߦߍ߲ ߘߐߙߐ߲), ߌ ߣߊ ߝߐ ߊ ߞߊ ߜ߳ߎ߲ߘߏ ߟߊߓߍ߲ߟߎ ߓߎ ߡߊߙߊ ߗߏߜ߳ߏ ߡߌ߲ ߣߊ.</translation>
+    </message>
+    <message>
+        <source>%action: %count items</source>
+        <translation>%action: ߝߍ߲ %count</translation>
+    </message>
+    <message>
+        <source>Deleting removes the items for good, with all their versions and translations. It cannot be undone.</source>
+        <translation>ߖߐߛߌߟߌ ߓߋ ߝߍ߲ߟߎ ߓߐ ߔߍߥߎ, ߎ ߞߊ ߥߍߙߌߛߌߦߐ߲ߟߎ ߣߌ ߎ ߞߊ ߓߊߦߍߟߍߡߊߟߎ ߓߍߍ. ߊ ߕߍ ߛߍ ߞߊ ߛߍߜ߳ߌ߲ ߞߐ.</translation>
+    </message>
+    <message>
+        <source>The items go to the trash, from where they can be restored.</source>
+        <translation>ߝߍ߲ߟߎ ߓߋ ߕߊߊ ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߟߊ, ߎ ߓߋ ߛߍ ߞߊ ߛߍߜ߳ߌ߲ ߞߊ ߓߐ ߦߍ߲.</translation>
+    </message>
+    <message>
+        <source>Each item is checked against your own permissions; an item with sub items is left as it is (remove it in the content structure). You will be asked to verify that it is you.</source>
+        <translation>ߝߍ߲ ߞߍߟߍ߲ ߞߍߟߍ߲ ߓߋ ߟߊߖߍ ߌ ߦߍߙߍ ߞߊ ߦߊߡߊߙߎߦߊߟߎ ߟߊ; ߝߍ߲ ߡߌ߲ ߓߋ ߣߌ ߝߍ߲ ߘߐߜ߳ߐߡߊ߲ߟߎ ߦߍ, ߏ ߓߋ ߕߏ ߊ ߗߏߜ߳ߏ ߟߊ (ߊ ߓߐߛߌ ߞߐߣߐߞߏ ߖߐߗߏߜ߳ߏ ߟߊ). ߊ ߓߍߣߊ ߢߌߣߌ ߌ ߝߍ ߌ ߞߊ ߖߌߙߊ ߞߏ ߌ ߦߍߙߍ ߘߏ߲.</translation>
+    </message>
+    <message>
+        <source>This runs in the background: its progress page opens, and the result per item is shown when it is done.</source>
+        <translation>ߣߌ߲ ߓߋ ߞߍ ߞߐߝߍ: ߊ ߕߊߊ ߢߍ ߓߋ ߦߍߟߍ, ߊߣߌ ߝߍ߲ ߞߍߟߍ߲ ߞߍߟߍ߲ ߖߊߊߓߌ ߓߋ ߖߌߙߊ ߣߊ ߓߊ߲ߣߊ.</translation>
+    </message>
+    <message>
+        <source>The selected items</source>
+        <translation>ߝߍ߲ ߛߎߜ߳ߊ߲ߘߌߟߍ߲ߟߎ</translation>
+    </message>
+    <message>
+        <source>and %count more</source>
+        <translation>ߊߣߌ %count ߥߍߙߍ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ߘߊߓߌߟߊ</translation>
+    </message>
+    <message>
+        <source>Nothing was done</source>
+        <translation>ߝߏߦߌ ߡߊ ߞߍ</translation>
+    </message>
+    <message>
+        <source>%action (%extra)</source>
+        <translation>%action (%extra)</translation>
+    </message>
+    <message>
+        <source>Reason: %reason</source>
+        <translation>ߛߊߓߊߓߎ: %reason</translation>
+    </message>
+    <message>
+        <source>The action is still running in the background.</source>
+        <translation>ߞߍߥߊߟߍ ߓߋ ߞߍ ߞߐߝߍ ߤߊߟߌ ߛߌߛߊ߲.</translation>
+    </message>
+    <message>
+        <source>Its progress</source>
+        <translation>ߊ ߕߊߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>The background action failed: %error</source>
+        <translation>ߞߐߝߍ ߞߍߥߊߟߍ ߡߊ ߢߍ: %error</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ߊ ߓߊ߲ߣߊ</translation>
+    </message>
+    <message>
+        <source>Refused</source>
+        <translation>ߊ ߡߊ ߛߐ߲</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ߊ ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>Per item</source>
+        <translation>ߝߍ߲ ߞߍߟߍ߲ ߞߍߟߍ߲</translation>
+    </message>
+    <message>
+        <source>Item</source>
+        <translation>ߝߍ߲</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ߖߊߊߓߌ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ߡߎ߲ ߣߊ</translation>
+    </message>
+    <message>
+        <source>Back to the list</source>
+        <translation>ߛߍߜ߳ߌ߲ ߟߌߛߌ ߡߊ</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ߟߊߓߍ߲ߣߌ</translation>
+    </message>
+    <message>
+        <source>Nothing done</source>
+        <translation>ߝߏߦߌ ߡߊ ߞߍ ߤߊߟߌ ߘߐߐߣߌ߲</translation>
+    </message>
+    <message>
+        <source>Confirm</source>
+        <translation>ߛߐ߲</translation>
+    </message>
+    <message>
+        <source>Choose an action.</source>
+        <translation>ߞߍߥߊߟߍ ߘߐ ߛߎߜ߳ߊ߲ߘߌ.</translation>
+    </message>
+    <message>
+        <source>Select at least one item.</source>
+        <translation>ߝߍ߲ ߞߍߟߍ߲ ߛߎߜ߳ߊ߲ߘߌ ߊ ߘߐߜ߳ߐߦߊ ߟߊ.</translation>
+    </message>
+    <message>
+        <source>Select at most 1000 items at a time.</source>
+        <translation>ߝߍ߲ 1000 ߘߐߙߐ߲ ߛߎߜ߳ߊ߲ߘߌ ߊ ߗߊߦߊ ߟߊ ߛߌߢߍ ߞߍߟߍ߲.</translation>
+    </message>
+    <message>
+        <source>Say why the items are held.</source>
+        <translation>ߊ ߝߐ ߝߍ߲ߟߎ ߡߌߣߍߣߊ ߡߎ߲ ߣߊ.</translation>
+    </message>
+    <message>
+        <source>Choose the section.</source>
+        <translation>ߛߍߞߌߛߌߦߐ߲ ߛߎߜ߳ߊ߲ߘߌ.</translation>
+    </message>
+    <message>
+        <source>Choose the state.</source>
+        <translation>ߗߏߜ߳ߏߦߊ ߛߎߜ߳ߊ߲ߘߌ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ߝߏߙߡߌߟߍߙߌ ߡߊ ߛߍ ߞߊ ߞߊߟߊ߲.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/moderation</name>
+    <message>
+        <source>Recent content</source>
+        <translation>ߞߐߣߐߞߏ ߞߎߙߊߟߎ</translation>
+    </message>
+    <message>
+        <source>The counts could not be read: %problem</source>
+        <translation>ߖߊߕߍߟߎ ߡߊ ߛߍ ߞߊ ߞߊߟߊ߲: %problem</translation>
+    </message>
+    <message>
+        <source>Held for review</source>
+        <translation>ߡߌߣߍߣߊ ߞߊ ߟߊߖߍ</translation>
+    </message>
+    <message>
+        <source>New today</source>
+        <translation>ߞߎߙߊ ߓߌ</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up yet (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ߟߊߖߍߟߌ ߡߌߣߍߣߌ ߡߊ ߟߊߓߍ߲ ߝߐߟߐ (ߦߍߟߍߡߊߟߌ ߕߊߊߓߏߟߏ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>All recent content</source>
+        <translation>ߞߐߣߐߞߏ ߞߎߙߊ ߓߍߍ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/contentjob</name>
+    <message>
+        <source>You may not run moderation actions (moderation/act).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߡߏߘߍߙߊߛߌߦߐ߲ ߞߍߥߊߟߍߟߎ ߞߍ (moderation/act).</translation>
+    </message>
+    <message>
+        <source>The moderation action is not complete: %errors.</source>
+        <translation>ߡߏߘߍߙߊߛߌߦߐ߲ ߞߍߥߊߟߍ ߡߊ ߘߊߝߊ: %errors.</translation>
+    </message>
+    <message>
+        <source>Moderation: %action on %count objects</source>
+        <translation>ߡߏߘߍߙߊߛߌߦߐ߲: %action ߏߓߖߍ %count ߞߊ߲</translation>
+    </message>
+    <message>
+        <source>%done of %total objects: %ok done, %refused refused, %failed failed</source>
+        <translation>%done ߏߓߖߍ %total ߟߊ: %ok ߓߊ߲ߣߊ, %refused ߡߊ ߛߐ߲, %failed ߡߊ ߢߍ</translation>
+    </message>
+    <message>
+        <source>%ok done, %refused refused, %failed failed</source>
+        <translation>%ok ߓߊ߲ߣߊ, %refused ߡߊ ߛߐ߲, %failed ߡߊ ߢߍ</translation>
+    </message>
+</context>
+<context>
+    <name>kernel/moderation</name>
+    <message>
+        <source>It does not exist any more.</source>
+        <translation>ߊ ߕߍ ߦߍ߲ ߕߎߜ߳ߎ߲.</translation>
+    </message>
+    <message>
+        <source>It has no location (not published).</source>
+        <translation>ߦߐߙߐ ߛߌ ߕߊ ߝߍ (ߊ ߡߊ ߓߌߟߊ).</translation>
+    </message>
+    <message>
+        <source>You may not hide it (content/hide).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߘߏߜ߳ߏ (content/hide).</translation>
+    </message>
+    <message>
+        <source>You may not reveal it (content/hide).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߖߌߙߊ (content/hide).</translation>
+    </message>
+    <message>
+        <source>It is hidden already.</source>
+        <translation>ߊ ߘߏߜ߳ߏߟߍ߲ ߘߏ߲ ߞߊߓߊ߲.</translation>
+    </message>
+    <message>
+        <source>It is not hidden.</source>
+        <translation>ߊ ߡߊ ߘߏߜ߳ߏ.</translation>
+    </message>
+    <message>
+        <source>Hidden.</source>
+        <translation>ߘߏߜ߳ߏߟߍ߲.</translation>
+    </message>
+    <message>
+        <source>Revealed.</source>
+        <translation>ߖߌߙߊߟߍ߲.</translation>
+    </message>
+    <message>
+        <source>It is in the trash: empty or restore it there.</source>
+        <translation>ߊ ߓߋ ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߟߊ: ߊ ߟߊ߲ߞߏߟߏ߲ ߥߊߟߌߡߊ ߊ ߛߍߜ߳ߌ߲ ߞߊ ߓߐ ߦߍ߲.</translation>
+    </message>
+    <message>
+        <source>A draft that was never published cannot go to the trash: delete it.</source>
+        <translation>ߓߙߎߦߐ߲ ߡߌ߲ ߡߊ ߓߌߟߊ ߊߓߊߘߊ, ߏ ߕߍ ߛߍ ߞߊ ߕߊߊ ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߟߊ: ߊ ߖߐߛߌ.</translation>
+    </message>
+    <message>
+        <source>You may not delete it (content/remove).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߖߐߛߌ (content/remove).</translation>
+    </message>
+    <message>
+        <source>Deleted.</source>
+        <translation>ߖߐߛߌߟߍ߲.</translation>
+    </message>
+    <message>
+        <source>You may not remove it (content/remove).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߓߐߛߌ (content/remove).</translation>
+    </message>
+    <message>
+        <source>It has sub items: remove it in the content structure, where they are listed.</source>
+        <translation>ߝߍ߲ ߘߐߜ߳ߐߡߊ߲ߟߎ ߓߊ ߟߊ: ߊ ߓߐߛߌ ߞߐߣߐߞߏ ߖߐߗߏߜ߳ߏ ߟߊ, ߎ ߟߌߛߌ ߓߋ ߦߐߙߐ ߡߌ߲ ߣߊ.</translation>
+    </message>
+    <message>
+        <source>It was not removed (a workflow may hold the removal).</source>
+        <translation>ߊ ߡߊ ߓߐߛߌ (ߓߊߊߙߊߛߌߙߊ ߘߐ ߓߋ ߛߍ ߞߊ ߓߐߛߌߟߌ ߡߌߣߍ).</translation>
+    </message>
+    <message>
+        <source>Moved to the trash.</source>
+        <translation>ߊ ߕߊߊߙߊ ߣߐߜ߳ߐߛߌߜ߳ߌߦߐߙߐ ߟߊ.</translation>
+    </message>
+    <message>
+        <source>The section does not exist.</source>
+        <translation>ߛߍߞߌߛߌߦߐ߲ ߕߍ ߦߍ߲.</translation>
+    </message>
+    <message>
+        <source>It is in this section already.</source>
+        <translation>ߊ ߓߋ ߛߍߞߌߛߌߦߐ߲ ߌ߲ ߣߊ ߞߊߓߊ߲.</translation>
+    </message>
+    <message>
+        <source>You may not assign this section (section/assign).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߛߍߞߌߛߌߦߐ߲ ߌ߲ ߘߌ (section/assign).</translation>
+    </message>
+    <message>
+        <source>The section was not assigned.</source>
+        <translation>ߛߍߞߌߛߌߦߐ߲ ߡߊ ߘߌ.</translation>
+    </message>
+    <message>
+        <source>Section assigned.</source>
+        <translation>ߛߍߞߌߛߌߦߐ߲ ߘߌߟߍ߲.</translation>
+    </message>
+    <message>
+        <source>The state does not exist.</source>
+        <translation>ߗߏߜ߳ߏߦߊ ߕߍ ߦߍ߲.</translation>
+    </message>
+    <message>
+        <source>It is in this state already.</source>
+        <translation>ߊ ߓߋ ߗߏߜ߳ߏߦߊ ߌ߲ ߣߊ ߞߊߓߊ߲.</translation>
+    </message>
+    <message>
+        <source>You may not assign this state (state/assign).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߗߏߜ߳ߏߦߊ ߌ߲ ߘߌ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The state was not assigned (a workflow may hold the change).</source>
+        <translation>ߗߏߜ߳ߏߦߊ ߡߊ ߘߌ (ߓߊߊߙߊߛߌߙߊ ߘߐ ߓߋ ߛߍ ߞߊ ߦߍߟߍߡߊߟߌ ߡߌߣߍ).</translation>
+    </message>
+    <message>
+        <source>State assigned.</source>
+        <translation>ߗߏߜ߳ߏߦߊ ߘߌߟߍ߲.</translation>
+    </message>
+    <message>
+        <source>There is no such action.</source>
+        <translation>ߞߍߥߊߟߍ ߛߎߜ߳ߎߦߊ ߕߍ ߦߍ߲.</translation>
+    </message>
+    <message>
+        <source>The review hold is not set up (the upgrade step 6.0.15-review-hold).</source>
+        <translation>ߟߊߖߍߟߌ ߡߌߣߍߣߌ ߡߊ ߟߊߓߍ߲ (ߦߍߟߍߡߊߟߌ ߕߊߊߓߏߟߏ 6.0.15-review-hold).</translation>
+    </message>
+    <message>
+        <source>Say why it is held.</source>
+        <translation>ߊ ߝߐ ߊ ߡߌߣߍߣߊ ߡߎ߲ ߣߊ.</translation>
+    </message>
+    <message>
+        <source>It is held already.</source>
+        <translation>ߊ ߡߌߣߍߣߊ ߞߊߓߊ߲.</translation>
+    </message>
+    <message>
+        <source>You may not hold it (state/assign).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߡߌߣߍ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not placed (a workflow may hold the change).</source>
+        <translation>ߡߌߣߍߣߌ ߡߊ ߞߍ (ߓߊߊߙߊߛߌߙߊ ߘߐ ߓߋ ߛߍ ߞߊ ߦߍߟߍߡߊߟߌ ߡߌߣߍ).</translation>
+    </message>
+    <message>
+        <source>Held.</source>
+        <translation>ߡߌߣߍߣߊ.</translation>
+    </message>
+    <message>
+        <source>It is not held.</source>
+        <translation>ߊ ߡߊ ߡߌߣߍ.</translation>
+    </message>
+    <message>
+        <source>You may not release it (state/assign).</source>
+        <translation>ߌ ߕߍ ߛߍ ߞߊ ߓߌߟߊ (state/assign).</translation>
+    </message>
+    <message>
+        <source>The hold was not released (a workflow may hold the change).</source>
+        <translation>ߡߌߣߍߣߌ ߡߊ ߓߐ (ߓߊߊߙߊߛߌߙߊ ߘߐ ߓߋ ߛߍ ߞߊ ߦߍߟߍߡߊߟߌ ߡߌߣߍ).</translation>
+    </message>
+    <message>
+        <source>Released; still hidden: you may not reveal it (content/hide).</source>
+        <translation>ߊ ߓߌߟߊߟߊ; ߊ ߘߏߜ߳ߏߟߍ߲ ߘߏ߲ ߤߊߟߌ ߓߌ: ߌ ߕߍ ߛߍ ߞߊ ߖߌߙߊ (content/hide).</translation>
+    </message>
+    <message>
+        <source>Released.</source>
+        <translation>ߊ ߓߌߟߊߟߊ.</translation>
     </message>
 </context>
 </TS>
