@@ -15142,6 +15142,14 @@ Ivasamt: Pakkarnir verða ikki avinnlagdir.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL-API'ið: endapunktið, skemað og ein leikvøllur at royna fyrispurningar.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Flytingar</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Broytingar í innleggingini goymdar sum fílur: støða teirra, koyringarnar, koyr og tak aftur.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Tú mást broyta flokkin hjá knútanum við býtisfunktiónini.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Send mutatiónir til /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Flytingar</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Støðan kundi ikki lesast: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Talvurnar hjá flytingunum eru ikki til enn: ./console exp:upgrade --apply stovnar tær.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count flytingar miseydnaðust</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ein koyring er í gongd, byrjað av %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Innleggingin er læst: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Bíðar</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Miseydnaðust</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Foreldraleysar</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Seinasta koyring</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>eingin enn</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Allar flytingar</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Simulerað koyring</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Royndarkoyring</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Flytingarnar, sum bíða, vórðu koyrdar í einari transaktión, sum síðani varð rullað aftur: einki varð goymt. Niðanfyri stendur, hvat hvør teirra broytti í dátugrunninum.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Hvat ein koyring fór at gjørt nú. Einki verður broytt: hvør flyting, sum bíðar, listar broytingarnar, hon fór at gjørt, og koyringin, hvat hon fór at gjørt áðrenn og aftaná.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulera</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Koyr</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Royndarkoyringin miseydnaðist: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Ein simulering krevur PostgreSQL ella SQLite, har skipanarbroytingar kunnu rullast aftur; á hesum dátugrunni vísir ætlanin niðanfyri, hvat ein koyring fór at gjørt.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Flytingarnar</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Flyting</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Støða</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Hvat hon fór at gjørt</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulering: %result upp á %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Eingin flyting enn.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Áðrenn og aftaná koyringina</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Støðumynd áðrenn</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>verður tikin og endurskapt, um ein flyting miseydnast</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>sløkt</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Støðumynd aftaná</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>verður tikin, tá ið koyringin eydnaðist</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total flytingar: %pending bíða, %done liðugar, %failed miseydnaðust.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Flytingarsøga</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Hvør koyring við brúkara, umhvørvi, støðumyndum og tí, sum varð váttað, merkt og sent. Ein koyring, sum miseydnaðist ella varð avbrotin, kann haldast fram; ein koyring við støðumynd áðrenn kann takast aftur.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Koyringarnar kundu ikki lesast: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Talvurnar hjá flytingunum eru ikki til enn: ./console exp:upgrade --apply stovnar tær.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Vís</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Øll</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Koyringar</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Byrjað</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Av</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Støðumyndir</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Goymsla</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Gerðir</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>áðrenn</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>aftaná</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>sending: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Halda fram</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Tak aftur</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Eingin koyring í hesi støðu.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Byrjað her</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Koyringar, framhald og afturtøkur, sum eru byrjaðar á hesum síðum, við frágreiðing um hvørja.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Hvat</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Úrslit</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Afturtøka</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Afturtøka av %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Koyring %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Hvat koyringin gjørdi, skráseting hennara og loggur. Ein koyring, sum er byrjað her, heldur fram í bakgrundini, tá ið henda síðan verður latin aftur; lat síðuna upp aftur fyri at fylgja henni.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Hald fram við hesi koyring</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Tak hesa koyring aftur</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Skrásetingin kundi ikki lesast: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Gongd</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Byrjað av %user kl. %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kanni kotuna og taki støðumynd áðrenn koyringina</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Koyri %id (%index av %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done av %total liðugar</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Flytingarnar eru koyrdar; endurskapi støðumyndina, um ein miseydnaðist</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Taki støðumynd aftaná koyringina, vátti, merki og sendi</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Endurskapi støðumyndina</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Koyringin er liðug. Frágreiðingin verður innlisin.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Gongdin kundi ikki fylgjast. Les síðuna inn aftur fyri at síggja, hvussu koyringin gongur.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Henda síðan fylgir koyringini, meðan hon gongur.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Les inn aftur</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Frágreiðing</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Tíð</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisekund</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Hvat koyringin skrivaði sum feilir</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Skráseting</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Umhvørvi</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>eingin</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Endað</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Váttan</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Merki</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Sending</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Boð</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Flytingar í hesi koyring</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Kelda</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Loggur yvir koyringina</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Bert endin á logginum verður vístur.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>í gongd</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>endaði uttan frágreiðing</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>eydnaðist</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>miseydnaðist</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>avvíst</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>dátugrunnurin var ikki atkomuligur</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>innanhýsis feilur</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ein koyring er í gongd</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind byrjað av %user kl. %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Fylg henni</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Innleggingin er læst</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Ein onnur koyring hevur lásið (ein dagføring ella ein koyring á konsolini): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>liðugt</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>bíðar</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ikki neyðugt</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ókent</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>rullað aftur</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>nýtt</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>fór at verið nýtt</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>tikið aftur</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>fór at verið tikið aftur</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ikki koyrt</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>bíðar eftir eini aðrari</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>broyting góðtikin</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>broyting fór at verið góðtikin</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulerað</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Flytingar</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Støða</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Søga</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Tak %target aftur</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Ein koyring verður tikin aftur til støðumyndina, sum varð tikin áðrenn hana; ein einstøk flyting við síni down(). At endurskapa eina eldri støðumynd er fyri serfrøðingar. Hvør afturtøka koyrir í bakgrundini sum tú, aftaná eina støðumynd av núverandi støðu.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Tað, sum kann takast aftur, kundi ikki lesast: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Ein koyring</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Ein flyting</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Ein eldri støðumynd</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Lýsing</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nei</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Støðumynd</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Heiti</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Tikin</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Slag</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Partar at endurskapa</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Dátugrunnurin</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Goymdu fílurnar (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Stillingarnar (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>At endurskapa dátugrunnin førir hann aftur til tíðina fyri støðumyndina, setur við: tú verður møguliga biðin um at rita inn aftur síðani. Alt, sum er broytt síðani, fer fyri skeyti; fyrst verður ein støðumynd av núverandi støðu tikin.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Eg veit, hvat hetta endurskapar</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Skriva samleikan á støðumyndini aftur</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ja, tak aftur</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ógilda</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Koyringarnar við støðumynd áðrenn tær.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Vel</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Eingin koyring við støðumynd enn.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Nýttu flytingarnar, sum sjálvar kunnu takast aftur (tær hava eina down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Eingin nýtt flyting hevur eina down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Eldri støðumyndir (serfrøðingar)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Eingin støðumynd enn.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Koyr flytingarnar</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Koyringin heldur fram í bakgrundini sum %user, og síða hennara vísir hana, meðan hon gongur. Áðrenn fyrstu flytingina verður ein støðumynd av innleggingini tikin; miseydnast ein flyting, steðgar koyringin, og støðumyndin verður endurskapt.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Fyrst ein royndarkoyring</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Støðan kundi ikki lesast: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Flytingar, sum bíða</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Tær verða koyrdar í hesi raðfylgju. Tak krossin burtur hjá eini fyri at lata hana og tær, sum eru tengdar at henni, bíða til eina seinni koyring.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Koyr hana</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Tendrar viðlíkahaldsstøðu, meðan hon koyrir.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Broyttar aftaná, at tær vórðu nýttar</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Hesar fílur eru ikki tær, sum vórðu nýttar. Ein koyring avvísir tær, uttan so at broytingin verður góðtikin við einari orsøk; tær verða ikki koyrdar aftur, nýggja kontrolsuman verður skrásett og orsøkin goymd í eftirlitsloggin.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Góðtak broytingarnar</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Orsøk</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Forsetingarnar eru tær tryggu. Hvør kassi loypur eitt stig um.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Eingin støðumynd</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Eingin støðumynd áðrenn og aftaná koyringina: eitt mistak kann ikki endurskapast sjálvvirkandi.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Eingin endurskapan</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Eftir eitt mistak verður innleggingin latin, sum mistakið læt hana.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Varðveit broytingar, sum ikki eru váttaðar</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Koyr, hóast stillingar, víðkanir ella sniðgevingar hava broytingar, sum ikki eru váttaðar; tær koma við í støðumyndina.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Eingin váttan</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Vátta ikki støðufíluna og koyringarloggin (heldur einki merki og eingin sending).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Eingin sending</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Vátta og merk, men send ikki.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Einki merki</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Vátta og send, men merk ikki koyringina.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ja, koyr hesar flytingar nú</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Eingin flyting bíðar.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Aftur til støðuna</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Broytingar í hesi innlegging, skrivaðar eina ferð sum fílur (innihald, flokkar, leiklutir, stillingar, skipan) og nýttar á hvørja innlegging av heimasíðuni í somu raðfylgju. Ein koyring tekur fyrst eina støðumynd, endurskapar hana, um ein flyting miseydnast, og skrásetur, váttar og sendir tað, hon gjørdi.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Koyr %count, sum bíða</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Yvirlit</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Bíðar</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Liðugar</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Miseydnaðust</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ikki neyðugar</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Dátugrunnur</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaktiónir: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Flytingar heimasíðunnar eru í migrations/, flytingar hjá eini víðkan í extension/&lt;name&gt;/migrations/. Tær verða koyrdar í raðfylgju eftir nøvnum og tí, tær krevja.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Seinasta koyring</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fílan broyttist aftaná, at hon varð nýtt.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Eingin flyting enn. ./console exp:migration:generate --skeleton &lt;name&gt; --apply skrivar ta fyrstu.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Seinastu koyringarnar</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Allar koyringar</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Eingin koyring enn.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>At simulera eina koyring krevur politikkin migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ein koyring er í gongd: simulera, tá ið hon er liðug.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Uppseting</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target er hvørki ein koyring, ein flyting ella ein støðumynd í hesi innlegging.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Set fyrst kross við „Ja, tak aftur“.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>At endurskapa eina eldri støðumynd er fyri serfrøðingar: set kross við „Eg veit, hvat hetta endurskapar“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Skriva samleikan á støðumyndini aftur: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Vel í minsta lagi ein part at endurskapa.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Henda koyringin hevur onga støðumynd áðrenn: tak flytingar hennara aftur eina í senn, ella endurskapa eina eldri støðumynd.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Henda flytingin kann ikki takast aftur av sær sjálvari: hon er ikki nýtt, ella hon hevur onga down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Formularin kundi ikki lesast.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Vel koyringina, sum skal haldast fram.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Set fyrst kross við „Ja, koyr hesar flytingar nú“.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Vel í minsta lagi eina flyting.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Ein flyting broyttist aftaná, at hon varð nýtt: góðtak broytingina við einari orsøk, ella set fíluna aftur.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Greið frá, hví broyttu flytingarnar verða góðtiknar.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Orsøkin er í mesta lagi 500 tekin.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Ein koyring, sum er byrjað her, er enn í gongd (%detail). Bíða, til hon er liðug.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Ein onnur koyring hevur lásið á innleggingini: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Koyringin krevur ein innritaðan brúkara, sum er til.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Einki php-boðlinjuforrit varð funnið. Set migration.ini [AdminSettings] PhpCliPath til fulla slóð tess.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open er sløkt, so ein koyring kann ikki byrjast her. Koyr ./console exp:migration:migrate --apply á ambætaranum.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ikki ber til at skriva í mappuna hjá koyringunum: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Koyringin varð byrjað, men boðaði ikki frá tilgongdarsamleika sínum. Kanna %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Greið frá, hvat skal takast aftur.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Koyringin kundi ikki byrjast.</translation>
     </message>
 </context>
 </TS>

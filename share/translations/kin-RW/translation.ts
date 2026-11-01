@@ -15142,6 +15142,14 @@ Icyitonderwa: Amapaki ntazakurwa muri sisitemu.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: iherezo ryayo, igishushanyo n'ahantu ho kugerageza ibibazo.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Iyimurwa</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Impinduka ku iyinjizwa zibitswe nka dosiye: uko zihagaze, ibikorwa, gukoresha no gusubiza inyuma.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Muzakenera guhindura ubwoko bw'ingingo mukoresheje imikorere yo guhinduranya.</t
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Ohereza impinduka kuri /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Iyimurwa</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Uko bihagaze ntibyashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Imbonerahamwe z&apos;iyimurwa ntiziraboneka: ./console exp:upgrade --apply irazikora.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Iyimurwa %count ryananiranye</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Hari igikorwa kirimo gukorwa, cyatangijwe na %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Iyinjizwa rirafunze: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Bitegereje</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Byananiranye</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Ibitagira nyirabyo</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Igikorwa giheruka</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nta na kimwe kugeza ubu</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Iyimurwa ryose</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Igikorwa cyiganwe</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Igerageza</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Iyimurwa ritegereje ryakorewe mu gikorwa cy&apos;ububiko cyasubijwe inyuma nyuma yaho: nta cyagumyeho. Hasi hari icyo buri rimwe ryahinduye mu bubiko bw&apos;amakuru.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Icyo igikorwa cyakora ubu. Nta gihindurwa: buri iyimurwa ritegereje rigaragaza impinduka ryakora, n&apos;igikorwa kigaragaza icyo cyakora mbere na nyuma.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Kwigana</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Gukoresha</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Igerageza ryananiranye: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Kwigana bisaba PostgreSQL cyangwa SQLite, aho impinduka z&apos;imiterere zishobora gusubizwa inyuma; kuri ubu bubiko bw&apos;amakuru, gahunda iri hasi ni yo igaragaza icyo igikorwa cyakora.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Iyimurwa</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Iyimurwa</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Uko bihagaze</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Icyo ryakora</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Kwigana: %result mu milisegonda %ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Nta yimurwa rirabaho.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Mbere na nyuma y&apos;igikorwa</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Ifoto ya mbere</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ifatwa, kandi igasubizwaho iyo iyimurwa rinaniranye</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>birahagaritswe</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Ifoto ya nyuma</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ifatwa iyo igikorwa cyagenze neza</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Iyimurwa %total: %pending ritegereje, %done ryarangiye, %failed ryananiranye.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Amateka y&apos;iyimurwa</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Buri gikorwa n&apos;ukoresha wacyo, ibidukikije, amafoto n&apos;ibyemejwe, ibyashyizweho ikimenyetso n&apos;ibyoherejwe. Igikorwa cyananiranye cyangwa cyahagaritswe gishobora gukomezwa; igikorwa gifite ifoto yafashwe mbere yacyo gishobora gusubizwa inyuma.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ibikorwa ntibyashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Imbonerahamwe z&apos;iyimurwa ntiziraboneka: ./console exp:upgrade --apply irazikora.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Erekana</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Byose</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Ibikorwa</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Byatangiye</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Na</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Amafoto</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Ububiko bwa kode</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Ibikorwa byakorwa</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>mbere</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>nyuma</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>kohereza: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Komeza</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Gusubiza inyuma</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Nta gikorwa kiri muri uko guhagarara.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Byatangiriye hano</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Ibikorwa, ibikomezwa n&apos;ibisubizwa inyuma byatangiriye kuri izi paji, hamwe na raporo ya buri kimwe.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Iki</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Ibyavuyemo</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Gusubiza inyuma</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Gusubiza inyuma %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Igikorwa %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Icyo igikorwa cyakoze, inyandiko yacyo n&apos;urutonde rw&apos;ibyabaye. Igikorwa cyatangiriye hano gikomeza inyuma iyo iyi paji ifunzwe; ongera ufungure paji kugira ngo ugikurikirane.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Komeza iki gikorwa</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Subiza inyuma iki gikorwa</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Inyandiko ntiyashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Aho bigeze</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Cyatangijwe na %user saa %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kugenzura kode no gufata ifoto mbere y&apos;igikorwa</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Birakoresha %id (%index kuri %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done kuri %total byarangiye</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Iyimurwa ryakozwe; gusubizaho ifoto niba rimwe ryananiranye</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Gufata ifoto nyuma y&apos;igikorwa, kwemeza, gushyiraho ikimenyetso no kohereza</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Gusubizaho ifoto</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Igikorwa cyarangiye. Raporo yacyo irimo gufungurwa.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Aho bigeze ntibyashoboye gukurikiranwa. Ongera ufungure paji urebe uko igikorwa kigenda.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Iyi paji ikurikirana igikorwa uko kigenda.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Ongera ufungure</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Raporo</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Igihe</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>milisegonda %ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Icyo igikorwa cyagaragaje nk&apos;amakosa</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Inyandiko</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Ibidukikije</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nta na kimwe</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Byarangiye</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kwemeza</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Ikimenyetso</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Kohereza</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Ubutumwa</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Iyimurwa ry&apos;iki gikorwa</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Inkomoko</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Urutonde rw&apos;ibyabaye mu gikorwa</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Impera y&apos;urutonde gusa ni yo igaragara.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>birakorwa</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>byarangiye nta raporo</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>byagenze neza</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>byananiranye</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>byanzwe</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ububiko bw&apos;amakuru ntibwagerwagaho</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ikosa ry&apos;imbere</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Hari igikorwa kirimo gukorwa</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind cyatangijwe na %user saa %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Gikurikirane</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Iyinjizwa rirafunze</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Ikindi gikorwa gifite ifunga (ivugurura cyangwa igikorwa kuri konsole): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>byarangiye</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>bitegereje</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ntibikenewe</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ntibizwi</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>byasubijwe inyuma</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>byashyizwe mu bikorwa</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>byashyirwa mu bikorwa</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>byakuweho</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>byakurwaho</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ntibyakozwe</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>bitegereje ikindi</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>impinduka yemewe</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>impinduka yakwemerwa</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>byiganwe</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Iyimurwa</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Uko bihagaze</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Amateka</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Kuraho %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Igikorwa gisubizwa ku ifoto yafashwe mbere yacyo, iyimurwa rimwe rigasubizwa inyuma na down() yaryo. Gusubizaho ifoto ya kera ni iby&apos;inzobere. Buri kimwe gikorerwa inyuma mu izina ryawe, nyuma yo gufata ifoto y&apos;uko bihagaze ubu.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Ibishobora gukurwaho ntibyashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Igikorwa</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Iyimurwa rimwe</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Ifoto ya kera</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Ibisobanuro</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yego</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>oya</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Ifoto</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Izina</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Yafashwe</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Ubwoko</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Ibice byo gusubizaho</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Ububiko bw&apos;amakuru</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Amadosiye abitswe (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Igenamiterere (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Gusubizaho ububiko bw&apos;amakuru bibusubiza ku gihe ifoto yafatiwe, harimo n&apos;amasesiyo: ushobora gusabwa kongera kwinjira nyuma. Ibyahindutse byose kuva icyo gihe birabura; ifoto y&apos;uko bihagaze ubu ifatwa mbere.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Nzi icyo ibi bisubizaho</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Ongera wandike indangamuntu y&apos;ifoto</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Yego, kuraho</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Kureka</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Ibikorwa bifite ifoto yafashwe mbere yabyo.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Hitamo</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Nta gikorwa gifite ifoto kirabaho.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Iyimurwa ryashyizwe mu bikorwa rishobora kwikuraho ubwaryo (rifite down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Nta yimurwa ryashyizwe mu bikorwa rifite down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Amafoto ya kera (inzobere)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Nta foto irabaho.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Koresha iyimurwa</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Igikorwa gikomeza inyuma mu izina rya %user, kandi paji yacyo ikigaragaza uko kigenda. Mbere y&apos;iyimurwa rya mbere hafatwa ifoto y&apos;iyinjizwa; iyo iyimurwa rinaniranye, igikorwa kirahagarara kandi ifoto igasubizwaho.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Banza igerageza</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Uko bihagaze ntibyashoboye gusomwa: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Iyimurwa ritegereje</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Rikorwa muri uru rutonde. Kuraho akamenyetso kuri rimwe kugira ngo urisige, hamwe n&apos;iriyikeneye, ku gikorwa gikurikira.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Rikoreshe</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Rifungura uburyo bwo kubungabunga mu gihe rikora.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Byahinduwe nyuma yo gushyirwa mu bikorwa</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Aya madosiye si yo yashyizwe mu bikorwa. Igikorwa kirayanga keretse impinduka yemewe hamwe n&apos;impamvu; ntibisubirwamo, igenzura rishya ryandikwa kandi impamvu ikabikwa mu gitabo cy&apos;igenzura.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Emera impinduka</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kubera iki</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Ibisanzwe ni byo bitekanye. Buri kazu gasiga intambwe imwe.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Nta foto</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Nta foto mbere na nyuma y&apos;igikorwa: ukunanirwa ntigushobora gusanwa mu buryo bwikora.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Nta gusubizaho</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Nyuma yo kunanirwa, siga iyinjizwa uko ukunanirwa kwarisize.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Bika impinduka zitaremezwa</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Koresha nubwo igenamiterere, iyagurwa cyangwa imiterere bifite impinduka zitaremezwa; zijya mu ifoto.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Nta kwemeza</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Ntukemeze dosiye y&apos;uko bihagaze n&apos;urutonde rw&apos;igikorwa (nta kimenyetso kandi nta kohereza).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Nta kohereza</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Emeza kandi ushyireho ikimenyetso, ariko ntwohereze.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Nta kimenyetso</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Emeza kandi wohereze, ariko ntushyire ikimenyetso ku gikorwa.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Yego, koresha iri yimurwa ubu</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Nta yimurwa ritegereje.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Subira ku uko bihagaze</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Impinduka kuri iri yinjizwa zanditswe rimwe nka dosiye (ibikubiyemo, amoko, inshingano, igenamiterere, imiterere) kandi zigashyirwa kuri buri yinjizwa ry&apos;urubuga mu rutonde rumwe. Igikorwa kibanza gufata ifoto, kikayisubizaho iyo iyimurwa rinaniranye, kandi kikandika, kikemeza kandi kikohereza ibyo cyakoze.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Koresha %count bitegereje</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Incamake</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Bitegereje</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Byarangiye</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Byananiranye</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ntibikenewe</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Ububiko bw&apos;amakuru</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ibikorwa by&apos;ububiko: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Iyimurwa ry&apos;urubuga riri muri migrations/, iry&apos;iyagurwa riri muri extension/&lt;name&gt;/migrations/. Rikorwa hakurikijwe urutonde rw&apos;amazina yaryo n&apos;ibyo rikeneye.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Igikorwa giheruka</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Dosiye yahindutse nyuma yo gushyirwa mu bikorwa.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Nta yimurwa rirabaho. ./console exp:migration:generate --skeleton &lt;name&gt; --apply yandika irya mbere.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Ibikorwa biheruka</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Ibikorwa byose</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Nta gikorwa kirabaho.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Kwigana igikorwa bisaba uburenganzira migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Hari igikorwa kirimo gukorwa: igana iyo kirangiye.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Gutunganya</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target si igikorwa, si iyimurwa kandi si ifoto by&apos;iri yinjizwa.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Banza ushyireho akamenyetso kuri “Yego, kuraho”.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Gusubizaho ifoto ya kera ni iby&apos;inzobere: shyiraho akamenyetso kuri “Nzi icyo ibi bisubizaho”.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Ongera wandike indangamuntu y&apos;ifoto: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Hitamo nibura igice kimwe cyo gusubizaho.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Iki gikorwa nta foto yafashwe mbere yacyo gifite: kuraho iyimurwa ryacyo rimwe rimwe, cyangwa usubizeho ifoto ya kera.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Iri yimurwa ntirishobora kwikuraho ubwaryo: ntiryashyizwe mu bikorwa, cyangwa ntirifite down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ifishi ntiyashoboye gusomwa.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Hitamo igikorwa cyo gukomeza.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Banza ushyireho akamenyetso kuri “Yego, koresha iri yimurwa ubu”.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Hitamo nibura iyimurwa rimwe.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Iyimurwa ryahindutse nyuma yo gushyirwa mu bikorwa: emera impinduka hamwe n&apos;impamvu, cyangwa usubizeho dosiye.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Tanga impamvu iyimurwa ryahindutse ryemerwa.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Impamvu ntirenga inyuguti 500.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Igikorwa cyatangiriye hano kiracyakorwa (%detail). Tegereza kirangire.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Ikindi gikorwa gifite ifunga ry&apos;iyinjizwa: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Igikorwa gikeneye ukoresha uriho winjiye.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nta porogaramu ya php y&apos;umurongo w&apos;amabwiriza yabonetse. Shyira inzira yuzuye yayo muri migration.ini [AdminSettings] PhpCliPath.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open irahagaritswe, bityo igikorwa ntigishobora gutangirira hano. Koresha ./console exp:migration:migrate --apply kuri seriveri.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ububiko bw&apos;ibikorwa ntibushobora kwandikwamo: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Igikorwa cyatangiye ariko ntigitangaza indangamuntu ya porosesi yacyo. Genzura %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Vuga icyo gukuraho.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Igikorwa nticyashoboye gutangira.</translation>
     </message>
 </context>
 </TS>

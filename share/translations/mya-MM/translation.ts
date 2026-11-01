@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API- ၎င်း၏ အဆုံးမှတ်၊ ဇယားဖွဲ့စည်းပုံနှင့် မေးမြန်းမှုများကို စမ်းသပ်ရန် နေရာ။</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ပြောင်းရွှေ့မှုများ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ဖိုင်များအဖြစ် သိမ်းထားသော တပ်ဆင်မှုပြောင်းလဲချက်များ: ၎င်းတို့၏ အနေအထား၊ လုပ်ဆောင်မှုများ၊ လုပ်ဆောင်ခြင်းနှင့် ပြန်လှည့်ခြင်း။</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ပြောင်းလဲမှု (mutation) များကို /api/graphql သို့ ပို့ပါ။</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ပြောင်းရွှေ့မှုများ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>အနေအထားကို ဖတ်၍မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ပြောင်းရွှေ့မှုများ၏ ဇယားများ မရှိသေးပါ: ./console exp:upgrade --apply က ၎င်းတို့ကို ဖန်တီးပေးသည်။</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>ပြောင်းရွှေ့မှု %count ခု မအောင်မြင်ပါ</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>လုပ်ဆောင်မှုတစ်ခု လုပ်ဆောင်နေသည်၊ %user က စတင်ခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>တပ်ဆင်မှုကို သော့ခတ်ထားသည်: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ဆိုင်းငံ့</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>မအောင်မြင်</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ပိုင်ရှင်မဲ့များ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>နောက်ဆုံးလုပ်ဆောင်မှု</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>မရှိသေးပါ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ပြောင်းရွှေ့မှုအားလုံး</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>အတုလုပ်ဆောင်မှု</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>စမ်းသပ်လုပ်ဆောင်မှု</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>ဆိုင်းငံ့ထားသော ပြောင်းရွှေ့မှုများကို နောက်ပိုင်းတွင် ပြန်လှည့်ခဲ့သော ငွေလွှဲမှုတစ်ခုအတွင်း လုပ်ဆောင်ခဲ့သည်: ဘာမျှ မသိမ်းထားပါ။ အောက်တွင် တစ်ခုချင်းစီက ဒေတာဘေ့စ်တွင် ပြောင်းလဲခဲ့သည်များ ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>လုပ်ဆောင်မှုတစ်ခုက ယခု ဘာလုပ်မည်နည်း။ ဘာမျှ မပြောင်းလဲပါ: ဆိုင်းငံ့ထားသော ပြောင်းရွှေ့မှုတစ်ခုစီက ၎င်းပြုလုပ်မည့် ပြောင်းလဲချက်များကို ဖော်ပြပြီး လုပ်ဆောင်မှုက မတိုင်မီနှင့် ပြီးနောက် ဘာလုပ်မည်ကို ဖော်ပြသည်။</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>အတုလုပ်ဆောင်ရန်</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>လုပ်ဆောင်ရန်</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>စမ်းသပ်လုပ်ဆောင်မှု မအောင်မြင်ပါ: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>အတုလုပ်ဆောင်မှုတစ်ခုသည် schema ပြောင်းလဲချက်များကို ပြန်လှည့်နိုင်သော PostgreSQL သို့မဟုတ် SQLite လိုအပ်သည်; ဤဒေတာဘေ့စ်တွင် အောက်ပါအစီအစဉ်သည် လုပ်ဆောင်မှုတစ်ခု ပြုလုပ်မည့်အရာ ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>ပြောင်းရွှေ့မှုများ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ပြောင်းရွှေ့မှု</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>အခြေအနေ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>၎င်းလုပ်ဆောင်မည့်အရာ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>အတုလုပ်ဆောင်မှု: %result၊ %ms မီလီစက္ကန့်</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ပြောင်းရွှေ့မှု မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>လုပ်ဆောင်မှု မတိုင်မီနှင့် ပြီးနောက်</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>မတိုင်မီ လျှပ်တစ်ပြက်မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ယူထားပြီး ပြောင်းရွှေ့မှုတစ်ခု မအောင်မြင်သောအခါ ပြန်လည်ထားရှိသည်</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ပိတ်</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ပြီးနောက် လျှပ်တစ်ပြက်မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>လုပ်ဆောင်မှု အောင်မြင်သောအခါ ယူသည်</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>ပြောင်းရွှေ့မှု %total ခု: ဆိုင်းငံ့ %pending၊ ပြီးဆုံး %done၊ မအောင်မြင် %failed။</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>ပြောင်းရွှေ့မှု မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>လုပ်ဆောင်မှုတိုင်းကို ၎င်း၏ အသုံးပြုသူ၊ ပတ်ဝန်းကျင်၊ လျှပ်တစ်ပြက်မှတ်တမ်းများနှင့် commit၊ tag နှင့် push လုပ်ခဲ့သည်များနှင့်အတူ။ မအောင်မြင်သော သို့မဟုတ် ကြားဖြတ်ခံရသော လုပ်ဆောင်မှုကို ဆက်လုပ်နိုင်သည်; မတိုင်မီ လျှပ်တစ်ပြက်မှတ်တမ်း ယူထားသော လုပ်ဆောင်မှုကို ပြန်ရုပ်သိမ်းနိုင်သည်။</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>လုပ်ဆောင်မှုများကို ဖတ်၍မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ပြောင်းရွှေ့မှုများ၏ ဇယားများ မရှိသေးပါ: ./console exp:upgrade --apply က ၎င်းတို့ကို ဖန်တီးပေးသည်။</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ပြရန်</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>အားလုံး</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>လုပ်ဆောင်မှုများ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>စတင်ချိန်</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ပြုလုပ်သူ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>လျှပ်တစ်ပြက်မှတ်တမ်းများ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>သိုလှောင်ရာ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>လုပ်ဆောင်ချက်များ</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>မတိုင်မီ</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ပြီးနောက်</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ပို့ခြင်း: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ဆက်လုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ပြန်လှည့်ရန်</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ဤအခြေအနေတွင် လုပ်ဆောင်မှု မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ဤနေရာတွင် စတင်ခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ဤစာမျက်နှာများတွင် စတင်ခဲ့သော လုပ်ဆောင်မှုများ၊ ဆက်လုပ်မှုများနှင့် ပြန်လှည့်မှုများ၊ တစ်ခုစီ၏ အစီရင်ခံစာနှင့်အတူ။</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ဘာ</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ရလဒ်</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ပြန်လှည့်မှု</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ၏ ပြန်လှည့်မှု</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>လုပ်ဆောင်မှု %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>လုပ်ဆောင်မှုက ပြုလုပ်ခဲ့သည်များ၊ ၎င်း၏ မှတ်တမ်းနှင့် log။ ဤနေရာတွင် စတင်သော လုပ်ဆောင်မှုသည် ဤစာမျက်နှာကို ပိတ်လိုက်သောအခါ နောက်ခံတွင် ဆက်လုပ်နေသည်; ၎င်းကို လိုက်ကြည့်ရန် စာမျက်နှာကို ထပ်ဖွင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ဤလုပ်ဆောင်မှုကို ဆက်လုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ဤလုပ်ဆောင်မှုကို ပြန်လှည့်ရန်</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>မှတ်တမ်းကို ဖတ်၍မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>တိုးတက်မှု</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user က %time တွင် စတင်ခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ကုဒ်ကို စစ်ဆေးပြီး လုပ်ဆောင်မှု မတိုင်မီ လျှပ်တစ်ပြက်မှတ်တမ်း ယူနေသည်</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ကို လုပ်ဆောင်နေသည် (%total ခုအနက် %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total ခုအနက် %done ခု ပြီးဆုံး</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>ပြောင်းရွှေ့မှုများ လုပ်ဆောင်ပြီးပြီ; တစ်ခု မအောင်မြင်ပါက လျှပ်တစ်ပြက်မှတ်တမ်းကို ပြန်လည်ထားရှိနေသည်</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>လုပ်ဆောင်မှု ပြီးနောက် လျှပ်တစ်ပြက်မှတ်တမ်း ယူခြင်း၊ commit၊ tag နှင့် push လုပ်နေသည်</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>လျှပ်တစ်ပြက်မှတ်တမ်းကို ပြန်လည်ထားရှိနေသည်</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>လုပ်ဆောင်မှု ပြီးဆုံးပြီ။ ၎င်း၏ အစီရင်ခံစာကို ဖွင့်နေသည်။</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>တိုးတက်မှုကို လိုက်ကြည့်၍မရပါ။ လုပ်ဆောင်မှု မည်သို့ဖြစ်နေသည်ကို ကြည့်ရန် စာမျက်နှာကို ပြန်ဖွင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ဤစာမျက်နှာသည် လုပ်ဆောင်မှုကို ၎င်းဆက်သွားနေစဉ် လိုက်ကြည့်သည်။</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ပြန်ဖွင့်ရန်</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>အစီရင်ခံစာ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ကြာချိန်</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms မီလီစက္ကန့်</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>လုပ်ဆောင်မှုက အမှားများအဖြစ် ထုတ်ပြခဲ့သည်များ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ပတ်ဝန်းကျင်</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>မရှိ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ပြီးဆုံးချိန်</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ကွန်မစ်</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>တဂ်</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ပို့ခြင်း</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>စာ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ဤလုပ်ဆောင်မှု၏ ပြောင်းရွှေ့မှုများ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ရင်းမြစ်</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>လုပ်ဆောင်မှု log</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>log ၏ အဆုံးပိုင်းကိုသာ ပြထားသည်။</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>လုပ်ဆောင်နေသည်</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>အစီရင်ခံစာမရှိဘဲ ပြီးဆုံးခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>အောင်မြင်</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>မအောင်မြင်</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ငြင်းပယ်ခံရ</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ဒေတာဘေ့စ်ကို ဆက်သွယ်၍ မရခဲ့ပါ</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>အတွင်းပိုင်း အမှား</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>လုပ်ဆောင်မှုတစ်ခု လုပ်ဆောင်နေသည်</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ကို %user က %time တွင် စတင်ခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>လိုက်ကြည့်ရန်</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>တပ်ဆင်မှုကို သော့ခတ်ထားသည်</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>အခြားလုပ်ဆောင်မှုတစ်ခုက သော့ကို ကိုင်ထားသည် (အဆင့်မြှင့်မှု သို့မဟုတ် console ပေါ်ရှိ လုပ်ဆောင်မှု): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ပြီးဆုံး</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ဆိုင်းငံ့</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>မလိုအပ်</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>မသိ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ပြန်လှည့်ပြီး</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>အသုံးချပြီး</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>အသုံးချမည်</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ပြန်ရုပ်သိမ်းပြီး</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ပြန်ရုပ်သိမ်းမည်</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>မလုပ်ဆောင်ရသေး</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>အခြားတစ်ခုကို စောင့်နေသည်</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ပြောင်းလဲချက် လက်ခံပြီး</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ပြောင်းလဲချက်ကို လက်ခံမည်</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>အတုလုပ်ဆောင်ပြီး</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ပြောင်းရွှေ့မှုများ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>အနေအထား</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ကို ပြန်ရုပ်သိမ်းရန်</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>လုပ်ဆောင်မှုတစ်ခုကို ၎င်းမတိုင်မီ ယူထားသော လျှပ်တစ်ပြက်မှတ်တမ်းသို့ ပြန်ရုပ်သိမ်းသည်၊ ပြောင်းရွှေ့မှုတစ်ခုကို ၎င်း၏ down() ဖြင့်။ ယခင် လျှပ်တစ်ပြက်မှတ်တမ်းကို ပြန်လည်ထားရှိခြင်းသည် ကျွမ်းကျင်သူများအတွက် ဖြစ်သည်။ တစ်ခုစီသည် ယခုအခြေအနေ၏ လျှပ်တစ်ပြက်မှတ်တမ်း ယူပြီးနောက် သင့်အနေဖြင့် နောက်ခံတွင် လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ပြန်ရုပ်သိမ်းနိုင်သည်များကို ဖတ်၍မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>လုပ်ဆောင်မှုတစ်ခု</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ပြောင်းရွှေ့မှုတစ်ခု</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>ယခင် လျှပ်တစ်ပြက်မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>ဖော်ပြချက်</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ဟုတ်</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>မဟုတ်</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>လျှပ်တစ်ပြက်မှတ်တမ်း</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>အမည်</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ယူခဲ့ချိန်</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>အမျိုးအစား</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ပြန်လည်ထားရှိမည့် အစိတ်အပိုင်းများ</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ဒေတာဘေ့စ်</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>သိုလှောင်ဖိုင်များ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ဆက်တင်များ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ဒေတာဘေ့စ်ကို ပြန်လည်ထားရှိခြင်းသည် ၎င်းကို session များအပါအဝင် လျှပ်တစ်ပြက်မှတ်တမ်း၏ အချိန်သို့ ပြန်ပို့သည်: ထို့နောက် ထပ်မံ ဝင်ရောက်ရန် တောင်းဆိုခံရနိုင်သည်။ ထိုအချိန်မှစ၍ ပြောင်းလဲခဲ့သမျှ ပျောက်ဆုံးမည်; ယခုအခြေအနေ၏ လျှပ်တစ်ပြက်မှတ်တမ်းကို ဦးစွာ ယူသည်။</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ဤအရာက ဘာကို ပြန်လည်ထားရှိသည်ကို ကျွန်ုပ်သိသည်</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>လျှပ်တစ်ပြက်မှတ်တမ်း၏ id ကို ထပ်ရိုက်ပါ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ဟုတ်ကဲ့၊ ပြန်ရုပ်သိမ်းပါ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ပယ်ဖျက်ရန်</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>မတိုင်မီ လျှပ်တစ်ပြက်မှတ်တမ်း ယူထားသော လုပ်ဆောင်မှုများ။</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ရွေးရန်</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>လျှပ်တစ်ပြက်မှတ်တမ်းပါသော လုပ်ဆောင်မှု မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>မိမိကိုယ်ကို ပြန်ရုပ်သိမ်းနိုင်သော အသုံးချပြီး ပြောင်းရွှေ့မှုများ (၎င်းတို့တွင် down() ရှိသည်)။</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>အသုံးချပြီး ပြောင်းရွှေ့မှု မည်သည့်တစ်ခုတွင်မျှ down() မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>ယခင် လျှပ်တစ်ပြက်မှတ်တမ်းများ (ကျွမ်းကျင်သူများ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>လျှပ်တစ်ပြက်မှတ်တမ်း မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>ပြောင်းရွှေ့မှုများကို လုပ်ဆောင်ရန်</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>လုပ်ဆောင်မှုသည် %user အနေဖြင့် နောက်ခံတွင် ဆက်လုပ်ပြီး ၎င်း၏ စာမျက်နှာက ဆက်သွားနေစဉ် ပြသည်။ ပထမ ပြောင်းရွှေ့မှု မတိုင်မီ တပ်ဆင်မှု၏ လျှပ်တစ်ပြက်မှတ်တမ်းကို ယူသည်; ပြောင်းရွှေ့မှုတစ်ခု မအောင်မြင်သောအခါ လုပ်ဆောင်မှု ရပ်ပြီး လျှပ်တစ်ပြက်မှတ်တမ်းကို ပြန်လည်ထားရှိသည်။</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ဦးစွာ စမ်းသပ်လုပ်ဆောင်ရန်</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>အနေအထားကို ဖတ်၍မရပါ: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ဆိုင်းငံ့ထားသော ပြောင်းရွှေ့မှုများ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>၎င်းတို့ကို ဤအစီအစဉ်အတိုင်း လုပ်ဆောင်သည်။ တစ်ခုကို နှင့် ၎င်းကို လိုအပ်သည်များကို နောက်လုပ်ဆောင်မှုအတွက် ချန်ထားရန် အမှန်ခြစ်ကို ဖြုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>လုပ်ဆောင်ရန်</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>လုပ်ဆောင်နေစဉ် ပြုပြင်ထိန်းသိမ်းမုဒ်ကို ဖွင့်ထားသည်။</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>အသုံးချပြီးနောက် ပြောင်းလဲခဲ့သည်</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ဤဖိုင်များသည် အသုံးချခဲ့သော ဖိုင်များ မဟုတ်ပါ။ ပြောင်းလဲချက်ကို အကြောင်းပြချက်ဖြင့် လက်မခံပါက လုပ်ဆောင်မှုက ၎င်းတို့ကို ငြင်းပယ်သည်; ၎င်းတို့ကို ထပ်မလုပ်ဆောင်ပါ၊ checksum အသစ်ကို မှတ်တမ်းတင်ပြီး အကြောင်းပြချက်ကို စစ်ဆေးရေး log တွင် သိမ်းထားသည်။</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ပြောင်းလဲချက်များကို လက်ခံရန်</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>အကြောင်းပြချက်</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>မူလသတ်မှတ်ချက်များသည် ဘေးကင်းသည်။ အကွက်တစ်ခုစီက အဆင့်တစ်ဆင့်ကို ချန်လှပ်သည်။</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>လျှပ်တစ်ပြက်မှတ်တမ်း မယူရန်</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>လုပ်ဆောင်မှု မတိုင်မီနှင့် ပြီးနောက် လျှပ်တစ်ပြက်မှတ်တမ်း မယူပါ: မအောင်မြင်မှုကို အလိုအလျောက် ပြန်လည်ထားရှိ၍ မရပါ။</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ပြန်လည်မထားရှိရန်</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>မအောင်မြင်ပြီးနောက် တပ်ဆင်မှုကို မအောင်မြင်မှုက ထားခဲ့သည့်အတိုင်း ထားပါ။</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>commit မလုပ်ရသေးသော ပြောင်းလဲချက်များကို ထားရှိရန်</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ဆက်တင်များ၊ extension များ သို့မဟုတ် ဒီဇိုင်းများတွင် commit မလုပ်ရသေးသော ပြောင်းလဲချက်များ ရှိသော်လည်း လုပ်ဆောင်ပါ; ၎င်းတို့သည် လျှပ်တစ်ပြက်မှတ်တမ်းထဲ ပါဝင်သည်။</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>commit မလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>အနေအထားဖိုင်နှင့် လုပ်ဆောင်မှု log ကို commit မလုပ်ပါနှင့် (tag နှင့် push လည်း မလုပ်ပါ)။</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>push မလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>commit နှင့် tag လုပ်ပါ၊ သို့သော် push မလုပ်ပါနှင့်။</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>tag မလုပ်ရန်</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>commit နှင့် push လုပ်ပါ၊ သို့သော် လုပ်ဆောင်မှုကို tag မလုပ်ပါနှင့်။</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ဟုတ်ကဲ့၊ ဤပြောင်းရွှေ့မှုများကို ယခု လုပ်ဆောင်ပါ</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ဆိုင်းငံ့ထားသော ပြောင်းရွှေ့မှု မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>အနေအထားသို့ ပြန်သွားရန်</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ဤတပ်ဆင်မှုအတွက် ပြောင်းလဲချက်များကို ဖိုင်များအဖြစ် တစ်ကြိမ် ရေးသားထားပြီး (အကြောင်းအရာ၊ class များ၊ role များ၊ ဆက်တင်များ၊ schema) ဆိုက်၏ တပ်ဆင်မှုတိုင်းတွင် တူညီသော အစီအစဉ်ဖြင့် အသုံးချသည်။ လုပ်ဆောင်မှုတစ်ခုသည် ဦးစွာ လျှပ်တစ်ပြက်မှတ်တမ်း ယူပြီး ပြောင်းရွှေ့မှုတစ်ခု မအောင်မြင်သောအခါ ၎င်းကို ပြန်လည်ထားရှိကာ ပြုလုပ်ခဲ့သည်များကို မှတ်တမ်းတင်၊ commit နှင့် push လုပ်သည်။</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>ဆိုင်းငံ့ %count ခုကို လုပ်ဆောင်ရန်</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>အကျဉ်းချုပ်</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ဆိုင်းငံ့</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ပြီးဆုံး</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>မအောင်မြင်</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>မလိုအပ်</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ဒေတာဘေ့စ်</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ငွေလွှဲမှုများ: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ဆိုက်ပြောင်းရွှေ့မှုများသည် migrations/ တွင်ရှိပြီး extension တစ်ခု၏ ပြောင်းရွှေ့မှုများသည် extension/&lt;name&gt;/migrations/ တွင် ရှိသည်။ ၎င်းတို့ကို အမည်များ၏ အစီအစဉ်နှင့် လိုအပ်ချက်များအတိုင်း လုပ်ဆောင်သည်။</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>နောက်ဆုံးလုပ်ဆောင်မှု</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ဖိုင်ကို အသုံးချပြီးနောက် ပြောင်းလဲခဲ့သည်။</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ပြောင်းရွှေ့မှု မရှိသေးပါ။ ./console exp:migration:generate --skeleton &lt;name&gt; --apply က ပထမတစ်ခုကို ရေးပေးသည်။</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>နောက်ဆုံး လုပ်ဆောင်မှုများ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>လုပ်ဆောင်မှုအားလုံး</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>လုပ်ဆောင်မှု မရှိသေးပါ။</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>လုပ်ဆောင်မှုကို အတုလုပ်ဆောင်ရန် migration/run မူဝါဒ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>လုပ်ဆောင်မှုတစ်ခု လုပ်ဆောင်နေသည်: ၎င်းပြီးဆုံးမှ အတုလုပ်ဆောင်ပါ။</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>စနစ်ထည့်သွင်းမှု</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target သည် ဤတပ်ဆင်မှု၏ လုပ်ဆောင်မှု၊ ပြောင်းရွှေ့မှု သို့မဟုတ် လျှပ်တစ်ပြက်မှတ်တမ်း မဟုတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>&quot;ဟုတ်ကဲ့၊ ပြန်ရုပ်သိမ်းပါ&quot; ကို ဦးစွာ အမှန်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ယခင် လျှပ်တစ်ပြက်မှတ်တမ်းကို ပြန်လည်ထားရှိခြင်းသည် ကျွမ်းကျင်သူများအတွက် ဖြစ်သည်: &quot;ဤအရာက ဘာကို ပြန်လည်ထားရှိသည်ကို ကျွန်ုပ်သိသည်&quot; ကို အမှန်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>လျှပ်တစ်ပြက်မှတ်တမ်း၏ id ကို ထပ်ရိုက်ပါ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ပြန်လည်ထားရှိမည့် အစိတ်အပိုင်း အနည်းဆုံး တစ်ခု ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ဤလုပ်ဆောင်မှုတွင် မတိုင်မီ ယူထားသော လျှပ်တစ်ပြက်မှတ်တမ်း မရှိပါ: ၎င်း၏ ပြောင်းရွှေ့မှုများကို တစ်ခုချင်း ပြန်ရုပ်သိမ်းပါ သို့မဟုတ် ယခင် လျှပ်တစ်ပြက်မှတ်တမ်းကို ပြန်လည်ထားရှိပါ။</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ဤပြောင်းရွှေ့မှုကို ၎င်းတစ်ခုတည်း ပြန်ရုပ်သိမ်း၍ မရပါ: ၎င်းကို အသုံးမချရသေးပါ သို့မဟုတ် ၎င်းတွင် down() မရှိပါ။</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ဖောင်ကို ဖတ်၍မရပါ။</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ဆက်လုပ်မည့် လုပ်ဆောင်မှုကို ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>&quot;ဟုတ်ကဲ့၊ ဤပြောင်းရွှေ့မှုများကို ယခု လုပ်ဆောင်ပါ&quot; ကို ဦးစွာ အမှန်ခြစ်ပါ။</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>ပြောင်းရွှေ့မှု အနည်းဆုံး တစ်ခု ရွေးပါ။</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ပြောင်းရွှေ့မှုတစ်ခုကို အသုံးချပြီးနောက် ပြောင်းလဲခဲ့သည်: ပြောင်းလဲချက်ကို အကြောင်းပြချက်ဖြင့် လက်ခံပါ သို့မဟုတ် ဖိုင်ကို ပြန်ထားပါ။</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>ပြောင်းလဲထားသော ပြောင်းရွှေ့မှုများကို လက်ခံရသည့် အကြောင်းပြချက်ကို ပေးပါ။</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>အကြောင်းပြချက်သည် အများဆုံး စာလုံး 500 ဖြစ်သည်။</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ဤနေရာတွင် စတင်ခဲ့သော လုပ်ဆောင်မှုတစ်ခု ဆက်လုပ်နေဆဲ (%detail)။ ၎င်းပြီးဆုံးသည်အထိ စောင့်ပါ။</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>အခြားလုပ်ဆောင်မှုတစ်ခုက တပ်ဆင်မှု၏ သော့ကို ကိုင်ထားသည်: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>လုပ်ဆောင်မှုသည် တည်ရှိပြီး ဝင်ရောက်ထားသော အသုံးပြုသူ လိုအပ်သည်။</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php command line ပရိုဂရမ် မတွေ့ပါ။ migration.ini [AdminSettings] PhpCliPath ကို ၎င်း၏ လမ်းကြောင်းအပြည့်သို့ သတ်မှတ်ပါ။</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ကို ပိတ်ထားသဖြင့် ဤနေရာတွင် လုပ်ဆောင်မှု စတင်၍မရပါ။ ဆာဗာပေါ်တွင် ./console exp:migration:migrate --apply ကို လုပ်ဆောင်ပါ။</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>လုပ်ဆောင်မှုများ၏ ဖိုဒါသို့ ရေး၍မရပါ: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>လုပ်ဆောင်မှုကို စတင်ခဲ့သော်လည်း ၎င်း၏ process id ကို မပြောပြခဲ့ပါ။ %detail ကို စစ်ဆေးပါ။</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ပြန်ရုပ်သိမ်းမည့်အရာကို ဖော်ပြပါ။</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>လုပ်ဆောင်မှုကို စတင်၍မရပါ။</translation>
     </message>
 </context>
 </TS>

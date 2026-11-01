@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: цуьнан чаккхенан тӀадам, схема а, хаттарш зен меттиг а.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграцеш</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ДӀахӀоттаман хийцамаш файлаш санна лардина: церан хьал, дӀадахьарш, дӀадахьар а юхадерзор а.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Мутацеш /api/graphql тӀе дахийта.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграцеш</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Статус еша ца делира: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Миграцийн таблицаш хӀинца а яц: ./console exp:upgrade --apply цо уьш кхуллу.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count миграци ца хилла</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ДӀадахьар доьдуш ду, %user долийна</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ДӀахӀоттам блокировкехь бу: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Хьоьжуш</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ца хилла</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Да-нана доцурш</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ТӀаьххьара дӀадахьар</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>хӀинца а дац</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Миграцеш массо а</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Моделехь дӀадахьар</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Талламан дӀадахьар</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Хьоьжуш йолу миграцеш транзакцехь дӀаяхна, иза тӀаьхьо юхаерзина: цхьа а хӀума ца лардина. Лахахь ду хӀора цхьаммо хаамийн базехь хийцинарг.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ХӀинца дӀадахьаро дийр долчух лаьцна. Цхьа а хӀума ца хуьйцу: хӀора хьоьжуш йолчу миграцис шена дан лаьа хийцамаш гойту, дӀадахьаро — хьалха а тӀаьхьа а дийр дерг.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Моделехь дан</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ДӀадоло</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Талламан дӀадахьар ца хилла: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Моделехь дан PostgreSQL я SQLite оьшу, церан схемин хийцамаш юхаберзалур бу; хӀокху хаамийн базехь лахахь йолчу планехь ду дӀадахьаро дийр дерг.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Миграцеш</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Миграци</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Хьал</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Цо дийр дерг</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Моделехь дар: %result, %ms мс</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ХӀинца а миграци яц.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ДӀадахьарал хьалха а тӀаьхьа а</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Хьалхара сурт</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>до, миграци ца хилча юхаметтахӀоттайо</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>дӀадайина</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ТӀаьхьара сурт</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>дӀадахьар кхиамца чекхдаьлча до</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total миграци: %pending хьоьжуш, %done кхочушйина, %failed ца хилла.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Миграцийн истори</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ХӀора дӀадахьар шен лелорхочуьнца, гонахьарчу хьолаца, суьрташца, коммит, тег, пуш динчуьнца. Ца хилла я сецна дӀадахьар кхин дӀа даьхьа мега; хьалха сурт долу дӀадахьар юхадерзо мега.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>ДӀадахьарш еша ца делира: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Миграцийн таблицаш хӀинца а яц: ./console exp:upgrade --apply цо уьш кхуллу.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Гайта</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Массо</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ДӀадахьарш</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Долийна</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Долийнарг</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Суьрташ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Репозиторий</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ГӀуллакхаш</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>хьалха</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>тӀаьхьа</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>пуш: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Кхин дӀа даьхьа</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Юхадерзо</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ХӀокху хьолехь дӀадахьар дац.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Кхузахь долийна</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ХӀокху агӀонашкахь долийна дӀадахьарш, кхин дӀа дахьарш, юхадерзорш, хӀоранна а шен хаамца.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ХӀун</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ЖамӀ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Юхадерзор</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target юхадерзор</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ДӀадахьар %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ДӀадахьаро диннарг, цуьнан дӀаяздар а журнал а. Кхузахь долийна дӀадахьар хӀара агӀо къовлича а гӀаролла тӀехь кхин дӀа доьду; иза тергал дан агӀо юха схьаеллаша.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ХӀара дӀадахьар кхин дӀа даьхьа</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ХӀара дӀадахьар юхадерзо</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ДӀаяздар еша ца делира: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ДӀабахар</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user долийна %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Код таллар а дӀадахьарал хьалха сурт дар а</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id доьду (%total чуьра %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total чуьра %done кхочушйина</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Миграцеш дӀаяхна; цхьаъ ца хиллехь, сурт юхаметтахӀоттадо</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ДӀадахьарал тӀаьхьа сурт дар, коммит, тег, пуш</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Сурт юхаметтахӀоттадар</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>ДӀадахьар чекхдаьлла. Цуьнан хаам чуйолуш бу.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ДӀабахар тергал дан ца делира. ДӀадахьар муха доьду хаа агӀо юха чуйиллахь.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ХӀокху агӀоно дӀадахьар доьдучу хенахь тергал до.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Юха чуйилла</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Хаам</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Хан</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ДӀадахьаро гӀалаташ санна арадаьккхинарг</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ДӀаяздар</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Хьал</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>дац</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Чекхдаьлла</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Коммит</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Тег</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Пуш</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Хаам</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ХӀокху дӀадахьаран миграцеш</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Хьост</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ДӀадахьаран журнал</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Журналан чаккхе бен ца гойту.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>доьду</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>хаам боцуш чекхдаьлла</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>кхиамца</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ца хилла</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>дӀатеттина</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>хаамийн базе кхача ца делира</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>чоьхьара гӀалат</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ДӀадахьар доьдуш ду</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind %user долийна %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Тергал де</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ДӀахӀоттам блокировкехь бу</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Кхечу дӀадахьаро блокировка лаьцна (керлайаккхар я консолехь дӀадахьар): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>кхочушйина</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>хьоьжуш</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ца оьшу</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>вовзийтина дац</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>юхаерзина</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>лелийна</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>лелор ю</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>юхаяьккхина</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>юхаяккхар ю</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>дӀа ца яхна</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>кхечуьнга хьоьжу</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>хийцам тӀеэцна</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>хийцам тӀеоцур бу</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>моделехь йина</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграцеш</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Истори</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target юхаяккха</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ДӀадахьар шел хьалха динчу сурте юхадерзадо, цхьа миграци — шен down() кхочушйина. Хьалхара сурт юхаметтахӀоттор говзанчашна ду. ХӀора гӀаролла тӀехь хьан цӀарах доьду, хӀинцалерчу хьолан сурт динчул тӀаьхьа.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Юхаяккха мегарг еша ца делира: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ДӀадахьар</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Цхьа миграци</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Хьалхара сурт</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Дийцар</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>хӀаъ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>хӀан-хӀа</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Сурт</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Билгало</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Дина</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Тайпа</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ЮхаметтахӀотто дакъош</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Хаамийн база</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Ларйинарчу файлаш (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Параметраш (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Хаамийн база юхаметтахӀоттайича, иза сурт динчу хене юхайоьрзу, сессеш а юкъахь: тӀаьхьа юха чугӀо оьшур ду хьуна. Цул тӀаьхьа хийцина массо а хӀума дӀадоьду; хьалха хӀинцалерчу хьолан сурт до.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Хаьа суна хӀокхо юхаметтахӀоттор дерг</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Суьртан идентификатор юха язъе</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ХӀаъ, юхаяккха</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Юхадаккха</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Шел хьалха сурт долу дӀадахьарш.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Харжа</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Сурт долу дӀадахьар хӀинца а дац.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Шаьш юхаяла йиш йолу лелийна миграцеш (цаьрца down() ю).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Цхьана а лелийначу миграцехь down() яц.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Хьалхара суьрташ (говзанчаш)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ХӀинца а сурт дац.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Миграцеш дӀаяха</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>ДӀадахьар гӀаролла тӀехь %user цӀарах доьду, цуьнан агӀоно иза доьдучу хенахь гойту. Хьалхарчу миграцел хьалха дӀахӀоттаман сурт до; миграци ца хилча дӀадахьар сецна, сурт юхаметтахӀоттадо.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Хьалха талламан дӀадахьар</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Статус еша ца делира: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Хьоьжуш йолу миграцеш</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Уьш хӀокху рагӀехь доьду. Цхьаъ тӀаьхьарчу дӀадахьарна юьтуш, цуьнан билгало дӀаяккха, иза оьшучаьрца цхьаьна.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ДӀадаха</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Доьдучу хенахь техникин хьелан раж дӀалото.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Лелийначул тӀаьхьа хийцина</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ХӀарш лелийна файлаш яц. ДӀадахьаро уьш дӀатуьту, хийцам бахьанца тӀе ца эцахь; уьш юха дӀа ца йоьду, керла контролан жамӀ дӀаяздо, бахьана аудитан журналехь лардо.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Хийцамаш тӀеэца</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ХӀунда</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Ӏадатан маьӀнаш кхерамза ду. ХӀора бошхапо цхьа гӀулч дӀайоккху.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Сурт доцуш</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ДӀадахьарал хьалха а тӀаьхьа а сурт доцуш: ца хиллачул тӀаьхьа шегара юхаметтахӀотто йиш яц.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ЮхаметтахӀоттор доцуш</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Ца хиллачул тӀаьхьа дӀахӀоттам иза мухха битнехь а, иштта бита.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Коммит ца дина хийцамаш дита</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Параметрашкахь, шордаршкахь я дизайнашкахь коммит ца дина хийцамаш белахь а дӀадаха; уьш сурте кхочу.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Коммит доцуш</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Статусан файл а дӀадахьаран журнал а коммит ма е (тег а пуш а доцуш).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Пуш доцуш</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Коммит а тег а е, амма пуш ма е.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Тег доцуш</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Коммит а пуш а е, амма дӀадахьарна тег ма е.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ХӀаъ, хӀинца хӀара миграцеш дӀаяха</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Хьоьжуш йолу миграци яц.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Статусе юхагӀо</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ХӀокху дӀахӀоттаман хийцамаш цкъа файлаш санна язйина (чулацам, классаш, рольш, параметраш, схема), сайтан хӀора дӀахӀоттамна цу рагӀехь лелош. ДӀадахьаро хьалха сурт до, миграци ца хилча иза юхаметтахӀоттадо, ша динарг дӀаяздо, коммит а пуш а до.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count хьоьжуш йолу дӀаяха</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Терго</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Хьоьжуш</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Кхочушйина</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ца хилла</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ца оьшу</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Хаамийн база</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>транзакцеш: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Сайтан миграцеш migrations/ чохь ю, шордаран миграцеш — extension/&lt;name&gt;/migrations/ чохь. Уьш шайн цӀерийн а шайна оьшучун а рагӀехь доьду.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ТӀаьххьара дӀадахьар</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Файл лелийначул тӀаьхьа хийцина.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ХӀинца а миграци яц. ./console exp:migration:generate --skeleton &lt;name&gt; --apply цо хьалхарниг язйо.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ТӀаьххьара дӀадахьарш</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ДӀадахьарш массо а</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ХӀинца а дӀадахьар дац.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ДӀадахьар моделехь дан migration/run политика оьшу.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ДӀадахьар доьдуш ду: иза чекхдаьлча моделехь де.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ДӀахӀоттор</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target хӀокху дӀахӀоттаман дӀадахьар а, миграци а, сурт а дац.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Хьалха «ХӀаъ, юхаяккха» билгало е.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Хьалхара сурт юхаметтахӀоттор говзанчашна ду: «Хаьа суна хӀокхо юхаметтахӀоттор дерг» билгало е.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Суьртан идентификатор юха язъе: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ЮхаметтахӀотто уггар кӀеззиг цхьа дакъа харжа.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ХӀокху дӀадахьарехь шел хьалха сурт дац: цуьнан миграцеш цхьацца юхаяха, я хьалхара сурт юхаметтахӀотта.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ХӀара миграци шех юхаяла йиш яц: иза лелийна яц, я цуьнца down() яц.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Форма еша ца делира.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Кхин дӀа даьхьа дӀадахьар харжа.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Хьалха «ХӀаъ, хӀинца хӀара миграцеш дӀаяха» билгало е.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Уггар кӀеззиг цхьа миграци харжа.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Миграци лелийначул тӀаьхьа хийцина: хийцам бахьанца тӀеэца, я файл юха меттахӀотта.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Хийцина миграцеш хӀунда тӀеоьцу, цуьнан бахьана язъе.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Бахьана уггар дукха 500 символ ю.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Кхузахь долийна дӀадахьар хӀинца а доьду (%detail). Иза чекхдаллалц собар де.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Кхечу дӀадахьаро дӀахӀоттаман блокировка лаьцна: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>ДӀадахьарна чувеана долу бакъ лелорхо оьшу.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php командин могӀанан программа ца карийна. migration.ini [AdminSettings] PhpCliPath цуьнан буьззина некъ хӀоттабе.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open дӀадайина ду, цундела кхузахь дӀадахьар доло йиш яц. Серверехь ./console exp:migration:migrate --apply дӀадоло.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ДӀадахьарийн папке язъян йиш яц: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>ДӀадахьар долийна, амма цо шен процессан идентификатор ца хаийтина. %detail талла.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Юхаяккха езарг язъе.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>ДӀадахьар доло ца делира.</translation>
     </message>
 </context>
 </TS>

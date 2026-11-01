@@ -15142,6 +15142,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: එහි අන්ත ලක්ෂ්‍යය, ස්කීමාව සහ විමසුම් අත්හදා බැලීමට පරීක්ෂණ පිටියක්.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>සංක්‍රමණ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ගොනු ලෙස තබා ඇති ස්ථාපනයේ වෙනස්කම්: ඒවායේ තත්ත්වය, ධාවන, ධාවනය සහ ආපසු හැරවීම.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>mutations /api/graphql වෙත යවන්න.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>සංක්‍රමණ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>තත්ත්වය කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>සංක්‍රමණවල වගු තවම නොපවතී: ./console exp:upgrade --apply ඒවා සාදයි.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>අසාර්ථක වූ සංක්‍රමණ: %count</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ධාවනයක් සිදුවෙමින් පවතී, %user විසින් ආරම්භ කළා</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ස්ථාපනය අගුළු දමා ඇත: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>පොරොත්තුවෙන්</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>අනාථ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>අවසන් ධාවනය</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>තවම කිසිවක් නැත</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>සියලු සංක්‍රමණ</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>අනුකරණය කළ ධාවනය</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>පරීක්ෂණ ධාවනය</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>පොරොත්තු සංක්‍රමණ පසුව ආපසු හරවන ලද ගනුදෙනුවක් තුළ ධාවනය විය: කිසිවක් තබා නොගන්නා ලදී. පහත දැක්වෙන්නේ එක් එක් සංක්‍රමණය දත්ත සමුදායේ වෙනස් කළ දේය.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ධාවනයක් දැන් කරන දේ. කිසිවක් වෙනස් නොවේ: එක් එක් පොරොත්තු සංක්‍රමණය එය කරන වෙනස්කම් ද, ධාවනය පෙර සහ පසු කරන දේ ද ලැයිස්තුගත කරයි.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>අනුකරණය කරන්න</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ධාවනය කරන්න</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>පරීක්ෂණ ධාවනය අසාර්ථක විය: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>අනුකරණයකට PostgreSQL හෝ SQLite අවශ්‍ය වේ, ඒවායේ ක්‍රමලේඛ වෙනස්කම් ආපසු හැරවිය හැක; මෙම දත්ත සමුදාය මත පහත සැලැස්ම ධාවනයක් කරන දේය.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>සංක්‍රමණ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>සංක්‍රමණය</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>එය කරන දේ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>අනුකරණය: %result, %ms ms තුළ</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>තවම සංක්‍රමණයක් නැත.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ධාවනයට පෙර සහ පසු</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>පෙර සටහන</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ගනු ලැබේ, සංක්‍රමණයක් අසාර්ථක වූ විට ප්‍රතිසාධනය කෙරේ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>අක්‍රියයි</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>පසු සටහන</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ධාවනය සාර්ථක වූ විට ගනු ලැබේ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>සංක්‍රමණ %total: පොරොත්තු %pending, නිම %done, අසාර්ථක %failed.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>සංක්‍රමණ ඉතිහාසය</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>එක් එක් ධාවනය එහි පරිශීලකයා, පරිසරය, සටහන් සහ commit කළ, ටැග් කළ සහ push කළ දේ සමඟ. අසාර්ථක හෝ බාධා වූ ධාවනයක් නැවත ආරම්භ කළ හැක; පෙර සටහනක් ඇති ධාවනයක් ආපසු ගත හැක.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>ධාවන කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>සංක්‍රමණවල වගු තවම නොපවතී: ./console exp:upgrade --apply ඒවා සාදයි.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>සියල්ල</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ධාවන</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ආරම්භ විය</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>විසින්</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>සටහන්</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ගබඩාව</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ක්‍රියා</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>පෙර</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>පසු</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>push කිරීම: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>නැවත ආරම්භ කරන්න</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ආපසු හරවන්න</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>මෙම තත්ත්වයේ ධාවනයක් නැත.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>මෙහි ආරම්භ කළ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>මෙම පිටුවල ආරම්භ කළ ධාවන, නැවත ආරම්භ කිරීම් සහ ආපසු හැරවීම්, එක් එක්කේ වාර්තාව සමඟ.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>කුමක්ද</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ප්‍රතිඵලය</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ආපසු හැරවීම</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ආපසු හැරවීම</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ධාවනය %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ධාවනය කළ දේ, එහි වාර්තාව සහ ලොගය. මෙහි ආරම්භ කළ ධාවනයක් මෙම පිටුව වැසූ විට පසුබිමේ දිගටම පවතී; එය අනුගමනය කිරීමට පිටුව නැවත විවෘත කරන්න.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>මෙම ධාවනය නැවත ආරම්භ කරන්න</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>මෙම ධාවනය ආපසු හරවන්න</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>වාර්තාව කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ප්‍රගතිය</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user විසින් %time ට ආරම්භ කළා.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>කේතය පරීක්ෂා කරමින් ධාවනයට පෙර සටහනක් ගනිමින්</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ධාවනය වෙමින් (%total න් %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total න් %done නිමයි</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>සංක්‍රමණ ධාවනය විය; එකක් අසාර්ථක වූයේ නම් සටහන ප්‍රතිසාධනය කෙරේ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ධාවනයෙන් පසු සටහනක් ගැනීම, commit, ටැග් සහ push කිරීම</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>සටහන ප්‍රතිසාධනය කෙරේ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>ධාවනය අවසන් විය. එහි වාර්තාව පූරණය වෙමින්.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ප්‍රගතිය අනුගමනය කළ නොහැකි විය. ධාවනය සිදුවන ආකාරය බැලීමට පිටුව නැවත පූරණය කරන්න.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>මෙම පිටුව ධාවනය සිදුවන අතරතුර එය අනුගමනය කරයි.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>නැවත පූරණය කරන්න</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>වාර්තාව</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>කාලය</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>මිලිතත්පර %ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ධාවනය දෝෂ ලෙස මුද්‍රණය කළ දේ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>වාර්තාව</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>පරිසරය</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>කිසිවක් නැත</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>අවසන් විය</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit කිරීම</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ටැගය</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Push කිරීම</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>පණිවිඩය</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>මෙම ධාවනයේ සංක්‍රමණ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>මූලාශ්‍රය</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ධාවන ලොගය</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ලොගයේ අවසානය පමණක් පෙන්වයි.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ධාවනය වෙමින්</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>වාර්තාවකින් තොරව අවසන් විය</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>සාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ප්‍රතික්ෂේප විය</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>දත්ත සමුදායට ළඟා විය නොහැකි විය</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>අභ්‍යන්තර දෝෂය</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ධාවනයක් සිදුවෙමින් පවතී</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, %user විසින් %time ට ආරම්භ කළා.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>අනුගමනය කරන්න</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ස්ථාපනය අගුළු දමා ඇත</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>වෙනත් ධාවනයක් අගුල රඳවා ඇත (උත්ශ්‍රේණි කිරීමක් හෝ කොන්සෝලයේ ධාවනයක්): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>නිමයි</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>පොරොත්තුවෙන්</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>අවශ්‍ය නැත</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>නොදන්නා</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ආපසු හැරවිණි</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>යොදන ලදී</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>යොදනු ඇත</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ආපසු ගන්නා ලදී</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ආපසු ගනු ඇත</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ධාවනය නොකළ</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>වෙනත් එකක් බලාපොරොත්තුවෙන්</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>වෙනස පිළිගන්නා ලදී</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>වෙනස පිළිගනු ඇත</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>අනුකරණය කළ</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>සංක්‍රමණ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ඉතිහාසය</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ආපසු ගන්න</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ධාවනයක් එයට පෙර ගත් සටහනට ආපසු ගනු ලැබේ, එක් සංක්‍රමණයක් එහි down() මගින්. පෙර සටහනක් ප්‍රතිසාධනය කිරීම විශේෂඥයින් සඳහාය. එක් එක්ක ඔබ ලෙස පසුබිමේ ධාවනය වේ, වත්මන් තත්ත්වයේ සටහනකින් පසුව.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ආපසු ගත හැකි දේ කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ධාවනයක්</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>එක් සංක්‍රමණයක්</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>පෙර සටහනක්</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>විස්තරය</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ඔව්</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>නැත</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>සටහන</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ලේබලය</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ගත් වේලාව</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>වර්ගය</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ප්‍රතිසාධනය කළ යුතු කොටස්</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>දත්ත සමුදාය</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ගබඩා ගොනු (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>සැකසුම් (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>දත්ත සමුදාය ප්‍රතිසාධනය කිරීම එය සැසි ඇතුළුව සටහනේ කාලයට ආපසු ගෙන යයි: පසුව ඔබෙන් නැවත පුරනය වීමට ඉල්ලා සිටිය හැක. එතැන් සිට වෙනස් වූ සියල්ල නැති වේ; පළමුව වත්මන් තත්ත්වයේ සටහනක් ගනු ලැබේ.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>මෙය ප්‍රතිසාධනය කරන දේ මම දනිමි</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>සටහනේ id නැවත ටයිප් කරන්න</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ඔව්, ආපසු ගන්න</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>අවලංගු කරන්න</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>පෙර සටහනක් ගත් ධාවන.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>තෝරන්න</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>තවම සටහනක් සහිත ධාවනයක් නැත.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>තමන්ම ආපසු ගත හැකි යොදන ලද සංක්‍රමණ (ඒවාට down() ඇත).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>කිසිදු යොදන ලද සංක්‍රමණයකට down() නැත.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>පෙර සටහන් (විශේෂඥයින්)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>තවම සටහනක් නැත.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>සංක්‍රමණ ධාවනය කරන්න</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>ධාවනය %user ලෙස පසුබිමේ සිදු වන අතර එහි පිටුව එය සිදුවන අතරතුර පෙන්වයි. පළමු සංක්‍රමණයට පෙර ස්ථාපනයේ සටහනක් ගනු ලැබේ; සංක්‍රමණයක් අසාර්ථක වූ විට ධාවනය නතර වී සටහන ප්‍රතිසාධනය කෙරේ.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>පළමුව පරීක්ෂණ ධාවනය</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>තත්ත්වය කියවිය නොහැකි විය: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>පොරොත්තු සංක්‍රමණ</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ඒවා මෙම අනුපිළිවෙලින් ධාවනය වේ. එකක් සහ එය අවශ්‍ය ඒවා පසු ධාවනයකට තැබීමට එහි සලකුණ ඉවත් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>එය ධාවනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>ධාවනය වන අතරතුර නඩත්තු ප්‍රකාරය සක්‍රිය කරයි.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>යෙදීමෙන් පසු වෙනස් විය</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>මෙම ගොනු යොදන ලද ඒවා නොවේ. වෙනස හේතුවක් සමඟ පිළිගන්නේ නම් මිස ධාවනයක් ඒවා ප්‍රතික්ෂේප කරයි; ඒවා නැවත ධාවනය නොවේ, නව checksum එක සටහන් කර හේතුව විගණන ලොගයේ තබා ගනී.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>වෙනස්කම් පිළිගන්න</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ඇයි</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>පෙරනිමි අගයන් ආරක්ෂිතයි. එක් එක් කොටුව එක් පියවරක් මඟහරියි.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>සටහනක් නැත</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ධාවනයට පෙර සහ පසු සටහනක් නැත: අසාර්ථකත්වයක් ස්වයංක්‍රීයව ප්‍රතිසාධනය කළ නොහැක.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ප්‍රතිසාධනයක් නැත</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>අසාර්ථකත්වයකින් පසු, ස්ථාපනය අසාර්ථකත්වය තැබූ ආකාරයටම තබන්න.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>commit නොකළ වෙනස්කම් තබා ගන්න</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>සැකසුම්, දිගු හෝ නිර්මාණවල commit නොකළ වෙනස්කම් ඇතත් ධාවනය කරන්න; ඒවා සටහනට ඇතුළත් වේ.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>commit නැත</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>තත්ත්ව ගොනුව සහ ධාවන ලොගය commit නොකරන්න (ටැග් හෝ push ද නැත).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>push නැත</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>commit සහ ටැග් කරන්න, නමුත් push නොකරන්න.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ටැග් නැත</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>commit සහ push කරන්න, නමුත් ධාවනය ටැග් නොකරන්න.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ඔව්, මෙම සංක්‍රමණ දැන් ධාවනය කරන්න</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>පොරොත්තුවෙන් සංක්‍රමණයක් නැත.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>තත්ත්වයට ආපසු</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>මෙම ස්ථාපනයේ වෙනස්කම් එක් වරක් ගොනු ලෙස ලියා (අන්තර්ගතය, පන්ති, භූමිකා, සැකසුම්, ක්‍රමලේඛය) අඩවියේ සෑම ස්ථාපනයකටම එකම අනුපිළිවෙලින් යොදයි. ධාවනයක් පළමුව සටහනක් ගනී, සංක්‍රමණයක් අසාර්ථක වූ විට එය ප්‍රතිසාධනය කරයි, සහ කළ දේ සටහන් කර commit සහ push කරයි.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>පොරොත්තු %count ධාවනය කරන්න</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>දළ විශ්ලේෂණය</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>පොරොත්තුවෙන්</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>නිමයි</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>අසාර්ථකයි</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>අවශ්‍ය නැත</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>දත්ත සමුදාය</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ගනුදෙනු: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>අඩවි සංක්‍රමණ migrations/ හි ඇත, දිගුවක ඒවා extension/&lt;name&gt;/migrations/ හි. ඒවා ඒවායේ නම් සහ අවශ්‍යතා අනුපිළිවෙලින් ධාවනය වේ.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>අවසන් ධාවනය</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ගොනුව යෙදීමෙන් පසු වෙනස් විය.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>තවම සංක්‍රමණයක් නැත. ./console exp:migration:generate --skeleton &lt;name&gt; --apply පළමු එක ලියයි.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>නවතම ධාවන</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>සියලු ධාවන</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>තවම ධාවනයක් නැත.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ධාවනයක් අනුකරණය කිරීමට migration/run ප්‍රතිපත්තිය අවශ්‍ය වේ.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ධාවනයක් සිදුවෙමින් පවතී: එය අවසන් වූ විට අනුකරණය කරන්න.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>පිහිටුවීම</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target මෙම ස්ථාපනයේ ධාවනයක්, සංක්‍රමණයක් හෝ සටහනක් නොවේ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>පළමුව &quot;ඔව්, ආපසු ගන්න&quot; සලකුණු කරන්න.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>පෙර සටහනක් ප්‍රතිසාධනය කිරීම විශේෂඥයින් සඳහාය: &quot;මෙය ප්‍රතිසාධනය කරන දේ මම දනිමි&quot; සලකුණු කරන්න.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>සටහනේ id නැවත ටයිප් කරන්න: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ප්‍රතිසාධනය කිරීමට අවම වශයෙන් එක් කොටසක් තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>මෙම ධාවනයට පෙර ගත් සටහනක් නැත: එහි සංක්‍රමණ එකින් එක ආපසු ගන්න, හෝ පෙර සටහනක් ප්‍රතිසාධනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>මෙම සංක්‍රමණය තනිවම ආපසු ගත නොහැක: එය යොදා නැත, හෝ එයට down() නැත.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>පෝරමය කියවිය නොහැකි විය.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>නැවත ආරම්භ කළ යුතු ධාවනය තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>පළමුව &quot;ඔව්, මෙම සංක්‍රමණ දැන් ධාවනය කරන්න&quot; සලකුණු කරන්න.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>අවම වශයෙන් එක් සංක්‍රමණයක් තෝරන්න.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>සංක්‍රමණයක් යෙදීමෙන් පසු වෙනස් විය: හේතුවක් සමඟ වෙනස පිළිගන්න, හෝ ගොනුව ආපසු තබන්න.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>වෙනස් වූ සංක්‍රමණ පිළිගන්නේ ඇයිදැයි හේතුව දෙන්න.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>හේතුව උපරිම අක්ෂර 500 කි.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>මෙහි ආරම්භ කළ ධාවනයක් තවමත් සිදුවෙමින් පවතී (%detail). එය අවසන් වන තුරු රැඳී සිටින්න.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>වෙනත් ධාවනයක් ස්ථාපනයේ අගුල රඳවා ඇත: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>ධාවනයට පවතින, පුරනය වූ පරිශීලකයෙකු අවශ්‍ය වේ.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php විධාන රේඛා ක්‍රමලේඛයක් හමු නොවීය. migration.ini [AdminSettings] PhpCliPath එහි සම්පූර්ණ මාර්ගයට සකසන්න.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open අක්‍රිය කර ඇති බැවින් මෙහි ධාවනයක් ආරම්භ කළ නොහැක. සේවාදායකයේ ./console exp:migration:migrate --apply ධාවනය කරන්න.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ධාවනවල ෆෝල්ඩරයට ලිවිය නොහැක: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>ධාවනය ආරම්භ වූ නමුත් එහි ක්‍රියාවලි id වාර්තා කළේ නැත. %detail පරීක්ෂා කරන්න.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ආපසු ගත යුතු දේ නම් කරන්න.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>ධාවනය ආරම්භ කළ නොහැකි විය.</translation>
     </message>
 </context>
 </TS>

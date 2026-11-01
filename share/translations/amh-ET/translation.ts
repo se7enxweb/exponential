@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API፦ መድረሻ ነጥቡ፣ መዋቅሩ እና ጥያቄዎችን የሚሞክሩበት መጫወቻ ቦታ።</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ፍልሰቶች</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>እንደ ፋይሎች የተቀመጡ የጭነቱ ለውጦች፦ ሁኔታቸው፣ አፈጻጸሞቹ፣ ማስኬድ እና መመለስ።</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ሚውቴሽኖችን ወደ /api/graphql ይላኩ።</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ፍልሰቶች</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ሁኔታው ሊነበብ አልቻለም፦ %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>የፍልሰቶቹ ሰንጠረዦች ገና የሉም፦ ./console exp:upgrade --apply ይፈጥራቸዋል።</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count ፍልሰቶች አልተሳኩም</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>አፈጻጸም በሂደት ላይ ነው፣ በ%user የተጀመረ</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ጭነቱ ተቆልፏል፦ %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>በመጠባበቅ ላይ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ያልተሳኩ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ወላጅ አልባ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>የመጨረሻው አፈጻጸም</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>እስካሁን የለም</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ሁሉም ፍልሰቶች</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>የተመሰለ አፈጻጸም</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>የሙከራ አፈጻጸም</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>በመጠባበቅ ላይ ያሉት ፍልሰቶች ከዚያ በኋላ በተመለሰ ግብይት ውስጥ ተካሂደዋል፦ ምንም አልተቀመጠም። ከታች እያንዳንዱ በውሂብ ጎታው ውስጥ የቀየረው ይታያል።</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>አፈጻጸም አሁን የሚያደርገው። ምንም አይቀየርም፦ እያንዳንዱ በመጠባበቅ ላይ ያለ ፍልሰት የሚያደርጋቸውን ለውጦች፣ አፈጻጸሙም በፊትና በኋላ የሚያደርገውን ይዘረዝራል።</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>አስመስል</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>አስኪድ</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>የሙከራ አፈጻጸሙ አልተሳካም፦ %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>ማስመሰል የንድፍ ለውጦቻቸው ሊመለሱ የሚችሉ PostgreSQL ወይም SQLite ያስፈልገዋል፤ በዚህ የውሂብ ጎታ ላይ ከታች ያለው ዕቅድ አፈጻጸም የሚያደርገውን ያሳያል።</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>ፍልሰቶቹ</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ፍልሰት</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>የሚያደርገው</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>ማስመሰል፦ %result በ%ms ሚሴ</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>እስካሁን ምንም ፍልሰት የለም።</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ከአፈጻጸሙ በፊትና በኋላ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>የቀደመ ቅጽበታዊ ቅጂ</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ይወሰዳል፣ ፍልሰት ካልተሳካ ይመለሳል</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ጠፍቷል</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>የኋላ ቅጽበታዊ ቅጂ</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>አፈጻጸሙ ሲሳካ ይወሰዳል</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total ፍልሰቶች፦ %pending በመጠባበቅ ላይ፣ %done ተጠናቀዋል፣ %failed አልተሳኩም።</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>የፍልሰት ታሪክ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>እያንዳንዱ አፈጻጸም ከተጠቃሚው፣ ከአካባቢው፣ ከቅጽበታዊ ቅጂዎቹ እና ኮሚት፣ መለያ እና ፑሽ ከተደረገው ጋር። ያልተሳካ ወይም የተቋረጠ አፈጻጸም መቀጠል ይችላል፤ ከሱ በፊት ቅጽበታዊ ቅጂ የተወሰደለት አፈጻጸም ሊመለስ ይችላል።</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>አፈጻጸሞቹ ሊነበቡ አልቻሉም፦ %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>የፍልሰቶቹ ሰንጠረዦች ገና የሉም፦ ./console exp:upgrade --apply ይፈጥራቸዋል።</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>አሳይ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ሁሉም</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>አፈጻጸሞች</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>የተጀመረ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>በ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ቅጽበታዊ ቅጂዎች</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ማከማቻ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>እርምጃዎች</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>በፊት</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>በኋላ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ፑሽ፦ %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ቀጥል</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>መልስ</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>በዚህ ሁኔታ ውስጥ ምንም አፈጻጸም የለም።</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>እዚህ የተጀመሩ</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>በእነዚህ ገጾች ላይ የተጀመሩ አፈጻጸሞች፣ ቀጣይነቶች እና መመለሻዎች፣ ከእያንዳንዱ ሪፖርት ጋር።</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ምን</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ውጤት</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>መመለሻ</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>የ%target መመለሻ</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>አፈጻጸም %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>አፈጻጸሙ ያደረገው፣ መዝገቡ እና ምዝግብ ማስታወሻው። እዚህ የተጀመረ አፈጻጸም ይህ ገጽ ሲዘጋ ከበስተጀርባ ይቀጥላል፤ ለመከታተል ገጹን እንደገና ይክፈቱ።</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ይህን አፈጻጸም ቀጥል</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ይህን አፈጻጸም መልስ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>መዝገቡ ሊነበብ አልቻለም፦ %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>እድገት</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>በ%user በ%time ተጀምሯል።</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ኮዱን በማረጋገጥ እና ከአፈጻጸሙ በፊት ቅጽበታዊ ቅጂ በመውሰድ ላይ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id በመካሄድ ላይ (%index ከ%total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>ከ%total %done ተጠናቀዋል</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>ፍልሰቶቹ ተካሂደዋል፤ አንዱ ካልተሳካ ቅጽበታዊ ቅጂው በመመለስ ላይ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ከአፈጻጸሙ በኋላ ቅጽበታዊ ቅጂ በመውሰድ፣ ኮሚት፣ መለያ እና ፑሽ በማድረግ ላይ</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>ቅጽበታዊ ቅጂውን በመመለስ ላይ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>አፈጻጸሙ አብቅቷል። ሪፖርቱ በመጫን ላይ።</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>እድገቱን መከታተል አልተቻለም። አፈጻጸሙ እንዴት እንደሆነ ለማየት ገጹን እንደገና ይጫኑ።</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ይህ ገጽ አፈጻጸሙን በሂደቱ ይከታተላል።</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>እንደገና ጫን</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ሪፖርት</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>የቆይታ ጊዜ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ሚሴ</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>አፈጻጸሙ እንደ ስህተት ያወጣው</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>መዝገብ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>አካባቢ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>የለም</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ያበቃበት</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ኮሚት</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>መለያ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ፑሽ</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>መልዕክት</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>የዚህ አፈጻጸም ፍልሰቶች</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ምንጭ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>የአፈጻጸም ምዝግብ ማስታወሻ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>የምዝግብ ማስታወሻው መጨረሻ ብቻ ይታያል።</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>በመካሄድ ላይ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ያለ ሪፖርት አብቅቷል</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ተሳክቷል</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>አልተሳካም</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ተከልክሏል</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>የውሂብ ጎታው ሊደረስበት አልቻለም</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>የውስጥ ስህተት</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>አፈጻጸም በሂደት ላይ ነው</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind በ%user በ%time ተጀምሯል።</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ተከታተል</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ጭነቱ ተቆልፏል</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ሌላ አፈጻጸም መቆለፊያውን ይዟል (ማሻሻያ ወይም በኮንሶል ላይ ያለ አፈጻጸም)፦ %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ተጠናቋል</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>በመጠባበቅ ላይ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>አያስፈልግም</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ያልታወቀ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ተመልሷል</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>ተተግብሯል</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ይተገበር ነበር</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ተመልሷል</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ይመለስ ነበር</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>አልተካሄደም</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ሌላውን ይጠብቃል</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ለውጡ ተቀባይነት አግኝቷል</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ለውጡ ተቀባይነት ያገኝ ነበር</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>ተመስሏል</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ፍልሰቶች</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ሁኔታ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ታሪክ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target መልስ</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>አፈጻጸም ከሱ በፊት ወደተወሰደው ቅጽበታዊ ቅጂ ይመለሳል፣ አንድ ፍልሰት ደግሞ በራሱ down()። የቀደመ ቅጽበታዊ ቅጂን መመለስ ለባለሙያዎች ነው። እያንዳንዱ የአሁኑን ሁኔታ ቅጽበታዊ ቅጂ ከወሰደ በኋላ በእርስዎ ስም ከበስተጀርባ ይካሄዳል።</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ሊመለስ የሚችለው ሊነበብ አልቻለም፦ %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>አንድ አፈጻጸም</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>አንድ ፍልሰት</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>የቀደመ ቅጽበታዊ ቅጂ</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>መግለጫ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>አዎ</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>አይ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ቅጽበታዊ ቅጂ</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>መሰየሚያ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>የተወሰደበት</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ዓይነት</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>የሚመለሱ ክፍሎች</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>የውሂብ ጎታው</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>የማከማቻ ፋይሎቹ (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ቅንብሮቹ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>የውሂብ ጎታውን መመለስ ክፍለ-ጊዜዎችን ጨምሮ ወደ ቅጽበታዊ ቅጂው ጊዜ ይመልሰዋል፦ ከዚያ በኋላ እንደገና እንዲገቡ ሊጠየቁ ይችላሉ። ከዚያ ወዲህ የተቀየረው ሁሉ ይጠፋል፤ በመጀመሪያ የአሁኑ ሁኔታ ቅጽበታዊ ቅጂ ይወሰዳል።</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ይህ ምን እንደሚመልስ አውቃለሁ</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>የቅጽበታዊ ቅጂውን መለያ ቁጥር እንደገና ይጻፉ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>አዎ፣ መልስ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ሰርዝ</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ከነሱ በፊት ቅጽበታዊ ቅጂ የተወሰደላቸው አፈጻጸሞች።</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ምረጥ</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>እስካሁን ቅጽበታዊ ቅጂ ያለው አፈጻጸም የለም።</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ራሳቸውን መመለስ የሚችሉ የተተገበሩ ፍልሰቶች (down() አላቸው)።</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ምንም የተተገበረ ፍልሰት down() የለውም።</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>የቀደሙ ቅጽበታዊ ቅጂዎች (ባለሙያዎች)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>እስካሁን ቅጽበታዊ ቅጂ የለም።</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>ፍልሰቶቹን አስኪድ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>አፈጻጸሙ እንደ %user ከበስተጀርባ ይካሄዳል፣ ገጹም በሂደቱ ያሳየዋል። ከመጀመሪያው ፍልሰት በፊት የጭነቱ ቅጽበታዊ ቅጂ ይወሰዳል፤ ፍልሰት ሳይሳካ ሲቀር አፈጻጸሙ ይቆማል ቅጽበታዊ ቅጂውም ይመለሳል።</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>በመጀመሪያ የሙከራ አፈጻጸም</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ሁኔታው ሊነበብ አልቻለም፦ %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>በመጠባበቅ ላይ ያሉ ፍልሰቶች</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>በዚህ ቅደም ተከተል ይካሄዳሉ። አንዱን እና የሚያስፈልጉትን ለኋላ አፈጻጸም ለመተው ምልክቱን ያንሱ።</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>አስኪደው</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>በሚካሄድበት ጊዜ የጥገና ሁነታን ያበራል።</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>ከተተገበሩ በኋላ የተቀየሩ</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>እነዚህ ፋይሎች የተተገበሩት አይደሉም። ለውጡ ከምክንያት ጋር ተቀባይነት ካላገኘ አፈጻጸም ይከለክላቸዋል፤ እንደገና አይካሄዱም፣ አዲሱ ቼክሰም ይመዘገባል ምክንያቱም በኦዲት ምዝግብ ማስታወሻ ውስጥ ይቀመጣል።</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ለውጦቹን ተቀበል</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ለምን</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ነባሪዎቹ ደህንነታቸው የተጠበቀ ናቸው። እያንዳንዱ ሳጥን አንድ እርምጃ ይተዋል።</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ቅጽበታዊ ቅጂ የለም</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ከአፈጻጸሙ በፊትና በኋላ ቅጽበታዊ ቅጂ የለም፦ አለመሳካት በራስ-ሰር ሊመለስ አይችልም።</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>መመለስ የለም</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ከአለመሳካት በኋላ ጭነቱን አለመሳካቱ እንደተወው ተው።</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>ኮሚት ያልተደረጉ ለውጦችን አቆይ</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ቅንብሮች፣ ቅጥያዎች ወይም ንድፎች ኮሚት ያልተደረጉ ለውጦች ቢኖራቸውም አስኪድ፤ ወደ ቅጽበታዊ ቅጂው ይገባሉ።</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>ኮሚት የለም</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>የሁኔታ ፋይሉን እና የአፈጻጸም ምዝግብ ማስታወሻውን ኮሚት አታድርግ (መለያም ፑሽም የለም)።</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>ፑሽ የለም</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>ኮሚት እና መለያ አድርግ፣ ግን ፑሽ አታድርግ።</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>መለያ የለም</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>ኮሚት እና ፑሽ አድርግ፣ ግን አፈጻጸሙን መለያ አትስጥ።</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>አዎ፣ እነዚህን ፍልሰቶች አሁን አስኪድ</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>በመጠባበቅ ላይ ያለ ፍልሰት የለም።</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ወደ ሁኔታው ተመለስ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>አንድ ጊዜ እንደ ፋይሎች የተጻፉ (ይዘት፣ ክፍሎች፣ ሚናዎች፣ ቅንብሮች፣ ንድፍ) እና በተመሳሳይ ቅደም ተከተል ለእያንዳንዱ የጣቢያው ጭነት የሚተገበሩ የዚህ ጭነት ለውጦች። አፈጻጸም በመጀመሪያ ቅጽበታዊ ቅጂ ይወስዳል፣ ፍልሰት ሳይሳካ ሲቀር ይመልሰዋል፣ ያደረገውንም ይመዘግባል፣ ኮሚት እና ፑሽ ያደርጋል።</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count በመጠባበቅ ላይ ያሉትን አስኪድ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>አጠቃላይ እይታ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>በመጠባበቅ ላይ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ተጠናቋል</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>አልተሳካም</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>አያስፈልግም</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>የውሂብ ጎታ</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ግብይቶች፦ %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>የጣቢያ ፍልሰቶች በ migrations/ ውስጥ፣ የቅጥያ ፍልሰቶች ደግሞ በ extension/&lt;name&gt;/migrations/ ውስጥ ናቸው። በስሞቻቸው እና በሚያስፈልጓቸው ቅደም ተከተል ይካሄዳሉ።</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>የመጨረሻው አፈጻጸም</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ፋይሉ ከተተገበረ በኋላ ተቀይሯል።</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>እስካሁን ምንም ፍልሰት የለም። ./console exp:migration:generate --skeleton &lt;name&gt; --apply የመጀመሪያውን ይጽፋል።</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>የቅርብ ጊዜ አፈጻጸሞች</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ሁሉም አፈጻጸሞች</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>እስካሁን ምንም አፈጻጸም የለም።</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>አፈጻጸምን ማስመሰል የ migration/run ፖሊሲ ያስፈልገዋል።</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>አፈጻጸም በሂደት ላይ ነው፦ ሲያበቃ ያስመስሉ።</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ዝግጅት</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target የዚህ ጭነት አፈጻጸም፣ ፍልሰት ወይም ቅጽበታዊ ቅጂ አይደለም።</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>በመጀመሪያ «አዎ፣ መልስ» ላይ ምልክት ያድርጉ።</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>የቀደመ ቅጽበታዊ ቅጂን መመለስ ለባለሙያዎች ነው፦ «ይህ ምን እንደሚመልስ አውቃለሁ» ላይ ምልክት ያድርጉ።</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>የቅጽበታዊ ቅጂውን መለያ ቁጥር እንደገና ይጻፉ፦ %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ለመመለስ ቢያንስ አንድ ክፍል ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ይህ አፈጻጸም ከሱ በፊት የተወሰደ ቅጽበታዊ ቅጂ የለውም፦ ፍልሰቶቹን አንድ በአንድ ይመልሱ ወይም የቀደመ ቅጽበታዊ ቅጂ ይመልሱ።</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ይህ ፍልሰት ራሱን መመለስ አይችልም፦ አልተተገበረም ወይም down() የለውም።</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ቅጹ ሊነበብ አልቻለም።</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>የሚቀጥለውን አፈጻጸም ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>በመጀመሪያ «አዎ፣ እነዚህን ፍልሰቶች አሁን አስኪድ» ላይ ምልክት ያድርጉ።</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>ቢያንስ አንድ ፍልሰት ይምረጡ።</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>አንድ ፍልሰት ከተተገበረ በኋላ ተቀይሯል፦ ለውጡን ከምክንያት ጋር ይቀበሉ ወይም ፋይሉን ይመልሱ።</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>የተቀየሩት ፍልሰቶች ለምን ተቀባይነት እንዳገኙ ምክንያቱን ይስጡ።</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>ምክንያቱ ቢበዛ 500 ቁምፊዎች ነው።</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>እዚህ የተጀመረ አፈጻጸም አሁንም በሂደት ላይ ነው (%detail)። እስኪያበቃ ይጠብቁ።</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ሌላ አፈጻጸም የጭነቱን መቆለፊያ ይዟል፦ %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>አፈጻጸሙ ያለ እና የገባ ተጠቃሚ ያስፈልገዋል።</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>የ php የትዕዛዝ መስመር ፕሮግራም አልተገኘም። migration.ini [AdminSettings] PhpCliPath ን ወደ ሙሉ ዱካው ያቀናብሩ።</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ተሰናክሏል፣ ስለዚህ እዚህ አፈጻጸም ሊጀመር አይችልም። በአገልጋዩ ላይ ./console exp:migration:migrate --apply ን ያስኪዱ።</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>የአፈጻጸሞቹ አቃፊ ሊጻፍበት አይችልም፦ %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>አፈጻጸሙ ተጀምሯል ግን የሂደት መለያ ቁጥሩን አላሳወቀም። %detail ን ያረጋግጡ።</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>የሚመለሰውን ይጥቀሱ።</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>አፈጻጸሙ ሊጀመር አልቻለም።</translation>
     </message>
 </context>
 </TS>

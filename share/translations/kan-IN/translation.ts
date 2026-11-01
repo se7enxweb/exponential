@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: ಅದರ ಎಂಡ್ ಪಾಯಿಂಟ್, ಸ್ಕೀಮಾ ಮತ್ತು ಕ್ವೆರಿಗಳನ್ನು ಪ್ರಯತ್ನಿಸಲು ಒಂದು ಪ್ಲೇಗ್ರೌಂಡ್.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>ಫೈಲ್‌ಗಳಾಗಿ ಇರಿಸಲಾದ ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಬದಲಾವಣೆಗಳು: ಅವುಗಳ ಸ್ಥಿತಿ, ರನ್‌ಗಳು, ರನ್ ಮತ್ತು ರೋಲ್‌ಬ್ಯಾಕ್.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>ಮ್ಯುಟೇಶನ್‌ಗಳನ್ನು /api/graphql ಗೆ ಕಳುಹಿಸಿ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ಸ್ಥಿತಿಯನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳ ಟೇಬಲ್‌ಗಳು ಇನ್ನೂ ಇಲ್ಲ: ./console exp:upgrade --apply ಅವುಗಳನ್ನು ರಚಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count ಮೈಗ್ರೇಶನ್‌ಗಳು ವಿಫಲವಾಗಿವೆ</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>ಒಂದು ರನ್ ನಡೆಯುತ್ತಿದೆ, %user ಪ್ರಾರಂಭಿಸಿದ್ದಾರೆ</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಲಾಕ್ ಆಗಿದೆ: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ಬಾಕಿ ಇರುವ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>ಅನಾಥ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ಕೊನೆಯ ರನ್</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ಎಲ್ಲಾ ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>ಅನುಕರಿಸಿದ ರನ್</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>ಡ್ರೈ ರನ್</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>ಬಾಕಿ ಇರುವ ಮೈಗ್ರೇಶನ್‌ಗಳು ಒಂದು ಟ್ರಾನ್ಸಾಕ್ಷನ್‌ನಲ್ಲಿ ನಡೆದು ನಂತರ ಅದನ್ನು ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡಲಾಯಿತು: ಏನನ್ನೂ ಉಳಿಸಲಾಗಿಲ್ಲ. ಪ್ರತಿಯೊಂದು ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಏನು ಬದಲಾಯಿಸಿತು ಎಂಬುದು ಕೆಳಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>ಈಗ ರನ್ ಮಾಡಿದರೆ ಏನಾಗುತ್ತದೆ. ಏನನ್ನೂ ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ: ಪ್ರತಿ ಬಾಕಿ ಮೈಗ್ರೇಶನ್ ತಾನು ಮಾಡುವ ಬದಲಾವಣೆಗಳನ್ನು, ಮತ್ತು ರನ್ ಮೊದಲು ಹಾಗೂ ನಂತರ ಏನು ಮಾಡುತ್ತದೆ ಎಂಬುದನ್ನು ಪಟ್ಟಿ ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>ಅನುಕರಿಸು</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>ರನ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>ಡ್ರೈ ರನ್ ವಿಫಲವಾಗಿದೆ: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>ಅನುಕರಣೆಗೆ PostgreSQL ಅಥವಾ SQLite ಬೇಕು, ಅವುಗಳ ಸ್ಕೀಮಾ ಬದಲಾವಣೆಗಳನ್ನು ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡಬಹುದು; ಈ ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಕೆಳಗಿನ ಯೋಜನೆಯೇ ರನ್ ಮಾಡುವುದು.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>ಮೈಗ್ರೇಶನ್</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>ಅದು ಏನು ಮಾಡುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>ಅನುಕರಣೆ: %result, %ms ಮಿ.ಸೆ.</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಮೈಗ್ರೇಶನ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>ರನ್‌ಗೆ ಮೊದಲು ಮತ್ತು ನಂತರ</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>ಮೊದಲಿನ ಕ್ಯಾಪ್ಶನ್</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತದೆ, ಮೈಗ್ರೇಶನ್ ವಿಫಲವಾದರೆ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ಆಫ್</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>ನಂತರದ ಕ್ಯಾಪ್ಶನ್</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>ರನ್ ಯಶಸ್ವಿಯಾದಾಗ ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total ಮೈಗ್ರೇಶನ್‌ಗಳು: %pending ಬಾಕಿ, %done ಮುಗಿದಿವೆ, %failed ವಿಫಲ.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>ಮೈಗ್ರೇಶನ್ ಇತಿಹಾಸ</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>ಪ್ರತಿ ರನ್, ಅದರ ಬಳಕೆದಾರ, ಪರಿಸರ, ಕ್ಯಾಪ್ಶನ್‌ಗಳು ಮತ್ತು ಕಮಿಟ್, ಟ್ಯಾಗ್, ಪುಶ್ ಮಾಡಿದ್ದು. ವಿಫಲವಾದ ಅಥವಾ ಅಡ್ಡಿಯಾದ ರನ್ ಅನ್ನು ಮುಂದುವರಿಸಬಹುದು; ಮೊದಲು ಕ್ಯಾಪ್ಶನ್ ತೆಗೆದುಕೊಂಡ ರನ್ ಅನ್ನು ಹಿಂಪಡೆಯಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>ರನ್‌ಗಳನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳ ಟೇಬಲ್‌ಗಳು ಇನ್ನೂ ಇಲ್ಲ: ./console exp:upgrade --apply ಅವುಗಳನ್ನು ರಚಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ತೋರಿಸು</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ಎಲ್ಲಾ</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>ರನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>ಪ್ರಾರಂಭ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>ಯಾರಿಂದ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>ಕ್ಯಾಪ್ಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>ರೆಪೊಸಿಟರಿ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>ಕ್ರಿಯೆಗಳು</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ಮೊದಲು</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ನಂತರ</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ಪುಶ್: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>ಮುಂದುವರಿಸು</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>ಈ ಸ್ಥಿತಿಯಲ್ಲಿ ಯಾವುದೇ ರನ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>ಇಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿದವು</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>ಈ ಪುಟಗಳಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿದ ರನ್‌ಗಳು, ಮುಂದುವರಿಕೆಗಳು ಮತ್ತು ರೋಲ್‌ಬ್ಯಾಕ್‌ಗಳು, ಪ್ರತಿಯೊಂದರ ವರದಿಯೊಂದಿಗೆ.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>ಏನು</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>ಫಲಿತಾಂಶ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target ರ ರೋಲ್‌ಬ್ಯಾಕ್</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>ರನ್ %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>ರನ್ ಏನು ಮಾಡಿತು, ಅದರ ದಾಖಲೆ ಮತ್ತು ಲಾಗ್. ಇಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿದ ರನ್ ಈ ಪುಟವನ್ನು ಮುಚ್ಚಿದಾಗಲೂ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ಮುಂದುವರಿಯುತ್ತದೆ; ಅದನ್ನು ಗಮನಿಸಲು ಪುಟವನ್ನು ಮತ್ತೆ ತೆರೆಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>ಈ ರನ್ ಮುಂದುವರಿಸು</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>ಈ ರನ್ ರೋಲ್‌ಬ್ಯಾಕ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ದಾಖಲೆಯನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>ಪ್ರಗತಿ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user ಅವರು %time ಕ್ಕೆ ಪ್ರಾರಂಭಿಸಿದರು.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>ಕೋಡ್ ಪರಿಶೀಲಿಸಿ ರನ್‌ಗೆ ಮೊದಲು ಕ್ಯಾಪ್ಶನ್ ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id ರನ್ ಆಗುತ್ತಿದೆ (%total ರಲ್ಲಿ %index)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%total ರಲ್ಲಿ %done ಮುಗಿದಿವೆ</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳು ರನ್ ಆಗಿವೆ; ಯಾವುದಾದರೂ ವಿಫಲವಾಗಿದ್ದರೆ ಕ್ಯಾಪ್ಶನ್ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>ರನ್ ನಂತರ ಕ್ಯಾಪ್ಶನ್ ತೆಗೆದು, ಕಮಿಟ್, ಟ್ಯಾಗ್ ಮತ್ತು ಪುಶ್ ಮಾಡಲಾಗುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>ಕ್ಯಾಪ್ಶನ್ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>ರನ್ ಮುಗಿದಿದೆ. ಅದರ ವರದಿ ಲೋಡ್ ಆಗುತ್ತಿದೆ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>ಪ್ರಗತಿಯನ್ನು ಗಮನಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ರನ್ ಹೇಗೆ ನಡೆಯುತ್ತಿದೆ ಎಂದು ನೋಡಲು ಪುಟವನ್ನು ರೀಲೋಡ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>ರನ್ ನಡೆಯುತ್ತಿದ್ದಂತೆ ಈ ಪುಟ ಅದನ್ನು ಅನುಸರಿಸುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>ರೀಲೋಡ್</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>ವರದಿ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>ಸಮಯ</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ಮಿ.ಸೆ.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>ರನ್ ದೋಷಗಳಾಗಿ ಮುದ್ರಿಸಿದ್ದು</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ದಾಖಲೆ</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>ಪರಿಸರ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>ಯಾವುದೂ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>ಮುಕ್ತಾಯ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ಕಮಿಟ್</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>ಟ್ಯಾಗ್</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>ಪುಶ್</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>ಸಂದೇಶ</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>ಈ ರನ್‌ನ ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>ಮೂಲ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>ರನ್ ಲಾಗ್</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>ಲಾಗ್‌ನ ಕೊನೆಯ ಭಾಗ ಮಾತ್ರ ತೋರಿಸಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ನಡೆಯುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ವರದಿ ಇಲ್ಲದೆ ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ಯಶಸ್ವಿ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ವಿಫಲ</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>ನಿರಾಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ಡೇಟಾಬೇಸ್ ತಲುಪಲಾಗಲಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ಆಂತರಿಕ ದೋಷ</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>ಒಂದು ರನ್ ನಡೆಯುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind ಅನ್ನು %user ಅವರು %time ಕ್ಕೆ ಪ್ರಾರಂಭಿಸಿದರು.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>ಅನುಸರಿಸು</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಲಾಕ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>ಇನ್ನೊಂದು ರನ್ ಲಾಕ್ ಹಿಡಿದಿದೆ (ಅಪ್‌ಗ್ರೇಡ್ ಅಥವಾ ಕನ್ಸೋಲ್‌ನಲ್ಲಿ ರನ್): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ಬಾಕಿ</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ಅಗತ್ಯವಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ಅಜ್ಞಾತ</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>ರೋಲ್‌ಬ್ಯಾಕ್ ಆಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>ಅನ್ವಯಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>ಅನ್ವಯಿಸಲಾಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>ಹಿಂಪಡೆಯಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>ಹಿಂಪಡೆಯಲಾಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>ರನ್ ಆಗಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ಇನ್ನೊಂದಕ್ಕಾಗಿ ಕಾಯುತ್ತಿದೆ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ಬದಲಾವಣೆ ಸ್ವೀಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ಬದಲಾವಣೆ ಸ್ವೀಕರಿಸಲಾಗುತ್ತದೆ</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>ಅನುಕರಿಸಲಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>ಸ್ಥಿತಿ</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>ಇತಿಹಾಸ</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target ಹಿಂಪಡೆ</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>ಒಂದು ರನ್ ಅನ್ನು ಅದರ ಮೊದಲು ತೆಗೆದ ಕ್ಯಾಪ್ಶನ್‌ಗೆ ಹಿಂಪಡೆಯಲಾಗುತ್ತದೆ, ಒಂದು ಮೈಗ್ರೇಶನ್ ಅನ್ನು ಅದರ down() ಮೂಲಕ. ಹಿಂದಿನ ಕ್ಯಾಪ್ಶನ್ ಮರುಸ್ಥಾಪನೆ ತಜ್ಞರಿಗಾಗಿ. ಪ್ರಸ್ತುತ ಸ್ಥಿತಿಯ ಕ್ಯಾಪ್ಶನ್ ನಂತರ ಪ್ರತಿಯೊಂದೂ ನಿಮ್ಮ ಹೆಸರಿನಲ್ಲಿ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ನಡೆಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>ಏನನ್ನು ಹಿಂಪಡೆಯಬಹುದು ಎಂಬುದನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>ಒಂದು ರನ್</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>ಒಂದು ಮೈಗ್ರೇಶನ್</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>ಹಿಂದಿನ ಕ್ಯಾಪ್ಶನ್</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>ವಿವರಣೆ</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ಹೌದು</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>ಕ್ಯಾಪ್ಶನ್</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>ಲೇಬಲ್</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>ತೆಗೆದ ಸಮಯ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ಪ್ರಕಾರ</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>ಮರುಸ್ಥಾಪಿಸಬೇಕಾದ ಭಾಗಗಳು</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ಡೇಟಾಬೇಸ್</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>ಸಂಗ್ರಹಣಾ ಫೈಲ್‌ಗಳು (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>ಡೇಟಾಬೇಸ್ ಮರುಸ್ಥಾಪನೆ ಅದನ್ನು ಸೆಷನ್‌ಗಳ ಸಹಿತ ಕ್ಯಾಪ್ಶನ್ ಸಮಯಕ್ಕೆ ಹಿಂದಿರುಗಿಸುತ್ತದೆ: ನಂತರ ನಿಮ್ಮನ್ನು ಮತ್ತೆ ಸೈನ್ ಇನ್ ಮಾಡಲು ಕೇಳಬಹುದು. ಅಂದಿನಿಂದ ಬದಲಾದ ಎಲ್ಲವೂ ಕಳೆದುಹೋಗುತ್ತದೆ; ಮೊದಲು ಪ್ರಸ್ತುತ ಸ್ಥಿತಿಯ ಕ್ಯಾಪ್ಶನ್ ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>ಇದು ಏನನ್ನು ಮರುಸ್ಥಾಪಿಸುತ್ತದೆ ಎಂದು ನನಗೆ ತಿಳಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>ಕ್ಯಾಪ್ಶನ್‌ನ ಐಡಿಯನ್ನು ಮತ್ತೆ ಟೈಪ್ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>ಹೌದು, ಹಿಂಪಡೆ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>ರದ್ದುಮಾಡು</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>ಮೊದಲು ಕ್ಯಾಪ್ಶನ್ ತೆಗೆದ ರನ್‌ಗಳು.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ಆಯ್ಕೆಮಾಡು</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>ಕ್ಯಾಪ್ಶನ್ ಇರುವ ರನ್ ಇನ್ನೂ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>ತಮ್ಮನ್ನು ತಾವೇ ಹಿಂಪಡೆಯಬಲ್ಲ ಅನ್ವಯಿಸಿದ ಮೈಗ್ರೇಶನ್‌ಗಳು (ಅವುಗಳಿಗೆ down() ಇದೆ).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>ಯಾವುದೇ ಅನ್ವಯಿಸಿದ ಮೈಗ್ರೇಶನ್‌ಗೆ down() ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>ಹಿಂದಿನ ಕ್ಯಾಪ್ಶನ್‌ಗಳು (ತಜ್ಞರಿಗೆ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಕ್ಯಾಪ್ಶನ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ರನ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>ರನ್ %user ಆಗಿ ಹಿನ್ನೆಲೆಯಲ್ಲಿ ನಡೆಯುತ್ತದೆ, ಮತ್ತು ಅದರ ಪುಟ ಅದು ನಡೆಯುತ್ತಿದ್ದಂತೆ ತೋರಿಸುತ್ತದೆ. ಮೊದಲ ಮೈಗ್ರೇಶನ್‌ಗೆ ಮೊದಲು ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನ ಕ್ಯಾಪ್ಶನ್ ತೆಗೆದುಕೊಳ್ಳಲಾಗುತ್ತದೆ; ಮೈಗ್ರೇಶನ್ ವಿಫಲವಾದರೆ ರನ್ ನಿಲ್ಲುತ್ತದೆ ಮತ್ತು ಕ್ಯಾಪ್ಶನ್ ಮರುಸ್ಥಾಪಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>ಮೊದಲು ಡ್ರೈ ರನ್</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>ಸ್ಥಿತಿಯನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>ಬಾಕಿ ಇರುವ ಮೈಗ್ರೇಶನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>ಅವು ಈ ಕ್ರಮದಲ್ಲಿ ರನ್ ಆಗುತ್ತವೆ. ಒಂದನ್ನು ಮತ್ತು ಅದನ್ನು ಅವಲಂಬಿಸಿದವನ್ನು ನಂತರದ ರನ್‌ಗೆ ಬಿಡಲು ಅದರ ಗುರುತು ತೆಗೆಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>ರನ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>ರನ್ ಆಗುತ್ತಿರುವಾಗ ನಿರ್ವಹಣಾ ಮೋಡ್ ಆನ್ ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>ಅನ್ವಯಿಸಿದ ನಂತರ ಬದಲಾದವು</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>ಈ ಫೈಲ್‌ಗಳು ಅನ್ವಯಿಸಿದವುಗಳಲ್ಲ. ಕಾರಣದೊಂದಿಗೆ ಬದಲಾವಣೆಯನ್ನು ಸ್ವೀಕರಿಸದ ಹೊರತು ರನ್ ಅವನ್ನು ನಿರಾಕರಿಸುತ್ತದೆ; ಅವನ್ನು ಮತ್ತೆ ರನ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ, ಹೊಸ ಚೆಕ್‌ಸಮ್ ದಾಖಲಿಸಲಾಗುತ್ತದೆ ಮತ್ತು ಕಾರಣವನ್ನು ಆಡಿಟ್ ಲಾಗ್‌ನಲ್ಲಿ ಇರಿಸಲಾಗುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>ಬದಲಾವಣೆಗಳನ್ನು ಸ್ವೀಕರಿಸು</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ಏಕೆ</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>ಡೀಫಾಲ್ಟ್‌ಗಳು ಸುರಕ್ಷಿತವಾದವು. ಪ್ರತಿ ಚೆಕ್‌ಬಾಕ್ಸ್ ಒಂದು ಹಂತವನ್ನು ಬಿಟ್ಟುಬಿಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>ಕ್ಯಾಪ್ಶನ್ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>ರನ್‌ಗೆ ಮೊದಲು ಮತ್ತು ನಂತರ ಕ್ಯಾಪ್ಶನ್ ಇಲ್ಲ: ವಿಫಲತೆಯನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಮರುಸ್ಥಾಪಿಸಲಾಗುವುದಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>ಮರುಸ್ಥಾಪನೆ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>ವಿಫಲತೆಯ ನಂತರ, ಇನ್‌ಸ್ಟಾಲೇಶನ್ ಅನ್ನು ವಿಫಲತೆ ಬಿಟ್ಟಂತೆಯೇ ಬಿಡು.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>ಕಮಿಟ್ ಆಗದ ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸು</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಎಕ್ಸ್‌ಟೆನ್ಶನ್‌ಗಳು ಅಥವಾ ಡಿಸೈನ್‌ಗಳಲ್ಲಿ ಕಮಿಟ್ ಆಗದ ಬದಲಾವಣೆಗಳಿದ್ದರೂ ರನ್ ಮಾಡು; ಅವು ಕ್ಯಾಪ್ಶನ್‌ಗೆ ಸೇರುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>ಕಮಿಟ್ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>ಸ್ಥಿತಿ ಫೈಲ್ ಮತ್ತು ರನ್ ಲಾಗ್ ಅನ್ನು ಕಮಿಟ್ ಮಾಡಬೇಡ (ಟ್ಯಾಗ್ ಮತ್ತು ಪುಶ್ ಕೂಡ ಇಲ್ಲ).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>ಪುಶ್ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>ಕಮಿಟ್ ಮತ್ತು ಟ್ಯಾಗ್ ಮಾಡು, ಆದರೆ ಪುಶ್ ಮಾಡಬೇಡ.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>ಟ್ಯಾಗ್ ಇಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>ಕಮಿಟ್ ಮತ್ತು ಪುಶ್ ಮಾಡು, ಆದರೆ ರನ್‌ಗೆ ಟ್ಯಾಗ್ ಮಾಡಬೇಡ.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>ಹೌದು, ಈ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಈಗ ರನ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>ಯಾವುದೇ ಮೈಗ್ರೇಶನ್ ಬಾಕಿ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>ಸ್ಥಿತಿಗೆ ಹಿಂತಿರುಗಿ</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನ ಬದಲಾವಣೆಗಳು (ವಿಷಯ, ಕ್ಲಾಸ್‌ಗಳು, ಪಾತ್ರಗಳು, ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಸ್ಕೀಮಾ) ಒಮ್ಮೆ ಫೈಲ್‌ಗಳಾಗಿ ಬರೆಯಲ್ಪಟ್ಟು ಸೈಟ್‌ನ ಪ್ರತಿ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ಗೆ ಅದೇ ಕ್ರಮದಲ್ಲಿ ಅನ್ವಯಿಸಲ್ಪಡುತ್ತವೆ. ರನ್ ಮೊದಲು ಕ್ಯಾಪ್ಶನ್ ತೆಗೆದುಕೊಳ್ಳುತ್ತದೆ, ಮೈಗ್ರೇಶನ್ ವಿಫಲವಾದರೆ ಅದನ್ನು ಮರುಸ್ಥಾಪಿಸುತ್ತದೆ, ಮತ್ತು ಮಾಡಿದ್ದನ್ನು ದಾಖಲಿಸಿ, ಕಮಿಟ್ ಮತ್ತು ಪುಶ್ ಮಾಡುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count ಬಾಕಿಯನ್ನು ರನ್ ಮಾಡು</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>ಅವಲೋಕನ</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>ಬಾಕಿ ಇರುವ</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>ಮುಗಿದಿದೆ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ವಿಫಲವಾಗಿದೆ</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>ಅಗತ್ಯವಿಲ್ಲ</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ಡೇಟಾಬೇಸ್</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>ಟ್ರಾನ್ಸಾಕ್ಷನ್‌ಗಳು: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>ಸೈಟ್ ಮೈಗ್ರೇಶನ್‌ಗಳು migrations/ ನಲ್ಲಿವೆ, ಎಕ್ಸ್‌ಟೆನ್ಶನ್‌ನವು extension/&lt;name&gt;/migrations/ ನಲ್ಲಿವೆ. ಅವು ಅವುಗಳ ಹೆಸರುಗಳ ಕ್ರಮದಲ್ಲಿ ಮತ್ತು ಅವಲಂಬನೆಗಳ ಪ್ರಕಾರ ರನ್ ಆಗುತ್ತವೆ.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>ಕೊನೆಯ ರನ್</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>ಅನ್ವಯಿಸಿದ ನಂತರ ಫೈಲ್ ಬದಲಾಗಿದೆ.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ಮೈಗ್ರೇಶನ್ ಇಲ್ಲ. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ಮೊದಲನೆಯದನ್ನು ಬರೆಯುತ್ತದೆ.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>ಇತ್ತೀಚಿನ ರನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ಎಲ್ಲಾ ರನ್‌ಗಳು</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>ಇನ್ನೂ ಯಾವುದೇ ರನ್ ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>ರನ್ ಅನುಕರಿಸಲು migration/run ನೀತಿ ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>ಒಂದು ರನ್ ನಡೆಯುತ್ತಿದೆ: ಅದು ಮುಗಿದ ನಂತರ ಅನುಕರಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>ಸೆಟಪ್</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ಈ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನ ರನ್ ಅಲ್ಲ, ಮೈಗ್ರೇಶನ್ ಅಲ್ಲ ಮತ್ತು ಕ್ಯಾಪ್ಶನ್ ಅಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>ಮೊದಲು “ಹೌದು, ಹಿಂಪಡೆ” ಗುರುತಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>ಹಿಂದಿನ ಕ್ಯಾಪ್ಶನ್ ಮರುಸ್ಥಾಪನೆ ತಜ್ಞರಿಗಾಗಿ: “ಇದು ಏನನ್ನು ಮರುಸ್ಥಾಪಿಸುತ್ತದೆ ಎಂದು ನನಗೆ ತಿಳಿದಿದೆ” ಗುರುತಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>ಕ್ಯಾಪ್ಶನ್‌ನ ಐಡಿಯನ್ನು ಮತ್ತೆ ಟೈಪ್ ಮಾಡಿ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>ಮರುಸ್ಥಾಪಿಸಲು ಕನಿಷ್ಠ ಒಂದು ಭಾಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>ಈ ರನ್‌ಗೆ ಮೊದಲು ತೆಗೆದ ಕ್ಯಾಪ್ಶನ್ ಇಲ್ಲ: ಅದರ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಒಂದೊಂದಾಗಿ ಹಿಂಪಡೆಯಿರಿ, ಅಥವಾ ಹಿಂದಿನ ಕ್ಯಾಪ್ಶನ್ ಮರುಸ್ಥಾಪಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>ಈ ಮೈಗ್ರೇಶನ್ ಅನ್ನು ಸ್ವತಃ ಹಿಂಪಡೆಯಲಾಗುವುದಿಲ್ಲ: ಅದು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ, ಅಥವಾ ಅದಕ್ಕೆ down() ಇಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>ಫಾರ್ಮ್ ಅನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>ಮುಂದುವರಿಸಬೇಕಾದ ರನ್ ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>ಮೊದಲು “ಹೌದು, ಈ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಈಗ ರನ್ ಮಾಡು” ಗುರುತಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>ಕನಿಷ್ಠ ಒಂದು ಮೈಗ್ರೇಶನ್ ಆಯ್ಕೆಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>ಒಂದು ಮೈಗ್ರೇಶನ್ ಅನ್ವಯಿಸಿದ ನಂತರ ಬದಲಾಗಿದೆ: ಕಾರಣದೊಂದಿಗೆ ಬದಲಾವಣೆಯನ್ನು ಸ್ವೀಕರಿಸಿ, ಅಥವಾ ಫೈಲ್ ಅನ್ನು ಮರಳಿ ಇಡಿ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>ಬದಲಾದ ಮೈಗ್ರೇಶನ್‌ಗಳನ್ನು ಏಕೆ ಸ್ವೀಕರಿಸಲಾಗಿದೆ ಎಂಬ ಕಾರಣ ನೀಡಿ.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>ಕಾರಣ ಗರಿಷ್ಠ 500 ಅಕ್ಷರಗಳು.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>ಇಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿದ ರನ್ ಇನ್ನೂ ನಡೆಯುತ್ತಿದೆ (%detail). ಅದು ಮುಗಿಯುವವರೆಗೆ ಕಾಯಿರಿ.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>ಇನ್ನೊಂದು ರನ್ ಇನ್‌ಸ್ಟಾಲೇಶನ್‌ನ ಲಾಕ್ ಹಿಡಿದಿದೆ: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>ರನ್‌ಗೆ ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ, ಸೈನ್ ಇನ್ ಆದ ಬಳಕೆದಾರ ಬೇಕು.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php ಕಮಾಂಡ್ ಲೈನ್ ಬೈನರಿ ಕಂಡುಬಂದಿಲ್ಲ. migration.ini [AdminSettings] PhpCliPath ಅನ್ನು ಅದರ ಪೂರ್ಣ ಪಥಕ್ಕೆ ಹೊಂದಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ನಿಷ್ಕ್ರಿಯವಾಗಿದೆ, ಆದ್ದರಿಂದ ಇಲ್ಲಿ ರನ್ ಪ್ರಾರಂಭಿಸಲಾಗುವುದಿಲ್ಲ. ಸರ್ವರ್‌ನಲ್ಲಿ ./console exp:migration:migrate --apply ರನ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>ರನ್‌ಗಳ ಫೋಲ್ಡರ್‌ಗೆ ಬರೆಯಲಾಗುವುದಿಲ್ಲ: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>ರನ್ ಪ್ರಾರಂಭವಾಯಿತು ಆದರೆ ಅದರ ಪ್ರಕ್ರಿಯೆ ಐಡಿ ವರದಿ ಮಾಡಲಿಲ್ಲ. %detail ಪರಿಶೀಲಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ಏನನ್ನು ಹಿಂಪಡೆಯಬೇಕು ಎಂದು ಸೂಚಿಸಿ.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>ರನ್ ಪ್ರಾರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</translation>
     </message>
 </context>
 </TS>

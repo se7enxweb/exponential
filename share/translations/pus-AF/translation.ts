@@ -15140,6 +15140,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>د GraphQL API: د هغه پای ټکی، سکیما او د پوښتنو د ازمویلو ځای.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مهاجرتونه</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>په نصب کې بدلونونه چې د فایلونو په توګه ساتل کېږي: د هغوی حالت، اجراوې، اجرا کول او بېرته ګرځول.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>میوټېشنونه /api/graphql ته ولېږئ.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>مهاجرتونه</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>حالت ونه لوستل شو: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>د مهاجرتونو جدولونه لا نشته: ./console exp:upgrade --apply یې جوړوي.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count مهاجرتونه ناکام شول</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>یو اجرا روانه ده، چې %user پیل کړې</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>نصب قلف شوی دی: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>په تمه کې</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>یتیم</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>وروستۍ اجرا</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>لا هیڅ نه</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>ټول مهاجرتونه</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>شبیه‌سازي شوې اجرا</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>آزمایښتي اجرا</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>په تمه کې مهاجرتونه په یوه معامله کې اجرا شول چې وروسته بېرته وګرځول شوه: هیڅ ونه ساتل شول. لاندې هغه څه دي چې هر یوه په ډېټابېس کې بدل کړل.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>یوه اجرا به اوس څه وکړي. هیڅ نه بدلېږي: هر په تمه کې مهاجرت هغه بدلونونه ښيي چې کول به یې، او اجرا هغه څه چې مخکې او وروسته به یې کول.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>شبیه‌سازي</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>اجرا کول</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>آزمایښتي اجرا ناکامه شوه: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>شبیه‌سازي PostgreSQL یا SQLite ته اړتیا لري، چې د سکیما بدلونونه یې بېرته ګرځول کېدای شي؛ په دې ډېټابېس کې لاندې پلان ښيي چې یوه اجرا به څه وکړي.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>مهاجرتونه</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>مهاجرت</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>څه به وکړي</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>شبیه‌سازي: %result په %ms ملي‌ثانیو کې</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>لا هیڅ مهاجرت نشته.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>له اجرا مخکې او وروسته</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>مخکینی انځور</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>اخیستل کېږي، او کله چې مهاجرت ناکام شي بېرته راګرځول کېږي</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>بند</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>وروستنی انځور</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>اخیستل کېږي کله چې اجرا بریالۍ شي</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total مهاجرتونه: %pending په تمه کې، %done بشپړ، %failed ناکام.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>د مهاجرتونو تاریخچه</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>هره اجرا له کارن، چاپېریال، انځورونو او هغه څه سره چې ثبت، نښه او ولېږل شول. ناکامه یا پرې شوې اجرا بیا پیلېدای شي؛ هغه اجرا چې مخکې ترې انځور اخیستل شوی وي بېرته اخیستل کېدای شي.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>اجراوې ونه لوستل شوې: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>د مهاجرتونو جدولونه لا نشته: ./console exp:upgrade --apply یې جوړوي.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>ښودل</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>ټول</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>اجراوې</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>پیل شوې</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>له خوا</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>انځورونه</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>زېرمتون</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>کړنې</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>مخکې</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>وروسته</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>لېږل: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>بیا پیلول</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>بېرته ګرځول</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>په دې حالت کې هیڅ اجرا نشته.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>دلته پیل شوې</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>هغه اجراوې، بیا پیلونې او بېرته ګرځونې چې په دې پاڼو کې پیل شوې، د هر یوه له راپور سره.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>څه</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>پایله</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>بېرته ګرځونه</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>د %target بېرته ګرځونه</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>اجرا %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>اجرا څه وکړل، د هغې ثبت او لاګ. هغه اجرا چې دلته پیل شوې وي، د دې پاڼې له تړلو وروسته په شالید کې روانه وي؛ د تعقیب لپاره پاڼه بیا پرانیزئ.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>دا اجرا بیا پیل کړئ</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>دا اجرا بېرته وګرځوئ</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>ثبت ونه لوستل شو: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>پرمختګ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>د %user له خوا په %time پیل شوې.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>کوډ کتل کېږي او له اجرا مخکې انځور اخیستل کېږي</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id اجرا کېږي (%index له %total څخه)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done له %total څخه بشپړ</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>مهاجرتونه اجرا شول؛ که یو ناکام شوی وي انځور بېرته راګرځول کېږي</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>له اجرا وروسته انځور اخیستل، ثبتول، نښه کول او لېږل</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>انځور بېرته راګرځول کېږي</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>اجرا پای ته ورسېده. راپور یې پورته کېږي.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>پرمختګ تعقیب نه شو. پاڼه بیا پورته کړئ ترڅو وګورئ چې اجرا څنګه روانه ده.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>دا پاڼه اجرا د روانېدو پر مهال تعقیبوي.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>بیا پورته کول</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>راپور</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>موده</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ملي‌ثانیې</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>هغه څه چې اجرا د تېروتنو په توګه چاپ کړل</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>ثبت</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>چاپېریال</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>هیڅ</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>پای ته رسېدلې</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>ثبتول</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>نښه</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>لېږل</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>پیغام</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>د دې اجرا مهاجرتونه</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>سرچینه</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>د اجرا لاګ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>یوازې د لاګ پای ښودل کېږي.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>روانه</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>بې راپوره پای ته ورسېده</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>بریالۍ</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ناکامه</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>رد شوې</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>ډېټابېس ته لاسرسی نه و</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>داخلي تېروتنه</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>یوه اجرا روانه ده</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind د %user له خوا په %time پیل شوه.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>تعقیبول</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>نصب قلف شوی دی</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>بله اجرا قلف لري (یو لوړول یا په کنسول کې اجرا): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>بشپړ</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>په تمه کې</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>اړین نه دی</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>نامعلوم</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>بېرته ګرځول شوی</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>پلي شوی</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>پلي به شي</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>بېرته اخیستل شوی</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>بېرته به واخیستل شي</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>نه دی اجرا شوی</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>د بل په تمه دی</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>بدلون ومنل شو</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>بدلون به ومنل شي</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>شبیه‌سازي شوی</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>مهاجرتونه</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>حالت</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>تاریخچه</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target بېرته واخلئ</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>یوه اجرا هغه انځور ته بېرته ګرځي چې مخکې ترې اخیستل شوی، یو مهاجرت د خپل down() په واسطه. د پخواني انځور بېرته راګرځول د متخصصینو لپاره دي. هر یو ستاسو په نوم په شالید کې اجرا کېږي، د اوسني حالت له انځور وروسته.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>هغه څه چې بېرته اخیستل کېدای شي ونه لوستل شول: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>یوه اجرا</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>یو مهاجرت</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>پخوانی انځور</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>تشریح</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>هو</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>نه</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>انځور</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>لیبل</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>اخیستل شوی</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>ډول</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>د بېرته راګرځولو برخې</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>ډېټابېس</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>د ذخیرې فایلونه (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>تنظیمات (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>د ډېټابېس بېرته راګرځول یې د انځور وخت ته بیايي، ناستې هم پکې شاملې دي: وروسته ښايي بیا ننوتو ته اړتیا ولرئ. هر هغه څه چې له هغه وخته بدل شوي له منځه ځي؛ لومړی د اوسني حالت انځور اخیستل کېږي.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>زه پوهېږم چې دا څه بېرته راګرځوي</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>د انځور پېژندنه بیا ولیکئ</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>هو، بېرته یې واخلئ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>لغوه کول</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>هغه اجراوې چې مخکې ترې انځور اخیستل شوی.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>ټاکل</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>لا هیڅ اجرا له انځور سره نشته.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>پلي شوي مهاجرتونه چې ځان بېرته اخیستلای شي (down() لري).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>هیڅ پلي شوی مهاجرت down() نه لري.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>پخواني انځورونه (متخصصین)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>لا هیڅ انځور نشته.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>مهاجرتونه اجرا کړئ</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>اجرا د %user په توګه په شالید کې روانه وي، او پاڼه یې د روانېدو پر مهال ښيي. له لومړي مهاجرت مخکې د نصب انځور اخیستل کېږي؛ کله چې مهاجرت ناکام شي اجرا دریږي او انځور بېرته راګرځول کېږي.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>لومړی آزمایښتي اجرا</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>حالت ونه لوستل شو: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>په تمه کې مهاجرتونه</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>دوی په دې ترتیب اجرا کېږي. د یوه نښه لرې کړئ ترڅو هغه او هغه چې ورته اړتیا لري د وروستۍ اجرا لپاره پاتې شي.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>اجرا یې کړئ</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>د اجرا پر مهال د ساتنې حالت فعالوي.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>له پلي کېدو وروسته بدل شوي</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>دا فایلونه هغه نه دي چې پلي شوي وو. اجرا یې ردوي مګر دا چې بدلون له دلیل سره ومنل شي؛ بیا نه اجرا کېږي، نوی چېک‌سم ثبتېږي او دلیل د پلټنې په لاګ کې ساتل کېږي.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>بدلونونه ومنئ</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>ولې</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>تلواله ارزښتونه خوندي دي. هره خونه یو ګام پرېږدي.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>بې انځوره</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>له اجرا مخکې او وروسته انځور نشته: ناکامي په خپلکاره ډول نه شي بېرته راګرځول کېدای.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>بې بېرته راګرځونې</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>له ناکامۍ وروسته، نصب هماغسې پرېږدئ لکه ناکامۍ چې پرې اېښی.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>نا ثبت شوي بدلونونه وساتئ</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>اجرا کړئ که څه هم تنظیمات، توسیعات یا ډیزاینونه نا ثبت شوي بدلونونه لري؛ دوی انځور ته ځي.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>بې ثبتوله</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>د حالت فایل او د اجرا لاګ مه ثبتوئ (نه نښه او نه لېږل).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>بې لېږلو</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>ثبت او نښه یې کړئ، خو مه یې لېږئ.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>بې نښې</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>ثبت او ویې لېږئ، خو اجرا ته نښه مه ورکوئ.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>هو، دا مهاجرتونه اوس اجرا کړئ</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>هیڅ مهاجرت په تمه کې نه دی.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>حالت ته بېرته</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>د دې نصب بدلونونه چې یو ځل د فایلونو په توګه لیکل شوي (منځپانګه، ټولګي، رولونه، تنظیمات، سکیما) او د سایټ په هر نصب کې په ورته ترتیب پلي کېږي. اجرا لومړی انځور اخلي، کله چې مهاجرت ناکام شي بېرته یې راګرځوي، او هغه څه چې یې کړي ثبتوي، کمېټوي او لېږي.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count په تمه کې اجرا کړئ</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>عمومي کتنه</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>په تمه کې</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>بشپړ</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>ناکام</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>اړین نه دي</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>ډېټابېس</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>معاملې: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>د سایټ مهاجرتونه په migrations/ کې دي، د یوه توسیع هغه په extension/&lt;name&gt;/migrations/ کې. دوی د خپلو نومونو او اړتیاوو په ترتیب اجرا کېږي.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>وروستۍ اجرا</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>فایل له پلي کېدو وروسته بدل شوی.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>لا هیڅ مهاجرت نشته. ./console exp:migration:generate --skeleton &lt;name&gt; --apply لومړی لیکي.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>وروستۍ اجراوې</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>ټولې اجراوې</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>لا هیڅ اجرا نشته.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>د اجرا شبیه‌سازي د migration/run پالیسۍ ته اړتیا لري.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>یوه اجرا روانه ده: کله چې پای ته ورسېږي شبیه‌سازي وکړئ.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>جوړونه</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target د دې نصب نه اجرا ده، نه مهاجرت او نه انځور.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>لومړی «هو، بېرته یې واخلئ» نښه کړئ.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>د پخواني انځور بېرته راګرځول د متخصصینو لپاره دي: «زه پوهېږم چې دا څه بېرته راګرځوي» نښه کړئ.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>د انځور پېژندنه بیا ولیکئ: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>لږ تر لږه د بېرته راګرځولو یوه برخه وټاکئ.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>دا اجرا مخکینی انځور نه لري: مهاجرتونه یې یو په یو بېرته واخلئ، یا پخوانی انځور بېرته راوګرځوئ.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>دا مهاجرت پخپله نه شي بېرته اخیستل کېدای: پلي شوی نه دی، یا down() نه لري.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>فورمه ونه لوستل شوه.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>هغه اجرا وټاکئ چې بیا پیل شي.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>لومړی «هو، دا مهاجرتونه اوس اجرا کړئ» نښه کړئ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>لږ تر لږه یو مهاجرت وټاکئ.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>یو مهاجرت له پلي کېدو وروسته بدل شوی: بدلون له دلیل سره ومنئ، یا فایل بېرته خپل ځای ته راوګرځوئ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>دلیل ووایاست چې بدل شوي مهاجرتونه ولې منل کېږي.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>دلیل تر ټولو ډېر ۵۰۰ توري دی.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>هغه اجرا چې دلته پیل شوې لا روانه ده (%detail). انتظار وکړئ چې پای ته ورسېږي.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>بله اجرا د نصب قلف لري: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>اجرا یو ننوتي کارن ته اړتیا لري چې شتون ولري.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>د php د کمانډ لاین پروګرام ونه موندل شو. په migration.ini [AdminSettings] PhpCliPath کې یې بشپړه لار وټاکئ.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open غیرفعال دی، نو دلته اجرا نه شي پیلېدای. په سرور کې ./console exp:migration:migrate --apply اجرا کړئ.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>د اجراوو په فولډر کې نه شي لیکل کېدای: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>اجرا پیل شوه خو د خپلې پروسې پېژندنه یې راپور نه کړه. %detail وګورئ.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>ووایاست چې څه بېرته واخیستل شي.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>اجرا پیل نه شوه.</translation>
     </message>
 </context>
 </TS>

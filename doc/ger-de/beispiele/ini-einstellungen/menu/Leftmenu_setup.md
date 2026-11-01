@@ -9,7 +9,7 @@ generated: exp:help:examples
 ---
 # menu.ini [Leftmenu_setup]
 
-Der Block `[Leftmenu_setup]` von `settings/menu.ini`, mit 64 Einstellung(en).
+Der Block `[Leftmenu_setup]` von `settings/menu.ini`, mit 65 Einstellung(en).
 
 Bearbeiten Sie `settings/menu.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -238,7 +238,7 @@ GroupLinks_data[]=data_syncs
 
 > Erweiterungen: expqueue (die Auftragswarteschlange, auch mit expai ausgeliefert), sevenx\_dse (der Datenbankeditor)  
 
-Standard: eine Liste mit 12: `cache`, `system_information`, `help_center`, `upgrade_check`, `maintenance`, `cronjobs`, `logs`, `extensions`, `ini`, `sitedata`, `expqueue`, `dse`.
+Standard: eine Liste mit 13: `cache`, `system_information`, `help_center`, `upgrade_check`, `migrations`, `maintenance`, `cronjobs`, `logs`, `extensions`, `ini`, `sitedata`, `expqueue` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -250,6 +250,7 @@ GroupLinks_system[]=cache
 GroupLinks_system[]=system_information
 GroupLinks_system[]=help_center
 GroupLinks_system[]=upgrade_check
+GroupLinks_system[]=migrations
 GroupLinks_system[]=maintenance
 GroupLinks_system[]=cronjobs
 GroupLinks_system[]=logs
@@ -367,7 +368,7 @@ MegaMenuLinks[]=git_manager
 >                                   figure\_key=<key> nur für eine angezeigte Kachel eingebunden; leer oder nicht design: zeichnet keine  
 > Eine Erweiterung setzt sie für ihren eigenen Link in ihrer menu.ini.append.php (doc/eng-us/features/6.0/admin4-design.md).  
 
-Standard: ein Hash mit 58: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
+Standard: ein Hash mit 59: `audit=journal-check`, `broken_relations=exclamation-diamond`, `storage_files=files`, `cache=arrow-clockwise`, `classes=diagram-3`, `collected=inbox`, `contentfinder=search`, `cronjobs=clock`, `design_node=brush`, `dse=database`, `expai_budgets=piggy-bank`, `expai_models=cpu` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -395,13 +396,13 @@ LinkIcons[git_manager]=git
 LinkIcons[git_manager_backup]=archive
 LinkIcons[global_setting]=globe
 LinkIcons[ini]=sliders
-# ... 38 weitere in der ausgelieferten Datei
+# ... 39 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkDescriptions
 
-Standard: ein Hash mit 58: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
+Standard: ein Hash mit 59: `audit=Who changed what: the audit settings and archives.`, `broken_relations=Visible content that links to deleted, hidden or trashed content.`, `storage_files=Files in the storage that nothing uses, and files with the wrong owner or mode.`, `cache=Clear or regenerate the caches.`, `classes=The content classes and their attributes.`, `collected=What visitors sent through forms.`, `contentfinder=Find content by its id, remote id or path.`, `cronjobs=The cronjob parts, their scripts and last runs.`, `design_node=The design's top node and the objects below it.`, `dse=Browse and query the database directly.`, `expai_budgets=AI budgets, queued requests and what they cost.`, `expai_models=The AI providers and models, and their tests.` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -429,7 +430,7 @@ LinkDescriptions[git_manager]=The Git checkout of the installation and its updat
 LinkDescriptions[git_manager_backup]=Make, download and remove backups.
 LinkDescriptions[global_setting]=The settings of the whole site.
 LinkDescriptions[ini]=Read and edit the INI settings.
-# ... 38 weitere in der ausgelieferten Datei
+# ... 39 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
@@ -454,48 +455,50 @@ LinkFigureTemplates[cronjobs]=design:setup/setupmenu_figure.tpl
 
 ## Links
 
-> Kein PolicyList\_overview\[\]: die Ansicht öffnet sich mit jeder einzelnen Funktion des Moduls setup (kernel/setup/module.php),  
-> was ein einzelner PolicyList-Eintrag nicht ausdrücken kann; CheckViewAccess fragt die Ansicht selbst.  
-> Die Audit-Einstellungen und Archive (doc/eng-us/bc/6.0/audit.md, "Placement"), nur mit audit/manage  
-> Der Inhalts-Finder (doc/eng-us/features/6.0/content-finder.md): Inhalt nach ID oder Pfad finden, nur mit contentfinder/search  
-> Die Inhaltsprüfungen (doc/eng-us/features/6.0/content-checks.md): nicht referenzierte Objekte und defekte Relationen, jeweils nur  
-> mit ihrer Richtlinie  
-> Die Cronjob-Konsole. LinkNames ist das, als was der Eintrag erscheint: ohne es  
-> fällt das Menü auf den Schlüssel zurück, und "cronjobs" ist keine Bezeichnung.  
-> Der Log-Viewer (doc/eng-us/features/6.0/log-viewer.md): Logdateien verfolgen, durchsuchen und querverweisen, nur mit setup/logs  
-> Die Seite des Tabs Design (sein URL\[default\]), in der Gruppe, die für den Tab steht (GroupTabs\[design\]): nur angezeigt,  
-> solange der Tab nicht im oberen Menü ist  
-> Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
+> No PolicyList\_overview\[\]: the view opens with any one of the setup module's functions (kernel/setup/module.php),  
+> which one PolicyList entry cannot say; CheckViewAccess asks the view itself.  
+> The audit settings and archives (doc/eng-us/bc/6.0/audit.md, "Placement"), only with audit/manage  
+> The content finder (doc/eng-us/features/6.0/content-finder.md): find content by id or path, only with contentfinder/search  
+> The content checks (doc/eng-us/features/6.0/content-checks.md): unreferenced objects and broken relations, each only  
+> with its policy  
+> The cronjobs console. LinkNames is what the entry reads as: without it the  
+> menu falls back to the key, and "cronjobs" is not a label.  
+> Migrations (module migration): the migrations of the site and its extensions, their runs, a run or a rollback in  
+> the background, the log of each run  
+> The log viewer (doc/eng-us/features/6.0/log-viewer.md): follow, search and cross-reference the log files, only with setup/logs  
+> The Design tab's page (its URL\[default\]), in the group that stands for the tab (GroupTabs\[design\]): shown only  
+> while the tab is not in the top menu  
+> Removed from 4.3. Enable if you have special requirements.  
 > Links\[global\_setting\]=content/edit/52  
 > PolicyList\_global\_setting\[\]=54  
-> Die Übersetzungs-Fallbacks jeder Oberflächensprache (doc/eng-us/languages.md), nur lesbar  
-> Die E-Mail-Einstellungen für Administratoren: Status, Kategorien, Sperrliste, Einwilligungs-Log  
-> Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
+> The translation fallbacks of every interface language (doc/eng-us/languages.md), read only  
+> The e-mail preferences for administrators: status, categories, suppression list, consent log  
+> Removed from 4.3. Enable if you have special requirements.  
 > Links\[look\_and\_feel\]=content/edit/54  
 > PolicyList\_look\_and\_feel\[\]=56  
-> Die Menüs der klassischen Site-Designs (visual/menuconfig) sind ein Link des Menüs Design (\[Leftmenu\_design\])  
-> Der Benachrichtigungsstatus (ausstehende Ereignisse, Digest-Nachrichten, die letzten Läufe des Benachrichtigungs-Cronjobs, Probleme)  
-> Preload Sites, RSS und Packages öffnen die Gruppe "Site und URLs" (GroupLinks\_site\[\]), RAD schließt sie: eine Gruppe zeichnet ihre  
-> Links in der Reihenfolge von Links\[\], also ist ihre Reihenfolge hier die Reihenfolge der Gruppe  
-> Standardmäßig in 4.3 deaktiviert, da es auch im Tab Benutzerkonto vorhanden ist.  
+> The menus of the classic site designs (visual/menuconfig) are a link of the Design menu (\[Leftmenu\_design\])  
+> The notification status (pending events, digest messages, the last runs of the notification cronjob, problems)  
+> Preload Sites, RSS and Packages open the group "Site and URLs" (GroupLinks\_site\[\]), RAD closes it: a group draws its  
+> links in the order of Links\[\], so their order here is the order of the group  
+> Disabled by default in 4.3 as it is also present in user account tab.  
 > Links\[roles\_and\_policies\]=role/list  
 > PolicyList\_roles\_and\_policies\[\]=role/\*  
-> Benutzerkonten prüfen (doc/eng-us/features/6.0/user-hygiene.md): nie angemeldet, lange nicht gesehen, deaktiviert, gesperrt,  
-> verwaist, eine gemeinsame E-Mail-Adresse; nur mit user/hygiene. Derselbe Schlüssel steht in \[Leftmenu\_user\].  
-> Die Datentabellen, die benannten Datenbankverbindungen und der Secret-Store (doc/eng-us/features/6.0/data-tables.md,  
+> Check user accounts (doc/eng-us/features/6.0/user-hygiene.md): never signed in, not seen for long, disabled, locked,  
+> orphaned, a shared e-mail address; only with user/hygiene. The same key is in \[Leftmenu\_user\].  
+> The data tables, the named database connections and the secret store (doc/eng-us/features/6.0/data-tables.md,  
 > doc/eng-us/features/6.0/secret-store.md)  
-> Die GraphQL-API (doc/eng-us/features/6.0/graphql.md)  
-> Die Zeilen von ezsite\_data, nur lesbar (Setup > Site-Daten)  
-> Das Hilfe-Center, die Startseite der Hilfe (exphelp/dashboard)  
-> Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
+> The GraphQL API (doc/eng-us/features/6.0/graphql.md)  
+> The rows of ezsite\_data, read only (Setup > Site data)  
+> The Help center, the start page of the help (exphelp/dashboard)  
+> Removed from 4.3. Enable if you have special requirements.  
 > Links\[templates\]=visual/templatelist  
 > PolicyList\_templates\[\]=visual/\*  
-> Entfernt seit 4.3. Aktivieren, wenn Sie besondere Anforderungen haben.  
+> Removed from 4.3. Enable if you have special requirements.  
 > Links\[toolbar\_management\]=visual/toolbarlist  
 > PolicyList\_toolbar\_management\[\]=visual/\*  
-> RAD schließt die Gruppe "Site und URLs"  
+> RAD closes the group "Site and URLs"  
 
-Standard: ein Hash mit 45: `overview=setup/menu`, `cache=setup/cache`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance`, `cronjobs=setup/cronjobs`, `logs=setup/logs` ....
+Standard: ein Hash mit 46: `overview=setup/menu`, `cache=setup/cache`, `audit=audit/settings`, `classes=class/grouplist`, `collected=infocollector/overview`, `contentfinder=contentfinder/search`, `unreferenced_objects=contentcheck/unreferenced`, `broken_relations=contentcheck/brokenrelations`, `storage_files=contentcheck/storage`, `maintenance=setup/maintenance`, `migrations=migration/status`, `cronjobs=setup/cronjobs` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -513,6 +516,7 @@ Links[unreferenced_objects]=contentcheck/unreferenced
 Links[broken_relations]=contentcheck/brokenrelations
 Links[storage_files]=contentcheck/storage
 Links[maintenance]=setup/maintenance
+Links[migrations]=migration/status
 Links[cronjobs]=setup/cronjobs
 Links[logs]=setup/logs
 Links[extensions]=setup/extensions
@@ -522,14 +526,13 @@ Links[languages]=content/translations
 Links[interface_languages]=setup/languages
 Links[mailpreferences]=mailpreferences/admin/status
 Links[notification]=notification/status
-Links[preload]=setup/preload
-# ... 25 weitere in der ausgelieferten Datei
+# ... 26 weitere in der ausgelieferten Datei
 */ ?>
 ```
 
 ## LinkNames
 
-Standard: ein Hash mit 19: `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content`, `interface_languages=Interface languages`, `preload=Preload Sites`, `user_hygiene=Check user accounts` ....
+Standard: ein Hash mit 20: `audit=Audit`, `contentfinder=Content finder`, `unreferenced_objects=Unreferenced objects`, `broken_relations=Broken relations`, `storage_files=Storage files`, `maintenance=Maintenance`, `migrations=Migrations`, `cronjobs=Cronjobs`, `logs=Log files`, `design_node=Design content`, `interface_languages=Interface languages`, `preload=Preload Sites` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -543,6 +546,7 @@ LinkNames[unreferenced_objects]=Unreferenced objects
 LinkNames[broken_relations]=Broken relations
 LinkNames[storage_files]=Storage files
 LinkNames[maintenance]=Maintenance
+LinkNames[migrations]=Migrations
 LinkNames[cronjobs]=Cronjobs
 LinkNames[logs]=Log files
 LinkNames[design_node]=Design content
@@ -682,6 +686,20 @@ Standard: eine Liste mit 1: `setup/administrate`.
 # ein leeres "PolicyList_maintenance[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
 PolicyList_maintenance[]
 PolicyList_maintenance[]=setup/administrate
+*/ ?>
+```
+
+## PolicyList_migrations
+
+Standard: eine Liste mit 1: `migration/read`.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/menu.ini.append.php
+[Leftmenu_setup]
+# ein leeres "PolicyList_migrations[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+PolicyList_migrations[]
+PolicyList_migrations[]=migration/read
 */ ?>
 ```
 

@@ -15081,6 +15081,14 @@ Note: The packages will not be uninstalled.</source>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: крайната точка, схемата и площадка за изпробване на заявки.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграции</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Промени по инсталацията, пазени като файлове: тяхното състояние, изпълненията, изпълнение и връщане.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ You will need to change the class of the node by using the swap functionality.</
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Изпращайте мутациите към /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграции</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Състоянието не можа да бъде прочетено: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Таблиците на миграциите още не съществуват: ./console exp:upgrade --apply ги създава.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count миграции са неуспешни</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Тече изпълнение, стартирано от %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Инсталацията е заключена: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>В изчакване</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Неуспешни</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Осиротели</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Последно изпълнение</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>още няма</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Всички миграции</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Симулирано изпълнение</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Пробно изпълнение</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Чакащите миграции се изпълниха в транзакция, която след това беше отменена: нищо не беше запазено. По-долу е показано какво промени всяка от тях в базата данни.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Какво би направило едно изпълнение сега. Нищо не се променя: всяка чакаща миграция изброява промените, които би направила, а изпълнението – какво би направило преди и след това.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Симулиране</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Изпълнение</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Пробното изпълнение е неуспешно: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Симулацията изисква PostgreSQL или SQLite, чиито промени в схемата могат да бъдат отменени; при тази база данни планът по-долу показва какво би направило едно изпълнение.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Миграциите</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Миграция</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Състояние</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Какво би направила</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Симулация: %result за %ms мс</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Още няма миграции.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Преди и след изпълнението</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Моментна снимка преди</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>се прави и се възстановява, ако миграция е неуспешна</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>изключено</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Моментна снимка след</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>се прави, когато изпълнението е успешно</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total миграции: %pending в изчакване, %done изпълнени, %failed неуспешни.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>История на миграциите</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Всяко изпълнение с потребителя, средата, моментните снимки и това, което е записано (commit), маркирано (tag) и изпратено (push). Неуспешно или прекъснато изпълнение може да бъде продължено; изпълнение с моментна снимка преди него може да бъде върнато.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Изпълненията не можаха да бъдат прочетени: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Таблиците на миграциите още не съществуват: ./console exp:upgrade --apply ги създава.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Показване</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Всички</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Изпълнения</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Стартирано</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>От</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Моментни снимки</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Хранилище</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Действия</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>преди</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>след</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>изпращане: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Продължаване</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Връщане</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Няма изпълнение в това състояние.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Стартирани тук</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Изпълнения, продължения и връщания, стартирани на тези страници, с отчета за всяко.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Какво</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Резултат</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Връщане</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Връщане на %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Изпълнение %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Какво направи изпълнението, неговият запис и неговият дневник. Изпълнение, стартирано тук, продължава във фонов режим, когато тази страница се затвори; отворете страницата отново, за да го следите.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Продължаване на това изпълнение</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Връщане на това изпълнение</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Записът не можа да бъде прочетен: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Напредък</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Стартирано от %user в %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Проверка на кода и моментна снимка преди изпълнението</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Изпълнява се %id (%index от %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done от %total изпълнени</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Миграциите са изпълнени; моментната снимка се възстановява, ако някоя е неуспешна</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Моментна снимка след изпълнението, commit, tag и push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Възстановяване на моментната снимка</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Изпълнението приключи. Отчетът му се зарежда.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Напредъкът не можа да бъде проследен. Презаредете страницата, за да видите докъде е стигнало изпълнението.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Тази страница следи изпълнението, докато то тече.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Презареждане</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Отчет</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Време</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms мс</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Какво изпълнението изведе като грешки</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Запис</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Среда</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>няма</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Приключено</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Записване (commit)</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Етикет</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Изпращане</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Съобщение</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Миграции на това изпълнение</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Източник</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Дневник на изпълнението</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Показан е само краят на дневника.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>изпълнява се</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>приключено без отчет</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>успешно</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>неуспешно</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>отказано</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>базата данни беше недостъпна</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>вътрешна грешка</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Тече изпълнение</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind стартирано от %user в %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Следене</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Инсталацията е заключена</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Друго изпълнение държи заключването (надграждане или изпълнение в конзолата): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>изпълнена</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>в изчакване</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>не е нужна</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>неизвестно</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>отменена</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>приложена</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>би била приложена</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>върната</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>би била върната</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>не е изпълнена</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>чака друга</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>промяната е приета</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>промяната би била приета</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>симулирана</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Миграции</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Състояние</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>История</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Връщане на %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Изпълнение се връща към моментната снимка, направена преди него, а отделна миграция – с нейния down(). Възстановяването на по-ранна моментна снимка е за експерти. Всяко връщане се изпълнява във фонов режим от ваше име, след моментна снимка на сегашното състояние.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Какво може да бъде върнато не можа да бъде прочетено: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Изпълнение</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Една миграция</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>По-ранна моментна снимка</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Описание</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>да</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>не</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Моментна снимка</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Етикет</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Направена</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Вид</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Части за възстановяване</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Базата данни</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Файловете в хранилището (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Настройките (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Възстановяването връща базата данни към момента на моментната снимка, включително сесиите: след това може да се наложи да влезете отново. Всичко, променено оттогава, се губи; първо се прави моментна снимка на сегашното състояние.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Знам какво възстановява това</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Въведете отново идентификатора на моментната снимка</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Да, върни го</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Отказ</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Изпълненията с моментна снимка преди тях.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Избор</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Още няма изпълнение с моментна снимка.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Приложените миграции, които могат сами да се върнат (имат down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Нито една приложена миграция няма down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>По-ранни моментни снимки (експерти)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Още няма моментна снимка.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Изпълнение на миграциите</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Изпълнението тече във фонов режим като %user, а страницата му го показва в хода му. Преди първата миграция се прави моментна снимка на инсталацията; ако миграция е неуспешна, изпълнението спира и моментната снимка се възстановява.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Първо пробно изпълнение</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Състоянието не можа да бъде прочетено: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Миграции в изчакване</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Те се изпълняват в този ред. Махнете отметката на някоя, за да я оставите, заедно със зависещите от нея, за по-късно изпълнение.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Изпълни</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Включва режима на поддръжка, докато тече.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Променени след прилагането</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Тези файлове не са онези, които бяха приложени. Изпълнението ги отказва, освен ако промяната не бъде приета с причина; те не се изпълняват отново, новата контролна сума се записва, а причината се пази в одитния дневник.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Приемане на промените</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Защо</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Стойностите по подразбиране са безопасните. Всяко поле пропуска една стъпка.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Без моментна снимка</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Без моментна снимка преди и след изпълнението: при неуспех не може да се възстанови автоматично.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Без възстановяване</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>След неуспех инсталацията остава такава, каквато я е оставил неуспехът.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Запазване на незаписаните (без commit) промени</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Изпълнение, въпреки че настройки, разширения или дизайни имат незаписани промени; те влизат в моментната снимка.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Без commit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Файлът на състоянието и дневникът на изпълнението не се записват с commit (също без tag и без push).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Без push</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit и tag, но без push.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Без tag</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit и push, но без tag на изпълнението.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Да, изпълни тези миграции сега</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Няма миграции в изчакване.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Обратно към състоянието</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Промени по тази инсталация, написани веднъж като файлове (съдържание, класове, роли, настройки, схема) и прилагани към всяка инсталация на сайта в същия ред. Изпълнението първо прави моментна снимка, възстановява я при неуспешна миграция и записва, прави commit и push на това, което е направило.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Изпълнение на %count чакащи</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Преглед</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>В изчакване</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Изпълнени</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Неуспешни</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Не са нужни</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>База данни</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>транзакции: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Миграциите на сайта са в migrations/, а тези на разширение – в extension/&lt;name&gt;/migrations/. Те се изпълняват по реда на имената си и на зависимостите си.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Последно изпълнение</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Файлът е променен след прилагането.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Още няма миграции. ./console exp:migration:generate --skeleton &lt;name&gt; --apply създава първата.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Последните изпълнения</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Всички изпълнения</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Още няма изпълнение.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Симулирането на изпълнение изисква правото migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Тече изпълнение: симулирайте, когато приключи.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Инсталация</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target не е нито изпълнение, нито миграция, нито моментна снимка на тази инсталация.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Първо отметнете „Да, върни го“.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Възстановяването на по-ранна моментна снимка е за експерти: отметнете „Знам какво възстановява това“.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Въведете отново идентификатора на моментната снимка: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Изберете поне една част за възстановяване.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Това изпълнение няма моментна снимка преди него: върнете миграциите му една по една или възстановете по-ранна моментна снимка.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Тази миграция не може да се върне сама: не е приложена или няма down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Формулярът не можа да бъде прочетен.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Изберете изпълнението за продължаване.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Първо отметнете „Да, изпълни тези миграции сега“.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Изберете поне една миграция.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Миграция е променена след прилагането: приемете промяната с причина или върнете файла.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Посочете причината, поради която променените миграции се приемат.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Причината е най-много 500 знака.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Изпълнение, стартирано тук, още тече (%detail). Изчакайте да приключи.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Друго изпълнение държи заключването на инсталацията: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Изпълнението изисква влязъл потребител, който съществува.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Не е намерена програма php за команден ред. Задайте в migration.ini [AdminSettings] PhpCliPath пълния ѝ път.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open е изключена, затова тук не може да се стартира изпълнение. Изпълнете ./console exp:migration:migrate --apply на сървъра.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>В папката на изпълненията не може да се записва: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Изпълнението беше стартирано, но не съобщи идентификатора на процеса си. Проверете %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Посочете какво да се върне.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Изпълнението не можа да бъде стартирано.</translation>
     </message>
 </context>
 </TS>

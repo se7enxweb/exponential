@@ -15140,6 +15140,14 @@ Not: Paketler sistemden kaldırılmayacak (yüklemeleri geri alınmayacak).</tra
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API: uç noktası, şema ve sorguları denemek için bir deneme alanı.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Geçişler</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Kurulumda dosya olarak tutulan değişiklikler: durumları, çalıştırmalar, çalıştırma ve geri alma.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79660,6 +79668,888 @@ Düğümün sınıfını değiştirme işlevini kullanarak değiştirmeniz gerek
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Mutasyonları /api/graphql adresine gönderin.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Geçişler</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Durum okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Geçişlerin tabloları henüz yok: ./console exp:upgrade --apply bunları oluşturur.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count geçiş başarısız oldu</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Bir çalıştırma sürüyor, başlatan: %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Kurulum kilitli: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Beklemede</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Başarısız</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Sahipsiz</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Son çalıştırma</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>henüz yok</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Tüm geçişler</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Benzetilmiş çalıştırma</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Deneme çalıştırması</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Bekleyen geçişler, ardından geri alınan bir işlem içinde çalıştı: hiçbir şey korunmadı. Aşağıda her birinin veritabanında neyi değiştirdiği görülüyor.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Bir çalıştırmanın şimdi ne yapacağı. Hiçbir şey değiştirilmez: her bekleyen geçiş yapacağı değişiklikleri, çalıştırma da öncesinde ve sonrasında ne yapacağını listeler.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Benzet</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Çalıştır</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Deneme çalıştırması başarısız oldu: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Bir benzetim, şema değişiklikleri geri alınabilen PostgreSQL ya da SQLite gerektirir; bu veritabanında aşağıdaki plan bir çalıştırmanın ne yapacağını gösterir.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Geçişler</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Geçiş</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Ne yapacağı</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Benzetim: %ms ms içinde %result</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Henüz geçiş yok.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Çalıştırmadan önce ve sonra</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Önceki geri yükleme noktası</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>alınır ve bir geçiş başarısız olursa geri yüklenir</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kapalı</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Sonraki geri yükleme noktası</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>çalıştırma başarılı olursa alınır</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total geçiş: %pending beklemede, %done tamamlandı, %failed başarısız.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Geçiş geçmişi</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Her çalıştırma; kullanıcısı, ortamı, geri yükleme noktaları ve neyin commit edildiği, etiketlendiği ve gönderildiğiyle birlikte. Başarısız ya da yarıda kalmış bir çalıştırma sürdürülebilir; öncesinde geri yükleme noktası alınmış bir çalıştırma geri alınabilir.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Çalıştırmalar okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Geçişlerin tabloları henüz yok: ./console exp:upgrade --apply bunları oluşturur.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Göster</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Tümü</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Çalıştırmalar</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Başlatan</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Geri yükleme noktaları</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depo</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Eylemler</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>önce</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>sonra</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>gönderme: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Sürdür</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Geri al</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Bu durumda çalıştırma yok.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Burada başlatılanlar</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Bu sayfalarda başlatılan çalıştırmalar, sürdürmeler ve geri almalar, her birinin raporuyla birlikte.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ne</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Sonuç</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Geri alma</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target geri alınması</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Çalıştırma %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Çalıştırmanın ne yaptığı, kaydı ve günlüğü. Burada başlatılan bir çalıştırma bu sayfa kapatıldığında arka planda sürer; izlemek için sayfayı yeniden açın.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Bu çalıştırmayı sürdür</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Bu çalıştırmayı geri al</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Kayıt okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>İlerleme</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user tarafından %time zamanında başlatıldı.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kod denetleniyor ve çalıştırmadan önce geri yükleme noktası alınıyor</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id çalışıyor (%index / %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done / %total tamamlandı</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Geçişler çalıştı; biri başarısız olduysa geri yükleme noktası geri yükleniyor</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Çalıştırmadan sonra geri yükleme noktası alınıyor, commit ediliyor, etiketleniyor ve gönderiliyor</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Geri yükleme noktası geri yükleniyor</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Çalıştırma bitti. Raporu yükleniyor.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>İlerleme izlenemedi. Çalıştırmanın durumunu görmek için sayfayı yeniden yükleyin.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Bu sayfa çalıştırmayı ilerledikçe izler.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Yeniden yükle</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapor</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Süre</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ms süre</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Çalıştırmanın hata olarak yazdıkları</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Kayıt</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Ortam</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>yok</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Commit kaydı</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Etiket</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Gönderme</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>İleti</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Bu çalıştırmanın geçişleri</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Kaynak</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Çalıştırma günlüğü</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Günlüğün yalnızca sonu gösteriliyor.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>çalışıyor</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>rapor olmadan bitti</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>başarılı</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>başarısız</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>reddedildi</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>veritabanına ulaşılamadı</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>iç hata</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Bir çalıştırma sürüyor</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, %user tarafından %time zamanında başlatıldı.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>İzle</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Kurulum kilitli</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Kilidi başka bir çalıştırma tutuyor (bir yükseltme ya da konsolda bir çalıştırma): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>tamamlandı</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>beklemede</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>gerekli değil</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>bilinmiyor</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>geri alındı</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>uygulandı</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>uygulanacaktı</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>geri alındı</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>geri alınacaktı</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>çalışmadı</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>başka birini bekliyor</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>değişiklik kabul edildi</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>değişiklik kabul edilecekti</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>benzetildi</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Geçişler</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Durum</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Geçmiş</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target geri al</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Bir çalıştırma, öncesinde alınan geri yükleme noktasına; tek bir geçiş ise kendi down() ile geri alınır. Daha önceki bir geri yükleme noktasını geri yüklemek uzmanlar içindir. Her biri, şimdiki durumun geri yükleme noktası alındıktan sonra sizin adınıza arka planda çalışır.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Neyin geri alınabileceği okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Bir çalıştırma</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Tek bir geçiş</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Daha önceki bir geri yükleme noktası</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Açıklama</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>evet</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>hayır</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Geri yükleme noktası</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Etiket adı</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Alınma zamanı</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Tür</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Geri yüklenecek bölümler</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Veritabanı</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Depolama dosyaları (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Ayarlar (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Veritabanını geri yüklemek, oturumlar dahil, onu geri yükleme noktasının zamanına döndürür: ardından yeniden oturum açmanız istenebilir. O zamandan beri değişen her şey kaybolur; önce şimdiki durumun geri yükleme noktası alınır.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Bunun neyi geri yüklediğini biliyorum</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Geri yükleme noktasının kimliğini yeniden yazın</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Evet, geri al</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>İptal</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Öncesinde geri yükleme noktası alınmış çalıştırmalar.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Seç</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Henüz geri yükleme noktası olan çalıştırma yok.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Kendini geri alabilen uygulanmış geçişler (bir down() içerirler).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Hiçbir uygulanmış geçişte down() yok.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Önceki geri yükleme noktaları (uzmanlar)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Henüz geri yükleme noktası yok.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Geçişleri çalıştır</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Çalıştırma arka planda %user olarak sürer ve sayfası ilerlemesini gösterir. İlk geçişten önce kurulumun geri yükleme noktası alınır; bir geçiş başarısız olursa çalıştırma durur ve geri yükleme noktası geri yüklenir.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Önce deneme çalıştırması</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Durum okunamadı: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Bekleyen geçişler</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Bu sırayla çalışırlar. Birini ve ona bağlı olanları sonraki bir çalıştırmaya bırakmak için işaretini kaldırın.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Çalıştır</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Çalışırken bakım kipini açar.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Uygulandıktan sonra değiştirilenler</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Bu dosyalar uygulanmış olanlar değil. Değişiklik bir gerekçeyle kabul edilmedikçe çalıştırma bunları reddeder; yeniden çalıştırılmazlar, yeni sağlama toplamı kaydedilir ve gerekçe denetim günlüğünde saklanır.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Değişiklikleri kabul et</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Neden</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Varsayılanlar güvenli olanlardır. Her kutu bir adımı dışarıda bırakır.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Geri yükleme noktası yok</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Çalıştırmadan önce ve sonra geri yükleme noktası yok: bir hata otomatik olarak geri yüklenemez.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Geri yükleme yok</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Bir hatadan sonra kurulumu hatanın bıraktığı gibi bırak.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Commit edilmemiş değişiklikleri koru</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Ayarlarda, eklentilerde ya da tasarımlarda commit edilmemiş değişiklikler olsa da çalıştır; bunlar geri yükleme noktasına girer.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Commit yok</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Durum dosyasını ve çalıştırma günlüğünü commit etme (etiket ve gönderme de yok).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Gönderme yok</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Commit et ve etiketle, ama gönderme.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Etiket yok</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Commit et ve gönder, ama çalıştırmayı etiketleme.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Evet, bu geçişleri şimdi çalıştır</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Bekleyen geçiş yok.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Duruma geri dön</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Bu kuruluma yapılan, bir kez dosya olarak yazılan (içerik, sınıflar, roller, ayarlar, şema) ve sitenin her kurulumuna aynı sırayla uygulanan değişiklikler. Bir çalıştırma önce bir geri yükleme noktası alır, bir geçiş başarısız olursa onu geri yükler ve yaptıklarını kaydeder, commit eder ve gönderir.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Bekleyen %count geçişi çalıştır</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Genel bakış</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Beklemede</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Tamamlandı</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Başarısız</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Gerekli değil</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Veritabanı</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>işlemler: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Site geçişleri migrations/ içinde, bir eklentininkiler extension/&lt;name&gt;/migrations/ içinde bulunur. Adlarının ve gereksinimlerinin sırasıyla çalışırlar.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Son çalıştırma</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Dosya uygulandıktan sonra değişti.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Henüz geçiş yok. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ilkini yazar.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Son çalıştırmalar</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Tüm çalıştırmalar</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Henüz çalıştırma yok.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Bir çalıştırmayı benzetmek için migration/run ilkesi gerekir.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Bir çalıştırma sürüyor: bittiğinde benzetin.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Kurulum</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target bu kurulumun ne bir çalıştırması, ne bir geçişi ne de bir geri yükleme noktası.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Önce “Evet, geri al” kutusunu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Daha önceki bir geri yükleme noktasını geri yüklemek uzmanlar içindir: “Bunun neyi geri yüklediğini biliyorum” kutusunu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Geri yükleme noktasının kimliğini yeniden yazın: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Geri yüklenecek en az bir bölüm seçin.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Bu çalıştırmanın öncesinde alınmış geri yükleme noktası yok: geçişlerini tek tek geri alın ya da daha önceki bir geri yükleme noktasını geri yükleyin.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Bu geçiş kendi başına geri alınamaz: uygulanmamış ya da down() içermiyor.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Form okunamadı.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Sürdürülecek çalıştırmayı seçin.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Önce “Evet, bu geçişleri şimdi çalıştır” kutusunu işaretleyin.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>En az bir geçiş seçin.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Bir geçiş uygulandıktan sonra değişti: değişikliği bir gerekçeyle kabul edin ya da dosyayı eski haline getirin.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Değişen geçişlerin neden kabul edildiğinin gerekçesini yazın.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Gerekçe en fazla 500 karakterdir.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Burada başlatılan bir çalıştırma hâlâ sürüyor (%detail). Bitmesini bekleyin.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Kurulumun kilidini başka bir çalıştırma tutuyor: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Çalıştırma, var olan ve oturum açmış bir kullanıcı gerektirir.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>php komut satırı programı bulunamadı. migration.ini [AdminSettings] PhpCliPath ayarını onun tam yoluna ayarlayın.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open devre dışı, bu yüzden burada çalıştırma başlatılamaz. Sunucuda ./console exp:migration:migrate --apply komutunu çalıştırın.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Çalıştırmaların klasörüne yazılamıyor: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Çalıştırma başlatıldı ama süreç kimliğini bildirmedi. %detail denetleyin.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Neyin geri alınacağını belirtin.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Çalıştırma başlatılamadı.</translation>
     </message>
 </context>
 </TS>

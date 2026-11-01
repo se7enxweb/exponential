@@ -15140,6 +15140,14 @@ Isaziso: Amaphakheji ngeke akhishwe.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>I-GraphQL API: iphoyinti layo lokugcina, i-schema nendawo yokuzama imibuzo.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Ukufuduka</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Izinguquko zokufakwa ezigcinwe njengamafayela: isimo sazo, ukuqhuba, qhuba futhi ubuyisele emuva.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79653,6 +79661,888 @@ Kuzodingeka nishintshe isigaba sendawo yomsuka ngokusebenzisa umsebenzi wokushin
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Thumela izinguquko (mutations) ku-/api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Ukufuduka</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Isimo asikwazanga ukufundwa: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Amathebula okufuduka awekho okwamanje: ./console exp:upgrade --apply uyawenza.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Ukufuduka okungu-%count kuhlulekile</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Ukuqhuba kuyaqhubeka, kuqalwe ngu-%user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Ukufakwa kukhiyiwe: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Kulindile</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kuhlulekile</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Izintandane</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ukuqhuba kokugcina</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>akukho okwamanje</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Konke ukufuduka</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Ukuqhuba okulingisiwe</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Ukuzama</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Ukufuduka okulindile kuqhutshwe kumsebenzi owabuyiselwa emuva ngemuva kwalokho: akukho okugciniwe. Ngezansi yilokho okushintshwe yilowo nalowo kudathabheyisi.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Lokho ukuqhuba obekungakwenza manje. Akukho okushintshwayo: ukufuduka ngakunye okulindile kubala izinguquko obekungazenza, kanti ukuqhuba kubala lokho obekungakwenza ngaphambili nangemuva.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Lingisa</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Qhuba</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Ukuzama kuhlulekile: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Ukulingisa kudinga i-PostgreSQL noma i-SQLite, okuzinguquko zayo zesakhiwo zingabuyiselwa emuva; kule dathabheyisi uhlelo olungezansi yilokho ukuqhuba obekungakwenza.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Ukufuduka</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Ukufuduka</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Isimo</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Lokho obekungakwenza</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Ukulingisa: %result ku-%ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Akukho kufuduka okwamanje.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Ngaphambi nangemva kokuqhuba</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Isithombe sangaphambili</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>siyathathwa, futhi sibuyiselwa uma ukufuduka kuhluleka</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>kuvaliwe</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Isithombe sangemuva</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>siyathathwa uma ukuqhuba kuphumelele</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Ukufuduka okungu-%total: %pending kulindile, %done kuqedile, %failed kuhlulekile.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Umlando wokufuduka</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Ukuqhuba ngakunye nomsebenzisi wakho, indawo yokusebenza, izithombe kanye nalokho okwenziwe i-commit, kwanikezwa ithegi futhi kwaphushwa. Ukuqhuba okuhlulekile noma okuphazanyisiwe kungaqhutshekwa; ukuqhuba okunesithombe esathathwa ngaphambi kwakho kungabuyiselwa emuva.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Ukuqhuba akukwazanga ukufundwa: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Amathebula okufuduka awekho okwamanje: ./console exp:upgrade --apply uyawenza.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Bonisa</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Konke</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Ukuqhuba</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Kuqalile</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Ngu</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Izithombe</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Inqolobane</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Izenzo</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ngaphambili</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>ngemuva</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ukuphusha: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Qhubeka</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Buyisela emuva</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Akukho kuqhuba kulesi simo.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Kuqalwe lapha</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Ukuqhuba, ukuqhubeka nokubuyisela emuva okuqalwe kulawa makhasi, kanye nombiko walokho ngakunye.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Ini</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Umphumela</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Ukubuyisela emuva</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Ukubuyisela emuva kwe-%target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Ukuqhuba %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Lokho ukuqhuba okwenzile, irekhodi lakho nelogi yakho. Ukuqhuba okuqalwe lapha kuyaqhubeka ngemuva uma leli khasi livaliwe; vula ikhasi futhi ukuze ukulandele.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Qhubeka nalokhu kuqhuba</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Buyisela emuva lokhu kuqhuba</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Irekhodi alikwazanga ukufundwa: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Inqubekelaphambili</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Kuqalwe ngu-%user ngo-%time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Kuhlolwa ikhodi futhi kuthathwa isithombe ngaphambi kokuqhuba</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Kuqhutshwa %id (%index kokungu-%total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done kokungu-%total kuqedile</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Ukufuduka sekuqhutshiwe; kubuyiselwa isithombe uma okukodwa kuhlulekile</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Kuthathwa isithombe ngemva kokuqhuba, kwenziwa i-commit, ithegi kanye nokuphusha</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Kubuyiselwa isithombe</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Ukuqhuba sekuphelile. Kulayishwa umbiko wakho.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Inqubekelaphambili ayikwazanga ukulandelwa. Layisha kabusha ikhasi ukuze ubone ukuthi ukuqhuba kuhamba kanjani.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Leli khasi lilandela ukuqhuba njengoba kuhamba.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Layisha kabusha</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Umbiko</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Isikhathi</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms amamilisekhondi</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Lokho ukuqhuba okuphrinte njengamaphutha</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Irekhodi</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Indawo yokusebenza</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>akukho</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Kuphelile</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>I-commit</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Ithegi</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ukuphusha</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Umlayezo</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Ukufuduka kwalokhu kuqhuba</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Umthombo</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Ilogi yokuqhuba</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Kuboniswa ukuphela kwelogi kuphela.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>kuyaqhuba</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>kuphele ngaphandle kombiko</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>kuphumelele</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>kuhlulekile</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>kwenqatshiwe</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>idathabheyisi ibingafinyeleleki</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>iphutha langaphakathi</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Ukuqhuba kuyaqhubeka</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind kuqalwe ngu-%user ngo-%time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Kulandele</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Ukufakwa kukhiyiwe</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Okunye ukuqhuba kubambe ukhiye (ukuthuthukisa noma ukuqhuba kukhonsoli): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>kuqedile</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>kulindile</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>akudingeki</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>akwaziwa</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>kubuyiselwe emuva</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>kusetshenzisiwe</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>bekungasetshenziswa</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>kuhoxisiwe</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>bekungahoxiswa</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>akuqhutshwanga</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>kulinde okunye</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>ushintsho lwamukelwe</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>ushintsho belungamukelwa</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>kulingisiwe</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Ukufuduka</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Isimo</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Umlando</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Hoxisa %target</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Ukuqhuba kuhoxiswa kuye esithombeni esathathwa ngaphambi kwakho, ukufuduka okukodwa nge-down() yakho. Ukubuyisela isithombe sangaphambilini kungokochwepheshe. Ngakunye kuqhuba ngemuva njengawe, ngemva kwesithombe sesimo samanje.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Lokho okungahoxiswa akukwazanga ukufundwa: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Ukuqhuba</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Ukufuduka okukodwa</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Isithombe sangaphambilini</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Incazelo</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>yebo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>cha</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Isithombe</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Ilebula</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Kuthathwe</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Uhlobo</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Izingxenye ezizobuyiselwa</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Idathabheyisi</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Amafayela okugcina (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Izilungiselelo (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Ukubuyisela idathabheyisi kuyibuyisela esikhathini sesithombe, kuhlanganise nezikhathi zokungena: ungacelwa ukuthi ungene futhi ngemuva kwalokho. Konke okushintshile kusukela lapho kuyalahleka; kuqala kuthathwa isithombe sesimo samanje.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ngiyazi ukuthi lokhu kubuyiselani</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Thayipha futhi i-id yesithombe</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Yebo, kuhoxise</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Khansela</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Ukuqhuba okunesithombe esathathwa ngaphambi kwakho.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Khetha</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Akukho kuqhuba okunesithombe okwamanje.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Ukufuduka okusetshenzisiwe okungazihoxisa (kune-down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Akukho kufuduka okusetshenzisiwe okune-down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Izithombe zangaphambilini (ochwepheshe)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Akukho sithombe okwamanje.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Qhuba ukufuduka</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Ukuqhuba kuqhubeka ngemuva njengo-%user, futhi ikhasi lakho likubonisa njengoba kuhamba. Ngaphambi kokufuduka kokuqala kuthathwa isithombe sokufakwa; uma ukufuduka kuhluleka ukuqhuba kuyama futhi isithombe siyabuyiselwa.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Zama kuqala</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Isimo asikwazanga ukufundwa: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Ukufuduka okulindile</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Kuqhuba ngalolu hlelo. Susa umaki kokukodwa ukuze ukushiye, kanye nalokho okukudingayo, kuze kube ukuqhuba kwakamuva.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Kuqhube</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Kuvula imodi yokulungisa ngesikhathi kuqhuba.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Kushintshwe ngemva kokusetshenziswa</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>La mafayela akuwona lawo asetshenziswa. Ukuqhuba kuyawenqaba ngaphandle uma ushintsho lwamukelwa ngesizathu; awaqhutshwa futhi, isamu yokuhlola entsha iyarekhodwa futhi isizathu sigcinwa kwilogi yokuhlola.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Yamukela izinguquko</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Kungani</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Okuzenzakalelayo yikho okuphephile. Ibhokisi ngalinye lishiya isinyathelo.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Asikho isithombe</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Asikho isithombe ngaphambi nangemva kokuqhuba: ukuhluleka akukwazi ukubuyiselwa ngokuzenzakalelayo.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Akukho kubuyisela</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Ngemva kokuhluleka, shiya ukufakwa njengoba ukuhluleka kukushiye.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Gcina izinguquko ezingenziwanga i-commit</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Qhuba noma izilungiselelo, izandiso noma imiklamo inezinguquko ezingenziwanga i-commit; zingena esithombeni.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Ayikho i-commit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Ungenzi i-commit yefayela lesimo nelogi yokuqhuba (futhi ayikho ithegi noma ukuphusha).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Akukho kuphusha</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Yenza i-commit nethegi, kodwa ungaphushi.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Ayikho ithegi</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Yenza i-commit futhi uphushe, kodwa unganiki ukuqhuba ithegi.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Yebo, qhuba lokhu kufuduka manje</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Akukho kufuduka okulindile.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Buyela esimweni</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Izinguquko zalokhu kufakwa ezibhalwe kanye njengamafayela (okuqukethwe, amakilasi, izindima, izilungiselelo, isakhiwo) futhi zisetshenziswe kukho konke ukufakwa kwesayithi ngohlelo olufanayo. Ukuqhuba kuqala kuthathe isithombe, kusibuyisele uma ukufuduka kuhluleka, futhi kurekhode, kwenze i-commit futhi kuphushe lokho okwenzile.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Qhuba okungu-%count okulindile</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Ukubuka konke</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Kulindile</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kuqedile</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Kuhlulekile</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Akudingeki</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Idathabheyisi</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>imisebenzi: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Ukufuduka kwesayithi kuku-migrations/, okwesandiso kuku-extension/&lt;name&gt;/migrations/. Kuqhuba ngokulandelana kwamagama akho nalokho okudingayo.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Ukuqhuba kokugcina</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Ifayela lishintshile ngemva kokusetshenziswa.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Akukho kufuduka okwamanje. ./console exp:migration:generate --skeleton &lt;name&gt; --apply ubhala okokuqala.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Ukuqhuba kwakamuva</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Konke ukuqhuba</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Akukho kuqhuba okwamanje.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Ukulingisa ukuqhuba kudinga inqubomgomo migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Ukuqhuba kuyaqhubeka: lingisa uma sekuphelile.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ukumisa</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target akusikho ukuqhuba, akusikho ukufuduka futhi akusiso isithombe salokhu kufakwa.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Maka &quot;Yebo, kuhoxise&quot; kuqala.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Ukubuyisela isithombe sangaphambilini kungokochwepheshe: maka &quot;Ngiyazi ukuthi lokhu kubuyiselani&quot;.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Thayipha futhi i-id yesithombe: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Khetha okungenani ingxenye eyodwa ezobuyiselwa.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Lokhu kuqhuba akunaso isithombe esathathwa ngaphambi kwakho: hoxisa ukufuduka kwakho ngakunye, noma ubuyisele isithombe sangaphambilini.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Lokhu kufuduka akukwazi ukuhoxiswa kukodwa: akusetshenzisiwe, noma akunayo i-down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Ifomu alikwazanga ukufundwa.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Khetha ukuqhuba okufanele kuqhubeke.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Maka &quot;Yebo, qhuba lokhu kufuduka manje&quot; kuqala.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Khetha okungenani ukufuduka okukodwa.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Ukufuduka kushintshe ngemva kokusetshenziswa: yamukela ushintsho ngesizathu, noma ubuyisele ifayela.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Nikeza isizathu sokuthi kungani ukufuduka okushintshiwe kwamukelwa.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Isizathu singaba ngamaletha angu-500 kuphela.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Ukuqhuba okuqalwe lapha kusaqhubeka (%detail). Linda kuze kuphele.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Okunye ukuqhuba kubambe ukhiye wokufakwa: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Ukuqhuba kudinga umsebenzisi ongenile okhona.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Ayikho ibhinari yomugqa womyalo we-php etholakele. Setha migration.ini [AdminSettings] PhpCliPath endleleni yayo egcwele.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ivaliwe, ngakho ukuqhuba akukwazi ukuqalwa lapha. Qhuba ./console exp:migration:migrate --apply kuseva.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Ifolda yokuqhuba ayikwazi ukubhalwa: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Ukuqhuba kuqalisiwe kodwa akuzange kubike i-id yenqubo yakho. Hlola %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Shono ukuthi yini okufanele ihoxiswe.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Ukuqhuba akukwazanga ukuqaliswa.</translation>
     </message>
 </context>
 </TS>

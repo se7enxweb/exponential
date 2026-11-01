@@ -7,7 +7,9 @@
  * burst of load on a shared machine falls on both sides of one round, or moves single rounds, which the median leaves
  * out. The times and the ratios are printed, so a change that makes Twig slower shows before it crosses the budget.
  *
- * Twig 3 from Composer, or TWIG_LIBRARY_PATH; without it the guard is skipped. No database and no siteaccess.
+ * Twig 3 from Composer, or TWIG_LIBRARY_PATH; without it the guard is skipped. No database and no siteaccess. With an
+ * active Xdebug (any xdebug.mode but off) it is skipped too: Xdebug slows Twig's many small calls far more than the
+ * compiled .tpl, so the ratio would measure Xdebug. CI runs it in a step of its own with php -d xdebug.mode=off.
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -98,6 +100,13 @@ class expTwigPerformanceGuardTest extends PHPUnit\Framework\TestCase
     {
         if ( !expTwigRenderer::loadLibrary() )
             $this->markTestSkipped( 'Twig 3 is not installed (composer require twig/twig, or TWIG_LIBRARY_PATH)' );
+        $xdebugModes = self::xdebugModes();
+        if ( $xdebugModes )
+            $this->markTestSkipped( 'Xdebug is active (xdebug.mode=' . implode( ',', $xdebugModes ) . '): it adds a cost to every PHP '
+                                  . 'function call, and a Twig render makes several times as many calls as a .tpl render, so the ratio '
+                                  . 'measures Xdebug, not Twig (PHP 8.5, 2026-11-01: 1.2-1.4 with xdebug.mode=off, 2.1 and more with '
+                                  . 'xdebug.mode=coverage, the mode of every CI leg). Run it '
+                                  . 'with php -d xdebug.mode=off, as the PHPUnit workflow does in its own step.' );
         $converter = new expTwigConverter( eZTemplate::factory() );
         $variables = self::variables();
         $report = array();
@@ -121,6 +130,21 @@ class expTwigPerformanceGuardTest extends PHPUnit\Framework\TestCase
             $this->assertLessThanOrEqual( self::BUDGET, $best, "$name: a .twig render takes $best times its .tpl (median of the rounds, lower of two series; budget " . self::BUDGET . ")\n" . implode( "\n", $report ) );
         }
         fwrite( STDERR, "\n" . implode( "\n", $report ) . "\n" );
+    }
+
+    /**
+     * The Xdebug modes that instrument code: none without Xdebug or with xdebug.mode=off.
+     *
+     * @return string[]
+     */
+    private static function xdebugModes()
+    {
+        if ( !extension_loaded( 'xdebug' ) )
+            return array();
+        if ( function_exists( 'xdebug_info' ) )
+            return array_values( (array)xdebug_info( 'mode' ) );
+        $mode = (string)ini_get( 'xdebug.mode' );
+        return $mode === '' || $mode === 'off' ? array() : explode( ',', $mode );
     }
 
     /**

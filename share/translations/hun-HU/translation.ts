@@ -15081,6 +15081,14 @@ Megjegyzés: a csomagok telepítése nem lesz visszavonva.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>A GraphQL API: a végpontja, a séma és egy kísérleti felület lekérdezések kipróbálásához.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrációk</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>A telepítés fájlokban tárolt módosításai: állapotuk, a futtatások, futtatás és visszavonás.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79685,6 +79693,888 @@ A csomópont osztályát a csere funkcióval kell módosítania.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>A mutációkat a /api/graphql címre küldje.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrációk</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Az állapot nem olvasható: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>A migrációk táblái még nem léteznek: a ./console exp:upgrade --apply létrehozza őket.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migráció sikertelen</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Egy futtatás folyamatban van, indította: %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>A telepítés zárolva van: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Függőben</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Sikertelen</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Árvák</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Utolsó futtatás</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>még nincs</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Összes migráció</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Szimulált futtatás</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Próbafuttatás</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>A függő migrációk egy tranzakcióban futottak, amelyet utána visszagörgettünk: semmi sem maradt meg. Alább látható, mit változtatott mindegyik az adatbázisban.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Mit tenne most egy futtatás. Semmi sem változik: minden függő migráció felsorolja a módosításait, a futtatás pedig azt, mit tenne előtte és utána.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Szimulálás</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Futtatás</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>A próbafuttatás sikertelen: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>A szimulációhoz PostgreSQL vagy SQLite kell, amelyeknél a sémamódosítások visszagörgethetők; ezen az adatbázison az alábbi terv mutatja, mit tenne egy futtatás.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>A migrációk</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migráció</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Mit tenne</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Szimuláció: %result, %ms ezredmásodperc alatt</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Még nincs migráció.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>A futtatás előtt és után</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Pillanatkép előtte</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>elkészül, és visszaállítódik, ha egy migráció sikertelen</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>ki</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Pillanatkép utána</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>elkészül, ha a futtatás sikeres volt</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migráció: %pending függőben, %done kész, %failed sikertelen.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Migrációs előzmények</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Minden futtatás a felhasználójával, környezetével, pillanatképeivel, és azzal, amit véglegesítettek, címkéztek és feltöltöttek. Egy sikertelen vagy megszakadt futtatás folytatható; egy futtatás, amely előtt pillanatkép készült, visszavonható.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>A futtatások nem olvashatók: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>A migrációk táblái még nem léteznek: a ./console exp:upgrade --apply létrehozza őket.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Megjelenítés</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Mind</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Futtatások</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Indítva</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Indította</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Pillanatképek</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Tároló</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Műveletek</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>előtte</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>utána</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>feltöltés: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Folytatás</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Visszavonás</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Nincs futtatás ebben az állapotban.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Itt indítva</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Ezeken az oldalakon indított futtatások, folytatások és visszavonások, mindegyik jelentésével.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Mi</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Eredmény</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Visszavonás</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target visszavonása</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>%run futtatás</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Mit tett a futtatás, a bejegyzése és a naplója. Az itt indított futtatás a háttérben folytatódik, ha bezárja ezt az oldalt; nyissa meg újra az oldalt a követéséhez.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Futtatás folytatása</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Futtatás visszavonása</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>A bejegyzés nem olvasható: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Haladás</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Indította: %user, időpont: %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>A kód ellenőrzése és pillanatkép készítése a futtatás előtt</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id fut (%index / %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done / %total kész</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>A migrációk lefutottak; a pillanatkép visszaállítása, ha valamelyik sikertelen volt</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Pillanatkép a futtatás után, véglegesítés, címkézés és feltöltés</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>A pillanatkép visszaállítása</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>A futtatás véget ért. A jelentés betöltése.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>A haladás nem követhető. Töltse újra az oldalt, hogy lássa, hol tart a futtatás.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Ez az oldal menet közben követi a futtatást.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Újratöltés</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Jelentés</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Időtartam</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms ezredmásodperc</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Amit a futtatás hibaként kiírt</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Bejegyzés</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Környezet</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>nincs</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Befejezve</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Véglegesítés</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Címke</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Feltöltés</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Üzenet</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>A futtatás migrációi</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Forrás</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Futtatási napló</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Csak a napló vége látható.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>fut</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>jelentés nélkül ért véget</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>sikeres</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>sikertelen</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>elutasítva</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>az adatbázis nem volt elérhető</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>belső hiba</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Egy futtatás folyamatban van</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind, indította: %user, időpont: %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Követés</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>A telepítés zárolva van</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Egy másik futtatás tartja a zárat (egy frissítés vagy egy konzolos futtatás): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>kész</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>függőben</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>nem szükséges</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ismeretlen</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>visszagörgetve</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>alkalmazva</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>alkalmazva lenne</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>visszavonva</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>visszavonva lenne</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>nem futott</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>egy másikra vár</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>módosítás elfogadva</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>a módosítás elfogadva lenne</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>szimulálva</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migrációk</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Állapot</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Előzmények</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target visszavonása</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Egy futtatás az előtte készült pillanatképre vonható vissza, egy migráció a saját down() metódusával. Egy korábbi pillanatkép visszaállítása szakértőknek való. Mindegyik a háttérben fut az Ön nevében, a jelenlegi állapotról készült pillanatkép után.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Nem olvasható, mi vonható vissza: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Egy futtatás</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Egy migráció</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Egy korábbi pillanatkép</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Leírás</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>igen</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nem</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Pillanatkép</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Megnevezés</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Készült</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Fajta</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Visszaállítandó részek</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Az adatbázis</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>A tárolt fájlok (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>A beállítások (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Az adatbázis visszaállítása a pillanatkép időpontjára állítja vissza, a munkamenetekkel együtt: utána lehet, hogy újra be kell jelentkeznie. Minden azóta történt módosítás elvész; előbb pillanatkép készül a jelenlegi állapotról.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Tudom, mit állít vissza</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Írja be újra a pillanatkép azonosítóját</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Igen, visszavonom</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Mégse</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>A futtatások, amelyek előtt pillanatkép készült.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Kiválasztás</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Még nincs pillanatképpel rendelkező futtatás.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Az alkalmazott migrációk, amelyek visszavonhatják magukat (van down() metódusuk).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Egyik alkalmazott migrációnak sincs down() metódusa.</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Korábbi pillanatképek (szakértőknek)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Még nincs pillanatkép.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>A migrációk futtatása</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>A futtatás a háttérben zajlik %user nevében, és az oldala menet közben mutatja. Az első migráció előtt pillanatkép készül a telepítésről; ha egy migráció sikertelen, a futtatás leáll, és a pillanatkép visszaállítódik.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Előbb próbafuttatás</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Az állapot nem olvasható: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Függő migrációk</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Ebben a sorrendben futnak. Vegye ki a pipát egy migráció mellől, hogy azt és a tőle függőket egy későbbi futtatásra hagyja.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Futtatás</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Futás közben bekapcsolja a karbantartási módot.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Alkalmazásuk után módosultak</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Ezek a fájlok nem azok, amelyeket alkalmaztak. A futtatás elutasítja őket, hacsak a módosítást indoklással el nem fogadják; nem futnak újra, az új ellenőrzőösszeg rögzítésre kerül, az indoklás pedig az auditnaplóba.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>A módosítások elfogadása</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Miért</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Az alapértelmezések a biztonságosak. Minden jelölőnégyzet kihagy egy lépést.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Nincs pillanatkép</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Nincs pillanatkép a futtatás előtt és után: hiba esetén nincs automatikus visszaállítás.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Nincs visszaállítás</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Hiba után a telepítés úgy marad, ahogy a hiba hagyta.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Nem véglegesített módosítások megtartása</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Futtatás akkor is, ha a beállításokban, bővítményekben vagy dizájnokban nem véglegesített módosítások vannak; ezek bekerülnek a pillanatképbe.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Nincs véglegesítés</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Az állapotfájl és a futtatási napló ne legyen véglegesítve (címke és feltöltés sem).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Nincs feltöltés</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Véglegesítés és címkézés, de feltöltés nélkül.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Nincs címke</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Véglegesítés és feltöltés, de a futtatás címkézése nélkül.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Igen, futtassa most ezeket a migrációkat</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Nincs függő migráció.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Vissza az állapothoz</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>A telepítés módosításai, egyszer fájlokként megírva (tartalom, osztályok, szerepkörök, beállítások, séma), és a webhely minden telepítésén ugyanabban a sorrendben alkalmazva. Egy futtatás először pillanatképet készít, visszaállítja, ha egy migráció sikertelen, majd rögzíti, véglegesíti és feltölti, amit tett.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count függő futtatása</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Áttekintés</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Függőben</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Kész</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Sikertelen</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Nem szükséges</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Adatbázis</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>tranzakciók: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>A webhely migrációi a migrations/ mappában vannak, egy bővítményéi az extension/&lt;name&gt;/migrations/ mappában. A nevük sorrendjében és függőségeik szerint futnak.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Utolsó futtatás</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>A fájl az alkalmazása után módosult.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Még nincs migráció. A ./console exp:migration:generate --skeleton &lt;name&gt; --apply megírja az elsőt.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>A legutóbbi futtatások</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Összes futtatás</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Még nincs futtatás.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>A futtatás szimulálásához a migration/run házirend szükséges.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Egy futtatás folyamatban van: szimuláljon, ha véget ért.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target nem futtatása, nem migrációja és nem pillanatképe ennek a telepítésnek.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Előbb jelölje be: „Igen, visszavonom”.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Egy korábbi pillanatkép visszaállítása szakértőknek való: jelölje be: „Tudom, mit állít vissza”.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Írja be újra a pillanatkép azonosítóját: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Válasszon legalább egy visszaállítandó részt.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Ehhez a futtatáshoz nem készült előtte pillanatkép: vonja vissza a migrációit egyenként, vagy állítson vissza egy korábbi pillanatképet.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Ez a migráció nem vonhatja vissza önmagát: nincs alkalmazva, vagy nincs down() metódusa.</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Az űrlap nem olvasható.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Válassza ki a folytatandó futtatást.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Előbb jelölje be: „Igen, futtassa most ezeket a migrációkat”.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Válasszon legalább egy migrációt.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Egy migráció az alkalmazása után módosult: fogadja el a módosítást indoklással, vagy állítsa vissza a fájlt.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Adja meg, miért fogadja el a módosult migrációkat.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Az indoklás legfeljebb 500 karakter lehet.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Egy itt indított futtatás még folyamatban van (%detail). Várja meg, amíg véget ér.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Egy másik futtatás tartja a telepítés zárát: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>A futtatáshoz létező, bejelentkezett felhasználó szükséges.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Nem található php parancssori program. Állítsa a migration.ini [AdminSettings] PhpCliPath értékét a teljes elérési útjára.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>A proc_open le van tiltva, ezért itt nem indítható futtatás. Futtassa a ./console exp:migration:migrate --apply parancsot a szerveren.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>A futtatások mappája nem írható: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>A futtatás elindult, de nem jelentette a folyamatazonosítóját. Ellenőrizze: %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Adja meg, mit kell visszavonni.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>A futtatás nem indítható el.</translation>
     </message>
 </context>
 </TS>

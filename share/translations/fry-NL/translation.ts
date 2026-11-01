@@ -15142,6 +15142,14 @@ Let op: de pakketten wurde net de-ynstallearre.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>De GraphQL-API: it einpunt, it skema en in boarterstún om query's út te probearjen.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraasjes</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Wizigingen oan de ynstallaasje bewarre as triemmen: harren steat, de útfieringen, útfiere en weromdraaie.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Jo moatte de klasse fan it knooppunt wizigje mei de wikselfunksje.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Stjoer mutaasjes nei /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraasjes</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>De steat koe net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>De tabellen fan de migraasjes besteane noch net: ./console exp:upgrade --apply makket se oan.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count migraasjes mislearre</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Der rint in útfiering, begûn troch %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>De ynstallaasje is beskoattele: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yn ôfwachting</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislearre</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Wezen</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Lêste útfiering</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>noch gjin</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Alle migraasjes</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Simulearre útfiering</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Proefútfiering</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>De migraasjes yn ôfwachting rûnen yn in transaksje dy&apos;t dêrnei weromdraaid waard: neat is bewarre. Hjirûnder stiet wat elk yn de databank feroare hat.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Wat in útfiering no dwaan soe. Der wurdt neat feroare: elke migraasje yn ôfwachting lit de wizigingen sjen dy&apos;t se meitsje soe, en de útfiering wat dy foar en nei dwaan soe.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simulearje</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Útfiere</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>De proefútfiering is mislearre: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>In simulaasje hat PostgreSQL of SQLite nedich, dêr&apos;t skemawizigingen weromdraaid wurde kinne; op dizze databank lit it plan hjirûnder sjen wat in útfiering dwaan soe.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>De migraasjes</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migraasje</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Steat</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Wat se dwaan soe</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulaasje: %result yn %ms millisek.</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Noch gjin migraasje.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Foar en nei de útfiering</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Momintopname foarôf</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>makke, en weromset as in migraasje mislearret</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>út</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Momintopname neitiid</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>makke as de útfiering slagge is</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total migraasjes: %pending yn ôfwachting, %done klear, %failed mislearre.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Skiednis fan de migraasjes</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Elke útfiering mei brûker, omjouwing, momintopnamen en wat fêstlein, merkt en ferstjoerd waard. In mislearre of ûnderbrutsen útfiering kin fuortset wurde; in útfiering mei in momintopname foarôf kin weromnommen wurde.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>De útfieringen koene net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>De tabellen fan de migraasjes besteane noch net: ./console exp:upgrade --apply makket se oan.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Sjen litte</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Útfieringen</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Begûn</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Troch</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Momintopnamen</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Repositoarium</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aksjes</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>foarôf</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>neitiid</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>ferstjoere: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Fuortsette</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Weromnimme</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Gjin útfiering yn dizze steat.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Hjir begûn</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Op dizze siden begûne útfieringen, fuortsettingen en weromnimmingen, mei it rapport fan elk.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Wat</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultaat</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Weromnimming</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Weromnimming fan %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Útfiering %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Wat de útfiering dien hat, de registraasje en it lochboek. In hjir begûne útfiering giet op de eftergrûn troch as dizze side ticht giet; iepenje de side opnij om him te folgjen.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Dizze útfiering fuortsette</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Dizze útfiering weromnimme</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>De registraasje koe net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fuortgong</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Begûn troch %user om %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>De koade wurdt kontrolearre en der wurdt in momintopname makke foar de útfiering</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id rint (%index fan %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done fan %total klear</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>De migraasjes binne rûn; de momintopname wurdt weromset as der ien mislearre</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Momintopname nei de útfiering, fêstlizze, merke en ferstjoere</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>De momintopname wurdt weromset</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>De útfiering is ôfrûn. It rapport wurdt laden.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>De fuortgong koe net folge wurde. Laad de side opnij om te sjen hoe fier de útfiering is.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Dizze side folget de útfiering wylst er rint.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Opnij lade</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapport</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Doer</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms millisek.</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Wat de útfiering as flaters útjûn hat</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Registraasje</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Omjouwing</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>gjin</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ôfrûn</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Fêstlizzing</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Merk</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Ferstjoering</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Berjocht</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migraasjes fan dizze útfiering</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Boarne</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Lochboek fan de útfiering</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Allinnich de ein fan it lochboek wurdt toand.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>rint</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>sûnder rapport ôfrûn</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>slagge</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>mislearre</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>wegere</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>de databank wie net te berikken</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>ynterne flater</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Der rint in útfiering</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind begûn troch %user om %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Folgje</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>De ynstallaasje is beskoattele</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>In oare útfiering hâldt it slot (in fernijing of in útfiering op de konsole): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>klear</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>yn ôfwachting</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>net nedich</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>ûnbekend</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>weromdraaid</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>tapast</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>soe tapast wurde</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>weromnommen</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>soe weromnommen wurde</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>net rûn</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>wachtet op in oare</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>wiziging akseptearre</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>wiziging soe akseptearre wurde</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simulearre</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migraasjes</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Steat</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Skiednis</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target weromnimme</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>In útfiering wurdt weromset nei de momintopname dy&apos;t der foar makke is, ien migraasje mei har down(). In eardere momintopname weromsette is foar saakkundigen. Elk rint op de eftergrûn as jo, nei in momintopname fan de hjoeddeiske steat.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Wat weromnommen wurde kin, koe net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>In útfiering</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Ien migraasje</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>In eardere momintopname</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beskriuwing</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>ja</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Momintopname</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Oantsjutting</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Makke</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Soarte</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Dielen om werom te setten</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>De databank</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>De bewarre triemmen (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>De ynstellingen (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Weromsetten bringt de databank werom nei it momint fan de momintopname, sesjes ynbegrepen: dêrnei moatte jo jo miskien opnij oanmelde. Alles wat sûnt dy tiid feroare is, giet ferlern; earst wurdt in momintopname fan de hjoeddeiske steat makke.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ik wit wat dit weromset</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Typ de identifikaasje fan de momintopname nochris</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Ja, weromnimme</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Annulearje</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>De útfieringen mei in momintopname foarôf.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Kieze</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Noch gjin útfiering mei momintopname.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>De tapaste migraasjes dy&apos;t harsels weromnimme kinne (se hawwe in down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Gjin inkelde tapaste migraasje hat in down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Eardere momintopnamen (saakkundigen)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Noch gjin momintopname.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>De migraasjes útfiere</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>De útfiering rint op de eftergrûn as %user, en de side lit him ûnderweis sjen. Foar de earste migraasje wurdt in momintopname fan de ynstallaasje makke; mislearret in migraasje, dan hâldt de útfiering op en wurdt de momintopname weromset.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Earst in proefútfiering</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>De steat koe net lêzen wurde: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Migraasjes yn ôfwachting</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Se rinne yn dizze folchoarder. Helje it fakje by ien leech om dy en de migraasjes dy&apos;t derfan ôfhingje oer te litten foar in lettere útfiering.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Útfiere</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Set de ûnderhâldsmodus oan wylst er rint.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Feroare nei it tapassen</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Dizze triemmen binne net dejingen dy&apos;t tapast binne. In útfiering wegeret se, útsein as de wiziging mei in reden akseptearre wurdt; se rinne net opnij, de nije kontrolesom wurdt fêstlein en de reden yn it auditlochboek bewarre.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>De wizigingen akseptearje</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Wêrom</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>De standertynstellingen binne de feilige. Elk fakje lit in stap fuort.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Gjin momintopname</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Gjin momintopname foar en nei de útfiering: in mislearring kin net automatysk weromset wurde.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Net weromsette</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Nei in mislearring de ynstallaasje litte sa&apos;t de mislearring him efterliet.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Net fêstleine wizigingen hâlde</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Ek útfiere as ynstellingen, útwreidingen of ûntwerpen net fêstleine wizigingen hawwe; dy komme yn de momintopname.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Net fêstlizze</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>De steattriem en it lochboek fan de útfiering net fêstlizze (ek gjin merk en net ferstjoere).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Net ferstjoere</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Fêstlizze en merke, mar net ferstjoere.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Gjin merk</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Fêstlizze en ferstjoere, mar de útfiering net merke.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Ja, dizze migraasjes no útfiere</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Der is gjin migraasje yn ôfwachting.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Werom nei de steat</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Wizigingen oan dizze ynstallaasje, ien kear as triemmen skreaun (ynhâld, klassen, rollen, ynstellingen, skema) en op elke ynstallaasje fan de side yn deselde folchoarder tapast. In útfiering makket earst in momintopname, set dy werom as in migraasje mislearret, en registrearret, leit fêst en ferstjoert wat er dien hat.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count yn ôfwachting útfiere</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Oersjoch</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Yn ôfwachting</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Klear</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Mislearre</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Net nedich</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Databank</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>transaksjes: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Migraasjes fan de side steane yn migrations/, dy fan in útwreiding yn extension/&lt;name&gt;/migrations/. Se rinne yn de folchoarder fan harren nammen en ôfhinklikheden.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Lêste útfiering</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>De triem is nei it tapassen feroare.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Noch gjin migraasje. ./console exp:migration:generate --skeleton &lt;name&gt; --apply skriuwt de earste.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>De lêste útfieringen</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Alle útfieringen</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Noch gjin útfiering.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>In útfiering simulearje hat it belied migration/run nedich.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Der rint in útfiering: simulearje as dy ôfrûn is.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ynstelle</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target is gjin útfiering, gjin migraasje en gjin momintopname fan dizze ynstallaasje.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Set earst in finkje by „Ja, weromnimme”.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>In eardere momintopname weromsette is foar saakkundigen: set in finkje by „Ik wit wat dit weromset”.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Typ de identifikaasje fan de momintopname nochris: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Kies op syn minst ien diel om werom te setten.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Dizze útfiering hat gjin momintopname foarôf: nim de migraasjes ien foar ien werom, of set in eardere momintopname werom.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Dizze migraasje kin harsels net weromnimme: se is net tapast, of se hat gjin down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>It formulier koe net lêzen wurde.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Kies de útfiering dy&apos;t fuortset wurde moat.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Set earst in finkje by „Ja, dizze migraasjes no útfiere”.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Kies op syn minst ien migraasje.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>In migraasje is nei it tapassen feroare: akseptearje de wiziging mei in reden, of set de triem werom.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Jou oan wêrom&apos;t de feroare migraasjes akseptearre wurde.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>De reden is op syn heechst 500 tekens.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>In hjir begûne útfiering rint noch (%detail). Wachtsje oant er ôfrûn is.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>In oare útfiering hâldt it slot fan de ynstallaasje: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>De útfiering hat in oanmelde brûker nedich dy&apos;t bestiet.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Der is gjin php-kommandorigelprogramma fûn. Set migration.ini [AdminSettings] PhpCliPath op it folsleine paad dêrfan.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open is útskeakele, dus hjir kin gjin útfiering begjinne. Fier ./console exp:migration:migrate --apply út op de tsjinner.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Yn de map fan de útfieringen kin net skreaun wurde: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>De útfiering is begûn, mar hat syn proses-ID net trochjûn. Kontrolearje %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Jou oan wat weromnommen wurde moat.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>De útfiering koe net begjinne.</translation>
     </message>
 </context>
 </TS>

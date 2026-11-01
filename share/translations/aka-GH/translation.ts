@@ -15142,6 +15142,14 @@ Makyerɛ: Wɔrenyi boa no afi mu a wɔde ahyɛ mu.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>GraphQL API no: n'awieeɛ kwan, schema no ne agorɔbea a wobɛsɔ abisadeɛ ahwɛ.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Atutukɔ</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Nsakraeɛ a wɔde ayɛ nhyehyɛeɛ no a wɔakora sɛ fael: wɔn gyinabea, dwumadie ahodoɔ, yɛ ne san fa kɔ akyi.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Esɛ sɛ wosesa nkɔmmɔbea no kuo de swap dwumadie no di dwuma.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Soma mutations kɔ /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Atutukɔ</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Wɔantumi ankenkan gyinabea no: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Atutukɔ no ntoboa nni hɔ da: ./console exp:upgrade --apply yɛ wɔn.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>Atutukɔ %count anyɛ yiye</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>Dwumadie bi rekɔ so, %user na ɔhyɛɛ aseɛ</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>Wɔato nhyehyɛeɛ no mu: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ɛretwɛn</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Nnyanfoɔ</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Dwumadie a ɛtwa toɔ</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>biribiara nni hɔ da</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>Atutukɔ nyinaa</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Dwumadie a wɔsuasuaeɛ</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Sɔhwɛ dwumadie</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Atutukɔ a ɛretwɛn no yɛɛ adwuma wɔ nnwumadie bi mu a wɔsan de kɔɔ akyi akyiri yi: wɔankora biribiara. Ase ha na deɛ emu biara sesaa wɔ data korabea no mu wɔ.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Deɛ dwumadie bi bɛyɛ seesei. Wɔnsesa hwee: tutukɔ biara a ɛretwɛn kyerɛw nsakraeɛ a ɛbɛyɛ, na dwumadie no kyerɛw deɛ ɛbɛyɛ ansa ne akyi.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Suasua</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Yɛ</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Sɔhwɛ dwumadie no annyɛ yiye: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Nsuasuaeɛ hia PostgreSQL anaa SQLite, a wɔtumi san de wɔn nhyehyɛeɛ nsakraeɛ kɔ akyi; wɔ data korabea yi so, nhyehyɛeɛ a ɛwɔ ase ha no ne deɛ dwumadie bɛyɛ.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>Atutukɔ no</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Tutukɔ</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Gyinabea</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Deɛ ɛbɛyɛ</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Nsuasuaeɛ: %result wɔ milisɛkɛn %ms mu</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Tutukɔ biara nni hɔ da.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Ansa na dwumadie no ne ne akyi</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Mfonini a edi kan</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>wɔtwa, na wɔsan de ba sɛ tutukɔ bi annyɛ yiye a</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>adum</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Mfonini a ɛdi akyi</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>wɔtwa bere a dwumadie no yɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>Atutukɔ %total: %pending retwɛn, %done awie, %failed anyɛ yiye.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Atutukɔ abakɔsɛm</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>Dwumadie biara ne ne dwumadifoɔ, atenaeɛ, mfonini ne deɛ wɔkoraa, wɔde agyiraeɛ hyɛɛ ho na wɔpiaeɛ. Dwumadie a annyɛ yiye anaa wɔtwaa mu no, wobɛtumi atoa so; dwumadie a wɔtwaa ne mfonini ansa no, wobɛtumi asan de akɔ akyi.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>Wɔantumi ankenkan dwumadie ahodoɔ no: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>Atutukɔ no ntoboa nni hɔ da: ./console exp:upgrade --apply yɛ wɔn.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Kyerɛ</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Nyinaa</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Dwumadie ahodoɔ</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Ahyɛaseɛ</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Obi a ɔyɛeɛ</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Mfonini ahodoɔ</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Akoraeɛ</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Nneyɛeɛ</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>ansa</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>akyi</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>pia: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Toa so</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>San fa kɔ akyi</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Dwumadie biara nni gyinabea yi mu.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Wɔhyɛɛ aseɛ wɔ ha</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Dwumadie, ntoasoɔ ne nsan-kɔ-akyi a wɔhyɛɛ aseɛ wɔ nkrataafa yi so, ne emu biara amanneɛbɔ.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Deɛn</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Nsonoeɛ</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Nsan-kɔ-akyi</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>%target nsan-kɔ-akyi</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Dwumadie %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Deɛ dwumadie no yɛeɛ, ne nkrataa ne ne nsɛm kyerɛwtohɔ. Dwumadie a wɔhyɛɛ aseɛ wɔ ha kɔ so wɔ akyi bere a wɔato krataafa yi mu; bue krataafa no bio na di akyi.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Toa dwumadie yi so</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>San fa dwumadie yi kɔ akyi</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Wɔantumi ankenkan nkrataa no: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Anim kɔ</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>%user na ɔhyɛɛ aseɛ wɔ %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>Ɛrehwɛ koodu no na ɛretwa mfonini ansa na dwumadie no</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>Ɛreyɛ %id (%index wɔ %total mu)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done wɔ %total mu awie</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>Atutukɔ no ayɛ adwuma; ɛresan de mfonini no aba sɛ baako annyɛ yiye a</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Ɛretwa mfonini wɔ dwumadie no akyi, ɛrekora, ɛde agyiraeɛ rehyɛ ho na ɛrepia</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>Ɛresan de mfonini no aba</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>Dwumadie no aba awieeɛ. Ɛreload ne amanneɛbɔ.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>Wɔantumi anni anim kɔ no akyi. San load krataafa no na hwɛ sɛdeɛ dwumadie no rekɔ so.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Krataafa yi di dwumadie no akyi bere a ɛrekɔ so.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>San load</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Amanneɛbɔ</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Bere tenten</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>milisɛkɛn %ms</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Deɛ dwumadie no kyerɛɛ sɛ mfomsoɔ</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Nkrataa</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Atenaeɛ</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>hwee</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Ɛbaa awieeɛ</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Kora</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Agyiraeɛ</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Pia</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Nkra</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Dwumadie yi atutukɔ</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Deɛ ɛfiri hɔ</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Dwumadie nsɛm kyerɛwtohɔ</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Nsɛm kyerɛwtohɔ no awieeɛ nko ara na wɔkyerɛ.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>ɛrekɔ so</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ɛbaa awieeɛ a amanneɛbɔ nni hɔ</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>ɛyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>wɔampene</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>wɔantumi annu data korabea no ho</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>mfomsoɔ a ɛwɔ mu</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>Dwumadie bi rekɔ so</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%user na ɔhyɛɛ %kind aseɛ wɔ %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Di akyi</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>Wɔato nhyehyɛeɛ no mu</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>Dwumadie foforɔ kura nsɔano no (nkɔsoɔ anaa dwumadie wɔ konsol so): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>awie</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>ɛretwɛn</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>ɛho nhia</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>wonnim</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>wɔasan de akɔ akyi</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>wɔde adi dwuma</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>wɔde bɛdi dwuma</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>wɔagye asan</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>wɔbɛgye asan</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>wɔnyɛeɛ</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>ɛretwɛn foforɔ</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>wɔagye nsakraeɛ no atom</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>wɔbɛgye nsakraeɛ no atom</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>wɔasuasua</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Atutukɔ</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Gyinabea</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Abakɔsɛm</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>Gye %target san</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>Wɔde dwumadie san kɔ mfonini a wɔtwaa ansa na ɛreyɛ no so, tutukɔ baako nso ne ne down(). Mfonini a edi kan bi a wɔsan de ba yɛ animdefoɔ dea. Emu biara yɛ adwuma wɔ akyi wɔ wo din mu, wɔ seesei gyinabea mfonini akyi.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Wɔantumi ankenkan deɛ wobɛtumi agye asan: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>Dwumadie bi</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Tutukɔ baako</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Mfonini a edi kan bi</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Nkyerɛkyerɛmu</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>aane</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>daabi</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Mfonini</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Ntamadeɛ</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Wɔtwaeɛ</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Ɛsu</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Afã a wɔbɛsan de aba</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>Data korabea no</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>Fael a wɔakora (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>Nhyehyɛeɛ (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>Sɛ wosan de data korabea no ba a, ɛde no kɔ mfonini no bere so, nkɔmmɔbɔ bere ka ho: ebia wɔbɛka akyerɛ wo sɛ wo nwura mu bio akyiri yi. Biribiara a wɔasesa firi saa bere no yera; wɔdi kan twa seesei gyinabea mfonini.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Menim deɛ yei san de ba</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Kyerɛw mfonini no id bio</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Aane, gye san</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Gyae</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>Dwumadie a wɔtwaa wɔn mfonini ansa no.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Paw</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Dwumadie biara a ɛwɔ mfonini nni hɔ da.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Atutukɔ a wɔde adi dwuma a wɔtumi gye wɔn ho san (wɔwɔ down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Tutukɔ biara a wɔde adi dwuma nni down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Mfonini a edi kan (animdefoɔ)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Mfonini biara nni hɔ da.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>Yɛ atutukɔ no</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>Dwumadie no kɔ so wɔ akyi sɛ %user, na ne krataafa kyerɛ no bere a ɛrekɔ so. Ansa na tutukɔ a edi kan no, wɔtwa nhyehyɛeɛ no mfonini; sɛ tutukɔ bi annyɛ yiye a, dwumadie no gyina na wɔsan de mfonini no ba.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Di kan yɛ sɔhwɛ dwumadie</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>Wɔantumi ankenkan gyinabea no: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Atutukɔ a ɛretwɛn</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Wɔyɛ adwuma wɔ saa nhyehyɛeɛ yi mu. Yi baako agyiraeɛ firi so na gya no ne deɛ ɛhia no ma dwumadie a ɛdi akyi.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Yɛ no</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Ɛsɔ nsiesieɛ kwan bere a ɛreyɛ adwuma.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Wɔsesaa wɔn wɔ bere a wɔde wɔn dii dwuma akyi</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Saa fael yi nyɛ deɛ wɔde dii dwuma no. Dwumadie mpene so gye sɛ wɔde nkyerɛkyerɛmu gye nsakraeɛ no tom; wɔnyɛ wɔn bio, wɔkyerɛw checksum foforɔ no na wɔkora nkyerɛkyerɛmu no wɔ nhwehwɛmu nsɛm kyerɛwtohɔ mu.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>Gye nsakraeɛ no tom</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Adɛn</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>Deɛ wɔahyɛ ato hɔ no na ɛyɛ ahobammɔ. Adaka biara gya anammɔn baako.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Mfonini biara nni hɔ</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Mfonini biara nni hɔ ansa ne dwumadie no akyi: wɔrentumi nsan mfa mfomsoɔ ho nsɛm mmra ankasa.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Wɔnsan mfa mma</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>Mfomsoɔ akyi, gya nhyehyɛeɛ no sɛdeɛ mfomsoɔ no gyaa no.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Kora nsakraeɛ a wɔnkoraa no</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Yɛ adwuma ɛmfa ho sɛ nhyehyɛeɛ, ntrɛmu anaa nhyehyɛ-mfonini wɔ nsakraeɛ a wɔnkoraa; ɛkɔ mfonini no mu.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Nkora</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>Nkora gyinabea fael no ne dwumadie nsɛm kyerɛwtohɔ no (agyiraeɛ ne mpiaeɛ nso nni hɔ).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Mpia</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Kora na de agyiraeɛ hyɛ ho, nanso mpia.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Agyiraeɛ nni hɔ</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Kora na pia, nanso mfa agyiraeɛ nhyɛ dwumadie no ho.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Aane, yɛ atutukɔ yi seesei</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Tutukɔ biara nretwɛn.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>San kɔ gyinabea no so</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Nsakraeɛ a wɔde ayɛ nhyehyɛeɛ yi a wɔakyerɛw prɛko sɛ fael (nsɛm, nkyekyɛmu, dwumadie, nhyehyɛeɛ, schema) na wɔde di dwuma wɔ site no nhyehyɛeɛ biara so wɔ nhyehyɛeɛ korɔ mu. Dwumadie di kan twa mfonini, san de ba sɛ tutukɔ bi annyɛ yiye a, na ɛkyerɛw, kora na pia deɛ ɛyɛeɛ.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>Yɛ %count a ɛretwɛn</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Nsɛm tiawa</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Ɛretwɛn</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Awie</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Ɛnyɛɛ yiye</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Ɛho nhia</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Data korabea</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>nnwumadie: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Site no atutukɔ wɔ migrations/ mu, ntrɛmu bi dea wɔ extension/&lt;name&gt;/migrations/ mu. Wɔyɛ adwuma wɔ wɔn din nhyehyɛeɛ ne deɛ ɛhia wɔn mu.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Dwumadie a ɛtwa toɔ</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>Fael no sesaa wɔ bere a wɔde dii dwuma akyi.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Tutukɔ biara nni hɔ da. ./console exp:migration:generate --skeleton &lt;name&gt; --apply kyerɛw deɛ edi kan no.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Dwumadie a ɛyɛ foforɔ</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>Dwumadie biara</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Dwumadie biara nni hɔ da.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Dwumadie nsuasuaeɛ hia migration/run mmara no.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>Dwumadie bi rekɔ so: suasua bere a aba awieeɛ.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Ahosiesie</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target nyɛ nhyehyɛeɛ yi dwumadie, tutukɔ anaa mfonini.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Di kan hyɛ &quot;Aane, gye san&quot; agyiraeɛ.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Mfonini a edi kan a wɔsan de ba yɛ animdefoɔ dea: hyɛ &quot;Menim deɛ yei san de ba&quot; agyiraeɛ.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Kyerɛw mfonini no id bio: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Paw afã baako pɛ ara yie a wɔbɛsan de aba.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Wɔantwa dwumadie yi mfonini ansa: gye n&apos;atutukɔ san baako baako, anaa san de mfonini a edi kan bi ba.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Tutukɔ yi ntumi ngye ne ho nsan: wɔmfaa no nnii dwuma, anaa onni down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>Wɔantumi ankenkan krataa no.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Paw dwumadie a wobɛtoa so.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Di kan hyɛ &quot;Aane, yɛ atutukɔ yi seesei&quot; agyiraeɛ.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Paw tutukɔ baako pɛ ara yie.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Tutukɔ bi sesaa wɔ bere a wɔde dii dwuma akyi: fa nkyerɛkyerɛmu gye nsakraeɛ no tom, anaa san de fael no si hɔ.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Ka deɛ enti a wɔgye atutukɔ a wɔasesa no tom.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>Nkyerɛkyerɛmu no nkyɛn nkyerɛwdeɛ 500.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>Dwumadie bi a wɔhyɛɛ aseɛ wɔ ha da so rekɔ so (%detail). Twɛn kosi sɛ ɛbɛba awieeɛ.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>Dwumadie foforɔ kura nhyehyɛeɛ no nsɔano: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>Dwumadie no hia dwumadifoɔ a ɔwɔ hɔ a wahyɛne mu.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Wɔanhunu php command line dwumadie biara. Hyɛ migration.ini [AdminSettings] PhpCliPath ma ɛnyɛ ne kwan nyinaa.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>Wɔadum proc_open, enti wɔrentumi mfiti dwumadie ase wɔ ha. Yɛ ./console exp:migration:migrate --apply wɔ sɛva no so.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Wɔrentumi ntwerɛ wɔ dwumadie ahodoɔ fael kotoku no mu: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>Wɔhyɛɛ dwumadie no aseɛ nanso ammɔ ne process id amanneɛ. Hwɛ %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Bɔ deɛ wobɛgye asan no din.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>Wɔantumi amfiti dwumadie no ase.</translation>
     </message>
 </context>
 </TS>

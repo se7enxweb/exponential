@@ -147,9 +147,17 @@
         "en": "Migration files or folders, relative to the root or absolute (a comma list or repeated): migrate and dry-run take only the migrations in them, check checks them instead of the migration directories",
         "de": "Migrationsdateien oder -ordner, relativ zur Wurzel oder absolut (als Komma-Liste oder wiederholt): migrate und dry-run nehmen nur die Migrationen darin, check prüft sie statt der Migrationsverzeichnisse"
     },
+    "command:expmigrationmigrate --progress": {
+        "en": "Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)",
+        "de": "Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht)"
+    },
     "command:expmigrationmigrate --reason": {
         "en": "Why a changed migration is accepted (needed with --force; kept in the record and the audit log)",
         "de": "Warum eine geänderte Migration angenommen wird (nötig mit --force; im Protokoll der Migrationen und im Audit-Log festgehalten)"
+    },
+    "command:expmigrationmigrate --run-id": {
+        "en": "The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run",
+        "de": "Die Kennung des zu startenden Laufs (Standard eine neue: <Datum>-<Uhrzeit>-<6 Hex-Ziffern>); die Administration vergibt sie, bevor sie den Lauf startet"
     },
     "command:expmigrationpush": {
         "en": "Push the migration runs whose push failed (push state pending) to the remote of the migrations repository; a dry run unless --apply",
@@ -207,9 +215,17 @@
         "en": "Commit and push, but do not tag the run",
         "de": "Committen und pushen, aber den Lauf nicht taggen"
     },
+    "command:expmigrationresume --progress": {
+        "en": "Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)",
+        "de": "Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht)"
+    },
     "command:expmigrationresume --reason": {
         "en": "Why a changed migration is accepted (needed with --force; kept in the record and the audit log)",
         "de": "Warum eine geänderte Migration angenommen wird (nötig mit --force; im Protokoll der Migrationen und im Audit-Log festgehalten)"
+    },
+    "command:expmigrationresume --run-id": {
+        "en": "The id of the run to start (default a new one: <date>-<time>-<6 hex digits>); the administration names it before it starts the run",
+        "de": "Die Kennung des zu startenden Laufs (Standard eine neue: <Datum>-<Uhrzeit>-<6 Hex-Ziffern>); die Administration vergibt sie, bevor sie den Lauf startet"
     },
     "command:expmigrationrollback": {
         "en": "Take migrations back: a run (its caption restored), one migration (its down()) or, for experts, any caption; a dry run unless --apply",
@@ -254,6 +270,10 @@
     "command:expmigrationrollback --parts": {
         "en": "Only these parts of the caption, a comma list of database, storage, settings, libraries, code (default [CaptionSettings] RestoreParts)",
         "de": "Nur diese Teile des Sicherungspunkts, eine Komma-Liste aus database, storage, settings, libraries, code (Standard [CaptionSettings] RestoreParts)"
+    },
+    "command:expmigrationrollback --progress": {
+        "en": "Append the progress of the run to this file, one JSON object per line (what the administration shows while the run goes on)",
+        "de": "Den Fortschritt des Laufs an diese Datei anhängen, ein JSON-Objekt pro Zeile (was die Administration zeigt, während der Lauf vor sich geht)"
     },
     "command:expmigrationrollback --source": {
         "en": "The source: site or extension:<name> (generate: where the file goes; rollback: which migration, when two sources have its id)",

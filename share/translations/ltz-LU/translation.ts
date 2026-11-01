@@ -15142,6 +15142,14 @@ Hiweis: D'Packagen ginn net desinstalléiert.</translation>
         <source>The GraphQL API: its end point, the schema and a playground to try queries.</source>
         <translation>D'GraphQL-API: hiren Endpunkt, de Schema an eng Spillplaz fir Ufroen auszeprobéieren.</translation>
     </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratiounen</translation>
+    </message>
+    <message>
+        <source>Changes to the installation kept as files: their state, the runs, run and roll back.</source>
+        <translation>Ännerunge vun der Installatioun, als Dateien gehalen: hiren Zoustand, d&apos;Leef, lafe loossen an zréckrollen.</translation>
+    </message>
 </context>
 <context>
     <name>design/admin/parts/shop/menu</name>
@@ -79655,6 +79663,888 @@ Dir musst d'Klass vum Knuet mat der Tauschfunktioun änneren.</translation>
     <message>
         <source>Send mutations to /api/graphql.</source>
         <translation>Schéckt Mutatiounen op /api/graphql.</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/dashboard/migrations</name>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratiounen</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>De Status konnt net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>D&apos;Tabelle vun de Migratiounen existéieren nach net: ./console exp:upgrade --apply mécht se.</translation>
+    </message>
+    <message>
+        <source>%count migrations failed</source>
+        <translation>%count Migratioune sinn feelgeschloen</translation>
+    </message>
+    <message>
+        <source>A run is going on, started by %user</source>
+        <translation>E Laf ass amgaang, gestart vum %user</translation>
+    </message>
+    <message>
+        <source>The installation is locked: %holder</source>
+        <translation>D&apos;Installatioun ass gespaart: %holder</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Amgaang</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Orphans</source>
+        <translation>Weesen</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Leschte Laf</translation>
+    </message>
+    <message>
+        <source>none yet</source>
+        <translation>nach keen</translation>
+    </message>
+    <message>
+        <source>All migrations</source>
+        <translation>All d&apos;Migratiounen</translation>
+    </message>
+</context>
+<context>
+    <name>design/admin/migration</name>
+    <message>
+        <source>Simulated run</source>
+        <translation>Simuléierte Laf</translation>
+    </message>
+    <message>
+        <source>Dry run</source>
+        <translation>Testlaf</translation>
+    </message>
+    <message>
+        <source>The pending migrations ran in a transaction that was rolled back afterwards: nothing was kept. Below is what each one changed in the database.</source>
+        <translation>Déi oppe Migratioune sinn an enger Transaktioun gelaf, déi duerno zréckgerollt gouf: näischt gouf behalen. Hei drënner steet, wat all eenzel an der Datebank geännert huet.</translation>
+    </message>
+    <message>
+        <source>What a run would do now. Nothing is changed: each pending migration lists the changes it would make, and the run what it would do before and after.</source>
+        <translation>Wat e Laf elo géif maachen. Näischt gëtt geännert: all oppe Migratioun lëscht d&apos;Ännerungen op, déi se géif maachen, an de Laf, wat e virdrun an duerno géif maachen.</translation>
+    </message>
+    <message>
+        <source>Simulate</source>
+        <translation>Simuléieren</translation>
+    </message>
+    <message>
+        <source>Run</source>
+        <translation>Lafe loossen</translation>
+    </message>
+    <message>
+        <source>The dry run failed: %problem</source>
+        <translation>Den Testlaf ass feelgeschloen: %problem</translation>
+    </message>
+    <message>
+        <source>A simulation needs PostgreSQL or SQLite, whose schema changes can be rolled back; on this database the plan below is what a run would do.</source>
+        <translation>Eng Simulatioun brauch PostgreSQL oder SQLite, wou Schema-Ännerunge kënnen zréckgerollt ginn; op dëser Datebank ass de Plang hei drënner dat, wat e Laf géif maachen.</translation>
+    </message>
+    <message>
+        <source>The migrations</source>
+        <translation>D&apos;Migratiounen</translation>
+    </message>
+    <message>
+        <source>Migration</source>
+        <translation>Migratioun</translation>
+    </message>
+    <message>
+        <source>State</source>
+        <translation>Zoustand</translation>
+    </message>
+    <message>
+        <source>What it would do</source>
+        <translation>Wat se géif maachen</translation>
+    </message>
+    <message>
+        <source>Simulation: %result in %ms ms</source>
+        <translation>Simulatioun: %result an %ms ms</translation>
+    </message>
+    <message>
+        <source>No migration yet.</source>
+        <translation>Nach keng Migratioun.</translation>
+    </message>
+    <message>
+        <source>Before and after the run</source>
+        <translation>Virun an no dem Laf</translation>
+    </message>
+    <message>
+        <source>Caption before</source>
+        <translation>Momentopnam virdrun</translation>
+    </message>
+    <message>
+        <source>taken, and restored when a migration fails</source>
+        <translation>gemaach, a restauréiert, wann eng Migratioun feelschléit</translation>
+    </message>
+    <message>
+        <source>off</source>
+        <translation>aus</translation>
+    </message>
+    <message>
+        <source>Caption after</source>
+        <translation>Momentopnam duerno</translation>
+    </message>
+    <message>
+        <source>taken when the run passed</source>
+        <translation>gemaach, wann de Laf gelongen ass</translation>
+    </message>
+    <message>
+        <source>%total migrations: %pending pending, %done done, %failed failed.</source>
+        <translation>%total Migratiounen: %pending op, %done fäerdeg, %failed feelgeschloen.</translation>
+    </message>
+    <message>
+        <source>Migration history</source>
+        <translation>Historique vun de Migratiounen</translation>
+    </message>
+    <message>
+        <source>Every run with its user, environment, captions and what was committed, tagged and pushed. A failed or interrupted run can be resumed; a run with a caption taken before it can be taken back.</source>
+        <translation>All Laf mat sengem Benotzer, senger Ëmgebung, senge Momentopnamen an deem, wat committed, getaggt a gepusht gouf. E feelgeschloenen oder ënnerbrachene Laf ka weidergefouert ginn; e Laf mat enger Momentopnam vu virdrun ka réckgängeg gemaach ginn.</translation>
+    </message>
+    <message>
+        <source>The runs could not be read: %problem</source>
+        <translation>D&apos;Leef konnten net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>The tables of the migrations do not exist yet: ./console exp:upgrade --apply makes them.</source>
+        <translation>D&apos;Tabelle vun de Migratiounen existéieren nach net: ./console exp:upgrade --apply mécht se.</translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation>Weisen</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alleguer</translation>
+    </message>
+    <message>
+        <source>Runs</source>
+        <translation>Leef</translation>
+    </message>
+    <message>
+        <source>Started</source>
+        <translation>Gestart</translation>
+    </message>
+    <message>
+        <source>By</source>
+        <translation>Vum</translation>
+    </message>
+    <message>
+        <source>Captions</source>
+        <translation>Momentopnamen</translation>
+    </message>
+    <message>
+        <source>Repository</source>
+        <translation>Depot</translation>
+    </message>
+    <message>
+        <source>Actions</source>
+        <translation>Aktiounen</translation>
+    </message>
+    <message>
+        <source>before</source>
+        <translation>virdrun</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>duerno</translation>
+    </message>
+    <message>
+        <source>push: %state</source>
+        <translation>Push: %state</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation>Weiderfueren</translation>
+    </message>
+    <message>
+        <source>Roll back</source>
+        <translation>Zréckrollen</translation>
+    </message>
+    <message>
+        <source>No run in this state.</source>
+        <translation>Kee Laf an dësem Zoustand.</translation>
+    </message>
+    <message>
+        <source>Started here</source>
+        <translation>Hei gestart</translation>
+    </message>
+    <message>
+        <source>Runs, resumes and rollbacks started on these pages, with the report of each.</source>
+        <translation>Leef, Weiderféierungen an Zréckrollungen, déi op dëse Säite gestart goufen, all mat sengem Rapport.</translation>
+    </message>
+    <message>
+        <source>What</source>
+        <translation>Wat</translation>
+    </message>
+    <message>
+        <source>Result</source>
+        <translation>Resultat</translation>
+    </message>
+    <message>
+        <source>Rollback</source>
+        <translation>Zréckrollung</translation>
+    </message>
+    <message>
+        <source>Rollback of %target</source>
+        <translation>Zréckrollung vun %target</translation>
+    </message>
+    <message>
+        <source>Run %run</source>
+        <translation>Laf %run</translation>
+    </message>
+    <message>
+        <source>What the run did, its record and its log. A run started here goes on in the background when this page is closed; open the page again to follow it.</source>
+        <translation>Wat de Laf gemaach huet, säin Androg a säi Log. E Laf, deen hei gestart gouf, leeft am Hannergrond weider, wann dës Säit zougemaach gëtt; maacht d&apos;Säit nees op, fir en ze verfollegen.</translation>
+    </message>
+    <message>
+        <source>Resume this run</source>
+        <translation>Dëse Laf weiderféieren</translation>
+    </message>
+    <message>
+        <source>Roll back this run</source>
+        <translation>Dëse Laf zréckrollen</translation>
+    </message>
+    <message>
+        <source>The record could not be read: %problem</source>
+        <translation>Den Androg konnt net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Fortschrëtt</translation>
+    </message>
+    <message>
+        <source>Started by %user at %time.</source>
+        <translation>Gestart vum %user um %time.</translation>
+    </message>
+    <message>
+        <source>Checking the code and taking a caption before the run</source>
+        <translation>De Code gëtt gepréift an eng Momentopnam virum Laf gemaach</translation>
+    </message>
+    <message>
+        <source>Running %id (%index of %total)</source>
+        <translation>%id leeft (%index vun %total)</translation>
+    </message>
+    <message>
+        <source>%done of %total done</source>
+        <translation>%done vun %total fäerdeg</translation>
+    </message>
+    <message>
+        <source>The migrations have run; restoring the caption if one failed</source>
+        <translation>D&apos;Migratioune sinn gelaf; d&apos;Momentopnam gëtt restauréiert, wann eng feelgeschloen ass</translation>
+    </message>
+    <message>
+        <source>Taking a caption after the run, committing, tagging and pushing</source>
+        <translation>Momentopnam nom Laf, Commit, Tag a Push</translation>
+    </message>
+    <message>
+        <source>Restoring the caption</source>
+        <translation>D&apos;Momentopnam gëtt restauréiert</translation>
+    </message>
+    <message>
+        <source>The run has ended. Loading its report.</source>
+        <translation>De Laf ass eriwwer. Säi Rapport gëtt gelueden.</translation>
+    </message>
+    <message>
+        <source>The progress could not be followed. Reload the page to see how the run is doing.</source>
+        <translation>De Fortschrëtt konnt net verfollegt ginn. Luet d&apos;Säit nei, fir ze gesinn, wéi de Laf steet.</translation>
+    </message>
+    <message>
+        <source>This page follows the run as it goes.</source>
+        <translation>Dës Säit verfollegt de Laf, während e leeft.</translation>
+    </message>
+    <message>
+        <source>Reload</source>
+        <translation>Nei lueden</translation>
+    </message>
+    <message>
+        <source>Report</source>
+        <translation>Rapport</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>Zäit</translation>
+    </message>
+    <message>
+        <source>%ms ms</source>
+        <translation>%ms Millisekonnen</translation>
+    </message>
+    <message>
+        <source>What the run printed as errors</source>
+        <translation>Wat de Laf als Feeler ausginn huet</translation>
+    </message>
+    <message>
+        <source>Record</source>
+        <translation>Androg</translation>
+    </message>
+    <message>
+        <source>Environment</source>
+        <translation>Ëmgebung</translation>
+    </message>
+    <message>
+        <source>none</source>
+        <translation>keng</translation>
+    </message>
+    <message>
+        <source>Ended</source>
+        <translation>Eriwwer</translation>
+    </message>
+    <message>
+        <source>Commit</source>
+        <translation>Iwwerdroung</translation>
+    </message>
+    <message>
+        <source>Tag</source>
+        <translation>Markéierung</translation>
+    </message>
+    <message>
+        <source>Push</source>
+        <translation>Verëffentlechung</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Noriicht</translation>
+    </message>
+    <message>
+        <source>Migrations of this run</source>
+        <translation>Migratioune vun dësem Laf</translation>
+    </message>
+    <message>
+        <source>Source</source>
+        <translation>Quell</translation>
+    </message>
+    <message>
+        <source>Run log</source>
+        <translation>Log vum Laf</translation>
+    </message>
+    <message>
+        <source>Only the end of the log is shown.</source>
+        <translation>Just d&apos;Enn vum Log gëtt gewisen.</translation>
+    </message>
+    <message>
+        <source>running</source>
+        <translation>leeft</translation>
+    </message>
+    <message>
+        <source>ended without a report</source>
+        <translation>ouni Rapport eriwwer</translation>
+    </message>
+    <message>
+        <source>passed</source>
+        <translation>gelongen</translation>
+    </message>
+    <message>
+        <source>failed</source>
+        <translation>feelgeschloen</translation>
+    </message>
+    <message>
+        <source>refused</source>
+        <translation>refuséiert</translation>
+    </message>
+    <message>
+        <source>the database was not reachable</source>
+        <translation>d&apos;Datebank war net z&apos;erreechen</translation>
+    </message>
+    <message>
+        <source>internal error</source>
+        <translation>interne Feeler</translation>
+    </message>
+    <message>
+        <source>A run is going on</source>
+        <translation>E Laf ass amgaang</translation>
+    </message>
+    <message>
+        <source>%kind started by %user at %time.</source>
+        <translation>%kind gestart vum %user um %time.</translation>
+    </message>
+    <message>
+        <source>Follow it</source>
+        <translation>Verfollegen</translation>
+    </message>
+    <message>
+        <source>The installation is locked</source>
+        <translation>D&apos;Installatioun ass gespaart</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock (an upgrade or a run on the console): %holder</source>
+        <translation>En anere Laf hält d&apos;Spär (en Upgrade oder e Laf op der Konsol): %holder</translation>
+    </message>
+    <message>
+        <source>done</source>
+        <translation>fäerdeg</translation>
+    </message>
+    <message>
+        <source>pending</source>
+        <translation>op</translation>
+    </message>
+    <message>
+        <source>not needed</source>
+        <translation>net néideg</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekannt</translation>
+    </message>
+    <message>
+        <source>rolled back</source>
+        <translation>zréckgerollt</translation>
+    </message>
+    <message>
+        <source>applied</source>
+        <translation>ugewannt</translation>
+    </message>
+    <message>
+        <source>would be applied</source>
+        <translation>géif ugewannt ginn</translation>
+    </message>
+    <message>
+        <source>taken back</source>
+        <translation>réckgängeg gemaach</translation>
+    </message>
+    <message>
+        <source>would be taken back</source>
+        <translation>géif réckgängeg gemaach ginn</translation>
+    </message>
+    <message>
+        <source>not run</source>
+        <translation>net gelaf</translation>
+    </message>
+    <message>
+        <source>waits for another</source>
+        <translation>waart op eng aner</translation>
+    </message>
+    <message>
+        <source>change accepted</source>
+        <translation>Ännerung akzeptéiert</translation>
+    </message>
+    <message>
+        <source>change would be accepted</source>
+        <translation>Ännerung géif akzeptéiert ginn</translation>
+    </message>
+    <message>
+        <source>simulated</source>
+        <translation>simuléiert</translation>
+    </message>
+    <message>
+        <source>Migrations</source>
+        <translation>Migratiounen</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Zoustand</translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation>Historique</translation>
+    </message>
+    <message>
+        <source>Take back %target</source>
+        <translation>%target réckgängeg maachen</translation>
+    </message>
+    <message>
+        <source>A run is taken back to the caption taken before it, one migration with its down(). Restoring an earlier caption is for experts. Each runs in the background as you, after a caption of the state now.</source>
+        <translation>E Laf gëtt op d&apos;Momentopnam vu virdrun zréckgesat, eng Migratioun mat hirem down(). Eng méi fréi Momentopnam ze restauréieren ass fir Experten. All dat leeft am Hannergrond als Dir, no enger Momentopnam vum aktuellen Zoustand.</translation>
+    </message>
+    <message>
+        <source>What can be taken back could not be read: %problem</source>
+        <translation>Wat réckgängeg gemaach ka ginn, konnt net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>A run</source>
+        <translation>E Laf</translation>
+    </message>
+    <message>
+        <source>One migration</source>
+        <translation>Eng Migratioun</translation>
+    </message>
+    <message>
+        <source>An earlier caption</source>
+        <translation>Eng méi fréi Momentopnam</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschreiwung</translation>
+    </message>
+    <message>
+        <source>down()</source>
+        <translation>down()</translation>
+    </message>
+    <message>
+        <source>yes</source>
+        <translation>jo</translation>
+    </message>
+    <message>
+        <source>no</source>
+        <translation>nee</translation>
+    </message>
+    <message>
+        <source>Caption</source>
+        <translation>Momentopnam</translation>
+    </message>
+    <message>
+        <source>Label</source>
+        <translation>Bezeechnung</translation>
+    </message>
+    <message>
+        <source>Taken</source>
+        <translation>Gemaach</translation>
+    </message>
+    <message>
+        <source>Kind</source>
+        <translation>Aart</translation>
+    </message>
+    <message>
+        <source>Parts to restore</source>
+        <translation>Deeler fir ze restauréieren</translation>
+    </message>
+    <message>
+        <source>The database</source>
+        <translation>D&apos;Datebank</translation>
+    </message>
+    <message>
+        <source>The storage files (var/)</source>
+        <translation>D&apos;Späicherdateien (var/)</translation>
+    </message>
+    <message>
+        <source>The settings (settings/override)</source>
+        <translation>D&apos;Astellungen (settings/override)</translation>
+    </message>
+    <message>
+        <source>Restoring the database takes it back to the time of the caption, sessions included: you may be asked to sign in again afterwards. Everything changed since then is lost; a caption of the state now is taken first.</source>
+        <translation>D&apos;Restauratioun vun der Datebank setzt se op den Zäitpunkt vun der Momentopnam zréck, Sessiounen abegraff: Dir musst Iech duerno eventuell nees umellen. Alles, wat zënterhier geännert gouf, geet verluer; virdrun gëtt eng Momentopnam vum aktuellen Zoustand gemaach.</translation>
+    </message>
+    <message>
+        <source>I know what this restores</source>
+        <translation>Ech weess, wat dat restauréiert</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again</source>
+        <translation>Gitt d&apos;ID vun der Momentopnam nach eng Kéier an</translation>
+    </message>
+    <message>
+        <source>Yes, take it back</source>
+        <translation>Jo, réckgängeg maachen</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Ofbriechen</translation>
+    </message>
+    <message>
+        <source>The runs with a caption taken before them.</source>
+        <translation>D&apos;Leef mat enger Momentopnam vu virdrun.</translation>
+    </message>
+    <message>
+        <source>Choose</source>
+        <translation>Auswielen</translation>
+    </message>
+    <message>
+        <source>No run with a caption yet.</source>
+        <translation>Nach kee Laf mat enger Momentopnam.</translation>
+    </message>
+    <message>
+        <source>The applied migrations that can take themselves back (they have a down()).</source>
+        <translation>Déi ugewannt Migratiounen, déi sech selwer réckgängeg maache kënnen (si hunn en down()).</translation>
+    </message>
+    <message>
+        <source>No applied migration has a down().</source>
+        <translation>Keng ugewannt Migratioun huet en down().</translation>
+    </message>
+    <message>
+        <source>Earlier captions (experts)</source>
+        <translation>Méi fréi Momentopnamen (Experten)</translation>
+    </message>
+    <message>
+        <source>No caption yet.</source>
+        <translation>Nach keng Momentopnam.</translation>
+    </message>
+    <message>
+        <source>Run the migrations</source>
+        <translation>D&apos;Migratioune lafe loossen</translation>
+    </message>
+    <message>
+        <source>The run goes on in the background as %user, and its page shows it as it goes. Before the first migration a caption of the installation is taken; when a migration fails the run stops and the caption is restored.</source>
+        <translation>De Laf leeft am Hannergrond als %user, a seng Säit weist en, während e leeft. Virun der éischter Migratioun gëtt eng Momentopnam vun der Installatioun gemaach; wann eng Migratioun feelschléit, hält de Laf un an d&apos;Momentopnam gëtt restauréiert.</translation>
+    </message>
+    <message>
+        <source>Dry run first</source>
+        <translation>Fir d&apos;éischt en Testlaf</translation>
+    </message>
+    <message>
+        <source>The status could not be read: %problem</source>
+        <translation>De Status konnt net gelies ginn: %problem</translation>
+    </message>
+    <message>
+        <source>Pending migrations</source>
+        <translation>Oppe Migratiounen</translation>
+    </message>
+    <message>
+        <source>They run in this order. Untick one to leave it, and the ones that require it, for a later run.</source>
+        <translation>Si lafen an dëser Reiefolleg. Huelt d&apos;Haken ewech, fir eng, an déi, déi se brauchen, fir e spéidere Laf ze loossen.</translation>
+    </message>
+    <message>
+        <source>Run it</source>
+        <translation>Lafe loossen</translation>
+    </message>
+    <message>
+        <source>Switches maintenance mode on while it runs.</source>
+        <translation>Schalt de Wartungsmodus an, während e leeft.</translation>
+    </message>
+    <message>
+        <source>Changed after they were applied</source>
+        <translation>Geännert, nodeems se ugewannt goufen</translation>
+    </message>
+    <message>
+        <source>These files are not the ones that were applied. A run refuses them unless the change is accepted with a reason; they are not run again, the new checksum is recorded and the reason kept in the audit log.</source>
+        <translation>Dës Dateie sinn net déi, déi ugewannt goufen. E Laf refuséiert se, ausser d&apos;Ännerung gëtt mat engem Grond akzeptéiert; si lafen net nach eng Kéier, déi nei Préifzomm gëtt agedroen an de Grond am Audit-Log gehalen.</translation>
+    </message>
+    <message>
+        <source>Accept the changes</source>
+        <translation>D&apos;Ännerungen akzeptéieren</translation>
+    </message>
+    <message>
+        <source>Why</source>
+        <translation>Firwat</translation>
+    </message>
+    <message>
+        <source>The defaults are the safe ones. Each box leaves a step out.</source>
+        <translation>D&apos;Standardastellunge sinn déi sécher. All Këscht léisst e Schrëtt ewech.</translation>
+    </message>
+    <message>
+        <source>No caption</source>
+        <translation>Keng Momentopnam</translation>
+    </message>
+    <message>
+        <source>No caption before and after the run: a failure cannot be restored automatically.</source>
+        <translation>Keng Momentopnam virun an no dem Laf: e Feeler kann net automatesch restauréiert ginn.</translation>
+    </message>
+    <message>
+        <source>No restore</source>
+        <translation>Keng Restauratioun</translation>
+    </message>
+    <message>
+        <source>After a failure, leave the installation as the failure left it.</source>
+        <translation>No engem Feeler d&apos;Installatioun esou loossen, wéi de Feeler se gelooss huet.</translation>
+    </message>
+    <message>
+        <source>Keep changes that are not committed</source>
+        <translation>Net committéiert Ännerunge behalen</translation>
+    </message>
+    <message>
+        <source>Run although settings, extensions or designs have changes that are not committed; they go into the caption.</source>
+        <translation>Lafe loossen, och wann Astellungen, Erweiderungen oder Designs net committéiert Ännerungen hunn; si kommen an d&apos;Momentopnam.</translation>
+    </message>
+    <message>
+        <source>No commit</source>
+        <translation>Kee Commit</translation>
+    </message>
+    <message>
+        <source>Do not commit the status file and the run log (no tag and no push either).</source>
+        <translation>D&apos;Statusdatei an de Log vum Laf net committen (och keen Tag a keen Push).</translation>
+    </message>
+    <message>
+        <source>No push</source>
+        <translation>Kee Push</translation>
+    </message>
+    <message>
+        <source>Commit and tag, but do not push.</source>
+        <translation>Committen an taggen, mee net pushen.</translation>
+    </message>
+    <message>
+        <source>No tag</source>
+        <translation>Keen Tag</translation>
+    </message>
+    <message>
+        <source>Commit and push, but do not tag the run.</source>
+        <translation>Committen a pushen, mee de Laf net taggen.</translation>
+    </message>
+    <message>
+        <source>Yes, run these migrations now</source>
+        <translation>Jo, dës Migratiounen elo lafe loossen</translation>
+    </message>
+    <message>
+        <source>No migration is pending.</source>
+        <translation>Keng Migratioun ass op.</translation>
+    </message>
+    <message>
+        <source>Back to the status</source>
+        <translation>Zréck bei de Status</translation>
+    </message>
+    <message>
+        <source>Changes to this installation written once as files (content, classes, roles, settings, schema) and applied to every installation of the site in the same order. A run takes a caption first, restores it when a migration fails, and records, commits and pushes what it did.</source>
+        <translation>Ännerunge vun dëser Installatioun, eemol als Dateie geschriwwen (Inhalt, Klassen, Rollen, Astellungen, Schema) an op all Installatioun vum Site an der selwechter Reiefolleg ugewannt. E Laf mécht fir d&apos;éischt eng Momentopnam, restauréiert se, wann eng Migratioun feelschléit, an dréit an, committ a pusht, wat e gemaach huet.</translation>
+    </message>
+    <message>
+        <source>Run %count pending</source>
+        <translation>%count oppe lafe loossen</translation>
+    </message>
+    <message>
+        <source>Overview</source>
+        <translation>Iwwersiicht</translation>
+    </message>
+    <message>
+        <source>Pending</source>
+        <translation>Op</translation>
+    </message>
+    <message>
+        <source>Done</source>
+        <translation>Fäerdeg</translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation>Feelgeschloen</translation>
+    </message>
+    <message>
+        <source>Not needed</source>
+        <translation>Net néideg</translation>
+    </message>
+    <message>
+        <source>Database</source>
+        <translation>Datebank</translation>
+    </message>
+    <message>
+        <source>transactions: %mode</source>
+        <translation>Transaktiounen: %mode</translation>
+    </message>
+    <message>
+        <source>Site migrations are in migrations/, those of an extension in extension/&lt;name&gt;/migrations/. They run in the order of their names and what they require.</source>
+        <translation>Site-Migratioune sinn a migrations/, déi vun enger Erweiderung an extension/&lt;name&gt;/migrations/. Si lafen an der Reiefolleg vun hiren Nimm an deem, wat se brauchen.</translation>
+    </message>
+    <message>
+        <source>Last run</source>
+        <translation>Leschte Laf</translation>
+    </message>
+    <message>
+        <source>The file changed after it was applied.</source>
+        <translation>D&apos;Datei gouf geännert, nodeems se ugewannt gouf.</translation>
+    </message>
+    <message>
+        <source>No migration yet. ./console exp:migration:generate --skeleton &lt;name&gt; --apply writes the first one.</source>
+        <translation>Nach keng Migratioun. ./console exp:migration:generate --skeleton &lt;name&gt; --apply schreift déi éischt.</translation>
+    </message>
+    <message>
+        <source>The latest runs</source>
+        <translation>Déi lescht Leef</translation>
+    </message>
+    <message>
+        <source>Every run</source>
+        <translation>All d&apos;Leef</translation>
+    </message>
+    <message>
+        <source>No run yet.</source>
+        <translation>Nach kee Laf.</translation>
+    </message>
+    <message>
+        <source>Simulating a run needs the policy migration/run.</source>
+        <translation>Fir e Laf ze simuléieren, brauch een d&apos;Rechter migration/run.</translation>
+    </message>
+    <message>
+        <source>A run is going on: simulate when it has ended.</source>
+        <translation>E Laf ass amgaang: simuléiert, wann e fäerdeg ass.</translation>
+    </message>
+    <message>
+        <source>Setup</source>
+        <translation>Konfiguratioun</translation>
+    </message>
+    <message>
+        <source>%target is no run, no migration and no caption of this installation.</source>
+        <translation>%target ass kee Laf, keng Migratioun a keng Momentopnam vun dëser Installatioun.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, take it back&quot; first.</source>
+        <translation>Kräizt fir d&apos;éischt &quot;Jo, réckgängeg maachen&quot; un.</translation>
+    </message>
+    <message>
+        <source>Restoring an earlier caption is for experts: tick &quot;I know what this restores&quot;.</source>
+        <translation>Eng méi fréi Momentopnam ze restauréieren ass fir Experten: kräizt &quot;Ech weess, wat dat restauréiert&quot; un.</translation>
+    </message>
+    <message>
+        <source>Type the id of the caption again: %target</source>
+        <translation>Gitt d&apos;ID vun der Momentopnam nach eng Kéier an: %target</translation>
+    </message>
+    <message>
+        <source>Choose at least one part to restore.</source>
+        <translation>Wielt mindestens een Deel fir ze restauréieren.</translation>
+    </message>
+    <message>
+        <source>This run has no caption taken before it: take its migrations back one by one, or restore an earlier caption.</source>
+        <translation>Dëse Laf huet keng Momentopnam vu virdrun: maacht seng Migratiounen eng no der anerer réckgängeg, oder restauréiert eng méi fréi Momentopnam.</translation>
+    </message>
+    <message>
+        <source>This migration cannot be taken back by itself: it is not applied, or it has no down().</source>
+        <translation>Dës Migratioun kann net eleng réckgängeg gemaach ginn: si ass net ugewannt, oder si huet keen down().</translation>
+    </message>
+    <message>
+        <source>The form could not be read.</source>
+        <translation>De Formulaire konnt net gelies ginn.</translation>
+    </message>
+    <message>
+        <source>Choose the run to resume.</source>
+        <translation>Wielt de Laf, deen weidergefouert soll ginn.</translation>
+    </message>
+    <message>
+        <source>Tick &quot;Yes, run these migrations now&quot; first.</source>
+        <translation>Kräizt fir d&apos;éischt &quot;Jo, dës Migratiounen elo lafe loossen&quot; un.</translation>
+    </message>
+    <message>
+        <source>Choose at least one migration.</source>
+        <translation>Wielt mindestens eng Migratioun.</translation>
+    </message>
+    <message>
+        <source>A migration changed after it was applied: accept the change with a reason, or put the file back.</source>
+        <translation>Eng Migratioun gouf geännert, nodeems se ugewannt gouf: akzeptéiert d&apos;Ännerung mat engem Grond, oder setzt d&apos;Datei zréck.</translation>
+    </message>
+    <message>
+        <source>Give the reason why the changed migrations are accepted.</source>
+        <translation>Gitt de Grond un, firwat déi geännert Migratiounen akzeptéiert ginn.</translation>
+    </message>
+    <message>
+        <source>The reason is at most 500 characters.</source>
+        <translation>De Grond huet héchstens 500 Zeechen.</translation>
+    </message>
+    <message>
+        <source>A run started here is still going on (%detail). Wait for it to end.</source>
+        <translation>E Laf, deen hei gestart gouf, ass nach amgaang (%detail). Waart, bis e fäerdeg ass.</translation>
+    </message>
+    <message>
+        <source>Another run holds the lock of the installation: %detail</source>
+        <translation>En anere Laf hält d&apos;Spär vun der Installatioun: %detail</translation>
+    </message>
+    <message>
+        <source>The run needs a signed-in user that exists.</source>
+        <translation>De Laf brauch en ugemellte Benotzer, deen existéiert.</translation>
+    </message>
+    <message>
+        <source>No php command line binary was found. Set migration.ini [AdminSettings] PhpCliPath to its full path.</source>
+        <translation>Kee php-Kommandozeilenprogramm gouf fonnt. Setzt migration.ini [AdminSettings] PhpCliPath op säi vollstännege Pfad.</translation>
+    </message>
+    <message>
+        <source>proc_open is disabled, so a run cannot be started here. Run ./console exp:migration:migrate --apply on the server.</source>
+        <translation>proc_open ass desaktivéiert, dofir kann hei kee Laf gestart ginn. Lafe loosst ./console exp:migration:migrate --apply um Server.</translation>
+    </message>
+    <message>
+        <source>The folder of the runs cannot be written: %detail</source>
+        <translation>Den Dossier vun de Leef kann net beschriwwe ginn: %detail</translation>
+    </message>
+    <message>
+        <source>The run was started but did not report its process id. Check %detail.</source>
+        <translation>De Laf gouf gestart, huet awer seng Prozess-ID net gemellt. Kontrolléiert %detail.</translation>
+    </message>
+    <message>
+        <source>Name what to take back.</source>
+        <translation>Nennt, wat réckgängeg gemaach soll ginn.</translation>
+    </message>
+    <message>
+        <source>The run could not be started.</source>
+        <translation>De Laf konnt net gestart ginn.</translation>
     </message>
 </context>
 </TS>

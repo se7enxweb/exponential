@@ -25,6 +25,7 @@
         "%link_start": "replaced although the link text follows without a space"
     },
     "*": {
+        "down()": "the method a migration takes itself back with, kept as code",
         "datatable.ini": "file name, kept as code",
         "secrets.ini": "file name, kept as code",
         "site.ini": "file name, kept as code",
@@ -1750,6 +1751,9 @@
         "Webhooks": "the same word in French (established loanword)"
     },
     "ger-DE": {
+        "Migration": "German word spelled the same",
+        "Commit": "the same word in German (a git commit)",
+        "Push": "the same word in German (a git push)",
         "Zoom: %1 %": "Zoom is the usual German term",
         "Ellipse": "German word spelled the same",
         "Sepia": "German word spelled the same",
