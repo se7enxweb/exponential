@@ -1,0 +1,43 @@
+# description: Loops, conditions, environments and references of a YAML migration
+# requires: 20261101090100_wp9_between
+steps:
+    - foreach: [ red, green ]
+      as: color
+      steps:
+          - type: wp9_record
+            name: "${ref.first_name}-${loop.color}-${loop.index}"
+            color: "${loop.color}"
+    - foreach: { a: 1, b: 2 }
+      steps:
+          - type: wp9_record
+            name: "pair ${loop.key}=${loop.item}"
+            count: "${loop.item}"
+    - while: { not: { ref: stop, set: true } }
+      max: 5
+      steps:
+          - type: wp9_record
+            name: "turn ${loop.index}"
+            value: "${loop.index}"
+            references: { turn: value }
+          - type: reference
+            if: { value: "${loop.index}", gte: 1 }
+            set: { stop: true }
+    - type: wp9_record
+      if: { environment: production }
+      name: production only
+    - type: wp9_record
+      environments: [ "!staging" ]
+      name: not on staging
+    - type: wp9_record
+      engines: [ mysql ]
+      name: mysql only
+    - type: wp9_record
+      if: { value: "${ref.from_php}", matches: "/^php saw first$/" }
+      mode: ensure
+      name: "${ref.from_php}"
+      comment: the reference of the PHP migration before
+down:
+    - type: wp9_record
+      mode: delete
+      name: undo loops
+      keep: true

@@ -3,13 +3,13 @@ title: site.ini [DebugSettings]
 audience: developer, admin
 category: examples
 summary: "Die Einstellungen von [DebugSettings] in site.ini: DebugOutput, AlwaysLog, DeprecatedLog, ScriptDebugOutput, DebugByIP, DebugIPList, DebugByUser, DebugUserIDList ..."
-keywords: Einstellung, site.ini, DebugSettings, INI, setting, DebugOutput, AlwaysLog, DeprecatedLog, ScriptDebugOutput, DebugByIP, DebugIPList, DebugByUser, DebugUserIDList, Debug, DebugRedirection, DisplayDebugWarnings, DebugLogOnly, DebugToolbar, DisplayIncludedFiles, QuickSettingsList, UsedTemplateEditUrl
+keywords: Einstellung, site.ini, DebugSettings, INI, setting, DebugOutput, AlwaysLog, DeprecatedLog, ScriptDebugOutput, DebugByIP, DebugIPList, DebugByUser, DebugUserIDList, CollectStatsPolicyList, Debug, DebugRedirection, DisplayDebugWarnings, DebugLogOnly, DebugToolbar, DisplayIncludedFiles, QuickSettingsList, UsedTemplateEditUrl
 type: generated
 generated: exp:help:examples
 ---
 # site.ini [DebugSettings]
 
-Der Block `[DebugSettings]` von `settings/site.ini`, mit 16 Einstellung(en).
+Der Block `[DebugSettings]` von `settings/site.ini`, mit 17 Einstellung(en).
 
 Bearbeiten Sie `settings/site.ini` nie selbst: Ein Update ersetzt die Datei. Schreiben Sie die Einstellungen, die Sie ändern, in ein Override, das Vorrang vor der ausgelieferten Datei hat:
 
@@ -158,17 +158,39 @@ DebugUserIDList[]
 */ ?>
 ```
 
+## CollectStatsPolicyList
+
+> Examples  
+> DebugUserIDList\[\]=14  
+> Signed-in users who hold one of these policies (module/function) get each  
+> request's statistics collected without any debug output: page time, SQL  
+> statements, the content view cache, cache-blocks and the template tree, as  
+> the debug bar shows them. Nothing is printed and no debug message is kept;  
+> a tool of theirs shows the figures (the website sidebar's Performance panel  
+> adds expwt/performance here). Empty: only with debug output on.  
+
+Standard: eine leere Liste.
+
+```ini
+<?php /* #?ini charset="utf-8"?
+# settings/override/site.ini.append.php
+[DebugSettings]
+# ein leeres "CollectStatsPolicyList[]" zuerst ersetzt die ausgelieferte Liste; ohne es werden die Einträge hinzugefügt
+CollectStatsPolicyList[]
+*/ ?>
+```
+
 ## Debug
 
-> Beispiele  
-> DebugUserIDList\[\]=14  
-> Steuert, wie das Debugging angezeigt wird: inline bedeutet, dass das Debugging  
-> in der Seite selbst angezeigt wird, popup öffnet ein neues Popup-Fenster mit dem Debugging.  
-> Das Popup-Fenster funktioniert eventuell nicht in allen Browsern.  
-> Verwenden Sie disabled, inline oder popup  
-> Wenn Sie popup verwenden, muss es eine Rewrite-Regel für .html-Dateien geben,  
-> oder Ihre Website muss im Modus ohne virtuellen Host laufen. Außerdem haben manche Browser  
-> Probleme mit dieser Funktion.  
+> Examples  
+> CollectStatsPolicyList\[\]=expwt/performance  
+> Controls how debug is displayed, inline means that the debug is displayed in  
+> page itself while popup will create a new popup window with the debug.  
+> Popup window might not work in all browsers.  
+> Use either disabled, inline or popup  
+> If you use popup you must make sure that a rewrite rules exists for .html files  
+> or that your site is running in non-virtual host mode. Also some browsers  
+> have problems with this feature.  
 
 Standard: `inline`.
 
