@@ -383,10 +383,11 @@ class eZURLAliasML extends eZPersistentObject
                   'lang_mask' => [ '$bitsAnySet' => $languageID ] ],
                 [ '$set' => [ 'lang_mask' => $newMask ] ]
             );
-            // Delete entries with zero effective lang_mask (no languages remaining)
+            // Delete entries with zero effective lang_mask (no languages remaining): 0 or the always-available bit
+            // alone (a bitmask of $bitsAllClear must not be negative, so ~1 matched nothing)
             $db->deleteWhere( 'ezurlalias_ml',
                 [ 'parent' => $parentID, 'text_md5' => $textMD5,
-                  'lang_mask' => [ '$bitsAllClear' => ~1 ] ]
+                  'lang_mask' => [ '$in' => [ 0, 1 ] ] ]
             );
             return;
         }
@@ -551,6 +552,9 @@ class eZURLAliasML extends eZPersistentObject
             $languageMask |= 1;
         // Set before the MongoDB branch, which stores new entries with it too
         $alwaysMask = $alwaysAvailable ? 1 : 0;
+        // The action type (eznode of eznode:59) of the entries the MongoDB branch stores; that branch runs before the
+        // action is checked below, and stored null as action_type when an existing entry was made the original
+        $actionName = preg_match( "#^(.+):(.+)$#", (string)$action, $actionMatches ) ? $actionMatches[1] : '';
 
         $path = eZURLAliasML::cleanURL( $path );
         $elements = explode( '/', $path );
@@ -837,8 +841,10 @@ class eZURLAliasML extends eZPersistentObject
                             'text'        => $newText,
                             'action'      => $action,
                             'action_type' => $actionName,
-                            'is_alias'    => $aliasRedirects ? 1 : 0,
+                            // an alias as the SQL branch stores it: always an alias, which redirects or not
+                            'is_alias'    => 1,
                             'is_original' => 1,
+                            'alias_redirects' => $aliasRedirects ? 1 : 0,
                         ] ]
                     );
                     $newElementID = $curElementID;
@@ -853,8 +859,9 @@ class eZURLAliasML extends eZPersistentObject
                         'lang_mask' => $languageID | $alwaysMask,
                         'action'    => $action,
                     ) );
-                    if ( $aliasRedirects )
-                        $element->IsAlias = 1;
+                    // always an alias (one that does not redirect was stored as a history entry of the name)
+                    $element->IsAlias = 1;
+                    $element->AliasRedirects = $aliasRedirects ? 1 : 0;
                     $element->store();
                     $newElementID   = (int)$element->attribute( 'id' );
                     $createdElement = $element;

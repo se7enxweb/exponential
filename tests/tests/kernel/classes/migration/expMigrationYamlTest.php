@@ -453,12 +453,12 @@ class expMigrationYamlTest extends PHPUnit\Framework\TestCase
         $this->assertSame( 'object-remote: names a node; an object is named by remote:', expMigrationIdentifier::problem( 'object', 'object-remote:abc' ) );
         try
         {
-            expMigrationIdentifier::resolve( 'class', 5 );
-            $this->fail( 'only nodes and objects' );
+            expMigrationIdentifier::resolve( 'widget', 5 );
+            $this->fail( 'no kind widget' );
         }
         catch ( RuntimeException $e )
         {
-            $this->assertStringContainsString( 'no identifiers of the kind class', $e->getMessage() );
+            $this->assertStringContainsString( 'no identifiers of the kind widget', $e->getMessage() );
         }
     }
 
@@ -691,7 +691,7 @@ class expMigrationYamlTest extends PHPUnit\Framework\TestCase
             $this->assertStringContainsString( $expected, $text );
         $site = expMigrationCheck::run( array( 'paths' => array( __DIR__ . '/fixtures/site' ), 'root' => self::$root ) );
         $byId = array_column( $site['migrations'], null, 'id' );
-        $this->assertStringContainsString( 'the unknown step type content', implode( "\n", $byId['20261004100000_news_content']['errors'] ) );
+        $this->assertStringContainsString( 'steps[1] (content): class is missing (mode create)', implode( "\n", $byId['20261004100000_news_content']['errors'] ) );
 
         // a registry of a test instead of the settings
         $check = expMigrationCheck::run( array( 'paths' => array( __DIR__ . '/fixtures/yaml' ), 'root' => self::$root,

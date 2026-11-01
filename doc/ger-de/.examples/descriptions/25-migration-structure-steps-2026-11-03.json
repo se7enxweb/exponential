@@ -1,0 +1,474 @@
+{
+    "step:content_class": {
+        "en": "Creates, updates, ensures or deletes a content class with its attributes, their datatype settings and the translations of their names",
+        "de": "Legt eine Inhaltsklasse mit ihren Attributen, deren Datentyp-Einstellungen und den Übersetzungen ihrer Namen an, ändert, sichert oder löscht sie"
+    },
+    "step:content_class add_attributes": {
+        "en": "attributes to add, as in attributes:; every object of the class gets them",
+        "de": "hinzuzufügende Attribute, wie in attributes:; jedes Objekt der Klasse bekommt sie"
+    },
+    "step:content_class always_available": {
+        "en": "whether a new object of the class is shown in a language it does not have",
+        "de": "ob ein neues Objekt der Klasse in einer Sprache gezeigt wird, die es nicht hat"
+    },
+    "step:content_class attributes": {
+        "en": "the attributes, each a map: identifier, type (the datatype), name, names, description, descriptions, required, searchable, translatable, information_collector, category, placement, settings; ensure adds the missing ones and changes what differs",
+        "de": "die Attribute, jedes eine Zuordnung: identifier, type (der Datentyp), name, names, description, descriptions, required, searchable, translatable, information_collector, category, placement, settings; ensure ergänzt die fehlenden und ändert, was abweicht"
+    },
+    "step:content_class class": {
+        "en": "the class to update or delete: its identifier, id or remote:<remote id>",
+        "de": "die zu ändernde oder zu löschende Klasse: ihr Bezeichner, ihre ID oder remote:<Remote-ID>"
+    },
+    "step:content_class container": {
+        "en": "whether objects of the class can have children",
+        "de": "ob Objekte der Klasse Kinder haben können"
+    },
+    "step:content_class description": {
+        "en": "the description of the class in the language of language:",
+        "de": "die Beschreibung der Klasse in der Sprache von language:"
+    },
+    "step:content_class descriptions": {
+        "en": "language => the description of the class in it",
+        "de": "Sprache => die Beschreibung der Klasse in ihr"
+    },
+    "step:content_class groups": {
+        "en": "the class groups the class is in: names or ids (create, ensure: default Content; update and ensure add the class to those it is not in)",
+        "de": "die Klassengruppen, in denen die Klasse ist: Namen oder IDs (create, ensure: Standard Content; update und ensure fügen die Klasse denen hinzu, in denen sie nicht ist)"
+    },
+    "step:content_class identifier": {
+        "en": "the identifier of the class; ensure finds the class by it (update: a new identifier)",
+        "de": "der Bezeichner der Klasse; ensure findet die Klasse über ihn (update: ein neuer Bezeichner)"
+    },
+    "step:content_class language": {
+        "en": "the language of name: (default: the default language of content, ContentObjectLocale)",
+        "de": "die Sprache von name: (Standard: die Standardsprache der Inhalte, ContentObjectLocale)"
+    },
+    "step:content_class missing": {
+        "en": "what happens when the class is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn die Klasse nicht da ist: fail (Standard) oder skip"
+    },
+    "step:content_class name": {
+        "en": "the name of the class in the language of language:",
+        "de": "der Name der Klasse in der Sprache von language:"
+    },
+    "step:content_class name_pattern": {
+        "en": "how an object is named from its attributes (<title>; default: the first attribute)",
+        "de": "wie ein Objekt aus seinen Attributen benannt wird (<title>; Standard: das erste Attribut)"
+    },
+    "step:content_class names": {
+        "en": "language => the name of the class in it: its translations",
+        "de": "Sprache => der Name der Klasse in ihr: ihre Übersetzungen"
+    },
+    "step:content_class remote_id": {
+        "en": "the remote id of a new class (default: a new one)",
+        "de": "die Remote-ID einer neuen Klasse (Standard: eine neue)"
+    },
+    "step:content_class remove_attributes": {
+        "en": "the identifiers of attributes to remove, with their data in every object",
+        "de": "die Bezeichner der zu entfernenden Attribute, mit ihren Daten in jedem Objekt"
+    },
+    "step:content_class sort_field": {
+        "en": "how the children of a new object are sorted",
+        "de": "wie die Kinder eines neuen Objekts sortiert werden"
+    },
+    "step:content_class sort_order": {
+        "en": "asc or desc",
+        "de": "asc oder desc"
+    },
+    "step:content_class update_attributes": {
+        "en": "attribute identifier => what changes (the keys of attributes: but identifier and type)",
+        "de": "Attributbezeichner => was sich ändert (die Schlüssel von attributes: außer identifier und type)"
+    },
+    "step:content_class url_alias_pattern": {
+        "en": "how the URL alias of an object is made (default: as its name)",
+        "de": "wie der URL-Alias eines Objekts gebildet wird (Standard: wie sein Name)"
+    },
+    "step:content_class value class_id": {
+        "en": "the id of the class",
+        "de": "die ID der Klasse"
+    },
+    "step:content_class value created": {
+        "en": "true when the step created the class",
+        "de": "true, wenn der Schritt die Klasse angelegt hat"
+    },
+    "step:content_class value identifier": {
+        "en": "its identifier",
+        "de": "ihr Bezeichner"
+    },
+    "step:content_class with_objects": {
+        "en": "true: a class with objects is deleted with them; false (the default): it is not deleted",
+        "de": "true: eine Klasse mit Objekten wird mit ihnen gelöscht; false (Standard): sie wird nicht gelöscht"
+    },
+    "step:content_class_group": {
+        "en": "Creates, renames, ensures or deletes a group of content classes",
+        "de": "Legt eine Gruppe von Inhaltsklassen an, benennt sie um, sichert oder löscht sie"
+    },
+    "step:content_class_group group": {
+        "en": "the group to rename or delete: its name or id",
+        "de": "die umzubenennende oder zu löschende Gruppe: ihr Name oder ihre ID"
+    },
+    "step:content_class_group missing": {
+        "en": "what happens when the group is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn die Gruppe nicht da ist: fail (Standard) oder skip"
+    },
+    "step:content_class_group name": {
+        "en": "the name of the group (update: its new name)",
+        "de": "der Name der Gruppe (update: ihr neuer Name)"
+    },
+    "step:content_class_group value changed": {
+        "en": "true when the step changed it (created, renamed or deleted)",
+        "de": "true, wenn der Schritt sie geändert hat (angelegt, umbenannt oder gelöscht)"
+    },
+    "step:content_class_group value created": {
+        "en": "true when the step created the group",
+        "de": "true, wenn der Schritt die Gruppe angelegt hat"
+    },
+    "step:content_class_group value group_id": {
+        "en": "the id of the group",
+        "de": "die ID der Gruppe"
+    },
+    "step:language": {
+        "en": "Adds, renames, ensures or removes a language of content",
+        "de": "Fügt eine Sprache der Inhalte hinzu, benennt sie um, sichert oder entfernt sie"
+    },
+    "step:language language": {
+        "en": "the language to rename or remove: its locale or id",
+        "de": "die umzubenennende oder zu entfernende Sprache: ihr Locale oder ihre ID"
+    },
+    "step:language locale": {
+        "en": "the locale of the language (ger-DE); ensure finds the language by it",
+        "de": "das Locale der Sprache (ger-DE); ensure findet die Sprache über es"
+    },
+    "step:language missing": {
+        "en": "what happens when the language is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn die Sprache nicht da ist: fail (Standard) oder skip"
+    },
+    "step:language name": {
+        "en": "the name of the language (default: the name of the locale)",
+        "de": "der Name der Sprache (Standard: der Name des Locales)"
+    },
+    "step:language value changed": {
+        "en": "true when the step changed it (added, renamed or removed)",
+        "de": "true, wenn der Schritt sie geändert hat (hinzugefügt, umbenannt oder entfernt)"
+    },
+    "step:language value created": {
+        "en": "true when the step added the language",
+        "de": "true, wenn der Schritt die Sprache hinzugefügt hat"
+    },
+    "step:language value language_id": {
+        "en": "the id of the language",
+        "de": "die ID der Sprache"
+    },
+    "step:language value locale": {
+        "en": "its locale",
+        "de": "ihr Locale"
+    },
+    "step:object_state_group": {
+        "en": "Creates, updates, ensures or deletes an object state group with its states and the translations of their names",
+        "de": "Legt eine Objektzustandsgruppe mit ihren Zuständen und den Übersetzungen ihrer Namen an, ändert, sichert oder löscht sie"
+    },
+    "step:object_state_group add_states": {
+        "en": "states to add, as in states:",
+        "de": "hinzuzufügende Zustände, wie in states:"
+    },
+    "step:object_state_group description": {
+        "en": "the description of the group in the language of language:",
+        "de": "die Beschreibung der Gruppe in der Sprache von language:"
+    },
+    "step:object_state_group descriptions": {
+        "en": "language => the description of the group in it",
+        "de": "Sprache => die Beschreibung der Gruppe in ihr"
+    },
+    "step:object_state_group group": {
+        "en": "the group to update or delete: its identifier or id",
+        "de": "die zu ändernde oder zu löschende Gruppe: ihr Bezeichner oder ihre ID"
+    },
+    "step:object_state_group identifier": {
+        "en": "the identifier of the group; ensure finds the group by it (update: a new identifier)",
+        "de": "der Bezeichner der Gruppe; ensure findet die Gruppe über ihn (update: ein neuer Bezeichner)"
+    },
+    "step:object_state_group language": {
+        "en": "the language of name: (default: the default language of content, ContentObjectLocale)",
+        "de": "die Sprache von name: (Standard: die Standardsprache der Inhalte, ContentObjectLocale)"
+    },
+    "step:object_state_group missing": {
+        "en": "what happens when the group is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn die Gruppe nicht da ist: fail (Standard) oder skip"
+    },
+    "step:object_state_group name": {
+        "en": "the name of the group in the language of language:",
+        "de": "der Name der Gruppe in der Sprache von language:"
+    },
+    "step:object_state_group names": {
+        "en": "language => the name of the group in it: its translations",
+        "de": "Sprache => der Name der Gruppe in ihr: ihre Übersetzungen"
+    },
+    "step:object_state_group remove_states": {
+        "en": "the identifiers of states to remove; their objects get the first state left",
+        "de": "die Bezeichner der zu entfernenden Zustände; ihre Objekte bekommen den ersten verbleibenden Zustand"
+    },
+    "step:object_state_group states": {
+        "en": "the states, each a map: identifier, name, names, description, descriptions; ensure adds the missing ones and changes what differs",
+        "de": "die Zustände, jeder eine Zuordnung: identifier, name, names, description, descriptions; ensure ergänzt die fehlenden und ändert, was abweicht"
+    },
+    "step:object_state_group update_states": {
+        "en": "state identifier => what changes (name, names, description, descriptions, identifier for a new one)",
+        "de": "Zustandsbezeichner => was sich ändert (name, names, description, descriptions, identifier für einen neuen)"
+    },
+    "step:object_state_group value created": {
+        "en": "true when the step created the group",
+        "de": "true, wenn der Schritt die Gruppe angelegt hat"
+    },
+    "step:object_state_group value group_id": {
+        "en": "the id of the group",
+        "de": "die ID der Gruppe"
+    },
+    "step:object_state_group value identifier": {
+        "en": "its identifier",
+        "de": "ihr Bezeichner"
+    },
+    "step:object_state_group value state_ids": {
+        "en": "state identifier => id, for every state of the group",
+        "de": "Zustandsbezeichner => ID, für jeden Zustand der Gruppe"
+    },
+    "step:role": {
+        "en": "Creates, updates, ensures or deletes a role with its policies and limitations, or assigns it to users and user groups or takes it from them",
+        "de": "Legt eine Rolle mit ihren Richtlinien und Einschränkungen an, ändert, sichert oder löscht sie, oder weist sie Benutzern und Benutzergruppen zu oder nimmt sie ihnen"
+    },
+    "step:role add_policies": {
+        "en": "policies to add, as in policies:",
+        "de": "hinzuzufügende Richtlinien, wie in policies:"
+    },
+    "step:role groups": {
+        "en": "the user groups (or other objects): object identifiers",
+        "de": "die Benutzergruppen (oder andere Objekte): Objektbezeichner"
+    },
+    "step:role missing": {
+        "en": "what happens when the role is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn die Rolle nicht da ist: fail (Standard) oder skip"
+    },
+    "step:role name": {
+        "en": "the name of the role; ensure finds the role by it (update: a new name)",
+        "de": "der Name der Rolle; ensure findet die Rolle über ihn (update: ein neuer Name)"
+    },
+    "step:role policies": {
+        "en": "the policies, each a map: module, function (* for all) and limitations (identifier => list of values); ensure adds those the role does not have",
+        "de": "die Richtlinien, jede eine Zuordnung: module, function (* für alle) und limitations (Bezeichner => Liste von Werten); ensure ergänzt die, die die Rolle nicht hat"
+    },
+    "step:role remove_policies": {
+        "en": "policies to remove, each a map: module and function (without function: every policy of the module)",
+        "de": "zu entfernende Richtlinien, jede eine Zuordnung: module und function (ohne function: jede Richtlinie des Moduls)"
+    },
+    "step:role role": {
+        "en": "the role: its name or id",
+        "de": "die Rolle: ihr Name oder ihre ID"
+    },
+    "step:role section": {
+        "en": "the assignment is limited to this section",
+        "de": "die Zuweisung ist auf diese Sektion beschränkt"
+    },
+    "step:role subtree": {
+        "en": "the assignment is limited to the subtree of this node",
+        "de": "die Zuweisung ist auf den Teilbaum dieses Knotens beschränkt"
+    },
+    "step:role users": {
+        "en": "the users: logins, ids or remote:<remote id>",
+        "de": "die Benutzer: Logins, IDs oder remote:<Remote-ID>"
+    },
+    "step:role value changed": {
+        "en": "true when the step changed it (created, updated, deleted, assigned or unassigned)",
+        "de": "true, wenn der Schritt sie geändert hat (angelegt, geändert, gelöscht, zugewiesen oder entzogen)"
+    },
+    "step:role value created": {
+        "en": "true when the step created the role",
+        "de": "true, wenn der Schritt die Rolle angelegt hat"
+    },
+    "step:role value role_id": {
+        "en": "the id of the role",
+        "de": "die ID der Rolle"
+    },
+    "step:section": {
+        "en": "Creates, updates, ensures or deletes a section, or assigns a section to a part of the content tree",
+        "de": "Legt eine Sektion an, ändert, sichert oder löscht sie, oder weist einem Teil des Inhaltsbaums eine Sektion zu"
+    },
+    "step:section identifier": {
+        "en": "the identifier of the section; ensure finds the section by it (update: a new identifier)",
+        "de": "der Bezeichner der Sektion; ensure findet die Sektion über ihn (update: ein neuer Bezeichner)"
+    },
+    "step:section missing": {
+        "en": "what happens when the section is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn die Sektion nicht da ist: fail (Standard) oder skip"
+    },
+    "step:section name": {
+        "en": "the name of the section",
+        "de": "der Name der Sektion"
+    },
+    "step:section navigation_part": {
+        "en": "the navigation part of the administration the section belongs to (default: ezcontentnavigationpart)",
+        "de": "der Navigationsbereich der Administration, zu dem die Sektion gehört (Standard: ezcontentnavigationpart)"
+    },
+    "step:section node": {
+        "en": "the node whose object (and the objects below it, by scope:) gets the section",
+        "de": "der Knoten, dessen Objekt (und die Objekte darunter, nach scope:) die Sektion bekommt"
+    },
+    "step:section object": {
+        "en": "the object that gets the section (or node:), at its main node",
+        "de": "das Objekt, das die Sektion bekommt (oder node:), an seinem Hauptknoten"
+    },
+    "step:section scope": {
+        "en": "subtree (the default): the objects below too; inherited: those below that had the same section; object: the object alone",
+        "de": "subtree (Standard): auch die Objekte darunter; inherited: die darunter, die dieselbe Sektion hatten; object: nur das Objekt"
+    },
+    "step:section section": {
+        "en": "the section: its identifier or id",
+        "de": "die Sektion: ihr Bezeichner oder ihre ID"
+    },
+    "step:section value changed": {
+        "en": "true when the step changed it (created, updated, deleted or assigned)",
+        "de": "true, wenn der Schritt sie geändert hat (angelegt, geändert, gelöscht oder zugewiesen)"
+    },
+    "step:section value created": {
+        "en": "true when the step created the section",
+        "de": "true, wenn der Schritt die Sektion angelegt hat"
+    },
+    "step:section value identifier": {
+        "en": "its identifier",
+        "de": "ihr Bezeichner"
+    },
+    "step:section value section_id": {
+        "en": "the id of the section",
+        "de": "die ID der Sektion"
+    },
+    "step:user": {
+        "en": "Creates, updates, ensures or deletes a user account with its groups, password and fields",
+        "de": "Legt ein Benutzerkonto mit seinen Gruppen, seinem Passwort und seinen Feldern an, ändert, sichert oder löscht es"
+    },
+    "step:user class": {
+        "en": "the class of a new user (default: user)",
+        "de": "die Klasse eines neuen Benutzers (Standard: user)"
+    },
+    "step:user email": {
+        "en": "the e-mail address of the account",
+        "de": "die E-Mail-Adresse des Kontos"
+    },
+    "step:user enabled": {
+        "en": "whether the account can sign in (default for a new user: true)",
+        "de": "ob sich das Konto anmelden kann (Standard für einen neuen Benutzer: true)"
+    },
+    "step:user fields": {
+        "en": "attribute identifier => value (first_name, last_name ...); the account is set by login:, email: and password:",
+        "de": "Attributbezeichner => Wert (first_name, last_name ...); das Konto setzen login:, email: und password:"
+    },
+    "step:user groups": {
+        "en": "the nodes of the user groups the user is in (the first is its main location); update and ensure add the user to those it is not in",
+        "de": "die Knoten der Benutzergruppen, in denen der Benutzer ist (die erste ist sein Hauptort); update und ensure fügen ihn denen hinzu, in denen er nicht ist"
+    },
+    "step:user language": {
+        "en": "the language of fields: (default: the default language of content)",
+        "de": "die Sprache von fields: (Standard: die Standardsprache der Inhalte)"
+    },
+    "step:user login": {
+        "en": "the login of a new user; ensure finds the user by it",
+        "de": "das Login eines neuen Benutzers; ensure findet den Benutzer über es"
+    },
+    "step:user missing": {
+        "en": "what happens when the user is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn der Benutzer nicht da ist: fail (Standard) oder skip"
+    },
+    "step:user password": {
+        "en": "the password, hashed as eZUser hashes it (ensure: only for a new user); use a placeholder, never the password in the file",
+        "de": "das Passwort, gehasht, wie eZUser es hasht (ensure: nur für einen neuen Benutzer); nehmen Sie einen Platzhalter, nie das Passwort in der Datei"
+    },
+    "step:user password_hash": {
+        "en": "a password hash to store as it is (instead of password:)",
+        "de": "ein Passwort-Hash, der so gespeichert wird, wie er ist (statt password:)"
+    },
+    "step:user password_hash_type": {
+        "en": "the type of password_hash: (md5_password, md5_user, md5_site, plaintext, password_hash ...)",
+        "de": "der Typ von password_hash: (md5_password, md5_user, md5_site, plaintext, password_hash ...)"
+    },
+    "step:user remote_id": {
+        "en": "the remote id of a new user's object",
+        "de": "die Remote-ID des Objekts eines neuen Benutzers"
+    },
+    "step:user remove_groups": {
+        "en": "the nodes of user groups the user leaves (not the main one)",
+        "de": "die Knoten der Benutzergruppen, die der Benutzer verlässt (nicht die Hauptgruppe)"
+    },
+    "step:user user": {
+        "en": "the user to update or delete: login, id or remote:<remote id>",
+        "de": "der zu ändernde oder zu löschende Benutzer: Login, ID oder remote:<Remote-ID>"
+    },
+    "step:user value created": {
+        "en": "true when the step created the user",
+        "de": "true, wenn der Schritt den Benutzer angelegt hat"
+    },
+    "step:user value email": {
+        "en": "the e-mail address",
+        "de": "die E-Mail-Adresse"
+    },
+    "step:user value login": {
+        "en": "the login",
+        "de": "das Login"
+    },
+    "step:user value object_id": {
+        "en": "the id of the user's object (the user id)",
+        "de": "die ID des Objekts des Benutzers (die Benutzer-ID)"
+    },
+    "step:user_group": {
+        "en": "Creates, updates, ensures or deletes a user group, with its name and description in one or more languages",
+        "de": "Legt eine Benutzergruppe mit ihrem Namen und ihrer Beschreibung in einer oder mehreren Sprachen an, ändert, sichert oder löscht sie"
+    },
+    "step:user_group class": {
+        "en": "the class of a new group (default: user_group)",
+        "de": "die Klasse einer neuen Gruppe (Standard: user_group)"
+    },
+    "step:user_group description": {
+        "en": "the description of the group",
+        "de": "die Beschreibung der Gruppe"
+    },
+    "step:user_group fields": {
+        "en": "further attributes of the class: attribute identifier => value",
+        "de": "weitere Attribute der Klasse: Attributbezeichner => Wert"
+    },
+    "step:user_group group": {
+        "en": "the group to update or delete: an object identifier (remote:<remote id>, id, path:)",
+        "de": "die zu ändernde oder zu löschende Gruppe: ein Objektbezeichner (remote:<Remote-ID>, ID, path:)"
+    },
+    "step:user_group language": {
+        "en": "the language of name: and description: (default: the default language of content)",
+        "de": "die Sprache von name: und description: (Standard: die Standardsprache der Inhalte)"
+    },
+    "step:user_group missing": {
+        "en": "what happens when the group is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn die Gruppe nicht da ist: fail (Standard) oder skip"
+    },
+    "step:user_group name": {
+        "en": "the name of the group",
+        "de": "der Name der Gruppe"
+    },
+    "step:user_group names": {
+        "en": "language => the name of the group in it: its translations",
+        "de": "Sprache => der Name der Gruppe in ihr: ihre Übersetzungen"
+    },
+    "step:user_group parent": {
+        "en": "the node of the group the new group is in (create, ensure)",
+        "de": "der Knoten der Gruppe, in der die neue Gruppe ist (create, ensure)"
+    },
+    "step:user_group remote_id": {
+        "en": "the remote id of a new group; ensure finds the group by it",
+        "de": "die Remote-ID einer neuen Gruppe; ensure findet die Gruppe über sie"
+    },
+    "step:user_group value created": {
+        "en": "true when the step created the group",
+        "de": "true, wenn der Schritt die Gruppe angelegt hat"
+    },
+    "step:user_group value node_id": {
+        "en": "the id of its main node (the parent: of users and groups in it)",
+        "de": "die ID ihres Hauptknotens (der parent: der Benutzer und Gruppen in ihr)"
+    },
+    "step:user_group value object_id": {
+        "en": "the id of the group's object",
+        "de": "die ID des Objekts der Gruppe"
+    }
+}

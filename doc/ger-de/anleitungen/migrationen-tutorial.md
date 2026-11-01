@@ -568,9 +568,10 @@ ihre Transaktion wird zurückgerollt. Diese Migration hat eine Schleife und kein
 `exp:migration:rollback 20261101094239_news_languages` sie ab: Fügen Sie eine `down:`-Liste hinzu, um eine
 YAML-Migration selbst zurückzunehmen, oder setzen Sie den Lauf auf seinen Sicherungspunkt zurück.
 
-Die Schritttypen des Kernels sind `reference` und `assert`; die Schritte, die Inhalte, Klassen und Rollen anlegen,
-kommen in `migration.ini [StepSettings] StepTypeList` hinzu, sobald es sie gibt, und eine Erweiterung registriert
-dort ihre eigenen. [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md#die-yaml-migration) nennt jeden
+Neben `reference` und `assert` legen die Schritttypen `content`, `location` und `content_version` des Kernels Objekte,
+ihre Übersetzungen, Orte und Versionen an und ändern sie ([Schritte von YAML-Migrationen](migrationen-yaml-schritte.md));
+die Schritte für Klassen und Rollen kommen in `migration.ini [StepSettings] StepTypeList` hinzu, sobald es sie gibt,
+und eine Erweiterung registriert dort ihre eigenen. [Das Dateiformat](../spezifikationen/6.0/migrationsdateiformat.md#die-yaml-migration) nennt jeden
 Schlüssel, Platzhalter, jede Bedingung und Schleife.
 
 ## Was Sie getan haben

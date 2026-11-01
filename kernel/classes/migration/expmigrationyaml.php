@@ -574,6 +574,7 @@ class expMigrationYaml implements expMigration
      */
     public function plan( $context )
     {
+        $this->tellFile( $context );
         $lines = array();
         $pending = array();
         $idmapErrors = array();
@@ -695,14 +696,27 @@ class expMigrationYaml implements expMigration
      */
     public function up( $context )
     {
+        $this->tellFile( $context );
         $lines = array();
         $this->runSteps( $this->document['steps'], 'steps', $context, array(), $lines );
         return $lines;
     }
 
     /**
+     * Tells the context which migration's steps run, so a step finds the files next to it (expMigrationContext::
+     * migrationFile()).
+     *
+     * @param expMigrationContext|null $context
+     */
+    protected function tellFile( $context )
+    {
+        if ( $context instanceof expMigrationContext )
+            $context->setMigrationFile( $this->file() );
+    }
+
+    /**
      * Whether down() can undo the migration: it has "down:", or every step is of a type that can revert it and none is
-     * a loop.
+     * a loop (a type that can revert only some of its steps, expMigrationPartlyRevertibleStepType, is asked for each).
      *
      * @return bool
      */
@@ -714,7 +728,11 @@ class expMigrationYaml implements expMigration
         {
             if ( !is_array( $step ) || array_key_exists( 'foreach', $step ) || array_key_exists( 'while', $step ) )
                 return false;
-            if ( !$this->registry->get( isset( $step['type'] ) ? $step['type'] : null ) instanceof expMigrationRevertibleStepType )
+            $type = $this->registry->get( isset( $step['type'] ) ? $step['type'] : null );
+            if ( !$type instanceof expMigrationRevertibleStepType )
+                return false;
+            if ( $type instanceof expMigrationPartlyRevertibleStepType
+                 && !$type->revertible( expMigrationStepSchema::withDefaults( $type->schema(), self::ownKeys( $step ) ) ) )
                 return false;
         }
         return true;
@@ -731,6 +749,7 @@ class expMigrationYaml implements expMigration
     {
         if ( !$this->reversible() )
             throw new RuntimeException( $this->id() . ' cannot be undone by itself (no down: and a step that cannot revert itself); restore the caption taken before it' );
+        $this->tellFile( $context );
         $lines = array();
         if ( $this->document['down'] !== null )
         {
