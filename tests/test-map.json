@@ -1950,7 +1950,8 @@
       "tests/tests/kernel/classes/help/expHelpLandingPagesTest.php"
     ],
     "kernel/classes/help/exphelpexamplesgenerator.php": [
-      "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
+      "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php"
     ],
     "kernel/private/classes/commands/exphelpexamples.php": [
       "tests/tests/kernel/classes/help/expHelpExamplesGeneratorTest.php"
@@ -2466,12 +2467,17 @@
       "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRunnerSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRunnerDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandToolsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php"
     ],
     "tests/tests/kernel/classes/migration/expMigrationRunnerFakes.php": [
       "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
       "tests/tests/kernel/classes/migration/expMigrationCaptionTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationRepositoryGitTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationRepositoryGitTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandToolsTest.php"
     ],
     "tests/tests/kernel/classes/migration/expMigrationRunnerEngineChecks.php": [
       "tests/tests/kernel/classes/migration/expMigrationRunnerSqliteTest.php",
@@ -2479,7 +2485,10 @@
       "tests/tests/lib/ezdb/mongodb/expMigrationRunnerMongoDBTest.php",
       "tests/tests/kernel/classes/migration/expMigrationCaptionSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationCaptionDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php"
     ],
     "kernel/classes/migration/*": [
       "tests/tests/kernel/classes/migration/expMigrationDefinitionTest.php",
@@ -2496,7 +2505,12 @@
       "tests/tests/kernel/classes/migration/expMigrationRepositoryGitTest.php",
       "tests/tests/kernel/classes/migration/expMigrationCaptionSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationCaptionDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandToolsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php"
     ],
     "kernel/classes/upgrade/expupgradelock.php": [
       "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
@@ -2571,6 +2585,19 @@
     "update/database/*/6.0/dbupdate-6.0.0-6.0.15.sql": [
       "tests/tests/kernel/classes/migration/expMigrationRecordTest.php",
       "tests/tests/kernel/classes/upgrade/expUpgradeRegistryTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationCommandEngineChecks.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationCommandDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php"
+    ],
+    "kernel/private/classes/commands/expmigration*": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
+      "tests/tests/bin/ConsoleExtensionAliasTest.php"
+    ],
+    "bin/php/expmigration*": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php",
+      "tests/tests/bin/ConsoleExtensionAliasTest.php"
     ]
   },
   "generated": {

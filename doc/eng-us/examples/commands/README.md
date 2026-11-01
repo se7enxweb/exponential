@@ -60,6 +60,15 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:explogs](explogs.md) | exp:logs | The log viewer on the command line: list the log files, follow one, search them and their rotations, find an error reference and the lines of its request (masked by default); rotate logs and prune their archives (dry run unless --apply) |
 | [exp:exploremipsumfill](exploremipsumfill.md) | exp:loremipsum | Fill a translation of objects in a test language (Lorem Ipsum, qlo-ZZ) with lorem ipsum text (dry run unless --apply) |
 | [exp:explovestack](explovestack.md) | exp:lovestack | Check an installation coming from LoveStack (read-only), and record its database as Exponential's (migrate) |
+| [exp:expmigrationcaption](expmigrationcaption.md) | exp:migration:caption | Take a caption of the installation now (database, storage, settings, the commits of the code), or list the captions; a dry run unless --apply |
+| [exp:expmigrationcheck](expmigrationcheck.md) | exp:migration:check | Check migration files without running them: names, headers, order, PHP syntax and classes (the lint for CI) |
+| [exp:expmigrationdryrun](expmigrationdryrun.md) | exp:migration:dry-run | Dry run of the pending migrations: the plan, and with --simulate a run in a transaction that is rolled back (--diff shows what changed) |
+| [exp:expmigrationgenerate](expmigrationgenerate.md) | exp:migration:generate | Write a new migration file: --skeleton writes an empty PHP migration with its header, plan(), up() and down(); a dry run unless --apply |
+| [exp:expmigrationmigrate](expmigrationmigrate.md) | exp:migration:migrate | Run the pending migrations: a dry run unless --apply; captions before and after, restore on failure, commit, tag and push |
+| [exp:expmigrationpush](expmigrationpush.md) | exp:migration:push | Push the migration runs whose push failed (push state pending) to the remote of the migrations repository; a dry run unless --apply |
+| [exp:expmigrationresume](expmigrationresume.md) | exp:migration:resume | Resume a migration run that failed or was interrupted: the migrations still pending run again; a dry run unless --apply |
+| [exp:expmigrationrollback](expmigrationrollback.md) | exp:migration:rollback | Take migrations back: a run (its caption restored), one migration (its down()) or, for experts, any caption; a dry run unless --apply |
+| [exp:expmigrationstatus](expmigrationstatus.md) | exp:migration:status | Migration status: every migration with its state (done, pending, not-needed, failed, unknown), the latest runs and what waits |
 | [exp:exppatterncatalogue](exppatterncatalogue.md) |  |  |
 | [exp:exprepair](exprepair.md) |  | Repair queue of the missing-libraries error page: --create-key, --disable, --status, --run |
 | [exp:exptemplatecheck](exptemplatecheck.md) | exp:template:check, exp:template:lint, exp:template:convert:check | Check templates of every engine (.tpl, .stpl, .twig, .html.twig) for valid syntax: files, directories, designs, extensions, siteaccesses; levels syntax/compile/strict; text, json, jsonl, junit, checkstyle, github and sarif output |
@@ -72,6 +81,7 @@ Every command of `./console` (`bin/php/console`): each `bin/php/<name>.php` is `
 | [exp:exptemplateconverttwigtostpl](exptemplateconverttwigtostpl.md) | exp:template:convert:twig-to-stpl | Convert the Twig templates (.twig) of a design to Smarty templates (.stpl); --dry-run, --file, --force, --override-ini |
 | [exp:exptemplateconverttwigtotpl](exptemplateconverttwigtotpl.md) | exp:template:convert:twig-to-tpl | Convert the Twig templates (.twig) of a design to Exponential templates (.tpl); --dry-run, --file, --force, --override-ini |
 | [exp:exptemplateengines](exptemplateengines.md) | exp:template:engines | List the template engines: library found or not, version, file endings, settings, security policy, compiled-template cache |
+| [exp:expwtmigratefromezwt](expwtmigratefromezwt.md) | exp:wt:migrate-from-ezwt | Replace ezwt (the website toolbar) by expwt (the website sidebar): settings, policies, activation, schedule (dry run unless --apply) |
 | [exp:ezapplytemplate](ezapplytemplate.md) |  | Apply the template blocks found in files and write the files back (exit code 0, 1 or 2) |
 | [exp:ezasynchronouspublisher](ezasynchronouspublisher.md) |  |  |
 | [exp:ezcache](ezcache.md) |  | Clear Exponential caches by tag or id (--clear-tag, --clear-id, --clear-all, --list-tags) |
