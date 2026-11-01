@@ -12,12 +12,11 @@
  * the truth: a step's state comes from detect(), the record only tells "done" (applied by exp:upgrade) from
  * "not-needed" (in place without it) and keeps the last failure's message.
  *
- * Where it is kept: the migration record exp_migration (expMigrationRecord), as migrations of the source "kernel",
- * once the step 6.0.15-migration-tables has made that table and copied the rows of the older table expupgrade_step
- * into it. Until then the record is expupgrade_step (made by step 0, 6.0.15-upgrade-record-table), so an
- * installation that has not run the newer step keeps working. Reading merges both: a row of expupgrade_step that has
- * not been copied yet still counts, and the row of exp_migration wins. Until either table exists nothing is read or
- * written and every step without a record counts as never run.
+ * Where it is kept: the migration record exp_migration (expMigrationRecord), as migrations of the source "kernel".
+ * Step 0, 6.0.15-migration-tables, makes that table. Until it exists nothing is read or written (a write returns
+ * false) and every step without a record counts as never run, so the very first steps of an upgrade work without it.
+ * The older table expupgrade_step of a pre-release of 6.0.15 is never read here: the step
+ * 6.0.15-upgrade-record-table copies its rows into exp_migration and drops it.
  *
  * @since 6.0.15
  * @package kernel
@@ -27,33 +26,26 @@ class expUpgradeRecord
     /** The table the record is written to once it exists. */
     const TABLE = expMigrationRecord::TABLE;
 
-    /** The record before exp_migration (step 0 makes it; read and written while exp_migration is missing). */
-    const LEGACY_TABLE = expMigrationRecord::LEGACY_TABLE;
-
     /**
-     * Whether a record table exists (true, false, null when it cannot be told).
+     * Whether the record table exists (true, false, null when it cannot be told).
      *
      * @param eZDBInterface $db
      * @return bool|null
      */
     public static function exists( $db )
     {
-        return self::table( $db ) !== null ? true : self::unknown( $db );
+        return expMigrationRecord::exists( $db );
     }
 
     /**
-     * The table the record is written to: exp_migration, else expupgrade_step, else null.
+     * The table the record is written to: exp_migration, or null while it does not exist.
      *
      * @param eZDBInterface $db
      * @return string|null
      */
     public static function table( $db )
     {
-        if ( expMigrationRecord::exists( $db ) === true )
-            return self::TABLE;
-        if ( expKernelTableSchema::exists( self::LEGACY_TABLE, $db, true ) === true )
-            return self::LEGACY_TABLE;
-        return null;
+        return expMigrationRecord::exists( $db ) === true ? self::TABLE : null;
     }
 
     /**
@@ -66,19 +58,6 @@ class expUpgradeRecord
     public static function all( $db )
     {
         $all = array();
-        if ( expKernelTableSchema::exists( self::LEGACY_TABLE, $db, true ) === true )
-        {
-            $rows = expKernelTableSchema::tryArrayQuery( $db, 'SELECT * FROM ' . self::LEGACY_TABLE );
-            foreach ( (array)$rows as $row )
-            {
-                $row = array_change_key_case( (array)$row, CASE_LOWER );
-                if ( !isset( $row['step_id'] ) )
-                    continue;
-                foreach ( array( 'applied_at', 'duration_ms' ) as $int )
-                    $row[$int] = isset( $row[$int] ) ? (int)$row[$int] : 0;
-                $all[(string)$row['step_id']] = $row;
-            }
-        }
         foreach ( expMigrationRecord::all( $db, expMigrationRecord::SOURCE_UPGRADE ) as $row )
             $all[$row['migration_id']] = expMigrationRecord::toLegacy( $row );
         return $all;
@@ -159,45 +138,19 @@ class expUpgradeRecord
     }
 
     /**
-     * Writes a row (in the columns of exp_migration) to the record table there is.
+     * Writes a row (in the columns of exp_migration) to exp_migration.
      *
      * @param eZDBInterface $db
      * @param array $row
-     * @return bool
+     * @return bool false while exp_migration does not exist
      */
     protected static function store( $db, array $row )
     {
-        $table = self::table( $db );
-        if ( $table === null )
+        if ( self::table( $db ) === null )
             return false;
         $row['source'] = expMigrationRecord::SOURCE_UPGRADE;
-        if ( $table === self::TABLE )
-        {
-            $row['environment'] = expMigrationRecord::environment();
-            return expMigrationRecord::write( $db, $row );
-        }
-        $legacy = expMigrationRecord::toLegacy( $row );
-        $sql = array();
-        foreach ( $legacy as $value )
-            $sql[] = is_int( $value ) ? (string)$value : "'" . $db->escapeString( (string)$value ) . "'";
-        $db->begin();
-        $db->query( 'DELETE FROM ' . self::LEGACY_TABLE . " WHERE step_id = '" . $db->escapeString( $legacy['step_id'] ) . "'" );
-        $db->query( 'INSERT INTO ' . self::LEGACY_TABLE . ' ( ' . implode( ', ', array_keys( $legacy ) ) . ' ) VALUES ( ' . implode( ', ', $sql ) . ' )' );
-        $db->commit();
-        return true;
-    }
-
-    /**
-     * Whether the record tables cannot be told (null) or are both missing (false).
-     *
-     * @param eZDBInterface $db
-     * @return bool|null
-     */
-    protected static function unknown( $db )
-    {
-        if ( expMigrationRecord::exists( $db ) === null || expKernelTableSchema::exists( self::LEGACY_TABLE, $db, true ) === null )
-            return null;
-        return false;
+        $row['environment'] = expMigrationRecord::environment();
+        return expMigrationRecord::write( $db, $row );
     }
 
     /**

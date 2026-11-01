@@ -53,8 +53,8 @@ Quick start:
 | `expMigrationRecord`, `expMigrationStatusMirror`, `expMigrationRepository` | the tables, the files in git, git |
 | `expMigrationLock` | the installation lock with a holder file (also the lock of `exp:upgrade`) |
 | `expMigrationStatus`, `expMigrationCheck`, `expMigrationSimulation`, `expMigrationGenerator` | the status, the lint, the simulation, the skeleton |
-| `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | the forms and the dashboard summary of Setup > Migrations, the runs started there in the background, their progress file |
 | `expMigrationUpgradeSource`, `expMigrationUpgradeStep` | the kernel's upgrade steps (`exp:upgrade`) as migrations of the source `kernel` |
+| `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | the forms and the dashboard summary of Setup > Migrations, the runs started there in the background, their progress file |
 
 The commands are `bin/php/expmigration<name>.php` (alias `exp:migration:<name>`), their code in
 `kernel/private/classes/commands/`. Their machine output is `exp-migration/1` (`--format=json`); the exit codes are
@@ -74,12 +74,12 @@ those of `exp:upgrade` (0, 1 failed, 2 usage, 3 database unreachable, 4 internal
 
 - Migrations are written in PHP. Files of the types `yml`, `sql`, `<engine>.sql` and `ini` are found, ordered and
   checked, and refused by the runner until their steps arrive.
+- A migration run applies the kernel's upgrade steps of the stages `database` and `scripts` only; the stages `code`,
+  `libraries` and `finish` stay with `exp:upgrade` (they are listed as `deferred`).
 - Setup > Migrations shows, runs and rolls back migrations; writing and generating them (the policy `migration/edit`
   is reserved for that) and the settings of the migrations repository are done in files and on the console.
 - A run started in the administration needs `proc_open` and a PHP command line binary
   (`migration.ini [AdminSettings] PhpCliPath`); without them the page says so and the console runs it.
-- A migration run applies the kernel's upgrade steps of the stages `database` and `scripts` only; the stages `code`,
-  `libraries` and `finish` stay with `exp:upgrade` (they are listed as `deferred`).
 - Commits, tags and pushes need git_manager; without it a run says so and commits nothing.
 
 ## Settings

@@ -54,8 +54,8 @@ Schnellstart:
 | `expMigrationRecord`, `expMigrationStatusMirror`, `expMigrationRepository` | die Tabellen, die Dateien in Git, Git |
 | `expMigrationLock` | die Sperre der Installation mit Halter-Datei (auch die Sperre von `exp:upgrade`) |
 | `expMigrationStatus`, `expMigrationCheck`, `expMigrationSimulation`, `expMigrationGenerator` | der Status, die Prüfung, die Simulation, das Gerüst |
-| `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | die Formulare und die Dashboard-Zusammenfassung von Setup > Migrationen, die dort im Hintergrund gestarteten Läufe, ihre Fortschrittsdatei |
 | `expMigrationUpgradeSource`, `expMigrationUpgradeStep` | die Upgrade-Schritte des Kernels (`exp:upgrade`) als Migrationen der Quelle `kernel` |
+| `expMigrationAdmin`, `expMigrationJob`, `expMigrationProgress` | die Formulare und die Dashboard-Zusammenfassung von Setup > Migrationen, die dort im Hintergrund gestarteten Läufe, ihre Fortschrittsdatei |
 
 Die Befehle sind `bin/php/expmigration<name>.php` (Alias `exp:migration:<name>`), ihr Code liegt in
 `kernel/private/classes/commands/`. Ihre Maschinenausgabe ist `exp-migration/1` (`--format=json`); die Exit-Codes sind
@@ -75,13 +75,13 @@ die von `exp:upgrade` (0, 1 gescheitert, 2 Bedienung, 3 Datenbank nicht erreichb
 
 - Migrationen werden in PHP geschrieben. Dateien der Typen `yml`, `sql`, `<engine>.sql` und `ini` werden gefunden,
   geordnet und geprüft und vom Runner abgelehnt, bis ihre Schritte kommen.
+- Ein Migrationslauf führt von den Upgrade-Schritten des Kernels nur die der Stufen `database` und `scripts` aus; die
+  Stufen `code`, `libraries` und `finish` bleiben bei `exp:upgrade` (sie werden als `deferred` gelistet).
 - Setup > Migrationen zeigt Migrationen an, führt sie aus und nimmt sie zurück; das Schreiben und Erzeugen (dafür ist
   die Richtlinie `migration/edit` vorgesehen) und die Einstellungen des Migrations-Repositorys geschehen in Dateien
   und auf der Konsole.
 - Ein in der Administration gestarteter Lauf braucht `proc_open` und ein PHP-Kommandozeilenprogramm
   (`migration.ini [AdminSettings] PhpCliPath`); fehlen sie, sagt die Seite das, und die Konsole führt ihn aus.
-- Ein Migrationslauf führt von den Upgrade-Schritten des Kernels nur die der Stufen `database` und `scripts` aus; die
-  Stufen `code`, `libraries` und `finish` bleiben bei `exp:upgrade` (sie werden als `deferred` gelistet).
 - Commits, Tags und Pushes brauchen git_manager; ohne ihn sagt ein Lauf das und committet nichts.
 
 ## Einstellungen

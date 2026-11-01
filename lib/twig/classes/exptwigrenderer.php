@@ -366,7 +366,7 @@ class expTwigRenderer
         try
         {
             $template = $twig->load( self::templateName( $twig, $path ) );
-            if ( !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' ) )
+            if ( ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' ) )
                 $treeIndex = expRenderStats::templateEnter( $uri !== null ? $uri : $path, $path, $templateName, true );
             $output = $template->render( $childContext );
             $variables = self::$captureStack[$depth] ?: array();

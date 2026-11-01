@@ -287,7 +287,7 @@ class expMigrationUpgradeSourceTest extends PHPUnit\Framework\TestCase
         $this->assertCount( count( $classes ), $source->migrations() );
         $ids = $source->ids();
         $this->assertSame( '6.0.15-upgrade-record-table', $ids[array_search( '6.0.15-upgrade-record-table', $ids, true )] );
-        $this->assertLessThan( array_search( '6.0.15-migration-tables', $ids, true ), array_search( '6.0.15-upgrade-record-table', $ids, true ) );
+        $this->assertLessThan( array_search( '6.0.15-upgrade-record-table', $ids, true ), array_search( '6.0.15-migration-tables', $ids, true ), 'the drop of expupgrade_step after the tables it copies into' );
         $runnable = 0;
         foreach ( $source->migrations() as $migration )
         {

@@ -84,7 +84,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [smarty.ini](smarty/README.md) | Kernel | 1 |
 | [soap.ini](soap/README.md) | Kernel | 2 |
 | [solr.ini](solr/README.md) | Kernel | 1 |
-| [staticcache.ini](staticcache/README.md) | Kernel | 1 |
+| [staticcache.ini](staticcache/README.md) | Kernel | 3 |
 | [subitems.ini](subitems/README.md) | Kernel | 7 |
 | [subitemscolumns.ini](subitemscolumns/README.md) | Kernel | 129 |
 | [syscard.ini](syscard/README.md) | Kernel | 16 |

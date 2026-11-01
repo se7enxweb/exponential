@@ -64,19 +64,20 @@ Exponential upgrade: status
 Code 6.0.15stable, database sqlite, version 6.0.15stable
 
 Stage database     pending (1 pending)
-  pending     6.0.15-upgrade-record-table          missing: table expupgrade_step
+  pending     6.0.15-migration-tables              missing: table exp_migration, table exp_migration_run
+  not-needed  6.0.15-upgrade-record-table          in place: no table expupgrade_step
   not-needed  6.0.15-user-password-hash-width      not for sqlite
   not-needed  6.0.15-trash-columns                 in place: ezcontentobject_trash.trashed, ...
   ...
 Stage scripts      not-needed
   not-needed  6.0.15-editor-policies               in place
   ...
-Summary: 1 pending, 0 done, 28 not needed, 0 failed, 0 unknown
+Summary: 1 pending, 0 done, 29 not needed, 0 failed, 0 unknown
 PASS
 ```
 
-This is what an installation that was upgraded by hand shows: everything is `not-needed` except the record table,
-which is new with `exp:upgrade` itself.
+This is what an installation that was upgraded by hand shows: everything is `not-needed` except the record tables,
+which are new with `exp:upgrade` itself.
 
 ## The dry run
 
@@ -87,8 +88,8 @@ and takes no lock. `--dry-run` is accepted as the same thing; `--apply` together
 
 ```text
 Stage database     pending (1 pending)
-  pending     6.0.15-upgrade-record-table          missing: table expupgrade_step
-              would create table expupgrade_step: CREATE TABLE expupgrade_step ( ... PRIMARY KEY ( step_id ) );
+  pending     6.0.15-migration-tables              missing: table exp_migration, table exp_migration_run
+              would create table exp_migration, exp_migration_run: CREATE TABLE exp_migration ( ... PRIMARY KEY ( source, migration_id ) ); ...
 ```
 
 ## Applying
@@ -268,12 +269,36 @@ the step is `unknown` and the run goes on; resolve them with `./console exp:user
 ## Verify and the record
 
 `exp:upgrade` records every step it applies: the step, its stage and version, done or failed, when, how long, the
-system user that ran it, the engine, the checksum of the step's code and the last message. The first step,
-`6.0.15-upgrade-record-table`, creates the table `expupgrade_step` for it. The step `6.0.15-migration-tables` then
-creates the record of the [migrations](migrations.md), `exp_migration` and `exp_migration_run`, and copies the rows of
-`expupgrade_step` into `exp_migration` as migrations of the source `kernel`; from then on the record of `exp:upgrade`
-is written there. Until that step has run, `expupgrade_step` is read and written as before, and a row not copied yet
-still counts.
+system user that ran it, the engine, the checksum of the step's code and the last message. The record is the record
+of the [migrations](migrations.md), `exp_migration` (one row per step, as a migration of the source `kernel`) and
+`exp_migration_run`; the first step of the database stage, `6.0.15-migration-tables`, creates both tables. Steps that
+run before it (the code and libraries stages of a first run) are not recorded; their state still comes from the
+installation itself, and the run says `not recorded` for them.
+
+**The older table `expupgrade_step`.** A pre-release of 6.0.15 kept this record in a table of its own,
+`expupgrade_step`. No released version had it and a new installation never gets it. On an installation that still has
+it, the step `6.0.15-upgrade-record-table` (right after `6.0.15-migration-tables`) retires it:
+
+1. it copies every row `exp_migration` does not have yet (a row `exp_migration` has already is newer and is kept);
+2. it checks that every row of `expupgrade_step` is now in `exp_migration`, and stops with the table kept if one is not;
+3. it drops the table (on MongoDB the collection; on Oracle `DROP TABLE ... PURGE`).
+
+The step is pending only while the table exists. The dry run lists each row it would copy, the check and the
+`DROP TABLE` statement, and changes nothing; a second run finds nothing to do. `exp:upgrade` never reads
+`expupgrade_step`: until the step has run, its rows not yet copied simply do not count as recorded.
+
+```text
+$ ./console exp:upgrade:database
+  pending     6.0.15-upgrade-record-table          missing: the table expupgrade_step is still there (2 row(s) not in exp_migration yet)
+              copy the row 6.0.15-trash-columns of expupgrade_step into exp_migration
+              copy the row caption:20261031-120000-pre of expupgrade_step into exp_migration
+              check that every row of expupgrade_step is in exp_migration
+              drop table expupgrade_step: DROP TABLE expupgrade_step;
+```
+
+The SQL update files `update/database/<engine>/6.0/dbupdate-6.0.0-6.0.15.sql` do the same in plain SQL: they create
+`expupgrade_step` empty when it is missing, copy its rows that `exp_migration` does not have and drop it, so they can
+run on every installation and again.
 
 The captions of `exp:upgrade` and those of migration runs (kinds `migration-pre`, `migration-post`,
 `migration-failure`) are one list: `exp:upgrade:captions` shows both, and either rollback can restore either
@@ -341,8 +366,8 @@ version), the backup, every stage with every step (`id`, `stage`, `version`, `st
 | `6.0.15-code-update` | code | `git pull` by hand, through git_manager, fast-forward only |
 | `6.0.15-libraries-update` | libraries | `composer update <package>` by hand (only with `--update`) |
 | `6.0.15-libraries-install` | libraries | `composer install` by hand, with `composer audit` |
-| `6.0.15-upgrade-record-table` | database | (new) the record table `expupgrade_step` |
-| `6.0.15-migration-tables` | database | (new) the record of migrations and upgrades, `exp_migration` and `exp_migration_run`, with the rows of `expupgrade_step` copied over |
+| `6.0.15-migration-tables` | database | (new) the record of migrations and upgrades, `exp_migration` and `exp_migration_run` |
+| `6.0.15-upgrade-record-table` | database | (new) only on an installation of a pre-release of 6.0.15: the rows of its table `expupgrade_step` copied into `exp_migration`, then the table dropped |
 | `6.0.15-user-password-hash-width` | database | `ezuser.password_hash` widened to 255 in the SQL update file |
 | `6.0.15-trash-columns` | database | `ezcontentobject_trash.trashed`, `trashed_by`, `trashed_via` and their index |
 | `6.0.15-pdf-export-footer` | database | `ezpdf_export.show_footer`, `footer_text` |

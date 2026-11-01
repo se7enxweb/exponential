@@ -412,7 +412,7 @@ class eZTemplateCompiler
                                                                           $rootNamespace, $currentNamespace );
             if ( $helperStatus )
             {
-                if ( !empty( $GLOBALS['eZDebugEnabled'] ) && class_exists( 'expRenderStats' ) )
+                if ( ( !empty( $GLOBALS['eZDebugEnabled'] ) || !empty( $GLOBALS['eZDebugCollect'] ) ) && class_exists( 'expRenderStats' ) )
                     expRenderStats::noteTemplateExecuted();
                 $textElements[] = $text;
                 return true;

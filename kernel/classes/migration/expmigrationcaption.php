@@ -80,7 +80,7 @@ class expMigrationCaption
     {
         return array( 'before' => true, 'after' => true, 'reuse' => true, 'restore' => true,
                       'restore-parts' => array( 'database', 'storage', 'settings' ), 'trees' => array( 'settings', 'extension', 'design' ),
-                      'ignore-tables' => array( 'exp_migration', 'exp_migration_run', 'expupgrade_step', 'ezsession', 'expaudit_*' ),
+                      'ignore-tables' => array( 'exp_migration', 'exp_migration_run', 'ezsession', 'expaudit_*' ),
                       'backup-dir' => '', 'include-uncommitted' => false );
     }
 
@@ -296,7 +296,23 @@ class expMigrationCaption
             $code = $head['ok'] ? trim( $head['output'] ) : '';
         }
         return array( 'format' => self::MARKER_FORMAT, 'engine' => $this->context->engine(), 'database' => $database,
-                      'storage' => self::filesMarker( $storage ), 'settings' => self::filesMarker( "$root/settings/override" ), 'code' => $code );
+                      'storage' => self::filesMarker( $storage ), 'settings' => self::filesMarker( $this->settingsDir( $root ) ), 'code' => $code );
+    }
+
+    /**
+     * The settings folder the marker covers: the option settings-dir (relative to the root, '' for none, as storage-dir),
+     * else settings/override.
+     *
+     * @param string $root
+     * @return string
+     */
+    protected function settingsDir( $root )
+    {
+        $dir = $this->context->option( 'settings-dir' );
+        if ( $dir === null )
+            return "$root/settings/override";
+        $dir = (string)$dir;
+        return ( $dir === '' || $dir[0] === '/' ) ? $dir : "$root/$dir";
     }
 
     /**
@@ -349,7 +365,10 @@ class expMigrationCaption
         if ( $dir === '' || !is_dir( $dir ) )
             return 'none';
         $lines = array();
-        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ) );
+        // a folder that cannot be read is left out instead of ending the whole marker (an unreadable var/log of a test
+        // fixture below var/tmp made every caption of the run fail, 2026-11-01)
+        $it = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( $dir, FilesystemIterator::SKIP_DOTS ),
+                                             RecursiveIteratorIterator::LEAVES_ONLY, RecursiveIteratorIterator::CATCH_GET_CHILD );
         foreach ( $it as $file )
         {
             if ( $file->isLink() || !$file->isFile() )
