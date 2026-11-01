@@ -216,6 +216,8 @@ class expAuditTaxonomy
         'system.migration.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration rolled back' ),
         'system.migration.caption' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration caption taken' ),
         'system.migration.push' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migrations pushed' ),
+        // a recording of changes (expMigrationRecording) started, stopped or discarded: the verb says which
+        'system.migration.record' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration recording started, stopped or discarded' ),
         'system.velocity.deploy' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system' ),
         // the Velocity watchdog (doc/eng-us/bc/6.0/velocity-engines.md, "The watchdog"): only a run that acts or decides
         // something notable; a run that finds the engine running records nothing (not even system.command.run)

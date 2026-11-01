@@ -2491,7 +2491,35 @@
       "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRunnerTest.php",
       "tests/tests/kernel/classes/migration/expMigrationCaptionTest.php",
-      "tests/tests/kernel/classes/migration/expMigrationYamlTest.php"
+      "tests/tests/kernel/classes/migration/expMigrationYamlTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php"
+    ],
+    "kernel/classes/migration/expmigrationrecord*.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordingSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordingDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationRecordingMongoDBTest.php"
+    ],
+    "kernel/classes/upgrade/steps/expupgradestepmigrationrecordingtables.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordingSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordingDatabaseTest.php"
+    ],
+    "kernel/private/classes/commands/expmigrationrecord*.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php"
+    ],
+    "bin/php/expmigrationrecord*.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCommandContractTest.php"
+    ],
+    "kernel/private/classes/views/migration/recording.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php"
+    ],
+    "kernel/migration/recording.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationRecordingEngineChecks.php": [
+      "tests/tests/kernel/classes/migration/expMigrationRecordingSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationRecordingDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationRecordingMongoDBTest.php"
     ],
     "tests/tests/kernel/classes/migration/fixtures/*": [
       "tests/tests/kernel/classes/migration/expMigrationLocatorTest.php",

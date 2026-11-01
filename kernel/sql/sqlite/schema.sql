@@ -950,6 +950,30 @@ CREATE TABLE `exp_migration_run` (
 ,  `state` varchar(20) NOT NULL DEFAULT ''
 ,  `tag_name` varchar(150) NOT NULL DEFAULT ''
 );
+CREATE TABLE `exp_migration_recording` (
+  `environment` varchar(50) NOT NULL DEFAULT ''
+,  `event_count` integer NOT NULL DEFAULT '0'
+,  `kind` varchar(20) NOT NULL DEFAULT ''
+,  `label` varchar(255) NOT NULL DEFAULT ''
+,  `message` varchar(1000) NOT NULL DEFAULT ''
+,  `recording_id` varchar(64) NOT NULL DEFAULT '' PRIMARY KEY
+,  `started_at` integer NOT NULL DEFAULT '0'
+,  `state` varchar(20) NOT NULL DEFAULT ''
+,  `stopped_at` integer NOT NULL DEFAULT '0'
+,  `user_id` integer NOT NULL DEFAULT '0'
+);
+CREATE TABLE `exp_migration_recording_event` (
+  `actor_id` integer NOT NULL DEFAULT '0'
+,  `audit_name` varchar(100) NOT NULL DEFAULT ''
+,  `event_id` varchar(32) NOT NULL DEFAULT ''
+,  `payload` longtext DEFAULT NULL
+,  `recorded_at` integer NOT NULL DEFAULT '0'
+,  `recording_id` varchar(64) NOT NULL DEFAULT ''
+,  `step_mode` varchar(20) NOT NULL DEFAULT ''
+,  `step_type` varchar(50) NOT NULL DEFAULT ''
+,  `subject` varchar(255) NOT NULL DEFAULT ''
+,  PRIMARY KEY (`recording_id`,`event_id`)
+);
 CREATE TABLE `exphelp_help_id` (
   `help_id` varchar(80) NOT NULL DEFAULT '' PRIMARY KEY
 ,  `object_id` integer NOT NULL DEFAULT '0'
@@ -1504,6 +1528,7 @@ CREATE INDEX exphelp_feedback_object ON exphelp_feedback ( object_id, created );
 CREATE INDEX exphelp_feedback_created ON exphelp_feedback ( created );
 CREATE INDEX exp_migration_run_id ON exp_migration ( run_id );
 CREATE INDEX exp_migration_run_started ON exp_migration_run ( started_at );
+CREATE INDEX exp_migration_recording_state ON exp_migration_recording ( state );
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_mod" ON "ezorder_status_history" (`modified`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_oid" ON "ezorder_status_history" (`order_id`);
 CREATE INDEX "idx_ezorder_status_history_ezorder_status_history_sid" ON "ezorder_status_history" (`status_id`);

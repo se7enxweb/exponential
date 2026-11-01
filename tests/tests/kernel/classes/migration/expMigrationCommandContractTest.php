@@ -30,7 +30,13 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:caption' => '[apply][dry-run][format:][list][label:][backup-dir:]',
         'exp:migration:push' => '[apply][dry-run][format:][limit:]',
         'exp:migration:check' => '[path:*][environment:][format:]',
-        'exp:migration:generate' => '[skeleton][source:][description:][author:][type:][apply][dry-run][format:]',
+        'exp:migration:generate' => '[skeleton][source:][description:][author:][type:][apply][dry-run][format:][from-recording:]',
+        'exp:migration:record:start' => '[apply][dry-run][format:][site-wide][label:][user:]',
+        'exp:migration:record:stop' => '[apply][dry-run][format:][site-wide][user:]',
+        'exp:migration:record:status' => '[format:][user:]',
+        'exp:migration:record:list' => '[format:][count:]',
+        'exp:migration:record:show' => '[format:][plan]',
+        'exp:migration:record:discard' => '[apply][dry-run][format:]',
     );
 
     /** The arguments. Add, never change or remove. */
@@ -38,6 +44,9 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:rollback' => '[target]',
         'exp:migration:resume' => '[run]',
         'exp:migration:generate' => '[name]',
+        'exp:migration:record:stop' => '[recording]',
+        'exp:migration:record:show' => '[recording]',
+        'exp:migration:record:discard' => '[recording]',
     );
 
     /** command => entry point in bin/php */
@@ -51,6 +60,12 @@ class expMigrationCommandContractTest extends PHPUnit\Framework\TestCase
         'exp:migration:push' => 'expmigrationpush',
         'exp:migration:check' => 'expmigrationcheck',
         'exp:migration:generate' => 'expmigrationgenerate',
+        'exp:migration:record:start' => 'expmigrationrecordstart',
+        'exp:migration:record:stop' => 'expmigrationrecordstop',
+        'exp:migration:record:status' => 'expmigrationrecordstatus',
+        'exp:migration:record:list' => 'expmigrationrecordlist',
+        'exp:migration:record:show' => 'expmigrationrecordshow',
+        'exp:migration:record:discard' => 'expmigrationrecorddiscard',
     );
 
     public static function setUpBeforeClass(): void

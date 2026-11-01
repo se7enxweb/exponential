@@ -8620,6 +8620,182 @@ $schema = array (
       ),
     ),
   ),
+  'exp_migration_recording' =>
+  array (
+    'name' => 'exp_migration_recording',
+    'fields' =>
+    array (
+      'environment' =>
+      array (
+        'length' => 50,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'event_count' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'kind' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'label' =>
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'message' =>
+      array (
+        'length' => 1000,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'recording_id' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'started_at' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'state' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'stopped_at' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'user_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'recording_id',
+        ),
+      ),
+      'exp_migration_recording_state' =>
+      array (
+        'type' => 'non-unique',
+        'fields' =>
+        array (
+          0 => 'state',
+        ),
+      ),
+    ),
+  ),
+  'exp_migration_recording_event' =>
+  array (
+    'name' => 'exp_migration_recording_event',
+    'fields' =>
+    array (
+      'actor_id' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'audit_name' =>
+      array (
+        'length' => 100,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'event_id' =>
+      array (
+        'length' => 32,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'payload' =>
+      array (
+        'type' => 'longtext',
+        'default' => NULL,
+      ),
+      'recorded_at' =>
+      array (
+        'length' => 11,
+        'type' => 'int',
+        'not_null' => '1',
+        'default' => 0,
+      ),
+      'recording_id' =>
+      array (
+        'length' => 64,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'step_mode' =>
+      array (
+        'length' => 20,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'step_type' =>
+      array (
+        'length' => 50,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+      'subject' =>
+      array (
+        'length' => 255,
+        'type' => 'varchar',
+        'not_null' => '1',
+        'default' => '',
+      ),
+    ),
+    'indexes' =>
+    array (
+      'PRIMARY' =>
+      array (
+        'type' => 'primary',
+        'fields' =>
+        array (
+          0 => 'recording_id',
+          1 => 'event_id',
+        ),
+      ),
+    ),
+  ),
   'ezproductcategory' =>
   array (
     'name' => 'ezproductcategory',

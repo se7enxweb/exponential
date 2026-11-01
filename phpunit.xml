@@ -119,6 +119,7 @@
             <file>tests/tests/lib/ezdb/mongodb/expMigrationUpgradeSourceMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationCaptionMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationCommandMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationRecordingMongoDBTest.php</file>
         </testsuite>
 
         <!--

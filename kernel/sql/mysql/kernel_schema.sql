@@ -1573,6 +1573,42 @@ CREATE TABLE exp_migration_run (
 
 
 
+CREATE TABLE exp_migration_recording (
+  environment varchar(50) NOT NULL default '',
+  event_count int(11) NOT NULL default '0',
+  kind varchar(20) NOT NULL default '',
+  label varchar(255) NOT NULL default '',
+  message varchar(1000) NOT NULL default '',
+  recording_id varchar(64) NOT NULL default '',
+  started_at int(11) NOT NULL default '0',
+  state varchar(20) NOT NULL default '',
+  stopped_at int(11) NOT NULL default '0',
+  user_id int(11) NOT NULL default '0',
+  PRIMARY KEY  (recording_id),
+  KEY exp_migration_recording_state (state)
+) ENGINE=InnoDB;
+
+
+
+
+
+CREATE TABLE exp_migration_recording_event (
+  actor_id int(11) NOT NULL default '0',
+  audit_name varchar(100) NOT NULL default '',
+  event_id varchar(32) NOT NULL default '',
+  payload longtext,
+  recorded_at int(11) NOT NULL default '0',
+  recording_id varchar(64) NOT NULL default '',
+  step_mode varchar(20) NOT NULL default '',
+  step_type varchar(50) NOT NULL default '',
+  subject varchar(255) NOT NULL default '',
+  PRIMARY KEY  (recording_id,event_id)
+) ENGINE=InnoDB;
+
+
+
+
+
 CREATE TABLE exphelp_help_id (
   help_id varchar(80) NOT NULL default '',
   object_id int(11) NOT NULL default '0',

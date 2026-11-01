@@ -1110,3 +1110,36 @@ INSERT INTO exp_migration ( source, migration_id, stage, "version", state, start
          CASE WHEN s.stage = 'caption' AND s.step_id LIKE 'caption:%' THEN SUBSTRING( s.step_id FROM 9 ) ELSE '' END
     FROM expupgrade_step s
    WHERE NOT EXISTS ( SELECT 1 FROM exp_migration m WHERE m.source = 'kernel' AND m.migration_id = s.step_id );
+
+-- exp_migration_recording and exp_migration_recording_event: the recordings of changes for migrations (one row per
+-- recording, one row per recorded change with the migration step it stands for as JSON in payload). The upgrade
+-- step 6.0.15-migration-recording-tables does the same. No sequence. New tables only, written with IF NOT EXISTS,
+-- so running these statements again changes nothing.
+
+CREATE TABLE IF NOT EXISTS exp_migration_recording (
+    environment character varying(50) DEFAULT ''::character varying NOT NULL,
+    event_count integer DEFAULT 0 NOT NULL,
+    kind character varying(20) DEFAULT ''::character varying NOT NULL,
+    label character varying(255) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    recording_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    stopped_at integer DEFAULT 0 NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL,
+    CONSTRAINT exp_migration_recording_pkey PRIMARY KEY ( recording_id )
+);
+CREATE INDEX IF NOT EXISTS exp_migration_recording_state ON exp_migration_recording USING btree ( state );
+
+CREATE TABLE IF NOT EXISTS exp_migration_recording_event (
+    actor_id integer DEFAULT 0 NOT NULL,
+    audit_name character varying(100) DEFAULT ''::character varying NOT NULL,
+    event_id character varying(32) DEFAULT ''::character varying NOT NULL,
+    payload text,
+    recorded_at integer DEFAULT 0 NOT NULL,
+    recording_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    step_mode character varying(20) DEFAULT ''::character varying NOT NULL,
+    step_type character varying(50) DEFAULT ''::character varying NOT NULL,
+    subject character varying(255) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT exp_migration_recording_event_pkey PRIMARY KEY ( recording_id, event_id )
+);

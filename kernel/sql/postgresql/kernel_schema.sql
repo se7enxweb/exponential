@@ -2766,6 +2766,35 @@ CREATE TABLE exp_migration_run (
 
 
 
+CREATE TABLE exp_migration_recording (
+    environment character varying(50) DEFAULT ''::character varying NOT NULL,
+    event_count integer DEFAULT 0 NOT NULL,
+    kind character varying(20) DEFAULT ''::character varying NOT NULL,
+    label character varying(255) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    recording_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    stopped_at integer DEFAULT 0 NOT NULL,
+    user_id integer DEFAULT 0 NOT NULL
+);
+
+
+
+CREATE TABLE exp_migration_recording_event (
+    actor_id integer DEFAULT 0 NOT NULL,
+    audit_name character varying(100) DEFAULT ''::character varying NOT NULL,
+    event_id character varying(32) DEFAULT ''::character varying NOT NULL,
+    payload text,
+    recorded_at integer DEFAULT 0 NOT NULL,
+    recording_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    step_mode character varying(20) DEFAULT ''::character varying NOT NULL,
+    step_type character varying(50) DEFAULT ''::character varying NOT NULL,
+    subject character varying(255) DEFAULT ''::character varying NOT NULL
+);
+
+
+
 CREATE TABLE exphelp_help_id (
     help_id character varying(80) DEFAULT ''::character varying NOT NULL,
     object_id integer DEFAULT 0 NOT NULL,
@@ -4336,6 +4365,10 @@ CREATE INDEX exp_migration_run_started ON exp_migration_run USING btree (started
 
 
 
+CREATE INDEX exp_migration_recording_state ON exp_migration_recording USING btree (state);
+
+
+
 
 
 
@@ -5452,6 +5485,16 @@ ALTER TABLE ONLY exp_migration
 
 ALTER TABLE ONLY exp_migration_run
     ADD CONSTRAINT exp_migration_run_pkey PRIMARY KEY (run_id);
+
+
+
+ALTER TABLE ONLY exp_migration_recording
+    ADD CONSTRAINT exp_migration_recording_pkey PRIMARY KEY (recording_id);
+
+
+
+ALTER TABLE ONLY exp_migration_recording_event
+    ADD CONSTRAINT exp_migration_recording_event_pkey PRIMARY KEY (recording_id, event_id);
 
 
 
