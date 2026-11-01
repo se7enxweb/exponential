@@ -24,11 +24,12 @@ Never edit `settings/audit.ini` itself: an update replaces it. Put the settings 
 > The most specific pattern wins; on a tie the later line wins. Events marked "always"  
 > in the catalogue (system.audit.\*, access.view.sensitive) ignore Disabled\[\].  
 > Migrations (migration.ini): a run, a migration applied (also a changed file accepted with  
-> --force --reason), failed or rolled back, a caption taken, the migrations repository pushed.  
+> --force --reason), failed or rolled back, a caption taken, the migrations repository pushed,  
+> and the requests, mails and console commands of their http, mail and command steps.  
 > A site that switches system.\* off keeps them with these lines.  
 > Static publishing: a publish (also a push tried again), a rollback, a deploy key made.  
 
-Default: a list of 42: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.staticpublish.publish`, `system.staticpublish.rollback`, `system.staticpublish.credential`, `content.node.move` ....
+Default: a list of 45: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.http`, `system.migration.mail`, `system.migration.command`, `system.staticpublish.publish` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -44,6 +45,9 @@ Enabled[]=system.migration.fail
 Enabled[]=system.migration.rollback
 Enabled[]=system.migration.caption
 Enabled[]=system.migration.push
+Enabled[]=system.migration.http
+Enabled[]=system.migration.mail
+Enabled[]=system.migration.command
 Enabled[]=system.staticpublish.publish
 Enabled[]=system.staticpublish.rollback
 Enabled[]=system.staticpublish.credential
@@ -53,10 +57,7 @@ Enabled[]=content.node.hide
 Enabled[]=content.node.reveal
 Enabled[]=content.node.swap
 Enabled[]=content.node.section
-Enabled[]=content.object.remove
-Enabled[]=content.object.purge
-Enabled[]=content.object.restore
-# ... 22 more in the shipped file
+# ... 25 more in the shipped file
 */ ?>
 ```
 

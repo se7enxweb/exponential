@@ -124,6 +124,7 @@
             <file>tests/tests/lib/ezdb/mongodb/expMigrationStructureStepsMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php</file>
             <file>tests/tests/lib/ezdb/mongodb/expMigrationCacheSearchAutoloadStepsMongoDBTest.php</file>
+            <file>tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php</file>
         </testsuite>
 
         <!--

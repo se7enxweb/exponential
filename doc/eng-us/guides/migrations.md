@@ -127,9 +127,10 @@ steps:
   (objects, their translations, locations and versions), `content_class` and `content_class_group` (classes with
   their attributes), `user`, `user_group` and `role` (accounts, groups, roles with policies, limitations and
   assignments), `section`, `language`, `object_state_group`, `tag` (eztags), `url_alias` (aliases and
-  wildcards), `trash`, `file` and `image` (files of the migrations folder), `cache`, `search` and `autoload`
-  ([YAML migration steps](migrations-yaml-steps.md));
-  the step types for layouts come later, and an extension adds its own the same way. A step's other keys are checked against its type's schema before anything runs.
+  wildcards), `trash`, `file` and `image` (files of the migrations folder), `cache`, `search` and `autoload`,
+  `layout`, `layout_block` and `layout_rule` (Exponential Layouts), `http`, `mail` and `command` (allowlisted console
+  commands) ([YAML migration steps](migrations-yaml-steps.md)); an extension adds its own the same way. A step's other
+  keys are checked against its type's schema before anything runs.
 - `${ref.<name>}` is a reference (set by `references:` of an earlier step, by a `reference` step, or by an earlier
   PHP or YAML migration of the run), `${loop.<name>}` a loop variable, `${idmap.<kind>.<name>}` an id of the id map
   `migrations/idmap/<environment>.json`, `${run.environment}` the run's environment.
@@ -273,7 +274,7 @@ The pages: [Migrations in the administration](../help/migrations/in-the-administ
 
 ## Not in 6.0.15 yet
 
-The YAML step types for layouts, `http`, `mail` and `command`, SQL and INI migrations, the editor and the
+SQL and INI migrations, the editor and the
 generators in the administration (generators other than the skeleton), recording, and `exp:velocity deploy --migrate`
 are planned and not part of this release.
 

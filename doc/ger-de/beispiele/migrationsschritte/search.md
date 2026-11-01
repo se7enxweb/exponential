@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Indiziert Objekte in der Suchmaschine neu (die genannten oder die, die der Lauf geändert hat) oder alle Objekte.
 
-Ein Schritt einer YAML-Migration mit `type: search`. Die Klasse `expMigrationStepSearch` ist in `settings/migration.ini` `[StepSettings] StepTypeList[search]` registriert.
+Ein Schritt einer YAML-Migration mit `type: search`. Die Klasse `expMigrationStepSearch` (`kernel/classes/migration/steps/expmigrationstepsearch.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[search]` registriert.
 
 ## Modi
 
@@ -57,4 +57,4 @@ Er berührt keinen Cache.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepsearch.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).

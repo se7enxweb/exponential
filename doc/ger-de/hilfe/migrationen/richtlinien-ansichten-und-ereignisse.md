@@ -4,7 +4,7 @@ audience: developer, admin, software-engineer, php-developer
 category: migrations
 order: 22
 summary: Die Richtlinien des Moduls migration und welche Ansichten sie prüfen, die sieben Ansichten mit ihren Adressen, der Dashboard-Block und seine Fetch-Funktion, die ezpEvent-Ereignisse eines Laufs mit ihren Parametern und die Audit-Ereignisse, die er schreibt - mit einem Listener-Beispiel und Links auf jede erzeugte Referenzseite.
-keywords: Richtlinien, Richtlinienfunktionen, Rollen, Modul migration, Ansichten, Dashboard-Block, Ereignisse, Listener, Audit-Ereignisse, Identität bestätigen, migration/read, migration/run, migration/rollback, migration/edit, policies, policy functions, roles, module migration, views, status, history, log, stream, dryrun, run, rollback, dashboard block, fetch migration summary, ezpEvent, events, migration/run/before, migration/step/before, migration/step/after, migration/run/after, listener, audit events, system.migration.run, system.migration.apply, system.migration.fail, system.migration.rollback, system.migration.caption, system.migration.push, verify it's you
+keywords: Richtlinien, Richtlinienfunktionen, Rollen, Modul migration, Ansichten, Dashboard-Block, Ereignisse, Listener, Audit-Ereignisse, Identität bestätigen, migration/read, migration/run, migration/rollback, migration/edit, policies, policy functions, roles, module migration, views, status, history, log, stream, dryrun, run, rollback, dashboard block, fetch migration summary, ezpEvent, events, migration/run/before, migration/step/before, migration/step/after, migration/run/after, listener, audit events, system.migration.run, system.migration.apply, system.migration.fail, system.migration.rollback, system.migration.caption, system.migration.push, system.migration.http, system.migration.mail, system.migration.command, verify it's you
 type: help
 ---
 # Migrationen: Richtlinien, Ansichten und Ereignisse
@@ -135,6 +135,9 @@ Jeder Lauf schreibt in das Prüfprotokoll (Kanal `system`), eingeschaltet in `se
 | `system.migration.rollback` | ein Lauf, eine Migration oder ein Sicherungspunkt zurückgenommen wird |
 | `system.migration.caption` | ein Sicherungspunkt genommen wird |
 | `system.migration.push` | die Aufzeichnung eines Laufs gepusht wird oder der Push scheitert |
+| `system.migration.http` | ein `http`-Schritt eine Anfrage sendet: Methode, Host und Pfad, Status (nie die Abfrage, ein Header oder der Inhalt) |
+| `system.migration.mail` | ein `mail`-Schritt eine E-Mail sendet: wie viele Empfänger (nie eine Adresse oder der Text) |
+| `system.migration.command` | ein `command`-Schritt einen Konsolenbefehl ausführt: sein Name und Exit-Code (nie seine Argumente oder Ausgabe) |
 
 `exp:upgrade` schreibt eigene Ereignisse `system.upgrade.*`. Lesen Sie sie in der Audit-Konsole, oder leiten Sie sie über
 die Senken des Prüfprotokolls weiter (E-Mail, Webhook) ([Die Audit-Spur der Läufe](rezepte/die-audit-spur-der-laeufe.md),

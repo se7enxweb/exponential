@@ -220,6 +220,11 @@ class expAuditTaxonomy
         'system.migration.rollback' => array( 'severity' => 'warning', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration rolled back' ),
         'system.migration.caption' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration caption taken' ),
         'system.migration.push' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migrations pushed' ),
+        // the steps of YAML migrations that reach out: an HTTP request (method, host and path, status), a mail (how
+        // many recipients) and a console command (its name, exit code); never a header, an address, a text or output
+        'system.migration.http' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration HTTP request sent' ),
+        'system.migration.mail' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration mail sent' ),
+        'system.migration.command' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Migration console command run' ),
         // static publishing (doc/eng-us/guides/static-publishing-targets-and-credentials.md): a publish or a push
         // retried, a rollback, a deploy key made or replaced (never a credential's value)
         'system.staticpublish.publish' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'system', 'label' => 'Static site published' ),

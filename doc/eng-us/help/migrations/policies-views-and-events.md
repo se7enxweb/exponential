@@ -4,7 +4,7 @@ audience: developer, admin, software-engineer, php-developer
 category: migrations
 order: 22
 summary: The policies of the module migration and which views check them, the seven views with their addresses, the dashboard block and its fetch function, the ezpEvent events a run sends with their parameters, and the audit events it writes - with a listener example and links to every generated reference page.
-keywords: migration/read, migration/run, migration/rollback, migration/edit, policies, policy functions, roles, module migration, views, status, history, log, stream, dryrun, run, rollback, dashboard block, fetch migration summary, ezpEvent, events, migration/run/before, migration/step/before, migration/step/after, migration/run/after, listener, audit events, system.migration.run, system.migration.apply, system.migration.fail, system.migration.rollback, system.migration.caption, system.migration.push, verify it's you
+keywords: migration/read, migration/run, migration/rollback, migration/edit, policies, policy functions, roles, module migration, views, status, history, log, stream, dryrun, run, rollback, dashboard block, fetch migration summary, ezpEvent, events, migration/run/before, migration/step/before, migration/step/after, migration/run/after, listener, audit events, system.migration.run, system.migration.apply, system.migration.fail, system.migration.rollback, system.migration.caption, system.migration.push, system.migration.http, system.migration.mail, system.migration.command, verify it's you
 type: help
 ---
 # Migrations: policies, views and events
@@ -132,6 +132,9 @@ Every run writes to the audit trail (channel `system`), enabled in `settings/aud
 | `system.migration.rollback` | a run, a migration or a caption is taken back |
 | `system.migration.caption` | a caption is taken |
 | `system.migration.push` | the record of a run is pushed, or the push fails |
+| `system.migration.http` | an `http` step sends a request: method, host and path, status (never the query, a header or the body) |
+| `system.migration.mail` | a `mail` step sends a mail: how many recipients (never an address or the text) |
+| `system.migration.command` | a `command` step runs a console command: its name and exit code (never its arguments or output) |
 
 `exp:upgrade` writes its own `system.upgrade.*` events. Read them in the audit console, or send them on through the
 audit log's sinks (mail, webhook) ([The audit trail of runs](recipes/the-audit-trail-of-runs.md),

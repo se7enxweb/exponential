@@ -238,8 +238,8 @@ fehlende Datei ist eine leere Zuordnung; eine Datei, die keine ist, lässt jede 
 Der Kernel registriert `reference` (`set:` eine Zuordnung von Referenzen), `assert` (`that:` eine Bedingung,
 `message:` der Text des Fehlers), `content`, `location`, `content_version`, `content_class`, `content_class_group`,
 `user`, `user_group`, `role`, `section`, `language`, `object_state_group`, `tag`, `url_alias`, `trash`, `file`, `image`,
-`cache`, `search` und
-`autoload`; jeden Schlüssel jedes Typs nennt seine erzeugte Seite ([die Schritttypen](../../beispiele/migrationsschritte/README.md)).
+`cache`, `search`, `autoload`, `layout`, `layout_block`, `layout_rule`, `http`, `mail` und
+`command`; jeden Schlüssel jedes Typs nennt seine erzeugte Seite ([die Schritttypen](../../beispiele/migrationsschritte/README.md)).
 Ein Bezeichner-Schlüssel nennt seine Art: `node`, `object`, `class`, `section`, `language`, `user`, `role`, `state`,
 `class_group`, `state_group`, `tag` oder `url_alias`; alle außer `node`, `object` und `tag` nehmen auch einen Namen
 (Bezeichner einer Klasse oder Sektion, eine Locale, ein Login, ein Rollenname, `<gruppe>/<zustand>`, der Name einer
@@ -248,6 +248,9 @@ ID, `remote:<Remote-ID>` oder `path:<Schlagwortpfad>` genannt, und nur dort, wo 
 ist. Die Schritte `file` und `image` lesen ihre `file:` unterhalb des Ordners der Migrationsdatei. Die Caches, die
 jeder Schritt nennt, werden nach dem Lauf einmal geleert, und die Objekte, die die Schritte geändert haben, neu indiziert
 ([Caches und der Suchindex](../../anleitungen/migrationen-yaml-schritte.md#caches-der-suchindex-und-autoloads)).
+Die Layout-Schritte arbeiten nur, wo Exponential Layouts installiert ist; `http`, `mail` und `command` senden und starten
+in einem Probelauf nichts, und `command` führt nur die `exp:*`-Befehle der Positivliste aus
+([HTTP-Anfragen, E-Mails und Konsolenbefehle](../../anleitungen/migrationen-yaml-schritte.md#http-anfragen-e-mails-und-konsolenbefehle)).
 Eine Erweiterung registriert ihre eigenen Schritttypen in ihrer `migration.ini.append.php`:
 
 ```ini

@@ -1,0 +1,274 @@
+{
+    "ini:settings/migration.ini [StepSettings] CommandAllowList": {
+        "en": "The console commands the step type command may run: exp:* commands of ./console, by name (exp:services:compile) or\nwith * at the end for a group (exp:static:*). Nothing else runs, and exp:migration:* and exp:upgrade* never do\n(they take the lock the run holds). There is no shell: the command and its arguments are handed over as a list.",
+        "de": "Die Konsolenbefehle, die der Schritttyp command ausführen darf: exp:*-Befehle von ./console, mit Namen (exp:services:compile) oder\nmit * am Ende für eine Gruppe (exp:static:*). Nichts anderes läuft, und exp:migration:* und exp:upgrade* laufen nie\n(sie nehmen die Sperre, die der Lauf hält). Es gibt keine Shell: Befehl und Argumente werden als Liste übergeben."
+    },
+    "step:command": {
+        "en": "Runs one exp:* console command of the installation that migration.ini allows, without a shell",
+        "de": "Führt einen exp:*-Konsolenbefehl der Installation aus, den migration.ini erlaubt, ohne Shell"
+    },
+    "step:command arguments": {
+        "en": "its arguments, each one argument",
+        "de": "seine Argumente, jedes ein Argument"
+    },
+    "step:command command": {
+        "en": "an exp:* command of ./console listed in migration.ini [StepSettings] CommandAllowList[]",
+        "de": "ein exp:*-Befehl von ./console aus migration.ini [StepSettings] CommandAllowList[]"
+    },
+    "step:command expect_exit": {
+        "en": "the exit code that passes",
+        "de": "der Exit-Code, der als Erfolg gilt"
+    },
+    "step:command timeout": {
+        "en": "seconds",
+        "de": "Sekunden"
+    },
+    "step:command value exit": {
+        "en": "the exit code",
+        "de": "der Exit-Code"
+    },
+    "step:command value output": {
+        "en": "what the command printed (at most 64 KB)",
+        "de": "was der Befehl ausgegeben hat (höchstens 64 KB)"
+    },
+    "step:http": {
+        "en": "Sends one HTTP request to another system, with secrets by name and an optional signature, and keeps the answer for references",
+        "de": "Sendet eine HTTP-Anfrage an ein anderes System, mit Geheimnissen über ihren Namen und einer optionalen Signatur, und behält die Antwort für Referenzen"
+    },
+    "step:http bearer": {
+        "en": "the name of a secret sent as Authorization: Bearer <value>",
+        "de": "der Name eines Geheimnisses, das als Authorization: Bearer <Wert> gesendet wird"
+    },
+    "step:http body": {
+        "en": "the body as a text",
+        "de": "der Inhalt als Text"
+    },
+    "step:http expect": {
+        "en": "the status codes that pass (default: any 2xx)",
+        "de": "die Statuscodes, die als Erfolg gelten (Standard: jeder 2xx)"
+    },
+    "step:http headers": {
+        "en": "header => value (no secrets here: secret_headers:)",
+        "de": "Header => Wert (keine Geheimnisse hier: secret_headers:)"
+    },
+    "step:http json": {
+        "en": "the body as JSON (Content-Type: application/json)",
+        "de": "der Inhalt als JSON (Content-Type: application/json)"
+    },
+    "step:http method": {
+        "en": "the method",
+        "de": "die Methode"
+    },
+    "step:http secret_headers": {
+        "en": "header => the name of a secret (Setup > Secrets, or env:<VARIABLE>)",
+        "de": "Header => der Name eines Geheimnisses (Setup > Geheimnisse, oder env:<VARIABLE>)"
+    },
+    "step:http sign": {
+        "en": "the name of a secret that signs the request as webhooks of Exponential are signed",
+        "de": "der Name eines Geheimnisses, das die Anfrage signiert, wie Webhooks von Exponential signiert werden"
+    },
+    "step:http timeout": {
+        "en": "seconds",
+        "de": "Sekunden"
+    },
+    "step:http url": {
+        "en": "http:// or https:// with a host, without a user or password",
+        "de": "http:// oder https:// mit einem Host, ohne Benutzer oder Passwort"
+    },
+    "step:http value body": {
+        "en": "the body of the answer (at most 64 KB)",
+        "de": "der Inhalt der Antwort (höchstens 64 KB)"
+    },
+    "step:http value json": {
+        "en": "the body decoded as JSON (null when it is not)",
+        "de": "der Inhalt als JSON gelesen (null, wenn er keines ist)"
+    },
+    "step:http value status": {
+        "en": "the status code of the answer",
+        "de": "der Statuscode der Antwort"
+    },
+    "step:layout": {
+        "en": "Creates, updates, ensures or deletes a layout of Exponential Layouts with its zones and their links to shared layouts",
+        "de": "Legt ein Layout von Exponential Layouts mit seinen Zonen und ihren Verknüpfungen zu geteilten Layouts an, ändert, sichert oder löscht es"
+    },
+    "step:layout identifier": {
+        "en": "the identifier of the layout",
+        "de": "der Bezeichner des Layouts"
+    },
+    "step:layout layout_type": {
+        "en": "a layout type of explayouts.ini ([LayoutType_<type>]); the zones it defines are added",
+        "de": "ein Layouttyp aus explayouts.ini ([LayoutType_<Typ>]); die Zonen, die er festlegt, werden hinzugefügt"
+    },
+    "step:layout missing": {
+        "en": "what happens when the layout, or Exponential Layouts, is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn das Layout oder Exponential Layouts nicht da ist: fail (Standard) oder skip"
+    },
+    "step:layout name": {
+        "en": "the name of the layout",
+        "de": "der Name des Layouts"
+    },
+    "step:layout publish": {
+        "en": "true: the draft is published; false: the change stays in the draft",
+        "de": "true: der Entwurf wird veröffentlicht; false: die Änderung bleibt im Entwurf"
+    },
+    "step:layout shared": {
+        "en": "whether other layouts can take the blocks of its zones (a new layout: false)",
+        "de": "ob andere Layouts die Blöcke seiner Zonen übernehmen können (ein neues Layout: false)"
+    },
+    "step:layout value created": {
+        "en": "true when the step created the layout",
+        "de": "true, wenn der Schritt das Layout angelegt hat"
+    },
+    "step:layout value layout_id": {
+        "en": "the id of the published layout (of the draft with publish: false)",
+        "de": "die ID des veröffentlichten Layouts (des Entwurfs bei publish: false)"
+    },
+    "step:layout zones": {
+        "en": "zone => {} (a zone of its own), { link: \"<shared layout>/<zone>\" } or { link: none }",
+        "de": "Zone => {} (eine eigene Zone), { link: \"<geteiltes Layout>/<Zone>\" } oder { link: none }"
+    },
+    "step:layout_block": {
+        "en": "Creates, updates, ensures or deletes a block in a zone of a layout of Exponential Layouts, with its parameters",
+        "de": "Legt einen Block in einer Zone eines Layouts von Exponential Layouts mit seinen Parametern an, ändert, sichert oder löscht ihn"
+    },
+    "step:layout_block definition": {
+        "en": "the block definition (explayouts.ini [BlockDefinition_<identifier>]): title, text, list ...",
+        "de": "die Blockdefinition (explayouts.ini [BlockDefinition_<Bezeichner>]): title, text, list ..."
+    },
+    "step:layout_block item_view_type": {
+        "en": "how the block renders its items",
+        "de": "wie der Block seine Einträge darstellt"
+    },
+    "step:layout_block layout": {
+        "en": "the identifier of the layout",
+        "de": "der Bezeichner des Layouts"
+    },
+    "step:layout_block missing": {
+        "en": "what happens when the layout, the zone, the block or Exponential Layouts is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn das Layout, die Zone, der Block oder Exponential Layouts nicht da ist: fail (Standard) oder skip"
+    },
+    "step:layout_block name": {
+        "en": "the name of the block, by which the step finds it in the zone",
+        "de": "der Name des Blocks, über den der Schritt ihn in der Zone findet"
+    },
+    "step:layout_block parameters": {
+        "en": "parameter => value; the others are kept",
+        "de": "Parameter => Wert; die übrigen bleiben"
+    },
+    "step:layout_block position": {
+        "en": "the place in the zone, from 0 (a new block: after the last)",
+        "de": "die Stelle in der Zone, ab 0 (ein neuer Block: nach dem letzten)"
+    },
+    "step:layout_block publish": {
+        "en": "true: the layout's draft is published; false: the change stays in the draft",
+        "de": "true: der Entwurf des Layouts wird veröffentlicht; false: die Änderung bleibt im Entwurf"
+    },
+    "step:layout_block value block_id": {
+        "en": "the id of the block (in the published layout, or in the draft with publish: false)",
+        "de": "die ID des Blocks (im veröffentlichten Layout oder bei publish: false im Entwurf)"
+    },
+    "step:layout_block value created": {
+        "en": "true when the step created the block",
+        "de": "true, wenn der Schritt den Block angelegt hat"
+    },
+    "step:layout_block value layout_id": {
+        "en": "the id of the layout it is in",
+        "de": "die ID des Layouts, in dem er ist"
+    },
+    "step:layout_block view_type": {
+        "en": "how the block renders (a new block: default)",
+        "de": "wie der Block dargestellt wird (ein neuer Block: default)"
+    },
+    "step:layout_block zone": {
+        "en": "the identifier of the zone",
+        "de": "der Bezeichner der Zone"
+    },
+    "step:layout_rule": {
+        "en": "Creates, updates, ensures or deletes a rule of Exponential Layouts that maps pages to a layout",
+        "de": "Legt eine Regel von Exponential Layouts an, die Seiten einem Layout zuordnet, ändert, sichert oder löscht sie"
+    },
+    "step:layout_rule conditions": {
+        "en": "when it applies: a list of { type, value } (siteaccess, class, query_parameter, route_parameter, time ...)",
+        "de": "wann sie gilt: eine Liste von { type, value } (siteaccess, class, query_parameter, route_parameter, time ...)"
+    },
+    "step:layout_rule enabled": {
+        "en": "whether the rule is used (a new rule: true)",
+        "de": "ob die Regel verwendet wird (eine neue Regel: true)"
+    },
+    "step:layout_rule layout": {
+        "en": "the identifier of the published layout",
+        "de": "der Bezeichner des veröffentlichten Layouts"
+    },
+    "step:layout_rule missing": {
+        "en": "what happens when the layout, the rule or Exponential Layouts is not there: fail (the default) or skip",
+        "de": "was geschieht, wenn das Layout, die Regel oder Exponential Layouts nicht da ist: fail (Standard) oder skip"
+    },
+    "step:layout_rule priority": {
+        "en": "the higher, the earlier it is tried (a new rule: above every other)",
+        "de": "je höher, desto früher wird sie versucht (eine neue Regel: über allen anderen)"
+    },
+    "step:layout_rule targets": {
+        "en": "where the rule applies: a list of { type, value } (path, path_prefix, path_info_prefix, path_regex, node, subtree, route, module, module_view); the rule is found by them",
+        "de": "wo die Regel gilt: eine Liste von { type, value } (path, path_prefix, path_info_prefix, path_regex, node, subtree, route, module, module_view); die Regel wird über sie gefunden"
+    },
+    "step:layout_rule value created": {
+        "en": "true when the step created the rule",
+        "de": "true, wenn der Schritt die Regel angelegt hat"
+    },
+    "step:layout_rule value layout_id": {
+        "en": "the id of the layout",
+        "de": "die ID des Layouts"
+    },
+    "step:layout_rule value rule_id": {
+        "en": "the id of the rule (of the first with which: all)",
+        "de": "die ID der Regel (der ersten bei which: all)"
+    },
+    "step:layout_rule which": {
+        "en": "all: every rule of the layout, whatever its targets",
+        "de": "all: jede Regel des Layouts, was immer ihre Ziele sind"
+    },
+    "step:mail": {
+        "en": "Sends one e-mail through the mail transport of the installation",
+        "de": "Sendet eine E-Mail über den Mailtransport der Installation"
+    },
+    "step:mail bcc": {
+        "en": "addresses in blind copy",
+        "de": "Adressen in Blindkopie"
+    },
+    "step:mail body": {
+        "en": "the text",
+        "de": "der Text"
+    },
+    "step:mail cc": {
+        "en": "addresses in copy",
+        "de": "Adressen in Kopie"
+    },
+    "step:mail from": {
+        "en": "the sender (default: site.ini [MailSettings] EmailSender, else AdminEmail)",
+        "de": "der Absender (Standard: site.ini [MailSettings] EmailSender, sonst AdminEmail)"
+    },
+    "step:mail html": {
+        "en": "true: body is HTML",
+        "de": "true: der Text ist HTML"
+    },
+    "step:mail reply_to": {
+        "en": "the address answers go to",
+        "de": "die Adresse, an die Antworten gehen"
+    },
+    "step:mail subject": {
+        "en": "the subject",
+        "de": "der Betreff"
+    },
+    "step:mail to": {
+        "en": "the addresses it goes to",
+        "de": "die Adressen, an die sie geht"
+    },
+    "step:mail transport": {
+        "en": "a transport of site.ini [MailSettings] TransportAlias (file, sendmail, smtp) for this mail only",
+        "de": "ein Transport aus site.ini [MailSettings] TransportAlias (file, sendmail, smtp) nur für diese E-Mail"
+    },
+    "step:mail value recipients": {
+        "en": "how many addresses it went to",
+        "de": "an wie viele Adressen sie ging"
+    }
+}

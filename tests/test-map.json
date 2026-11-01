@@ -2521,7 +2521,11 @@
       "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationCacheSearchAutoloadStepsMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationCacheSearchAutoloadStepsMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php"
     ],
     "tests/tests/kernel/classes/migration/expMigrationStructureStepsEngineChecks.php": [
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php",
@@ -2764,6 +2768,15 @@
     ],
     "kernel/classes/migration/expmigrationrunner.php": [
       "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsSqliteTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsEngineChecks.php": [
+      "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationLayoutHttpMailCommandStepsMongoDBTest.php"
+    ],
+    "kernel/classes/migration/expmigrationprocess.php": [
+      "tests/tests/kernel/classes/migration/expMigrationCacheSearchAutoloadStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationLayoutHttpMailCommandStepsTest.php"
     ]
   },
   "generated": {

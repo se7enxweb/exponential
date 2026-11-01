@@ -11,7 +11,7 @@ generated: exp:help:examples
 
 Erzeugt das Autoload-Array der Erweiterungen oder der Kernel-Klassen, die Erweiterungen ersetzen, neu.
 
-Ein Schritt einer YAML-Migration mit `type: autoload`. Die Klasse `expMigrationStepAutoload` ist in `settings/migration.ini` `[StepSettings] StepTypeList[autoload]` registriert.
+Ein Schritt einer YAML-Migration mit `type: autoload`. Die Klasse `expMigrationStepAutoload` (`kernel/classes/migration/steps/expmigrationstepautoload.php`) ist in `settings/migration.ini` `[StepSettings] StepTypeList[autoload]` registriert.
 
 ## Schlüssel
 
@@ -49,4 +49,4 @@ Er berührt keinen Cache.
 
 ---
 
-Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
+Erzeugt von `./console exp:help:examples --language=ger-de` aus `settings/migration.ini`, `kernel/classes/migration/steps/expmigrationstepautoload.php`. Bearbeiten Sie diese Seite nicht: Ändern Sie die Quelle oder die deutsche Übersetzung und erzeugen Sie sie neu ([wie](../README.md#so-entstehen-die-generierten-seiten)). Freie Dokumentation: [GFDL 1.3 oder später](../../hilfe/freie-dokumentation.md).
