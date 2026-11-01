@@ -25,7 +25,7 @@ e9a221cfefd482545e28180305af7f54  .htaccess_root_static
 46884c493a70f93699d00c996034fbf3  README.md
 edc8679bb8f166efb213766609d84034  SECURITY.md
 afffc46af33f147f5fbcf7e6d9be3fb4  autoload.php
-fbc04be73c8d76222aeb1f85c3e57a0a  autoload/ezp_kernel.php
+22484210979f04e86b8b6d17823867cf  autoload/ezp_kernel.php
 e930cee886a2bb3d48841249c278e5cc  benchmarks/classes/ezbenchmark.php
 7d53275297ef3644b03de14c378ce32a  benchmarks/classes/ezbenchmarkcase.php
 c7d5434eac3788fbeb0a44161d7cdda8  benchmarks/classes/ezbenchmarkclirunner.php
@@ -3515,7 +3515,7 @@ d95203ddf57747c5dcb15b6923bd0356  doc/eng-us/bc/6.0/SUBITEMS_MENU_MORE_ACTIONS_M
 a98f04025a77698f04dcc7f7114859a2  doc/eng-us/bc/6.0/admin4l.md
 57fc6878bd998cb0f26251b458c5fda8  doc/eng-us/bc/6.0/anonymous-public-policies.md
 f0b57cd68a5b41cc14ca22727186740c  doc/eng-us/bc/6.0/api-keys.md
-b397c8b7efc113e4f231e7ba3827a866  doc/eng-us/bc/6.0/audit.md
+4c4d249808a2b482e4965ffdf137c240  doc/eng-us/bc/6.0/audit.md
 2d12f47a5cd7477f143f9e677de4b9e8  doc/eng-us/bc/6.0/backend_ezjscore_services.md
 74bf211249c836e582f29414b8e78479  doc/eng-us/bc/6.0/behaviour-changes-2026-07-08.md
 41b5bdd9a600e99203e97c58f9fb160d  doc/eng-us/bc/6.0/behaviour-changes-2026-09b.md
@@ -6569,7 +6569,7 @@ f5132156a14ca2bfc828685864f93610  doc/eng-us/features/5.4/configurable_dfs_clust
 c1e6f7140df76368c9e37c8e9cd04636  doc/eng-us/features/5.4/event.txt
 f419d28c3a4373456e07228fe7a92255  doc/eng-us/features/5.90/README.md
 79726a141ab55b1f07b48c692d681dd3  doc/eng-us/features/5.90/event.md
-6d2cd2cdc4153f0b6435d9e377576490  doc/eng-us/features/6.0/README.md
+15bf11c1e491a9c7fbc4e4fd56b9c050  doc/eng-us/features/6.0/README.md
 f55de11d14ed02bbc6737bf957afba48  doc/eng-us/features/6.0/about-and-package-pages.md
 36a71395fa49ed9a5d57c795b275c841  doc/eng-us/features/6.0/access-and-cache-filters.md
 c8c82226e2ad84aaddb04a5964a53c40  doc/eng-us/features/6.0/access-array-prefetch.md
@@ -6725,6 +6725,7 @@ f5e4958f9d3d63bcf9d9532889bfb9a2  doc/eng-us/features/6.0/request-logs.md
 cb7cc5398c087e0e65890983dd173f8a  doc/eng-us/features/6.0/request-rules.md
 3d9244162b4071c4b61c40bdaf12e21b  doc/eng-us/features/6.0/reset-user-password.md
 b9891e0910d2e3feb530a7bd60a621bf  doc/eng-us/features/6.0/reverse-relation-check.md
+5a10acfc155fc36448fb6666f1527985  doc/eng-us/features/6.0/review-hold.md
 9cc566fd4212c691405ae71d2e91e42a  doc/eng-us/features/6.0/rich-text-supplementary-characters-and-tex-source.md
 55ac8395f3c983ffd6233f9c0be021e9  doc/eng-us/features/6.0/right-to-left.md
 151865d6634beae6d8b82c8ce851fefe  doc/eng-us/features/6.0/robots-txt.md
@@ -23319,7 +23320,7 @@ c0276f02617099800fc44a3f1be1a776  kernel/classes/audit/expauditkeys.php
 05f84be1889154d25c4bdac622843965  kernel/classes/audit/expauditprivacy.php
 b15fe0df420e7aa6bdca37a5052a4ba2  kernel/classes/audit/expauditreader.php
 a9c7b2d7db2dc3484712ab0c1678d9c4  kernel/classes/audit/expauditsink.php
-fa548f1edc0c2343d5de9d62f62e48b9  kernel/classes/audit/expaudittaxonomy.php
+23d1d74a3cd5b22ffd48c7ef70551c95  kernel/classes/audit/expaudittaxonomy.php
 69d5747a55ef7bf33278f31a8c656aef  kernel/classes/audit/expaudittaxonomybranch.php
 211e12eced11c07249c1fb04e0a75d4a  kernel/classes/audit/expauditverifier.php
 7046fa2f4def0eee720f6521544e8a93  kernel/classes/audit/expauditwriter.php
@@ -23330,7 +23331,7 @@ f3df100147c1489c76ee168eb615e0a4  kernel/classes/audit/format/expauditbzip2forma
 816c47e5cb64c98dca2d001dc5180b5e  kernel/classes/audit/format/expauditxzformat.php
 99bbf0a25d401cbcc0f292a1c1bcdb1c  kernel/classes/audit/format/expauditzipformat.php
 4732234ea7140340b37d83277b9cb41f  kernel/classes/audit/format/expauditzstdformat.php
-364c71e66d6afd8248d236db452d0a40  kernel/classes/audit/hook/expaudithook.php
+3dda3f11969252814e71287b80135ff5  kernel/classes/audit/hook/expaudithook.php
 a225cd9252777670a7817706c7381e2e  kernel/classes/audit/index/expauditindexer.php
 aaaf00d47034b628bdbfae683d0889af  kernel/classes/audit/index/expauditindexrow.php
 a2dc36d3452ebe4d00de421884802f30  kernel/classes/audit/index/expauditindexschema.php
@@ -23570,6 +23571,7 @@ ff21db9e62979a47ec36d34ca3d7a32e  kernel/classes/exppackagearchivemodes.php
 4d84549974acfd0fef70d120d8b3ba5c  kernel/classes/exppreloadjob.php
 d90fee72d4c97e463a995bf96af55d3f  kernel/classes/exppreloadlock.php
 c2716b6471cf0a37197768ec9505651c  kernel/classes/expprocesstools.php
+2e3482787d46050daa1ae3e5f8447a51  kernel/classes/expreviewhold.php
 8f6269e51f361ef385834a13cc7a6a49  kernel/classes/expscriptstatus.php
 aa90dfe294797d07ac3ee9c7be7aa569  kernel/classes/expsecretrule.php
 e773b6378b88c7fb7d34dda61c0242d0  kernel/classes/expsetupfilecopy.php
@@ -24138,6 +24140,7 @@ ae2f94471448406e7b5fff9190742db3  kernel/classes/upgrade/steps/expupgradestepord
 3fd96b5c7cf2bec9dc83f104575da8e5  kernel/classes/upgrade/steps/expupgradesteppasswordhashwidth.php
 40e02ddaecbf7606ec27f333d6e4bf37  kernel/classes/upgrade/steps/expupgradesteppdfexportfooter.php
 a162ed22ddb2259e2bf3d7471a0d698c  kernel/classes/upgrade/steps/expupgradesteprecordtable.php
+74bfa78e1fc0d751161a1e5d82a6ccd9  kernel/classes/upgrade/steps/expupgradestepreviewhold.php
 82a892af7e87ed6ce673c49288f81f4b  kernel/classes/upgrade/steps/expupgradesteprssopmlpodcast.php
 d4882884cb8e11c2db92d3940177cd98  kernel/classes/upgrade/steps/expupgradestepsiteversion.php
 7e17b240f7fbe3bb9779533fecbd006a  kernel/classes/upgrade/steps/expupgradesteptransferruntable.php
@@ -24238,7 +24241,7 @@ b85dea0cf41c041c649e4aa6c4e07d3e  kernel/content/browse.php
 5f2671ea32925e5f1c54d6c792d7ce9e  kernel/content/draft.php
 2da41c5e91dee90bc2490993a82c8b1a  kernel/content/edit.php
 fafda7d9742af73e66deaf690ca62587  kernel/content/ezcontentfunctioncollection.php
-6fb7b2b64cf1170b036da230ea171932  kernel/content/ezcontentoperationcollection.php
+777f35e1d69f0aa687c7d61773eda7d3  kernel/content/ezcontentoperationcollection.php
 bfc735ea8665dbb870074c7a69427d77  kernel/content/ezcontentpublishingbehaviour.php
 8332a57d75764017379dd394a2ed88ea  kernel/content/function_definition.php
 7388554514526aa970cf52f0f66b5ca8  kernel/content/hide.php
@@ -24252,7 +24255,7 @@ dd3d0d0a53d5d9d22893ebfccd31b3e0  kernel/content/multiedit.php
 acc2d03921487b0e6798ed76a6213268  kernel/content/multiedit_functions.php
 21ba165aa5f682062a820b17188c8b63  kernel/content/newcontent.php
 b76d0c0473e3acf61ea2b60659a557e3  kernel/content/node_edit.php
-8db9bfcbd142f3bda8b6f4dddf2cf5a0  kernel/content/operation_definition.php
+b9d2b4f100dc7dde8d5dfbafe09124b9  kernel/content/operation_definition.php
 530072068329040662429a6a76653c4e  kernel/content/pdf.php
 07ea488229b1bd4226bd8188cd40fc63  kernel/content/pendinglist.php
 8bba6b18784be00f259dcd587b099f45  kernel/content/queued.php
@@ -25749,7 +25752,7 @@ af0b62d748bba41c371d96991d3aea96  settings/transfer.ini
 c80250dec48448bcda0865588dfc740c  settings/twig.ini
 074de6a07b41cfcc25307f4e9156daa6  settings/uiswitch.ini
 f23fe66b3019c3e623ade3854c3af1c5  settings/units.ini
-288e80dd6ef6e2a55eed00a91a1200f5  settings/upgrade.ini
+68724922575fabc5ddc4a4ece4bde179  settings/upgrade.ini
 a053b7b38c86a24626be0de5c4370c9c  settings/upload.ini
 53f363dfc5d11e88ff40763bed4b0471  settings/velocity.ini
 4458e8a6aace15cac216a1b48075d17f  settings/viewcache.ini
@@ -27428,7 +27431,7 @@ efeb92c386aa5b9febaf3ee6029dbc92  tests/tests/kernel/classes/audit/expAuditMailR
 908a441e3f86685b3007887aea40c01b  tests/tests/kernel/classes/audit/expAuditPrivacyTest.php
 af4f27cae92e7df2d5b7254676c4705e  tests/tests/kernel/classes/audit/expAuditReaderChunkTest.php
 be1773f7ec01e6432df7c0fa18e96f3c  tests/tests/kernel/classes/audit/expAuditRecentChannelsTest.php
-169f109f0b6ec621f3f8197808ab262c  tests/tests/kernel/classes/audit/expAuditRecordTest.php
+91584d7c37c38b6ad95ad652b585df65  tests/tests/kernel/classes/audit/expAuditRecordTest.php
 9b5253e655ffc477e63c6a2abb93f299  tests/tests/kernel/classes/audit/expAuditSinksTest.php
 760b1c6f215983f292cf424433c05b9d  tests/tests/kernel/classes/audit/expAuditSourceTest.php
 c5cbdbb5d277236b64c83a19a74981a8  tests/tests/kernel/classes/audit/fixtures/expaudittestfixtures.php
@@ -27658,6 +27661,7 @@ f76bf900c6a92ee17e476a7f9f62a0c1  tests/tests/kernel/classes/expMemberManagement
 c00a1c39a7e5c42e5216499c9f6df85c  tests/tests/kernel/classes/expPolicyOmitListTest.php
 c134594e2dbcceec5e46a6435adb0248  tests/tests/kernel/classes/expRemoveSubtreeMultiLocationTest.php
 5891e64b6e4f94ab060c460b7553bf30  tests/tests/kernel/classes/expReverseRelationCheckTest.php
+23da3b6234da0b0d39293a3f63eb4c9c  tests/tests/kernel/classes/expReviewHoldTest.php
 ceeffa0bc56cad57e85e2d23d4d42b19  tests/tests/kernel/classes/expRoleGrantCheckTest.php
 c40cd0bc9e3cb716a69ed51ad0dcf654  tests/tests/kernel/classes/expRolePagesTest.php
 596e3188451406338f843bc97d09d2f4  tests/tests/kernel/classes/expSecretRuleTest.php
