@@ -670,9 +670,69 @@
         try { if (s) { s.setItem(NAV_KEY, JSON.stringify(state)); } } catch (e) { /* blocked or full: this page only */ }
     }
 
+    /*
+     * The viewer's tree opens only the way to its page; the other folders carry data-nav-lazy, the address of their
+     * list (exphelp/navigation/<folder>/(format)/fragment). Opening one (a click, a stored state, the filter) loads it
+     * into the folder's list, which holds the overview link and a link to the folder's own listing until then (and
+     * for good when the request fails). The filter needs every page: the first time it is used on a tree with
+     * folders not loaded, the whole tree (data-exphelp-nav-tree) is loaded in its place.
+     */
+    var LAZY = 'data-nav-lazy';
+    function getText(url, done) {
+        if (typeof fetch !== 'function') { done(null); return; }
+        fetch(url, { headers: { Accept: 'text/html' }, credentials: 'same-origin' })
+            .then(function (response) {
+                if (!response.ok) { throw new Error('HTTP ' + response.status); }
+                return response.text();
+            })
+            .then(function (text) { done(text); })
+            .catch(function () { done(null); });
+    }
+
+    // the first list of an HTML answer of the server, parsed inert (DOMParser runs no script), or null
+    function parseList(html) {
+        if (typeof window.DOMParser !== 'function') { return null; }
+        var doc = new window.DOMParser().parseFromString(html, 'text/html');
+        return doc && doc.body ? doc.body.querySelector('ul') : null;
+    }
+
     function setupNavFilter(nav, t) {
         var details = arr(nav.querySelectorAll('details'));
         var state = readNav();
+        var onLoad = [];
+        function loadFolder(d) {
+            var url = d.getAttribute(LAZY);
+            if (!url || d.hasAttribute('aria-busy')) { return; }
+            d.setAttribute('aria-busy', 'true');
+            getText(url, function (html) {
+                d.removeAttribute('aria-busy');
+                var list = ownChild(d, 'UL');
+                if (html === null || !list || !d.hasAttribute(LAZY)) { return; }
+                d.removeAttribute(LAZY);
+                var fresh = parseList('<ul>' + html + '</ul>');
+                if (!fresh) { return; }
+                while (list.firstChild) { list.removeChild(list.firstChild); }
+                while (fresh.firstChild) { list.appendChild(fresh.firstChild); }
+                onLoad.forEach(function (fn) { fn(list); });
+            });
+        }
+        function loadOpen(root) {
+            arr(root.querySelectorAll('details[' + LAZY + ']')).forEach(function (d) { if (isOpen(d)) { loadFolder(d); } });
+        }
+        // a folder opened in any way (toggle does not bubble: listened to while it goes down)
+        nav.addEventListener('toggle', function (event) {
+            var d = event.target;
+            if (d && d.tagName === 'DETAILS' && isOpen(d) && d.hasAttribute(LAZY)) { loadFolder(d); }
+        }, true);
+        // the folders a loaded list brings: as the reader left them
+        onLoad.push(function (list) {
+            details = arr(nav.querySelectorAll('details'));
+            arr(list.querySelectorAll('details')).forEach(function (d) {
+                var p = pathOf(d);
+                if (p !== '' && Object.prototype.hasOwnProperty.call(state.open, p)) { setOpen(d, state.open[p] === true); }
+            });
+            loadOpen(list);
+        });
         function pathOf(d) { return d.getAttribute('data-nav-path') || ''; }
         function remember(d, open) {
             var p = pathOf(d);
@@ -692,6 +752,7 @@
             if (p !== '' && Object.prototype.hasOwnProperty.call(state.open, p)) { setOpen(d, state.open[p] === true); }
         });
         keepCurrent();
+        loadOpen(nav);
         // the folders as the reader left them before the filter opened its matches; back when the field is emptied
         var saved = null;
         var api = {
@@ -717,21 +778,64 @@
         if (!input) { return api; }
         var status = nav.querySelector('[data-exphelp-navfilter-status]');
         var clear = nav.querySelector('[data-exphelp-navfilter-clear]');
-        var items = arr(nav.querySelectorAll('li'));
+        var items = [], texts = [];
         function norm(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
         function folderOf(li) { return ownChild(li, 'DETAILS'); }
-        var texts = items.map(function (li) {
-            var d = folderOf(li);
-            var own = d ? ownChild(d, 'SUMMARY') : ownChild(li, 'A');
-            return norm(own ? own.textContent : '');
-        });
+        function scan() {
+            items = arr(nav.querySelectorAll('li'));
+            texts = items.map(function (li) {
+                var d = folderOf(li);
+                var own = d ? ownChild(d, 'SUMMARY') : ownChild(li, 'A');
+                return norm(own ? own.textContent : '');
+            });
+        }
+        scan();
         function parentItem(li) { return li.parentNode && li.parentNode.closest ? li.parentNode.closest('li') : null; }
         var timer = null;
+        // the whole tree for the filter, once: in place of the tree that opens only the way to the page
+        var treeUrl = nav.getAttribute('data-exphelp-nav-tree') || '', treeState = treeUrl ? 'none' : 'done';
+        function loadTree() {
+            if (treeState !== 'none' || !nav.querySelector('details[' + LAZY + ']')) { treeState = 'done'; return false; }
+            treeState = 'loading';
+            nav.setAttribute('aria-busy', 'true');
+            getText(treeUrl, function (html) {
+                nav.removeAttribute('aria-busy');
+                var top = nav.querySelector('ul.a4-help-nav-list.is-top');
+                treeState = 'done';
+                if (html === null || !top) { return; }
+                var here = current ? current.getAttribute('href') : null;
+                var tree = parseList(html);
+                if (!tree || !tree.classList.contains('is-top')) { return; }
+                tree = document.importNode(tree, true);
+                top.parentNode.replaceChild(tree, top);
+                current = null;
+                if (here) {
+                    arr(tree.querySelectorAll('a[href]')).some(function (a) {
+                        if (a.getAttribute('href') !== here) { return false; }
+                        a.setAttribute('aria-current', 'page');
+                        current = a;
+                        return true;
+                    });
+                }
+                details = arr(nav.querySelectorAll('details'));
+                details.forEach(function (d) {
+                    var p = pathOf(d);
+                    if (p !== '' && Object.prototype.hasOwnProperty.call(state.open, p)) { setOpen(d, state.open[p] === true); }
+                });
+                saved = null;
+                keepCurrent();
+                scan();
+                apply();
+            });
+            return true;
+        }
+        onLoad.push(function () { if (treeState !== 'loading') { scan(); } });
         input.hidden = false;
         function apply() {
             var words = norm(input.value).split(/\s+/).filter(function (w) { return w !== ''; });
             if (clear) { clear.hidden = input.value === ''; }
             if (state.filter !== input.value) { state.filter = input.value; writeNav(state); }
+            if (words.length && loadTree()) { if (status) { status.textContent = t.searching; } return; }
             if (!words.length) {
                 items.forEach(function (li) { li.hidden = false; });
                 if (saved) { details.forEach(function (d, i) { setOpen(d, saved[i]); }); }
