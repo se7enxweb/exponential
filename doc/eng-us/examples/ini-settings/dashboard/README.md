@@ -10,7 +10,7 @@ generated: exp:help:examples
 ---
 # dashboard.ini
 
-The shipped settings of `settings/dashboard.ini`: 9 blocks, 28 settings.
+The shipped settings of `settings/dashboard.ini`: 10 blocks, 31 settings.
 
 | Block | Settings |
 |---|---|
@@ -19,6 +19,7 @@ The shipped settings of `settings/dashboard.ini`: 9 blocks, 28 settings.
 | [DashboardBlock_audit](DashboardBlock_audit.md) | 4 |
 | [DashboardBlock_cronjobs](DashboardBlock_cronjobs.md) | 3 |
 | [DashboardBlock_migrations](DashboardBlock_migrations.md) | 3 |
+| [DashboardBlock_moderation](DashboardBlock_moderation.md) | 3 |
 | [DashboardBlock_drafts](DashboardBlock_drafts.md) | 4 |
 | [DashboardBlock_all_latest_content](DashboardBlock_all_latest_content.md) | 3 |
 | [DashboardBlock_latest_content](DashboardBlock_latest_content.md) | 3 |

@@ -61,9 +61,11 @@ ExtensionRepositories[]
 > The data tables and the named database connections (doc/eng-us/features/6.0/data-tables.md)  
 > The GraphQL API with the session of the web interface (doc/eng-us/features/6.0/graphql.md)  
 > Migrations: Setup > Migrations, their state, runs and rollback (doc/eng-us/guides/migrations.md)  
+> Moderation: Setup > Recent content, the newest content with its hold and actions on a selection  
+> (doc/eng-us/features/6.0/moderation.md)  
 > The kernel's secret store (doc/eng-us/features/6.0/secret-store.md)  
 
-Default: a list of 38: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
+Default: a list of 39: `apikey`, `audit`, `class`, `collaboration`, `contentcheck`, `csp`, `contentfinder`, `content`, `datatable`, `error`, `exphelp`, `graphql` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -88,10 +90,10 @@ ModuleList[]=infocollector
 ModuleList[]=layout
 ModuleList[]=mailpreferences
 ModuleList[]=migration
+ModuleList[]=moderation
 ModuleList[]=notification
 ModuleList[]=oauth
-ModuleList[]=oauthadmin
-# ... 18 more in the shipped file
+# ... 19 more in the shipped file
 */ ?>
 ```
 

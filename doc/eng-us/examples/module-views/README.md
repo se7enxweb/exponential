@@ -34,6 +34,7 @@ Every module of the kernel and the bundled extensions, from their `module.php`: 
 | [layout](layout/README.md) | 1 | `kernel/layout/module.php` |
 | [mailpreferences](mailpreferences/README.md) | 7 | `kernel/mailpreferences/module.php` |
 | [migration](migration/README.md) | 7 | `kernel/migration/module.php` |
+| [moderation](moderation/README.md) | 3 | `kernel/moderation/module.php` |
 | [notification](notification/README.md) | 5 | `kernel/notification/module.php` |
 | [oauth](oauth/README.md) | 1 | `kernel/private/modules/oauth/module.php` |
 | [oauthadmin](oauthadmin/README.md) | 6 | `kernel/private/modules/oauthadmin/module.php` |

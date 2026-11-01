@@ -27,14 +27,14 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [codetemplate.ini](codetemplate/README.md) | kernel | 1 |
 | [collaboration.ini](collaboration/README.md) | kernel | 4 |
 | [collect.ini](collect/README.md) | kernel | 4 |
-| [content.ini](content/README.md) | kernel | 54 |
+| [content.ini](content/README.md) | kernel | 56 |
 | [contentcheck.ini](contentcheck/README.md) | kernel | 7 |
 | [contentfinder.ini](contentfinder/README.md) | kernel | 1 |
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | kernel | 1 |
 | [country.ini](country/README.md) | kernel | 250 |
 | [countrygroups.ini](countrygroups/README.md) | kernel | 1 |
 | [cronjob.ini](cronjob/README.md) | kernel | 26 |
-| [dashboard.ini](dashboard/README.md) | kernel | 9 |
+| [dashboard.ini](dashboard/README.md) | kernel | 10 |
 | [datatable.ini](datatable/README.md) | kernel | 3 |
 | [datatype.ini](datatype/README.md) | kernel | 5 |
 | [datetime.ini](datetime/README.md) | kernel | 1 |
