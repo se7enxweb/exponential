@@ -3342,7 +3342,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-2eca5485f8afc9f972d48fe28f38b2f1  doc/changelogs/6.0/6.0.15.md
+0f1effe88f135332f1bdcea38adfe103  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6665,7 +6665,7 @@ c1d35c36ad8001ff08accbbb4dcb4b7f  doc/eng-us/features/6.0/transfer-registry.md
 52655ccd8d99de4f991040e3be60a92a  doc/eng-us/features/6.0/trash-who-and-where.md
 d3145c14972f62fc3e55bd0ddb7339f3  doc/eng-us/features/6.0/twig-templates.md
 01c1af354bf09f4fd77c533d051b7106  doc/eng-us/features/6.0/ui-switch-design.md
-5ef33046e1d4d1024b83856954e4a4d6  doc/eng-us/features/6.0/ui-switch-languages.md
+8b06af1fe3206dcb8524386def7ef35f  doc/eng-us/features/6.0/ui-switch-languages.md
 dddc25f5090a5e0f97d83e3714f992fd  doc/eng-us/features/6.0/ui-switch.md
 e4ef7f86ac46e99ef7922dd6e0715833  doc/eng-us/features/6.0/user-audit.md
 86e455aa2147f5763a183b396caab8c7  doc/eng-us/features/6.0/user-hygiene.md
@@ -15951,7 +15951,7 @@ e24a7bd7bc416dfbe85b84c2aa2a29d9  doc/ger-de/funktionen/6.0/transfer-laeufe.md
 9e66ca9e3eb599d2a168f12a86485efe  doc/ger-de/funktionen/6.0/transfer-register.md
 d8811a6943bde3813b7afe286f9d2629  doc/ger-de/funktionen/6.0/uebersetzungen-und-sprachen.md
 de3819d9e1d4985d7a1647e5e065add1  doc/ger-de/funktionen/6.0/ui-umschalter-design.md
-80d54e583466897653208d6d89f50395  doc/ger-de/funktionen/6.0/ui-umschalter-sprachen.md
+a9a3c90a874bd8a7a8b9c19cfbd9d5ea  doc/ger-de/funktionen/6.0/ui-umschalter-sprachen.md
 2cd891c2e50279534ff464caeb48d90c  doc/ger-de/funktionen/6.0/ui-umschalter.md
 491d879bcd909b60ac5fb9ffe5a83da4  doc/ger-de/funktionen/6.0/umbenennung-in-exponential.md
 fdbd3678418acb16837dc2783cd78dd7  doc/ger-de/funktionen/6.0/umgebungseinstellungen.md
@@ -23874,8 +23874,8 @@ af14b3abd4cdf8b310612d7e6bb59709  kernel/classes/transfer/expkerneltransferrunsc
 be52be44d116d4d6ced8fddb10195d93  kernel/classes/transfer/expkerneltransfertool.php
 dbf8f136f76c23dd3c25e769c7351a53  kernel/classes/uiswitch/expuiswitch.php
 f788f1588896b86d1c44eddec6e6c78d  kernel/classes/uiswitch/expuiswitchdesignprovider.php
-e8ecfe28722a595b159227308975a2e6  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
-6908eed0f6649679d38d18cc65d3d4db  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
+a0656f5f4b5d1e6ea5bc1f87cda8b703  kernel/classes/uiswitch/expuiswitchlanguagecatalogue.php
+36ae0ada26aeab3daeee8387f9446610  kernel/classes/uiswitch/expuiswitchlanguageprovider.php
 b175ddfcd284ec585d4e3839b9e02b39  kernel/classes/uiswitch/expuiswitchprovider.php
 97c2143532e0f136ba4e0f7bfef28049  kernel/classes/uiswitch/expuiswitchproviderinterface.php
 13969a076edaaa84b29819ea99744bda  kernel/classes/upgrade/expupgrade.php
@@ -27829,7 +27829,7 @@ f7a2056466297f97f7e6f0ca0b48e64d  tests/tests/kernel/classes/trash/TrashedByColu
 bd2188551781d6b5ff86c3d6ae7600f7  tests/tests/kernel/classes/trash/eZContentObjectTrashRecordTest.php
 b2613564292d5b6c8e23e088227245ba  tests/tests/kernel/classes/uiswitch/expUISwitchDesignProviderTest.php
 d2470d92d4290b1a456535d57f4f9368  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageCatalogueScanTest.php
-d2839df911e083cd2b59c73c787f85ae  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php
+e0b49892e7f4d252029d40910f93812e  tests/tests/kernel/classes/uiswitch/expUISwitchLanguageProviderTest.php
 40df586f72acf6e2c43d2f5d5de6e622  tests/tests/kernel/classes/uiswitch/expUISwitchTest.php
 b5a5b0b8af07949159b580216b6c1078  tests/tests/kernel/classes/uiswitch/expUISwitchTestLanguageTest.php
 a46daadcacf40b3c72d11dfc374d7cb9  tests/tests/kernel/classes/updatesql/CheckDbFilesVersionListTest.php
