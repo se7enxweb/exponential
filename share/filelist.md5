@@ -3342,7 +3342,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-a22c453a877c33893ce21de57af13c47  doc/changelogs/6.0/6.0.15.md
+2eca5485f8afc9f972d48fe28f38b2f1  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -27667,7 +27667,7 @@ d9adcdab7f6d19d12d6c2d0cb709a661  tests/tests/kernel/classes/packages/eZPackageT
 675aba8210a86c2fbf9db52e743e3f2c  tests/tests/kernel/classes/packages/eZPackageUploadInspectorTest.php
 6ad17145c224d066cf6d06b45a404b08  tests/tests/kernel/classes/packages/eZPackageXMLNoNetworkTest.php
 2446efd09f3dbed59b4097e99d6ddef6  tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php
-8fec1a598d53f4222579b3da96cc55c8  tests/tests/kernel/classes/packages/expPackageArchiveLegacyFormatsTest.php
+cbf6b9af92bf0076fb1191949e822bca  tests/tests/kernel/classes/packages/expPackageArchiveLegacyFormatsTest.php
 9b3ad062e6fa4025b729b78dc3c4d2bb  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
 d5765ecae8fce7191512c1e6533d411d  tests/tests/kernel/classes/packages/expPackageJsonTest.php
 4760d244cf27fef4cb7b77f2035c5a31  tests/tests/kernel/classes/packages/fixtures/build-legacy-package-fixtures.php
