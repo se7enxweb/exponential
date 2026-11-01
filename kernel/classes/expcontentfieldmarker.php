@@ -41,8 +41,7 @@ class expContentFieldMarker
      */
     public static function active()
     {
-        $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '';
-        $key = ( class_exists( 'eZUser', false ) ? eZUser::currentUserID() : 0 ) . '/' . $access;
+        $key = self::key();
         if ( !isset( self::$active[$key] ) )
             self::$active[$key] = self::ask();
         return self::$active[$key];
@@ -58,9 +57,21 @@ class expContentFieldMarker
         self::$active = array();
         if ( $active !== null )
         {
-            $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '';
-            self::$active[( class_exists( 'eZUser', false ) ? eZUser::currentUserID() : 0 ) . '/' . $access] = (bool)$active;
+            self::$active[self::key()] = (bool)$active;
         }
+    }
+
+    /**
+     * The user and siteaccess the answer is kept for. The user is asked only when a database connection exists: without
+     * one (a DB-less test, an early bootstrap) eZUser would try to connect, and the answer is the anonymous one anyway.
+     *
+     * @return string
+     */
+    protected static function key()
+    {
+        $access = isset( $GLOBALS['eZCurrentAccess']['name'] ) ? $GLOBALS['eZCurrentAccess']['name'] : '';
+        $user = class_exists( 'eZUser', false ) && class_exists( 'eZDB', false ) && eZDB::hasInstance() ? eZUser::currentUserID() : 0;
+        return $user . '/' . $access;
     }
 
     protected static function ask()
