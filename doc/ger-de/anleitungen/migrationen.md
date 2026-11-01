@@ -127,9 +127,12 @@ steps:
 - Der Kopf besteht aus denselben `#`-Kommentarzeilen wie bei jeder Migration. `exp:migration:generate --skeleton
   <Name> --type=yml` schreibt eine leere.
 - `type` nennt einen Schritttyp aus `migration.ini [StepSettings] StepTypeList`. Der Kernel hat `reference`
-  (Referenzen setzen) und `assert` (die Migration scheitern lassen, wenn eine Bedingung falsch ist); die Schritttypen,
-  die Inhalte, Klassen, Rollen und die anderen Teile einer Installation ändern, werden dort registriert, sobald es sie
-  gibt, und eine Erweiterung fügt ihre eigenen genauso hinzu. Die übrigen Schlüssel eines Schritts werden gegen das
+  (Referenzen setzen), `assert` (die Migration scheitern lassen, wenn eine Bedingung falsch ist), `content`, `location`
+  und `content_version` (Objekte, ihre Übersetzungen, Orte und Versionen), `content_class` und `content_class_group`
+  (Klassen mit ihren Attributen), `user`, `user_group` und `role` (Konten, Gruppen, Rollen mit Richtlinien,
+  Einschränkungen und Zuweisungen), `section`, `language` und `object_state_group`
+  ([Schritte von YAML-Migrationen](migrationen-yaml-schritte.md)); die Schritttypen für Tags, URL-Aliase, den
+  Papierkorb, Dateien, Caches und Layouts kommen später, und eine Erweiterung fügt ihre eigenen genauso hinzu. Die übrigen Schlüssel eines Schritts werden gegen das
   Schema seines Typs geprüft, bevor irgendetwas läuft.
 - `${ref.<Name>}` ist eine Referenz (gesetzt von `references:` eines früheren Schritts, von einem `reference`-Schritt
   oder von einer früheren PHP- oder YAML-Migration des Laufs), `${loop.<Name>}` eine Schleifenvariable,
@@ -280,9 +283,10 @@ Die Seiten: [Migrationen in der Administration](../hilfe/migrationen/in-der-admi
 
 ## Noch nicht in 6.0.15
 
-Die YAML-Schritttypen, die Inhalte, Klassen, Rollen und Einstellungen ändern, SQL- und INI-Migrationen, der Editor und
-die Generatoren in der Administration (Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy
---migrate` sind geplant und nicht Teil dieses Releases.
+Die YAML-Schritttypen für Tags, URL-Aliase, den Papierkorb, Dateien und Bilder, Caches und den Suchindex, Layouts,
+`http`, `mail` und `command`, SQL- und INI-Migrationen, der Editor und die Generatoren in der Administration
+(Generatoren außer dem Gerüst), das Aufzeichnen und `exp:velocity deploy --migrate` sind geplant und nicht Teil
+dieses Releases.
 
 ## Verwandte Seiten
 

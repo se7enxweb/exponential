@@ -22,7 +22,7 @@ Bearbeiten Sie `settings/migration.ini` nie selbst: Ein Update ersetzt die Datei
 > Die Schritttypen von YAML-Migrationen: StepTypeList\[<Name>\]=<Klasse>, wobei <Name> das ist, was "type:" eines Schritts nennt, und  
 > die Klasse expMigrationStepType implementiert. Eine Erweiterung registriert ihre eigenen in ihrer migration.ini.append.php.  
 
-Standard: ein Hash mit 2: `reference=expMigrationStepReference`, `assert=expMigrationStepAssert`.
+Standard: ein Hash mit 13: `reference=expMigrationStepReference`, `assert=expMigrationStepAssert`, `content=expMigrationStepContent`, `location=expMigrationStepLocation`, `content_version=expMigrationStepContentVersion`, `content_class=expMigrationStepContentClass`, `content_class_group=expMigrationStepContentClassGroup`, `user=expMigrationStepUser`, `user_group=expMigrationStepUserGroup`, `role=expMigrationStepRole`, `section=expMigrationStepSection`, `language=expMigrationStepLanguage` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -32,6 +32,17 @@ Standard: ein Hash mit 2: `reference=expMigrationStepReference`, `assert=expMigr
 StepTypeList[]
 StepTypeList[reference]=expMigrationStepReference
 StepTypeList[assert]=expMigrationStepAssert
+StepTypeList[content]=expMigrationStepContent
+StepTypeList[location]=expMigrationStepLocation
+StepTypeList[content_version]=expMigrationStepContentVersion
+StepTypeList[content_class]=expMigrationStepContentClass
+StepTypeList[content_class_group]=expMigrationStepContentClassGroup
+StepTypeList[user]=expMigrationStepUser
+StepTypeList[user_group]=expMigrationStepUserGroup
+StepTypeList[role]=expMigrationStepRole
+StepTypeList[section]=expMigrationStepSection
+StepTypeList[language]=expMigrationStepLanguage
+StepTypeList[object_state_group]=expMigrationStepObjectStateGroup
 */ ?>
 ```
 

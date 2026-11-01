@@ -27,7 +27,7 @@ Every shipped INI file of the kernel and the bundled extensions, one page per bl
 | [codetemplate.ini](codetemplate/README.md) | kernel | 1 |
 | [collaboration.ini](collaboration/README.md) | kernel | 4 |
 | [collect.ini](collect/README.md) | kernel | 4 |
-| [content.ini](content/README.md) | kernel | 53 |
+| [content.ini](content/README.md) | kernel | 54 |
 | [contentcheck.ini](contentcheck/README.md) | kernel | 7 |
 | [contentfinder.ini](contentfinder/README.md) | kernel | 1 |
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | kernel | 1 |

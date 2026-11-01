@@ -27,7 +27,7 @@ Jede ausgelieferte INI-Datei des Kernels und der mitgelieferten Erweiterungen, e
 | [codetemplate.ini](codetemplate/README.md) | Kernel | 1 |
 | [collaboration.ini](collaboration/README.md) | Kernel | 4 |
 | [collect.ini](collect/README.md) | Kernel | 4 |
-| [content.ini](content/README.md) | Kernel | 53 |
+| [content.ini](content/README.md) | Kernel | 54 |
 | [contentcheck.ini](contentcheck/README.md) | Kernel | 7 |
 | [contentfinder.ini](contentfinder/README.md) | Kernel | 1 |
 | [contentstructuremenu.ini](contentstructuremenu/README.md) | Kernel | 1 |

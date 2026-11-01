@@ -136,14 +136,23 @@ It is one of the kernel's upgrade steps of the stage `code`, `libraries` or `fin
 `exp:upgrade`; the warning names the command (`./console exp:upgrade:code --apply` ...). A migration that requires it
 waits ([Upgrade step or migration?](recipes/upgrade-step-or-migration.md)).
 
-### `migrations of type .yml cannot be run yet`
+### `migrations of type .sql cannot be run yet` (or `.ini`)
 
-In 6.0.15 migrations are written in PHP. YAML, SQL and INI files are found and checked, and refused by the runner.
+In 6.0.15 migrations are written in PHP or as YAML steps. SQL and INI files are found and checked, and refused by the
+runner.
 
 ### The PHP file is refused: no class, two classes, a class declared twice
 
 Each file declares exactly one non-abstract class that extends `\expMigrationPhp`, in a namespace, with a name no
 other file uses. `exp:migration:generate --skeleton` writes it that way ([PHP migrations](../../guides/migrations-php.md)).
+
+### `...::definition() has the name of a method of expMigrationPhp that a migration cannot declare`
+
+The class declares a method PHP would refuse while loading the file: a helper named like one of the base class's own
+methods (`definition()`, `file()`, `id()`, `source()`, `checksum()`, `state()` ...), or `plan()`, `up()`, `down()`,
+`detect()` declared private, static, with a type on `$context` or with more required parameters. `exp:migration:check`
+and every run read the class before loading it and name the method; the other migrations are checked and run as
+usual. Rename the helper, or declare the hook as [PHP migrations](../../guides/migrations-php.md#the-methods) shows it.
 
 ## A migration ran where it should not
 
