@@ -79,7 +79,12 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | [exp:exprepair](exprepair.md) |  | Reparaturwarteschlange der Fehlerseite für fehlende Bibliotheken: --create-key, --disable, --status, --run |
 | [exp:expstaticbuild](expstaticbuild.md) | exp:static:build | Baut eine statische Kopie des Siteaccess eines Ziels in seinen Ordner (statisches Veröffentlichen): als anonymer Benutzer durchlaufen, Links umgeschrieben, Dateien gesammelt, Zusatzdateien und Manifest geschrieben |
 | [exp:expstaticdiff](expstaticdiff.md) | exp:static:diff | Was der letzte statische Build eines Ziels geändert hat, ob sein Ordner noch zum Manifest passt und ob jeder Link darin funktioniert, wenn er unterhalb eines Pfads ausgeliefert wird |
+| [exp:expstatickeys](expstatickeys.md) | exp:static:keys | Den SSH-Deploy-Key eines Ziels des statischen Veröffentlichens erzeugen oder anzeigen: ed25519, die private Hälfte im Geheimnisspeicher, die öffentliche zum Hinzufügen beim Repository |
+| [exp:expstaticpublish](expstaticpublish.md) | exp:static:publish | Den statischen Build eines Ziels veröffentlichen (statisches Veröffentlichen): im Git-Repository des Ziels committen, als static/<ziel>/<n> taggen und pushen, nie erzwungen |
+| [exp:expstaticpush](expstaticpush.md) | exp:static:push | Die Ziele des statischen Veröffentlichens erneut pushen, deren Push gescheitert ist (Läufe mit dem Push-Zustand pending), nie erzwungen |
+| [exp:expstaticrollback](expstaticrollback.md) | exp:static:rollback | Ein Ziel des statischen Veröffentlichens auf eine frühere Veröffentlichung zurücknehmen: ein neuer Commit mit den Dateien dieses Tags, getaggt und gepusht; der Verlauf bleibt |
 | [exp:expstaticserve](expstaticserve.md) | exp:static:serve | Den statischen Build eines Ziels lokal ansehen: der eingebaute Webserver von PHP liefert seinen Ordner unterhalb des Basispfads des Ziels aus, wie GitHub Pages eine Projekt-Website ausliefert |
+| [exp:expstaticstatus](expstaticstatus.md) | exp:static:status | Der Zustand eines Ziels des statischen Veröffentlichens: sein Git-Repository, die Zugangsdaten (nie ihr Wert), die letzten Läufe, wartende Pushes und veraltete Seiten |
 | [exp:expstatictargets](expstatictargets.md) | exp:static:targets | Listet die Ziele des statischen Veröffentlichens (staticcache.ini [Target_<id>]) mit Siteaccess, Links und Ordner und prüft jedes |
 | [exp:exptemplatecheck](exptemplatecheck.md) | exp:template:check, exp:template:lint, exp:template:convert:check | Prüft Templates jeder Engine (.tpl, .stpl, .twig, .html.twig) auf gültige Syntax: Dateien, Verzeichnisse, Designs, Erweiterungen, Siteaccesses; Stufen syntax/compile/strict; Ausgabe als Text, json, jsonl, junit, checkstyle, github und sarif |
 | [exp:exptemplateconvert](exptemplateconvert.md) | exp:template:convert | Konvertiert die Templates eines Designs von einer Template-Engine in eine andere (--from-engine, --to-engine: tpl, stpl, twig); --dry-run, --file, --force, --override-ini, --twig-suffix |
@@ -194,6 +199,7 @@ Jeder Befehl von `./console` (`bin/php/console`): Jedes `bin/php/<name>.php` ist
 | `shell:common` | `bin/shell/common.sh` |  |
 | `shell:creatediff` | `bin/shell/creatediff.sh` | Erstellt ein Patch-/Diff-Archiv zwischen zwei Exponential-Releases |
 | `shell:distcommon` | `bin/shell/distcommon.sh` | Gemeinsame Funktionsbibliothek, die die Skripte zum Bau der Distribution einbinden (nicht ausführbar) |
+| `shell:expstaticaskpass` | `bin/shell/expstaticaskpass.sh` | Statisches Veröffentlichen: das Passwort-Hilfsprogramm von git (GIT_ASKPASS) für ein Ziel mit einem Token als Zugangsdaten |
 | `shell:extensionscommon` | `bin/shell/extensionscommon.sh` | Gemeinsame Funktionsbibliothek, die die Skripte zum Paketieren von Erweiterungen einbinden (nicht ausführbar) |
 | `shell:fixlicense` | `bin/shell/fixlicense.sh` | Aktualisiert alte Lizenz-URLs von eZ Systems in PHP-Quelldateien |
 | `shell:generatefilelist` | `bin/shell/generatefilelist.sh` | Erzeugt die Prüfsummen der Dateien in share/filelist.md5 für das aktuelle Release |

@@ -28,6 +28,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | `notification` | [notification.php](notification.md) | `php runcronjobs.php notification` |
 | `mailpreferences` | [mailpreferences.php](mailpreferences.md) | `php runcronjobs.php mailpreferences` |
 | `migrationpush` | [migrationpush.php](migrationpush.md) | `php runcronjobs.php migrationpush` |
+| `staticpublish` | [staticpublish.php](staticpublish.md) | `php runcronjobs.php staticpublish` |
 | `mailbounces` | [mailbounces.php](mailbounces.md) | `php runcronjobs.php mailbounces` |
 | `usersessions` | [usersessions.php](usersessions.md) | `php runcronjobs.php usersessions` |
 | `useraudit` | [useraudit.php](useraudit.md) | `php runcronjobs.php useraudit` |
@@ -66,6 +67,7 @@ Jedes Cronjob-Skript des Kernels und der mitgelieferten Erweiterungen und die Te
 | [rssimport.php](rssimport.md) | Holt die konfigurierten RSS-Feeds und importiert sie in den Inhaltsbaum | (Standard) |
 | [session_gc.php](session_gc.md) | Räumt abgelaufene Benutzersitzungen aus dem Sitzungsspeicher |  |
 | [staticcache_cleanup.php](staticcache_cleanup.md) | Entfernt abgelaufene und veraltete Einträge aus dem statischen Seiten-Cache |  |
+| [staticpublish.php](staticpublish.md) | Statisches Veröffentlichen: die Ziele erneut pushen, deren Veröffentlichung nicht gepusht werden konnte (Läufe mit dem Push-Zustand pending) | staticpublish |
 | [subtreeexpirycleanup.php](subtreeexpirycleanup.md) | Räumt Einträge zum Ablauf von Teilbäumen aus den URL-Cache-Tabellen |  |
 | [trashpurge.php](trashpurge.md) | Löscht Objekte im Papierkorb endgültig (alle oder so alte, wie [TrashSettings] KeepItemsForDays sagt) |  |
 | [unlock.php](unlock.md) | Gibt Inhaltsobjekte frei, die in einem gesperrten Bearbeitungszustand hängen | unlock |

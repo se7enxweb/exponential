@@ -19,15 +19,16 @@ Bearbeiten Sie `settings/audit.ini` nie selbst: Ein Update ersetzt die Datei. Sc
 
 ## Enabled
 
-> Welche Ereignisse aufgezeichnet werden, nach Taxonomie-Muster: eine ganze Domäne (content.\*), ein Gegenstand  
-> (content.node.\*), eine Aktion mit ihren Details (content.node.remove.\*) oder ein einzelner Name.  
-> Das genaueste Muster gewinnt; bei Gleichstand gewinnt die spätere Zeile. Ereignisse, die im Katalog als "always"  
-> markiert sind (system.audit.\*, access.view.sensitive), ignorieren Disabled\[\].  
-> Migrationen (migration.ini): ein Lauf, eine angewendete Migration (auch eine mit --force --reason angenommene  
-> geänderte Datei), eine gescheiterte oder zurückgenommene, ein angelegter Sicherungspunkt, ein Push des  
-> Migrations-Repositorys. Eine Site, die system.\* abschaltet, behält sie mit diesen Zeilen.  
+> Which events are recorded, by taxonomy pattern: a whole domain (content.\*), a subject  
+> (content.node.\*), an action with its details (content.node.remove.\*) or one name.  
+> The most specific pattern wins; on a tie the later line wins. Events marked "always"  
+> in the catalogue (system.audit.\*, access.view.sensitive) ignore Disabled\[\].  
+> Migrations (migration.ini): a run, a migration applied (also a changed file accepted with  
+> --force --reason), failed or rolled back, a caption taken, the migrations repository pushed.  
+> A site that switches system.\* off keeps them with these lines.  
+> Static publishing: a publish (also a push tried again), a rollback, a deploy key made.  
 
-Standard: eine Liste mit 40: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.record`, `content.node.move`, `content.node.remove.*`, `content.node.hide` ....
+Standard: eine Liste mit 43: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.record`, `system.staticpublish.publish`, `system.staticpublish.rollback`, `system.staticpublish.credential` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -44,6 +45,9 @@ Enabled[]=system.migration.rollback
 Enabled[]=system.migration.caption
 Enabled[]=system.migration.push
 Enabled[]=system.migration.record
+Enabled[]=system.staticpublish.publish
+Enabled[]=system.staticpublish.rollback
+Enabled[]=system.staticpublish.credential
 Enabled[]=content.node.move
 Enabled[]=content.node.remove.*
 Enabled[]=content.node.hide
@@ -52,10 +56,7 @@ Enabled[]=content.node.swap
 Enabled[]=content.node.section
 Enabled[]=content.object.remove
 Enabled[]=content.object.purge
-Enabled[]=content.object.restore
-Enabled[]=content.object.state
-Enabled[]=content.object.translation.remove
-# ... 20 weitere in der ausgelieferten Datei
+# ... 23 weitere in der ausgelieferten Datei
 */ ?>
 ```
 

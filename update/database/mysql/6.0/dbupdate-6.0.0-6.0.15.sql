@@ -878,6 +878,44 @@ CREATE TABLE IF NOT EXISTS expupgrade_step (
   PRIMARY KEY ( step_id )
 ) ENGINE=InnoDB;
 
+-- exp_static_run and exp_static_page: the record of static publishing, one row per publish or rollback of a
+-- target and one per page of a target as last published (the upgrade step 6.0.15-static-publish-tables makes
+-- them). Written with IF NOT EXISTS, so running these statements again changes nothing.
+
+CREATE TABLE IF NOT EXISTS exp_static_page (
+  built_at int(11) NOT NULL DEFAULT '0',
+  hash varchar(64) NOT NULL DEFAULT '',
+  node_id int(11) NOT NULL DEFAULT '0',
+  page_bytes int(11) NOT NULL DEFAULT '0',
+  path varchar(255) NOT NULL DEFAULT '',
+  stale int(11) NOT NULL DEFAULT '0',
+  target varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY ( target, path ),
+  KEY exp_static_page_node ( node_id )
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS exp_static_run (
+  added int(11) NOT NULL DEFAULT '0',
+  bytes int(11) NOT NULL DEFAULT '0',
+  changed int(11) NOT NULL DEFAULT '0',
+  commit_id varchar(64) NOT NULL DEFAULT '',
+  files int(11) NOT NULL DEFAULT '0',
+  finished_at int(11) NOT NULL DEFAULT '0',
+  kind varchar(20) NOT NULL DEFAULT '',
+  message varchar(1000) NOT NULL DEFAULT '',
+  pages int(11) NOT NULL DEFAULT '0',
+  push_state varchar(20) NOT NULL DEFAULT '',
+  removed int(11) NOT NULL DEFAULT '0',
+  run_by varchar(150) NOT NULL DEFAULT '',
+  run_id varchar(64) NOT NULL DEFAULT '',
+  started_at int(11) NOT NULL DEFAULT '0',
+  state varchar(20) NOT NULL DEFAULT '',
+  tag_name varchar(150) NOT NULL DEFAULT '',
+  target varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY ( run_id ),
+  KEY exp_static_run_target ( target, started_at )
+) ENGINE=InnoDB;
+
 -- exp_migration and exp_migration_run: the migration record (one row per migration, the key is its source and
 -- id) and its runs; exp:upgrade writes its steps there as migrations of the source "kernel" (the upgrade step
 -- 6.0.15-migration-tables makes them). Written with IF NOT EXISTS, the copy leaves out a row that exp_migration

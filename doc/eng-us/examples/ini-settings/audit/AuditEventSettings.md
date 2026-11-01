@@ -26,8 +26,9 @@ Never edit `settings/audit.ini` itself: an update replaces it. Put the settings 
 > Migrations (migration.ini): a run, a migration applied (also a changed file accepted with  
 > --force --reason), failed or rolled back, a caption taken, the migrations repository pushed.  
 > A site that switches system.\* off keeps them with these lines.  
+> Static publishing: a publish (also a push tried again), a rollback, a deploy key made.  
 
-Default: a list of 40: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.record`, `content.node.move`, `content.node.remove.*`, `content.node.hide` ....
+Default: a list of 43: `access.*`, `system.*`, `system.migration.run`, `system.migration.apply`, `system.migration.fail`, `system.migration.rollback`, `system.migration.caption`, `system.migration.push`, `system.migration.record`, `system.staticpublish.publish`, `system.staticpublish.rollback`, `system.staticpublish.credential` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -44,6 +45,9 @@ Enabled[]=system.migration.rollback
 Enabled[]=system.migration.caption
 Enabled[]=system.migration.push
 Enabled[]=system.migration.record
+Enabled[]=system.staticpublish.publish
+Enabled[]=system.staticpublish.rollback
+Enabled[]=system.staticpublish.credential
 Enabled[]=content.node.move
 Enabled[]=content.node.remove.*
 Enabled[]=content.node.hide
@@ -52,10 +56,7 @@ Enabled[]=content.node.swap
 Enabled[]=content.node.section
 Enabled[]=content.object.remove
 Enabled[]=content.object.purge
-Enabled[]=content.object.restore
-Enabled[]=content.object.state
-Enabled[]=content.object.translation.remove
-# ... 20 more in the shipped file
+# ... 23 more in the shipped file
 */ ?>
 ```
 

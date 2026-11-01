@@ -1056,6 +1056,44 @@ CREATE TABLE IF NOT EXISTS expupgrade_step (
     CONSTRAINT expupgrade_step_pkey PRIMARY KEY ( step_id )
 );
 
+-- exp_static_run and exp_static_page: the record of static publishing, one row per publish or rollback of a
+-- target and one per page of a target as last published (the upgrade step 6.0.15-static-publish-tables makes
+-- them). Written with IF NOT EXISTS, so running these statements again changes nothing.
+
+CREATE TABLE IF NOT EXISTS exp_static_page (
+    built_at integer DEFAULT 0 NOT NULL,
+    hash character varying(64) DEFAULT ''::character varying NOT NULL,
+    node_id integer DEFAULT 0 NOT NULL,
+    page_bytes integer DEFAULT 0 NOT NULL,
+    path character varying(255) DEFAULT ''::character varying NOT NULL,
+    stale integer DEFAULT 0 NOT NULL,
+    target character varying(50) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT exp_static_page_pkey PRIMARY KEY ( target, path )
+);
+CREATE INDEX IF NOT EXISTS exp_static_page_node ON exp_static_page USING btree ( node_id );
+
+CREATE TABLE IF NOT EXISTS exp_static_run (
+    added integer DEFAULT 0 NOT NULL,
+    bytes integer DEFAULT 0 NOT NULL,
+    changed integer DEFAULT 0 NOT NULL,
+    commit_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    files integer DEFAULT 0 NOT NULL,
+    finished_at integer DEFAULT 0 NOT NULL,
+    kind character varying(20) DEFAULT ''::character varying NOT NULL,
+    message character varying(1000) DEFAULT ''::character varying NOT NULL,
+    pages integer DEFAULT 0 NOT NULL,
+    push_state character varying(20) DEFAULT ''::character varying NOT NULL,
+    removed integer DEFAULT 0 NOT NULL,
+    run_by character varying(150) DEFAULT ''::character varying NOT NULL,
+    run_id character varying(64) DEFAULT ''::character varying NOT NULL,
+    started_at integer DEFAULT 0 NOT NULL,
+    state character varying(20) DEFAULT ''::character varying NOT NULL,
+    tag_name character varying(150) DEFAULT ''::character varying NOT NULL,
+    target character varying(50) DEFAULT ''::character varying NOT NULL,
+    CONSTRAINT exp_static_run_pkey PRIMARY KEY ( run_id )
+);
+CREATE INDEX IF NOT EXISTS exp_static_run_target ON exp_static_run USING btree ( target, started_at );
+
 -- exp_migration and exp_migration_run: the migration record (one row per migration, the key is its source and
 -- id) and its runs; exp:upgrade writes its steps there as migrations of the source "kernel" (the upgrade step
 -- 6.0.15-migration-tables makes them). No sequence. Written with IF NOT EXISTS, the copy leaves out a row that
