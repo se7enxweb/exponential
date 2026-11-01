@@ -17,7 +17,7 @@ class WebDAVPathsTest extends PHPUnit\Framework\TestCase
     {
         chdir( dirname( __DIR__, 5 ) );
         if ( !class_exists( 'ezcWebdavAutomaticPathFactory' ) )
-            $this->markTestSkipped( 'zetacomponents/webdav is not installed' );
+            $this->markTestSkipped( 'se7enxweb/expcomponents-webdav is not installed' );
     }
 
     public function testNoPrefixLeavesThePath()
