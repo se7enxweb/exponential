@@ -2498,6 +2498,7 @@
       "tests/tests/kernel/classes/migration/expMigrationYamlTest.php",
       "tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php"
     ],
     "kernel/classes/migration/steps/*": [
@@ -2512,7 +2513,11 @@
       "tests/tests/kernel/classes/migration/expMigrationContentStepsTest.php",
       "tests/tests/kernel/classes/migration/expMigrationContentStepsSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationContentStepsDatabaseTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php"
     ],
     "tests/tests/kernel/classes/migration/expMigrationStructureStepsEngineChecks.php": [
       "tests/tests/kernel/classes/migration/expMigrationStructureStepsSqliteTest.php",
@@ -2692,7 +2697,9 @@
     ],
     "kernel/classes/ezurlaliasml.php": [
       "tests/tests/kernel/classes/expLegacyForkFixesTest.php",
-      "tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php"
+      "tests/tests/lib/ezdb/mongodb/expMigrationContentStepsMongoDBTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsSqliteTest.php"
     ],
     "settings/file.ini": [
       "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
@@ -2724,6 +2731,21 @@
       "tests/tests/kernel/classes/migration/expMigrationYamlSqliteTest.php",
       "tests/tests/kernel/classes/migration/expMigrationYamlDatabaseTest.php",
       "tests/tests/lib/ezdb/mongodb/expMigrationYamlMongoDBTest.php"
+    ],
+    "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsEngineChecks.php": [
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsSqliteTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsDatabaseTest.php",
+      "tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php"
+    ],
+    "kernel/classes/ezurlaliasquery.php": [
+      "tests/tests/lib/ezdb/mongodb/expMigrationTagAliasTrashFileStepsMongoDBTest.php",
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsSqliteTest.php"
+    ],
+    "kernel/classes/migration/expmigrationidentifier.php": [
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php"
+    ],
+    "kernel/classes/migration/expmigrationcontext.php": [
+      "tests/tests/kernel/classes/migration/expMigrationTagAliasTrashFileStepsTest.php"
     ],
     "kernel/classes/migration/expmigrationrecord*.php": [
       "tests/tests/kernel/classes/migration/expMigrationRecordingTest.php",

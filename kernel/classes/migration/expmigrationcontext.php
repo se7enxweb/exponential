@@ -69,6 +69,9 @@ class expMigrationContext extends expUpgradeContext
     /** @var array column => value of exp_migration_run that the caption flow sets (caption_pre ...) */
     protected $runFields = array();
 
+    /** @var string|null the file of the YAML migration whose steps run (or are planned) now */
+    protected $migrationFile;
+
     /**
      * @param eZDBInterface|null $db the connection (eZDB::instance() when null)
      * @param bool $apply whether the run writes
@@ -104,6 +107,23 @@ class expMigrationContext extends expUpgradeContext
     public function runId()
     {
         return $this->runId;
+    }
+
+    /**
+     * The file of the YAML migration whose steps run now: steps that read files of the migration (file, image) find
+     * them next to it. expMigrationYaml sets it before its steps run, are planned or undone.
+     *
+     * @param string|null $file
+     */
+    public function setMigrationFile( $file )
+    {
+        $this->migrationFile = $file === null || $file === '' ? null : (string)$file;
+    }
+
+    /** @return string|null the file of the YAML migration whose steps run now, null outside one */
+    public function migrationFile()
+    {
+        return $this->migrationFile;
     }
 
     /** @return string the environment ([AdminEnvironment] Level), empty when the installation names none */
