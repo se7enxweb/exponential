@@ -43,7 +43,11 @@ Installation gelaufen, hält die Aufzeichnung das fest, und sie läuft dort nie 
 
 Migrationen und `exp:upgrade` teilen sich die Aufzeichnungstabelle `exp_migration`, die Sperre der Installation und die
 Sicherungspunkte, sodass ein Upgrade und ein Migrationslauf nie gleichzeitig schreiben und `exp:upgrade:captions` die
-Sicherungspunkte beider zeigt.
+Sicherungspunkte beider zeigt. Die Upgrade-Schritte sind ebenfalls Migrationen, der Quelle `kernel`:
+`exp:migration:status` listet sie zuerst, und `exp:migration:migrate --apply` führt die ausstehenden der Stufen
+`database` und `scripts` vor den Migrationen der Site aus; die Stufen `code`, `libraries` und `finish` bleiben bei
+`exp:upgrade` ([Die Schritte unter den Migrationen](aktualisieren-mit-der-konsole.md#die-schritte-unter-den-migrationen)).
+Eine Migration, die die Änderung eines Schritts braucht, nennt den Schritt in `requires`.
 
 ## Der Lebenszyklus
 

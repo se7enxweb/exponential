@@ -41,6 +41,11 @@ installation, the record says so and it never runs there again.
 
 Migrations and `exp:upgrade` share the record table `exp_migration`, the installation lock and the captions, so an
 upgrade and a migration run never write at the same time and `exp:upgrade:captions` lists the captions of both.
+The upgrade steps are migrations too, of the source `kernel`: `exp:migration:status` lists them first, and
+`exp:migration:migrate --apply` applies the pending ones of the stages `database` and `scripts` before the site's
+migrations; the stages `code`, `libraries` and `finish` stay with `exp:upgrade`
+([The steps among the migrations](upgrading-with-the-console.md#the-steps-among-the-migrations)). A migration that
+needs a step's change names the step in `requires`.
 
 ## The life cycle
 

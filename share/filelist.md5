@@ -3381,7 +3381,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-28481e4ece077f5dc5dfb001d787ea1d  doc/changelogs/6.0/6.0.15.md
+fc84af2d91d6b9e7343b8fa6c5a117ea  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -6670,7 +6670,7 @@ ef86408eb52d65639150b32f89ecf5eb  doc/eng-us/features/6.0/jquery4-and-yui-remova
 fb41e999d70ad1fbeef83693d1ee6c77  doc/eng-us/features/6.0/mail-preferences.md
 70689845801571a8ad48a92751b21397  doc/eng-us/features/6.0/maintenance-mode.md
 a2b887cb3bf61b535d6fca58c72d1ae0  doc/eng-us/features/6.0/managed-by-deployment.md
-c360591e05ef5ff1c306682b3c80445c  doc/eng-us/features/6.0/migrations.md
+f5f50ab34c499dc4c8f059ab7bb7fe02  doc/eng-us/features/6.0/migrations.md
 572060f2ace6a44b07cdaec2a772a43a  doc/eng-us/features/6.0/modern-password-change.md
 df9251aeb6fb79ab9f17590b0bbbb3fb  doc/eng-us/features/6.0/mongodb-database-support.md
 ee73985215cffde6a73d4c2b4f7b0dff  doc/eng-us/features/6.0/multi-site-ini-overrides.md
@@ -6838,7 +6838,7 @@ b1ce11a50c0108934aa655898d1ff1f1  doc/eng-us/guides/migrations-repositories.md
 f759ee8194266665bb23e16328357365  doc/eng-us/guides/migrations-rollback-and-captions.md
 ca1f62fc7cab76f6d12393625f273b76  doc/eng-us/guides/migrations-troubleshooting.md
 edbe5e5358cc714439e09489af22dbdb  doc/eng-us/guides/migrations-tutorial.md
-5efd262b2e536aa2bab490331bf91334  doc/eng-us/guides/migrations.md
+a8e73e33869aa2dfb5a25972f844ac7a  doc/eng-us/guides/migrations.md
 e565fb4c364a70e397ad6e26fb0e18c3  doc/eng-us/guides/missing-files.md
 c16f7bb9ba5be0218ef063840c48580c  doc/eng-us/guides/notifications-administrator.md
 c1af1e57aab428c892c4e04cfe7c6cb4  doc/eng-us/guides/notifications-developer.md
@@ -6897,8 +6897,8 @@ ece15ec77c80cf6be557056386321c5a  doc/eng-us/guides/two-factor-login.md
 d3d05fbd49424c70b1e24d18c20d6225  doc/eng-us/guides/ui-switch-design.md
 601ae064ee2f4daf3ca688b1020c2062  doc/eng-us/guides/ui-switch-settings.md
 fbd762b7a0907f18bac2dcccd44b49ab  doc/eng-us/guides/upgrade-check.md
-d1ce80800b86e31cb2ffffb6e6af7cd0  doc/eng-us/guides/upgrade-steps-for-extensions.md
-49c748e5c27057b428f964818f7109a3  doc/eng-us/guides/upgrading-with-the-console.md
+2f30879faf2946e9e4df285ae7705cdf  doc/eng-us/guides/upgrade-steps-for-extensions.md
+492d780e34e2da101b0a1c325f2c3c29  doc/eng-us/guides/upgrading-with-the-console.md
 ead3e2c382501b885af05c249ebb51ad  doc/eng-us/guides/upgrading.md
 5393f8cc19fb69291dad3ea780d08d8e  doc/eng-us/guides/urls-and-aliases.md
 3606b85d04c493d11cd7be6e8fe8b999  doc/eng-us/guides/verify-its-you.md
@@ -11406,7 +11406,7 @@ ca5825b0a98f97cea64427e30481cdea  doc/eng-us/help/software-engineers/persistence
 1cc422088252317e11c23b38c81af4d4  doc/eng-us/help/software-engineers/release-engineering.md
 46e7b9ae43c242f2e89002bc78d2818b  doc/eng-us/help/software-engineers/request-lifecycle.md
 b36ea0644245dfa7998635b4ac0a4443  doc/eng-us/help/software-engineers/scaling-and-clustering.md
-9bb225932309323afd50d5843592b251  doc/eng-us/help/software-engineers/schema-changes-and-migrations.md
+a645e25c6f4103d0f14ec8f54e35abb2  doc/eng-us/help/software-engineers/schema-changes-and-migrations.md
 61aa763224845fe39255b84f1381e4c4  doc/eng-us/help/software-engineers/security-engineering-overview.md
 646b822e9125dbcb27437f141b008929  doc/eng-us/help/software-engineers/security-review-checklist.md
 a13eb33997c7242bca855531bfa337af  doc/eng-us/help/software-engineers/siteaccesses-and-configuration.md
@@ -12959,7 +12959,7 @@ d4444f60d9f3f6fd7dc43dc6edac7e39  doc/ger-de/README-LIZENZ.md
 35f2e2b3176ed05cb4e6cd1a8e7adf0f  doc/ger-de/UNINSTALL.md
 0babcec812761514c679795187d034c5  doc/ger-de/UPDATE.md
 f83fe0b18f0c6f128ad952b8c94a44f8  doc/ger-de/anleitungen/README.md
-7611110580265b6af8b318470861bddd  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
+0a2cacf7d5d15deef4e225ad7923103d  doc/ger-de/anleitungen/aktualisieren-mit-der-konsole.md
 4466cdc5489db0b7fed81b2d97013830  doc/ger-de/anleitungen/aktualisieren.md
 00b768f89ffba00f97d83b38c9fb6a5d  doc/ger-de/anleitungen/api-schluessel.md
 da7ab11cef5bd19657b9d33e0fdd53e8  doc/ger-de/anleitungen/benachrichtigungen-administrator.md
@@ -13037,7 +13037,7 @@ ebcf18a7d612001f327c9d0135edca23  doc/ger-de/anleitungen/migrationen-php.md
 d2bd1d77a45baa737a330d931f2d5670  doc/ger-de/anleitungen/migrationen-repositories.md
 87990e586d142f2084b075951821990d  doc/ger-de/anleitungen/migrationen-rueckgaengig-und-captions.md
 883015ea2328663c4f25e734f5501428  doc/ger-de/anleitungen/migrationen-tutorial.md
-7cf0f4faca427af00ce856cdd0ea414f  doc/ger-de/anleitungen/migrationen.md
+151062dfeeafbfe786efdf46f05dd2e5  doc/ger-de/anleitungen/migrationen.md
 465336715cb5f76e2f9ecd9aaca6024a  doc/ger-de/anleitungen/neue-redakteurskonten-freigeben.md
 a0976fe58065ceb997a8d1fac6b00996  doc/ger-de/anleitungen/objektzustaende.md
 c88a68ff0b56f324e4301df5540cfdd1  doc/ger-de/anleitungen/pakete.md
@@ -13068,7 +13068,7 @@ d0f3ff1fc81771c32b16742e54f7ec95  doc/ger-de/anleitungen/twig-templates-rezepte.
 538acd610f602879df1d118d1a8104b3  doc/ger-de/anleitungen/ui-umschalter-einstellungen.md
 96c7e7570232e91c8971eb947b341ba1  doc/ger-de/anleitungen/umgebungsvariablen.md
 58ef9ee1db2c783c9a482cfa4b020230  doc/ger-de/anleitungen/upgrade-pruefung.md
-0b46169f6fdbb059c6db39985ff41c79  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
+f0cd1aeaad5b037cff813a37a546f61a  doc/ger-de/anleitungen/upgrade-schritte-fuer-erweiterungen.md
 8d5e959f90212c55a89c8d9a3166c3a2  doc/ger-de/anleitungen/urls-und-aliase.md
 b055f7da6714bbbb0030b07eb7b6615c  doc/ger-de/anleitungen/wartungsmodus.md
 e85dd39016eef809cb91b42a067f4bc0  doc/ger-de/anleitungen/workflows.md
@@ -16023,7 +16023,7 @@ da67a1fdef82c7239c71bbff311eeb76  doc/ger-de/funktionen/6.0/lesezeichenordner.md
 814a75b8780507956190e0c206bbfa6a  doc/ger-de/funktionen/6.0/log-betrachter.md
 d1adeb16d48df541b3a2c073b9495150  doc/ger-de/funktionen/6.0/log-rotation.md
 2d9e73a5bdc1de02051bb8e74ea9d2b7  doc/ger-de/funktionen/6.0/log-und-cache-pfade-fuer-mehrere-websites.md
-e4a86123b198e0b947b462972c7aa7c0  doc/ger-de/funktionen/6.0/migrationen.md
+51e1e25856e135e00f43c22f8ecc3ab4  doc/ger-de/funktionen/6.0/migrationen.md
 ebd05b7548344cb496f08ecce8fc702c  doc/ger-de/funktionen/6.0/moderne-passwortaenderung.md
 298bb86f3a6c50d18a8fd5252f6d84ec  doc/ger-de/funktionen/6.0/modulueberschreibung-durch-extensions.md
 b3edb037382b4ddf1dba6c6c491c41db  doc/ger-de/funktionen/6.0/mongodb-datenbankunterstuetzung.md
@@ -19540,7 +19540,7 @@ d702cef1e6eb44cd220774fabdcce50b  doc/ger-de/hilfe/softwareingenieure/kernel-lib
 ad4fd9db0ff546d028af0f9daef48b50  doc/ger-de/hilfe/softwareingenieure/portables-sql-schreiben.md
 3eab4fd6c1427d2a174c9e166efe7baf  doc/ger-de/hilfe/softwareingenieure/release-engineering.md
 8a5f8d39c43904ed91523e9b760bfa5f  doc/ger-de/hilfe/softwareingenieure/richtlinie-zur-rueckwaertskompatibilitaet.md
-23282f00139f1b2fee2f3e55586501e0  doc/ger-de/hilfe/softwareingenieure/schemaaenderungen-und-migrationen.md
+d2f9d159192aa07587e99eebecec366a  doc/ger-de/hilfe/softwareingenieure/schemaaenderungen-und-migrationen.md
 d691687e273e9332058473aeffa18186  doc/ger-de/hilfe/softwareingenieure/sicherheitstechnik-im-ueberblick.md
 45828582a8d337ebaa4df01b28896d23  doc/ger-de/hilfe/softwareingenieure/siteaccesses-und-konfiguration.md
 8078ff2c1b31668c28026823e0cec9c8  doc/ger-de/hilfe/softwareingenieure/skalierung-und-clustering.md

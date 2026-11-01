@@ -278,6 +278,29 @@ The captions of `exp:upgrade` and those of migration runs (kinds `migration-pre`
 `migration-failure`) are one list: `exp:upgrade:captions` shows both, and either rollback can restore either
 ([Rollback and captions](migrations-rollback-and-captions.md)).
 
+### The steps among the migrations
+
+Every upgrade step is also a migration of the source `kernel`, with the step id as its migration id. The
+[migration commands](migrations.md) and Setup > Migrations therefore show and run the kernel's steps too:
+
+| Where | What it does with the steps |
+|---|---|
+| `./console exp:migration:status`, Setup > Migrations, the dashboard block | lists every step first, before the site's and the extensions' migrations, with the state `exp:upgrade:status` gives it |
+| `./console exp:migration:migrate --apply`, Run in Setup > Migrations | applies the pending steps of the stages `database` and `scripts` first, then the migrations, in one run under one lock and one caption |
+| a migration file | may name a step in `requires` (`requires: 6.0.15-migration-tables`); it then runs after it |
+
+A migration run leaves the stages `code`, `libraries` and `finish` to `exp:upgrade`: a pending step of those stages
+(or an optional step) is listed as `deferred`, a warning names the command that runs it
+(`./console exp:upgrade:code --apply` ...), and a migration that requires it waits. After a migration run that
+applied steps, `./console exp:upgrade:finish --apply` makes them live (deploy, caches, smoke check). A step keeps
+what makes it a step: its state comes from `detect()`, there is no checksum guard on its class file, no transaction
+around it, and it has no `down()` (a caption restores it).
+
+Both commands write the same record, so a step applied by a migration run is `done` in `exp:upgrade:status`, and
+the other way round. Each command keeps its own rule for captions: `exp:upgrade` stops when no caption can be taken
+and refuses `--no-caption` on production, a migration run warns and goes on; `exp:upgrade` restores only with
+`--rollback-on-fail`, a migration run restores by default.
+
 `./console exp:upgrade:verify` looks at every step again and reports drift: a step the record calls done whose
 effect is missing now (a table dropped, a policy removed by hand). It exits 1 when it finds any. Run it after a
 restore, or from monitoring.
