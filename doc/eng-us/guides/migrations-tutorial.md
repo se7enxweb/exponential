@@ -558,8 +558,10 @@ assert that is false fails the migration like an exception in `up()`, and its tr
 migration has a loop and no `down:`, so `exp:migration:rollback 20261101094239_news_languages` refuses it: add a
 `down:` list to undo a YAML migration by itself, or roll the run back to its caption.
 
-The kernel's step types are `reference` and `assert`; the steps that create content, classes and roles are added to
-`migration.ini [StepSettings] StepTypeList` as they come, and an extension registers its own there.
+Besides `reference` and `assert`, the kernel's step types `content`, `location` and `content_version` create and
+change objects, their translations, locations and versions ([YAML migration steps](migrations-yaml-steps.md)); the
+steps for classes and roles are added to `migration.ini [StepSettings] StepTypeList` as they come, and an extension
+registers its own there.
 [The file format](../specifications/6.0/migration-file-format.md#the-yaml-migration) lists every key, placeholder,
 condition and loop.
 

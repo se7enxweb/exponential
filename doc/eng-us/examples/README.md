@@ -78,6 +78,7 @@ and the generated pages [exp:setupfiles](commands/setupfiles.md) and [exp:config
 | [Cronjob scripts and parts](cronjobs/README.md) | What each script does, its parts, and how to run and schedule it |
 | [Console commands](commands/README.md) | Every `./console exp:*` command with its help text, options and aliases |
 | [Extension points](extension-points/README.md) | INI lists of handlers, classes and directories an extension can add to |
+| [Migration step types](migration-steps/README.md) | Every step type of YAML migrations with its modes, keys, reference values and an example |
 
 The help lists these pages in folders. A folder opens in the navigation once you are on one of its pages; its
 overview page links to every page in it. They rank below the written guides in the search, so a question finds the

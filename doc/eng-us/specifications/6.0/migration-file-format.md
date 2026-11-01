@@ -231,8 +231,14 @@ empty map; a file that is not one fails every YAML migration of the run.
 
 ### Step types
 
-The kernel registers `reference` (`set:` a map of references) and `assert` (`that:` a condition, `message:` the text
-of the failure). An extension registers its own in its `migration.ini.append.php`:
+The kernel registers `reference` (`set:` a map of references), `assert` (`that:` a condition, `message:` the text
+of the failure), `content`, `location`, `content_version`, `content_class`, `content_class_group`, `user`,
+`user_group`, `role`, `section`, `language` and `object_state_group`; every key of each is on its generated page
+([the step types](../../examples/migration-steps/README.md)). An identifier key names its kind: `node`, `object`,
+`class`, `section`, `language`, `user`, `role`, `state`, `class_group` or `state_group`; all but `node` and `object`
+also take a name (a class or section identifier, a locale, a login, a role name, `<group>/<state>`, the name of a
+class group, the identifier of a state group). An extension registers its own step types in its
+`migration.ini.append.php`:
 
 ```ini
 [StepSettings]

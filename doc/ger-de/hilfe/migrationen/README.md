@@ -155,16 +155,18 @@ Website-Seitenleiste ein Panel, das nur liest.
 
 ## YAML-Migrationen
 
-> **Kommt mit der YAML-Engine.** Migrationen aus YAML-Schritten (Inhalte, Klassen, Rollen, Einstellungen) sind geplant.
-> In 6.0.15 wird eine Migrationsdatei `.yml` gefunden, eingeordnet und geprüft, und der Runner lehnt sie ab, bis ihre
-> Schritte kommen. Dieser Abschnitt verlinkt die YAML-Seiten, sobald sie erscheinen; bis dahin ist jedes Rezept hier in
-> PHP geschrieben.
+Eine Migration kann statt einer PHP-Klasse eine Liste von YAML-Schritten sein: Inhalte, Orte und Versionen, Klassen und
+Klassengruppen, Benutzer, Benutzergruppen und Rollen, Sektionen, Sprachen und Objektzustände. Die Engine, ihre
+Platzhalter, Bedingungen und Schleifen: [das Dateiformat](../../spezifikationen/6.0/migrationsdateiformat.md); die
+Schritttypen: [Schritte von YAML-Migrationen](../../anleitungen/migrationen-yaml-schritte.md) und
+[jeder Schritttyp](../../beispiele/migrationsschritte/README.md). Die Rezepte hier sind in PHP geschrieben; jedes lässt
+sich auch als YAML-Schritte schreiben, wo ein Schritttyp es abdeckt.
 
 ## Was 6.0.15 bietet und was später kommt
 
 | In 6.0.15 | Noch nicht |
 |---|---|
-| PHP-Migrationen in der Site, in aktiven Erweiterungen und in installierten Paketen | YAML-, SQL- und INI-Migrationen (gefunden und geprüft, vom Runner abgelehnt) |
+| PHP- und YAML-Migrationen in der Site, in aktiven Erweiterungen und in installierten Paketen | SQL- und INI-Migrationen (gefunden und geprüft, vom Runner abgelehnt); die YAML-Schritte für Tags, URL-Aliase, den Papierkorb, Dateien, Caches und Layouts |
 | der Probelauf und die Simulation mit Diff auf PostgreSQL und SQLite | eine Simulation auf MySQL/MariaDB, Oracle und MongoDB (der Plan wird gelistet) |
 | Sicherungspunkte, die automatische Wiederherstellung, die Rücknahme eines Laufs, einer Migration und jedes Sicherungspunkts | Generatoren außer dem Gerüst, ein Editor in der Administration |
 | Commit, Tag und Push der Aufzeichnung jedes Laufs; der Cronjob-Teil `migrationpush` | `exp:velocity deploy --migrate` |

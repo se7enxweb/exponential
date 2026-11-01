@@ -392,6 +392,7 @@ Code-Version), die Sicherung, jede Stufe mit jedem Schritt (`id`, `stage`, `vers
 | `6.0.15-libraries-install` | libraries | `composer install` von Hand, mit `composer audit` |
 | `6.0.15-migration-tables` | database | (neu) die Aufzeichnung der Migrationen und Upgrades, `exp_migration` und `exp_migration_run` |
 | `6.0.15-upgrade-record-table` | database | (neu) nur auf einer Installation einer Vorabversion von 6.0.15: die Zeilen ihrer Tabelle `expupgrade_step` nach `exp_migration` kopiert, dann die Tabelle gelöscht |
+| `6.0.15-sqlite-composite-keys` | database | (neu) nur SQLite: eine Tabelle, die `share/db_schema.dba` über mehrere Spalten schlüsselt (`ezcontentobject_attribute` über `id` und `version` ...), die Datenbank aber nur über `id` (eine Installation aus einer älteren `kernel/sql/sqlite/schema.sql`), wird mit dem Schlüssel der .dba neu aufgebaut, Zeilen und Indizes bleiben erhalten |
 | `6.0.15-user-password-hash-width` | database | `ezuser.password_hash` in der SQL-Update-Datei auf 255 verbreitert |
 | `6.0.15-trash-columns` | database | `ezcontentobject_trash.trashed`, `trashed_by`, `trashed_via` und ihr Index |
 | `6.0.15-pdf-export-footer` | database | `ezpdf_export.show_footer`, `footer_text` |

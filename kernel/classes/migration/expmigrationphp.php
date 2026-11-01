@@ -56,14 +56,20 @@ abstract class expMigrationPhp implements expMigration
      * @return expMigrationPhp
      * @throws RuntimeException when the file has no class that extends expMigrationPhp, or more than one
      */
-    public static function load( expMigrationDefinition $definition )
+    final public static function load( expMigrationDefinition $definition )
     {
         if ( $definition->type() !== 'php' )
             throw new RuntimeException( $definition->id() . ' is not a PHP migration (.' . $definition->type() . ')' );
         $file = $definition->file();
         if ( $file === null || !is_file( $file ) )
             throw new RuntimeException( $definition->id() . ': the file is missing' );
-        $classes = self::classesIn( (string)file_get_contents( $file ) );
+        $code = (string)file_get_contents( $file );
+        $classes = self::classesIn( $code );
+        // A method PHP would refuse (a helper named definition() or file(), a hook with another signature) is a fatal
+        // error while the file loads, which nothing can catch: it is found in the code before the file is loaded.
+        $clashes = self::methodClashes( $code );
+        if ( $clashes )
+            throw new RuntimeException( "$file: " . implode( '; ', $clashes ) );
         foreach ( $classes as $class )
             if ( class_exists( $class, false ) && ( new ReflectionClass( $class ) )->getFileName() !== realpath( $file ) )
                 throw new RuntimeException( "$file: the class $class is defined in another file already ("
@@ -88,7 +94,7 @@ abstract class expMigrationPhp implements expMigration
      * @param string $code
      * @return string[] fully qualified, without the leading backslash
      */
-    public static function classesIn( $code )
+    final public static function classesIn( $code )
     {
         $tokens = token_get_all( (string)$code );
         $nameTokens = array( T_STRING, T_NS_SEPARATOR );
@@ -139,11 +145,233 @@ abstract class expMigrationPhp implements expMigration
     }
 
     /**
+     * The methods of the classes in $code that extend expMigrationPhp and that PHP would refuse when the file loads (a
+     * fatal error nothing can catch), each as a message. Pure: the code is tokenized, never run.
+     *
+     * - a method of the base's own (final: definition(), file(), id(), source(), checksum(), state() ...) declared
+     *   again, typically a helper that happens to have the name;
+     * - a hook (plan(), up(), down(), detect(), description(), transactional(), reversible()) declared private,
+     *   protected or static, with fewer parameters than the base, with more required ones, or with a type on a
+     *   parameter the base leaves untyped;
+     * - a class that is not abstract and has no up().
+     *
+     * @param string $code
+     * @return string[] empty when nothing clashes
+     */
+    final public static function methodClashes( $code )
+    {
+        $base = array();
+        foreach ( ( new ReflectionClass( __CLASS__ ) )->getMethods() as $method )
+            if ( !$method->isPrivate() )
+                $base[strtolower( $method->getName() )] = $method;
+        $tokens = token_get_all( (string)$code );
+        $count = count( $tokens );
+        $skip = array( T_WHITESPACE, T_COMMENT, T_DOC_COMMENT );
+        $classModifiers = array( T_ABSTRACT, T_FINAL );
+        if ( defined( 'T_READONLY' ) )
+            $classModifiers[] = constant( 'T_READONLY' );
+        $problems = array();
+        $depth = 0;
+        $classDepth = null;
+        $pending = null;
+        $class = null;
+        for ( $i = 0; $i < $count; $i++ )
+        {
+            $token = $tokens[$i];
+            if ( !is_array( $token ) )
+            {
+                if ( $token === '{' )
+                {
+                    $depth++;
+                    if ( $pending !== null )
+                    {
+                        $class = $pending;
+                        $classDepth = $depth;
+                        $pending = null;
+                    }
+                }
+                else if ( $token === '}' )
+                {
+                    if ( $classDepth !== null && $depth === $classDepth )
+                    {
+                        if ( !$class['abstract'] && !$class['up'] )
+                            $problems[] = "the class {$class['name']} has no method up()";
+                        $classDepth = null;
+                        $class = null;
+                    }
+                    $depth--;
+                }
+                continue;
+            }
+            if ( $token[0] === T_CURLY_OPEN || $token[0] === T_DOLLAR_OPEN_CURLY_BRACES )
+            {
+                $depth++;
+                continue;
+            }
+            if ( $token[0] === T_CLASS && $classDepth === null )
+            {
+                $prev = self::previousToken( $tokens, $i, $skip );
+                if ( $prev !== null && is_array( $tokens[$prev] ) && in_array( $tokens[$prev][0], array( T_DOUBLE_COLON, T_NEW ), true ) )
+                    continue;
+                $abstract = false;
+                for ( $p = $prev; $p !== null && is_array( $tokens[$p] ) && in_array( $tokens[$p][0], $classModifiers, true ); $p = self::previousToken( $tokens, $p, $skip ) )
+                    if ( $tokens[$p][0] === T_ABSTRACT )
+                        $abstract = true;
+                $name = '';
+                $extends = false;
+                for ( $j = $i + 1; $j < $count && $tokens[$j] !== '{'; $j++ )
+                {
+                    if ( !is_array( $tokens[$j] ) || in_array( $tokens[$j][0], $skip, true ) )
+                        continue;
+                    if ( $name === '' && $tokens[$j][0] === T_STRING )
+                        $name = $tokens[$j][1];
+                    else if ( $tokens[$j][0] === T_EXTENDS )
+                    {
+                        $n = self::nextToken( $tokens, $j, $skip );
+                        $extends = $n !== null && is_array( $tokens[$n] ) && strtolower( ltrim( $tokens[$n][1], '\\' ) ) === 'expmigrationphp';
+                    }
+                }
+                if ( $extends )
+                    $pending = array( 'name' => $name, 'abstract' => $abstract, 'up' => false );
+                continue;
+            }
+            if ( $token[0] !== T_FUNCTION || $classDepth === null || $depth !== $classDepth )
+                continue;
+
+            $n = self::nextToken( $tokens, $i, $skip );
+            if ( $n !== null && $tokens[$n] === '&' )
+                $n = self::nextToken( $tokens, $n, $skip );
+            if ( $n === null || !is_array( $tokens[$n] ) )
+                continue;
+            $method = $tokens[$n][1];
+            $lower = strtolower( $method );
+            if ( $lower === 'up' )
+                $class['up'] = true;
+            $modifiers = array();
+            for ( $p = self::previousToken( $tokens, $i, $skip ); $p !== null && is_array( $tokens[$p] ) && in_array( $tokens[$p][0], array( T_PUBLIC, T_PROTECTED, T_PRIVATE, T_STATIC, T_ABSTRACT, T_FINAL ), true ); $p = self::previousToken( $tokens, $p, $skip ) )
+                $modifiers[] = strtolower( $tokens[$p][1] );
+            if ( !isset( $base[$lower] ) )
+                continue;
+            $own = $base[$lower];
+            $where = "{$class['name']}::$method()";
+            if ( $own->isFinal() )
+            {
+                $problems[] = "$where has the name of a method of expMigrationPhp that a migration cannot declare: give it another name";
+                continue;
+            }
+            if ( in_array( 'private', $modifiers, true ) || in_array( 'protected', $modifiers, true ) )
+                $problems[] = "$where must be public, as in expMigrationPhp";
+            if ( in_array( 'static', $modifiers, true ) !== $own->isStatic() )
+                $problems[] = "$where must " . ( $own->isStatic() ? '' : 'not ' ) . 'be static, as in expMigrationPhp';
+            $params = self::parametersAfter( $tokens, $n, $skip );
+            $wanted = $own->getNumberOfParameters();
+            if ( count( $params ) < $wanted )
+                $problems[] = "$where must take $wanted parameter(s), as in expMigrationPhp";
+            $required = 0;
+            foreach ( $params as $k => $param )
+            {
+                if ( !$param['optional'] )
+                    $required = $k + 1;
+                if ( $k < $wanted && $param['type'] !== '' && strtolower( $param['type'] ) !== 'mixed' )
+                    $problems[] = "$where: the parameter {$param['name']} has the type {$param['type']}, which expMigrationPhp does not have: leave it untyped";
+            }
+            if ( $required > $wanted )
+                $problems[] = "$where requires $required parameter(s), expMigrationPhp passes $wanted";
+        }
+        return $problems;
+    }
+
+    /**
+     * The parameters of the function whose name is the token $nameIndex: name, type (as written, '' for none) and
+     * whether it is optional (a default or variadic).
+     *
+     * @param array $tokens
+     * @param int $nameIndex
+     * @param int[] $skip
+     * @return array[]
+     */
+    private static function parametersAfter( array $tokens, $nameIndex, array $skip )
+    {
+        $count = count( $tokens );
+        $i = $nameIndex + 1;
+        while ( $i < $count && $tokens[$i] !== '(' )
+            $i++;
+        $params = array();
+        $current = array( 'name' => '', 'type' => '', 'optional' => false );
+        $level = 0;
+        $afterName = false;
+        $attribute = defined( 'T_ATTRIBUTE' ) ? constant( 'T_ATTRIBUTE' ) : null;
+        for ( $i++; $i < $count; $i++ )
+        {
+            $t = $tokens[$i];
+            if ( $t === '(' || $t === '[' || ( is_array( $t ) && $t[0] === $attribute ) )
+                $level++;
+            else if ( $t === ']' )
+                $level--;
+            else if ( $t === ')' )
+            {
+                if ( $level === 0 )
+                    break;
+                $level--;
+            }
+            if ( $level > 0 )
+                continue;
+            if ( $t === ',' )
+            {
+                if ( $current['name'] !== '' )
+                    $params[] = $current;
+                $current = array( 'name' => '', 'type' => '', 'optional' => false );
+                $afterName = false;
+                continue;
+            }
+            if ( $afterName )
+            {
+                if ( $t === '=' )
+                    $current['optional'] = true;
+                continue;
+            }
+            if ( is_array( $t ) && $t[0] === T_VARIABLE )
+            {
+                $current['name'] = $t[1];
+                $afterName = true;
+            }
+            else if ( is_array( $t ) && $t[0] === T_ELLIPSIS )
+                $current['optional'] = true;
+            else if ( is_array( $t ) && in_array( $t[0], $skip, true ) )
+                continue;
+            else if ( $t !== '&' )
+                $current['type'] .= is_array( $t ) ? $t[1] : $t;
+        }
+        if ( $current['name'] !== '' )
+            $params[] = $current;
+        return $params;
+    }
+
+    /** @return int|null the index of the token before $i that is not in $skip */
+    private static function previousToken( array $tokens, $i, array $skip )
+    {
+        for ( $p = $i - 1; $p >= 0; $p-- )
+            if ( !is_array( $tokens[$p] ) || !in_array( $tokens[$p][0], $skip, true ) )
+                return $p;
+        return null;
+    }
+
+    /** @return int|null the index of the token after $i that is not in $skip */
+    private static function nextToken( array $tokens, $i, array $skip )
+    {
+        $count = count( $tokens );
+        for ( $n = $i + 1; $n < $count; $n++ )
+            if ( !is_array( $tokens[$n] ) || !in_array( $tokens[$n][0], $skip, true ) )
+                return $n;
+        return null;
+    }
+
+    /**
      * Loads a migration file with nothing of the caller in its scope.
      *
      * @param string $file
      */
-    protected static function requireFile( $file )
+    final protected static function requireFile( $file )
     {
         require_once $file;
     }
@@ -151,25 +379,25 @@ abstract class expMigrationPhp implements expMigration
     /**
      * @param expMigrationDefinition $definition
      */
-    public function setDefinition( expMigrationDefinition $definition )
+    final public function setDefinition( expMigrationDefinition $definition )
     {
         $this->definition = $definition;
     }
 
     /** @return expMigrationDefinition|null */
-    public function definition()
+    final public function definition()
     {
         return $this->definition;
     }
 
     /** @return string */
-    public function id()
+    final public function id()
     {
         return $this->definition ? $this->definition->id() : '';
     }
 
     /** @return string */
-    public function source()
+    final public function source()
     {
         return $this->definition ? $this->definition->source() : 'site';
     }
@@ -181,37 +409,37 @@ abstract class expMigrationPhp implements expMigration
     }
 
     /** @return string[] */
-    public function environments()
+    final public function environments()
     {
         return $this->definition ? $this->definition->environments() : array();
     }
 
     /** @return string[] */
-    public function requires()
+    final public function requires()
     {
         return $this->definition ? $this->definition->requires() : array();
     }
 
     /** @return bool */
-    public function maintenance()
+    final public function maintenance()
     {
         return $this->definition ? $this->definition->maintenance() : false;
     }
 
     /** @return string[] */
-    public function engines()
+    final public function engines()
     {
         return $this->definition ? $this->definition->engines() : array( '*' );
     }
 
     /** @return string|null the checksum of the file (expMigrationDefinition::checksumFor()) */
-    public function checksum()
+    final public function checksum()
     {
         return $this->definition ? $this->definition->checksumFor() : null;
     }
 
     /** @return string|null the file */
-    public function file()
+    final public function file()
     {
         return $this->definition ? $this->definition->file() : null;
     }
@@ -243,7 +471,7 @@ abstract class expMigrationPhp implements expMigration
      * @param expMigrationContext $context
      * @return string
      */
-    public function state( $context )
+    final public function state( $context )
     {
         $detected = $this->detect( $context );
         if ( $detected !== null )

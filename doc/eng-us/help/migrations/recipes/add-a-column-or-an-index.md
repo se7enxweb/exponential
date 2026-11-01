@@ -46,7 +46,8 @@ PASS
 ### 2. Fill it in
 
 Add the header lines `requires:` and `engines:` and the methods below. Do not name a helper method
-`definition()` or `file()`: `expMigrationPhp` has methods of those names, and PHP refuses the class.
+`definition()` or `file()`: `expMigrationPhp` has methods of those names. `exp:migration:check` (and every run)
+reports such a method by name instead of loading the class.
 
 ### 3. Check and look at the dry run
 

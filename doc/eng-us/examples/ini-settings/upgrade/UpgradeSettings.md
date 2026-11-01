@@ -26,10 +26,11 @@ Never edit `settings/upgrade.ini` itself: an update replaces it. Put the setting
 > stage libraries: Composer (an update only when asked with --update, then install from composer.lock)  
 > stage database: schema and data, every engine (step 0 first: the record table exp\_migration)  
 > the older record expupgrade\_step of a pre-release of 6.0.15: its rows copied into exp\_migration, then dropped  
+> SQLite only: the tables the .dba keys on more than one column (ezcontentobject\_attribute on id, version) get that key  
 > stage scripts: the PHP upgrade steps, through the classes of the scripts and setup commands  
 > stage finish: make the changes live and check the site (only when the run changed something)  
 
-Default: a list of 41: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses`, `expUpgradeStepAuditIndexTables` ....
+Default: a list of 43: `expUpgradeStepCodeUpdate`, `expUpgradeStepLibrariesUpdate`, `expUpgradeStepLibrariesInstall`, `expUpgradeStepMigrationTables`, `expUpgradeStepRecordTable`, `expUpgradeStepMigrationRecordingTables`, `expUpgradeStepSqliteCompositeKeys`, `expUpgradeStepPasswordHashWidth`, `expUpgradeStepTrashColumns`, `expUpgradeStepPdfExportFooter`, `expUpgradeStepRssOpmlPodcast`, `expUpgradeStepOrderStatuses` ....
 
 ```ini
 <?php /* #?ini charset="utf-8"?
@@ -43,6 +44,7 @@ StepList[]=expUpgradeStepLibrariesInstall
 StepList[]=expUpgradeStepMigrationTables
 StepList[]=expUpgradeStepRecordTable
 StepList[]=expUpgradeStepMigrationRecordingTables
+StepList[]=expUpgradeStepSqliteCompositeKeys
 StepList[]=expUpgradeStepPasswordHashWidth
 StepList[]=expUpgradeStepTrashColumns
 StepList[]=expUpgradeStepPdfExportFooter
@@ -56,8 +58,7 @@ StepList[]=expUpgradeStepMailPreferenceTables
 StepList[]=expUpgradeStepApiKeyTable
 StepList[]=expUpgradeStepTransferRunTable
 StepList[]=expUpgradeStepDataTableTables
-StepList[]=expUpgradeStepUserSessionTable
-# ... 21 more in the shipped file
+# ... 23 more in the shipped file
 */ ?>
 ```
 

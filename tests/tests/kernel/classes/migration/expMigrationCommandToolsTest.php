@@ -13,6 +13,8 @@
  *        error and a class declared twice fail
  *  MT-05 expMigrationGenerator: names, the skeleton's path, class and namespace; written once, never replaced; the
  *        file passes the check and loads as a reversible PHP migration with its description
+ *  MT-07 expMigrationCheck reports a method PHP would refuse (a helper named definition() or file(), a hook with
+ *        another signature, no up()) without loading the file; expMigrationPhp's own methods are final
  *  MT-06 expMigrationResume::pick(): the newest failed or interrupted run, a run still running, a finished run
  *
  * @copyright Copyright (C) 1998 - 2026 Exponential Foundation and 7x. All rights reserved.
@@ -219,10 +221,19 @@ class expMigrationCommandToolsTest extends PHPUnit\Framework\TestCase
         $site = expMigrationCheck::run( array( 'paths' => array( "$fixtures/site" ), 'root' => self::$root ) );
         $this->assertSame( 1, $site['exit'] );
         $byId = array_column( $site['migrations'], null, 'id' );
-        // a YAML migration whose step type no extension registers (the content steps come later)
+        // a YAML migration whose second content step names neither class nor parent: the step type's own check
         $this->assertFalse( $byId['20261004100000_news_content']['ok'] );
-        $this->assertStringContainsString( expMigrationYamlParser::available() ? 'the unknown step type content' : 'symfony/yaml is not installed',
-                                           implode( "\n", $byId['20261004100000_news_content']['errors'] ) );
+        $contentErrors = implode( "\n", $byId['20261004100000_news_content']['errors'] );
+        if ( expMigrationYamlParser::available() )
+        {
+            $this->assertStringContainsString( 'steps[1] (content): class is missing (mode create)', $contentErrors );
+            $this->assertStringContainsString( 'steps[1] (content): parent is missing (mode create)', $contentErrors );
+            $this->assertStringNotContainsString( 'steps[0]', $contentErrors );
+        }
+        else
+        {
+            $this->assertStringContainsString( 'symfony/yaml is not installed', $contentErrors );
+        }
         $this->assertContains( 'migrations of type .ini cannot be run yet', $byId['20261003100000_news_settings']['errors'] );
 
         $runnerBroken = expMigrationCheck::run( array( 'paths' => array( "$fixtures/runner-broken" ), 'root' => self::$root ) );
@@ -247,6 +258,43 @@ class expMigrationCommandToolsTest extends PHPUnit\Framework\TestCase
         $this->assertTrue( $byId['20261001100000_first']['ok'], implode( '; ', $byId['20261001100000_first']['errors'] ) );
         $this->assertStringContainsString( 'is declared by 20261001100000_first.php too', implode( "\n", $byId['20261002100000_second']['errors'] ) );
         $this->assertStringContainsString( 'PHP syntax', implode( "\n", $byId['20261003100000_broken']['errors'] ) );
+    }
+
+    /** MT-07 */
+    public function testCheckReportsMethodsPhpWouldRefuse()
+    {
+        $head = "<?php\n// description: %s\nnamespace ExpTests\\MigrationClash;\n";
+        $files = array(
+            '20261005100000_helper_definition' => "final class HelperDefinition extends \\expMigrationPhp\n{\n    private function definition( \$table ) { return array(); }\n    public function up( \$context ) { return array(); }\n}\n",
+            '20261005100100_helper_file' => "final class HelperFile extends \\expMigrationPhp\n{\n    public function up( \$context ) { return array( \$this->file( 'a' ) ); }\n    protected static function file( \$name ) { return \$name; }\n}\n",
+            '20261005100200_typed_plan' => "final class TypedPlan extends \\expMigrationPhp\n{\n    public function plan( \\expMigrationContext \$context ) { return array(); }\n    public function up( \$context ) { return array(); }\n}\n",
+            '20261005100300_private_down' => "final class PrivateDown extends \\expMigrationPhp\n{\n    public function up( \$context ) { return array(); }\n    private function down( \$context, \$more ) { return array(); }\n}\n",
+            '20261005100400_no_up' => "final class NoUp extends \\expMigrationPhp\n{\n    public function plan( \$context ) { return array(); }\n}\n",
+            '20261005100500_fine' => "final class Fine extends \\expMigrationPhp\n{\n    #[\\ReturnTypeWillChange]\n    public function plan( \$context, array \$extra = array() ): array { return \$this->tableDefinition(); }\n"
+                                   . "    public function up( \$context ) { \$f = function () { return 1; }; return array( \"{\$f()}\" ); }\n"
+                                   . "    private function tableDefinition() { return array( 'x' ); }\n    public static function definitionOf( \$x ) { return \$x; }\n}\n",
+        );
+        $dir = $this->dir();
+        foreach ( $files as $id => $body )
+            file_put_contents( "$dir/$id.php", sprintf( $head, $id ) . $body );
+
+        $check = expMigrationCheck::run( array( 'paths' => array( $dir ), 'root' => self::$root ) );
+        $byId = array_column( $check['migrations'], null, 'id' );
+        $errors = function ( $id ) use ( $byId ) { return implode( "\n", $byId[$id]['errors'] ); };
+        $this->assertSame( 1, $check['exit'] );
+        $this->assertStringContainsString( 'HelperDefinition::definition() has the name of a method of expMigrationPhp that a migration cannot declare', $errors( '20261005100000_helper_definition' ) );
+        $this->assertStringContainsString( 'HelperFile::file() has the name of a method of expMigrationPhp', $errors( '20261005100100_helper_file' ) );
+        $this->assertStringContainsString( 'TypedPlan::plan(): the parameter $context has the type \\expMigrationContext', $errors( '20261005100200_typed_plan' ) );
+        $this->assertStringContainsString( 'PrivateDown::down() must be public', $errors( '20261005100300_private_down' ) );
+        $this->assertStringContainsString( 'PrivateDown::down() requires 2 parameter(s), expMigrationPhp passes 1', $errors( '20261005100300_private_down' ) );
+        $this->assertStringContainsString( 'the class NoUp has no method up()', $errors( '20261005100400_no_up' ) );
+        $this->assertTrue( $byId['20261005100500_fine']['ok'], $errors( '20261005100500_fine' ) );
+        $this->assertFalse( class_exists( 'ExpTests\\MigrationClash\\HelperDefinition', false ), 'a refused file is never loaded' );
+
+        $this->assertSame( array(), expMigrationPhp::methodClashes( (string)file_get_contents( __DIR__ . '/fixtures/runner/20261031130000_wp3_note_table.php' ) ) );
+        $this->assertSame( array(), expMigrationPhp::methodClashes( "<?php\nclass NotAMigration { public function definition() {} }\n" ), 'only classes that extend expMigrationPhp' );
+        $this->assertTrue( ( new ReflectionMethod( 'expMigrationPhp', 'definition' ) )->isFinal() );
+        $this->assertFalse( ( new ReflectionMethod( 'expMigrationPhp', 'plan' ) )->isFinal() );
     }
 
     /** MT-05 */

@@ -143,6 +143,20 @@ class eZContentOperationCollection
         }
     }
 
+    /**
+     * The steps check-review-hold and check-review-hold-after-workflow of the publish operation: a held object
+     * (expReviewHold, doc/eng-us/features/6.0/review-hold.md) is published only by a user whose content/publish
+     * allows the held state; otherwise the publication is cancelled and the version stays a draft.
+     *
+     * @param int $objectID
+     * @param int $versionNum
+     * @return array|null
+     */
+    static public function checkReviewHold( $objectID, $versionNum )
+    {
+        return class_exists( 'expReviewHold' ) ? expReviewHold::checkPublish( $objectID, $versionNum ) : null;
+    }
+
     static public function setVersionStatus( $objectID, $versionNum, $status )
     {
         $db = eZDB::instance();

@@ -123,8 +123,11 @@ steps:
 - The header is the same `#` comment lines as in every migration. `exp:migration:generate --skeleton <name>
   --type=yml` writes an empty one.
 - `type` names a step type of `migration.ini [StepSettings] StepTypeList`. The kernel has `reference` (set
-  references) and `assert` (fail the migration when a condition is false); the step types that change content,
-  classes, roles and the other parts of an installation are registered there as they come, and an extension adds its
+  references), `assert` (fail the migration when a condition is false), `content`, `location` and `content_version`
+  (objects, their translations, locations and versions), `content_class` and `content_class_group` (classes with
+  their attributes), `user`, `user_group` and `role` (accounts, groups, roles with policies, limitations and
+  assignments), `section`, `language` and `object_state_group` ([YAML migration steps](migrations-yaml-steps.md));
+  the step types for tags, URL aliases, the trash, files, caches and layouts come later, and an extension adds its
   own the same way. A step's other keys are checked against its type's schema before anything runs.
 - `${ref.<name>}` is a reference (set by `references:` of an earlier step, by a `reference` step, or by an earlier
   PHP or YAML migration of the run), `${loop.<name>}` a loop variable, `${idmap.<kind>.<name>}` an id of the id map
@@ -269,7 +272,8 @@ The pages: [Migrations in the administration](../help/migrations/in-the-administ
 
 ## Not in 6.0.15 yet
 
-The YAML step types that change content, classes, roles and settings, SQL and INI migrations, the editor and the
+The YAML step types for tags, URL aliases, the trash, files and images, caches and the search index, layouts, `http`,
+`mail` and `command`, SQL and INI migrations, the editor and the
 generators in the administration (generators other than the skeleton), recording, and `exp:velocity deploy --migrate`
 are planned and not part of this release.
 

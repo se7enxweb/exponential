@@ -77,6 +77,7 @@ class expAuditTaxonomy
         'content.node.swap' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.node.section' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
         'content.object.state' => array( 'severity' => 'info', 'default' => 'on', 'channel' => 'content' ),
+        'content.object.hold.refused' => array( 'severity' => 'notice', 'default' => 'on', 'channel' => 'content', 'label' => 'Publication of a held object refused' ),
         'content.node.main' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content', 'label' => 'Main location change' ),
         'content.node.sort' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),
         'content.node.priority' => array( 'severity' => 'info', 'default' => 'off', 'channel' => 'content' ),

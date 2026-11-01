@@ -86,6 +86,7 @@ class expAuditHook
         'content.object.download' => 'read',
         'content.object.initial_language' => 'change',
         'content.object.state' => 'assign',
+        'content.object.hold.refused' => 'refuse',
         'content.object.translation.remove' => 'remove',
         'content.search.query' => 'read',
         'content.trash.empty' => 'purge',
