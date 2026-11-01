@@ -188,6 +188,22 @@ class expLegacyForkFixesTest extends PHPUnit\Framework\TestCase
         $this->assertMatchesRegularExpression( '/static function storePath\(.*?\{\s*(\/\/[^\n]*\s*)*\$pathOfURL = eZURLAliasML::cleanURL\( eZURLAliasML::stripURLOrigin\( \$path \) \);/s', $code );
     }
 
+    public function testEzjscoreSubtreeHasAHardLimitThatCoversTheAdminPageSizes()
+    {
+        $ini = file_get_contents( self::root() . '/extension/ezjscore/settings/ezjscore.ini' );
+        $this->assertSame( 1, preg_match( '/^\[ezjscServer_ezjscnode\]\n(?:[^\[].*\n|\n)*?HardLimit=(.*)$/m', $ini, $match ) );
+        $this->assertMatchesRegularExpression( '/^[1-9][0-9]*$/', trim( $match[1] ), 'a positive number, not false' );
+        $hardLimit = (int)$match[1];
+
+        foreach ( array( 'design/admin', 'design/admin4' ) as $design )
+        {
+            $js = file_get_contents( self::root() . '/' . $design . '/javascript/ezajaxsubitems_expdatatable.js' );
+            preg_match_all( '/\{ id: \d+, count: (\d+) \}/', $js, $counts );
+            $this->assertNotEmpty( $counts[1], $design . ': the page sizes of the sub-items list' );
+            $this->assertLessThanOrEqual( $hardLimit, max( array_map( 'intval', $counts[1] ) ), $design . ': a page the list offers is cut' );
+        }
+    }
+
     public function testRestKernelRegistersTheEventListeners()
     {
         $kernel = file_get_contents( self::root() . '/kernel/private/rest/classes/ezpkernelrest.php' );

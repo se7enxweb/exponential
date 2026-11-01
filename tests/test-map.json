@@ -553,7 +553,8 @@
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
     ],
     "extension/ezjscore/settings/ezjscore.ini": [
-      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
+      "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php",
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ],
     "extension/ezjscore/extension.xml": [
       "tests/tests/extension/ezjscore/ezjscoreVendoredLibrariesTest.php"
@@ -821,7 +822,8 @@
       "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
     ],
     "extension/ezjscore/classes/ezjscserverfunctionsnode.php": [
-      "tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php"
+      "tests/tests/extension/ezjscore/ezjscServerFunctionsNodePriorityTest.php",
+      "tests/tests/kernel/classes/expLegacyForkFixesTest.php"
     ],
     "kernel/classes/subitems/expsubitemsserverfunctions.php": [
       "tests/tests/kernel/classes/user/expUserAccountStatusTest.php"
