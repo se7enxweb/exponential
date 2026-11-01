@@ -6,8 +6,9 @@ there is nothing on the public side to update, patch or attack. You rebuild and 
 
 It is for site owners and administrators who want a free public site, and for developers who build and publish
 sites from the command line or from CI. This first version covers the command line: a target set up in the settings,
-a build, a local preview, a check and the publish with `exp:static:publish`. The administration screens and the automatic publishing to
-GitHub come with later parts of static publishing; the feature page lists what each part adds.
+a build, a local preview, a check and the publish with `exp:static:publish`. The same steps have screens in the
+administration, in Setup > Static publishing ([Static publishing](../help/static-publishing/README.md)). The automatic
+publishing to GitHub comes with a later part of static publishing; the feature page lists what each part adds.
 
 [Guides](README.md) · Related: [Static publishing](../features/6.0/static-publishing.md),
 [The build format](../specifications/6.0/static-publishing-build-format.md),

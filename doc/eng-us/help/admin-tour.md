@@ -55,7 +55,10 @@ The left column changes with the tab:
   started in the background, and the log of each run
   ([Migrations in the administration](migrations/in-the-administration.md); what migrations are, for administrators:
   [Migrations for administrators](migrations/migrations-for-administrators.md); everything else:
-  [Migrations](migrations/README.md)).
+  [Migrations](migrations/README.md)). Next to **Cache** in the same group, **Static publishing** publishes a static
+  copy of a site to GitHub Pages or any other host of repositories: a target made with a wizard, a build in the
+  background, the changes checked before **Publish**, and every publish kept to go back to
+  ([Static publishing](static-publishing/README.md)).
 
 ![The menu of an item in the tree](images/context-menu.webp)
 
@@ -96,6 +99,9 @@ Administrators also see blocks about the system, updates and security events, an
 many migrations are pending or failed, the orphans (recorded, their file gone), the last run with its state, a note
 while a run is going on, and **All migrations**, a link to Setup > Migrations. The block shows only to users who may
 see the migrations ([The dashboard block](migrations/status-and-history.md#the-dashboard-block)).
+The **Static publishing** block lists each target with its stale pages and its last publish; before the first
+target it is one line with links to the wizard and the tutorial, and **hide this** removes it for you
+([Static publishing](static-publishing/README.md)).
 
 ![My bookmarks: the items you bookmarked with Add to bookmarks, to open them again in one click](images/accounts/my-bookmarks.webp)
 
