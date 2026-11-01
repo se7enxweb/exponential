@@ -3342,7 +3342,7 @@ b2661906876c559f0a805cd1378d55b7  doc/changelogs/4.4/unstable/CHANGELOG-4.4.0bet
 3c780980b22c0994450e0b01f0ca9918  doc/changelogs/6.0/6.0.12.md
 20b7c5140c27148705a8bd11861002ef  doc/changelogs/6.0/6.0.13.md
 ba21ca58f6986ff6840de87589ad6858  doc/changelogs/6.0/6.0.14.md
-9acc1b5d46628b1737f581b3f423a138  doc/changelogs/6.0/6.0.15.md
+a22c453a877c33893ce21de57af13c47  doc/changelogs/6.0/6.0.15.md
 62a27cc345f6ef69f2f8bc85123ba051  doc/changelogs/6.0/6.0.2.md
 e170c3ef800c56fbe5d1af34b1041349  doc/changelogs/6.0/6.0.3.md
 377335ec93c70a1ae3abf53e956c2bee  doc/changelogs/6.0/6.0.4.md
@@ -27668,7 +27668,7 @@ d9adcdab7f6d19d12d6c2d0cb709a661  tests/tests/kernel/classes/packages/eZPackageT
 6ad17145c224d066cf6d06b45a404b08  tests/tests/kernel/classes/packages/eZPackageXMLNoNetworkTest.php
 2446efd09f3dbed59b4097e99d6ddef6  tests/tests/kernel/classes/packages/eZStylePackageCreatorTest.php
 8fec1a598d53f4222579b3da96cc55c8  tests/tests/kernel/classes/packages/expPackageArchiveLegacyFormatsTest.php
-33a9037adb64c89fd1c390e24402efcc  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
+9b3ad062e6fa4025b729b78dc3c4d2bb  tests/tests/kernel/classes/packages/expPackageArchiveTest.php
 d5765ecae8fce7191512c1e6533d411d  tests/tests/kernel/classes/packages/expPackageJsonTest.php
 4760d244cf27fef4cb7b77f2035c5a31  tests/tests/kernel/classes/packages/fixtures/build-legacy-package-fixtures.php
 bd68328f1799790292de4ffcb2d7dd04  tests/tests/kernel/classes/packages/fixtures/legacy/bsdtar-macos-pax.ezpkg
@@ -27993,7 +27993,7 @@ d161a1e6c1e63595214e09987d7772dd  tests/tests/kernel/datatypes/ezxmltext/ezxmlte
 4f8f760c6a58b518b2077db632bdeb6c  tests/tests/kernel/datatypes/ezxmltext/handlers/output/ezxhtmlxmloutput_regression.php
 6a3f99282a2cab1261e8f9e55d3c5a29  tests/tests/kernel/datatypes/suite.php
 0acad35eac7418ea80693f064a999cd0  tests/tests/kernel/error/ErrorHeaderListTest.php
-5ba8595e70a79503791c375734122414  tests/tests/kernel/logviewer/expLogActionsTest.php
+963e1d25b5be621b8f36eab5fa3b51a9  tests/tests/kernel/logviewer/expLogActionsTest.php
 2d80963a17a522fc8b6059e19a38ca1a  tests/tests/kernel/logviewer/expLogArchiveViewTest.php
 7418645639611cd30df89353a11b4d05  tests/tests/kernel/logviewer/expLogBundleTest.php
 1e0e68a8890f34218bdc265173b72b46  tests/tests/kernel/logviewer/expLogCspReportsTest.php
